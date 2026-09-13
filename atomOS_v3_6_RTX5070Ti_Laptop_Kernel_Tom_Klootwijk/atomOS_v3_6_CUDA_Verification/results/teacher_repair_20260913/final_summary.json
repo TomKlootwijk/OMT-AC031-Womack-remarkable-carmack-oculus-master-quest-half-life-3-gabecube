@@ -1,0 +1,39 @@
+{
+  "schema": "atomos-bounded-repair-and-template-continuation-v1",
+  "status": "completed_no_novel_programs",
+  "previous_checkpoint": "c6ae871f6899a31f7a2e0396525e7df0891c62d4",
+  "overall_general_ai_objective": "incomplete",
+  "actual_repair_queries": 12,
+  "repair_parsed_incorrect": 11,
+  "repair_invalid_syntax": 1,
+  "repair_full_domain_cases": 176,
+  "template_followup_queries": 6,
+  "template_correct_duplicate": 1,
+  "template_parsed_incorrect": 3,
+  "template_invalid_syntax": 2,
+  "new_program_pages": 0,
+  "existing_pages": 7,
+  "existing_teacher_capabilities": 3,
+  "existing_bank_sha256": "21d7814645fe0a584dac81040d7c8b411221bebc3179631b756c53a540945d86",
+  "new_native_bank_validation": "not_run_no_new_bank",
+  "active_bank_publication": "not_run_no_new_bank",
+  "previous_native_evidence": "results/teacher_expression_20260913/final_summary.json",
+  "full_python_tests": {
+    "total": 298,
+    "passed": 287,
+    "existing_optional_skips": 11
+  },
+  "alias_actual_prompt_matches": 6,
+  "template_quality_improvement": "not_established",
+  "model_weights_downloaded": 0,
+  "model_weights_added_to_git": 0,
+  "alias_created": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+  "original_alias_modification": false,
+  "teacher_models_unloaded": true,
+  "scope": "bounded repair and corrected one-user-message rendering; no general language or permanent cache pinning proof",
+  "prior_intermediate_push": {
+    "commit": "c6ae871f6899a31f7a2e0396525e7df0891c62d4",
+    "outgoing_pack_bytes": 318214,
+    "outgoing_pack_sha256": "2884a1c4a5acd5349affea3d001bbfcbcd794680ded2875b87c4005f9c1259b8"
+  }
+}

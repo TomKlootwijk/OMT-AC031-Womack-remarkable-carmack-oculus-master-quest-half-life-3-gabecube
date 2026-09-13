@@ -1,0 +1,772 @@
+{
+  "schema": "atomos-bounded-teacher-repair-v1",
+  "status": "no_novel_programs",
+  "curriculum": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2",
+  "source_acquisition": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr",
+  "base_bank": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\proposed\\bank.bin",
+  "max_rounds": 2,
+  "selection": [
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "full_adder_1bit_v1",
+      "original_review": {
+        "status": "oracle_correct",
+        "verified_cases": 8,
+        "mismatch_count": 0,
+        "counterexample": null,
+        "semantic_sha256": "d66316c4a78fc4505fa770fdaedad310d9d285831b3fe2dbc5855ced3791a0cc"
+      },
+      "original_response_sha256": "31b54b42249ee3319a9b2076e7b8486a6423f3aa978b92d5c039234ba422dc2a",
+      "status": "skipped",
+      "reason": "exact_function_already_present_in_base"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 16,
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        "semantic_sha256": "ce232ee9acc6213410ce04c9961b37045ebce52e8c10dd1d0eace6753d88dab7"
+      },
+      "original_response_sha256": "b08c7bd4a9675613df5b50fa8fef8881cf960e764c187569945b5a467c2db64b",
+      "status": "selected",
+      "reason": "actual_oracle_mismatch_and_absent_function"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "unsigned_add_2bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 15,
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 3
+        },
+        "semantic_sha256": "36ca22b800750555b20e4b8a7c30adbca5d9ff7b7838a4f8c23a758b34c4063c"
+      },
+      "original_response_sha256": "61493616e5be5e80d2d26a98e979438a2cfdbc339c1a568fbba27f86f014616b",
+      "status": "selected",
+      "reason": "actual_oracle_mismatch_and_absent_function"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "binary_to_gray_4bit_v1",
+      "original_review": {
+        "status": "oracle_correct",
+        "verified_cases": 16,
+        "mismatch_count": 0,
+        "counterexample": null,
+        "semantic_sha256": "88a22a1915f5b2ba9f43c24339d0dab238f5acbaecb99ee5c24732e8f8ec584c"
+      },
+      "original_response_sha256": "df8638ef3ae14cbb2fd938ac86e98903ef231149c11eb2ab23c4ce3e111749a3",
+      "status": "skipped",
+      "reason": "exact_function_already_present_in_base"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "absolute_difference_2bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 10,
+        "counterexample": {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        "semantic_sha256": "1b48b13811733d7077c1e2345f5b66056bbfbaf6c5a1934b18a1e66719adff50"
+      },
+      "original_response_sha256": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+      "status": "selected",
+      "reason": "actual_oracle_mismatch_and_absent_function"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "mux_2bit_v1",
+      "original_review": {
+        "status": "oracle_correct",
+        "verified_cases": 32,
+        "mismatch_count": 0,
+        "counterexample": null,
+        "semantic_sha256": "e6a24f3edeab7b68137703a789bf64fb70c917c05b7a68fb3d047ccd1e7779a3"
+      },
+      "original_response_sha256": "773f87eae67276b9ec0d3e3533e14b3f5ab3e6b1bd7e9b9406f1ed24cfb51d7a",
+      "status": "skipped",
+      "reason": "exact_function_already_present_in_base"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "full_adder_1bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 8,
+        "mismatch_count": 5,
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        "semantic_sha256": "13aa00a272b173a6288fcc22235f46bb07cab3e5bc5cfd9bd7250236c6cddfa7"
+      },
+      "original_response_sha256": "95629370ed24dbf5fc60d035bff5c758f1b2312882260a979aab435eb03715e0",
+      "status": "skipped",
+      "reason": "exact_function_already_present_in_base"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 14,
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 4
+        },
+        "semantic_sha256": "27136fb9c775ab3ecf092106d7ff08180d53bdaf28243b363708ec7f9e270992"
+      },
+      "original_response_sha256": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+      "status": "selected",
+      "reason": "actual_oracle_mismatch_and_absent_function"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "unsigned_add_2bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 13,
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        "semantic_sha256": "d60e46f951ab49f6ef3056a931f3ba8acdc81b647e0f3959e0ad471139492b23"
+      },
+      "original_response_sha256": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+      "status": "selected",
+      "reason": "actual_oracle_mismatch_and_absent_function"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "binary_to_gray_4bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 14,
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 11
+        },
+        "semantic_sha256": "399c5f11ab5c48b9d170ff29000ef82025006b0581fd26727dc722e4aeeceb15"
+      },
+      "original_response_sha256": "935198d99ab41fd08d149dbe3c78821dbe492d054de02a315287afa0f5db5f45",
+      "status": "skipped",
+      "reason": "exact_function_already_present_in_base"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "absolute_difference_2bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 16,
+        "counterexample": {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        },
+        "semantic_sha256": "5d5b6a947955ada9f907536063469db1433690aa539bd9afe3f434d58ceb8994"
+      },
+      "original_response_sha256": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+      "status": "selected",
+      "reason": "actual_oracle_mismatch_and_absent_function"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "mux_2bit_v1",
+      "original_review": {
+        "status": "incorrect",
+        "verified_cases": 32,
+        "mismatch_count": 24,
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        "semantic_sha256": "58c80db83c7c57c41fc228b36b56d0f85951b10bc2872cb68dc71fe53c635297"
+      },
+      "original_response_sha256": "e2af54a938e6aee92c603d1a8af7cdef06f68185120992de9c89ddf42b559d95",
+      "status": "skipped",
+      "reason": "exact_function_already_present_in_base"
+    }
+  ],
+  "rounds": [
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "round": 1,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 14,
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        "semantic_sha256": "5881ecef207b2cd746175c8c205d3d9052f6d1e00a70b2cf397567425d73d2a0"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1\\run.json"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "round": 2,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2",
+      "status": "invalid_expression",
+      "review": {
+        "status": "invalid_expression",
+        "reason": "unsupported character in Boolean expression",
+        "verified_cases": 0
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2\\run.json"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "unsigned_add_2bit_v1",
+      "round": 1,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 12,
+        "counterexample": {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        "semantic_sha256": "c53ebf47bcdf42352a5109739dbad285c87d713cddc4a00c9cbb869c15f7ffc0"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1\\run.json"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "unsigned_add_2bit_v1",
+      "round": 2,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 13,
+        "counterexample": {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        "semantic_sha256": "5d90893faed038d53e47e097c1502e6ada490023974632c5d7a16a37781808a4"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2\\run.json"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "absolute_difference_2bit_v1",
+      "round": 1,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 10,
+        "counterexample": {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        "semantic_sha256": "1b48b13811733d7077c1e2345f5b66056bbfbaf6c5a1934b18a1e66719adff50"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1\\run.json"
+    },
+    {
+      "teacher_id": "qwen3_4b_instruct",
+      "profile_id": "absolute_difference_2bit_v1",
+      "round": 2,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 10,
+        "counterexample": {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        "semantic_sha256": "1b48b13811733d7077c1e2345f5b66056bbfbaf6c5a1934b18a1e66719adff50"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2\\run.json"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "round": 1,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 16,
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 5
+        },
+        "semantic_sha256": "b4594ef0fbb1799ddfa0f6e4e7c95ea89e51c9492ab8d0340b2a8095daa0be77"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\run.json"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "round": 2,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 16,
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 5
+        },
+        "semantic_sha256": "b4594ef0fbb1799ddfa0f6e4e7c95ea89e51c9492ab8d0340b2a8095daa0be77"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2\\run.json"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "unsigned_add_2bit_v1",
+      "round": 1,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 13,
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        "semantic_sha256": "d60e46f951ab49f6ef3056a931f3ba8acdc81b647e0f3959e0ad471139492b23"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\run.json"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "unsigned_add_2bit_v1",
+      "round": 2,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 13,
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        "semantic_sha256": "d60e46f951ab49f6ef3056a931f3ba8acdc81b647e0f3959e0ad471139492b23"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2\\run.json"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "absolute_difference_2bit_v1",
+      "round": 1,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 16,
+        "counterexample": {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        },
+        "semantic_sha256": "5d5b6a947955ada9f907536063469db1433690aa539bd9afe3f434d58ceb8994"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1\\run.json"
+    },
+    {
+      "teacher_id": "phi4_mini_instruct",
+      "profile_id": "absolute_difference_2bit_v1",
+      "round": 2,
+      "folder": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2",
+      "status": "incorrect",
+      "review": {
+        "status": "incorrect",
+        "verified_cases": 16,
+        "mismatch_count": 16,
+        "counterexample": {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        },
+        "semantic_sha256": "5d5b6a947955ada9f907536063469db1433690aa539bd9afe3f434d58ceb8994"
+      },
+      "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2\\run.json"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "qwen3_4b_instruct",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "model_artifact_bytes": 2497280736,
+      "artifact_verification": {
+        "path": "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "bytes": 2497280736,
+        "verified_at_utc": "2026-09-13T18:11:41.393085+00:00",
+        "scope": "installed bytes match the named file at observed pinned HF revision; original acquisition revision unknown"
+      },
+      "show_sha256": "ae391993134984efb0f75c839e8f8c6525f02423bef723bebc72a8e2ff41c160",
+      "unloaded": true,
+      "unload_response": {
+        "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+        "created_at": "2026-09-13T18:11:53.6283094Z",
+        "response": "",
+        "done": true,
+        "done_reason": "unload"
+      },
+      "loaded_after_unload": {
+        "models": []
+      }
+    },
+    {
+      "id": "phi4_mini_instruct",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "model_artifact_bytes": 2491874688,
+      "artifact_verification": {
+        "path": "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "bytes": 2491874688,
+        "verified_at_utc": "2026-09-13T18:12:01.095204+00:00",
+        "scope": "installed bytes match the named file at observed pinned HF revision; original acquisition revision unknown"
+      },
+      "show_sha256": "9e03f636e096d8e6be29fd16b9b2119325c8fdd8e9a518d504fde4d3497c7527",
+      "unloaded": true,
+      "unload_response": {
+        "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+        "created_at": "2026-09-13T18:12:14.8474917Z",
+        "response": "",
+        "done": true,
+        "done_reason": "unload"
+      },
+      "loaded_after_unload": {
+        "models": []
+      }
+    }
+  ],
+  "later_skips": [],
+  "endpoint": "http://127.0.0.1:11434",
+  "dependency_sha256": {
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.oracle.json": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.prompt.txt": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.oracle.json": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.prompt.txt": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\curriculum.json": "5803c757c7acfcae0a21353e1beeb9ce1cd0c3b16fe20110fbaf1a80813065ae",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.oracle.json": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.prompt.txt": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.oracle.json": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.prompt.txt": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\source_curriculum.json": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.oracle.json": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.prompt.txt": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.oracle.json": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.prompt.txt": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\teachers.json": "f5e0e95a80591f5fe7c50d20b358f5ca15404e3e25c3ab565593d49145385179",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\acquire_teacher_knowledge.py": "5d6f4084fa38ef76a8dc577dc60e222c9264b17229b1b8bdbde53823a60cedcb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_knowledge.py": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank.py": "b19e72bfd518e01df2bc7e9629d5a1834e8253e81e1675753cee7f8a07a4dd8a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\knowledge_admission.py": "25cbf23929d101331f172c7874150b1b4124b49bbf5d45c5547e705ddbdc271e",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_expression_frontend.py": "177388ea9ce58d359f68b1302da5572f7e06fa85e3a4f40f31523a3031a3b08f",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\acquisition.json": "a55d0f7ca3dccd4f1cf7d72d53d57226f596d06432ea387a18007d6a234c5fd8",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\api_response.json": "37877ec414bc765398db56135ccee5e933de57d8324357be1041e3c9d2e832ae",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\request.json": "5b2bc900e9c48604ad346e254aec092a598a30e0f3c0e2440e8f85ec9c39a25d",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\run.json": "c485b0fd619975171f6ebad620f3b290b665180588b1102eb00dd283f0919afe",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\api_response.json": "58383cc17199f19ba6a080028d8806f4d3a1b5eae1bff46daaabbfb5bb3dbbae",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\request.json": "c602d0f09044025ba6f1a398d4204c8c3e637e95a8e22002a01cd9488d031cc1",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\response.txt": "935198d99ab41fd08d149dbe3c78821dbe492d054de02a315287afa0f5db5f45",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\run.json": "2f9f449c4bc742e55dedbdc09739ef6e36c7f06322c1a08d925447666ccad640",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\api_response.json": "2f910742d51e80222888e99390ea9a31736972f818fa2eec78b1d7c1b52cfdf8",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\request.json": "72b31ec04df221adbbbdd2e064d33b08b5d83b3786f3e2d35ff2c449094dc0d5",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\response.txt": "95629370ed24dbf5fc60d035bff5c758f1b2312882260a979aab435eb03715e0",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\run.json": "d7d0680cbf8344c73793988875e3b8e5cf7cf8bd505e588ff4538cbefda8b1ff",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\api_response.json": "132cb4a7b13e65e19ab63a600b812e5fa98c317bd8bfaa7bed512c3961e5cddb",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\request.json": "de7b3b68d5fd047e9e5aa0ee5e2e14b2ede23bca79dc12f126cd209d3b6431e0",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\response.txt": "e2af54a938e6aee92c603d1a8af7cdef06f68185120992de9c89ddf42b559d95",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\run.json": "7cccf45c3df7572f27c3044392dc04f989889d3b6415e782fd80a55c189814e7",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\ollama_show.json": "70064f37cceb3abe702ec67085a461a4705fed13a65807561724efe67d6a09f6",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\api_response.json": "96f2e829b98c801ea039526e717473755455c5235308de001d241488cdd1151b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\request.json": "74175b0aa2d1d64fd6d834fb5a4cee3af23e661a53a77b92cf1a70baf59eb5fc",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\run.json": "6e923b06a22f58bef4452442f324e9fea03e7a98a9a40ced50a123b882006978",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\api_response.json": "5b1a4bc7d557d241910fc7c6ede7e950c547dcbb6ae31d122523e7847c383676",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\request.json": "b23eb3a875fe47a12d40e225139c7e86a536192abc0eb0010993ec639bb22fbb",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\response.txt": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\run.json": "b6f8ab97eff174fb6d518622a46709e3e4f7cd8d54acf1008a1a18a8f7e9eb51",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\api_response.json": "11ad98fe6f4d5714e85654c79735187af376273f44eda92652a0180d81ba505d",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\request.json": "ca13df9c737baea1601a1fdac00fc188da52e2409e0165d1b41005749d72f11a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\run.json": "e9eb2fd12ed4a8252df47ff79052abb30503595d2d3d0199b278cc8350ef233b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\api_response.json": "b0a1a4a2717b01389e6a895f8617dc5199b3155490a3e9d664eefe0c5512ec80",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\request.json": "0c5f6d8ea104288465625c00b0a0608c3c50ab0ae2b8472fae04e95052b14c3a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt": "df8638ef3ae14cbb2fd938ac86e98903ef231149c11eb2ab23c4ce3e111749a3",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json": "ed484f57d7878537cc1bcf1abd52fb6f067208dd19765b637bbd2fe93e6fe6b7",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\api_response.json": "e847ec98b8df1acd631440c84160ce4e297627459237baa2a0e4cfcd1aa62524",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\request.json": "769bd7010864c16056d2992db89a82f1cb64548faa827da59b262ec89f72c51c",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt": "31b54b42249ee3319a9b2076e7b8486a6423f3aa978b92d5c039234ba422dc2a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json": "61a397d3e413a935cc2ceda0ffec5f42f5dc740cfb2a977124e4fdc9a2e4bbc7",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\api_response.json": "654a2303fb99640a08d5519c77002b62a1d2cebdbdf278637b76740023d666db",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\request.json": "155d7ca0fc39be4fb84718b712db02364728a0a898a0fb9e162c922f93df6bec",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt": "773f87eae67276b9ec0d3e3533e14b3f5ab3e6b1bd7e9b9406f1ed24cfb51d7a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\run.json": "b259d789d9656d26af476b1cf1967b00f64bc05edb06080b2785f1571595697c",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\ollama_show.json": "a8ca3645cf3507d23b1e6380dc6334585059087ba4a09b05fcf13acf6340e03c",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\api_response.json": "aac3b738ebc87772718b2baf26523fb3ab5b67e163302166637713a494778281",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\request.json": "c1edac3b1dd783654527a68d9747daa379fe7cb7645011f574b5d7376edb641a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\response.txt": "61493616e5be5e80d2d26a98e979438a2cfdbc339c1a568fbba27f86f014616b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\run.json": "941729b164cae8875d3b9f0c14ca8974b4163368bc66f0072902b0912fb6a890",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\api_response.json": "3540a575df754a921ca8b2dfb7aaf2de90f6060ea9a4852ccb95444bf95a2246",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\request.json": "d9a0a9e41e8cb8afe20bbde46b4bc146e816fb3dca1462405fd3f2c4e098d05e",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\response.txt": "b08c7bd4a9675613df5b50fa8fef8881cf960e764c187569945b5a467c2db64b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\run.json": "bdd0055e11f7f52088b146d52d7fd24cba43e7cecd3c6b49c65cba53e1069476",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\proposed\\bank.bin": "21d7814645fe0a584dac81040d7c8b411221bebc3179631b756c53a540945d86",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\proposed\\manifest.json": "03bb49e0051dd6198a4ba6cd10ad93e4c017f5684f0bf3899507046a96d0cbe4",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\repair_teacher_knowledge.py": "8a9293c4e59ed19e02e94c45d2a5451b2a76fbd0042323636dd49ee649032841",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\compile_teacher_knowledge.py": "3a070fed72957ce2d15f0d8547c2d4980f44c2fd37bc71caf0b79a708b9f51ff",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank_reference.py": "e93f67cde008ce5738a5fdd8ffbad3da4a35c8007119c6c6fee28af92b844bb4",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\runtime.json": "cbbd2a2c13be65b0385e402793f5729e13a775708174064e16f549dbed468b54",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\initially_loaded.json": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\ollama_show.json": "ae391993134984efb0f75c839e8f8c6525f02423bef723bebc72a8e2ff41c160",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\initial_response.txt": "b08c7bd4a9675613df5b50fa8fef8881cf960e764c187569945b5a467c2db64b",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1\\prompt.txt": "e6b4a5a12ef8883310a1215fe2f0b32d77c0099c12972d1f36727111d148c9bd",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1\\correction.json": "c6e99e5c3f8129d056f4dc3a3ec7548656e63390a5163e764036c0d6dc1df010",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1\\request.json": "ec0ec32f0d7e07146f5c961076768d37761f1b5396a001b8455fb95223dad05f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1\\api_response.json": "8f0050faf0ceb05b4d7326a4f3275210b3f2e83eb097ad897df175f1a36c7049",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1\\response.txt": "a097cbf2c7beac48d055ce81d7ef2519074f6a115983af4940dcc98d02bf5562",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round1\\run.json": "acdac707144faff32c8ba7fec9f9ed11aa1541378f89a4c1143fb49fafa85a32",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2\\prompt.txt": "de871b00a7f1b182c4d4190bc77b490278f0e997c078b40dbf3a07947a6dbfc4",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2\\correction.json": "3a8e845de90bae3c5b6316e94a749d81d5e1597143f71b61b5639ba4e856738d",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2\\request.json": "cd7fc9f31791744a860f852c47ad4141613bb4a9926137565abf790d658f196b",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2\\api_response.json": "1f281cc78434fba5f9fd00eb7a25b8583c6e0cb19bbb8a7ea3f55c7a347e7c97",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2\\response.txt": "d5acaf48733c263907380879efee13b2cfeaf66b638120c5cc3d4c72d018c5dd",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\round2\\run.json": "3f591aec6d9e4eaddcc652bdd9707c164e174c3a3f0028e34715c2ce7bce17f1",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\initial_response.txt": "61493616e5be5e80d2d26a98e979438a2cfdbc339c1a568fbba27f86f014616b",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1\\prompt.txt": "37c0c41c2be0dbe45a3ddcf0b4bd5830993585200cc4007ca7d4a2ebc3241b8f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1\\correction.json": "fb024b6fda99e20b4dbf57c422e138af008e6d6797f666a558b946f33ba61f4a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1\\request.json": "98243b3b657707535ab765589f51b8666081a913601b8fd9b39f82636ea83ea1",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1\\api_response.json": "464ce2a0500fcda4e411aaf88fee97373a6a982125176d701515cd8e9f1b4043",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1\\response.txt": "0752bb26d0fd6a3f87f8ff8ea618f6d80c62cd4f3beb3e8ecb1a9f5110a90c60",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round1\\run.json": "c3d36d5a31a7580b0b72ec3f532eb6d06f1e9ce9d501e4fd1e33dbf52029793a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2\\prompt.txt": "11e55ee1cf778a28aff5595b186ad3e288800e143bf208e31eb66f88126114ae",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2\\correction.json": "af98fb3857975aafc85d7e2b176394c875175f774f544d473bb33a78bbe0c3fb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2\\request.json": "10ab42dc3dc31136e96b863c7e632c832adbe548b5fca7ec156dc36be2050029",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2\\api_response.json": "e8bc1744c863068fb6ed0c14a1d8a2155a335076ade186f250a5d6d56ab00c5b",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2\\response.txt": "1d5c19ba4a94a214ac1bca74c7ad106ee8ae2a3d9d4fd16f6ccf033aa6babebb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\round2\\run.json": "48128488f7bc195549512eab6effb3546bd5bcfb4f344e57c27c6b8ad01d54be",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\initial_response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1\\prompt.txt": "bd1885d20c1ea2a98bbaedeb17a3e38cd1e57ecd0fe9d7794eef3676c5646b80",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1\\correction.json": "4333f2d2cdd850c0cbd5bc20a7a14ef66052082b6a6656b643615a5955542fe6",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1\\request.json": "8271fcfb212d64b0242cb066301d2b7bfef9b7de5889ed6c16d5be95b8cbf422",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1\\api_response.json": "4202a11fdc62bcfa8e75dc16c628ff9f981a0849d60dcc1a5471623ea028eaf6",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1\\response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round1\\run.json": "fdf3ca0cdc8e5bdc360fb8b314128a1141a2dc8931dd4f421497db7edfaaf454",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2\\prompt.txt": "c6896a6217ac4aa1ccb0efe7b1a88982a0c222e8f234b35782161e38e516364b",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2\\correction.json": "09d668be44e79e999d52e37129a7515296bebd17a1531ffc004fcce98e9444cc",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2\\request.json": "40ceec6cba77f81ec8a3d81ef21c204d77ef5ef581e204452d6db2f45c0de3bc",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2\\api_response.json": "0ccb2ca51baf2a0f1d3c7be1d1c788ed2a8c2b2037c1a2da60560ce0a397a8b5",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2\\response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\round2\\run.json": "d8325590292972b030f3d08d5dd6803b4c3950b45430ef412c5371f2d2326b08",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\unload_response.json": "3022b8a7c826e8a039ff4ab4efbe9b6b7141ccbf5baac27fdfc0379fc76dff80",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\loaded_after_unload.json": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\ollama_show.json": "9e03f636e096d8e6be29fd16b9b2119325c8fdd8e9a518d504fde4d3497c7527",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\initial_response.txt": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\prompt.txt": "8955d43ff792b604083ec3a99fa98926152111672e98766900b6f647d1813e80",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\correction.json": "4b6f7a9d0eba8448309b0ee4604c3f335f65bbe6e7dc49054fe26d3da63712b4",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\request.json": "c823378ba598145abdfe6628f0c2d5f8a8a5a736ee66a162004af71cf01e4b3c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\api_response.json": "5df2b15c5c674bb78eef2a1646d219b273409d1617aff205739e11df62e30ae8",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\response.txt": "4252d8d9b4ba4c02bcefa0fa779f49e79231414f8a5b5a9ba10934c4a11407fa",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\run.json": "63c6a793bb44b0a90b7c4eee56f8f5fdd287bcd22ea1d96e329cb79e219a9a38",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2\\prompt.txt": "f2363487d5450fe3d7fb1d6a8609bf82cfcf26f6553faa1c0207c7ec9e6aa972",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2\\correction.json": "5b2c2784ec322ab4702a77aba39b88cc4032e04efefee196d5151deb078cc0cb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2\\request.json": "2bf525021d9c55c6bbadba9ed5d997ca083c45881f7e6d0a2d45ee90eefa6101",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2\\api_response.json": "d15ce6611443d934d327b1bcbe72a193273a7ed2985aca1d1f361910646dba9e",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2\\response.txt": "4252d8d9b4ba4c02bcefa0fa779f49e79231414f8a5b5a9ba10934c4a11407fa",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round2\\run.json": "5041cc392787bc3d2bb29145d02a960cc05efe58bc372627e8fbf3622ab958f6",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\initial_response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\prompt.txt": "a385c08e0bedb850a7a40e3baf307eb73758edb7db1f27d9ae16ea9e3c42c071",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\correction.json": "719fda9598131817d761305df43fd08895d87862eb579a9c33d674de936fc3e2",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\request.json": "48cfa7726bd284b573cb4b929f587c98b27b7e377a82dfd0ff94bb64afbda8a1",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\api_response.json": "7db1bc2ec95a0ee4b07d44a4f9d4a70b1403500241fa1e855c6154feeeb904f5",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\run.json": "4261219d2be4e4cde74d739a442e90bf2771796dbf059960adfe578a87e024c4",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2\\prompt.txt": "53cae388498bda0c1b778ea9d08be3efef35665ef40d5d236be259ee24551da9",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2\\correction.json": "8d6a260839c6f0a764e037325202bac8a5a5934a06167ff514c7dc5f39fd7454",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2\\request.json": "80ab748cc67bf186cb7dd514b4e3d76d8bb5f93f284dff400aa6f7f603d508c6",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2\\api_response.json": "555fcb27a9c10361828e61803a51b31e1d213eb9743fe856b37fbd005d27be93",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2\\response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round2\\run.json": "873150bef65aad9a5d4df40a9f1143a9bed67af7e65abb1f5d4278ced7308125",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\initial_response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1\\prompt.txt": "acb30f5515e8b1bb86f6ac87f55c0e8962122420f90022bf759cad30e0b8928d",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1\\correction.json": "1cba87d1bcaba8ea4d03556997188624f6d5255f25703205cdf9b8f40a411933",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1\\request.json": "07ee5176fe651fe149cfaac6a54c82ad3dd918b662f85725585a86228f90c1b2",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1\\api_response.json": "1a49ea534e85d1be88b68585d40282b5e95a22f2c6657ec4ae62177d0a25c6c6",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1\\response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round1\\run.json": "f7302a8fef6b5749f6b5194a0742940a0d504704f694fc87f2d8ef93ce7fef3a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2\\prompt.txt": "32b31a60232edb3a13a091124d94ff745126fa5837e91dd2af9622a9a9f8cf79",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2\\correction.json": "9a4bb40eef2facdb44c93e48a8eb3c79784e73d62e34ec2a6352df4a8b01b323",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2\\request.json": "5b7e4f0c4c1de46ec2e19d4ce2633aa5fe88ffa3b9d15525c71f930274822551",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2\\api_response.json": "157c1c5451518a69df8932b0bdb5dd3121c602c5b32c67eb9c9d4291aba0db2b",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2\\response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\round2\\run.json": "ae3b7e674aab6e62185bbe9ed252990db322860d17accb78cd84893aec71cffa",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unload_response.json": "d2c6c64a9755ea9821a4aea0009ddba5f7234516b7127ffbd9f389a24f3b8530",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\loaded_after_unload.json": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\verified_correct_responses.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  "model_artifact_sha256": {
+    "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+    "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2"
+  },
+  "actual_repair_queries": 12,
+  "teacher_generated_code_executed": false,
+  "teacher_weights_in_program_bank": false,
+  "gpu_execution": "not_run",
+  "new_active_bank_published": false,
+  "accepted_programs": 0,
+  "feedback_policy": "one actual failing input; unchanged six-profile integer oracle; at most two rounds per model/profile",
+  "model_authentication": "not_claimed; pinned local artifact bytes and retained request/API consistency verified",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "initially_loaded": {
+    "models": []
+  },
+  "repeat_check": "not_run_no_correct_repair_candidates",
+  "final_bank": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\proposed\\bank.bin",
+  "artifact_sha256": {
+    "initially_loaded.json": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+    "runtime.json": "cbbd2a2c13be65b0385e402793f5729e13a775708174064e16f549dbed468b54",
+    "verified_correct_responses.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "phi4_mini_instruct/loaded_after_unload.json": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+    "phi4_mini_instruct/ollama_show.json": "9e03f636e096d8e6be29fd16b9b2119325c8fdd8e9a518d504fde4d3497c7527",
+    "phi4_mini_instruct/unload_response.json": "d2c6c64a9755ea9821a4aea0009ddba5f7234516b7127ffbd9f389a24f3b8530",
+    "qwen3_4b_instruct/loaded_after_unload.json": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+    "qwen3_4b_instruct/ollama_show.json": "ae391993134984efb0f75c839e8f8c6525f02423bef723bebc72a8e2ff41c160",
+    "qwen3_4b_instruct/unload_response.json": "3022b8a7c826e8a039ff4ab4efbe9b6b7141ccbf5baac27fdfc0379fc76dff80",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/initial_response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/initial_response.txt": "61493616e5be5e80d2d26a98e979438a2cfdbc339c1a568fbba27f86f014616b",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/initial_response.txt": "b08c7bd4a9675613df5b50fa8fef8881cf960e764c187569945b5a467c2db64b",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round1/api_response.json": "8f0050faf0ceb05b4d7326a4f3275210b3f2e83eb097ad897df175f1a36c7049",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round1/correction.json": "c6e99e5c3f8129d056f4dc3a3ec7548656e63390a5163e764036c0d6dc1df010",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round1/prompt.txt": "e6b4a5a12ef8883310a1215fe2f0b32d77c0099c12972d1f36727111d148c9bd",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round1/request.json": "ec0ec32f0d7e07146f5c961076768d37761f1b5396a001b8455fb95223dad05f",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round1/response.txt": "a097cbf2c7beac48d055ce81d7ef2519074f6a115983af4940dcc98d02bf5562",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round1/run.json": "acdac707144faff32c8ba7fec9f9ed11aa1541378f89a4c1143fb49fafa85a32",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round2/api_response.json": "1f281cc78434fba5f9fd00eb7a25b8583c6e0cb19bbb8a7ea3f55c7a347e7c97",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round2/correction.json": "3a8e845de90bae3c5b6316e94a749d81d5e1597143f71b61b5639ba4e856738d",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round2/prompt.txt": "de871b00a7f1b182c4d4190bc77b490278f0e997c078b40dbf3a07947a6dbfc4",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round2/request.json": "cd7fc9f31791744a860f852c47ad4141613bb4a9926137565abf790d658f196b",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round2/response.txt": "d5acaf48733c263907380879efee13b2cfeaf66b638120c5cc3d4c72d018c5dd",
+    "qwen3_4b_instruct/unsigned_compare_2bit_v1/round2/run.json": "3f591aec6d9e4eaddcc652bdd9707c164e174c3a3f0028e34715c2ce7bce17f1",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round1/api_response.json": "464ce2a0500fcda4e411aaf88fee97373a6a982125176d701515cd8e9f1b4043",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round1/correction.json": "fb024b6fda99e20b4dbf57c422e138af008e6d6797f666a558b946f33ba61f4a",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round1/prompt.txt": "37c0c41c2be0dbe45a3ddcf0b4bd5830993585200cc4007ca7d4a2ebc3241b8f",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round1/request.json": "98243b3b657707535ab765589f51b8666081a913601b8fd9b39f82636ea83ea1",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round1/response.txt": "0752bb26d0fd6a3f87f8ff8ea618f6d80c62cd4f3beb3e8ecb1a9f5110a90c60",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round1/run.json": "c3d36d5a31a7580b0b72ec3f532eb6d06f1e9ce9d501e4fd1e33dbf52029793a",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round2/api_response.json": "e8bc1744c863068fb6ed0c14a1d8a2155a335076ade186f250a5d6d56ab00c5b",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round2/correction.json": "af98fb3857975aafc85d7e2b176394c875175f774f544d473bb33a78bbe0c3fb",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round2/prompt.txt": "11e55ee1cf778a28aff5595b186ad3e288800e143bf208e31eb66f88126114ae",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round2/request.json": "10ab42dc3dc31136e96b863c7e632c832adbe548b5fca7ec156dc36be2050029",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round2/response.txt": "1d5c19ba4a94a214ac1bca74c7ad106ee8ae2a3d9d4fd16f6ccf033aa6babebb",
+    "qwen3_4b_instruct/unsigned_add_2bit_v1/round2/run.json": "48128488f7bc195549512eab6effb3546bd5bcfb4f344e57c27c6b8ad01d54be",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round1/api_response.json": "4202a11fdc62bcfa8e75dc16c628ff9f981a0849d60dcc1a5471623ea028eaf6",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round1/correction.json": "4333f2d2cdd850c0cbd5bc20a7a14ef66052082b6a6656b643615a5955542fe6",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round1/prompt.txt": "bd1885d20c1ea2a98bbaedeb17a3e38cd1e57ecd0fe9d7794eef3676c5646b80",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round1/request.json": "8271fcfb212d64b0242cb066301d2b7bfef9b7de5889ed6c16d5be95b8cbf422",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round1/response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round1/run.json": "fdf3ca0cdc8e5bdc360fb8b314128a1141a2dc8931dd4f421497db7edfaaf454",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round2/api_response.json": "0ccb2ca51baf2a0f1d3c7be1d1c788ed2a8c2b2037c1a2da60560ce0a397a8b5",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round2/correction.json": "09d668be44e79e999d52e37129a7515296bebd17a1531ffc004fcce98e9444cc",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round2/prompt.txt": "c6896a6217ac4aa1ccb0efe7b1a88982a0c222e8f234b35782161e38e516364b",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round2/request.json": "40ceec6cba77f81ec8a3d81ef21c204d77ef5ef581e204452d6db2f45c0de3bc",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round2/response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "qwen3_4b_instruct/absolute_difference_2bit_v1/round2/run.json": "d8325590292972b030f3d08d5dd6803b4c3950b45430ef412c5371f2d2326b08",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/initial_response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/initial_response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/initial_response.txt": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round1/api_response.json": "5df2b15c5c674bb78eef2a1646d219b273409d1617aff205739e11df62e30ae8",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round1/correction.json": "4b6f7a9d0eba8448309b0ee4604c3f335f65bbe6e7dc49054fe26d3da63712b4",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round1/prompt.txt": "8955d43ff792b604083ec3a99fa98926152111672e98766900b6f647d1813e80",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round1/request.json": "c823378ba598145abdfe6628f0c2d5f8a8a5a736ee66a162004af71cf01e4b3c",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round1/response.txt": "4252d8d9b4ba4c02bcefa0fa779f49e79231414f8a5b5a9ba10934c4a11407fa",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round1/run.json": "63c6a793bb44b0a90b7c4eee56f8f5fdd287bcd22ea1d96e329cb79e219a9a38",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round2/api_response.json": "d15ce6611443d934d327b1bcbe72a193273a7ed2985aca1d1f361910646dba9e",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round2/correction.json": "5b2c2784ec322ab4702a77aba39b88cc4032e04efefee196d5151deb078cc0cb",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round2/prompt.txt": "f2363487d5450fe3d7fb1d6a8609bf82cfcf26f6553faa1c0207c7ec9e6aa972",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round2/request.json": "2bf525021d9c55c6bbadba9ed5d997ca083c45881f7e6d0a2d45ee90eefa6101",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round2/response.txt": "4252d8d9b4ba4c02bcefa0fa779f49e79231414f8a5b5a9ba10934c4a11407fa",
+    "phi4_mini_instruct/unsigned_compare_2bit_v1/round2/run.json": "5041cc392787bc3d2bb29145d02a960cc05efe58bc372627e8fbf3622ab958f6",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round1/api_response.json": "7db1bc2ec95a0ee4b07d44a4f9d4a70b1403500241fa1e855c6154feeeb904f5",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round1/correction.json": "719fda9598131817d761305df43fd08895d87862eb579a9c33d674de936fc3e2",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round1/prompt.txt": "a385c08e0bedb850a7a40e3baf307eb73758edb7db1f27d9ae16ea9e3c42c071",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round1/request.json": "48cfa7726bd284b573cb4b929f587c98b27b7e377a82dfd0ff94bb64afbda8a1",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round1/response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round1/run.json": "4261219d2be4e4cde74d739a442e90bf2771796dbf059960adfe578a87e024c4",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round2/api_response.json": "555fcb27a9c10361828e61803a51b31e1d213eb9743fe856b37fbd005d27be93",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round2/correction.json": "8d6a260839c6f0a764e037325202bac8a5a5934a06167ff514c7dc5f39fd7454",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round2/prompt.txt": "53cae388498bda0c1b778ea9d08be3efef35665ef40d5d236be259ee24551da9",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round2/request.json": "80ab748cc67bf186cb7dd514b4e3d76d8bb5f93f284dff400aa6f7f603d508c6",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round2/response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "phi4_mini_instruct/unsigned_add_2bit_v1/round2/run.json": "873150bef65aad9a5d4df40a9f1143a9bed67af7e65abb1f5d4278ced7308125",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round1/api_response.json": "1a49ea534e85d1be88b68585d40282b5e95a22f2c6657ec4ae62177d0a25c6c6",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round1/correction.json": "1cba87d1bcaba8ea4d03556997188624f6d5255f25703205cdf9b8f40a411933",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round1/prompt.txt": "acb30f5515e8b1bb86f6ac87f55c0e8962122420f90022bf759cad30e0b8928d",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round1/request.json": "07ee5176fe651fe149cfaac6a54c82ad3dd918b662f85725585a86228f90c1b2",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round1/response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round1/run.json": "f7302a8fef6b5749f6b5194a0742940a0d504704f694fc87f2d8ef93ce7fef3a",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round2/api_response.json": "157c1c5451518a69df8932b0bdb5dd3121c602c5b32c67eb9c9d4291aba0db2b",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round2/correction.json": "9a4bb40eef2facdb44c93e48a8eb3c79784e73d62e34ec2a6352df4a8b01b323",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round2/prompt.txt": "32b31a60232edb3a13a091124d94ff745126fa5837e91dd2af9622a9a9f8cf79",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round2/request.json": "5b7e4f0c4c1de46ec2e19d4ce2633aa5fe88ffa3b9d15525c71f930274822551",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round2/response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "phi4_mini_instruct/absolute_difference_2bit_v1/round2/run.json": "ae3b7e674aab6e62185bbe9ed252990db322860d17accb78cd84893aec71cffa"
+  }
+}

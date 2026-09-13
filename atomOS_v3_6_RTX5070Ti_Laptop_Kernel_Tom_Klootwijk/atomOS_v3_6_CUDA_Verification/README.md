@@ -324,3 +324,7 @@ actual Qwen-derived selector to the full-adder and Gray-code skills. Duplicate
 functions allocate no new pages. A bounded command interface executes admitted
 skills through the native packed textures and returns explicit unknown results
 for unsupported or unavailable capabilities. The broader AI goal remains open.
+
+The [bounded repair and template audit](docs/TEACHER_REPAIR_AND_TEMPLATE_AUDIT.md)
+retains twelve unsuccessful repairs and a controlled Qwen rendering correction.
+No additional page qualified; the broader goal remains incomplete.

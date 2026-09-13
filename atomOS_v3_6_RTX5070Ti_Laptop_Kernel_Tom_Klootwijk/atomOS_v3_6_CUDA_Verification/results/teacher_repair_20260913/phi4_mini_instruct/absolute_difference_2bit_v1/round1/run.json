@@ -1,0 +1,47 @@
+{
+  "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+  "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+  "model_revision_status": "pinned_huggingface_commit",
+  "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+  "model_artifact_bytes": 2491874688,
+  "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+  "schema": "atomos-teacher-inference-run-v1",
+  "frontend": "boolean-expression",
+  "status": "completed",
+  "profile_id": "absolute_difference_2bit_v1",
+  "repair": {
+    "round": 1,
+    "previous_response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\absolute_difference_2bit_v1\\initial_response.txt",
+    "previous_response_sha256": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "counterexample": {
+      "input": 0,
+      "expected": 0,
+      "actual": 2
+    }
+  },
+  "prompt_sha256": "acb30f5515e8b1bb86f6ac87f55c0e8962122420f90022bf759cad30e0b8928d",
+  "response_sha256": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+  "request_sha256": "07ee5176fe651fe149cfaac6a54c82ad3dd918b662f85725585a86228f90c1b2",
+  "api_response_sha256": "1a49ea534e85d1be88b68585d40282b5e95a22f2c6657ec4ae62177d0a25c6c6",
+  "ollama_show_sha256": "9e03f636e096d8e6be29fd16b9b2119325c8fdd8e9a518d504fde4d3497c7527",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "elapsed_seconds": 0.9744540000101551,
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "generation": {
+    "done_reason": "stop",
+    "total_duration": 946532500,
+    "load_duration": 2102300,
+    "prompt_eval_count": 600,
+    "prompt_eval_duration": 99483000,
+    "eval_count": 113,
+    "eval_duration": 790489000
+  },
+  "teacher_generated_code_executed": false
+}

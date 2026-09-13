@@ -1,0 +1,47 @@
+{
+  "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+  "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+  "model_revision_status": "pinned_huggingface_commit",
+  "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+  "model_artifact_bytes": 2497280736,
+  "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+  "schema": "atomos-teacher-inference-run-v1",
+  "frontend": "boolean-expression",
+  "status": "completed",
+  "profile_id": "absolute_difference_2bit_v1",
+  "repair": {
+    "round": 1,
+    "previous_response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\initial_response.txt",
+    "previous_response_sha256": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "counterexample": {
+      "input": 2,
+      "expected": 2,
+      "actual": 1
+    }
+  },
+  "prompt_sha256": "bd1885d20c1ea2a98bbaedeb17a3e38cd1e57ecd0fe9d7794eef3676c5646b80",
+  "response_sha256": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+  "request_sha256": "8271fcfb212d64b0242cb066301d2b7bfef9b7de5889ed6c16d5be95b8cbf422",
+  "api_response_sha256": "4202a11fdc62bcfa8e75dc16c628ff9f981a0849d60dcc1a5471623ea028eaf6",
+  "ollama_show_sha256": "ae391993134984efb0f75c839e8f8c6525f02423bef723bebc72a8e2ff41c160",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "elapsed_seconds": 0.779559300004621,
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "generation": {
+    "done_reason": "stop",
+    "total_duration": 756485600,
+    "load_duration": 2741800,
+    "prompt_eval_count": 559,
+    "prompt_eval_duration": 87102000,
+    "eval_count": 82,
+    "eval_duration": 601787000
+  },
+  "teacher_generated_code_executed": false
+}

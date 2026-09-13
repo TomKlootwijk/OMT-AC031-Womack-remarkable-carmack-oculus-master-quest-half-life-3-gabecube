@@ -1,0 +1,304 @@
+{
+  "schema": "atomos-local-teacher-acquisition-v1",
+  "status": "completed",
+  "started_at_utc": "2026-09-13T18:22:54.892058+00:00",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "endpoint": "http://127.0.0.1:11434",
+  "frontend": "boolean-expression",
+  "curriculum": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2",
+  "dependency_sha256": {
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.oracle.json": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.prompt.txt": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.oracle.json": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.prompt.txt": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\curriculum.json": "5803c757c7acfcae0a21353e1beeb9ce1cd0c3b16fe20110fbaf1a80813065ae",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.oracle.json": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.prompt.txt": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.oracle.json": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.prompt.txt": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\source_curriculum.json": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.oracle.json": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.prompt.txt": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.oracle.json": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.prompt.txt": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\verified_alias_v2\\teachers.json": "c1756bbc12150676a10862b7e4d16a2479e1876a7b4031bb4237a4c6e027da9b",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\acquire_teacher_knowledge.py": "5d6f4084fa38ef76a8dc577dc60e222c9264b17229b1b8bdbde53823a60cedcb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_knowledge.py": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank.py": "b19e72bfd518e01df2bc7e9629d5a1834e8253e81e1675753cee7f8a07a4dd8a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\knowledge_admission.py": "25cbf23929d101331f172c7874150b1b4124b49bbf5d45c5547e705ddbdc271e",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_expression_frontend.py": "177388ea9ce58d359f68b1302da5572f7e06fa85e3a4f40f31523a3031a3b08f"
+  },
+  "initially_loaded": {
+    "models": []
+  },
+  "teacher_weights_in_program_bank": false,
+  "model_artifact_sha256": {
+    "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e"
+  },
+  "teachers": [
+    {
+      "id": "qwen3_4b_instruct_faithful",
+      "ollama_model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+      "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "model_artifact_bytes": 2497280736,
+      "model_filename": "Qwen_Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+      "original_model_repo": "Qwen/Qwen3-4B-Instruct-2507",
+      "original_model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "original_license": "Apache-2.0",
+      "original_acquisition_revision": "unknown; installed bytes are checked against the observed pinned Hugging Face file",
+      "template_experiment": "actual render-only API matches exact pinned HF template for all six frozen one-user-message prompts",
+      "artifact_verification": {
+        "path": "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "bytes": 2497280736,
+        "verified_at_utc": "2026-09-13T18:22:58.182480+00:00",
+        "scope": "installed bytes match the named file at observed pinned HF revision; original acquisition revision unknown"
+      },
+      "show_sha256": "3291b28329a1d7154cb1b1671a61adf9a66225e9447c7880dfdc59cda7c7650f",
+      "loaded_observations": [
+        {
+          "models": [
+            {
+              "name": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "size": 3178149969,
+              "digest": "fffff5d5b80a9a3a57c3e62b4092737c223d863863ad4197a7eb97990fa6c781",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-09-13T20:25:05.5559748+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "size": 3178149969,
+              "digest": "fffff5d5b80a9a3a57c3e62b4092737c223d863863ad4197a7eb97990fa6c781",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-09-13T20:25:06.5940755+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "size": 3178149969,
+              "digest": "fffff5d5b80a9a3a57c3e62b4092737c223d863863ad4197a7eb97990fa6c781",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-09-13T20:25:07.4261034+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "size": 3178149969,
+              "digest": "fffff5d5b80a9a3a57c3e62b4092737c223d863863ad4197a7eb97990fa6c781",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-09-13T20:25:08.0977456+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "size": 3178149969,
+              "digest": "fffff5d5b80a9a3a57c3e62b4092737c223d863863ad4197a7eb97990fa6c781",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-09-13T20:25:08.8255321+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+              "size": 3178149969,
+              "digest": "fffff5d5b80a9a3a57c3e62b4092737c223d863863ad4197a7eb97990fa6c781",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-09-13T20:25:09.6744201+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        }
+      ],
+      "unloaded": true,
+      "unload_response": {
+        "model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+        "created_at": "2026-09-13T18:23:09.7082246Z",
+        "response": "",
+        "done": true,
+        "done_reason": "unload"
+      },
+      "loaded_after_unload": {
+        "models": []
+      }
+    }
+  ],
+  "responses": [
+    {
+      "profile_id": "full_adder_1bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\full_adder_1bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\full_adder_1bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+        "response_sha256": "e3e9132afe18894ab91b9021310d6857c09800542ab37e71f321c2435ae4698e",
+        "run_sha256": "aed8d2c3d3b5ab853d810e20ab8a336ae32d71ef194534cdfb8ec0afa3401b06"
+      }
+    },
+    {
+      "profile_id": "unsigned_compare_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\unsigned_compare_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\unsigned_compare_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+        "response_sha256": "7bcbabc99ac2cfae8d14e8cb7bc0984f379d4991bb97bab0b165e9229624e769",
+        "run_sha256": "61fad8e706905244b84870eb7a034e6142181f1b4b58207f7cfb4b11ca786156"
+      }
+    },
+    {
+      "profile_id": "unsigned_add_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\unsigned_add_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\unsigned_add_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+        "response_sha256": "6b1a98590d30a8aadaa6a28dcf6ea997cf0c4cac3e0799eb587d1dc56e28f8e8",
+        "run_sha256": "0782aab5baa09f5b264d8d5f9f12b5a7e424c0a7e7385637d8f3e05e3fe1b10e"
+      }
+    },
+    {
+      "profile_id": "binary_to_gray_4bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\binary_to_gray_4bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\binary_to_gray_4bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+        "response_sha256": "aee70c9d0875a3c02c9420e6106fb9c329fe3dabdc34249b3761273c5caba147",
+        "run_sha256": "9fe86aafb978239040ef7ed95b41da0541647a10f7838626e9ed33c54cbca1b9"
+      }
+    },
+    {
+      "profile_id": "absolute_difference_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\absolute_difference_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\absolute_difference_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+        "response_sha256": "90e4ee7f058bb6abaa8db5344336ba11eac467b8cd26c247ca42b4d4c81f8dbf",
+        "run_sha256": "b56501bb19fd7b756c2a22d4b488faa19a3a897620eb16298312df76034edf79"
+      }
+    },
+    {
+      "profile_id": "mux_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\mux_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_faithful\\qwen3_4b_instruct_faithful\\mux_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+        "response_sha256": "f3bcfacea9d9faa93fc16490d0836c7858818a5b97e16c6601bef753e262caee",
+        "run_sha256": "454019b189f738cea3b14b51b6719bd9b8222bef3504f204b76feda9b7690baf"
+      }
+    }
+  ],
+  "failures": [],
+  "finished_at_utc": "2026-09-13T18:23:16.895861+00:00"
+}

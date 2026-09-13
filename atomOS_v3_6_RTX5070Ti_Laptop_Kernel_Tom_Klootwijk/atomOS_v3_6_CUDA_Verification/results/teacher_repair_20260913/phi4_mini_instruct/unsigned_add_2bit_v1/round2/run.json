@@ -1,0 +1,47 @@
+{
+  "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+  "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+  "model_revision_status": "pinned_huggingface_commit",
+  "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+  "model_artifact_bytes": 2491874688,
+  "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+  "schema": "atomos-teacher-inference-run-v1",
+  "frontend": "boolean-expression",
+  "status": "completed",
+  "profile_id": "unsigned_add_2bit_v1",
+  "repair": {
+    "round": 2,
+    "previous_response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_add_2bit_v1\\round1\\response.txt",
+    "previous_response_sha256": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "counterexample": {
+      "input": 1,
+      "expected": 1,
+      "actual": 0
+    }
+  },
+  "prompt_sha256": "53cae388498bda0c1b778ea9d08be3efef35665ef40d5d236be259ee24551da9",
+  "response_sha256": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+  "request_sha256": "80ab748cc67bf186cb7dd514b4e3d76d8bb5f93f284dff400aa6f7f603d508c6",
+  "api_response_sha256": "555fcb27a9c10361828e61803a51b31e1d213eb9743fe856b37fbd005d27be93",
+  "ollama_show_sha256": "9e03f636e096d8e6be29fd16b9b2119325c8fdd8e9a518d504fde4d3497c7527",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "elapsed_seconds": 1.0560882999998285,
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "generation": {
+    "done_reason": "stop",
+    "total_duration": 1032218600,
+    "load_duration": 3142100,
+    "prompt_eval_count": 636,
+    "prompt_eval_duration": 63579000,
+    "eval_count": 139,
+    "eval_duration": 909346000
+  },
+  "teacher_generated_code_executed": false
+}

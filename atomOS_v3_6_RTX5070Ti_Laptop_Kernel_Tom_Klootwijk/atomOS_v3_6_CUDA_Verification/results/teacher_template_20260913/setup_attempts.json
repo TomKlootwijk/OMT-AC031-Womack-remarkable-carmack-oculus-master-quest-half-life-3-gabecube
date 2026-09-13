@@ -1,0 +1,27 @@
+{
+  "schema": "atomos-template-setup-attempts-v1",
+  "attempts": [
+    {
+      "attempt": "configure_alias.py",
+      "creation": "success",
+      "verification": "failed_exact_stored_template_text",
+      "reason": "Ollama selected and exposed embedded Jinja instead of submitted Go template",
+      "source_sha256": "41fa1abd87cca27ad91bd50ef411762943a4bc7e3c81ba575a86483e3621ee49",
+      "evidence": "alias_setup"
+    },
+    {
+      "attempt": "verify_alias_render.before_parameter_order_fix.py",
+      "verification": "failed_printed_parameter_order_comparison",
+      "reason": "printed parameter key order differed; parsed values were equal",
+      "source_sha256": "60d1517226333ca454f76ed065564cd12d100c5390d47ea35880a23a591c0031",
+      "evidence": "verified_alias"
+    },
+    {
+      "attempt": "verify_alias_render.py",
+      "verification": "passed_six_actual_HF_prompt_matches",
+      "reason": "compared actual rendered text and parsed inherited parameter values",
+      "source_sha256": "710dbf1bc6eeb34ff42a20a97ee6f1efec43cd3295594f8c8c47d5dcecbfc343",
+      "evidence": "verified_alias_v2"
+    }
+  ]
+}

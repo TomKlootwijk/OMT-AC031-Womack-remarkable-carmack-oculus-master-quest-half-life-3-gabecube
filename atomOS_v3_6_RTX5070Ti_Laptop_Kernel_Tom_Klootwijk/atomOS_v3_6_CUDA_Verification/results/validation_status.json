@@ -44,5 +44,15 @@
     "accepted_program_evaluations": 836,
     "overall_general_ai_objective": "incomplete",
     "evidence": "results\\teacher_expression_20260913\\final_summary.json"
+  },
+  "bounded_teacher_repair": {
+    "status": "completed_no_novel_programs",
+    "actual_repair_queries": 12,
+    "template_followup_queries": 6,
+    "new_programs": 0,
+    "new_native_bank_validation": "not_run_no_new_bank",
+    "evidence": "results/teacher_repair_20260913/repair.json",
+    "template_evidence": "results/teacher_template_20260913/compilation/compilation.json",
+    "overall_general_ai_objective": "incomplete"
   }
 }

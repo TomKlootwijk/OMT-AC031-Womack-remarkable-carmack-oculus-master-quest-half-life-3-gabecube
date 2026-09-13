@@ -1,0 +1,47 @@
+{
+  "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+  "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+  "model_revision_status": "pinned_huggingface_commit",
+  "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+  "model_artifact_bytes": 2491874688,
+  "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+  "schema": "atomos-teacher-inference-run-v1",
+  "frontend": "boolean-expression",
+  "status": "completed",
+  "profile_id": "unsigned_compare_2bit_v1",
+  "repair": {
+    "round": 2,
+    "previous_response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\round1\\response.txt",
+    "previous_response_sha256": "4252d8d9b4ba4c02bcefa0fa779f49e79231414f8a5b5a9ba10934c4a11407fa",
+    "counterexample": {
+      "input": 0,
+      "expected": 2,
+      "actual": 5
+    }
+  },
+  "prompt_sha256": "f2363487d5450fe3d7fb1d6a8609bf82cfcf26f6553faa1c0207c7ec9e6aa972",
+  "response_sha256": "4252d8d9b4ba4c02bcefa0fa779f49e79231414f8a5b5a9ba10934c4a11407fa",
+  "request_sha256": "2bf525021d9c55c6bbadba9ed5d997ca083c45881f7e6d0a2d45ee90eefa6101",
+  "api_response_sha256": "d15ce6611443d934d327b1bcbe72a193273a7ed2985aca1d1f361910646dba9e",
+  "ollama_show_sha256": "9e03f636e096d8e6be29fd16b9b2119325c8fdd8e9a518d504fde4d3497c7527",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "elapsed_seconds": 0.9294838999921922,
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "generation": {
+    "done_reason": "stop",
+    "total_duration": 899194000,
+    "load_duration": 4414400,
+    "prompt_eval_count": 635,
+    "prompt_eval_duration": 67024000,
+    "eval_count": 133,
+    "eval_duration": 772001000
+  },
+  "teacher_generated_code_executed": false
+}

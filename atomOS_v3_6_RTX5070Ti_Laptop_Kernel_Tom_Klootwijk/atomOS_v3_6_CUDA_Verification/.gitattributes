@@ -66,3 +66,8 @@ tests/test_teacher_frontend_selection.py -text
 tests/test_knowledge_queries.py -text
 results/teacher_expression_20260913/** -text
 docs/TEACHER_EXPRESSION_QUERIES.md -text
+tools/repair_teacher_knowledge.py -text
+tests/test_teacher_repair.py -text
+results/teacher_repair_20260913/** -text
+results/teacher_template_20260913/** -text
+docs/TEACHER_REPAIR_AND_TEMPLATE_AUDIT.md -text

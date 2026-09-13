@@ -1,0 +1,1 @@
+{"schema":"atomos-teacher-procedure-v2","profile_id":"unsigned_add_2bit_v1","procedures":[{"name":"unsigned_add_2bit_v1","input_bits":4,"output_bits":3,"outputs":["a0^b0^a1^b1","(a0&b0)^(a1&b1)","a1&b1^a0&b1^a0&b0^a1&a0&b0"]}]}

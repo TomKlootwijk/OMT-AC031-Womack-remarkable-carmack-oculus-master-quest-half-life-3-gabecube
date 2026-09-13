@@ -1,0 +1,1 @@
+{"procedures":[{"input_bits":5,"name":"mux_2bit_v1","output_bits":2,"outputs":["select_b & (b0 | (b1 << 1)) | (~select_b) & (a0 | (a1 << 1))","select_b & (b1) | (~select_b) & (a1)"]}],"profile_id":"mux_2bit_v1","schema":"atomos-teacher-procedure-v2"}

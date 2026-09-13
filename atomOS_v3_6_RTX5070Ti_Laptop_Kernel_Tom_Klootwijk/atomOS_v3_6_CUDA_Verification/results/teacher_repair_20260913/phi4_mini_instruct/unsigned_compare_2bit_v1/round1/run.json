@@ -1,0 +1,47 @@
+{
+  "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+  "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+  "model_revision_status": "pinned_huggingface_commit",
+  "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+  "model_artifact_bytes": 2491874688,
+  "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+  "schema": "atomos-teacher-inference-run-v1",
+  "frontend": "boolean-expression",
+  "status": "completed",
+  "profile_id": "unsigned_compare_2bit_v1",
+  "repair": {
+    "round": 1,
+    "previous_response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_repair_20260913\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\initial_response.txt",
+    "previous_response_sha256": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+    "counterexample": {
+      "input": 0,
+      "expected": 2,
+      "actual": 4
+    }
+  },
+  "prompt_sha256": "8955d43ff792b604083ec3a99fa98926152111672e98766900b6f647d1813e80",
+  "response_sha256": "4252d8d9b4ba4c02bcefa0fa779f49e79231414f8a5b5a9ba10934c4a11407fa",
+  "request_sha256": "c823378ba598145abdfe6628f0c2d5f8a8a5a736ee66a162004af71cf01e4b3c",
+  "api_response_sha256": "5df2b15c5c674bb78eef2a1646d219b273409d1617aff205739e11df62e30ae8",
+  "ollama_show_sha256": "9e03f636e096d8e6be29fd16b9b2119325c8fdd8e9a518d504fde4d3497c7527",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "elapsed_seconds": 8.280013800002052,
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "generation": {
+    "done_reason": "stop",
+    "total_duration": 8219773400,
+    "load_duration": 7188914400,
+    "prompt_eval_count": 636,
+    "prompt_eval_duration": 217762000,
+    "eval_count": 133,
+    "eval_duration": 795153000
+  },
+  "teacher_generated_code_executed": false
+}

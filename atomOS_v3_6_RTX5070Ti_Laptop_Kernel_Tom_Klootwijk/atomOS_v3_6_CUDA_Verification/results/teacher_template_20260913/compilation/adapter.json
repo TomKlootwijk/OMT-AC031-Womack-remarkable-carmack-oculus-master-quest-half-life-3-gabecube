@@ -1,0 +1,133 @@
+{
+  "schema": "atomos-teacher-expression-adapter-receipt-v2",
+  "adapter_version": "atomos-safe-bit-expression-frontend-v2",
+  "frontend_source_sha256": "177388ea9ce58d359f68b1302da5572f7e06fa85e3a4f40f31523a3031a3b08f",
+  "original_frontend_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+  "curriculum_sha256": "5803c757c7acfcae0a21353e1beeb9ce1cd0c3b16fe20110fbaf1a80813065ae",
+  "status": "candidates_prepared",
+  "responses_received": 6,
+  "compiled_candidates": 4,
+  "rejected_responses": 2,
+  "decisions": [
+    {
+      "response_index": 0,
+      "status": "compiled_candidate",
+      "profile_id": "full_adder_1bit_v1",
+      "expression_nodes": 14,
+      "expression_depth": 4,
+      "gate_count": 17,
+      "wrapping": "plain_json",
+      "response_sha256": "e3e9132afe18894ab91b9021310d6857c09800542ab37e71f321c2435ae4698e",
+      "oracle_id": "full_adder_1bit_v1:expression-response:0",
+      "seed_hex": "756ae6697e51a8f3607aba487bd0e2d8938dada47889c9a4076e2c2cca02ea51",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+        "response_sha256": "e3e9132afe18894ab91b9021310d6857c09800542ab37e71f321c2435ae4698e",
+        "run_sha256": "aed8d2c3d3b5ab853d810e20ab8a336ae32d71ef194534cdfb8ec0afa3401b06",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\full_adder_1bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\full_adder_1bit_v1\\run.json"
+      },
+      "repair_round": 0
+    },
+    {
+      "response_index": 1,
+      "status": "rejected",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "reason": "invalid_expression_response_or_provenance",
+      "detail": "unsupported character in Boolean expression"
+    },
+    {
+      "response_index": 2,
+      "status": "compiled_candidate",
+      "profile_id": "unsigned_add_2bit_v1",
+      "expression_nodes": 29,
+      "expression_depth": 5,
+      "gate_count": 33,
+      "wrapping": "plain_json",
+      "response_sha256": "6b1a98590d30a8aadaa6a28dcf6ea997cf0c4cac3e0799eb587d1dc56e28f8e8",
+      "oracle_id": "unsigned_add_2bit_v1:expression-response:2",
+      "seed_hex": "29054c0c52ec3b9db066e3fe846f05f451a2b30e9f52c3a27cb8d250f1082850",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+        "response_sha256": "6b1a98590d30a8aadaa6a28dcf6ea997cf0c4cac3e0799eb587d1dc56e28f8e8",
+        "run_sha256": "0782aab5baa09f5b264d8d5f9f12b5a7e424c0a7e7385637d8f3e05e3fe1b10e",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\unsigned_add_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\unsigned_add_2bit_v1\\run.json"
+      },
+      "repair_round": 0
+    },
+    {
+      "response_index": 3,
+      "status": "compiled_candidate",
+      "profile_id": "binary_to_gray_4bit_v1",
+      "expression_nodes": 10,
+      "expression_depth": 2,
+      "gate_count": 15,
+      "wrapping": "plain_json",
+      "response_sha256": "aee70c9d0875a3c02c9420e6106fb9c329fe3dabdc34249b3761273c5caba147",
+      "oracle_id": "binary_to_gray_4bit_v1:expression-response:3",
+      "seed_hex": "80303bb2d8e9ba86379f3cb8ec78e04b90fec267d868d61431a1a59e30bd06af",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+        "response_sha256": "aee70c9d0875a3c02c9420e6106fb9c329fe3dabdc34249b3761273c5caba147",
+        "run_sha256": "9fe86aafb978239040ef7ed95b41da0541647a10f7838626e9ed33c54cbca1b9",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\binary_to_gray_4bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\binary_to_gray_4bit_v1\\run.json"
+      },
+      "repair_round": 0
+    },
+    {
+      "response_index": 4,
+      "status": "compiled_candidate",
+      "profile_id": "absolute_difference_2bit_v1",
+      "expression_nodes": 14,
+      "expression_depth": 3,
+      "gate_count": 26,
+      "wrapping": "plain_json",
+      "response_sha256": "90e4ee7f058bb6abaa8db5344336ba11eac467b8cd26c247ca42b4d4c81f8dbf",
+      "oracle_id": "absolute_difference_2bit_v1:expression-response:4",
+      "seed_hex": "50a1ef5eef55d8df3df43a900f10b886683ef2e4795a3b680e83e77b3f7363d8",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+        "response_sha256": "90e4ee7f058bb6abaa8db5344336ba11eac467b8cd26c247ca42b4d4c81f8dbf",
+        "run_sha256": "b56501bb19fd7b756c2a22d4b488faa19a3a897620eb16298312df76034edf79",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\absolute_difference_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_template_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct_faithful\\absolute_difference_2bit_v1\\run.json"
+      },
+      "repair_round": 0
+    },
+    {
+      "response_index": 5,
+      "status": "rejected",
+      "profile_id": "mux_2bit_v1",
+      "reason": "invalid_expression_response_or_provenance",
+      "detail": "unsupported character in Boolean expression"
+    }
+  ],
+  "semantic_verification": "pending unchanged full-domain oracle and semantic-novelty admission",
+  "scope": "representation-only frontend change; no supplied algorithms, teacher repairs, Python evaluation or GPU claim",
+  "limits": {
+    "response_bytes": 65536,
+    "expression_bytes": 2048,
+    "expression_nodes": 512,
+    "expression_depth": 32,
+    "responses": 32,
+    "repair_rounds": 2
+  }
+}

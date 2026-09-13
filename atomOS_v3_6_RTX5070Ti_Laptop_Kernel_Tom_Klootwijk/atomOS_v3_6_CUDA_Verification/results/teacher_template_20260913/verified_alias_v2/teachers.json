@@ -1,0 +1,21 @@
+{
+  "schema": "atomos-local-teachers-v1",
+  "endpoint": "http://127.0.0.1:11434",
+  "teachers": [
+    {
+      "id": "qwen3_4b_instruct_faithful",
+      "ollama_model": "atomos-qwen3-4b-instruct2507-faithful-v1:latest",
+      "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "model_artifact_bytes": 2497280736,
+      "model_filename": "Qwen_Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+      "original_model_repo": "Qwen/Qwen3-4B-Instruct-2507",
+      "original_model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "original_license": "Apache-2.0",
+      "original_acquisition_revision": "unknown; installed bytes are checked against the observed pinned Hugging Face file",
+      "template_experiment": "actual render-only API matches exact pinned HF template for all six frozen one-user-message prompts"
+    }
+  ]
+}

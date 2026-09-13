@@ -1,0 +1,11 @@
+Express this known digital algorithm using your existing algorithm knowledge. Return only the requested JSON object, without reasoning, prose, Markdown or a truth table.
+
+Compare unsigned A=a0+2*a1 with B=b0+2*b1. Return three Boolean results in this order: A<B, A==B, A>B.
+Input bits (the only variable identifiers): a0, a1, b0, b1.
+Output expression order: 0=a_less_b, 1=a_equal_b, 2=a_greater_b.
+Each outputs entry is a STRING containing a Boolean expression. Allowed syntax: input identifiers, integer constants 0 and 1, parentheses, binary & (AND), | (OR), ^ (XOR), and unary ~ (NOT). The words not, and, or are also accepted with pure one-bit semantics. Every operand and result is exactly one bit; ~x and not x both mean 1-x. Use parentheses to make grouping explicit; Python expression precedence applies. Do not use arithmetic, comparisons, shifts, indexing, function calls, assignments, conditional expressions, named intermediate variables or references to other outputs. Do not use JSON true/false as constants. Each string is limited to 2048 UTF-8 bytes; the complete procedure is limited to 512 expression nodes and depth 32.
+Required JSON shape (replace every placeholder with a complete expression string):
+{"schema":"atomos-teacher-procedure-v2","profile_id":"unsigned_compare_2bit_v1","procedures":[{"name":"unsigned_compare_2bit_v1","input_bits":4,"output_bits":3,"outputs":["BOOLEAN_EXPRESSION_STRING","BOOLEAN_EXPRESSION_STRING","BOOLEAN_EXPRESSION_STRING"]}]}
+
+Bounded revision round 1 of 2. The following is your retained previous candidate, quoted as data, followed by ONE verified failing input. Derive a corrected Boolean procedure that satisfies the original specification for every input. Return the same JSON schema. No solution expression or full truth table is supplied.
+{"previous_candidate": "{\"schema\":\"atomos-teacher-procedure-v2\",\"profile_id\":\"unsigned_compare_2bit_v1\",\"procedures\":[{\"name\":\"unsigned_compare_2bit_v1\",\"input_bits\":4,\"output_bits\":3,\"outputs\":[\"(a0 & ~b0) | (a0 ^ b0) & (a1 ^ b1) & (~a1 | b1)\", \"(a0 ^ b0) | (a1 ^ b1)\", \"(b0 & ~a0) | (b0 ^ a0) & (b1 ^ a1) & (~b1 | a1)\"]}] }", "single_counterexample": {"input_assignment": {"a0": 0, "a1": 0, "b0": 0, "b1": 0}, "expected_output_bits": [0, 1, 0], "actual_output_bits": [0, 0, 0]}}

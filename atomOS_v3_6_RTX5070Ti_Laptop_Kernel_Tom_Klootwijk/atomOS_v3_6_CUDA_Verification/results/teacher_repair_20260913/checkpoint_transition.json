@@ -1,0 +1,34 @@
+{
+  "schema": "atomos-checkpoint-transition-v1",
+  "previous_checkpoint": "c6ae871f6899a31f7a2e0396525e7df0891c62d4",
+  "reason": "Add bounded repair and actual template experiment; earlier data and native code unchanged",
+  "historical_seals_scope": "Earlier seals remain valid at their recorded commits",
+  "prior_sealed_files_checked": 561,
+  "changed_files": {
+    ".gitattributes": {
+      "previous_sha256": "03d2a9f02c45071017964725b71f983dd7b71e6802a540c51eb97e078dd1c4b4",
+      "current_sha256": "467e803edd4e3696500f4b0e9dc847709e2106875d2ef2d172282dd9951906b8",
+      "retained_previous_bytes": "results/teacher_repair_20260913/prior_checkpoint_files/.gitattributes"
+    },
+    "AUTHORSHIP.json": {
+      "previous_sha256": "3cc85df79ba1caea53f218349004ed83a69b58b71e67a978a43b5c29f35c29a6",
+      "current_sha256": "ff130c5f5476f22331b223dde36411c8d2cf4e1651c1bf551e21001583511b44",
+      "retained_previous_bytes": "results/teacher_repair_20260913/prior_checkpoint_files/AUTHORSHIP.json"
+    },
+    "README.md": {
+      "previous_sha256": "7c9320a5357c671088dd0adc88bc65553d8ec2a8fd097d13a8bdcb8b59fd2ff6",
+      "current_sha256": "fe9363e3139920b25c4a5750939e3f0f4e20e0a8ce8171b947d52722f4dc5131",
+      "retained_previous_bytes": "results/teacher_repair_20260913/prior_checkpoint_files/README.md"
+    },
+    "docs/coverage.csv": {
+      "previous_sha256": "c186362ef8bced4bdffdcc0f51a80ae03421895397956faed327ce66f4dd0ca2",
+      "current_sha256": "c7a07f85776090ade1402a78e3316674390e5f837244327d4ca3b99cbcb69b00",
+      "retained_previous_bytes": "results/teacher_repair_20260913/prior_checkpoint_files/docs/coverage.csv"
+    },
+    "results/validation_status.json": {
+      "previous_sha256": "c5ee7455e06a5eece62e5c88912bb008f3f136061046c5d5f506addbb90f4c26",
+      "current_sha256": "536d5f4a856f8c1c5fabac40338772a1b3dac2c9e54acad599105ee412b4253a",
+      "retained_previous_bytes": "results/teacher_repair_20260913/prior_checkpoint_files/results/validation_status.json"
+    }
+  }
+}
