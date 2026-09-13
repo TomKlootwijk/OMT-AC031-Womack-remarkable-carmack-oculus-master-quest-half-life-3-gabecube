@@ -1,0 +1,30 @@
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+identifier = C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/cache_bulk.cu
+ptxasOptions = --fmad false --generate-line-info 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+identifier = C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/cache_bulk.cu
+
+Resource usage:
+ Common:
+  GLOBAL:131 CONSTANT[4]:32
+ Function _ZN17cache_bulk_detail23atomos_epoch_bulk_probeEN6atomos6ConfigEPKNS0_5StateEPKNS0_4LaneEyPNS0_6ResultEP5uint4SB_SB_SB_jj:
+  REG:107 STACK:0 SHARED:11784 LOCAL:0 CONSTANT[0]:1000 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de219atomos_epoch_packedENS_6ConfigEPKNS_5StateEPKNS_4LaneEyPNS_6ResultE:
+  REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:960 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de219atomos_epoch_globalENS_6ConfigEPKNS_5StateEPKNS_4LaneEPKjS9_S9_S9_PNS_6ResultE:
+  REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:984 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de220atomos_epoch_textureENS_6ConfigEPKNS_5StateEPKNS_4LaneEyyyyPNS_6ResultE:
+  REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:984 TEXTURE:0 SURFACE:0 SAMPLER:0

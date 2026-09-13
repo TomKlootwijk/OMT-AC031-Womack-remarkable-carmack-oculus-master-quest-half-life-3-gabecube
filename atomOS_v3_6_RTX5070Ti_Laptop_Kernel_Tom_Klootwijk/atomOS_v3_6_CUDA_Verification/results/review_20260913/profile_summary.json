@@ -1,0 +1,3766 @@
+{
+  "schema": "atomOS-K1-targeted-cache-profile",
+  "created_at_utc": "2026-09-13T10:06:21.425771+00:00",
+  "status": "collected",
+  "executable": "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+  "executable_sha256": "c2e551dec5b9251945eeabe0a1ad701aa883f9dd2af1a477babc55a57bccbb4f",
+  "profiler_executable": "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+  "requested_metrics": [
+    "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum",
+    "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum",
+    "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum",
+    "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum",
+    "gpu__time_duration.sum"
+  ],
+  "configs": [
+    {
+      "read": "texture",
+      "layout": "morton8",
+      "block_size": 256,
+      "cache": "default"
+    },
+    {
+      "read": "texture",
+      "layout": "morton8",
+      "block_size": 64,
+      "cache": "max-l1"
+    },
+    {
+      "read": "texture-packed",
+      "layout": "linear",
+      "block_size": 128,
+      "cache": "default"
+    },
+    {
+      "read": "texture-packed",
+      "layout": "linear",
+      "block_size": 128,
+      "cache": "max-l1"
+    },
+    {
+      "read": "texture-packed",
+      "layout": "morton8",
+      "block_size": 128,
+      "cache": "default"
+    }
+  ],
+  "repetitions": 3,
+  "rows": 128,
+  "angles": 1024,
+  "epochs": 1,
+  "device": 0,
+  "mode": "recurrent",
+  "fringe": "off",
+  "commands": [
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--version"
+      ],
+      "stdout": "profiler_version.stdout.log",
+      "stderr": "profiler_version.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 0.03473129999474622
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config00_cold_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "256",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config00_cold_01.stdout.log",
+      "stderr": "config00_cold_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.3203975000069477
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config00_cold_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "256",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config00_cold_02.stdout.log",
+      "stderr": "config00_cold_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.1022813000017777
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config00_cold_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "256",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config00_cold_03.stdout.log",
+      "stderr": "config00_cold_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.042252399987774
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config00_warm_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "256",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config00_warm_01.stdout.log",
+      "stderr": "config00_warm_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.1332953999954043
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config00_warm_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "256",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config00_warm_02.stdout.log",
+      "stderr": "config00_warm_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.094001699995715
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config00_warm_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "256",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config00_warm_03.stdout.log",
+      "stderr": "config00_warm_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.1101905000105035
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config01_cold_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "64",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config01_cold_01.stdout.log",
+      "stderr": "config01_cold_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.030294500000309
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config01_cold_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "64",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config01_cold_02.stdout.log",
+      "stderr": "config01_cold_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.1803442999953404
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config01_cold_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "64",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config01_cold_03.stdout.log",
+      "stderr": "config01_cold_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0965119000029517
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config01_warm_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "64",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config01_warm_01.stdout.log",
+      "stderr": "config01_warm_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.049463500006823
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config01_warm_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "64",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config01_warm_02.stdout.log",
+      "stderr": "config01_warm_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0769092999980785
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config01_warm_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "64",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config01_warm_03.stdout.log",
+      "stderr": "config01_warm_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0657747000077507
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config02_cold_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config02_cold_01.stdout.log",
+      "stderr": "config02_cold_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.092213500000071
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config02_cold_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config02_cold_02.stdout.log",
+      "stderr": "config02_cold_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0671760000113863
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config02_cold_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config02_cold_03.stdout.log",
+      "stderr": "config02_cold_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.060674199994537
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config02_warm_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config02_warm_01.stdout.log",
+      "stderr": "config02_warm_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.1274889999913285
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config02_warm_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config02_warm_02.stdout.log",
+      "stderr": "config02_warm_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.2204246999899624
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config02_warm_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config02_warm_03.stdout.log",
+      "stderr": "config02_warm_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.184550100006163
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config03_cold_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config03_cold_01.stdout.log",
+      "stderr": "config03_cold_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0744049999921117
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config03_cold_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config03_cold_02.stdout.log",
+      "stderr": "config03_cold_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0718254999956116
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config03_cold_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config03_cold_03.stdout.log",
+      "stderr": "config03_cold_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0685849000001326
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config03_warm_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config03_warm_01.stdout.log",
+      "stderr": "config03_warm_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.086581700001261
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config03_warm_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config03_warm_02.stdout.log",
+      "stderr": "config03_warm_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0911323000036646
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config03_warm_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "linear",
+        "--block-size",
+        "128",
+        "--cache",
+        "max-l1",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config03_warm_03.stdout.log",
+      "stderr": "config03_warm_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0030258000042522
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config04_cold_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config04_cold_01.stdout.log",
+      "stderr": "config04_cold_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.079908100000466
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config04_cold_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config04_cold_02.stdout.log",
+      "stderr": "config04_cold_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0659519000037108
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "kernel",
+        "--cache-control",
+        "all",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config04_cold_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config04_cold_03.stdout.log",
+      "stderr": "config04_cold_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.025474900001427
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config04_warm_01.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config04_warm_01.stdout.log",
+      "stderr": "config04_warm_01.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.099003700001049
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config04_warm_02.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config04_warm_02.stdout.log",
+      "stderr": "config04_warm_02.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.054802099999506
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+        "--devices",
+        "0",
+        "--metrics",
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,gpu__time_duration.sum",
+        "--replay-mode",
+        "application",
+        "--cache-control",
+        "none",
+        "--clock-control",
+        "none",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\config04_warm_03.csv.log",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cuda.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--read",
+        "texture-packed",
+        "--layout",
+        "morton8",
+        "--block-size",
+        "128",
+        "--cache",
+        "default",
+        "--device",
+        "0",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off"
+      ],
+      "stdout": "config04_warm_03.stdout.log",
+      "stderr": "config04_warm_03.stderr.log",
+      "exit_code": 0,
+      "status": "completed",
+      "wall_seconds": 2.0598776999977417
+    }
+  ],
+  "runs": [
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config00_cold_01.csv.log",
+      "command_index": 1,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "6.144",
+          "unit": "sector",
+          "value": 6144,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "63.136",
+          "unit": "ns",
+          "value": 63136,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "16.384",
+          "unit": "byte",
+          "value": 16384,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config00_cold_02.csv.log",
+      "command_index": 2,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "6.144",
+          "unit": "sector",
+          "value": 6144,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "63.520",
+          "unit": "ns",
+          "value": 63520,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "16.384",
+          "unit": "byte",
+          "value": 16384,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config00_cold_03.csv.log",
+      "command_index": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "6.144",
+          "unit": "sector",
+          "value": 6144,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "63.808",
+          "unit": "ns",
+          "value": 63808,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "16.384",
+          "unit": "byte",
+          "value": 16384,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config00_warm_01.csv.log",
+      "command_index": 4,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "6.144",
+          "unit": "sector",
+          "value": 6144,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "78.048",
+          "unit": "ns",
+          "value": 78048,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "16.384",
+          "unit": "byte",
+          "value": 16384,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config00_warm_02.csv.log",
+      "command_index": 5,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "6.144",
+          "unit": "sector",
+          "value": 6144,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "61.728",
+          "unit": "ns",
+          "value": 61728,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "16.384",
+          "unit": "byte",
+          "value": 16384,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config00_warm_03.csv.log",
+      "command_index": 6,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "6.144",
+          "unit": "sector",
+          "value": 6144,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "61.632",
+          "unit": "ns",
+          "value": 61632,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "16.384",
+          "unit": "byte",
+          "value": 16384,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config01_cold_01.csv.log",
+      "command_index": 7,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "39.232",
+          "unit": "ns",
+          "value": 39232,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config01_cold_02.csv.log",
+      "command_index": 8,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "51.360",
+          "unit": "ns",
+          "value": 51360,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config01_cold_03.csv.log",
+      "command_index": 9,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "55.200",
+          "unit": "ns",
+          "value": 55200,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config01_warm_01.csv.log",
+      "command_index": 10,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "37.056",
+          "unit": "ns",
+          "value": 37056,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config01_warm_02.csv.log",
+      "command_index": 11,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "36.992",
+          "unit": "ns",
+          "value": 36992,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config01_warm_03.csv.log",
+      "command_index": 12,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "1.024",
+          "unit": "",
+          "value": 1024,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "46.112",
+          "unit": "ns",
+          "value": 46112,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config02_cold_01.csv.log",
+      "command_index": 13,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "50.784",
+          "unit": "ns",
+          "value": 50784,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config02_cold_02.csv.log",
+      "command_index": 14,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "38.816",
+          "unit": "ns",
+          "value": 38816,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config02_cold_03.csv.log",
+      "command_index": 15,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "38.720",
+          "unit": "ns",
+          "value": 38720,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config02_warm_01.csv.log",
+      "command_index": 16,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "49.888",
+          "unit": "ns",
+          "value": 49888,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config02_warm_02.csv.log",
+      "command_index": 17,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "37.056",
+          "unit": "ns",
+          "value": 37056,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config02_warm_03.csv.log",
+      "command_index": 18,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "36.832",
+          "unit": "ns",
+          "value": 36832,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config03_cold_01.csv.log",
+      "command_index": 19,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "39.616",
+          "unit": "ns",
+          "value": 39616,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config03_cold_02.csv.log",
+      "command_index": 20,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "38.752",
+          "unit": "ns",
+          "value": 38752,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config03_cold_03.csv.log",
+      "command_index": 21,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "38.784",
+          "unit": "ns",
+          "value": 38784,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config03_warm_01.csv.log",
+      "command_index": 22,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "36.832",
+          "unit": "ns",
+          "value": 36832,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config03_warm_02.csv.log",
+      "command_index": 23,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "53.184",
+          "unit": "ns",
+          "value": 53184,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config03_warm_03.csv.log",
+      "command_index": 24,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "0",
+          "unit": "sector",
+          "value": 0,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "36.736",
+          "unit": "ns",
+          "value": 36736,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config04_cold_01.csv.log",
+      "command_index": 25,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "38.752",
+          "unit": "ns",
+          "value": 38752,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config04_cold_02.csv.log",
+      "command_index": 26,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "39.072",
+          "unit": "ns",
+          "value": 39072,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config04_cold_03.csv.log",
+      "command_index": 27,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "39.008",
+          "unit": "ns",
+          "value": 39008,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 1,
+      "status": "collected",
+      "csv_log": "config04_warm_01.csv.log",
+      "command_index": 28,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "37.216",
+          "unit": "ns",
+          "value": 37216,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 2,
+      "status": "collected",
+      "csv_log": "config04_warm_02.csv.log",
+      "command_index": 29,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "51.136",
+          "unit": "ns",
+          "value": 51136,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "repetition": 3,
+      "status": "collected",
+      "csv_log": "config04_warm_03.csv.log",
+      "command_index": 30,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "256",
+          "unit": "",
+          "value": 256,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "4.096",
+          "unit": "sector",
+          "value": 4096,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "2.048",
+          "unit": "sector",
+          "value": 2048,
+          "status": "collected"
+        },
+        "gpu__time_duration.sum": {
+          "raw_value": "37.152",
+          "unit": "ns",
+          "value": 37152,
+          "status": "collected"
+        }
+      },
+      "diagnostics": {
+        "launch__shared_mem_config_size": {
+          "raw_value": "32.768",
+          "unit": "byte",
+          "value": 32768,
+          "status": "collected"
+        }
+      }
+    }
+  ],
+  "conditions": {
+    "cold": {
+      "replay_mode": "kernel",
+      "cache_control": "all"
+    },
+    "warm": {
+      "replay_mode": "application",
+      "cache_control": "none"
+    }
+  },
+  "launch_skip": 1,
+  "launch_count": 1,
+  "clock_control": "none",
+  "timing_scope": "gpu__time_duration.sum is profiler GPU duration; application compute_ms in stdout is profiling-perturbed and excluded from benchmark summaries.",
+  "evidence_scope": "Cache counters describe the selected launch under the recorded replay conditions; they do not prove permanent or complete texture-cache residency. Application candidate verification remains enabled; no run directory is exported during application replay.",
+  "aggregates": [
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 256,
+          "median": 256,
+          "max": 256
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 38720,
+          "median": 38816,
+          "max": 50784
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 256,
+          "median": 256,
+          "max": 256
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 36832,
+          "median": 37056,
+          "max": 49888
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 256,
+          "median": 256,
+          "max": 256
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 4096,
+          "median": 4096,
+          "max": 4096
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 38752,
+          "median": 39008,
+          "max": 39072
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "morton8",
+        "block_size": 128,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 256,
+          "median": 256,
+          "max": 256
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 4096,
+          "median": 4096,
+          "max": 4096
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 37152,
+          "median": 37216,
+          "max": 51136
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 256,
+          "median": 256,
+          "max": 256
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 38752,
+          "median": 38784,
+          "max": 39616
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture-packed",
+        "layout": "linear",
+        "block_size": 128,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 256,
+          "median": 256,
+          "max": 256
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 36736,
+          "median": 36832,
+          "max": 53184
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "cold",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 1024,
+          "median": 1024,
+          "max": 1024
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 8192,
+          "median": 8192,
+          "max": 8192
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 6144,
+          "median": 6144,
+          "max": 6144
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 63136,
+          "median": 63520,
+          "max": 63808
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 256,
+        "cache": "default"
+      },
+      "condition": "warm",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 1024,
+          "median": 1024,
+          "max": 1024
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 8192,
+          "median": 8192,
+          "max": 8192
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 6144,
+          "median": 6144,
+          "max": 6144
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 2048,
+          "median": 2048,
+          "max": 2048
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 61632,
+          "median": 61728,
+          "max": 78048
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "cold",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 1024,
+          "median": 1024,
+          "max": 1024
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 8192,
+          "median": 8192,
+          "max": 8192
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 4096,
+          "median": 4096,
+          "max": 4096
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 4096,
+          "median": 4096,
+          "max": 4096
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 39232,
+          "median": 51360,
+          "max": 55200
+        }
+      }
+    },
+    {
+      "config": {
+        "read": "texture",
+        "layout": "morton8",
+        "block_size": 64,
+        "cache": "max-l1"
+      },
+      "condition": "warm",
+      "samples": 3,
+      "metrics": {
+        "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "",
+          "min": 1024,
+          "median": 1024,
+          "max": 1024
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 8192,
+          "median": 8192,
+          "max": 8192
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 4096,
+          "median": 4096,
+          "max": 4096
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "status": "collected",
+          "unit": "sector",
+          "min": 4096,
+          "median": 4096,
+          "max": 4096
+        },
+        "gpu__time_duration.sum": {
+          "status": "collected",
+          "unit": "ns",
+          "min": 36992,
+          "median": 37056,
+          "max": 46112
+        }
+      }
+    }
+  ]
+}

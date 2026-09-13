@@ -1,0 +1,1099 @@
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+identifier = C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/rotation_probe.cu
+ptxasOptions = --fmad false --generate-line-info 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+identifier = C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/rotation_probe.cu
+
+	code for sm_120
+	.target	sm_120
+
+		Function : _ZN46_GLOBAL__N__ffcc688d_17_rotation_probe_cu_main15rotation_valuesEPKdPd
+	.headerflags	@"EF_CUDA_SM120 EF_CUDA_VIRTUAL_SM(EF_CUDA_SM120)"
+        /*0000*/                   LDC R1, c[0x0][0x37c]                                     &wr=0x0                  ?trans8;           /* 0x0000df00ff017b82 */
+                                                                                                                                         /* 0x000e300000000800 */
+        /*0010*/                   LDC.64 R32, c[0x4][0x8]                                   &wr=0x1                  ?trans1;           /* 0x01000200ff207b82 */
+                                                                                                                                         /* 0x000e620000000a00 */
+        /*0020*/                   LDCU.64 UR6, c[0x0][0x358]                                &wr=0x2                  ?trans7;           /* 0x00006b00ff0677ac */
+                                                                                                                                         /* 0x000eae0008000a00 */
+        /*0030*/                   LDC.64 R30, c[0x4][0x8]                                   &wr=0x2                  ?trans1;           /* 0x01000200ff1e7b82 */
+                                                                                                                                         /* 0x000ea20000000a00 */
+        /*0040*/                   IADD3 R1, PT, PT, R1, -0x30, RZ                           &req={0}                 ?trans1;           /* 0xffffffd001017810 */
+                                                                                                                                         /* 0x001fe20007ffe0ff */
+        /*0050*/                   LDG.E.64.CONSTANT R6, desc[UR6][R30.64+0x8]               &req={2} &wr=0x2         ?trans4;           /* 0x000008061e067981 */
+                                                                                                                                         /* 0x004ea8000c1e9b00 */
+        /*0060*/                   LDG.E.64.CONSTANT R14, desc[UR6][R30.64+0x10]             &wr=0x3                  ?trans4;           /* 0x000010061e0e7981 */
+                                                                                                                                         /* 0x000ee8000c1e9b00 */
+        /*0070*/                   LDG.E.64.CONSTANT R28, desc[UR6][R32.64+0x48]             &req={1} &wr=0x4         ?trans4;           /* 0x00004806201c7981 */
+                                                                                                                                         /* 0x002f28000c1e9b00 */
+        /*0080*/                   LDG.E.64.CONSTANT R12, desc[UR6][R30.64+0x18]             &wr=0x5                  ?trans4;           /* 0x000018061e0c7981 */
+                                                                                                                                         /* 0x000f68000c1e9b00 */
+        /*0090*/                   LDG.E.64.CONSTANT R10, desc[UR6][R30.64+0x20]             &wr=0x2                  ?trans4;           /* 0x000020061e0a7981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*00a0*/                   LDG.E.64.CONSTANT R8, desc[UR6][R30.64+0x28]              &wr=0x2                  ?trans4;           /* 0x000028061e087981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*00b0*/                   LDG.E.64.CONSTANT R26, desc[UR6][R32.64+0x50]             &wr=0x2                  ?trans4;           /* 0x00005006201a7981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*00c0*/                   LDG.E.64.CONSTANT R2, desc[UR6][R30.64+0x30]              &wr=0x2                  ?trans4;           /* 0x000030061e027981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*00d0*/                   LDG.E.64.CONSTANT R20, desc[UR6][R32.64+0x58]             &wr=0x2                  ?trans4;           /* 0x0000580620147981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*00e0*/                   LDG.E.64.CONSTANT R18, desc[UR6][R32.64+0x60]             &wr=0x2                  ?trans4;           /* 0x0000600620127981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*00f0*/                   LDG.E.64.CONSTANT R16, desc[UR6][R32.64+0x68]             &wr=0x2                  ?trans4;           /* 0x0000680620107981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*0100*/                   LDG.E.64.CONSTANT R4, desc[UR6][R32.64+0x70]              &wr=0x2                  ?trans1;           /* 0x0000700620047981 */
+                                                                                                                                         /* 0x000ea2000c1e9b00 */
+        /*0110*/                   I2F.F64 R22, RZ                                           &wr=0x0                  ?trans1;           /* 0x000000ff00167312 */
+                                                                                                                                         /* 0x000e220000201c00 */
+        /*0120*/                   MOV.64 R24, 0x3fd999999999999a                                                     ?WAIT2_END_GROUP;  /* 0x999999999a187402 */
+                                                                                                                                         /* 0x000fc400003fd999 */
+        /*0130*/                   UMOV.64 UR8, 0x3ff921fb54442d18                                                    ?trans1;           /* 0xfb54442d18087482 */
+                                                                                                                                         /* 0x000fe200083ff921 */
+        /*0140*/                   UMOV.64 UR10, 0x3c91a62633145c00                                                   ?trans1;           /* 0x2633145c000a7482 */
+                                                                                                                                         /* 0x000fe200083c91a6 */
+        /*0150*/                   UMOV.64 UR12, 0x397b839a252049c0                                                   ?trans1;           /* 0x9a252049c00c7482 */
+                                                                                                                                         /* 0x000fe20008397b83 */
+        /*0160*/                   UMOV.64 UR4, 0x3da8ff8320fd8164                                                    ?WAIT15_END_GROUP; /* 0x8320fd8164047482 */
+                                                                                                                                         /* 0x000fde00083da8ff */
+        /*0170*/                   NOP                                                                                ?WAIT13_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fda0000000000 */
+        /*0180*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0190*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*01a0*/                   DFMA R24, R22, -UR8, R24                                  &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x8000000816187c2b */
+                                                                                                                                         /* 0x001e1e0008000018 */
+        /*01b0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*01c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*01d0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*01e0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*01f0*/                   DFMA R24, R22, -UR10, R24                                 &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x8000000a16187c2b */
+                                                                                                                                         /* 0x001e1e0008000018 */
+        /*0200*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0210*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0220*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0230*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0240*/                   DFMA R22, R22, -UR12, R24                                 &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x8000000c16167c2b */
+                                                                                                                                         /* 0x001e1e0008000018 */
+        /*0250*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0260*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0270*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0280*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0290*/                   DMUL R24, R22, R22                                        &req={0} &wr=0x4         ?WAIT15_END_GROUP; /* 0x0000001616187228 */
+                                                                                                                                         /* 0x001f1e0000000000 */
+        /*02a0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*02b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*02c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*02d0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*02e0*/                   DFMA R28, R24, -UR4, R28                                  &req={4}                 ?trans1;           /* 0x80000004181c7c2b */
+                                                                                                                                         /* 0x010fe2000800001c */
+        /*02f0*/                   UMOV.64 UR4, 0x3de5db65f9785eba                                                    ?WAIT15_END_GROUP; /* 0x65f9785eba047482 */
+                                                                                                                                         /* 0x000fde00083de5db */
+        /*0300*/                   NOP                                                                                ?WAIT3_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc60000000000 */
+        /*0310*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0320*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0330*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0340*/                   DFMA R6, R24, UR4, R6                                     &req={2} &wr=0x3         ?WAIT15_END_GROUP; /* 0x0000000418067c2b */
+                                                                                                                                         /* 0x004ede0008000006 */
+        /*0350*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0360*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0370*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0380*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0390*/                   DFMA R6, R24, R6, R14                                     &req={3} &wr=0x5         ?WAIT15_END_GROUP; /* 0x000000061806722b */
+                                                                                                                                         /* 0x008f5e000000000e */
+        /*03a0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*03b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*03c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*03d0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*03e0*/                   DFMA R6, R24, R6, R12                                     &req={5} &wr=0x0         ?WAIT15_END_GROUP; /* 0x000000061806722b */
+                                                                                                                                         /* 0x020e1e000000000c */
+        /*03f0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0400*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0410*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0420*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0430*/                   DFMA R6, R24, R6, R10                                     &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x000000061806722b */
+                                                                                                                                         /* 0x001e1e000000000a */
+        /*0440*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0450*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0460*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0470*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0480*/                   DFMA R6, R24, R6, R8                                      &req={0} &rd=0x0 &wr=0x1 ?trans2;           /* 0x000000061806722b */
+                                                                                                                                         /* 0x0010640000000008 */
+        /*0490*/                   LDC.64 R8, c[0x0][0x380]                                  &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x0000e000ff087b82 */
+                                                                                                                                         /* 0x001e1e0000000a00 */
+        /*04a0*/                   NOP                                                                                ?trans2;           /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fe40000000000 */
+        /*04b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*04c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*04d0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*04e0*/                   DFMA R26, R24, R28, R26                                   &wr=0x2                  ?WAIT15_END_GROUP; /* 0x0000001c181a722b */
+                                                                                                                                         /* 0x000e9e000000001a */
+        /*04f0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0500*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0510*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0520*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0530*/                   DFMA R2, R24, R6, R2                                      &req={1} &rd=0x1         ?trans2;           /* 0x000000061802722b */
+                                                                                                                                         /* 0x0023e40000000002 */
+        /*0540*/                   LDC.64 R6, c[0x0][0x388]                                  &req={1} &wr=0x1         ?WAIT15_END_GROUP; /* 0x0000e200ff067b82 */
+                                                                                                                                         /* 0x002e5e0000000a00 */
+        /*0550*/                   NOP                                                                                ?trans2;           /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fe40000000000 */
+        /*0560*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0570*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0580*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0590*/                   DFMA R20, R24, R26, R20                                   &req={2} &wr=0x2         ?WAIT15_END_GROUP; /* 0x0000001a1814722b */
+                                                                                                                                         /* 0x004e9e0000000014 */
+        /*05a0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*05b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*05c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*05d0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*05e0*/                   DFMA R18, R24, R20, R18                                   &req={2} &wr=0x2         ?WAIT15_END_GROUP; /* 0x000000141812722b */
+                                                                                                                                         /* 0x004e9e0000000012 */
+        /*05f0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0600*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0610*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0620*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0630*/                   DFMA R16, R24, R18, R16                                   &req={2} &wr=0x2         ?WAIT15_END_GROUP; /* 0x000000121810722b */
+                                                                                                                                         /* 0x004e9e0000000010 */
+        /*0640*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0650*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0660*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0670*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0680*/                   DFMA R4, R24, R16, R4                                     &req={2} &wr=0x2         ?WAIT15_END_GROUP; /* 0x000000101804722b */
+                                                                                                                                         /* 0x004e9e0000000004 */
+        /*0690*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*06a0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*06b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*06c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*06d0*/                   DFMA R4, R24, R4, 1                                       &req={2} &wr=0x1         ?trans2;           /* 0x3ff000001804742b */
+                                                                                                                                         /* 0x004e640000000004 */
+        /*06e0*/                   STG.E.64 desc[UR6][R6.64], R4                             &req={1} &rd=0x1         ?WAIT15_END_GROUP; /* 0x0000000406007986 */
+                                                                                                                                         /* 0x0023de000c101b06 */
+        /*06f0*/                   NOP                                                                                ?trans2;           /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fe40000000000 */
+        /*0700*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0710*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0720*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0730*/                   DFMA R22, R22, R2, R22                                    &wr=0x2                  ?trans2;           /* 0x000000021616722b */
+                                                                                                                                         /* 0x000ea40000000016 */
+        /*0740*/                   STG.E.64 desc[UR6][R6.64+0x8], R22                        &req={2} &rd=0x1         ?trans4;           /* 0x0000081606007986 */
+                                                                                                                                         /* 0x0043e8000c101b06 */
+        /*0750*/                   LDG.E.64 R8, desc[UR6][R8.64]                             &req={0} &wr=0x2         ?trans1;           /* 0x0000000608087981 */
+                                                                                                                                         /* 0x001ea2000c1e1b00 */
+        /*0760*/                   LDCU UR4, c[0x0][0x2f8]                                   &wr=0x0                  ?trans1;           /* 0x00005f00ff0477ac */
+                                                                                                                                         /* 0x000e220008000800 */
+        /*0770*/                   LDCU UR5, c[0x0][0x2fc]                                   &wr=0x0                  ?trans1;           /* 0x00005f80ff0577ac */
+                                                                                                                                         /* 0x000e220008000800 */
+        /*0780*/                   MOV R2, R1                                                                         ?trans1;           /* 0x0000000100027202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*0790*/                   HFMA2 R3, -RZ, RZ, 0, 0                                                            ?WAIT5_END_GROUP;  /* 0x00000000ff037431 */
+                                                                                                                                         /* 0x000fca00000001ff */
+        /*07a0*/                   IADD.64 R10, R2, UR4                                      &req={0}                 ?trans2;           /* 0x00000004020a7c35 */
+                                                                                                                                         /* 0x001fe4000f8e0200 */
+        /*07b0*/                   ISETP.NE.AND P0, PT, R8, RZ, PT                           &req={2}                 ?trans1;           /* 0x000000ff0800720c */
+                                                                                                                                         /* 0x004fe20003f05270 */
+        /*07c0*/                   LOP3.LUT R0, R9, 0x7fffffff, RZ, 0xc0, !PT                                         ?WAIT5_END_GROUP;  /* 0x7fffffff09007812 */
+                                                                                                                                         /* 0x000fca00078ec0ff */
+        /*07d0*/                   ISETP.NE.OR P0, PT, R0, 0x7ff00000, P0                                             ?WAIT15_END_GROUP; /* 0x7ff000000000780c */
+                                                                                                                                         /* 0x000fde0000705670 */
+        /*07e0*/                   NOP                                                                                ?WAIT11_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fd60000000000 */
+        /*07f0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0800*/              @!P0 DMUL R2, RZ, R8                                           &rd=0x1 &wr=0x0          ?trans1;           /* 0x00000008ff028228 */
+                                                                                                                                         /* 0x0002220000000000 */
+        /*0810*/              @!P0 MOV R0, 0x1                                                                        ?trans1;           /* 0x0000000100008802 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*0820*/              @!P0 BRA 0xac0                                                 &req={1,0}               ?trans6;           /* 0x0000000000a48947 */
+                                                                                                                                         /* 0x003fec0003800000 */
+        /*0830*/                   UMOV.64 UR4, 0x3fe45f306dc9c883                                                    ?trans1;           /* 0x306dc9c883047482 */
+                                                                                                                                         /* 0x000fe200083fe45f */
+        /*0840*/                   DSETP.GE.AND P0, PT, |R8|, 2.14748364800000000000e+09, PT                          ?WAIT15_END_GROUP; /* 0x41e000000800742a */
+                                                                                                                                         /* 0x000fde0003f06200 */
+        /*0850*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0860*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0870*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0880*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0890*/                   DMUL R4, R8, UR4                                          &wr=0x0                  ?WAIT15_END_GROUP; /* 0x0000000408047c28 */
+                                                                                                                                         /* 0x000e1e0008000000 */
+        /*08a0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*08b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*08c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*08d0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*08e0*/                   F2I.F64 R0, R4                                            &req={0} &wr=0x0         ?trans2;           /* 0x0000000400007311 */
+                                                                                                                                         /* 0x001e240000301100 */
+        /*08f0*/                   STL [R1+0x4], R0                                          &req={0} &rd=0x0         ?WAIT15_END_GROUP; /* 0x0000040001007387 */
+                                                                                                                                         /* 0x0011de0000100800 */
+        /*0900*/                   NOP                                                                                ?trans2;           /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fe40000000000 */
+        /*0910*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0920*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0930*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0940*/                   I2F.F64 R2, R0                                            &wr=0x1                  ?WAIT15_END_GROUP; /* 0x0000000000027312 */
+                                                                                                                                         /* 0x000e5e0000201c00 */
+        /*0950*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0960*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0970*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0980*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0990*/                   DFMA R6, R2, -UR8, R8                                     &req={1} &wr=0x1         ?WAIT15_END_GROUP; /* 0x8000000802067c2b */
+                                                                                                                                         /* 0x002e5e0008000008 */
+        /*09a0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*09b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*09c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*09d0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*09e0*/                   DFMA R6, R2, -UR10, R6                                    &req={1} &wr=0x1         ?WAIT15_END_GROUP; /* 0x8000000a02067c2b */
+                                                                                                                                         /* 0x002e5e0008000006 */
+        /*09f0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0a00*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0a10*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0a20*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0a30*/                   DFMA R2, R2, -UR12, R6                                    &req={1} &rd=0x0 &wr=0x1 ?trans2;           /* 0x8000000c02027c2b */
+                                                                                                                                         /* 0x0020640008000006 */
+        /*0a40*/              @!P0 BRA 0xab0                                                 &req={1,0}               ?trans5;           /* 0x0000000000188947 */
+                                                                                                                                         /* 0x003fea0003800000 */
+        /*0a50*/                   IADD.64 R2, R10, 0x4                                                               ?trans2;           /* 0x000000040a027835 */
+                                                                                                                                         /* 0x000fe400078e0200 */
+        /*0a60*/                   MOV R14, R8                                                                        ?trans1;           /* 0x00000008000e7202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*0a70*/                   MOV R15, R9                                                                        ?trans1;           /* 0x00000009000f7202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*0a80*/                   MOV R16, 0xaa0                                                                     ?WAIT7_END_GROUP;  /* 0x00000aa000107802 */
+                                                                                                                                         /* 0x000fce0000000f00 */
+        /*0a90*/                   CALL.REL.NOINC 0x16e0                                                              ?trans5;           /* 0x0000000c00107944 */
+                                                                                                                                         /* 0x000fea0003c00000 */
+        /*0aa0*/                   LDL R0, [R1+0x4]                                          &rd=0x0 &wr=0x5          ?trans2;           /* 0x0000040001007983 */
+                                                                                                                                         /* 0x0001640000100800 */
+        /*0ab0*/                   IADD3 R0, PT, PT, R0, 0x1, RZ                             &req={5}                 ?WAIT7_END_GROUP;  /* 0x0000000100007810 */
+                                                                                                                                         /* 0x020fce0007ffe0ff */
+        /*0ac0*/                   LDCU.64 UR4, c[0x4][0x8]                                  &wr=0x1                  ?trans1;           /* 0x01000100ff0477ac */
+                                                                                                                                         /* 0x000e620008000a00 */
+        /*0ad0*/                   IMAD.SHL.U32 R12, R0, 0x40, RZ                                                     ?trans1;           /* 0x00000040000c7824 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*0ae0*/                   MOV R13, RZ                                                                        ?WAIT4_END_GROUP;  /* 0x000000ff000d7202 */
+                                                                                                                                         /* 0x000fc80000000f00 */
+        /*0af0*/                   LOP3.LUT R12, R12, 0x40, RZ, 0xc0, !PT                                             ?WAIT5_END_GROUP;  /* 0x000000400c0c7812 */
+                                                                                                                                         /* 0x000fca00078ec0ff */
+        /*0b00*/                   IADD.64 R12, R12, UR4                                     &req={1}                 ?WAIT6_END_GROUP;  /* 0x000000040c0c7c35 */
+                                                                                                                                         /* 0x002fcc000f8e0200 */
+        /*0b10*/                   LDG.E.64.CONSTANT R14, desc[UR6][R12.64+0x8]              &wr=0x2                  ?trans4;           /* 0x000008060c0e7981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*0b20*/                   LDG.E.64.CONSTANT R16, desc[UR6][R12.64+0x10]             &wr=0x3                  ?trans4;           /* 0x000010060c107981 */
+                                                                                                                                         /* 0x000ee8000c1e9b00 */
+        /*0b30*/                   LDG.E.64.CONSTANT R18, desc[UR6][R12.64+0x18]             &wr=0x4                  ?trans4;           /* 0x000018060c127981 */
+                                                                                                                                         /* 0x000f28000c1e9b00 */
+        /*0b40*/                   LDG.E.64.CONSTANT R20, desc[UR6][R12.64+0x20]             &wr=0x5                  ?trans4;           /* 0x000020060c147981 */
+                                                                                                                                         /* 0x000f68000c1e9b00 */
+        /*0b50*/                   LDG.E.64.CONSTANT R8, desc[UR6][R12.64+0x28]              &wr=0x3                  ?trans4;           /* 0x000028060c087981 */
+                                                                                                                                         /* 0x000ee8000c1e9b00 */
+        /*0b60*/                   LDG.E.64.CONSTANT R6, desc[UR6][R12.64+0x30]              &wr=0x3                  ?trans1;           /* 0x000030060c067981 */
+                                                                                                                                         /* 0x000ee2000c1e9b00 */
+        /*0b70*/                   LOP3.LUT R22, R0, 0x1, RZ, 0xc0, !PT                                               ?trans1;           /* 0x0000000100167812 */
+                                                                                                                                         /* 0x000fe200078ec0ff */
+        /*0b80*/                   DMUL R4, R2, R2                                           &wr=0x2                  ?trans1;           /* 0x0000000202047228 */
+                                                                                                                                         /* 0x000ea20000000000 */
+        /*0b90*/                   MOV R23, 0x3da8ff83                                                                ?WAIT3_END_GROUP;  /* 0x3da8ff8300177802 */
+                                                                                                                                         /* 0x000fc60000000f00 */
+        /*0ba0*/                   ISETP.NE.U32.AND P0, PT, R22, 0x1, PT                                              ?trans1;           /* 0x000000011600780c */
+                                                                                                                                         /* 0x000fe20003f05070 */
+        /*0bb0*/                   MOV R22, 0x20fd8164                                                                ?WAIT4_END_GROUP;  /* 0x20fd816400167802 */
+                                                                                                                                         /* 0x000fc80000000f00 */
+        /*0bc0*/                   FSEL R23, -R23, 0.11223486810922622681, !P0                                        ?trans1;           /* 0x3de5db6517177808 */
+                                                                                                                                         /* 0x000fe20004000100 */
+        /*0bd0*/                   FSEL R22, R22, -8.06006814911005101289e+34, !P0                                    ?WAIT15_END_GROUP; /* 0xf9785eba16167808 */
+                                                                                                                                         /* 0x000fde0004000000 */
+        /*0be0*/                   NOP                                                                                ?WAIT9_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fd20000000000 */
+        /*0bf0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0c00*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0c10*/                   DFMA R14, R4, R22, R14                                    &req={2} &wr=0x3         ?WAIT15_END_GROUP; /* 0x00000016040e722b */
+                                                                                                                                         /* 0x004ede000000000e */
+        /*0c20*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0c30*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0c40*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0c50*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0c60*/                   DFMA R14, R4, R14, R16                                    &req={3} &wr=0x4         ?WAIT15_END_GROUP; /* 0x0000000e040e722b */
+                                                                                                                                         /* 0x008f1e0000000010 */
+        /*0c70*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0c80*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0c90*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0ca0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0cb0*/                   DFMA R14, R4, R14, R18                                    &req={4} &wr=0x5         ?WAIT15_END_GROUP; /* 0x0000000e040e722b */
+                                                                                                                                         /* 0x010f5e0000000012 */
+        /*0cc0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0cd0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0ce0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0cf0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0d00*/                   DFMA R14, R4, R14, R20                                    &req={5} &wr=0x1         ?WAIT15_END_GROUP; /* 0x0000000e040e722b */
+                                                                                                                                         /* 0x020e5e0000000014 */
+        /*0d10*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0d20*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0d30*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0d40*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0d50*/                   DFMA R8, R4, R14, R8                                      &req={1} &wr=0x1         ?WAIT15_END_GROUP; /* 0x0000000e0408722b */
+                                                                                                                                         /* 0x002e5e0000000008 */
+        /*0d60*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0d70*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0d80*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0d90*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0da0*/                   DFMA R6, R4, R8, R6                                       &req={1} &rd=0x1 &wr=0x2 ?trans2;           /* 0x000000080406722b */
+                                                                                                                                         /* 0x0022a40000000006 */
+        /*0db0*/                   LDC.64 R8, c[0x0][0x388]                                  &req={1} &wr=0x1         ?WAIT15_END_GROUP; /* 0x0000e200ff087b82 */
+                                                                                                                                         /* 0x002e5e0000000a00 */
+        /*0dc0*/                   NOP                                                                                ?trans2;           /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fe40000000000 */
+        /*0dd0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0de0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0df0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0e00*/                   DFMA R2, R6, R2, R2                                       &req={2}                 ?WAIT15_END_GROUP; /* 0x000000020602722b */
+                                                                                                                                         /* 0x004fde0000000002 */
+        /*0e10*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0e20*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0e30*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0e40*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0e50*/                   DFMA R4, R4, R6, 1                                        &wr=0x2                  ?trans2;           /* 0x3ff000000404742b */
+                                                                                                                                         /* 0x000ea40000000006 */
+        /*0e60*/                   FSEL R4, R4, R2, !P0                                      &req={2}                 ?trans1;           /* 0x0000000204047208 */
+                                                                                                                                         /* 0x004fe20004000000 */
+        /*0e70*/                   FSEL R5, R5, R3, !P0                                                               ?trans1;           /* 0x0000000305057208 */
+                                                                                                                                         /* 0x000fe20004000000 */
+        /*0e80*/                   LOP3.LUT P0, RZ, R0, 0x2, RZ, 0xc0, !PT                                            ?WAIT15_END_GROUP; /* 0x0000000200ff7812 */
+                                                                                                                                         /* 0x000fde000780c0ff */
+        /*0e90*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0ea0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0eb0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0ec0*/                   DADD R2, RZ, -R4                                          &wr=0x2                  ?trans2;           /* 0x00000000ff027229 */
+                                                                                                                                         /* 0x000ea40000000804 */
+        /*0ed0*/                   FSEL R6, R4, R2, !P0                                      &req={2}                 ?trans1;           /* 0x0000000204067208 */
+                                                                                                                                         /* 0x004fe20004000000 */
+        /*0ee0*/                   FSEL R7, R5, R3, !P0                                                               ?trans2;           /* 0x0000000305077208 */
+                                                                                                                                         /* 0x000fe40004000000 */
+        /*0ef0*/                   LDC.64 R4, c[0x0][0x380]                                  &wr=0x2                  ?trans3;           /* 0x0000e000ff047b82 */
+                                                                                                                                         /* 0x000ea60000000a00 */
+        /*0f00*/                   STG.E.64 desc[UR6][R8.64+0x10], R6                        &req={1} &rd=0x1         ?trans4;           /* 0x0000100608007986 */
+                                                                                                                                         /* 0x0023e8000c101b06 */
+        /*0f10*/                   LDG.E.64 R4, desc[UR6][R4.64]                             &req={2} &wr=0x2         ?trans2;           /* 0x0000000604047981 */
+                                                                                                                                         /* 0x004ea4000c1e1b00 */
+        /*0f20*/                   ISETP.NE.AND P0, PT, R4, RZ, PT                           &req={2}                 ?trans1;           /* 0x000000ff0400720c */
+                                                                                                                                         /* 0x004fe20003f05270 */
+        /*0f30*/                   LOP3.LUT R0, R5, 0x7fffffff, RZ, 0xc0, !PT                                         ?WAIT5_END_GROUP;  /* 0x7fffffff05007812 */
+                                                                                                                                         /* 0x000fca00078ec0ff */
+        /*0f40*/                   ISETP.NE.OR P0, PT, R0, 0x7ff00000, P0                                             ?WAIT15_END_GROUP; /* 0x7ff000000000780c */
+                                                                                                                                         /* 0x000fde0000705670 */
+        /*0f50*/                   NOP                                                                                ?WAIT14_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fdc0000000000 */
+        /*0f60*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0f70*/              @!P0 DMUL R2, RZ, R4                                           &rd=0x1 &wr=0x2          ?trans1;           /* 0x00000004ff028228 */
+                                                                                                                                         /* 0x0002a20000000000 */
+        /*0f80*/              @!P0 MOV R0, RZ                                                                         ?trans1;           /* 0x000000ff00008202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*0f90*/              @!P0 BRA 0x1260                                                &req={2,1}               ?trans6;           /* 0x0000000000b08947 */
+                                                                                                                                         /* 0x006fec0003800000 */
+        /*0fa0*/                   UMOV.64 UR4, 0x3fe45f306dc9c883                                                    ?trans1;           /* 0x306dc9c883047482 */
+                                                                                                                                         /* 0x000fe200083fe45f */
+        /*0fb0*/                   DSETP.GE.AND P0, PT, |R4|, 2.14748364800000000000e+09, PT                          ?WAIT15_END_GROUP; /* 0x41e000000400742a */
+                                                                                                                                         /* 0x000fde0003f06200 */
+        /*0fc0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*0fd0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0fe0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*0ff0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1000*/                   DMUL R6, R4, UR4                                          &wr=0x1                  ?trans1;           /* 0x0000000404067c28 */
+                                                                                                                                         /* 0x000e620008000000 */
+        /*1010*/                   UMOV.64 UR4, 0x3ff921fb54442d18                                                    ?WAIT15_END_GROUP; /* 0xfb54442d18047482 */
+                                                                                                                                         /* 0x000fde00083ff921 */
+        /*1020*/                   NOP                                                                                ?WAIT3_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc60000000000 */
+        /*1030*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1040*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1050*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1060*/                   F2I.F64 R0, R6                                            &req={1} &wr=0x1         ?trans2;           /* 0x0000000600007311 */
+                                                                                                                                         /* 0x002e640000301100 */
+        /*1070*/                   STL [R1], R0                                              &req={1} &rd=0x1         ?WAIT15_END_GROUP; /* 0x0000000001007387 */
+                                                                                                                                         /* 0x0023de0000100800 */
+        /*1080*/                   NOP                                                                                ?trans2;           /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fe40000000000 */
+        /*1090*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*10a0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*10b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*10c0*/                   I2F.F64 R2, R0                                            &wr=0x2                  ?WAIT15_END_GROUP; /* 0x0000000000027312 */
+                                                                                                                                         /* 0x000e9e0000201c00 */
+        /*10d0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*10e0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*10f0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1100*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1110*/                   DFMA R8, R2, -UR4, R4                                     &req={2} &wr=0x2         ?trans1;           /* 0x8000000402087c2b */
+                                                                                                                                         /* 0x004ea20008000004 */
+        /*1120*/                   UMOV.64 UR4, 0x3c91a62633145c00                                                    ?WAIT15_END_GROUP; /* 0x2633145c00047482 */
+                                                                                                                                         /* 0x000fde00083c91a6 */
+        /*1130*/                   NOP                                                                                ?WAIT3_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc60000000000 */
+        /*1140*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1150*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1160*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1170*/                   DFMA R8, R2, -UR4, R8                                     &req={2} &wr=0x2         ?trans1;           /* 0x8000000402087c2b */
+                                                                                                                                         /* 0x004ea20008000008 */
+        /*1180*/                   UMOV.64 UR4, 0x397b839a252049c0                                                    ?WAIT15_END_GROUP; /* 0x9a252049c0047482 */
+                                                                                                                                         /* 0x000fde0008397b83 */
+        /*1190*/                   NOP                                                                                ?WAIT3_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc60000000000 */
+        /*11a0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*11b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*11c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*11d0*/                   DFMA R2, R2, -UR4, R8                                     &req={2} &rd=0x1 &wr=0x2 ?trans2;           /* 0x8000000402027c2b */
+                                                                                                                                         /* 0x0042a40008000008 */
+        /*11e0*/              @!P0 BRA 0x1260                                                &req={2,1}               ?trans5;           /* 0x00000000001c8947 */
+                                                                                                                                         /* 0x006fea0003800000 */
+        /*11f0*/                   MOV R14, R4                                                                        ?trans1;           /* 0x00000004000e7202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1200*/                   MOV R15, R5                                                                        ?trans1;           /* 0x00000005000f7202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1210*/                   MOV R2, R10                                                                        ?trans1;           /* 0x0000000a00027202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1220*/                   MOV R3, R11                                                                        ?trans1;           /* 0x0000000b00037202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1230*/                   MOV R16, 0x1250                                                                    ?WAIT7_END_GROUP;  /* 0x0000125000107802 */
+                                                                                                                                         /* 0x000fce0000000f00 */
+        /*1240*/                   CALL.REL.NOINC 0x16e0                                     &req={0}                 ?trans5;           /* 0x0000000400247944 */
+                                                                                                                                         /* 0x001fea0003c00000 */
+        /*1250*/                   LDL R0, [R1]                                              &rd=0x1 &wr=0x5          ?trans2;           /* 0x0000000001007983 */
+                                                                                                                                         /* 0x0003640000100800 */
+        /*1260*/                   LDCU.64 UR4, c[0x4][0x8]                                  &wr=0x2                  ?trans1;           /* 0x01000100ff0477ac */
+                                                                                                                                         /* 0x000ea20008000a00 */
+        /*1270*/                   IMAD.SHL.U32 R6, R0, 0x40, RZ                             &req={5}                 ?trans1;           /* 0x0000004000067824 */
+                                                                                                                                         /* 0x020fe200078e00ff */
+        /*1280*/                   MOV R7, RZ                                                                         ?WAIT4_END_GROUP;  /* 0x000000ff00077202 */
+                                                                                                                                         /* 0x000fc80000000f00 */
+        /*1290*/                   LOP3.LUT R6, R6, 0x40, RZ, 0xc0, !PT                                               ?WAIT5_END_GROUP;  /* 0x0000004006067812 */
+                                                                                                                                         /* 0x000fca00078ec0ff */
+        /*12a0*/                   IADD.64 R6, R6, UR4                                       &req={2}                 ?WAIT6_END_GROUP;  /* 0x0000000406067c35 */
+                                                                                                                                         /* 0x004fcc000f8e0200 */
+        /*12b0*/                   LDG.E.64.CONSTANT R8, desc[UR6][R6.64+0x8]                &wr=0x2                  ?trans4;           /* 0x0000080606087981 */
+                                                                                                                                         /* 0x000ea8000c1e9b00 */
+        /*12c0*/                   LDG.E.64.CONSTANT R10, desc[UR6][R6.64+0x10]              &wr=0x3                  ?trans4;           /* 0x00001006060a7981 */
+                                                                                                                                         /* 0x000ee8000c1e9b00 */
+        /*12d0*/                   LDG.E.64.CONSTANT R12, desc[UR6][R6.64+0x18]              &wr=0x4                  ?trans4;           /* 0x00001806060c7981 */
+                                                                                                                                         /* 0x000f28000c1e9b00 */
+        /*12e0*/                   LDG.E.64.CONSTANT R14, desc[UR6][R6.64+0x20]              &wr=0x3                  ?trans4;           /* 0x00002006060e7981 */
+                                                                                                                                         /* 0x000ee8000c1e9b00 */
+        /*12f0*/                   LDG.E.64.CONSTANT R16, desc[UR6][R6.64+0x28]              &wr=0x3                  ?trans4;           /* 0x0000280606107981 */
+                                                                                                                                         /* 0x000ee8000c1e9b00 */
+        /*1300*/                   LDG.E.64.CONSTANT R18, desc[UR6][R6.64+0x30]              &rd=0x0 &wr=0x3          ?trans1;           /* 0x0000300606127981 */
+                                                                                                                                         /* 0x0000e2000c1e9b00 */
+        /*1310*/                   LOP3.LUT R20, R0.reuse, 0x1, RZ, 0xc0, !PT                                         ?trans1;           /* 0x0000000100147812 */
+                                                                                                                                         /* 0x040fe200078ec0ff */
+        /*1320*/                   DMUL R4, R2, R2                                           &wr=0x2                  ?trans1;           /* 0x0000000202047228 */
+                                                                                                                                         /* 0x000ea20000000000 */
+        /*1330*/                   MOV R21, 0x3da8ff83                                                                ?trans1;           /* 0x3da8ff8300157802 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1340*/                   LOP3.LUT P1, RZ, R0, 0x2, RZ, 0xc0, !PT                                            ?WAIT2_END_GROUP;  /* 0x0000000200ff7812 */
+                                                                                                                                         /* 0x000fc4000782c0ff */
+        /*1350*/                   ISETP.NE.U32.AND P0, PT, R20, 0x1, PT                                              ?trans1;           /* 0x000000011400780c */
+                                                                                                                                         /* 0x000fe20003f05070 */
+        /*1360*/                   MOV R20, 0x20fd8164                                                                ?trans1;           /* 0x20fd816400147802 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1370*/                   MOV.64 R6, 0x3fed7954e7dba2f8                             &req={0}                 ?WAIT4_END_GROUP;  /* 0x54e7dba2f8067402 */
+                                                                                                                                         /* 0x001fc800003fed79 */
+        /*1380*/                   FSEL R20, R20, -8.06006814911005101289e+34, !P0                                    ?trans1;           /* 0xf9785eba14147808 */
+                                                                                                                                         /* 0x000fe20004000000 */
+        /*1390*/                   FSEL R21, -R21, 0.11223486810922622681, !P0                                        ?WAIT15_END_GROUP; /* 0x3de5db6515157808 */
+                                                                                                                                         /* 0x000fde0004000100 */
+        /*13a0*/                   NOP                                                                                ?WAIT8_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fd00000000000 */
+        /*13b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*13c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*13d0*/                   DFMA R8, R4, R20, R8                                      &req={2} &wr=0x3         ?WAIT15_END_GROUP; /* 0x000000140408722b */
+                                                                                                                                         /* 0x004ede0000000008 */
+        /*13e0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*13f0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1400*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1410*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1420*/                   DFMA R8, R4, R8, R10                                      &req={3} &rd=0x0 &wr=0x4 ?trans2;           /* 0x000000080408722b */
+                                                                                                                                         /* 0x008124000000000a */
+        /*1430*/                   LDC.64 R10, c[0x0][0x388]                                 &req={0} &wr=0x0         ?trans2;           /* 0x0000e200ff0a7b82 */
+                                                                                                                                         /* 0x001e240000000a00 */
+        /*1440*/                   STG.E.64 desc[UR6][R10.64+0x20], R6                       &req={0}                 ?WAIT15_END_GROUP; /* 0x000020060a007986 */
+                                                                                                                                         /* 0x001fde000c101b06 */
+        /*1450*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1460*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1470*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1480*/                   DFMA R8, R4, R8, R12                                      &req={4} &wr=0x0         ?WAIT15_END_GROUP; /* 0x000000080408722b */
+                                                                                                                                         /* 0x010e1e000000000c */
+        /*1490*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*14a0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*14b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*14c0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*14d0*/                   DFMA R8, R4, R8, R14                                      &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x000000080408722b */
+                                                                                                                                         /* 0x001e1e000000000e */
+        /*14e0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*14f0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1500*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1510*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1520*/                   DFMA R8, R4, R8, R16                                      &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x000000080408722b */
+                                                                                                                                         /* 0x001e1e0000000010 */
+        /*1530*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*1540*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1550*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1560*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1570*/                   DFMA R8, R4, R8, R18                                      &req={0} &wr=0x0         ?WAIT15_END_GROUP; /* 0x000000080408722b */
+                                                                                                                                         /* 0x001e1e0000000012 */
+        /*1580*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*1590*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*15a0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*15b0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*15c0*/                   DFMA R2, R8, R2, R2                                       &req={0}                 ?WAIT15_END_GROUP; /* 0x000000020802722b */
+                                                                                                                                         /* 0x001fde0000000002 */
+        /*15d0*/                   NOP                                                                                ?WAIT4_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc80000000000 */
+        /*15e0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*15f0*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1600*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1610*/                   DFMA R4, R4, R8, 1                                        &wr=0x0                  ?trans2;           /* 0x3ff000000404742b */
+                                                                                                                                         /* 0x000e240000000008 */
+        /*1620*/                   FSEL R4, R4, R2, !P0                                      &req={0}                 ?trans1;           /* 0x0000000204047208 */
+                                                                                                                                         /* 0x001fe20004000000 */
+        /*1630*/                   FSEL R5, R5, R3, !P0                                                               ?trans1;           /* 0x0000000305057208 */
+                                                                                                                                         /* 0x000fe20004000000 */
+        /*1640*/                   MOV.64 R8, 0x3fd8ec3ae92b676b                                                      ?WAIT6_END_GROUP;  /* 0x3ae92b676b087402 */
+                                                                                                                                         /* 0x000fcc00003fd8ec */
+        /*1650*/                   STG.E.64 desc[UR6][R10.64+0x28], R8                                                ?WAIT15_END_GROUP; /* 0x000028080a007986 */
+                                                                                                                                         /* 0x000fde000c101b06 */
+        /*1660*/                   NOP                                                                                ?WAIT9_END_GROUP;  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fd20000000000 */
+        /*1670*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1680*/                   NOP                                                                                ?WAIT15_END_GROUP; /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fde0000000000 */
+        /*1690*/                   DADD R2, RZ, -R4                                          &wr=0x0                  ?trans2;           /* 0x00000000ff027229 */
+                                                                                                                                         /* 0x000e240000000804 */
+        /*16a0*/                   FSEL R2, R4, R2, !P1                                      &req={0}                 ?trans1;           /* 0x0000000204027208 */
+                                                                                                                                         /* 0x001fe20004800000 */
+        /*16b0*/                   FSEL R3, R5, R3, !P1                                                               ?WAIT5_END_GROUP;  /* 0x0000000305037208 */
+                                                                                                                                         /* 0x000fca0004800000 */
+        /*16c0*/                   STG.E.64 desc[UR6][R10.64+0x18], R2                                                ?trans1;           /* 0x000018020a007986 */
+                                                                                                                                         /* 0x000fe2000c101b06 */
+        /*16d0*/                   EXIT                                                                               ?trans5;           /* 0x000000000000794d */
+                                                                                                                                         /* 0x000fea0003800000 */
+        /*16e0*/                   SHF.R.U32.HI R0, RZ, 0x14, R15                                                     ?trans1;           /* 0x00000014ff007819 */
+                                                                                                                                         /* 0x000fe2000001160f */
+        /*16f0*/                   MOV R12, R2                                                                        ?trans1;           /* 0x00000002000c7202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1700*/                   MOV R13, R3                                                                        ?trans2;           /* 0x00000003000d7202 */
+                                                                                                                                         /* 0x000fe40000000f00 */
+        /*1710*/                   LOP3.LUT R4, R0, 0x7ff, RZ, 0xc0, !PT                                              ?WAIT5_END_GROUP;  /* 0x000007ff00047812 */
+                                                                                                                                         /* 0x000fca00078ec0ff */
+        /*1720*/                   ISETP.NE.AND P0, PT, R4, 0x7ff, PT                                                 ?WAIT13_END_GROUP; /* 0x000007ff0400780c */
+                                                                                                                                         /* 0x000fda0003f05270 */
+        /*1730*/              @!P0 BRA 0x2070                                                                         ?trans5;           /* 0x00000008004c8947 */
+                                                                                                                                         /* 0x000fea0003800000 */
+        /*1740*/                   IADD3 R3, PT, PT, R4, -0x400, RZ                                                   ?trans1;           /* 0xfffffc0004037810 */
+                                                                                                                                         /* 0x000fe20007ffe0ff */
+        /*1750*/                   MOV.64 R18, RZ                                                                     ?WAIT3_END_GROUP;  /* 0x000000ff00127202 */
+                                                                                                                                         /* 0x000fc60000010f00 */
+        /*1760*/                   IADD3 R8, PT, PT, R1, 0x8, RZ                                                      ?trans2;           /* 0x0000000801087810 */
+                                                                                                                                         /* 0x000fe40007ffe0ff */
+        /*1770*/                   SHF.R.U32.HI R2, RZ, 0x6, R3                                                       ?trans1;           /* 0x00000006ff027819 */
+                                                                                                                                         /* 0x000fe20000011603 */
+        /*1780*/                   ISETP.GE.U32.AND P0, PT, R3, 0x80, PT                                              ?WAIT3_END_GROUP;  /* 0x000000800300780c */
+                                                                                                                                         /* 0x000fc60003f06070 */
+        /*1790*/                   IADD3 R9, PT, PT, -R2.reuse, 0x13, RZ                                              ?trans2;           /* 0x0000001302097810 */
+                                                                                                                                         /* 0x040fe40007ffe1ff */
+        /*17a0*/                   IADD3 R23, PT, PT, -R2, 0xf, RZ                                                    ?WAIT3_END_GROUP;  /* 0x0000000f02177810 */
+                                                                                                                                         /* 0x000fc60007ffe1ff */
+        /*17b0*/                   SEL R9, R9, 0x12, P0                                                               ?WAIT5_END_GROUP;  /* 0x0000001209097807 */
+                                                                                                                                         /* 0x000fca0000000000 */
+        /*17c0*/                   ISETP.GE.AND P0, PT, R23, R9, PT                                                   ?WAIT13_END_GROUP; /* 0x000000091700720c */
+                                                                                                                                         /* 0x000fda0003f06270 */
+        /*17d0*/               @P0 BRA 0x1a00                                                                         ?trans5;           /* 0x0000000000880947 */
+                                                                                                                                         /* 0x000fea0003800000 */
+        /*17e0*/                   LDC.64 R4, c[0x4][RZ]                                     &wr=0x0                  ?trans1;           /* 0x01000000ff047b82 */
+                                                                                                                                         /* 0x000e220000000a00 */
+        /*17f0*/                   SHF.L.U64.HI R25, R14.reuse, 0xb, R15                                              ?trans1;           /* 0x0000000b0e197819 */
+                                                                                                                                         /* 0x040fe2000001020f */
+        /*1800*/                   HFMA2 R21, -RZ, RZ, 0, 0                                                           ?trans1;           /* 0x00000000ff157431 */
+                                                                                                                                         /* 0x000fe200000001ff */
+        /*1810*/                   MOV.64 R18, RZ                                                                     ?trans2;           /* 0x000000ff00127202 */
+                                                                                                                                         /* 0x000fe40000010f00 */
+        /*1820*/                   IMAD.SHL.U32 R17, R14, 0x800, RZ                                                   ?trans1;           /* 0x000008000e117824 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*1830*/                   IADD3 R20, PT, PT, RZ, -R2, -R9                                                    ?trans1;           /* 0x80000002ff147210 */
+                                                                                                                                         /* 0x000fe20007ffe809 */
+        /*1840*/                   LDCU.64 UR4, c[0x0][0x358]                                &wr=0x1                  ?trans1;           /* 0x00006b00ff0477ac */
+                                                                                                                                         /* 0x000e620008000a00 */
+        /*1850*/                   LOP3.LUT R25, R25, 0x80000000, RZ, 0xfc, !PT                                       ?WAIT7_END_GROUP;  /* 0x8000000019197812 */
+                                                                                                                                         /* 0x000fce00078efcff */
+        /*1860*/                   IMAD.WIDE R6, R23, 0x8, R4                                &req={0}                 ?WAIT6_END_GROUP;  /* 0x0000000817067825 */
+                                                                                                                                         /* 0x001fcc00078e0204 */
+        /*1870*/                   LDG.E.64.CONSTANT R6, desc[UR4][R6.64]                    &req={1} &wr=0x2         ?trans1;           /* 0x0000000406067981 */
+                                                                                                                                         /* 0x002ea2000c1e9b00 */
+        /*1880*/                   IADD3 R20, PT, PT, R20, 0x1, RZ                                                    ?trans2;           /* 0x0000000114147810 */
+                                                                                                                                         /* 0x000fe40007ffe0ff */
+        /*1890*/                   IADD3 R23, PT, PT, R23, 0x1, RZ                                                    ?trans1;           /* 0x0000000117177810 */
+                                                                                                                                         /* 0x000fe20007ffe0ff */
+        /*18a0*/                   IMAD.WIDE.U32 R18, P2, R6, R17, R18                       &req={2}                 ?WAIT4_END_GROUP;  /* 0x0000001106127225 */
+                                                                                                                                         /* 0x004fc80007840012 */
+        /*18b0*/                   IMAD R27, R6, R25, RZ                                                              ?trans2;           /* 0x00000019061b7224 */
+                                                                                                                                         /* 0x000fe400078e02ff */
+        /*18c0*/                   IMAD R22, R7.reuse, R17.reuse, RZ                                                  ?trans2;           /* 0x0000001107167224 */
+                                                                                                                                         /* 0x0c0fe400078e02ff */
+        /*18d0*/                   IMAD.HI.U32 R29, R7, R17, RZ                                                       ?trans1;           /* 0x00000011071d7227 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*18e0*/                   IADD3 R19, P1, PT, R27, R19, RZ                                                    ?WAIT3_END_GROUP;  /* 0x000000131b137210 */
+                                                                                                                                         /* 0x000fc60007f3e0ff */
+        /*18f0*/                   IMAD R27, R21.reuse, 0x8, R8                                                       ?trans1;           /* 0x00000008151b7824 */
+                                                                                                                                         /* 0x040fe200078e0208 */
+        /*1900*/                   IADD3 R19, P0, PT, R22, R19, RZ                                                    ?trans1;           /* 0x0000001316137210 */
+                                                                                                                                         /* 0x000fe20007f1e0ff */
+        /*1910*/                   IMAD.HI.U32 R22, R6, R25, RZ                                                       ?trans1;           /* 0x0000001906167227 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*1920*/                   IADD3 R21, PT, PT, R21, 0x1, RZ                                                    ?WAIT3_END_GROUP;  /* 0x0000000115157810 */
+                                                                                                                                         /* 0x000fc60007ffe0ff */
+        /*1930*/                   STL.64 [R27], R18                                         &rd=0x0                  ?trans1;           /* 0x000000121b007387 */
+                                                                                                                                         /* 0x0001e20000100a00 */
+        /*1940*/                   IADD3.X R6, PT, PT, R22, RZ, RZ, P2, !PT                                           ?trans1;           /* 0x000000ff16067210 */
+                                                                                                                                         /* 0x000fe200017fe4ff */
+        /*1950*/                   IMAD.HI.U32 R22, R7, R25, RZ                                                       ?WAIT3_END_GROUP;  /* 0x0000001907167227 */
+                                                                                                                                         /* 0x000fc600078e00ff */
+        /*1960*/                   IADD3.X R6, P1, PT, R29, R6, RZ, P1, !PT                                           ?trans1;           /* 0x000000061d067210 */
+                                                                                                                                         /* 0x000fe20000f3e4ff */
+        /*1970*/                   IMAD R29, R7, R25, RZ                                                              ?WAIT3_END_GROUP;  /* 0x00000019071d7224 */
+                                                                                                                                         /* 0x000fc600078e02ff */
+        /*1980*/                   IADD3.X R7, PT, PT, R22, RZ, RZ, P1, !PT                                           ?trans1;           /* 0x000000ff16077210 */
+                                                                                                                                         /* 0x000fe20000ffe4ff */
+        /*1990*/                   ISETP.NE.AND P1, PT, R20, -0xf, PT                                                 ?trans1;           /* 0xfffffff11400780c */
+                                                                                                                                         /* 0x000fe20003f25270 */
+        /*19a0*/                   IADD3.X R6, P0, PT, R29, R6, RZ, P0, !PT                                           ?WAIT4_END_GROUP;  /* 0x000000061d067210 */
+                                                                                                                                         /* 0x000fc8000071e4ff */
+        /*19b0*/                   IADD3.X R7, PT, PT, RZ, R7, RZ, P0, !PT                                            ?trans1;           /* 0x00000007ff077210 */
+                                                                                                                                         /* 0x000fe200007fe4ff */
+        /*19c0*/                   MOV R18, R6                                               &req={0}                 ?WAIT4_END_GROUP;  /* 0x0000000600127202 */
+                                                                                                                                         /* 0x001fc80000000f00 */
+        /*19d0*/                   MOV R19, R7                                                                        ?WAIT3_END_GROUP;  /* 0x0000000700137202 */
+                                                                                                                                         /* 0x000fc60000000f00 */
+        /*19e0*/               @P1 BRA 0x1860                                                                         ?trans5;           /* 0xfffffffc009c1947 */
+                                                                                                                                         /* 0x000fea000383ffff */
+        /*19f0*/                   MOV R23, R9                                                                        ?WAIT7_END_GROUP;  /* 0x0000000900177202 */
+                                                                                                                                         /* 0x000fce0000000f00 */
+        /*1a00*/                   SHF.R.S32.HI R5, RZ, 0x1f, R23                                                     ?trans1;           /* 0x0000001fff057819 */
+                                                                                                                                         /* 0x000fe20000011417 */
+        /*1a10*/                   HFMA2 R3, -RZ, RZ, 0, 0                                                            ?trans1;           /* 0x00000000ff037431 */
+                                                                                                                                         /* 0x000fe200000001ff */
+        /*1a20*/                   MOV R4, R23                                                                        ?trans1;           /* 0x0000001700047202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1a30*/                   LOP3.LUT P0, R23, R0, 0x3f, RZ, 0xc0, !PT                                          ?WAIT4_END_GROUP;  /* 0x0000003f00177812 */
+                                                                                                                                         /* 0x000fc8000780c0ff */
+        /*1a40*/                   IADD.64 R2, R4, R2                                                                 ?WAIT6_END_GROUP;  /* 0x0000000204027235 */
+                                                                                                                                         /* 0x000fcc00078e0200 */
+        /*1a50*/                   IMAD.U32 R17, R2, 0x8, R8                                                          ?WAIT5_END_GROUP;  /* 0x0000000802117824 */
+                                                                                                                                         /* 0x000fca00078e0008 */
+        /*1a60*/                   STL.64 [R17+-0x78], R18                                   &rd=0x0                  ?trans4;           /* 0xffff881211007387 */
+                                                                                                                                         /* 0x0001e80000100a00 */
+        /*1a70*/                   LDL.64 R20, [R1+0x18]                                     &wr=0x2                  ?trans4;           /* 0x0000180001147983 */
+                                                                                                                                         /* 0x000ea80000100a00 */
+        /*1a80*/                   LDL.64 R2, [R1+0x20]                                      &wr=0x3                  ?trans4;           /* 0x0000200001027983 */
+                                                                                                                                         /* 0x000ee80000100a00 */
+        /*1a90*/               @P0 LDL.64 R4, [R1+0x10]                                      &wr=0x4                  ?trans1;           /* 0x0000100001040983 */
+                                                                                                                                         /* 0x000f220000100a00 */
+        /*1aa0*/               @P0 IADD3 R0, PT, PT, -R23, 0x40, RZ                                                   ?WAIT4_END_GROUP;  /* 0x0000004017000810 */
+                                                                                                                                         /* 0x000fc80007ffe1ff */
+        /*1ab0*/               @P0 SHF.R.U64 R6, R20, R0.reuse, R21.reuse                    &req={2}                 ?trans2;           /* 0x0000000014060219 */
+                                                                                                                                         /* 0x184fe40000001215 */
+        /*1ac0*/               @P0 SHF.R.U32.HI R7, RZ, R0, R21                                                       ?trans2;           /* 0x00000000ff070219 */
+                                                                                                                                         /* 0x000fe40000011615 */
+        /*1ad0*/               @P0 SHF.L.U32 R9, R2.reuse, R23.reuse, RZ                     &req={3}                 ?trans2;           /* 0x0000001702090219 */
+                                                                                                                                         /* 0x0c8fe400000006ff */
+        /*1ae0*/               @P0 SHF.L.U64.HI R8, R2, R23, R3                                                       ?trans2;           /* 0x0000001702080219 */
+                                                                                                                                         /* 0x000fe40000010203 */
+        /*1af0*/               @P0 LOP3.LUT R6, R9, R6, RZ, 0xfc, !PT                                                 ?trans2;           /* 0x0000000609060212 */
+                                                                                                                                         /* 0x000fe400078efcff */
+        /*1b00*/               @P0 SHF.R.U64 R4, R4, R0, R5                                  &req={4}                 ?WAIT2_END_GROUP;  /* 0x0000000004040219 */
+                                                                                                                                         /* 0x010fc40000001205 */
+        /*1b10*/               @P0 SHF.R.U32.HI R0, RZ, R0, R5                                                        ?trans2;           /* 0x00000000ff000219 */
+                                                                                                                                         /* 0x000fe40000011605 */
+        /*1b20*/               @P0 SHF.L.U64.HI R5, R20, R23, R21                                                     ?trans1;           /* 0x0000001714050219 */
+                                                                                                                                         /* 0x000fe20000010215 */
+        /*1b30*/               @P0 MOV R2, R6                                                                         ?trans1;           /* 0x0000000600020202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1b40*/               @P0 LOP3.LUT R7, R8, R7, RZ, 0xfc, !PT                                                 ?trans2;           /* 0x0000000708070212 */
+                                                                                                                                         /* 0x000fe400078efcff */
+        /*1b50*/               @P0 LOP3.LUT R21, R0, R5, RZ, 0xfc, !PT                                                ?trans2;           /* 0x0000000500150212 */
+                                                                                                                                         /* 0x000fe400078efcff */
+        /*1b60*/               @P0 SHF.L.U32 R9, R20, R23, RZ                                                         ?trans1;           /* 0x0000001714090219 */
+                                                                                                                                         /* 0x000fe200000006ff */
+        /*1b70*/                   IMAD.SHL.U32 R0, R2, 0x4, RZ                                                       ?trans1;           /* 0x0000000402007824 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*1b80*/               @P0 MOV R3, R7                                                                         ?trans1;           /* 0x0000000700030202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1b90*/                   SHF.R.U32.HI R5, RZ, 0x1e, R21                                                     ?WAIT2_END_GROUP;  /* 0x0000001eff057819 */
+                                                                                                                                         /* 0x000fc40000011615 */
+        /*1ba0*/               @P0 LOP3.LUT R20, R4, R9, RZ, 0xfc, !PT                                                ?trans2;           /* 0x0000000904140212 */
+                                                                                                                                         /* 0x000fe400078efcff */
+        /*1bb0*/                   LOP3.LUT R6, R0, R5, RZ, 0xfc, !PT                                                 ?trans2;           /* 0x0000000500067212 */
+                                                                                                                                         /* 0x000fe400078efcff */
+        /*1bc0*/                   SHF.L.U64.HI R0, R2, 0x2, R3                                                       ?trans2;           /* 0x0000000202007819 */
+                                                                                                                                         /* 0x000fe40000010203 */
+        /*1bd0*/                   SHF.L.U64.HI R21, R20.reuse, 0x2, R21                                              ?trans1;           /* 0x0000000214157819 */
+                                                                                                                                         /* 0x040fe20000010215 */
+        /*1be0*/                   IMAD.SHL.U32 R20, R20, 0x4, RZ                                                     ?trans1;           /* 0x0000000414147824 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*1bf0*/                   LOP3.LUT R4, RZ, R6, RZ, 0x33, !PT                                                 ?trans1;           /* 0x00000006ff047212 */
+                                                                                                                                         /* 0x000fe200078e33ff */
+        /*1c00*/                   MOV R7, R0                                                                         ?trans1;           /* 0x0000000000077202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1c10*/                   LOP3.LUT R8, RZ, R21, RZ, 0x33, !PT                                                ?WAIT2_END_GROUP;  /* 0x00000015ff087212 */
+                                                                                                                                         /* 0x000fc400078e33ff */
+        /*1c20*/                   IADD3 RZ, P0, PT, RZ, -R20, RZ                                                     ?trans2;           /* 0x80000014ffff7210 */
+                                                                                                                                         /* 0x000fe40007f1e0ff */
+        /*1c30*/                   ISETP.GT.S64.AND P1, PT, R6, -0x1, PT                                              ?WAIT3_END_GROUP;  /* 0xffffffff0600780c */
+                                                                                                                                         /* 0x000fc60003f34270 */
+        /*1c40*/                   IADD3.X R9, P0, PT, RZ, R8, RZ, P0, !PT                                            ?trans2;           /* 0x00000008ff097210 */
+                                                                                                                                         /* 0x000fe4000071e4ff */
+        /*1c50*/                   LOP3.LUT R5, RZ, R0, RZ, 0x33, !PT                                                 ?trans2;           /* 0x00000000ff057212 */
+                                                                                                                                         /* 0x000fe400078e33ff */
+        /*1c60*/                   IADD3.X R4, P0, PT, RZ, R4, RZ, P0, !PT                                            ?WAIT4_END_GROUP;  /* 0x00000004ff047210 */
+                                                                                                                                         /* 0x000fc8000071e4ff */
+        /*1c70*/                   IADD3.X R5, PT, PT, RZ, R5, RZ, P0, !PT                                            ?WAIT3_END_GROUP;  /* 0x00000005ff057210 */
+                                                                                                                                         /* 0x000fc600007fe4ff */
+        /*1c80*/              @!P1 MOV R6, R4                                                                         ?trans1;           /* 0x0000000400069202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1c90*/               @P1 MOV R9, R21                                                                        ?trans1;           /* 0x0000001500091202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1ca0*/              @!P1 MOV R7, R5                                                                         ?WAIT5_END_GROUP;  /* 0x0000000500079202 */
+                                                                                                                                         /* 0x000fca0000000f00 */
+        /*1cb0*/                   ISETP.NE.U32.AND P0, PT, R7, RZ, PT                                                ?WAIT5_END_GROUP;  /* 0x000000ff0700720c */
+                                                                                                                                         /* 0x000fca0003f05070 */
+        /*1cc0*/                   SEL R4, R6, R7, !P0                                                                ?WAIT6_END_GROUP;  /* 0x0000000706047207 */
+                                                                                                                                         /* 0x000fcc0004000000 */
+        /*1cd0*/                   FLO.U32 R4, R4                                            &wr=0x1                  ?trans2;           /* 0x0000000400047300 */
+                                                                                                                                         /* 0x000e6400000e0000 */
+        /*1ce0*/                   IADD3 R5, PT, PT, -R4.reuse, 0x1f, RZ                     &req={1}                 ?trans2;           /* 0x0000001f04057810 */
+                                                                                                                                         /* 0x042fe40007ffe1ff */
+        /*1cf0*/                   IADD3 R8, PT, PT, -R4, 0x3f, RZ                                                    ?trans2;           /* 0x0000003f04087810 */
+                                                                                                                                         /* 0x000fe40007ffe1ff */
+        /*1d00*/               @P0 IADD3 R8, PT, PT, R5, RZ, RZ                                                       ?trans1;           /* 0x000000ff05080210 */
+                                                                                                                                         /* 0x000fe20007ffe0ff */
+        /*1d10*/                   HFMA2 R5, -RZ, RZ, 0, 0                                                            ?WAIT4_END_GROUP;  /* 0x00000000ff057431 */
+                                                                                                                                         /* 0x000fc800000001ff */
+        /*1d20*/                   MOV R4, R8                                                                         ?trans1;           /* 0x0000000800047202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1d30*/                   IADD3 R8, PT, PT, -R20, RZ, RZ                                                     ?trans1;           /* 0x000000ff14087210 */
+                                                                                                                                         /* 0x000fe20007ffe1ff */
+        /*1d40*/               @P1 MOV R8, R20                                                                        ?WAIT3_END_GROUP;  /* 0x0000001400081202 */
+                                                                                                                                         /* 0x000fc60000000f00 */
+        /*1d50*/                   ISETP.NE.S64.AND P0, PT, R4, RZ, PT                                                ?WAIT14_END_GROUP; /* 0x000000ff0400720c */
+                                                                                                                                         /* 0x000fdc0003f15270 */
+        /*1d60*/              @!P0 BRA 0x1de0                                                &req={0}                 ?trans5;           /* 0x00000000001c8947 */
+                                                                                                                                         /* 0x001fea0003800000 */
+        /*1d70*/                   IADD3 R17, PT, PT, -R4, 0x40, RZ                                                   ?trans2;           /* 0x0000004004117810 */
+                                                                                                                                         /* 0x000fe40007ffe1ff */
+        /*1d80*/                   SHF.L.U32 R19, R6.reuse, R4.reuse, RZ                                              ?trans2;           /* 0x0000000406137219 */
+                                                                                                                                         /* 0x0c0fe400000006ff */
+        /*1d90*/                   SHF.L.U64.HI R18, R6, R4, R7                                                       ?trans2;           /* 0x0000000406127219 */
+                                                                                                                                         /* 0x000fe40000010207 */
+        /*1da0*/                   SHF.R.U64 R6, R8, R17.reuse, R9.reuse                                              ?trans2;           /* 0x0000001108067219 */
+                                                                                                                                         /* 0x180fe40000001209 */
+        /*1db0*/                   SHF.R.U32.HI R7, RZ, R17, R9                                                       ?trans2;           /* 0x00000011ff077219 */
+                                                                                                                                         /* 0x000fe40000011609 */
+        /*1dc0*/                   LOP3.LUT R6, R6, R19, RZ, 0xfc, !PT                                                ?WAIT2_END_GROUP;  /* 0x0000001306067212 */
+                                                                                                                                         /* 0x000fc400078efcff */
+        /*1dd0*/                   LOP3.LUT R7, R7, R18, RZ, 0xfc, !PT                                                ?WAIT7_END_GROUP;  /* 0x0000001207077212 */
+                                                                                                                                         /* 0x000fce00078efcff */
+        /*1de0*/                   IMAD.WIDE.U32 R18, R6, 0x2168c235, RZ                                              ?trans1;           /* 0x2168c23506127825 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*1df0*/                   MOV R9, RZ                                                                         ?trans1;           /* 0x000000ff00097202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1e00*/                   LDCU UR4, c[0x0][0x2f8]                                   &wr=0x0                  ?trans1;           /* 0x00005f00ff0477ac */
+                                                                                                                                         /* 0x000e220008000800 */
+        /*1e10*/                   SHF.R.U32.HI R3, RZ, 0x1e, R3                                                      ?trans1;           /* 0x0000001eff037819 */
+                                                                                                                                         /* 0x000fe20000011603 */
+        /*1e20*/                   IMAD.HI.U32 R2, R7, -0x36f0255e, RZ                                                ?trans1;           /* 0xc90fdaa207027827 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*1e30*/                   MOV R8, R19                                                                        ?trans1;           /* 0x0000001300087202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1e40*/                   LDCU UR5, c[0x0][0x2fc]                                   &wr=0x0                  ?trans1;           /* 0x00005f80ff0577ac */
+                                                                                                                                         /* 0x000e220008000800 */
+        /*1e50*/                   LEA.HI R0, R0, R3, RZ, 0x1                                                         ?WAIT3_END_GROUP;  /* 0x0000000300007211 */
+                                                                                                                                         /* 0x000fc600078f08ff */
+        /*1e60*/                   IMAD.WIDE.U32 R8, R6, -0x36f0255e, R8                                              ?WAIT4_END_GROUP;  /* 0xc90fdaa206087825 */
+                                                                                                                                         /* 0x000fc800078e0008 */
+        /*1e70*/                   IMAD.WIDE.U32 R8, P0, R7, 0x2168c235, R8                                           ?WAIT4_END_GROUP;  /* 0x2168c23507087825 */
+                                                                                                                                         /* 0x000fc80007800008 */
+        /*1e80*/                   IMAD R7, R7, -0x36f0255e, RZ                                                       ?trans1;           /* 0xc90fdaa207077824 */
+                                                                                                                                         /* 0x000fe200078e02ff */
+        /*1e90*/                   IADD3.X R2, PT, PT, R2, RZ, RZ, P0, !PT                                            ?trans1;           /* 0x000000ff02027210 */
+                                                                                                                                         /* 0x000fe200007fe4ff */
+        /*1ea0*/                   IADD.64 R12, R12, -UR4                                    &req={0}                 ?WAIT3_END_GROUP;  /* 0x800000040c0c7c35 */
+                                                                                                                                         /* 0x001fc6000f8e0200 */
+        /*1eb0*/                   IADD3 R6, P0, PT, R7, R9, RZ                                                       ?WAIT4_END_GROUP;  /* 0x0000000907067210 */
+                                                                                                                                         /* 0x000fc80007f1e0ff */
+        /*1ec0*/                   IADD3.X R7, PT, PT, RZ, R2, RZ, P0, !PT                                            ?trans2;           /* 0x00000002ff077210 */
+                                                                                                                                         /* 0x000fe400007fe4ff */
+        /*1ed0*/                   IADD3 RZ, P0, PT, R18, R18, RZ                                                     ?WAIT3_END_GROUP;  /* 0x0000001212ff7210 */
+                                                                                                                                         /* 0x000fc60007f1e0ff */
+        /*1ee0*/                   ISETP.GT.S64.AND P2, PT, R6, RZ, PT                                                ?WAIT3_END_GROUP;  /* 0x000000ff0600720c */
+                                                                                                                                         /* 0x000fc60003f54270 */
+        /*1ef0*/                   IADD3.X RZ, P0, PT, R8, R8, RZ, P0, !PT                                            ?WAIT4_END_GROUP;  /* 0x0000000808ff7210 */
+                                                                                                                                         /* 0x000fc8000071e4ff */
+        /*1f00*/                   IADD3.X R2, P0, PT, R6, R6, RZ, P0, !PT                                            ?WAIT4_END_GROUP;  /* 0x0000000606027210 */
+                                                                                                                                         /* 0x000fc8000071e4ff */
+        /*1f10*/                   IADD3.X R9, PT, PT, R7, R7, RZ, P0, !PT                                            ?trans2;           /* 0x0000000707097210 */
+                                                                                                                                         /* 0x000fe400007fe4ff */
+        /*1f20*/                   LOP3.LUT P0, R14, R15, 0x80000000, RZ, 0xc0, !PT                                   ?trans1;           /* 0x800000000f0e7812 */
+                                                                                                                                         /* 0x000fe2000780c0ff */
+        /*1f30*/               @P2 MOV R6, R2                                                                         ?trans2;           /* 0x0000000200062202 */
+                                                                                                                                         /* 0x000fe40000000f00 */
+        /*1f40*/               @P2 MOV R7, R9                                                                         ?trans1;           /* 0x0000000900072202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*1f50*/                   SEL.64 R2, RZ, -0x1, !P2                                                           ?WAIT3_END_GROUP;  /* 0xffffffffff027407 */
+                                                                                                                                         /* 0x000fc60005000001 */
+        /*1f60*/              @!P1 LOP3.LUT R14, R14, 0x80000000, RZ, 0x3c, !PT                                       ?trans1;           /* 0x800000000e0e9812 */
+                                                                                                                                         /* 0x000fe200078e3cff */
+        /*1f70*/                   IADD.64 R6, R6, 0x1                                                                ?trans2;           /* 0x0000000106067835 */
+                                                                                                                                         /* 0x000fe400078e0200 */
+        /*1f80*/                   IADD.64 R2, -R4, R2                                                                ?WAIT3_END_GROUP;  /* 0x0000000204027235 */
+                                                                                                                                         /* 0x000fc600078e0300 */
+        /*1f90*/                   SHF.R.U64 R6, R6, 0xa, R7.reuse                                                    ?trans2;           /* 0x0000000a06067819 */
+                                                                                                                                         /* 0x100fe40000001207 */
+        /*1fa0*/                   SHF.R.U32.HI R7, RZ, 0xa, R7                                                       ?trans1;           /* 0x0000000aff077819 */
+                                                                                                                                         /* 0x000fe20000011607 */
+        /*1fb0*/                   IMAD.SHL.U32 R3, R2, 0x100000, RZ                                                  ?trans1;           /* 0x0010000002037824 */
+                                                                                                                                         /* 0x000fe200078e00ff */
+        /*1fc0*/               @P0 IADD3 R0, PT, PT, -R0, RZ, RZ                                                      ?trans1;           /* 0x000000ff00000210 */
+                                                                                                                                         /* 0x000fe20007ffe1ff */
+        /*1fd0*/                   MOV R2, RZ                                                                         ?trans2;           /* 0x000000ff00027202 */
+                                                                                                                                         /* 0x000fe40000000f00 */
+        /*1fe0*/                   IADD.64 R4, R6, 0x1                                                                ?trans2;           /* 0x0000000106047835 */
+                                                                                                                                         /* 0x000fe400078e0200 */
+        /*1ff0*/                   STL [R12], R0                                             &rd=0x0                  ?trans1;           /* 0x000000000c007387 */
+                                                                                                                                         /* 0x0001e20000100800 */
+        /*2000*/                   MOV.64 R6, 0x3fe0000000000000                                                      ?WAIT3_END_GROUP;  /* 0x0000000000067402 */
+                                                                                                                                         /* 0x000fc600003fe000 */
+        /*2010*/                   SHF.R.U64 R4, R4, 0x1, R5.reuse                                                    ?trans2;           /* 0x0000000104047819 */
+                                                                                                                                         /* 0x100fe40000001205 */
+        /*2020*/                   SHF.R.U32.HI R5, RZ, 0x1, R5                                                       ?WAIT5_END_GROUP;  /* 0x00000001ff057819 */
+                                                                                                                                         /* 0x000fca0000011605 */
+        /*2030*/                   IADD.64 R2, R2, R4                                                                 ?WAIT4_END_GROUP;  /* 0x0000000402027235 */
+                                                                                                                                         /* 0x000fc800078e0200 */
+        /*2040*/                   IADD.64 R2, R2, R6                                                                 ?WAIT5_END_GROUP;  /* 0x0000000602027235 */
+                                                                                                                                         /* 0x000fca00078e0200 */
+        /*2050*/                   LOP3.LUT R15, R3, R14, RZ, 0xfc, !PT                                               ?trans1;           /* 0x0000000e030f7212 */
+                                                                                                                                         /* 0x000fe200078efcff */
+        /*2060*/                   MOV R14, R2                                               &req={0}                 ?WAIT7_END_GROUP;  /* 0x00000002000e7202 */
+                                                                                                                                         /* 0x001fce0000000f00 */
+        /*2070*/                   HFMA2 R17, -RZ, RZ, 0, 0                                                           ?trans1;           /* 0x00000000ff117431 */
+                                                                                                                                         /* 0x000fe200000001ff */
+        /*2080*/                   MOV R2, R14                                                                        ?trans1;           /* 0x0000000e00027202 */
+                                                                                                                                         /* 0x000fe20000000f00 */
+        /*2090*/                   MOV R3, R15                                                                        ?trans2;           /* 0x0000000f00037202 */
+                                                                                                                                         /* 0x000fe40000000f00 */
+        /*20a0*/                   RET.REL.NODEC R16 0x0                                                              ?trans5;           /* 0xffffffdc10d47950 */
+                                                                                                                                         /* 0x000fea0003c3ffff */
+        /*20b0*/                   BRA 0x20b0;                                                                                           /* 0xfffffffc00fc7947 */
+                                                                                                                                         /* 0x000fc0000383ffff */
+        /*20c0*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*20d0*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*20e0*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*20f0*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2100*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2110*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2120*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2130*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2140*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2150*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2160*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+        /*2170*/                   NOP;                                                                                                  /* 0x0000000000007918 */
+                                                                                                                                         /* 0x000fc00000000000 */
+		..........
+
+

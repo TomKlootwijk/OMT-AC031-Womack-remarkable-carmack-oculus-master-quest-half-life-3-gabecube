@@ -1,0 +1,159 @@
+{
+  "schema": "atomos.rotation_fold_native.v1",
+  "created_utc": "2026-09-13T11:30:19.439438+00:00",
+  "scope": "offline native code/resources plus root-executed value probe; no folded GPU execution or residency claim",
+  "fixed_binary64_argument": "0x1.999999999999ap-2",
+  "cos_constant": "0x1.d7954e7dba2f8p-1",
+  "sin_constant": "0x1.8ec3ae92b676bp-2",
+  "proof": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\rotation_rounding.json",
+    "sha256": "7021f21757a8ecb6cfa1a34b43dded03a23ff8dcc5a1adb94e531497c0e01e79",
+    "kind": "exact rational analytic enclosure; not a binary proof"
+  },
+  "runtime_value_probe": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\rotation_probe_gpu.json",
+    "sha256": "36dc377ce986161f24a76ce08a0f066afcbd159784301c296920d228d7069ca8",
+    "utf8_copy": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\rotation_probe_gpu_utf8.json",
+    "status": "matched",
+    "executed_by": "root agent"
+  },
+  "prefold_provenance": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\rotation_prefold_provenance.json",
+  "prefold_executable_sha256": "6d8b0e82f47be33551ea63da75e2d65f8e8b66c128c284b84cf6cd9c5e367ac5",
+  "comparison_pair": "padded pre-fold binary 6d8b0e82 versus same padded source after fixed-rotation folding",
+  "older_unpadded_artifacts": "bulk_prefold_sass.txt/resources.txt refer to the earlier d4a67af1 binary (REG105); excluded from this controlled comparison",
+  "folded_snapshots": [
+    {
+      "source": "C:\\Users\\Tom\\.cache\\ak1\\bulk_fold_sm120\\Release\\atomos_cache_bulk.exe",
+      "snapshot": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\atomos_cache_bulk_folded.exe",
+      "sha256": "1942f1db273ebd4aa604ccef30f3d1e51bcc96e1a576273ddc7769084a4e8e4b",
+      "bytes": 1417216
+    },
+    {
+      "source": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\include\\atomos\\core.hpp",
+      "snapshot": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\core_folded.hpp",
+      "sha256": "3caf491f29fa0704d8ad596530c71dd30e66da551e070949debac0ac70b99e0a",
+      "bytes": 7312
+    },
+    {
+      "source": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\experiments\\cache_bulk.cu",
+      "snapshot": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\cache_bulk_folded.cu",
+      "sha256": "80d843d9fa6ab75e802aa6fb036d5833e4684a397406d48c6b8ca02baf0dbc96",
+      "bytes": 21844
+    }
+  ],
+  "toolchain": {
+    "cuda": "12.8.61",
+    "msvc": "19.44.35221.0",
+    "host_toolset": "14.44.35207",
+    "architectures": [
+      "sm_120",
+      "compute_120"
+    ],
+    "fmad": false,
+    "build_log": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\bulk_fold_build.log"
+  },
+  "native_before": [
+    {
+      "name": "_ZN17cache_bulk_detail23atomos_epoch_bulk_probeEN6atomos6ConfigEPKNS0_5StateEPKNS0_4LaneEyPNS0_6ResultEP5uint4SB_SB_SB_jj",
+      "scope": "actual_bulk_kernel",
+      "resources": "REG:107 STACK:0 SHARED:11784 LOCAL:0 CONSTANT[0]:1000 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 12,
+      "static_ldg_all": 12,
+      "static_stg_all": 0,
+      "static_tld": 15,
+      "static_cctl_ivall": 7
+    },
+    {
+      "name": "_ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de219atomos_epoch_packedENS_6ConfigEPKNS_5StateEPKNS_4LaneEyPNS_6ResultE",
+      "scope": "included_production_kernel_not_launched_by_bulk_executable",
+      "resources": "REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:960 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 12,
+      "static_ldg_all": 33,
+      "static_stg_all": 21,
+      "static_tld": 1,
+      "static_cctl_ivall": 0
+    },
+    {
+      "name": "_ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de219atomos_epoch_globalENS_6ConfigEPKNS_5StateEPKNS_4LaneEPKjS9_S9_S9_PNS_6ResultE",
+      "scope": "included_production_kernel_not_launched_by_bulk_executable",
+      "resources": "REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:984 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 12,
+      "static_ldg_all": 37,
+      "static_stg_all": 21,
+      "static_tld": 0,
+      "static_cctl_ivall": 0
+    },
+    {
+      "name": "_ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de220atomos_epoch_textureENS_6ConfigEPKNS_5StateEPKNS_4LaneEyyyyPNS_6ResultE",
+      "scope": "included_production_kernel_not_launched_by_bulk_executable",
+      "resources": "REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:984 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 12,
+      "static_ldg_all": 33,
+      "static_stg_all": 21,
+      "static_tld": 4,
+      "static_cctl_ivall": 0
+    }
+  ],
+  "native_after": [
+    {
+      "name": "_ZN17cache_bulk_detail23atomos_epoch_bulk_probeEN6atomos6ConfigEPKNS0_5StateEPKNS0_4LaneEyPNS0_6ResultEP5uint4SB_SB_SB_jj",
+      "scope": "actual_bulk_kernel",
+      "resources": "REG:84 STACK:0 SHARED:11784 LOCAL:0 CONSTANT[0]:1000 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 0,
+      "static_ldg_all": 0,
+      "static_stg_all": 0,
+      "static_tld": 15,
+      "static_cctl_ivall": 7
+    },
+    {
+      "name": "_ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de219atomos_epoch_packedENS_6ConfigEPKNS_5StateEPKNS_4LaneEyPNS_6ResultE",
+      "scope": "included_production_kernel_not_launched_by_bulk_executable",
+      "resources": "REG:74 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:960 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 0,
+      "static_ldg_all": 21,
+      "static_stg_all": 21,
+      "static_tld": 1,
+      "static_cctl_ivall": 0
+    },
+    {
+      "name": "_ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de219atomos_epoch_globalENS_6ConfigEPKNS_5StateEPKNS_4LaneEPKjS9_S9_S9_PNS_6ResultE",
+      "scope": "included_production_kernel_not_launched_by_bulk_executable",
+      "resources": "REG:74 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:984 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 0,
+      "static_ldg_all": 25,
+      "static_stg_all": 21,
+      "static_tld": 0,
+      "static_cctl_ivall": 0
+    },
+    {
+      "name": "_ZN6atomos46_GLOBAL__N__af54bf11_13_cache_bulk_cu_f7908de220atomos_epoch_textureENS_6ConfigEPKNS_5StateEPKNS_4LaneEyyyyPNS_6ResultE",
+      "scope": "included_production_kernel_not_launched_by_bulk_executable",
+      "resources": "REG:74 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:984 TEXTURE:0 SURFACE:0 SAMPLER:0",
+      "static_ldg_constant": 0,
+      "static_ldg_all": 21,
+      "static_stg_all": 21,
+      "static_tld": 4,
+      "static_cctl_ivall": 0
+    }
+  ],
+  "coefficient_load_elimination": {
+    "status": "passed",
+    "actual_bulk_before": 12,
+    "actual_bulk_after": 0,
+    "actual_bulk_ldg_all_after": 0,
+    "actual_bulk_stg_all_after": 0
+  },
+  "cpu_regression": {
+    "baseline": "passed",
+    "folded": "passed",
+    "groups": 32,
+    "assertions": 134521,
+    "baseline_log": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\rotation_cpu_baseline_test.log",
+    "folded_log": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\rotation_cpu_fold_test.log",
+    "new_case": "fixed rotation singularity/profile semantics at both signs and nearby available case"
+  },
+  "folded_gpu_correctness": "not_run_by_kernel_review",
+  "folded_gpu_cache_effect": "not_run_by_kernel_review",
+  "interpretation": "Replacing fixed sin/cos with identical binary64 constants removes all 12 coefficient loads from the actual TMA bulk kernel. Register allocation also changes, so any observed cache difference is the effect of the compiled change, not proof attributing every miss to coefficients alone.",
+  "analysis_source_sha256": "ff901492be7cdc930ce125a68716a2a43e46d697c451767e895d94c111d50d6d"
+}

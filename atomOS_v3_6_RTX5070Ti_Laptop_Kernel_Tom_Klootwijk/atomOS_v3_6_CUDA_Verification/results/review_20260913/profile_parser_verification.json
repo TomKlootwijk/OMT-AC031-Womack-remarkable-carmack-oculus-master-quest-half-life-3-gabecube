@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "scope": "CPU-only parser and discovery checks; no GPU launched",
+  "input": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\review_20260913\\first_counters.csv",
+  "parsed_observed_metrics": {
+    "l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum": {
+      "raw_value": "256",
+      "unit": "",
+      "value": 256,
+      "status": "collected"
+    },
+    "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+      "raw_value": "2.048",
+      "unit": "sector",
+      "value": 2048,
+      "status": "collected"
+    },
+    "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+      "raw_value": "0",
+      "unit": "sector",
+      "value": 0,
+      "status": "collected"
+    },
+    "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+      "raw_value": "2.048",
+      "unit": "sector",
+      "value": 2048,
+      "status": "collected"
+    },
+    "gpu__time_duration.sum": {
+      "raw_value": "36.640",
+      "unit": "ns",
+      "value": 36640,
+      "status": "collected"
+    }
+  },
+  "diagnostics": {
+    "launch__shared_mem_config_size": {
+      "raw_value": "32.768",
+      "unit": "byte",
+      "value": 32768,
+      "status": "collected"
+    }
+  },
+  "checks": [
+    "wide CSV with Dutch grouping",
+    "long CSV with Dutch/English/no grouping",
+    "missing metrics retain null/not_run",
+    "duplicate launches fail",
+    "unavailable/nonfinite/negative/nonintegral metrics rejected",
+    "config parsing",
+    "native Nsight executable discovery"
+  ],
+  "native_ncu": "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2025.1.0\\target\\windows-desktop-win7-x64\\ncu.exe",
+  "python": "C:\\Users\\Tom\\miniconda3\\python.exe"
+}

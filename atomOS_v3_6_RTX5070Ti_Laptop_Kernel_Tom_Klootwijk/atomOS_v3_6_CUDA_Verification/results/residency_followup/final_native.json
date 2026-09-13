@@ -1,0 +1,314 @@
+{
+  "schema": "atomos-bulk-final-native-audit-1",
+  "gpu_execution": "not_run_by_this_audit",
+  "commands": [
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\cuobjdump.exe",
+        "--dump-sass",
+        "C:\\Users\\Tom\\.cache\\ak1\\bulk_export_sm120\\Release\\atomos_cache_bulk.exe"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\cuobjdump.exe",
+        "--dump-resource-usage",
+        "C:\\Users\\Tom\\.cache\\ak1\\bulk_export_sm120\\Release\\atomos_cache_bulk.exe"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\cuobjdump.exe",
+        "--dump-sass",
+        "C:\\Users\\Tom\\.cache\\ak1\\bulk_fold_sm120\\Release\\atomos_cache_bulk.exe"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "executable": "C:\\Users\\Tom\\.cache\\ak1\\bulk_export_sm120\\Release\\atomos_cache_bulk.exe",
+  "executable_sha256": "fc25b2f435bc3c1ccbcdc2ed8f494ef3247285b357541b72f2855e8b83a175e4",
+  "tool": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\cuobjdump.exe",
+  "tool_sha256": "291b5e9b821564541fa21d92ff0ab3d5df0b2764d40ec6f49c8dfbdad5a9227a",
+  "architecture": "sm_120",
+  "ptx_isa": "8.7",
+  "ptxas_options": "--fmad false --generate-line-info",
+  "kernel": "_ZN17cache_bulk_detail23atomos_epoch_bulk_probeEN6atomos6ConfigEPKNS0_5StateEPKNS0_4LaneEyPNS0_6ResultEP5uint4SB_SB_SB_jj",
+  "resources": {
+    "registers_per_thread": 84,
+    "stack_bytes": 0,
+    "local_bytes": 0,
+    "cuobjdump_shared_bytes": 11784,
+    "source_shared_union_bytes": 10752,
+    "source_mbarrier_bytes": 8,
+    "source_user_shared_bytes": 10760,
+    "difference_from_user_shared_bytes": 1024,
+    "common_global_bytes": 3,
+    "constant_bank_0_bytes": 1000
+  },
+  "static_instruction_count": 6856,
+  "static_opcode_counts": {
+    "ATOM.E.ADD.STRONG.GPU": 2,
+    "BAR.SYNC.DEFER_BLOCKING": 19,
+    "BPT.TRAP": 2,
+    "BRA": 244,
+    "BRA.DIV": 3,
+    "BRA.U.ANY": 29,
+    "BREAK.RELIABLE": 50,
+    "BSSY": 5,
+    "BSSY.RECONVERGENT": 93,
+    "BSSY.RELIABLE": 8,
+    "BSYNC": 5,
+    "BSYNC.RECONVERGENT": 93,
+    "BSYNC.RELIABLE": 8,
+    "CALL.REL.NOINC": 16,
+    "CCTL.IVALL": 7,
+    "CGAERRBAR": 2,
+    "CS2R": 33,
+    "DADD": 115,
+    "DEPBAR.LE": 9,
+    "DFMA": 413,
+    "DMUL": 97,
+    "DMUL.RP": 1,
+    "DSETP.EQ.AND": 7,
+    "DSETP.GE.AND": 28,
+    "DSETP.GEU.AND": 22,
+    "DSETP.GT.AND": 14,
+    "DSETP.GTU.AND": 9,
+    "DSETP.MAX.AND": 7,
+    "DSETP.MIN.AND": 8,
+    "DSETP.NAN.AND": 23,
+    "DSETP.NEU.AND": 83,
+    "DSETP.NEU.OR": 7,
+    "DSETP.NUM.AND": 1,
+    "ELECT": 18,
+    "ENDCOLLECTIVE": 3,
+    "ERRBAR": 2,
+    "EXIT": 2,
+    "F2I.FTZ.U32.TRUNC.NTZ": 4,
+    "FENCE.VIEW.ASYNC.S": 7,
+    "FFMA": 16,
+    "FLO.U32": 2,
+    "FSEL": 252,
+    "FSETP.GEU.AND": 18,
+    "FSETP.GT.AND": 16,
+    "FSETP.GTU.AND": 1,
+    "FSETP.NEU.AND": 2,
+    "HFMA2": 56,
+    "I2F.U32.RP": 4,
+    "IADD.64": 58,
+    "IADD3": 165,
+    "IMAD": 27,
+    "IMAD.HI.U32": 8,
+    "IMAD.SHL.U32": 14,
+    "IMAD.U32": 1,
+    "IMAD.WIDE.U32": 1,
+    "IMNMX.U64": 4,
+    "ISETP.EQ.OR": 16,
+    "ISETP.EQ.U32.AND": 2,
+    "ISETP.GE.AND": 28,
+    "ISETP.GE.U32.AND": 28,
+    "ISETP.GE.U32.OR": 2,
+    "ISETP.GE.U64.AND": 4,
+    "ISETP.GT.AND": 30,
+    "ISETP.GT.U32.AND": 17,
+    "ISETP.GT.U32.OR": 1,
+    "ISETP.NE.AND": 79,
+    "ISETP.NE.S64.AND": 22,
+    "ISETP.NE.U32.AND": 4,
+    "LD.E.STRONG.GPU": 2,
+    "LDC": 7,
+    "LDC.64": 3,
+    "LDCU": 20,
+    "LDCU.64": 10,
+    "LDS.128": 5,
+    "LDS.64": 1,
+    "LEA": 13,
+    "LEA.HI": 15,
+    "LEA.HI.X": 2,
+    "LOP3.LUT": 254,
+    "MEMBAR.ALL.CTA": 8,
+    "MEMBAR.ALL.GPU": 2,
+    "MOV": 395,
+    "MOV.64": 133,
+    "MUFU.RCP": 4,
+    "MUFU.RCP64H": 24,
+    "MUFU.RSQ64H": 1,
+    "NOP": 2620,
+    "PLOP3.LUT": 103,
+    "POPC": 4,
+    "R2UR": 22,
+    "RET.REL.NODEC": 1,
+    "S2R": 18,
+    "S2UR": 13,
+    "SEL": 31,
+    "SEL.64": 14,
+    "SHF.L.U32": 18,
+    "SHF.L.U64.HI": 14,
+    "SHF.R.U32.HI": 54,
+    "SHF.R.U64": 16,
+    "SHFL.IDX": 2,
+    "STS.128": 4,
+    "STS.64": 21,
+    "SYNCS.ARRIVE.TRANS64": 1,
+    "SYNCS.CCTL.IV": 1,
+    "SYNCS.EXCH.64": 1,
+    "SYNCS.PHASECHK.TRANS64.TRYWAIT": 1,
+    "TLD.LZ": 15,
+    "UBLKCP.G.S": 13,
+    "UBLKCP.S.G": 18,
+    "UIADD3": 46,
+    "UIADD3.64": 10,
+    "UIMAD": 16,
+    "UIMAD.WIDE.U32": 27,
+    "UIMNMX.U64": 1,
+    "UISETP.GE.U64.AND": 2,
+    "UISETP.NE.AND": 1,
+    "ULEA": 10,
+    "ULEA.HI.X": 3,
+    "ULOP3.LUT": 8,
+    "UMOV": 77,
+    "UMOV.64": 329,
+    "UPOPC": 1,
+    "USEL": 1,
+    "USHF.L.U32": 2,
+    "USHF.R.U32.HI": 4,
+    "UTMACMDFLUSH": 5,
+    "VIMNMX.S32": 2,
+    "VIMNMX.U32": 14,
+    "VOTEU.ALL": 3,
+    "VOTEU.ANY": 4,
+    "WARPSYNC.ALL": 3,
+    "WARPSYNC.COLLECTIVE.ALL": 3,
+    "YIELD": 3
+  },
+  "important_static_counts": {
+    "TLD": 15,
+    "UBLKCP.S.G": 18,
+    "UBLKCP.G.S": 13,
+    "UTMACMDFLUSH": 5,
+    "LDG": 0,
+    "STG": 0,
+    "LD_generic": 2,
+    "ST_generic": 0,
+    "ATOM": 2,
+    "CCTL": 7,
+    "SYNCS": 4
+  },
+  "ordinary_global_and_generic_sites": [
+    {
+      "address": "0320",
+      "opcode": "CCTL.IVALL",
+      "line": "/*0320*/                   CCTL.IVALL                                                       &req={2}                   ?trans1;           /* 0x00000000ff00798f */"
+    },
+    {
+      "address": "0960",
+      "opcode": "CCTL.IVALL",
+      "line": "/*0960*/                   CCTL.IVALL                                                       &req={2}                   ?trans1;           /* 0x00000000ff00798f */"
+    },
+    {
+      "address": "0c30",
+      "opcode": "ATOM.E.ADD.STRONG.GPU",
+      "line": "/*0c30*/               @P0 ATOM.E.ADD.STRONG.GPU PT, R3, desc[UR18][R14.64+0x4], R3         &wr=0x2                    ?trans1;           /* 0x800004030e03098a */"
+    },
+    {
+      "address": "0c90",
+      "opcode": "LD.E.STRONG.GPU",
+      "line": "/*0c90*/                   LD.E.STRONG.GPU R3, desc[UR18][R14.64+0x4]                       &wr=0x2                    ?trans4;           /* 0x000004120e037980 */"
+    },
+    {
+      "address": "0ca0",
+      "opcode": "CCTL.IVALL",
+      "line": "/*0ca0*/                   CCTL.IVALL                                                       &req={2}                   ?trans1;           /* 0x00000000ff00798f */"
+    },
+    {
+      "address": "194f0",
+      "opcode": "CCTL.IVALL",
+      "line": "/*194f0*/                   CCTL.IVALL                                                      &req={5}                   ?trans1;           /* 0x00000000ff00798f */"
+    },
+    {
+      "address": "197c0",
+      "opcode": "ATOM.E.ADD.STRONG.GPU",
+      "line": "/*197c0*/               @P0 ATOM.E.ADD.STRONG.GPU PT, R3, desc[UR18][R14.64+0x4], R3        &wr=0x2                    ?trans1;           /* 0x800004030e03098a */"
+    },
+    {
+      "address": "19820",
+      "opcode": "LD.E.STRONG.GPU",
+      "line": "/*19820*/                   LD.E.STRONG.GPU R3, desc[UR18][R14.64+0x4]                      &wr=0x2                    ?trans4;           /* 0x000004120e037980 */"
+    },
+    {
+      "address": "19830",
+      "opcode": "CCTL.IVALL",
+      "line": "/*19830*/                   CCTL.IVALL                                                      &req={2}                   ?trans1;           /* 0x00000000ff00798f */"
+    },
+    {
+      "address": "19f60",
+      "opcode": "CCTL.IVALL",
+      "line": "/*19f60*/                   CCTL.IVALL                                                      &req={5}                   ?trans1;           /* 0x00000000ff00798f */"
+    },
+    {
+      "address": "1a110",
+      "opcode": "CCTL.IVALL",
+      "line": "/*1a110*/                   CCTL.IVALL                                                      &req={5}                   ?trans1;           /* 0x00000000ff00798f */"
+    }
+  ],
+  "comparison_to_folded_pre_export": {
+    "executable": "C:\\Users\\Tom\\.cache\\ak1\\bulk_fold_sm120\\Release\\atomos_cache_bulk.exe",
+    "executable_sha256": "1942f1db273ebd4aa604ccef30f3d1e51bcc96e1a576273ddc7769084a4e8e4b",
+    "same_kernel_symbol": true,
+    "static_instruction_count": 6856,
+    "exact_kernel_disassembly_text_equal": true,
+    "instruction_lines_equal": true,
+    "encoded_64bit_words_equal": true,
+    "encoded_64bit_word_count": 13712,
+    "opcode_counts_equal": true,
+    "final_kernel_disassembly_sha256": "10478bce3552205d84336ad54850010e46b5908d72d967486e827f8c522f4463",
+    "pre_export_kernel_disassembly_sha256": "10478bce3552205d84336ad54850010e46b5908d72d967486e827f8c522f4463",
+    "conclusion": "All disassembled instruction lines and encoded instruction words are identical; no relocation difference is observed in the reviewed kernel."
+  },
+  "scope_caveats": [
+    "Counts are static sites within atomos_epoch_bulk_probe only, not whole executable or dynamic instruction counts.",
+    "The included production texture/global kernels remain separate functions and are excluded from these counts.",
+    "Lane/State/Result and checksum/SM exports use bulk copies, but cooperative grid synchronization still has generic strong loads, atomic and cache-control bookkeeping; zero LDG/STG does not imply zero ordinary global-memory traffic.",
+    "cuobjdump reports11784 shared bytes; source-declared shared union plus barrier totals10760 bytes. The1024-byte difference is consistent with NVIDIA per-block reserved shared overhead. Effective hardware carveout must come from actual profiling.",
+    "No SASS inspection alone proves CUDA correctness, cache residency, dynamic traffic or runtime speed; those require retained execution/profile evidence.",
+    "Unchanged disassembled instruction words establish identity of this kernel code section, not identity of complete executables or all runtime state."
+  ],
+  "artifacts": {
+    "bulk_final_sass.txt": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\bulk_final_sass.txt",
+      "sha256": "e568e66adcee68994a39eb4970becf368c680e37c145d9faacaad089927da635"
+    },
+    "bulk_final_resources.txt": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\bulk_final_resources.txt",
+      "sha256": "c347f1c13a017a25f9a95778311df3d2c6596c1750c9e173e8110f9d37923dfd"
+    }
+  },
+  "source_hashes": {
+    "experiments/cache_bulk.cu": "65348fbdca740c5f0853ddc7cbd50ee69bf769c52163ad771607523fd8f45f05",
+    "include/atomos/core.hpp": "3caf491f29fa0704d8ad596530c71dd30e66da551e070949debac0ac70b99e0a",
+    "cuda/kernel.cu": "1dd20984d5c999856c40bb51fbecba4558ffb5ef7b24c113a7f9ab376b3369f9",
+    "include/atomos/host.hpp": "9033684ba87db4806c0cc345e03ecd961d7c76554355ac1555bcc3b07d8af278"
+  },
+  "cache_control_site_classification": {
+    "grid_sync_CCTL_IVALL_addresses": [
+      "0ca0",
+      "19830"
+    ],
+    "bulk_store_full_completion_CCTL_IVALL_addresses": [
+      "0320",
+      "0960",
+      "194f0",
+      "19f60",
+      "1a110"
+    ],
+    "classification_basis": "Native instruction neighborhoods and source ordering: five bulk_store_finish expansion sites and two cooperative grid synchronization expansion sites.",
+    "interpretation": "The presence of CCTL.IVALL is not evidence that texture cache data was globally invalidated. Its scope/behavior must not be inferred from the mnemonic alone; measured full-workload TEX counters are separate evidence."
+  },
+  "executable_sha256_after": "fc25b2f435bc3c1ccbcdc2ed8f494ef3247285b357541b72f2855e8b83a175e4",
+  "executable_unchanged_during_audit": true
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "tool launch/version only; no GPU workload",
+  "resolved_executable": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\compute-sanitizer\\compute-sanitizer.exe",
+  "command": [
+    "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\compute-sanitizer\\compute-sanitizer.exe",
+    "--version"
+  ],
+  "exit_code": 0,
+  "stdout": "NVIDIA (R) Compute Sanitizer\nCopyright (c) 2020-2025 NVIDIA Corporation\nVersion 2025.1.0.0 (build 35351055) (public-release)\n",
+  "stderr": "",
+  "python": "C:\\Users\\Tom\\miniconda3\\python.exe"
+}

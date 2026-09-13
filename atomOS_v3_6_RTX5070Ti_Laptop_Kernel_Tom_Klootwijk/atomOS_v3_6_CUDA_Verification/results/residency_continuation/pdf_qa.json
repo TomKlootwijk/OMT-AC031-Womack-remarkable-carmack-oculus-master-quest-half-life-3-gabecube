@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "pdf": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\pdf\\atomOS_v3_6_Kernel_Validation_Texture_Cache.pdf",
+  "pdf_sha256": "6acd1d3c9fe920805af20c691562396c0486af62240578e3c528e3bea738de7a",
+  "pages": 9,
+  "text_extraction": "passed",
+  "visual_review": "All nine pages rendered and visually inspected. Only page 6 changed in final correction; its fresh render was inspected and the other eight PNG hashes were unchanged.",
+  "render_warnings": [
+    "Poppler reported missing display fonts Symbol and ArialUnicode; no visible missing glyphs were found in the rendered report."
+  ],
+  "render_sha256": {
+    "atomos-final-1.png": "0acf5d59d082cad2333a5efd58ee92a93c53d1bcf35570ca44d0f8289f129b47",
+    "atomos-final-2.png": "dbaeb1f7e998e89838f4ce9218c9781ef1bfa8d2727a5b5cf7f50f8578eb0500",
+    "atomos-final-3.png": "ebc979a818e7409d8066f7776c879efa525fa2c178147739c88d1d457e537fcd",
+    "atomos-final-4.png": "f252bfd871d3b60f750b2b3b0065efbc6f4aa2fec3b0f409686acb4459141f6e",
+    "atomos-final-5.png": "dc93e53bf3992d961c93cf4e5fb19a73ccbe0bcd44674f8abc61e7b49f3bf039",
+    "atomos-final-6.png": "7a2a870aecf7342b576553c5475ff747f061dac35b072d17a0e7bc097bf514a2",
+    "atomos-final-7.png": "0bee4fbb5face4c208144da343f8506ac9a6a38ed8c20f307b01e92de357abf9",
+    "atomos-final-8.png": "ed3fe5200615070588332e1f5695ed33c565728530bcce9058b8a5a58d768cc1",
+    "atomos-final-9.png": "04d188f7d8f2a84320f92ea944caa8f42ae30de1f7d581d22756ccb0fc2aa750"
+  },
+  "temporary_render_files": "Removed after visual inspection; hashes retained."
+}

@@ -1,0 +1,33 @@
+test_cpu_cannot_be_relabelled_cuda (test_reference.ExecutionMetadataTests.test_cpu_cannot_be_relabelled_cuda) ... ok
+test_cuda_device_integer_types_and_bounds (test_reference.ExecutionMetadataTests.test_cuda_device_integer_types_and_bounds) ... ok
+test_cuda_read_paths_and_optional_device_fields (test_reference.ExecutionMetadataTests.test_cuda_read_paths_and_optional_device_fields) ... ok
+test_failed_candidate_verification_is_rejected (test_reference.ExecutionMetadataTests.test_failed_candidate_verification_is_rejected) ... ok
+test_invalid_read_or_cpu_device_is_rejected (test_reference.ExecutionMetadataTests.test_invalid_read_or_cpu_device_is_rejected) ... ok
+test_requested_read_and_probed_device_must_match (test_reference.ExecutionMetadataTests.test_requested_read_and_probed_device_must_match) ... ok
+test_runner_context_rejects_consistent_backend_relabel (test_reference.ExecutionMetadataTests.test_runner_context_rejects_consistent_backend_relabel) ... ok
+test_unchanged_cpu_run_matches_expected_context (test_reference.ExecutionMetadataTests.test_unchanged_cpu_run_matches_expected_context) ... ok
+test_absorb_not_clear (test_reference.ReferenceTests.test_absorb_not_clear) ... ok
+test_axis_unavailable (test_reference.ReferenceTests.test_axis_unavailable) ... ok
+test_bank_bad_interval (test_reference.ReferenceTests.test_bank_bad_interval) ... ok
+test_bank_default (test_reference.ReferenceTests.test_bank_default) ... ok
+test_bitset_random_contraction (test_reference.ReferenceTests.test_bitset_random_contraction) ... ok
+test_canonical_finite (test_reference.ReferenceTests.test_canonical_finite) ... ok
+test_completion_explicit (test_reference.ReferenceTests.test_completion_explicit) ... ok
+test_fringe_nonmonotone (test_reference.ReferenceTests.test_fringe_nonmonotone) ... ok
+test_identity_order_and_width (test_reference.ReferenceTests.test_identity_order_and_width) ... ok
+test_morton_order (test_reference.ReferenceTests.test_morton_order) ... ok
+test_morton_tile (test_reference.ReferenceTests.test_morton_tile) ... ok
+test_producer_variants (test_reference.ReferenceTests.test_producer_variants) ... ok
+test_raw_residual (test_reference.ReferenceTests.test_raw_residual) ... ok
+test_seal_detects_changes (test_reference.ReferenceTests.test_seal_detects_changes) ... ok
+test_seal_refuses_replacement (test_reference.ReferenceTests.test_seal_refuses_replacement) ... ok
+test_source_ratio (test_reference.ReferenceTests.test_source_ratio) ... ok
+test_unicode_normalization (test_reference.ReferenceTests.test_unicode_normalization) ... ok
+test_wrap_seam (test_reference.ReferenceTests.test_wrap_seam) ... ok
+test_zero (test_reference.ReferenceTests.test_zero) ... ok
+test_zero_motion (test_reference.ReferenceTests.test_zero_motion) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.220s
+
+OK

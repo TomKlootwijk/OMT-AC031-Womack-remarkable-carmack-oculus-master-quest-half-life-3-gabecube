@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "scope": "Mocked subprocess orchestration only; no profiler or GPU process executed",
+  "cases": [
+    {
+      "case": "success",
+      "return": 0,
+      "summary_status": "collected",
+      "profile_commands_checked": 6
+    },
+    {
+      "case": "missing_counters",
+      "return": 3,
+      "summary_status": "not_run",
+      "profile_commands_checked": 6
+    },
+    {
+      "case": "failed_application",
+      "return": 1,
+      "summary_status": "failed",
+      "profile_commands_checked": 6
+    }
+  ],
+  "checks": [
+    "default 3 repetitions in each replay condition",
+    "skip/count match constructor warmup",
+    "no application output directory during replay",
+    "clock changes disabled",
+    "separate application stdout and raw CSV",
+    "absent values remain null/not_run",
+    "application error prevents accepted counters"
+  ]
+}

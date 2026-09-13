@@ -1,0 +1,31 @@
+PASS fixed data ABI
+PASS all JK triples
+PASS all blend triples
+PASS population count exhaustive 16 bit
+PASS high-bit population count
+PASS whole-word absorption is not bit clearing
+PASS independent 32-bit oracle
+PASS neutral fringe and final idempotence
+PASS mask nonmonotonicity witness
+PASS Morton tile bijection inverse
+PASS padded atlas roundtrips
+PASS tail masks and dimensions
+PASS zero padding in all planes
+PASS cross-layout and profile exact integer conformance
+PASS failed epoch preserves state
+PASS diagnostic-only axis changes do not affect core
+PASS invalid JK inputs rejected
+PASS shift merge variants and zero guard
+PASS literal OTAN2 and raw residual
+PASS quadrants and literal reversal alias
+PASS zero and denominator statuses
+PASS missing optional fields
+PASS nonfinite and ratio range
+PASS periodic views and seam
+PASS six invariant laws on bounded inputs
+PASS W precondition does not invalidate orientation
+PASS memory and 12 GiB capacity scenario
+PASS log-polar dictionary roundtrips
+PASS log-polar domain and wrap
+PASS JSON safe string escaping
+RESULT 30 groups; 134503 assertions passed

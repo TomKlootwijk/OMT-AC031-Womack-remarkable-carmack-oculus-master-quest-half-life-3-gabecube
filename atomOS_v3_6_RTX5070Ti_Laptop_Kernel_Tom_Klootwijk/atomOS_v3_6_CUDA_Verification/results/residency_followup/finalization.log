@@ -1,0 +1,33 @@
+{
+  "status": "execution_validated_residency_observed",
+  "summary": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\summary.json",
+  "counts": {
+    "cpp_test_groups": 32,
+    "cpp_assertions": 134521,
+    "cpp_ctest_cases": 7,
+    "python_unit_tests": 37,
+    "symbolic_obligations": 15,
+    "cpu_verified_runs": 48,
+    "cpu_lane_epochs": 204000,
+    "production_gpu_verified_runs": 144,
+    "production_gpu_lane_epochs": 612000,
+    "production_gpu_memchecks": 6,
+    "production_gpu_runs_including_memcheck": 150,
+    "production_gpu_lane_epochs_including_memcheck": 614754,
+    "bulk_native_conformance_runs": 192,
+    "bulk_additional_export_runs": 2,
+    "bulk_python_verified_export_runs": 26,
+    "bulk_python_verified_lane_epochs": 626288,
+    "bulk_unprofiled_timing_trials": 20,
+    "bulk_cold_profile_samples": 12,
+    "edge_native_conformance_runs": 20,
+    "edge_cold_profile_samples": 12,
+    "bulk_memchecks": 6,
+    "bulk_syncchecks": 4,
+    "bulk_racechecks": 4,
+    "native_audits_passed": 1,
+    "cold_profile_geometry_audits_passed": 24,
+    "cold_profiles_at_compulsory_floor": 24,
+    "cold_profiles_above_compulsory_floor": 0
+  }
+}

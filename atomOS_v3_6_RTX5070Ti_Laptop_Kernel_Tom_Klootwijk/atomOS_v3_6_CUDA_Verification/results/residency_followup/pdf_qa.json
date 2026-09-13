@@ -1,0 +1,80 @@
+{
+  "schema": "atomOS-final-residency-pdf-qa",
+  "status": "passed",
+  "created_at_utc": "2026-09-13T11:46:10.589908+00:00",
+  "pdf": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\pdf\\atomOS_v3_6_Kernel_Validation_Texture_Cache.pdf",
+  "pdf_sha256": "b7ed304f9c4b6c89405ba6ba0ab3bef5e29fc78e5f11ad3c134333320bf31a48",
+  "pages": [
+    {
+      "page": 1,
+      "rendered_png_sha256": "4eb5ca6e6e349993bb415444acc9c64d24055fdfe964f35cb10b69603bea4fcf",
+      "text_characters": 1713,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    },
+    {
+      "page": 2,
+      "rendered_png_sha256": "54616b0d5e51450fc254db9ea953d6f944a9227039e199e27bb66bfb32af2076",
+      "text_characters": 2146,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    },
+    {
+      "page": 3,
+      "rendered_png_sha256": "31faa99a19e7ef262361dbef9c0b2fc52f1a1d83373694efb7e3bda8dce93f9a",
+      "text_characters": 2232,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    },
+    {
+      "page": 4,
+      "rendered_png_sha256": "c16219598895509cfd05539a44eb82c3748600f2fb62a277394e52c7a575381b",
+      "text_characters": 2030,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    },
+    {
+      "page": 5,
+      "rendered_png_sha256": "1b8ff7a1ba7f2a29c35a45d73091031b15127424f7f248eb45cc17cfc7d1babb",
+      "text_characters": 1991,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    },
+    {
+      "page": 6,
+      "rendered_png_sha256": "45358ee3a0c2d9b1c77ca4ddd8a9b0aaa6e5452db18b4598b1bf4706bf23aa83",
+      "text_characters": 2118,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    },
+    {
+      "page": 7,
+      "rendered_png_sha256": "6bb0b853a556b840ac6c6a8b46899b5dbc963c62db640494331923dd63e621ce",
+      "text_characters": 2154,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    },
+    {
+      "page": 8,
+      "rendered_png_sha256": "a097bff8293b2bb15208e65b1589372c88905ff02992ce06ce3621d565311968",
+      "text_characters": 2615,
+      "visual_review": "passed",
+      "observed_layout_defects": []
+    }
+  ],
+  "page_count": 8,
+  "renderer": "Poppler pdftoppm -r 90 -png",
+  "visual_review_scope": "All eight final page PNGs inspected for clipping, overlap, glyph corruption, table fit and footer placement.",
+  "renderer_warnings": [
+    "No display font for 'Symbol'",
+    "No display font for 'ArialUnicode'"
+  ],
+  "warning_assessment": "No affected glyphs or visual defects observed in any final page.",
+  "out_of_page_text": "none",
+  "reference_link_uris": [
+    "https://docs.nvidia.com/nsight-compute/ProfilingGuide/",
+    "https://docs.nvidia.com/cuda/archive/12.8.2/parallel-thread-execution/index.html",
+    "https://docs.nvidia.com/cuda/archive/12.8.2/cuda-c-programming-guide/index.html#using-tma-to-transfer-data",
+    "https://docs.nvidia.com/cuda/archive/12.8.2/parallel-thread-execution/index.html#data-movement-and-conversion-instructions-cp-async-bulk"
+  ]
+}

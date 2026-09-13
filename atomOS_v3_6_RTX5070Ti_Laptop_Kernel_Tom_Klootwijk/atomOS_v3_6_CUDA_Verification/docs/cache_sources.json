@@ -1,0 +1,153 @@
+{
+  "schema": "atomos-cache-sources-1",
+  "consulted": "2026-09-13",
+  "scope": "Official NVIDIA documentation and interpretation for the cc12.0 texture/global K1 kernels. Architectural documentation is distinct from measured implementation evidence.",
+  "sources": [
+    {
+      "id": "CACHE01",
+      "title": "CUDA Programming Guide: Compute Capabilities, shared-memory capacity table",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/compute-capabilities.html",
+      "claims": [
+        "Compute capability 12.x has 128 KiB unified data-cache capacity per SM.",
+        "Supported shared-memory carveouts are 0, 8, 16, 32, 64 and 100 KiB.",
+        "The table gives a 28-128 KiB texture-cache working-set range, depending on configuration. The unified maximum is not a promise of private texture capacity."
+      ]
+    },
+    {
+      "id": "CACHE02",
+      "title": "CUDA Programming Guide: Configuring L1/Shared Memory Balance",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/03-advanced/advanced-kernel-programming.html#configuring-l1-shared-memory-balance",
+      "claims": [
+        "cudaFuncAttributePreferredSharedMemoryCarveout supports cudaSharedmemCarveoutMaxL1.",
+        "The attribute is a driver hint; the driver can choose a different carveout to execute the kernel.",
+        "An accepted preference or a queried preferred attribute does not establish the realized hardware partition; record profiler launch__shared_mem_config_size separately."
+      ],
+      "interpretation": "The final claim is an evidence distinction derived from preference semantics, rather than a cache-capacity guarantee."
+    },
+    {
+      "id": "CACHE03",
+      "title": "PTX ISA: Cache Operators, Cache Eviction Priority Hints and Memory Hierarchy",
+      "url": "https://docs.nvidia.com/cuda/parallel-thread-execution/index.html",
+      "claims": [
+        "Cache operators and eviction priorities are performance hints, not guaranteed cache pinning.",
+        "Global data is coherent at L2; separate L1 caches are not coherent for global data. The driver must invalidate global L1 lines between dependent grids.",
+        "Texture reads are not coherent with global or surface writes in the same kernel; safe texture updates precede the reading launch.",
+        "Persistence of the texture memory state space across launches means allocation/content lifetime, not guaranteed retention of its cache lines."
+      ],
+      "interpretation": "The last statement distinguishes persistent memory storage from cache residency. The global-L1 invalidation requirement alone does not prove exactly which texture lines Blackwell invalidated in a particular measurement."
+    },
+    {
+      "id": "CACHE04",
+      "title": "Nsight Compute Profiling Guide: Cache Control and L1/TEX Memory Tables",
+      "url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/",
+      "claims": [
+        "Nsight Compute normally flushes caches before replay passes; application replay with cache-control none permits application priming but does not force retention.",
+        "L1 sectors are 32 bytes. Sector hit rate counts requested sectors that do not miss; it is not a snapshot of resident dictionary contents.",
+        "A texture instruction can produce multiple requests; request count is not necessarily executed instruction count.",
+        "L1 data, texture and shared data use the same physical resource. Texture data arriving through TEX and global/local data arriving through LSU can compete.",
+        "Query metric availability for the installed tool and target architecture; unavailable metrics must not become numerical zero."
+      ]
+    },
+    {
+      "id": "CACHE05",
+      "title": "CUDA Binary Utilities: cuobjdump and nvdisasm",
+      "url": "https://docs.nvidia.com/cuda/cuda-binary-utilities/index.html",
+      "claims": [
+        "cuobjdump can extract and disassemble cubins embedded in host executables; nvdisasm accepts cubins and offers richer analysis.",
+        "Preserve native sm_120 SASS and resource usage from the actual tested binary. TLD/TEX instructions substantiate the texture instruction path; they do not prove runtime residency."
+      ]
+    },
+    {
+      "id": "CACHE06",
+      "title": "CUDA Programming Guide: Programming Model",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html",
+      "claims": [
+        "Thread blocks are scheduled among available SMs, with no guarantee about their assignment order.",
+        "A warm-up launch therefore does not guarantee that the next launch's corresponding block executes on the same SM or finds the same per-SM cache state."
+      ],
+      "interpretation": "The second statement follows from the absence of a block-to-SM assignment guarantee."
+    },
+    {
+      "id": "CACHE07",
+      "title": "CUDA C++ Programming Guide: Device Memory L2 Access Management",
+      "url": "https://docs.nvidia.com/cuda/archive/13.0.0/cuda-c-programming-guide/index.html#device-memory-l2-access-management",
+      "claims": [
+        "L2 access-policy windows and persisting set-asides control preferential retention in L2, subject to supported sizes and competing use.",
+        "L2 persistence does not provide L1/texture cache pinning. The access-policy hitRatio field is a policy parameter, not a measured hit rate."
+      ]
+    },
+    {
+      "id": "CACHE08",
+      "title": "CUDA Best Practices Guide: Texture Memory",
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/#texture-memory",
+      "claims": [
+        "Texture fetches benefit from spatial locality. NVIDIA describes the texture path as streaming with constant fetch latency: cache hits reduce DRAM demand rather than fetch latency.",
+        "Texture fetching can be useful in some access patterns; native texture use alone does not establish superiority to coalesced global loads."
+      ]
+    },
+    {
+      "id": "CACHE09",
+      "title": "NVIDIA Development Tools: ERR_NVGPUCTRPERM Nsight Compute",
+      "url": "https://developer.nvidia.com/nvidia-development-tools-solutions-err-nvgpuctrperm-nsightcompute",
+      "claims": [
+        "ERR_NVGPUCTRPERM means the user lacks access to GPU performance counters.",
+        "The documented remedies involve administrative execution or enabling counter access. This project records restricted profiling honestly without silently changing privileges or system policy."
+      ],
+      "interpretation": "The final sentence applies the project operational contract, not an NVIDIA requirement."
+    },
+    {
+      "id": "CACHE10",
+      "title": "CUDA C++ Programming Guide 12.8: Using TMA to transfer data",
+      "url": "https://docs.nvidia.com/cuda/archive/12.8.2/cuda-c-programming-guide/index.html#using-tma-to-transfer-data",
+      "claims": [
+        "Bulk asynchronous copies support one-dimensional global/shared transfers on supported architectures.",
+        "Global and shared pointers and transfer sizes require the documented alignment; a shared completion barrier and async-proxy ordering are part of correctness.",
+        "The implementation uses shared staging plus native bulk copies. Its cache effect is measured separately, not inferred from the instruction name."
+      ]
+    },
+    {
+      "id": "CACHE11",
+      "title": "PTX ISA 8.7: cp.async.bulk and async-proxy memory ordering",
+      "url": "https://docs.nvidia.com/cuda/archive/12.8.2/parallel-thread-execution/index.html#data-movement-and-conversion-instructions-cp-async-bulk",
+      "claims": [
+        "cp.async.bulk.shared::cta.global uses mbarrier complete-tx bytes for completion.",
+        "cp.async.bulk.global.shared::cta uses bulk async groups; the implementation commits and waits for complete group writes before shared storage reuse.",
+        "fence.proxy.async.shared::cta orders generic shared accesses with the async proxy. Cache residency is not a formal property proved by these ordering rules."
+      ]
+    }
+  ],
+  "architecture_interpretation": {
+    "capacity": "128 KiB is the cc12.x combined per-SM maximum. Subtract a realized 32 KiB shared-memory configuration to obtain a nominal 96 KiB remaining unified-cache capacity; this arithmetic is not a measurement of exclusively usable texture bytes.",
+    "residency_boundary": "No supported L1/texture pinning guarantee is established by these interfaces. Neither fitting within capacity nor disabling the profiler's own flushing promises retention across kernel launches.",
+    "invalidation_boundary": "The formal PTX documentation establishes dependent-grid global-L1 invalidation and texture coherence boundaries. The available measurement does not isolate whether texture-line invalidation, block scheduling, interference or other cache behavior caused its misses. Do not assert a specific Blackwell invalidation mechanism from this one sample."
+  },
+  "review_measurement": {
+    "source": "results/review_20260913/first_counters.csv",
+    "format_note": "CSV includes profiler preamble and a units row. Locale uses a dot as a thousands separator and a comma for fractional values. Values below are normalized from the measured kernel row.",
+    "kernel": "atomos_epoch_packed",
+    "threads_per_block": 128,
+    "blocks": 32,
+    "logical_lanes": 4096,
+    "sm_count": 46,
+    "registers_per_thread": 78,
+    "texture_requests": 256,
+    "texture_sectors": 2048,
+    "texture_sector_hits": 0,
+    "texture_sector_misses": 2048,
+    "texture_sector_bytes": 32,
+    "texture_requested_bytes": 65536,
+    "realized_shared_configuration_bytes": 32768,
+    "driver_shared_bytes_per_block": 1024,
+    "profiled_duration_ns": 36640,
+    "inference": "2048 sectors times 32 bytes equals the entire 65536-byte packed dictionary. For this aligned one-pass read of the complete dictionary, total sector traffic matches the minimum unique-sector footprint. This is useful streaming efficiency despite 0% observed sector hits; it is not complete cache residency.",
+    "request_interpretation": "4096 threads form 128 warps; 256 texture requests are compatible with multiple TEX requests per warp instruction. Do not equate requests with fetch instructions.",
+    "optimization_objective": "Preserve exact output semantics and minimize verified execution time, unnecessary fetch instructions, requested sectors and misses. A higher hit percentage produced by redundant rereads or fragmented accesses can accompany more work and worse performance. Report numerator and denominator, not hit percentage alone."
+  },
+  "continuation_findings": {
+    "instruction_cache": "The Nsight architecture guide identifies instruction/constant caches separately from L1TEX; a large instruction footprint alone does not establish direct texture-data eviction.",
+    "cg_boundary": "L2-only cache requests do not establish zero activity in L1TEX data banks or promise that unrelated texture lines remain resident.",
+    "control_boundary": "A successful warm/reread control and a failing full epoch isolate additional workload effects. They do not by themselves identify allocation, invalidation, contention, preemption or cache replacement as the hardware cause.",
+    "cache_priorities": "PTX L1 eviction and no-allocation qualifiers are performance hints. A successful compile or accepted hint must be distinguished from measured residency.",
+    "measurement_reference": "results/residency_continuation/summary.json"
+  }
+}

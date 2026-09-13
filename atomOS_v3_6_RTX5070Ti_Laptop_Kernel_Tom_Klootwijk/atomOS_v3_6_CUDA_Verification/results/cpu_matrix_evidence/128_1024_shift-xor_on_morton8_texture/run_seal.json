@@ -1,0 +1,27 @@
+{
+  "header": {
+    "schema": "atomOS-v3.6-K1-seal",
+    "genesis": {
+      "record": {
+        "schema": "atomOS-v3.6-K1-genesis",
+        "members": [
+          "atomOS:synthetic:K1"
+        ]
+      },
+      "digest256": "3dbefa57a6b94bfad0b9f1494f99d18b4675b08907d1dd4aba5cce2436ca7b15"
+    },
+    "files": {
+      "summary.json": "03cb80892718545eee3ff3d86e279aa28c2b21b97ed7ac86dafb82362d71816f",
+      "inputs.csv": "32d2ee0ca5f63cd69eeac033d4474355c75334d1bbd886806c0787700674f433",
+      "trace.csv": "e3025cc34514da0db40b2054ba4d994a40ff8b5605b8800d7d986099de013667",
+      "final_state.csv": "d1742cc53d3565d09228fdd5d52ab7e7f6c1c119437111192d04c6115b51cc8e",
+      "asa.u32le": "eda1b0d7373ddb0a25405f286a89476a0505a3dff1be9cea1a09fbdfafac4043",
+      "na.u32le": "8b00c006e55f9884950bbf032219190ab8727c6233cfc0876d49f92cee291247",
+      "boundary.u32le": "df0376bf9bfca4e0977d6766fec459f487a1c07fb58cd60ca2be28b1a63958de",
+      "fringe.u32le": "5c8b7b3d715504d32e7cea227fb873bcd7a8be661b188f280c670cb4a88c46da",
+      "COMMITTED": "72a72d1a18c28e13211c90f407a4586c5a730f42d1a759d18910cd5641a53060"
+    }
+  },
+  "rows_including_csv_header": 12289,
+  "head256": "5b9639f8913835890a3a4e83be7720675624aee7853185c9e193f7fb61fa9dd9"
+}

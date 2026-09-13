@@ -1,0 +1,1937 @@
+{
+  "schema": "atomos-exact-mask-compression-feasibility-1",
+  "execution": "cpu_python_reference_only",
+  "gpu_execution": "not_run",
+  "source_files": {
+    "python/reference.py": "6c45794138f04605ccc6d753bb9f453680cc3f13edff943e6269c0aa3a9c1aa3",
+    "include/atomos/host.hpp": "9033684ba87db4806c0cc345e03ecd961d7c76554355ac1555bcc3b07d8af278",
+    "include/atomos/core.hpp": "40074857177e9ea41221a5b62904136ae592f67b5c5d9c27b92f2cc49fe1f341"
+  },
+  "fixtures": [
+    {
+      "rows": 128,
+      "angles": 1024,
+      "seed": 130,
+      "logical_texels": 4096,
+      "stored_texels": 4096,
+      "padding_texels": 0,
+      "original_mask_bytes": 65536,
+      "layouts": {
+        "linear": {
+          "physical_sha256": "ff8620baa54dc5c3e024da7eef61b343e4026c13ca5459e83710a228a3254ab5",
+          "unique_uint4": 4096,
+          "unique_logical_uint4": 4096,
+          "joint_dictionary_texture_bytes": 65536,
+          "u32_index_bytes": 16384,
+          "u32_total_bytes": 81920,
+          "smallest_native_index_bytes_each": 2,
+          "smallest_native_index_bytes": 8192,
+          "smallest_native_total_bytes": 73728,
+          "index_bits_information_width": 12,
+          "bitpacked_index_bytes": 6144,
+          "decode_roundtrip": "passed",
+          "uint4_runs": {
+            "count": 4096,
+            "longest": 1,
+            "mean": 1.0,
+            "histogram": {
+              "1": 4096
+            },
+            "naive_u32_length_rle_bytes": 81920
+          },
+          "planes": [
+            {
+              "name": "asa",
+              "unique_stored_u32": 4091,
+              "unique_logical_u32": 4091,
+              "dictionary_texture_bytes": 16364,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 24556,
+              "u32_dictionary_plus_index_bytes": 32748,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 23.981201171875,
+              "valid_bit_one_fraction": 0.7494125366210938,
+              "binary_entropy_per_valid_bit_empirical": 0.8122079048625941,
+              "binary_entropy_estimate_bytes_excluding_padding": 13307.214313268742,
+              "empirical_u32_entropy_bits": 11.99755859375,
+              "logical_popcount_histogram": {
+                "14": 1,
+                "15": 1,
+                "16": 4,
+                "17": 20,
+                "18": 32,
+                "19": 99,
+                "20": 202,
+                "21": 283,
+                "22": 434,
+                "23": 594,
+                "24": 670,
+                "25": 630,
+                "26": 527,
+                "27": 317,
+                "28": 166,
+                "29": 82,
+                "30": 27,
+                "31": 7
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "7fdfffff",
+                  "count": 2
+                },
+                {
+                  "word_hex": "ffbfffef",
+                  "count": 2
+                },
+                {
+                  "word_hex": "ff7ffffe",
+                  "count": 2
+                },
+                {
+                  "word_hex": "eb7ff7f7",
+                  "count": 2
+                },
+                {
+                  "word_hex": "ffbfffff",
+                  "count": 2
+                }
+              ],
+              "physical_runs": {
+                "count": 4096,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 4096
+                },
+                "naive_u32_length_rle_bytes": 32768
+              }
+            },
+            {
+              "name": "na",
+              "unique_stored_u32": 4095,
+              "unique_logical_u32": 4095,
+              "dictionary_texture_bytes": 16380,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 24572,
+              "u32_dictionary_plus_index_bytes": 32764,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 24.0068359375,
+              "valid_bit_one_fraction": 0.750213623046875,
+              "binary_entropy_per_valid_bit_empirical": 0.8109393643415692,
+              "binary_entropy_estimate_bytes_excluding_padding": 13286.43054537227,
+              "empirical_u32_entropy_bits": 11.99951171875,
+              "logical_popcount_histogram": {
+                "14": 1,
+                "15": 3,
+                "16": 8,
+                "17": 12,
+                "18": 40,
+                "19": 78,
+                "20": 182,
+                "21": 281,
+                "22": 461,
+                "23": 615,
+                "24": 600,
+                "25": 678,
+                "26": 529,
+                "27": 334,
+                "28": 178,
+                "29": 77,
+                "30": 17,
+                "31": 2
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "fffffefd",
+                  "count": 2
+                },
+                {
+                  "word_hex": "f7a5ee73",
+                  "count": 1
+                },
+                {
+                  "word_hex": "8ffbfbed",
+                  "count": 1
+                },
+                {
+                  "word_hex": "f5fdfffe",
+                  "count": 1
+                },
+                {
+                  "word_hex": "dfa9fcf7",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 4096,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 4096
+                },
+                "naive_u32_length_rle_bytes": 32768
+              }
+            },
+            {
+              "name": "boundary",
+              "unique_stored_u32": 1748,
+              "unique_logical_u32": 1748,
+              "dictionary_texture_bytes": 6992,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 15184,
+              "u32_dictionary_plus_index_bytes": 23376,
+              "logical_zero_words": 520,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 1.99560546875,
+              "valid_bit_one_fraction": 0.0623626708984375,
+              "binary_entropy_per_valid_bit_empirical": 0.33675330450614743,
+              "binary_entropy_estimate_bytes_excluding_padding": 5517.3661410287195,
+              "empirical_u32_entropy_bits": 9.015058395932353,
+              "logical_popcount_histogram": {
+                "0": 520,
+                "1": 1103,
+                "2": 1147,
+                "3": 767,
+                "4": 376,
+                "5": 135,
+                "6": 40,
+                "7": 7,
+                "8": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000000",
+                  "count": 520
+                },
+                {
+                  "word_hex": "00040000",
+                  "count": 48
+                },
+                {
+                  "word_hex": "00000001",
+                  "count": 44
+                },
+                {
+                  "word_hex": "02000000",
+                  "count": 44
+                },
+                {
+                  "word_hex": "00000200",
+                  "count": 40
+                }
+              ],
+              "physical_runs": {
+                "count": 4012,
+                "longest": 4,
+                "mean": 1.0209371884346958,
+                "histogram": {
+                  "1": 3934,
+                  "2": 73,
+                  "3": 4,
+                  "4": 1
+                },
+                "naive_u32_length_rle_bytes": 32096
+              }
+            },
+            {
+              "name": "fringe",
+              "unique_stored_u32": 4096,
+              "unique_logical_u32": 4096,
+              "dictionary_texture_bytes": 16384,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 24576,
+              "u32_dictionary_plus_index_bytes": 32768,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 15.958740234375,
+              "valid_bit_one_fraction": 0.49871063232421875,
+              "binary_entropy_per_valid_bit_empirical": 0.9999952031231101,
+              "binary_entropy_estimate_bytes_excluding_padding": 16383.921407969035,
+              "empirical_u32_entropy_bits": 12.0,
+              "logical_popcount_histogram": {
+                "5": 1,
+                "6": 2,
+                "7": 2,
+                "8": 12,
+                "9": 30,
+                "10": 56,
+                "11": 127,
+                "12": 224,
+                "13": 347,
+                "14": 457,
+                "15": 533,
+                "16": 583,
+                "17": 533,
+                "18": 415,
+                "19": 324,
+                "20": 212,
+                "21": 138,
+                "22": 53,
+                "23": 29,
+                "24": 16,
+                "25": 1,
+                "26": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "2fc3e88f",
+                  "count": 1
+                },
+                {
+                  "word_hex": "364bca61",
+                  "count": 1
+                },
+                {
+                  "word_hex": "54a9e37a",
+                  "count": 1
+                },
+                {
+                  "word_hex": "c4c7d0e2",
+                  "count": 1
+                },
+                {
+                  "word_hex": "1a678677",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 4096,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 4096
+                },
+                "naive_u32_length_rle_bytes": 32768
+              }
+            }
+          ],
+          "separate_plane_dictionary_texture_bytes": 56120,
+          "separate_plane_native_total_bytes": 88888,
+          "independent_bernoulli_entropy_estimate_bytes": 48494.932407638764,
+          "boundary_only_dictionary_hybrid": {
+            "representation": "Keep ASA/NA/fringe as exact 32-bit values; use exact uint32 boundary dictionary and per-stored-texel native index. Byte sums assume no vector padding and exclude texture descriptors/allocation overhead.",
+            "texture_payload_bytes": 56144,
+            "global_index_bytes": 8192,
+            "total_bytes": 64336,
+            "texture_reduction_percent": 14.3310546875,
+            "total_reduction_percent": 1.8310546875,
+            "gpu_verified": false
+          },
+          "independent_bernoulli_entropy_estimate_bits_per_logical_tuple": 94.71666485866946
+        },
+        "morton8": {
+          "physical_sha256": "fc9a517362813d332ae8714305e86a618a18023257592fc939937fb3e1d7c61e",
+          "unique_uint4": 4096,
+          "unique_logical_uint4": 4096,
+          "joint_dictionary_texture_bytes": 65536,
+          "u32_index_bytes": 16384,
+          "u32_total_bytes": 81920,
+          "smallest_native_index_bytes_each": 2,
+          "smallest_native_index_bytes": 8192,
+          "smallest_native_total_bytes": 73728,
+          "index_bits_information_width": 12,
+          "bitpacked_index_bytes": 6144,
+          "decode_roundtrip": "passed",
+          "uint4_runs": {
+            "count": 4096,
+            "longest": 1,
+            "mean": 1.0,
+            "histogram": {
+              "1": 4096
+            },
+            "naive_u32_length_rle_bytes": 81920
+          },
+          "planes": [
+            {
+              "name": "asa",
+              "unique_stored_u32": 4091,
+              "unique_logical_u32": 4091,
+              "dictionary_texture_bytes": 16364,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 24556,
+              "u32_dictionary_plus_index_bytes": 32748,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 23.981201171875,
+              "valid_bit_one_fraction": 0.7494125366210938,
+              "binary_entropy_per_valid_bit_empirical": 0.8122079048625941,
+              "binary_entropy_estimate_bytes_excluding_padding": 13307.214313268742,
+              "empirical_u32_entropy_bits": 11.99755859375,
+              "logical_popcount_histogram": {
+                "14": 1,
+                "15": 1,
+                "16": 4,
+                "17": 20,
+                "18": 32,
+                "19": 99,
+                "20": 202,
+                "21": 283,
+                "22": 434,
+                "23": 594,
+                "24": 670,
+                "25": 630,
+                "26": 527,
+                "27": 317,
+                "28": 166,
+                "29": 82,
+                "30": 27,
+                "31": 7
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "7fdfffff",
+                  "count": 2
+                },
+                {
+                  "word_hex": "ffbfffef",
+                  "count": 2
+                },
+                {
+                  "word_hex": "ff7ffffe",
+                  "count": 2
+                },
+                {
+                  "word_hex": "eb7ff7f7",
+                  "count": 2
+                },
+                {
+                  "word_hex": "ffbfffff",
+                  "count": 2
+                }
+              ],
+              "physical_runs": {
+                "count": 4096,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 4096
+                },
+                "naive_u32_length_rle_bytes": 32768
+              }
+            },
+            {
+              "name": "na",
+              "unique_stored_u32": 4095,
+              "unique_logical_u32": 4095,
+              "dictionary_texture_bytes": 16380,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 24572,
+              "u32_dictionary_plus_index_bytes": 32764,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 24.0068359375,
+              "valid_bit_one_fraction": 0.750213623046875,
+              "binary_entropy_per_valid_bit_empirical": 0.8109393643415692,
+              "binary_entropy_estimate_bytes_excluding_padding": 13286.43054537227,
+              "empirical_u32_entropy_bits": 11.99951171875,
+              "logical_popcount_histogram": {
+                "14": 1,
+                "15": 3,
+                "16": 8,
+                "17": 12,
+                "18": 40,
+                "19": 78,
+                "20": 182,
+                "21": 281,
+                "22": 461,
+                "23": 615,
+                "24": 600,
+                "25": 678,
+                "26": 529,
+                "27": 334,
+                "28": 178,
+                "29": 77,
+                "30": 17,
+                "31": 2
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "fffffefd",
+                  "count": 2
+                },
+                {
+                  "word_hex": "f7a5ee73",
+                  "count": 1
+                },
+                {
+                  "word_hex": "8ffbfbed",
+                  "count": 1
+                },
+                {
+                  "word_hex": "f5fdfffe",
+                  "count": 1
+                },
+                {
+                  "word_hex": "dfa9fcf7",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 4096,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 4096
+                },
+                "naive_u32_length_rle_bytes": 32768
+              }
+            },
+            {
+              "name": "boundary",
+              "unique_stored_u32": 1748,
+              "unique_logical_u32": 1748,
+              "dictionary_texture_bytes": 6992,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 15184,
+              "u32_dictionary_plus_index_bytes": 23376,
+              "logical_zero_words": 520,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 1.99560546875,
+              "valid_bit_one_fraction": 0.0623626708984375,
+              "binary_entropy_per_valid_bit_empirical": 0.33675330450614743,
+              "binary_entropy_estimate_bytes_excluding_padding": 5517.3661410287195,
+              "empirical_u32_entropy_bits": 9.015058395932353,
+              "logical_popcount_histogram": {
+                "0": 520,
+                "1": 1103,
+                "2": 1147,
+                "3": 767,
+                "4": 376,
+                "5": 135,
+                "6": 40,
+                "7": 7,
+                "8": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000000",
+                  "count": 520
+                },
+                {
+                  "word_hex": "00040000",
+                  "count": 48
+                },
+                {
+                  "word_hex": "00000001",
+                  "count": 44
+                },
+                {
+                  "word_hex": "02000000",
+                  "count": 44
+                },
+                {
+                  "word_hex": "00000200",
+                  "count": 40
+                }
+              ],
+              "physical_runs": {
+                "count": 4035,
+                "longest": 3,
+                "mean": 1.0151177199504338,
+                "histogram": {
+                  "1": 3980,
+                  "2": 49,
+                  "3": 6
+                },
+                "naive_u32_length_rle_bytes": 32280
+              }
+            },
+            {
+              "name": "fringe",
+              "unique_stored_u32": 4096,
+              "unique_logical_u32": 4096,
+              "dictionary_texture_bytes": 16384,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 24576,
+              "u32_dictionary_plus_index_bytes": 32768,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 15.958740234375,
+              "valid_bit_one_fraction": 0.49871063232421875,
+              "binary_entropy_per_valid_bit_empirical": 0.9999952031231101,
+              "binary_entropy_estimate_bytes_excluding_padding": 16383.921407969035,
+              "empirical_u32_entropy_bits": 12.0,
+              "logical_popcount_histogram": {
+                "5": 1,
+                "6": 2,
+                "7": 2,
+                "8": 12,
+                "9": 30,
+                "10": 56,
+                "11": 127,
+                "12": 224,
+                "13": 347,
+                "14": 457,
+                "15": 533,
+                "16": 583,
+                "17": 533,
+                "18": 415,
+                "19": 324,
+                "20": 212,
+                "21": 138,
+                "22": 53,
+                "23": 29,
+                "24": 16,
+                "25": 1,
+                "26": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "2fc3e88f",
+                  "count": 1
+                },
+                {
+                  "word_hex": "364bca61",
+                  "count": 1
+                },
+                {
+                  "word_hex": "54a9e37a",
+                  "count": 1
+                },
+                {
+                  "word_hex": "c4c7d0e2",
+                  "count": 1
+                },
+                {
+                  "word_hex": "1a678677",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 4096,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 4096
+                },
+                "naive_u32_length_rle_bytes": 32768
+              }
+            }
+          ],
+          "separate_plane_dictionary_texture_bytes": 56120,
+          "separate_plane_native_total_bytes": 88888,
+          "independent_bernoulli_entropy_estimate_bytes": 48494.932407638764,
+          "boundary_only_dictionary_hybrid": {
+            "representation": "Keep ASA/NA/fringe as exact 32-bit values; use exact uint32 boundary dictionary and per-stored-texel native index. Byte sums assume no vector padding and exclude texture descriptors/allocation overhead.",
+            "texture_payload_bytes": 56144,
+            "global_index_bytes": 8192,
+            "total_bytes": 64336,
+            "texture_reduction_percent": 14.3310546875,
+            "total_reduction_percent": 1.8310546875,
+            "gpu_verified": false
+          },
+          "independent_bernoulli_entropy_estimate_bits_per_logical_tuple": 94.71666485866946
+        }
+      }
+    },
+    {
+      "rows": 512,
+      "angles": 16384,
+      "seed": 130,
+      "logical_texels": 262144,
+      "stored_texels": 262144,
+      "padding_texels": 0,
+      "original_mask_bytes": 4194304,
+      "layouts": {
+        "linear": {
+          "physical_sha256": "3585b3cce732d38b5aa1995c2e62e077cb107975321dcfc13b546c0eecad12e9",
+          "unique_uint4": 262144,
+          "unique_logical_uint4": 262144,
+          "joint_dictionary_texture_bytes": 4194304,
+          "u32_index_bytes": 1048576,
+          "u32_total_bytes": 5242880,
+          "smallest_native_index_bytes_each": 4,
+          "smallest_native_index_bytes": 1048576,
+          "smallest_native_total_bytes": 5242880,
+          "index_bits_information_width": 18,
+          "bitpacked_index_bytes": 589824,
+          "decode_roundtrip": "passed",
+          "uint4_runs": {
+            "count": 262144,
+            "longest": 1,
+            "mean": 1.0,
+            "histogram": {
+              "1": 262144
+            },
+            "naive_u32_length_rle_bytes": 5242880
+          },
+          "planes": [
+            {
+              "name": "asa",
+              "unique_stored_u32": 255415,
+              "unique_logical_u32": 255415,
+              "dictionary_texture_bytes": 1021660,
+              "native_index_bytes_each": 4,
+              "native_dictionary_plus_index_bytes": 2070236,
+              "u32_dictionary_plus_index_bytes": 2070236,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 19,
+              "logical_popcount_mean_per_word": 23.99578094482422,
+              "valid_bit_one_fraction": 0.7498681545257568,
+              "binary_entropy_per_valid_bit_empirical": 0.8114870277230043,
+              "binary_entropy_estimate_bytes_excluding_padding": 850905.821581677,
+              "empirical_u32_entropy_bits": 17.942703485045143,
+              "logical_popcount_histogram": {
+                "12": 2,
+                "13": 6,
+                "14": 36,
+                "15": 117,
+                "16": 336,
+                "17": 1034,
+                "18": 2472,
+                "19": 5802,
+                "20": 11257,
+                "21": 19197,
+                "22": 29018,
+                "23": 37549,
+                "24": 42116,
+                "25": 40562,
+                "26": 32673,
+                "27": 21907,
+                "28": 11504,
+                "29": 4919,
+                "30": 1349,
+                "31": 269,
+                "32": 19
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "ffffffff",
+                  "count": 19
+                },
+                {
+                  "word_hex": "fff7ffff",
+                  "count": 14
+                },
+                {
+                  "word_hex": "ffbfffff",
+                  "count": 13
+                },
+                {
+                  "word_hex": "ffffbfff",
+                  "count": 12
+                },
+                {
+                  "word_hex": "fffeffff",
+                  "count": 11
+                }
+              ],
+              "physical_runs": {
+                "count": 262144,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 262144
+                },
+                "naive_u32_length_rle_bytes": 2097152
+              }
+            },
+            {
+              "name": "na",
+              "unique_stored_u32": 255520,
+              "unique_logical_u32": 255520,
+              "dictionary_texture_bytes": 1022080,
+              "native_index_bytes_each": 4,
+              "native_dictionary_plus_index_bytes": 2070656,
+              "u32_dictionary_plus_index_bytes": 2070656,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 24,
+              "logical_popcount_mean_per_word": 23.998523712158203,
+              "valid_bit_one_fraction": 0.7499538660049438,
+              "binary_entropy_per_valid_bit_empirical": 0.8113512369234983,
+              "binary_entropy_estimate_bytes_excluding_padding": 850763.4346082942,
+              "empirical_u32_entropy_bits": 17.943120554158636,
+              "logical_popcount_histogram": {
+                "12": 1,
+                "13": 5,
+                "14": 26,
+                "15": 114,
+                "16": 346,
+                "17": 980,
+                "18": 2594,
+                "19": 5641,
+                "20": 11455,
+                "21": 19109,
+                "22": 28750,
+                "23": 37756,
+                "24": 41999,
+                "25": 40486,
+                "26": 32940,
+                "27": 21907,
+                "28": 11556,
+                "29": 4764,
+                "30": 1394,
+                "31": 297,
+                "32": 24
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "ffffffff",
+                  "count": 24
+                },
+                {
+                  "word_hex": "7fffffff",
+                  "count": 14
+                },
+                {
+                  "word_hex": "ffffdfff",
+                  "count": 14
+                },
+                {
+                  "word_hex": "efffffff",
+                  "count": 13
+                },
+                {
+                  "word_hex": "fffdffff",
+                  "count": 12
+                }
+              ],
+              "physical_runs": {
+                "count": 262144,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 262144
+                },
+                "naive_u32_length_rle_bytes": 2097152
+              }
+            },
+            {
+              "name": "boundary",
+              "unique_stored_u32": 34659,
+              "unique_logical_u32": 34659,
+              "dictionary_texture_bytes": 138636,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 662924,
+              "u32_dictionary_plus_index_bytes": 1187212,
+              "logical_zero_words": 33049,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 2.000621795654297,
+              "valid_bit_one_fraction": 0.06251943111419678,
+              "binary_entropy_per_valid_bit_empirical": 0.33736597720653977,
+              "binary_entropy_estimate_bytes_excluding_padding": 353753.86691532464,
+              "empirical_u32_entropy_bits": 10.399335929132265,
+              "logical_popcount_histogram": {
+                "0": 33049,
+                "1": 70577,
+                "2": 73638,
+                "3": 49153,
+                "4": 23708,
+                "5": 8738,
+                "6": 2532,
+                "7": 605,
+                "8": 115,
+                "9": 21,
+                "10": 7,
+                "11": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000000",
+                  "count": 33049
+                },
+                {
+                  "word_hex": "00000002",
+                  "count": 2377
+                },
+                {
+                  "word_hex": "00020000",
+                  "count": 2303
+                },
+                {
+                  "word_hex": "00000008",
+                  "count": 2294
+                },
+                {
+                  "word_hex": "00000001",
+                  "count": 2286
+                }
+              ],
+              "physical_runs": {
+                "count": 257341,
+                "longest": 7,
+                "mean": 1.0186639517216456,
+                "histogram": {
+                  "1": 253081,
+                  "2": 3793,
+                  "3": 402,
+                  "4": 56,
+                  "5": 8,
+                  "7": 1
+                },
+                "naive_u32_length_rle_bytes": 2058728
+              }
+            },
+            {
+              "name": "fringe",
+              "unique_stored_u32": 262144,
+              "unique_logical_u32": 262144,
+              "dictionary_texture_bytes": 1048576,
+              "native_index_bytes_each": 4,
+              "native_dictionary_plus_index_bytes": 2097152,
+              "u32_dictionary_plus_index_bytes": 2097152,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 15.996910095214844,
+              "valid_bit_one_fraction": 0.49990344047546387,
+              "binary_entropy_per_valid_bit_empirical": 0.9999999730973678,
+              "binary_entropy_estimate_bytes_excluding_padding": 1048575.9717905455,
+              "empirical_u32_entropy_bits": 18.0,
+              "logical_popcount_histogram": {
+                "3": 1,
+                "4": 1,
+                "5": 9,
+                "6": 55,
+                "7": 207,
+                "8": 704,
+                "9": 1745,
+                "10": 3851,
+                "11": 7983,
+                "12": 13679,
+                "13": 21427,
+                "14": 28705,
+                "15": 34581,
+                "16": 36471,
+                "17": 34567,
+                "18": 28901,
+                "19": 21007,
+                "20": 13626,
+                "21": 7962,
+                "22": 3990,
+                "23": 1799,
+                "24": 611,
+                "25": 184,
+                "26": 60,
+                "27": 15,
+                "28": 2,
+                "29": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "2fc3e88f",
+                  "count": 1
+                },
+                {
+                  "word_hex": "364bca61",
+                  "count": 1
+                },
+                {
+                  "word_hex": "54a9e37a",
+                  "count": 1
+                },
+                {
+                  "word_hex": "c4c7d0e2",
+                  "count": 1
+                },
+                {
+                  "word_hex": "1a678677",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 262144,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 262144
+                },
+                "naive_u32_length_rle_bytes": 2097152
+              }
+            }
+          ],
+          "separate_plane_dictionary_texture_bytes": 3230952,
+          "separate_plane_native_total_bytes": 6900968,
+          "independent_bernoulli_entropy_estimate_bytes": 3103999.094895841,
+          "boundary_only_dictionary_hybrid": {
+            "representation": "Keep ASA/NA/fringe as exact 32-bit values; use exact uint32 boundary dictionary and per-stored-texel native index. Byte sums assume no vector padding and exclude texture descriptors/allocation overhead.",
+            "texture_payload_bytes": 3284364,
+            "global_index_bytes": 524288,
+            "total_bytes": 3808652,
+            "texture_reduction_percent": 21.694660186767578,
+            "total_reduction_percent": 9.194660186767578,
+            "gpu_verified": false
+          },
+          "independent_bernoulli_entropy_estimate_bits_per_logical_tuple": 94.72653487841312
+        },
+        "morton8": {
+          "physical_sha256": "9919dbaf74acadcd7b3f0d60601f3649af3c6396de01f381bb7a304f436b3eca",
+          "unique_uint4": 262144,
+          "unique_logical_uint4": 262144,
+          "joint_dictionary_texture_bytes": 4194304,
+          "u32_index_bytes": 1048576,
+          "u32_total_bytes": 5242880,
+          "smallest_native_index_bytes_each": 4,
+          "smallest_native_index_bytes": 1048576,
+          "smallest_native_total_bytes": 5242880,
+          "index_bits_information_width": 18,
+          "bitpacked_index_bytes": 589824,
+          "decode_roundtrip": "passed",
+          "uint4_runs": {
+            "count": 262144,
+            "longest": 1,
+            "mean": 1.0,
+            "histogram": {
+              "1": 262144
+            },
+            "naive_u32_length_rle_bytes": 5242880
+          },
+          "planes": [
+            {
+              "name": "asa",
+              "unique_stored_u32": 255415,
+              "unique_logical_u32": 255415,
+              "dictionary_texture_bytes": 1021660,
+              "native_index_bytes_each": 4,
+              "native_dictionary_plus_index_bytes": 2070236,
+              "u32_dictionary_plus_index_bytes": 2070236,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 19,
+              "logical_popcount_mean_per_word": 23.99578094482422,
+              "valid_bit_one_fraction": 0.7498681545257568,
+              "binary_entropy_per_valid_bit_empirical": 0.8114870277230043,
+              "binary_entropy_estimate_bytes_excluding_padding": 850905.821581677,
+              "empirical_u32_entropy_bits": 17.942703485045143,
+              "logical_popcount_histogram": {
+                "12": 2,
+                "13": 6,
+                "14": 36,
+                "15": 117,
+                "16": 336,
+                "17": 1034,
+                "18": 2472,
+                "19": 5802,
+                "20": 11257,
+                "21": 19197,
+                "22": 29018,
+                "23": 37549,
+                "24": 42116,
+                "25": 40562,
+                "26": 32673,
+                "27": 21907,
+                "28": 11504,
+                "29": 4919,
+                "30": 1349,
+                "31": 269,
+                "32": 19
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "ffffffff",
+                  "count": 19
+                },
+                {
+                  "word_hex": "fff7ffff",
+                  "count": 14
+                },
+                {
+                  "word_hex": "ffbfffff",
+                  "count": 13
+                },
+                {
+                  "word_hex": "ffffbfff",
+                  "count": 12
+                },
+                {
+                  "word_hex": "fffeffff",
+                  "count": 11
+                }
+              ],
+              "physical_runs": {
+                "count": 262144,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 262144
+                },
+                "naive_u32_length_rle_bytes": 2097152
+              }
+            },
+            {
+              "name": "na",
+              "unique_stored_u32": 255520,
+              "unique_logical_u32": 255520,
+              "dictionary_texture_bytes": 1022080,
+              "native_index_bytes_each": 4,
+              "native_dictionary_plus_index_bytes": 2070656,
+              "u32_dictionary_plus_index_bytes": 2070656,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 24,
+              "logical_popcount_mean_per_word": 23.998523712158203,
+              "valid_bit_one_fraction": 0.7499538660049438,
+              "binary_entropy_per_valid_bit_empirical": 0.8113512369234983,
+              "binary_entropy_estimate_bytes_excluding_padding": 850763.4346082942,
+              "empirical_u32_entropy_bits": 17.943120554158636,
+              "logical_popcount_histogram": {
+                "12": 1,
+                "13": 5,
+                "14": 26,
+                "15": 114,
+                "16": 346,
+                "17": 980,
+                "18": 2594,
+                "19": 5641,
+                "20": 11455,
+                "21": 19109,
+                "22": 28750,
+                "23": 37756,
+                "24": 41999,
+                "25": 40486,
+                "26": 32940,
+                "27": 21907,
+                "28": 11556,
+                "29": 4764,
+                "30": 1394,
+                "31": 297,
+                "32": 24
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "ffffffff",
+                  "count": 24
+                },
+                {
+                  "word_hex": "7fffffff",
+                  "count": 14
+                },
+                {
+                  "word_hex": "ffffdfff",
+                  "count": 14
+                },
+                {
+                  "word_hex": "efffffff",
+                  "count": 13
+                },
+                {
+                  "word_hex": "fffdffff",
+                  "count": 12
+                }
+              ],
+              "physical_runs": {
+                "count": 262144,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 262144
+                },
+                "naive_u32_length_rle_bytes": 2097152
+              }
+            },
+            {
+              "name": "boundary",
+              "unique_stored_u32": 34659,
+              "unique_logical_u32": 34659,
+              "dictionary_texture_bytes": 138636,
+              "native_index_bytes_each": 2,
+              "native_dictionary_plus_index_bytes": 662924,
+              "u32_dictionary_plus_index_bytes": 1187212,
+              "logical_zero_words": 33049,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 2.000621795654297,
+              "valid_bit_one_fraction": 0.06251943111419678,
+              "binary_entropy_per_valid_bit_empirical": 0.33736597720653977,
+              "binary_entropy_estimate_bytes_excluding_padding": 353753.86691532464,
+              "empirical_u32_entropy_bits": 10.399335929132265,
+              "logical_popcount_histogram": {
+                "0": 33049,
+                "1": 70577,
+                "2": 73638,
+                "3": 49153,
+                "4": 23708,
+                "5": 8738,
+                "6": 2532,
+                "7": 605,
+                "8": 115,
+                "9": 21,
+                "10": 7,
+                "11": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000000",
+                  "count": 33049
+                },
+                {
+                  "word_hex": "00000002",
+                  "count": 2377
+                },
+                {
+                  "word_hex": "00020000",
+                  "count": 2303
+                },
+                {
+                  "word_hex": "00000008",
+                  "count": 2294
+                },
+                {
+                  "word_hex": "00000001",
+                  "count": 2286
+                }
+              ],
+              "physical_runs": {
+                "count": 257283,
+                "longest": 6,
+                "mean": 1.0188935918813136,
+                "histogram": {
+                  "1": 252986,
+                  "2": 3799,
+                  "3": 438,
+                  "4": 56,
+                  "5": 2,
+                  "6": 2
+                },
+                "naive_u32_length_rle_bytes": 2058264
+              }
+            },
+            {
+              "name": "fringe",
+              "unique_stored_u32": 262144,
+              "unique_logical_u32": 262144,
+              "dictionary_texture_bytes": 1048576,
+              "native_index_bytes_each": 4,
+              "native_dictionary_plus_index_bytes": 2097152,
+              "u32_dictionary_plus_index_bytes": 2097152,
+              "logical_zero_words": 0,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 15.996910095214844,
+              "valid_bit_one_fraction": 0.49990344047546387,
+              "binary_entropy_per_valid_bit_empirical": 0.9999999730973678,
+              "binary_entropy_estimate_bytes_excluding_padding": 1048575.9717905455,
+              "empirical_u32_entropy_bits": 18.0,
+              "logical_popcount_histogram": {
+                "3": 1,
+                "4": 1,
+                "5": 9,
+                "6": 55,
+                "7": 207,
+                "8": 704,
+                "9": 1745,
+                "10": 3851,
+                "11": 7983,
+                "12": 13679,
+                "13": 21427,
+                "14": 28705,
+                "15": 34581,
+                "16": 36471,
+                "17": 34567,
+                "18": 28901,
+                "19": 21007,
+                "20": 13626,
+                "21": 7962,
+                "22": 3990,
+                "23": 1799,
+                "24": 611,
+                "25": 184,
+                "26": 60,
+                "27": 15,
+                "28": 2,
+                "29": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "2fc3e88f",
+                  "count": 1
+                },
+                {
+                  "word_hex": "364bca61",
+                  "count": 1
+                },
+                {
+                  "word_hex": "54a9e37a",
+                  "count": 1
+                },
+                {
+                  "word_hex": "c4c7d0e2",
+                  "count": 1
+                },
+                {
+                  "word_hex": "1a678677",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 262144,
+                "longest": 1,
+                "mean": 1.0,
+                "histogram": {
+                  "1": 262144
+                },
+                "naive_u32_length_rle_bytes": 2097152
+              }
+            }
+          ],
+          "separate_plane_dictionary_texture_bytes": 3230952,
+          "separate_plane_native_total_bytes": 6900968,
+          "independent_bernoulli_entropy_estimate_bytes": 3103999.094895841,
+          "boundary_only_dictionary_hybrid": {
+            "representation": "Keep ASA/NA/fringe as exact 32-bit values; use exact uint32 boundary dictionary and per-stored-texel native index. Byte sums assume no vector padding and exclude texture descriptors/allocation overhead.",
+            "texture_payload_bytes": 3284364,
+            "global_index_bytes": 524288,
+            "total_bytes": 3808652,
+            "texture_reduction_percent": 21.694660186767578,
+            "total_reduction_percent": 9.194660186767578,
+            "gpu_verified": false
+          },
+          "independent_bernoulli_entropy_estimate_bits_per_logical_tuple": 94.72653487841312
+        }
+      }
+    },
+    {
+      "rows": 17,
+      "angles": 257,
+      "seed": 130,
+      "logical_texels": 153,
+      "stored_texels": 384,
+      "padding_texels": 231,
+      "original_mask_bytes": 6144,
+      "layouts": {
+        "linear": {
+          "physical_sha256": "59c3e2989d30eb01975030f17a35632f3b7543d6254c6c49fcc6932246424718",
+          "unique_uint4": 143,
+          "unique_logical_uint4": 142,
+          "joint_dictionary_texture_bytes": 2288,
+          "u32_index_bytes": 1536,
+          "u32_total_bytes": 3824,
+          "smallest_native_index_bytes_each": 1,
+          "smallest_native_index_bytes": 384,
+          "smallest_native_total_bytes": 2672,
+          "index_bits_information_width": 8,
+          "bitpacked_index_bytes": 384,
+          "decode_roundtrip": "passed",
+          "uint4_runs": {
+            "count": 170,
+            "longest": 119,
+            "mean": 2.2588235294117647,
+            "histogram": {
+              "1": 153,
+              "7": 16,
+              "119": 1
+            },
+            "naive_u32_length_rle_bytes": 3400
+          },
+          "planes": [
+            {
+              "name": "asa",
+              "unique_stored_u32": 138,
+              "unique_logical_u32": 138,
+              "dictionary_texture_bytes": 552,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 936,
+              "u32_dictionary_plus_index_bytes": 2088,
+              "logical_zero_words": 3,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 21.633986928104576,
+              "valid_bit_one_fraction": 0.7576104371709773,
+              "binary_entropy_per_valid_bit_empirical": 0.7989915080530653,
+              "binary_entropy_estimate_bytes_excluding_padding": 436.34923733548027,
+              "empirical_u32_entropy_bits": 6.877924728895463,
+              "logical_popcount_histogram": {
+                "0": 3,
+                "1": 14,
+                "17": 1,
+                "18": 1,
+                "19": 2,
+                "20": 5,
+                "21": 8,
+                "22": 21,
+                "23": 15,
+                "24": 17,
+                "25": 24,
+                "26": 17,
+                "27": 12,
+                "28": 6,
+                "29": 4,
+                "30": 3
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000001",
+                  "count": 14
+                },
+                {
+                  "word_hex": "00000000",
+                  "count": 3
+                },
+                {
+                  "word_hex": "f7f7b7bf",
+                  "count": 1
+                },
+                {
+                  "word_hex": "e631bf5b",
+                  "count": 1
+                },
+                {
+                  "word_hex": "ce77bddc",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 167,
+                "longest": 119,
+                "mean": 2.2994011976047903,
+                "histogram": {
+                  "1": 150,
+                  "7": 13,
+                  "8": 3,
+                  "119": 1
+                },
+                "naive_u32_length_rle_bytes": 1336
+              }
+            },
+            {
+              "name": "na",
+              "unique_stored_u32": 138,
+              "unique_logical_u32": 138,
+              "dictionary_texture_bytes": 552,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 936,
+              "u32_dictionary_plus_index_bytes": 2088,
+              "logical_zero_words": 4,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 21.124183006535947,
+              "valid_bit_one_fraction": 0.7397573815518426,
+              "binary_entropy_per_valid_bit_empirical": 0.8271122663942548,
+              "binary_entropy_estimate_bytes_excluding_padding": 451.7066864845624,
+              "empirical_u32_entropy_bits": 6.890683814353867,
+              "logical_popcount_histogram": {
+                "0": 4,
+                "1": 13,
+                "18": 2,
+                "19": 1,
+                "20": 4,
+                "21": 13,
+                "22": 21,
+                "23": 28,
+                "24": 22,
+                "25": 17,
+                "26": 15,
+                "27": 7,
+                "28": 2,
+                "29": 3,
+                "30": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000001",
+                  "count": 13
+                },
+                {
+                  "word_hex": "00000000",
+                  "count": 4
+                },
+                {
+                  "word_hex": "f7a5ee73",
+                  "count": 1
+                },
+                {
+                  "word_hex": "8ffbfbed",
+                  "count": 1
+                },
+                {
+                  "word_hex": "f5fdfffe",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 166,
+                "longest": 119,
+                "mean": 2.3132530120481927,
+                "histogram": {
+                  "1": 149,
+                  "7": 12,
+                  "8": 4,
+                  "119": 1
+                },
+                "naive_u32_length_rle_bytes": 1328
+              }
+            },
+            {
+              "name": "boundary",
+              "unique_stored_u32": 101,
+              "unique_logical_u32": 101,
+              "dictionary_texture_bytes": 404,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 788,
+              "u32_dictionary_plus_index_bytes": 1940,
+              "logical_zero_words": 32,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 1.6143790849673203,
+              "valid_bit_one_fraction": 0.05653467612726024,
+              "binary_entropy_per_valid_bit_empirical": 0.3135324404139521,
+              "binary_entropy_estimate_bytes_excluding_padding": 171.2279040210696,
+              "empirical_u32_entropy_bits": 5.909252793630624,
+              "logical_popcount_histogram": {
+                "0": 32,
+                "1": 40,
+                "2": 50,
+                "3": 20,
+                "4": 10,
+                "7": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000000",
+                  "count": 32
+                },
+                {
+                  "word_hex": "00000001",
+                  "count": 4
+                },
+                {
+                  "word_hex": "00080000",
+                  "count": 3
+                },
+                {
+                  "word_hex": "00000100",
+                  "count": 3
+                },
+                {
+                  "word_hex": "00800000",
+                  "count": 3
+                }
+              ],
+              "physical_runs": {
+                "count": 149,
+                "longest": 121,
+                "mean": 2.577181208053691,
+                "histogram": {
+                  "1": 131,
+                  "2": 1,
+                  "7": 1,
+                  "8": 12,
+                  "9": 3,
+                  "121": 1
+                },
+                "naive_u32_length_rle_bytes": 1192
+              }
+            },
+            {
+              "name": "fringe",
+              "unique_stored_u32": 138,
+              "unique_logical_u32": 138,
+              "dictionary_texture_bytes": 552,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 936,
+              "u32_dictionary_plus_index_bytes": 2088,
+              "logical_zero_words": 7,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 14.202614379084967,
+              "valid_bit_one_fraction": 0.4973678187228199,
+              "binary_entropy_per_valid_bit_empirical": 0.9999800088337016,
+              "binary_entropy_estimate_bytes_excluding_padding": 546.1140823243053,
+              "empirical_u32_entropy_bits": 6.9118272845013005,
+              "logical_popcount_histogram": {
+                "0": 7,
+                "1": 10,
+                "8": 3,
+                "11": 5,
+                "12": 12,
+                "13": 7,
+                "14": 12,
+                "15": 21,
+                "16": 14,
+                "17": 26,
+                "18": 14,
+                "19": 8,
+                "20": 5,
+                "21": 4,
+                "22": 3,
+                "23": 2
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000001",
+                  "count": 10
+                },
+                {
+                  "word_hex": "00000000",
+                  "count": 7
+                },
+                {
+                  "word_hex": "2fc3e88f",
+                  "count": 1
+                },
+                {
+                  "word_hex": "364bca61",
+                  "count": 1
+                },
+                {
+                  "word_hex": "54a9e37a",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 163,
+                "longest": 120,
+                "mean": 2.355828220858896,
+                "histogram": {
+                  "1": 146,
+                  "7": 10,
+                  "8": 6,
+                  "120": 1
+                },
+                "naive_u32_length_rle_bytes": 1304
+              }
+            }
+          ],
+          "separate_plane_dictionary_texture_bytes": 2060,
+          "separate_plane_native_total_bytes": 3596,
+          "independent_bernoulli_entropy_estimate_bytes": 1605.3979101654177,
+          "boundary_only_dictionary_hybrid": {
+            "representation": "Keep ASA/NA/fringe as exact 32-bit values; use exact uint32 boundary dictionary and per-stored-texel native index. Byte sums assume no vector padding and exclude texture descriptors/allocation overhead.",
+            "texture_payload_bytes": 5012,
+            "global_index_bytes": 384,
+            "total_bytes": 5396,
+            "texture_reduction_percent": 18.424479166666664,
+            "total_reduction_percent": 12.174479166666663,
+            "gpu_verified": false
+          },
+          "independent_bernoulli_entropy_estimate_bits_per_logical_tuple": 83.94237438773426
+        },
+        "morton8": {
+          "physical_sha256": "adfabb19f59c13871e270c8076016e8069eb40867da434926f5f29cd4392260c",
+          "unique_uint4": 143,
+          "unique_logical_uint4": 142,
+          "joint_dictionary_texture_bytes": 2288,
+          "u32_index_bytes": 1536,
+          "u32_total_bytes": 3824,
+          "smallest_native_index_bytes_each": 1,
+          "smallest_native_index_bytes": 384,
+          "smallest_native_total_bytes": 2672,
+          "index_bits_information_width": 8,
+          "bitpacked_index_bytes": 384,
+          "decode_roundtrip": "passed",
+          "uint4_runs": {
+            "count": 168,
+            "longest": 63,
+            "mean": 2.2857142857142856,
+            "histogram": {
+              "1": 153,
+              "2": 6,
+              "5": 2,
+              "10": 2,
+              "21": 2,
+              "42": 2,
+              "63": 1
+            },
+            "naive_u32_length_rle_bytes": 3360
+          },
+          "planes": [
+            {
+              "name": "asa",
+              "unique_stored_u32": 138,
+              "unique_logical_u32": 138,
+              "dictionary_texture_bytes": 552,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 936,
+              "u32_dictionary_plus_index_bytes": 2088,
+              "logical_zero_words": 3,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 21.633986928104576,
+              "valid_bit_one_fraction": 0.7576104371709773,
+              "binary_entropy_per_valid_bit_empirical": 0.7989915080530653,
+              "binary_entropy_estimate_bytes_excluding_padding": 436.34923733548027,
+              "empirical_u32_entropy_bits": 6.877924728895463,
+              "logical_popcount_histogram": {
+                "0": 3,
+                "1": 14,
+                "17": 1,
+                "18": 1,
+                "19": 2,
+                "20": 5,
+                "21": 8,
+                "22": 21,
+                "23": 15,
+                "24": 17,
+                "25": 24,
+                "26": 17,
+                "27": 12,
+                "28": 6,
+                "29": 4,
+                "30": 3
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000001",
+                  "count": 14
+                },
+                {
+                  "word_hex": "00000000",
+                  "count": 3
+                },
+                {
+                  "word_hex": "f7f7b7bf",
+                  "count": 1
+                },
+                {
+                  "word_hex": "e631bf5b",
+                  "count": 1
+                },
+                {
+                  "word_hex": "ce77bddc",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 162,
+                "longest": 63,
+                "mean": 2.3703703703703702,
+                "histogram": {
+                  "1": 144,
+                  "2": 8,
+                  "3": 1,
+                  "5": 2,
+                  "10": 1,
+                  "11": 1,
+                  "21": 2,
+                  "42": 1,
+                  "43": 1,
+                  "63": 1
+                },
+                "naive_u32_length_rle_bytes": 1296
+              }
+            },
+            {
+              "name": "na",
+              "unique_stored_u32": 138,
+              "unique_logical_u32": 138,
+              "dictionary_texture_bytes": 552,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 936,
+              "u32_dictionary_plus_index_bytes": 2088,
+              "logical_zero_words": 4,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 21.124183006535947,
+              "valid_bit_one_fraction": 0.7397573815518426,
+              "binary_entropy_per_valid_bit_empirical": 0.8271122663942548,
+              "binary_entropy_estimate_bytes_excluding_padding": 451.7066864845624,
+              "empirical_u32_entropy_bits": 6.890683814353867,
+              "logical_popcount_histogram": {
+                "0": 4,
+                "1": 13,
+                "18": 2,
+                "19": 1,
+                "20": 4,
+                "21": 13,
+                "22": 21,
+                "23": 28,
+                "24": 22,
+                "25": 17,
+                "26": 15,
+                "27": 7,
+                "28": 2,
+                "29": 3,
+                "30": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000001",
+                  "count": 13
+                },
+                {
+                  "word_hex": "00000000",
+                  "count": 4
+                },
+                {
+                  "word_hex": "f7a5ee73",
+                  "count": 1
+                },
+                {
+                  "word_hex": "8ffbfbed",
+                  "count": 1
+                },
+                {
+                  "word_hex": "f5fdfffe",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 160,
+                "longest": 63,
+                "mean": 2.4,
+                "histogram": {
+                  "1": 143,
+                  "2": 8,
+                  "5": 2,
+                  "11": 1,
+                  "14": 1,
+                  "21": 2,
+                  "42": 1,
+                  "43": 1,
+                  "63": 1
+                },
+                "naive_u32_length_rle_bytes": 1280
+              }
+            },
+            {
+              "name": "boundary",
+              "unique_stored_u32": 101,
+              "unique_logical_u32": 101,
+              "dictionary_texture_bytes": 404,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 788,
+              "u32_dictionary_plus_index_bytes": 1940,
+              "logical_zero_words": 32,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 1.6143790849673203,
+              "valid_bit_one_fraction": 0.05653467612726024,
+              "binary_entropy_per_valid_bit_empirical": 0.3135324404139521,
+              "binary_entropy_estimate_bytes_excluding_padding": 171.2279040210696,
+              "empirical_u32_entropy_bits": 5.909252793630624,
+              "logical_popcount_histogram": {
+                "0": 32,
+                "1": 40,
+                "2": 50,
+                "3": 20,
+                "4": 10,
+                "7": 1
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000000",
+                  "count": 32
+                },
+                {
+                  "word_hex": "00000001",
+                  "count": 4
+                },
+                {
+                  "word_hex": "00080000",
+                  "count": 3
+                },
+                {
+                  "word_hex": "00000100",
+                  "count": 3
+                },
+                {
+                  "word_hex": "00800000",
+                  "count": 3
+                }
+              ],
+              "physical_runs": {
+                "count": 142,
+                "longest": 87,
+                "mean": 2.704225352112676,
+                "histogram": {
+                  "1": 133,
+                  "2": 2,
+                  "5": 2,
+                  "17": 1,
+                  "21": 1,
+                  "48": 1,
+                  "64": 1,
+                  "87": 1
+                },
+                "naive_u32_length_rle_bytes": 1136
+              }
+            },
+            {
+              "name": "fringe",
+              "unique_stored_u32": 138,
+              "unique_logical_u32": 138,
+              "dictionary_texture_bytes": 552,
+              "native_index_bytes_each": 1,
+              "native_dictionary_plus_index_bytes": 936,
+              "u32_dictionary_plus_index_bytes": 2088,
+              "logical_zero_words": 7,
+              "logical_all_one_words": 0,
+              "logical_popcount_mean_per_word": 14.202614379084967,
+              "valid_bit_one_fraction": 0.4973678187228199,
+              "binary_entropy_per_valid_bit_empirical": 0.9999800088337016,
+              "binary_entropy_estimate_bytes_excluding_padding": 546.1140823243053,
+              "empirical_u32_entropy_bits": 6.9118272845013005,
+              "logical_popcount_histogram": {
+                "0": 7,
+                "1": 10,
+                "8": 3,
+                "11": 5,
+                "12": 12,
+                "13": 7,
+                "14": 12,
+                "15": 21,
+                "16": 14,
+                "17": 26,
+                "18": 14,
+                "19": 8,
+                "20": 5,
+                "21": 4,
+                "22": 3,
+                "23": 2
+              },
+              "most_common_logical_words": [
+                {
+                  "word_hex": "00000001",
+                  "count": 10
+                },
+                {
+                  "word_hex": "00000000",
+                  "count": 7
+                },
+                {
+                  "word_hex": "2fc3e88f",
+                  "count": 1
+                },
+                {
+                  "word_hex": "364bca61",
+                  "count": 1
+                },
+                {
+                  "word_hex": "54a9e37a",
+                  "count": 1
+                }
+              ],
+              "physical_runs": {
+                "count": 159,
+                "longest": 85,
+                "mean": 2.4150943396226414,
+                "histogram": {
+                  "1": 144,
+                  "2": 3,
+                  "3": 3,
+                  "4": 1,
+                  "5": 2,
+                  "10": 1,
+                  "11": 1,
+                  "21": 1,
+                  "42": 2,
+                  "85": 1
+                },
+                "naive_u32_length_rle_bytes": 1272
+              }
+            }
+          ],
+          "separate_plane_dictionary_texture_bytes": 2060,
+          "separate_plane_native_total_bytes": 3596,
+          "independent_bernoulli_entropy_estimate_bytes": 1605.3979101654177,
+          "boundary_only_dictionary_hybrid": {
+            "representation": "Keep ASA/NA/fringe as exact 32-bit values; use exact uint32 boundary dictionary and per-stored-texel native index. Byte sums assume no vector padding and exclude texture descriptors/allocation overhead.",
+            "texture_payload_bytes": 5012,
+            "global_index_bytes": 384,
+            "total_bytes": 5396,
+            "texture_reduction_percent": 18.424479166666664,
+            "total_reduction_percent": 12.174479166666663,
+            "gpu_verified": false
+          },
+          "independent_bernoulli_entropy_estimate_bits_per_logical_tuple": 83.94237438773426
+        }
+      }
+    }
+  ],
+  "boundaries": [
+    "Exact uint4 equality and exact dictionary-index roundtrip; no semantic predicate reduction.",
+    "Measured seed 130; arbitrary input or arbitrary seed compression ratios are not guaranteed.",
+    "Entropy numbers are empirical independent-Bernoulli modeling estimates, not implemented encoding sizes or proven finite-fixture lower bounds.",
+    "Native index sizing assumes 1/2/4-byte integer indices.",
+    "TEX residency and performance have not been measured for any dictionary representation."
+  ],
+  "exact_fixture_structure": {
+    "full_word_fringe_uniqueness_all_seeds": "For any seed, distinct logical indices yield distinct full-width fringe words: multiplication by odd 0x9e3779b9, XOR with seed, mix32, addition 53, and mix32 are bijections of uint32. Every multiply inside mix32 is odd; xor-with-right-shift is invertible. Therefore full-width uint4 tuples are also distinct. The proof does not apply after a tail valid-bit mask truncates the word.",
+    "layout_effect": "Linear and Morton8 only permute stored positions. They cannot change dictionary cardinality; run lengths may change.",
+    "padding_effect": "Padding is initialized to the all-zero tuple. Tail words can repeat after valid-bit masking. Neither repetition applies to all-full-word unpadded main fixtures.",
+    "worst_case_joint_dictionary": "For N stored tuples with no duplication, uint4 dictionary retains 16*N texture bytes and adds an index map. At the supported maximum N=262144, a uint32 map adds 1048576 bytes (25% overhead); an 18-bit packed map adds 589824 bytes but adds extraction complexity and no texture-byte saving.",
+    "entropy_caveat": "The measured Bernoulli entropy estimate models masks as random bits with per-plane empirical probabilities. It is not a proven lower bound on these deterministic fixtures: seed and dimensions regenerate the masks. Replacing every texture fetch with procedural generation would stop testing a resident texture dictionary.",
+    "residency_caveat": "A smaller dictionary is not proof of complete texture L1 residency. Index traffic, dependent texture fetches, dictionary alignment, sector utilization, cache mapping, and which dictionary entries each SM touches all require independent measurement."
+  },
+  "decision": "Reject joint-uint4 dictionary compression as a route to complete residency for full-width main fixtures. Boundary-only dictionary has a limited exact byte saving but needs separate TEX layout/index access and does not resolve full-workload retention."
+}

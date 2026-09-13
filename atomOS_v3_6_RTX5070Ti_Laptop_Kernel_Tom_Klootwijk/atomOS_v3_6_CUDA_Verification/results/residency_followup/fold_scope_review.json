@@ -1,0 +1,170 @@
+{
+  "schema": "atomos.fold_scope_review.v1",
+  "created_utc": "2026-09-13T11:33:46.427117+00:00",
+  "read_only_gpu_review": "passed",
+  "profile_binary_sha256": "1942f1db273ebd4aa604ccef30f3d1e51bcc96e1a576273ddc7769084a4e8e4b",
+  "cold_cache_rows": [
+    {
+      "rows": 128,
+      "angles": 1024,
+      "layout": "linear",
+      "mask_bytes": 65536,
+      "sectors": 6149,
+      "hits": 4101,
+      "misses": 2048,
+      "compulsory_32_byte_sector_floor": 2048,
+      "excess_misses": 0,
+      "padded_prefold_misses": null,
+      "miss_reduction_from_matched_prefold": null,
+      "maximum_assigned_mask_bytes_per_sm": 2048,
+      "warm_texels": 4096,
+      "work_texels": 4096,
+      "post_texels": 4096,
+      "candidate_verification": "passed",
+      "observed_sm_mapping": "unique and unchanged at entry/exit",
+      "raw_counter_file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_128_1024_linear.csv",
+      "kernel_summary": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_128_1024_linear.stdout"
+    },
+    {
+      "rows": 128,
+      "angles": 1024,
+      "layout": "morton8",
+      "mask_bytes": 65536,
+      "sectors": 6163,
+      "hits": 4115,
+      "misses": 2048,
+      "compulsory_32_byte_sector_floor": 2048,
+      "excess_misses": 0,
+      "padded_prefold_misses": null,
+      "miss_reduction_from_matched_prefold": null,
+      "maximum_assigned_mask_bytes_per_sm": 2048,
+      "warm_texels": 4096,
+      "work_texels": 4096,
+      "post_texels": 4096,
+      "candidate_verification": "passed",
+      "observed_sm_mapping": "unique and unchanged at entry/exit",
+      "raw_counter_file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_128_1024_morton8.csv",
+      "kernel_summary": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_128_1024_morton8.stdout"
+    },
+    {
+      "rows": 512,
+      "angles": 16384,
+      "layout": "linear",
+      "mask_bytes": 4194304,
+      "sectors": 393750,
+      "hits": 262678,
+      "misses": 131072,
+      "compulsory_32_byte_sector_floor": 131072,
+      "excess_misses": 0,
+      "padded_prefold_misses": 131580,
+      "miss_reduction_from_matched_prefold": 508,
+      "maximum_assigned_mask_bytes_per_sm": 92160,
+      "warm_texels": 262144,
+      "work_texels": 262144,
+      "post_texels": 262144,
+      "candidate_verification": "passed",
+      "observed_sm_mapping": "unique and unchanged at entry/exit",
+      "raw_counter_file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_512_16384_linear.csv",
+      "kernel_summary": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_512_16384_linear.stdout"
+    },
+    {
+      "rows": 512,
+      "angles": 16384,
+      "layout": "morton8",
+      "mask_bytes": 4194304,
+      "sectors": 393750,
+      "hits": 262678,
+      "misses": 131072,
+      "compulsory_32_byte_sector_floor": 131072,
+      "excess_misses": 0,
+      "padded_prefold_misses": 131580,
+      "miss_reduction_from_matched_prefold": 508,
+      "maximum_assigned_mask_bytes_per_sm": 92160,
+      "warm_texels": 262144,
+      "work_texels": 262144,
+      "post_texels": 262144,
+      "candidate_verification": "passed",
+      "observed_sm_mapping": "unique and unchanged at entry/exit",
+      "raw_counter_file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_512_16384_morton8.csv",
+      "kernel_summary": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\fold_512_16384_morton8.stdout"
+    }
+  ],
+  "supported_claim": "The complete 4 MiB dictionary, partitioned across SM-local texture caches, showed only compulsory cold texture-sector misses through a real verified epoch and a full retention probe in the measured cooperative harness, in both layouts.",
+  "count_interpretation": "At maximum size, 4194304/32 = 131072 unique sectors. The entire warm/work/post kernel records 131072 misses and 262678 hits, with hits+misses=393750. Relative to the compulsory-sector floor there are zero excess misses. Given cold starting caches, full unique-sector coverage, and no independent dictionary-refill path, this supports all subsequent demand reuses hitting; counters were collected for the whole kernel, not isolated phases.",
+  "scope_limits": [
+    "Dictionary residency is distributed across the SM-local caches, not a 4 MiB cache per SM.",
+    "This is empirical retention in the measured cooperative warm/work/post launch, not documented hardware pinning or persistence across arbitrary later work.",
+    "Warm-up and post-work probing are explicit extra reads; full unpadded runs issue three logical texture passes.",
+    "The fixed-constant source change removes coefficient loads and changes register allocation. These records establish the compiled change's effect; they do not uniquely attribute every avoided miss to a coefficient line.",
+    "No ordinary LDG/STG instructions remain in the actual bulk kernel, but dynamic LSU global-load metrics remain nonzero; bulk and synchronization traffic are still present.",
+    "Profiled CUDA-event compute_ms includes profiling effects. Use unprofiled measurements for performance comparisons."
+  ],
+  "primary_documentation": [
+    {
+      "url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/#cache-control",
+      "claim": "Cache control all flushes GPU caches before replay passes."
+    },
+    {
+      "url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/",
+      "claim": "L1 sector accounting uses 32-byte sectors; sector hit rate describes requested sectors that do not miss."
+    }
+  ],
+  "cpu_full_validation": {
+    "command": [
+      "C:/Users/Tom/miniconda3/python.exe",
+      "tools/validate.py",
+      "--proofs",
+      "--build",
+      "C:/Users/Tom/.cache/ak1/cpu_fold_final"
+    ],
+    "exit_code": 0,
+    "ctest_cases_passed": 7,
+    "python_tests_passed": 37,
+    "symbolic_obligations_passed": 15,
+    "independently_verified_runs": 48,
+    "evidence": "C:\\Users\\Tom\\.cache\\ak1\\cpu_fold_final\\evidence_1789299038566882500",
+    "validation_record": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\cpu_fold_final\\evidence_1789299038566882500\\validation.json",
+      "sha256": "9820a6f4fff1fc74b3618c6b4a29acfe78044ef5b87f4d02885767f1749fc5bd"
+    },
+    "proof_record": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\cpu_fold_final\\evidence_1789299038566882500\\proofs.json",
+      "sha256": "7e18be9e873fe9dad78e56b691b816af9175c4d816416b7c95f16fdc68fd1bb0"
+    },
+    "console_log": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\cpu_fold_final_validation.log",
+      "sha256": "33b9581127319f12f4784f89fcfc325e17974b36fe955edb96ff1637b521bd5a"
+    },
+    "gpu_status": "not_run",
+    "artifact_hashes": [
+      {
+        "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\include\\atomos\\core.hpp",
+        "sha256": "3caf491f29fa0704d8ad596530c71dd30e66da551e070949debac0ac70b99e0a"
+      },
+      {
+        "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tests\\test_core.cpp",
+        "sha256": "9f9842f9aa09a1ef2974c7acd25da9f4689f65132479182d40248a00a823388d"
+      },
+      {
+        "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\reference.py",
+        "sha256": "1e0860a498bf9a314ab646ea86754ca06a16fd464efebb0cc922c6b6999bfa7d"
+      },
+      {
+        "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tests\\test_reference.py",
+        "sha256": "ba9417c44311a3c9847e2df5c249b11f529f2f07309ba6e292974a1495cddc6b"
+      },
+      {
+        "path": "C:\\Users\\Tom\\.cache\\ak1\\cpu_fold_final\\Release\\atomos_cpu.exe",
+        "sha256": "d0199da586b0ef092943008c5e8aa452473aa53555c811ca870b631019b2a597"
+      },
+      {
+        "path": "C:\\Users\\Tom\\.cache\\ak1\\cpu_fold_final\\Release\\atomos_tests.exe",
+        "sha256": "b69cf5fd07bb45804d9691f6bee0eac8ef362f6432413c0152576b2f0577219d"
+      }
+    ]
+  },
+  "analysis_source": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\review_fold_scope.py",
+    "sha256": "e645c78200b1802bcf813bc75801e129559c935a0c6ca2fff134a228bed4f5aa"
+  }
+}

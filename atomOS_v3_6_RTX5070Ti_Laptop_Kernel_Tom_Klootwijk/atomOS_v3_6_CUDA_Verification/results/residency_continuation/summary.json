@@ -1,0 +1,214 @@
+{
+  "schema": "atomOS-residency-continuation-1",
+  "date": "2026-09-13",
+  "status": "execution_validated_residency_partial",
+  "executable": "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+  "executable_sha256": "098692baec6bd708503642633c62ef47ca0cebfa297eb5483bace3418c27196d",
+  "partition_studies": [
+    {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\partition_grid_cg\\study.json",
+      "sha256": "474b5570cf691e4a1f06d0af77ed1a17e20c141593a41c4eb260544342243056",
+      "barrier": "grid",
+      "io": "cg",
+      "label": "grid / CG",
+      "aggregates": [
+        {
+          "size": "default",
+          "layout": "linear",
+          "sectors": 6158,
+          "misses": 2048,
+          "misses_min": 2048,
+          "misses_max": 2048,
+          "compulsory_misses": 2048,
+          "all_repeats_at_compulsory_floor": true,
+          "median_ms": 0.050335999578237534,
+          "min_ms": 0.04835199937224388,
+          "max_ms": 0.0506879985332489
+        },
+        {
+          "size": "default",
+          "layout": "morton8",
+          "sectors": 6180,
+          "misses": 2144,
+          "misses_min": 2132,
+          "misses_max": 2312,
+          "compulsory_misses": 2048,
+          "all_repeats_at_compulsory_floor": false,
+          "median_ms": 0.0522879995405674,
+          "min_ms": 0.05036799982190132,
+          "max_ms": 0.055296000093221664
+        },
+        {
+          "size": "max",
+          "layout": "linear",
+          "sectors": 393753,
+          "misses": 383787,
+          "misses_min": 383737,
+          "misses_max": 383953,
+          "compulsory_misses": 131072,
+          "all_repeats_at_compulsory_floor": false,
+          "median_ms": 1.1341760158538818,
+          "min_ms": 1.133952021598816,
+          "max_ms": 1.1351679563522339
+        },
+        {
+          "size": "max",
+          "layout": "morton8",
+          "sectors": 393753,
+          "misses": 385349,
+          "misses_min": 384950,
+          "misses_max": 385525,
+          "compulsory_misses": 131072,
+          "all_repeats_at_compulsory_floor": false,
+          "median_ms": 1.1076159477233887,
+          "min_ms": 1.106495976448059,
+          "max_ms": 1.1088639497756958
+        }
+      ],
+      "audit": {
+        "status": "passed",
+        "commands_checked": 40,
+        "application_json_receipts": 40,
+        "conformance_runs": 8,
+        "timing_runs": 20,
+        "profile_runs": 12,
+        "device": {
+          "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+          "cc_major": 12,
+          "cc_minor": 0,
+          "total_bytes": 12820480000,
+          "free_bytes_at_start": 11561598976,
+          "runtime": 12080,
+          "driver": 13010,
+          "max_texture_1d_linear": 268435456
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\partition_grid_noalloc\\study.json",
+      "sha256": "6dc3fe19b8cf40881d724bd7740e31fe871baf6e3b782a3aa01bc33edd86860e",
+      "barrier": "grid",
+      "io": "no-allocate",
+      "label": "grid / NA",
+      "aggregates": [
+        {
+          "size": "default",
+          "layout": "linear",
+          "sectors": 6161,
+          "misses": 2048,
+          "misses_min": 2048,
+          "misses_max": 2048,
+          "compulsory_misses": 2048,
+          "all_repeats_at_compulsory_floor": true,
+          "median_ms": 0.05379199981689453,
+          "min_ms": 0.048895999789237976,
+          "max_ms": 0.059039998799562454
+        },
+        {
+          "size": "default",
+          "layout": "morton8",
+          "sectors": 6181,
+          "misses": 2204,
+          "misses_min": 2168,
+          "misses_max": 2204,
+          "compulsory_misses": 2048,
+          "all_repeats_at_compulsory_floor": false,
+          "median_ms": 0.05446400120854378,
+          "min_ms": 0.04684799909591675,
+          "max_ms": 0.058880001306533813
+        },
+        {
+          "size": "max",
+          "layout": "linear",
+          "sectors": 393753,
+          "misses": 291832,
+          "misses_min": 290316,
+          "misses_max": 293532,
+          "compulsory_misses": 131072,
+          "all_repeats_at_compulsory_floor": false,
+          "median_ms": 1.1360960006713867,
+          "min_ms": 1.1352319717407227,
+          "max_ms": 1.2672640085220337
+        },
+        {
+          "size": "max",
+          "layout": "morton8",
+          "sectors": 393753,
+          "misses": 315940,
+          "misses_min": 315056,
+          "misses_max": 317744,
+          "compulsory_misses": 131072,
+          "all_repeats_at_compulsory_floor": false,
+          "median_ms": 1.2499200105667114,
+          "min_ms": 1.110592007637024,
+          "max_ms": 1.2509119510650635
+        }
+      ],
+      "audit": {
+        "status": "passed",
+        "commands_checked": 40,
+        "application_json_receipts": 40,
+        "conformance_runs": 8,
+        "timing_runs": 20,
+        "profile_runs": 12,
+        "device": {
+          "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+          "cc_major": 12,
+          "cc_minor": 0,
+          "total_bytes": 12820480000,
+          "free_bytes_at_start": 11561598976,
+          "runtime": 12080,
+          "driver": 13010,
+          "max_texture_1d_linear": 268435456
+        }
+      }
+    }
+  ],
+  "partition_sanitizer_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_continuation\\partition_sanitizers.json",
+  "native_audit_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_continuation\\final_native_findings.json",
+  "warm_study_path": "C:\\Users\\Tom\\.cache\\ak1\\warm_study\\study.json",
+  "source_and_binary_scope": "Final partition studies capture exact source/binary hashes before and after all runs. Earlier exploratory variants are retained separately with archive-time provenance; those hashes were not captured before every quick run.",
+  "residency_interpretation": "The 64 KiB LINEAR dictionary reached exactly 2,048 compulsory misses in all six final profiles across the two I/O policies. Under the cold-start and coverage assumptions, the work and final probe added no observed dictionary misses. This establishes measured retention for that fixture during these launches. The same-size Morton8 cases added 84-264 misses; all 4 MiB cases also failed the cold-miss-floor criterion. Full residency across the supported domain remains unachieved.",
+  "validation_description": "The final binary passed 16 conformance executions covering tiny, padded-tail, default and maximum fixtures under both layouts and both I/O policies. Forty unprofiled timing trials and 24 cold profile samples also passed the host candidate checks and independent receipt/geometry audit. Six memory checks and four synchronization checks reported zero errors; the memory checks include the maximum Morton8 fixture under both policies. These are additional to the production validation on page 2.",
+  "resource_description": "Both sm_120 partition templates use 96 registers per thread, zero local/stack allocation and zero static shared memory. Native disassembly distinguishes STRONG.GPU from NA global accesses. Loop unrolling creates 15 static TLD sites per template; the dynamic phase counts, not that static count, determine traffic. The experiment allocates 754,032 extra bytes for per-thread checksums and SM records, included in memory admission and payload accounting.",
+  "control_rows": [
+    [
+      "Global warming (64 KiB)",
+      "L1 prefetch, read-only global loads and cache-all loads left all 2,048 productive texture misses intact."
+    ],
+    [
+      "Extra texture read (64 KiB)",
+      "Block and cooperative positive controls: 4,096 sectors, 2,048 cold misses. Added traffic is counted; this is deliberate warming."
+    ],
+    [
+      "Block vs grid barrier",
+      "Removing grid barriers removed extra sector requests but did not remove the larger-case failure."
+    ],
+    [
+      "Retain-only (256 KiB)",
+      "8,192 compulsory misses and 8,192 hits, with no K1 work or state commit. At 4 MiB this control also exceeded the cold floor."
+    ],
+    [
+      "Word-only (256 KiB)",
+      "16,384 misses versus an 8,192 cold floor, same as the full epoch. Floating-point diagnostics were omitted; full K1 verification was not run."
+    ],
+    [
+      "No-allocation hint (4 MiB)",
+      "Linear median misses fell from 383,787 to 291,832; both exceed 131,072. Median event time was 1.134 vs 1.136 ms, so fewer misses did not show a speedup."
+    ]
+  ],
+  "causal_interpretation": "The 256 KiB word-only counterexample shows that full diagnostic arithmetic is not required for the loss. Removing productive work removed those extra misses. The experiments do not isolate which remaining memory instruction, replacement, bank-traffic or interruption mechanism causes it; neither nominal capacity nor the grid-barrier invalidation instructions alone explain all observations.",
+  "practical_result": "The production fixes and measured 33.1% best-median improvement remain available. The explicit linear partition experiment reaches the residency floor at the default size, with all warming and probing overhead included. It is retained as a reproducible experiment, not promoted as a universal replacement: the larger-domain residency target remains unresolved, and no supported interface used here guarantees pinned texture lines.",
+  "goal_status_description": "Kernel validation, repairs, native-code inspection and the PDF are delivered. The broader complete-residency target remains unresolved; no maximum-domain or across-launch pinning pass is claimed.",
+  "complete_texture_residency": "not_established_for_full_supported_domain",
+  "default_linear_measured_retention": "compulsory_miss_floor_reached_in_6_of_6_final_profiles",
+  "warm_sanitizers": [
+    "results\\residency_continuation\\memcheck_ca.log",
+    "results\\residency_continuation\\memcheck_cooperative-texture-control.log",
+    "results\\residency_continuation\\memcheck_load.log",
+    "results\\residency_continuation\\memcheck_none.log",
+    "results\\residency_continuation\\memcheck_prefetch.log",
+    "results\\residency_continuation\\memcheck_texture-control.log",
+    "results\\residency_continuation\\synccheck_cooperative.log"
+  ]
+}

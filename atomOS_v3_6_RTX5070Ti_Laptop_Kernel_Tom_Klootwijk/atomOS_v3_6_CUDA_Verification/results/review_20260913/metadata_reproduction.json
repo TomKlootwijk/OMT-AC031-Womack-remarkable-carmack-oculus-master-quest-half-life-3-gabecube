@@ -1,0 +1,65 @@
+{
+  "schema": "atomOS-K1-metadata-defect-reproduction",
+  "recorded_at_utc": "2026-09-13T09:54:04.997329+00:00",
+  "python": "3.13.11",
+  "python_executable": "C:\\Users\\Tom\\miniconda3\\python.exe",
+  "fixture": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\cpu_matrix_evidence\\1_1_provided_off_linear_texture",
+  "method": "Patch Path.read_text for summary.json only; no fixture file mutations. Pre-fix observations were captured during the initial read-only audit; post-fix observations were executed after metadata validation was added.",
+  "scope": "Checks metadata consistency and runner expectations; self-reported JSON is not hardware execution proof.",
+  "cases": [
+    {
+      "injected_metadata": {
+        "backend": "cuda"
+      },
+      "pre_fix_observed": {
+        "status": "passed",
+        "backend_recorded": "cuda"
+      },
+      "post_fix": {
+        "status": "rejected",
+        "reason": "CUDA execution metadata missing or invalid"
+      }
+    },
+    {
+      "injected_metadata": {
+        "candidate_verification": "failed"
+      },
+      "pre_fix_observed": {
+        "status": "passed",
+        "backend_recorded": "cpu"
+      },
+      "post_fix": {
+        "status": "rejected",
+        "reason": "candidate verification was not passed"
+      }
+    },
+    {
+      "injected_metadata": {
+        "read": "fabricated"
+      },
+      "pre_fix_observed": {
+        "status": "passed",
+        "backend_recorded": "cpu"
+      },
+      "post_fix": {
+        "status": "rejected",
+        "reason": "CPU execution requires host reads and no CUDA device"
+      }
+    },
+    {
+      "injected_metadata": {
+        "device": {
+          "name": "invented GPU"
+        }
+      },
+      "pre_fix_observed": {
+        "status": "passed",
+        "backend_recorded": "cpu"
+      },
+      "post_fix": {
+        "status": "rejected",
+        "reason": "CPU execution requires host reads and no CUDA device"
+      }
+    }
+  ]
+}

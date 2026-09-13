@@ -1,0 +1,944 @@
+{
+  "status": "collected",
+  "executable": "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+  "executable_sha256": "05e1eb590d3e0a32f5fac082b33925b55061da63d4cd1922e914180519bcdae0",
+  "executable_unchanged": true,
+  "runs": [
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_cg_epoch_1024.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "epoch",
+        "--io",
+        "cg"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_cg_epoch_1024.csv",
+      "io": "cg",
+      "control": "epoch",
+      "angles": 1024,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "24.615",
+          "unit": "sector",
+          "value": 24615,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "8.231",
+          "unit": "sector",
+          "value": 8231,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "16.384",
+          "unit": "sector",
+          "value": 16384,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "180.265",
+          "unit": "sector",
+          "value": 180265,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "438.364",
+          "unit": "sector",
+          "value": 438364,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_cg_epoch_16384.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "16384",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "epoch",
+        "--io",
+        "cg"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_cg_epoch_16384.csv",
+      "io": "cg",
+      "control": "epoch",
+      "angles": 16384,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "393.753",
+          "unit": "sector",
+          "value": 393753,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "12.921",
+          "unit": "sector",
+          "value": 12921,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "380.832",
+          "unit": "sector",
+          "value": 380832,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "2.854.882",
+          "unit": "sector",
+          "value": 2854882,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "5.599.324",
+          "unit": "sector",
+          "value": 5599324,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_cg_load-only_1024.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "load-only",
+        "--io",
+        "cg"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_cg_load-only_1024.csv",
+      "io": "cg",
+      "control": "load-only",
+      "angles": 1024,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "24.598",
+          "unit": "sector",
+          "value": 24598,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "8.214",
+          "unit": "sector",
+          "value": 8214,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "16.384",
+          "unit": "sector",
+          "value": 16384,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "172.218",
+          "unit": "sector",
+          "value": 172218,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "141.416",
+          "unit": "sector",
+          "value": 141416,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_cg_load-only_16384.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "16384",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "load-only",
+        "--io",
+        "cg"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_cg_load-only_16384.csv",
+      "io": "cg",
+      "control": "load-only",
+      "angles": 16384,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "393.729",
+          "unit": "sector",
+          "value": 393729,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "13.736",
+          "unit": "sector",
+          "value": 13736,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "379.993",
+          "unit": "sector",
+          "value": 379993,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "2.753.366",
+          "unit": "sector",
+          "value": 2753366,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "141.404",
+          "unit": "sector",
+          "value": 141404,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_cg_store-only_1024.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "store-only",
+        "--io",
+        "cg"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_cg_store-only_1024.csv",
+      "io": "cg",
+      "control": "store-only",
+      "angles": 1024,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "24.605",
+          "unit": "sector",
+          "value": 24605,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "16.345",
+          "unit": "sector",
+          "value": 16345,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "8.260",
+          "unit": "sector",
+          "value": 8260,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "442",
+          "unit": "sector",
+          "value": 442,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "438.364",
+          "unit": "sector",
+          "value": 438364,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_cg_store-only_16384.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "16384",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "store-only",
+        "--io",
+        "cg"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_cg_store-only_16384.csv",
+      "io": "cg",
+      "control": "store-only",
+      "angles": 16384,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "393.693",
+          "unit": "sector",
+          "value": 393693,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "13.815",
+          "unit": "sector",
+          "value": 13815,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "379.878",
+          "unit": "sector",
+          "value": 379878,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "2.797",
+          "unit": "sector",
+          "value": 2797,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "5.599.324",
+          "unit": "sector",
+          "value": 5599324,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_no-allocate_epoch_1024.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "epoch",
+        "--io",
+        "no-allocate"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_no-allocate_epoch_1024.csv",
+      "io": "no-allocate",
+      "control": "epoch",
+      "angles": 1024,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "24.616",
+          "unit": "sector",
+          "value": 24616,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "8.232",
+          "unit": "sector",
+          "value": 8232,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "16.384",
+          "unit": "sector",
+          "value": 16384,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "180.341",
+          "unit": "sector",
+          "value": 180341,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "438.364",
+          "unit": "sector",
+          "value": 438364,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_no-allocate_epoch_16384.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "16384",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "epoch",
+        "--io",
+        "no-allocate"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_no-allocate_epoch_16384.csv",
+      "io": "no-allocate",
+      "control": "epoch",
+      "angles": 16384,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "393.753",
+          "unit": "sector",
+          "value": 393753,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "100.129",
+          "unit": "sector",
+          "value": 100129,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "293.624",
+          "unit": "sector",
+          "value": 293624,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "2.854.991",
+          "unit": "sector",
+          "value": 2854991,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "5.599.324",
+          "unit": "sector",
+          "value": 5599324,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_no-allocate_load-only_1024.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "load-only",
+        "--io",
+        "no-allocate"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_no-allocate_load-only_1024.csv",
+      "io": "no-allocate",
+      "control": "load-only",
+      "angles": 1024,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "24.580",
+          "unit": "sector",
+          "value": 24580,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "8.196",
+          "unit": "sector",
+          "value": 8196,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "16.384",
+          "unit": "sector",
+          "value": 16384,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "172.192",
+          "unit": "sector",
+          "value": 172192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "141.416",
+          "unit": "sector",
+          "value": 141416,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_no-allocate_load-only_16384.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "16384",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "load-only",
+        "--io",
+        "no-allocate"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_no-allocate_load-only_16384.csv",
+      "io": "no-allocate",
+      "control": "load-only",
+      "angles": 16384,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "393.681",
+          "unit": "sector",
+          "value": 393681,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "14.297",
+          "unit": "sector",
+          "value": 14297,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "379.384",
+          "unit": "sector",
+          "value": 379384,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "2.753.218",
+          "unit": "sector",
+          "value": 2753218,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "141.404",
+          "unit": "sector",
+          "value": 141404,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_no-allocate_store-only_1024.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "1024",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "store-only",
+        "--io",
+        "no-allocate"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_no-allocate_store-only_1024.csv",
+      "io": "no-allocate",
+      "control": "store-only",
+      "angles": 1024,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "24.601",
+          "unit": "sector",
+          "value": 24601,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "16.409",
+          "unit": "sector",
+          "value": 16409,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "8.192",
+          "unit": "sector",
+          "value": 8192,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "483",
+          "unit": "sector",
+          "value": 483,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "438.364",
+          "unit": "sector",
+          "value": 438364,
+          "status": "collected"
+        }
+      }
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA Corporation/Nsight Compute 2025.1.0/target/windows-desktop-win7-x64/ncu.exe",
+        "--clock-control",
+        "none",
+        "--cache-control",
+        "all",
+        "--replay-mode",
+        "kernel",
+        "--launch-skip",
+        "1",
+        "--launch-count",
+        "1",
+        "--check-exit-code",
+        "1",
+        "--metrics",
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum,l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum,l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base",
+        "--log-file",
+        "results\\residency_followup\\split_no-allocate_store-only_16384.csv",
+        "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+        "--rows",
+        "512",
+        "--angles",
+        "16384",
+        "--epochs",
+        "1",
+        "--layout",
+        "linear",
+        "--barrier",
+        "grid",
+        "--control",
+        "store-only",
+        "--io",
+        "no-allocate"
+      ],
+      "exit_code": 0,
+      "csv": "results\\residency_followup\\split_no-allocate_store-only_16384.csv",
+      "io": "no-allocate",
+      "control": "store-only",
+      "angles": 16384,
+      "metrics": {
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum": {
+          "raw_value": "393.741",
+          "unit": "sector",
+          "value": 393741,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum": {
+          "raw_value": "262.669",
+          "unit": "sector",
+          "value": 262669,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum": {
+          "raw_value": "131.072",
+          "unit": "sector",
+          "value": 131072,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum": {
+          "raw_value": "3.120",
+          "unit": "sector",
+          "value": 3120,
+          "status": "collected"
+        },
+        "l1tex__t_sectors_pipe_lsu_mem_global_op_st.sum": {
+          "raw_value": "5.599.324",
+          "unit": "sector",
+          "value": 5599324,
+          "status": "collected"
+        }
+      }
+    }
+  ]
+}

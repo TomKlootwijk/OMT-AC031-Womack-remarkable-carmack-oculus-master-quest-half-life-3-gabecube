@@ -1,0 +1,69 @@
+{
+  "executable": "C:\\Users\\Tom\\.cache\\ak1\\bulk_sm120_padded\\Release\\atomos_cache_bulk.exe",
+  "sha256": "6d8b0e82f47be33551ea63da75e2d65f8e8b66c128c284b84cf6cd9c5e367ac5",
+  "runs": [
+    {
+      "command": [
+        "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/compute-sanitizer/compute-sanitizer.exe",
+        "--tool",
+        "memcheck",
+        "--error-exitcode",
+        "97",
+        "C:\\Users\\Tom\\.cache\\ak1\\bulk_sm120_padded\\Release\\atomos_cache_bulk.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--layout",
+        "morton8",
+        "--epochs",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "padded_memcheck_17_257_morton8.stdout",
+      "stderr": "padded_memcheck_17_257_morton8.stderr"
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/compute-sanitizer/compute-sanitizer.exe",
+        "--tool",
+        "synccheck",
+        "--error-exitcode",
+        "97",
+        "C:\\Users\\Tom\\.cache\\ak1\\bulk_sm120_padded\\Release\\atomos_cache_bulk.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--layout",
+        "morton8",
+        "--epochs",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "padded_synccheck_17_257_morton8.stdout",
+      "stderr": "padded_synccheck_17_257_morton8.stderr"
+    },
+    {
+      "command": [
+        "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/compute-sanitizer/compute-sanitizer.exe",
+        "--tool",
+        "racecheck",
+        "--error-exitcode",
+        "97",
+        "C:\\Users\\Tom\\.cache\\ak1\\bulk_sm120_padded\\Release\\atomos_cache_bulk.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--layout",
+        "morton8",
+        "--epochs",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "padded_racecheck_17_257_morton8.stdout",
+      "stderr": "padded_racecheck_17_257_morton8.stderr"
+    }
+  ]
+}

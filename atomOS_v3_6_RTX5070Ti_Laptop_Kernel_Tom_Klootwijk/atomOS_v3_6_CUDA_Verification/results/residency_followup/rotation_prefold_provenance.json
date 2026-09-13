@@ -1,0 +1,31 @@
+{
+  "schema": "atomos.rotation_prefold.v1",
+  "captured_utc": "2026-09-13T11:23:45.8871361Z",
+  "entries": [
+    {
+      "source": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\include\\atomos\\core.hpp",
+      "snapshot": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\core_prefold.hpp",
+      "sha256": "40074857177e9ea41221a5b62904136ae592f67b5c5d9c27b92f2cc49fe1f341",
+      "bytes": 7179
+    },
+    {
+      "source": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\experiments\\cache_bulk.cu",
+      "snapshot": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\cache_bulk_prefold.cu",
+      "sha256": "80d843d9fa6ab75e802aa6fb036d5833e4684a397406d48c6b8ca02baf0dbc96",
+      "bytes": 21844
+    },
+    {
+      "source": "C:\\Users\\Tom\\.cache\\ak1\\bulk_sm120\\Release\\atomos_cache_bulk.exe",
+      "snapshot": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\atomos_cache_bulk_prefold.exe",
+      "sha256": "d4a67af1a8583b19798611aa518a45f0089ac354d3ed4d372db36ee645f51095",
+      "bytes": 1432576
+    },
+    {
+      "source": "C:\\Users\\Tom\\.cache\\ak1\\bulk_sm120_padded\\Release\\atomos_cache_bulk.exe",
+      "snapshot": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\atomos_cache_bulk_padded_prefold.exe",
+      "sha256": "6d8b0e82f47be33551ea63da75e2d65f8e8b66c128c284b84cf6cd9c5e367ac5",
+      "bytes": 1438208
+    }
+  ],
+  "gpu_execution": "not_run_by_kernel_review"
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "arguments": [
+      "--rows",
+      "0"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--angles",
+      "65537"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--epochs",
+      "0"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--epochs",
+      "17"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--layout",
+      "bad"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--mode",
+      "bad"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--profile",
+      "bad"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--fringe",
+      "maybe"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--budget-mib",
+      "1"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--probe"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--out",
+      "/mnt/data/atomOS_v3_6_CUDA_Verification/results/demo_morton"
+    ],
+    "expected_success": false,
+    "actual_exit": 1,
+    "passed": true
+  },
+  {
+    "arguments": [
+      "--rows",
+      "1",
+      "--angles",
+      "1",
+      "--epochs",
+      "1"
+    ],
+    "expected_success": true,
+    "actual_exit": 0,
+    "passed": true
+  }
+]

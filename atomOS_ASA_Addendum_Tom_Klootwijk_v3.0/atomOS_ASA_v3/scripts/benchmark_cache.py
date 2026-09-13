@@ -27,6 +27,8 @@ METRICS = (
 )
 AGGREGATE_METRIC = 'l1tex__t_sector_hit_rate.pct'
 REQUESTED_METRICS = (*METRICS, AGGREGATE_METRIC)
+PASSES = 'profiler__replayer_passes'
+PROFILE_METRICS = (*REQUESTED_METRICS, PASSES)
 
 
 def profiler_number(value: str, percentage: bool) -> float:
@@ -54,6 +56,29 @@ def validate_metrics(metrics: dict) -> None:
         raise ValueError('texture counts disagree with hit percentage or show no texture work')
 
 
+def parse_profile(stdout: str) -> dict:
+    header = '"ID","Process ID"'
+    if header not in stdout:
+        raise ValueError('profiler emitted no metric CSV')
+    rows = list(csv.DictReader(io.StringIO(stdout[stdout.index(header):])))
+    if len(rows) != len(PROFILE_METRICS) or {row.get('Metric Name') for row in rows} != set(PROFILE_METRICS):
+        raise ValueError('profiler must emit exactly one row per requested metric, including replay passes')
+    identity_fields = ('ID', 'Process ID', 'Kernel Name', 'Context', 'Stream')
+    identities = {tuple(row.get(name) for name in identity_fields) for row in rows}
+    if len(identities) != 1 or any(not value for value in next(iter(identities))):
+        raise ValueError('profiler metrics must belong to exactly one identified kernel capture')
+    identity = dict(zip(identity_fields, next(iter(identities))))
+    if identity['Kernel Name'].split('(', 1)[0].strip() != 'asa_texture_kernel':
+        raise ValueError('profiler reported the wrong texture kernel')
+    passes = next(row for row in rows if row['Metric Name'] == PASSES)
+    if profiler_number(passes['Metric Value'], False) != 1:
+        raise ValueError('cache measurement requires exactly one profiler pass; replay could change cache state')
+    metrics = {row['Metric Name']: profiler_number(row['Metric Value'], row['Metric Unit']=='%')
+               for row in rows if row['Metric Name'] != PASSES}
+    validate_metrics(metrics)
+    return {'metrics': metrics, 'profiler_passes': 1, 'capture': identity}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--executable', required=True, type=Path)
@@ -73,17 +98,26 @@ def main() -> int:
               'binary_sha256': hashlib.sha256(exe.read_bytes()).hexdigest(),
               'warmup_launches_per_path': 5, 'timed_launches_per_path': 30,
               'profile_cache_control': 'all', 'profile_clock_control': 'base',
-              'profile_replay_mode': 'kernel', 'steps': [], 'conditions': {}}
+              'profile_replay_mode': 'kernel', 'required_profiler_passes': 1,
+              'steps': [], 'conditions': {}}
+
+    def verify_binary():
+        digest = hashlib.sha256(exe.read_bytes()).hexdigest()
+        if digest != record['binary_sha256']:
+            raise RuntimeError('executable changed during the benchmark')
+        return digest
 
     def run(label, command):
         command = list(map(str, command))
+        before = verify_binary()
         started = time.perf_counter()
         done = subprocess.run(command, cwd=ROOT, text=True, encoding='utf-8', errors='replace',
                               stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         elapsed = (time.perf_counter()-started)*1000
         (report/(label+'.log')).write_text(done.stdout, encoding='utf-8')
         record['steps'].append({'label': label, 'command': command, 'returncode': done.returncode,
-                                'process_wall_ms': elapsed})
+                                'process_wall_ms': elapsed, 'binary_sha256_before': before})
+        record['steps'][-1]['binary_sha256_after'] = verify_binary()
         if done.returncode:
             raise RuntimeError(f'{label} failed; see its log')
         return done.stdout, elapsed
@@ -123,24 +157,18 @@ def main() -> int:
                     base = [exe, '--samples', args.samples, '--layout', layout, '--sample-order', order, '--warmup', 5, '--block-size', args.block_size, '--l2-policy', 'normal']
                     name = label+f'_profile_{n}'
                     output = report/name
-                    stdout, _ = run(name, [args.ncu.resolve(), '--metrics', ','.join(REQUESTED_METRICS),
+                    stdout, _ = run(name, [args.ncu.resolve(), '--metrics', ','.join(PROFILE_METRICS),
                                            '--cache-control', 'all', '--clock-control', 'base',
                                            '--replay-mode', 'kernel', '--kernel-name', 'regex:asa_texture_kernel',
                                            '--launch-skip', 5, '--launch-count', 1, '--csv', '--print-units', 'base',
                                            *base, '--repeat', 1, '--out', output])
-                    rows = list(csv.DictReader(io.StringIO(stdout[stdout.index('"ID","Process ID"'):])))
-                    if len(rows) != len(REQUESTED_METRICS):
-                        raise RuntimeError('profiler did not emit exactly one row per metric')
-                    metrics = {row['Metric Name']: profiler_number(row['Metric Value'], row['Metric Unit']=='%') for row in rows}
-                    if set(metrics) != set(REQUESTED_METRICS):
-                        raise RuntimeError('profiler metric names do not match the requested set')
-                    validate_metrics(metrics)
+                    measurement = parse_profile(stdout)
                     meta = json.loads((output/'run.json').read_text())
                     verify_execution_metadata(meta, [str(v) for v in [*base[1:], '--repeat', 1]], True)
                     oracle = verify_directory(output)
                     if (output/'results.bin').read_bytes() != expected_results or (output/'samples.f64x2').read_bytes() != expected_samples:
                         raise AssertionError('profiled sample order or result differs from natural output')
-                    condition['profiles'].append({'metrics': metrics, 'oracle': oracle})
+                    condition['profiles'].append({**measurement, 'oracle': oracle})
         for condition in record['conditions'].values():
             condition['summary'] = {
                     'process_wall_ms_median': statistics.median(x['process_wall_ms'] for x in condition['timing']),
@@ -155,8 +183,7 @@ def main() -> int:
                     'texture_requested_sectors_median': statistics.median(x['metrics'][METRICS[3]] for x in condition['profiles']),
                     'texture_requests_median': statistics.median(x['metrics'][METRICS[4]] for x in condition['profiles']),
                 }
-        if hashlib.sha256(exe.read_bytes()).hexdigest() != record['binary_sha256']:
-            raise RuntimeError('executable changed during the benchmark')
+        verify_binary()
         record['status'] = 'pass'
         record['all_results_and_sample_order_exact'] = True
     except Exception as error:

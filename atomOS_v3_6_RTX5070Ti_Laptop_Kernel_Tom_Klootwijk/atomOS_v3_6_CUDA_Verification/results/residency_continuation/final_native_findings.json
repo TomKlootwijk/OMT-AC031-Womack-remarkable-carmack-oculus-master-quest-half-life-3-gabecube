@@ -1,0 +1,232 @@
+{
+  "schema": "atomOS-v3.6-K1-partition-native-audit",
+  "status": "passed",
+  "audit_kind": "static native disassembly and source review",
+  "gpu_execution_performed": false,
+  "recorded_utc": "2026-09-13T10:56:35.991348+00:00",
+  "executable": "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\Release\\atomos_cache_partition.exe",
+  "executable_sha256": "098692baec6bd708503642633c62ef47ca0cebfa297eb5483bace3418c27196d",
+  "tool": {
+    "path": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\cuobjdump.exe",
+    "sha256": "291b5e9b821564541fa21d92ff0ab3d5df0b2764d40ec6f49c8dfbdad5a9227a",
+    "version": "cuobjdump: NVIDIA (R) fat binary listing tool\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Jan__3_19:58:15_Pacific_Standard_Time_2025\nCuda compilation tools, release 12.8, V12.8.55\nBuild cuda_12.8.r12.8/compiler.35351055_0"
+  },
+  "architecture": "sm_120",
+  "ptx_isa_version": "8.7",
+  "fmad": false,
+  "files": {
+    "results\\residency_continuation\\final_sass.txt": {
+      "sha256": "7265b32b6a5b5a49d191fed5caa7efa9ef3378e6545c438d0c68f1379d00e93e",
+      "bytes": 11108996
+    },
+    "results\\residency_continuation\\final_resources.txt": {
+      "sha256": "0352db56c91b19bed734acdbadbb5b4160c225c5aa1ad485cce0a06300bb4115",
+      "bytes": 1920
+    },
+    "experiments\\cache_partition.cu": {
+      "sha256": "a4c066b285dc9cbefcfb07578012b38d696916fd07c84e54df92c90ab8ce6e6f",
+      "bytes": 19363
+    },
+    "cuda\\kernel.cu": {
+      "sha256": "1dd20984d5c999856c40bb51fbecba4558ffb5ef7b24c113a7f9ab376b3369f9",
+      "bytes": 9357
+    },
+    "include\\atomos\\core.hpp": {
+      "sha256": "40074857177e9ea41221a5b62904136ae592f67b5c5d9c27b92f2cc49fe1f341",
+      "bytes": 7179
+    },
+    "include\\atomos\\host.hpp": {
+      "sha256": "9033684ba87db4806c0cc345e03ecd961d7c76554355ac1555bcc3b07d8af278",
+      "bytes": 7826
+    },
+    "CMakeLists.txt": {
+      "sha256": "5d3c52f02199c233a3c26c881b208b01aa7e6d4524fd4f650b399982c71248ad",
+      "bytes": 4195
+    }
+  },
+  "variants": [
+    {
+      "policy": "cg",
+      "mangled_kernel": "_ZN22cache_partition_detail28atomos_epoch_partition_probeILb0EEEvN6atomos6ConfigEPKNS1_5StateEPKNS1_4LaneEyPNS1_6ResultEP5uint4SC_PjSD_jjjjj",
+      "resources": {
+        "reg": 96,
+        "stack": 0,
+        "shared": 0,
+        "local": 0
+      },
+      "static_instruction_counts": {
+        "STG.E.STRONG.GPU": 10,
+        "TLD.LZ": 15,
+        "BAR.SYNC.DEFER_BLOCKING": 10,
+        "MEMBAR.ALL.GPU": 2,
+        "CCTL.IVALL": 2,
+        "LDG.E.64.STRONG.GPU": 10,
+        "LDG.E.STRONG.GPU": 2,
+        "LDG.E.64.CONSTANT": 12,
+        "STG.E.64.STRONG.GPU": 21
+      },
+      "instruction_examples": {
+        "STG.E.STRONG.GPU": {
+          "pc": "0x0190",
+          "assembly": "STG.E.STRONG.GPU desc[UR12][R2.64], R5;"
+        },
+        "TLD.LZ": {
+          "pc": "0x0390",
+          "assembly": "TLD.LZ R24, R22, R16, UR4, 1D;"
+        },
+        "BAR.SYNC.DEFER_BLOCKING": {
+          "pc": "0x07c0",
+          "assembly": "BAR.SYNC.DEFER_BLOCKING 0x0;"
+        },
+        "MEMBAR.ALL.GPU": {
+          "pc": "0x0940",
+          "assembly": "MEMBAR.ALL.GPU;"
+        },
+        "CCTL.IVALL": {
+          "pc": "0x09e0",
+          "assembly": "CCTL.IVALL;"
+        },
+        "LDG.E.64.STRONG.GPU": {
+          "pc": "0x1170",
+          "assembly": "LDG.E.64.STRONG.GPU R24, desc[UR12][R44.64+0x20];"
+        },
+        "LDG.E.STRONG.GPU": {
+          "pc": "0x1260",
+          "assembly": "LDG.E.STRONG.GPU R46, desc[UR12][R42.64];"
+        },
+        "LDG.E.64.CONSTANT": {
+          "pc": "0xf780",
+          "assembly": "LDG.E.64.CONSTANT R8, desc[UR12][R20.64+0x8];"
+        },
+        "STG.E.64.STRONG.GPU": {
+          "pc": "0x178f0",
+          "assembly": "STG.E.64.STRONG.GPU desc[UR12][R8.64], R38;"
+        }
+      },
+      "texture_instruction_pcs": [
+        "0x0390",
+        "0x03a0",
+        "0x03b0",
+        "0x03c0",
+        "0x0500",
+        "0x0560",
+        "0x0580",
+        "0x1120",
+        "0x180f0",
+        "0x18100",
+        "0x18110",
+        "0x18120",
+        "0x18270",
+        "0x182d0",
+        "0x182f0"
+      ],
+      "grid_sync_invalidation_pcs": [
+        "0x09e0",
+        "0x17dc0"
+      ]
+    },
+    {
+      "policy": "no-allocate",
+      "mangled_kernel": "_ZN22cache_partition_detail28atomos_epoch_partition_probeILb1EEEvN6atomos6ConfigEPKNS1_5StateEPKNS1_4LaneEyPNS1_6ResultEP5uint4SC_PjSD_jjjjj",
+      "resources": {
+        "reg": 96,
+        "stack": 0,
+        "shared": 0,
+        "local": 0
+      },
+      "static_instruction_counts": {
+        "STG.E.NA": 10,
+        "TLD.LZ": 15,
+        "BAR.SYNC.DEFER_BLOCKING": 10,
+        "MEMBAR.ALL.GPU": 2,
+        "CCTL.IVALL": 2,
+        "LDG.E.NA.64": 10,
+        "LDG.E.NA": 2,
+        "LDG.E.64.CONSTANT": 12,
+        "STG.E.NA.64": 21
+      },
+      "instruction_examples": {
+        "STG.E.NA": {
+          "pc": "0x0190",
+          "assembly": "STG.E.NA desc[UR12][R2.64], R5;"
+        },
+        "TLD.LZ": {
+          "pc": "0x0390",
+          "assembly": "TLD.LZ R24, R22, R16, UR4, 1D;"
+        },
+        "BAR.SYNC.DEFER_BLOCKING": {
+          "pc": "0x07c0",
+          "assembly": "BAR.SYNC.DEFER_BLOCKING 0x0;"
+        },
+        "MEMBAR.ALL.GPU": {
+          "pc": "0x0940",
+          "assembly": "MEMBAR.ALL.GPU;"
+        },
+        "CCTL.IVALL": {
+          "pc": "0x09e0",
+          "assembly": "CCTL.IVALL;"
+        },
+        "LDG.E.NA.64": {
+          "pc": "0x1160",
+          "assembly": "LDG.E.NA.64 R24, desc[UR12][R44.64+0x20];"
+        },
+        "LDG.E.NA": {
+          "pc": "0x1250",
+          "assembly": "LDG.E.NA R46, desc[UR12][R42.64];"
+        },
+        "LDG.E.64.CONSTANT": {
+          "pc": "0xf770",
+          "assembly": "LDG.E.64.CONSTANT R8, desc[UR12][R20.64+0x8];"
+        },
+        "STG.E.NA.64": {
+          "pc": "0x178e0",
+          "assembly": "STG.E.NA.64 desc[UR12][R8.64], R38;"
+        }
+      },
+      "texture_instruction_pcs": [
+        "0x0390",
+        "0x03a0",
+        "0x03b0",
+        "0x03c0",
+        "0x0500",
+        "0x0560",
+        "0x0580",
+        "0x1110",
+        "0x180e0",
+        "0x180f0",
+        "0x18100",
+        "0x18110",
+        "0x18260",
+        "0x182c0",
+        "0x182e0"
+      ],
+      "grid_sync_invalidation_pcs": [
+        "0x09e0",
+        "0x17db0"
+      ]
+    }
+  ],
+  "interpretation": [
+    "Both templates have 96 registers/thread and no reported local memory, stack, or static shared memory. Runtime occupancy==1 is still checked for the selected template; static resource counts alone are not a runtime occupancy measurement.",
+    "CG explicit input/output operations lower to STRONG.GPU opcode families; no-allocate operations lower to NA families. Static explicit load/store counts are equal across policies.",
+    "Each template retains 15 static TLD.LZ sites because warm/post loops are unrolled; these are not dynamic request counts. The real-work loop retains a distinct texture load.",
+    "Both templates retain two static CCTL.IVALL sites associated with the optional cooperative grid-sync path, and 12 LDG.E.64.CONSTANT sites in the math body. Changing explicit IO policy does not rewrite library-internal accesses.",
+    "No cache-residency conclusion follows from this static audit. Runtime profiling evidence must be interpreted separately."
+  ],
+  "source_review": {
+    "critical_findings": [],
+    "reproduced_defects": [],
+    "checked_contracts": [
+      "A physical range may be empty when its beginning exceeds atlas length; all loops then perform zero reads, checksums remain zero, and all threads still participate in chosen barriers.",
+      "Partition intervals are contiguous, non-overlapping, aligned to 32 uint4 texels and clipped at stored atlas length. Host coverage independently counts all stored and all logical coordinates.",
+      "Both inverse layouts preserve radial-even/angular-word-odd Morton semantics. Padding is warmed/probed but cannot create a logical result; tail validity is applied by unchanged word_step/epoch_word.",
+      "Every result field is explicitly stored and every frozen Lane/State field is loaded. An opaque compiler boundary retains angle loads in the word-only control.",
+      "Kernel pointer selection precedes function attributes and occupancy queries; the same selected template pointer is used for cooperative launch.",
+      "All buffer and record limits are checked before allocation. Additional pre/post checksum and SM-id buffers are included in budget/summary payload.",
+      "Texture object destruction precedes backing-mask destruction. No kernel writes to input/state/mask resources.",
+      "Real epochs verify probes and all candidates before commit_verified advances host state. Controls skip candidate verification and commit, reporting not_run, zero verified lane epochs and host_state_committed=false.",
+      "Sparse SM identifiers are checked only for unchanged before/after identity and uniqueness; no assumption that SM IDs are less than reported SM count.",
+      "No cache-capacity or pinning guarantee is hardcoded."
+    ]
+  }
+}

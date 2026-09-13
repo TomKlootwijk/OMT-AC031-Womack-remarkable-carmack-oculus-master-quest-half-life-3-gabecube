@@ -1,5 +1,7 @@
 # Build status — delivered edition
 
+The latest local follow-up is [residency delivery status](../local_validation/20260913_residency_delivery/delivery_status.json) and its [PDF](../output/pdf/atomOS_ASA_kernel_residency_validation.pdf). The earlier tables below retain their historical scope. This follow-up did not change the CUDA/core arithmetic; it repaired benchmark capture validation and added a host request-footprint utility.
+
 The `results/validation_status.json` record is authoritative for the delivered run.
 
 | Check | Status |
@@ -43,3 +45,13 @@ The final residency probe accepted 84 one-pass captures. Independently measured 
 One-pass capacity profiling measured an 8 KiB shared-memory partition, 1 KiB driver shared memory per block and zero static/dynamic application shared memory. Together with NVIDIA's documented 128 KiB combined capacity for CC 12.x, this suggests a nominal 120 KiB L1/TEX allocation budget per SM. It is not measured occupancy or proof of permanent cache residence.
 
 Earlier failed and unavailable attempts are retained, including the rejected four-pass L2 probe in `residency_initial`. This repository remains a user-mode numerical CUDA application, not a custom ring-0 driver or executable pinned in a texture cache. [CODEX_FINDINGS.md](../CODEX_FINDINGS.md) gives the fixes, measurement details, source links, earlier failures and limits.
+
+## Fresh residency delivery follow-up - 13 September 2026
+
+Fresh CPU and CUDA configure/build/CTest passed; all 16 Compute Sanitizer invocations passed. After the benchmark repair, all five CTest targets passed again, including 47 Python tests, 33 C++ groups / 74,982 assertions, 58 CPU CLI and 76 GPU CLI scenarios. The retained 72 focused cases / 28,656 samples passed the independent Python oracle with maximum error 0. Host ASan/UBSan was requested and reported unavailable with MSVC, not passed.
+
+The repaired benchmark accepted 12 cold one-pass captures and 20 unprofiled process runs. Fresh Morton8 natural/locality miss sectors were 53,662 / 10,470; texture-kernel means were 0.060306 / 0.029486 ms (medians across five process runs, each five warmups and 30 timed launches per path). These compare existing scheduling options, not a new change to the optimized kernel. Host preparation/restoration costs remain material.
+
+All 84 fresh residency captures required one pass and exact outputs. Warm Morton/locality L1/TEX hits were 71.2286% with 10,463 miss sectors (normal policy, medians). Both kernels and policies had zero independently measured warm L2 read misses. Full L1/TEX residency was not reached or guaranteed. The fresh capacity capture measured an 8 KiB shared partition, 1 KiB driver shared allocation per block and zero application shared memory. Native resource reports show 36 registers and zero stack/local/shared bytes for both kernels; texture SASS contains TLD.LZ instructions.
+
+The host sector model measured requested footprints of 217,280 bytes (linear) and 205,472 bytes (Morton), with locality maximum block footprints of 8,000 and 9,216 bytes respectively. The full tables total 544,768 bytes (532 KiB). These are requested-address models, not cache occupancy. Original `results/` hashes remain unchanged. The collector's initial import-path failure and the host tracer's initial command-path failure are retained as tooling attempts and corrected; neither is a CUDA numerical failure.

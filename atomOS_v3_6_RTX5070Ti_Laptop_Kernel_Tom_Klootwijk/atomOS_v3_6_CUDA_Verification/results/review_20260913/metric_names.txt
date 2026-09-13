@@ -1,0 +1,443 @@
+gpu__time_duration.avg                                                      Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.peak_sustained                                       Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.peak_sustained_active                                Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.peak_sustained_active.per_second                     Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.peak_sustained_elapsed                               Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.peak_sustained_elapsed.per_second                    Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.per_cycle_active                                     Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.per_cycle_elapsed                                    Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.per_second                                           Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.pct_of_peak_sustained_active                         Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.avg.pct_of_peak_sustained_elapsed                        Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max                                                      Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.peak_sustained                                       Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.peak_sustained_active                                Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.peak_sustained_active.per_second                     Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.peak_sustained_elapsed                               Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.peak_sustained_elapsed.per_second                    Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.per_cycle_active                                     Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.per_cycle_elapsed                                    Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.per_second                                           Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.pct_of_peak_sustained_active                         Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.max.pct_of_peak_sustained_elapsed                        Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min                                                      Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.peak_sustained                                       Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.peak_sustained_active                                Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.peak_sustained_active.per_second                     Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.peak_sustained_elapsed                               Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.peak_sustained_elapsed.per_second                    Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.per_cycle_active                                     Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.per_cycle_elapsed                                    Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.per_second                                           Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.pct_of_peak_sustained_active                         Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.min.pct_of_peak_sustained_elapsed                        Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum                                                      Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.peak_sustained                                       Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.peak_sustained_active                                Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.peak_sustained_active.per_second                     Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.peak_sustained_elapsed                               Counter         ns              equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.peak_sustained_elapsed.per_second                    Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.per_cycle_active                                     Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.per_cycle_elapsed                                    Counter         ns/cycle        equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.per_second                                           Counter         ns/s            equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.pct_of_peak_sustained_active                         Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration.sum.pct_of_peak_sustained_elapsed                        Counter         %               equals to gpu__time_duration_measured_user if collectable, otherwise  
+                                                                                                            equals to gpu__time_duration_measured_wallclock (This counter metric  
+gpu__time_duration_measured_user.avg                                        Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.peak_sustained                         Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.peak_sustained_active                  Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.peak_sustained_active.per_second       Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.peak_sustained_elapsed                 Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.peak_sustained_elapsed.per_second      Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.per_cycle_active                       Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.per_cycle_elapsed                      Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.per_second                             Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.pct_of_peak_sustained_active           Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.avg.pct_of_peak_sustained_elapsed          Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max                                        Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.peak_sustained                         Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.peak_sustained_active                  Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.peak_sustained_active.per_second       Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.peak_sustained_elapsed                 Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.peak_sustained_elapsed.per_second      Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.per_cycle_active                       Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.per_cycle_elapsed                      Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.per_second                             Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.pct_of_peak_sustained_active           Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.max.pct_of_peak_sustained_elapsed          Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min                                        Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.peak_sustained                         Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.peak_sustained_active                  Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.peak_sustained_active.per_second       Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.peak_sustained_elapsed                 Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.peak_sustained_elapsed.per_second      Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.per_cycle_active                       Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.per_cycle_elapsed                      Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.per_second                             Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.pct_of_peak_sustained_active           Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.min.pct_of_peak_sustained_elapsed          Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum                                        Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.peak_sustained                         Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.peak_sustained_active                  Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.peak_sustained_active.per_second       Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.peak_sustained_elapsed                 Counter         ns              context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.peak_sustained_elapsed.per_second      Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.per_cycle_active                       Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.per_cycle_elapsed                      Counter         ns/cycle        context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.per_second                             Counter         ns/s            context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.pct_of_peak_sustained_active           Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_user.sum.pct_of_peak_sustained_elapsed          Counter         %               context-aware time duration in nanoseconds (This counter metric       
+gpu__time_duration_measured_wallclock.avg                                   Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.peak_sustained                    Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.peak_sustained_active             Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.peak_sustained_active.per_second  Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.peak_sustained_elapsed            Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.peak_sustained_elapsed.per_second Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.per_cycle_active                  Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.per_cycle_elapsed                 Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.per_second                        Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.pct_of_peak_sustained_active      Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.avg.pct_of_peak_sustained_elapsed     Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max                                   Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.peak_sustained                    Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.peak_sustained_active             Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.peak_sustained_active.per_second  Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.peak_sustained_elapsed            Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.peak_sustained_elapsed.per_second Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.per_cycle_active                  Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.per_cycle_elapsed                 Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.per_second                        Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.pct_of_peak_sustained_active      Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.max.pct_of_peak_sustained_elapsed     Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min                                   Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.peak_sustained                    Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.peak_sustained_active             Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.peak_sustained_active.per_second  Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.peak_sustained_elapsed            Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.peak_sustained_elapsed.per_second Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.per_cycle_active                  Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.per_cycle_elapsed                 Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.per_second                        Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.pct_of_peak_sustained_active      Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.min.pct_of_peak_sustained_elapsed     Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum                                   Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.peak_sustained                    Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.peak_sustained_active             Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.peak_sustained_active.per_second  Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.peak_sustained_elapsed            Counter         ns              wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.peak_sustained_elapsed.per_second Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.per_cycle_active                  Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.per_cycle_elapsed                 Counter         ns/cycle        wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.per_second                        Counter         ns/s            wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.pct_of_peak_sustained_active      Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+gpu__time_duration_measured_wallclock.sum.pct_of_peak_sustained_elapsed     Counter         %               wall-clock duration in nanoseconds (This counter metric represents    
+l1tex__t_requests_pipe_tex_mem_texture.avg                                         Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.peak_sustained                          Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.peak_sustained_active                   Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.peak_sustained_active.per_second        Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.peak_sustained_elapsed                  Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.peak_sustained_elapsed.per_second       Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.per_cycle_active                        Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.per_cycle_elapsed                       Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.per_second                              Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.pct_of_peak_sustained_active            Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.avg.pct_of_peak_sustained_elapsed           Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max                                         Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.peak_sustained                          Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.peak_sustained_active                   Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.peak_sustained_active.per_second        Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.peak_sustained_elapsed                  Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.peak_sustained_elapsed.per_second       Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.per_cycle_active                        Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.per_cycle_elapsed                       Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.per_second                              Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.pct_of_peak_sustained_active            Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.max.pct_of_peak_sustained_elapsed           Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min                                         Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.peak_sustained                          Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.peak_sustained_active                   Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.peak_sustained_active.per_second        Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.peak_sustained_elapsed                  Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.peak_sustained_elapsed.per_second       Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.per_cycle_active                        Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.per_cycle_elapsed                       Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.per_second                              Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.pct_of_peak_sustained_active            Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.min.pct_of_peak_sustained_elapsed           Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum                                         Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.peak_sustained                          Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.peak_sustained_active                   Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.peak_sustained_active.per_second        Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.peak_sustained_elapsed                  Counter                         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.peak_sustained_elapsed.per_second       Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.per_cycle_active                        Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.per_cycle_elapsed                       Counter         1/cycle         # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.per_second                              Counter         1/s             # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.pct_of_peak_sustained_active            Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture.sum.pct_of_peak_sustained_elapsed           Counter         %               # of requests sent to T-Stage from the L1TEX X-Stage for textures     
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg                                   Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.peak_sustained                    Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.peak_sustained_active             Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.peak_sustained_active.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.peak_sustained_elapsed            Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.peak_sustained_elapsed.per_second Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.per_cycle_active                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.per_cycle_elapsed                 Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.per_second                        Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.pct_of_peak_sustained_active       Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.avg.pct_of_peak_sustained_elapsed      Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max                                    Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.peak_sustained                     Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.peak_sustained_active              Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.peak_sustained_active.per_second   Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.peak_sustained_elapsed             Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.peak_sustained_elapsed.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.per_cycle_active                   Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.per_cycle_elapsed                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.per_second                         Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.pct_of_peak_sustained_active       Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.max.pct_of_peak_sustained_elapsed      Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min                                    Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.peak_sustained                     Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.peak_sustained_active              Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.peak_sustained_active.per_second   Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.peak_sustained_elapsed             Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.peak_sustained_elapsed.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.per_cycle_active                   Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.per_cycle_elapsed                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.per_second                         Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.pct_of_peak_sustained_active       Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.min.pct_of_peak_sustained_elapsed      Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum                                    Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.peak_sustained                     Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.peak_sustained_active              Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.peak_sustained_active.per_second   Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.peak_sustained_elapsed             Counter                         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.peak_sustained_elapsed.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.per_cycle_active                   Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.per_cycle_elapsed                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.per_second                         Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.pct_of_peak_sustained_active       Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_ld.sum.pct_of_peak_sustained_elapsed      Counter         %               # of requests sent to T-Stage from the TEX pipe for TLD instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg                                   Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.peak_sustained                    Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.peak_sustained_active             Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.peak_sustained_active.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.peak_sustained_elapsed            Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.peak_sustained_elapsed.per_second Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.per_cycle_active                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.per_cycle_elapsed                 Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.per_second                        Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.pct_of_peak_sustained_active      Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.avg.pct_of_peak_sustained_elapsed     Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max                                   Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.peak_sustained                    Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.peak_sustained_active             Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.peak_sustained_active.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.peak_sustained_elapsed            Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.peak_sustained_elapsed.per_second Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.per_cycle_active                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.per_cycle_elapsed                 Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.per_second                        Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.pct_of_peak_sustained_active      Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.max.pct_of_peak_sustained_elapsed     Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min                                   Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.peak_sustained                    Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.peak_sustained_active             Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.peak_sustained_active.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.peak_sustained_elapsed            Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.peak_sustained_elapsed.per_second Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.per_cycle_active                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.per_cycle_elapsed                 Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.per_second                        Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.pct_of_peak_sustained_active      Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.min.pct_of_peak_sustained_elapsed     Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum                                   Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.peak_sustained                    Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.peak_sustained_active             Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.peak_sustained_active.per_second  Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.peak_sustained_elapsed            Counter                         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.peak_sustained_elapsed.per_second Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.per_cycle_active                  Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.per_cycle_elapsed                 Counter         1/cycle         # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.per_second                        Counter         1/s             # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.pct_of_peak_sustained_active      Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_requests_pipe_tex_mem_texture_op_tex.sum.pct_of_peak_sustained_elapsed     Counter         %               # of requests sent to T-Stage from the TEX pipe for TEX instructions  
+l1tex__t_sector_hit_rate.max_rate                                                   Ratio                           # of sector hits per sector (This ratio metric represents the ratio's 
+l1tex__t_sector_hit_rate.pct                                                        Ratio           %               # of sector hits per sector (This ratio metric represents the value   
+l1tex__t_sector_hit_rate.ratio                                                      Ratio                           # of sector hits per sector (This ratio metric represents the value   
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg                                              Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.peak_sustained                               Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.peak_sustained_active                        Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.peak_sustained_active.per_second             Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.peak_sustained_elapsed                       Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.peak_sustained_elapsed.per_second            Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.per_cycle_active                             Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.per_cycle_elapsed                            Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.per_second                                   Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.pct_of_peak_sustained_active                 Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.avg.pct_of_peak_sustained_elapsed                Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max                                              Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.peak_sustained                               Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.peak_sustained_active                        Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.peak_sustained_active.per_second             Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.peak_sustained_elapsed                       Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.peak_sustained_elapsed.per_second            Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.per_cycle_active                             Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.per_cycle_elapsed                            Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.per_second                                   Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.pct_of_peak_sustained_active                 Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.max.pct_of_peak_sustained_elapsed                Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min                                              Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.peak_sustained                               Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.peak_sustained_active                        Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.peak_sustained_active.per_second             Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.peak_sustained_elapsed                       Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.peak_sustained_elapsed.per_second            Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.per_cycle_active                             Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.per_cycle_elapsed                            Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.per_second                                   Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.pct_of_peak_sustained_active                 Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.min.pct_of_peak_sustained_elapsed                Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum                                              Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.peak_sustained                               Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.peak_sustained_active                        Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.peak_sustained_active.per_second             Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.peak_sustained_elapsed                       Counter         sector          # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.peak_sustained_elapsed.per_second            Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.per_cycle_active                             Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.per_cycle_elapsed                            Counter         sector/cycle    # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.per_second                                   Counter         sector/s        # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.pct_of_peak_sustained_active                 Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum.pct_of_peak_sustained_elapsed                Counter         %               # of sectors requested for TLD instructions (This counter metric      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg                                   Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.peak_sustained_active             Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.peak_sustained_active.per_second  Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.peak_sustained_elapsed            Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.peak_sustained_elapsed.per_second Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.per_cycle_active                  Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.per_cycle_elapsed                 Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.per_second                        Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.pct_of_peak_sustained_active      Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.avg.pct_of_peak_sustained_elapsed     Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max                                   Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.peak_sustained_active             Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.peak_sustained_active.per_second  Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.peak_sustained_elapsed            Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.peak_sustained_elapsed.per_second Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.per_cycle_active                  Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.per_cycle_elapsed                 Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.per_second                        Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.pct_of_peak_sustained_active      Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.max.pct_of_peak_sustained_elapsed     Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min                                   Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.peak_sustained_active             Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.peak_sustained_active.per_second  Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.peak_sustained_elapsed            Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.peak_sustained_elapsed.per_second Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.per_cycle_active                  Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.per_cycle_elapsed                 Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.per_second                        Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.pct_of_peak_sustained_active      Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.min.pct_of_peak_sustained_elapsed     Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum                                   Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.peak_sustained_active             Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.peak_sustained_active.per_second   Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.peak_sustained_elapsed             Counter         sector          # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.peak_sustained_elapsed.per_second  Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.per_cycle_active                   Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.per_cycle_elapsed                  Counter         sector/cycle    # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.per_second                         Counter         sector/s        # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.pct_of_peak_sustained_active       Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_hit.sum.pct_of_peak_sustained_elapsed      Counter         %               # of sector requests to T-Stage with tag-hit and data-hit for TLD     
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg                                   Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.peak_sustained_active             Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.peak_sustained_active.per_second  Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.peak_sustained_elapsed            Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.peak_sustained_elapsed.per_second Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.per_cycle_active                  Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.per_cycle_elapsed                 Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.per_second                        Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.pct_of_peak_sustained_active      Counter         %               # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.avg.pct_of_peak_sustained_elapsed     Counter         %               # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max                                   Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.peak_sustained_active             Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.peak_sustained_active.per_second  Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.peak_sustained_elapsed            Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.peak_sustained_elapsed.per_second Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.per_cycle_active                  Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.per_cycle_elapsed                 Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.per_second                        Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.pct_of_peak_sustained_active      Counter         %               # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.max.pct_of_peak_sustained_elapsed     Counter         %               # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min                                   Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.peak_sustained_active             Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.peak_sustained_active.per_second  Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.peak_sustained_elapsed            Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.peak_sustained_elapsed.per_second Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.per_cycle_active                  Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.per_cycle_elapsed                 Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.per_second                        Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.pct_of_peak_sustained_active      Counter         %               # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.min.pct_of_peak_sustained_elapsed     Counter         %               # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum                                   Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.peak_sustained                    Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.peak_sustained_active             Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.peak_sustained_active.per_second  Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.peak_sustained_elapsed            Counter         sector          # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.peak_sustained_elapsed.per_second Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.per_cycle_active                  Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.per_cycle_elapsed                 Counter         sector/cycle    # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.per_second                        Counter         sector/s        # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.pct_of_peak_sustained_active      Counter         %               # of sector requests to T-Stage that missed for TLD instructions      
+l1tex__t_sectors_pipe_tex_mem_texture_op_ld_lookup_miss.sum.pct_of_peak_sustained_elapsed     Counter         %               # of sector requests to T-Stage that missed for TLD instructions      

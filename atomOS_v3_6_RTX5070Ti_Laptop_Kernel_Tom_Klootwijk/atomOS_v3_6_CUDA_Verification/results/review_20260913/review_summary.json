@@ -1,0 +1,47 @@
+{
+  "schema": "atomOS-v3.6-K1-review",
+  "date": "2026-09-13",
+  "status": "passed",
+  "gpu_validation_path": "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\evidence_1789293705720626800\\validation.json",
+  "cpu_validation_path": "C:\\Users\\Tom\\.cache\\ak1\\cpu\\evidence_1789293352596987800\\validation.json",
+  "benchmark_path": "C:\\Users\\Tom\\.cache\\ak1\\cache_benchmark\\benchmark.json",
+  "profile_path": "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\profile_summary.json",
+  "supplemental_path": "C:\\Users\\Tom\\.cache\\ak1\\launch_memchecks\\supplemental.json",
+  "executable_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\bin\\atomos_cuda.exe",
+  "executable_sha256": "c2e551dec5b9251945eeabe0a1ad701aa883f9dd2af1a477babc55a57bccbb4f",
+  "ordinary_gpu_lane_epochs": 612000,
+  "matrix_gpu_lane_epochs": 614754,
+  "supplemental_memchecks": 6,
+  "max_float_difference_radians": 8.881784197001252e-16,
+  "complete_texture_residency": "not_established",
+  "packed_linear_sectors": 2048,
+  "packed_linear_lookup_misses": 2048,
+  "source_proof_scope": "SMT specification claims, not compiler/binary proof",
+  "original_failures": [
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\build_cpu\\evidence_1789293007931007200\\configure.log",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\build_gpu\\evidence_1789293024702278500\\configure.log",
+    "C:\\Users\\Tom\\.cache\\ak1\\gpu\\evidence_1789293066570379300\\configure.log",
+    "C:\\Users\\Tom\\.cache\\ak1\\gpu128\\evidence_1789293312980970500\\validation.json"
+  ],
+  "repaired_defects": [
+    "free VRAM reserve admission",
+    "execution metadata consistency",
+    "Windows native Compute Sanitizer discovery"
+  ],
+  "performance_options": "texture-packed; max-L1 preference; 64/128/256-thread scheduling; original defaults unchanged",
+  "original_manifest_changed_files": [
+    "CMakeLists.txt",
+    "README.md",
+    "cuda/kernel.cu",
+    "docs/CONTRACT.md",
+    "include/atomos/host.hpp",
+    "proofs/CLAIMS.md",
+    "python/reference.py",
+    "results/validation_status.json",
+    "src/main.cpp",
+    "tests/test_core.cpp",
+    "tests/test_reference.py",
+    "tools/validate.py"
+  ],
+  "residency_continuation": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_continuation\\summary.json"
+}

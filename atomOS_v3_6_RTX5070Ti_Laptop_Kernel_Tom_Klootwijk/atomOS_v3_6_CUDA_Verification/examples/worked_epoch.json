@@ -1,0 +1,76 @@
+{
+  "schema": "atomOS-K1-worked-witness",
+  "inputs": {
+    "word": 15,
+    "asa_mask": 15,
+    "na_mask": 14,
+    "boundary": 0,
+    "valid": 15,
+    "fringe": 15,
+    "q": 0,
+    "j": 1,
+    "k": 0,
+    "north": 1,
+    "axis_bit": 0,
+    "kinematic_bit": 1,
+    "orientation": {
+      "dr": 0.5,
+      "dp": 0.5,
+      "alpha": 0.2617993877991494,
+      "interval": 0.125,
+      "profile": 0,
+      "axis_known": 1,
+      "frame_known": 1,
+      "increment_known": 1
+    }
+  },
+  "output": {
+    "asa": 15,
+    "na": 14,
+    "hits": 0,
+    "word": 14,
+    "q_after": 1,
+    "blend": 0,
+    "orientation": {
+      "status": 0,
+      "beta_status": 0,
+      "beta": 0.7853981633974483,
+      "raw": 0.5235987755982989,
+      "principal": 0.5235987755982989,
+      "line": 0.5235987755982989
+    },
+    "invariants": [
+      {
+        "state": 0,
+        "reason": 0,
+        "error": 0.0
+      },
+      {
+        "state": 0,
+        "reason": 0,
+        "error": 0.0
+      },
+      {
+        "state": 0,
+        "reason": 0,
+        "error": 0.0
+      },
+      {
+        "state": 0,
+        "reason": 0,
+        "error": 0.0
+      },
+      {
+        "state": 0,
+        "reason": 0,
+        "error": 0.0
+      },
+      {
+        "state": 0,
+        "reason": 0,
+        "error": 0.0
+      }
+    ]
+  },
+  "scope": "Arithmetic witness; the CLI uses the documented deterministic generated fixture, not this JSON as a file protocol."
+}

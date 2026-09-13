@@ -6,6 +6,8 @@
 
 Start with `atomOS_ASA_Addendum_Tom_Klootwijk.pdf`, then `CODEX_REVIEW.md`.
 
+The fresh local [kernel and texture-cache validation PDF](output/pdf/atomOS_ASA_kernel_residency_validation.pdf) reports actual RTX laptop execution, the repaired single-pass benchmark, native instruction inspection and requested-footprint analysis. Its evidence is under `local_validation/20260913_residency_delivery/`. Complete L1/TEX residence was not demonstrated: the fresh warm texture hit rate is 71.23%, while independently captured warm L2 read misses were zero.
+
 This addendum implements `>O<` paired aperture coordinates, NA-after-ASA, a declared liquid-lens LUT profile, packed one-bit matte words and an explicit Morton8 swizzle. The demonstration is an offline faceted grayscale image operator. It has CPU and CUDA texture/global paths and an independent Python oracle. The new source passages and all newly assigned numerical choices are mapped in `docs/SOURCE_MAP.md` and `docs/PROFILES.md`.
 
 ## Build and verify
@@ -88,6 +90,8 @@ python scripts/benchmark_cache.py --executable b128/Release/asa_cuda.exe --ncu '
 ```
 
 Its process wall time covers the entire benchmark invocation, including both paths, warmups, repeated launches and output files. It is separate from the mean kernel time and is not a single-launch latency. Texture-load hit rates and miss-sector counts are recorded separately from aggregate L1/TEX hit rates.
+
+The benchmark requires exactly one profiler pass and one consistent texture-kernel capture identity. Executable digests must match before and after every process invocation. Invalid captures fail with retained logs rather than contributing to a cache result. `scripts/trace_texture_footprint.cpp` separately models requested table sectors on the host; its output is not cache occupancy or a miss prediction.
 
 The residency probe compares cold/warm cache settings and normal/persist-image policy. Its seven metric groups capture texture-load L1 hits/misses together, then L2 hit, miss and evict-last counters separately for the texture and global kernels:
 
