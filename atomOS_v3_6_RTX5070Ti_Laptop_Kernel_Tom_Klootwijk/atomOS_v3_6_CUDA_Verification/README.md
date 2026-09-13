@@ -96,6 +96,18 @@ visited program pages plus the 1 KiB operator atlas. Final receipts are in
 `output/bin/program_bank_v1/atomos_program_bank.exe`. Teacher recommendations are
 in `docs/HUGGINGFACE_TEACHERS.md`.
 
+## Actual teacher knowledge acquisition
+
+The local Hugging Face Qwen3-4B-Instruct and Phi-4-mini teachers have now been
+queried against six frozen algorithm specifications. Twelve structured replies
+compiled; two Qwen procedures passed every case (full adder and Gray conversion),
+and ten incorrect proposals were rejected. The resulting six-page bank passed
+17 native validation runs; its complete 2,560-byte operator/program set reached
+the cold miss floor in four profiles. Teacher weights remain outside the
+packed program bank. See `docs/TEACHER_KNOWLEDGE_EXTRACTION.md` and
+`results/teacher_acquisition_20260913/response_assessment.json` for the exact
+prompts, identities, results and remaining broader AI work.
+
 ## Run on your laptop
 
 Install a CUDA Toolkit **12.8 or newer**, a CUDA-supported host C++ compiler, CMake

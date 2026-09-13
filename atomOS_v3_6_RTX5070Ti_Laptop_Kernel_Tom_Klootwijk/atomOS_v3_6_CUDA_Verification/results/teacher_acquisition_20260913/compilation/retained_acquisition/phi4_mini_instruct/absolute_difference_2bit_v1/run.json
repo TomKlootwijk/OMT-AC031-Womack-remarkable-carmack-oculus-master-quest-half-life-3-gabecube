@@ -1,0 +1,37 @@
+{
+  "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+  "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+  "model_revision_status": "pinned_huggingface_commit",
+  "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+  "schema": "atomos-teacher-inference-run-v1",
+  "profile_id": "absolute_difference_2bit_v1",
+  "status": "completed",
+  "prompt_sha256": "23e1e667bcc85a428bb8c7a8b12d80d193ed29d110daa5e6d25a980f2c2de7a8",
+  "response_sha256": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+  "request_sha256": "42bd1809143f93ad5ac253b80fd51606d0023135473b989368afac039fdeedfc",
+  "api_response_sha256": "d06d7cfbe00dffed11155b907049a266fb4de2fb230c0f46bc9a9c105cd8f9c9",
+  "ollama_show_sha256": "70064f37cceb3abe702ec67085a461a4705fed13a65807561724efe67d6a09f6",
+  "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+  "model_artifact_bytes": 2491874688,
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "elapsed_seconds": 0.9364523999975063,
+  "completed_at_utc": "2026-09-13T17:32:51.209587+00:00",
+  "generation": {
+    "done_reason": "stop",
+    "total_duration": 934921300,
+    "load_duration": 3129100,
+    "prompt_eval_count": 301,
+    "prompt_eval_duration": 38152000,
+    "eval_count": 101,
+    "eval_duration": 855067000
+  },
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "teacher_generated_code_executed": false
+}

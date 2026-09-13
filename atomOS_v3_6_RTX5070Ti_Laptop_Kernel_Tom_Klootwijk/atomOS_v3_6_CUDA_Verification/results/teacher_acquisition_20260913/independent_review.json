@@ -1,0 +1,30 @@
+{
+  "schema": "atomos-independent-agent-review-v1",
+  "status": "passed",
+  "reviewer": "separate cooperating coding agent, not external certification",
+  "checks": {
+    "all_teacher_integer_cases_recomputed": 208,
+    "actual_model_artifact_bytes_rehashed": true,
+    "four_prior_pages_and_metadata_preserved": true,
+    "native_validation_runs_replayed": 17,
+    "cold_profiles_replayed": 4,
+    "accepted_program_evaluations": 736,
+    "counterexample_rejections": 10,
+    "verified_native_fault_rejections": 1,
+    "repeat_added_pages": 0,
+    "cache_full_bytes": 2560,
+    "cache_sector_floor": 80,
+    "cache_extra_misses": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "python_total": 229,
+    "python_passed": 218,
+    "python_skipped": 11,
+    "new_tests_passed": 49
+  },
+  "material_errors": [],
+  "scope": "Two actual teacher-derived finite algorithms; general AI objective remains incomplete."
+}

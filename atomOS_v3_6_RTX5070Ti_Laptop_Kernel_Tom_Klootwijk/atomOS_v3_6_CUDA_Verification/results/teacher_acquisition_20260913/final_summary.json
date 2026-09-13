@@ -1,0 +1,132 @@
+{
+  "schema": "atomos-actual-teacher-knowledge-final-v1",
+  "status": "passed_for_recorded_scope",
+  "date": "2026-09-13",
+  "concept_author": "Tom Klootwijk",
+  "scope": "Actual pinned local teacher algorithms extracted into the independent finite program-texture substrate; exhaustive admission, switching, publication and full-set cold-cache measurement",
+  "overall_general_ai_objective": "incomplete",
+  "acquisition": {
+    "runtime": {
+      "version": "0.34.0"
+    },
+    "teachers": [
+      {
+        "id": "qwen3_4b_instruct",
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "model_artifact_bytes": 2497280736,
+        "unloaded": true
+      },
+      {
+        "id": "phi4_mini_instruct",
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "model_artifact_bytes": 2491874688,
+        "unloaded": true
+      }
+    ],
+    "completed_responses": 12,
+    "compiled_responses": 12,
+    "correct_responses": 2,
+    "incorrect_responses": 10,
+    "independent_evaluations": 208,
+    "distinct_requested_profiles": 6,
+    "profiles_acquired": 2,
+    "profiles_still_missing": 4,
+    "earlier_failed_request_retained": true,
+    "weights_copied_into_program_bank": false,
+    "new_weight_downloads": 0
+  },
+  "bank": {
+    "base_capsules": 4,
+    "result_capsules": 6,
+    "new_programs": [
+      "full_adder_1bit_v1",
+      "binary_to_gray_4bit_v1"
+    ],
+    "new_gate_counts": [
+      17,
+      15
+    ],
+    "old_file_bytes": 1112,
+    "new_file_bytes": 1640,
+    "file_sha256": "cc78155a5809717540c10d928e0cbb0f773e3fb2914643829a92f0d548491914",
+    "manifest_sha256": "32aeac083c8c4e2ced89f8957f868ce37b7cf3ac3776a2dc02d00bf233f2d777",
+    "old_pages_and_metadata_preserved": true,
+    "repeat_accepted_programs": 0,
+    "repeat_status": "no_growth"
+  },
+  "validation": {
+    "python_tests": 229,
+    "python_passed": 218,
+    "python_skipped_existing_optional": 11,
+    "new_teacher_tests": 49,
+    "native_validation_runs": 17,
+    "accepted_validation_runs": 16,
+    "sanitizer_runs": 2,
+    "verified_fault_rejections": 1,
+    "accepted_validation_evaluations": 640,
+    "preserved_base_cases": 256,
+    "new_oracle_cases": 24,
+    "switching_layouts": [
+      "linear",
+      "morton8"
+    ],
+    "active_pointer_published": true,
+    "rejected_preserved_active_bank": true,
+    "cold_profiles": 4,
+    "cold_profile_evaluations": 96,
+    "all_new_native_runs": 21,
+    "all_accepted_program_evaluations": 736
+  },
+  "cache": {
+    "complete_operator_bytes": 1024,
+    "complete_program_bytes": 1536,
+    "complete_texture_bytes": 2560,
+    "compulsory_32byte_sector_floor": 80,
+    "observed_extra_misses": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "profiles_at_floor": 4,
+    "scope": "measured complete-pool within-launch retention on the recorded schedule",
+    "permanent_pinning": false
+  },
+  "toolchain": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+      "cc_major": 12,
+      "cc_minor": 0,
+      "total_bytes": 12820480000,
+      "free_bytes_at_start": 11561598976,
+      "runtime": 12080,
+      "driver": 13010,
+      "max_texture_1d_linear": 268435456
+    },
+    "native_binary_sha256": "2cb47ca5e151203e9bbd01424821d93a094d45d13931017512f063e9b99397fc",
+    "native_build": "unchanged CUDA 12.8.61 / MSVC 19.44.35221 / sm_120 build from previous program-bank checkpoint"
+  },
+  "evidence": {
+    "acquisition": "results/teacher_acquisition_20260913/compilation/retained_acquisition/acquisition.json",
+    "response_assessment": "results/teacher_acquisition_20260913/response_assessment.json",
+    "compilation": "results/teacher_acquisition_20260913/compilation/compilation.json",
+    "native": "results/teacher_acquisition_20260913/native/publication.json",
+    "cache": "results/teacher_acquisition_20260913/cache/cache_study.json",
+    "documentation": "docs/TEACHER_KNOWLEDGE_EXTRACTION.md"
+  },
+  "remaining": [
+    "Improve acquisition for four rejected curriculum profiles without inserting hand-authored substitutes.",
+    "Typed general facts, relations, applicability, unknown/conflict handling and language query interfaces.",
+    "Broader independently evaluated knowledge/reasoning capability, useful novelty criteria beyond finite combinational interfaces, and comparative practicality measurements."
+  ],
+  "limitations": [
+    "Exact source and artifact binding is evidence consistency, not cryptographic authentication of factual truth or teacher origin.",
+    "This is actual extraction of two bounded algorithms, not extraction of all model knowledge or general-language-model replacement.",
+    "Earlier required base CPU/GPU/SMT regressions are historical; this extension ran the explicitly listed new unit/native/cache checks."
+  ]
+}

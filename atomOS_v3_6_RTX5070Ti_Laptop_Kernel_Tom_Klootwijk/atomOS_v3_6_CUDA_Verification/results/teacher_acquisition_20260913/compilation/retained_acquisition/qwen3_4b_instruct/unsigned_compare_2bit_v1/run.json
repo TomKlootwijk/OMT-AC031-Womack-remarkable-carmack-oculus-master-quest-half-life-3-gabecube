@@ -1,0 +1,37 @@
+{
+  "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+  "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+  "model_revision_status": "pinned_huggingface_commit",
+  "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+  "schema": "atomos-teacher-inference-run-v1",
+  "profile_id": "unsigned_compare_2bit_v1",
+  "status": "completed",
+  "prompt_sha256": "32b2a704a98c4fadcc1642c4f24b020d13c1521502709f31cfb55c16be147b0c",
+  "response_sha256": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+  "request_sha256": "86f1b792c0be6bb816752e33f1e07a5b58fb7bb696884f5a788bbe27c4792227",
+  "api_response_sha256": "fb6e6c278849cc4930769fd1c0ccc9c5ffc20b0c3ab5348297276f8bd22a2390",
+  "ollama_show_sha256": "a8ca3645cf3507d23b1e6380dc6334585059087ba4a09b05fcf13acf6340e03c",
+  "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+  "model_artifact_bytes": 2497280736,
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "elapsed_seconds": 1.165156000002753,
+  "completed_at_utc": "2026-09-13T17:32:18.122296+00:00",
+  "generation": {
+    "done_reason": "stop",
+    "total_duration": 1163777500,
+    "load_duration": 4680000,
+    "prompt_eval_count": 313,
+    "prompt_eval_duration": 43696000,
+    "eval_count": 122,
+    "eval_duration": 1080612000
+  },
+  "options": {
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 4096,
+    "num_predict": 2048
+  },
+  "teacher_generated_code_executed": false
+}

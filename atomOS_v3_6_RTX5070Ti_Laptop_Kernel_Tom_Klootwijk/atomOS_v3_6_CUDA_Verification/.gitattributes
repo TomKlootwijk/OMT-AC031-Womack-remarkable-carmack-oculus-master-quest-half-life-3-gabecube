@@ -48,3 +48,13 @@ examples/program_bank/learned_v1/manifest.json -text
 output/bin/program_bank_v1/atomos_program_bank.exe -text
 results/sdf_klein_20260913/atlases/nor_8_256.atlas -text
 tools/profile_cache.py -text
+python/teacher_knowledge.py -text
+tools/acquire_teacher_knowledge.py -text
+tools/compile_teacher_knowledge.py -text
+tools/profile_knowledge_cache.py -text
+tests/test_teacher_acquisition.py -text
+tests/test_teacher_knowledge.py -text
+tests/test_teacher_compilation.py -text
+examples/teacher_knowledge/** -text
+results/teacher_acquisition_20260913/** -text
+docs/TEACHER_KNOWLEDGE_EXTRACTION.md -text

@@ -1,0 +1,154 @@
+{
+  "id": "mux_2bit_v1",
+  "kind": "fixed-domain-oracle",
+  "independent_of_candidate": true,
+  "input_bits": 5,
+  "output_bits": 2,
+  "source": {
+    "kind": "independent-integer-specification",
+    "reference": "mux_2bit_v1: Select between unsigned two-bit words A=a0+2*a1 and B=b0+2*b1. Return A when select_b=0 and B when select_b=1, least-significant bit first.",
+    "input_labels": [
+      "a0",
+      "a1",
+      "b0",
+      "b1",
+      "select_b"
+    ],
+    "output_labels": [
+      "selected0",
+      "selected1"
+    ],
+    "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "scope": "complete bounded integer specification; no teacher labels used"
+  },
+  "cases": [
+    {
+      "input": 0,
+      "output": 0
+    },
+    {
+      "input": 1,
+      "output": 1
+    },
+    {
+      "input": 2,
+      "output": 2
+    },
+    {
+      "input": 3,
+      "output": 3
+    },
+    {
+      "input": 4,
+      "output": 0
+    },
+    {
+      "input": 5,
+      "output": 1
+    },
+    {
+      "input": 6,
+      "output": 2
+    },
+    {
+      "input": 7,
+      "output": 3
+    },
+    {
+      "input": 8,
+      "output": 0
+    },
+    {
+      "input": 9,
+      "output": 1
+    },
+    {
+      "input": 10,
+      "output": 2
+    },
+    {
+      "input": 11,
+      "output": 3
+    },
+    {
+      "input": 12,
+      "output": 0
+    },
+    {
+      "input": 13,
+      "output": 1
+    },
+    {
+      "input": 14,
+      "output": 2
+    },
+    {
+      "input": 15,
+      "output": 3
+    },
+    {
+      "input": 16,
+      "output": 0
+    },
+    {
+      "input": 17,
+      "output": 0
+    },
+    {
+      "input": 18,
+      "output": 0
+    },
+    {
+      "input": 19,
+      "output": 0
+    },
+    {
+      "input": 20,
+      "output": 1
+    },
+    {
+      "input": 21,
+      "output": 1
+    },
+    {
+      "input": 22,
+      "output": 1
+    },
+    {
+      "input": 23,
+      "output": 1
+    },
+    {
+      "input": 24,
+      "output": 2
+    },
+    {
+      "input": 25,
+      "output": 2
+    },
+    {
+      "input": 26,
+      "output": 2
+    },
+    {
+      "input": 27,
+      "output": 2
+    },
+    {
+      "input": 28,
+      "output": 3
+    },
+    {
+      "input": 29,
+      "output": 3
+    },
+    {
+      "input": 30,
+      "output": 3
+    },
+    {
+      "input": 31,
+      "output": 3
+    }
+  ]
+}

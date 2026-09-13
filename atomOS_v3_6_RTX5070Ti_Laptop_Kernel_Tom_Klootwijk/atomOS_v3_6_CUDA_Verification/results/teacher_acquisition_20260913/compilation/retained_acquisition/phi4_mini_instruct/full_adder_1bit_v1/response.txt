@@ -1,0 +1,42 @@
+{
+  "schema": "atomos-teacher-procedure-v1",
+  "profile_id": "full_adder_1bit_v1",
+  "procedures": [
+    {
+      "name": "full_adder_1bit_v1",
+      "input_bits": 3,
+      "output_bits": 2,
+      "outputs": [
+        [
+          "or",
+          [
+            "xor",
+            [
+              "and",
+              ["input", 0],
+              ["input", 1]
+            ],
+            ["input", 2]
+          ],
+          ["input", 1]
+        ],
+        [
+          "or",
+          [
+            "and",
+            ["input", 0],
+            ["input", 1]
+          ],
+          [
+            "not",
+            [
+              "and",
+              ["input", 0],
+              ["input", 1]
+            ]
+          ]
+        ]
+      ]
+    }
+  ]
+}

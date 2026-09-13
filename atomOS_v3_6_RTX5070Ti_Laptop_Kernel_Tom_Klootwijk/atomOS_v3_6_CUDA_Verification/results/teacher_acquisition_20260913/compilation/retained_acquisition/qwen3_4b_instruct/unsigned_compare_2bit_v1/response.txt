@@ -1,0 +1,1 @@
+{"schema":"atomos-teacher-procedure-v1","profile_id":"unsigned_compare_2bit_v1","procedures":[{"name":"unsigned_compare_2bit_v1","input_bits":4,"output_bits":3,"outputs":[["or",["and",["not",[ "input", 0 ]],["input", 1 ]],["and",[ "input", 2 ],["input", 3 ]]],["and",[ "input", 0 ],["input", 2 ]],["xor",[ "input", 1 ],["input", 3 ]]]}]}

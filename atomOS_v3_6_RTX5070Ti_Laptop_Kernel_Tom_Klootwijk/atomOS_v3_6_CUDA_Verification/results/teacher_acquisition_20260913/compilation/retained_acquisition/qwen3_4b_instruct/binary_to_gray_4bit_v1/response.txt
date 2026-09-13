@@ -1,0 +1,1 @@
+{"schema":"atomos-teacher-procedure-v1","profile_id":"binary_to_gray_4bit_v1","procedures":[{"name":"binary_to_gray_4bit_v1","input_bits":4,"output_bits":4,"outputs":[["xor",[ "input", 0 ], [ "input", 1 ]], ["xor",[ "input", 1 ], [ "input", 2 ]], ["xor",[ "input", 2 ], [ "input", 3 ]], ["input", 3]]}]}

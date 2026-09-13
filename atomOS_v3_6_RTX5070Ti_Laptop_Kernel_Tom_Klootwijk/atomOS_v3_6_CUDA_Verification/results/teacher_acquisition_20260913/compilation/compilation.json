@@ -1,0 +1,922 @@
+{
+  "schema": "atomos-teacher-compilation-v1",
+  "status": "prepared",
+  "source_acquisition": "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2",
+  "curriculum": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum",
+  "curriculum_sha256": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+  "verified_completed_queries": 12,
+  "generation_failures": 0,
+  "model_artifact_pins": {
+    "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+    "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2"
+  },
+  "dependency_sha256": {
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\absolute_difference_2bit_v1.oracle.json": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\absolute_difference_2bit_v1.prompt.txt": "23e1e667bcc85a428bb8c7a8b12d80d193ed29d110daa5e6d25a980f2c2de7a8",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\binary_to_gray_4bit_v1.oracle.json": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\binary_to_gray_4bit_v1.prompt.txt": "5a6c306937e5fa5f8b957c8d4bb6a8f8fc31f651615227919633f5d699f6b966",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\curriculum.json": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\full_adder_1bit_v1.oracle.json": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\full_adder_1bit_v1.prompt.txt": "e2a5cb2170f0aa1aeb2d41c8f70cb16aec3a93b731bdd2f11ff942ef3a042f51",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\mux_2bit_v1.oracle.json": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\mux_2bit_v1.prompt.txt": "3736410f908cabaed770029c8793871682f8b1fbe913a74c212c53d22a34fd2e",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\unsigned_add_2bit_v1.oracle.json": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\unsigned_add_2bit_v1.prompt.txt": "4022ea8c029a0b2e3aaf33c862c9c12d6e23f944ca5a3fb4106357e9b311c026",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\unsigned_compare_2bit_v1.oracle.json": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\unsigned_compare_2bit_v1.prompt.txt": "32b2a704a98c4fadcc1642c4f24b020d13c1521502709f31cfb55c16be147b0c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\teachers.json": "f5e0e95a80591f5fe7c50d20b358f5ca15404e3e25c3ab565593d49145385179",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\acquire_teacher_knowledge.py": "2c09d3f2b76c9a1d99fa8cdc1819d81902bb6e349f521e7c8da6ab0e1d97074a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_knowledge.py": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank.py": "b19e72bfd518e01df2bc7e9629d5a1834e8253e81e1675753cee7f8a07a4dd8a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\knowledge_admission.py": "25cbf23929d101331f172c7874150b1b4124b49bbf5d45c5547e705ddbdc271e",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\acquisition.json": "a18323928867acc63c991e1227094374facefcd77921c170da3429c3f5346a67",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\absolute_difference_2bit_v1\\api_response.json": "d06d7cfbe00dffed11155b907049a266fb4de2fb230c0f46bc9a9c105cd8f9c9",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\absolute_difference_2bit_v1\\request.json": "42bd1809143f93ad5ac253b80fd51606d0023135473b989368afac039fdeedfc",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\absolute_difference_2bit_v1\\response.txt": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\absolute_difference_2bit_v1\\run.json": "7722230e46f0aacbc2f9b68c4f41a6ac2279e23a38920ae6afa78491953a7f50",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\api_response.json": "e20f776d3a012c16bf25517e86380faa945b3bc257e2f38910c2e75fb876b5a8",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\request.json": "910d0bcae943d460cf7b8830823ae1ca8362952b9365783965c8a951c4068907",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\response.txt": "15dd57aa9f0e6dc0453cf031374014aa30fbf42b3826b12837f5b89dd797f26a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\run.json": "a896e19ec6fb0ce1eb3e858d898c50e61252eeb7ec71e89678568e11136c751d",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\full_adder_1bit_v1\\api_response.json": "7830d7150c0398920dea3680916aa5996ad0c3485a1469b3b20bea56f93e1843",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\full_adder_1bit_v1\\request.json": "e9b5c9dbd3ba1cb3d10c873d324584251523834cbaa32fccc7285e91045f012d",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\full_adder_1bit_v1\\response.txt": "079e2bee05fbac685e0b38f9db56da3df8d17876a908c79b33ea5b01d9d9f7b2",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\full_adder_1bit_v1\\run.json": "81a7d82659aa6192d91ee18c58a966f964e23f4ace725a40fb7f2470d3072df3",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\mux_2bit_v1\\api_response.json": "c19e38efd6e7317a2ded6e6e5d68ed4375cefe8e91a01ae77ccbc7df09354b01",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\mux_2bit_v1\\request.json": "859d4ae14d709101ea38b8a559e1312073a8ee89e07dd0c584d5f8dd7eeb0845",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\mux_2bit_v1\\response.txt": "82615f7f8ecb11e8411ba99e4ab120ce4414810b8722f5fe4dcfa44595edc1d7",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\mux_2bit_v1\\run.json": "5c0ff151899b49f2ba0f6bd07fb6d136fd9f7e0516d37159df738c0e2a41d6e3",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\ollama_show.json": "70064f37cceb3abe702ec67085a461a4705fed13a65807561724efe67d6a09f6",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_add_2bit_v1\\api_response.json": "857cf902affdc67d42baa0dc8eeecfe010b6033f633d33bf6b4b173d9528bdfb",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_add_2bit_v1\\request.json": "9f83cf0ed813acfe73ff0856c2ff9069b766e13acecdd0fb0ff7620c911bb6c0",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_add_2bit_v1\\response.txt": "b14f433c6e12504e16b30ee7d82a957be39f837e8fd79f4875f32d7e8a3d6753",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_add_2bit_v1\\run.json": "7125fa81bc5684ad1e12504baa3a0a1262ddc7d6e093347f6a6d242b84846996",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\api_response.json": "826a45f3aca69cf680e562b25901fba4e943d31434c394c9614a838c99b366cb",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\request.json": "1de08e8f27aa19c8a806b718b9f93b30101dcb9bae2c33e7ad06d0a3a40ed334",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\response.txt": "358fcaf3a76fac21e5babf4738c8826a6ea2df6ec5bcdfb1fd8eaf632c34a8f5",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\run.json": "cdc008247ce5d243c19b4e05a9b522c8cb5ea1b4535094547f6756b5d8f87edb",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\api_response.json": "ef7c12aabce4b71fa4676e133f8e9afa0cf37e39e4fb7672ebe8a798ec8d110e",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\request.json": "2c58f4475fca7a385692d5b3d7e7abed6fe9257ad90062e46fcd4fd032f8f8b2",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\response.txt": "722e1cad5f4f9eff8524b5dbf95a6d510133f7cafbdfc1c885e666871ee75e59",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\run.json": "c4028a05ddca81ead5e58e46187be9c52978f645b490f9de16346a772b857641",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\api_response.json": "d7f5876374c0dd7d77073f0b685f5ae9c4fccfe9446760d9d0fcc53d8b2695cd",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\request.json": "96d26891c3a600d518c5833946de5e53820824ae5c4fc52c36453af465994686",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json": "d299963d1f0f3b1ee05fd8afee01d9e51d89d6d522826d471ab2c439cf43e82e",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\full_adder_1bit_v1\\api_response.json": "a3ef3ceb9cf79d7b828aeafa6faf42a578afcf44b9a87d165316e82fe4a8224e",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\full_adder_1bit_v1\\request.json": "454d6fe839cb26526c914bb2e698c9ffed6aedc82a48a7f43373121d5b0a07dd",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json": "57e81bf713fafd19873e29d8147368a92e3ddfb08fbb67f335d9431c839ea8ed",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\mux_2bit_v1\\api_response.json": "f0b80aca98e3f4f98b4e2493f99e186a927cb60a0868798c6ca9592fc502b4d0",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\mux_2bit_v1\\request.json": "5f4298b2c67dd37fc65132faec005c554d69a6f5a7dadf617c687be478875382",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt": "a17300cf85213cec7aa8731dd1c6308d48874e7b505d086b386c291a1c65f05e",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\mux_2bit_v1\\run.json": "3156308f0510ed876624459702b3d01771d8075d6d7b4fa710b5c3361c918366",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\ollama_show.json": "a8ca3645cf3507d23b1e6380dc6334585059087ba4a09b05fcf13acf6340e03c",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\api_response.json": "901f64a7e76efd6225ba0a1a5f59472c6c054536e85318b5eb106eb134941cc2",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\request.json": "45d9261f0ef5a705ef2cabe65d22a4013326d033d0427c280cfdbfeb8c1bc98f",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\response.txt": "642c7ec02165cfa8a62240e796bfe81abcf12c03ec1d6185c15c9185181040a6",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\run.json": "52973f1cd0b3b337b0559b2ac10a8abcfed447e21726af82539fd19c282a64bd",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\api_response.json": "fb6e6c278849cc4930769fd1c0ccc9c5ffc20b0c3ab5348297276f8bd22a2390",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\request.json": "86f1b792c0be6bb816752e33f1e07a5b58fb7bb696884f5a788bbe27c4792227",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\response.txt": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_acq_v2\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\run.json": "5562fed7c72ed3af3901c8ea92249508bfb3f894aca0d70872f25aa02f0f1622",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\compile_teacher_knowledge.py": "6645bed82086a033e04afcd93cafdb5564ba7e6b9bdfd83cd43a5dc92aa205d5",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\knowledge_admission\\admitted\\bank.bin": "7b14de0a0ae14798f4dfe59b9e30c010fa776199c5fa1f23bdbc77aa60eed3cb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\knowledge_admission\\admitted\\manifest.json": "2962a8f4caeadb225111bdb5920fc875418a1c348ec8d31471d75b7a0495dd0c"
+  },
+  "teacher_code_executed": false,
+  "model_or_api_calls": 0,
+  "gpu_execution": "not_run",
+  "new_active_bank_published": false,
+  "model_authentication": "not_claimed; retained acquisition/request/API/artifact-record consistency checked",
+  "model_weight_rehash": "not_run_by_compiler; acquisition records before/after artifact checks",
+  "knowledge_scope": "teacher-returned bounded algorithms compiled and checked against independently frozen integer cases",
+  "compiled_candidates": 12,
+  "parse_or_provenance_rejections": 0,
+  "response_decisions": [
+    {
+      "response_index": 0,
+      "status": "compiled_candidate",
+      "profile_id": "full_adder_1bit_v1",
+      "ast_nodes": 14,
+      "gate_count": 17,
+      "wrapping": "plain_json",
+      "seed_hex": "a1eb921027a5fd163fc26a09fea824735359ae07c748655964af43b3a2ef3b22",
+      "response_sha256": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+      "oracle_id": "full_adder_1bit_v1:response:0",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "e2a5cb2170f0aa1aeb2d41c8f70cb16aec3a93b731bdd2f11ff942ef3a042f51",
+        "response_sha256": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+        "run_sha256": "57e81bf713fafd19873e29d8147368a92e3ddfb08fbb67f335d9431c839ea8ed",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 1,
+      "status": "compiled_candidate",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "ast_nodes": 14,
+      "gate_count": 14,
+      "wrapping": "plain_json",
+      "seed_hex": "4aaa7cbb5a91568f75f3abfd4064adc04f983c7e6ac68562cf7fccdc41f6bd35",
+      "response_sha256": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+      "oracle_id": "unsigned_compare_2bit_v1:response:1",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "32b2a704a98c4fadcc1642c4f24b020d13c1521502709f31cfb55c16be147b0c",
+        "response_sha256": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+        "run_sha256": "5562fed7c72ed3af3901c8ea92249508bfb3f894aca0d70872f25aa02f0f1622",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 2,
+      "status": "compiled_candidate",
+      "profile_id": "unsigned_add_2bit_v1",
+      "ast_nodes": 21,
+      "gate_count": 21,
+      "wrapping": "plain_json",
+      "seed_hex": "d678d73820ed1fbfa42685916f34e494ea2d27f8cf97745e8ef5d38a058502d7",
+      "response_sha256": "642c7ec02165cfa8a62240e796bfe81abcf12c03ec1d6185c15c9185181040a6",
+      "oracle_id": "unsigned_add_2bit_v1:response:2",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "4022ea8c029a0b2e3aaf33c862c9c12d6e23f944ca5a3fb4106357e9b311c026",
+        "response_sha256": "642c7ec02165cfa8a62240e796bfe81abcf12c03ec1d6185c15c9185181040a6",
+        "run_sha256": "52973f1cd0b3b337b0559b2ac10a8abcfed447e21726af82539fd19c282a64bd",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 3,
+      "status": "compiled_candidate",
+      "profile_id": "binary_to_gray_4bit_v1",
+      "ast_nodes": 10,
+      "gate_count": 15,
+      "wrapping": "plain_json",
+      "seed_hex": "f42d4e4427fa00e1bce2617dec97f840b7ed2c6c3b0be04ea9985ae40d758507",
+      "response_sha256": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+      "oracle_id": "binary_to_gray_4bit_v1:response:3",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "5a6c306937e5fa5f8b957c8d4bb6a8f8fc31f651615227919633f5d699f6b966",
+        "response_sha256": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+        "run_sha256": "d299963d1f0f3b1ee05fd8afee01d9e51d89d6d522826d471ab2c439cf43e82e",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 4,
+      "status": "compiled_candidate",
+      "profile_id": "absolute_difference_2bit_v1",
+      "ast_nodes": 22,
+      "gate_count": 29,
+      "wrapping": "plain_json",
+      "seed_hex": "e852b99850fd72d2498620280199bf2a67f8a2857a5ac69feaa9112d3478d48c",
+      "response_sha256": "722e1cad5f4f9eff8524b5dbf95a6d510133f7cafbdfc1c885e666871ee75e59",
+      "oracle_id": "absolute_difference_2bit_v1:response:4",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "23e1e667bcc85a428bb8c7a8b12d80d193ed29d110daa5e6d25a980f2c2de7a8",
+        "response_sha256": "722e1cad5f4f9eff8524b5dbf95a6d510133f7cafbdfc1c885e666871ee75e59",
+        "run_sha256": "c4028a05ddca81ead5e58e46187be9c52978f645b490f9de16346a772b857641",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 5,
+      "status": "compiled_candidate",
+      "profile_id": "mux_2bit_v1",
+      "ast_nodes": 8,
+      "gate_count": 4,
+      "wrapping": "plain_json",
+      "seed_hex": "da15ebbba06bc7c633841b938167bb2c93055606635d975ed64f5df8f617ae35",
+      "response_sha256": "a17300cf85213cec7aa8731dd1c6308d48874e7b505d086b386c291a1c65f05e",
+      "oracle_id": "mux_2bit_v1:response:5",
+      "teacher_provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "3736410f908cabaed770029c8793871682f8b1fbe913a74c212c53d22a34fd2e",
+        "response_sha256": "a17300cf85213cec7aa8731dd1c6308d48874e7b505d086b386c291a1c65f05e",
+        "run_sha256": "3156308f0510ed876624459702b3d01771d8075d6d7b4fa710b5c3361c918366",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\mux_2bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 6,
+      "status": "compiled_candidate",
+      "profile_id": "full_adder_1bit_v1",
+      "ast_nodes": 15,
+      "gate_count": 13,
+      "wrapping": "plain_json",
+      "seed_hex": "f40ee3ec0645a55521365d9ab0eaabb8a55f01cfba73387df2c379dbec9beae0",
+      "response_sha256": "079e2bee05fbac685e0b38f9db56da3df8d17876a908c79b33ea5b01d9d9f7b2",
+      "oracle_id": "full_adder_1bit_v1:response:6",
+      "teacher_provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "e2a5cb2170f0aa1aeb2d41c8f70cb16aec3a93b731bdd2f11ff942ef3a042f51",
+        "response_sha256": "079e2bee05fbac685e0b38f9db56da3df8d17876a908c79b33ea5b01d9d9f7b2",
+        "run_sha256": "81a7d82659aa6192d91ee18c58a966f964e23f4ace725a40fb7f2470d3072df3",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\full_adder_1bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\full_adder_1bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 7,
+      "status": "compiled_candidate",
+      "profile_id": "unsigned_compare_2bit_v1",
+      "ast_nodes": 19,
+      "gate_count": 8,
+      "wrapping": "plain_json",
+      "seed_hex": "fde4fae034d8148698db718f0604239103ba2ba3b3e822f2beb06920d25f6ecd",
+      "response_sha256": "358fcaf3a76fac21e5babf4738c8826a6ea2df6ec5bcdfb1fd8eaf632c34a8f5",
+      "oracle_id": "unsigned_compare_2bit_v1:response:7",
+      "teacher_provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "32b2a704a98c4fadcc1642c4f24b020d13c1521502709f31cfb55c16be147b0c",
+        "response_sha256": "358fcaf3a76fac21e5babf4738c8826a6ea2df6ec5bcdfb1fd8eaf632c34a8f5",
+        "run_sha256": "cdc008247ce5d243c19b4e05a9b522c8cb5ea1b4535094547f6756b5d8f87edb",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 8,
+      "status": "compiled_candidate",
+      "profile_id": "unsigned_add_2bit_v1",
+      "ast_nodes": 18,
+      "gate_count": 4,
+      "wrapping": "plain_json",
+      "seed_hex": "844bb35e3db8289d2dad5f246e96a6b2dcdb557f773de7d28148fcb5639f7832",
+      "response_sha256": "b14f433c6e12504e16b30ee7d82a957be39f837e8fd79f4875f32d7e8a3d6753",
+      "oracle_id": "unsigned_add_2bit_v1:response:8",
+      "teacher_provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "4022ea8c029a0b2e3aaf33c862c9c12d6e23f944ca5a3fb4106357e9b311c026",
+        "response_sha256": "b14f433c6e12504e16b30ee7d82a957be39f837e8fd79f4875f32d7e8a3d6753",
+        "run_sha256": "7125fa81bc5684ad1e12504baa3a0a1262ddc7d6e093347f6a6d242b84846996",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_add_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_add_2bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 9,
+      "status": "compiled_candidate",
+      "profile_id": "binary_to_gray_4bit_v1",
+      "ast_nodes": 24,
+      "gate_count": 13,
+      "wrapping": "plain_json",
+      "seed_hex": "5c5709fe0dfa56117bdff06975916e5083c5172f0f594b9e681d5247900b5e3d",
+      "response_sha256": "15dd57aa9f0e6dc0453cf031374014aa30fbf42b3826b12837f5b89dd797f26a",
+      "oracle_id": "binary_to_gray_4bit_v1:response:9",
+      "teacher_provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "5a6c306937e5fa5f8b957c8d4bb6a8f8fc31f651615227919633f5d699f6b966",
+        "response_sha256": "15dd57aa9f0e6dc0453cf031374014aa30fbf42b3826b12837f5b89dd797f26a",
+        "run_sha256": "a896e19ec6fb0ce1eb3e858d898c50e61252eeb7ec71e89678568e11136c751d",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 10,
+      "status": "compiled_candidate",
+      "profile_id": "absolute_difference_2bit_v1",
+      "ast_nodes": 2,
+      "gate_count": 0,
+      "wrapping": "plain_json",
+      "seed_hex": "e0cca380fd0b8a98522a93d6de641eb66aae68e59c4874a54d99cc7b118e96ab",
+      "response_sha256": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+      "oracle_id": "absolute_difference_2bit_v1:response:10",
+      "teacher_provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "23e1e667bcc85a428bb8c7a8b12d80d193ed29d110daa5e6d25a980f2c2de7a8",
+        "response_sha256": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+        "run_sha256": "7722230e46f0aacbc2f9b68c4f41a6ac2279e23a38920ae6afa78491953a7f50",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\absolute_difference_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\absolute_difference_2bit_v1\\run.json"
+      }
+    },
+    {
+      "response_index": 11,
+      "status": "compiled_candidate",
+      "profile_id": "mux_2bit_v1",
+      "ast_nodes": 2,
+      "gate_count": 0,
+      "wrapping": "plain_json",
+      "seed_hex": "be968c777d522948fdbd3d37dbd791ea38a97d402da6ed720a85b3906dd22b45",
+      "response_sha256": "82615f7f8ecb11e8411ba99e4ab120ce4414810b8722f5fe4dcfa44595edc1d7",
+      "oracle_id": "mux_2bit_v1:response:11",
+      "teacher_provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "3736410f908cabaed770029c8793871682f8b1fbe913a74c212c53d22a34fd2e",
+        "response_sha256": "82615f7f8ecb11e8411ba99e4ab120ce4414810b8722f5fe4dcfa44595edc1d7",
+        "run_sha256": "5c0ff151899b49f2ba0f6bd07fb6d136fd9f7e0516d37159df738c0e2a41d6e3",
+        "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\mux_2bit_v1\\response.txt",
+        "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\mux_2bit_v1\\run.json"
+      }
+    }
+  ],
+  "accepted_programs": 2,
+  "semantic_rejections": [
+    {
+      "candidate_index": 1,
+      "status": "rejected",
+      "name": "unsigned_compare_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 0,
+        "expected": 2,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 2,
+      "status": "rejected",
+      "name": "unsigned_add_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 2,
+        "expected": 2,
+        "actual": 1
+      }
+    },
+    {
+      "candidate_index": 4,
+      "status": "rejected",
+      "name": "absolute_difference_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 1,
+        "expected": 1,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 5,
+      "status": "rejected",
+      "name": "mux_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 20,
+        "expected": 1,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 6,
+      "status": "rejected",
+      "name": "full_adder_1bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 0,
+        "expected": 0,
+        "actual": 2
+      }
+    },
+    {
+      "candidate_index": 7,
+      "status": "rejected",
+      "name": "unsigned_compare_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 0,
+        "expected": 2,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 8,
+      "status": "rejected",
+      "name": "unsigned_add_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 1,
+        "expected": 1,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 9,
+      "status": "rejected",
+      "name": "binary_to_gray_4bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 0,
+        "expected": 0,
+        "actual": 5
+      }
+    },
+    {
+      "candidate_index": 10,
+      "status": "rejected",
+      "name": "absolute_difference_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 4,
+        "expected": 1,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 11,
+      "status": "rejected",
+      "name": "mux_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 17,
+        "expected": 0,
+        "actual": 1
+      }
+    }
+  ],
+  "repeat_check": "verified_no_growth",
+  "admitted_programs": [
+    {
+      "candidate_index": 0,
+      "status": "accepted",
+      "name": "full_adder_1bit_v1",
+      "semantic_sha256": "d66316c4a78fc4505fa770fdaedad310d9d285831b3fe2dbc5855ced3791a0cc",
+      "oracle_id": "full_adder_1bit_v1:response:0",
+      "verified_cases": 8,
+      "reason": "verified_novel_function",
+      "slot": 4,
+      "content_sha256": "22e8d4cc7b6caad903922c628c148a948a8129d6760b93ed8dc70edbd522764d"
+    },
+    {
+      "candidate_index": 3,
+      "status": "accepted",
+      "name": "binary_to_gray_4bit_v1",
+      "semantic_sha256": "88a22a1915f5b2ba9f43c24339d0dab238f5acbaecb99ee5c24732e8f8ec584c",
+      "oracle_id": "binary_to_gray_4bit_v1:response:3",
+      "verified_cases": 16,
+      "reason": "verified_novel_function",
+      "slot": 5,
+      "content_sha256": "20af5c84e8cd8f23d7decba0b033f86e84cd3d7411737cab8fe2d40ab6c69a32"
+    }
+  ],
+  "admission": {
+    "schema": "atomos-knowledge-admission-v1",
+    "status": "prepared",
+    "base_bank_sha256": "7b14de0a0ae14798f4dfe59b9e30c010fa776199c5fa1f23bdbc77aa60eed3cb",
+    "base_manifest_sha256": "2962a8f4caeadb225111bdb5920fc875418a1c348ec8d31471d75b7a0495dd0c",
+    "request_sha256": "f9de479012c0b6f933cf8c5dd1d647d5998b088a2fd9ffa16a551af2d72518c3",
+    "proposed_bank_sha256": "cc78155a5809717540c10d928e0cbb0f773e3fb2914643829a92f0d548491914",
+    "base_capsules": 4,
+    "accepted_capsules": 2,
+    "rejected_candidates": 10,
+    "result_capsules": 6,
+    "base_unique_functions": 4,
+    "result_unique_functions": 6,
+    "base_program_pages_unchanged": true,
+    "new_active_bank_published": false,
+    "gpu_execution": "not_run",
+    "novelty_scope": "exact ordered bit-index interface widths and full-domain outputs; labels, seed, name, ancestry, routing and layout excluded; not universal typed semantic equivalence",
+    "knowledge_scope": "conformance to separately supplied oracle cases; source independence is declared, not authenticated",
+    "stateful_novelty": "not_supported; combinational function admission does not classify recurrent system equivalence",
+    "stop_rule": "each input candidate considered once; equivalent functions allocate no program page; fixed work and capacity bounds",
+    "limits": {
+      "candidate_limit": 32,
+      "maximum_candidates": 256,
+      "input_bits": 12,
+      "output_bits": 8,
+      "wires": 1024,
+      "bank_capsules": 4096,
+      "bank_bytes": 67108864,
+      "page_bytes": 65536,
+      "json_bytes": 16777216,
+      "boolean_work": 67108864
+    },
+    "work": {
+      "boolean_work": 13216,
+      "domain_evaluations": 1000
+    },
+    "decisions": [
+      {
+        "candidate_index": 0,
+        "status": "accepted",
+        "name": "full_adder_1bit_v1",
+        "semantic_sha256": "d66316c4a78fc4505fa770fdaedad310d9d285831b3fe2dbc5855ced3791a0cc",
+        "oracle_id": "full_adder_1bit_v1:response:0",
+        "verified_cases": 8,
+        "reason": "verified_novel_function",
+        "slot": 4,
+        "content_sha256": "22e8d4cc7b6caad903922c628c148a948a8129d6760b93ed8dc70edbd522764d"
+      },
+      {
+        "candidate_index": 1,
+        "status": "rejected",
+        "name": "unsigned_compare_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 2,
+        "status": "rejected",
+        "name": "unsigned_add_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        }
+      },
+      {
+        "candidate_index": 3,
+        "status": "accepted",
+        "name": "binary_to_gray_4bit_v1",
+        "semantic_sha256": "88a22a1915f5b2ba9f43c24339d0dab238f5acbaecb99ee5c24732e8f8ec584c",
+        "oracle_id": "binary_to_gray_4bit_v1:response:3",
+        "verified_cases": 16,
+        "reason": "verified_novel_function",
+        "slot": 5,
+        "content_sha256": "20af5c84e8cd8f23d7decba0b033f86e84cd3d7411737cab8fe2d40ab6c69a32"
+      },
+      {
+        "candidate_index": 4,
+        "status": "rejected",
+        "name": "absolute_difference_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 5,
+        "status": "rejected",
+        "name": "mux_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 6,
+        "status": "rejected",
+        "name": "full_adder_1bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        }
+      },
+      {
+        "candidate_index": 7,
+        "status": "rejected",
+        "name": "unsigned_compare_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 8,
+        "status": "rejected",
+        "name": "unsigned_add_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 9,
+        "status": "rejected",
+        "name": "binary_to_gray_4bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 0,
+          "actual": 5
+        }
+      },
+      {
+        "candidate_index": 10,
+        "status": "rejected",
+        "name": "absolute_difference_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 11,
+        "status": "rejected",
+        "name": "mux_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 17,
+          "expected": 0,
+          "actual": 1
+        }
+      }
+    ]
+  },
+  "repeated_admission": {
+    "schema": "atomos-knowledge-admission-v1",
+    "status": "no_growth",
+    "base_bank_sha256": "cc78155a5809717540c10d928e0cbb0f773e3fb2914643829a92f0d548491914",
+    "base_manifest_sha256": "32aeac083c8c4e2ced89f8957f868ce37b7cf3ac3776a2dc02d00bf233f2d777",
+    "request_sha256": "f9de479012c0b6f933cf8c5dd1d647d5998b088a2fd9ffa16a551af2d72518c3",
+    "proposed_bank_sha256": null,
+    "base_capsules": 6,
+    "accepted_capsules": 0,
+    "rejected_candidates": 12,
+    "result_capsules": 6,
+    "base_unique_functions": 6,
+    "result_unique_functions": 6,
+    "base_program_pages_unchanged": true,
+    "new_active_bank_published": false,
+    "gpu_execution": "not_run",
+    "novelty_scope": "exact ordered bit-index interface widths and full-domain outputs; labels, seed, name, ancestry, routing and layout excluded; not universal typed semantic equivalence",
+    "knowledge_scope": "conformance to separately supplied oracle cases; source independence is declared, not authenticated",
+    "stateful_novelty": "not_supported; combinational function admission does not classify recurrent system equivalence",
+    "stop_rule": "each input candidate considered once; equivalent functions allocate no program page; fixed work and capacity bounds",
+    "limits": {
+      "candidate_limit": 32,
+      "maximum_candidates": 256,
+      "input_bits": 12,
+      "output_bits": 8,
+      "wires": 1024,
+      "bank_capsules": 4096,
+      "bank_bytes": 67108864,
+      "page_bytes": 65536,
+      "json_bytes": 16777216,
+      "boolean_work": 67108864
+    },
+    "work": {
+      "boolean_work": 10688,
+      "domain_evaluations": 768
+    },
+    "decisions": [
+      {
+        "candidate_index": 0,
+        "status": "rejected",
+        "name": "full_adder_1bit_v1",
+        "semantic_sha256": "d66316c4a78fc4505fa770fdaedad310d9d285831b3fe2dbc5855ced3791a0cc",
+        "oracle_id": "full_adder_1bit_v1:response:0",
+        "verified_cases": 8,
+        "reason": "duplicate_semantics",
+        "existing_slot": 4
+      },
+      {
+        "candidate_index": 1,
+        "status": "rejected",
+        "name": "unsigned_compare_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 2,
+        "status": "rejected",
+        "name": "unsigned_add_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        }
+      },
+      {
+        "candidate_index": 3,
+        "status": "rejected",
+        "name": "binary_to_gray_4bit_v1",
+        "semantic_sha256": "88a22a1915f5b2ba9f43c24339d0dab238f5acbaecb99ee5c24732e8f8ec584c",
+        "oracle_id": "binary_to_gray_4bit_v1:response:3",
+        "verified_cases": 16,
+        "reason": "duplicate_semantics",
+        "existing_slot": 5
+      },
+      {
+        "candidate_index": 4,
+        "status": "rejected",
+        "name": "absolute_difference_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 5,
+        "status": "rejected",
+        "name": "mux_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 6,
+        "status": "rejected",
+        "name": "full_adder_1bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        }
+      },
+      {
+        "candidate_index": 7,
+        "status": "rejected",
+        "name": "unsigned_compare_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 8,
+        "status": "rejected",
+        "name": "unsigned_add_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 9,
+        "status": "rejected",
+        "name": "binary_to_gray_4bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 0,
+          "expected": 0,
+          "actual": 5
+        }
+      },
+      {
+        "candidate_index": 10,
+        "status": "rejected",
+        "name": "absolute_difference_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        }
+      },
+      {
+        "candidate_index": 11,
+        "status": "rejected",
+        "name": "mux_2bit_v1",
+        "reason": "oracle_mismatch",
+        "counterexample": {
+          "input": 17,
+          "expected": 0,
+          "actual": 1
+        }
+      }
+    ]
+  },
+  "proposed_bank_sha256": "cc78155a5809717540c10d928e0cbb0f773e3fb2914643829a92f0d548491914",
+  "artifact_sha256": {
+    "adapter.json": "a9e9ee5264970bfa2033ce4535def2df246bd41287ac8aa47bec2e4664248f19",
+    "candidates.json": "1d78879686a49a5379c4e97f79d29171bd8c73b9d9c5e221c30260b8c93cae36",
+    "dependency_snapshots/000_absolute_difference_2bit_v1.oracle.json": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+    "dependency_snapshots/001_absolute_difference_2bit_v1.prompt.txt": "23e1e667bcc85a428bb8c7a8b12d80d193ed29d110daa5e6d25a980f2c2de7a8",
+    "dependency_snapshots/002_binary_to_gray_4bit_v1.oracle.json": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+    "dependency_snapshots/003_binary_to_gray_4bit_v1.prompt.txt": "5a6c306937e5fa5f8b957c8d4bb6a8f8fc31f651615227919633f5d699f6b966",
+    "dependency_snapshots/004_curriculum.json": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+    "dependency_snapshots/005_full_adder_1bit_v1.oracle.json": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+    "dependency_snapshots/006_full_adder_1bit_v1.prompt.txt": "e2a5cb2170f0aa1aeb2d41c8f70cb16aec3a93b731bdd2f11ff942ef3a042f51",
+    "dependency_snapshots/007_mux_2bit_v1.oracle.json": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+    "dependency_snapshots/008_mux_2bit_v1.prompt.txt": "3736410f908cabaed770029c8793871682f8b1fbe913a74c212c53d22a34fd2e",
+    "dependency_snapshots/009_unsigned_add_2bit_v1.oracle.json": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+    "dependency_snapshots/010_unsigned_add_2bit_v1.prompt.txt": "4022ea8c029a0b2e3aaf33c862c9c12d6e23f944ca5a3fb4106357e9b311c026",
+    "dependency_snapshots/011_unsigned_compare_2bit_v1.oracle.json": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+    "dependency_snapshots/012_unsigned_compare_2bit_v1.prompt.txt": "32b2a704a98c4fadcc1642c4f24b020d13c1521502709f31cfb55c16be147b0c",
+    "dependency_snapshots/013_teachers.json": "f5e0e95a80591f5fe7c50d20b358f5ca15404e3e25c3ab565593d49145385179",
+    "dependency_snapshots/014_knowledge_admission.py": "25cbf23929d101331f172c7874150b1b4124b49bbf5d45c5547e705ddbdc271e",
+    "dependency_snapshots/015_program_bank.py": "b19e72bfd518e01df2bc7e9629d5a1834e8253e81e1675753cee7f8a07a4dd8a",
+    "dependency_snapshots/016_teacher_knowledge.py": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "dependency_snapshots/017_acquire_teacher_knowledge.py": "2c09d3f2b76c9a1d99fa8cdc1819d81902bb6e349f521e7c8da6ab0e1d97074a",
+    "proposed/admission.json": "9298a3aecd12d0788e243cdc7a0c6e0cf5ea6b295bd5cf621e5ca004d296f90d",
+    "proposed/bank.bin": "cc78155a5809717540c10d928e0cbb0f773e3fb2914643829a92f0d548491914",
+    "proposed/candidates.json": "1b391390f54606468cfd71662ed632a64b2fe009e0b63b7875c8a98d50a255af",
+    "proposed/manifest.json": "32aeac083c8c4e2ced89f8957f868ce37b7cf3ac3776a2dc02d00bf233f2d777",
+    "repeated/admission.json": "75f1f6b47c883b41c9429b2626e995a3b20a197c60921bc8a5d4728822244c4b",
+    "repeated/candidates.json": "1b391390f54606468cfd71662ed632a64b2fe009e0b63b7875c8a98d50a255af",
+    "retained_acquisition/acquisition.json": "a18323928867acc63c991e1227094374facefcd77921c170da3429c3f5346a67",
+    "retained_acquisition/phi4_mini_instruct/absolute_difference_2bit_v1/api_response.json": "d06d7cfbe00dffed11155b907049a266fb4de2fb230c0f46bc9a9c105cd8f9c9",
+    "retained_acquisition/phi4_mini_instruct/absolute_difference_2bit_v1/request.json": "42bd1809143f93ad5ac253b80fd51606d0023135473b989368afac039fdeedfc",
+    "retained_acquisition/phi4_mini_instruct/absolute_difference_2bit_v1/response.txt": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+    "retained_acquisition/phi4_mini_instruct/absolute_difference_2bit_v1/run.json": "7722230e46f0aacbc2f9b68c4f41a6ac2279e23a38920ae6afa78491953a7f50",
+    "retained_acquisition/phi4_mini_instruct/binary_to_gray_4bit_v1/api_response.json": "e20f776d3a012c16bf25517e86380faa945b3bc257e2f38910c2e75fb876b5a8",
+    "retained_acquisition/phi4_mini_instruct/binary_to_gray_4bit_v1/request.json": "910d0bcae943d460cf7b8830823ae1ca8362952b9365783965c8a951c4068907",
+    "retained_acquisition/phi4_mini_instruct/binary_to_gray_4bit_v1/response.txt": "15dd57aa9f0e6dc0453cf031374014aa30fbf42b3826b12837f5b89dd797f26a",
+    "retained_acquisition/phi4_mini_instruct/binary_to_gray_4bit_v1/run.json": "a896e19ec6fb0ce1eb3e858d898c50e61252eeb7ec71e89678568e11136c751d",
+    "retained_acquisition/phi4_mini_instruct/full_adder_1bit_v1/api_response.json": "7830d7150c0398920dea3680916aa5996ad0c3485a1469b3b20bea56f93e1843",
+    "retained_acquisition/phi4_mini_instruct/full_adder_1bit_v1/request.json": "e9b5c9dbd3ba1cb3d10c873d324584251523834cbaa32fccc7285e91045f012d",
+    "retained_acquisition/phi4_mini_instruct/full_adder_1bit_v1/response.txt": "079e2bee05fbac685e0b38f9db56da3df8d17876a908c79b33ea5b01d9d9f7b2",
+    "retained_acquisition/phi4_mini_instruct/full_adder_1bit_v1/run.json": "81a7d82659aa6192d91ee18c58a966f964e23f4ace725a40fb7f2470d3072df3",
+    "retained_acquisition/phi4_mini_instruct/mux_2bit_v1/api_response.json": "c19e38efd6e7317a2ded6e6e5d68ed4375cefe8e91a01ae77ccbc7df09354b01",
+    "retained_acquisition/phi4_mini_instruct/mux_2bit_v1/request.json": "859d4ae14d709101ea38b8a559e1312073a8ee89e07dd0c584d5f8dd7eeb0845",
+    "retained_acquisition/phi4_mini_instruct/mux_2bit_v1/response.txt": "82615f7f8ecb11e8411ba99e4ab120ce4414810b8722f5fe4dcfa44595edc1d7",
+    "retained_acquisition/phi4_mini_instruct/mux_2bit_v1/run.json": "5c0ff151899b49f2ba0f6bd07fb6d136fd9f7e0516d37159df738c0e2a41d6e3",
+    "retained_acquisition/phi4_mini_instruct/ollama_show.json": "70064f37cceb3abe702ec67085a461a4705fed13a65807561724efe67d6a09f6",
+    "retained_acquisition/phi4_mini_instruct/unsigned_add_2bit_v1/api_response.json": "857cf902affdc67d42baa0dc8eeecfe010b6033f633d33bf6b4b173d9528bdfb",
+    "retained_acquisition/phi4_mini_instruct/unsigned_add_2bit_v1/request.json": "9f83cf0ed813acfe73ff0856c2ff9069b766e13acecdd0fb0ff7620c911bb6c0",
+    "retained_acquisition/phi4_mini_instruct/unsigned_add_2bit_v1/response.txt": "b14f433c6e12504e16b30ee7d82a957be39f837e8fd79f4875f32d7e8a3d6753",
+    "retained_acquisition/phi4_mini_instruct/unsigned_add_2bit_v1/run.json": "7125fa81bc5684ad1e12504baa3a0a1262ddc7d6e093347f6a6d242b84846996",
+    "retained_acquisition/phi4_mini_instruct/unsigned_compare_2bit_v1/api_response.json": "826a45f3aca69cf680e562b25901fba4e943d31434c394c9614a838c99b366cb",
+    "retained_acquisition/phi4_mini_instruct/unsigned_compare_2bit_v1/request.json": "1de08e8f27aa19c8a806b718b9f93b30101dcb9bae2c33e7ad06d0a3a40ed334",
+    "retained_acquisition/phi4_mini_instruct/unsigned_compare_2bit_v1/response.txt": "358fcaf3a76fac21e5babf4738c8826a6ea2df6ec5bcdfb1fd8eaf632c34a8f5",
+    "retained_acquisition/phi4_mini_instruct/unsigned_compare_2bit_v1/run.json": "cdc008247ce5d243c19b4e05a9b522c8cb5ea1b4535094547f6756b5d8f87edb",
+    "retained_acquisition/qwen3_4b_instruct/absolute_difference_2bit_v1/api_response.json": "ef7c12aabce4b71fa4676e133f8e9afa0cf37e39e4fb7672ebe8a798ec8d110e",
+    "retained_acquisition/qwen3_4b_instruct/absolute_difference_2bit_v1/request.json": "2c58f4475fca7a385692d5b3d7e7abed6fe9257ad90062e46fcd4fd032f8f8b2",
+    "retained_acquisition/qwen3_4b_instruct/absolute_difference_2bit_v1/response.txt": "722e1cad5f4f9eff8524b5dbf95a6d510133f7cafbdfc1c885e666871ee75e59",
+    "retained_acquisition/qwen3_4b_instruct/absolute_difference_2bit_v1/run.json": "c4028a05ddca81ead5e58e46187be9c52978f645b490f9de16346a772b857641",
+    "retained_acquisition/qwen3_4b_instruct/binary_to_gray_4bit_v1/api_response.json": "d7f5876374c0dd7d77073f0b685f5ae9c4fccfe9446760d9d0fcc53d8b2695cd",
+    "retained_acquisition/qwen3_4b_instruct/binary_to_gray_4bit_v1/request.json": "96d26891c3a600d518c5833946de5e53820824ae5c4fc52c36453af465994686",
+    "retained_acquisition/qwen3_4b_instruct/binary_to_gray_4bit_v1/response.txt": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+    "retained_acquisition/qwen3_4b_instruct/binary_to_gray_4bit_v1/run.json": "d299963d1f0f3b1ee05fd8afee01d9e51d89d6d522826d471ab2c439cf43e82e",
+    "retained_acquisition/qwen3_4b_instruct/full_adder_1bit_v1/api_response.json": "a3ef3ceb9cf79d7b828aeafa6faf42a578afcf44b9a87d165316e82fe4a8224e",
+    "retained_acquisition/qwen3_4b_instruct/full_adder_1bit_v1/request.json": "454d6fe839cb26526c914bb2e698c9ffed6aedc82a48a7f43373121d5b0a07dd",
+    "retained_acquisition/qwen3_4b_instruct/full_adder_1bit_v1/response.txt": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+    "retained_acquisition/qwen3_4b_instruct/full_adder_1bit_v1/run.json": "57e81bf713fafd19873e29d8147368a92e3ddfb08fbb67f335d9431c839ea8ed",
+    "retained_acquisition/qwen3_4b_instruct/mux_2bit_v1/api_response.json": "f0b80aca98e3f4f98b4e2493f99e186a927cb60a0868798c6ca9592fc502b4d0",
+    "retained_acquisition/qwen3_4b_instruct/mux_2bit_v1/request.json": "5f4298b2c67dd37fc65132faec005c554d69a6f5a7dadf617c687be478875382",
+    "retained_acquisition/qwen3_4b_instruct/mux_2bit_v1/response.txt": "a17300cf85213cec7aa8731dd1c6308d48874e7b505d086b386c291a1c65f05e",
+    "retained_acquisition/qwen3_4b_instruct/mux_2bit_v1/run.json": "3156308f0510ed876624459702b3d01771d8075d6d7b4fa710b5c3361c918366",
+    "retained_acquisition/qwen3_4b_instruct/ollama_show.json": "a8ca3645cf3507d23b1e6380dc6334585059087ba4a09b05fcf13acf6340e03c",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_add_2bit_v1/api_response.json": "901f64a7e76efd6225ba0a1a5f59472c6c054536e85318b5eb106eb134941cc2",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_add_2bit_v1/request.json": "45d9261f0ef5a705ef2cabe65d22a4013326d033d0427c280cfdbfeb8c1bc98f",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_add_2bit_v1/response.txt": "642c7ec02165cfa8a62240e796bfe81abcf12c03ec1d6185c15c9185181040a6",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_add_2bit_v1/run.json": "52973f1cd0b3b337b0559b2ac10a8abcfed447e21726af82539fd19c282a64bd",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_compare_2bit_v1/api_response.json": "fb6e6c278849cc4930769fd1c0ccc9c5ffc20b0c3ab5348297276f8bd22a2390",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_compare_2bit_v1/request.json": "86f1b792c0be6bb816752e33f1e07a5b58fb7bb696884f5a788bbe27c4792227",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_compare_2bit_v1/response.txt": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+    "retained_acquisition/qwen3_4b_instruct/unsigned_compare_2bit_v1/run.json": "5562fed7c72ed3af3901c8ea92249508bfb3f894aca0d70872f25aa02f0f1622",
+    "retained_dependencies.json": "303bab69ddfc27ee4d1b86399e5015c3bd1c39b12053bdeeabc8d47e61b81dfa",
+    "verified_responses.json": "3e9395cbc0ae10b3d0bde6f8259e8faab11311ad0887ce0bc1596ba0ae4dd7b4"
+  }
+}

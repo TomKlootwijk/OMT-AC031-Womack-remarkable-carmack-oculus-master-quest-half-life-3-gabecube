@@ -1,0 +1,2738 @@
+{
+  "schema": "atomos-knowledge-candidates-v1",
+  "oracles": [
+    {
+      "id": "full_adder_1bit_v1:response:0",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 3,
+      "output_bits": 2,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "full_adder_1bit_v1: Add the three unsigned one-bit inputs a, b and carry_in. Return the two-bit exact sum, least-significant bit first.",
+        "input_labels": [
+          "a",
+          "b",
+          "carry_in"
+        ],
+        "output_labels": [
+          "sum",
+          "carry_out"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+        "teacher_proposal": {
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "prompt_sha256": "e2a5cb2170f0aa1aeb2d41c8f70cb16aec3a93b731bdd2f11ff942ef3a042f51",
+          "response_sha256": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+          "run_sha256": "57e81bf713fafd19873e29d8147368a92e3ddfb08fbb67f335d9431c839ea8ed",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 1
+        },
+        {
+          "input": 3,
+          "output": 2
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 2
+        },
+        {
+          "input": 6,
+          "output": 2
+        },
+        {
+          "input": 7,
+          "output": 3
+        }
+      ]
+    },
+    {
+      "id": "unsigned_compare_2bit_v1:response:1",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 3,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "unsigned_compare_2bit_v1: Compare unsigned A=a0+2*a1 with B=b0+2*b1. Return three Boolean results in this order: A<B, A==B, A>B.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "output_labels": [
+          "a_less_b",
+          "a_equal_b",
+          "a_greater_b"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+        "teacher_proposal": {
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "prompt_sha256": "32b2a704a98c4fadcc1642c4f24b020d13c1521502709f31cfb55c16be147b0c",
+          "response_sha256": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+          "run_sha256": "5562fed7c72ed3af3901c8ea92249508bfb3f894aca0d70872f25aa02f0f1622",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 2
+        },
+        {
+          "input": 1,
+          "output": 4
+        },
+        {
+          "input": 2,
+          "output": 4
+        },
+        {
+          "input": 3,
+          "output": 4
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 2
+        },
+        {
+          "input": 6,
+          "output": 4
+        },
+        {
+          "input": 7,
+          "output": 4
+        },
+        {
+          "input": 8,
+          "output": 1
+        },
+        {
+          "input": 9,
+          "output": 1
+        },
+        {
+          "input": 10,
+          "output": 2
+        },
+        {
+          "input": 11,
+          "output": 4
+        },
+        {
+          "input": 12,
+          "output": 1
+        },
+        {
+          "input": 13,
+          "output": 1
+        },
+        {
+          "input": 14,
+          "output": 1
+        },
+        {
+          "input": 15,
+          "output": 2
+        }
+      ]
+    },
+    {
+      "id": "unsigned_add_2bit_v1:response:2",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 3,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "unsigned_add_2bit_v1: Add unsigned A=a0+2*a1 and B=b0+2*b1. Return their exact three-bit sum without overflow, least-significant bit first.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "output_labels": [
+          "sum0",
+          "sum1",
+          "sum2"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+        "teacher_proposal": {
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "prompt_sha256": "4022ea8c029a0b2e3aaf33c862c9c12d6e23f944ca5a3fb4106357e9b311c026",
+          "response_sha256": "642c7ec02165cfa8a62240e796bfe81abcf12c03ec1d6185c15c9185181040a6",
+          "run_sha256": "52973f1cd0b3b337b0559b2ac10a8abcfed447e21726af82539fd19c282a64bd",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 2
+        },
+        {
+          "input": 3,
+          "output": 3
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 2
+        },
+        {
+          "input": 6,
+          "output": 3
+        },
+        {
+          "input": 7,
+          "output": 4
+        },
+        {
+          "input": 8,
+          "output": 2
+        },
+        {
+          "input": 9,
+          "output": 3
+        },
+        {
+          "input": 10,
+          "output": 4
+        },
+        {
+          "input": 11,
+          "output": 5
+        },
+        {
+          "input": 12,
+          "output": 3
+        },
+        {
+          "input": 13,
+          "output": 4
+        },
+        {
+          "input": 14,
+          "output": 5
+        },
+        {
+          "input": 15,
+          "output": 6
+        }
+      ]
+    },
+    {
+      "id": "binary_to_gray_4bit_v1:response:3",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 4,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "binary_to_gray_4bit_v1: Convert a four-bit unsigned binary integer to its standard binary-reflected Gray-code representation. Input and output bits are ordered least-significant first.",
+        "input_labels": [
+          "binary0",
+          "binary1",
+          "binary2",
+          "binary3"
+        ],
+        "output_labels": [
+          "gray0",
+          "gray1",
+          "gray2",
+          "gray3"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+        "teacher_proposal": {
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "prompt_sha256": "5a6c306937e5fa5f8b957c8d4bb6a8f8fc31f651615227919633f5d699f6b966",
+          "response_sha256": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+          "run_sha256": "d299963d1f0f3b1ee05fd8afee01d9e51d89d6d522826d471ab2c439cf43e82e",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 3
+        },
+        {
+          "input": 3,
+          "output": 2
+        },
+        {
+          "input": 4,
+          "output": 6
+        },
+        {
+          "input": 5,
+          "output": 7
+        },
+        {
+          "input": 6,
+          "output": 5
+        },
+        {
+          "input": 7,
+          "output": 4
+        },
+        {
+          "input": 8,
+          "output": 12
+        },
+        {
+          "input": 9,
+          "output": 13
+        },
+        {
+          "input": 10,
+          "output": 15
+        },
+        {
+          "input": 11,
+          "output": 14
+        },
+        {
+          "input": 12,
+          "output": 10
+        },
+        {
+          "input": 13,
+          "output": 11
+        },
+        {
+          "input": 14,
+          "output": 9
+        },
+        {
+          "input": 15,
+          "output": 8
+        }
+      ]
+    },
+    {
+      "id": "absolute_difference_2bit_v1:response:4",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 2,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "absolute_difference_2bit_v1: For unsigned A=a0+2*a1 and B=b0+2*b1, return the exact absolute difference |A-B| as two bits, least-significant bit first.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "output_labels": [
+          "difference0",
+          "difference1"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+        "teacher_proposal": {
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "prompt_sha256": "23e1e667bcc85a428bb8c7a8b12d80d193ed29d110daa5e6d25a980f2c2de7a8",
+          "response_sha256": "722e1cad5f4f9eff8524b5dbf95a6d510133f7cafbdfc1c885e666871ee75e59",
+          "run_sha256": "c4028a05ddca81ead5e58e46187be9c52978f645b490f9de16346a772b857641",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 2
+        },
+        {
+          "input": 3,
+          "output": 3
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 0
+        },
+        {
+          "input": 6,
+          "output": 1
+        },
+        {
+          "input": 7,
+          "output": 2
+        },
+        {
+          "input": 8,
+          "output": 2
+        },
+        {
+          "input": 9,
+          "output": 1
+        },
+        {
+          "input": 10,
+          "output": 0
+        },
+        {
+          "input": 11,
+          "output": 1
+        },
+        {
+          "input": 12,
+          "output": 3
+        },
+        {
+          "input": 13,
+          "output": 2
+        },
+        {
+          "input": 14,
+          "output": 1
+        },
+        {
+          "input": 15,
+          "output": 0
+        }
+      ]
+    },
+    {
+      "id": "mux_2bit_v1:response:5",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 5,
+      "output_bits": 2,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "mux_2bit_v1: Select between unsigned two-bit words A=a0+2*a1 and B=b0+2*b1. Return A when select_b=0 and B when select_b=1, least-significant bit first.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1",
+          "select_b"
+        ],
+        "output_labels": [
+          "selected0",
+          "selected1"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+        "teacher_proposal": {
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "prompt_sha256": "3736410f908cabaed770029c8793871682f8b1fbe913a74c212c53d22a34fd2e",
+          "response_sha256": "a17300cf85213cec7aa8731dd1c6308d48874e7b505d086b386c291a1c65f05e",
+          "run_sha256": "3156308f0510ed876624459702b3d01771d8075d6d7b4fa710b5c3361c918366",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\mux_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 2
+        },
+        {
+          "input": 3,
+          "output": 3
+        },
+        {
+          "input": 4,
+          "output": 0
+        },
+        {
+          "input": 5,
+          "output": 1
+        },
+        {
+          "input": 6,
+          "output": 2
+        },
+        {
+          "input": 7,
+          "output": 3
+        },
+        {
+          "input": 8,
+          "output": 0
+        },
+        {
+          "input": 9,
+          "output": 1
+        },
+        {
+          "input": 10,
+          "output": 2
+        },
+        {
+          "input": 11,
+          "output": 3
+        },
+        {
+          "input": 12,
+          "output": 0
+        },
+        {
+          "input": 13,
+          "output": 1
+        },
+        {
+          "input": 14,
+          "output": 2
+        },
+        {
+          "input": 15,
+          "output": 3
+        },
+        {
+          "input": 16,
+          "output": 0
+        },
+        {
+          "input": 17,
+          "output": 0
+        },
+        {
+          "input": 18,
+          "output": 0
+        },
+        {
+          "input": 19,
+          "output": 0
+        },
+        {
+          "input": 20,
+          "output": 1
+        },
+        {
+          "input": 21,
+          "output": 1
+        },
+        {
+          "input": 22,
+          "output": 1
+        },
+        {
+          "input": 23,
+          "output": 1
+        },
+        {
+          "input": 24,
+          "output": 2
+        },
+        {
+          "input": 25,
+          "output": 2
+        },
+        {
+          "input": 26,
+          "output": 2
+        },
+        {
+          "input": 27,
+          "output": 2
+        },
+        {
+          "input": 28,
+          "output": 3
+        },
+        {
+          "input": 29,
+          "output": 3
+        },
+        {
+          "input": 30,
+          "output": 3
+        },
+        {
+          "input": 31,
+          "output": 3
+        }
+      ]
+    },
+    {
+      "id": "full_adder_1bit_v1:response:6",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 3,
+      "output_bits": 2,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "full_adder_1bit_v1: Add the three unsigned one-bit inputs a, b and carry_in. Return the two-bit exact sum, least-significant bit first.",
+        "input_labels": [
+          "a",
+          "b",
+          "carry_in"
+        ],
+        "output_labels": [
+          "sum",
+          "carry_out"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+        "teacher_proposal": {
+          "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+          "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+          "prompt_sha256": "e2a5cb2170f0aa1aeb2d41c8f70cb16aec3a93b731bdd2f11ff942ef3a042f51",
+          "response_sha256": "079e2bee05fbac685e0b38f9db56da3df8d17876a908c79b33ea5b01d9d9f7b2",
+          "run_sha256": "81a7d82659aa6192d91ee18c58a966f964e23f4ace725a40fb7f2470d3072df3",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\full_adder_1bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\full_adder_1bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 1
+        },
+        {
+          "input": 3,
+          "output": 2
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 2
+        },
+        {
+          "input": 6,
+          "output": 2
+        },
+        {
+          "input": 7,
+          "output": 3
+        }
+      ]
+    },
+    {
+      "id": "unsigned_compare_2bit_v1:response:7",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 3,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "unsigned_compare_2bit_v1: Compare unsigned A=a0+2*a1 with B=b0+2*b1. Return three Boolean results in this order: A<B, A==B, A>B.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "output_labels": [
+          "a_less_b",
+          "a_equal_b",
+          "a_greater_b"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+        "teacher_proposal": {
+          "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+          "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+          "prompt_sha256": "32b2a704a98c4fadcc1642c4f24b020d13c1521502709f31cfb55c16be147b0c",
+          "response_sha256": "358fcaf3a76fac21e5babf4738c8826a6ea2df6ec5bcdfb1fd8eaf632c34a8f5",
+          "run_sha256": "cdc008247ce5d243c19b4e05a9b522c8cb5ea1b4535094547f6756b5d8f87edb",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 2
+        },
+        {
+          "input": 1,
+          "output": 4
+        },
+        {
+          "input": 2,
+          "output": 4
+        },
+        {
+          "input": 3,
+          "output": 4
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 2
+        },
+        {
+          "input": 6,
+          "output": 4
+        },
+        {
+          "input": 7,
+          "output": 4
+        },
+        {
+          "input": 8,
+          "output": 1
+        },
+        {
+          "input": 9,
+          "output": 1
+        },
+        {
+          "input": 10,
+          "output": 2
+        },
+        {
+          "input": 11,
+          "output": 4
+        },
+        {
+          "input": 12,
+          "output": 1
+        },
+        {
+          "input": 13,
+          "output": 1
+        },
+        {
+          "input": 14,
+          "output": 1
+        },
+        {
+          "input": 15,
+          "output": 2
+        }
+      ]
+    },
+    {
+      "id": "unsigned_add_2bit_v1:response:8",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 3,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "unsigned_add_2bit_v1: Add unsigned A=a0+2*a1 and B=b0+2*b1. Return their exact three-bit sum without overflow, least-significant bit first.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "output_labels": [
+          "sum0",
+          "sum1",
+          "sum2"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+        "teacher_proposal": {
+          "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+          "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+          "prompt_sha256": "4022ea8c029a0b2e3aaf33c862c9c12d6e23f944ca5a3fb4106357e9b311c026",
+          "response_sha256": "b14f433c6e12504e16b30ee7d82a957be39f837e8fd79f4875f32d7e8a3d6753",
+          "run_sha256": "7125fa81bc5684ad1e12504baa3a0a1262ddc7d6e093347f6a6d242b84846996",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_add_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\unsigned_add_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 2
+        },
+        {
+          "input": 3,
+          "output": 3
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 2
+        },
+        {
+          "input": 6,
+          "output": 3
+        },
+        {
+          "input": 7,
+          "output": 4
+        },
+        {
+          "input": 8,
+          "output": 2
+        },
+        {
+          "input": 9,
+          "output": 3
+        },
+        {
+          "input": 10,
+          "output": 4
+        },
+        {
+          "input": 11,
+          "output": 5
+        },
+        {
+          "input": 12,
+          "output": 3
+        },
+        {
+          "input": 13,
+          "output": 4
+        },
+        {
+          "input": 14,
+          "output": 5
+        },
+        {
+          "input": 15,
+          "output": 6
+        }
+      ]
+    },
+    {
+      "id": "binary_to_gray_4bit_v1:response:9",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 4,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "binary_to_gray_4bit_v1: Convert a four-bit unsigned binary integer to its standard binary-reflected Gray-code representation. Input and output bits are ordered least-significant first.",
+        "input_labels": [
+          "binary0",
+          "binary1",
+          "binary2",
+          "binary3"
+        ],
+        "output_labels": [
+          "gray0",
+          "gray1",
+          "gray2",
+          "gray3"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+        "teacher_proposal": {
+          "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+          "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+          "prompt_sha256": "5a6c306937e5fa5f8b957c8d4bb6a8f8fc31f651615227919633f5d699f6b966",
+          "response_sha256": "15dd57aa9f0e6dc0453cf031374014aa30fbf42b3826b12837f5b89dd797f26a",
+          "run_sha256": "a896e19ec6fb0ce1eb3e858d898c50e61252eeb7ec71e89678568e11136c751d",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 3
+        },
+        {
+          "input": 3,
+          "output": 2
+        },
+        {
+          "input": 4,
+          "output": 6
+        },
+        {
+          "input": 5,
+          "output": 7
+        },
+        {
+          "input": 6,
+          "output": 5
+        },
+        {
+          "input": 7,
+          "output": 4
+        },
+        {
+          "input": 8,
+          "output": 12
+        },
+        {
+          "input": 9,
+          "output": 13
+        },
+        {
+          "input": 10,
+          "output": 15
+        },
+        {
+          "input": 11,
+          "output": 14
+        },
+        {
+          "input": 12,
+          "output": 10
+        },
+        {
+          "input": 13,
+          "output": 11
+        },
+        {
+          "input": 14,
+          "output": 9
+        },
+        {
+          "input": 15,
+          "output": 8
+        }
+      ]
+    },
+    {
+      "id": "absolute_difference_2bit_v1:response:10",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 4,
+      "output_bits": 2,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "absolute_difference_2bit_v1: For unsigned A=a0+2*a1 and B=b0+2*b1, return the exact absolute difference |A-B| as two bits, least-significant bit first.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1"
+        ],
+        "output_labels": [
+          "difference0",
+          "difference1"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+        "teacher_proposal": {
+          "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+          "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+          "prompt_sha256": "23e1e667bcc85a428bb8c7a8b12d80d193ed29d110daa5e6d25a980f2c2de7a8",
+          "response_sha256": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+          "run_sha256": "7722230e46f0aacbc2f9b68c4f41a6ac2279e23a38920ae6afa78491953a7f50",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\absolute_difference_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\absolute_difference_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 2
+        },
+        {
+          "input": 3,
+          "output": 3
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 0
+        },
+        {
+          "input": 6,
+          "output": 1
+        },
+        {
+          "input": 7,
+          "output": 2
+        },
+        {
+          "input": 8,
+          "output": 2
+        },
+        {
+          "input": 9,
+          "output": 1
+        },
+        {
+          "input": 10,
+          "output": 0
+        },
+        {
+          "input": 11,
+          "output": 1
+        },
+        {
+          "input": 12,
+          "output": 3
+        },
+        {
+          "input": 13,
+          "output": 2
+        },
+        {
+          "input": 14,
+          "output": 1
+        },
+        {
+          "input": 15,
+          "output": 0
+        }
+      ]
+    },
+    {
+      "id": "mux_2bit_v1:response:11",
+      "kind": "fixed-domain-oracle",
+      "independent_of_candidate": true,
+      "input_bits": 5,
+      "output_bits": 2,
+      "source": {
+        "kind": "independent-integer-specification",
+        "reference": "mux_2bit_v1: Select between unsigned two-bit words A=a0+2*a1 and B=b0+2*b1. Return A when select_b=0 and B when select_b=1, least-significant bit first.",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1",
+          "select_b"
+        ],
+        "output_labels": [
+          "selected0",
+          "selected1"
+        ],
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "frozen_oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+        "teacher_proposal": {
+          "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+          "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+          "model_revision_status": "pinned_huggingface_commit",
+          "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+          "prompt_sha256": "3736410f908cabaed770029c8793871682f8b1fbe913a74c212c53d22a34fd2e",
+          "response_sha256": "82615f7f8ecb11e8411ba99e4ab120ce4414810b8722f5fe4dcfa44595edc1d7",
+          "run_sha256": "5c0ff151899b49f2ba0f6bd07fb6d136fd9f7e0516d37159df738c0e2a41d6e3",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\mux_2bit_v1\\response.txt",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\phi4_mini_instruct\\mux_2bit_v1\\run.json"
+        }
+      },
+      "cases": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 2
+        },
+        {
+          "input": 3,
+          "output": 3
+        },
+        {
+          "input": 4,
+          "output": 0
+        },
+        {
+          "input": 5,
+          "output": 1
+        },
+        {
+          "input": 6,
+          "output": 2
+        },
+        {
+          "input": 7,
+          "output": 3
+        },
+        {
+          "input": 8,
+          "output": 0
+        },
+        {
+          "input": 9,
+          "output": 1
+        },
+        {
+          "input": 10,
+          "output": 2
+        },
+        {
+          "input": 11,
+          "output": 3
+        },
+        {
+          "input": 12,
+          "output": 0
+        },
+        {
+          "input": 13,
+          "output": 1
+        },
+        {
+          "input": 14,
+          "output": 2
+        },
+        {
+          "input": 15,
+          "output": 3
+        },
+        {
+          "input": 16,
+          "output": 0
+        },
+        {
+          "input": 17,
+          "output": 0
+        },
+        {
+          "input": 18,
+          "output": 0
+        },
+        {
+          "input": 19,
+          "output": 0
+        },
+        {
+          "input": 20,
+          "output": 1
+        },
+        {
+          "input": 21,
+          "output": 1
+        },
+        {
+          "input": 22,
+          "output": 1
+        },
+        {
+          "input": 23,
+          "output": 1
+        },
+        {
+          "input": 24,
+          "output": 2
+        },
+        {
+          "input": 25,
+          "output": 2
+        },
+        {
+          "input": 26,
+          "output": 2
+        },
+        {
+          "input": 27,
+          "output": 2
+        },
+        {
+          "input": 28,
+          "output": 3
+        },
+        {
+          "input": 29,
+          "output": 3
+        },
+        {
+          "input": 30,
+          "output": 3
+        },
+        {
+          "input": 31,
+          "output": 3
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "name": "full_adder_1bit_v1",
+      "oracle_id": "full_adder_1bit_v1:response:0",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "a1eb921027a5fd163fc26a09fea824735359ae07c748655964af43b3a2ef3b22",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 3,
+          "output_bits": 2,
+          "constant_zero_wire": 3,
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              12,
+              12
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              19,
+              19
+            ]
+          ],
+          "outputs": [
+            13,
+            20
+          ]
+        },
+        "expressions": [
+          [
+            "xor",
+            [
+              "xor",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                1
+              ]
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "or",
+            [
+              "and",
+              [
+                "xor",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ],
+              [
+                "input",
+                2
+              ]
+            ],
+            [
+              "and",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                1
+              ]
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "unsigned_compare_2bit_v1",
+      "oracle_id": "unsigned_compare_2bit_v1:response:1",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "4aaa7cbb5a91568f75f3abfd4064adc04f983c7e6ac68562cf7fccdc41f6bd35",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 3,
+          "constant_zero_wire": 4,
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              11,
+              11
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              17,
+              17
+            ]
+          ],
+          "outputs": [
+            12,
+            13,
+            18
+          ]
+        },
+        "expressions": [
+          [
+            "or",
+            [
+              "and",
+              [
+                "not",
+                [
+                  "input",
+                  0
+                ]
+              ],
+              [
+                "input",
+                1
+              ]
+            ],
+            [
+              "and",
+              [
+                "input",
+                2
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "unsigned_add_2bit_v1",
+      "oracle_id": "unsigned_add_2bit_v1:response:2",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "d678d73820ed1fbfa42685916f34e494ea2d27f8cf97745e8ef5d38a058502d7",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 3,
+          "constant_zero_wire": 4,
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              14,
+              17
+            ],
+            [
+              18,
+              18
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              20,
+              21
+            ],
+            [
+              16,
+              20
+            ],
+            [
+              22,
+              23
+            ],
+            [
+              24,
+              24
+            ]
+          ],
+          "outputs": [
+            9,
+            19,
+            25
+          ]
+        },
+        "expressions": [
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              1
+            ]
+          ],
+          [
+            "or",
+            [
+              "and",
+              [
+                "xor",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ],
+              [
+                "xor",
+                [
+                  "input",
+                  2
+                ],
+                [
+                  "input",
+                  3
+                ]
+              ]
+            ],
+            [
+              "and",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ],
+          [
+            "or",
+            [
+              "and",
+              [
+                "input",
+                1
+              ],
+              [
+                "input",
+                2
+              ]
+            ],
+            [
+              "and",
+              [
+                "input",
+                1
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "binary_to_gray_4bit_v1",
+      "oracle_id": "binary_to_gray_4bit_v1:response:3",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "f42d4e4427fa00e1bce2617dec97f840b7ed2c6c3b0be04ea9985ae40d758507",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 4,
+          "constant_zero_wire": 4,
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              10
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              13,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              15
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              16,
+              17
+            ],
+            [
+              18,
+              18
+            ]
+          ],
+          "outputs": [
+            9,
+            14,
+            19,
+            3
+          ]
+        },
+        "expressions": [
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              1
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              2
+            ],
+            [
+              "input",
+              3
+            ]
+          ],
+          [
+            "input",
+            3
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "absolute_difference_2bit_v1",
+      "oracle_id": "absolute_difference_2bit_v1:response:4",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "e852b99850fd72d2498620280199bf2a67f8a2857a5ac69feaa9112d3478d48c",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 2,
+          "constant_zero_wire": 4,
+          "gates": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              11,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              15,
+              17
+            ],
+            [
+              15,
+              18
+            ],
+            [
+              17,
+              18
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              21,
+              21
+            ],
+            [
+              13,
+              22
+            ],
+            [
+              13,
+              23
+            ],
+            [
+              22,
+              23
+            ],
+            [
+              24,
+              25
+            ],
+            [
+              26,
+              26
+            ],
+            [
+              14,
+              16
+            ],
+            [
+              11,
+              28
+            ],
+            [
+              28,
+              29
+            ],
+            [
+              11,
+              29
+            ],
+            [
+              30,
+              31
+            ],
+            [
+              32,
+              32
+            ]
+          ],
+          "outputs": [
+            27,
+            33
+          ]
+        },
+        "expressions": [
+          [
+            "xor",
+            [
+              "and",
+              [
+                "xor",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ],
+              [
+                "and",
+                [
+                  "input",
+                  2
+                ],
+                [
+                  "input",
+                  3
+                ]
+              ]
+            ],
+            [
+              "xor",
+              [
+                "and",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  3
+                ]
+              ],
+              [
+                "and",
+                [
+                  "input",
+                  1
+                ],
+                [
+                  "input",
+                  2
+                ]
+              ]
+            ]
+          ],
+          [
+            "xor",
+            [
+              "and",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                1
+              ]
+            ],
+            [
+              "and",
+              [
+                "input",
+                2
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "mux_2bit_v1",
+      "oracle_id": "mux_2bit_v1:response:5",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "da15ebbba06bc7c633841b938167bb2c93055606635d975ed64f5df8f617ae35",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 5,
+          "output_bits": 2,
+          "constant_zero_wire": 5,
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "outputs": [
+            7,
+            9
+          ]
+        },
+        "expressions": [
+          [
+            "and",
+            [
+              "input",
+              0
+            ],
+            [
+              "not",
+              [
+                "input",
+                4
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "input",
+              1
+            ],
+            [
+              "not",
+              [
+                "input",
+                4
+              ]
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "full_adder_1bit_v1",
+      "oracle_id": "full_adder_1bit_v1:response:6",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "f40ee3ec0645a55521365d9ab0eaabb8a55f01cfba73387df2c379dbec9beae0",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 3,
+          "output_bits": 2,
+          "constant_zero_wire": 3,
+          "gates": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              12,
+              12
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              15,
+              15
+            ]
+          ],
+          "outputs": [
+            13,
+            16
+          ]
+        },
+        "expressions": [
+          [
+            "or",
+            [
+              "xor",
+              [
+                "and",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ],
+              [
+                "input",
+                2
+              ]
+            ],
+            [
+              "input",
+              1
+            ]
+          ],
+          [
+            "or",
+            [
+              "and",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                1
+              ]
+            ],
+            [
+              "not",
+              [
+                "and",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ]
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "unsigned_compare_2bit_v1",
+      "oracle_id": "unsigned_compare_2bit_v1:response:7",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "fde4fae034d8148698db718f0604239103ba2ba3b3e822f2beb06920d25f6ecd",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 3,
+          "constant_zero_wire": 4,
+          "gates": [
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              5,
+              10
+            ]
+          ],
+          "outputs": [
+            11,
+            12,
+            6
+          ]
+        },
+        "expressions": [
+          [
+            "and",
+            [
+              "not",
+              [
+                "xor",
+                [
+                  "constant",
+                  0
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              1
+            ]
+          ],
+          [
+            "and",
+            [
+              "not",
+              [
+                "xor",
+                [
+                  "constant",
+                  0
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              0
+            ]
+          ],
+          [
+            "or",
+            [
+              "and",
+              [
+                "constant",
+                1
+              ],
+              [
+                "constant",
+                0
+              ]
+            ],
+            [
+              "and",
+              [
+                "constant",
+                0
+              ],
+              [
+                "constant",
+                1
+              ]
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "unsigned_add_2bit_v1",
+      "oracle_id": "unsigned_add_2bit_v1:response:8",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "844bb35e3db8289d2dad5f246e96a6b2dcdb557f773de7d28148fcb5639f7832",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 3,
+          "constant_zero_wire": 4,
+          "gates": [
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "outputs": [
+            6,
+            8,
+            8
+          ]
+        },
+        "expressions": [
+          [
+            "and",
+            [
+              "not",
+              [
+                "or",
+                [
+                  "constant",
+                  1
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              1
+            ]
+          ],
+          [
+            "and",
+            [
+              "not",
+              [
+                "or",
+                [
+                  "constant",
+                  1
+                ],
+                [
+                  "constant",
+                  0
+                ]
+              ]
+            ],
+            [
+              "constant",
+              1
+            ]
+          ],
+          [
+            "and",
+            [
+              "not",
+              [
+                "or",
+                [
+                  "constant",
+                  0
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              1
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "binary_to_gray_4bit_v1",
+      "oracle_id": "binary_to_gray_4bit_v1:response:9",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "5c5709fe0dfa56117bdff06975916e5083c5172f0f594b9e681d5247900b5e3d",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 4,
+          "constant_zero_wire": 4,
+          "gates": [
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              11,
+              11
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              14,
+              15
+            ],
+            [
+              16,
+              16
+            ]
+          ],
+          "outputs": [
+            12,
+            17,
+            12,
+            17
+          ]
+        },
+        "expressions": [
+          [
+            "xor",
+            [
+              "not",
+              [
+                "and",
+                [
+                  "constant",
+                  0
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              0
+            ]
+          ],
+          [
+            "xor",
+            [
+              "not",
+              [
+                "and",
+                [
+                  "constant",
+                  0
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              1
+            ]
+          ],
+          [
+            "xor",
+            [
+              "not",
+              [
+                "and",
+                [
+                  "constant",
+                  0
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              0
+            ]
+          ],
+          [
+            "xor",
+            [
+              "not",
+              [
+                "and",
+                [
+                  "constant",
+                  0
+                ],
+                [
+                  "constant",
+                  1
+                ]
+              ]
+            ],
+            [
+              "constant",
+              1
+            ]
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "absolute_difference_2bit_v1",
+      "oracle_id": "absolute_difference_2bit_v1:response:10",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "e0cca380fd0b8a98522a93d6de641eb66aae68e59c4874a54d99cc7b118e96ab",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 4,
+          "output_bits": 2,
+          "constant_zero_wire": 4,
+          "gates": [],
+          "outputs": [
+            0,
+            1
+          ]
+        },
+        "expressions": [
+          [
+            "input",
+            0
+          ],
+          [
+            "input",
+            1
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    },
+    {
+      "name": "mux_2bit_v1",
+      "oracle_id": "mux_2bit_v1:response:11",
+      "kind": "boolean-circuit",
+      "capsule": {
+        "seed_hex": "be968c777d522948fdbd3d37dbd791ea38a97d402da6ed720a85b3906dd22b45",
+        "next_slot": 0,
+        "version": 1,
+        "circuit": {
+          "input_bits": 5,
+          "output_bits": 2,
+          "constant_zero_wire": 5,
+          "gates": [],
+          "outputs": [
+            0,
+            1
+          ]
+        },
+        "expressions": [
+          [
+            "input",
+            0
+          ],
+          [
+            "input",
+            1
+          ]
+        ],
+        "generator": "atomos-teacher-expression-adapter-v1"
+      }
+    }
+  ]
+}

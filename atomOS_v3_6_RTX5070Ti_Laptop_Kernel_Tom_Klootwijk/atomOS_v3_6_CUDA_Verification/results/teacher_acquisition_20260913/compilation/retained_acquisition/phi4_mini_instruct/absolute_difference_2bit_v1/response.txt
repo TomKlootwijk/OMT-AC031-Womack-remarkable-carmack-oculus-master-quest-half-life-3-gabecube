@@ -1,0 +1,19 @@
+{
+  "schema": "atomos-teacher-procedure-v1",
+  "profile_id": "absolute_difference_2bit_v1",
+  "procedures": [
+    {
+      "name": "absolute_difference_2bit_v1",
+      "input_bits": 4,
+      "output_bits": 2,
+      "outputs": [
+        [
+          "input", 0
+        ],
+        [
+          "input", 1
+        ]
+      ]
+    }
+  ]
+}

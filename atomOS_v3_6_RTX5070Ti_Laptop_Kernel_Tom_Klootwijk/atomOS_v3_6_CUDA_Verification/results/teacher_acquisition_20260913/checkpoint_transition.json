@@ -1,0 +1,28 @@
+{
+  "schema": "atomos-checkpoint-transition-v1",
+  "previous_checkpoint": "75ba2c510bf46717a3722956795b0420000b8426",
+  "reason": "Add actual teacher acquisition, validation documentation, concept/model attribution and raw-byte Git rules for new artifacts. No historical measurement file or native implementation changed.",
+  "historical_seals_scope": "Verify earlier evidence seals against their recorded Git checkpoints; changed current metadata is declared here.",
+  "changed_metadata": {
+    ".gitattributes": {
+      "previous_sha256": "6c8d557ab597d559b62ee9f4ad28180d6c991f535c7d73566ebcad2ce13ebc5b",
+      "current_sha256": "e57dcbc0d73b6a1e2a4af38aad601a0510b80dc40c1a94b878dfbc2ea6f12f00",
+      "retained_previous_bytes": "results/teacher_acquisition_20260913/prior_checkpoint_metadata/.gitattributes"
+    },
+    "AUTHORSHIP.json": {
+      "previous_sha256": "ec11c7e4792e0ddab2b73bf242fd147a02804ff567900de72d91ad68523e3553",
+      "current_sha256": "3eb6a5474b6dcf53d150f8cdc2b7212c1152b2286b8496fb75633a505f5a7803",
+      "retained_previous_bytes": "results/teacher_acquisition_20260913/prior_checkpoint_metadata/AUTHORSHIP.json"
+    },
+    "README.md": {
+      "previous_sha256": "0ef7a38c9ce277af4389279dd39e2499cc02bef88ea4794665c5444154a082cf",
+      "current_sha256": "7c779713dff2172c8522bcd7a749b2067075b94466a8f5aff1223ed06f80ad29",
+      "retained_previous_bytes": "results/teacher_acquisition_20260913/prior_checkpoint_metadata/README.md"
+    },
+    "docs/coverage.csv": {
+      "previous_sha256": "3bf6829143aebe1b1f7f8dda666c04dbaad0fa114380bff95967687b12a2e6cb",
+      "current_sha256": "9d58324976d01d7636fb75f2cb6dfa8819aab7b0553a9dbde5455e0f504fe3f7",
+      "retained_previous_bytes": "results/teacher_acquisition_20260913/prior_checkpoint_metadata/docs/coverage.csv"
+    }
+  }
+}

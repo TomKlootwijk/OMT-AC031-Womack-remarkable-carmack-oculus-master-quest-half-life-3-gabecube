@@ -1,0 +1,1794 @@
+{
+  "schema": "atomos-teacher-independent-response-assessment-v1",
+  "status": "completed",
+  "actual_teacher_responses": 12,
+  "compiled_responses": 12,
+  "correct_responses": 2,
+  "incorrect_responses": 10,
+  "complete_evaluations": 208,
+  "models_unloaded": true,
+  "rows": [
+    {
+      "profile": "full_adder_1bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "response_sha256": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+      "gate_count": 17,
+      "case_count": 8,
+      "wrong_case_count": 0,
+      "counterexamples": [],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 3
+        }
+      ]
+    },
+    {
+      "profile": "unsigned_compare_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "response_sha256": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+      "gate_count": 14,
+      "case_count": 16,
+      "wrong_case_count": 13,
+      "counterexamples": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 6
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 11,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 7
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 3
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 3,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 6
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 11,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 7
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 3
+        }
+      ]
+    },
+    {
+      "profile": "unsigned_add_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "response_sha256": "642c7ec02165cfa8a62240e796bfe81abcf12c03ec1d6185c15c9185181040a6",
+      "gate_count": 21,
+      "case_count": 16,
+      "wrong_case_count": 10,
+      "counterexamples": [
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 7
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 6
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 4,
+          "actual": 3
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 7
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 6
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 4,
+          "actual": 3
+        },
+        {
+          "input": 14,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "input": 15,
+          "expected": 6,
+          "actual": 6
+        }
+      ]
+    },
+    {
+      "profile": "binary_to_gray_4bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "response_sha256": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+      "gate_count": 15,
+      "case_count": 16,
+      "wrong_case_count": 0,
+      "counterexamples": [],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 6,
+          "actual": 6
+        },
+        {
+          "input": 5,
+          "expected": 7,
+          "actual": 7
+        },
+        {
+          "input": 6,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 8,
+          "expected": 12,
+          "actual": 12
+        },
+        {
+          "input": 9,
+          "expected": 13,
+          "actual": 13
+        },
+        {
+          "input": 10,
+          "expected": 15,
+          "actual": 15
+        },
+        {
+          "input": 11,
+          "expected": 14,
+          "actual": 14
+        },
+        {
+          "input": 12,
+          "expected": 10,
+          "actual": 10
+        },
+        {
+          "input": 13,
+          "expected": 11,
+          "actual": 11
+        },
+        {
+          "input": 14,
+          "expected": 9,
+          "actual": 9
+        },
+        {
+          "input": 15,
+          "expected": 8,
+          "actual": 8
+        }
+      ]
+    },
+    {
+      "profile": "absolute_difference_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "response_sha256": "722e1cad5f4f9eff8524b5dbf95a6d510133f7cafbdfc1c885e666871ee75e59",
+      "gate_count": 29,
+      "case_count": 16,
+      "wrong_case_count": 9,
+      "counterexamples": [
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 2
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 13,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 15,
+          "expected": 0,
+          "actual": 0
+        }
+      ]
+    },
+    {
+      "profile": "mux_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "response_sha256": "a17300cf85213cec7aa8731dd1c6308d48874e7b505d086b386c291a1c65f05e",
+      "gate_count": 4,
+      "case_count": 32,
+      "wrong_case_count": 12,
+      "counterexamples": [
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 21,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 22,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 23,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 24,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 25,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 26,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 27,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 28,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 29,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 30,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 31,
+          "expected": 3,
+          "actual": 0
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 4,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 15,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 16,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 17,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 18,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 19,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 21,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 22,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 23,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 24,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 25,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 26,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 27,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 28,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 29,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 30,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 31,
+          "expected": 3,
+          "actual": 0
+        }
+      ]
+    },
+    {
+      "profile": "full_adder_1bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "response_sha256": "079e2bee05fbac685e0b38f9db56da3df8d17876a908c79b33ea5b01d9d9f7b2",
+      "gate_count": 13,
+      "case_count": 8,
+      "wrong_case_count": 7,
+      "counterexamples": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 3
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 3
+        }
+      ]
+    },
+    {
+      "profile": "unsigned_compare_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "response_sha256": "358fcaf3a76fac21e5babf4738c8826a6ea2df6ec5bcdfb1fd8eaf632c34a8f5",
+      "gate_count": 8,
+      "case_count": 16,
+      "wrong_case_count": 16,
+      "counterexamples": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 0
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 0
+        }
+      ]
+    },
+    {
+      "profile": "unsigned_add_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "response_sha256": "b14f433c6e12504e16b30ee7d82a957be39f837e8fd79f4875f32d7e8a3d6753",
+      "gate_count": 4,
+      "case_count": 16,
+      "wrong_case_count": 15,
+      "counterexamples": [
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 6,
+          "actual": 0
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 6,
+          "actual": 0
+        }
+      ]
+    },
+    {
+      "profile": "binary_to_gray_4bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "response_sha256": "15dd57aa9f0e6dc0453cf031374014aa30fbf42b3826b12837f5b89dd797f26a",
+      "gate_count": 13,
+      "case_count": 16,
+      "wrong_case_count": 15,
+      "counterexamples": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 5
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 2,
+          "expected": 3,
+          "actual": 5
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 5
+        },
+        {
+          "input": 4,
+          "expected": 6,
+          "actual": 5
+        },
+        {
+          "input": 5,
+          "expected": 7,
+          "actual": 5
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 8,
+          "expected": 12,
+          "actual": 5
+        },
+        {
+          "input": 9,
+          "expected": 13,
+          "actual": 5
+        },
+        {
+          "input": 10,
+          "expected": 15,
+          "actual": 5
+        },
+        {
+          "input": 11,
+          "expected": 14,
+          "actual": 5
+        },
+        {
+          "input": 12,
+          "expected": 10,
+          "actual": 5
+        },
+        {
+          "input": 13,
+          "expected": 11,
+          "actual": 5
+        },
+        {
+          "input": 14,
+          "expected": 9,
+          "actual": 5
+        },
+        {
+          "input": 15,
+          "expected": 8,
+          "actual": 5
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 5
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 2,
+          "expected": 3,
+          "actual": 5
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 5
+        },
+        {
+          "input": 4,
+          "expected": 6,
+          "actual": 5
+        },
+        {
+          "input": 5,
+          "expected": 7,
+          "actual": 5
+        },
+        {
+          "input": 6,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 8,
+          "expected": 12,
+          "actual": 5
+        },
+        {
+          "input": 9,
+          "expected": 13,
+          "actual": 5
+        },
+        {
+          "input": 10,
+          "expected": 15,
+          "actual": 5
+        },
+        {
+          "input": 11,
+          "expected": 14,
+          "actual": 5
+        },
+        {
+          "input": 12,
+          "expected": 10,
+          "actual": 5
+        },
+        {
+          "input": 13,
+          "expected": 11,
+          "actual": 5
+        },
+        {
+          "input": 14,
+          "expected": 9,
+          "actual": 5
+        },
+        {
+          "input": 15,
+          "expected": 8,
+          "actual": 5
+        }
+      ]
+    },
+    {
+      "profile": "absolute_difference_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "response_sha256": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+      "gate_count": 0,
+      "case_count": 16,
+      "wrong_case_count": 11,
+      "counterexamples": [
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 1
+        },
+        {
+          "input": 6,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 15,
+          "expected": 0,
+          "actual": 3
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 1
+        },
+        {
+          "input": 6,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 15,
+          "expected": 0,
+          "actual": 3
+        }
+      ]
+    },
+    {
+      "profile": "mux_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "response_sha256": "82615f7f8ecb11e8411ba99e4ab120ce4414810b8722f5fe4dcfa44595edc1d7",
+      "gate_count": 0,
+      "case_count": 32,
+      "wrong_case_count": 12,
+      "counterexamples": [
+        {
+          "input": 17,
+          "expected": 0,
+          "actual": 1
+        },
+        {
+          "input": 18,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 19,
+          "expected": 0,
+          "actual": 3
+        },
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 22,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 23,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 24,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 25,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 27,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 28,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 29,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 30,
+          "expected": 3,
+          "actual": 2
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 4,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 15,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 16,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 17,
+          "expected": 0,
+          "actual": 1
+        },
+        {
+          "input": 18,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 19,
+          "expected": 0,
+          "actual": 3
+        },
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 21,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 22,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 23,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 24,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 25,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 26,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 27,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 28,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 29,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 30,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 31,
+          "expected": 3,
+          "actual": 3
+        }
+      ]
+    }
+  ]
+}

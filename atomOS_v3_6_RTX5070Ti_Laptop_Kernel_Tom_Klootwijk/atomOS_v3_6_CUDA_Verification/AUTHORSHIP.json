@@ -30,5 +30,18 @@
     "concept_author": "Tom Klootwijk",
     "pages": 43,
     "sha256": "b51651c007c560775ff1950e278789cd7674e131ec71a09ebd9254cebe9c19ce"
+  },
+  "teacher_knowledge_acquisition": {
+    "date": "2026-09-13",
+    "concept_author": "Tom Klootwijk",
+    "development": "AI-assisted independent knowledge extraction, exact finite admission and program-texture integration",
+    "source": "docs/TEACHER_KNOWLEDGE_EXTRACTION.md",
+    "teacher_models": [
+      "Qwen/Qwen3-4B-Instruct-2507",
+      "microsoft/Phi-4-mini-instruct"
+    ],
+    "quantization_provider": "bartowski on Hugging Face",
+    "attribution_scope": "AtomOS architecture attribution is separate from teacher developers and retained original-model licenses",
+    "scope": "Actual local teacher-generated algorithm proposals; two correct first-pass procedures; broader knowledge and language capability remains incomplete"
   }
 }

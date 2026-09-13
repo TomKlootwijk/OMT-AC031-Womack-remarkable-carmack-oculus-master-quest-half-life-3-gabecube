@@ -1,0 +1,8 @@
+Express the following known digital algorithm as Boolean expression trees. Use your existing algorithm knowledge. Return only one JSON object; no prose, reasoning, Markdown, executable code or truth table.
+
+For unsigned A=a0+2*a1 and B=b0+2*b1, return the exact absolute difference |A-B| as two bits, least-significant bit first.
+Input wire indices: 0=a0, 1=a1, 2=b0, 3=b1.
+Output list order: 0=difference0, 1=difference1.
+Each output is one nested JSON array. The complete grammar is: ["input", integer_wire_index], ["constant", 0_or_1], ["not", expression], ["and", expression, expression], ["or", expression, expression], ["xor", expression, expression]. All and/or/xor nodes have exactly two operands. Use literal integer 0 or 1 for constants, not JSON true/false. No named references, local definitions or other operators are supported. Return exactly 2 expressions, at most 512 total nodes and depth at most 24.
+Required object structure (replace the outputs placeholder with the expression list):
+{"schema":"atomos-teacher-procedure-v1","profile_id":"absolute_difference_2bit_v1","procedures":[{"name":"absolute_difference_2bit_v1","input_bits":4,"output_bits":2,"outputs":"REPLACE_WITH_OUTPUT_EXPRESSION_LIST"}]}

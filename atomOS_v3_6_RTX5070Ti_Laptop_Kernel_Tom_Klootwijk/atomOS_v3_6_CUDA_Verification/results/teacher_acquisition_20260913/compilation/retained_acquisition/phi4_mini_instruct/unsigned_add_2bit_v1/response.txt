@@ -1,0 +1,37 @@
+{
+  "schema": "atomos-teacher-procedure-v1",
+  "profile_id": "unsigned_add_2bit_v1",
+  "procedures": [
+    {
+      "name": "unsigned_add_2bit_v1",
+      "input_bits": 4,
+      "output_bits": 3,
+      "outputs": [
+        [
+          "and",
+          [
+            "not",
+            ["or", ["constant", 1], ["constant", 1]]
+          ],
+          ["constant", 1]
+        ],
+        [
+          "and",
+          [
+            "not",
+            ["or", ["constant", 1], ["constant", 0]]
+          ],
+          ["constant", 1]
+        ],
+        [
+          "and",
+          [
+            "not",
+            ["or", ["constant", 0], ["constant", 1]]
+          ],
+          ["constant", 1]
+        ]
+      ]
+    }
+  ]
+}

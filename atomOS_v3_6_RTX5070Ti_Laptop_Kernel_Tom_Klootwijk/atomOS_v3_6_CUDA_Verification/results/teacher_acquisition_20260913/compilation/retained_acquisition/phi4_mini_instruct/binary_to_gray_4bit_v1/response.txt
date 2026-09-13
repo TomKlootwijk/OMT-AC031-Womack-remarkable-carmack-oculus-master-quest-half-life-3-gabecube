@@ -1,0 +1,45 @@
+{
+  "schema": "atomos-teacher-procedure-v1",
+  "profile_id": "binary_to_gray_4bit_v1",
+  "procedures": [
+    {
+      "name": "binary_to_gray_4bit_v1",
+      "input_bits": 4,
+      "output_bits": 4,
+      "outputs": [
+        [
+          "xor",
+          [
+            "not",
+            ["and", ["constant", 0], ["constant", 1]]
+          ],
+          ["constant", 0]
+        ],
+        [
+          "xor",
+          [
+            "not",
+            ["and", ["constant", 0], ["constant", 1]]
+          ],
+          ["constant", 1]
+        ],
+        [
+          "xor",
+          [
+            "not",
+            ["and", ["constant", 0], ["constant", 1]]
+          ],
+          ["constant", 0]
+        ],
+        [
+          "xor",
+          [
+            "not",
+            ["and", ["constant", 0], ["constant", 1]]
+          ],
+          ["constant", 1]
+        ]
+      ]
+    }
+  ]
+}
