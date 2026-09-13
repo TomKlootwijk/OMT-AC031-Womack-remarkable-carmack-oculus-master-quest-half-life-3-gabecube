@@ -104,6 +104,36 @@ void check_semantic_edges(const std::string& name,const Config& c,
     }
 }
 
+void stream_completion_regression(const cudaDeviceProp& prop) {
+    const Config config;constexpr u32 count=65536;
+    const u64 bytes=required_bytes(config,count);
+    std::size_t free_bytes=0,total_bytes=0;ASA_CUDA(cudaMemGetInfo(&free_bytes,&total_bytes));
+    if(!gpu_payload_admitted(bytes,free_bytes))throw std::runtime_error("insufficient free VRAM for stream completion regression");
+    const Fixture fixture(config);const auto samples=make_samples(count,config);const auto expected=cpu_run(config,fixture,samples);
+    Buffer<float> image(fixture.image.size());Buffer<u32> mask(fixture.mask.size());Buffer<Warp> warp(fixture.warp.size());
+    Buffer<Sample> input(samples.size());Buffer<Result> output(samples.size());
+    image.upload(fixture.image.data(),fixture.image.size());mask.upload(fixture.mask.data(),fixture.mask.size());
+    warp.upload(fixture.warp.data(),fixture.warp.size());input.upload(samples.data(),samples.size());
+    ASA_CUDA(cudaStreamSynchronize(nullptr));
+    Texture ti(image.get(),fixture.image.size()*sizeof(float),cudaCreateChannelDesc<float>(),fixture.image.size(),prop);
+    Texture tm(mask.get(),fixture.mask.size()*sizeof(u32),cudaCreateChannelDesc<unsigned int>(),fixture.mask.size(),prop);
+    Texture tw(warp.get(),fixture.warp.size()*sizeof(Warp),cudaCreateChannelDesc<float2>(),fixture.warp.size(),prop);
+    Event completed;std::vector<Result> actual(samples.size());struct ScopeExit {};
+    for(int mode:{0,1,2}) {
+        try {
+            Stream stream;
+            asa_texture_kernel<<<(count+255u)/256u,256,0,stream.get()>>>(input.get(),output.get(),count,config,{ti.get(),tm.get(),tw.get()});
+            ASA_CUDA(cudaGetLastError());ASA_CUDA(cudaEventRecord(completed.get(),stream.get()));
+            if(mode==1)throw ScopeExit{};
+            if(mode==2){stream.close();stream.close();}
+        }catch(const ScopeExit&){}
+        // Query does not wait: stream destruction/close must already have completed the recorded work.
+        ASA_CUDA(cudaEventQuery(completed.get()));
+        output.download(actual.data(),actual.size());compare(actual,expected);
+    }
+    std::cout<<"PASS owned stream completion: destructor, exception unwind, explicit close; "<<count<<" samples each\n";
+}
+
 std::vector<Result> run_case(const Config& c,const std::vector<Sample>& samples,
                              const cudaDeviceProp& prop,const std::filesystem::path& output,const std::string& order) {
     const u64 bytes=required_bytes(c,samples.size());
@@ -119,6 +149,9 @@ std::vector<Result> run_case(const Config& c,const std::vector<Sample>& samples,
     RunInfo info;info.backend="CUDA focused boundary texture + global differential";
     info.device=prop.name;info.gpu=!samples.empty();info.total_vram=total_bytes;info.free_vram=free_bytes;
     info.sample_order=order;info.compute_statistic="not timed (focused boundary validation)";
+    info.block_size=samples.empty()?0:256;
+    info.l2_cache_bytes=prop.l2CacheSize;info.persisting_l2_max_bytes=prop.persistingL2CacheMaxSize;
+    info.access_policy_max_window_bytes=prop.accessPolicyMaxWindowSize;
     SampleSchedule schedule;
     if(order=="locality") {
         const auto start=std::chrono::steady_clock::now();schedule=make_locality_schedule(samples,c);
@@ -165,6 +198,8 @@ int main(int argc,char** argv) {try {
     int devices=0;ASA_CUDA(cudaGetDeviceCount(&devices));
     if(!devices)throw std::runtime_error("no CUDA device available for boundary tests");
     ASA_CUDA(cudaSetDevice(0));cudaDeviceProp prop{};ASA_CUDA(cudaGetDeviceProperties(&prop,0));
+    if(prop.maxThreadsPerBlock<256||prop.maxThreadsDim[0]<256)throw std::runtime_error("boundary test block size exceeds CUDA device limits");
+    stream_completion_regression(prop);
     std::size_t case_index=0,total_samples=0;
     for(const auto& test:cases()) {
         const auto samples=boundary_samples(test.config);

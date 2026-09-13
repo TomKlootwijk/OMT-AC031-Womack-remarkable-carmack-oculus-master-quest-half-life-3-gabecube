@@ -32,7 +32,7 @@ python scripts/validate.py --gpu --sanitizer --build-dir b128 --report-dir local
 
 Use a fresh report directory for each evidence run. `--cmake-arg=VALUE` may be repeated for other explicit CMake selections; select a fresh build directory when changing its generator or toolset. The script records the exact command and resolved tool paths, and launches the toolkit's native Compute Sanitizer executable on Windows. CPU-only `--sanitizer` with MSVC returns **2 (unavailable)** because the requested combined host ASan/UBSan instrumentation is not implemented for that compiler. GPU `--sanitizer` requests Compute Sanitizer, independently of host instrumentation.
 
-Validation requires Python 3.10 or newer and passes the running interpreter to CMake, so the independent oracle cannot be silently omitted. CLI integration covers 0, 1, 257, 4097 and 65,536 samples in both layouts, rectangular dictionaries, clean failure cases and truthful device-execution metadata. A separate CUDA boundary executable checks focused configurations against CPU, the other layout, and the independent Python oracle. All four requested Compute Sanitizer tools also run that focused executable.
+Validation requires Python 3.10 or newer and passes the running interpreter to CMake, so the independent oracle cannot be silently omitted. CLI integration covers 0, 1, 257, 4097 and 65,536 samples in both layouts and sample orders, rectangular dictionaries, supported launch sizes, clean failure cases and truthful device-execution metadata. A separate CUDA boundary executable checks focused configurations against CPU, the other layout, both sample orders, and the independent Python oracle. All four requested Compute Sanitizer tools cover the focused executable and production paths with natural ordering, locality ordering and the optional L2 policy. Consult [the local build status](docs/BUILD_STATUS.md) for which source revision and checks actually ran.
 
 Manual CMake build:
 
@@ -55,9 +55,51 @@ python scripts/verify_run.py new_morton_run
 
 Use the corresponding Windows executable path when appropriate. Every output directory must be new or empty. `--layout linear` is the comparison layout. `--device-info` prints actual GPU memory, capability and driver/runtime versions. Every GPU execution checks both texture and direct global-load results against CPU values before writing its results.
 
-## What has been run in this delivery
+## Sample ordering and repeated measurements
 
-See `docs/BUILD_STATUS.md` and `results/validation_status.json`. Recorded tests include CPU compilation, 30 C++ test groups, 21 Python tests, independent layout checks, CLI failure cases and address/undefined-behavior sanitizer checks. **CUDA compilation and GPU execution were not available in the preparation environment.** No `.cubin` or claimed device benchmark is bundled.
+The CUDA executable defaults to `--sample-order locality --block-size 512`. Locality ordering sorts a host-side spatial key before upload and restores results to their original sample order after download. Image values, flags, logical cell keys and saved input order retain the same contract. This adds host sorting, temporary host storage and restoration work; it does not add device payload allocations. `--sample-order natural` retains the incoming order. The CPU executable defaults to natural order and can also exercise locality ordering.
+
+CUDA accepts `--block-size 128|256|512|1024`, subject to the selected device's launch limits. The CPU executable accepts its default block option, 256, and rejects GPU-only overrides. A zero-sample GPU run launches no kernel and records `gpu_executed: false`, `block_size: 0` and zero measured GPU iterations.
+
+Use `--warmup 0..100` and `--repeat 1..1000` to measure repeated CUDA execution; defaults are zero warmups and one timed launch per path. For example:
+
+```powershell
+.\b128\Release\asa_cuda.exe --samples 65536 --layout morton --sample-order locality --block-size 512 --warmup 5 --repeat 30 --out local_validation/my_repeated_run
+```
+
+Each path warms up and then records CUDA event timings while the same read-only tables and device buffers remain allocated. `compute_ms` is the mean texture-kernel time, also recorded as `texture_mean_ms`; `texture_min_ms`, `global_mean_ms` and `global_min_ms` describe the corresponding device measurements. `reorder_ms` records host preparation, and `restore_ms` includes restoration of both downloaded CUDA outputs. These host costs, transfers, fixture construction, CPU comparisons and file output are outside the kernel timings. The CPU rejects nondefault GPU warmup/repeat requests.
+
+## Optional L2 persistence policy
+
+`--l2-policy normal` is the default. CUDA's opt-in `--l2-policy persist-image` applies a supported L2 access-policy window to the image allocation on the owned CUDA stream. It does not cover the separately allocated matte and lens tables. The program queries device limits and records the requested/accepted reservation plus stream-window readback, including its size, base address, properties and `l2_policy_active` state. Empty batches perform no policy setup; the CPU rejects `persist-image`.
+
+```powershell
+.\b128\Release\asa_cuda.exe --samples 65536 --l2-policy persist-image --warmup 5 --repeat 30 --out local_validation/my_l2_policy_run
+```
+
+This is a preference for retaining data in L2. The policy's `hitRatio` is not a measured hit percentage, and successful configuration does not establish permanent cache residence. The window is disabled and persistence settings are restored after completion. L1/TEX cache activity remains subject to hardware scheduling and replacement; executable instructions are not placed or pinned in the texture cache. See [NVIDIA's L2 access-management documentation](https://docs.nvidia.com/cuda/archive/12.8.0/cuda-c-programming-guide/index.html#device-memory-l2-access-management).
+
+## Reproduce cache measurements
+
+The benchmark compares natural/locality ordering in both layouts, alternates A/B execution order, and verifies exact sample/result bytes plus the independent oracle. It uses five warmups and 30 timed launches per path, with five unprofiled process runs and three cold profiler captures per condition by default:
+
+```powershell
+python scripts/benchmark_cache.py --executable b128/Release/asa_cuda.exe --ncu 'C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\target\windows-desktop-win7-x64\ncu.exe' --block-size 512 --report-dir local_validation/my_cache_benchmark
+```
+
+Its process wall time covers the entire benchmark invocation, including both paths, warmups, repeated launches and output files. It is separate from the mean kernel time and is not a single-launch latency. Texture-load hit rates and miss-sector counts are recorded separately from aggregate L1/TEX hit rates.
+
+The residency probe compares cold/warm cache settings and normal/persist-image policy. Its seven metric groups capture texture-load L1 hits/misses together, then L2 hit, miss and evict-last counters separately for the texture and global kernels:
+
+```powershell
+python scripts/probe_cache_residency.py --executable b128/Release/asa_cuda.exe --ncu 'C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.1.0\target\windows-desktop-win7-x64\ncu.exe' --report-dir local_validation/my_residency_probe
+```
+
+Each capture measures one kernel after five application warmups and requires exactly one profiler pass, so replay cannot silently substitute a different cache state. L2 counters require independent captures on this device; their summaries report each counter's median and range, without deriving a same-launch L2 hit percentage. The default is three repetitions, totaling 84 captures; `--runs 1` makes an initial 28-capture probe. Results retain the oracle data, exact commands and policy readback. L2 source-unit counters describe the shared L1/TEX read path, not the residence of individual table lines. Both scripts require a fresh report directory and preserve the original `results/` evidence.
+
+## What was run in the original delivery
+
+The original delivery recorded CPU compilation, 30 C++ test groups, 21 Python tests, independent layout checks, CLI failure cases and address/undefined-behavior sanitizer checks. **CUDA compilation and GPU execution were unavailable in that preparation environment.** No `.cubin` or claimed device benchmark was bundled. Those historical records remain in `results/validation_status.json`; subsequent local execution and its limitations are recorded separately in [docs/BUILD_STATUS.md](docs/BUILD_STATUS.md).
 
 ## Memory profile
 
@@ -83,6 +125,6 @@ The handoff requests a patch, regressions and logs for CUDA compiler compatibili
 
 ## Files
 
-`include/asa/` contains shared C++/CUDA operators, layout and fixtures. `cuda/asa_texture.cu` contains device kernels and texture lifetimes. `python/` is the independent reference, rational timeline and provenance layer. `tests/` and `scripts/` run reproducible checks. `results/` holds executed evidence. `docs/addendum.tex` is the editable PDF source. `source/manifest.json` fingerprints the two source PDFs; original transcripts are not redistributed.
+`include/asa/` contains shared C++/CUDA operators, layout, sample scheduling and fixtures. `cuda/asa_texture.cu` runs the device paths; `cuda/asa_device.cuh` contains their kernels and allocation, texture, stream and cache-policy lifetimes. `python/` is the independent reference, rational timeline and provenance layer. `tests/` and `scripts/` run reproducible checks and cache experiments. `results/` holds the original delivered evidence; new local evidence belongs under a fresh report directory. `docs/addendum.tex` is the editable PDF source. `source/manifest.json` fingerprints the two source PDFs; original transcripts are not redistributed.
 
 Run `python scripts/verify_package.py` to check the delivery hashes. The record seal checks integrity relative to its retained head; it is not an identity credential. Re-running an unchanged fixture preserves transition data, while measured timing and whole-file hashes may differ.

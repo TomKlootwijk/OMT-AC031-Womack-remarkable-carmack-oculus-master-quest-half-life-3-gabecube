@@ -101,10 +101,15 @@ def main(argv=None) -> int:
                 for tool in ('memcheck', 'initcheck', 'racecheck', 'synccheck'):
                     with tempfile.TemporaryDirectory(prefix='asa_cuda_'+tool+'_') as name:
                         run(tool, [tool_paths['compute-sanitizer'], '--tool', tool, '--error-exitcode', '1',
-                                   exe, '--samples', '4097', '--out', Path(name)/'run'])
+                                   exe, '--samples', '4097', '--sample-order', 'natural', '--block-size', '512',
+                                   '--out', Path(name)/'run'])
                         run(tool+'_locality', [tool_paths['compute-sanitizer'], '--tool', tool, '--error-exitcode', '1',
                                               exe, '--samples', '4097', '--sample-order', 'locality',
-                                              '--warmup', '2', '--repeat', '3', '--out', Path(name)/'locality'])
+                                              '--block-size', '512', '--warmup', '2', '--repeat', '3', '--out', Path(name)/'locality'])
+                        run(tool+'_persist_image', [tool_paths['compute-sanitizer'], '--tool', tool, '--error-exitcode', '1',
+                                                   exe, '--samples', '4097', '--sample-order', 'locality', '--block-size', '512',
+                                                   '--l2-policy', 'persist-image', '--warmup', '2', '--repeat', '3',
+                                                   '--out', Path(name)/'persist_image'])
                         run(tool+'_boundaries', [tool_paths['compute-sanitizer'], '--tool', tool, '--error-exitcode', '1',
                                               executable('asa_cuda_tests')])
     except StageFailure as error:
