@@ -1,0 +1,51 @@
+{
+  "date": "2026-09-13",
+  "cpu_compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "python": "3.13.5",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "cpp_groups": 26,
+  "cpp_assertions": 25051,
+  "python_tests": 29,
+  "ctest_cpu_passed": 4,
+  "ctest_sanitized_passed": 4,
+  "cross_language_cases": {
+    "word": 1000,
+    "sha256": 100,
+    "jitter": 300,
+    "random_vm_programs": 600
+  },
+  "gpu": {
+    "nvcc_available": false,
+    "nvidia_smi_available": false,
+    "compiled": false,
+    "executed": false,
+    "cache_residency_measured": false,
+    "throughput": null
+  },
+  "smooth_rk4_control": [
+    {
+      "steps": 10,
+      "h": 0.1,
+      "abs_error": 2.0843238792700447e-06,
+      "previous_error_ratio": null
+    },
+    {
+      "steps": 20,
+      "h": 0.05,
+      "abs_error": 1.3580270996627064e-07,
+      "previous_error_ratio": 15.34817589271767
+    },
+    {
+      "steps": 40,
+      "h": 0.025,
+      "abs_error": 8.666190431938503e-09,
+      "previous_error_ratio": 15.6704045488986
+    },
+    {
+      "steps": 80,
+      "h": 0.0125,
+      "abs_error": 5.47304868092624e-10,
+      "previous_error_ratio": 15.834301752404414
+    }
+  ]
+}

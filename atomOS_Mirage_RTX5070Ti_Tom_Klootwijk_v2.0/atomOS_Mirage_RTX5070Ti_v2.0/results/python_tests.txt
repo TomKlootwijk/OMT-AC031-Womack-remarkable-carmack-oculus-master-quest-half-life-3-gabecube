@@ -1,0 +1,34 @@
+test_1000_unsigned_word_cases (test_reference.CrossLanguage.test_1000_unsigned_word_cases) ... ok
+test_100_sha256_byte_strings (test_reference.CrossLanguage.test_100_sha256_byte_strings) ... ok
+test_300_jitter_cases (test_reference.CrossLanguage.test_300_jitter_cases) ... ok
+test_600_random_program_traces (test_reference.CrossLanguage.test_600_random_program_traces) ... ok
+test_journal_hashes (test_reference.Journal.test_journal_hashes) ... ok
+test_tampering_detected (test_reference.Journal.test_tampering_detected) ... ok
+test_wrong_anchor_detected (test_reference.Journal.test_wrong_anchor_detected) ... ok
+test_bitpacking_bounds (test_reference.Mathematics.test_bitpacking_bounds) ... ok
+test_bitpacking_word_crossings (test_reference.Mathematics.test_bitpacking_word_crossings) ... ok
+test_children_are_not_right_shifts (test_reference.Mathematics.test_children_are_not_right_shifts) ... ok
+test_divergence_constant_cartesian_field (test_reference.Mathematics.test_divergence_constant_cartesian_field) ... ok
+test_hash_width (test_reference.Mathematics.test_hash_width) ... ok
+test_invalid_klein (test_reference.Mathematics.test_invalid_klein) ... ok
+test_jitter_replay (test_reference.Mathematics.test_jitter_replay) ... ok
+test_jitter_threshold (test_reference.Mathematics.test_jitter_threshold) ... ok
+test_jk_truth_table (test_reference.Mathematics.test_jk_truth_table) ... ok
+test_klein_deck_relation (test_reference.Mathematics.test_klein_deck_relation) ... ok
+test_klein_two_wraps (test_reference.Mathematics.test_klein_two_wraps) ... ok
+test_lineage_injective (test_reference.Mathematics.test_lineage_injective) ... ok
+test_lineage_overflow (test_reference.Mathematics.test_lineage_overflow) ... ok
+test_mask_requires_same_index_space (test_reference.Mathematics.test_mask_requires_same_index_space) ... ok
+test_or_xor_distinct (test_reference.Mathematics.test_or_xor_distinct) ... ok
+test_rk4_fourth_order_smooth_control (test_reference.Mathematics.test_rk4_fourth_order_smooth_control) ... ok
+test_vm_bad_program (test_reference.Mathematics.test_vm_bad_program) ... ok
+test_vm_capacity_no_commit (test_reference.Mathematics.test_vm_capacity_no_commit) ... ok
+test_vm_pause_continue (test_reference.Mathematics.test_vm_pause_continue) ... ok
+test_vm_unary (test_reference.Mathematics.test_vm_unary) ... ok
+test_word_range (test_reference.Mathematics.test_word_range) ... ok
+test_zero_is_absorbing (test_reference.Mathematics.test_zero_is_absorbing) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.121s
+
+OK

@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>atomOS | Mirage / Ring</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif;background:#111a18;color:#e8eee7}body{margin:0}header,main,footer{max-width:1080px;margin:auto;padding:24px}header{border-bottom:1px solid #4f6754}h1{font-size:34px;margin:8px 0}small,.muted{color:#adc1b1}section{display:flex;gap:18px;align-items:center;flex-wrap:wrap}button,label.file{background:#334a37;border:1px solid #92ab83;border-radius:5px;padding:10px 16px;color:inherit;cursor:pointer}input[type=file]{max-width:280px}input[type=range]{flex:1;min-width:180px}canvas{width:100%;height:auto;background:#0c1310;border:1px solid #455c47;margin:24px 0}#status{min-height:2em}.tag{letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:#bdca9c}footer{font-size:13px;border-top:1px solid #4f6754}
+</style>
+<header><div class="tag">AC130 / AC031 • atomOS 2.0</div><h1>Mirage / Ring</h1><p class="muted">A local view of synthetic branch states. No network access, game integration or privileged execution.</p></header>
+<main><section><input id="file" type="file" accept=".json,application/json" aria-label="Load frames.json"><button id="play">Play</button><label><input id="mirage" type="checkbox"> Bush mirage view</label></section>
+<p id="status">Load <strong>frames.json</strong> from a generated run or from results/cpu_propagation.</p>
+<section><span id="generation">Generation —</span><input id="time" type="range" min="0" max="0" value="0" aria-label="Generation"></section>
+<canvas id="map" width="1040" height="700" aria-label="Log-polar node visualization"></canvas>
+<p class="muted">Mirage changes only the drawn glyph. Node identity, coordinates, occupancy and logs are unchanged. For Klein mode this is a chart illustration, not an embedding of the Klein bottle.</p></main>
+<footer>Author: Tom Klootwijk. Original procedural glyphs; no C&amp;C or Tolkien artwork, text or game assets. The “ring” is a presentation motif, not CPU ring 0.</footer>
+<script>
+'use strict';
+const $=s=>document.getElementById(s),canvas=$('map'),ctx=canvas.getContext('2d');
+let data=null,timer=null;
+function draw(){
+ const W=canvas.width,H=canvas.height,cx=W/2,cy=H/2;ctx.clearRect(0,0,W,H);ctx.lineWidth=1;
+ for(let i=1;i<=7;i++){ctx.beginPath();ctx.arc(cx,cy,i*H/17,0,Math.PI*2);ctx.strokeStyle=i===7?'#a5b885':'#29402f';ctx.stroke();}
+ ctx.fillStyle='#d2dfb6';ctx.font='13px system-ui';ctx.fillText('V  /  synthetic log-polar chart',24,30);
+ if(!data)return;
+ const frame=data.frames[Number($('time').value)],m=data.manifest;
+ $('generation').textContent='Generation '+frame.generation;
+ $('status').textContent=frame.nodes.length+' live nodes • '+m.topology+' • '+($('mirage').checked?'mirage glyphs':'state markers');
+ const maxR=Math.exp(m.rho_max);
+ for(const n of frame.nodes){
+  if(!Number.isFinite(n.rho)||!Number.isFinite(n.phi))continue;
+  const r=Math.exp(n.rho)/maxR*H*.45,x=cx+r*Math.cos(n.phi),y=cy-r*Math.sin(n.phi);
+  if($('mirage').checked){let s=2.4;ctx.fillStyle='#8ea978';for(const [dx,dy,rr]of[[-s,0,s],[s,0,s],[0,-s,s*1.3]]){ctx.beginPath();ctx.arc(x+dx,y+dy,rr,0,Math.PI*2);ctx.fill();}}
+  else{ctx.fillStyle='#dbe7c3';ctx.beginPath();ctx.arc(x,y,1.8,0,Math.PI*2);ctx.fill();}
+ }
+ ctx.fillStyle='#c4d0b1';ctx.fillRect(cx-2,cy-2,4,4);
+}
+$('file').addEventListener('change',async ev=>{try{
+ const f=ev.target.files[0];if(!f)return;if(f.size>100*1024*1024)throw Error('File exceeds the 100 MiB viewer limit');
+ const d=JSON.parse(await f.text());if(d.synthetic!==true||!Array.isArray(d.frames)||!d.frames.length||!d.manifest)throw Error('Expected atomOS frames.json');
+ if(!Number.isFinite(d.manifest.rho_max)||!['annulus','klein'].includes(d.manifest.topology))throw Error('Invalid chart manifest');
+ for(const f of d.frames){if(!Array.isArray(f.nodes)||f.nodes.length>1048576)throw Error('Invalid frame');}
+ data=d;$('time').max=data.frames.length-1;$('time').value=0;draw();
+}catch(e){$('status').textContent=e.message;}});
+$('time').addEventListener('input',draw);$('mirage').addEventListener('change',draw);
+$('play').addEventListener('click',()=>{if(timer){clearInterval(timer);timer=null;$('play').textContent='Play';return;}if(!data)return;$('play').textContent='Pause';timer=setInterval(()=>{$('time').value=(Number($('time').value)+1)%data.frames.length;draw();},500);});draw();
+</script></html>

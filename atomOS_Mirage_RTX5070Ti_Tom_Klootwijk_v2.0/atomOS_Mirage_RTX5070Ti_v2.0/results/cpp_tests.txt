@@ -1,0 +1,27 @@
+PASS SHA-256 known vectors
+PASS identity-seeded log-polar projection
+PASS word XOR and OR are different
+PASS unsigned shifts / mask properties
+PASS rotation boundaries
+PASS coordinate words are indices
+PASS configuration validation
+PASS annular half-open domain
+PASS Klein positive and negative wraps
+PASS Klein vector-field symmetry
+PASS LUT phase error bound
+PASS distinct child identifiers and hinge
+PASS lineage overflow guarded
+PASS inactive state cannot be revived
+PASS jitter veto is one bit per candidate
+PASS jitter endpoints and repeatability
+PASS obstacle sink preserves identity
+PASS radial absorption
+PASS RK4 constant log-field exactness
+PASS frontier shape validation
+PASS VM unary batch and independent tapes
+PASS VM continuation under bounded launch budgets
+PASS VM out-of-range is no-commit
+PASS VM invalid encoding is no-commit
+PASS VM invalid head and halted states
+PASS VM 32-bit word boundary
+RESULT groups=26 assertions=25051 passed

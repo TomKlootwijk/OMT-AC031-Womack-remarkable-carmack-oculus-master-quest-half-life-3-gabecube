@@ -1,0 +1,3 @@
+# 2.0 changes
+
+Re-grounded in both supplied transcripts. Added C++ shared semantics, CUDA texture/global propagation, texture/global programmable interpreter, CPU-only build, host SHA-256 jitter, sample journals, offline Mirage viewer, runtime bounds, source traceability and GPU acceptance script. The universal-memory extension is kept explicit. Code and program-as-data, texture allocation and cache residency, and GPU execution versus CPU ring 0 are separated. No GPU compile/run or external deployment occurred in this environment. The new package does not carry forward prior validation counts as new results.
