@@ -40,3 +40,11 @@ tests/test_knowledge_admission.py -text
 results/knowledge_admission_20260913/** -text
 examples/knowledge_admission/** -text
 docs/KNOWLEDGE_ADMISSION.md -text
+tools/validate_knowledge_bank.py -text
+tests/test_knowledge_publication.py -text
+.gitattributes -text
+examples/program_bank/learned_v1/bank.bin -text
+examples/program_bank/learned_v1/manifest.json -text
+output/bin/program_bank_v1/atomos_program_bank.exe -text
+results/sdf_klein_20260913/atlases/nor_8_256.atlas -text
+tools/profile_cache.py -text

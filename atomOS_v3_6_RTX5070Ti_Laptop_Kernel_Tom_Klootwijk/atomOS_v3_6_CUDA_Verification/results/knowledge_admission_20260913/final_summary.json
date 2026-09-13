@@ -1,0 +1,89 @@
+{
+  "schema": "atomos-knowledge-admission-final-v1",
+  "date": "2026-09-13",
+  "concept_author": "Tom Klootwijk",
+  "status": "passed",
+  "scope": "Novelty-gated finite Boolean programs in the existing seeded log-polar/Klein texture bank; native switching and checked host epoch publication",
+  "architecture": "Independent explicit knowledge/program substrate; no teacher weights or token-distribution cloning",
+  "bank": {
+    "old_capsules": 3,
+    "new_capsules": 4,
+    "accepted_proposals": 1,
+    "rejected_proposals": 4,
+    "repeat_accepted": 0,
+    "repeat_status": "no_growth",
+    "old_file_bytes": 848,
+    "new_file_bytes": 1112,
+    "program_page_bytes": 256,
+    "added_record_bytes": 264,
+    "old_page_bytes_and_metadata_preserved": true,
+    "sha256": "7b14de0a0ae14798f4dfe59b9e30c010fa776199c5fa1f23bdbc77aa60eed3cb"
+  },
+  "validation": {
+    "python_discovered": 180,
+    "python_passed": 169,
+    "python_skipped": 11,
+    "new_admission_tests": 17,
+    "new_publication_tests": 17,
+    "native_runs": 13,
+    "accepted_native_runs": 12,
+    "verified_native_rejections": 1,
+    "sanitizer_runs": 2,
+    "accepted_program_evaluations": 688,
+    "preserved_base_cases": 192,
+    "new_oracle_cases": 64,
+    "layouts": [
+      "linear",
+      "morton8"
+    ],
+    "visited_slots": {
+      "linear": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "morton8": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "rejected_preserved_active_bank": true,
+    "new_active_bank_published": true,
+    "copied_native_evidence_reverified": true
+  },
+  "toolchain": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "executable_sha256": "2cb47ca5e151203e9bbd01424821d93a094d45d13931017512f063e9b99397fc",
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+      "cc_major": 12,
+      "cc_minor": 0,
+      "total_bytes": 12820480000,
+      "free_bytes_at_start": 11561598976,
+      "runtime": 12080,
+      "driver": 13010,
+      "max_texture_1d_linear": 268435456
+    },
+    "historical_native_build": "CUDA 12.8.61 / MSVC 19.44.35221 / sm_120; binary unchanged from program-bank checkpoint"
+  },
+  "evidence": {
+    "admission": "examples/knowledge_admission/admitted/admission.json",
+    "repeat": "examples/knowledge_admission/repeated/admission.json",
+    "native": "results/knowledge_admission_20260913/native/publication.json",
+    "original_native_output": "C:\\Users\\Tom\\.cache\\ak1\\kn_verify",
+    "unit_tests": "results/knowledge_admission_20260913/all_python_tests.log",
+    "documentation": "docs/KNOWLEDGE_ADMISSION.md",
+    "prior_mandatory_regressions": "results/program_bank_20260913/final_summary.json"
+  },
+  "limits": [
+    "Only exact ordered finite Boolean interfaces and complete oracle cases are admitted; not general semantic equivalence.",
+    "Oracle independence is declared and scalar fixtures are retained; source truth is not authenticated.",
+    "Hugging Face model execution and model-derived knowledge extraction: not_run.",
+    "No new cache counters, large-VRAM capacity study, permanent cache-pinning guarantee or general language replacement proof.",
+    "Publication is a host boundary; texture inputs remain immutable within launches.",
+    "Existing 11 optional-fixture Python skips are not passes."
+  ]
+}

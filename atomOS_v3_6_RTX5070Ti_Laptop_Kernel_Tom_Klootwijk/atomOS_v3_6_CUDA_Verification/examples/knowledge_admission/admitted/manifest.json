@@ -1,0 +1,638 @@
+{
+  "schema": "atomos-program-lut-bank-v1",
+  "bank_file_sha256": "7b14de0a0ae14798f4dfe59b9e30c010fa776199c5fa1f23bdbc77aa60eed3cb",
+  "rows": 8,
+  "angles": 256,
+  "capsule_count": 4,
+  "master_seed_hex": "5c4037388385414ae7d617fe2b7fef79e9fa3042f386d74398ab090056d11e41",
+  "capsules": [
+    {
+      "id": 0,
+      "name": "enabled_fault_alarm",
+      "version": 1,
+      "next_slot": 1,
+      "origin_row": 0,
+      "origin_angle": 109,
+      "seed_hex": "1187d6c91af23da132efc23f27be8b456daafd6f0f0a181fdb6243e38982706e",
+      "parent_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "content_sha256": "04108e74d39c512dd496b827d906ebf88d0bf29abeada2dc13ff604571b19b3e",
+      "input_bits": 6,
+      "output_bits": 1,
+      "gate_count": 3,
+      "ref_width": 4,
+      "bit_length": 1052,
+      "root_seed256": "5c4037388385414ae7d617fe2b7fef79e9fa3042f386d74398ab090056d11e41",
+      "generator": "atomos-novelty-boolean-synthesis-v1",
+      "training": [
+        {
+          "input": 1,
+          "output": 0
+        },
+        {
+          "input": 3,
+          "output": 1
+        },
+        {
+          "input": 4,
+          "output": 0
+        },
+        {
+          "input": 6,
+          "output": 0
+        },
+        {
+          "input": 7,
+          "output": 1
+        },
+        {
+          "input": 8,
+          "output": 0
+        },
+        {
+          "input": 9,
+          "output": 0
+        },
+        {
+          "input": 10,
+          "output": 0
+        },
+        {
+          "input": 11,
+          "output": 1
+        },
+        {
+          "input": 12,
+          "output": 0
+        },
+        {
+          "input": 13,
+          "output": 1
+        },
+        {
+          "input": 14,
+          "output": 0
+        },
+        {
+          "input": 16,
+          "output": 0
+        },
+        {
+          "input": 18,
+          "output": 0
+        },
+        {
+          "input": 19,
+          "output": 1
+        },
+        {
+          "input": 22,
+          "output": 0
+        },
+        {
+          "input": 23,
+          "output": 1
+        },
+        {
+          "input": 25,
+          "output": 0
+        },
+        {
+          "input": 27,
+          "output": 1
+        },
+        {
+          "input": 28,
+          "output": 0
+        },
+        {
+          "input": 32,
+          "output": 0
+        },
+        {
+          "input": 33,
+          "output": 0
+        },
+        {
+          "input": 34,
+          "output": 0
+        },
+        {
+          "input": 35,
+          "output": 1
+        },
+        {
+          "input": 36,
+          "output": 0
+        },
+        {
+          "input": 37,
+          "output": 1
+        },
+        {
+          "input": 39,
+          "output": 1
+        },
+        {
+          "input": 40,
+          "output": 0
+        },
+        {
+          "input": 46,
+          "output": 0
+        },
+        {
+          "input": 48,
+          "output": 0
+        },
+        {
+          "input": 49,
+          "output": 0
+        },
+        {
+          "input": 50,
+          "output": 0
+        },
+        {
+          "input": 51,
+          "output": 1
+        },
+        {
+          "input": 52,
+          "output": 0
+        },
+        {
+          "input": 54,
+          "output": 0
+        },
+        {
+          "input": 55,
+          "output": 1
+        },
+        {
+          "input": 56,
+          "output": 0
+        },
+        {
+          "input": 60,
+          "output": 0
+        },
+        {
+          "input": 61,
+          "output": 1
+        },
+        {
+          "input": 62,
+          "output": 0
+        }
+      ],
+      "expressions": [
+        [
+          "and",
+          [
+            "input",
+            0
+          ],
+          [
+            "or",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              2
+            ]
+          ]
+        ]
+      ],
+      "frozen_expression_digest256": "fdf292c220d4288e2fd39209186506d08bcd90be681489a599c37ff13f3ea75f"
+    },
+    {
+      "id": 1,
+      "name": "permission_without_block",
+      "version": 1,
+      "next_slot": 2,
+      "origin_row": 7,
+      "origin_angle": 246,
+      "seed_hex": "e589dd73d094d6daf6f487e703866f8df6958b19d97552a2fa7676f951ed2034",
+      "parent_sha256": "04108e74d39c512dd496b827d906ebf88d0bf29abeada2dc13ff604571b19b3e",
+      "content_sha256": "22c29643b3d1943ba7f681e58fa40f5e99fc1bfae3aae016d1996b37615cf1bb",
+      "input_bits": 6,
+      "output_bits": 1,
+      "gate_count": 2,
+      "ref_width": 4,
+      "bit_length": 1044,
+      "root_seed256": "5c4037388385414ae7d617fe2b7fef79e9fa3042f386d74398ab090056d11e41",
+      "generator": "atomos-novelty-boolean-synthesis-v1",
+      "training": [
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 0
+        },
+        {
+          "input": 3,
+          "output": 0
+        },
+        {
+          "input": 4,
+          "output": 0
+        },
+        {
+          "input": 6,
+          "output": 0
+        },
+        {
+          "input": 7,
+          "output": 0
+        },
+        {
+          "input": 10,
+          "output": 0
+        },
+        {
+          "input": 12,
+          "output": 0
+        },
+        {
+          "input": 14,
+          "output": 0
+        },
+        {
+          "input": 17,
+          "output": 1
+        },
+        {
+          "input": 19,
+          "output": 0
+        },
+        {
+          "input": 20,
+          "output": 0
+        },
+        {
+          "input": 21,
+          "output": 1
+        },
+        {
+          "input": 22,
+          "output": 0
+        },
+        {
+          "input": 24,
+          "output": 0
+        },
+        {
+          "input": 25,
+          "output": 1
+        },
+        {
+          "input": 26,
+          "output": 0
+        },
+        {
+          "input": 27,
+          "output": 0
+        },
+        {
+          "input": 28,
+          "output": 0
+        },
+        {
+          "input": 30,
+          "output": 0
+        },
+        {
+          "input": 31,
+          "output": 0
+        },
+        {
+          "input": 32,
+          "output": 0
+        },
+        {
+          "input": 33,
+          "output": 1
+        },
+        {
+          "input": 40,
+          "output": 0
+        },
+        {
+          "input": 41,
+          "output": 1
+        },
+        {
+          "input": 42,
+          "output": 0
+        },
+        {
+          "input": 43,
+          "output": 0
+        },
+        {
+          "input": 44,
+          "output": 0
+        },
+        {
+          "input": 45,
+          "output": 1
+        },
+        {
+          "input": 49,
+          "output": 1
+        },
+        {
+          "input": 50,
+          "output": 0
+        },
+        {
+          "input": 51,
+          "output": 0
+        },
+        {
+          "input": 54,
+          "output": 0
+        },
+        {
+          "input": 55,
+          "output": 0
+        },
+        {
+          "input": 58,
+          "output": 0
+        },
+        {
+          "input": 59,
+          "output": 0
+        },
+        {
+          "input": 60,
+          "output": 0
+        },
+        {
+          "input": 61,
+          "output": 1
+        },
+        {
+          "input": 62,
+          "output": 0
+        },
+        {
+          "input": 63,
+          "output": 0
+        }
+      ],
+      "expressions": [
+        [
+          "and",
+          [
+            "input",
+            0
+          ],
+          [
+            "not",
+            [
+              "input",
+              1
+            ]
+          ]
+        ]
+      ],
+      "frozen_expression_digest256": "b23773994abd3a74ed6a5027bae48108de5a2e12afeee01b0f839705206ed792"
+    },
+    {
+      "id": 2,
+      "name": "three_signal_parity",
+      "version": 1,
+      "next_slot": 0,
+      "origin_row": 0,
+      "origin_angle": 156,
+      "seed_hex": "19adc683e2ad455b5fa300f84d0bdef79cb0d75df4ca2c382dbd7c9d74e411a4",
+      "parent_sha256": "22c29643b3d1943ba7f681e58fa40f5e99fc1bfae3aae016d1996b37615cf1bb",
+      "content_sha256": "ea640f200947cc11d76cc6db148a371d1d85fa89733115b002c243adae10b134",
+      "input_bits": 6,
+      "output_bits": 1,
+      "gate_count": 10,
+      "ref_width": 5,
+      "bit_length": 1129,
+      "root_seed256": "5c4037388385414ae7d617fe2b7fef79e9fa3042f386d74398ab090056d11e41",
+      "generator": "atomos-novelty-boolean-synthesis-v1",
+      "training": [
+        {
+          "input": 0,
+          "output": 0
+        },
+        {
+          "input": 1,
+          "output": 1
+        },
+        {
+          "input": 2,
+          "output": 1
+        },
+        {
+          "input": 4,
+          "output": 1
+        },
+        {
+          "input": 5,
+          "output": 0
+        },
+        {
+          "input": 8,
+          "output": 0
+        },
+        {
+          "input": 9,
+          "output": 1
+        },
+        {
+          "input": 10,
+          "output": 1
+        },
+        {
+          "input": 11,
+          "output": 0
+        },
+        {
+          "input": 15,
+          "output": 1
+        },
+        {
+          "input": 16,
+          "output": 0
+        },
+        {
+          "input": 17,
+          "output": 1
+        },
+        {
+          "input": 20,
+          "output": 1
+        },
+        {
+          "input": 21,
+          "output": 0
+        },
+        {
+          "input": 24,
+          "output": 0
+        },
+        {
+          "input": 26,
+          "output": 1
+        },
+        {
+          "input": 27,
+          "output": 0
+        },
+        {
+          "input": 28,
+          "output": 1
+        },
+        {
+          "input": 29,
+          "output": 0
+        },
+        {
+          "input": 30,
+          "output": 0
+        },
+        {
+          "input": 31,
+          "output": 1
+        },
+        {
+          "input": 32,
+          "output": 0
+        },
+        {
+          "input": 38,
+          "output": 0
+        },
+        {
+          "input": 39,
+          "output": 1
+        },
+        {
+          "input": 40,
+          "output": 0
+        },
+        {
+          "input": 41,
+          "output": 1
+        },
+        {
+          "input": 42,
+          "output": 1
+        },
+        {
+          "input": 43,
+          "output": 0
+        },
+        {
+          "input": 44,
+          "output": 1
+        },
+        {
+          "input": 46,
+          "output": 0
+        },
+        {
+          "input": 47,
+          "output": 1
+        },
+        {
+          "input": 48,
+          "output": 0
+        },
+        {
+          "input": 49,
+          "output": 1
+        },
+        {
+          "input": 51,
+          "output": 0
+        },
+        {
+          "input": 53,
+          "output": 0
+        },
+        {
+          "input": 55,
+          "output": 1
+        },
+        {
+          "input": 56,
+          "output": 0
+        },
+        {
+          "input": 57,
+          "output": 1
+        },
+        {
+          "input": 61,
+          "output": 0
+        },
+        {
+          "input": 62,
+          "output": 0
+        }
+      ],
+      "expressions": [
+        [
+          "xor",
+          [
+            "input",
+            0
+          ],
+          [
+            "xor",
+            [
+              "input",
+              2
+            ],
+            [
+              "input",
+              1
+            ]
+          ]
+        ]
+      ],
+      "frozen_expression_digest256": "31e3b911e831b40daf5918683b902bb9289221c00d47759c570da6ff807e3698"
+    },
+    {
+      "id": 3,
+      "name": "two_signal_xor",
+      "version": 1,
+      "next_slot": 0,
+      "origin_row": 3,
+      "origin_angle": 248,
+      "seed_hex": "78cc114ecf6267b5b822bae08b915e84f89e1f04278e2f1a3538c74453db95a8",
+      "parent_sha256": "ea640f200947cc11d76cc6db148a371d1d85fa89733115b002c243adae10b134",
+      "content_sha256": "1cd575da0fee812a7c831dcf2bbdc025da78e05ac64ece86e36f314c95fb9764",
+      "input_bits": 6,
+      "output_bits": 1,
+      "gate_count": 5,
+      "ref_width": 4,
+      "bit_length": 1068,
+      "knowledge_admission": {
+        "semantic_sha256": "bd3e6bac9f8bc24cdf244ac9be1b2dc9cb9e62ebab7d99057b2b61f4fd8be636",
+        "oracle_id": "two_signal_xor",
+        "oracle_record_sha256": "5393aed1dc571619feb3d04113b01f22a7a23c45b7e4bef4fe485245df796c4e",
+        "source": {
+          "kind": "synthetic-independent-specification",
+          "reference": "Synthetic sensor-disagreement predicate: input bit0=sensor_a, bit1=sensor_b; bits2..5 ignored. Output bit0=signals_disagree=(sensor_a != sensor_b). Domain: all 64 six-bit inputs; appended capsule routes to existing slot0."
+        },
+        "scope": "exact finite oracle conformance; oracle truth and origin are not authenticated"
+      }
+    }
+  ],
+  "logical_representation": "one-bit cells packed in canonical little-endian uint32 words",
+  "coordinate_profile": "log-radius rows, angular nodes, SHA256 origin, reflected Klein angular seam",
+  "seed_role": "versioned generation/order and origin; retained payload required for arbitrary content"
+}
