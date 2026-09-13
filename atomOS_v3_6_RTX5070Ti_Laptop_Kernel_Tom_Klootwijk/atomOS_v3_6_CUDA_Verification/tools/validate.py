@@ -51,7 +51,8 @@ def main()->int:
         run(['cmake','--build',str(build),'--config','Release','--parallel','2'],'build')
         if args.gpu:status['cuda_build']='passed'
         run(['ctest','--test-dir',str(build),'-C','Release','--output-on-failure','-E','^cuda_'],'cpu_ctest')
-        run([sys.executable,'-m','unittest','discover','-s','tests','-p','test_reference.py','-v'],'python_tests');status['cpu']='passed'
+        run([sys.executable,'-m','unittest','discover','-s','tests','-p','test_reference.py','-v'],'python_tests')
+        run([sys.executable,'-m','unittest','discover','-s','tests','-p','test_program_bank*.py','-v'],'program_bank_python_tests');status['cpu']='passed'
         if args.proofs:
             status['proofs']='running';run([sys.executable,'proofs/check_proofs.py','--out',str(evidence/'proofs.json')],'symbolic_proofs');status['proofs']='passed'
         def executable(name):

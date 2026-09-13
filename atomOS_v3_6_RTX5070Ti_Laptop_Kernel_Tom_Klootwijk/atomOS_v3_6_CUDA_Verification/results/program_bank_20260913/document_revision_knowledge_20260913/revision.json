@@ -1,0 +1,27 @@
+{
+  "schema": "atomos-document-revision-v1",
+  "date": "2026-09-13",
+  "reason": "User clarified independent knowledge extraction rather than neural cloning; requested useful semantic novelty and no recursive duplicate admission.",
+  "historical_measurements_changed": false,
+  "new_gpu_execution": "not_run; documentation-only revision",
+  "historical_seal_sha256": "ef6189b1f5db8626c0426bee00087fb13d141994896a6efa2e927ba4a2093312",
+  "revisions": {
+    "docs/DISTILLED_PROGRAM_BANK.md": {
+      "before_sha256": "415d2253df547e7f0e171cad1d3063fe0aae7000f89ef6ceb1c7b75e94f52ba8",
+      "after_sha256": "5c24ffd83f917e738de8a038cccd1386039c12ffb52cef05d1929ae46787649a"
+    },
+    "docs/HUGGINGFACE_TEACHERS.md": {
+      "before_sha256": "a2cb4dbf2cf6d418984b787cfeaf4280b91af0f947e17b7b7ae1d5b2992098d2",
+      "after_sha256": "f189d13ce248f854070ea1d349ae6083ff213d7662b94e0b2ec2b9de2c7d2bcf"
+    },
+    "AUTHORSHIP.json": {
+      "before_sha256": "a739acce09d7483ffbcceb4a9936061f5c38a36d0d967c261e8977da53d2b6a0",
+      "after_sha256": "ec11c7e4792e0ddab2b73bf242fd147a02804ff567900de72d91ad68523e3553"
+    },
+    "README.md": {
+      "before_sha256": "91d06522ec7f6e71e926209f039ac4b18fe2571e14ce74863992ba9add75a9af",
+      "after_sha256": "0ef7a38c9ce277af4389279dd39e2499cc02bef88ea4794665c5444154a082cf"
+    }
+  },
+  "added_document": "docs/KNOWLEDGE_EXTRACTION_ARCHITECTURE.md"
+}

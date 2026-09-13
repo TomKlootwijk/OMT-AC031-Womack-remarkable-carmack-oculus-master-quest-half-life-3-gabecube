@@ -167,3 +167,30 @@ Actual evidence is in `results/sdf_klein_20260913/final_summary.json`: source,
 binary, CPU/Python comparisons, fault cases, sanitizers, native instructions and
 hardware counters remain separate categories. The joint 1 KiB cache observation
 and distributed bulk 4.625 MiB observation belong to different execution profiles.
+
+## Distilled program bank: finite evidence, 2026-09-13
+
+The AOPLUT1 profile packs actual NOR wiring and routing metadata into binary cells
+on a required seeded Klein/log-polar chart. Its independent decoder and native
+execution establish the recorded finite transport and execution results. The
+source-word NOR operator remains unchanged. Nineteen existing symbolic
+obligations were rerun; none is presented as a proof of the new CUDA binary or
+learning algorithm.
+
+For each of three frozen learned circuits, exhaustive agreement on all 64 inputs
+establishes equality with that specified finite teacher function. Withheld
+examples were not used to select the circuit. Native checks cover all domains
+across four chart shapes and two layouts. The checked routing amendment changes
+one link/version while preserving all 192 finite skill cases; it is a bounded
+host-mediated application policy, not a proof of autonomous improvement.
+
+Five cold profiles meet their declared unique-sector floor. Four cover the full
+1792-byte operator-plus-program set; one covers 9216 bytes while a larger device
+pool is allocated. The near-10-GB pool is replicated capacity data, not an equally
+large unique learned library or a texture-cache footprint. These observations
+establish the measured within-launch schedule only. General language-model
+behaviour, efficient learnability and permanent cache pinning are not established.
+
+See `results/program_bank_20260913/final_summary.json` and
+`docs/DISTILLED_PROGRAM_BANK.md` for actual run counts, corrected failed attempts
+and the requirement-by-requirement evidence register.

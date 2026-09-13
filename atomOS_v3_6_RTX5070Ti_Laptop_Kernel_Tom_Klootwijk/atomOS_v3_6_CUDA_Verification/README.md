@@ -74,6 +74,28 @@ and 26 independently Python-verified trace exports passed. See
 for additional shape/sanitizer coverage, timing cost and exact claim boundaries.
 This is measured within-launch retention, not a cache-pinning guarantee.
 
+## Distilled program bank
+
+The new example-driven skill bank packs actual program wiring, outputs, seed,
+version and routing links into required Klein/log-polar one-bit texture cells.
+A fixed source-word SDF NOR atlas executes these immutable pages and follows their
+links. The long-term target is broad knowledge and language capability through
+an independent knowledge/program architecture; the current distiller learns
+finite Boolean skills. LLMs supply candidate knowledge during acquisition.
+See `docs/KNOWLEDGE_EXTRACTION_ARCHITECTURE.md` for this distinction and
+`docs/DISTILLED_PROGRAM_BANK.md` for
+the full request, format, implementation, run commands and evidence boundaries.
+No language-model replacement or permanent texture-cache pinning is claimed.
+
+The completed first bank has three learned skills, 55 native runs (51 accepted,
+four intentionally rejected), 12 new sanitizer runs and five cold profiles at
+their compulsory floor. A 9,917,421,312-byte replicated device pool was initialized
+and fully readback verified. The capacity cache profile covers its 8 KiB of
+visited program pages plus the 1 KiB operator atlas. Final receipts are in
+`results/program_bank_20260913/final_summary.json`; the executable is
+`output/bin/program_bank_v1/atomos_program_bank.exe`. Teacher recommendations are
+in `docs/HUGGINGFACE_TEACHERS.md`.
+
 ## Run on your laptop
 
 Install a CUDA Toolkit **12.8 or newer**, a CUDA-supported host C++ compiler, CMake

@@ -29,5 +29,10 @@
     "joint_cold_profiles_at_floor": 4,
     "joint_cold_profiles": 4,
     "guarantee": "observed scoped within-launch retention; no permanent cache pin or all-workload guarantee"
+  },
+  "distilled_program_bank": {
+    "status": "passed",
+    "evidence": "results/program_bank_20260913/final_summary.json",
+    "general_language_model_replacement": "not_established"
   }
 }

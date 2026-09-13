@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\tools\validate_program_bank.py", line 164, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\tools\validate_program_bank.py", line 134, in main
+    run(f'memcheck_domain_{layout}', layout=layout, value=0,
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        hops=1 << bank['capsules'][first]['input_bits'], first=first, mode='domain',
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        prefix=(sanitizer,'--tool','memcheck','--error-exitcode','2'), kind='memcheck')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\tools\validate_program_bank.py", line 94, in run
+    raise RuntimeError('native run failed: '+label)
+RuntimeError: native run failed: memcheck_domain_linear

@@ -1,0 +1,157 @@
+test_budget_and_missing_audits_are_explicit (test_program_bank.DistillationTests.test_budget_and_missing_audits_are_explicit) ... ok
+test_external_multiple_output_examples (test_program_bank.DistillationTests.test_external_multiple_output_examples) ... ok
+test_holdout_labels_cannot_change_candidate_and_failure_is_rejected (test_program_bank.DistillationTests.test_holdout_labels_cannot_change_candidate_and_failure_is_rejected) ... ok
+test_learns_then_generalizes_to_every_withheld_input (test_program_bank.DistillationTests.test_learns_then_generalizes_to_every_withheld_input) ... ok
+test_nor_lowering_cancels_double_negation_and_dead_gates (test_program_bank.DistillationTests.test_nor_lowering_cancels_double_negation_and_dead_gates) ... ok
+test_reject_bad_teacher_data (test_program_bank.DistillationTests.test_reject_bad_teacher_data) ... ok
+test_seed_reproduces_exact_frozen_results (test_program_bank.DistillationTests.test_seed_reproduces_exact_frozen_results) ... ok
+test_manifest_content_digest_and_bank_extent_fail_closed (test_program_bank.PackedBankTests.test_manifest_content_digest_and_bank_extent_fail_closed) ... ok
+test_native_wire_and_padded_shape_limits (test_program_bank.PackedBankTests.test_native_wire_and_padded_shape_limits) ... ok
+test_reject_tail_reference_origin_and_reserved_field (test_program_bank.PackedBankTests.test_reject_tail_reference_origin_and_reserved_field) ... ok
+test_roundtrip_all_inputs_and_full_hash_chain (test_program_bank.PackedBankTests.test_roundtrip_all_inputs_and_full_hash_chain) ... ok
+test_seed_halves_and_klein_are_bijective_with_reflected_seam (test_program_bank.PackedBankTests.test_seed_halves_and_klein_are_bijective_with_reflected_seam) ... ok
+test_self_amendment_preserves_function_and_links_previous_content (test_program_bank.PackedBankTests.test_self_amendment_preserves_function_and_links_previous_content) ... ok
+test_cpu_mock_accepts_only_routing_revision (test_program_bank_amendment.AmendmentProtocolTests.test_cpu_mock_accepts_only_routing_revision) ... ok
+test_pointer_replace_failure_leaves_only_uncommitted_prepared_marker (test_program_bank_amendment.AmendmentProtocolTests.test_pointer_replace_failure_leaves_only_uncommitted_prepared_marker) ... ok
+test_receipt_write_failure_preserves_previous_active_bank (test_program_bank_amendment.AmendmentProtocolTests.test_receipt_write_failure_preserves_previous_active_bank) ... ok
+test_rejects_candidate_bytes_changed_during_native_call (test_program_bank_amendment.AmendmentProtocolTests.test_rejects_candidate_bytes_changed_during_native_call) ... ok
+test_rejects_changed_seed_even_when_skill_is_identical (test_program_bank_amendment.AmendmentProtocolTests.test_rejects_changed_seed_even_when_skill_is_identical) ... ok
+test_rejects_equivalent_circuit_rewrite_under_routing_only_policy (test_program_bank_amendment.AmendmentProtocolTests.test_rejects_equivalent_circuit_rewrite_under_routing_only_policy) ... ok
+test_rejects_native_rejection_despite_stale_commit_marker (test_program_bank_amendment.AmendmentProtocolTests.test_rejects_native_rejection_despite_stale_commit_marker) ... ok
+test_rejects_nonchain_source_receipt (test_program_bank_amendment.AmendmentProtocolTests.test_rejects_nonchain_source_receipt) ... ok
+test_bit_fields_cross_word_boundary (test_program_bank_reference.ProgramBankReferenceTests.test_bit_fields_cross_word_boundary) ... ok
+test_compiler_bytes_equal_manually_scattered_fixture (test_program_bank_reference.ProgramBankReferenceTests.test_compiler_bytes_equal_manually_scattered_fixture) ... ok
+test_manual_inverse_mapping_seams_and_seed_extremes (test_program_bank_reference.ProgramBankReferenceTests.test_manual_inverse_mapping_seams_and_seed_extremes) ... ok
+test_manual_page_cross_decodes_with_compiler_reader (test_program_bank_reference.ProgramBankReferenceTests.test_manual_page_cross_decodes_with_compiler_reader) ... ok
+test_rejects_bank_byte_budget_before_reading (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_bank_byte_budget_before_reading) ... ok
+test_rejects_container_magic_extent_and_dimensions (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_container_magic_extent_and_dimensions) ... ok
+test_rejects_dirty_logical_tail_after_reflected_seam (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_dirty_logical_tail_after_reflected_seam) ... ok
+test_rejects_forward_gate_and_invalid_output (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_forward_gate_and_invalid_output) ... ok
+test_rejects_header_reserved_extent_and_identity_mutations (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_header_reserved_extent_and_identity_mutations) ... ok
+test_rejects_manifest_schema_and_metadata_mutations (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_manifest_schema_and_metadata_mutations) ... ok
+test_rejects_native_padded_extent_before_payload_decode (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_native_padded_extent_before_payload_decode) ... ok
+test_rejects_seed_origin_disagreement_and_outside_chart (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_seed_origin_disagreement_and_outside_chart) ... ok
+test_rejects_wire_count_above_native_limit (test_program_bank_reference.ProgramBankReferenceTests.test_rejects_wire_count_above_native_limit) ... ok
+test_same_origin_preserves_distinct_programs_and_routing (test_program_bank_reference.ProgramBankReferenceTests.test_same_origin_preserves_distinct_programs_and_routing) ... ok
+test_trace_rejects_changed_version_and_extra_hop (test_program_bank_reference.ProgramBankReferenceTests.test_trace_rejects_changed_version_and_extra_hop) ... ok
+test_zero_input_constant_and_high_input_bit (test_program_bank_reference.ProgramBankReferenceTests.test_zero_input_constant_and_high_input_bit) ... ok
+test_application_failure_is_not_evidence_of_fault_rejection (test_program_bank_study.StudyRejectionTests.test_application_failure_is_not_evidence_of_fault_rejection) ... FAIL
+test_bulk_byte_counts_and_padding_claim_must_match (test_reference.BulkMemoryMetadataTests.test_bulk_byte_counts_and_padding_claim_must_match) ... ok
+test_bulk_metadata_cannot_be_omitted_or_relabelled (test_reference.BulkMemoryMetadataTests.test_bulk_metadata_cannot_be_omitted_or_relabelled) ... ok
+test_grid_count_bool_and_duplicate_sm_ids_are_rejected (test_reference.BulkMemoryMetadataTests.test_grid_count_bool_and_duplicate_sm_ids_are_rejected) ... ok
+test_kernel_timing_scope_cannot_drop_probe_cost (test_reference.BulkMemoryMetadataTests.test_kernel_timing_scope_cannot_drop_probe_cost) ... ok
+test_logical_only_payload_cannot_hide_padded_allocations (test_reference.BulkMemoryMetadataTests.test_logical_only_payload_cannot_hide_padded_allocations) ... ok
+test_padded_bulk_accounting_is_accepted (test_reference.BulkMemoryMetadataTests.test_padded_bulk_accounting_is_accepted) ... ok
+test_cpu_cannot_be_relabelled_cuda (test_reference.ExecutionMetadataTests.test_cpu_cannot_be_relabelled_cuda) ... ok
+test_cuda_device_integer_types_and_bounds (test_reference.ExecutionMetadataTests.test_cuda_device_integer_types_and_bounds) ... ok
+test_cuda_read_paths_and_optional_device_fields (test_reference.ExecutionMetadataTests.test_cuda_read_paths_and_optional_device_fields) ... ok
+test_failed_candidate_verification_is_rejected (test_reference.ExecutionMetadataTests.test_failed_candidate_verification_is_rejected) ... ok
+test_invalid_read_or_cpu_device_is_rejected (test_reference.ExecutionMetadataTests.test_invalid_read_or_cpu_device_is_rejected) ... ok
+test_requested_read_and_probed_device_must_match (test_reference.ExecutionMetadataTests.test_requested_read_and_probed_device_must_match) ... ok
+test_runner_context_rejects_consistent_backend_relabel (test_reference.ExecutionMetadataTests.test_runner_context_rejects_consistent_backend_relabel) ... ok
+test_unchanged_cpu_run_matches_expected_context (test_reference.ExecutionMetadataTests.test_unchanged_cpu_run_matches_expected_context) ... ok
+test_absorb_not_clear (test_reference.ReferenceTests.test_absorb_not_clear) ... ok
+test_axis_unavailable (test_reference.ReferenceTests.test_axis_unavailable) ... ok
+test_bank_bad_interval (test_reference.ReferenceTests.test_bank_bad_interval) ... ok
+test_bank_default (test_reference.ReferenceTests.test_bank_default) ... ok
+test_bitset_random_contraction (test_reference.ReferenceTests.test_bitset_random_contraction) ... ok
+test_canonical_finite (test_reference.ReferenceTests.test_canonical_finite) ... ok
+test_completion_explicit (test_reference.ReferenceTests.test_completion_explicit) ... ok
+test_fringe_nonmonotone (test_reference.ReferenceTests.test_fringe_nonmonotone) ... ok
+test_identity_order_and_width (test_reference.ReferenceTests.test_identity_order_and_width) ... ok
+test_morton_order (test_reference.ReferenceTests.test_morton_order) ... ok
+test_morton_tile (test_reference.ReferenceTests.test_morton_tile) ... ok
+test_producer_variants (test_reference.ReferenceTests.test_producer_variants) ... ok
+test_raw_residual (test_reference.ReferenceTests.test_raw_residual) ... ok
+test_seal_detects_changes (test_reference.ReferenceTests.test_seal_detects_changes) ... ok
+test_seal_refuses_replacement (test_reference.ReferenceTests.test_seal_refuses_replacement) ... ok
+test_source_ratio (test_reference.ReferenceTests.test_source_ratio) ... ok
+test_unicode_normalization (test_reference.ReferenceTests.test_unicode_normalization) ... ok
+test_wrap_seam (test_reference.ReferenceTests.test_wrap_seam) ... ok
+test_zero (test_reference.ReferenceTests.test_zero) ... ok
+test_zero_motion (test_reference.ReferenceTests.test_zero_motion) ... ok
+test_explicit_native_executable_and_missing_wrapper_target (test_reference.SanitizerDiscoveryTests.test_explicit_native_executable_and_missing_wrapper_target) ... ok
+test_missing_tool_stays_unavailable (test_reference.SanitizerDiscoveryTests.test_missing_tool_stays_unavailable) ... ok
+test_windows_path_wrapper_resolves_native_executable (test_reference.SanitizerDiscoveryTests.test_windows_path_wrapper_resolves_native_executable) ... ok
+test_capacity_sweep_dimensions_not_fixed_four_mib (test_sdf_atlas.SdfAtlasTests.test_capacity_sweep_dimensions_not_fixed_four_mib) ... ok
+test_empty_plane_and_reproducibility (test_sdf_atlas.SdfAtlasTests.test_empty_plane_and_reproducibility) ... ok
+test_false_topology_metadata_reject (test_sdf_atlas.SdfAtlasTests.test_false_topology_metadata_reject) ... ok
+test_geometry_compile_independent_all_bits_and_tails (test_sdf_atlas.SdfAtlasTests.test_geometry_compile_independent_all_bits_and_tails) ... ok
+test_hash_and_scalar_tampering_reject (test_sdf_atlas.SdfAtlasTests.test_hash_and_scalar_tampering_reject) ... ok
+test_known_klein_distance_differs_from_torus (test_sdf_atlas.SdfAtlasTests.test_known_klein_distance_differs_from_torus) ... ok
+test_nor_compile_verify (test_sdf_atlas.SdfAtlasTests.test_nor_compile_verify) ... ok
+test_nor_sites_actual_scalar_and_exact_masks (test_sdf_atlas.SdfAtlasTests.test_nor_sites_actual_scalar_and_exact_masks) ... ok
+test_profile_validation (test_sdf_atlas.SdfAtlasTests.test_profile_validation) ... ok
+test_scalar_deck_reference_and_negative_seams (test_sdf_atlas.SdfAtlasTests.test_scalar_deck_reference_and_negative_seams) ... ok
+test_controller_write_causally_changes_exact_winding (test_sdf_joint_reference.SdfJointReferenceTests.test_controller_write_causally_changes_exact_winding) ... ok
+test_extinction_and_empty_frontier_do_not_halt_machine (test_sdf_joint_reference.SdfJointReferenceTests.test_extinction_and_empty_frontier_do_not_halt_machine) ... ok
+test_hand_specified_export_and_atomic_fault_rollback (test_sdf_joint_reference.SdfJointReferenceTests.test_hand_specified_export_and_atomic_fault_rollback) ... ok
+test_mutated_controller_output_or_memory_receipt_is_rejected (test_sdf_joint_reference.SdfJointReferenceTests.test_mutated_controller_output_or_memory_receipt_is_rejected) ... ok
+test_mutations_fail_on_causal_state_geometry_search_and_bytes (test_sdf_joint_reference.SdfJointReferenceTests.test_mutations_fail_on_causal_state_geometry_search_and_bytes) ... ok
+test_phi_overflow_and_tape_boundary_refuse_before_mutation (test_sdf_joint_reference.SdfJointReferenceTests.test_phi_overflow_and_tape_boundary_refuse_before_mutation) ... ok
+test_resource_stop_retains_complete_prior_joint_prefix (test_sdf_joint_reference.SdfJointReferenceTests.test_resource_stop_retains_complete_prior_joint_prefix) ... ok
+test_retained_actual_export_detects_mutated_evidence (test_sdf_joint_reference.SdfJointReferenceTests.test_retained_actual_export_detects_mutated_evidence) ... skipped 'optional retained actual export not configured'
+test_searches_include_absent_keys_and_complete_midpoint_paths (test_sdf_joint_reference.SdfJointReferenceTests.test_searches_include_absent_keys_and_complete_midpoint_paths) ... ok
+test_word_fault_changes_admission_but_preserves_input_state (test_sdf_joint_reference.SdfJointReferenceTests.test_word_fault_changes_admission_but_preserves_input_state) ... ok
+test_zero_budget_still_evaluates_initial_halt_and_does_not_step (test_sdf_joint_reference.SdfJointReferenceTests.test_zero_budget_still_evaluates_initial_halt_and_does_not_step) ... ok
+test_zero_hinge_preserves_distinct_coincident_lineages (test_sdf_joint_reference.SdfJointReferenceTests.test_zero_hinge_preserves_distinct_coincident_lineages) ... ok
+test_bst_cycle (test_sdf_lineage_reference.ExportMutationTests.test_bst_cycle) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_child_id (test_sdf_lineage_reference.ExportMutationTests.test_child_id) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_final_jk (test_sdf_lineage_reference.ExportMutationTests.test_final_jk) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_incomplete_budget (test_sdf_lineage_reference.ExportMutationTests.test_incomplete_budget) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_omitted_search (test_sdf_lineage_reference.ExportMutationTests.test_omitted_search) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_payload_metadata (test_sdf_lineage_reference.ExportMutationTests.test_payload_metadata) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_reemission (test_sdf_lineage_reference.ExportMutationTests.test_reemission) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_seam_parity (test_sdf_lineage_reference.ExportMutationTests.test_seam_parity) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_undefined_is_not_zero (test_sdf_lineage_reference.ExportMutationTests.test_undefined_is_not_zero) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_unmodified_retained_fixture (test_sdf_lineage_reference.ExportMutationTests.test_unmodified_retained_fixture) ... skipped 'set ATOMOS_LINEAGE_FIXTURE to a retained native smoke export'
+test_empty_no_resurrection (test_sdf_lineage_reference.GeometryTests.test_empty_no_resurrection) ... ok
+test_last_valid_id (test_sdf_lineage_reference.GeometryTests.test_last_valid_id) ... ok
+test_multiwrap (test_sdf_lineage_reference.GeometryTests.test_multiwrap) ... ok
+test_zero_phi_preserves_ids (test_sdf_lineage_reference.GeometryTests.test_zero_phi_preserves_ids) ... ok
+test_circuit_forward_wire_and_unused_input_truth_are_checked (test_sdf_nor_reference.SdfNorReferenceTests.test_circuit_forward_wire_and_unused_input_truth_are_checked) ... ok
+test_complete_good_export_both_layouts (test_sdf_nor_reference.SdfNorReferenceTests.test_complete_good_export_both_layouts) ... ok
+test_forged_resource_and_truth_metadata_rejected (test_sdf_nor_reference.SdfNorReferenceTests.test_forged_resource_and_truth_metadata_rejected) ... ok
+test_gate_sites_cover_negative_and_positive_angular_lifts (test_sdf_nor_reference.SdfNorReferenceTests.test_gate_sites_cover_negative_and_positive_angular_lifts) ... ok
+test_injected_texture_and_gate_require_full_rollback (test_sdf_nor_reference.SdfNorReferenceTests.test_injected_texture_and_gate_require_full_rollback) ... ok
+test_study_matrix_and_independent_exit_predictions (test_sdf_nor_reference.SdfNorReferenceTests.test_study_matrix_and_independent_exit_predictions) ... ok
+test_tampered_tail_address_decode_and_count_rejected (test_sdf_nor_reference.SdfNorReferenceTests.test_tampered_tail_address_decode_and_count_rejected) ... ok
+test_zero_budget_halt_and_checked_boundary (test_sdf_nor_reference.SdfNorReferenceTests.test_zero_budget_halt_and_checked_boundary) ... ok
+test_inverse_preserves_full_support (test_sdf_reference.KleinReplay.test_inverse_preserves_full_support) ... ok
+test_minus_seam (test_sdf_reference.KleinReplay.test_minus_seam) ... ok
+test_plus_seam_and_tail (test_sdf_reference.KleinReplay.test_plus_seam_and_tail) ... ok
+test_two_circuits_restore_location (test_sdf_reference.KleinReplay.test_two_circuits_restore_location) ... ok
+test_budget_is_running (test_universal_reference.UniversalReferenceTests.test_budget_is_running) ... ok
+test_duplicate_and_invalid_program_rejected (test_universal_reference.UniversalReferenceTests.test_duplicate_and_invalid_program_rejected) ... ok
+test_explicit_zero_cell_still_requires_valid_address (test_universal_reference.UniversalReferenceTests.test_explicit_zero_cell_still_requires_valid_address) ... ok
+test_final_budget_step_can_halt (test_universal_reference.UniversalReferenceTests.test_final_budget_step_can_halt) ... ok
+test_growing_extent_clamps_both_signed_endpoints (test_universal_reference.UniversalReferenceTests.test_growing_extent_clamps_both_signed_endpoints) ... ok
+test_initial_halt_with_zero_budget (test_universal_reference.UniversalReferenceTests.test_initial_halt_with_zero_budget) ... ok
+test_left_movement_and_erasure (test_universal_reference.UniversalReferenceTests.test_left_movement_and_erasure) ... ok
+test_missing_rule_retains_completed_candidate_prefix (test_universal_reference.UniversalReferenceTests.test_missing_rule_retains_completed_candidate_prefix) ... ok
+test_one_symbol_alphabet_uses_one_storage_bit (test_universal_reference.UniversalReferenceTests.test_one_symbol_alphabet_uses_one_storage_bit) ... ok
+test_packed_cross_word_symbol_and_nonzero_tail (test_universal_reference.UniversalReferenceTests.test_packed_cross_word_symbol_and_nonzero_tail) ... ok
+test_range_failure_does_not_write_or_enter_halt (test_universal_reference.UniversalReferenceTests.test_range_failure_does_not_write_or_enter_halt) ... ok
+test_signed_endpoint_overflow_is_range_error (test_universal_reference.UniversalReferenceTests.test_signed_endpoint_overflow_is_range_error) ... ok
+test_six_bit_symbols_preserve_neighbours (test_universal_reference.UniversalReferenceTests.test_six_bit_symbols_preserve_neighbours) ... ok
+test_unary_increment (test_universal_reference.UniversalReferenceTests.test_unary_increment) ... ok
+test_unsigned_negative_zero_is_not_a_valid_program_token (test_universal_reference.UniversalReferenceTests.test_unsigned_negative_zero_is_not_a_valid_program_token) ... ok
+test_zero_budget_is_identity (test_universal_reference.UniversalReferenceTests.test_zero_budget_is_identity) ... ok
+test_rejection_receipt_does_not_advance_accepted_head (test_universal_reference.UniversalSealTests.test_rejection_receipt_does_not_advance_accepted_head) ... ok
+test_seal_detects_added_file (test_universal_reference.UniversalSealTests.test_seal_detects_added_file) ... ok
+test_seal_detects_modified_candidate_payload (test_universal_reference.UniversalSealTests.test_seal_detects_modified_candidate_payload) ... ok
+test_seal_refuses_replacement (test_universal_reference.UniversalSealTests.test_seal_refuses_replacement) ... ok
+
+======================================================================
+FAIL: test_application_failure_is_not_evidence_of_fault_rejection (test_program_bank_study.StudyRejectionTests.test_application_failure_is_not_evidence_of_fault_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\tests\test_program_bank_study.py", line 64, in test_application_failure_is_not_evidence_of_fault_rejection
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 143 tests in 5.577s
+
+FAILED (failures=1, skipped=11)

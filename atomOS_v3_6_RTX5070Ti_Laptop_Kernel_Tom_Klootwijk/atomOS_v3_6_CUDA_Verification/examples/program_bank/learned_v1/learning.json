@@ -1,0 +1,458 @@
+{
+  "schema": "atomos-program-distillation-receipt-v1",
+  "generator": "atomos-novelty-boolean-synthesis-v1",
+  "root_seed256": "5c4037388385414ae7d617fe2b7fef79e9fa3042f386d74398ab090056d11e41",
+  "seed_text": "atomOS finite skill distillation v1",
+  "parent_digest256": null,
+  "teacher_dataset_digest256": "1c45d8a7779ba2874e44993f886b80f1671f92e52ce6e406be1b8061d07664c8",
+  "input_bits": 6,
+  "output_bits": 1,
+  "status": "passed",
+  "accepted_skills": 3,
+  "requested_skills": 3,
+  "claim_scope": "finite structured Boolean skill distillation; not language-model replacement",
+  "holdout_policy": "candidate frozen before audit labels; no reselection on audit failure",
+  "skills": [
+    {
+      "name": "enabled_fault_alarm",
+      "search": {
+        "generator": "atomos-novelty-boolean-synthesis-v1",
+        "seed256": "1187d6c91af23da132efc23f27be8b456daafd6f0f0a181fdb6243e38982706e",
+        "grammar": [
+          "input",
+          "constant",
+          "not",
+          "and",
+          "or",
+          "xor"
+        ],
+        "max_operators": 3,
+        "candidate_budget": 12000,
+        "archive_capacity": 64,
+        "probe_domain": "all_inputs_unlabelled",
+        "proposal_budget_per_round": 100000,
+        "proposal_budget_exhausted": false,
+        "probe_count": 64,
+        "training_rows": 40,
+        "training_digest256": "56ddc28970842c7eb10359199044d509413e3ba06f6a660f74e0fa204e386b51",
+        "evaluated_candidates": 6469,
+        "duplicate_behaviors_skipped": 12033,
+        "budget_exhausted": false,
+        "rounds": [
+          {
+            "operators": 0,
+            "generated": 8,
+            "unique_proposals": 8,
+            "evaluated": 8,
+            "archive_size_before": 0,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 1,
+            "generated": 116,
+            "unique_proposals": 51,
+            "evaluated": 51,
+            "archive_size_before": 8,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 2,
+            "generated": 1275,
+            "unique_proposals": 525,
+            "evaluated": 525,
+            "archive_size_before": 59,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 3,
+            "generated": 17103,
+            "unique_proposals": 5885,
+            "evaluated": 5885,
+            "archive_size_before": 64,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          }
+        ],
+        "selection_trace": [
+          {
+            "output_bit": 0,
+            "candidate_number": 529,
+            "nor_gates": 3,
+            "operators": 2,
+            "novelty_distance": 8,
+            "probe_count": 64
+          }
+        ],
+        "status": "frozen",
+        "frozen_expression_digest256": "fdf292c220d4288e2fd39209186506d08bcd90be681489a599c37ff13f3ea75f"
+      },
+      "audit_status": "passed",
+      "expressions": [
+        [
+          "and",
+          [
+            "input",
+            0
+          ],
+          [
+            "or",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              2
+            ]
+          ]
+        ]
+      ],
+      "circuit": {
+        "input_bits": 6,
+        "output_bits": 1,
+        "constant_zero_wire": 6,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "outputs": [
+          9
+        ]
+      },
+      "audits": {
+        "train": {
+          "status": "passed",
+          "rows": 40,
+          "failures": [],
+          "labels_digest256": "da7bd50bc16f41cd3fd4edae7e47dbc5c1f1a82321cf491e7c2acec0bbb59b33"
+        },
+        "holdout": {
+          "status": "passed",
+          "rows": 24,
+          "failures": [],
+          "labels_digest256": "f9eaadd2ee421d6572b7b5c6eface73a6e40c60335b3ea2eb9599fab0a769e5d"
+        },
+        "full_domain": {
+          "status": "passed",
+          "rows": 64,
+          "failures": [],
+          "labels_digest256": "8e954efa8fd84fccc49711ae71c2ffe6c67ca20ea791e8f0734ce5ec965de275"
+        }
+      }
+    },
+    {
+      "name": "permission_without_block",
+      "search": {
+        "generator": "atomos-novelty-boolean-synthesis-v1",
+        "seed256": "e589dd73d094d6daf6f487e703866f8df6958b19d97552a2fa7676f951ed2034",
+        "grammar": [
+          "input",
+          "constant",
+          "not",
+          "and",
+          "or",
+          "xor"
+        ],
+        "max_operators": 3,
+        "candidate_budget": 12000,
+        "archive_capacity": 64,
+        "probe_domain": "all_inputs_unlabelled",
+        "proposal_budget_per_round": 100000,
+        "proposal_budget_exhausted": false,
+        "probe_count": 64,
+        "training_rows": 40,
+        "training_digest256": "fae13593dcf930cd201a602505bf7d87f5e22afeab1816f6573c33ce55ebda25",
+        "evaluated_candidates": 6469,
+        "duplicate_behaviors_skipped": 12033,
+        "budget_exhausted": false,
+        "rounds": [
+          {
+            "operators": 0,
+            "generated": 8,
+            "unique_proposals": 8,
+            "evaluated": 8,
+            "archive_size_before": 0,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 1,
+            "generated": 116,
+            "unique_proposals": 51,
+            "evaluated": 51,
+            "archive_size_before": 8,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 2,
+            "generated": 1275,
+            "unique_proposals": 525,
+            "evaluated": 525,
+            "archive_size_before": 59,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 3,
+            "generated": 17103,
+            "unique_proposals": 5885,
+            "evaluated": 5885,
+            "archive_size_before": 64,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          }
+        ],
+        "selection_trace": [
+          {
+            "output_bit": 0,
+            "candidate_number": 280,
+            "nor_gates": 2,
+            "operators": 2,
+            "novelty_distance": 16,
+            "probe_count": 64
+          }
+        ],
+        "status": "frozen",
+        "frozen_expression_digest256": "b23773994abd3a74ed6a5027bae48108de5a2e12afeee01b0f839705206ed792"
+      },
+      "audit_status": "passed",
+      "expressions": [
+        [
+          "and",
+          [
+            "input",
+            0
+          ],
+          [
+            "not",
+            [
+              "input",
+              1
+            ]
+          ]
+        ]
+      ],
+      "circuit": {
+        "input_bits": 6,
+        "output_bits": 1,
+        "constant_zero_wire": 6,
+        "gates": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "outputs": [
+          8
+        ]
+      },
+      "audits": {
+        "train": {
+          "status": "passed",
+          "rows": 40,
+          "failures": [],
+          "labels_digest256": "02e29eb5da35f527d73fb5cbdd2318ac77ab924d05a1ec38187bfa31a09badce"
+        },
+        "holdout": {
+          "status": "passed",
+          "rows": 24,
+          "failures": [],
+          "labels_digest256": "d6f4b4746fab9c1c6f43f3fcf607aaa9467211a32abd537b17f74cde5a1fcc1b"
+        },
+        "full_domain": {
+          "status": "passed",
+          "rows": 64,
+          "failures": [],
+          "labels_digest256": "4a46fe3e77a2b86fd16e70d9a323b0ffe2d16f2549290898129d18506462ad52"
+        }
+      }
+    },
+    {
+      "name": "three_signal_parity",
+      "search": {
+        "generator": "atomos-novelty-boolean-synthesis-v1",
+        "seed256": "19adc683e2ad455b5fa300f84d0bdef79cb0d75df4ca2c382dbd7c9d74e411a4",
+        "grammar": [
+          "input",
+          "constant",
+          "not",
+          "and",
+          "or",
+          "xor"
+        ],
+        "max_operators": 3,
+        "candidate_budget": 12000,
+        "archive_capacity": 64,
+        "probe_domain": "all_inputs_unlabelled",
+        "proposal_budget_per_round": 100000,
+        "proposal_budget_exhausted": false,
+        "probe_count": 64,
+        "training_rows": 40,
+        "training_digest256": "6d5fa4650219a7442c6f7a04abbcbd719e0abb9df5682a2b69f69d88f46efd9c",
+        "evaluated_candidates": 6469,
+        "duplicate_behaviors_skipped": 12033,
+        "budget_exhausted": false,
+        "rounds": [
+          {
+            "operators": 0,
+            "generated": 8,
+            "unique_proposals": 8,
+            "evaluated": 8,
+            "archive_size_before": 0,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 1,
+            "generated": 116,
+            "unique_proposals": 51,
+            "evaluated": 51,
+            "archive_size_before": 8,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 2,
+            "generated": 1275,
+            "unique_proposals": 525,
+            "evaluated": 525,
+            "archive_size_before": 59,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          },
+          {
+            "operators": 3,
+            "generated": 17103,
+            "unique_proposals": 5885,
+            "evaluated": 5885,
+            "archive_size_before": 64,
+            "proposal_generation_truncated": false,
+            "ranking": "descending_min_hamming_then_seeded_tie"
+          }
+        ],
+        "selection_trace": [
+          {
+            "output_bit": 0,
+            "candidate_number": 64,
+            "nor_gates": 10,
+            "operators": 2,
+            "novelty_distance": 32,
+            "probe_count": 64
+          }
+        ],
+        "status": "frozen",
+        "frozen_expression_digest256": "31e3b911e831b40daf5918683b902bb9289221c00d47759c570da6ff807e3698"
+      },
+      "audit_status": "passed",
+      "expressions": [
+        [
+          "xor",
+          [
+            "input",
+            0
+          ],
+          [
+            "xor",
+            [
+              "input",
+              2
+            ],
+            [
+              "input",
+              1
+            ]
+          ]
+        ]
+      ],
+      "circuit": {
+        "input_bits": 6,
+        "output_bits": 1,
+        "constant_zero_wire": 6,
+        "gates": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            0,
+            11
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            13,
+            14
+          ],
+          [
+            15,
+            15
+          ]
+        ],
+        "outputs": [
+          16
+        ]
+      },
+      "audits": {
+        "train": {
+          "status": "passed",
+          "rows": 40,
+          "failures": [],
+          "labels_digest256": "ec527ad899ab9e4cf6f16bf38c20e24fdeb0e2ca19f9e1bf34ff7c6d0231c8bc"
+        },
+        "holdout": {
+          "status": "passed",
+          "rows": 24,
+          "failures": [],
+          "labels_digest256": "35facfadf31fa1f9636d0e56b0c8489a2f04feb61aea92db7e93016cfc8d44c2"
+        },
+        "full_domain": {
+          "status": "passed",
+          "rows": 64,
+          "failures": [],
+          "labels_digest256": "ee558692d19068db6dc7c909b93b5a07bf292c6c4943be0f9981f0aa5486ab00"
+        }
+      }
+    }
+  ],
+  "receipt_digest256": "03e0f9cf8db8a2588e3d5bed859fd7f473a9b962a80432c89f22b14ed031fe13"
+}

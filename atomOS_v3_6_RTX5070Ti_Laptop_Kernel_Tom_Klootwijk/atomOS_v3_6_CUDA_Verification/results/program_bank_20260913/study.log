@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\tools\validate_program_bank.py", line 153, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\tools\validate_program_bank.py", line 137, in main
+    run(f'cold_{layout}_{trial}', layout=layout, hops=24, kind='cold')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\tools\validate_program_bank.py", line 90, in run
+    raise RuntimeError('native run failed: '+label)
+RuntimeError: native run failed: cold_linear_1

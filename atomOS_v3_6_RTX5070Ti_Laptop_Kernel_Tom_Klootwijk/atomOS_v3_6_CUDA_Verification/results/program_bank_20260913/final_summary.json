@@ -1,0 +1,108 @@
+{
+  "schema": "atomos-distilled-program-bank-final-v1",
+  "date": "2026-09-13",
+  "concept_author": "Tom Klootwijk",
+  "status": "passed",
+  "completed_scope": "Documented request and working finite distillation/program-texture/VRAM/cache/amendment construction",
+  "long_term_target": "general language-model behaviour",
+  "general_language_model_replacement": "not_established",
+  "huggingface_model_execution": "not_run; model-card research only",
+  "interpretation": "One-bit storage on a required seeded log-polar/Klein chart; source-word SDF NOR operators fixed; no cache pinning or seed-only compression claim",
+  "counts": {
+    "distinct_learned_skills": 3,
+    "training_cases": 120,
+    "withheld_cases": 72,
+    "exhaustive_skill_cases": 192,
+    "new_native_runs": 55,
+    "accepted_new_native_runs": 51,
+    "rejected_native_injections": 4,
+    "new_sanitizer_runs": 12,
+    "accepted_program_evaluations": 2440,
+    "cold_profiles": 5,
+    "cold_profiles_at_floor": 5,
+    "cpu_ctest": 13,
+    "publication_regressions": 5,
+    "python_discovered": 146,
+    "python_passed": 135,
+    "python_skipped": 11,
+    "mandatory_cpu_configurations": 48,
+    "mandatory_gpu_configurations": 144,
+    "mandatory_gpu_memchecks": 6,
+    "symbolic_obligations": 19
+  },
+  "capacity": {
+    "pool_bytes": 9917421312,
+    "initialized_bytes": 9917421312,
+    "verified_bytes": 9917421312,
+    "physical_program_slots": 38739927,
+    "distinct_programs": 3,
+    "executed_program_page_bytes": 8192,
+    "free_bytes_after_allocation": 1642070016,
+    "reserve_bytes": 1610612736,
+    "ordinary_kernel_ms": 0.4850879907608032,
+    "cold_pool_bytes": 9875478528,
+    "cold_operator_plus_program_bytes": 9216,
+    "cold_miss_floor": 288,
+    "replicated_capacity_not_distinct_knowledge": true,
+    "all_pool_in_texture_cache": false
+  },
+  "cache_small": {
+    "operator_bytes": 1024,
+    "all_program_bytes": 768,
+    "whole_texture_bytes": 1792,
+    "cold_miss_floor": 56,
+    "repeats_per_layout": 2,
+    "extra_misses": 0
+  },
+  "amendment": {
+    "program_id": 0,
+    "old_next": 1,
+    "new_next": 2,
+    "old_version": 1,
+    "new_version": 2,
+    "skill_cases_preserved": 192,
+    "native_hops": 24,
+    "autonomous_learning": false
+  },
+  "code": {
+    "executable": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\bin\\program_bank_v1\\atomos_program_bank.exe",
+    "executable_sha256": "2cb47ca5e151203e9bbd01424821d93a094d45d13931017512f063e9b99397fc",
+    "cuda_architecture": "sm_120",
+    "cuda_toolkit": "12.8.61",
+    "msvc": "19.44.35221",
+    "nvidia_driver": "591.59",
+    "registers_per_thread": 64,
+    "local_bytes_per_thread": 0,
+    "active_evaluator_threads": 1,
+    "device": {
+      "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+      "cc_major": 12,
+      "cc_minor": 0,
+      "total_bytes": 12820480000,
+      "free_bytes_at_start": 11561598976,
+      "runtime": 12080,
+      "driver": 13010,
+      "max_texture_1d_linear": 268435456
+    }
+  },
+  "evidence": {
+    "main_study": "results/program_bank_20260913/verified_study/study.json",
+    "shape_studies": [
+      "results/program_bank_20260913/shape_r2_a1024/study.json",
+      "results/program_bank_20260913/shape_r9_a128/study.json",
+      "results/program_bank_20260913/shape_r17_a288/study.json"
+    ],
+    "amendment": "results/program_bank_20260913/amendment/amendment.json",
+    "learning": "examples/program_bank/learned_v1/learning.json",
+    "mandatory_cpu": "C:\\Users\\Tom\\.cache\\ak1\\program_cpu\\evidence_1789317069091464500\\validation.json",
+    "mandatory_gpu": "C:\\Users\\Tom\\.cache\\ak1\\sdf_gpu\\evidence_1789317264908545800\\validation.json",
+    "documentation": "docs/DISTILLED_PROGRAM_BANK.md",
+    "teachers": "docs/HUGGINGFACE_TEACHERS.md"
+  },
+  "errata": [
+    "Earlier final_study counted four export failures as rejection; superseded by verified_study with four exit-2 retained rejection receipts.",
+    "Original r2_a1024 instrumented export reached Windows MAX_PATH; replaced by short-path shape study; original attempt remains failed.",
+    "Python skips are existing optional-fixture tests, not reported as passed.",
+    "SMT proofs describe equations, not the new native binary."
+  ]
+}
