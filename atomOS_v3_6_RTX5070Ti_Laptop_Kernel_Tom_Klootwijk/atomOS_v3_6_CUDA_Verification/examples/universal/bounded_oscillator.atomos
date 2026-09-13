@@ -1,0 +1,9 @@
+# Tom Klootwijk atomOS: explicit bounded periodic test program.
+# With blank cells at 0 and 1, each two transitions restore tape/head/control.
+# A finite validation budget returns running; the abstract two-state cycle repeats.
+atomos-universal 1
+states 2
+alphabet 2
+start 0 0
+rule 0 0 1 0 R
+rule 1 0 0 0 L

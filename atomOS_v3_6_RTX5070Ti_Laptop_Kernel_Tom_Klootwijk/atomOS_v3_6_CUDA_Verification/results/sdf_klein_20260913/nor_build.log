@@ -1,0 +1,98 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/CMakeLists.txt
+  Compiling CUDA source file ..\..\..\..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu...
+  
+  C:\Users\Tom\.cache\ak1\sdf_gpu>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_s.94B49B41\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart shared -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -lineinfo -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdatomos_sdf_universal.dir\Release\vc143.pdb" -o atomos_sdf_universal.dir\Release\sdf_universal.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu" 
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(189): error : expression must be a pointer to a complete object type [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+      intended[index]=value;
+      ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(201): error : expression must be a pointer to a complete object type [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     if(injection=="texture"){const auto site=gate_site(s,0);uploaded[address(s,site.row,site.angle/32,layout)].x&=~1u;}
+                                                             ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(202): error : expression must have class type but it has type "std::vector<uint4, std::allocator<uint4>> (*)(size_t)" (aka "std::vector<uint4, std::allocator<uint4>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     Buffer<uint4> masks(uploaded.size());masks.upload(uploaded.data());Texture texture(masks.get(),uploaded.size());
+                         ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(202): error : function "atomos::<unnamed>::Buffer<T>::Buffer(const atomos::<unnamed>::Buffer<T> &) [with T=uint4]" (declared at line 11 of C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\../cuda/kernel.cu) cannot be referenced -- it is a deleted function [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     Buffer<uint4> masks(uploaded.size());masks.upload(uploaded.data());Texture texture(masks.get(),uploaded.size());
+                         ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(202): error : expression must have class type but it has type "std::vector<uint4, std::allocator<uint4>> (*)(size_t)" (aka "std::vector<uint4, std::allocator<uint4>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     Buffer<uint4> masks(uploaded.size());masks.upload(uploaded.data());Texture texture(masks.get(),uploaded.size());
+                                                       ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(202): error : expression must have class type but it has type "std::vector<uint4, std::allocator<uint4>> (*)(size_t)" (aka "std::vector<uint4, std::allocator<uint4>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     Buffer<uint4> masks(uploaded.size());masks.upload(uploaded.data());Texture texture(masks.get(),uploaded.size());
+                                                                                                    ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(213): error : expression must have class type but it has type "atomos::<unnamed>::Buffer<sdf_detail::GateTrace> (*)(size_t)" (aka "atomos::<unnamed>::Buffer<sdf_detail::GateTrace> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     atomos_sdf_nor_machine<<<1,32>>>(view,s,layout,texture.get(),tape_view,{program.initial_state,program.initial_head},steps,injection=="gate",wires.get(),gate_trace.get(),evaluation_buffer.get(),transition_buffer.get(),result_buffer.get());
+                                                                                                                                                             ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(213): error : expression must have class type but it has type "atomos::<unnamed>::Buffer<sdf_detail::Evaluation> (*)(size_t)" (aka "atomos::<unnamed>::Buffer<sdf_detail::Evaluation> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     atomos_sdf_nor_machine<<<1,32>>>(view,s,layout,texture.get(),tape_view,{program.initial_state,program.initial_head},steps,injection=="gate",wires.get(),gate_trace.get(),evaluation_buffer.get(),transition_buffer.get(),result_buffer.get());
+                                                                                                                                                                              ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(218): error : expression must have class type but it has type "atomos::<unnamed>::Buffer<sdf_detail::GateTrace> (*)(size_t)" (aka "atomos::<unnamed>::Buffer<sdf_detail::GateTrace> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     std::vector<GateTrace> gates(std::size_t(gate_records));gate_trace.download(gates.data());gates.resize(std::size_t(result.evaluations)*circuit.gates.size());
+                                                             ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(218): error : expression must have class type but it has type "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (*)(size_t)" (aka "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     std::vector<GateTrace> gates(std::size_t(gate_records));gate_trace.download(gates.data());gates.resize(std::size_t(result.evaluations)*circuit.gates.size());
+                                                                                 ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(218): error : expression must have class type but it has type "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (*)(size_t)" (aka "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     std::vector<GateTrace> gates(std::size_t(gate_records));gate_trace.download(gates.data());gates.resize(std::size_t(result.evaluations)*circuit.gates.size());
+                                                                                               ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(219): error : expression must have class type but it has type "atomos::<unnamed>::Buffer<sdf_detail::Evaluation> (*)(size_t)" (aka "atomos::<unnamed>::Buffer<sdf_detail::Evaluation> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     std::vector<Evaluation> evaluations(std::size_t(evaluations_limit));evaluation_buffer.download(evaluations.data());evaluations.resize(result.evaluations);
+                                                                         ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(219): error : expression must have class type but it has type "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (*)(size_t)" (aka "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     std::vector<Evaluation> evaluations(std::size_t(evaluations_limit));evaluation_buffer.download(evaluations.data());evaluations.resize(result.evaluations);
+                                                                                                    ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(219): error : expression must have class type but it has type "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (*)(size_t)" (aka "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     std::vector<Evaluation> evaluations(std::size_t(evaluations_limit));evaluation_buffer.download(evaluations.data());evaluations.resize(result.evaluations);
+                                                                                                                        ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(221): error : no suitable constructor exists to convert from "std::vector<uint4, std::allocator<uint4>> (size_t)" (aka "std::vector<uint4, std::allocator<uint4>> (unsigned long long)") to "std::vector<uint4, std::allocator<uint4>>" [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     U::ReferenceRun reference{};const auto verification=verify(circuit,program,s,layout,intended,uploaded,before,candidate,result,gates,evaluations,transitions,steps,tail_fill,reference);
+                                                                                         ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(221): error : no suitable constructor exists to convert from "std::vector<uint4, std::allocator<uint4>> (*)(size_t)" (aka "std::vector<uint4, std::allocator<uint4>> (*)(unsigned long long)") to "std::vector<uint4, std::allocator<uint4>>" [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     U::ReferenceRun reference{};const auto verification=verify(circuit,program,s,layout,intended,uploaded,before,candidate,result,gates,evaluations,transitions,steps,tail_fill,reference);
+                                                                                                  ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(221): error : no suitable constructor exists to convert from "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (size_t)" (aka "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (unsigned long long)") to "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>>" [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     U::ReferenceRun reference{};const auto verification=verify(circuit,program,s,layout,intended,uploaded,before,candidate,result,gates,evaluations,transitions,steps,tail_fill,reference);
+                                                                                                                                   ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(221): error : no suitable constructor exists to convert from "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (size_t)" (aka "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (unsigned long long)") to "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>>" [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+     U::ReferenceRun reference{};const auto verification=verify(circuit,program,s,layout,intended,uploaded,before,candidate,result,gates,evaluations,transitions,steps,tail_fill,reference);
+                                                                                                                                         ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(234): error : expression must have class type but it has type "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (*)(size_t)" (aka "std::vector<sdf_detail::GateTrace, std::allocator<sdf_detail::GateTrace>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+      for(std::size_t i=0;i<gates.size();++i){const auto&g=gates[i];out<<i/circuit.gates.size()<<','<<i%circuit.gates.size()<<','<<g.a<<','<<g.b<<','<<g.output<<','<<g.texel<<','<<g.parity<<','<<g.asa<<','<<g.na<<','<<g.boundary<<','<<g.fringe<<'\n';}}
+                            ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(234): error : expression must be a pointer to a complete object type [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+      for(std::size_t i=0;i<gates.size();++i){const auto&g=gates[i];out<<i/circuit.gates.size()<<','<<i%circuit.gates.size()<<','<<g.a<<','<<g.b<<','<<g.output<<','<<g.texel<<','<<g.parity<<','<<g.asa<<','<<g.na<<','<<g.boundary<<','<<g.fringe<<'\n';}}
+                                                           ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(236): error : expression must have class type but it has type "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (*)(size_t)" (aka "std::vector<sdf_detail::Evaluation, std::allocator<sdf_detail::Evaluation>> (*)(unsigned long long)") [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+      for(std::size_t i=0;i<evaluations.size();++i){const auto&e=evaluations[i];const auto&d=e.decoded;out<<i<<','<<e.machine.control<<','<<e.machine.head<<','<<e.read<<','<<d.next<<','<<d.write<<','<<d.move<<','<<d.defined<<','<<d.halt_current<<','<<d.halt_after<<'\n';}}
+                            ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu(236): error : expression must be a pointer to a complete object type [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]
+      for(std::size_t i=0;i<evaluations.size();++i){const auto&e=evaluations[i];const auto&d=e.decoded;out<<i<<','<<e.machine.control<<','<<e.machine.head<<','<<e.read<<','<<d.next<<','<<d.write<<','<<d.move<<','<<d.defined<<','<<d.halt_current<<','<<d.halt_after<<'\n';}}
+                                                                 ^
+  
+  22 errors detected in the compilation of "C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/sdf_universal.cu".
+  sdf_universal.cu
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.8.targets(800,9): error MSB3721: The command ""C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_s.94B49B41\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart shared -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -lineinfo -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdatomos_sdf_universal.dir\Release\vc143.pdb" -o atomos_sdf_universal.dir\Release\sdf_universal.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_universal.cu"" exited with code 2. [C:\Users\Tom\.cache\ak1\sdf_gpu\atomos_sdf_universal.vcxproj]

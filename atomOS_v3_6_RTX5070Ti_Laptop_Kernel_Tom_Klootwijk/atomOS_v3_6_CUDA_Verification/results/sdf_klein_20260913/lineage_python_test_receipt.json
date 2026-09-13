@@ -1,0 +1,15 @@
+{
+  "schema": "atomOS-lineage-python-test-receipt-v1",
+  "status": "passed",
+  "kind": "CPU oracle and retained-export mutation regressions; no GPU launch",
+  "command": "ATOMOS_LINEAGE_FIXTURE=C:/Users/Tom/.cache/ak1/sdf_lineage_smoke python -m unittest discover -s tests -p test_sdf_lineage_reference.py -v",
+  "tests": 14,
+  "log": "results/sdf_klein_20260913/lineage_python_tests.log",
+  "execution": {
+    "chunk_id": "4c1b55",
+    "wall_time_seconds": 2.6959917,
+    "exit_code": 0,
+    "original_token_count": 370,
+    "output": "test_bst_cycle (test_sdf_lineage_reference.ExportMutationTests.test_bst_cycle) ... ok\r\ntest_child_id (test_sdf_lineage_reference.ExportMutationTests.test_child_id) ... ok\r\ntest_final_jk (test_sdf_lineage_reference.ExportMutationTests.test_final_jk) ... ok\r\ntest_incomplete_budget (test_sdf_lineage_reference.ExportMutationTests.test_incomplete_budget) ... ok\r\ntest_omitted_search (test_sdf_lineage_reference.ExportMutationTests.test_omitted_search) ... ok\r\ntest_payload_metadata (test_sdf_lineage_reference.ExportMutationTests.test_payload_metadata) ... ok\r\ntest_reemission (test_sdf_lineage_reference.ExportMutationTests.test_reemission) ... ok\r\ntest_seam_parity (test_sdf_lineage_reference.ExportMutationTests.test_seam_parity) ... ok\r\ntest_undefined_is_not_zero (test_sdf_lineage_reference.ExportMutationTests.test_undefined_is_not_zero) ... ok\r\ntest_unmodified_retained_fixture (test_sdf_lineage_reference.ExportMutationTests.test_unmodified_retained_fixture) ... ok\r\ntest_empty_no_resurrection (test_sdf_lineage_reference.GeometryTests.test_empty_no_resurrection) ... ok\r\ntest_last_valid_id (test_sdf_lineage_reference.GeometryTests.test_last_valid_id) ... ok\r\ntest_multiwrap (test_sdf_lineage_reference.GeometryTests.test_multiwrap) ... ok\r\ntest_zero_phi_preserves_ids (test_sdf_lineage_reference.GeometryTests.test_zero_phi_preserves_ids) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 14 tests in 2.169s\r\n\r\nOK\r\nPrepared cases: 56\r\n"
+  }
+}

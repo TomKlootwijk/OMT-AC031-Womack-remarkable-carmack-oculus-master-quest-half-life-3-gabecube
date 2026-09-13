@@ -1,0 +1,338 @@
+{
+  "schema": "atomOS-nor-cache-layout-audit-v1",
+  "kind": "read-only counter/address audit; no GPU launch",
+  "status": "passed",
+  "runs": [
+    {
+      "study": "sdf_nor_cache",
+      "label": "cold_linear_0",
+      "raw_log_sha256": "52c62c3a5dde7e2ed93c2bbb6f62bf0aebbca169e6b7f559f3cf5b5df0fda103",
+      "requests": 4992,
+      "hits": 4960,
+      "misses": 32,
+      "cold_floor": 32,
+      "extra": 0,
+      "at_floor": true
+    },
+    {
+      "study": "sdf_nor_cache",
+      "label": "cold_linear_1",
+      "raw_log_sha256": "1350c0ddd2cd76443f21a54805630004f6e68bac7f24d97a837163daedd45253",
+      "requests": 4992,
+      "hits": 4960,
+      "misses": 32,
+      "cold_floor": 32,
+      "extra": 0,
+      "at_floor": true
+    },
+    {
+      "study": "sdf_nor_cache",
+      "label": "cold_morton8_0",
+      "raw_log_sha256": "6a60982261f2c831ddd69b0026037f65bcd2bd3fda21d41d734938674761b211",
+      "requests": 4992,
+      "hits": 4936,
+      "misses": 56,
+      "cold_floor": 32,
+      "extra": 24,
+      "at_floor": false
+    },
+    {
+      "study": "sdf_nor_cache",
+      "label": "cold_morton8_1",
+      "raw_log_sha256": "c6c9a70e9a5eafeed1418300669d69a6fe7a18c2485f2ff25cb56850f96f2197",
+      "requests": 4992,
+      "hits": 4936,
+      "misses": 56,
+      "cold_floor": 32,
+      "extra": 24,
+      "at_floor": false
+    },
+    {
+      "study": "sdf_nor_cache_cg",
+      "label": "cold_linear_0",
+      "raw_log_sha256": "0a0357cbcad675579235e3c451a1ed40e5b5d96f589026e3be6f0861836722fa",
+      "requests": 4992,
+      "hits": 4960,
+      "misses": 32,
+      "cold_floor": 32,
+      "extra": 0,
+      "at_floor": true
+    },
+    {
+      "study": "sdf_nor_cache_cg",
+      "label": "cold_linear_1",
+      "raw_log_sha256": "7236967f63e6587446041ef4a01fa8b5b998f99cdd275908e2d09429888fb5db",
+      "requests": 4992,
+      "hits": 4960,
+      "misses": 32,
+      "cold_floor": 32,
+      "extra": 0,
+      "at_floor": true
+    },
+    {
+      "study": "sdf_nor_cache_cg",
+      "label": "cold_morton8_0",
+      "raw_log_sha256": "a77603a8039523bc4f8e076c807940c8b44f1c3c580ee026893a4842a334ba46",
+      "requests": 4992,
+      "hits": 4936,
+      "misses": 56,
+      "cold_floor": 32,
+      "extra": 24,
+      "at_floor": false
+    },
+    {
+      "study": "sdf_nor_cache_cg",
+      "label": "cold_morton8_1",
+      "raw_log_sha256": "84226263ff813fa01688bcbc13abd060391ad0acf8220e28c22184ddb35ce68a",
+      "requests": 4992,
+      "hits": 4936,
+      "misses": 56,
+      "cold_floor": 32,
+      "extra": 24,
+      "at_floor": false
+    }
+  ],
+  "address_patterns": {
+    "linear": {
+      "gate_texels_per_evaluation": [
+        56,
+        1,
+        48,
+        49,
+        16,
+        41,
+        32,
+        25,
+        24,
+        25,
+        40,
+        17,
+        8,
+        49,
+        0,
+        1,
+        0,
+        57,
+        48
+      ],
+      "gate_32byte_sectors": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28
+      ],
+      "gate_aligned128byte_regions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "gate_trace_records_checked": 4864,
+      "all_indices_in_bound": true
+    },
+    "morton8": {
+      "gate_texels_per_evaluation": [
+        21,
+        2,
+        20,
+        22,
+        4,
+        19,
+        16,
+        7,
+        5,
+        7,
+        17,
+        6,
+        1,
+        22,
+        0,
+        2,
+        0,
+        23,
+        20
+      ],
+      "gate_32byte_sectors": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        10,
+        11
+      ],
+      "gate_aligned128byte_regions": [
+        0,
+        2
+      ],
+      "gate_trace_records_checked": 4864,
+      "all_indices_in_bound": true
+    }
+  },
+  "conclusion": "Both atlas shapes occupy1KiB and use the same binary with4992 texture requests. Sparse8x64: linear32misses, Morton56. Dense8x256: linear40misses, Morton32. Both repeats agree. Which layout reaches the cold compulsory floor depends on shape and actual gate access sequence; there is no universal layout winner. No functional/address/padding defect or causal cache mechanism is established by aggregate counters.",
+  "recommended_claim": "The measured compulsory-floor retention target is achieved by sparse8x64 linear and dense8x256 Morton under their recorded bounded schedules. Opposite layouts miss the target. Neither layout nor CUDA texture use alone guarantees retention for other shapes/programs.",
+  "dense_followup": {
+    "study": "sdf_nor_cache_dense",
+    "atlas_rows": 8,
+    "atlas_angles": 256,
+    "stored_texture_bytes": 1024,
+    "same_executable_as_sparse": true,
+    "runs": [
+      {
+        "label": "cold_linear_0",
+        "raw_log_sha256": "68606c11af63dedae0c445061545f6394206403858eadeec303b0411c8e41d7a",
+        "requests": 4992,
+        "hits": 4952,
+        "misses": 40,
+        "cold_floor": 32,
+        "extra": 8,
+        "at_floor": false
+      },
+      {
+        "label": "cold_linear_1",
+        "raw_log_sha256": "21ddc1be5c5cf30e5405a40ea7b77bfce5d775a2445880efe3ee6ac5da58f420",
+        "requests": 4992,
+        "hits": 4952,
+        "misses": 40,
+        "cold_floor": 32,
+        "extra": 8,
+        "at_floor": false
+      },
+      {
+        "label": "cold_morton8_0",
+        "raw_log_sha256": "57843840c763fe80377276c2b13c86ad829151a9bcf96b334686a017221bd8e9",
+        "requests": 4992,
+        "hits": 4960,
+        "misses": 32,
+        "cold_floor": 32,
+        "extra": 0,
+        "at_floor": true
+      },
+      {
+        "label": "cold_morton8_1",
+        "raw_log_sha256": "b36cd731c1a7918e6f0055313edaf79042f7dd01474d4e5eadb1c9ebb985adff",
+        "requests": 4992,
+        "hits": 4960,
+        "misses": 32,
+        "cold_floor": 32,
+        "extra": 0,
+        "at_floor": true
+      }
+    ],
+    "address_patterns": {
+      "linear": {
+        "gate_texels_per_evaluation": [
+          56,
+          1,
+          58,
+          59,
+          4,
+          61,
+          62,
+          7,
+          48,
+          49,
+          10,
+          51,
+          52,
+          13,
+          54,
+          55,
+          16,
+          41,
+          42
+        ],
+        "gate_32byte_sectors": [
+          0,
+          2,
+          3,
+          5,
+          6,
+          8,
+          20,
+          21,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "gate_aligned128byte_regions": [
+          0,
+          1,
+          2,
+          5,
+          6,
+          7
+        ],
+        "gate_trace_records_checked": 4864,
+        "all_indices_in_bound": true
+      },
+      "morton8": {
+        "gate_texels_per_evaluation": [
+          21,
+          2,
+          29,
+          31,
+          32,
+          55,
+          61,
+          42,
+          20,
+          22,
+          9,
+          30,
+          52,
+          35,
+          60,
+          62,
+          4,
+          19,
+          25
+        ],
+        "gate_32byte_sectors": [
+          1,
+          2,
+          4,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16,
+          17,
+          21,
+          26,
+          27,
+          30,
+          31
+        ],
+        "gate_aligned128byte_regions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "gate_trace_records_checked": 4864,
+        "all_indices_in_bound": true
+      }
+    }
+  }
+}

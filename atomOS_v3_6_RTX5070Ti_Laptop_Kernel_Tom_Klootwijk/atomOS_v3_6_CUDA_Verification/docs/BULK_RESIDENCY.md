@@ -96,3 +96,91 @@ study, with selected complete trace exports for the independent Python reference
 Compute Sanitizer tools. Their summaries keep exact executable/source hashes,
 commands, raw logs and observed residency outcomes. Consult the final PDF and
 `results/residency_followup/summary.json` for the executed counts and limitations.
+
+## Source atlas and Klein carrier: first TMA result, 2026-09-13
+
+The capacity and allocation statements above describe the original direct
+profile. The extended runner can load a strictly checked `AOSDF01` source atlas
+with `--atlas`, and selects `direct`, `klein-plus`, or `klein-minus` occupancy
+transport with `--carrier`. The default atlas cap remains 262,144 stored texels;
+`--atlas-cap-texels` explicitly permits studies up to 1,048,576. These storage
+limits are not measured cache-capacity claims. This section records only the
+first successful 4 MiB source-atlas/carrier profile; larger studies are separate.
+
+The carrier reads an immutable pre-epoch occupancy snapshot, crosses the angular
+seam by reflecting the radial row, and runs before the selected word producer.
+Each destination retains its own JK state. Downloaded transported words,
+including every padded word, are compared with an independent per-cell scatter
+before the proposed K1 results are verified and committed. Declared synthetic
+OTAN2 increments remain explicitly identified as synthetic inputs.
+
+The first carrier implementation used scalar `.cg` neighbor loads and exported
+each transported word with a scalar `.cg` store. A cold hardware-counter run
+revealed extra texture misses despite the cache policy. Adding an explicit warp
+barrier before the productive TEX read did not restore retention. The replacement
+uses neighbor states already in the shared input tile, fetches each required
+external row neighbor as an aligned 16-byte State pair through native bulk TMA,
+and exports transported words through bulk TMA. A linear tile exports 256 bytes;
+a Morton tile exports eight canonical rows of 32 bytes each.
+
+The input tile remains 5,632 bytes and the input/output union remains 10,752 bytes.
+Separate shared storage adds 128 bytes for neighbor pairs and 256 bytes for the
+carrier export. The observed binary uses 11,152 static shared bytes, 102 registers
+per thread, no local-memory spill storage, and a realized 16 KiB shared-memory
+configuration. Disassembly of the bulk function removes its two explicit
+`LDG.E.STRONG.GPU` sites and one `STG.E.STRONG.GPU` site. Other kernel infrastructure
+still contributes LSU traffic; this is not a claim of zero LSU traffic globally.
+
+The measured case was a 512-row by 16,384-angle source atlas, linear layout,
+`klein-plus`, recurrent producer, fringe enabled, mixed diagnostic profile, and
+one measured epoch after the verified setup launch. The device was the NVIDIA
+GeForce RTX 5070 Ti Laptop GPU, compute capability 12.0, with 46 SMs. CUDA 12.8,
+MSVC 14.44.35207 and Nsight Compute 2025.1.0 were used. Profiling selected one cold
+kernel using kernel replay, `--cache-control all`, and unchanged GPU clocks.
+
+| Recorded schedule | TEX sectors | TEX miss sectors | LSU global-load miss sectors |
+| --- | ---: | ---: | ---: |
+| Original binary, direct carrier control | 393,702 | 131,072 | 4,536 |
+| Original binary, Klein-plus with scalar `.cg` carrier I/O | 393,738 | 136,288 | 78,789 |
+| TMA carrier replacement, Klein-plus | 393,738 | 131,072 | 4,824 |
+
+The 4 MiB dictionary has 131,072 compulsory 32-byte sectors. The TMA run reached
+that exact miss floor, eliminating the original carrier run's 5,216 additional
+misses for this recorded launch. Total TEX sectors exceed the ideal coalescing
+minimum of 393,216 in both the direct control and the corrected carrier run;
+extra request splitting alone therefore does not imply dictionary eviction.
+The residency criterion remains exact equality to the compulsory miss floor,
+with complete dictionary coverage and the recorded phase ordering. No miss
+tolerance was relaxed.
+
+For this shape the new metadata reports 4,096 halo transfers, 65,536 halo bytes,
+4,096 carrier export transfers, and 1,048,576 carrier export bytes per epoch.
+Its device payload is `272 * stored_texels + diagnostics + 4 * stored_texels`,
+or 73,106,880 bytes here; the last term is the separately verified carrier output.
+Halo storage is shared memory, so it adds no global allocation. Metadata records
+zero scalar carrier `.cg` loads and stores and identifies the TMA policy. A host
+coverage check verifies the staged or halo source of every logical destination.
+An independent CPU scatter audit covered 264 shape/layout/direction cases and
+12,160 logical words, including one-cell angles, non-power-of-two row counts,
+partial angular words and row strides that do not divide a tile. Actual CUDA
+candidate/transport checking remains required for each device run.
+
+Nsight Compute reported 1.327328 ms for this TMA kernel. This is a profiler
+duration, not an ordinary timing benchmark; CUDA-event output captured inside
+the replayed process must also not be treated as ordinary timing. These results
+show observed retention for this workload and launch, not a driver-supported
+cache pin or a guarantee across launches, competing workloads, other layouts,
+larger atlases, or the separate SDF/NOR interpreter kernel.
+
+Evidence: the preserved original source is
+[`baseline_cache_bulk.cu`](../results/sdf_klein_20260913/baseline_cache_bulk.cu).
+The build and small Morton/tail smoke receipts are
+[`bulk_tma_carrier_build.log`](../results/sdf_klein_20260913/bulk_tma_carrier_build.log)
+and [`tma_smoke.log`](../results/sdf_klein_20260913/tma_smoke.log).
+The first profile's exact command and raw counters are
+`C:/Users/Tom/.cache/ak1/sdf_capacity/tma_plus.command.json` and
+`C:/Users/Tom/.cache/ak1/sdf_capacity/tma_plus.csv.log`; the direct and original
+carrier controls are the same directory's `direct_control.csv.log` and
+`cold_512_16384_linear_0.csv.log`. The fixed executable is
+`C:/Users/Tom/.cache/ak1/sdf_gpu/Release/atomos_cache_bulk.exe`; the preserved
+baseline is `C:/Users/Tom/.cache/ak1/sdf_bulk_before.exe`.

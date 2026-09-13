@@ -168,7 +168,18 @@ def verify_memory_metadata(s:dict)->None:
         grid=receipt.get('grid_blocks')
         if type(grid) is not int or not (1<=grid<=U32//512):raise ValueError('bulk grid bounds')
         diagnostic=16*grid*(2*512+2)
-        payload=272*stored+diagnostic
+        carrier=s.get('carrier','direct')
+        if carrier not in ('direct','klein-plus','klein-minus'):
+            raise ValueError('unknown bulk carrier')
+        carrier_bytes=4*stored if carrier!='direct' else 0
+        if carrier_bytes:
+            if s.get('schema')!='atomOS-source-atlas-K1-run-v1':
+                raise ValueError('Klein carrier requires source-atlas replay schema')
+            if receipt.get('carrier_buffer_bytes')!=carrier_bytes:
+                raise ValueError('Klein carrier allocation size mismatch')
+        elif receipt.get('carrier_buffer_bytes',0)!=0:
+            raise ValueError('direct carrier has unexpected allocation')
+        payload=272*stored+diagnostic+carrier_bytes
         chunk=((stored+grid*64-1)//(grid*64))*64
         expected={
             'status':'passed','scope':'experimental_bulk_io_warm_work_retention_probe',

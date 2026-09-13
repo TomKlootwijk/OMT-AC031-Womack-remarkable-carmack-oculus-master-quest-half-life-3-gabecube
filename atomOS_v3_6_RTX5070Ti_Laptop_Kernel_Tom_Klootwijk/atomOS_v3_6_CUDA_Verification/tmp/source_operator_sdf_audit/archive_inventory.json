@@ -1,0 +1,48 @@
+[
+  {
+    "name": "atomOS_ASA_Addendum_Tom_Klootwijk_v3.0.zip",
+    "sha256": "aa9260db9f527d4f3a611a83fac647802920f851bde618a7492ee88c5cfa669a",
+    "text_files": 54,
+    "pdfs": [
+      "atomOS_ASA_v3/atomOS_ASA_Addendum_Tom_Klootwijk.pdf"
+    ],
+    "sdf_matches": []
+  },
+  {
+    "name": "atomOS_Mirage_RTX5070Ti_Tom_Klootwijk_v2.0.zip",
+    "sha256": "39b9f4e1e9a4aa1f1065e0e97e85a3c2b209065c1bad5a89b3d26b6ca3781314",
+    "text_files": 51,
+    "pdfs": [
+      "atomOS_Mirage_RTX5070Ti_v2.0/atomOS_Mirage_RTX5070Ti_Tom_Klootwijk.pdf"
+    ],
+    "sdf_matches": [
+      {
+        "file": "atomOS_Mirage_RTX5070Ti_v2.0/docs/source_traceability.csv",
+        "line": 9,
+        "text": "C08,\"S1 5,7-9,17; S0 9,12-14,24\",Klein bottle SDF,Klein quotient and occupancy predicate are separate objects; orientation parity retained,Corrected"
+      },
+      {
+        "file": "atomOS_Mirage_RTX5070Ti_v2.0/docs/source_traceability.csv",
+        "line": 12,
+        "text": "C11,\"S1 25-27,30-31; S0 34-37,41\",Packed coordinate AND SDF / POPCNT,Only same-domain masks can be intersected; a coordinate first indexes a mask bit,Corrected"
+      },
+      {
+        "file": "atomOS_Mirage_RTX5070Ti_v2.0/docs/specification.tex",
+        "line": 129,
+        "text": "25--31 & One-bit SDF words; POPCNT; Vantablack & Packed membership predicates, same-domain intersections and absorbing active state.\\\\"
+      },
+      {
+        "file": "atomOS_Mirage_RTX5070Ti_v2.0/docs/specification.tex",
+        "line": 339,
+        "text": "The environment is a separately defined predicate $E:K\\to\\B$ on canonical chart cells. It can represent blocked cells on the quotient. It is not a global signed-distance function of the Klein bottle embedded without intersections in ordinary 3-D space. ``One-bit SDF'' is therefore retained as a name for a thresholded occupancy predicate, not a clai"
+      }
+    ]
+  },
+  {
+    "name": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk.zip",
+    "sha256": "239118aa4f7cd4b06e83a9fecf22bdd5cbd223027bc471e3084fe0a3e696c40c",
+    "text_files": 303,
+    "pdfs": [],
+    "sdf_matches": []
+  }
+]

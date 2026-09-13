@@ -1,0 +1,724 @@
+
+===== PHYSICAL PAGE 1 =====
+AC031 / AC130 ATOMOS VERSION 3.1.0
+atomOS
+ASA operator engine
+⊕>O<
+Blend operator & pinion integration
+A–W–𝜙–N / hollow-center aperture
+Tom Klootwijk
+Author-supplied identifier NL200678942
+Author-supplied date 10-07-1990
+Previous specification ASA 3.0.0
+This specification ASA 3.1.0 — minor revision
+Release date 13 September 2026
+Integrated in this release
+The circle-plus blend; coordinate A; time interval W; kinematic calculus B in the source’s
+double-lowercase-phi notation; north polar pinion N; sweeping-envelope flags; and the
+hollow-center / active-fringe distinction.
+Self-containedrevisionoftheformalspecification. TheretainedASA/NAcore,newdefinitions,compatibility
+conditions and source references are set out below. The five newly supplied source pages are reproduced in
+the appendix.
+
+===== PHYSICAL PAGE 2 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+Release record
+ASA3.1.0integratesthenewblend-operatordocumentintotheexistingASAenginespecification.
+It preserves the 3.0.0 aperture/NA/absorption core and adds a named pinion record plus an
+optional, explicitly supplied fringe mask. The new material is not treated as an unrelated
+replacement engine.
+The source document proceeds from the A–W–B–N blend notation to a sweeping-cone interpreta-
+tion, then to a boresight-aligned hollow center and active caustic fringe. That order is retained in
+this revision. [C, pp.1–5]
+Release item Disposition
+Unchanged core ASA intersection, NA after ASA, POPCNT boundary count,
+whole-word Vantablack disposition.
+New definitions Typed A, W, B/ 𝜙, N; one-bit blend interpretation; three separately
+named predicates.
+New integration Record-only default and optional supplied-mask profile, with an exact
+neutral-mask compatibility rule.
+Unchanged storage Logical word groups, tail-bit convention, canonical result order,
+existing linear/Morton interpretation.
+Delivery Formalized PDF, source mapping, algebra checks and original-source
+appendix.
+Implementation status Specification update only; no executable or CUDA revision is delivered
+or reported as tested here.
+How to distinguish the material
+C denotes the newly supplied five-page blend document.A denotes the earlier WHITE KING
+corpus; B denotes the fly-eye addendum. B0 denotes the ASA 3.0.0 mathematical contract
+established in the preceding project conversation and restated here. It is a baseline definition, not a
+newly inspected binary artifact.
+I01–I08identify integration decisions made for this revision. They are not presented as numerical
+rules already supplied by C. A source quotation or source mapping remains distinct from a
+normative definition and from a deduction proved from that definition.
+Minor-version compatibility
+Existing 3.0 records keep their original meaning. By default, the new pinion information is
+a separate annotation. Enabling an additional fringe mask is explicit; selecting the neutral
+mask recovers the original core output exactly.
+Tom Klootwijk | 13 September 2026 2
+
+===== PHYSICAL PAGE 3 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+Contents
+Release record 2
+1 The retained ASA core 4
+2 The new document, in its own order 5
+3 A–W–B–N notation without name collisions 6
+4 The circle-plus blend: source expression and typing 7
+5 Three one-bit predicates, three meanings 8
+6 Sweeping envelope and hollow-center aperture 9
+7 Integration into the ASA engine 10
+8 Algebraic consequences of the integration 11
+9 Precedence zero and the integrated record 12
+10 Worked word examples and finite checks 13
+11 Integration decisions and unresolved inputs 14
+12 Provenance and source appendix 15
+Appendix — original blend document (C, pages 1–5) 16
+Reading routes
+For the integration itself, read Sections 3–8. For the source’s changing use of the one-bit state,
+read Section 5. For compatibility and review, read Sections 8–12. The appendix preserves
+C’s original wording and tables so that the formal interpretation can be checked against the
+supplied pages.
+Tom Klootwijk | 13 September 2026 3
+
+===== PHYSICAL PAGE 4 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+1 The retained ASA core
+1.1 Typed word contract
+For a fixed logical cell dictionary, let𝑥, 𝑀 ASA, 𝑀NA, 𝑀𝜕, 𝑉∈{0, 1}32. They respectively denote the
+input occupancy, ASA aperture, post-ASA NA mask, boundary mask and valid-bit mask. The
+retained record is
+𝑎 = 𝑥∧𝑀ASA∧𝑉 , (1)
+𝑛 = 𝑎∧𝑀NA, (2)
+ℎ = popcount(𝑛∧𝑀𝜕), (3)
+𝑦 =
+(
+0, ℎ > 0,
+𝑛, ℎ = 0, 𝐹3.0(𝑥; 𝑀ASA, 𝑀NA, 𝑀𝜕, 𝑉)=(𝑎, 𝑛, ℎ, 𝑦). (4)
+This is the 3.0 contract used by the new integration. The NA stage remains after ASA, and any
+intersectingboundarybitzerostheentireselectedlogicalword. [B0,stagedwordrule][A,pp.75–81]
+Whole-word disposition is not replaced by𝑛∧¬𝑀𝜕. A one-bit region annotation is likewise not
+silently substituted for the boundary word. Those would be different operations with different
+output records.
+1.2 Retained geometry and grouping
+The baseline uses a declared log-polar dictionary, with𝜌 = ln(𝑟/𝑟min)on a finite positive-radius
+annulus and a periodic angular index. A 32-bit word groups 32 logical angular predicates. A
+last partial word is masked by𝑉; padded storage does not create extra cells. The coordinate
+key, occupancy word and author identifier remain separate types. [B0, log-polar dictionary and
+padding]
+The existing Morton profile interleaves radialword-coordinatebits in even positions and angular-
+word bits in odd positions within an 8-by-8 tile. Linear or Morton storage must not change which
+logical cells share a whole-word disposition. This revision leaves that grouping and its output
+order intact. [B0, word-level swizzle][A, pp.85–87]
+1.3 What stays outside the new blend
+The double-UU author/state binding, symbolic genesis, facet-input organization and previously
+declared timing targets are inherited, not redefined by the letters A, W, B or N in C. The new W is a
+local time-interval label; it is not a reinterpretation of the author’s date. The new N is a pinion
+datum; it is not the pre-existing NA mask. [I01]
+Tom Klootwijk | 13 September 2026 4
+
+===== PHYSICAL PAGE 5 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+2 The new document, in its own order
+The five source pages are integrated through three successive concepts, not flattened into one
+unnamed Boolean gate.
+C page Source content Integration in 3.1.0
+1 Circle-plus operator, coordinate A,
+W as delta time, B described as
+double lowercase phi, and N as
+north polar pinion.
+Preserve all names; assign distinct record fields and
+require a declared encoding before applying bitwise
+XOR.
+2 𝑁⊕(𝐴+ 𝜙(𝑊))mod 2; zero as
+aligned and one as phase
+adjustment. Then the cone-sweep
+interpretation begins.
+Retain the displayed expression; define its binary
+interpretation separately from continuous or
+geometric inputs.
+3 A mapping table: N as datum/apex,
+A as boresight,(𝜙, 𝑊)as sweep
+parameters. Zero means inside the
+sweep envelope; one means
+limit/threshold event.
+Preserve the table’s relationships and create a distinct
+envelope predicate. The source’s hardware actions
+remain described actions, not automatic record
+semantics.
+4 Hollow-center / caustic receiver
+configuration; A becomes the
+centerline of a central void; inner
+and outer boundaries are
+distinguished.
+Add named region roles, with geometry and
+boundary values left as supplied-profile inputs.
+5 Zero for the hollow region and one
+for active fringe. The structural
+comparison contrasts boresight,
+receiver location and latch meaning.
+Add a separate fringe predicate; retain the listed
+configuration alternatives and their unresolved
+choice.
+2.1 The two source tables
+C p.3 maps symbols to roles in the sweeping-parabola narrative. C p.5 changes that narrative to a
+hollow-center arrangement. Both tables are preserved in the appendix. Their entries are treated
+as source configuration descriptions; the PDF does not add a reflector design or infer a numerical
+reception pattern from those descriptions alone.
+C closes with questions about pencil versus fan beam, waveform type, reflector versus ring-array
+configuration, and carrier range. No answers to those questions occur in the five-page file. They
+remain open profile fields rather than chosen hardware settings. [C, pp.3, 5]
+Tom Klootwijk | 13 September 2026 5
+
+===== PHYSICAL PAGE 6 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+3 A–W–B–N notation without name collisions
+Source Retained meaning Canonical record name
+𝐴 Primary eigenvector axis; later
+boresight centerline.
+𝐴axis / axis_reference
+𝑊 Infinitesimal or discrete time
+interval used by the kinematic
+calculus.
+𝑊 / time_interval
+𝐵 Kinematic calculus described as
+double lowercase phi.
+𝐵𝜙 / kinematic_descriptor
+𝜙(𝑊) The source’s notation for the
+accumulated shift or
+transformation over W.
+kinematic_result, with its type declared.
+𝑁 North polar pinion; reference
+datum and later mechanical apex
+description.
+𝑁pinion / pinion_reference
+⊕ Circle-plus blend; binary
+XOR/state-toggle interpretation.
+blend_xor, operating on bits only.
+[C, pp.1–3][I01]
+3.1 The double-lowercase-phi label
+C uses the phrase “double lowercase phi” but displays a single𝜙 in its explanatory formulas. This
+edition retains that phrase as the name of𝐵𝜙. It does not silently replace it with∝⌈⌈≀⊔⊣⌋⌋𝜙, 𝜙2, a second
+derivative, or an ordered pair. A meaning among those alternatives is not fixed by the supplied
+page. [C, p.1]
+The same paragraph calls B an angular velocityora kinematic transformation matrix. Those are
+alternative types, not interchangeable arithmetic operands. Consequently,𝜙(𝑊)remains a named
+result of the chosen B-profile; no integration equation or matrix is invented for it. [I02]
+3.2 Axis, origin and code are distinct
+Calling A an eigenvector axis identifies its source role. The underlying linear operator, eigenvalue,
+normalization and coordinate-frame convention are not specified. Likewise, a north direction, a
+mechanical origin and a pinion label need distinct representation when a later profile uses them
+numerically.
+The previous ASA mask is written𝑀ASA, the NA mask𝑀NA, and the boundary mask𝑀𝜕. None is
+overwritten by the new source letters. This namespacing is required to retain the 3.0 word contract
+while incorporating C’s notation. An encoded bit for an axis is a record value about that axis, not
+the entire axis itself.
+Tom Klootwijk | 13 September 2026 6
+
+===== PHYSICAL PAGE 7 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+4 The circle-plus blend: source expression and typing
+4.1 Expression retained from C
+The source writes
+𝑠source = 𝑁⊕
+ 
+𝐴+ 𝜙(𝑊)
+
+(mod 2). (5)
+Itsaccompanyinginterpretationassignszerotoalignmentandonetoaphase-shift/togglecondition.
+[C, p.2]
+As written, the expression does not specify how a reference axis, a pinion datum and a continuous
+kinematicresultbecomebinaryoperands. Theformalizationthereforeseparatesthe sourceexpression
+from a definedbinary encoding profile. That distinction is part of the integration, not an implicit
+correction of C. [I02]
+4.2 Defined binary special case
+When a selected profile supplies𝑎𝑏 , 𝑛𝑏 , 𝛽𝑏∈{0, 1}, define
+𝑠blend = 𝑛𝑏⊕((𝑎𝑏+ 𝛽𝑏)mod 2)= 𝑛𝑏⊕𝑎𝑏⊕𝛽𝑏. (6)
+Here 𝛽𝑏 is the profile’s encoded kinematic contribution, not W itself. The eight cases are
+𝑛𝑏 𝑎𝑏 𝛽𝑏 𝑠blend
+0 0 0 0
+0 0 1 1
+0 1 0 1
+0 1 1 0
+1 0 0 1
+1 0 1 0
+1 1 0 0
+1 1 1 1
+The equality in Eq.(6) follows because addition modulo two and XOR have the same two-input
+truth table.
+4.3 Meaning of equality after encoding
+A zero result establishes equality of the encoded bit classes. It establishes equality of the original
+geometric states only if the encoding profile supplies that stronger implication. Parity alone cannot
+do so: the distinct integers zero and two have the same remainder modulo two.
+Forgeometricinputs,aprofilemustprovideitsencoderandunitsbeforeEq. (6)isevaluated. When
+that information is absent, the blend value isunspecified; it is not silently replaced by zero. C
+supplies no such encoding rule or overflow convention. [C, pp.1–2]
+Tom Klootwijk | 13 September 2026 7
+
+===== PHYSICAL PAGE 8 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+5 Three one-bit predicates, three meanings
+The source uses the same words “State 0” and “State 1” for three different conditions. Version 3.1
+preserves each polarity but stores the conditions separately. [I03]
+Predicate Source meaning of 0 Source meaning of 1 Page
+𝑠align Alignment / no phase
+adjustment.
+Out-of-phase / phase-shift or
+toggle condition.
+C 2
+𝑠limit Within the valid sweeping
+envelope.
+Sweep limit or a detection
+threshold reached.
+C 3
+𝑠fringe Inside the hollow / central void.On the active caustic fringe. C 4–5
+5.1 The required independence
+No equation in C establishes
+𝑠align = 𝑠limit = 𝑠fringe. (7)
+The integration therefore does not make that identification. A change from zero to one in the
+alignment record is not automatically a fringe acceptance, and a fringe bit is not automatically a
+whole-word boundary count.
+The binary value in Eq.(6) may populate 𝑠align only under a profile that explicitly adopts C’s
+alignment interpretation. The other two predicates require their own supplied conditions. The
+source proposes hardware consequences for some states, but those consequences do not define
+equality between the predicates. [C, pp.2–5]
+5.2 Representing an unspecified value
+Each predicate is paired with a definition status:
+𝑄 =(𝑣, 𝑑), 𝑑 ∈{defined, unspecified}, 𝑣 ∈{0, 1}only when𝑑 = defined. (8)
+This is atyped record about a one-bit predicate; the status is metadata, not a third value secretly placed
+in a one-bit word. It distinguishes a genuine source zero from a missing definition. [I03]
+C p.5 contrasts the hollow region with the active fringe, but does not assign a complete truth table
+for points beyond the outer boundary, points on an exact edge, or a missing observation. Those
+cases remain unspecified until a named profile defines them. This avoids treating “outside the
+hollow” as a synonym for “on the active fringe” without an explicit domain restriction.
+Tom Klootwijk | 13 September 2026 8
+
+===== PHYSICAL PAGE 9 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+6 Sweeping envelope and hollow-center aperture
+6.1 The source’s two-stage geometry narrative
+C pp.2–3 describes a parabolic detection arrangement with N as datum/apex, A as boresight and
+(𝜙, 𝑊)as the time-dependent sweep description. C pp.4–5 then introduces a central receiver and
+distinguishes the hollow region from an active fringe around it. The second description refines the
+source scenario; it does not supply numerical dimensions for the first one.
+CnamesCassegrain,Gregorianandring-focusalternatives,andlateraskswhethertheconfiguration
+is a dual-reflector system or a phased ring array. No choice is finalized in the uploaded document.
+The specification retains the alternatives rather than silently choosing one. [C, pp.4–5]
+6.2 Configuration sets, not an inferred field
+For documentary integration, let a supplied region description name𝐻 as the hollow region and𝑅
+as the active fringe. On explicitly classified points, C’s polarity is represented as
+𝑠fringe(𝑧)=
+(
+0, 𝑧 ∈𝐻,
+1, 𝑧 ∈𝑅. (9)
+A consistent binary profile requires𝐻∩𝑅 =∅. If the profile does not classify𝑧, the value is
+unspecified rather than inferred from this two-case definition. [I04]
+C alternates between “two angles” and “inner/outer caustic radius.” This release keeps
+inner_boundary and outer_boundary as named, unit-tagged profile fields. It does not equate a
+radius with an angle, invent a focal length, or infer a ring-shaped response solely from receiver
+location. The source supplies a proposed hollow-center configuration but no field equation
+establishing those numerical relationships. [C, p.4]
+6.3 Connection to the ASA aperture
+When a profile explicitly compiles its active-fringe classification into the existing logical cell
+dictionary, its support can be represented by𝑀fringe. That mask is an optional input to Section 7; it
+is not computed by an unstated radar or acoustic model.
+The pinion and geometry record remains separate from the author record and from the facet
+source label. The fly-eye organization is retained as prior input context, not converted into a newly
+specified multi-sensor acquisition protocol. [B0, facet input model][B, pp.7–8]
+Tom Klootwijk | 13 September 2026 9
+
+===== PHYSICAL PAGE 10 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+7 Integration into the ASA engine
+7.1 Default profile: record-only
+Let 𝑃𝐶 be the pinion record containing the source references, A–W–B–N fields, definition statuses
+and the three named predicates. The default minor-version extension is
+𝐹record
+3.1 (𝑥; 𝑀, 𝑃 𝐶)=⟨𝐹3.0(𝑥; 𝑀), 𝑃 𝐶⟩, (10)
+where 𝑀 =(𝑀ASA, 𝑀NA, 𝑀𝜕, 𝑉). Projection onto the core record gives the identical 3.0 result.
+Existing consumers can therefore read the original four fields without reinterpreting the new flags.
+[I05]
+This is an additive integration: the new source model becomes part of the engine’s formal state
+record, while its unresolved parameters do not erase previously valid output.
+7.2 Optional profile: explicitly supplied fringe mask
+A caller may opt into an already-defined active-fringe mask over the same logical dictionary. The
+effective aperture is
+𝑀′
+ASA = 𝑀ASA∧𝑀fringe, 𝐹 mask
+3.1 (𝑥; 𝑀, 𝑃 𝐶 , 𝑀fringe)=
+
+𝐹3.0(𝑥; 𝑀′
+ASA, 𝑀NA, 𝑀𝜕, 𝑉), 𝑃 𝐶
+
+. (11)
+The order remains ASA, then NA, then POPCNT and whole-word disposition. No alignment or
+sweep-limit bit is implicitly used as an erasure mask. The record identifiesmask mode and the
+mask’s definition, so the changed aperture is inspectable. [I06]
+This opt-in composition is anew integration decision, not an equation quoted from C. A total mask
+over all valid cells is required. If classification is incomplete, mask-mode evaluation is not defined;
+the record-only profile remains available without pretending the missing cells were measured
+clear or blocked.
+Theorem 7.1(Minor-version recovery). The record-only profile projects exactly to the 3.0 core. In mask
+mode, selecting𝑀fringe = 𝑉 also recovers every field of the 3.0 record.
+Proof. Record-onlyprojectionfollowsdirectlyfromitsdefinition. Fortheneutralmask, 𝑥∧𝑀′
+ASA∧
+𝑉 = 𝑥∧𝑀ASA∧𝑉∧𝑉 = 𝑥∧𝑀ASA∧𝑉. The NA word, intersection count and final disposition are
+then calculated from identical inputs, so all four fields are equal. □
+Tom Klootwijk | 13 September 2026 10
+
+===== PHYSICAL PAGE 11 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+8 Algebraic consequences of the integration
+8.1 Selection before absorption
+For any supplied fringe mask, the new ASA-selected support is contained in the old ASA support,
+and the new NA-selected support is contained in the old NA support:
+𝑎′= 𝑎∧𝑀fringe⊆𝑎, 𝑛 ′= 𝑛∧𝑀fringe⊆𝑛. (12)
+This is an immediate consequence of the added intersection. It doesnotimply inclusion of the final
+output word after whole-word absorption.
+8.2 A preserved non-monotonicity
+Take two valid bits and choose
+𝑥 = 112, 𝑀 ASA = 𝑀NA = 𝑉 = 112, 𝑀 𝜕 = 102, 𝑀 fringe = 012. (13)
+The 3.0 record has𝑛 = 112 and a nonzero boundary intersection, hence𝑦 = 0. Mask mode has
+𝑛′= 012 and no boundary intersection, hence𝑦′= 012. Restricting the input has removed the one
+bit that previously absorbed the entire word.
+Consequently, a review must compare all four fields and the selected profile, not assume that the
+masked final output is always a subset of the unmasked final output. The integration preserves
+the inherited whole-word rule. [B0, whole-word disposition][I06]
+Proposition 8.1(Zero and final-word idempotence). For fixed masks and a fixed enabled profile, a zero
+inputremainszero. Ifthefinaloutputwordisfedbackthroughthesameprofile,itsfinaloutputisunchanged.
+Proof. Everyselectedbitisobtainedbyintersectionswiththeinput,sozerocannotcreateaselected
+bit. For idempotence, an absorbed first output is zero. Otherwise the output already satisfies
+every selection mask and has no boundary intersection. Reapplying those same masks leaves it
+unchanged and the boundary check stays clear. This concerns the final word; the intermediate
+history is a separate record. □
+8.3 Storage-order invariance is inherited
+Bothstoragelayoutsmustretrievethesamefourbaselinelogicalmaskwords,andtheoptionalfifth
+mask must use the same dictionary mapping. Emitting records in canonical logical order leaves
+the equations independent of physical storage order. This is a formal compatibility requirement,
+not a claim that a new GPU implementation was compiled or benchmarked for this PDF.
+Tom Klootwijk | 13 September 2026 11
+
+===== PHYSICAL PAGE 12 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+9 Precedence zero and the integrated record
+9.1 Ordering, not an elapsed-time value
+C calls the blend “precedence order 0” and associates it with immediate hardware action. This
+revision retainsprecedence 0as the name of the source’s pinion/blend interpretation stage. Its
+formal consequence is a dependency order: required source values and their encoding must be
+available before the corresponding Boolean value can be defined. [C, pp.1–3][I07]
+The source gives no hardware scheduler, memory-ordering rule, latency bound or proof of a
+zero-duration execution. The normative order here therefore stateswhat depends on what, without
+inserting an elapsed-time guarantee into the Boolean algebra.
+Stage Meaning Dependency / result
+P0 Source and type resolution Record A, W, B/ 𝜙, N; retain unresolved fields.
+P0-B Blend interpretation Evaluate encoded XOR only under a defined profile.
+P0-R Region interpretation Record separate envelope and fringe
+definitions/statuses.
+P1 Existing ASA input Use original aperture, or explicit aperture/fringe
+intersection.
+P2 Existing NA stage Retain the post-ASA ordering and intermediate record.
+P3 Existing disposition POPCNT and unchanged whole-word absorption.
+P4 Record publication Publish the core record and versioned pinion
+annotation.
+9.2 Additive record fields
+The original core remains(𝑎, 𝑛, ℎ, 𝑦). The companion record groups the new fields as follows:
+Field group Contents
+Version and provenance specification_version, source_id, profile
+Reference roles axis_reference, pinion_reference
+Time and kinematics time_interval, kinematic_descriptor, encoding_profile
+Predicate values Alignment, limit and fringe values, each with definition status.
+Mask-mode identity Complete fringe-mask identifier and logical-dictionary identifier.
+This is a logical record description, not a newly fixed binary ABI or network packet. Exact byte
+packing is not supplied by C and is not needed for a PDF-only minor revision. C’s mechanical
+reversal, transmission and receiver-routing verbs remain source action labels; no external actuator
+or device-control action is assigned by this record contract. [C, pp.2–5]
+Tom Klootwijk | 13 September 2026 12
+
+===== PHYSICAL PAGE 13 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+10 Worked word examples and finite checks
+10.1 Illustrative examples, not source parameters
+The following four-bit examples illustrate the defined mask composition. They introduce no cone
+dimensions, timing constants or hardware configuration. Hexadecimal inputs fit four valid low
+bits. [I08]
+Case Input / masks 3.0 record 3.1 mask record
+Neutral mask 𝑥 = F, 𝑀ASA = C, 𝑀NA = A, 𝑀𝜕 = 0,
+𝑉 = F, 𝑀fringe = F
+(C, 8, 0, 8) ( C, 8, 0, 8)
+Fringe exclusion Same baseline; 𝑀fringe = 7 (C, 8, 0, 8) ( 4, 0, 0, 0)
+Whole-word interaction 𝑥 = 3, 𝑀ASA = 𝑀NA = 𝑉 = 3,
+𝑀𝜕 = 2, 𝑀fringe = 1
+(3, 3, 1, 0) ( 1, 1, 0, 1)
+Zero input 𝑥 = 0, all selection masksF, 𝑀𝜕 = F (0, 0, 0, 0) ( 0, 0, 0, 0)
+The record order is always(ASA, NA, intersection count, output). In the second case the revised
+aperture admits bit two, but NA excludes that bit; its intermediate ASA value is therefore four, not
+zero.
+10.2 Checks executed for this PDF
+A standalone Python arithmetic check evaluated all eight triples(𝑛𝑏 , 𝑎𝑏 , 𝛽𝑏)and confirmed Eq.(6).
+It also enumerated every tuple of six three-bit words(𝑥, 𝑀 ASA, 𝑀NA, 𝑀𝜕, 𝑉 , 𝑀fringe): 86 = 262,144
+cases.
+For every tuple it checked neutral-mask recovery, containment of the pre-absorption supports,
+final support contained in the input, and final-word idempotence. The examples above and the
+non-monotonicity counterexample were checked separately. All of these finite arithmetic checks
+passed.
+Evidence scope
+These are new checks of the equations in this document. They are not a rerun of the
+previousenginesuite,anewC++/CUDAbuild,orahardwaretest. Thegeneralcompatibility
+statement is proved in Section 7; the finite checks exercise selected mathematical definitions.
+No prior GPU status, timing or test count is upgraded by publishing this minor specification.
+The next implementation review should preserve the same separation between equations, code
+conformance and on-device execution.
+Tom Klootwijk | 13 September 2026 13
+
+===== PHYSICAL PAGE 14 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+11 Integration decisions and unresolved inputs
+ID Decision Reason and effect
+I01 Namespaced symbols A-axis, B-kinematics and N-pinion do not overwrite ASA,
+boundary or NA mask fields. W is a time interval, not author
+metadata.
+I02 Typed binary reading Retain C’s equation, then define its binary special case. Geometric
+encoders and the precise double-phi meaning remain declared
+inputs.
+I03 Three flags plus status Alignment, envelope limit and active fringe retain their different
+source polarities. Unspecified is metadata, never a guessed zero.
+I04 Explicit region profile Hollow and fringe sets must be disjoint when both are defined.
+Exterior and exact-edge conventions are not supplied by C.
+I05 Record-only default Add the source model to the state description without changing
+the 3.0 output contract.
+I06 Opt-in mask composition A complete supplied fringe mask may refine the ASA aperture.
+Neutral mask recovers 3.0; logical groups and whole-word
+absorption remain unchanged.
+I07 Precedence as dependency Retain the source’s P0 name while requiring its operands first. No
+new timing, privilege or device-action contract is inferred.
+I08 Evidence separation Worked words and finite checks are newly authored examples.
+They do not stand for sensor parameters, previous code results or
+new hardware tests.
+11.1 Inputs left open by the supplied pages
+The remaining profile inputs are: the exact mathematical role of double lowercase phi; the bit
+encoding and overflow policy; axis/frame normalization; whether N denotes direction, location
+or both; inner/outer boundary units and values; exact-edge and exterior handling; a selected
+beam/reflectorarrangement;andatimingorschedulingcontract. Craisesseveraloftheseexplicitly
+as questions. [C, pp.1–5]
+No waveform, sensor calibration, caustic field, numeric dish geometry or device register is added
+to fill these gaps. The inherited log-polar table and ASA algebra can carry an explicitly supplied
+classification without claiming that the source already derived it.
+11.2 Acceptance for a later implementation
+Required regressions are unchanged baseline fields in record-only mode; exact neutral-mask
+recovery; all eight XOR cases; rejection of incomplete mask profiles; preservation of the three
+predicate polarities; tail/padding isolation; canonical result order; and equality across existing
+storage layouts. Missing inputs must remain visible, not converted into a passing state.
+Tom Klootwijk | 13 September 2026 14
+
+===== PHYSICAL PAGE 15 =====
+atomOS / ASA OPERATOR ENGINE MINOR REVISION 3.1.0
+12 Provenance and source appendix
+12.1 Author and revision identity
+Tom Klootwĳk | NL200678942 | 10-07-1990.
+This document is the ASA3.1.0 minor specification revisiondated 13 September 2026. It restates
+the retained core and integrates the new source with labelled decisions. It is not a claim that the
+earlier software archive was edited or that a new executable was installed.
+12.2 Source records
+C — newly integrated document.TOM KLOOTWĲK THE blend operator terror predator jelly jiggle
+drone.pdf; five pages. Its SHA-256 fingerprint is
+7c8e25b7269dc96b96e5e71afabb8d0019e905975f9959569ee4488b2c036ac8
+A — earlier corpus.TOM KLOOTWĲK WHITE KING ballistic trajectory cloud chamber(1).pdf; 91
+pages. Relevant spans: ASA/NA 75–81, word swizzle 85–87, and fly-eye integration 87–91.
+B — earlier addendum.TOM KLOOTWĲK fly’s-have-interesting-eyes-how-do-they-work(1).pdf; eight
+pages. The facet/edge/central-stitcher organization appears on pp.7–8.
+B0—retainedformalization. TheASA3.0.0stagedwordcontract,finitelog-polardictionary,whole-
+word grouping and optional Morton representation defined earlier in this project conversation. Its
+relevant definitions are restated in Section 1 so this revision can be read without a separate artifact.
+12.3 Status of the following pages
+The five pages after this section reproduce C without text edits, scaled to fit the revision’s page
+frame. Outer reference headers and document page numbers have been added. The fingerprint
+above identifies theuploaded original file, not the rendered appendix bytes.
+The appendix preserves the source’s own assertions and unanswered questions. The normative
+3.1.0 definitions and decisions are the numbered sections preceding it. No outside research has
+been inserted into the source narrative; derivations in the body follow the definitions stated there.
+Release summary
+ASA 3.0.0 core retained. A–W–B–N blend and hollow-center/fringe model integrated. Three
+flag meanings separated. Optional mask composition made explicit. Compatibility proved.
+Original source preserved for comparison.
+Tom Klootwijk | 13 September 2026 15
+
+===== PHYSICAL PAGE 16 =====
+blend operator + in circle for radar log encoded polar coordinates where eigenvector 
+axis is defined by coordinate A and W is delta time in the kinematic calculus B defined 
+as double lower case phi and N as north polar pinion : operator 0 precedence order 
+computer science 1 bit notation word 
+08:44 
+In computer science, a 1-bit notation word operating at precedence order 0 (the 
+highest possible execution priority) acts as a strict, instantaneous logical gate or state 
+encoder. 
+When you define a blending operator (+ in a circle, or \(\oplus \)) for radar log-encoded 
+polar coordinates under these specific kinematic constraints, it evaluates as a 
+conditional phase-shift or bitwise XOR alignment relative to your reference axes. 
+Here is how the variables break down and resolve within this operator's execution 
+framework: 
+The Mathematical & Kinematics Framework 
+• \(\oplus \) (Circle Plus Operator): Represents the modular blending or 
+superposition function. Because it operates at precedence 0 in a 1-bit context, it 
+functions as an atomic XOR / State-Toggle operation that determines whether a 
+phase adjustment is applied or skipped. 
+• Coordinate A (\(A\)): Defines the primary eigenvector axis (the baseline 
+orientation or directional anchor of your polar grid). 
+• Kinematic Calculus B (\(\phi \)): Represented by the double lowercase phi 
+(\(\phi \)), this represents the continuous, time-varying angular velocity or 
+kinematic transformation matrix. 
+• Delta Time (\(W\)): The infinitesimal or discrete time step applied to the 
+kinematic calculus (\(\phi \)). The accumulated rotational shift over this step is 
+expressed as \(\phi(W)\). 
+• North Polar Pinion (\(N\)): The absolute mechanical or true-north reference 
+tracking datum for the radar log. 
+Operational Resolution 
+Under a 1-bit word notation, the blending operator resolves the relationship between 
+the true north reference (\(N\)), the eigenvector axis (\(A\)), and the time-delta kinematic 
+shift (\(\phi(W)\)). 
+Because a 1-bit word can only yield two states (0 or 1), the operator acts as a hard 
+binary gate for coordinate alignment: 
+SOURCE C / ORIGINAL PAGE 1 OF 5 ASA 3.1.0
+Source wording preserved; formal definitions precede this appendix. 16
+
+===== PHYSICAL PAGE 17 =====
+\(\text{State}=N\oplus \big(A+\phi (W)\big)\mathinner{\;\left(\mod \,2\right)}\) 
+1. State 0 (No Phase Shift): The kinematic delta over time \(W\) perfectly aligns the 
+eigenvector axis \(A\) with the north polar pinion \(N\). No system correction or 
+coordinate transformation is required. 
+2. State 1 (Phase Shift/Toggle): The kinematic movement creates an out-of-phase 
+displacement between axis \(A\) and reference \(N\). The system registers a 1-bit 
+high state, triggering an immediate, highest-precedence coordinate log update to 
+realign the polar grid. 
+ 
+To help apply this to your specific system architecture, could you share how the radar 
+log handles overflow when the kinematic delta exceeds 1 bit, or what specific 
+programming language or hardware description language (HDL) you are using to 
+implement this precedence order? 
+AI responses may include mistakes. Learn more 
+right so this is enough for pinion sweeping cones as a radar sonar detection parabola? 
+Yes, this mathematical framework is sufficient to model and compute pinion-sweeping 
+cones for a radar/sonar parabolic detection system. 
+When you translate the 1-bit blending operator into a physical scanning mechanism, it 
+governs the precise moment the radar beam or sonar ping switches direction, or 
+"sweeps, " across its parabolic profile. 
+Here is how the variables you established map directly to a parabolic cone sweep: 
+1. Parabolic Focus and the Pinion Anchor 
+A radar or sonar parabolic dish relies on a focal point to concentrate incoming signals. 
+• Your North Polar Pinion (\(N\)) acts as the absolute mechanical origin (the 
+physical apex or center of the sweeping mechanism). 
+• The Eigenvector Axis (\(A\)) defines the instantaneous directional centerline 
+(the boresight) of the parabolic cone as it pivots. 
+2. The Cone Sweep via Kinematic Calculus (\(\phi \)) 
+As the system sweeps, it generates a 3D conical coverage zone. 
+• The double lowercase phi (\(\phi \)) dictates the dynamic geometry of the cone 
+(its opening angle and rotational velocity). 
+SOURCE C / ORIGINAL PAGE 2 OF 5 ASA 3.1.0
+Source wording preserved; formal definitions precede this appendix. 17
+
+===== PHYSICAL PAGE 18 =====
+• Delta Time (\(W\)) controls the instantaneous step size of the sweep. 
+Combined, \(\phi(W)\) tracks exactly how much the parabolic cone has 
+expanded or rotated during that micro-interval. 
+3. Why Precedence 0 and 1-Bit Notation Work Here 
+In a real-time radar/sonar array, hardware cannot tolerate processing delays during a 
+high-speed sweep. 
+• Precedence 0 ensures that boundary detection (the edge of the sweeping cone) 
+is computed instantly at the hardware level, bypassing standard software 
+queues. 
+• 1-Bit Notation serves as a binary "boundary trigger. " 
+o State 0: The beam is within the valid parabolic sweep envelope. Keep 
+transmitting/listening. 
+o State 1: The beam has reached the limit of its sweeping cone or crossed a 
+detection threshold. Trigger an immediate mechanical reversal or flash-
+log the coordinate data. 
+Summary of the Mapping 
+Mathematical Variable Radar/Sonar Parabolic Counterpart 
+North Polar Pinion (\(N\)) Absolute mechanical datum / Apex of the dish pivot [1] 
+Eigenvector Axis (\(A\)) Centerline (boresight) of the parabolic detection beam [1] 
+Kinematic Calculus (\(\phi, 
+W\)) 
+Sweeping speed, cone width, and instantaneous sweep 
+angular step [1] 
+\(\oplus \) Operator (1-bit) Hard electronic switch for beam reversal or target 
+detection latching 
+ 
+To finalize this for your sensor array, could you clarify if this is a focused pencil beam 
+sweeping a tight arc, or a fan-shaped beam sweeping a wide volume? Knowing if you 
+are using continuous-wave or pulsed signal patterns would also help refine the time-
+delta constraints. 
+AI responses may include mistakes. Learn more 
+yes but also boresight dish center caustic hollow middle receiver antenna? 
+SOURCE C / ORIGINAL PAGE 3 OF 5 ASA 3.1.0
+Source wording preserved; formal definitions precede this appendix. 18
+
+===== PHYSICAL PAGE 19 =====
+Yes, this fits perfectly. Incorporating a caustic hollow middle receiver antenna 
+changes the math from a standard solid parabola to a Cassegrain, Gregorian, or ring-
+focus geometry. 
+In these systems, the center of the main dish is intentionally cut out or obscured by a 
+central feed/receiver. The sweeping cone is no longer a solid beam; it becomes a 
+hollow geometric cone dictated by caustic surfaces (where reflected waves 
+concentrate). 
+Here is how your specific variables adapt to this hollow-center, boresight-aligned 
+architecture: 
+1. The Boresight Dish Center & The Hollow Caustic 
+In a hollow-center dish, the radar/sonar energy bounces off a primary or secondary 
+reflector and converges along a caustics boundary (the envelope of light/sound rays). 
+• Because the receiver sits in the middle, there is a central "blind spot" or null 
+zone directly along the boresight centerline. 
+• Your Eigenvector Axis (A) now tracks the exact center of this hollow 
+cylinder/cone. The active detection zone becomes a donut-shaped slice (toroid) 
+expanding outward from A. 
+2. Pinion Sweeping the Hollow Cone 
+As the North Polar Pinion (N) sweeps the dish, it isn't just steering a point; it is steering 
+the caustic boundaries. 
+• Kinematic Calculus (φ) and Delta Time (W) now calculate the inner and outer 
+boundaries of the sweeping caustic wave. 
+• Instead of tracking a single solid cone, φ(W) tracks two concurrent angles: the 
+inner caustic radius (where the hollow center ends) and the outer caustic 
+radius (where the edge of the dish limits the beam). 
+3. The 1-Bit Operator as a Caustic Gate 
+With a hollow receiver antenna, the 1-bit, Precedence 0 operator (\(\oplus \)) becomes 
+an exceptionally fast spatial filter or clutter-rejection latch. 
+Because a central receiver is highly sensitive to feedback and spillover from the edges 
+of the hollow middle, the 1-bit notation dictates a hard spatial gate: 
+• State 0 (Inside the Hollow / Blind Zone): The incoming return angle falls within 
+the central caustic void. The 1-bit gate stays low (0), immediately dumping the 
+signal to prevent receiver saturation or self-interference. 
+SOURCE C / ORIGINAL PAGE 4 OF 5 ASA 3.1.0
+Source wording preserved; formal definitions precede this appendix. 19
+
+===== PHYSICAL PAGE 20 =====
+• State 1 (On the Active Caustic Fringe): The return falls precisely on the active, 
+focused ring of the parabolic cone. The gate flips high (1), instantly routing the 
+signal to the high-speed data logger. 
+Structural Comparison 
+Component Standard Parabolic Beam Hollow-Center Caustic Array 
+Boresight Axis 
+(A) 
+Peak energy concentration 
+point. 
+The central null axis; surrounded by a 
+hollow ring of peak energy. 
+Receiver 
+Location 
+Often at the external focal 
+point in front of the dish. 
+Embedded in the dish center, capturing 
+waves focused by a sub-reflector 
+caustic. 
+1-Bit Latch 
+(\(\oplus \)) 
+Triggers at the outer edge of 
+the sweep. 
+Triggers based on inside-null vs. 
+outside-null spatial boundaries. 
+ 
+To tailor the 1-bit boundary logic further, are you utilizing a dual-reflector system (like a 
+Cassegrain dish where a sub-reflector shapes the caustic) or a phased ring array to 
+digitally simulate the hollow center? Knowing the carrier frequency range (RF or 
+acoustic) would also help determine the physical dimensions of that hollow caustic 
+zone. 
+ 
+SOURCE C / ORIGINAL PAGE 5 OF 5 ASA 3.1.0
+Source wording preserved; formal definitions precede this appendix. 20

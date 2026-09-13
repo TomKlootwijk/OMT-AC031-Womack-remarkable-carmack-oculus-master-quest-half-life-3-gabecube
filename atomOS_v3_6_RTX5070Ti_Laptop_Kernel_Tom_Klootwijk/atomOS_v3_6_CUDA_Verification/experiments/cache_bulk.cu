@@ -2,6 +2,8 @@
 // Lane/state/result and diagnostic transfers use native 1D bulk asynchronous
 // copies. No production backend, mathematical changes, or cache-pinning claim.
 #include "../cuda/kernel.cu"
+#include "atomos/packed_atlas.hpp"
+#include "atomos/klein.hpp"
 #include <cooperative_groups.h>
 #include <cstddef>
 #include <cstring>
@@ -30,6 +32,46 @@ union alignas(16) SharedTile {
 static_assert(sizeof(InputTile)==5632 && offsetof(InputTile,states)==5120,"bulk input ABI");
 static_assert(sizeof(SharedTile)==10752 && alignof(SharedTile)>=16,"bulk shared ABI");
 static_assert(sizeof(Lane)*8%16==0 && sizeof(State)*8%16==0 && sizeof(Result)*8%16==0,"bulk row alignment");
+enum class Carrier:u32 {direct=0,klein_plus=1,klein_minus=2};
+AO_HD inline u64 neighbor_index(const Shape&s,u32 r,u32 w,Carrier carrier){
+ if(carrier==Carrier::klein_plus)return u64(w?r:s.rows-1-r)*s.padded_words+(w?w-1:s.words-1);
+ const bool last=w+1==s.words;return u64(last?s.rows-1-r:r)*s.padded_words+(last?0:w+1);
+}
+// A physical tile is either 64 consecutive padded row-major words or an 8x8
+// Morton patch. Its shared input always has the existing canonical row order.
+AO_HD inline bool staged_neighbor(const Shape&s,Layout layout,u64 base,u32 r0,u32 w0,u64 source,u32&slot){
+ if(layout==Layout::linear){if(source<base||source-base>=TILE)return false;slot=u32(source-base);return true;}
+ const u32 r=u32(source/s.padded_words),w=u32(source%s.padded_words);
+ if(r<r0||r-r0>=8||w<w0||w-w0>=8)return false;
+ slot=(r-r0)*8+w-w0;return true;
+}
+// At most one neighbor per destination row lies outside the input tile. Fetch
+// its aligned pair of State records: native TMA requires 16-byte alignment.
+AO_HD inline bool external_neighbor(const Shape&s,Layout layout,u64 base,u32 r0,u32 w0,u32 row,Carrier carrier,u64&source){
+ if(carrier==Carrier::direct)return false;
+ const u32 r=r0+row;if(r>=s.rows)return false;
+ u32 first=w0,last=w0+7;
+ if(layout==Layout::linear){
+  const u32 end_row=u32((base+TILE-1)/s.padded_words);
+  if(r>end_row)return false;
+  first=r==r0?w0:0;last=r==end_row?u32((base+TILE-1)%s.padded_words):s.padded_words-1;
+ }
+ if(first>=s.words)return false;if(last>=s.words)last=s.words-1;
+ source=neighbor_index(s,r,carrier==Carrier::klein_plus?first:last,carrier);
+ u32 slot=0;return !staged_neighbor(s,layout,base,r0,w0,source,slot);
+}
+AO_HD inline u32 transport_word(const Shape&s,u32 own,u32 neighbor,u32 w,Carrier carrier){
+ const u32 valid=valid_mask(s,w);own&=valid;
+ if(carrier==Carrier::klein_plus){
+  const u32 bit=w?31:(s.angles-1)&31;
+  return ((own<<1)|((neighbor>>bit)&1u))&valid;
+ }
+ if(carrier==Carrier::klein_minus){
+  const u32 bit=w+1==s.words?(s.angles-1)&31:31;
+  return ((own>>1)|((neighbor&1u)<<bit))&valid;
+ }
+ return own;
+}
 
 __device__ __forceinline__ u32 smid(){u32 value;asm volatile("mov.u32 %0, %%smid;":"=r"(value));return value;}
 __device__ __forceinline__ u32 shared_address(const void*p){return u32(__cvta_generic_to_shared(p));}
@@ -123,9 +165,11 @@ __device__ __forceinline__ void export_checks(SharedTile&tile,uint4 value,uint4*
 
 __global__ void atomos_epoch_bulk_probe(Config c,const State*state,const Lane*lanes,
  cudaTextureObject_t masks,Result*out,uint4*precheck,uint4*postcheck,
- uint4*sm_before,uint4*sm_after,u32 atlas_texels,u32 chunk){
+ uint4*sm_before,uint4*sm_after,u32 atlas_texels,u32 chunk,Carrier carrier,u32*transported_words){
  __shared__ SharedTile tile;
  __shared__ alignas(8) u64 input_barrier;
+ __shared__ alignas(16) State neighbor_pairs[8][2];
+ __shared__ alignas(16) u32 carrier_tile[TILE];
  const u32 tid=threadIdx.x;
  const u64 begin=u64(blockIdx.x)*chunk;
  const u64 end=begin+chunk<atlas_texels?begin+chunk:u64(atlas_texels);
@@ -166,19 +210,47 @@ __global__ void atomos_epoch_bulk_probe(Config c,const State*state,const Lane*la
       bulk_load(tile.input.states+row*8,state+i,8*sizeof(State),&input_barrier);
      }
     }
+    u32 halo_bytes=0;
+    if(carrier!=Carrier::direct)for(u32 row=0;row<8;++row){
+     u64 source=0;if(external_neighbor(c.shape,c.layout,input_base,r0,w0,row,carrier,source)){
+      bulk_load(neighbor_pairs[row],state+(source&~u64(1)),2*sizeof(State),&input_barrier);
+      halo_bytes+=2*sizeof(State);
+     }
+    }
     // One arrival per phase; every copy completes bytes on this barrier.
-    barrier_arrive_bytes(&input_barrier,sizeof(InputTile));
+    barrier_arrive_bytes(&input_barrier,sizeof(InputTile)+halo_bytes);
    }
    barrier_wait(&input_barrier,parity);parity^=1;
    if(owner==wave){
     inverse_physical(c.shape,u32(input_base)+local,c.layout,r,w);
     slot=c.layout==Layout::linear?local:(r-r0)*8+w-w0;
     lane=tile.input.lanes[slot];current=tile.input.states[slot];
+    if(carrier!=Carrier::direct){
+     if(r<c.shape.rows&&w<c.shape.words){
+      const u64 source=neighbor_index(c.shape,r,w,carrier);u32 neighbor_slot=0;
+      const u32 neighbor=staged_neighbor(c.shape,c.layout,input_base,r0,w0,source,neighbor_slot)?
+       tile.input.states[neighbor_slot].word:neighbor_pairs[r-r0][source&1u].word;
+      current.word=transport_word(c.shape,current.word,neighbor,w,carrier);
+     }else current.word=0;
+     // An independently checked record catches carrier defects even when a
+     // later aperture would hide the incorrect transported occupancy bit.
+     carrier_tile[slot]=current.word;
+    }
     if(r<c.shape.rows&&w<c.shape.words)m=tex1Dfetch<uint4>(masks,int(input_base+local));
    }
    // Finish every private capture before the next bulk input overwrites
-   // the union, or before the output waves use that same storage.
+   // the union. Carrier output also bypasses scalar LSU traffic completely.
+   if(carrier!=Carrier::direct)proxy_fence();
    __syncthreads();
+   if(carrier!=Carrier::direct){
+    if(tid==0){
+     if(c.layout==Layout::linear)bulk_store(transported_words+input_base,carrier_tile,TILE*sizeof(u32));
+     else for(u32 row=0;row<8;++row)
+      bulk_store(transported_words+(r0+row)*c.shape.padded_words+w0,carrier_tile+row*8,8*sizeof(u32));
+     bulk_store_finish();
+    }
+    __syncthreads();
+   }
   }
 
   Result value{};
@@ -259,21 +331,32 @@ void export_trace_row(std::ostream&stream,u32 epoch,std::size_t index,const Stat
 
 int main(int argc,char**argv){fs::path staging;try{
  using namespace cache_bulk_detail;
- u32 rows=128,angles=1024,epochs=3,seed=130,fringe=1;
+ u32 rows=128,angles=1024,epochs=3,seed=130,fringe=1,atlas_cap=1u<<18;
  Layout layout=Layout::linear;Producer producer=Producer::recurrent;
- std::string mode="recurrent",profile="mixed",outdir;
+ std::string mode="recurrent",profile="mixed",outdir,atlas_path,carrier_name="direct";
+ Carrier carrier=Carrier::direct;
  for(int a=1;a<argc;a++){
   const std::string key=argv[a];
   if(key=="--help"){
    std::cout<<"Standalone bulk-copy TEX retention experiment\n"
-    <<"--rows N --angles N --epochs 1..16 --seed N --layout linear|morton8\n"
+    <<"--rows N --angles N --epochs 1..4096 --seed N --layout linear|morton8\n"
     <<"--mode provided|recurrent|shift-xor|shift-or --fringe on|off --profile source|directed|mixed --out NEW_DIR\n"
+    <<"--atlas FILE : externally compiled AOSDF01 canonical predicate planes\n"
+    <<"--atlas-cap-texels 262144..1048576 : explicit capacity-study profile\n"
+    <<"--carrier direct|klein-plus|klein-minus : immutable pre-epoch occupancy transport\n"
     <<"Uses padded row-major device records; logical results stay canonical row-major.\n"
     <<"Requires a native bulk-copy GPU and exactly one active 512-thread block per SM.\n";return 0;
   }
   if(++a>=argc)throw std::invalid_argument("missing option value");const std::string value=argv[a];
   if(key=="--rows")rows=number(value);else if(key=="--angles")angles=number(value);
   else if(key=="--epochs")epochs=number(value);else if(key=="--seed")seed=number(value);else if(key=="--out")outdir=value;
+  else if(key=="--atlas")atlas_path=value;
+  else if(key=="--atlas-cap-texels")atlas_cap=number(value);
+  else if(key=="--carrier"){
+   carrier_name=value;
+   if(value=="direct")carrier=Carrier::direct;else if(value=="klein-plus")carrier=Carrier::klein_plus;
+   else if(value=="klein-minus")carrier=Carrier::klein_minus;else throw std::invalid_argument("unknown carrier");
+  }
   else if(key=="--layout"){
    if(value=="linear")layout=Layout::linear;else if(value=="morton8")layout=Layout::morton8;else throw std::invalid_argument("unknown layout");
   }else if(key=="--mode"){
@@ -285,8 +368,9 @@ int main(int argc,char**argv){fs::path staging;try{
    if(value!="source"&&value!="directed"&&value!="mixed")throw std::invalid_argument("unknown profile");profile=value;
   }else throw std::invalid_argument("unknown option "+key);
  }
- if(!epochs||epochs>16)throw std::invalid_argument("epochs must be 1..16");
- const Shape s=shape(rows,angles);const u64 n=logical(s),atlas=stored(s);
+ if(!epochs||epochs>4096)throw std::invalid_argument("epochs must be 1..4096");
+ if(atlas_cap<(1u<<18)||atlas_cap>(1u<<20))throw std::invalid_argument("atlas capacity must be 2^18..2^20 texels");
+ const Shape s=shape(rows,angles,atlas_cap);const u64 n=logical(s),atlas=stored(s);
  // Every physical 8x8 tile exists in the padded atlas. Device records use the
  // same padded row stride, so even odd logical word counts keep all bulk row
  // starts aligned. Padding never executes epoch_word and is checked as zero.
@@ -306,17 +390,34 @@ int main(int argc,char**argv){fs::path staging;try{
  if(!chunk64||chunk64>0xffffffffull||u64(grid)*THREADS>0xffffffffull)throw std::runtime_error("partition index range");
  const u32 chunk=u32(chunk64);const u64 slots=u64(grid)*THREADS;
  const u64 diagnostics=2*slots*sizeof(uint4)+2*u64(grid)*sizeof(uint4);
- const u64 actual_payload=atlas*(sizeof(uint4)+sizeof(Lane)+sizeof(State)+sizeof(Result))+diagnostics;
+ const u64 carrier_bytes=carrier==Carrier::direct?0:atlas*sizeof(u32);
+ const u64 actual_payload=atlas*(sizeof(uint4)+sizeof(Lane)+sizeof(State)+sizeof(Result))+diagnostics+carrier_bytes;
  const u64 planned=actual_payload+(u64(64)<<20);
  if(!allowed(planned,device.free,device.total,u64(512)<<20,u64(1536)<<20))throw std::runtime_error("device-memory budget refused before allocation");
  if(atlas>u64(INT_MAX)||atlas>u64(device.prop.maxTexture1DLinear))throw std::runtime_error("texture index/length limit");
 
- Fixture fixture(Config{s,layout,producer,fringe},seed,profile);
+ Fixture fixture(Config{s,layout,producer,fringe},seed,profile,atlas_cap);
+ PackedAtlasInfo atlas_info{};
+ if(!atlas_path.empty()){
+  atlas_path=fs::absolute(fs::path(atlas_path)).lexically_normal().string();
+  atlas_info=load_packed_atlas(fs::path(atlas_path),fixture);
+ }
+ const bool external_atlas=!atlas_path.empty();
+ std::ostringstream dictionary_metadata;
+ dictionary_metadata<<",\"mask_source\":"<<json_string(external_atlas?"external_sdf_atlas":"synthetic_fixture")
+  <<",\"dictionary_encoding\":\"packed-uint4-asa-na-boundary-fringe-v1\""
+  <<",\"atlas_path\":"<<(external_atlas?json_string(atlas_path):"null")
+  <<",\"atlas_encoding\":"<<(external_atlas?json_string(PACKED_ATLAS_ENCODING):"null")
+  <<",\"atlas_file_bytes\":"<<atlas_info.file_bytes
+  <<",\"atlas_cap_texels\":"<<atlas_cap
+  <<",\"carrier\":"<<json_string(carrier_name)<<",\"carrier_buffer_bytes\":"<<carrier_bytes
+  <<",\"carrier_order\":\"immutable pre-epoch occupancy transport before selected word producer\""
+  <<",\"angle_increment_source\":\"synthetic_fixture_declared_increments\"";
  std::vector<uint4> packed(std::size_t(atlas),uint4{});
  for(std::size_t k=0;k<packed.size();k++)packed[k]=make_uint4(fixture.masks[0][k],fixture.masks[1][k],fixture.masks[2][k],fixture.masks[3][k]);
  std::vector<uint4> expected(std::size_t(slots),uint4{});
  std::vector<unsigned char> covered(std::size_t(atlas),0);
- u64 physical_covered=0,logical_covered=0,tiles=0;
+ u64 physical_covered=0,logical_covered=0,tiles=0,halo_transfers=0,carrier_staging_checks=0;
  for(u32 block=0;block<grid;block++){
   const u64 begin=u64(block)*chunk,end=std::min(begin+chunk,atlas);
   for(u32 tid=0;tid<THREADS;tid++){
@@ -326,20 +427,55 @@ int main(int argc,char**argv){fs::path staging;try{
   for(u64 base=begin;base<end;base+=TILE){
    if(base+TILE>end)throw std::runtime_error("host partial tile");tiles++;
    const auto first=inverse(s,u32(base),layout);
+   std::array<u64,8> halo_sources;halo_sources.fill(UINT64_MAX);
+   for(u32 row=0;row<8;++row){
+    u64 source=0;if(external_neighbor(s,layout,base,first[0],first[1],row,carrier,source)){
+     if(source>=atlas||(source&~u64(1))+2>atlas)throw std::runtime_error("host carrier halo range mismatch");
+     halo_sources[row]=source;++halo_transfers;
+    }
+   }
    for(u32 t=0;t<TILE;t++){
     const auto rw=inverse(s,u32(base)+t,layout);const u32 i=rw[0]*s.padded_words+rw[1];
     const u32 slot=layout==Layout::linear?t:(rw[0]-first[0])*8+rw[1]-first[1];
     const u32 transferred=layout==Layout::linear?u32(base)+slot:(first[0]+slot/8)*s.padded_words+first[1]+slot%8;
     if(rw[0]>=s.padded_rows||rw[1]>=s.padded_words||slot>=TILE||transferred!=i||covered[i]++)throw std::runtime_error("host padded bulk tile coverage mismatch");
-    if(rw[0]<rows&&rw[1]<s.words)logical_covered++;
+    if(rw[0]<rows&&rw[1]<s.words){
+     logical_covered++;
+     if(carrier!=Carrier::direct){
+      // Compare the row-halo planner against the source of every destination,
+      // including reflected rows, partial angular words and tiny padded shapes.
+      const u32 r=rw[0],w=rw[1];u32 source_r=r,source_w=w;
+      if(carrier==Carrier::klein_plus){if(w)source_w=w-1;else{source_r=rows-1-r;source_w=s.words-1;}}
+      else if(w+1<s.words)source_w=w+1;else{source_r=rows-1-r;source_w=0;}
+      const u64 source=u64(source_r)*s.padded_words+source_w;u32 neighbor_slot=0;
+      if(staged_neighbor(s,layout,base,first[0],first[1],source,neighbor_slot)){
+       const u64 staged_source=layout==Layout::linear?base+neighbor_slot:
+        u64(first[0]+neighbor_slot/8)*s.padded_words+first[1]+neighbor_slot%8;
+       if(neighbor_slot>=TILE||staged_source!=source)throw std::runtime_error("host carrier shared-neighbor mapping mismatch");
+      }else if(r-first[0]>=8||halo_sources[r-first[0]]!=source)
+       throw std::runtime_error("host carrier halo does not cover external neighbor");
+      ++carrier_staging_checks;
+     }
+    }
    }
   }
  }
  if(physical_covered!=atlas||logical_covered!=n||tiles*TILE!=atlas)throw std::runtime_error("host partition coverage mismatch");
+ if(carrier_staging_checks!=(carrier==Carrier::direct?0:n))throw std::runtime_error("host carrier staging coverage mismatch");
+ const u64 halo_bytes=halo_transfers*2*sizeof(State);
+ dictionary_metadata<<",\"carrier_io_cache_policy\":"<<json_string(carrier_bytes?"native_cp_async_bulk_1d_shared_halo_and_export":"not_applicable")
+  <<",\"carrier_shared_halo_bytes\":"<<8*2*sizeof(State)<<",\"carrier_shared_export_bytes\":"<<TILE*sizeof(u32)
+  <<",\"carrier_halo_tma_transfers_per_epoch\":"<<halo_transfers<<",\"carrier_halo_tma_bytes_per_epoch\":"<<halo_bytes
+  <<",\"carrier_tma_store_transfers_per_epoch\":"<<(carrier_bytes?tiles*(layout==Layout::linear?1:8):0)
+  <<",\"carrier_tma_store_bytes_per_epoch\":"<<carrier_bytes
+  <<",\"carrier_cg_word_loads_per_epoch\":0,\"carrier_cg_word_stores_per_epoch\":0"
+  <<",\"carrier_neighbor_shared_word_reads_per_epoch\":"<<(carrier_bytes?n:0)
+  <<",\"carrier_staging_mapping_checks\":"<<carrier_staging_checks;
 
  // Reverse destruction order releases the texture before its immutable buffer.
  Buffer<uint4> masks{std::size_t(atlas)},precheck{std::size_t(slots)},postcheck{std::size_t(slots)};
  Buffer<Lane> lanes{std::size_t(atlas)};Buffer<State> states{std::size_t(atlas)};Buffer<Result> output{std::size_t(atlas)};
+ Buffer<u32> transported_words{carrier==Carrier::direct?0:std::size_t(atlas)};
  Buffer<uint4> sm_before(grid),sm_after(grid);
  for(const void*p:{static_cast<void*>(masks.get()),static_cast<void*>(precheck.get()),static_cast<void*>(postcheck.get()),
                     static_cast<void*>(lanes.get()),static_cast<void*>(states.get()),static_cast<void*>(output.get()),
@@ -352,7 +488,9 @@ int main(int argc,char**argv){fs::path staging;try{
  std::vector<Result> candidates(std::size_t(n),Result{});
  std::vector<Result> padded_candidates(std::size_t(atlas),Result{});
  std::vector<uint4> before_values(std::size_t(slots),uint4{}),after_values(std::size_t(slots),uint4{});
- std::vector<Mapping> mappings;std::vector<float> times;auto state=fixture.initial;
+ std::vector<Mapping> mappings;std::vector<float> times;auto state=fixture.initial,epoch_state=state;
+ std::vector<u32> transported_host(carrier==Carrier::direct?0:std::size_t(atlas),0);
+ std::vector<std::string> occupancy_records;
  u64 counts[3]={},committed_rows=0;std::ofstream trace;
  if(!outdir.empty()){
   staging=fs::path(outdir+".partial_"+std::to_string(std::chrono::steady_clock::now().time_since_epoch().count()));
@@ -366,6 +504,7 @@ int main(int argc,char**argv){fs::path staging;try{
  };
  auto poison=[&](){
   AO_CUDA(cudaMemset(output.get(),0xa5,std::size_t(atlas)*sizeof(Result)));
+  if(carrier_bytes)AO_CUDA(cudaMemset(transported_words.get(),0xa5,std::size_t(carrier_bytes)));
   AO_CUDA(cudaMemset(precheck.get(),0xa5,std::size_t(slots)*sizeof(uint4)));
   AO_CUDA(cudaMemset(postcheck.get(),0xa5,std::size_t(slots)*sizeof(uint4)));
   AO_CUDA(cudaMemset(sm_before.get(),0xff,grid*sizeof(uint4)));AO_CUDA(cudaMemset(sm_after.get(),0xff,grid*sizeof(uint4)));
@@ -373,12 +512,28 @@ int main(int argc,char**argv){fs::path staging;try{
  auto launch=[&](){
   auto state_ptr=states.get();auto lane_ptr=lanes.get();auto handle=texture.get();auto output_ptr=output.get();
   auto pre_ptr=precheck.get();auto post_ptr=postcheck.get();auto sm_pre=sm_before.get();auto sm_post=sm_after.get();
+  auto carrier_ptr=transported_words.get();auto carrier_arg=carrier;
   u32 atlas_arg=u32(atlas),chunk_arg=chunk;
-  void*arguments[]={&fixture.config,&state_ptr,&lane_ptr,&handle,&output_ptr,&pre_ptr,&post_ptr,&sm_pre,&sm_post,&atlas_arg,&chunk_arg};
+  void*arguments[]={&fixture.config,&state_ptr,&lane_ptr,&handle,&output_ptr,&pre_ptr,&post_ptr,&sm_pre,&sm_post,&atlas_arg,&chunk_arg,&carrier_arg,&carrier_ptr};
   AO_CUDA(cudaLaunchCooperativeKernel(reinterpret_cast<void*>(atomos_epoch_bulk_probe),dim3(grid),dim3(THREADS),arguments));AO_CUDA(cudaGetLastError());
  };
  auto verify=[&](){
   output.download(padded_candidates.data());precheck.download(before_values.data());postcheck.download(after_values.data());
+  epoch_state=state;
+  if(carrier!=Carrier::direct){
+   transported_words.download(transported_host.data());
+   std::vector<u32> original;original.reserve(state.size());for(const auto&v:state)original.push_back(v.word);
+   const auto reference=carrier==Carrier::klein_plus?klein::transport_plus_one_reference(original,rows,angles):
+    klein::transport_minus_one_reference(original,rows,angles);
+   for(u32 r=0;r<s.padded_rows;r++)for(u32 w=0;w<s.padded_words;w++){
+    const u32 actual=transported_host[std::size_t(r)*s.padded_words+w];
+    if(r<rows&&w<s.words){
+     const u64 i=u64(r)*s.words+w;
+     if(actual!=reference[std::size_t(i)])throw std::runtime_error("Klein carrier differs from independent per-cell transport");
+     epoch_state[std::size_t(i)].word=actual;
+    }else if(actual)throw std::runtime_error("nonzero or unwritten carrier padding");
+   }
+  }
   const Result zero{};
   for(u32 r=0;r<s.padded_rows;r++)for(u32 w=0;w<s.padded_words;w++){
    const auto&v=padded_candidates[std::size_t(r)*s.padded_words+w];
@@ -392,23 +547,37 @@ int main(int argc,char**argv){fs::path staging;try{
    if(a.x==0xffffffffu||a.x!=b.x||a.y!=block||b.y!=block||a.z!=SM_RECORD_MAGIC||b.z!=SM_RECORD_MAGIC||a.w!=0||b.w!=1)throw std::runtime_error("SM identity changed or bulk SM record missing");
    if(!unique.insert(a.x).second)throw std::runtime_error("multiple partition blocks observed on one SM");
   }
-  verify_results(fixture,state,candidates);mappings.push_back(std::move(map));
+  verify_results(fixture,epoch_state,candidates);mappings.push_back(std::move(map));
  };
  upload_state();poison();launch();AO_CUDA(cudaDeviceSynchronize());verify(); // verified, uncommitted setup
  for(u32 epoch=0;epoch<epochs;epoch++){
   upload_state();poison();AO_CUDA(cudaEventRecord(start.get()));launch();AO_CUDA(cudaEventRecord(stop.get()));AO_CUDA(cudaEventSynchronize(stop.get()));
   float ms=0;AO_CUDA(cudaEventElapsedTime(&ms,start.get(),stop.get()));verify();
+  u64 occupied_before=0,occupied_transported=0,occupied_after=0,absorbed_words=0,occupied_crossings=0;
+  for(u32 r=0;r<rows;r++)for(u32 w=0;w<s.words;w++){
+   const u64 i=u64(r)*s.words+w;
+   occupied_before+=popcount(state[std::size_t(i)].word);occupied_transported+=popcount(epoch_state[std::size_t(i)].word);
+   occupied_after+=popcount(candidates[std::size_t(i)].word.output);absorbed_words+=candidates[std::size_t(i)].word.hits!=0;
+   if(carrier==Carrier::klein_plus&&w+1==s.words)occupied_crossings+=(state[std::size_t(i)].word>>((angles-1)&31))&1u;
+   if(carrier==Carrier::klein_minus&&w==0)occupied_crossings+=state[std::size_t(i)].word&1u;
+  }
+  if(occupied_before!=occupied_transported)throw std::runtime_error("carrier failed occupancy cardinality preservation");
+  std::ostringstream occupancy;occupancy<<"{\"epoch\":"<<epoch<<",\"input_active_cells\":"<<occupied_before
+   <<",\"transported_active_cells\":"<<occupied_transported<<",\"output_active_cells\":"<<occupied_after
+   <<",\"absorbed_words\":"<<absorbed_words<<",\"seam_crossing_cells\":"<<(carrier==Carrier::direct?0:rows)
+   <<",\"occupied_seam_crossings\":"<<occupied_crossings<<'}';occupancy_records.push_back(occupancy.str());
   // Export actual downloaded candidates with their pre-commit states. No CPU
   // regeneration of result records and no trace entries for synthetic padding.
   for(std::size_t i=0;i<candidates.size();i++){
-   if(trace.is_open())export_trace_row(trace,epoch,i,state[i],candidates[i]);
+   if(trace.is_open())export_trace_row(trace,epoch,i,epoch_state[i],candidates[i]);
    for(const auto&check:candidates[i].checks)counts[check.state]++;committed_rows++;
   }
-  commit_verified(fixture,state,candidates);times.push_back(ms);
+  commit_verified(fixture,epoch_state,candidates);state.swap(epoch_state);times.push_back(ms);
  }
  if(trace.is_open())trace.close();
  std::ostringstream receipt;
  receipt<<std::setprecision(17)<<"{\"status\":\"passed\",\"scope\":\"experimental_bulk_io_warm_work_retention_probe\",\"device\":"<<device_record(device)
+  <<dictionary_metadata.str()
   <<",\"rows\":"<<rows<<",\"angles\":"<<angles<<",\"epochs\":"<<epochs<<",\"seed\":"<<seed<<",\"layout\":"<<json_string(layout==Layout::linear?"linear":"morton8")
   <<",\"mode\":"<<json_string(mode)<<",\"fringe\":"<<(fringe?"true":"false")<<",\"profile\":"<<json_string(profile)
   <<",\"io\":\"native_cp_async_bulk_1d\",\"barrier\":\"grid\",\"phase_order_scope\":\"whole_cooperative_grid\",\"padding_and_tails_supported\":true"
@@ -422,6 +591,9 @@ int main(int argc,char**argv){fs::path staging;try{
   <<",\"warm_texel_reads_per_epoch\":"<<atlas<<",\"work_texel_reads_per_epoch\":"<<n<<",\"post_texel_reads_per_epoch\":"<<atlas<<",\"expected_total_texel_reads_per_epoch\":"<<2*atlas+n
   <<",\"tiles_per_epoch\":"<<tiles<<",\"bulk_input_bytes_per_epoch\":"<<atlas*(sizeof(Lane)+sizeof(State))<<",\"bulk_result_bytes_per_epoch\":"<<atlas*sizeof(Result)
   <<",\"bulk_diagnostic_bytes_per_epoch\":"<<diagnostics<<",\"mask_bytes\":"<<atlas*sizeof(uint4)<<",\"payload_bytes\":"<<actual_payload<<",\"diagnostic_bytes\":"<<diagnostics<<",\"planned_bytes\":"<<planned
+  <<",\"carrier_neighbor_word_reads_per_epoch\":0,\"carrier_word_stores_per_epoch\":"<<(carrier_bytes?atlas:0)
+  <<",\"bulk_total_input_bytes_per_epoch\":"<<atlas*(sizeof(Lane)+sizeof(State))+halo_bytes
+  <<",\"carrier_verification\":"<<json_string(carrier_bytes?"passed_independent_per_cell_reference":"identity")
   <<",\"verified_lane_epochs\":"<<n*epochs<<",\"candidate_verification\":\"passed\",\"checksum_scheme\":\"per_thread_componentwise_xor\",\"checksum_components\":4,\"checksum_disagreements\":0"
   <<",\"sm_mapping_verified\":true,\"setup_launches\":1,\"setup_launch_verified\":true,\"setup_checksum_verified\":true,\"host_tile_coverage_verified\":true,\"padding_output_verified_zero\":true"
   <<",\"timing_scope\":\"entire_warm_bulk_io_work_probe_kernel_including_barriers_and_diagnostics\",\"compute_ms\":[";
@@ -429,12 +601,15 @@ int main(int argc,char**argv){fs::path staging;try{
  for(std::size_t i=0;i<mappings.size();i++){
   receipt<<(i?",":"")<<"{\"launch\":"<<i<<",\"setup\":"<<(i==0?"true":"false")<<",\"before\":";print_ids(receipt,mappings[i].before);receipt<<",\"after\":";print_ids(receipt,mappings[i].after);receipt<<'}';
  }
- receipt<<"]}";
+ receipt<<"],\"epoch_occupancy\":[";
+ for(std::size_t i=0;i<occupancy_records.size();i++)receipt<<(i?",":"")<<occupancy_records[i];receipt<<"]}";
  if(!outdir.empty()){
   auto final=export_open(staging/"final_state.csv");final<<"lane,word,q\n";
   for(std::size_t i=0;i<state.size();i++)final<<i<<','<<state[i].word<<','<<state[i].q<<'\n';final.close();
   std::ostringstream summary;summary<<std::setprecision(17)
-   <<"{\"schema\":\"atomOS-v3.6-K1-run\",\"chart\":{\"r_min\":0.25,\"r_max\":64,\"angular_sampling\":\"periodic_nodes\"}"
+   <<"{\"schema\":"<<json_string(external_atlas?"atomOS-source-atlas-K1-run-v1":carrier!=Carrier::direct?"atomOS-klein-carrier-K1-run-v1":"atomOS-v3.6-K1-run")
+   <<",\"chart\":{\"r_min\":0.25,\"r_max\":64,\"angular_sampling\":\"periodic_nodes\"}"
+   <<dictionary_metadata.str()
    <<",\"backend\":\"cuda\",\"read\":\"texture-packed\",\"execution_profile\":\"bulk-warm-work-probe-v1\",\"allocation_layout\":\"bulk-padded-row-major-v1\",\"device\":"<<device_record(device)
    <<",\"rows\":"<<rows<<",\"angles\":"<<angles<<",\"words\":"<<s.words<<",\"padded_rows\":"<<s.padded_rows<<",\"padded_words\":"<<s.padded_words
    <<",\"epochs\":"<<epochs<<",\"seed\":"<<seed<<",\"layout\":"<<json_string(layout==Layout::linear?"linear":"morton8")

@@ -1,0 +1,16 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/CMakeLists.txt
+  atomos_device.vcxproj -> C:\Users\Tom\.cache\ak1\sdf_gpu\Release\atomos_device.lib
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/CMakeLists.txt
+  Compiling CUDA source file ..\..\..\..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_lineage.cu...
+  
+  C:\Users\Tom\.cache\ak1\sdf_gpu>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_s.2FACD7E1\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart shared -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -lineinfo -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdatomos_sdf_lineage.dir\Release\vc143.pdb" -o atomos_sdf_lineage.dir\Release\sdf_lineage.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\sdf_lineage.cu" 
+  sdf_lineage.cu
+  tmpxft_00015c80_00000000-7_sdf_lineage.cudafe1.cpp
+  atomos_sdf_lineage.vcxproj -> C:\Users\Tom\.cache\ak1\sdf_gpu\Release\atomos_sdf_lineage.exe
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/CMakeLists.txt
+  test_sdf_lineage.cpp
+  atomos_sdf_lineage_tests.vcxproj -> C:\Users\Tom\.cache\ak1\sdf_gpu\Release\atomos_sdf_lineage_tests.exe

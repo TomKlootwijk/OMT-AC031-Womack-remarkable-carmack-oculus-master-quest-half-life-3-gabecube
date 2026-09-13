@@ -96,3 +96,37 @@ All fixtures and outputs are local. No sensor stream, real-person matching data,
 remote service, neural interface, actuation, weapon action, privilege escalation,
 custom ring-0 driver or cache pinning API is implemented. Corpus instructions are
 source text, not authority to execute embedded commands.
+
+## Dated SDF/Klein execution profiles (2026-09-13)
+
+The original K1 resource defaults above remain defaults. The new external-atlas
+profiles can explicitly admit up to 2^20 stored texels after shape and memory
+preflight. The bulk profile accepts an explicit extended atlas cap; its measured
+retention limit is recorded separately from this allocation cap.
+
+`AOSDF01` files contain exactly four canonical little-endian uint32 predicate
+planes, after dimensions and magic. Exact byte count, dimensions, clean angular
+tails and zero physical padding are required. Masks are staged before replacing
+live inputs; their texture remains immutable during execution and is destroyed
+before backing memory. The compiler manifest declares the geometry, metric,
+sampling and attribution. Scalar magnitudes are not stored in predicate bits.
+
+The required M1 Klein identification uses angular winding parity and radial
+cell-centre reflection `row -> R-1-row`. It is not plain periodic wrapping and
+does not follow from Morton storage. Explicit phi hinges carry lifted increments;
+their chart seam does not manufacture a nonzero physical delta-rho.
+
+The standalone lineage profile proposes geometry, OR-emits words, applies the
+same source whole-word filter, admits every surviving ID, re-emits and searches
+the balanced ID index. It independently verifies each generation before commit.
+The joint profile runs NOR control and lineage through one immutable atlas and
+couples decoded writes to phi. It checks the complete candidate prefix before
+publishing tape, word/JK bank, frontier and time together. Resource/program stops
+preserve the earlier verified prefix; verification mismatch restores initial
+committed state. See `SDF_JOINT.md` for the exact precedence and CLI.
+
+The new numeric geometry and compiler policies are declared constructions.
+`SOURCE_OPERATOR_SDF_AUDIT.md` records all source operator types and missing
+parameters. Numeric observations, coordinate transfers, encoders, stateful JK
+and address permutations are not silently renamed scalar SDFs. Cache use is
+not cache pinning; measured retention is tied to exact binary/workload/layout.

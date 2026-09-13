@@ -3,10 +3,30 @@
 **Concept author: Tom Klootwijk Â· NL200678942 Â· 10-07-1990**  
 **Target: NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12 GB GDDR7, `sm_120`.**
 
+**Scope correction, 2026-09-13:** the author's required target is operator SDFs
+sampled into one-bit words on the log-polar/Klein dictionary, executed through
+resident-as-measured CUDA textures. The earlier synthetic-mask K1 and separate U1
+results do not complete that target. The corrected declared SDF/Klein/NOR/lineage
+profiles now have actual native validation and a connected shared-atlas run; see
+`docs/COURSE_CORRECTION_SDF_KLEIN.md` and `docs/SDF_JOINT.md`. The source defines
+binary SDF_WORD rules; a scalar distance equation for every named original
+operator remains unspecified. Historical counts below retain their original scope.
+
+The corrected report is
+`output/pdf/Tom_Klootwijk_atomOS_SDF_Klein_LSystem_Validation.pdf`, with evidence in
+`results/sdf_klein_20260913/final_summary.json`. New native executables are copied
+to `output/bin/sdf_klein_20260913/`. The connected profile uses one immutable
+SDF-word texture for both NOR computation and controller-driven Klein branching.
+It passed 104 native cases and 18 sanitizer runs across two atlas shapes.
+Its complete 1 KiB operator atlas met the compulsory cold-miss floor in both
+layouts, twice each. The separate distributed bulk profile retained up to
+4.625 MiB in its measured schedule; 4.6875 MiB had extra misses. These are scoped
+within-launch measurements, not permanent pinning or a guarantee for every program.
+
 The Tom Klootwijk atomOS extension adds an executable programmable U lane,
 integrated with the word/JK/observation epoch, plus a parallel machine-capacity
 test. See `docs/UNIVERSAL_ENGINE.md` for editable programs and run commands.
-The latest report is `output/pdf/Tom_Klootwijk_atomOS_Kernel_Universality_Applications.pdf`;
+The earlier report is `output/pdf/Tom_Klootwijk_atomOS_Kernel_Universality_Applications.pdf`;
 its evidence is in `results/optimization_20260913/summary.json`. Earlier reviews
 below retain their original scope and counts.
 

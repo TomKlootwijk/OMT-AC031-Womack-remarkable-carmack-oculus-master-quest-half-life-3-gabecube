@@ -1,0 +1,25 @@
+run_000_1_33_linear_klein-plus_recurrent_1
+run_001_1_33_linear_klein-minus_recurrent_1
+run_002_1_33_morton8_klein-plus_recurrent_1
+run_003_1_33_morton8_klein-minus_recurrent_1
+run_004_9_33_linear_klein-plus_recurrent_1
+run_005_9_33_linear_klein-minus_recurrent_1
+run_006_9_33_morton8_klein-plus_recurrent_1
+run_007_9_33_morton8_klein-minus_recurrent_1
+run_008_17_700_linear_klein-plus_recurrent_1
+run_009_17_700_linear_klein-minus_recurrent_1
+run_010_17_700_morton8_klein-plus_recurrent_1
+run_011_17_700_morton8_klein-minus_recurrent_1
+memcheck_linear_klein-plus
+memcheck_linear_klein-minus
+memcheck_morton8_klein-plus
+memcheck_morton8_klein-minus
+racecheck_linear_klein-plus
+racecheck_linear_klein-minus
+racecheck_morton8_klein-plus
+racecheck_morton8_klein-minus
+synccheck_linear_klein-plus
+synccheck_linear_klein-minus
+synccheck_morton8_klein-plus
+synccheck_morton8_klein-minus
+{"status": "passed", "runs": 24, "study": "C:\\Users\\Tom\\.cache\\ak1\\sdf_tma_edges\\study.json"}

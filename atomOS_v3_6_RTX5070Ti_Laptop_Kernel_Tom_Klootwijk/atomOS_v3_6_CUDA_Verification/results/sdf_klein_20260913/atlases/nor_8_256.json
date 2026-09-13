@@ -1,0 +1,114 @@
+{
+  "schema": "atomos-sdf-atlas-v1",
+  "concept_author": "Tom Klootwijk",
+  "construction": "NEW explicit scalar SDF profile; not a recovered original distance/optical law",
+  "source": {
+    "master_sha256": "b51651c007c560775ff1950e278789cd7674e131ec71a09ebd9254cebe9c19ce",
+    "physical_pdf_pages": [
+      9,
+      10,
+      16,
+      17,
+      18,
+      27,
+      31,
+      32
+    ],
+    "original_white_king_pages": [
+      33,
+      34,
+      35,
+      63,
+      67,
+      76,
+      85,
+      86,
+      87
+    ]
+  },
+  "topology": "klein_m1_angular_twist",
+  "metric": "flat_normalized_quotient: ds^2=du^2+dv^2",
+  "deck_map": "(u,v)->((-1)^n*u+m,v+n), m,n integers",
+  "nodes": "radial_centers_angular_nodes",
+  "log_chart": "rho=ln(r/r_star), u=(rho-rho_min)/(rho_max-rho_min), v=phi/(2*pi)",
+  "sign": "inside/on boundary iff scalar SDF<=0; stored bit1",
+  "profile": "nor_sites",
+  "parameters": {
+    "profile": "nor_sites",
+    "rows": 8,
+    "angles": 256,
+    "r_min": 0.25,
+    "r_max": 64.0,
+    "r_star": 1.0,
+    "radius": 0.00078125
+  },
+  "rows": 8,
+  "angles": 256,
+  "words_per_row": 8,
+  "plane_order": [
+    "asa",
+    "na",
+    "boundary",
+    "fringe"
+  ],
+  "packing": "32 angular nodes per little-endian u32, canonical row-major; tail bits zero",
+  "stored_texels": 64,
+  "canonical_plane_payload_bytes": 1024,
+  "padded_four_plane_bytes": 1024,
+  "capacity_profile": {
+    "max_padded_texels": 1048576,
+    "max_padded_four_plane_bytes": 16777216,
+    "cache_residency": "not measured by compiler"
+  },
+  "minimum_abs_sdf": {
+    "asa": 0.00078125,
+    "na": 0.00078125,
+    "boundary": 0.00078125,
+    "fringe": 0.00078125
+  },
+  "set_bits": {
+    "asa": 192,
+    "na": 192,
+    "boundary": 128,
+    "fringe": 192
+  },
+  "seam_tests": {
+    "comparisons": 96,
+    "maximum_abs_error": 1.1102230246251565e-16,
+    "relations": [
+      "d(u+1,v)=d(u,v)",
+      "d(-u,v+1)=d(u,v)",
+      "negative angular seam"
+    ]
+  },
+  "atlas_sha256": "96fbafc72aa5688927f9e79174d0b0773026c20a402a11c1c9eae9e37e5e755e",
+  "site_offsets": {
+    "asa": [
+      0,
+      1,
+      2
+    ],
+    "na": [
+      0,
+      1,
+      2
+    ],
+    "boundary": [
+      1,
+      2
+    ],
+    "fringe": [
+      0,
+      1,
+      2
+    ]
+  },
+  "independent_expected_word_masks": [
+    7,
+    7,
+    6,
+    7
+  ],
+  "independent_all_bits_verified": true,
+  "verified_bits": 8192
+}

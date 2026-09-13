@@ -13,10 +13,11 @@
 namespace atomos {
 inline u64 stored(const Shape&s){return u64(s.padded_rows)*s.padded_words;}
 inline u64 logical(const Shape&s){return u64(s.rows)*s.words;}
-inline Shape shape(u32 rows,u32 angles){
+inline Shape shape(u32 rows,u32 angles,u64 atlas_limit=(u64(1)<<18)){
  if(!rows||!angles||rows>65536||angles>65536)throw std::invalid_argument("dimensions must be 1..65536");
+ if(atlas_limit<(u64(1)<<18)||atlas_limit>(u64(1)<<20))throw std::invalid_argument("atlas limit must be 2^18..2^20 stored words per plane");
  const u32 w=(angles+31)/32;Shape s{rows,angles,w,(rows+7)/8*8,(w+7)/8*8};
- if(stored(s)>(u64(1)<<18))throw std::invalid_argument("K1 atlas cap is 2^18 stored words per plane");
+ if(stored(s)>atlas_limit)throw std::invalid_argument("selected atlas cap exceeded");
  return s;
 }
 inline std::array<u32,2> inverse(const Shape&s,u32 k,Layout l){
@@ -37,8 +38,8 @@ inline void validate_lane(const Lane&l,const State&s){
 }
 struct Fixture {
  Config config;u32 seed;std::string angle_profile;std::array<std::vector<u32>,4> masks;std::vector<Lane> lanes;std::vector<State> initial;
- Fixture(Config c,u32 root=130,const std::string&p="mixed"):config(c),seed(root),angle_profile(p){
-  const Shape verified=shape(c.shape.rows,c.shape.angles);
+ Fixture(Config c,u32 root=130,const std::string&p="mixed",u64 atlas_limit=(u64(1)<<18)):config(c),seed(root),angle_profile(p){
+  const Shape verified=shape(c.shape.rows,c.shape.angles,atlas_limit);
   if(c.shape.words!=verified.words||c.shape.padded_rows!=verified.padded_rows||c.shape.padded_words!=verified.padded_words||u32(c.layout)>1||u32(c.producer)>3||c.fringe>1)
    throw std::invalid_argument("invalid configuration or padded dimensions");
   if(p!="source"&&p!="directed"&&p!="mixed")throw std::invalid_argument("profile must be source, directed or mixed");

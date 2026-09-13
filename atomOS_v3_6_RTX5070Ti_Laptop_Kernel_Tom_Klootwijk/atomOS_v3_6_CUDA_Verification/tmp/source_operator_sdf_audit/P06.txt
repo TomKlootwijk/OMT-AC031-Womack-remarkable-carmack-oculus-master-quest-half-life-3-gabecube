@@ -1,0 +1,342 @@
+
+===== PHYSICAL PAGE 1 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+1
+13 SEPTEMBER 2026 / ACTUAL RTX 5070 Ti LAPTOP EXECUTION
+atomOS v3.6
+Kernel validation &
+texture residency
+Concept author: Tom Klootwijk
+Native CUDA 12.8 / sm_120. Local synthetic K1 inputs. This report replaces the earlier partial-residency report and
+distinguishes the final binary from retained exploratory builds.
+RESULT
+OBSERVED EVIDENCE
+Full 4 MiB dictionary
+18/18 maximum-atlas cold profiles reached exactly 131,072 compulsory misses.
+The dictionary is distributed across 46 SM caches.
+After-warm retention
+24/24 final cold profiles reached their dictionary miss floor across default and
+additional shape/seed cases.
+Full computation retained
+212 bulk-path conformance runs; 26 complete exported traces independently
+checked by Python.
+Memory and synchronization
+Final bulk binary: six memchecks, four syncchecks and four racechecks. The
+rebuilt production binary passed six additional memchecks.
+Claim boundary
+Measured retention through the verified cooperative warm/work/reread epoch. No
+guaranteed cache pinning across launches or arbitrary competing workloads.
+What changed
+The optional bulk-copy kernel stages live inputs and results through native asynchronous shared/global transfers
+while masks stay on the texture path. Correctly rounded constants replace repeated sine/cosine calls for the fixed .4
+rotation. The final kernel uses 84 registers per thread and has zero stack/local allocation.
+Residency has an execution cost. The report includes all warming, probing, barriers and diagnostic work in ordinary kernel timing. A
+complete-residency observation is not a claim of the fastest possible K1 implementation.
+
+
+===== PHYSICAL PAGE 2 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+2
+ATOMOS v3.6 K1 / FINAL DEVICE REVIEW / 02
+What the cache result means
+The measurement starts cold, reads the entire physical dictionary, runs the real K1 epoch, and rereads the entire
+dictionary. Grid-wide barriers separate the phases. Inputs are immutable throughout. The host independently
+checks every candidate before committing word and JK state.
+PHASE
+COVERAGE / CHECK
+Warm
+Every packed uint4 texel, including physical padding. Each aligned 32-byte sector is
+required at least once.
+Real work
+All logical lanes execute the original producer, word disposition, JK, blend, OTAN2 and
+six diagnostic checks. Padding executes no logical work.
+Post-work reread
+Every physical texel again, on its owning cooperative block. Independent expected
+per-thread XOR digests cover all texels, but can collide.
+Ownership
+Exactly one active 512-thread block per SM is required. All 46 observed SM identifiers
+must be unique and unchanged at both endpoints of every launch.
+At 4 MiB, 4,194,304 / 32 = 131,072 unique texture sectors. A cold launch with exactly that many misses leaves no
+observed extra dictionary misses for work or the final reread. This inference depends on the recorded cold-cache
+and coverage conditions; the counters are aggregate, not separate measurements of a 100% hit rate in each phase.
+[1]
+SIZE / LAYOUT
+MISS FLOOR
+MEASURED MISS RANGE
+REPEATS AT FLOOR
+default / linear
+2,048
+2,048 - 2,048
+3/3
+default / morton8
+2,048
+2,048 - 2,048
+3/3
+max / linear
+131,072
+131,072 - 131,072
+3/3
+max / morton8
+131,072
+131,072 - 131,072
+3/3
+Nsight Compute: kernel replay, cache-control all, clock-control none, setup launch skipped, one measured launch per sample. Requested
+sectors, hits, misses, realized shared configuration, global-load traffic and profiler duration are retained with raw locale-aware CSV values.
+Missing metrics never become zero.
+Cache operators and carveout preferences are hints, not a supported texture-line pinning interface. Passing this experiment does not
+establish retention across a new launch or guarantee behavior on another GPU. [2]
+
+
+===== PHYSICAL PAGE 3 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+3
+ATOMOS v3.6 K1 / FINAL DEVICE REVIEW / 03
+Native transfer schedule and repairs
+The full dictionary is divided into aligned physical intervals. A 64-texel tile stages 64 Lane records plus 64 State
+records in shared memory. Once all readers have private values, the same shared union holds 64 complete Result
+records. Native bulk-copy completion and proxy fences protect every reuse. [3, 4]
+CHANGE
+WHY IT MATTERS
+Native bulk I/O
+cp.async.bulk moves Lane/State into shared memory and Results back to global memory. Mask 
+reads remain tex1Dfetch<uint4>. Diagnostic exports also use bulk copies.
+Fixed rotation folded exactly
+cos(binary64 .4) = 0x1.d7954e7dba2f8p-1; sin(binary64 .4) = 0x1.8ec3ae92b676bp-2. The
+original CPU/GPU literal and runtime calls matched both constants bit for bit.
+Exact rounding evidence
+40-term rational alternating Taylor sums and next-term bounds lie strictly inside the
+nearest-double rounding bins. The high-precision calculation and GPU value probe are separate
+evidence categories.
+Padded backing and canonical
+export
+Padded row-major Lane/State/Result buffers keep bulk ranges aligned. Morton physical tiles map
+explicitly to these records. Zero output padding is verified before canonical logical rows are
+gathered.
+Verify before commit
+Downloaded candidates, checksums, SM records and padding must all pass. Exported traces
+contain actual GPU results and pre-commit states; incomplete output remains in an uncommitted
+staging directory.
+The controlled padded before/after comparison changed only the fixed rotation constants in the computation:
+maximum-atlas excess misses fell from 508 to zero in the first sample of each layout. Registers also fell from 107 to
+84. This supports the compiled change; it does not isolate coefficient traffic as the sole microarchitectural cause.
+Literal atan(delta_phase / delta_rho), separately selected atan2 completion, whole-word absorption, explicit J/K, separate
+shift-XOR/shift-OR, unavailable statuses, Morton bit order and original comparison thresholds remain intact. The nearby rotated-singularity
+regression preserves the difference between literal and directed profiles.
+
+
+===== PHYSICAL PAGE 4 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+4
+ATOMOS v3.6 K1 / FINAL DEVICE REVIEW / 04
+Machine code and memory footprint
+FINAL BULK KERNEL
+MEASURED / INSPECTED VALUE
+Device / architecture
+NVIDIA GeForce RTX 5070 Ti Laptop GPU / compute capability 12.0
+Toolchain
+CUDA 12.8.61; MSVC 19.44.35221 (toolset 14.44.35207); CMake 4.3.2; native sm_120 plus
+compute_120 PTX
+Registers / stack / local
+84 per thread / 0 bytes / 0 bytes
+Shared allocation
+10,752-byte shared union + 8-byte barrier = 10,760 user bytes. cuobjdump reports 11,784
+bytes including the 1,024-byte difference.
+Realized shared configuration
+16,384 bytes in every final counter sample; maximum-L1 preference is recorded separately.
+Native texture / bulk instructions
+15 static TLD sites, 18 UBLKCP.S.G sites and 13 UBLKCP.G.S sites. Loop/unrolled sites are
+not dynamic traffic counts.
+Remaining global bookkeeping
+Zero ordinary LDG/STG in the inspected kernel body. Two generic load sites and two atomic
+sites support cooperative barriers; profiler global-load traffic is still nonzero.
+At the atlas cap, 262,144 uint4 texels occupy 4 MiB. On this 46-SM GPU each block owns at most 5,760 texels, or
+90 KiB. The 4 MiB is distributed across the SMs. It is not 4 MiB resident in each SM, and maximum-L1 is not
+evidence of an exclusively available texture-cache capacity. [2]
+ALLOCATION
+ACTUAL FORMULA
+Device payload
+272 x stored_texels + 16 x SMs x (2 x 512 + 2) bytes
+Diagnostics on this GPU
+755,136 bytes for pre/post thread digests and two uint4 SM records per block
+Admission
+Payload + 64 MiB margin; 512 MiB ceiling; preserve 1,536 MiB of actual free VRAM; retain the
+70%-of-free limit
+The final exporter binary and the pre-export folded binary have identical kernel SASS and encoded instruction words. Native code
+inspection supports instruction-path claims; it does not constitute a proof of the compiled binary. Source FMA contraction is disabled;
+explicit fused instructions used inside device math libraries may still occur.
+
+
+===== PHYSICAL PAGE 5 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+5
+ATOMOS v3.6 K1 / FINAL DEVICE REVIEW / 05
+Correctness and execution coverage
+EVIDENCE CATEGORY
+EXECUTED RESULT
+C++ contract regression checks
+32 groups / 134,521 assertions; includes fixed-rotation singularity and nearby available cases
+Independent Python regressions
+37 tests; includes rejected fabricated bulk profiles, incorrect memory accounting and
+incomplete receipts
+CPU execution
+7 CTest cases; 48 independently verified exported configurations
+Symbolic specification
+15 Z3 4.16.0 obligations: every negated property UNSAT. These are mathematical
+specifications, not a C++/CUDA binary proof.
+Rebuilt production CUDA
+144 normal configurations; 612,000 lane-epochs; six additional memchecks
+Final bulk conformance
+192 main + 20 additional aspect/seed cases; every candidate checked before commit
+Independent bulk trace exports
+26 runs / 626,288 lane-epochs recomputed by Python; run seals checked
+Bulk Compute Sanitizer
+6 memcheck + 4 synccheck + 4 racecheck runs; zero reported errors or race hazards/warnings
+The 192-case main bulk matrix covers 1x1, 17x257, 128x1024 and 512x16384 shapes; both layouts; all four
+producers; fringe on/off; source, directed and mixed diagnostic profiles; three committed epochs. Selected exports
+cover every producer and profile, with both maximum-atlas layouts exported for an additional one-epoch check.
+The additional 20 cases cover 1x65536, 32768x1, 128x65536, 511x16353 and 9x33, both layouts, and seeds 0 /
+4,294,967,295 with different producer/profile/fringe choices. Memory, synchronization and race checks include both
+padded-tail and full maximum fixtures.
+Largest independent floating discrepancy: production 8.88e-16 rad; bulk exports 8.88e-16 rad. Acceptance stays 2e-11 rad; the invariant
+threshold stays 1e-10. Integer fields, statuses, states and reasons compare exactly. CPU address/undefined-behavior sanitizers were not
+rerun in this Windows review.
+
+
+===== PHYSICAL PAGE 6 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+6
+ATOMOS v3.6 K1 / FINAL DEVICE REVIEW / 06
+Retention, traffic and execution cost
+SIZE / LAYOUT
+MEDIAN
+TRIAL RANGE
+SCOPE
+default / linear
+76.16 us
+71.10 - 81.34 us
+warm + work + probe
+default / morton8
+83.20 us
+76.58 - 84.54 us
+warm + work + probe
+max / linear
+2470.40 us
+2470.37 - 2472.38 us
+warm + work + probe
+max / morton8
+2482.82 us
+2480.67 - 2769.34 us
+warm + work + probe
+Each timing row contains five separate, shuffled processes, each with three measured epochs after a verified,
+uncommitted setup launch. The statistic is the median of each process's epoch median. Upload, download, host
+verification and export are outside the CUDA-event interval. Nsight and sanitizer timings are excluded from this
+table.
+FINAL COLD COUNTERS
+SECTORS (MEDIAN)
+MISSES (MEDIAN)
+HITS (MEDIAN)
+default / linear
+6,154
+2,048
+4,106
+default / morton8
+6,156
+2,048
+4,108
+max / linear
+393,750
+131,072
+262,678
+max / morton8
+393,750
+131,072
+262,678
+The minimum nominal traffic for a full unpadded dictionary is three reads: warm, productive work and final probe.
+Aggregate sectors can exceed that nominal count; all excess requests are retained in the study. A higher hit
+percentage alone would not demonstrate an improvement, because redundant reads enlarge the denominator.
+Earlier controls explain the search, not the final performance claim
+Global warming alone did not remove productive TEX misses. With split I/O, no-allocation stores preserved the
+large dictionary in the store-only control, but input loads did not. Native bulk I/O reduced the full 4 MiB case to 508
+excess misses; folding the fixed rotation removed those remaining observed misses in the controlled comparison.
+The earlier production sweep found a 33.1% lower best median after launch tuning (81.25 to 54.34 us at the default shape). That
+measurement belongs to the archived pre-fold binary and excludes warm/probe work. It is retained as historical evidence, not relabelled as
+a benchmark of the final bulk binary. Complete retention and minimum runtime are separate objectives.
+
+
+===== PHYSICAL PAGE 7 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+7
+ATOMOS v3.6 K1 / FINAL DEVICE REVIEW / 07
+Reproduce and use the delivered kernel
+The delivered atomos_cache_bulk.exe implements the full measured schedule and supports --out for independent
+verification. Keep its profile explicit: bulk-warm-work-probe-v1 with bulk-padded-row-major-v1 allocation. The
+standard atomos_cuda.exe retains its texture, packed-texture and global choices.
+cmake -S . -B C:/Users/Tom/.cache/ak1/bulk_export_sm120
+ -T cuda=12.8 -DATOMOS_ENABLE_CUDA=ON
+ -DATOMOS_CACHE_BULK_EXPERIMENT=ON
+cmake --build C:/Users/Tom/.cache/ak1/bulk_export_sm120
+ --config Release --target atomos_cache_bulk
+Enter each wrapped command above as one command. The short build directory avoids the reproduced Windows MSBuild path-length
+issue; the explicit installed toolset avoids stale CUDA 12.9 integration.
+output/bin/atomos_cache_bulk.exe --rows 512 --angles 16384
+ --layout morton8 --mode recurrent --epochs 1 --out my_bulk_run
+python tools/verify_run.py my_bulk_run
+The output directory must be new. Canonical run files contain actual downloaded GPU candidates, with no logical
+padding rows. The Python verifier checks the complete trace, final state, exact execution profile and actual
+allocation formula. Seals record local file integrity; they are not author authentication.
+python tools/validate.py --proofs
+python tools/validate.py --gpu --sanitizer --proofs
+ --build C:/Users/Tom/.cache/ak1/gpu_fold_final
+ --cmake-arg=-Tcuda=12.8
+Use tools/study_cache_bulk.py for the 226-command main study and tools/check_cache_bulk_edges.py for the
+46-command supplementary study, passing the executable, a new evidence directory, and the native
+Nsight/Compute Sanitizer paths recorded in their JSON. Both retain raw logs, before/after source and binary
+hashes, and an independent receipt audit.
+Existing repairs remain: allocation admission preserves the reserve in currently free VRAM; inconsistent execution metadata is rejected;
+Windows sanitizer discovery resolves the native executable. No drivers, watchdog settings, privileges or service connections were changed.
+
+
+===== PHYSICAL PAGE 8 =====
+Tom Klootwijk  |  atomOS v3.6 K1  |  real device evidence  |  13 September 2026
+8
+ATOMOS v3.6 K1 / FINAL DEVICE REVIEW / 08
+Evidence, identity and limits
+All paths below are local. K = C:/Users/Tom/.cache/ak1. R is the workspace root printed below. Each study records exact commands,
+device metadata, raw logs and executable/source hashes. The final source manifest and output delivery manifest are unsigned integrity
+records.
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3
+_6_CUDA_Verification
+EVIDENCE
+LOCATION
+Final review / current status
+R/results/residency_followup/summary.json; R/results/validation_status.json
+CPU validation
+K/cpu_fold_final/evidence_1789299038566882500/validation.json
+Production GPU validation
+K/gpu_fold_final/evidence_1789299027401576500/validation.json
+Main bulk study
+K/bulk_final_study_v2/study.json; raw .stdout.log/.stderr.log/.csv.log files and sealed *.run
+directories alongside it
+Additional shapes / sanitizers
+K/bulk_final_edges/study.json; raw per-command logs alongside it
+Rounding / native code
+R/results/residency_followup/rotation_rounding.json; rotation_fold_native.json; final_native.json;
+bulk_final_sass.txt
+Initial controlled cache comparison
+R/results/residency_followup/padded_before_fold_profiles.json; fold_initial_profiles.json
+Retained rejected attempt
+K/bulk_final_study/study.json: validator-source change during execution; excluded from final counts
+Final bulk executable SHA-256
+fc25b2f435bc3c1ccbcdc2ed8f494ef3247285b357541b72f2855e8b83a175e4
+Final production executable SHA-256
+cdfe79ac3e48e35f7837954b680ad9bbef0a2a4ba353422e54724ff6bed75d95
+Limits of the conclusion
+The final profile set records 24 miss-floor successes and 0 excess-miss outcomes. These are finite, workload-specific hardware
+observations. They do not establish cache pinning, arbitrary concurrency, all possible inputs, every future compiler, or a formal
+CUDA-binary proof. K1 remains the synthetic integrated word-epoch profile; unimplemented engine producers remain listed in
+docs/coverage.csv.
+Primary references
+[1] Nsight Compute: cache control and 32-byte L1/TEX sector metrics. Full URLs and claim mapping: docs/cache_sources.json.
+[2] PTX ISA 8.7: cache hints, memory model and texture coherence. Full URLs and claim mapping: docs/cache_sources.json.
+[3] CUDA 12.8: bulk asynchronous transfers and completion ordering. Full URLs and claim mapping: docs/cache_sources.json.
+[4] PTX ISA 8.7: cp.async.bulk and async-proxy fences. Full URLs and claim mapping: docs/cache_sources.json.

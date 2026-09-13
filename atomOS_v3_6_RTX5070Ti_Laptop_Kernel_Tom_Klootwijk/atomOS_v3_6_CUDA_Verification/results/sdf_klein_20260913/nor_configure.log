@@ -1,0 +1,9 @@
+CMake Warning:
+  Ignoring extra path from command line:
+
+   ".8"
+
+
+CMake Error: Error: generator toolset: cuda=12
+Does not match the toolset used previously: cuda=12.8
+Either remove the CMakeCache.txt file and CMakeFiles directory or choose a different binary directory.

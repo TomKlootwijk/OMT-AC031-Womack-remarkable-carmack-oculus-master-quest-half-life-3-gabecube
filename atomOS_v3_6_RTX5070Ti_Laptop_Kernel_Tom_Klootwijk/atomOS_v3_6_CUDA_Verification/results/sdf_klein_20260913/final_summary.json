@@ -1,0 +1,274 @@
+{
+  "schema": "atomOS-SDF-Klein-final-evidence-v1",
+  "date": "2026-09-13",
+  "concept_author": "Tom Klootwijk",
+  "evidence_status": "passed",
+  "scope": "Declared SDF-word/Klein/NOR/lineage constructions and finite measured binaries; not a recovered scalar SDF for every source operator",
+  "full_original_operator_scalar_sdf_bank": "not_established; source audit records missing geometry, encoders and fields",
+  "universality": "constructive NOR/controller/tape simulation with addressable-state and joint-frontier resource assumptions",
+  "literal_infinite_device_execution": "not_claimed",
+  "permanent_texture_cache_pinning": "not_claimed",
+  "bulk_largest_fully_retained_bytes": 4849664,
+  "bulk_next_tested_misses_bytes": 4915200,
+  "bulk_cold_profiles": 36,
+  "bulk_profiles_at_floor": 16,
+  "joint_cold_profiles": 4,
+  "joint_profiles_at_floor": 4,
+  "joint_texture_bytes": 1024,
+  "counts": {
+    "cpu_ctest": 12,
+    "python_unittests": 105,
+    "symbolic_obligations": 19,
+    "original_gpu": 144,
+    "original_memchecks": 6,
+    "bulk_native_cases": 158,
+    "bulk_sanitizers": 24,
+    "nor_native_cases": 80,
+    "nor_sanitizers": 9,
+    "lineage_native_cases": 56,
+    "lineage_sanitizers": 9,
+    "joint_native_cases": 104,
+    "joint_sanitizers": 18
+  },
+  "joint_checked_totals_including_sanitizers": {
+    "actual_transitions": 938,
+    "gate_evaluations": 18660,
+    "proposed_children": 4668,
+    "diagnostic_records": 4668,
+    "word_records": 37520,
+    "bst_searches": 6544,
+    "packed_snapshot_words_verified": 97640
+  },
+  "evidence": {
+    "cpu": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_cpu\\evidence_1789306629417199700\\validation.json",
+      "sha256": "64e3b7772364d122d9bb0d129e0975b4d9e7892eaa906f37d738cc2a24bcad6f"
+    },
+    "original_gpu": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_gpu\\evidence_1789306726916312500\\validation.json",
+      "sha256": "ed911b9c3a367334e0dda5d5a45b23f4b830fe90b3644d8cde435392a36ddd53"
+    },
+    "bulk_conformance": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_conformance_tma\\study.json",
+      "sha256": "1d68b6390d092c6a34f22e8ec0f0e1f273139f4b0f8cc0847f9094c0f1544d78"
+    },
+    "bulk_edges": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_tma_edges\\study.json",
+      "sha256": "009529dcc72d5151aeffe45f79dd64ca5b98bb51e1deab4bc8cb87348829a2cb"
+    },
+    "bulk_capacity": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_capacity_tma\\study.json",
+      "sha256": "799a8ddc04a692041a5d1909fe25daf0c572ac59b647ac52311e4ae8b76cc08e"
+    },
+    "bulk_refinement": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_capacity_refinement\\study.json",
+      "sha256": "060de97fc2b73debb120927d6c9c2d5db855b5ad8e77b1d946d6b83aaf95c843"
+    },
+    "nor": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_nor_validation\\summary.json",
+      "sha256": "bcc743370eef91d36718ea196806d1b365b365ba5805c85fd82f012e513e6d38"
+    },
+    "lineage": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_lineage_validation\\summary.json",
+      "sha256": "9c1415bc04eb9aefcab80b243b1e611cd034480b523469ec2e7233723d30d059"
+    },
+    "joint_dense": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_joint_validation_dense\\summary.json",
+      "sha256": "9898e1970b6d253ecd68462ab5b55156df64475953e0af832c3c4245d6d918b4"
+    },
+    "joint_sparse": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_joint_validation_sparse\\summary.json",
+      "sha256": "1c6d274288471f56c51edefd0cb59839daa54f65b991d5be0664a74ed35b2a75"
+    },
+    "nor_sparse_cache": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_nor_cache\\study.json",
+      "sha256": "9c4f1128b5751da730d89a65301ab34b00d0d2deabb2a8410899b192214479c3"
+    },
+    "nor_dense_cache": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_nor_cache_dense\\study.json",
+      "sha256": "d51a2054e24f98f32945b4484a8485b5893e22446cbf9e68990cdcade618a306"
+    },
+    "nor_cg_experiment": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_nor_cache_cg\\study.json",
+      "sha256": "2a563348799d8685f001c8c0c58d76cfcd78a2af9d84d196ab1e7a716b2498ed"
+    },
+    "joint_cache": {
+      "path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_joint_cache\\study.json",
+      "sha256": "31c052ecead94bdd36642f33f4c8b2e70bb2133c0e4eda2ecab20351ff4205fc"
+    },
+    "nor_proofs": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\sdf_klein_20260913\\nor_proofs.json",
+      "sha256": "c1b3b5dfd4b37b36f1cc8956864af6675bd42c1bf1128ab3b88f15eb41ad6e0f"
+    },
+    "tape_proofs": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\sdf_klein_20260913\\universal_packing_proofs.json",
+      "sha256": "9b6ea8b36f784aa18f7cb5829ad33454037b5f1b9e597d3580dc2647cc5c4ebb"
+    }
+  },
+  "cache_table": [
+    [
+      "4 MiB",
+      "0 / 0",
+      "0 / 0"
+    ],
+    [
+      "4.5 MiB",
+      "0 / 0",
+      "0 / 0"
+    ],
+    [
+      "4.5625 MiB",
+      "0 / 0",
+      "0 / 0"
+    ],
+    [
+      "4.625 MiB",
+      "0 / 0",
+      "0 / 0"
+    ],
+    [
+      "4.6875 MiB",
+      "221 / 221",
+      "214 / 209"
+    ],
+    [
+      "4.75 MiB",
+      "15,782 / 15,778",
+      "15,782 / 15,798"
+    ],
+    [
+      "4.875 MiB",
+      "54,999 / 55,346",
+      "55,094 / 54,418"
+    ],
+    [
+      "5 MiB",
+      "90,119 / 90,339",
+      "90,437 / 90,511"
+    ],
+    [
+      "5.25 MiB",
+      "156,562 / 155,808",
+      "157,161 / 156,586"
+    ]
+  ],
+  "joint_cover": "104 native cases and 18 sanitizer runs checked the coupled controller/branching profile. Its full 1 KiB atlas met the cold retention floor in all four measured joint profiles.",
+  "joint_description": "The connected profile executes one CUDA launch with one active lane. It warms one immutable NOR-site atlas, computes the program controller through its SDF-word gates, uses the written symbol to select phi, branches on the Klein quotient, filters every logical word, updates JK/tape and searches live IDs, then rereads the atlas.",
+  "joint_rows": [
+    [
+      "Same operator dictionary",
+      "8 x 256 sampled sites; 64 logical uint4 entries; 1,024 texture bytes; actual SDF compilation independently checked 8,192 predicate bits."
+    ],
+    [
+      "Connected example",
+      "Binary input 31 became 32 in 6 steps. First five writes selected one winding; the final write selected two. The run retained 64 distinct IDs."
+    ],
+    [
+      "Checks in that run",
+      "114 NOR gate evaluations; 126 children/diagnostic records; 384 complete word/JK records; 138 search traces; complete tape/frontier snapshots."
+    ],
+    [
+      "Native validation",
+      "104 cases and 18 sanitizer runs across sparse and dense atlases, both layouts, faults, extinction and resource limits."
+    ],
+    [
+      "Search organization",
+      "Sorted IDs are searched by repeated midpoint selection: an implicit balanced binary search tree. Exact visited index paths are exported and checked."
+    ]
+  ],
+  "joint_transaction": "Tape, occupancy, JK, frontier and time are published as one verified candidate prefix. A resource or program stop adds no partial failing step and retains the verified earlier prefix. A verification mismatch rejects the entire proposal and restores every initially committed component. The mutable buffers and traces remain outside the immutable operator texture.",
+  "joint_performance": "Four ordinary six-step runs measured 0.323-0.332 ms for the complete kernel. This includes full traces and snapshots; it excludes transfers, CPU checking and export. The native kernel reports 86 registers and 152 local bytes per thread. This is a finite correctness witness, not the distributed bulk throughput profile.",
+  "bulk_timing_text": "1.693 ms linear and 1.664 ms Morton: median of three evolving epochs per layout, each including warm, TMA transfers, work, checks and reread. These are kernel timings, not three independent process trials.",
+  "nor_cache_text": "For the 1 KiB sparse 8 x 64 atlas, linear had 0 extra misses and Morton 24. For the dense 8 x 256 atlas, linear had 8 extra misses and Morton 0. Each result repeated twice for a 256-step oscillator. The tested global-cache flags did not fix the sparse Morton result. No universal layout winner is established.",
+  "joint_cache_text": "The dense 1 KiB shared-atlas six-step run had exactly 32 compulsory misses and 0 extra misses in both layouts, twice each. It made 626 TEX requests/sectors: 594 hits + 32 misses. The cold whole-launch hit rate was 94.888%; subsequent work and reread added no misses under this counter test.",
+  "validation_rows": [
+    [
+      "Original K1 regression",
+      "48 CPU configurations; 144 GPU configurations and 6 memory-check runs. Required symbolic checks passed. Historical/source-fixture scope retained."
+    ],
+    [
+      "Final CPU checks",
+      "12 CTest cases and 105 Python unit/oracle/mutation tests passed. Source/geometry, layout, metadata, wrong-output and rollback checks are included."
+    ],
+    [
+      "Mathematical checks",
+      "15 original obligations, 2 packed-tape obligations and 2 new NOR obligations: all negated properties UNSAT in Z3. Analytic simulation arguments are documented separately."
+    ],
+    [
+      "Optimized SDF/Klein bulk",
+      "158 native conformance/edge cases and 24 sanitizer runs passed, including angular tails, padding, both seams and 130-epoch prefixes."
+    ],
+    [
+      "SDF/NOR controller",
+      "80 cases + 9 sanitizer runs; all finite controller input rows, gate chronology, machine transitions, full packed tape and expected faults independently replayed."
+    ],
+    [
+      "Lineage and search",
+      "56 cases + 9 sanitizer runs; all child IDs, geometric locations, masks, diagnostics, JK and search results replayed."
+    ],
+    [
+      "Connected profile",
+      "104 cases + 18 sanitizer runs; entire causal controller-to-phi-to-geometry-to-state path and combined publication checked."
+    ],
+    [
+      "Native cache evidence",
+      "36 bulk cold profiles bracketed capacity; separate sparse/dense NOR and connected-kernel counters retained, with ordinary timings kept separate."
+    ]
+  ],
+  "evidence_rows": [
+    [
+      "Summary and hashes",
+      "results/sdf_klein_20260913/final_summary.json; evidence_seal.json"
+    ],
+    [
+      "Build / device / native logs",
+      "results/sdf_klein_20260913/ (nvcc, sanitizer, build logs and native SASS dumps)"
+    ],
+    [
+      "Bulk source conformance",
+      "C:/Users/Tom/.cache/ak1/sdf_conformance_tma/study.json; sdf_tma_edges/study.json"
+    ],
+    [
+      "Bulk capacity",
+      "C:/Users/Tom/.cache/ak1/sdf_capacity_tma/study.json; sdf_capacity_refinement/study.json"
+    ],
+    [
+      "NOR and lineage",
+      "C:/Users/Tom/.cache/ak1/sdf_nor_validation/summary.json; sdf_lineage_validation/summary.json"
+    ],
+    [
+      "Connected validation",
+      "C:/Users/Tom/.cache/ak1/sdf_joint_validation_dense/summary.json; sdf_joint_validation_sparse/summary.json"
+    ],
+    [
+      "Connected cache",
+      "C:/Users/Tom/.cache/ak1/sdf_joint_cache/study.json"
+    ],
+    [
+      "Copied native executables",
+      "output/bin/sdf_klein_20260913/atomos_cache_bulk.exe; atomos_sdf_universal.exe; atomos_sdf_lineage.exe; atomos_sdf_joint.exe"
+    ]
+  ],
+  "binaries": {
+    "atomos_cache_bulk": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\bin\\sdf_klein_20260913\\atomos_cache_bulk.exe",
+      "build_path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_gpu\\Release\\atomos_cache_bulk.exe",
+      "sha256": "cc114943ea63575b6b0b4a108a6ed467092dae29f58fac47aa10d42278cd0902"
+    },
+    "atomos_sdf_universal": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\bin\\sdf_klein_20260913\\atomos_sdf_universal.exe",
+      "build_path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_gpu\\Release\\atomos_sdf_universal.exe",
+      "sha256": "2e3dadd70ee623143772145c7d90a93e6131bb7f144dbcde8a523b5338a723df"
+    },
+    "atomos_sdf_lineage": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\bin\\sdf_klein_20260913\\atomos_sdf_lineage.exe",
+      "build_path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_gpu\\Release\\atomos_sdf_lineage.exe",
+      "sha256": "2006a4b3c92c2c9f2b72619cb197215f4c1f4da0f16f167ebfdca3e08cc9e939"
+    },
+    "atomos_sdf_joint": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\output\\bin\\sdf_klein_20260913\\atomos_sdf_joint.exe",
+      "build_path": "C:\\Users\\Tom\\.cache\\ak1\\sdf_gpu\\Release\\atomos_sdf_joint.exe",
+      "sha256": "c5b575820b5b01a4dbe9cf130beb34916e77bf4ff661e20a6e6b63657f5df3a9"
+    }
+  }
+}

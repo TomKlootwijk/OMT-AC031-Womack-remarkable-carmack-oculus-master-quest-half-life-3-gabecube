@@ -1,0 +1,20 @@
+; New representation construction using the unchanged source whole-word sink.
+; The two inputs are bits; bit 0 is an explicitly supplied carrier token.
+(set-logic QF_BV)
+(declare-fun a () (_ BitVec 1))
+(declare-fun b () (_ BitVec 1))
+(define-fun x () (_ BitVec 32)
+ (bvor #x00000001
+  (bvor (bvshl ((_ zero_extend 31) a) #x00000001)
+         (bvshl ((_ zero_extend 31) b) #x00000002))))
+(define-fun selected () (_ BitVec 32) (bvand x #x00000007))
+(define-fun final () (_ BitVec 32)
+ (ite (= (bvand selected #x00000006) #x00000000) selected #x00000000))
+(push)
+(assert (not (= ((_ extract 0 0) final) (bvnot (bvor a b)))))
+(check-sat)
+(pop)
+(push)
+(assert (not (= (bvand final #xfffffffe) #x00000000)))
+(check-sat)
+(pop)

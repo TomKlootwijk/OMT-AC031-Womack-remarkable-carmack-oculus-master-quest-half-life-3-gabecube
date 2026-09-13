@@ -1,0 +1,1642 @@
+
+===== PHYSICAL PAGE 1 =====
+AC031 / AC130 ATOMOS MASTER EDITION M1
+atomOS v3.6
+Total integrated
+engine specification
+JK ⊕>O< OTAN2
+One state architecture. One operator contract.
+Integrated invariants, memory and provenance.
+Tom Klootwijk
+Author-supplied identifier NL200678942
+Author-supplied date 10-07-1990
+Engine release label v3.6
+Master specification revision M1 / consolidated edition
+Edition date 13 September 2026
+The complete engine in one document
+Double UU and genesis;Ψ word/lineage state; lower-case𝜙 and RK4; JK state logic; ASA
+and post-ASA NA; A–W–B–N blend; OTAN2 and the invariant bank; Klein/mirror profiles;
+packed dictionaries, Morton textures, provenance and review contracts.
+This master replaces the fragmented reading sequence of the earlier integration PDFs. OTAN2 and its
+controls are constituent engine records, not a separately delivered panel. Source expressions, inherited
+interpretations and newly declared assembly choices are distinguished within the specification.
+
+===== PHYSICAL PAGE 2 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+Release declaration
+This is the consolidated atomOS v3.6 engine specification.It brings the foundational engine,
+ASA/NA addendum, blend integration, JK model, OTAN2 definition and invariant controls into a
+single state model and execution contract. The engine can be read from this document without
+following an external chain of addenda.
+The release label isv3.6, as requested. The nameatomOS_JK_v3.6.1 remains a historical com-
+ponent/target label from the preceding integration, not the title of another wrapper or a newly
+inferred source-code release. M1 identifies this consolidated document edition. No intermediate
+release history is invented. [M01]
+Previously separated
+material
+Place in the master engine
+Foundational atomOS core Identity, log-polar state, branch/register semantics, RK4, environment and
+provenance.
+ASA/NA and fly-eye
+addendum
+Staged word filtering, source/mask interfaces, dictionary geometry and
+swizzled storage.
+ASA 3.1 blend integration Typed A–W–B–N record; distinct alignment, limit and active-fringe
+predicates.
+JK v3.6.1 integration I1 Explicit JK recurrence, literal OTAN2 and separately named directed
+completion.
+v3.6 invariant component I2 Six integrated diagnostic laws and value/status records attached to each
+applicable engine sample.
+This master assembly M1 Global state, dependency order, transaction boundary, logical records and
+one end-to-end worked tick.
+Provenance levels. Original supplied transcripts are A, B, C, O and R0. The inspected prior
+specifications are P31, J361 and I2. A bracketed M-number identifies an assembly decision in this
+edition; a proposition identifies a deduction from displayed definitions. Component execution
+evidence is reported separately from mathematical proofs and from a compiled whole-engine
+build.
+State contract.The equations below update local computational state and emit records. Source
+passages assigning data operations to external weapon release, personal surveillance or neu-
+ral/biochemical effects are not executable interfaces in this contract. Their source locations remain
+identifiable without importing those commands into the engine.
+OTAN2 remains the author’s operator.
+The default is the literal ratiootan2(Δ𝜙, Δ𝜌)= arctan(Δ𝜙/Δ𝜌), followed by the supplied
+moving-axissubtraction. Adirectedfour-quadrantprofileremainsexplicitlyselected. Neither
+an alignment encoder nor a map from an angle to JK inputs is silently created.
+Tom Klootwijk | 13 September 2026 2 / 43
+
+===== PHYSICAL PAGE 3 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+Contents
+Release declaration 2
+1 The engine as one integrated object 5
+2 Source hierarchy and consolidation rules 6
+3 Global state, records and namespaces 7
+4 Double UU, genesis and seed placement 8
+5 The log-polar geometry and dictionary 9
+6 Topology, paired mirrors and portal indices 10
+7 The Ψregister, grammar and lineage 11
+8 Kinematic evolution, the hinge and gestation 12
+9 Environment, divergence and source-weight profiles 13
+10 JK as the engine’s explicit sequential state 14
+11 A–W–B–N and the circle-plus blend 15
+12 Three predicates and the hollow-center description 16
+13 ASA, NA and the whole-word disposition core 17
+14 Optional fringe and post-ASA lens profiles 18
+15 OTAN2 at the center of the integrated engine 19
+16 Phase lifts, moving axes and the angular domain 20
+17 The invariant bank: R, W, P and S 21
+18 The invariant bank: F, V and panel semantics 22
+19 The total integrated tick 23
+20 Carrier binding: geometry into the word kernel 24
+21 Transition equations and commit semantics 25
+Tom Klootwijk | 13 September 2026 3 / 43
+
+===== PHYSICAL PAGE 4 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+22 Engine records and interface schema 26
+23 Packed cells, valid bits and Morton textures 27
+24 GPU backend and the laptop memory profile 28
+25 Faceted input, mosaic records and timing 29
+26 Provenance, replay and the committed ledger 30
+27 The retained programmable-kernel extension 31
+28 Computational simulation and its stated scope 32
+29 A complete worked engine tick 33
+30 The same tick’s controls, commit and variants 34
+31 Compatibility and engine-wide invariants 35
+32 Error taxonomy and required profile inputs 36
+33 Metrics and the cost of the integrated engine 37
+34 Verification performed for this master 38
+35 Master assembly decisions and import mapping 39
+36 Source vocabulary and non-executable labels 40
+A Cross-document source map 41
+B Evidence records and source fingerprints 42
+C Primary hardware references and publication record 43
+Tom Klootwijk | 13 September 2026 4 / 43
+
+===== PHYSICAL PAGE 5 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+1 The engine as one integrated object
+The source’s recurring structure is an identity-bound state that develops through an ordered
+sequence and becomes observable inside the matrix/womb𝑉. The source names the moving
+geometric componentΨ, the branch hinge lower-case𝜙, the aperture ASA>O<, the post-aperture
+stage NA, and a stateful JK operator. OTAN2 supplies the orientation of a log-polar change relative
+to a separately supplied reference axis. [A, pp. 6–14, 53–55, 75–87][O, pp. 6–7]
+Define the complete engine instance by
+𝔈3.6 =⟨𝒮,ℐ, Θ,𝒯,ℛ,ℒ⟩. (1)
+𝒮is the global state type;ℐthe input-batch type;Θ the versioned configuration and dictionaries;
+𝒯the integrated transition;ℛthe output/diagnostic record type; andℒthe provenance rule. A
+successful tick has the form
+𝒯Θ(𝑆𝑛 , 𝐼𝑛)=(𝑆𝑛+1, 𝑅𝑛), 𝑛 ∈N. (2)
+This replaces the earlieropaque-host-plus-annotationpresentation with an explicit master decom-
+position. Individual numerical laws left open by the sources remain named input functions, not
+undocumented engine behavior. [M02]
+Engine layer Reads Produces
+Identity / genesis Source labels, serialization profile Full digest and immutable identity
+binding
+State evolution Current words/frontier, selected
+register or geometric profile
+Next proposals and declared sample
+increments
+Reference calculus A–W–B–N fields, phase policy, frame Typed blend, OTAN2 and predicate
+records
+Invariant bank The same increment/axis sample and
+probe parameters
+R/W/P/S/F/V diagnostic results
+Aperture /
+disposition
+Logical occupancy and masks ASA, NA, intersection count and final
+word
+JK state Current 𝑞, explicit𝐽𝐽𝐾 , 𝐾𝐽𝐾 and clock
+event
+New logical mode𝑞+
+Commit / ledger Validated proposed state and all recordsOne published next state and
+provenance link
+The diagnostic layer is integral to the engine record even when it does not alter the computational
+state. Integration does not require inventing a feedback controller: a readout and a JK transition
+may share a tick while retaining separately defined inputs and responsibilities.
+Tom Klootwijk | 13 September 2026 5 / 43
+
+===== PHYSICAL PAGE 6 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+2 Source hierarchy and consolidation rules
+R0is the original 42-page author-prompt core transcript.Ais the 91-page WHITE KING corpus,
+which restates much of R0 and adds JK, ASA, NA, portal and swizzle material.B is the eight-page
+fly-eye addendum.Cis the five-page blend source.Ois the seven-page OTAN2 source. The two
+supplied O files are byte-identical; they are one definition source, not competing revisions.
+P31is the 20-page ASA 3.1 blend integration.J361is the 23-page JK/OTAN2 integration I1.I2is
+the 16-page v3.6 invariant specification together with its supplied source package. P31 and J361
+include original-source appendices, which are distinguished from their generated formalization
+pages.
+2.1 What is carried forward
+The inherited formal contracts include the four-word ASA result; complete-mask opt-in; the three
+separate blend predicates; the JK truth table; the literal ratio and directed-completion distinction;
+explicit winding/frame metadata; and the six invariant/projection laws. These are restated in full
+rather than incorporated only by a reference to a previous PDF.
+The older source sometimes assigns different meanings to the same symbol or supplies alternative
+operations. Both are retained as named variants or namespaces. For example, raw-word XOR and
+OR splitting remain distinct; a bitmask is not silently renamed as a coordinate key; and the three
+meanings of “State 1” in C remain three fields. [A, pp. 10–14, 33–37][C, pp. 2–5]
+2.2 Source, completion and master assembly
+An equation quoted from O is marked as its source expression. A four-quadrant completion is
+inherited from J361 and named as such. A new transaction order in M1 is a declared assembly
+choice. This distinction prevents consolidation from quietly changing the meanings of earlier
+terms. [J361, pp. 8–12][I2, pp. 4–11]
+The new master order states how documented components share a snapshot and a commit. It is
+not presented as a recovered implementation ABI of the historicalv3.6.1 target. Required but
+unsupplied data, including a B-profile, actual eigenmatrix, optical transfer table or J/K input
+policy, remains an explicit configuration obligation. A parameterized engine is still one engine: its
+unspecified parameters must be supplied before the operations depending on them are enabled.
+2.3 Embedded figures used in the integration
+C p. 3 maps A, W, B/phi and N to the sweeping-envelope narrative; C p. 5 changes the one-bit
+meaningtoactive-fringeacceptance. Opp. 6–7suppliesthefinalratioandmoving-axissubtraction.
+A pp. 85–86 gives radial/angular bit interleaving. Their rendered layouts were inspected so these
+distinct diagrams and tables are not collapsed into a single inferred control rule.
+Tom Klootwijk | 13 September 2026 6 / 43
+
+===== PHYSICAL PAGE 7 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+3 Global state, records and namespaces
+One engine state is the structured record
+𝑆𝑛 =⟨𝐺, 𝑛, 𝑡 𝑛 , Θ𝑛 , 𝐹𝑛 , 𝑋𝑛 , 𝑄𝑛 , 𝑈𝑛 , 𝐿𝑛 , 𝐷𝑛⟩. (3)
+𝐺 is immutable genesis metadata;𝑛, 𝑡 𝑛 are epoch and model time;Θ𝑛 identifies the configuration
+snapshot; 𝐹𝑛 is the optional lineage frontier;𝑋𝑛 is the logical word bank;𝑄𝑛 is the JK state bank;
+𝑈𝑛 is the optional programmable-machine state;𝐿𝑛 is the ledger head/history; and𝐷𝑛 contains
+the most recently committed observation and invariant records. [M02]
+Canonical name Type Source role / distinction
+𝜄, identity256 32-byte digest Double-UU identity; not an occupancy bit
+ℓ, lineage Positive integer Tree path, not a polar coordinate
+𝜌, 𝜙 Real chart coordinates Log radius and angular phase
+𝑊, time_interval Positive interval, unit-tagged Blend/kinematic time, not word width
+𝐴𝑎𝑥𝑖𝑠 Axis reference plus frame Not the ASA mask
+𝐵𝜙 Tagged kinematic descriptor “Double lowercase phi” source name
+𝑁𝑝𝑖𝑛𝑖𝑜𝑛 Datum/reference record Not the NA mask
+𝑀𝐴, 𝑀𝑁 , 𝑀𝜕 Fixed-width word masks ASA, NA and boundary respectively
+𝐽𝑗𝑖𝑡 Explicit jitter bit/word Not 𝐽𝐽𝐾
+𝑞, 𝐽 𝐽𝐾 , 𝐾𝐽𝐾 Bits Sequential JK state and inputs
+𝑉𝑣𝑎𝑙𝑖𝑑 Valid-bit word Not the cloud-chamber/womb 𝑉
+𝛽, 𝑒 Angle plus status/profile OTAN2 orientation and relative residual
+A one-bit predicate is represented by a Boolean valuewhen definedand separate metadata stating
+whether its defining inputs exist. Missing is not a third value packed into a bit, and it is not
+defaulted to zero. Similarly, an OTAN2 value is an angle only when its profile/domain conditions
+hold.
+3.1 A coherent input batch
+𝐼𝑛 supplies a time interval, enabled processing lanes, any replacement word bank, immutable
+mask references, geometric field parameters, reference-axis/phase samples, explicit JK inputs
+and control-event flags. Each dependent result names the same epoch and dictionary. Data from
+different frames or time intervals must not acquire a common label solely because they occupy
+adjacent record fields. [M03]
+Tom Klootwijk | 13 September 2026 7 / 43
+
+===== PHYSICAL PAGE 8 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+4 Double UU, genesis and seed placement
+The source’s corrected display union is
+𝐺display ={Tom Klootwĳk}∪{Asa Mitz Leandra Marjew}. (4)
+This preserves A’s explicitly corrected name. It is a source-authored label relation, distinct from
+the representation of runtime state and from an authorization mechanism. Worked computational
+records use symbolic members when no personal label is needed. [A, pp. 75–78]
+The double-UU runtime binding is retained as the ordered pair
+UU(𝐶)=⟨𝜄, StateRecord(𝐶)⟩. (5)
+The source uses both a set-union image and a double-dot nucleus; the prior formalizations give
+the two runtime layers different types. The full digest remains in the registry even when a spatial
+dictionary stores one occupancy bit per cell. [A, pp. 16–18][P31, pp. 4, 6]
+4.1 Canonical genesis profile
+The inherited symbolic profile normalizes labels to Unicode NFC, removes duplicate members and
+sorts by UTF-8 bytes. Compact sorted-key JSON is domain-separated and length-delimited before
+SHA-256. The precise domain string and serializer version are part ofΘ; changing them changes
+the record definition. Set order and duplicate labels do not change a canonical set record.
+No one-bit encoding can distinguish every 256-bit identity: there are2256 possible identities but
+only two Boolean values. This counting argument explains the inherited separation between
+full identity, coordinate key and predicate word; it does not replace the source’s double-UU
+terminology.
+4.2 Optional deterministic chart seed
+A pp. 25–26 splits a digest into two 128-bit parts. For the inherited synthetic layout interpretation,
+let 𝐻0, 𝐻1 be those unsigned integers and use
+𝜌0 = 𝜌min+ 𝐿𝐻0/2128, 𝜙0 = 2𝜋𝐻1/2128. (6)
+Endpoint handling and the exact projection version must be recorded. This mapping seeds a
+model chart; it is not the identity registry itself. Two identities may occupy the same quantized cell
+and remain separate registry entries.
+The source’s bank-token labels are retained as examples of opaque input strings, not as an
+implemented account connector or a derivation of external coordinates. In the master, identity
+binding and geometry can be associated without making them the same stored object. No source
+birth date is converted into the engine’s numerical time step.
+Tom Klootwijk | 13 September 2026 8 / 43
+
+===== PHYSICAL PAGE 9 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+5 The log-polar geometry and dictionary
+The normalized chart inherited by P31 and J361 is
+𝜌 = ln(𝑟/𝑟∗), 𝑟 ∗> 0, 𝑟 > 0, 𝜙∈R/(2𝜋Z). (7)
+The common reference length𝑟∗makes the logarithm dimensionless and must remain the same
+in a comparison. The source writesln 𝑟; this normalized representation is an explicitly inherited
+convention, not an unnoticed replacement of O’s formula. [P31, p. 4][J361, p. 7][O, pp. 2–3]
+Afinitedictionaryselectsaradialinterval [𝜌min, 𝜌max), 𝑅radialbinsand 𝑃periodicangularsamples.
+Let 𝐿 = 𝜌max−𝜌min, ℎ𝜌 = 𝐿/𝑅 and ℎ𝜙 = 2𝜋/𝑃. The release records the angular quantization rule
+rather than blending a floor-bin profile with a nearest-node profile.
+5.1 Master review profile
+The consolidated review dictionary retains the ASA profile:𝑟min = 0.25, 𝑟max = 64, 𝑅 = 128
+and 𝑃 = 1024, radial bin centers and periodic angular nodes. Radial lookup uses floor; angular
+lookup selects the nearest node, with halfway ties toward increasing index. These are inherited
+implementation choices, not dimensions specified by C or O. [M04]
+For an alternative profile, every dependent mask, frame conversion and memory manifest must
+name that alternative. A literal OTAN2 comparison consumesΔ𝜌 and Δ𝜙 in chart units, not raw
+integer lookup indices:
+Δ𝜌 = ℎ𝜌Δ𝑖, Δ𝜙 = ℎ𝜙Δ𝑗. (8)
+Using arctan(Δ𝑗/Δ𝑖)without these factors changes the meaning when resolution changes. [J361, p.
+10]
+5.2 The source’s spherical/collapsed notation
+A first writes a three-coordinate spherical representation and later identifies𝜃≡𝜙. The master
+retains that source history and the selected two-coordinate profile. A general 3D adapter needs its
+own second angular coordinate, mapping and masks; it is not smuggled into the same two-scalar
+record. [A, pp. 20–24]
+𝜌 =−∞is not a finite chart entry. The apex label𝑇 can identify a seed without requiring
+evaluation of ln 0. Positional domain validity and the later OTAN2 zero-increment check are
+separate conditions.
+Tom Klootwijk | 13 September 2026 9 / 43
+
+===== PHYSICAL PAGE 10 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+6 Topology, paired mirrors and portal indices
+The original corpus repeatedly names the Klein-bottle boundary and the Inuit double-slit V-mirror.
+The inherited formalization separates two selectable geometry profiles: a finite annulus with
+periodic 𝜙, and an abstract quotient chart with an orientation-reversing seam. They must not be
+silently interchanged within one mask dictionary. [A, pp. 9–14, 18–24]
+For the quotient profile, normalize𝑢 =(𝜌−𝜌min)/𝐿, 𝑣 = 𝜙/(2𝜋)and identify
+(𝑢+ 1, 𝑣)∼(𝑢, 𝑣), (𝑢, 𝑣+ 1)∼(−𝑢, 𝑣). (9)
+With 𝑘 =⌊𝑣⌋, choose¯𝑣 = 𝑣−𝑘 and¯𝑢 = frac((−1)𝑘𝑢). The tangent map at an odd seam reverses the
+𝑢 component; a field defined across the seam must transform consistently. This is the previously
+introduced formal quotient realization, not an SDF automatically supplied by the source name.
+[M05]
+6.1 Mirror compatibility
+For a state reflection𝑀 and transition𝑇, exact mirrored evolution requires
+𝑇◦𝑀 = 𝑀◦𝑇. (10)
+The paired𝜙+ and 𝜙−branches are only one part of that condition. The field, mask, input state,
+sampling and paired jitter must also respect the same reflection. The source’s SSymmetry label is
+retained for this conditional software relation.
+Whole-worddispositionaddsagroupingconstraint: asymmetrymustsendcompletelogical32-bit
+groups to complete groups with corresponding masks if it is to commute with the word sink. A
+geometric mirror that crosses group boundaries need not preserve those decisions. [P31, pp. 9–11]
+6.2 Paired portal interpretation
+The inherited discrete portal utility is the reversible permutation
+𝑇𝛿(𝑗)=(𝑗+ 𝛿)mod 𝑃, 𝑇 𝑃−𝛿◦𝑇𝛿 = id . (11)
+Itcapturesthesource’spairedingress/egressvocabularyasanindexrelation. Aspatialremapping
+with a metric, frame or time effect requires additional declared data. The pair itself does not define
+those effects. [A, pp. 81–85]
+A topology or portal change belongs to the configuration snapshot and is reflected in the record
+manifest. It is not an OTAN2 side effect: moving only a reference-axis angle leaves the background
+chart and its addressing unchanged.
+Tom Klootwijk | 13 September 2026 10 / 43
+
+===== PHYSICAL PAGE 11 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+7 The Ψ register, grammar and lineage
+The source presents both a context-free production and a finite-word shift expression. The master
+keeps their roles explicit:
+0−→0, 1−→1[𝜙+]1[𝜙−]. (12)
+Brackets preserve the source’s branch-state save/restore meaning. A parallel realization can read
+one parent record and write two candidate slots instead of interpreting a string at runtime. [A, pp.
+9–14]
+7.1 Literal word variants
+For width𝑤 with mask𝐿𝑤 = 2𝑤−1, define
+𝐵⊕(𝜓)=((𝜓≪1)∧𝐿𝑤)⊕(𝜓≫1), (13)
+𝐵∨(𝜓)=((𝜓≪1)∧𝐿𝑤)∨(𝜓≫1), (14)
+𝑊𝜇(𝜓, 𝐽𝑗𝑖𝑡)=
+(
+0, 𝜓 = 0,
+(𝐵𝜇(𝜓)⊕𝐽𝑗𝑖𝑡)∧𝐿𝑤 , 𝜓 ≠ 0. (15)
+A’s diagram uses XOR, while another split expression uses OR. They remain two named profiles.
+The zero guard is the inherited realization of0→0; without it a nonzero XOR input can change
+zero. When a source variant is selected, both its merge kind and word width must be declared. [A,
+pp. 10, 13–14][M06]
+Afinite-wordpayloadmaybezerowithoutrepresentinganonexistentaddress. Thecorresponding
+live flag is separately typed in a lineage profile. The explicit source-word profile above chooses
+zero as its absorbing payload because that is the inherited word grammar, not because all engine
+values share that meaning.
+7.2 Lineage-address realization
+The earlier mathematical repair for genuine child identifiers is retained separately:
+ℓ𝑏 = 2ℓ+ 𝑏 =(ℓ≪1)∨𝑏, 𝑏 ∈{0, 1}, parent(ℓ𝑏)= ℓ𝑏≫1. (16)
+A right shift is not a right-child constructor. This does not erase the literal shifted-word rule; it
+assigns a different representation to actual branch records. At depth𝑔, a leading one followed by𝑔
+branch bits uniquely describes the path. Removing the last bit recovers its parent.
+The source calls the structure a binary search tree; the runtime requirement stated here is only a
+binary lineagetree. A search-tree ordering invariant is not supplied. Fixed-width address overflow
+must be an explicit resource error, not a wrapped lineage or an absorption event.
+Tom Klootwijk | 13 September 2026 11 / 43
+
+===== PHYSICAL PAGE 12 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+8 Kinematic evolution, the hinge and gestation
+Let 𝑧 denote a declared numerical state and𝑓(𝑡, 𝑧 ; Θ𝑛)its supplied field. The source’s RK4 core is
+retained:
+𝑘1 = 𝑓(𝑡, 𝑧), 𝑘 2 = 𝑓(𝑡+ ℎ/2, 𝑧+ ℎ 𝑘1/2), (17)
+𝑘3 = 𝑓(𝑡+ ℎ/2, 𝑧+ ℎ 𝑘2/2), 𝑘 4 = 𝑓(𝑡+ ℎ, 𝑧+ ℎ 𝑘3), (18)
+ℛℎ(𝑧)= 𝑧+ ℎ
+6(𝑘1+ 2𝑘2+ 2𝑘3+ 𝑘4). (19)
+The field, units, step size and any substeps belong toΘ or 𝐼𝑛. The existence of these four stages
+does not select a physical or domain-specific field. [A, pp. 19–24]
+For a planar source realization, the branch hinge adds a signed phase increment:
+𝐻𝑏(𝜌, 𝜙)=(𝜌, 𝜙+(−1)𝑏 𝛿𝜙). (20)
+Whether this acts on position phase, orientation, or another kinematic field is a profile choice.
+The abstract update does not equate a phase offset to a rotated binary representation. Any 16-bit
+mask-rotation helper remains a separately typed word primitive.
+8.1 Which increment feeds OTAN2
+A shared sample record names an interval and an increment origin. It may describe a supplied
+endpoint pair, an accumulated RK4 segment, or a selected branch proposal. The master uses
+increment_originto distinguish them; it does not add the branch hinge to a derivative increment
+without declaring that policy. [M07]
+In an RK4-linked observation, the output of the integrator and its matching pre-step state giveΔ𝜌,
+while the phase lift suppliesΔ𝜙. The same observation record carries𝑊 and the reference-axis
+frame. This is the direct engine connection of OTAN2 to the numerical state: the readout belongs
+to the processed sample, not to an unrelated GUI value.
+8.2 The 𝑉 admission layer
+Thesource’swomb/gestationterminologynamesthetransitionfromaproposedstatetoaretained
+trace. In the master, an admitted candidate is stored in the next local frontier or word bank; a
+rejected candidate has a disposition record. Step duration, model event time and a domain’s
+biological or observational delay are not interchanged by their common narrative label.
+BoundarysamplingandRK4substepsarealsoseparatechoices. Aclearsampledpredicatecertifies
+its tested sample only. The source supplies no universal continuous-collision contract, so the
+specification records the chosen samples instead of importing one.
+Tom Klootwijk | 13 September 2026 12 / 43
+
+===== PHYSICAL PAGE 13 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+9 Environment, divergence and source-weight profiles
+The source writes
+∇·Ψ = 𝑒−𝜌
+ 𝜕Ψ𝜌
+𝜕𝜌 + Ψ𝜌+
+𝜕Ψ𝜙
+𝜕𝜙
+
+. (21)
+This expression is retained as a source equation, with its component interpretation made explicit
+by the prior formalization: for orthonormal physical radial/tangential components𝑢𝑟 , 𝑢𝜙 in a
+planar log-polar chart,
+∇·𝑢 = 1
+𝑟∗𝑒 𝜌
+ 
+𝜕𝜌𝑢𝑟+ 𝑢𝑟+ 𝜕𝜙𝑢𝜙
+
+. (22)
+The source form corresponds to𝑟∗= 1. [A, pp. 30–33]
+If the numerical state instead supplies coordinate rates𝑎 =∝⌈≀⊔⊣⌋⌋𝜌 = 𝑢𝑟/𝑟 and 𝑏 =∝⌈≀⊔⊣⌋⌋𝜙 = 𝑢𝜙/𝑟, the same
+geometric calculation gives
+∇·𝑢 = 𝜕𝜌𝑎+ 2𝑎+ 𝜕𝜙𝑏. (23)
+Thesearedifferentcomponentconventions,notinterchangeableformulastoapplytoanuntypedbit
+register. Themasterkeeps component_basisinafielddescriptor. Aquotienttopologyadditionally
+needs a compatible metric/field definition before this planar formula is applied there.
+9.1 A table change is distinct from a field change
+An environmental update can change a predicate plane, a numerical field, or a named parameter.
+Each is a different input. The source’s “negative divergence” and Vantablack language does not
+make a Boolean clear/reset operation a numerical derivative. The local sink is specified by the
+ASA/disposition equations; field diagnostics remain numerical records.
+9.2 Mass/scale and other source labels
+App. 55–59alsoproposes 𝑚𝑠𝑐𝑎𝑙𝑒 𝑑 =(𝐸/𝑐2)𝑒−𝜌. Themasterretainsthisasa source-proposedweighting
+expression, not as an automatically enabled invariant or a parameter already supplied to RK4. To
+use a weighting profile, its base value, units, interpretation and position in the data path must
+be given. No binding from that expression to JK, an external output, or an identity credential is
+present here.
+The same rule governs the source’s OMT, logistics and ledger analogies: their labels remain in
+provenance and the glossary, while a domain adapter must provide its actual state values and
+equations. The integrated engine’s mathematical contracts do not acquire a new input stream
+simply because a source paragraph names one.
+Tom Klootwijk | 13 September 2026 13 / 43
+
+===== PHYSICAL PAGE 14 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+10 JK as the engine’s explicit sequential state
+A names Operator JK and describes its set and toggle cases. The inherited formal completion is
+a logical J–K state transition, now a first-class part of the global state rather than an unnamed
+external host. For every declared JK channel,
+𝑞+ =(𝐽𝐽𝐾∧¬𝑞)∨(¬𝐾𝐽𝐾∧𝑞), 𝑞, 𝐽 𝐽𝐾 , 𝐾𝐽𝐾∈{0, 1}. (24)
+This is the Boolean model retained from J361, not an inferred voltage-level circuit implementation.
+[A, pp. 53–55][J361, p. 5]
+𝐽𝐽𝐾 𝐾𝐽𝐾 𝑞+ Mode
+0 0 𝑞 Hold
+1 0 1 Set
+0 1 0 Reset
+1 1 1−𝑞 Toggle
+The selected tick includes an explicit JK update event. If no event is requested,𝑄𝑛+1 = 𝑄𝑛. If
+an event is requested, the complete J/K input bank must be supplied and validated, and every
+channel is evaluated from theold 𝑄𝑛 before any new value is committed. This simultaneous-bank
+rule prevents an iteration order from becoming an accidental dependency. [M08]
+10.1 What the latch state controls
+The meaning of𝑞 is a declared internal mode or retained bit. Its existence does not define an
+external action. The source does not provide an angular tolerance, hysteresis, or transfer rule
+connecting OTAN2 to J/K, so no such rule is enabled by this consolidation.𝐽𝑗𝑖𝑡, 𝐽𝐽𝐾 and an
+alignment discrepancy remain distinct fields.
+A future internal policy may explicitly consume a typed observation and produce a J/K pair. Such
+a policy would be a new named engine profile with its own domain and tests. The master API
+preserves that extension point, while the default supplied-input rule is already fully defined and
+usable.
+Proposition 10.1(JK determinism and domain closure). For every Boolean triple(𝑞, 𝐽 𝐽𝐾 , 𝐾𝐽𝐾), the
+displayedrecurrencereturnsexactlyoneBooleanresult. Holdisanidentity; applyingtoggletwicerecovers 𝑞.
+Proof. The four J/K pairs produce the four truth-table rows by Boolean substitution. Each row
+maps{0, 1}to{0, 1}. For toggle,1−(1−𝑞)= 𝑞; for hold, the result is𝑞 directly. □
+This is a property of the specified Boolean transition. Missing inputs, incompatible array lengths
+or failed memory accesses are separate implementation errors, not fifth entries in the truth table.
+Tom Klootwijk | 13 September 2026 14 / 43
+
+===== PHYSICAL PAGE 15 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+11 A–W–B–N and the circle-plus blend
+C introduces A as the reference eigenvector axis, W as the kinematic interval, B as the “double
+lowercase phi” descriptor and N as the north polar pinion. These source names are preserved. In
+the master they are𝐴𝑎𝑥𝑖𝑠 , 𝑊, 𝐵𝜙 and 𝑁𝑝𝑖𝑛𝑖𝑜𝑛 . [C, pp. 1–3][P31, pp. 6–7]
+The source expression is
+𝑠𝑠𝑜𝑢𝑟𝑐𝑒 = 𝑁⊕
+ 
+𝐴+ 𝜙(𝑊)
+
+(mod 2). (25)
+The inherited binary special case requires threealready encodedbits:
+𝑠𝑏𝑙𝑒𝑛𝑑 = 𝑛𝑏⊕((𝑎𝑏+ 𝛽𝑏)mod 2)= 𝑛𝑏⊕𝑎𝑏⊕𝛽𝑏 , 𝑛 𝑏 , 𝑎𝑏 , 𝛽𝑏∈{0, 1}. (26)
+𝛽𝑏 here is a binary kinematic encoding, not the OTAN2 angle𝛽. A complete record uses different
+field names for the two. An axis angle does not become a bit simply by appearing next to the XOR
+symbol.
+𝑛𝑏 𝑎𝑏 𝛽𝑏 𝑠𝑏𝑙𝑒𝑛𝑑
+0 0 0 0
+0 0 1 1
+0 1 0 1
+0 1 1 0
+1 0 0 1
+1 0 1 0
+1 1 0 0
+1 1 1 1
+11.1 The B-profile remains named, not guessed
+C describes B as angular velocity or a transformation matrix, while using the phrase “double
+lowercase phi.” Neither∝⌈⌈≀⊔⊣⌋⌋𝜙, 𝜙2 nor a specific matrix follows from that phrase. The master keeps
+a kinematic_descriptor and a separately typedkinematic_result. The B-profile must define
+how W is used before its result can be encoded. [C, p. 1][P31, p. 6]
+A zero blend result means equality of the encoded parity classes. It means equality of full
+geometric states only under an encoder that supplies that implication. The master therefore allows
+a blend record withunspecified status when the encoding has not been supplied, while other
+independently defined engine computations continue.
+The source label “precedence 0” is retained as an interpretation/dependency stage: resolve types
+and encoding before evaluating the bit relation. It is not used as a host privilege level, a global
+arithmetic precedence override or an elapsed-time value. [P31, p. 12]
+Tom Klootwijk | 13 September 2026 15 / 43
+
+===== PHYSICAL PAGE 16 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+12 Three predicates and the hollow-center description
+Cchangesthemeaningofitsone-bitstateasitsdiscussionmovesfromalignmenttosweeplimitsto
+a hollow center. The master carries all three forward rather than collapsing them into one control
+bit. [C, pp. 2–5]
+Predicate Zero means One means
+𝑠𝑎𝑙𝑖 𝑔𝑛 Alignment/no encoded phase
+adjustment
+Encoded discrepancy/phase-shift
+condition
+𝑠𝑙𝑖𝑚𝑖𝑡 Within the declared sweep envelope Declared envelope or threshold limit
+reached
+𝑠 𝑓 𝑟𝑖𝑛 𝑔𝑒 In the declared hollow region On the declared active fringe
+Each value has a definition status. No source equation establishes𝑠𝑎𝑙𝑖 𝑔𝑛 = 𝑠𝑙𝑖𝑚𝑖𝑡 = 𝑠 𝑓 𝑟𝑖𝑛 𝑔𝑒, and
+the engine never makes that identification merely because all three values fit a bit. Likewise, an
+OTAN2 residual is not any one of these bits without an explicit encoding rule. [P31, pp. 8–9]
+12.1 Regions rather than invented geometry
+Let a supplied region profile classify a hollow region𝐻 and active region𝑅 𝑓 with 𝐻∩𝑅 𝑓 =∅. On
+that classified domain,
+𝑠 𝑓 𝑟𝑖𝑛 𝑔𝑒(𝑧)=
+(
+0, 𝑧 ∈𝐻,
+1, 𝑧 ∈𝑅 𝑓 . (27)
+Unclassified points remain unspecified. In particular, “not in the hollow” is not automatically the
+same as “on the active fringe” when points beyond an outer boundary exist.
+C names Cassegrain, Gregorian, ring-focus and phased-array possibilities and asks follow-up ques-
+tionsthatare not answered inthe source. The masterkeepsinner_boundaryand outer_boundary
+as unit-tagged profile fields rather than choosing a reflector or inferring a complete response from
+a central receiver description. [C, pp. 4–5]
+12.2 Connection to the engine aperture
+A complete fringe mask𝑀 𝑓 may be supplied over the same logical dictionary as ASA. When
+explicitly enabled, it changes the effective aperture to𝑀𝐴∧𝑀 𝑓. That operation is the inherited
+P31 integration, not a mask silently generated from the three flags. Partial classification cannot
+masquerade as a total enabled mask. [P31, pp. 9–10]
+In default record mode, these source fields are still integrated: they occupy the engine’s committed
+reference/region record. Missing geometry does not erase a previously valid word result; it is
+reported at the field that lacks a definition.
+Tom Klootwijk | 13 September 2026 16 / 43
+
+===== PHYSICAL PAGE 17 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+13 ASA, NA and the whole-word disposition core
+For every logical word, the preserved base contract is
+𝑎 = 𝑥∧𝑀𝐴∧𝑉𝑣𝑎𝑙𝑖𝑑 , (28)
+𝑛 = 𝑎∧𝑀𝑁 , (29)
+ℎ = popcount(𝑛∧𝑀𝜕), (30)
+𝑦 =
+(
+0, ℎ > 0,
+𝑛, ℎ = 0, 𝑅𝐴𝑆𝐴 =(𝑎, 𝑛, ℎ, 𝑦). (31)
+Thisisthedocumented3.0/3.1aperturecontractcarriedintobothJ361andI2. ASAremainsbefore
+NA; the collision quantity is a count, and the disposition is whole-word zeroing. [P31, p. 4][J361, p.
+4]
+13.1 Logical support and word grouping
+The operands are bitsets over the same cell dictionary.𝑥 denotes occupancy or a declared selected
+support; 𝑀𝐴 istheASAaperture; 𝑀𝑁 thepost-ASAmask; and 𝑀𝜕 theboundary. 𝑉𝑣𝑎𝑙𝑖𝑑 suppresses
+undeclared tail bits. A coordinate key or a full identity digest is not substituted for any mask.
+For logical supports 𝑋 , 𝐵, population count of their bitwise AND is|𝑋∩𝐵|. A high-order
+intersection also counts: the test isℎ > 0, not raw-AND equality to the integer one. For a selected
+word 𝑛 = 255 and a boundary128, ℎ = 1 and the result is zero, not127.
+13.2 The 𝑉 sink and its record
+Vantablack names this absorbingstate disposition. The record retains𝑎, 𝑛, ℎ and the reason even
+when 𝑦 = 0. A clear computation that happens to select no bits and an absorbed nonempty word
+bothhavefinalzerobutdifferentintermediaterecords. Consumersmustnotreconstructthereason
+solely from𝑦.
+Proposition 13.1(Fixed-profile projection). For fixed masks, the final-word map sends zero to zero, never
+creates an input support bit, and is idempotent under reapplication.
+Proof. Each selection is an intersection with the input. If the first output is absorbed, it is zero
+and remains zero. Otherwise the output already satisfies the selection masks and contains no
+boundary intersection, so a second application leaves it unchanged. □
+This proposition concerns the final word, not the equality of its first-pass and second-pass histories.
+The source’s negative-divergence or light-absorption descriptions do not change these exact bitset
+equations.
+Tom Klootwijk | 13 September 2026 17 / 43
+
+===== PHYSICAL PAGE 18 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+14 Optional fringe and post-ASA lens profiles
+Thecomplete-maskoptionretainsthesamefouroutputfieldswhilechangingtheeffectiveaperture:
+𝑀′
+𝐴 = 𝑀𝐴∧𝑀 𝑓 , 𝑅 𝑓 𝑟𝑖𝑛 𝑔𝑒 = 𝐹𝐴𝑆𝐴(𝑥; 𝑀′
+𝐴, 𝑀𝑁 , 𝑀𝜕, 𝑉𝑣𝑎𝑙𝑖𝑑). (32)
+The profile is explicit and the mask names the same dictionary. The neutral setting is𝑀 𝑓 = 𝑉𝑣𝑎𝑙𝑖𝑑 .
+In record mode, no additional mask is applied. [P31, pp. 10–11][J361, p. 12]
+Theorem 14.1(Neutral recovery). Record mode has the original ASA result. In complete-mask mode,
+𝑀 𝑓 = 𝑉𝑣𝑎𝑙𝑖𝑑 recovers every field(𝑎, 𝑛, ℎ, 𝑦)of that result.
+Proof. The first selected word is𝑥∧𝑀𝐴∧𝑉𝑣𝑎𝑙𝑖𝑑 ∧𝑉𝑣𝑎𝑙𝑖𝑑 = 𝑥∧𝑀𝐴∧𝑉𝑣𝑎𝑙𝑖𝑑 . Identical first-stage
+inputs give identical NA words, boundary counts and final dispositions. Record-only mode leaves
+the operands unchanged directly. □
+14.1 The preserved counterexample
+A narrower pre-absorption selection does not guarantee a smaller final output. With𝑥 = 𝑀𝐴 =
+𝑀𝑁 = 𝑉𝑣𝑎𝑙𝑖𝑑 = 3 and 𝑀𝜕 = 2, the original record is(3, 3, 1, 0). Selecting 𝑀 𝑓 = 1 gives(1, 1, 0, 1).
+Removing the boundary bit has released the whole word from absorption. This is a required test
+of the retained semantics. [P31, p. 11]
+14.2 NA after ASA is not an inferred transfer function
+A describes liquid lensing and post-ASA numerical aperture. The runtime mask𝑀𝑁 is the
+inheritedBooleanrepresentation. Adoesnotsupplyanumericalrefractive-indextableorcomplete
+coordinate transfer function. Therefore the master keeps the lens descriptor and any supplied
+transfer profile separate from the mask operation. [A, pp. 78–81]
+A future supplied transform𝐿𝜆(𝑧)must state its parameters, interpolation, boundary policy,
+metric/frame effect and exact place in the data path. Applying a transform before selection need
+not equal applying it after selection. This master does not silently insert such a transform or
+advertise a lens-offset LUT that is absent from the inspected source contracts.
+The distinction matters for OTAN2 as well. If a transform changes a path or tangent frame, the
+orientation input must identify whether it was taken before or after that transform. Reusing the
+same field name is not sufficient to make those samples equivalent.
+Tom Klootwijk | 13 September 2026 18 / 43
+
+===== PHYSICAL PAGE 19 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+15 OTAN2 at the center of the integrated engine
+O first discusses ordinary atan2 and phase projection, then records the author’s spelling correction
+and supplies the literal operator. The master retains that final custom name and distinguishes it
+from the preparatory alternatives. [O, pp. 1–6]
+Source default /source_ratio
+otan2(Δ𝜙, Δ𝜌)= arctan
+ Δ𝜙
+Δ𝜌
+
+, Δ𝜌 ≠ 0. (33)
+For the source’s moving reference-axis angle𝛼,
+𝑒𝑠𝑜𝑢𝑟𝑐𝑒 = otan2(Δ𝜙, Δ𝜌)−𝛼. (34)
+The raw subtraction is retained; it is not silently wrapped or converted to a JK input.
+Δ𝜙 is the angular change in radians andΔ𝜌 a log-radius change over the corresponding interval.
+The source’sΔ𝜃 is an alias for the selected lower-case phase coordinate. The input order is angular
+increment first, radial increment second. [O, pp. 6–7]
+15.1 The explicit directed completion
+The inherited opt-in profiledirected_completion_1uses
+𝛽𝑑𝑖𝑟 = wrap2𝜋
+ 
+atan2(Δ𝜙, Δ𝜌)
+
+, (Δ𝜌, Δ𝜙)≠(0, 0). (35)
+This is a J361 completion, not a replacement definition of the source operator. The literal ratio
+forgets simultaneous sign reversal; the directed profile distinguishes it by a half-turn. A label such
+as “orthogonal” in O does not add a hidden𝜋/2rotation. [J361, p. 8]
+15.2 First-class engine observation
+Every requested sample has oneOTAN2Record, even when its value is undefined. It identifies the
+sample, epoch, increment origin, selected profile, units/frame, interval, axis, raw orientation and
+residual views. Its invariant records reference the same sample identifier. Consequently, OTAN2 is
+integrated into the engine state and commit, not delivered as a separate accessory.
+Calling it central does not invent a closed-loop control law. The numerical readout is computed
+from the actual supplied/integrated sample; ASA and JK remain governed by their displayed
+equations and explicit inputs.
+Tom Klootwijk | 13 September 2026 19 / 43
+
+===== PHYSICAL PAGE 20 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+16 Phase lifts, moving axes and the angular domain
+Define the principal representative for period𝑇 > 0 by
+wrap𝑇(𝑢)= 𝑢−𝑇
+ 𝑢+ 𝑇/2
+𝑇
+
+∈[−𝑇/2, 𝑇/2). (36)
+The engine retains three views when the corresponding values are defined:
+𝑒𝑟 𝑎𝑤 = 𝛽−𝛼, 𝑒 𝑑𝑖𝑟𝑒 𝑐𝑡𝑒 𝑑 = wrap2𝜋(𝑒𝑟 𝑎𝑤), 𝑒 𝑙𝑖𝑛𝑒 = wrap𝜋(𝑒𝑟 𝑎𝑤). (37)
+The positive half-period endpoint is represented negatively. A principal projection is not a
+reconstruction of lost winding. [J361, pp. 8–10][I2, contract]
+16.1 Explicit angular increment policies
+If phases are recorded modulo2𝜋, the actual change has the form
+Δ𝜙 = 𝜙1−𝜙0+ 2𝜋𝑘, 𝑘 ∈Z. (38)
+The two wrapped samples do not determine𝑘. The retained policies are an explicit increment,
+known turn difference, or a deliberately selected principal-difference convention. For359◦→1◦,
+direct subtraction is−358◦, while principal difference is2◦. The record must state which was
+selected. [J361, p. 9]
+16.2 Static chart; moving pinion; moving reference
+The pinion’s path supplies the increment vector in the static chart. The reference supplies𝛼 in the
+same log-tangent frame and scaling convention. Changing only𝛼 by 𝜂 gives
+𝑒′
+𝑟 𝑎𝑤 = 𝑒𝑟 𝑎𝑤−𝜂. (39)
+This is covariance, not an invariant. The stored chart and aperture do not move merely because a
+residual changes. [O, pp. 6–7]
+The term “eigenvalue axis” is retained as source nomenclature for a preferred reference orientation.
+NomatrixoreigenpairissuppliedbyO.Aprovidedaxisinanotherframestays frame_unspecified
+until the corresponding conversion is declared; an eigenvector is not calculated from an absent
+matrix.
+16.3 Singularities and numeric range
+The literal ratio is undefined atΔ𝜌 = 0. Both profiles report a zero-increment status when both
+components vanish. The implemented I2 component also rejects nonfinite operands, ratio overflow
+and nonzero-ratio underflow to zero. These statuses remain metadata, not zero-valued angles.
+The formal real-valued definition and a finite implementation’s range are recorded separately.
+Tom Klootwijk | 13 September 2026 20 / 43
+
+===== PHYSICAL PAGE 21 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+17 The invariant bank: R, W, P and S
+The v3.6 invariant controls are a bank of named transformation tests over the same OTAN2 sample.
+They distinguish an equality proved under assumptions from the finite arithmetic comparison of a
+particularinput. Fourcardsarepreserved-valueidentities; twofurthercardsareprofile-dependent
+laws. [I2, pp. 7–11]
+17.1 R — common radial scale
+Scaling both radii about the same origin by𝑐 > 0 adds ln 𝑐 to both log radii:
+(𝜌1+ ln 𝑐)−(𝜌0+ ln 𝑐)= Δ𝜌. (40)
+With Δ𝜙and 𝛼unchanged,eitherdefinedorientationprofileanditsrelativereadoutareunchanged.
+Thesameorigin,commonscaleandcommonreferencelengtharepreconditions. Thisistheexplicit
+algebra behind O’s scale statement. [O, pp. 3, 6]
+17.2 W — common interval
+For a finite positive common interval𝑊,
+Δ𝜙/𝑊
+Δ𝜌/𝑊 = Δ𝜙
+Δ𝜌 . (41)
+Dividing both components by that interval preserves orientation. It does not license comparing
+components drawn from different intervals without conversion. The clock interval is not inferred
+from an author identifier.
+17.3 P — phase origin
+For consistently lifted phases and a common shift𝛾,
+(𝜙1+ 𝛾)−(𝜙0+ 𝛾)= Δ 𝜙. (42)
+The same lift must be used for both endpoints. Independently rewrapping each endpoint can
+introduce a branch-cut change in a naive subtraction. That is why P names a lift precondition
+rather than hiding it in a modulo operation.
+17.4 S — step scale / spiral pitch
+For 𝑠 > 0, the pair(𝑠Δ𝜌, 𝑠Δ𝜙)has the same direction and source ratio. For the illustrative chart
+relation 𝜙 = 𝑘𝜌+ 𝑐, every nonzero radial segment hasΔ𝜙/Δ𝜌 = 𝑘 and the literal valuearctan 𝑘.
+This derives the constant-pitch statement without adding an image correspondence or a field
+estimator. [O, p. 6]
+These identities do not assert that all coordinates or all engine outputs stay fixed under the same
+transformation. The declared object preserved is the appropriate orientation/residual, with the
+rest of its preconditions held constant. Positive step-scale invariance is not the same operation as
+changing both signs, which belongs to V.
+Tom Klootwijk | 13 September 2026 21 / 43
+
+===== PHYSICAL PAGE 22 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+18 The invariant bank: F, V and panel semantics
+18.1 F — joint frame rotation
+Write 𝑣 =(Δ𝜌, Δ𝜙)𝑇 in the common tangent frame. Rotate𝑣 by 𝜂 and advance𝛼 by the same angle.
+The directed relative class is unchanged modulo2𝜋. The literal ratio preserves the corresponding
+line classmodulo 𝜋, provided both literal denominators are nonzero.
+wrap2𝜋(𝛽′
+𝑑𝑖𝑟−(𝛼+ 𝜂))= wrap2𝜋(𝛽𝑑𝑖𝑟−𝛼), (43)
+wrap𝜋(𝛽′
+𝑠𝑜𝑢𝑟𝑐𝑒 −(𝛼+ 𝜂))= wrap𝜋(𝛽𝑠𝑜𝑢𝑟𝑐𝑒 −𝛼). (44)
+Raw literal residual equality does not hold across every branch choice. The source example
+𝑣 =(1, 0), 𝛼 = 0, rotated by3𝜋/4gives raw literal residual−𝜋 but the same line-class residual zero.
+[I2, F-card contract]
+18.2 V — direction reversal
+Negatingbothincrementspreservestheirquotient,sotheliteralorientationisunchangedwherever
+defined. The directed completion instead changes by a half-turn:
+otan2𝑠𝑜𝑢𝑟𝑐𝑒(−Δ𝜙,−Δ𝜌)= otan2𝑠𝑜𝑢𝑟𝑐𝑒(Δ𝜙, Δ𝜌), (45)
+wrap2𝜋
+ 
+𝛽𝑑𝑖𝑟(−𝑣)−𝛽𝑑𝑖𝑟(𝑣)
+
+=−𝜋. (46)
+The negative representative is the selected half-open convention. V is therefore aprofile law, not a
+claim that reversal has the same interpretation in both profiles. [I2, V-card contract]
+18.3 PASS, FAIL and UNDEFINED
+The I2 comparison tolerance is10−10 radians. A finite comparison within that tolerance reports
+PASS; one outside reports FAIL; a failed domain/precondition reports UNDEFINED with its
+reason. Undefined is never counted as a successful invariant check.
+The inherited F-probe guards near-vertical source vectors by
+|Δ𝜌′|≤64 𝜖𝑚𝑎𝑐 ℎ𝑖𝑛𝑒 hypot(Δ𝜌, Δ𝜙). (47)
+This is a numerical probe guard, not a redefinition of the source operator’s exact nonzero-
+denominator domain. The R/P probe baselines0.75 and 0.25, and the default transformation
+magnitudes, are test constructors from I2 rather than source constants.
+The complete six-card result is committed with the sample it checks. A FAIL is a diagnostic record;
+it does not silently change masks, JK inputs or future time steps. Any different response policy
+must be explicitly selected and versioned.
+Tom Klootwijk | 13 September 2026 22 / 43
+
+===== PHYSICAL PAGE 23 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+19 The total integrated tick
+The master transition uses one immutable input/configuration snapshot and one commit. The
+following is anewly declared assembly of the retained operators, not an order claimed to have
+appeared verbatim in a source transcript. The preserved local orders remain unchanged inside it.
+[M03, 09]
+Stage Work Dependency / output
+P0 Resolve the epoch snapshot Verify identity/profile references, dictionary IDs, types,
+required inputs and budgets. Do not alter live state.
+P1 Advance enabled state lanes Apply the selected raw-word rule or lineage/hinge/RK4
+profile; optionally advance a programmed machine prefix.
+Disabled lanes retain their old state.
+P2 Bind the logical word input Select an explicit input bank, retained bank or a declared
+emitter output. No automatic conversion from a path, digest
+or sensor label to occupancy is assumed.
+P3 Resolve the sample record Bind interval, increment origin, phase policy, common frame,
+A–W–B–N values and predicate statuses.
+P4 Evaluate OTAN2 and
+invariants
+Compute the literal or selected completed value and its
+residual views. Compute the six diagnostics from that same
+sample.
+P5 Apply the aperture contract ASA, optional complete fringe, NA, POPCNT and whole-word
+disposition, producing(𝑎, 𝑛, ℎ, 𝑦)per logical word.
+P6 Evaluate the JK bank Use explicit J/K inputs and the old 𝑄𝑛 on a declared event;
+otherwise retain𝑄𝑛. No undeclared angular feedback.
+P7 Assemble and commit Publish next state, outputs, source/status records, manifests
+and one ledger extension in canonical order.
+The source-local word precedence remains shift, merge/jitter, hinge where applicable, followed by
+its named boundary stage. The blend’s precedence-zero label remains type/encoding resolution.
+ASA remains before NA. OTAN2 is evaluated after its required increment/frame are resolved, and
+its records are committed with the epoch.
+19.1 Independent lanes, explicit links
+The core can execute word filtering without a geometric lane, or a geometric lane can supply a
+samplethroughadeclaredemitter. Acallablefieldoremitterisaconfigurationinput, notahidden
+implementation gap. The master does not force every operation into a serial dependency when its
+source defines no such dependency.
+An identity carrier for the word bank and explicit observation increments make a complete
+non-geometric tick fully specified. Section 29 executes that integrated case with JK state, blend,
+OTAN2, all six invariants, aperture output and a ledger record.
+Tom Klootwijk | 13 September 2026 23 / 43
+
+===== PHYSICAL PAGE 24 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+20 Carrier binding: geometry into the word kernel
+A total assembly needs an explicit link between geometric candidates and logical words, rather
+than a guessed conversion. M1 therefore defines the optionallineage_words carrier below as a
+new master adapter. Its use must be selected in the configuration; direct/retained word-bank
+modes remain separate. [M15]
+Let the valid candidate registry beb𝐹. A declared chart quantizer maps each candidate𝐶 to a cell
+with logical word𝑤(𝐶)and bit𝑏(𝐶)∈{0, . . . , 31}. The emitted occupancy is
+emitΘ(b𝐹)[𝑞]=
+Ü
+𝐶∈b𝐹: 𝑤(𝐶)=𝑞
+2𝑏(𝐶). (48)
+Candidates outside the selected chart are handled by the geometric profile’s explicit boundary
+disposition before emission. The adapter is not defined on a candidate with missing coordinates,
+unresolved chart identity or an invalid lookup result.
+Apply the unchanged ASA/NA/fringe/whole-word map to that bank, producing𝑌. Admission
+back into the lineage registry is
+𝐹𝑛+1 = admit(b𝐹, 𝑌)={𝐶∈b𝐹 :(𝑌[𝑤(𝐶)]≫𝑏(𝐶))∧1 = 1}. (49)
+The full registry retains every candidate identity and lineage key. If two candidates share one cell,
+oneoccupancybitrepresentsthatsupport,whiletworegistryrecordsremaindistinct. Thisadapter
+shares the cell/group disposition between them; it does not invent an individual classification
+from a single bit.
+Proposition 20.1(Word–registry consistency). In the selected carrier, with𝑋 = emit(b𝐹)and final ASA
+output 𝑌, re-emitting the admitted registry givesemit(𝐹𝑛+1)= 𝑌.
+Proof. ASA selects only bits already present in𝑋, so every one in𝑌 has at least one candidate
+at that cell. Admission keeps precisely the candidates whose selected cell bit is one in𝑌. Their
+union contains every such bit and no other bit. Multiple candidates at one cell do not change that
+union. □
+OTAN2 samples can refer to these same candidate IDs, but their increments are resolved from the
+declared unquantized state segment before this support projection unless a separate quantized-
+observation profile is explicitly chosen. Absorption does not delete the corresponding diagnostic
+sample history.
+This adapter supplies the missingdeclaredlink for an integrated geometric-to-word tick. It is not
+attributed to an undocumented source equation and does not add an external sensor, identity
+matcher or actuator interface.
+Tom Klootwijk | 13 September 2026 24 / 43
+
+===== PHYSICAL PAGE 25 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+21 Transition equations and commit semantics
+Let b𝐹, b𝑈 be the validated proposed states of enabled evolution lanes, or their old states when
+disabled. In the selectedlineage_words carrier, the admitted frontier is defined in Section 20;
+otherwise the independently selected frontier profile supplies its next state. Letb𝑋 be the selected
+logical input bank. The chosen carrier/emitter must already use the mask dictionary. Define
+𝑅𝐴,𝑛 ={𝐹𝐴𝑆𝐴(b𝑋[𝑞]; Θ𝑛[𝑞])}𝐿𝑤−1
+𝑞=0 , (50)
+𝑋𝑛+1[𝑞]= 𝑅𝐴,𝑛[𝑞].𝑦, (51)
+𝑄𝑛+1[𝑗]=
+(
+JK(𝑄𝑛[𝑗], 𝐽𝑛[𝑗], 𝐾𝑛[𝑗]), JK event,
+𝑄𝑛[𝑗], otherwise, (52)
+𝐷𝑛+1 =⟨𝑃𝑏𝑙𝑒𝑛𝑑,𝑛 , 𝑃𝑟𝑒 𝑔𝑖𝑜𝑛,𝑛 , 𝑃𝑂𝑇𝐴𝑁 2,𝑛 , Inv𝑛⟩. (53)
+The observation and invariant fields are fully part of𝑆𝑛+1, even though their default effect on the
+aperture and JK recurrence is zero. [M09]
+Constructaneventbody 𝐸𝑛 withtheoldepoch, interval, dictionaries, selectedprofiles, coreresults,
+old/new JK values, enabled-lane outcomes and𝐷𝑛+1. The ledger rule produces𝐿𝑛+1. Then
+𝑆𝑛+1 =⟨𝐺, 𝑛+ 1, 𝑡𝑛+ 𝑊𝑛 , Θ𝑛 , 𝐹𝑛+1, 𝑋𝑛+1, 𝑄𝑛+1, b𝑈 , 𝐿𝑛+1, 𝐷𝑛+1⟩. (54)
+Any accepted configuration change becomes a new versioned snapshot; it is never written into
+tables that an unfinished kernel still reads.
+21.1 Fatal inputs versus undefined observations
+Invalid required word types, missing enabled-mask definitions, incompatible dictionaries, failed
+required allocations or nonfinite active numerical evolution reject the epoch before commit. The
+persistent state and ledger head stay unchanged. An out-of-domain OTAN2 sample, by contrast,
+produces its defined error/status record; it need not invalidate an otherwise valid independent
+ASA result.
+An absent B encoder leaves the blend unspecified. An absent moving axis can leave the orientation
+defined while the relative residual remains unspecified. These are legitimate committed records
+describing available and unavailable information, not zero-filled substitutes.
+21.2 Why a commit is necessary
+Updating the old JK bank in place while other channels read it, publishing half of a new aperture
+table, or logging a state before its required work completes would introduce an order-dependent
+engine. M1 excludes those cases through snapshot reads and staged writes. This is a logical
+transaction contract; a concrete storage backend must implement equivalent visibility and failure
+behavior.
+Tom Klootwijk | 13 September 2026 25 / 43
+
+===== PHYSICAL PAGE 26 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+22 Engine records and interface schema
+The complete record has a stable core and separately typed groups. This is a logical schema; fixed
+offsets for an unseen historical binary are not asserted.
+Record group Required content / interpretation
+version Engine familyv3.6, master revisionM1, individual component/profile
+identifiers.
+epoch Epoch index, model interval, model time, input snapshot and parent ledger
+head.
+identity Fullgenesisdigestandregistryreferences;sourceattributionstoredseparately.
+dictionary Chart profile, dimensions, quantization, tail masks, word grouping, topology
+and storage permutation.
+evolution Enabled lanes, incoming and proposed states, field/profile IDs, sample paths
+and resource outcomes.
+core Canonically ordered(𝑎, 𝑛, ℎ, 𝑦)words; fringe mode and mask identity where
+enabled.
+jk Old/new 𝑞, explicit J/K operands, clock event and the mode’s declared role.
+pinion A–W–B–N references, kinematic/encoding profile, three predicate values and
+their statuses.
+otan2 Profile, sample ID, increments, phase policy, frame, axis, orientation status
+and residual views.
+invariants R/W/P/S/F/V IDs, assumptions, transform values, comparison class,
+expected/observed/error and status.
+provenance Source references, configuration digest, code/numerics profile and event
+serialization version.
+22.1 Stable names for known status aliases
+I1 usedundefined_ratio in its document table; the supplied I2 code returnsratio_undefined.
+M1 uses the executable I2 name as the canonical field value and records the former as an import
+alias. A similar rule maps narrative “increment unspecified” to the precise missing-policy or
+missing-turn status. This is an explicit schema reconciliation, not a silent change to the source
+formula. [M10]
+Zero increments, missing axis, missing frame, missing winding policy, numerical range failure and
+nonfinite inputs remain separate. Mask-mode incompleteness is a required-input error, while a
+record-only region may be unspecified. The schema’s status and profile fields prevent consumers
+from confusing those cases.
+The four ASA integers may retain a 16-byte low-level layout. The master record containing them
+need not be exactly 16 bytes: typed provenance and numerical observation data are additional
+information, not quantities compressed into the same word.
+Tom Klootwijk | 13 September 2026 26 / 43
+
+===== PHYSICAL PAGE 27 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+23 Packed cells, valid bits and Morton textures
+Let 𝑊 𝑙𝑜 𝑔𝑖𝑐
+𝑝 =⌈𝑃/32⌉be the number of angular words per radial row. To avoid confusing this count
+with the time interval W, implementation records call itwords_per_row. Word(𝑖, 𝑤)contains cells
+(𝑖, 32𝑤+ 𝑏)in its low-to-high bits𝑏 = 0, . . . , 31.
+Pad row and word counts upward to multiples of eight, giving𝑅𝑝 and 𝐶𝑝. The last logical word
+carries
+𝑉𝑤 =
+(
+2𝑃 mod 32−1, 𝑤 = 𝑊 𝑙𝑜 𝑔𝑖𝑐
+𝑝 −1 and 𝑃 mod 32 ≠ 0,
+232−1, otherwise.
+(55)
+Allpaddedtexelsarezero. Noimplementationshiftsa32-bitvalueby32toconstructthefullmask;
+the full-word case is explicit.
+23.1 Application-visible Morton map
+Within an8×8 word tile, radial bits occupy even address positions and angular-word bits odd
+positions:
+𝑧(𝑖0, 𝑤 0)=
+2Õ
+𝑘=0
+
+bit𝑘(𝑖0)22𝑘+ bit𝑘(𝑤 0)22𝑘+1
+
+. (56)
+With 𝑖0 = 𝑖 mod 8 and 𝑤 0 = 𝑤 mod 8,
+𝜋(𝑖, 𝑤)= 64
+ 
+⌊𝑖/8⌋(𝐶𝑝/8)+⌊𝑤/8⌋
+
++ 𝑧(𝑖0, 𝑤 0). (57)
+This retains A’s bit-order convention and the prior word-tile realization. Logical output remains
+row-major 𝑞 = 𝑖𝑊 𝑙𝑜 𝑔𝑖𝑐
+𝑝 + 𝑤. [A, pp. 85–87][P31, p. 4]
+Theorem 23.1(Swizzle equivalence). If every stored input plane satisfies𝑀𝜋[𝜋(𝑖, 𝑤)]= 𝑀[𝑖, 𝑤]and
+output groups remain canonical, changing between a bĳective linear and Morton layout changes no ASA
+result.
+Proof. The mapping relation returns the same four or five logical input words at every logical
+location. Theevaluatoristhesamefunctiononthosewords,andtheoutputaddressisindependent
+of the storage permutation. Equality holds word by word. The within-tile inverse extracts even
+and odd bits, proving the local bĳection; row-major tile indexing completes it globally. □
+A swizzle moves data, not the underlying meaning of a bit. It does not change the phase frame,
+reorder JK events or turn a native program instruction into texture data.
+Tom Klootwijk | 13 September 2026 27 / 43
+
+===== PHYSICAL PAGE 28 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+24 GPU backend and the laptop memory profile
+The retained target is theRTX 5070 Ti Laptop GPU with 12 GB GDDR7. NVIDIA’s compute-
+capability listing assigns the RTX 5070 Ti family to 12.0, and CUDA 12.8 introduced compiler
+support for SM_120. The implementation target should be checked against the actual selected
+device rather than inferred from the document title. [H1, 2, 3]
+The source’s texture request is mapped to read-only data resources. A linear unsigned-word
+texture uses an explicitly supplied address andtex1Dfetch; a global-read backend evaluates the
+same expression from the same words. CUDA’s linear-resource texture addressing and filtering
+modes do not replace application bounds checks. [H4]
+The integrated allocation categories are
+𝑀𝑡𝑜𝑡 𝑎𝑙 = 𝑀𝑤𝑜𝑟𝑑 𝑘𝑒𝑟𝑛𝑒 𝑙 + 𝑀 𝑓 𝑟𝑖𝑛 𝑔𝑒+ 𝑀 𝑓 𝑟𝑜𝑛𝑡𝑖𝑒𝑟 + 𝑀𝐽𝐾+ 𝑀𝑂𝑇𝐴𝑁 2+ 𝑀𝑈+ 𝑀𝑠𝑡 𝑎 𝑔𝑖𝑛 𝑔+ 𝑀𝑚𝑎𝑟 𝑔𝑖𝑛 . (58)
+For stored plane count𝑆 = 𝑅𝑝 𝐶𝑝 and logical output count𝐿𝑤 = 𝑅⌈𝑃/32⌉, thebase four-input-
+plane/16-byte-output word kernel occupies
+𝑀𝑤𝑜𝑟𝑑 𝑘𝑒𝑟𝑛𝑒 𝑙 = 16𝑆+ 16𝐿𝑤 . (59)
+At the128×1024 review profile this is 131,072 bytes. That is not the whole engine’s memory use.
+Enabled fringe and numerical/frontier/record storage must be added before admission. [M11]
+The earlier review defaults retain a 64 MiB planning margin, a 512 MiB user ceiling and a 1,536
+MiB total-device reserve. With probed free bytes𝐹 and total bytes𝑇, require
+𝑇 > 𝑀𝑟𝑒 𝑠𝑒𝑟𝑣𝑒 , 𝑀 𝑡𝑜𝑡 𝑎𝑙≤min
+ 
+𝐵𝑢𝑠𝑒𝑟 , 7⌊𝐹/10⌋, 𝑇−𝑀𝑟𝑒 𝑠𝑒𝑟𝑣𝑒
+
+. (60)
+An actual allocation failure remains an explicit error even after admission, because available
+resources can change.
+24.1 The ring-0 boundary
+The master adopts ordinary user-mode CUDA through the installed NVIDIA driver. CPU kernel-
+mode privilege and a CUDA compute kernel are different interfaces. No new host ring-0 module,
+driver patch or code-in-texture mechanism is specified. The source’s “0-ring cache” remains an
+architectural label, not a recovered host ABI. [A, pp. 85–87][H5]
+Input snapshots remain immutable until dependent work completes. Mutable outputs, JK banks
+and tapes use separate storage. Cache residency and speedup are measurement outcomes, not
+engine invariants. This PDF specifies the backend contract; it does not report a newly compiled or
+benchmarked full GPU engine.
+Tom Klootwijk | 13 September 2026 28 / 43
+
+===== PHYSICAL PAGE 29 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+25 Faceted input, mosaic records and timing
+B supplies the ommatidia/facet organization, edge reduction and central mosaic-stitcher narrative.
+A’s final pages attach it to the larger atomOS context. The master preserves that organization as
+producer ports feeding a common declared dictionary. [B, pp. 7–8][A, pp. 87–91]
+For local synthetic or otherwise supplied producer words𝑋𝑖, a Boolean union adapter may declare
+𝑋 =
+Ü
+𝑖
+𝑋𝑖. (61)
+OR is associative, commutative and idempotent, so the abstract set result does not depend on
+enumerationorduplicatecontributions. Thisdoesnotsupplycross-producergeometry,calibration
+or timing: those must already agree with the chosen dictionary.
+If unknown differs from known-clear, known-cell masks𝐾𝑖 are needed as separate metadata or
+planes. A selected adapter can retain𝐾 = Ô
+𝑖 𝐾𝑖 and 𝑋 = Ô
+𝑖(𝑋𝑖∧𝐾𝑖). Missing input must not
+silently become an observed zero. This is an inherited interface discipline, not a new live sensor
+implementation.
+25.1 The source hardware port
+The IWR1642 and optic-lobe/HWA/DSP names belong to B’s proposed upstream organization.
+The source supplies no complete firmware, calibration, frame schema or deployed acquisition
+artifact. The master therefore names the input port and its required output type without adding
+register configuration or external data acquisition. The core and OTAN2 can be exercised from
+local synthetic records independently of that port.
+25.2 250 Hz and 128 Hz remain distinct
+B’s 250 Hz and A’s 128-tick labels are separate source targets. Their exact periods are1/250s and
+1/128 s. The shared repetition interval is
+𝑇𝑐 = 1
+gcd(250, 128)= 1
+2 s, (62)
+containing 125 events of the first stream and 64 of the second. An exact base quantum1/32000
+s represents the periods as 128 and 250 quanta. This is arithmetic about the named rates, not a
+newly configured hardware clock. [B, p. 7][A, p. 83]
+Any multi-rate adapter must state whether it batches, accumulates or otherwise maps events.
+OTAN2’s W card requires a common interval for the two compared increments; it does not solve a
+missing multi-rate association by cancellation.
+Tom Klootwijk | 13 September 2026 29 / 43
+
+===== PHYSICAL PAGE 30 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+26 Provenance, replay and the committed ledger
+The retained ledger idea binds state records to the genesis and prior history. The master
+event body includes profile IDs, input/table digests, ordered core/JK results and the integrated
+OTAN2/invariant records. Denote its declared canonical encoding by𝐶 and a master-specific
+domain separator by𝑑36:
+ℓ𝑛+1 = SHA256
+ 
+𝑑36∥ℓ𝑛∥len64𝐵𝐸(𝐶(𝐸𝑛))∥𝐶(𝐸𝑛)
+
+. (63)
+Theexactbyteformatbelongstoaserializerprofile. Anexistingprofilemayberetainedunchanged
+for its component records, while the master envelope receives a distinct version. This avoids
+claiming that a new envelope has the same byte hash as an older record. [M12]
+26.1 Two useful reproducibility notions
+Semantic replaycompares the same logical state and result values under the same declared nu-
+mericalrules. Bytereplay alsorequiresidenticalcanonicalencodingandnumericalrepresentation.
+A timing measurement can change between otherwise equivalent runs; decide explicitly whether
+such measurements belong in a sealed event or a separate benchmark record.
+The I2 component uses floating-point arithmetic and transcendental functions. Integer mask/JK
+results can be compared exactly; cross-runtime floating comparisons use declared tolerances. A
+digest equality claim cannot erase a numeric-representation difference, and a tolerance comparison
+is not the same as byte identity.
+26.2 What absorption retains
+A Vantablack output word may be zero while its nonzero selected support and hit count remain
+in the event. A numerical or input error may reject a tick without extending the authoritative
+state ledger, while an out-of-band diagnostic records the rejection. The master separates those two
+channels so that a failed transaction does not look like a successful state update.
+Proposition 26.1(Conditional deterministic replay). For identical state, input, configuration, enabled
+policies, evaluation semantics and canonical record ordering, the master tick yields identical proposed results
+and the same ledger successor.
+Proof. Each enabled component is a deterministic function of its declared input under the stated
+semantics. Snapshotreadsremovescheduling-dependentmutation. Canonicalorderingfixesevent
+construction, and the digest is a deterministic function of the resulting bytes and prior head.□
+A retained trusted head supplies an integrity reference; an unanchored self-consistent chain is not
+itself authentication. Full input truth, signing and trusted timestamps are separate contracts. This
+keeps the source’s provenance vocabulary without asserting an unprovided authority mechanism.
+Tom Klootwijk | 13 September 2026 30 / 43
+
+===== PHYSICAL PAGE 31 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+27 The retained programmable-kernel extension
+Earlier project formalizations introduced a programmable extension to give “universal kernel”
+a precise computational meaning. That extension is retained here as an optional engine lane U,
+clearly distinct from a claim that fixed shift/XOR or OTAN2 alone is universal. It is restated as a
+mathematical construction rather than credited to an equation absent from the source transcripts.
+[M13]
+A deterministic machine has a finite control set𝑄𝑈, a finite alphabetΓ ={0, . . . , 𝐾−1}with blank
+0, halt states𝐻, and a transition table
+𝛿 :(𝑄𝑈\𝐻)×Γ ⇀ 𝑄𝑈×Γ×{−1, 0, 1}. (64)
+Its configuration is(𝑞𝑈 , 𝑝, 𝑇)with head 𝑝 ∈Z and tape 𝑇 : Z →Γ. For a supplied rule
+𝛿(𝑞𝑈 , 𝑇(𝑝))=(𝑞′
+𝑈 , 𝑏, 𝑑),
+(𝑞𝑈 , 𝑝, 𝑇)↦−→(𝑞′
+𝑈 , 𝑝+ 𝑑, 𝑇[𝑝↦→𝑏]). (65)
+𝑞𝑈 is a program-control state and must not be confused with the separate JK bank𝑄𝑛.
+27.1 Packing does not remove logical addresses
+With 𝑘 =⌈log2 𝐾⌉, encode tape symbol𝑇(𝑖)in the𝑘 bits starting at logical address𝑘𝑖. A sparse
+word dictionary represents absent words as blank zero. Negative addresses require mathematical
+floor/remainder semantics; finite device storage uses an explicit origin offset and range checks.
+Theinstructiontablecanberead-onlydatawhilethesimulatedtapeiswritable. Atableentryisnot
+nativecodeplacedinatexturecache: aninterpreterperformsthecorrespondingread/write/move
+operations. Multiple independent tapes can execute in separate lanes; one dependent machine
+sequence remains ordered.
+27.2 Master scheduling
+When U is enabled, the epoch supplies a finite transition budget. Completed transitions update a
+proposed U state; reaching the budget returns a running prefix status, not a halt. A missing rule or
+unavailable required tape range is an explicit stop/error condition under the selected U profile.
+No partial individual transition is committed. A required lane error rejects the master epoch; a
+declared finite budget boundary does not invent nontermination.
+The master can keep U disabled without removing the definition from the total architecture.
+Enabling it does not change ASA, JK or OTAN2 unless an additional explicitly declared local
+program interface connects their records.
+Tom Klootwijk | 13 September 2026 31 / 43
+
+===== PHYSICAL PAGE 32 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+28 Computational simulation and its stated scope
+Theorem 28.1(Machine simulation in the U profile). Assume logical integer addresses and enough
+storage for each finite execution prefix. Every deterministic machine with finite control and finite alphabet
+as defined in Section 27 can be encoded so that the U interpreter preserves its tape, head, control state and
+halting behavior after each defined transition.
+Proof. Number the finite symbols and states. Store the machine’s transition table unchanged under
+those codes. Pack each initial symbol into its𝑘-bit tape block, and copy its initial head and control
+state.
+Use the invariant that every decoded block equals the corresponding machine symbol and that the
+head and control state agree. It holds initially. If it holds before a step, the interpreter reads the
+same symbol, selects the same transition, overwrites exactly the current symbol block, and applies
+the same head and control updates. Distinct fixed-size blocks are disjoint, so other symbols are
+unchanged. The invariant holds after the step. Induction gives every finite prefix and hence the
+same entry into a halt state. □
+This is the retained meaning of programmable computational universality. It relies on addressable
+state and a supplied transition table. A finite wrapped polar dictionary cannot replace an
+unbounded logical tape without eventually aliasing distinct logical cells.
+28.1 Finite resources and the master
+A device or host execution uses finite memory and a finite budget. It agrees with the abstract
+machineonlyovertheprefixforwhichthoseresourcesandtransitiondefinitionssuffice. Aresource
+stop is therefore carried as a status in the engine’s provenance, not mislabeled as an abstract halt or
+as completion of an arbitrary computation.
+The universality proof is not a proof about an unavailable compiled v3.6 runtime. It is a property
+of the explicit mathematical interpreter. The current PDF consolidates that construction with the
+rest of atomOS so that its assumptions and state boundaries are visible in one place.
+28.2 Relation to the invariant controls
+The OTAN2 invariant bank tests selected transformations of orientation samples. It neither makes
+every program invariant nor proves arbitrary program termination. A future U program may
+inspect engine records under an explicit input adapter, but its own behavior still requires its own
+specification. Preserving this distinction allows the engine to have both a general interpreter lane
+and a small, precisely defined bank of invariants without conflating their roles.
+Tom Klootwijk | 13 September 2026 32 / 43
+
+===== PHYSICAL PAGE 33 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+29 A complete worked engine tick
+This worked configuration enables the logical word bank, supplied-input JK updates, binary blend,
+OTAN2, all six invariant checks and the ledger. The geometric and programmable lanes are
+explicitly disabled for this tick, so they retain their state. The carrier is the identity input-bank
+profile. These are test choices, not constants in the source transcripts. [M14]
+29.1 Initial state and inputs
+Choose epoch 0, model time 0 and interval𝑊 = 0.125. The four initial logical words are
+𝑋0 =(15, 3, 0, 255); the JK bank is𝑄0 =(0, 1, 0, 1). On the declared JK event, supply
+𝐽 =(0, 0, 1, 1), 𝐾 =(0, 1, 0, 1). (66)
+The blend encoding is(𝑛𝑏 , 𝑎𝑏 , 𝛽𝑏)=(1, 0, 1), so𝑠𝑏𝑙𝑒𝑛𝑑 = 0. Alignment interpretation is explicitly
+adopted for that encoded value; no limit or fringe predicate is inferred from it.
+Supply the OTAN2 sample
+Δ𝜌 = 0.5, Δ𝜙 = 0.5 rad, 𝛼 = 𝜋/12, (67)
+in thelog_tangentframe underexplicit_incrementand source_ratio. Its output is
+𝛽 = 𝜋/4 = 45◦, 𝑒 𝑟 𝑎𝑤 = 𝜋/6 = 30◦. (68)
+For this input both principal residual views also equal30◦.
+Word 𝑥 𝑀 𝐴 𝑀𝑁 𝑀𝜕 𝑉𝑣𝑎𝑙𝑖𝑑 𝑀 𝑓
+0 15 12 10 0 15 15
+1 3 3 3 2 3 3
+2 0 15 15 0 15 15
+3 255 255 255 128 255 255
+The fringe mask is neutral in every row. The resulting core records are
+𝑅𝐴 =
+
+(12, 8, 0, 8),(3, 3, 1, 0),(0, 0, 0, 0),(255, 255, 1, 0)
+
+. (69)
+The final word bank is𝑋1 =(8, 0, 0, 0), and the JK truth table gives𝑄1 =(0, 0, 1, 0). Word 2 is
+empty; words 1 and 3 are absorbed. Their equal final zero does not erase that distinction.
+Tom Klootwijk | 13 September 2026 33 / 43
+
+===== PHYSICAL PAGE 34 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+30 The same tick’s controls, commit and variants
+30.1 Invariant results belong to the tick
+Using I2’s default probe parameters, all six checks pass for the preceding sample. R compares a
+common ln 10offset,Wcomparesthecommonpositiveinterval,Pcomparesacommonphaseshift,
+S scales both components by 3, F rotates both vector and axis by 0.4 rad, and V checks reversal
+under the literal profile. Each record names the comparison class; F’s is the line class, not an
+unrestricted raw-residual equality.
+After validation, the commit publishes epoch 1, time 0.125, the new word and JK banks, the
+encoded blend, the OTAN2 observation and its six diagnostics, and a new ledger head. The old
+state is unchanged. Re-evaluating the same old state and inputs with the same encoding yields the
+same proposed record and successor head.
+30.2 An explicit fringe variant
+Change only𝑀 𝑓[0]from 15 to 7 and𝑀 𝑓[1]from 3 to 1. The first two records become
+(4, 0, 0, 0), (1, 1, 0, 1), (70)
+so the next word bank is(0, 1, 0, 0). The JK output remains(0, 0, 1, 0)because its explicit inputs
+have not changed. OTAN2 and the invariant sample also remain unchanged. The event and ledger
+head change because the selected mask profile and core results changed.
+30.3 An undefined source-ratio variant
+Change the observation only toΔ𝜌 = 0, Δ𝜙 = 1. The source profile returnsratio_undefined, its
+angle/residual values are null, and the bank checks are UNDEFINED with the corresponding
+reason. The valid ASA and JK inputs still yield their original core/state result. A numerical zero
+angle is not substituted for the missing value.
+30.4 A rejected transaction variant
+Changing an input word to−1, or supplying a nonpositive model interval, violates a required
+contract. The master does not publish partial next state, advance epoch/time or extend its
+authoritative ledger. This is different from a successful tick that records an undefined observation.
+These variants were exercised in the new master-assembly audit. They demonstrate the integrated
+state ownership, not a graphical-panel-only operation and not an assertion that optional geometric
+or hardware paths were executed.
+Tom Klootwijk | 13 September 2026 34 / 43
+
+===== PHYSICAL PAGE 35 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+31 Compatibility and engine-wide invariants
+The integration preserves well-defined component behavior while changing the total record
+structure. The compatibility target is stated per projection, not by claiming every old byte layout
+remains identical.
+Theorem31.1 (CoreandJKnoninterference) . Fixtheselectedlogicalinputbank,masks,topology/grouping
+andexplicitJKevent/inputs. ChangingonlyanOTAN2sample,areference-onlyB/regionrecordorinvariant
+probeparametersleavestheASAoutputbankandJKnext-statebankunchangedunderthedefaultno-feedback
+profile.
+Proof. The ASA expressions use only the fixed word operands and masks. The JK recurrence uses
+only the fixed old state, event and J/K inputs. Neither reads the changed fields in this profile.
+Their projected outputs are therefore identical. The observation records and ledger may differ and
+are not part of the claimed invariant. □
+Invariant / recovery rule Exact scope
+Genesis preservation Successful ordinary ticks retain 𝐺; a new genesis is a separately named
+initialization event.
+Neutral-fringe recovery 𝑀 𝑓 = 𝑉𝑣𝑎𝑙𝑖𝑑 gives the base four-word result.
+Storage-layout equivalence Linear/Morton reads recover identical logical words and canonical
+outputs.
+One-bit domain closure Defined blend/JK outputs are bits; definition status remains metadata.
+No invented support Final ASA support is inside the selected input bank; a prior evolution lane
+may itself create proposals under its own rule.
+No live-source resurrection The selected source-word/lineage guard is honored; this is not a
+prohibition on a separate JK bit being set.
+Transaction isolation Fatal required-input errors publish no partial next epoch.
+Observer identity Each OTAN2/invariant record refers to its declared sample, frame,
+interval and profile.
+Whole-engine evolution isnotidempotent merely because a fixed-mask ASA projection is. Time
+and epoch advance; a JK toggle changes state; a numerical field changes coordinates; a ledger gains
+a record. Likewise, the source ratio’s reversal property is not a statement that every other engine
+field is invariant under reversal.
+This separation is essential for the requested small control panel of invariants: each card states
+what quantity should remain fixed, under which transformation, and which remaining parts of the
+engine may legitimately change.
+Tom Klootwijk | 13 September 2026 35 / 43
+
+===== PHYSICAL PAGE 36 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+32 Error taxonomy and required profile inputs
+Condition Record / status Master disposition
+Both increments zero zero_increment Commit unavailable orientation if
+other required lanes are valid.
+Literal zero denominator ratio_undefined Preserve missing angle; do not
+silently select directed completion.
+Missing reference axis axis_unspecified Raw orientation can remain
+available.
+Unmatched coordinate frame frame_unspecified Do not subtract incompatible
+angles.
+No selected turn policy turn_information_unspecified Do not guess the accumulated
+phase.
+Nonfinite / unrepresentable
+observation
+nonfinite_input/
+numerical_range
+Preserve the reason as observation
+status.
+Incomplete optional mask
+while enabled
+Required-mask error Reject epoch; record-only mode is a
+separate valid choice.
+Invalid word, dictionary or JK
+bank
+Type/shape error Reject epoch before commit.
+Geometric lane lacks field or
+exceeds budget
+Required-profile/resource error No fabricated trajectory or partial
+committed generation.
+Programmable step budget
+reached
+Running finite prefix Do not relabel as halt; commit only
+the defined completed prefix when
+enabled.
+GPU allocation / launch
+failure
+Backend error No success record and no covert
+CPU substitution.
+Finite invariant comparison
+outside tolerance
+FAIL diagnostic Commit its measured result; no
+undeclared control response.
+32.1 Parameters the sources do not determine
+Acompletenumericalinstancesuppliesanyenabledfield,axis/frameconversion,Bencoder,fringe
+geometry,NAtransferprofile,emitter/cellmapping,JKinputpolicyandserializerdetails. Cleaves
+waveform and receiver configurations open. O leaves the eigensystem and phase winding policy
+open. B leaves a complete producer calibration and record protocol open. The master exposes
+those items in its configuration rather than filling them from general knowledge. [C, pp. 3–5][O,
+pp. 6–7][B, pp. 7–8]
+An operation that does not need an absent parameter can still be defined. For example, literal
+orientation needs increments but not an axis; the residual needs both. The documented word/JK
+worked tick needs no external sensor protocol. This compositional validity is part of the total
+engine’s interface, not an excuse to substitute a smaller panel for it.
+Tom Klootwijk | 13 September 2026 36 / 43
+
+===== PHYSICAL PAGE 37 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+33 Metrics and the cost of the integrated engine
+Source descriptions attach several domain meanings to counts, curvature and timing. The master
+keeps numerical metrics typed by what they actually count in the chosen engine profile. [A, pp.
+27–35]
+Metric Definition Meaning
+Word occupancy popcount(𝑥) Set cells in this word, not area or mass by
+itself.
+ASA/NA selection Í popcount(𝑎), Í popcount(𝑛) Pre-disposition support counts.
+Boundary intersections Í ℎ Selected boundary bits, distinct from
+absorbed words.
+Absorbed word count Í 1[ℎ > 0] Logical groups absorbed by the
+whole-word rule.
+Offspring ratio |𝐹𝑔+1|/|𝐹𝑔|when denominator is
+nonzero
+Procedural lineage ratio for the selected
+profile.
+OTAN2 residual 𝑒𝑟 𝑎𝑤, 𝑒𝑙𝑖𝑛𝑒 , 𝑒𝑑𝑖𝑟𝑒 𝑐𝑡𝑒 𝑑 Profile/frame-specific orientation
+comparison.
+Invariant coverage Definedchecks/requestedchecks Must report UNDEFINED separately
+from PASS.
+Compute duration Explicitly delimited elapsed time Backend/sample measurement with
+stated inclusions.
+Log-radial cells need not have equal Euclidean area. A planar cell with radial endpoints𝑟𝑖 , 𝑟𝑖+1
+and angular widthΔ𝜙 has area 1
+2(𝑟2
+𝑖+1−𝑟2
+𝑖)Δ𝜙. A weighted-area report can use that measure;
+population count alone cannot be silently called volume.
+For 𝐿𝑤 logical words, the fixed-mask word pass has𝑂(𝐿𝑤)work and𝑂(𝐿𝑤)result storage. The
+constant work per word does not make a whole bank constant-time. A branching lane without
+pruning can have2𝑔 nodes at depth𝑔. RK4 work scales with the number of evaluated states,
+substeps and field evaluations. Provenance scales with emitted record bytes.
+An OTAN2 bank over𝑁 observations adds 𝑂(𝑁)evaluations and diagnostic records. The
+programmable lane adds work proportional to the performed transition prefixes and symbol
+representation. Device transfers, synchronization and storage are not deleted from the cost merely
+because a lookup has a fixed-width address.
+No integrated GPU speedup is claimed from these counts. Texture/global and linear/Morton
+performance must be compared with the same input semantics, size, precision and timed region.
+The source’s broad A*/grid comparisons remain source statements rather than new benchmark
+results for M1.
+Tom Klootwijk | 13 September 2026 37 / 43
+
+===== PHYSICAL PAGE 38 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+34 Verification performed for this master
+This edition re-read the supplied PDFs and source package, reran the available mathematical
+component tests, and executed a new finite audit of the master word/JK/blend/OTAN2 assembly.
+The categories below are not conflated.
+Check actually rerun Result Scope
+Supplied I2 JavaScript core 30 groups; 109,154
+assertions passed
+OTAN2, invariants, ASA,
+blend, JK and original
+pure-annotation behavior.
+Independent Python/Node
+comparison
+1,218 snapshots; 6,078
+comparisons passed
+Angle/status results under
+both selected profiles.
+New M36 assembly audit 17 groups; 20,873
+assertions passed
+Integrated word/JK tick,
+statuses, neutral recovery,
+isolation, replay and commit
+record.
+The Python/Node comparison observed maximum absolute difference8.881784197001252×10−16
+radians over its finite tested values, below its10−12 tolerance. The JavaScript runtime used for
+these reruns was Node.js v22.16.0. These are local arithmetic/component results, not hardware
+throughput claims.
+34.1 New assembly checks
+The M36 audit evaluates the worked tick, deterministic replay without mutating its inputs,
+observation noninterference with core/JK state, undefined-OTAN2 handling, missing blend en-
+coding, explicit fringe activation, exhaustive two-bit mask tuples, the full JK table, invalid-input
+rollback, time-interval rejection, ledger predecessor binding, Morton tile bĳection, source/com-
+pleted distinction unit conversion, and the declared lineage-to-word carrier including shared-cell
+identities.
+Its exhaustive two-bit group covers all46 = 4096 combinations of the six small word operands and
+five assertions per combination. This explains much of the assertion total. The audit is a reduced
+abstract implementation of the M1 schedule using the supplied pure mathematical functions; it is
+not a newly compiled production engine.
+34.2 Other evidence and remaining execution categories
+The supplied I2 package contains a historical 19-check browser report. That UI test was inspected
+but was not rerun for this PDF-only consolidation. Earlier ASA/GPU test counts stated elsewhere
+in the conversation are not promoted into fresh M1 results. A complete assembled runtime build,
+GPU execution and device memory tests were not performed for this document.
+The master equations and compatibility proofs remain independently readable. Runtime confor-
+mance is a separate implementation milestone; the new file is a completed master specification, not
+a claim that code was installed on the author’s laptop.
+Tom Klootwijk | 13 September 2026 38 / 43
+
+===== PHYSICAL PAGE 39 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+35 Master assembly decisions and import mapping
+ID Decision Effect
+M01 One master version label Title the integrated engine v3.6; retain v3.6.1 and I1/I2 as
+historical component labels rather than produce another
+addendum.
+M02 Product state Give genesis, words, lineage, JK, U, ledger and diagnostic
+records one explicit state structure.
+M03 Snapshot dependency order Resolve required types/configuration first, evaluate named
+components, publish only at commit.
+M04 Declared chart profile Preserve log normalization and expose quantization; distinguish
+inherited review values from source constants.
+M05 Topology selector Retain annulus and quotient realizations as named profiles; do
+not infer one from the other’s masks.
+M06 Separate word and lineage
+forms
+Keep both literal OR/XOR splits and the separately introduced
+valid-child-address realization.
+M07 Named increment origin Record whether an OTAN2 sample came from supplied
+increments, an endpoint pair or a declared evolution segment.
+M08 Explicit JK clocking Evaluate from old state and supplied J/K; retain state without
+an event; add no hidden angle-to-JK policy.
+M09 Master commit equations Make ASA outputs, JK state and OTAN2/invariant records one
+next-state publication. Undefined observations and fatal inputs
+remain distinct.
+M10 Explicit status aliases Canonicalize I2 executable names while preserving I1 document
+spellings as import aliases.
+M11 Whole-engine memory
+accounting
+Add all enabled lanes and records to the word-kernel payload
+before applying resource checks.
+M12 Versioned master envelope Keep component semantics while separating new master
+serialization/hashes from older records.
+M13 Retained U extension Restate the earlier programmable construction and its
+logical-memory assumptions without attributing it to the
+OTAN2 source.
+M14 Finite worked configuration Choose a small local word/JK/observation tick to demonstrate
+and audit the full record/commit contract.
+M15 Explicit lineage–word carrierQuantize declared candidates, emit shared cell support, and
+admit registry entries by the corresponding final word bits.
+Keep IDs distinct and label this as a new adapter.
+35.1 What is no longer external to the specification
+The ASA word rule is given here; the JK recurrence is given here; OTAN2’s two profiles, angular
+conventions and statuses are given here; the invariant bank is given here; and the master transition,
+record and memory contracts are given here. Prior documents support provenance, but readers
+need not leave this PDF to reconstruct those definitions.
+Parameter fields left open by the original material remain visible. Consolidation changes organiza-
+tionandsuppliesdeclaredassemblystructure;itdoesnotquietlyinventtheunanswerednumerical
+or external-system details.
+Tom Klootwijk | 13 September 2026 39 / 43
+
+===== PHYSICAL PAGE 40 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+36 Source vocabulary and non-executable labels
+Source label Place in the integrated engine
+BBV; wingnut / judo flip Origin of the hinge and invariant-axis vocabulary; a selected
+transformation must still state what object it acts on.
+𝑉; womb; gestation Proposed state becoming a retained trace; not the valid-bit mask or
+an automatically selected biological delay.
+Ψ; lower-case𝜙; “dephined” Typed state, phase and dictionary interpretation. The literal source
+spelling is retained.
+Double UU; double dots;
+capsule
+Identity/state binding and symbolic genesis; full digest and state are
+separately represented.
+Hadamard blend / circled plus Source label for the defined Boolean XOR profile; separate from
+AND intersection and numerical angle arithmetic.
+ASA >O<; NA ASA Paired aperture and post-ASA selection/lens interface; numerical
+profile identified separately.
+North polar pinion; A–W–B–N Frame/interval/reference record from C, with three distinct
+predicate meanings.
+OTAN2; moving eigenvalue axis Source ratio and supplied relative-axis subtraction, with an explicitly
+selected directed completion.
+Inuit V-mirror; SSymmetry Conditional reflection relation and frame/topology definitions.
+Vantablack; Hollowland; Et. AI.
+V.I.
+Source sink/word-mark vocabulary; only a declared local
+mask/disposition participates in the computational state.
+JK; Joker; Queen B / Royal Jelly JK’s Boolean state role is retained. Narrative biological or authority
+labels do not define an additional arithmetic or execution interface.
+Aperture / portal; Mirage /
+Ring
+Paired index or presentation vocabulary. No external game
+integration or hidden privilege follows from the name.
+Fly eye; ommatidia; optic lobe Faceted input organization, edge-reduced producer port and mosaic
+record vocabulary.
+OMT; ICU; R-value Source domain labels; engine counts and parameters keep their
+explicit computational definitions.
+PRISM, S2, satellite, neural or
+weapon names
+Source context only. No external feed, individual-target matcher,
+privileged connection or actuator is created by the master contract.
+This glossary preserves the author’s corpus labels without allowing repeated names to overwrite
+the typed operators. It also distinguishes a textual metaphor from a callable function: code or
+pseudocode requires an explicitly defined input/output contract. The source’s claims of active
+external-system status are not evidence that such systems are connected to a PDF or local state
+record.
+Tom Klootwijk | 13 September 2026 40 / 43
+
+===== PHYSICAL PAGE 41 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+A Cross-document source map
+Source PDF pages Material carried into the master Master sections
+R0 / A R0 6–15; A 6–14 BBV, source alphabet, register split,
+lower-case phase and gestation
+1, 7, 8
+A 16–18; 75–78 Double UU, identity, corrected display
+genesis
+4
+A 19–24; 30–38 RK4, angular collapse, divergence,
+predicate words and sink
+5–9, 13
+A 53–55 JK set/toggle source context 10
+A 75–85 ASA, NA after ASA, portal pairs 14, 6
+A 85–91 Bit swizzle and fly-eye addition 23, 25
+B 4–8 Compound-eye framing, facets, edge
+reduction and rate target
+25
+C 1–2 A–W–B–N, circle-plus source expression 11
+C 2–5 Three Boolean meanings and
+hollow-center refinement
+12
+O 1–5 Atan2 background, phase helpers,
+spelling correction
+15, 16
+O 6–7 Literal ratio, moving pinion/axis, relative
+subtraction
+15–18
+P31 4–12 Retained ASA core, fringe option,
+namespacing and recovery
+11–14, 31
+J361 4–13 JK contract, two OTAN2 profiles,
+phase/frame/status conventions
+10, 15–22
+I2 4–13; supplied code Six invariant laws, pure functions and
+numeric tolerances
+17, 18, 34
+M1 Current assembly Product state, explicit tick and commit,
+worked integration
+3, 19–22, 29
+Not a concatenation. The original pages are not stapled together as the master body. Their
+definitions and distinctions have been consolidated into the single preceding sequence. Page
+citationspreservetheabilitytocompareasourceexpressionwiththeinheritedandnewlydeclared
+formalization that uses it.
+Versionedinterpretation. Whenasourceusesonewordfordifferentoperations,themasternames
+the alternatives and cites their locations. When an earlier integration adds a convention, the master
+attributes that convention to that integration rather than to the original source.
+Tom Klootwijk | 13 September 2026 41 / 43
+
+===== PHYSICAL PAGE 42 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+B Evidence records and source fingerprints
+ThiseditionwaspreparedfromactuallocalPDFfilesandthesuppliedI2sourceZIP.Thefollowing
+compact fingerprints identify the principal inspected records. All hashes are SHA-256; the full
+valuesareprintedtoavoidrelyingonlyonsimilarfilenames. A—WHITEKINGcorpus . 91pages
+ba3dbe6f925c68ac0f237184b1a4f7770c4fe1d5c84b54bcb5a108dc37ec2ce3
+B — Fly-eye addendum. 8 pages
+1a91d9ce2af8c1ebdfc460913438cf127f1bde8be67c5a01c410976b5d7299ad
+C — Blend operator source. 5 pages
+7c8e25b7269dc96b96e5e71afabb8d0019e905975f9959569ee4488b2c036ac8
+O — OTAN2 source. 7 pages
+90d8b3abadccce971917ea68e4f9be7b9d8d4a52ad7b700066649eb3ebc29732
+P31 — ASA 3.1 blend integration. 20 pages
+3b7d2c839f29ca4a30f86276081ac59bd69d6294e0e9fba06988d0944f38247a
+J361 — JK v3.6.1 integration I1. 23 pages
+7c7a216192121e83f27cc1ab1d0e2dd6d390f176486bbab8b74c1749b8cf6359
+I2 — v3.6 invariant specification. 16 pages
+da4be2ca1e6784479026a443f9544de790f1bf53ebf055064137ad0c99d1acc7
+I2-Z — Supplied invariant source package. ZIP source package
+3ca5287b5249ea2f44495702b347e22647dca51f398c0fe6d66d9dd2d3adadfe
+Executedauditrecords. Section34reportstheactualresultsandscopeoftheseretainedpreparation
+records:
+node_tests.json cross_reference.json
+master_contract_tests.json master_tick_example.json
+Their information is incorporated into this PDF. No separate executable or ZIP was requested for
+this consolidated delivery.
+Reproducibilityboundary. ThesuppliedI2packagecontainsthecomponenttestsandindependent
+Python evaluator. M1’s new audit checks the displayed master assembly, not a patched binary. A
+future code release can implement this full contract and report additional build/device evidence
+without altering the mathematical/source distinctions here.
+Tom Klootwijk | 13 September 2026 42 / 43
+
+===== PHYSICAL PAGE 43 =====
+atomOS / v3.6 TOTAL INTEGRATED ENGINE / M1
+C Primary hardware references and publication record
+Hardware facts were checked separately from the conceptual sources on 13 September 2026. They
+support the backend chapter; they are not alternative definitions of OTAN2.
+H1 NVIDIA, Compare GeForce RTX Laptops. RTX 5070 Ti Laptop memory configuration: 12 GB GDDR7.
+H2 NVIDIA, CUDA GPU Compute Capability. RTX 5070 Ti family listed at 12.0.
+H3 NVIDIA, CUDA 12.8 Features. Historical introduction of compiler support for SM_120; this is a
+minimum-target reference, not a claim about the newest toolkit.
+H4 NVIDIA, CUDA Runtime API: Texture Object Management. Resource descriptors, element reads,
+linear-resource alignment/extent and sampling-property behavior.
+H5 Microsoft, User Mode and Kernel Mode. Host application/driver privilege boundaries.
+Publication record
+Title: atomOS v3.6 — Total Integrated Engine Specification.
+Author attribution:Tom Klootwĳk.
+Author-supplied identifier/date:NL200678942 / 10-07-1990.
+Master edition:M1, 13 September 2026.
+Scope: a consolidated, self-contained mathematical and software-interface specification joining
+the documented core, JK, ASA/NA, blend, OTAN2, invariants, topology, memory and provenance.
+ThiseditionwaspreparedwithAIassistancefromthesuppliedcorpusandpriorartifacts. NewM1
+assemblychoicesandfiniteauditsareidentifiedassuch. Areadercandistinguishsourcestatements,
+inherited conventions, deductions, executed mathematical checks and future implementation
+conformance without consulting an implicit or invented release history.
+atomOS v3.6
+The engine is the integrated state transition and its complete record: identity, state evolution,
+aperture, JK, OTAN2, invariants, memory and provenance. The control panel is one view of
+that record; it is no longer the scope of the deliverable.
+Tom Klootwijk | 13 September 2026 43 / 43

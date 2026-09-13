@@ -135,3 +135,35 @@ before their shared commit. A required failure preserves the accepted prefix.
 Exact counts, capacity stops, source hashes, commands and toolchain evidence are
 in `results/optimization_20260913/summary.json`. The combined profile's cache
 residency is unmeasured; it does not inherit the separate bulk-word observation.
+
+## 8. Declared SDF/Klein/NOR and connected lineage profiles
+
+The source audit in `docs/SOURCE_OPERATOR_SDF_AUDIT.md` distinguishes the original
+binary SDF_WORD algebra from absent scalar distance formulas. The new normalized
+Klein metric, disks/annuli and NOR sites are explicit constructions. They do not
+recover a uniquely specified original optical geometry.
+
+`SDF_NOR_UNIVERSALITY.md` constructs NOR from the preserved whole-word sink and
+then compiles arbitrary finite controller tables to acyclic NOR wiring. The GPU
+evaluates that wiring through the actual SDF predicate texture. Two additional
+SMT obligations in `sdf_nor.smt2` were UNSAT. Together with the original fifteen
+and the two tape-field obligations, nineteen symbolic obligations have executed.
+They do not prove the scalar SDF implementation, compiler or generated binary.
+
+The finite-prefix tape simulation requires nonaliasing addressable memory. The
+joint profile adds the explicit coupling
+`phi_steps = base_phi_steps * (1 + decoded.write)` and two terminal children per
+live parent. Its general finite-prefix embedding also needs enough frontier and
+ID capacity; finite device limits are not unbounded hardware. Empty geometry does
+not halt the programmable controller. All admitted IDs, including collisions,
+are retained, and sorted-array midpoint searches implement an implicit BST.
+
+The complete joint candidate includes tape, frontier, occupancy, JK and time.
+Resource/program stops add no partial failing step; a fully verified prior prefix
+can be retained. Verification failure restores every initially committed
+component. `docs/SDF_JOINT.md` gives precise stop/commit rules.
+
+Actual evidence is in `results/sdf_klein_20260913/final_summary.json`: source,
+binary, CPU/Python comparisons, fault cases, sanitizers, native instructions and
+hardware counters remain separate categories. The joint 1 KiB cache observation
+and distributed bulk 4.625 MiB observation belong to different execution profiles.
