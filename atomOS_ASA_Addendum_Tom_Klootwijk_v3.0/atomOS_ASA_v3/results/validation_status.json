@@ -1,0 +1,27 @@
+{
+  "edition": "atomOS ASA v3.0.0",
+  "date": "2026-09-13",
+  "cpp_groups": 30,
+  "cpp_assertions": 73559,
+  "python_tests": 21,
+  "cli_cases": 10,
+  "ctest_cpu_passed": 3,
+  "ctest_sanitized_passed": 3,
+  "sanitizers": [
+    "address",
+    "undefined behavior"
+  ],
+  "independent_oracle_samples_per_layout": 65536,
+  "layouts_verified": [
+    "linear",
+    "Morton8"
+  ],
+  "oracle_max_absolute_error": 0.0,
+  "cuda_compilation": "not_executed",
+  "cuda_execution": "not_executed",
+  "device_benchmark": "not_executed",
+  "windows_build": "not_executed",
+  "cuda_environment": "nvcc and NVIDIA device not available",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+  "python": "Python 3.13.5"
+}

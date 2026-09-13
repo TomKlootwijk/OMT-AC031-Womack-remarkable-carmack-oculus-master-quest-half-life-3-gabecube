@@ -1,0 +1,26 @@
+test_antipode (test_python.Contract.test_antipode) ... ok
+test_canonical_keys (test_python.Contract.test_canonical_keys) ... ok
+test_canonical_nan (test_python.Contract.test_canonical_nan) ... ok
+test_clock_bad_rate (test_python.Contract.test_clock_bad_rate) ... ok
+test_clock_bad_tick (test_python.Contract.test_clock_bad_tick) ... ok
+test_clock_causality (test_python.Contract.test_clock_causality) ... ok
+test_clock_common_base (test_python.Contract.test_clock_common_base) ... ok
+test_clock_engine_period (test_python.Contract.test_clock_engine_period) ... ok
+test_clock_half_second (test_python.Contract.test_clock_half_second) ... ok
+test_clock_source_period (test_python.Contract.test_clock_source_period) ... ok
+test_double_seal_rejected (test_python.Contract.test_double_seal_rejected) ... ok
+test_float32_roundtrip (test_python.Contract.test_float32_roundtrip) ... ok
+test_genesis_determinism (test_python.Contract.test_genesis_determinism) ... ok
+test_genesis_fixture_domain (test_python.Contract.test_genesis_fixture_domain) ... ok
+test_genesis_full_digest (test_python.Contract.test_genesis_full_digest) ... ok
+test_genesis_role_separation (test_python.Contract.test_genesis_role_separation) ... ok
+test_large_phase (test_python.Contract.test_large_phase) ... ok
+test_morton_dense (test_python.Contract.test_morton_dense) ... ok
+test_morton_known (test_python.Contract.test_morton_known) ... ok
+test_seal_tamper_and_anchor (test_python.Contract.test_seal_tamper_and_anchor) ... ok
+test_wrap (test_python.Contract.test_wrap) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.004s
+
+OK

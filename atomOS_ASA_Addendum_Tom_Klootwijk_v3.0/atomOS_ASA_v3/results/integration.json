@@ -1,0 +1,93 @@
+{
+  "backend": "CPU",
+  "cases": [
+    {
+      "arguments": [
+        "--samples",
+        "257",
+        "--layout",
+        "morton"
+      ],
+      "expected_success": true,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--samples",
+        "257",
+        "--layout",
+        "linear"
+      ],
+      "expected_success": true,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--samples",
+        "0"
+      ],
+      "expected_success": true,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--samples",
+        "1",
+        "--rho-bins",
+        "8",
+        "--phi-bins",
+        "8"
+      ],
+      "expected_success": true,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--rho-bins",
+        "9"
+      ],
+      "expected_success": false,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--samples",
+        "-1"
+      ],
+      "expected_success": false,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--budget-mib",
+        "1"
+      ],
+      "expected_success": false,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--layout",
+        "bad"
+      ],
+      "expected_success": false,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--samples",
+        "4194305"
+      ],
+      "expected_success": false,
+      "status": "pass"
+    },
+    {
+      "arguments": [
+        "--unknown",
+        "1"
+      ],
+      "expected_success": false,
+      "status": "pass"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+"schema":"atomOS.ASA.v3.run",
+"config":{"rho_bins":256,"phi_bins":512,"warp_bins":512,"layout":0,"rho_min":0,"rho_max":4,"pupil_min":0.20000000000000001,"pupil_max":3.7999999999999998,"axis":0,"hinge":0.035000000000000003,"alpha":1.2,"radial_warp":0.080000000000000002,"angular_warp":0.12},
+"samples":65536,
+"left_valid":21713,
+"right_valid":21717,
+"pair_valid":21095,
+"backend":"CPU",
+"device":"host",
+"gpu_executed":false,
+"compute_ms":4.9299270000000002,
+"payload_bytes":3690496,
+"device_total_bytes":0,
+"device_free_before_bytes":0
+}

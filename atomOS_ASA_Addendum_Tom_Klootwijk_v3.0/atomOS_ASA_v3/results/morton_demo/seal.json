@@ -1,0 +1,42 @@
+{
+  "schema": "atomOS.ASA.v3.seal",
+  "genesis": {
+    "record": {
+      "schema": "atomOS.ASA.v3.genesis",
+      "author": {
+        "name": "Tom Klootwijk",
+        "identifier": "NL200678942",
+        "date_verbatim": "10-07-1990"
+      },
+      "operator_label": ">O< / ASA",
+      "fixture_id": "ASA-symbolic-fixture-v3"
+    },
+    "sha256": "ac3daf8e7d6f0d3bfda1a9e21929f4089fcf2a7e3535a67f375a424036a5f8d7"
+  },
+  "config": {
+    "rho_bins": 256,
+    "phi_bins": 512,
+    "warp_bins": 512,
+    "layout": 1,
+    "rho_min": 0,
+    "rho_max": 4,
+    "pupil_min": 0.2,
+    "pupil_max": 3.8,
+    "axis": 0,
+    "hinge": 0.035,
+    "alpha": 1.2,
+    "radial_warp": 0.08,
+    "angular_warp": 0.12
+  },
+  "records": 65536,
+  "head": "58b3863a7d483cfb47ed6282f8c4020952996866cf9f5f46039ba821ac8db961",
+  "files": {
+    "image.f32": "510d4107788125752be57bbea24e25ff080b56e01dba41864c1f01a348547a0d",
+    "mask.u32": "abaacd64521405f65689f13a3e2784af4818419e5cea02a851c1d58322e824b9",
+    "warp.f32x2": "2635edfa03dc6ef6f9a6cfbab2e37ca2c7511103d60a8cf8d65cbe7533d05864",
+    "samples.f64x2": "8e65efdd7aece2baa096191a85f722de36b8ee4f7bf8091dc74e1dd299ec5e76",
+    "results.bin": "8d8425fbf653570c059672916fcfd1d7b245f23bf4bce03d001d3c826b6639f0",
+    "results.csv": "e494948acc1c1cd86ca21dd601fc70d1c44364ea735f0cb0cddc05a560a46d77",
+    "run.json": "0244d6549b0f3252da297b06d3675b7123b5ad2e4e7f8394dbffc5e55aca0cc1"
+  }
+}

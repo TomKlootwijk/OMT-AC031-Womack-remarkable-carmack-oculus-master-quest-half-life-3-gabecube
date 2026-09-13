@@ -1,0 +1,47 @@
+{
+  "schema": "atomOS.ASA.v3.validation",
+  "gpu_requested": false,
+  "steps": [
+    {
+      "name": "configure",
+      "command": [
+        "cmake",
+        "-S",
+        "/mnt/data/atomOS_ASA_v3",
+        "-B",
+        "/mnt/data/asa_work/script_build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DASA_ENABLE_CUDA=OFF",
+        "-DASA_SANITIZE=OFF"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "build",
+      "command": [
+        "cmake",
+        "--build",
+        "/mnt/data/asa_work/script_build",
+        "--config",
+        "Release",
+        "--parallel",
+        "2"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "ctest",
+      "command": [
+        "ctest",
+        "--test-dir",
+        "/mnt/data/asa_work/script_build",
+        "-C",
+        "Release",
+        "--output-on-failure"
+      ],
+      "returncode": 0
+    }
+  ],
+  "status": "pass",
+  "message": "All requested build and test stages passed. Reports: /mnt/data/asa_work/script_validation"
+}

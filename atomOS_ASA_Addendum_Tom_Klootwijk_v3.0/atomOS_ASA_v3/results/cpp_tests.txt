@@ -1,0 +1,31 @@
+PASS record ABI
+PASS published Morton bit order
+PASS all tile positions unique
+PASS rectangular swizzle round trip
+PASS linear layout round trip
+PASS whole word popcount
+PASS nullifier all bit positions
+PASS portal pair is involution
+PASS wrap and antipode convention
+PASS configuration validation
+PASS numerical aperture conversion
+PASS numerical aperture domain
+PASS memory calculation
+PASS memory cap input
+PASS lens table even odd symmetry
+PASS lens interpolation reflection
+PASS identity lens
+PASS bilateral aperture accepts center
+PASS aperture upper radial bound excluded
+PASS aperture lower radial bound included
+PASS NA rejects outside wedge
+PASS lens chart escape
+PASS invalid sample is isolated
+PASS finite extreme phase remains finite
+PASS all mask bits force zero output
+PASS linear and Morton field equivalence
+PASS sides exchange on reflected input
+PASS fixture restart is deterministic
+PASS empty batch
+PASS strict index differential
+RESULT 30 groups / 73559 assertions passed
