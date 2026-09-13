@@ -1,0 +1,142 @@
+{
+  "schema": "atomos-frozen-expression-curriculum-v2",
+  "adapter_version": "atomos-safe-bit-expression-frontend-v2",
+  "frontend_source_sha256": "177388ea9ce58d359f68b1302da5572f7e06fa85e3a4f40f31523a3031a3b08f",
+  "original_frontend_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+  "source_curriculum": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum",
+  "source_curriculum_sha256": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+  "oracle_policy": "original V1 oracle bytes retained unchanged; only response representation and prompt changed",
+  "teacher_execution": "not_run_by_curriculum_freeze",
+  "profiles": [
+    {
+      "profile_id": "full_adder_1bit_v1",
+      "input_bits": 3,
+      "output_bits": 2,
+      "input_labels": [
+        "a",
+        "b",
+        "carry_in"
+      ],
+      "output_labels": [
+        "sum",
+        "carry_out"
+      ],
+      "specification": "Add the three unsigned one-bit inputs a, b and carry_in. Return the two-bit exact sum, least-significant bit first.",
+      "prompt_file": "full_adder_1bit_v1.prompt.txt",
+      "oracle_file": "full_adder_1bit_v1.oracle.json",
+      "prompt_sha256": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+      "oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+      "source_oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb"
+    },
+    {
+      "profile_id": "unsigned_compare_2bit_v1",
+      "input_bits": 4,
+      "output_bits": 3,
+      "input_labels": [
+        "a0",
+        "a1",
+        "b0",
+        "b1"
+      ],
+      "output_labels": [
+        "a_less_b",
+        "a_equal_b",
+        "a_greater_b"
+      ],
+      "specification": "Compare unsigned A=a0+2*a1 with B=b0+2*b1. Return three Boolean results in this order: A<B, A==B, A>B.",
+      "prompt_file": "unsigned_compare_2bit_v1.prompt.txt",
+      "oracle_file": "unsigned_compare_2bit_v1.oracle.json",
+      "prompt_sha256": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+      "oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+      "source_oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293"
+    },
+    {
+      "profile_id": "unsigned_add_2bit_v1",
+      "input_bits": 4,
+      "output_bits": 3,
+      "input_labels": [
+        "a0",
+        "a1",
+        "b0",
+        "b1"
+      ],
+      "output_labels": [
+        "sum0",
+        "sum1",
+        "sum2"
+      ],
+      "specification": "Add unsigned A=a0+2*a1 and B=b0+2*b1. Return their exact three-bit sum without overflow, least-significant bit first.",
+      "prompt_file": "unsigned_add_2bit_v1.prompt.txt",
+      "oracle_file": "unsigned_add_2bit_v1.oracle.json",
+      "prompt_sha256": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+      "oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+      "source_oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483"
+    },
+    {
+      "profile_id": "binary_to_gray_4bit_v1",
+      "input_bits": 4,
+      "output_bits": 4,
+      "input_labels": [
+        "binary0",
+        "binary1",
+        "binary2",
+        "binary3"
+      ],
+      "output_labels": [
+        "gray0",
+        "gray1",
+        "gray2",
+        "gray3"
+      ],
+      "specification": "Convert a four-bit unsigned binary integer to its standard binary-reflected Gray-code representation. Input and output bits are ordered least-significant first.",
+      "prompt_file": "binary_to_gray_4bit_v1.prompt.txt",
+      "oracle_file": "binary_to_gray_4bit_v1.oracle.json",
+      "prompt_sha256": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+      "oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+      "source_oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108"
+    },
+    {
+      "profile_id": "absolute_difference_2bit_v1",
+      "input_bits": 4,
+      "output_bits": 2,
+      "input_labels": [
+        "a0",
+        "a1",
+        "b0",
+        "b1"
+      ],
+      "output_labels": [
+        "difference0",
+        "difference1"
+      ],
+      "specification": "For unsigned A=a0+2*a1 and B=b0+2*b1, return the exact absolute difference |A-B| as two bits, least-significant bit first.",
+      "prompt_file": "absolute_difference_2bit_v1.prompt.txt",
+      "oracle_file": "absolute_difference_2bit_v1.oracle.json",
+      "prompt_sha256": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+      "oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+      "source_oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c"
+    },
+    {
+      "profile_id": "mux_2bit_v1",
+      "input_bits": 5,
+      "output_bits": 2,
+      "input_labels": [
+        "a0",
+        "a1",
+        "b0",
+        "b1",
+        "select_b"
+      ],
+      "output_labels": [
+        "selected0",
+        "selected1"
+      ],
+      "specification": "Select between unsigned two-bit words A=a0+2*a1 and B=b0+2*b1. Return A when select_b=0 and B when select_b=1, least-significant bit first.",
+      "prompt_file": "mux_2bit_v1.prompt.txt",
+      "oracle_file": "mux_2bit_v1.oracle.json",
+      "prompt_sha256": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+      "oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+      "source_oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "atomos-checkpoint-transition-v1",
+  "previous_checkpoint": "4c14275696e77500c2b3c249aed41716adad69b8",
+  "reason": "Versioned safe expression frontend and typed native queries; original oracle bytes and native kernel unchanged. Historical seals still apply to their earlier commits.",
+  "changed_files": {
+    ".gitattributes": {
+      "previous_sha256": "e57dcbc0d73b6a1e2a4af38aad601a0510b80dc40c1a94b878dfbc2ea6f12f00",
+      "current_sha256": "03d2a9f02c45071017964725b71f983dd7b71e6802a540c51eb97e078dd1c4b4",
+      "retained_previous_bytes": "results/teacher_expression_20260913/prior_checkpoint_files/.gitattributes"
+    },
+    "AUTHORSHIP.json": {
+      "previous_sha256": "3eb6a5474b6dcf53d150f8cdc2b7212c1152b2286b8496fb75633a505f5a7803",
+      "current_sha256": "3cc85df79ba1caea53f218349004ed83a69b58b71e67a978a43b5c29f35c29a6",
+      "retained_previous_bytes": "results/teacher_expression_20260913/prior_checkpoint_files/AUTHORSHIP.json"
+    },
+    "README.md": {
+      "previous_sha256": "7c779713dff2172c8522bcd7a749b2067075b94466a8f5aff1223ed06f80ad29",
+      "current_sha256": "7c9320a5357c671088dd0adc88bc65553d8ec2a8fd097d13a8bdcb8b59fd2ff6",
+      "retained_previous_bytes": "results/teacher_expression_20260913/prior_checkpoint_files/README.md"
+    },
+    "docs/coverage.csv": {
+      "previous_sha256": "9d58324976d01d7636fb75f2cb6dfa8819aab7b0553a9dbde5455e0f504fe3f7",
+      "current_sha256": "c186362ef8bced4bdffdcc0f51a80ae03421895397956faed327ce66f4dd0ca2",
+      "retained_previous_bytes": "results/teacher_expression_20260913/prior_checkpoint_files/docs/coverage.csv"
+    },
+    "results/validation_status.json": {
+      "previous_sha256": "5335de9319c7d36fe672fdaaa4bb24489832762bf1545c7e28f3dd3e8c2fcb38",
+      "current_sha256": "c5ee7455e06a5eece62e5c88912bb008f3f136061046c5d5f506addbb90f4c26",
+      "retained_previous_bytes": "results/teacher_expression_20260913/prior_checkpoint_files/results/validation_status.json"
+    },
+    "tools/acquire_teacher_knowledge.py": {
+      "previous_sha256": "2c09d3f2b76c9a1d99fa8cdc1819d81902bb6e349f521e7c8da6ab0e1d97074a",
+      "current_sha256": "5d6f4084fa38ef76a8dc577dc60e222c9264b17229b1b8bdbde53823a60cedcb",
+      "retained_previous_bytes": "results/teacher_expression_20260913/prior_checkpoint_files/tools/acquire_teacher_knowledge.py"
+    },
+    "tools/compile_teacher_knowledge.py": {
+      "previous_sha256": "6645bed82086a033e04afcd93cafdb5564ba7e6b9bdfd83cd43a5dc92aa205d5",
+      "current_sha256": "3a070fed72957ce2d15f0d8547c2d4980f44c2fd37bc71caf0b79a708b9f51ff",
+      "retained_previous_bytes": "results/teacher_expression_20260913/prior_checkpoint_files/tools/compile_teacher_knowledge.py"
+    }
+  }
+}

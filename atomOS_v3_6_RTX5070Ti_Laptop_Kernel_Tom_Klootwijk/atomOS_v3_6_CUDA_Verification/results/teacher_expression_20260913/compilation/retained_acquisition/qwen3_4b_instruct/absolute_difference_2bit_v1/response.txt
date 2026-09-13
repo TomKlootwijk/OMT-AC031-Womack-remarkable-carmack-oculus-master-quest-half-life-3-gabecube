@@ -1,0 +1,1 @@
+{"schema":"atomos-teacher-procedure-v2","profile_id":"absolute_difference_2bit_v1","procedures":[{"name":"absolute_difference_2bit_v1","input_bits":4,"output_bits":2,"outputs":["(a0 ^ b0) ^ (a1 ^ b1)","(a0 & b1) ^ (a1 & b0)"]}]}

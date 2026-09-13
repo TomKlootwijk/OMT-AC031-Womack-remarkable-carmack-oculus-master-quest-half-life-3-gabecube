@@ -1,0 +1,26 @@
+{
+  "schema": "atomOS-v3.6-K1-validation",
+  "cpu": "not_run",
+  "proofs": "not_requested",
+  "cuda_build": "not_run",
+  "gpu": "not_run",
+  "gpu_memcheck": "not_requested",
+  "runs": [],
+  "commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification",
+        "-B",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\build_cpu",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DATOMOS_ENABLE_CUDA=OFF"
+      ],
+      "exit_code": 1,
+      "log": "configure.log"
+    }
+  ],
+  "status": "failed",
+  "reason": "configure failed with exit 1; see C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\build_cpu\\evidence_1789322191713552300\\configure.log"
+}

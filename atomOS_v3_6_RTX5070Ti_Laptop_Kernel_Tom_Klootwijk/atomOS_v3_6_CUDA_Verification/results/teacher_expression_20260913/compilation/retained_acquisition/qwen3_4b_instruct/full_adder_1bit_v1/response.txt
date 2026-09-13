@@ -1,0 +1,1 @@
+{"schema":"atomos-teacher-procedure-v2","profile_id":"full_adder_1bit_v1","procedures":[{"name":"full_adder_1bit_v1","input_bits":3,"output_bits":2,"outputs":["a ^ b ^ carry_in","(a & b) | (carry_in & (a ^ b))"]}]}

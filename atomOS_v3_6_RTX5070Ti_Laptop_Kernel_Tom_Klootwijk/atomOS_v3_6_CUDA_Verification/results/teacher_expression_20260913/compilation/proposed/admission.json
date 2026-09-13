@@ -1,0 +1,169 @@
+{
+  "schema": "atomos-knowledge-admission-v1",
+  "status": "prepared",
+  "base_bank_sha256": "cc78155a5809717540c10d928e0cbb0f773e3fb2914643829a92f0d548491914",
+  "base_manifest_sha256": "32aeac083c8c4e2ced89f8957f868ce37b7cf3ac3776a2dc02d00bf233f2d777",
+  "request_sha256": "def0544245f242766a826ee7d406560ed4be2466281d46009a10087cde22fe51",
+  "proposed_bank_sha256": "21d7814645fe0a584dac81040d7c8b411221bebc3179631b756c53a540945d86",
+  "base_capsules": 6,
+  "accepted_capsules": 1,
+  "rejected_candidates": 11,
+  "result_capsules": 7,
+  "base_unique_functions": 6,
+  "result_unique_functions": 7,
+  "base_program_pages_unchanged": true,
+  "new_active_bank_published": false,
+  "gpu_execution": "not_run",
+  "novelty_scope": "exact ordered bit-index interface widths and full-domain outputs; labels, seed, name, ancestry, routing and layout excluded; not universal typed semantic equivalence",
+  "knowledge_scope": "conformance to separately supplied oracle cases; source independence is declared, not authenticated",
+  "stateful_novelty": "not_supported; combinational function admission does not classify recurrent system equivalence",
+  "stop_rule": "each input candidate considered once; equivalent functions allocate no program page; fixed work and capacity bounds",
+  "limits": {
+    "candidate_limit": 32,
+    "maximum_candidates": 256,
+    "input_bits": 12,
+    "output_bits": 8,
+    "wires": 1024,
+    "bank_capsules": 4096,
+    "bank_bytes": 67108864,
+    "page_bytes": 65536,
+    "json_bytes": 16777216,
+    "boolean_work": 67108864
+  },
+  "work": {
+    "boolean_work": 16752,
+    "domain_evaluations": 1080
+  },
+  "decisions": [
+    {
+      "candidate_index": 0,
+      "status": "rejected",
+      "name": "full_adder_1bit_v1",
+      "semantic_sha256": "d66316c4a78fc4505fa770fdaedad310d9d285831b3fe2dbc5855ced3791a0cc",
+      "oracle_id": "full_adder_1bit_v1:expression-response:0",
+      "verified_cases": 8,
+      "reason": "duplicate_semantics",
+      "existing_slot": 4
+    },
+    {
+      "candidate_index": 1,
+      "status": "rejected",
+      "name": "unsigned_compare_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 0,
+        "expected": 2,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 2,
+      "status": "rejected",
+      "name": "unsigned_add_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 1,
+        "expected": 1,
+        "actual": 3
+      }
+    },
+    {
+      "candidate_index": 3,
+      "status": "rejected",
+      "name": "binary_to_gray_4bit_v1",
+      "semantic_sha256": "88a22a1915f5b2ba9f43c24339d0dab238f5acbaecb99ee5c24732e8f8ec584c",
+      "oracle_id": "binary_to_gray_4bit_v1:expression-response:3",
+      "verified_cases": 16,
+      "reason": "duplicate_semantics",
+      "existing_slot": 5
+    },
+    {
+      "candidate_index": 4,
+      "status": "rejected",
+      "name": "absolute_difference_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 2,
+        "expected": 2,
+        "actual": 1
+      }
+    },
+    {
+      "candidate_index": 5,
+      "status": "accepted",
+      "name": "mux_2bit_v1",
+      "semantic_sha256": "e6a24f3edeab7b68137703a789bf64fb70c917c05b7a68fb3d047ccd1e7779a3",
+      "oracle_id": "mux_2bit_v1:expression-response:5",
+      "verified_cases": 32,
+      "reason": "verified_novel_function",
+      "slot": 6,
+      "content_sha256": "3894a512511e17b9e081ff3b470c752f697240651702f3b66ff25d7c570ecd6d"
+    },
+    {
+      "candidate_index": 6,
+      "status": "rejected",
+      "name": "full_adder_1bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 1,
+        "expected": 1,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 7,
+      "status": "rejected",
+      "name": "unsigned_compare_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 0,
+        "expected": 2,
+        "actual": 4
+      }
+    },
+    {
+      "candidate_index": 8,
+      "status": "rejected",
+      "name": "unsigned_add_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 1,
+        "expected": 1,
+        "actual": 0
+      }
+    },
+    {
+      "candidate_index": 9,
+      "status": "rejected",
+      "name": "binary_to_gray_4bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 1,
+        "expected": 1,
+        "actual": 11
+      }
+    },
+    {
+      "candidate_index": 10,
+      "status": "rejected",
+      "name": "absolute_difference_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 0,
+        "expected": 0,
+        "actual": 2
+      }
+    },
+    {
+      "candidate_index": 11,
+      "status": "rejected",
+      "name": "mux_2bit_v1",
+      "reason": "oracle_mismatch",
+      "counterexample": {
+        "input": 1,
+        "expected": 1,
+        "actual": 0
+      }
+    }
+  ]
+}

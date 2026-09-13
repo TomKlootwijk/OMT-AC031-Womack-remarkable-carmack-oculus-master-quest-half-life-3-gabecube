@@ -99,12 +99,19 @@ def _captured_acquisition(folder):
     return snapshots
 
 
-def verify_acquisition(curriculum, acquisition):
+def verify_acquisition(curriculum, acquisition, frontend='boolean-tree'):
     """Fail before output creation on inconsistent acquisition evidence."""
     curriculum, acquisition = Path(curriculum).resolve(), Path(acquisition).resolve()
-    frozen = teacher_knowledge.load_curriculum(curriculum)
+    if frontend not in ('boolean-tree', 'boolean-expression'):
+        raise ValueError('unsupported teacher frontend')
+    adapter_module = teacher_knowledge
+    if frontend == 'boolean-expression':
+        import teacher_expression_frontend as adapter_module
+    frozen = adapter_module.load_curriculum(curriculum)
     snapshots = _captured_acquisition(acquisition)
     report = decode_json(snapshots["acquisition.json"])
+    if isinstance(report, dict) and report.get('frontend', 'boolean-tree') != frontend:
+        raise ValueError('acquisition frontend differs from selected compiler frontend')
     if (not isinstance(report, dict) or report.get("schema") != "atomos-local-teacher-acquisition-v1" or
             report.get("status") not in ("completed", "completed_with_generation_failures") or
             report.get("teacher_weights_in_program_bank") is not False or
@@ -125,6 +132,8 @@ def verify_acquisition(curriculum, acquisition):
             raise ValueError("acquisition dependency changed: " + name)
         dependency_snapshots[name] = raw
     required = {str((ROOT / name).resolve()) for name in ACQUISITION_SOURCES}
+    if frontend == 'boolean-expression':
+        required.add(str((ROOT / 'python/teacher_expression_frontend.py').resolve()))
     required.update(str(path.resolve()) for path in curriculum.rglob("*") if path.is_file())
     if not required.issubset(dependencies):
         raise ValueError("acquisition omits required source/curriculum bindings")
@@ -226,7 +235,8 @@ def verify_acquisition(curriculum, acquisition):
                 run.get("model_artifact_bytes") != model["model_artifact_bytes"] or
                 run.get("runtime") != report.get("runtime") or
                 run.get("ollama_show_sha256") != model["show_sha256"] or
-                run.get("teacher_generated_code_executed") is not False):
+                run.get("teacher_generated_code_executed") is not False or
+                run.get('frontend', 'boolean-tree') != frontend):
             raise ValueError("teacher run identity/runtime/artifact metadata mismatch")
         for key, actual in (("prompt_sha256", profile["prompt_sha256"]), ("response_sha256", sha(raw["response"])),
                             ("request_sha256", sha(raw["request"])), ("api_response_sha256", sha(raw["api"]))):
@@ -237,6 +247,8 @@ def verify_acquisition(curriculum, acquisition):
                 request.get("options") != run.get("options") or
                 not (request.get("format") == "json" or isinstance(request.get("format"), dict))):
             raise ValueError("retained request differs from frozen prompt/model/options")
+        if frontend == 'boolean-expression' and request.get('format') != adapter_module.response_format(profile_id):
+            raise ValueError('retained expression request differs from frozen response schema')
         if (api.get("model") != model["ollama_model"] or api.get("done") is not True or
                 api.get("message", {}).get("role") != "assistant" or
                 not isinstance(api.get("message", {}).get("content"), str) or
@@ -280,18 +292,18 @@ def verify_acquisition(curriculum, acquisition):
             "curriculum_sha256": frozen["curriculum_sha256"], "model_artifact_pins": artifact_pins}
 
 
-def compile_acquisition(*, curriculum, acquisition, base_bank, out):
+def compile_acquisition(*, curriculum, acquisition, base_bank, out, frontend='boolean-tree'):
     curriculum, acquisition, base_bank, out = [Path(value).resolve() for value in (curriculum, acquisition, base_bank, out)]
     if out.exists():
         raise ValueError("refusing to overwrite teacher compilation output")
-    checked = verify_acquisition(curriculum, acquisition)
+    checked = verify_acquisition(curriculum, acquisition, frontend=frontend)
     # Bind source code and the actual base before retaining/compiling proposals.
     bindings = checked["bindings"]
     for path in (Path(__file__).resolve(), base_bank, base_bank.parent / "manifest.json"):
         bindings[str(path)] = sha(read_bytes(path))
     out.mkdir(parents=True, exist_ok=False)
     report = {"schema": "atomos-teacher-compilation-v1", "status": "running",
-              "source_acquisition": str(acquisition), "curriculum": str(curriculum),
+              "source_acquisition": str(acquisition), "curriculum": str(curriculum), 'frontend': frontend,
               "curriculum_sha256": checked["curriculum_sha256"],
               "verified_completed_queries": checked["verified_completed_queries"],
               "generation_failures": checked["generation_failures"],
@@ -325,7 +337,11 @@ def compile_acquisition(*, curriculum, acquisition, base_bank, out):
         save(out / "verified_responses.json", responses)
         require_unchanged(bindings)
         if responses:
-            request, adapter = teacher_knowledge.build_teacher_request(curriculum, responses)
+            if frontend == 'boolean-expression':
+                import teacher_expression_frontend
+                request, adapter = teacher_expression_frontend.build_request(curriculum, responses)
+            else:
+                request, adapter = teacher_knowledge.build_teacher_request(curriculum, responses)
         else:
             request = {"schema": knowledge_admission.SCHEMA, "oracles": [], "candidates": []}
             adapter = {"schema": "atomos-teacher-adapter-receipt-v1", "status": "no_completed_responses",
@@ -370,18 +386,24 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="command", required=True)
     prepare = commands.add_parser("prepare", help="freeze independent cases and prompts before teacher acquisition")
     prepare.add_argument("--out", type=Path, required=True)
+    prepare.add_argument('--frontend', choices=('boolean-tree', 'boolean-expression'), default='boolean-tree')
     compile_parser = commands.add_parser("compile", help="verify retained acquisition, compile and admit novel procedures")
     for field in ("curriculum", "acquisition", "base-bank", "out"):
         compile_parser.add_argument("--" + field, type=Path, required=True)
+    compile_parser.add_argument('--frontend', choices=('boolean-tree', 'boolean-expression'), default='boolean-tree')
     args = parser.parse_args(argv)
     try:
         if args.command == "prepare":
-            result = teacher_knowledge.prepare_curriculum(args.out)
+            if args.frontend == 'boolean-expression':
+                import teacher_expression_frontend
+                result = teacher_expression_frontend.freeze_curriculum(args.out)
+            else:
+                result = teacher_knowledge.prepare_curriculum(args.out)
             print(json.dumps({"status": "frozen", "profiles": len(result["profiles"]),
                               "curriculum": str(args.out / "curriculum.json")}))
             return 0
         result = compile_acquisition(curriculum=args.curriculum, acquisition=args.acquisition,
-                                     base_bank=args.base_bank, out=args.out)
+                                     base_bank=args.base_bank, out=args.out, frontend=args.frontend)
         print(json.dumps({"status": result["status"], "verified_completed_queries": result["verified_completed_queries"],
                           "compiled_candidates": result["compiled_candidates"], "accepted_programs": result["accepted_programs"],
                           "repeat_check": result["repeat_check"], "report": str(args.out / "compilation.json")}))

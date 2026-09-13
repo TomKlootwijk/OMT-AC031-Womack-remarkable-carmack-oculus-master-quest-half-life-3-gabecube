@@ -1,0 +1,1965 @@
+{
+  "schema": "atomOS-v3.6-K1-validation",
+  "cpu": "passed",
+  "proofs": "passed",
+  "cuda_build": "not_run",
+  "gpu": "not_run",
+  "gpu_memcheck": "not_requested",
+  "runs": [
+    {
+      "path": "1_1_provided_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "f646e913f2a6ecfeecaf8396b19afea898796636f8b7c2b0920b083d6d9c9ff3",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_provided_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "f646e913f2a6ecfeecaf8396b19afea898796636f8b7c2b0920b083d6d9c9ff3",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_provided_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "61f06e70edef5777edf7dda380e301f10c148f573e7a2477a814ef7638ef92b7",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_provided_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "61f06e70edef5777edf7dda380e301f10c148f573e7a2477a814ef7638ef92b7",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_recurrent_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "7af2c272f80882236bf43011539b082c9864b34c8acf81282c01306741152676",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_recurrent_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "7af2c272f80882236bf43011539b082c9864b34c8acf81282c01306741152676",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_recurrent_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "3eeaff1502de2102a439b087987e55ab47773545e9fdfe3ec19012619052ebea",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_recurrent_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "3eeaff1502de2102a439b087987e55ab47773545e9fdfe3ec19012619052ebea",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-xor_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "bf6bf82fb53dd70a89b2a765cac9ea0a5d94794950d047244cdc57dc8be42d0f",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-xor_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "bf6bf82fb53dd70a89b2a765cac9ea0a5d94794950d047244cdc57dc8be42d0f",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-xor_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "933de30a1e00566c488b74cdf3314ec3e0b4a4e8ac3ed3481cd3e6bb23d8d2f8",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-xor_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "933de30a1e00566c488b74cdf3314ec3e0b4a4e8ac3ed3481cd3e6bb23d8d2f8",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-or_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "361935e0ec98233df53918493f56b6522770d95b61424974c1dc7b622ee030a8",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-or_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "361935e0ec98233df53918493f56b6522770d95b61424974c1dc7b622ee030a8",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-or_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "64781253c56cc5cbcdd9fda723da7e464e32b819d7aca37192735f82ba8703dd",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "1_1_shift-or_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 3,
+      "integer_semantic_sha256": "64781253c56cc5cbcdd9fda723da7e464e32b819d7aca37192735f82ba8703dd",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        0,
+        0,
+        18
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_provided_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "57cb06f5cdefc3a6e71921d232ec386c38dfd65dd026dfde29c2cdaa2fabaaf7",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_provided_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "57cb06f5cdefc3a6e71921d232ec386c38dfd65dd026dfde29c2cdaa2fabaaf7",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_provided_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "7e529ce6e994fe0666d5d5e38a828287f339a3d382fba81567050c0aa56ca3bd",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_provided_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "7e529ce6e994fe0666d5d5e38a828287f339a3d382fba81567050c0aa56ca3bd",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_recurrent_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "ba0198d671249fcc77ee9b52464aeee066b5149ff2187e6d889b2ce28eb93aae",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_recurrent_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "ba0198d671249fcc77ee9b52464aeee066b5149ff2187e6d889b2ce28eb93aae",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_recurrent_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "1f36d1d44b5e6343aa26222e1cc6b54f5d1a09733675d36f43666d222386f233",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_recurrent_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "1f36d1d44b5e6343aa26222e1cc6b54f5d1a09733675d36f43666d222386f233",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-xor_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "4d06f25db465f40880e71aec91d785a2a41036e67d1fac4d9e049627727c42b7",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-xor_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "4d06f25db465f40880e71aec91d785a2a41036e67d1fac4d9e049627727c42b7",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-xor_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "dd10e4a72b389ca86edd133ad9e5fe88c1a87ed62f26287763e1a189bc0e9137",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-xor_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "dd10e4a72b389ca86edd133ad9e5fe88c1a87ed62f26287763e1a189bc0e9137",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-or_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "37ed7cf2f3942bea4b6b37e41fe99ab386b02b4267e1b8751036422b61f66b32",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-or_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "37ed7cf2f3942bea4b6b37e41fe99ab386b02b4267e1b8751036422b61f66b32",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-or_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "8eabaad1fb8faab85715607f322469fd3f9b4c0726289d589cbd8bad6df4e10d",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "17_257_shift-or_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 459,
+      "integer_semantic_sha256": "8eabaad1fb8faab85715607f322469fd3f9b4c0726289d589cbd8bad6df4e10d",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        2424,
+        0,
+        330
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_provided_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "7138d3e1ae89b18a826581c77c849f34e9f4ea4469e687423a85d16742679102",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_provided_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "7138d3e1ae89b18a826581c77c849f34e9f4ea4469e687423a85d16742679102",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_provided_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "f91d14c898e413556cef8481768bebac031b09177829a962bfeecea21989c94b",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_provided_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "f91d14c898e413556cef8481768bebac031b09177829a962bfeecea21989c94b",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_recurrent_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "b57a4b4e05dec5784a9ee9023c4be36bbc662ffb951116f293fc16551f63b913",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_recurrent_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "b57a4b4e05dec5784a9ee9023c4be36bbc662ffb951116f293fc16551f63b913",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_recurrent_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "b8966de5d6949f100cb3f8d83b3155b37b34e8ff4e31a0c341b3f5e0026f8db0",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_recurrent_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "b8966de5d6949f100cb3f8d83b3155b37b34e8ff4e31a0c341b3f5e0026f8db0",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-xor_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "68fa977b8c928d5a220c528022dba80d2c423b40421ffd6086546535110afe16",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-xor_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "68fa977b8c928d5a220c528022dba80d2c423b40421ffd6086546535110afe16",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-xor_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "52e66b64cff1f775eab508fead6e986b037f2dbaf90cf6a8ec2300bcb1d17491",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-xor_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "52e66b64cff1f775eab508fead6e986b037f2dbaf90cf6a8ec2300bcb1d17491",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-or_off_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "08e340ba31fc6688e500a3cc6e00625885c69167ba97a71dba8c73044ad375d0",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-or_off_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "08e340ba31fc6688e500a3cc6e00625885c69167ba97a71dba8c73044ad375d0",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-or_on_linear_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "dfd617eb9350cd3e4eebcf54d6cb1302c2395410cd29e097cf45daf4386980af",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    },
+    {
+      "path": "128_1024_shift-or_on_morton8_texture",
+      "status": "passed",
+      "lane_epochs": 12288,
+      "integer_semantic_sha256": "dfd617eb9350cd3e4eebcf54d6cb1302c2395410cd29e097cf45daf4386980af",
+      "max_float_difference_radians": 0.0,
+      "tolerance_radians": 2e-11,
+      "invariant_counts": [
+        67020,
+        0,
+        6708
+      ],
+      "backend_recorded": "cpu"
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification",
+        "-B",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DATOMOS_ENABLE_CUDA=OFF"
+      ],
+      "exit_code": 0,
+      "log": "configure.log"
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu",
+        "--config",
+        "Release",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu",
+        "-C",
+        "Release",
+        "--output-on-failure",
+        "-E",
+        "^cuda_"
+      ],
+      "exit_code": 0,
+      "log": "cpu_ctest.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_reference.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "python_tests.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_program_bank*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "program_bank_python_tests.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "proofs/check_proofs.py",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\proofs.json"
+      ],
+      "exit_code": 0,
+      "log": "symbolic_proofs.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_provided_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_provided_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_provided_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_provided_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_provided_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_provided_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_provided_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_provided_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_recurrent_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_recurrent_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_recurrent_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_recurrent_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_recurrent_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_recurrent_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_recurrent_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_recurrent_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-xor_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-xor_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-xor_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-xor_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-xor_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-xor_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-xor_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-xor_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-or_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-or_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-or_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-or_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-or_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-or_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "1",
+        "--angles",
+        "1",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\1_1_shift-or_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "1_1_shift-or_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_provided_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_provided_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_provided_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_provided_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_provided_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_provided_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_provided_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_provided_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_recurrent_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_recurrent_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_recurrent_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_recurrent_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_recurrent_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_recurrent_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_recurrent_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_recurrent_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-xor_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-xor_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-xor_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-xor_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-xor_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-xor_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-xor_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-xor_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-or_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-or_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-or_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-or_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-or_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-or_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "17",
+        "--angles",
+        "257",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\17_257_shift-or_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "17_257_shift-or_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_provided_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_provided_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_provided_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_provided_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_provided_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_provided_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "provided",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_provided_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_provided_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_recurrent_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_recurrent_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_recurrent_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_recurrent_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_recurrent_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_recurrent_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "recurrent",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_recurrent_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_recurrent_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-xor_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-xor_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-xor_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-xor_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-xor_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-xor_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-xor",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-xor_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-xor_on_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "off",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-or_off_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-or_off_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "off",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-or_off_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-or_off_morton8_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "on",
+        "--layout",
+        "linear",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-or_on_linear_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-or_on_linear_texture.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\Release\\atomos_cpu.exe",
+        "--rows",
+        "128",
+        "--angles",
+        "1024",
+        "--epochs",
+        "3",
+        "--mode",
+        "shift-or",
+        "--fringe",
+        "on",
+        "--layout",
+        "morton8",
+        "--read",
+        "texture",
+        "--out",
+        "C:\\Users\\Tom\\.cache\\ak1\\expression_cpu\\evidence_1789322219167315700\\128_1024_shift-or_on_morton8_texture",
+        "--device",
+        "0"
+      ],
+      "exit_code": 0,
+      "log": "128_1024_shift-or_on_morton8_texture.log"
+    }
+  ],
+  "status": "passed"
+}

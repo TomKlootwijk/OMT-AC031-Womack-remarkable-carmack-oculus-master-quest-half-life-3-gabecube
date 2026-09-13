@@ -1,0 +1,3186 @@
+{
+  "schema": "atomos-teacher-independent-expression-assessment-v2",
+  "status": "completed",
+  "assessed_at_utc": "2026-09-13T18:00:59.456860+00:00",
+  "actual_teacher_responses": 12,
+  "compiled_responses": 12,
+  "parse_rejections": 0,
+  "correct_responses": 3,
+  "incorrect_responses": 9,
+  "complete_evaluations": 208,
+  "all_original_oracle_bytes_unchanged": true,
+  "all_comparison_expected_cases_unchanged": true,
+  "acquisition_status": "completed",
+  "generation_failures": [],
+  "models_unloaded_in_acquisition_receipt": true,
+  "gpu_validation": "not_run_by_this_assessment",
+  "new_model_queries": 0,
+  "method": "Parse actual retained V2 teacher expression strings, compile to NOR, evaluate every input using codec evaluator, compare against original independent scalar integer oracles.",
+  "comparison_limit": "One observation per model/profile/representation; prompts and constrained response grammar changed together. Observed improvement is not a controlled causal attribution or broad language-model quality claim.",
+  "prior_assessment_sha256": "d30648933530e8f5e698bf8a3f5c4a4d68f5fe91a8276fbd8ea9e7a60d9009fd",
+  "oracle_checks": [
+    {
+      "profile": "full_adder_1bit_v1",
+      "original_oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+      "expression_oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+      "identical_original_bytes": true,
+      "complete_domain_size": 8
+    },
+    {
+      "profile": "unsigned_compare_2bit_v1",
+      "original_oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+      "expression_oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+      "identical_original_bytes": true,
+      "complete_domain_size": 16
+    },
+    {
+      "profile": "unsigned_add_2bit_v1",
+      "original_oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+      "expression_oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+      "identical_original_bytes": true,
+      "complete_domain_size": 16
+    },
+    {
+      "profile": "binary_to_gray_4bit_v1",
+      "original_oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+      "expression_oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+      "identical_original_bytes": true,
+      "complete_domain_size": 16
+    },
+    {
+      "profile": "absolute_difference_2bit_v1",
+      "original_oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+      "expression_oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+      "identical_original_bytes": true,
+      "complete_domain_size": 16
+    },
+    {
+      "profile": "mux_2bit_v1",
+      "original_oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+      "expression_oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+      "identical_original_bytes": true,
+      "complete_domain_size": 32
+    }
+  ],
+  "model_summaries": [
+    {
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "responses": 6,
+      "parsed": 6,
+      "correct_profiles": 3,
+      "prior_correct_profiles": 2,
+      "wrong_cases_in_parsed_responses": 41,
+      "prior_wrong_cases": 44
+    },
+    {
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "responses": 6,
+      "parsed": 6,
+      "correct_profiles": 0,
+      "prior_correct_profiles": 0,
+      "wrong_cases_in_parsed_responses": 86,
+      "prior_wrong_cases": 76
+    }
+  ],
+  "rows": [
+    {
+      "profile": "full_adder_1bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json",
+      "response_sha256": "31b54b42249ee3319a9b2076e7b8486a6423f3aa978b92d5c039234ba422dc2a",
+      "run_sha256": "61a397d3e413a935cc2ceda0ffec5f42f5dc740cfb2a977124e4fdc9a2e4bbc7",
+      "request_sha256": "769bd7010864c16056d2992db89a82f1cb64548faa827da59b262ec89f72c51c",
+      "api_response_sha256": "e847ec98b8df1acd631440c84160ce4e297627459237baa2a0e4cfcd1aa62524",
+      "prompt_sha256": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+      "oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+      "expected_domain_size": 8,
+      "status": "correct",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "a ^ b ^ carry_in",
+        "(a & b) | (carry_in & (a ^ b))"
+      ],
+      "canonical_ast": [
+        [
+          "xor",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              1
+            ]
+          ],
+          [
+            "input",
+            2
+          ]
+        ],
+        [
+          "or",
+          [
+            "and",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              1
+            ]
+          ],
+          [
+            "and",
+            [
+              "input",
+              2
+            ],
+            [
+              "xor",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                1
+              ]
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 17,
+      "case_count": 8,
+      "wrong_case_count": 0,
+      "counterexamples": [],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 3
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+        "prior_wrong_case_count": 0,
+        "current_wrong_case_count": 0,
+        "identical_expected_cases": true,
+        "prior_correct": true,
+        "current_correct": true
+      }
+    },
+    {
+      "profile": "unsigned_compare_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\run.json",
+      "response_sha256": "b08c7bd4a9675613df5b50fa8fef8881cf960e764c187569945b5a467c2db64b",
+      "run_sha256": "bdd0055e11f7f52088b146d52d7fd24cba43e7cecd3c6b49c65cba53e1069476",
+      "request_sha256": "d9a0a9e41e8cb8afe20bbde46b4bc146e816fb3dca1462405fd3f2c4e098d05e",
+      "api_response_sha256": "3540a575df754a921ca8b2dfb7aaf2de90f6060ea9a4852ccb95444bf95a2246",
+      "prompt_sha256": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+      "oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+      "expected_domain_size": 16,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "(a0 & ~b0) | (a0 ^ b0) & (a1 ^ b1) & (~a1 | b1)",
+        "(a0 ^ b0) | (a1 ^ b1)",
+        "(b0 & ~a0) | (b0 ^ a0) & (b1 ^ a1) & (~b1 | a1)"
+      ],
+      "canonical_ast": [
+        [
+          "or",
+          [
+            "and",
+            [
+              "input",
+              0
+            ],
+            [
+              "not",
+              [
+                "input",
+                2
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "and",
+              [
+                "xor",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  2
+                ]
+              ],
+              [
+                "xor",
+                [
+                  "input",
+                  1
+                ],
+                [
+                  "input",
+                  3
+                ]
+              ]
+            ],
+            [
+              "or",
+              [
+                "not",
+                [
+                  "input",
+                  1
+                ]
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "and",
+            [
+              "input",
+              2
+            ],
+            [
+              "not",
+              [
+                "input",
+                0
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "and",
+              [
+                "xor",
+                [
+                  "input",
+                  2
+                ],
+                [
+                  "input",
+                  0
+                ]
+              ],
+              [
+                "xor",
+                [
+                  "input",
+                  3
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ]
+            ],
+            [
+              "or",
+              [
+                "not",
+                [
+                  "input",
+                  3
+                ]
+              ],
+              [
+                "input",
+                1
+              ]
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 28,
+      "case_count": 16,
+      "wrong_case_count": 16,
+      "counterexamples": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 4,
+          "actual": 3
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 4,
+          "actual": 7
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 6
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 6
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 4,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 7
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 6
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 0
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 4,
+          "actual": 3
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 4,
+          "actual": 7
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 6
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 6
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 4,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 7
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 6
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 0
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "e470924fb9eda77c158bd2b0f5a69350239689686c37077010d3deaa9c237d2a",
+        "prior_wrong_case_count": 13,
+        "current_wrong_case_count": 16,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "unsigned_add_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\run.json",
+      "response_sha256": "61493616e5be5e80d2d26a98e979438a2cfdbc339c1a568fbba27f86f014616b",
+      "run_sha256": "941729b164cae8875d3b9f0c14ca8974b4163368bc66f0072902b0912fb6a890",
+      "request_sha256": "c1edac3b1dd783654527a68d9747daa379fe7cb7645011f574b5d7376edb641a",
+      "api_response_sha256": "aac3b738ebc87772718b2baf26523fb3ab5b67e163302166637713a494778281",
+      "prompt_sha256": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+      "oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+      "expected_domain_size": 16,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "a0^b0^(a1&b1)",
+        "a0^b0^(a1&b1)",
+        "a1^b1^((a0&b0)&(a1^b1))"
+      ],
+      "canonical_ast": [
+        [
+          "xor",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "and",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "xor",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "and",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "xor",
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ],
+          [
+            "and",
+            [
+              "and",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                2
+              ]
+            ],
+            [
+              "xor",
+              [
+                "input",
+                1
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 28,
+      "case_count": 16,
+      "wrong_case_count": 15,
+      "counterexamples": [
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 9,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 3
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 13,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 6,
+          "actual": 3
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 9,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 3
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 7
+        },
+        {
+          "input": 13,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 5,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 6,
+          "actual": 3
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "642c7ec02165cfa8a62240e796bfe81abcf12c03ec1d6185c15c9185181040a6",
+        "prior_wrong_case_count": 10,
+        "current_wrong_case_count": 15,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "binary_to_gray_4bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json",
+      "response_sha256": "df8638ef3ae14cbb2fd938ac86e98903ef231149c11eb2ab23c4ce3e111749a3",
+      "run_sha256": "ed484f57d7878537cc1bcf1abd52fb6f067208dd19765b637bbd2fe93e6fe6b7",
+      "request_sha256": "0c5f6d8ea104288465625c00b0a0608c3c50ab0ae2b8472fae04e95052b14c3a",
+      "api_response_sha256": "b0a1a4a2717b01389e6a895f8617dc5199b3155490a3e9d664eefe0c5512ec80",
+      "prompt_sha256": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+      "oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+      "expected_domain_size": 16,
+      "status": "correct",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "binary0^binary1",
+        "binary1^binary2",
+        "binary2^binary3",
+        "binary3"
+      ],
+      "canonical_ast": [
+        [
+          "xor",
+          [
+            "input",
+            0
+          ],
+          [
+            "input",
+            1
+          ]
+        ],
+        [
+          "xor",
+          [
+            "input",
+            1
+          ],
+          [
+            "input",
+            2
+          ]
+        ],
+        [
+          "xor",
+          [
+            "input",
+            2
+          ],
+          [
+            "input",
+            3
+          ]
+        ],
+        [
+          "input",
+          3
+        ]
+      ],
+      "gate_count": 15,
+      "case_count": 16,
+      "wrong_case_count": 0,
+      "counterexamples": [],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 6,
+          "actual": 6
+        },
+        {
+          "input": 5,
+          "expected": 7,
+          "actual": 7
+        },
+        {
+          "input": 6,
+          "expected": 5,
+          "actual": 5
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 8,
+          "expected": 12,
+          "actual": 12
+        },
+        {
+          "input": 9,
+          "expected": 13,
+          "actual": 13
+        },
+        {
+          "input": 10,
+          "expected": 15,
+          "actual": 15
+        },
+        {
+          "input": 11,
+          "expected": 14,
+          "actual": 14
+        },
+        {
+          "input": 12,
+          "expected": 10,
+          "actual": 10
+        },
+        {
+          "input": 13,
+          "expected": 11,
+          "actual": 11
+        },
+        {
+          "input": 14,
+          "expected": 9,
+          "actual": 9
+        },
+        {
+          "input": 15,
+          "expected": 8,
+          "actual": 8
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+        "prior_wrong_case_count": 0,
+        "current_wrong_case_count": 0,
+        "identical_expected_cases": true,
+        "prior_correct": true,
+        "current_correct": true
+      }
+    },
+    {
+      "profile": "absolute_difference_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\run.json",
+      "response_sha256": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+      "run_sha256": "e9eb2fd12ed4a8252df47ff79052abb30503595d2d3d0199b278cc8350ef233b",
+      "request_sha256": "ca13df9c737baea1601a1fdac00fc188da52e2409e0165d1b41005749d72f11a",
+      "api_response_sha256": "11ad98fe6f4d5714e85654c79735187af376273f44eda92652a0180d81ba505d",
+      "prompt_sha256": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+      "oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+      "expected_domain_size": 16,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "(a0 ^ b0) ^ (a1 ^ b1)",
+        "(a0 & b1) ^ (a1 & b0)"
+      ],
+      "canonical_ast": [
+        [
+          "xor",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "xor",
+          [
+            "and",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              3
+            ]
+          ],
+          [
+            "and",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              2
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 26,
+      "case_count": 16,
+      "wrong_case_count": 10,
+      "counterexamples": [
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 3
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 2,
+          "actual": 3
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 3
+        },
+        {
+          "input": 15,
+          "expected": 0,
+          "actual": 0
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "722e1cad5f4f9eff8524b5dbf95a6d510133f7cafbdfc1c885e666871ee75e59",
+        "prior_wrong_case_count": 9,
+        "current_wrong_case_count": 10,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "mux_2bit_v1",
+      "model": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\run.json",
+      "response_sha256": "773f87eae67276b9ec0d3e3533e14b3f5ab3e6b1bd7e9b9406f1ed24cfb51d7a",
+      "run_sha256": "b259d789d9656d26af476b1cf1967b00f64bc05edb06080b2785f1571595697c",
+      "request_sha256": "155d7ca0fc39be4fb84718b712db02364728a0a898a0fb9e162c922f93df6bec",
+      "api_response_sha256": "654a2303fb99640a08d5519c77002b62a1d2cebdbdf278637b76740023d666db",
+      "prompt_sha256": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+      "oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+      "expected_domain_size": 32,
+      "status": "correct",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "select_b & b0 | (~select_b) & a0",
+        "select_b & b1 | (~select_b) & a1"
+      ],
+      "canonical_ast": [
+        [
+          "or",
+          [
+            "and",
+            [
+              "input",
+              4
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "and",
+            [
+              "not",
+              [
+                "input",
+                4
+              ]
+            ],
+            [
+              "input",
+              0
+            ]
+          ]
+        ],
+        [
+          "or",
+          [
+            "and",
+            [
+              "input",
+              4
+            ],
+            [
+              "input",
+              3
+            ]
+          ],
+          [
+            "and",
+            [
+              "not",
+              [
+                "input",
+                4
+              ]
+            ],
+            [
+              "input",
+              1
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 13,
+      "case_count": 32,
+      "wrong_case_count": 0,
+      "counterexamples": [],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 4,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 8,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 15,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 16,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 17,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 18,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 19,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 21,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 22,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 23,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 24,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 25,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 26,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 27,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 28,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 29,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 30,
+          "expected": 3,
+          "actual": 3
+        },
+        {
+          "input": 31,
+          "expected": 3,
+          "actual": 3
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "a17300cf85213cec7aa8731dd1c6308d48874e7b505d086b386c291a1c65f05e",
+        "prior_wrong_case_count": 12,
+        "current_wrong_case_count": 0,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": true
+      }
+    },
+    {
+      "profile": "full_adder_1bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\run.json",
+      "response_sha256": "95629370ed24dbf5fc60d035bff5c758f1b2312882260a979aab435eb03715e0",
+      "run_sha256": "d7d0680cbf8344c73793988875e3b8e5cf7cf8bd505e588ff4538cbefda8b1ff",
+      "request_sha256": "72b31ec04df221adbbbdd2e064d33b08b5d83b3786f3e2d35ff2c449094dc0d5",
+      "api_response_sha256": "2f910742d51e80222888e99390ea9a31736972f818fa2eec78b1d7c1b52cfdf8",
+      "prompt_sha256": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+      "oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+      "expected_domain_size": 8,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "~a & ~b & carry_in",
+        "~a & b & ~carry_in | a & ~b & carry_in | a & b & carry_in"
+      ],
+      "canonical_ast": [
+        [
+          "and",
+          [
+            "and",
+            [
+              "not",
+              [
+                "input",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "input",
+                1
+              ]
+            ]
+          ],
+          [
+            "input",
+            2
+          ]
+        ],
+        [
+          "or",
+          [
+            "or",
+            [
+              "and",
+              [
+                "and",
+                [
+                  "not",
+                  [
+                    "input",
+                    0
+                  ]
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ],
+              [
+                "not",
+                [
+                  "input",
+                  2
+                ]
+              ]
+            ],
+            [
+              "and",
+              [
+                "and",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "not",
+                  [
+                    "input",
+                    1
+                  ]
+                ]
+              ],
+              [
+                "input",
+                2
+              ]
+            ]
+          ],
+          [
+            "and",
+            [
+              "and",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                1
+              ]
+            ],
+            [
+              "input",
+              2
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 19,
+      "case_count": 8,
+      "wrong_case_count": 5,
+      "counterexamples": [
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 2
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 2
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 2
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "079e2bee05fbac685e0b38f9db56da3df8d17876a908c79b33ea5b01d9d9f7b2",
+        "prior_wrong_case_count": 7,
+        "current_wrong_case_count": 5,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "unsigned_compare_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\run.json",
+      "response_sha256": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+      "run_sha256": "b6f8ab97eff174fb6d518622a46709e3e4f7cd8d54acf1008a1a18a8f7e9eb51",
+      "request_sha256": "b23eb3a875fe47a12d40e225139c7e86a536192abc0eb0010993ec639bb22fbb",
+      "api_response_sha256": "5b1a4bc7d557d241910fc7c6ede7e950c547dcbb6ae31d122523e7847c383676",
+      "prompt_sha256": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+      "oracle_sha256": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+      "expected_domain_size": 16,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "((~(a0 ^ b0)) & (a1 ^ b1))",
+        "((a0 ^ b0) & (a1 ^ b1))",
+        "~((a0 ^ b0) & (a1 ^ b1))"
+      ],
+      "canonical_ast": [
+        [
+          "and",
+          [
+            "not",
+            [
+              "xor",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                2
+              ]
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "not",
+          [
+            "and",
+            [
+              "xor",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                2
+              ]
+            ],
+            [
+              "xor",
+              [
+                "input",
+                1
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 12,
+      "case_count": 16,
+      "wrong_case_count": 14,
+      "counterexamples": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 3,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 4
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 1,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 2,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 3,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 6,
+          "expected": 4,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 5
+        },
+        {
+          "input": 8,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 4
+        },
+        {
+          "input": 11,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 12,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 4
+        },
+        {
+          "input": 15,
+          "expected": 2,
+          "actual": 4
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "358fcaf3a76fac21e5babf4738c8826a6ea2df6ec5bcdfb1fd8eaf632c34a8f5",
+        "prior_wrong_case_count": 16,
+        "current_wrong_case_count": 14,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "unsigned_add_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\run.json",
+      "response_sha256": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+      "run_sha256": "6e923b06a22f58bef4452442f324e9fea03e7a98a9a40ced50a123b882006978",
+      "request_sha256": "74175b0aa2d1d64fd6d834fb5a4cee3af23e661a53a77b92cf1a70baf59eb5fc",
+      "api_response_sha256": "96f2e829b98c801ea039526e717473755455c5235308de001d241488cdd1151b",
+      "prompt_sha256": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+      "oracle_sha256": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+      "expected_domain_size": 16,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "((a0 ^ b0) & (a1 | b1))",
+        "(a0 ^ b0) & (a1 & b1)",
+        "(a0 | b0) & (~(a0 ^ b0) & (a1 | b1))"
+      ],
+      "canonical_ast": [
+        [
+          "and",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "or",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "xor",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "and",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "or",
+            [
+              "input",
+              0
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "and",
+            [
+              "not",
+              [
+                "xor",
+                [
+                  "input",
+                  0
+                ],
+                [
+                  "input",
+                  2
+                ]
+              ]
+            ],
+            [
+              "or",
+              [
+                "input",
+                1
+              ],
+              [
+                "input",
+                3
+              ]
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 15,
+      "case_count": 16,
+      "wrong_case_count": 13,
+      "counterexamples": [
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 5,
+          "actual": 3
+        },
+        {
+          "input": 15,
+          "expected": 6,
+          "actual": 4
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 10,
+          "expected": 4,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 5,
+          "actual": 3
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 1
+        },
+        {
+          "input": 13,
+          "expected": 4,
+          "actual": 4
+        },
+        {
+          "input": 14,
+          "expected": 5,
+          "actual": 3
+        },
+        {
+          "input": 15,
+          "expected": 6,
+          "actual": 4
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "b14f433c6e12504e16b30ee7d82a957be39f837e8fd79f4875f32d7e8a3d6753",
+        "prior_wrong_case_count": 15,
+        "current_wrong_case_count": 13,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "binary_to_gray_4bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\run.json",
+      "response_sha256": "935198d99ab41fd08d149dbe3c78821dbe492d054de02a315287afa0f5db5f45",
+      "run_sha256": "2f9f449c4bc742e55dedbdc09739ef6e36c7f06322c1a08d925447666ccad640",
+      "request_sha256": "c602d0f09044025ba6f1a398d4204c8c3e637e95a8e22002a01cd9488d031cc1",
+      "api_response_sha256": "58383cc17199f19ba6a080028d8806f4d3a1b5eae1bff46daaabbfb5bb3dbbae",
+      "prompt_sha256": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+      "oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+      "expected_domain_size": 16,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "binary0 ^ binary1",
+        "binary0 ^ binary2",
+        "binary1 ^ binary2",
+        "binary0 ^ binary3"
+      ],
+      "canonical_ast": [
+        [
+          "xor",
+          [
+            "input",
+            0
+          ],
+          [
+            "input",
+            1
+          ]
+        ],
+        [
+          "xor",
+          [
+            "input",
+            0
+          ],
+          [
+            "input",
+            2
+          ]
+        ],
+        [
+          "xor",
+          [
+            "input",
+            1
+          ],
+          [
+            "input",
+            2
+          ]
+        ],
+        [
+          "xor",
+          [
+            "input",
+            0
+          ],
+          [
+            "input",
+            3
+          ]
+        ]
+      ],
+      "gate_count": 20,
+      "case_count": 16,
+      "wrong_case_count": 14,
+      "counterexamples": [
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 11
+        },
+        {
+          "input": 2,
+          "expected": 3,
+          "actual": 5
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 14
+        },
+        {
+          "input": 5,
+          "expected": 7,
+          "actual": 13
+        },
+        {
+          "input": 6,
+          "expected": 5,
+          "actual": 3
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 8
+        },
+        {
+          "input": 8,
+          "expected": 12,
+          "actual": 8
+        },
+        {
+          "input": 9,
+          "expected": 13,
+          "actual": 3
+        },
+        {
+          "input": 10,
+          "expected": 15,
+          "actual": 13
+        },
+        {
+          "input": 11,
+          "expected": 14,
+          "actual": 6
+        },
+        {
+          "input": 12,
+          "expected": 10,
+          "actual": 14
+        },
+        {
+          "input": 13,
+          "expected": 11,
+          "actual": 5
+        },
+        {
+          "input": 14,
+          "expected": 9,
+          "actual": 11
+        },
+        {
+          "input": 15,
+          "expected": 8,
+          "actual": 0
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 11
+        },
+        {
+          "input": 2,
+          "expected": 3,
+          "actual": 5
+        },
+        {
+          "input": 3,
+          "expected": 2,
+          "actual": 14
+        },
+        {
+          "input": 4,
+          "expected": 6,
+          "actual": 6
+        },
+        {
+          "input": 5,
+          "expected": 7,
+          "actual": 13
+        },
+        {
+          "input": 6,
+          "expected": 5,
+          "actual": 3
+        },
+        {
+          "input": 7,
+          "expected": 4,
+          "actual": 8
+        },
+        {
+          "input": 8,
+          "expected": 12,
+          "actual": 8
+        },
+        {
+          "input": 9,
+          "expected": 13,
+          "actual": 3
+        },
+        {
+          "input": 10,
+          "expected": 15,
+          "actual": 13
+        },
+        {
+          "input": 11,
+          "expected": 14,
+          "actual": 6
+        },
+        {
+          "input": 12,
+          "expected": 10,
+          "actual": 14
+        },
+        {
+          "input": 13,
+          "expected": 11,
+          "actual": 5
+        },
+        {
+          "input": 14,
+          "expected": 9,
+          "actual": 11
+        },
+        {
+          "input": 15,
+          "expected": 8,
+          "actual": 0
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "15dd57aa9f0e6dc0453cf031374014aa30fbf42b3826b12837f5b89dd797f26a",
+        "prior_wrong_case_count": 15,
+        "current_wrong_case_count": 14,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "absolute_difference_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\run.json",
+      "response_sha256": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+      "run_sha256": "c485b0fd619975171f6ebad620f3b290b665180588b1102eb00dd283f0919afe",
+      "request_sha256": "5b2bc900e9c48604ad346e254aec092a598a30e0f3c0e2440e8f85ec9c39a25d",
+      "api_response_sha256": "37877ec414bc765398db56135ccee5e933de57d8324357be1041e3c9d2e832ae",
+      "prompt_sha256": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+      "oracle_sha256": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+      "expected_domain_size": 16,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "~(a0 ^ b0) & (a1 ^ b1)",
+        "~(a0 ^ b0) ^ (a1 ^ b1)"
+      ],
+      "canonical_ast": [
+        [
+          "and",
+          [
+            "not",
+            [
+              "xor",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                2
+              ]
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "xor",
+          [
+            "not",
+            [
+              "xor",
+              [
+                "input",
+                0
+              ],
+              [
+                "input",
+                2
+              ]
+            ]
+          ],
+          [
+            "xor",
+            [
+              "input",
+              1
+            ],
+            [
+              "input",
+              3
+            ]
+          ]
+        ]
+      ],
+      "gate_count": 16,
+      "case_count": 16,
+      "wrong_case_count": 16,
+      "counterexamples": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 6,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 13,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 0,
+          "actual": 2
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 4,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 6,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 7,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 8,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 10,
+          "expected": 0,
+          "actual": 2
+        },
+        {
+          "input": 11,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "input": 13,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 14,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 0,
+          "actual": 2
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "e19f7dae60361c7b8a24256e0dec822e77d4c10f2037c8064bc4f77885d933b3",
+        "prior_wrong_case_count": 11,
+        "current_wrong_case_count": 16,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    },
+    {
+      "profile": "mux_2bit_v1",
+      "model": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\run.json",
+      "response_sha256": "e2af54a938e6aee92c603d1a8af7cdef06f68185120992de9c89ddf42b559d95",
+      "run_sha256": "7cccf45c3df7572f27c3044392dc04f989889d3b6415e782fd80a55c189814e7",
+      "request_sha256": "de7b3b68d5fd047e9e5aa0ee5e2e14b2ede23bca79dc12f126cd209d3b6431e0",
+      "api_response_sha256": "132cb4a7b13e65e19ab63a600b812e5fa98c317bd8bfaa7bed512c3961e5cddb",
+      "prompt_sha256": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+      "oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+      "expected_domain_size": 32,
+      "status": "incorrect",
+      "parse_status": "parsed",
+      "expression_outputs": [
+        "~select_b & a1 & ~a0 & b0 & ~b1",
+        "~select_b & ~a1 & a0 & ~b0 & b1"
+      ],
+      "canonical_ast": [
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "and",
+                [
+                  "not",
+                  [
+                    "input",
+                    4
+                  ]
+                ],
+                [
+                  "input",
+                  1
+                ]
+              ],
+              [
+                "not",
+                [
+                  "input",
+                  0
+                ]
+              ]
+            ],
+            [
+              "input",
+              2
+            ]
+          ],
+          [
+            "not",
+            [
+              "input",
+              3
+            ]
+          ]
+        ],
+        [
+          "and",
+          [
+            "and",
+            [
+              "and",
+              [
+                "and",
+                [
+                  "not",
+                  [
+                    "input",
+                    4
+                  ]
+                ],
+                [
+                  "not",
+                  [
+                    "input",
+                    1
+                  ]
+                ]
+              ],
+              [
+                "input",
+                0
+              ]
+            ],
+            [
+              "not",
+              [
+                "input",
+                2
+              ]
+            ]
+          ],
+          [
+            "input",
+            3
+          ]
+        ]
+      ],
+      "gate_count": 18,
+      "case_count": 32,
+      "wrong_case_count": 24,
+      "counterexamples": [
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 21,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 22,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 23,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 24,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 25,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 26,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 27,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 28,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 29,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 30,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 31,
+          "expected": 3,
+          "actual": 0
+        }
+      ],
+      "complete_cases": [
+        {
+          "input": 0,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 1,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 2,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 3,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 4,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 5,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 6,
+          "expected": 2,
+          "actual": 1
+        },
+        {
+          "input": 7,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 8,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 9,
+          "expected": 1,
+          "actual": 2
+        },
+        {
+          "input": 10,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 11,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 12,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 13,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 14,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 15,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 16,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 17,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 18,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 19,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "input": 20,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 21,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 22,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 23,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "input": 24,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 25,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 26,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 27,
+          "expected": 2,
+          "actual": 0
+        },
+        {
+          "input": 28,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 29,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 30,
+          "expected": 3,
+          "actual": 0
+        },
+        {
+          "input": 31,
+          "expected": 3,
+          "actual": 0
+        }
+      ],
+      "v1_comparison": {
+        "prior_response_sha256": "82615f7f8ecb11e8411ba99e4ab120ce4414810b8722f5fe4dcfa44595edc1d7",
+        "prior_wrong_case_count": 12,
+        "current_wrong_case_count": 24,
+        "identical_expected_cases": true,
+        "prior_correct": false,
+        "current_correct": false
+      }
+    }
+  ],
+  "evidence_sha256": {
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\acquisition.json": "a55d0f7ca3dccd4f1cf7d72d53d57226f596d06432ea387a18007d6a234c5fd8",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.oracle.json": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.prompt.txt": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.oracle.json": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.prompt.txt": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\curriculum.json": "5803c757c7acfcae0a21353e1beeb9ce1cd0c3b16fe20110fbaf1a80813065ae",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.oracle.json": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.prompt.txt": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.oracle.json": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.prompt.txt": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\source_curriculum.json": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.oracle.json": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.prompt.txt": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.oracle.json": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.prompt.txt": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\teachers.json": "f5e0e95a80591f5fe7c50d20b358f5ca15404e3e25c3ab565593d49145385179",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\acquire_teacher_knowledge.py": "5d6f4084fa38ef76a8dc577dc60e222c9264b17229b1b8bdbde53823a60cedcb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_knowledge.py": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank.py": "b19e72bfd518e01df2bc7e9629d5a1834e8253e81e1675753cee7f8a07a4dd8a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\knowledge_admission.py": "25cbf23929d101331f172c7874150b1b4124b49bbf5d45c5547e705ddbdc271e",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_expression_frontend.py": "177388ea9ce58d359f68b1302da5572f7e06fa85e3a4f40f31523a3031a3b08f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\response_assessment.json": "d30648933530e8f5e698bf8a3f5c4a4d68f5fe91a8276fbd8ea9e7a60d9009fd",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\full_adder_1bit_v1.oracle.json": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\unsigned_compare_2bit_v1.oracle.json": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\unsigned_add_2bit_v1.oracle.json": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\binary_to_gray_4bit_v1.oracle.json": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\absolute_difference_2bit_v1.oracle.json": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\curriculum\\mux_2bit_v1.oracle.json": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt": "31b54b42249ee3319a9b2076e7b8486a6423f3aa978b92d5c039234ba422dc2a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json": "61a397d3e413a935cc2ceda0ffec5f42f5dc740cfb2a977124e4fdc9a2e4bbc7",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\request.json": "769bd7010864c16056d2992db89a82f1cb64548faa827da59b262ec89f72c51c",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\api_response.json": "e847ec98b8df1acd631440c84160ce4e297627459237baa2a0e4cfcd1aa62524",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\response.txt": "b08c7bd4a9675613df5b50fa8fef8881cf960e764c187569945b5a467c2db64b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\run.json": "bdd0055e11f7f52088b146d52d7fd24cba43e7cecd3c6b49c65cba53e1069476",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\request.json": "d9a0a9e41e8cb8afe20bbde46b4bc146e816fb3dca1462405fd3f2c4e098d05e",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\api_response.json": "3540a575df754a921ca8b2dfb7aaf2de90f6060ea9a4852ccb95444bf95a2246",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\response.txt": "61493616e5be5e80d2d26a98e979438a2cfdbc339c1a568fbba27f86f014616b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\run.json": "941729b164cae8875d3b9f0c14ca8974b4163368bc66f0072902b0912fb6a890",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\request.json": "c1edac3b1dd783654527a68d9747daa379fe7cb7645011f574b5d7376edb641a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\api_response.json": "aac3b738ebc87772718b2baf26523fb3ab5b67e163302166637713a494778281",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt": "df8638ef3ae14cbb2fd938ac86e98903ef231149c11eb2ab23c4ce3e111749a3",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json": "ed484f57d7878537cc1bcf1abd52fb6f067208dd19765b637bbd2fe93e6fe6b7",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\request.json": "0c5f6d8ea104288465625c00b0a0608c3c50ab0ae2b8472fae04e95052b14c3a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\api_response.json": "b0a1a4a2717b01389e6a895f8617dc5199b3155490a3e9d664eefe0c5512ec80",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\response.txt": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\run.json": "e9eb2fd12ed4a8252df47ff79052abb30503595d2d3d0199b278cc8350ef233b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\request.json": "ca13df9c737baea1601a1fdac00fc188da52e2409e0165d1b41005749d72f11a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\api_response.json": "11ad98fe6f4d5714e85654c79735187af376273f44eda92652a0180d81ba505d",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt": "773f87eae67276b9ec0d3e3533e14b3f5ab3e6b1bd7e9b9406f1ed24cfb51d7a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\run.json": "b259d789d9656d26af476b1cf1967b00f64bc05edb06080b2785f1571595697c",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\request.json": "155d7ca0fc39be4fb84718b712db02364728a0a898a0fb9e162c922f93df6bec",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\api_response.json": "654a2303fb99640a08d5519c77002b62a1d2cebdbdf278637b76740023d666db",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\response.txt": "95629370ed24dbf5fc60d035bff5c758f1b2312882260a979aab435eb03715e0",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\run.json": "d7d0680cbf8344c73793988875e3b8e5cf7cf8bd505e588ff4538cbefda8b1ff",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\request.json": "72b31ec04df221adbbbdd2e064d33b08b5d83b3786f3e2d35ff2c449094dc0d5",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\api_response.json": "2f910742d51e80222888e99390ea9a31736972f818fa2eec78b1d7c1b52cfdf8",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\response.txt": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\run.json": "b6f8ab97eff174fb6d518622a46709e3e4f7cd8d54acf1008a1a18a8f7e9eb51",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\request.json": "b23eb3a875fe47a12d40e225139c7e86a536192abc0eb0010993ec639bb22fbb",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\api_response.json": "5b1a4bc7d557d241910fc7c6ede7e950c547dcbb6ae31d122523e7847c383676",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\response.txt": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\run.json": "6e923b06a22f58bef4452442f324e9fea03e7a98a9a40ced50a123b882006978",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\request.json": "74175b0aa2d1d64fd6d834fb5a4cee3af23e661a53a77b92cf1a70baf59eb5fc",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\api_response.json": "96f2e829b98c801ea039526e717473755455c5235308de001d241488cdd1151b",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\response.txt": "935198d99ab41fd08d149dbe3c78821dbe492d054de02a315287afa0f5db5f45",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\run.json": "2f9f449c4bc742e55dedbdc09739ef6e36c7f06322c1a08d925447666ccad640",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\request.json": "c602d0f09044025ba6f1a398d4204c8c3e637e95a8e22002a01cd9488d031cc1",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\api_response.json": "58383cc17199f19ba6a080028d8806f4d3a1b5eae1bff46daaabbfb5bb3dbbae",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\response.txt": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\run.json": "c485b0fd619975171f6ebad620f3b290b665180588b1102eb00dd283f0919afe",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\request.json": "5b2bc900e9c48604ad346e254aec092a598a30e0f3c0e2440e8f85ec9c39a25d",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\api_response.json": "37877ec414bc765398db56135ccee5e933de57d8324357be1041e3c9d2e832ae",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\response.txt": "e2af54a938e6aee92c603d1a8af7cdef06f68185120992de9c89ddf42b559d95",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\run.json": "7cccf45c3df7572f27c3044392dc04f989889d3b6415e782fd80a55c189814e7",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\request.json": "de7b3b68d5fd047e9e5aa0ee5e2e14b2ede23bca79dc12f126cd209d3b6431e0",
+    "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\api_response.json": "132cb4a7b13e65e19ab63a600b812e5fa98c317bd8bfaa7bed512c3961e5cddb"
+  }
+}

@@ -58,3 +58,11 @@ tests/test_teacher_compilation.py -text
 examples/teacher_knowledge/** -text
 results/teacher_acquisition_20260913/** -text
 docs/TEACHER_KNOWLEDGE_EXTRACTION.md -text
+python/teacher_expression_frontend.py -text
+python/knowledge_queries.py -text
+tools/query_knowledge.py -text
+tests/test_teacher_expression_frontend.py -text
+tests/test_teacher_frontend_selection.py -text
+tests/test_knowledge_queries.py -text
+results/teacher_expression_20260913/** -text
+docs/TEACHER_EXPRESSION_QUERIES.md -text

@@ -1,0 +1,12 @@
+{
+"schema":"atomOS-v3.6-K1-run",
+"chart":{"r_min":0.25,"r_max":64,"angular_sampling":"periodic_nodes"},
+"backend":"cpu",
+"device":null,
+"rows":17,"angles":257,"words":9,"padded_rows":24,"padded_words":16,
+"epochs":3,"seed":130,"layout":"morton8","read":"host",
+"mode":"shift-xor","profile":"mixed","fringe":true,
+"payload_bytes":45312,"planned_bytes":67154176,"committed_lane_epochs":459,
+"checks_pass":2424,"checks_fail":0,"checks_undefined":330,
+"candidate_verification":"passed","compute_ms":[0.065199999999999994,0.040399999999999998,0.037199999999999997]
+}

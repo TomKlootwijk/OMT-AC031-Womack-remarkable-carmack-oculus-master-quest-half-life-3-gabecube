@@ -1,0 +1,157 @@
+{
+  "scope": "Symbolic specification properties, not source-code or GPU equivalence proof",
+  "solver": "Z3 Z3 4.16.0.0",
+  "status": "passed",
+  "obligations": [
+    {
+      "id": "P01_neutral_fringe",
+      "file": "P01_neutral_fringe.smt2",
+      "expected": "unsat",
+      "claim": "Neutral fringe preserves the 32-bit final output.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.06326359999366105,
+      "sha256": "e70c2df1b697a06ed4dcbebafdc30092dc62ed2233cf4ed63c07c6238f45744b"
+    },
+    {
+      "id": "P02_idempotent_output",
+      "file": "P02_idempotent_output.smt2",
+      "expected": "unsat",
+      "claim": "Final-word idempotence for all 32-bit masks and inputs.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.018871399995987304,
+      "sha256": "7f71a7e9ec40913a3755cd5c3809c0a8b26ad2c02421c26583c196af45c3fa61"
+    },
+    {
+      "id": "P03_output_support",
+      "file": "P03_output_support.smt2",
+      "expected": "unsat",
+      "claim": "Final output cannot introduce an input-zero bit.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.015418900002259761,
+      "sha256": "c5e89918694268bcdae584e952e7b8c45e2b9f4ae00dae92c2f97d8ea04ffc15"
+    },
+    {
+      "id": "P04_zero_fixed_point",
+      "file": "P04_zero_fixed_point.smt2",
+      "expected": "unsat",
+      "claim": "Zero remains zero under the complete aperture rule.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.010445799998706207,
+      "sha256": "912bfebb6ddb32a4f8c1e8dea0c46fcabd1b8e0be59e974da811002ba18c5526"
+    },
+    {
+      "id": "P05_tail_isolation",
+      "file": "P05_tail_isolation.smt2",
+      "expected": "unsat",
+      "claim": "Boundary bits outside the valid mask do not affect output.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.010163500002818182,
+      "sha256": "2aab252dde2db047c2d915cad0c2078d4db8a96a348ab6e8e3cd6811ea8dfe68"
+    },
+    {
+      "id": "P06_fringe_contraction",
+      "file": "P06_fringe_contraction.smt2",
+      "expected": "unsat",
+      "claim": "Pre-absorption NA support contracts under the fringe intersection.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.016466200002469122,
+      "sha256": "8c03d883206d3bb24349ef7a501b62ae1ce28930c88b6767eae6ee04b3bdc5cf"
+    },
+    {
+      "id": "P07_asa_neutral",
+      "file": "P07_asa_neutral.smt2",
+      "expected": "unsat",
+      "claim": "Neutral fringe preserves the recorded ASA stage itself.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.009602100006304681,
+      "sha256": "6fdbed120f3af438b820d56fee5bb3372f2af0ea5c12f22b709bbca058352505"
+    },
+    {
+      "id": "P08_mask_order",
+      "file": "P08_mask_order.smt2",
+      "expected": "unsat",
+      "claim": "Recorded ASA then NA gives the declared selected support.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.009806900008697994,
+      "sha256": "87c3b12e9cea61fcfcd33c6a8edd5d4182f0ddfe6369328e2e0759fe41e701a1"
+    },
+    {
+      "id": "P09_popcount_32",
+      "file": "P09_popcount_32.smt2",
+      "expected": "unsat",
+      "claim": "32-bit SWAR count equals the sum of all 32 bits.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.2348403999931179,
+      "sha256": "7acc3bfda2ae11473d6987a2ec375ffcb57cad8c83e7028fdcb1668359f53e85"
+    },
+    {
+      "id": "P10_popcount_gate",
+      "file": "P10_popcount_gate.smt2",
+      "expected": "unsat",
+      "claim": "Population count is zero exactly for the zero word.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.02681270000175573,
+      "sha256": "b4d6e8e1ae3cc55e01cda2efaef3938e05ddb1796728ae0e1b42034d0db64747"
+    },
+    {
+      "id": "P11_JK_truth_table",
+      "file": "P11_JK_truth_table.smt2",
+      "expected": "unsat",
+      "claim": "JK equation equals the complete hold/set/reset/toggle truth table.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.014636600011726841,
+      "sha256": "a0347dad3837056ca370c8cfc0b52596e183638ac7a63963b3fe3d7e6a227199"
+    },
+    {
+      "id": "P12_JK_toggle_twice",
+      "file": "P12_JK_toggle_twice.smt2",
+      "expected": "unsat",
+      "claim": "Two toggle events recover the initial JK bit.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.009343999990960583,
+      "sha256": "23c0157699d1ab73b6bc153ba72ba8f1a1198e94a7a9fb948eb849e7f806e736"
+    },
+    {
+      "id": "P13_blend_parity",
+      "file": "P13_blend_parity.smt2",
+      "expected": "unsat",
+      "claim": "Three-way XOR equals binary parity, all encoded bit triples.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.009524199995212257,
+      "sha256": "6b4109d52fc9f20f689b5dff784675dd4223c2fe44f654dc829dec8107ccedf2"
+    },
+    {
+      "id": "P14_morton_inverse",
+      "file": "P14_morton_inverse.smt2",
+      "expected": "unsat",
+      "claim": "The even/odd inverse recovers both coordinates of every 8x8 word tile.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.009294799994677305,
+      "sha256": "34601620da450767927efea2935fec1a6bb313898844d13e6f942499b99a5b14"
+    },
+    {
+      "id": "P15_atomic_commit",
+      "file": "P15_atomic_commit.smt2",
+      "expected": "unsat",
+      "claim": "The formal commit selector preserves the old word when validation rejects.",
+      "observed": "unsat",
+      "passed": true,
+      "seconds": 0.010091699994518422,
+      "sha256": "4412c0b2924166b98ad68dfae64714701b762ff8d100d0432cbf3010da0a6b43"
+    }
+  ]
+}

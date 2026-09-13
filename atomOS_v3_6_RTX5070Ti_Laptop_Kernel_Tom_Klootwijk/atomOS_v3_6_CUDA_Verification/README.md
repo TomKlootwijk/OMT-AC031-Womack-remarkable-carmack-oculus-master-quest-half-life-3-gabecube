@@ -316,3 +316,11 @@ canonical GPU traces for `tools/verify_run.py`. Its separate execution/allocatio
 profile records actual padded device memory and diagnostic buffers. Use
 `tools/study_cache_bulk.py` and `tools/check_cache_bulk_edges.py` for the final
 study; `docs/BULK_RESIDENCY.md` describes its synchronization and reproduction.
+
+## Teacher expressions and native queries
+
+The [expression/query continuation](docs/TEACHER_EXPRESSION_QUERIES.md) adds one
+actual Qwen-derived selector to the full-adder and Gray-code skills. Duplicate
+functions allocate no new pages. A bounded command interface executes admitted
+skills through the native packed textures and returns explicit unknown results
+for unsupported or unavailable capabilities. The broader AI goal remains open.

@@ -1,0 +1,15 @@
+{
+  "schema": "atomos-teacher-procedure-v2",
+  "profile_id": "mux_2bit_v1",
+  "procedures": [
+    {
+      "name": "mux_2bit_v1",
+      "input_bits": 5,
+      "output_bits": 2,
+      "outputs": [
+        "~select_b & a1 & ~a0 & b0 & ~b1",
+        "~select_b & ~a1 & a0 & ~b0 & b1"
+      ]
+    }
+  ]
+}

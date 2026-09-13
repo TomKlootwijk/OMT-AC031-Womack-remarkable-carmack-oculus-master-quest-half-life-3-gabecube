@@ -1,0 +1,184 @@
+{
+  "schema": "atomos-typed-knowledge-registry-v1",
+  "status": "verified_finite_registry",
+  "bank_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\proposed\\bank.bin",
+  "bindings": {
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\proposed\\bank.bin": "21d7814645fe0a584dac81040d7c8b411221bebc3179631b756c53a540945d86",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\proposed\\manifest.json": "03bb49e0051dd6198a4ba6cd10ad93e4c017f5684f0bf3899507046a96d0cbe4",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\knowledge_queries.py": "0aea0130bfc6348d4670b39ee01976da7c47700b8c680ae5068f20cde898120a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_knowledge.py": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\knowledge_admission.py": "25cbf23929d101331f172c7874150b1b4124b49bbf5d45c5547e705ddbdc271e",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank.py": "b19e72bfd518e01df2bc7e9629d5a1834e8253e81e1675753cee7f8a07a4dd8a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank_reference.py": "e93f67cde008ce5738a5fdd8ffbad3da4a35c8007119c6c6fee28af92b844bb4"
+  },
+  "capabilities": [
+    {
+      "profile_id": "full_adder_1bit_v1",
+      "command": "add one-bit A B carry C (A, B, C: 0..1)",
+      "specification": "Add the three unsigned one-bit inputs a, b and carry_in. Return the two-bit exact sum, least-significant bit first.",
+      "input_bits": 3,
+      "output_bits": 2,
+      "input_labels": [
+        "a",
+        "b",
+        "carry_in"
+      ],
+      "output_labels": [
+        "sum",
+        "carry_out"
+      ],
+      "program_id": 4,
+      "version": 1,
+      "seed_hex": "a1eb921027a5fd163fc26a09fea824735359ae07c748655964af43b3a2ef3b22",
+      "content_sha256": "22e8d4cc7b6caad903922c628c148a948a8129d6760b93ed8dc70edbd522764d",
+      "gate_count": 17,
+      "verified_domain_cases": 8,
+      "oracle_record_sha256": "7ea6c204b7860177c6b1652a6859f4f05a82b15f3810d6714b6a02da9c947531",
+      "semantic_sha256": "d66316c4a78fc4505fa770fdaedad310d9d285831b3fe2dbc5855ced3791a0cc",
+      "source": {
+        "frozen_oracle_sha256": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+        "input_labels": [
+          "a",
+          "b",
+          "carry_in"
+        ],
+        "kind": "independent-integer-specification",
+        "output_labels": [
+          "sum",
+          "carry_out"
+        ],
+        "reference": "full_adder_1bit_v1: Add the three unsigned one-bit inputs a, b and carry_in. Return the two-bit exact sum, least-significant bit first.",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "teacher_proposal": {
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "prompt_sha256": "e2a5cb2170f0aa1aeb2d41c8f70cb16aec3a93b731bdd2f11ff942ef3a042f51",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt",
+          "response_sha256": "a78395491e0c658728a44db89bd7cab68893632ea3c4c26c6ae584a57e790c58",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json",
+          "run_sha256": "57e81bf713fafd19873e29d8147368a92e3ddfb08fbb67f335d9431c839ea8ed"
+        }
+      },
+      "evidence_status": "manifest references retained teacher evidence; source origin not authenticated by query execution"
+    },
+    {
+      "profile_id": "binary_to_gray_4bit_v1",
+      "command": "gray N (N: 0..15, decimal)",
+      "specification": "Convert a four-bit unsigned binary integer to its standard binary-reflected Gray-code representation. Input and output bits are ordered least-significant first.",
+      "input_bits": 4,
+      "output_bits": 4,
+      "input_labels": [
+        "binary0",
+        "binary1",
+        "binary2",
+        "binary3"
+      ],
+      "output_labels": [
+        "gray0",
+        "gray1",
+        "gray2",
+        "gray3"
+      ],
+      "program_id": 5,
+      "version": 1,
+      "seed_hex": "f42d4e4427fa00e1bce2617dec97f840b7ed2c6c3b0be04ea9985ae40d758507",
+      "content_sha256": "20af5c84e8cd8f23d7decba0b033f86e84cd3d7411737cab8fe2d40ab6c69a32",
+      "gate_count": 15,
+      "verified_domain_cases": 16,
+      "oracle_record_sha256": "be8d2a3e1e8487104cb3b5744708593329c6be5f997b22adbf9a7ee3dfabd9fb",
+      "semantic_sha256": "88a22a1915f5b2ba9f43c24339d0dab238f5acbaecb99ee5c24732e8f8ec584c",
+      "source": {
+        "frozen_oracle_sha256": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+        "input_labels": [
+          "binary0",
+          "binary1",
+          "binary2",
+          "binary3"
+        ],
+        "kind": "independent-integer-specification",
+        "output_labels": [
+          "gray0",
+          "gray1",
+          "gray2",
+          "gray3"
+        ],
+        "reference": "binary_to_gray_4bit_v1: Convert a four-bit unsigned binary integer to its standard binary-reflected Gray-code representation. Input and output bits are ordered least-significant first.",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "teacher_proposal": {
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "prompt_sha256": "5a6c306937e5fa5f8b957c8d4bb6a8f8fc31f651615227919633f5d699f6b966",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt",
+          "response_sha256": "e99ac285c01922a9fd7927c071cb916cc8c2a1788178680bbfcdc36bc85531ad",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_acquisition_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json",
+          "run_sha256": "d299963d1f0f3b1ee05fd8afee01d9e51d89d6d522826d471ab2c439cf43e82e"
+        }
+      },
+      "evidence_status": "manifest references retained teacher evidence; source origin not authenticated by query execution"
+    },
+    {
+      "profile_id": "mux_2bit_v1",
+      "command": "select A B if S (A, B: 0..3; S: 0..1)",
+      "specification": "Select between unsigned two-bit words A=a0+2*a1 and B=b0+2*b1. Return A when select_b=0 and B when select_b=1, least-significant bit first.",
+      "input_bits": 5,
+      "output_bits": 2,
+      "input_labels": [
+        "a0",
+        "a1",
+        "b0",
+        "b1",
+        "select_b"
+      ],
+      "output_labels": [
+        "selected0",
+        "selected1"
+      ],
+      "program_id": 6,
+      "version": 1,
+      "seed_hex": "d1b75acd51547fe5b2f1a08055b4c0803cdb20b656873e85a6e96690e1b4c6c3",
+      "content_sha256": "3894a512511e17b9e081ff3b470c752f697240651702f3b66ff25d7c570ecd6d",
+      "gate_count": 13,
+      "verified_domain_cases": 32,
+      "oracle_record_sha256": "cfe84de51ff79b64c7e5df11f216dee71a70acfde4bc7d70ea89d8a766a0869f",
+      "semantic_sha256": "e6a24f3edeab7b68137703a789bf64fb70c917c05b7a68fb3d047ccd1e7779a3",
+      "source": {
+        "frozen_oracle_sha256": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+        "input_labels": [
+          "a0",
+          "a1",
+          "b0",
+          "b1",
+          "select_b"
+        ],
+        "kind": "independent-integer-specification",
+        "output_labels": [
+          "selected0",
+          "selected1"
+        ],
+        "reference": "mux_2bit_v1: Select between unsigned two-bit words A=a0+2*a1 and B=b0+2*b1. Return A when select_b=0 and B when select_b=1, least-significant bit first.",
+        "scope": "complete bounded integer specification; no teacher labels used",
+        "specification_adapter_sha256": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+        "teacher_proposal": {
+          "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+          "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+          "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+          "model_revision_status": "pinned_huggingface_commit",
+          "prompt_sha256": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+          "response_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt",
+          "response_sha256": "773f87eae67276b9ec0d3e3533e14b3f5ab3e6b1bd7e9b9406f1ed24cfb51d7a",
+          "run_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\teacher_expression_20260913\\compilation\\retained_acquisition\\qwen3_4b_instruct\\mux_2bit_v1\\run.json",
+          "run_sha256": "b259d789d9656d26af476b1cf1967b00f64bc05edb06080b2785f1571595697c"
+        }
+      },
+      "evidence_status": "manifest references retained teacher evidence; source origin not authenticated by query execution"
+    }
+  ],
+  "rejected_capabilities": [],
+  "scope": "six finite integer profiles only; capability enumeration performs CPU verification, no GPU execution"
+}

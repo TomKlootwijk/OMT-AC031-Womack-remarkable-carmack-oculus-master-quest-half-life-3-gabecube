@@ -1,0 +1,14 @@
+========= COMPUTE-SANITIZER
+{
+"schema":"atomOS-v3.6-K1-run",
+"chart":{"r_min":0.25,"r_max":64,"angular_sampling":"periodic_nodes"},
+"backend":"cuda",
+"device":{"name":"NVIDIA GeForce RTX 5070 Ti Laptop GPU","cc_major":12,"cc_minor":0,"total_bytes":12820480000,"free_bytes_at_start":11484004352,"runtime":12080,"driver":13010,"max_texture_1d_linear":268435456,"multiprocessors":46,"l2_bytes":37748736,"kernel":{"name":"atomos_epoch_packed","block_size":256,"grid_blocks":1,"registers_per_thread":74,"local_bytes_per_thread":0,"static_shared_bytes":0,"preferred_shared_carveout":-1,"max_l1_requested":false,"active_blocks_per_sm_limit":3,"mask_bytes":6144}},
+"rows":17,"angles":257,"words":9,"padded_rows":24,"padded_words":16,
+"epochs":3,"seed":130,"layout":"linear","read":"texture-packed",
+"mode":"shift-or","profile":"mixed","fringe":true,
+"payload_bytes":45312,"planned_bytes":67154176,"committed_lane_epochs":459,
+"checks_pass":2424,"checks_fail":0,"checks_undefined":330,
+"candidate_verification":"passed","compute_ms":[0.42345601320266724,0.43593600392341614,0.32393598556518555]
+}
+========= ERROR SUMMARY: 0 errors

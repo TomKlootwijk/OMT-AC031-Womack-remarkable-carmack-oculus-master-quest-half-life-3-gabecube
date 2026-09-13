@@ -1,0 +1,38 @@
+{
+  "engine": "atomOS v3.6",
+  "concept_author": "Tom Klootwijk",
+  "date": "2026-09-13",
+  "status": "declared_SDF_Klein_NOR_lineage_joint_profiles_validated",
+  "latest_evidence": "results/sdf_klein_20260913/final_summary.json",
+  "historical_status": "results\\sdf_klein_20260913\\historical_K1_U1_validation_status.json",
+  "source_operator_scalar_sdf_bank": "not_established; source audit records missing geometry, encoders and fields",
+  "universality_scope": "constructive NOR/controller/tape simulation with addressable-state and joint-frontier resource assumptions",
+  "counts": {
+    "cpu_ctest": 12,
+    "python_unittests": 105,
+    "symbolic_obligations": 19,
+    "original_gpu": 144,
+    "original_memchecks": 6,
+    "bulk_native_cases": 158,
+    "bulk_sanitizers": 24,
+    "nor_native_cases": 80,
+    "nor_sanitizers": 9,
+    "lineage_native_cases": 56,
+    "lineage_sanitizers": 9,
+    "joint_native_cases": 104,
+    "joint_sanitizers": 18
+  },
+  "texture_residency": {
+    "bulk_largest_tested_fully_retained_bytes": 4849664,
+    "next_tested_size_with_extra_misses": 4915200,
+    "joint_tested_texture_bytes": 1024,
+    "joint_cold_profiles_at_floor": 4,
+    "joint_cold_profiles": 4,
+    "guarantee": "observed scoped within-launch retention; no permanent cache pin or all-workload guarantee"
+  },
+  "distilled_program_bank": {
+    "status": "passed",
+    "evidence": "results/program_bank_20260913/final_summary.json",
+    "general_language_model_replacement": "not_established"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "atomos-local-teachers-v1",
+  "endpoint": "http://127.0.0.1:11434",
+  "teachers": [
+    {
+      "id": "qwen3_4b_instruct",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "model_artifact_bytes": 2497280736,
+      "model_filename": "Qwen_Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+      "original_model_repo": "Qwen/Qwen3-4B-Instruct-2507",
+      "original_model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "original_license": "Apache-2.0",
+      "original_acquisition_revision": "unknown; installed bytes are checked against the observed pinned Hugging Face file"
+    },
+    {
+      "id": "phi4_mini_instruct",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "model_artifact_bytes": 2491874688,
+      "model_filename": "microsoft_Phi-4-mini-instruct-Q4_K_M.gguf",
+      "original_model_repo": "microsoft/Phi-4-mini-instruct",
+      "original_model_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+      "original_license": "MIT",
+      "original_acquisition_revision": "unknown; installed bytes are checked against the observed pinned Hugging Face file"
+    }
+  ]
+}

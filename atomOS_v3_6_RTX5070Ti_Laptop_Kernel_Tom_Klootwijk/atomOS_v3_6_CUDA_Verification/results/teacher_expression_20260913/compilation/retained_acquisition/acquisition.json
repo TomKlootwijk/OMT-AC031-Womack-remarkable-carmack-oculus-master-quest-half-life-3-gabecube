@@ -1,0 +1,561 @@
+{
+  "schema": "atomos-local-teacher-acquisition-v1",
+  "status": "completed",
+  "started_at_utc": "2026-09-13T17:57:58.581713+00:00",
+  "runtime": {
+    "version": "0.34.0"
+  },
+  "endpoint": "http://127.0.0.1:11434",
+  "frontend": "boolean-expression",
+  "curriculum": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2",
+  "dependency_sha256": {
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.oracle.json": "51d86bbe388689f12d04c26a16a052a96773e644ed34acaf69db56e895ecba3c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\absolute_difference_2bit_v1.prompt.txt": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.oracle.json": "f05a85be4df6ce8892b868bfc13e8a6c37522906ff646f15934cb418a243e108",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\binary_to_gray_4bit_v1.prompt.txt": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\curriculum.json": "5803c757c7acfcae0a21353e1beeb9ce1cd0c3b16fe20110fbaf1a80813065ae",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.oracle.json": "ee7f6b54c58f2cdd45111e7fcebb62479ecb1c77643acc258cf0be22671fcbbb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\full_adder_1bit_v1.prompt.txt": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.oracle.json": "24e3895752435b8bea4ba4d52f9b562bfeccecaea52ae3c479f032f1d4718357",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\mux_2bit_v1.prompt.txt": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\source_curriculum.json": "ea2f842ca73427a8e25c07d9ca05c2835c407a23025591a05821efbbaffec8e0",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.oracle.json": "499abe5a02b8feea784f69a99100049261faab3ef6c411a4afad3110fdf43483",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_add_2bit_v1.prompt.txt": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.oracle.json": "618bb2f3b77c6524a901c3af3aeaa1823c4a493f4167b0cdddf01ccd0250f293",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\expression_curriculum_v2\\unsigned_compare_2bit_v1.prompt.txt": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\examples\\teacher_knowledge\\teachers.json": "f5e0e95a80591f5fe7c50d20b358f5ca15404e3e25c3ab565593d49145385179",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\tools\\acquire_teacher_knowledge.py": "5d6f4084fa38ef76a8dc577dc60e222c9264b17229b1b8bdbde53823a60cedcb",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_knowledge.py": "a4891d524b740168782ea2f0cb6994440cf55953cd916f65544c6b68b69e705c",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\program_bank.py": "b19e72bfd518e01df2bc7e9629d5a1834e8253e81e1675753cee7f8a07a4dd8a",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\knowledge_admission.py": "25cbf23929d101331f172c7874150b1b4124b49bbf5d45c5547e705ddbdc271e",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\python\\teacher_expression_frontend.py": "177388ea9ce58d359f68b1302da5572f7e06fa85e3a4f40f31523a3031a3b08f"
+  },
+  "initially_loaded": {
+    "models": []
+  },
+  "teacher_weights_in_program_bank": false,
+  "model_artifact_sha256": {
+    "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+    "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2"
+  },
+  "teachers": [
+    {
+      "id": "qwen3_4b_instruct",
+      "ollama_model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+      "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+      "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+      "model_artifact_bytes": 2497280736,
+      "model_filename": "Qwen_Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+      "original_model_repo": "Qwen/Qwen3-4B-Instruct-2507",
+      "original_model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "original_license": "Apache-2.0",
+      "original_acquisition_revision": "unknown; installed bytes are checked against the observed pinned Hugging Face file",
+      "artifact_verification": {
+        "path": "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "bytes": 2497280736,
+        "verified_at_utc": "2026-09-13T17:58:02.235828+00:00",
+        "scope": "installed bytes match the named file at observed pinned HF revision; original acquisition revision unknown"
+      },
+      "show_sha256": "a8ca3645cf3507d23b1e6380dc6334585059087ba4a09b05fcf13acf6340e03c",
+      "loaded_observations": [
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "size": 3178149969,
+              "digest": "5cfd6a526dc35c24a21a8a457db3e8810165e93bbb134dd6a7ac20b34e97b25a",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.02B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:09.746765+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "size": 3178149969,
+              "digest": "5cfd6a526dc35c24a21a8a457db3e8810165e93bbb134dd6a7ac20b34e97b25a",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.02B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:10.7289775+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "size": 3178149969,
+              "digest": "5cfd6a526dc35c24a21a8a457db3e8810165e93bbb134dd6a7ac20b34e97b25a",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.02B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:11.4723914+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "size": 3178149969,
+              "digest": "5cfd6a526dc35c24a21a8a457db3e8810165e93bbb134dd6a7ac20b34e97b25a",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.02B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:12.0881092+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "size": 3178149969,
+              "digest": "5cfd6a526dc35c24a21a8a457db3e8810165e93bbb134dd6a7ac20b34e97b25a",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.02B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:12.8009026+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+              "size": 3178149969,
+              "digest": "5cfd6a526dc35c24a21a8a457db3e8810165e93bbb134dd6a7ac20b34e97b25a",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "4.02B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:13.4740593+02:00",
+              "size_vram": 3178149969,
+              "context_length": 4096
+            }
+          ]
+        }
+      ],
+      "unloaded": true,
+      "unload_response": {
+        "model": "hf.co/bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF:Q4_K_M",
+        "created_at": "2026-09-13T17:58:13.5117844Z",
+        "response": "",
+        "done": true,
+        "done_reason": "unload"
+      },
+      "loaded_after_unload": {
+        "models": []
+      }
+    },
+    {
+      "id": "phi4_mini_instruct",
+      "ollama_model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+      "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+      "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+      "model_revision_status": "pinned_huggingface_commit",
+      "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+      "model_artifact_bytes": 2491874688,
+      "model_filename": "microsoft_Phi-4-mini-instruct-Q4_K_M.gguf",
+      "original_model_repo": "microsoft/Phi-4-mini-instruct",
+      "original_model_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+      "original_license": "MIT",
+      "original_acquisition_revision": "unknown; installed bytes are checked against the observed pinned Hugging Face file",
+      "artifact_verification": {
+        "path": "C:\\Users\\Tom\\.ollama\\models\\blobs\\sha256-01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "bytes": 2491874688,
+        "verified_at_utc": "2026-09-13T17:58:20.823423+00:00",
+        "scope": "installed bytes match the named file at observed pinned HF revision; original acquisition revision unknown"
+      },
+      "show_sha256": "70064f37cceb3abe702ec67085a461a4705fed13a65807561724efe67d6a09f6",
+      "loaded_observations": [
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "size": 3087615917,
+              "digest": "b77e948e63ccd6542b794add4b1c01ff79ee553e30d82cdf61ad601e97880342",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "phi3",
+                "families": [
+                  "phi3"
+                ],
+                "parameter_size": "3.84B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:28.6422165+02:00",
+              "size_vram": 3087615917,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "size": 3087615917,
+              "digest": "b77e948e63ccd6542b794add4b1c01ff79ee553e30d82cdf61ad601e97880342",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "phi3",
+                "families": [
+                  "phi3"
+                ],
+                "parameter_size": "3.84B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:29.5685744+02:00",
+              "size_vram": 3087615917,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "size": 3087615917,
+              "digest": "b77e948e63ccd6542b794add4b1c01ff79ee553e30d82cdf61ad601e97880342",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "phi3",
+                "families": [
+                  "phi3"
+                ],
+                "parameter_size": "3.84B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:30.5152411+02:00",
+              "size_vram": 3087615917,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "size": 3087615917,
+              "digest": "b77e948e63ccd6542b794add4b1c01ff79ee553e30d82cdf61ad601e97880342",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "phi3",
+                "families": [
+                  "phi3"
+                ],
+                "parameter_size": "3.84B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:31.3179639+02:00",
+              "size_vram": 3087615917,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "size": 3087615917,
+              "digest": "b77e948e63ccd6542b794add4b1c01ff79ee553e30d82cdf61ad601e97880342",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "phi3",
+                "families": [
+                  "phi3"
+                ],
+                "parameter_size": "3.84B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:32.2035073+02:00",
+              "size_vram": 3087615917,
+              "context_length": 4096
+            }
+          ]
+        },
+        {
+          "models": [
+            {
+              "name": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+              "size": 3087615917,
+              "digest": "b77e948e63ccd6542b794add4b1c01ff79ee553e30d82cdf61ad601e97880342",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "phi3",
+                "families": [
+                  "phi3"
+                ],
+                "parameter_size": "3.84B",
+                "quantization_level": "unknown"
+              },
+              "expires_at": "2026-09-13T20:00:33.105246+02:00",
+              "size_vram": 3087615917,
+              "context_length": 4096
+            }
+          ]
+        }
+      ],
+      "unloaded": true,
+      "unload_response": {
+        "model": "hf.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF:Q4_K_M",
+        "created_at": "2026-09-13T17:58:33.1350229Z",
+        "response": "",
+        "done": true,
+        "done_reason": "unload"
+      },
+      "loaded_after_unload": {
+        "models": []
+      }
+    }
+  ],
+  "responses": [
+    {
+      "profile_id": "full_adder_1bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\full_adder_1bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+        "response_sha256": "31b54b42249ee3319a9b2076e7b8486a6423f3aa978b92d5c039234ba422dc2a",
+        "run_sha256": "61a397d3e413a935cc2ceda0ffec5f42f5dc740cfb2a977124e4fdc9a2e4bbc7"
+      }
+    },
+    {
+      "profile_id": "unsigned_compare_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_compare_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+        "response_sha256": "b08c7bd4a9675613df5b50fa8fef8881cf960e764c187569945b5a467c2db64b",
+        "run_sha256": "bdd0055e11f7f52088b146d52d7fd24cba43e7cecd3c6b49c65cba53e1069476"
+      }
+    },
+    {
+      "profile_id": "unsigned_add_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\unsigned_add_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+        "response_sha256": "61493616e5be5e80d2d26a98e979438a2cfdbc339c1a568fbba27f86f014616b",
+        "run_sha256": "941729b164cae8875d3b9f0c14ca8974b4163368bc66f0072902b0912fb6a890"
+      }
+    },
+    {
+      "profile_id": "binary_to_gray_4bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\binary_to_gray_4bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+        "response_sha256": "df8638ef3ae14cbb2fd938ac86e98903ef231149c11eb2ab23c4ce3e111749a3",
+        "run_sha256": "ed484f57d7878537cc1bcf1abd52fb6f067208dd19765b637bbd2fe93e6fe6b7"
+      }
+    },
+    {
+      "profile_id": "absolute_difference_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\absolute_difference_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+        "response_sha256": "bdf86b455139942f234e5b337d4b56e4e9511d14d6feb9fd95c4c1ea16f08f57",
+        "run_sha256": "e9eb2fd12ed4a8252df47ff79052abb30503595d2d3d0199b278cc8350ef233b"
+      }
+    },
+    {
+      "profile_id": "mux_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\qwen3_4b_instruct\\mux_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/Qwen_Qwen3-4B-Instruct-2507-GGUF",
+        "model_revision": "ae44f08e1392f39c0e474af10c3ff8355c8b6688",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "2fde00ce69dd4899c70d020845e2638353015bba0fdf161b3eb965f2bca4464e",
+        "prompt_sha256": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+        "response_sha256": "773f87eae67276b9ec0d3e3533e14b3f5ab3e6b1bd7e9b9406f1ed24cfb51d7a",
+        "run_sha256": "b259d789d9656d26af476b1cf1967b00f64bc05edb06080b2785f1571595697c"
+      }
+    },
+    {
+      "profile_id": "full_adder_1bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\full_adder_1bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "61f8fdf3dff5881fccf8fb149b084bcf30d826f38cadb3274f0e70a071946baa",
+        "response_sha256": "95629370ed24dbf5fc60d035bff5c758f1b2312882260a979aab435eb03715e0",
+        "run_sha256": "d7d0680cbf8344c73793988875e3b8e5cf7cf8bd505e588ff4538cbefda8b1ff"
+      }
+    },
+    {
+      "profile_id": "unsigned_compare_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_compare_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "2714ec18c4caaff4a8a8f909d104b5f25ca249d847aba72c974be1870550cbd5",
+        "response_sha256": "1d0a98abe0534320dae9c0260c36fc5d847b0f0b589808be4f6f6fc5b1e85945",
+        "run_sha256": "b6f8ab97eff174fb6d518622a46709e3e4f7cd8d54acf1008a1a18a8f7e9eb51"
+      }
+    },
+    {
+      "profile_id": "unsigned_add_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\unsigned_add_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "a5cd006da027cb998574335a9caf2f8ba22873c19277c6025362110632e5954a",
+        "response_sha256": "d3b312ca2debecdabd6d671c8beb7810ed93dd4b49a0b83cd75cddc6a4f58bac",
+        "run_sha256": "6e923b06a22f58bef4452442f324e9fea03e7a98a9a40ced50a123b882006978"
+      }
+    },
+    {
+      "profile_id": "binary_to_gray_4bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\binary_to_gray_4bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "c25efe327857f62dfd358e307688e6f6457843499d32eb6f90359963e679e01f",
+        "response_sha256": "935198d99ab41fd08d149dbe3c78821dbe492d054de02a315287afa0f5db5f45",
+        "run_sha256": "2f9f449c4bc742e55dedbdc09739ef6e36c7f06322c1a08d925447666ccad640"
+      }
+    },
+    {
+      "profile_id": "absolute_difference_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\absolute_difference_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "2b3a0176c6cab134d865e6a6f603d15ccd19a5498857dc455b21924c53271626",
+        "response_sha256": "c34113c340399ae3c765dbf9d01c2ef0614fcdbeb2ffffc9a26c1b651e7fe39a",
+        "run_sha256": "c485b0fd619975171f6ebad620f3b290b665180588b1102eb00dd283f0919afe"
+      }
+    },
+    {
+      "profile_id": "mux_2bit_v1",
+      "response_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\response.txt",
+      "run_path": "C:\\Users\\Tom\\.cache\\ak1\\teacher_expr\\phi4_mini_instruct\\mux_2bit_v1\\run.json",
+      "provenance": {
+        "model_repo": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+        "model_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+        "model_revision_status": "pinned_huggingface_commit",
+        "model_artifact_sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+        "prompt_sha256": "80f6fa915f2b7538477ce7e2d6c50d2e0e751e6cc502b283e7793adc71e82a4f",
+        "response_sha256": "e2af54a938e6aee92c603d1a8af7cdef06f68185120992de9c89ddf42b559d95",
+        "run_sha256": "7cccf45c3df7572f27c3044392dc04f989889d3b6415e782fd80a55c189814e7"
+      }
+    }
+  ],
+  "failures": [],
+  "finished_at_utc": "2026-09-13T17:58:43.787421+00:00"
+}

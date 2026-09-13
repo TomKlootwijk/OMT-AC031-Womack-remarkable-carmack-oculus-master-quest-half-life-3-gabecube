@@ -1,0 +1,92 @@
+{
+  "schema": "atomos-actual-typed-query-demo-v1",
+  "status": "passed",
+  "queries": [
+    {
+      "query": "add one-bit 1 0 carry 1",
+      "status": "answered",
+      "reason": null,
+      "answer": "1 + 0 + carry 1 = 2; sum bit 0, carry 1.",
+      "gpu_execution": "run_and_independently_verified",
+      "typed_output": {
+        "sum": 0,
+        "carry_out": 1,
+        "total": 2
+      }
+    },
+    {
+      "query": "gray 11",
+      "status": "answered",
+      "reason": null,
+      "answer": "Binary integer 11 maps to Gray code 1110 (14).",
+      "gpu_execution": "run_and_independently_verified",
+      "typed_output": {
+        "gray_decimal": 14,
+        "gray_bits": "1110"
+      }
+    },
+    {
+      "query": "select 2 1 if 0",
+      "status": "answered",
+      "reason": null,
+      "answer": "Selected A: 2.",
+      "gpu_execution": "run_and_independently_verified",
+      "typed_output": {
+        "selected": 2
+      }
+    },
+    {
+      "query": "select 2 1 if 1",
+      "status": "answered",
+      "reason": null,
+      "answer": "Selected B: 1.",
+      "gpu_execution": "run_and_independently_verified",
+      "typed_output": {
+        "selected": 1
+      }
+    },
+    {
+      "query": "compare 2 3",
+      "status": "unknown",
+      "reason": "capability_unavailable_in_verified_bank",
+      "answer": null,
+      "gpu_execution": "not_run",
+      "typed_output": null
+    },
+    {
+      "query": "add 2 3",
+      "status": "unknown",
+      "reason": "capability_unavailable_in_verified_bank",
+      "answer": null,
+      "gpu_execution": "not_run",
+      "typed_output": null
+    },
+    {
+      "query": "difference 1 3",
+      "status": "unknown",
+      "reason": "capability_unavailable_in_verified_bank",
+      "answer": null,
+      "gpu_execution": "not_run",
+      "typed_output": null
+    },
+    {
+      "query": "select 7 1 if 0",
+      "status": "unknown",
+      "reason": "out_of_domain",
+      "answer": null,
+      "gpu_execution": "not_run",
+      "typed_output": null
+    },
+    {
+      "query": "Explain the causes of gravity",
+      "status": "unknown",
+      "reason": "unsupported_command",
+      "answer": null,
+      "gpu_execution": "not_run",
+      "typed_output": null
+    }
+  ],
+  "accepted_native_queries": 4,
+  "explicit_unknown_queries": 5,
+  "scope": "bounded command grammar over three actual admitted finite algorithms; no general language understanding"
+}
