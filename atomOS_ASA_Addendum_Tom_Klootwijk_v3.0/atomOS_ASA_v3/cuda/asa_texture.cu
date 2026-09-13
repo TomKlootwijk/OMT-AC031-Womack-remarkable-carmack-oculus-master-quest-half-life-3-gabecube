@@ -1,59 +1,5 @@
-#include <cuda_runtime.h>
+#include "asa_device.cuh"
 #include "asa/io.hpp"
-#include <algorithm>
-namespace asa {
-inline void check_cuda(cudaError_t e,const char* expression) {
-    if(e!=cudaSuccess)throw std::runtime_error(std::string(expression)+": "+cudaGetErrorString(e));
-}
-#define ASA_CUDA(expr) ::asa::check_cuda((expr),#expr)
-struct TextureData {
-    cudaTextureObject_t image,mask,warp;
-    __device__ float value(u32 k)const{return tex1Dfetch<float>(image,int(k));}
-    __device__ u32 maskword(u32 k)const{return tex1Dfetch<unsigned int>(mask,int(k));}
-    __device__ Warp lens(u32 k)const{const float2 v=tex1Dfetch<float2>(warp,int(k));return {v.x,v.y};}
-};
-__global__ void asa_texture_kernel(const Sample* in,Result* out,u32 count,Config config,TextureData data) {
-    const u32 i=blockIdx.x*blockDim.x+threadIdx.x;
-    if(i<count)out[i]=evaluate(in[i],config,data);
-}
-__global__ void asa_global_kernel(const Sample* in,Result* out,u32 count,Config config,HostData data) {
-    const u32 i=blockIdx.x*blockDim.x+threadIdx.x;
-    if(i<count)out[i]=evaluate(in[i],config,data);
-}
-template<class T>class Buffer {
-    T* ptr_=nullptr;std::size_t capacity_=0;
-public:
-    explicit Buffer(std::size_t n):capacity_(n){if(n)ASA_CUDA(cudaMalloc(reinterpret_cast<void**>(&ptr_),n*sizeof(T)));}
-    ~Buffer(){if(ptr_)cudaFree(ptr_);}
-    Buffer(const Buffer&)=delete;Buffer&operator=(const Buffer&)=delete;
-    T* get()const{return ptr_;}
-    void upload(const T* p,std::size_t n){if(n>capacity_)throw std::runtime_error("upload size");if(n)ASA_CUDA(cudaMemcpy(ptr_,p,n*sizeof(T),cudaMemcpyHostToDevice));}
-    void download(T* p,std::size_t n){if(n>capacity_)throw std::runtime_error("download size");if(n)ASA_CUDA(cudaMemcpy(p,ptr_,n*sizeof(T),cudaMemcpyDeviceToHost));}
-};
-class Texture {
-    cudaTextureObject_t object_=0;
-public:
-    Texture(void* ptr,std::size_t bytes,cudaChannelFormatDesc desc,std::size_t texels,const cudaDeviceProp& prop){
-        if(texels>std::size_t(prop.maxTexture1DLinear))throw std::runtime_error("linear texture exceeds device limit");
-        if(reinterpret_cast<std::uintptr_t>(ptr)%prop.textureAlignment)throw std::runtime_error("texture alignment mismatch");
-        cudaResourceDesc resource{};resource.resType=cudaResourceTypeLinear;
-        resource.res.linear.devPtr=ptr;resource.res.linear.desc=desc;resource.res.linear.sizeInBytes=bytes;
-        cudaTextureDesc texture{};texture.readMode=cudaReadModeElementType;
-        texture.filterMode=cudaFilterModePoint;texture.normalizedCoords=0;
-        ASA_CUDA(cudaCreateTextureObject(&object_,&resource,&texture,nullptr));
-    }
-    ~Texture(){if(object_)cudaDestroyTextureObject(object_);}
-    Texture(const Texture&)=delete;Texture&operator=(const Texture&)=delete;
-    cudaTextureObject_t get()const{return object_;}
-};
-class Event {
-    cudaEvent_t e_{};
-public:
-    Event(){ASA_CUDA(cudaEventCreate(&e_));}~Event(){cudaEventDestroy(e_);}
-    Event(const Event&)=delete;Event&operator=(const Event&)=delete;
-    cudaEvent_t get()const{return e_;}
-};
-}
 int main(int argc,char**argv){try{
     const auto o=asa::options(argc,argv);if(o.help){asa::help();return 0;}
     int count=0;ASA_CUDA(cudaGetDeviceCount(&count));
@@ -68,30 +14,56 @@ int main(int argc,char**argv){try{
     }
     // Budget rule: <= configured budget, <= half of currently free VRAM,
     // and at least 512 MiB remains outside this run's payload.
-    const asa::u64 bytes=asa::required_bytes(o.config,o.samples),reserve=512ull*1048576;
-    if(free_bytes<=reserve||bytes>free_bytes-reserve||bytes>free_bytes/2)
+    const asa::u64 bytes=asa::required_bytes(o.config,o.samples);
+    if(!asa::gpu_payload_admitted(bytes,free_bytes))
         throw std::runtime_error("insufficient free VRAM for payload plus reserve");
     const asa::Fixture f(o.config);const auto samples=asa::make_samples(o.samples,o.config);
     const auto cpu=asa::cpu_run(o.config,f,samples);
+    asa::RunInfo info;info.backend="CUDA texture + global differential";info.device=prop.name;info.gpu=(o.samples!=0);
+    info.sample_order=o.sample_order;info.compute_statistic="mean texture kernel CUDA event time";
+    info.total_vram=total_bytes;info.free_vram=free_bytes;
+    asa::SampleSchedule schedule;
+    if(o.sample_order=="locality") {
+        const auto start=std::chrono::steady_clock::now();schedule=asa::make_locality_schedule(samples,o.config);
+        info.reorder_ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-start).count();
+    }
+    const auto& input=o.sample_order=="locality"?schedule.ordered:samples;
     asa::Buffer<float> image(f.image.size());asa::Buffer<asa::u32> mask(f.mask.size());asa::Buffer<asa::Warp> warp(f.warp.size());
     asa::Buffer<asa::Sample> in(samples.size());asa::Buffer<asa::Result> out(samples.size());
     image.upload(f.image.data(),f.image.size());mask.upload(f.mask.data(),f.mask.size());warp.upload(f.warp.data(),f.warp.size());
-    in.upload(samples.data(),samples.size());
+    in.upload(input.data(),input.size());
     asa::Texture ti(image.get(),f.image.size()*4,cudaCreateChannelDesc<float>(),f.image.size(),prop);
     asa::Texture tm(mask.get(),f.mask.size()*4,cudaCreateChannelDesc<unsigned int>(),f.mask.size(),prop);
     asa::Texture tw(warp.get(),f.warp.size()*8,cudaCreateChannelDesc<float2>(),f.warp.size(),prop);
     std::vector<asa::Result> texture(samples.size()),global(samples.size());
-    asa::RunInfo info;info.backend="CUDA texture + global differential";info.device=prop.name;info.gpu=true;
-    info.total_vram=total_bytes;info.free_vram=free_bytes;
     if(o.samples){
         const asa::u32 blocks=(o.samples+255u)/256u;asa::Event start,end;
-        ASA_CUDA(cudaEventRecord(start.get()));
-        asa::asa_texture_kernel<<<blocks,256>>>(in.get(),out.get(),o.samples,o.config,{ti.get(),tm.get(),tw.get()});
-        ASA_CUDA(cudaGetLastError());ASA_CUDA(cudaEventRecord(end.get()));ASA_CUDA(cudaEventSynchronize(end.get()));
-        float ms=0;ASA_CUDA(cudaEventElapsedTime(&ms,start.get(),end.get()));info.milliseconds=ms;
-        out.download(texture.data(),texture.size());asa::compare(texture,cpu);
-        asa::asa_global_kernel<<<blocks,256>>>(in.get(),out.get(),o.samples,o.config,{image.get(),mask.get(),warp.get()});
-        ASA_CUDA(cudaGetLastError());ASA_CUDA(cudaDeviceSynchronize());out.download(global.data(),global.size());
+        info.warmup_runs_per_path=o.warmup;info.timed_runs_per_path=o.repeat;
+        auto measure=[&](auto launch,double& mean,double& minimum) {
+            for(asa::u32 i=0;i<o.warmup;++i){launch();ASA_CUDA(cudaGetLastError());}
+            if(o.warmup)ASA_CUDA(cudaDeviceSynchronize());
+            double total=0;minimum=std::numeric_limits<double>::max();
+            for(asa::u32 i=0;i<o.repeat;++i) {
+                ASA_CUDA(cudaEventRecord(start.get()));launch();ASA_CUDA(cudaGetLastError());
+                ASA_CUDA(cudaEventRecord(end.get()));ASA_CUDA(cudaEventSynchronize(end.get()));
+                float ms=0;ASA_CUDA(cudaEventElapsedTime(&ms,start.get(),end.get()));
+                total+=ms;minimum=std::min(minimum,double(ms));
+            }
+            mean=total/o.repeat;
+        };
+        auto restore=[&](std::vector<asa::Result>& results) {
+            if(o.sample_order=="locality") {
+                const auto restore_start=std::chrono::steady_clock::now();asa::restore_sample_order(results,schedule);
+                info.restore_ms+=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-restore_start).count();
+            }
+        };
+        measure([&]{asa::asa_texture_kernel<<<blocks,256>>>(in.get(),out.get(),o.samples,o.config,{ti.get(),tm.get(),tw.get()});},
+                info.texture_mean_ms,info.texture_min_ms);
+        info.milliseconds=info.texture_mean_ms;
+        out.download(texture.data(),texture.size());restore(texture);asa::compare(texture,cpu);
+        measure([&]{asa::asa_global_kernel<<<blocks,256>>>(in.get(),out.get(),o.samples,o.config,{image.get(),mask.get(),warp.get()});},
+                info.global_mean_ms,info.global_min_ms);
+        out.download(global.data(),global.size());restore(global);
         asa::compare(global,cpu);asa::compare(texture,global);
     }
     asa::write_run(o.out,o.config,f,samples,texture,info);

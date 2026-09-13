@@ -1,0 +1,10 @@
+^C:\OMT AC031 WOMACK REMARKABLE CARMACK OCULUS MASTER QUEST HALF-LIFE 3 GABECUBE\ATOMOS_ASA_ADDENDUM_TOM_KLOOTWIJK_V3.0\ATOMOS_ASA_V3\B128\CMAKEFILES\87B9C33D5C772CEF571C7952949C4945\GENERATE.STAMP.RULE
+setlocal
+C:\Users\Tom\miniconda3\Lib\site-packages\cmake\data\bin\cmake.exe "-SC:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_ASA_Addendum_Tom_Klootwijk_v3.0/atomOS_ASA_v3" "-BC:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_ASA_Addendum_Tom_Klootwijk_v3.0/atomOS_ASA_v3/b128" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_ASA_Addendum_Tom_Klootwijk_v3.0/atomOS_ASA_v3/b128/atomOS_ASA.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

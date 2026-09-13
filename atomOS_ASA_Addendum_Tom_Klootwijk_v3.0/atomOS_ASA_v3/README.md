@@ -24,6 +24,16 @@ python scripts/validate.py --gpu --sanitizer
 
 The GPU script builds native `sm_120` plus PTX, runs CPU/CUDA integration checks, captures device information, and runs the requested Compute Sanitizer tools. Missing required tools produce exit code **2**, not a passing test. Without Compute Sanitizer, run `--gpu` by itself and record that sanitizer validation is still pending.
 
+On the verified Windows laptop, stale Visual Studio CUDA 12.9 integration files required selecting the installed CUDA 12.8 toolkit explicitly. A short build directory also avoids the observed MSBuild FileTracker path-length failure. From PowerShell, the reproducible selection is:
+
+```powershell
+python scripts/validate.py --gpu --sanitizer --build-dir b128 --report-dir local_validation/my_gpu_run '--cmake-arg=-Tcuda=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8'
+```
+
+Use a fresh report directory for each evidence run. `--cmake-arg=VALUE` may be repeated for other explicit CMake selections; select a fresh build directory when changing its generator or toolset. The script records the exact command and resolved tool paths, and launches the toolkit's native Compute Sanitizer executable on Windows. CPU-only `--sanitizer` with MSVC returns **2 (unavailable)** because the requested combined host ASan/UBSan instrumentation is not implemented for that compiler. GPU `--sanitizer` requests Compute Sanitizer, independently of host instrumentation.
+
+Validation requires Python 3.10 or newer and passes the running interpreter to CMake, so the independent oracle cannot be silently omitted. CLI integration covers 0, 1, 257, 4097 and 65,536 samples in both layouts, rectangular dictionaries, clean failure cases and truthful device-execution metadata. A separate CUDA boundary executable checks focused configurations against CPU, the other layout, and the independent Python oracle. All four requested Compute Sanitizer tools also run that focused executable.
+
 Manual CMake build:
 
 ```sh

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CudaCompile Include="..\cuda\asa_texture.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_ASA_Addendum_Tom_Klootwijk_v3.0\atomOS_ASA_v3\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C947A81A-EE92-32EB-86B0-102715ACFA84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

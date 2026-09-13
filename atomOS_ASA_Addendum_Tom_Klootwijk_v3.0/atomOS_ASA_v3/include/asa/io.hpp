@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+#include <chrono>
 namespace asa {
 inline std::string quoted(const std::string& s) {
     std::ostringstream out;out<<'"';
@@ -27,7 +28,11 @@ inline std::string config_json(const Config& c) {
       <<",\"pupil_min\":"<<c.pupil_min<<",\"pupil_max\":"<<c.pupil_max<<",\"axis\":"<<c.axis<<",\"hinge\":"<<c.hinge
       <<",\"alpha\":"<<c.alpha<<",\"radial_warp\":"<<c.radial_warp<<",\"angular_warp\":"<<c.angular_warp<<'}';return s.str();
 }
-struct RunInfo {std::string backend="CPU",device="host";double milliseconds=0;u64 total_vram=0,free_vram=0;bool gpu=false;};
+struct RunInfo {
+    std::string backend="CPU",device="host",sample_order="natural",compute_statistic="single CPU evaluation loop";
+    double milliseconds=0,reorder_ms=0,restore_ms=0,texture_mean_ms=0,texture_min_ms=0,global_mean_ms=0,global_min_ms=0;
+    u64 total_vram=0,free_vram=0;u32 warmup_runs_per_path=0,timed_runs_per_path=0;bool gpu=false;
+};
 inline void write_run(const std::filesystem::path& dir,const Config& c,const Fixture& f,
                       const std::vector<Sample>& z,const std::vector<Result>& out,const RunInfo& info) {
     std::filesystem::create_directories(dir);
@@ -47,9 +52,14 @@ inline void write_run(const std::filesystem::path& dir,const Config& c,const Fix
         <<",\n\"left_valid\":"<<left<<",\n\"right_valid\":"<<right<<",\n\"pair_valid\":"<<pairs
         <<",\n\"backend\":"<<quoted(info.backend)<<",\n\"device\":"<<quoted(info.device)<<",\n\"gpu_executed\":"<<(info.gpu?"true":"false")
         <<",\n\"compute_ms\":"<<info.milliseconds<<",\n\"payload_bytes\":"<<required_bytes(c,z.size())
+        <<",\n\"sample_order\":"<<quoted(info.sample_order)<<",\n\"compute_statistic\":"<<quoted(info.compute_statistic)
+        <<",\n\"reorder_ms\":"<<info.reorder_ms<<",\n\"restore_ms\":"<<info.restore_ms
+        <<",\n\"texture_mean_ms\":"<<info.texture_mean_ms<<",\n\"texture_min_ms\":"<<info.texture_min_ms
+        <<",\n\"global_mean_ms\":"<<info.global_mean_ms<<",\n\"global_min_ms\":"<<info.global_min_ms
+        <<",\n\"warmup_runs_per_path\":"<<info.warmup_runs_per_path<<",\n\"timed_runs_per_path\":"<<info.timed_runs_per_path
         <<",\n\"device_total_bytes\":"<<info.total_vram<<",\n\"device_free_before_bytes\":"<<info.free_vram<<"\n}\n";
 }
-struct Options { Config config;u32 samples=65536,budget_mib=256,device=0;std::filesystem::path out="asa_run";bool help=false,device_only=false; };
+struct Options { Config config;u32 samples=65536,budget_mib=256,device=0,warmup=0,repeat=1;std::string sample_order="natural";std::filesystem::path out="asa_run";bool help=false,device_only=false; };
 inline Options options(int argc,char**argv) {
     Options o;
     for(int i=1;i<argc;++i){const std::string a=argv[i];
@@ -61,16 +71,20 @@ inline Options options(int argc,char**argv) {
         else if(a=="--phi-bins")o.config.phi_bins=parse_uint(v);
         else if(a=="--budget-mib")o.budget_mib=parse_uint(v);
         else if(a=="--device")o.device=parse_uint(v);
+        else if(a=="--warmup")o.warmup=parse_uint(v);
+        else if(a=="--repeat")o.repeat=parse_uint(v);
+        else if(a=="--sample-order"){if(v!="natural"&&v!="locality")throw std::invalid_argument("sample order must be natural or locality");o.sample_order=v;}
         else if(a=="--out")o.out=v;
         else if(a=="--layout"){if(v!="linear"&&v!="morton")throw std::invalid_argument("layout must be linear or morton");o.config.layout=v=="linear"?Layout::Linear:Layout::Morton8;}
         else throw std::invalid_argument("unknown option "+a);
     }
     if(o.help||o.device_only)return o;
+    if(o.warmup>100||o.repeat<1||o.repeat>1000)throw std::invalid_argument("warmup must be 0..100 and repeat must be 1..1000");
     if(o.budget_mib<1||o.budget_mib>2048)throw std::invalid_argument("budget must be 1..2048 MiB");
     if(required_bytes(o.config,o.samples)>u64(o.budget_mib)*1048576)throw std::runtime_error("payload exceeds configured memory budget");
     if(std::filesystem::exists(o.out)&&(!std::filesystem::is_directory(o.out)||!std::filesystem::is_empty(o.out)))
         throw std::runtime_error("output directory must be new or empty");
     return o;
 }
-inline void help() {std::cout<<"ASA v3 numerical image operator\n--samples N --rho-bins N --phi-bins N --layout linear|morton\n--budget-mib N --out NEW_DIRECTORY --device N --device-info\n";}
+inline void help() {std::cout<<"ASA v3 numerical image operator\n--samples N --rho-bins N --phi-bins N --layout linear|morton\n--sample-order natural|locality --warmup 0..100 --repeat 1..1000 (timing repeats: CUDA only)\n--budget-mib N --out NEW_DIRECTORY --device N --device-info\n";}
 }
