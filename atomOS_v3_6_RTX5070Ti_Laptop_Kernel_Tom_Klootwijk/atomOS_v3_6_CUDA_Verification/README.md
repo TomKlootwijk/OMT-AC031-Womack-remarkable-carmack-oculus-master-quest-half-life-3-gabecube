@@ -3,6 +3,13 @@
 **Concept author: Tom Klootwijk Â· NL200678942 Â· 10-07-1990**  
 **Target: NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12 GB GDDR7, `sm_120`.**
 
+The Tom Klootwijk atomOS extension adds an executable programmable U lane,
+integrated with the word/JK/observation epoch, plus a parallel machine-capacity
+test. See `docs/UNIVERSAL_ENGINE.md` for editable programs and run commands.
+The latest report is `output/pdf/Tom_Klootwijk_atomOS_Kernel_Universality_Applications.pdf`;
+its evidence is in `results/optimization_20260913/summary.json`. Earlier reviews
+below retain their original scope and counts.
+
 This package implements the **integrated v3.6 word-epoch profile**, not just the
 OTAN2 panel: word production, ASA/NA/fringe selection, whole-word disposition,
 persistent Jâ€“K state, encoded blend, literal OTAN2, its explicitly selected directed

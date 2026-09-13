@@ -1,0 +1,8 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  Compiling CUDA source file ..\..\..\..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu...
+  
+  C:\Users\Tom\.cache\ak1\universal_final>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_engine\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart shared -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -lineinfo -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdatomos_engine.dir\Release\vc143.pdb" -o atomos_engine.dir\Release\universal_engine.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu" 
+  universal_engine.cu
+  tmpxft_00015d2c_00000000-7_universal_engine.cudafe1.cpp
+  atomos_engine.vcxproj -> C:\Users\Tom\.cache\ak1\universal_final\Release\atomos_engine.exe

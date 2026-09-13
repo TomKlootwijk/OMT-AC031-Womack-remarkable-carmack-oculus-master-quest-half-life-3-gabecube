@@ -1,0 +1,107 @@
+{
+  "schema": "atomOS-K1-U1-final-review",
+  "status": "passed",
+  "concept_author": "Tom Klootwijk",
+  "created_at_utc": "2026-09-13T12:47:24.058473+00:00",
+  "cpu_validation": "C:\\Users\\Tom\\.cache\\ak1\\cpu_opt_final\\evidence_1789301536940708800\\validation.json",
+  "gpu_validation": "C:\\Users\\Tom\\.cache\\ak1\\gpu_opt_final\\evidence_1789301537057744900\\validation.json",
+  "bulk_validation": "C:\\Users\\Tom\\.cache\\ak1\\opt_bulk_final_conformance\\study.json",
+  "bulk_profiles": "C:\\Users\\Tom\\.cache\\ak1\\opt_bulk_final_profiles\\study.json",
+  "bulk_edges": "C:\\Users\\Tom\\.cache\\ak1\\opt_bulk_final_edges\\study.json",
+  "universal_validation": "C:\\Users\\Tom\\.cache\\ak1\\universal_validation_release\\summary.json",
+  "hardware_stress": "C:\\Users\\Tom\\.cache\\ak1\\universal_stress_capacity.json",
+  "timing_comparison": "C:\\Users\\Tom\\.cache\\ak1\\opt_compare_release\\comparison.json",
+  "cpp_assertions": 259957,
+  "cpp_groups": 34,
+  "universal_cpp_assertions": 33199,
+  "python_word_tests": 37,
+  "python_universal_tests": 20,
+  "original_symbolic_obligations": 15,
+  "additional_packed_symbol_obligations": 2,
+  "bulk_conformance": 212,
+  "cache_profiles": 20,
+  "cache_profiles_at_floor": 20,
+  "bulk_python_exports": 26,
+  "bulk_python_lane_epochs": 626288,
+  "universal_device_cases": 43,
+  "universal_prelaunch_refusals": 4,
+  "timing_rows": [
+    [
+      "64 KiB / linear",
+      "0.078 ms",
+      "0.052 ms",
+      "1.49x"
+    ],
+    [
+      "64 KiB / morton8",
+      "0.078 ms",
+      "0.055 ms",
+      "1.41x"
+    ],
+    [
+      "4 MiB / linear",
+      "2.469 ms",
+      "1.284 ms",
+      "1.92x"
+    ],
+    [
+      "4 MiB / morton8",
+      "2.483 ms",
+      "1.307 ms",
+      "1.90x"
+    ]
+  ],
+  "large_speedup_range": "1.90-1.92x",
+  "program_examples": [
+    [
+      "Add one mark",
+      "Three marks become four; program halts.",
+      "4"
+    ],
+    [
+      "Binary arithmetic",
+      "31 becomes 32; six simple read/write/move transitions.",
+      "6"
+    ],
+    [
+      "Sequence rewriting",
+      "1,2,1,1 becomes 2,2,2,2; program halts at the blank.",
+      "5"
+    ]
+  ],
+  "delivered_binaries": {
+    "atomos_engine.exe": "46efd8185f93cf023cc46bca28b8424fa1e762b59df82d91e95972e0bee33d80",
+    "atomos_universal_stress.exe": "61795746b1d3b1adda77c78e688d7f2b6df63db6405b48b211dbc94c76df221b",
+    "atomos_cache_bulk.exe": "ee4024ba75837b47c34b7126f045d331205db04cbd89cd45ac6234eaa88e2009",
+    "atomos_cuda.exe": "f40626c9ef5330cbc4003c5df200069015c98c00b5f874369bf197c0ded57374"
+  },
+  "source_document_sha256": "b51651c007c560775ff1950e278789cd7674e131ec71a09ebd9254cebe9c19ce",
+  "stress_command": [
+    "C:\\Users\\Tom\\.cache\\ak1\\universal_final\\Release\\atomos_universal_stress.exe",
+    "--memory-fraction",
+    "0.85",
+    "--steps-per-launch",
+    "16384",
+    "--rounds",
+    "32",
+    "--out",
+    "C:\\Users\\Tom\\.cache\\ak1\\universal_stress_capacity.json"
+  ],
+  "stress_report_sha256": "d6485ce76e8f6124ccd269c8541d17e2c3925371507e60a142cd56a4b036accd",
+  "stress_sanitizer_cases": 4,
+  "source_snapshot_at_packaging": {
+    "CMakeLists.txt": "fa8738135d14c31b60ad0a6ffd1e3ad132792b2712104b5225d5b555b9a08478",
+    "include/atomos/core.hpp": "81a181c95a71160c95b72bab27e5992800fb66c4e5dbc3d536ce3258f2cda12d",
+    "include/atomos/universal.hpp": "d0e5918646a79766b1ccfe7bb0ba2c7c59f5be5f0500096efa9983d6fddd6228",
+    "experiments/cache_bulk.cu": "a2e5776aa34aa9a534f9cfe79967d0efcb0985a048f9c42826e862726a91252b",
+    "experiments/universal_engine.cu": "d032ba4a671850e7a595f11729107768989e93175b88170d828e5b3691fb49d3",
+    "experiments/universal_stress.cu": "4367f5c5502485821fa5a6eb0349b80531a1eab07ed83d4a16b9c410e9cece49"
+  },
+  "limits": [
+    "Conditional machine-simulation theorem; finite binary execution evidence.",
+    "Full M1 optional geometric profiles remain disabled.",
+    "Post-run audit seal is separate from native commit.",
+    "Texture retention measured for bulk word profile; combined word-plus-U residency unmeasured.",
+    "Stress throughput belongs to the generated table and many independent tapes."
+  ]
+}

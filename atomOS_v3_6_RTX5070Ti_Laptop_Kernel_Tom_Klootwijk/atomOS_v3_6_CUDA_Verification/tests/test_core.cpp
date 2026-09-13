@@ -1,14 +1,24 @@
 #include "atomos/host.hpp"
 #include "atomos/log_polar.hpp"
 #include <bitset>
+#include <cstring>
 #include <functional>
 #include <iostream>
+#include <limits>
 #include <set>
 using namespace atomos;
 static u64 assertions=0;static u32 groups=0;
 void require(bool x,const char*msg){assertions++;if(!x)throw std::runtime_error(msg);}
 void group(const char*name,const std::function<void()>&f){f();groups++;std::cout<<"PASS "<<name<<'\n';}
 template<class F>void must_throw(F f){bool thrown=false;try{f();}catch(const std::exception&){thrown=true;}require(thrown,"expected exception");}
+static u64 double_bits(double x){u64 bits;std::memcpy(&bits,&x,sizeof bits);return bits;}
+static double from_double_bits(u64 bits){double x;std::memcpy(&x,&bits,sizeof x);return x;}
+static double legacy_wrap(double x,double period){
+ double v=::fmod(x,period);if(v>=period/2)v-=period;if(v< -period/2)v+=period;return v==0?0.0:v;
+}
+static void require_legacy_wrap(double x,double period){
+ require(double_bits(wrap(x,period))==double_bits(legacy_wrap(x,period)),"wrap differs from legacy binary64 result");
+}
 int main(){try{
  group("fixed data ABI",[]{require(sizeof(Result)==168,"output size");require(sizeof(Lane)==80,"lane size");require(sizeof(State)==8,"state size");});
  group("all JK triples",[]{for(u32 q=0;q<2;q++){require(jk(q,0,0)==q,"hold");require(jk(q,1,0)==1,"set");require(jk(q,0,1)==0,"reset");require(jk(q,1,1)==1-q,"toggle");}});
@@ -34,6 +44,33 @@ int main(){try{
  group("missing optional fields",[]{AngleInput a{1,1,0,.125,0,0,1,1};auto r=observe(a);require(r.status==u32(Status::axis_unspecified)&&r.beta_status==0,"missing axis");a.axis_known=1;a.frame_known=0;require(observe(a).status==u32(Status::frame_unspecified),"frame");a.frame_known=1;a.increment_known=0;require(observe(a).status==u32(Status::increment_policy_unspecified),"increment");});
  group("nonfinite and ratio range",[]{AngleInput a{1,std::numeric_limits<double>::infinity(),0,.125,0,1,1,1};require(observe(a).status==u32(Status::nonfinite_input),"finite contract");a.dr=DBL_MIN;a.dp=DBL_MAX;require(observe(a).status==u32(Status::numerical_range),"ratio overflow");a.dr=DBL_MAX;a.dp=DBL_MIN;require(observe(a).status==u32(Status::numerical_range),"ratio underflow");});
  group("periodic views and seam",[]{require(wrap(PI)==-PI,"principal endpoint");require(near(wrap((1-359)*PI/180),2*PI/180),"seam");for(int i=-100;i<=100;i++){double v=i*.125;require(near(wrap(wrap(v)),wrap(v)),"wrap idempotence");}});
+ group("wrap exact legacy seams and exceptional periods",[]{
+  const double inf=std::numeric_limits<double>::infinity(),nan=std::numeric_limits<double>::quiet_NaN();
+  const double tiny=std::numeric_limits<double>::denorm_min();
+  // Exercise the branch boundary separately from the half-period output seam.
+  // Invalid/custom periods retain the old behavior; this does not declare them
+  // valid angle units or turn NaNs into defined diagnostic values.
+  for(double period:{PI,TAU,.125,1.0,10.0,DBL_MIN,tiny,DBL_MAX,inf,-PI,-TAU,0.0,-0.0,nan,-inf}){
+   for(double x:{0.0,-0.0,tiny,-tiny,DBL_MIN,-DBL_MIN,DBL_MAX,-DBL_MAX,PI/2,-PI/2,PI,-PI,TAU,-TAU,inf,-inf,nan})require_legacy_wrap(x,period);
+   for(double seam:{period/2,-period/2,period,-period}){
+    require_legacy_wrap(seam,period);
+    require_legacy_wrap(std::nextafter(seam,inf),period);
+    require_legacy_wrap(std::nextafter(seam,-inf),period);
+   }
+  }
+  require(double_bits(wrap(-0.0))==double_bits(0.0),"wrap still canonicalizes negative zero");
+ });
+ group("wrap exact legacy random binary64 inputs",[]{
+  u64 rng=0xd1b54a32d192ed03ull;
+  const auto next=[&](){rng^=rng<<13; rng^=rng>>7; rng^=rng<<17; return rng;};
+  for(u32 i=0;i<25000;++i){
+   const double x=from_double_bits(next()),period=from_double_bits(next());
+   require_legacy_wrap(x,PI);require_legacy_wrap(x,TAU);
+   require_legacy_wrap(x,period);require_legacy_wrap(x,absd(period));
+   // Dense ordinary angles supplement exponent-wide random bit patterns.
+   require_legacy_wrap((double(i)-12500.0)/1024.0,(i&1)?PI:TAU);
+  }
+ });
  group("six invariant laws on bounded inputs",[]{for(int dr=-16;dr<=16;dr++)for(int dp=-16;dp<=16;dp++)for(u32 p=0;p<2;p++){AngleInput a{dr/8.0,dp/8.0,.2,.125,p,1,1,1};auto o=observe(a);Check c[6];invariant_bank(a,o,c);for(auto&x:c)require(o.status==0?x.state==0:x.state==2,"bank status");}});
  group("fixed rotation preserves singularity and profile semantics",[]{
   // Independently rounded sin/cos(binary64 .4) put the rotated radial component at zero.

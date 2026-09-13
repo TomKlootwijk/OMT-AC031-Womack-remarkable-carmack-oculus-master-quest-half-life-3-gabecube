@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\Tom\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_universal_reference.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "status": "passed",
+  "scope": "20 CPU-only Python unit tests; no GPU execution",
+  "stdout": "universal_python_tests.stdout.log",
+  "stderr": "universal_python_tests.stderr.log"
+}

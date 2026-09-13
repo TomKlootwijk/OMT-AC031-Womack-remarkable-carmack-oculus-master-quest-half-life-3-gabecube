@@ -1,0 +1,26 @@
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+identifier = C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/universal_stress.cu
+ptxasOptions = --fmad false --generate-line-info 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+identifier = C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/universal_stress.cu
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZN48_GLOBAL__N__7f9c10d4_19_universal_stress_cu_main12run_machinesENS_10StressTapeEPNS_13DeviceMachineEPKN6atomos9universal4RuleEPKjjj:
+  REG:36 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:976 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN48_GLOBAL__N__7f9c10d4_19_universal_stress_cu_main19initialize_machinesENS_10StressTapeEPNS_13DeviceMachineEjxjPKNS_8SeedCellEy:
+  REG:34 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:992 TEXTURE:0 SURFACE:0 SAMPLER:0

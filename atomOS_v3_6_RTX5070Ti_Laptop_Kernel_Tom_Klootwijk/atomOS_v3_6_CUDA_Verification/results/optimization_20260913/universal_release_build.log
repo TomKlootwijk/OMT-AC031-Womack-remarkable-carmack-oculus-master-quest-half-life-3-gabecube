@@ -1,0 +1,106 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  Compiling CUDA source file ..\..\..\..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu...
+  
+  C:\Users\Tom\.cache\ak1\universal_final>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_engine\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart shared -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -lineinfo -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdatomos_engine.dir\Release\vc143.pdb" -o atomos_engine.dir\Release\universal_engine.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu" 
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(76): error : expected an identifier [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    inline bool (double a,double b,double tol=2e-11){return finite(a)&&finite(b)&&absd(a-b)<=tol;}
+                 ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(76): error : expected a ")" [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    inline bool (double a,double b,double tol=2e-11){return finite(a)&&finite(b)&&absd(a-b)<=tol;}
+                         ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(76): warning #1569-D: specifiers after comma between declarations are nonstandard [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    inline bool (double a,double b,double tol=2e-11){return finite(a)&&finite(b)&&absd(a-b)<=tol;}
+                          ^
+  
+  Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(76): warning #1569-D: specifiers after comma between declarations are nonstandard [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    inline bool (double a,double b,double tol=2e-11){return finite(a)&&finite(b)&&absd(a-b)<=tol;}
+                                   ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(76): error : expected a ";" [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    inline bool (double a,double b,double tol=2e-11){return finite(a)&&finite(b)&&absd(a-b)<=tol;}
+                                                   ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(92): warning #12-D: parsing restarts here after previous syntax error [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    class Backend {public:virtual ~Backend()=default;virtual std::vector<Result> propose(const std::vector<State>&)=0;virtual double last_ms()const=0;virtual std::string device_json()const=0;};
+                                                                                                                                                                                                ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(93): error : not a class or struct name [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    class CpuBackend final:public Backend {const Fixture&f;double ms=0;public:explicit CpuBackend(const Fixture&x):f(x){}std::vector<Result> propose(const std::vector<State>&s)override{const auto t=std::chrono::steady_clock::now();auto out=cpu_propose(f,s);ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-t).count();return out;}double last_ms()const override{return ms;}std::string device_json()const override{return "null";}};
+                                  ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(93): error : member function declared with "override" does not override a base class member [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    class CpuBackend final:public Backend {const Fixture&f;double ms=0;public:explicit CpuBackend(const Fixture&x):f(x){}std::vector<Result> propose(const std::vector<State>&s)override{const auto t=std::chrono::steady_clock::now();auto out=cpu_propose(f,s);ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-t).count();return out;}double last_ms()const override{return ms;}std::string device_json()const override{return "null";}};
+                                                                                                                                             ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(93): error : member function declared with "override" does not override a base class member [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    class CpuBackend final:public Backend {const Fixture&f;double ms=0;public:explicit CpuBackend(const Fixture&x):f(x){}std::vector<Result> propose(const std::vector<State>&s)override{const auto t=std::chrono::steady_clock::now();auto out=cpu_propose(f,s);ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-t).count();return out;}double last_ms()const override{return ms;}std::string device_json()const override{return "null";}};
+                                                                                                                                                                                                                                                                                                                                                                            ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(93): error : member function declared with "override" does not override a base class member [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    class CpuBackend final:public Backend {const Fixture&f;double ms=0;public:explicit CpuBackend(const Fixture&x):f(x){}std::vector<Result> propose(const std::vector<State>&s)override{const auto t=std::chrono::steady_clock::now();auto out=cpu_propose(f,s);ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-t).count();return out;}double last_ms()const override{return ms;}std::string device_json()const override{return "null";}};
+                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+  
+C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/include\atomos/host.hpp(94): error : identifier "Backend" is undefined [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    std::unique_ptr<Backend> make_cuda_backend(const Fixture&,int device,bool texture,u64 budget,u64 reserve,bool packed=false,bool max_l1=false,u32 block_size=256);
+                    ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\../cuda/kernel.cu(42): error : not a class or struct name [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    class CudaBackend final:public Backend {
+                                   ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\../cuda/kernel.cu(77): error : member function declared with "override" does not override a base class member [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+     std::vector<Result> propose(const std::vector<State>&s)override{
+                         ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\../cuda/kernel.cu(84): error : member function declared with "override" does not override a base class member [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+     double last_ms()const override{return ms_;}std::string device_json()const override{
+            ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\../cuda/kernel.cu(84): error : member function declared with "override" does not override a base class member [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+     double last_ms()const override{return ms_;}std::string device_json()const override{
+                                                            ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\../cuda/kernel.cu(93): error : identifier "Backend" is undefined [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    std::unique_ptr<Backend> make_cuda_backend(const Fixture&f,int id,bool texture,u64 budget,u64 reserve,bool packed,bool max_l1,u32 block_size){return std::make_unique<CudaBackend>(f,id,texture,budget,reserve,packed,max_l1,block_size);}
+                    ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\../cuda/kernel.cu(93): error : no suitable user-defined conversion from "std::unique_ptr<atomos::<unnamed>::CudaBackend, std::default_delete<atomos::<unnamed>::CudaBackend>>" to "std::unique_ptr<<error-type>, std::default_delete<<error-type>>>" exists [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+    std::unique_ptr<Backend> make_cuda_backend(const Fixture&f,int id,bool texture,u64 budget,u64 reserve,bool packed,bool max_l1,u32 block_size){return std::make_unique<CudaBackend>(f,id,texture,budget,reserve,packed,max_l1,block_size);}
+                                                                                                                                                         ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu(284): error : identifier "verify_results" is undefined [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+      verify_results(fixture,core_state,proposed_core);
+      ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu(286): error : no instance of overloaded function "std::vector<_Ty, _Alloc>::push_back [with _Ty=atomos::State, _Alloc=std::allocator<atomos::State>]" matches the argument list [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+              argument types are: ({...})
+              object type is: std::vector<atomos::State, std::allocator<atomos::State>>
+      for(const auto&value:proposed_core)next_core.push_back({value.word.output,value.word.q_after});
+                                                   ^
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\vector(936): note #3326-D: function "std::vector<_Ty, _Alloc>::push_back(_Ty &&) [with _Ty=atomos::State, _Alloc=std::allocator<atomos::State>]" does not match because argument #1 does not match parameter
+        inline void push_back(_Ty&& _Val) {
+                    ^
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\vector(932): note #3326-D: function "std::vector<_Ty, _Alloc>::push_back(const _Ty &) [with _Ty=atomos::State, _Alloc=std::allocator<atomos::State>]" does not match because argument #1 does not match parameter
+        inline void push_back(const _Ty& _Val) { 
+                    ^
+  
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu(309): error : no instance of overloaded function "std::vector<_Ty, _Alloc>::push_back [with _Ty=atomos::State, _Alloc=std::allocator<atomos::State>]" matches the argument list [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]
+              argument types are: ({...})
+              object type is: std::vector<atomos::State, std::allocator<atomos::State>>
+      for(const auto&value:proposed_core)candidate_core.push_back({value.word.output,value.word.q_after});
+                                                        ^
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\vector(936): note #3326-D: function "std::vector<_Ty, _Alloc>::push_back(_Ty &&) [with _Ty=atomos::State, _Alloc=std::allocator<atomos::State>]" does not match because argument #1 does not match parameter
+        inline void push_back(_Ty&& _Val) {
+                    ^
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include\vector(932): note #3326-D: function "std::vector<_Ty, _Alloc>::push_back(const _Ty &) [with _Ty=atomos::State, _Alloc=std::allocator<atomos::State>]" does not match because argument #1 does not match parameter
+        inline void push_back(const _Ty& _Val) { 
+                    ^
+  
+  17 errors detected in the compilation of "C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/experiments/universal_engine.cu".
+  universal_engine.cu
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.8.targets(800,9): error MSB3721: The command ""C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_engine\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart shared -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -lineinfo -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/Fdatomos_engine.dir\Release\vc143.pdb" -o atomos_engine.dir\Release\universal_engine.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\atomOS_v3_6_CUDA_Verification\experiments\universal_engine.cu"" exited with code 2. [C:\Users\Tom\.cache\ak1\universal_final\atomos_engine.vcxproj]

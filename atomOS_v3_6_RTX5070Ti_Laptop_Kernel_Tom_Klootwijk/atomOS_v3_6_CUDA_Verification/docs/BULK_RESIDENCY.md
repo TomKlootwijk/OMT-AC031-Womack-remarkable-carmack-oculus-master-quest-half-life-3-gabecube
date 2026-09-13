@@ -26,6 +26,12 @@ that block numbering determines their order.
 5. Download and verify all logical candidates and zero padding. Commit the host
    word and JK state only after verification.
 
+The optimized schedule groups four physical tiles for simultaneous computation
+by 256 threads, then exports the four results in waves. The same shared union is
+reused. `compute_tiles` and `compute_threads` distinguish this grouping from the
+unchanged 64-texel physical tile. The build-time `ATOMOS_BULK_COMPUTE_TILES` macro
+permits controlled comparisons.
+
 The fixed `.4` rotation uses correctly rounded binary64 sine/cosine constants.
 Exact rational rounding enclosures and a CPU/GPU bit comparison are recorded in
 `results/residency_followup/`. This removes the reviewed binary's otherwise

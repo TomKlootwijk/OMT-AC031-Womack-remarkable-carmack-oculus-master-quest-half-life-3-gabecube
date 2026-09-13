@@ -1,0 +1,9 @@
+# Cross address zero and write three different nonblank symbols.
+atomos-universal 1
+states 4
+alphabet 5
+start 0 1
+halt 3
+rule 0 0 1 4 L
+rule 1 0 2 3 L
+rule 2 0 3 2 S

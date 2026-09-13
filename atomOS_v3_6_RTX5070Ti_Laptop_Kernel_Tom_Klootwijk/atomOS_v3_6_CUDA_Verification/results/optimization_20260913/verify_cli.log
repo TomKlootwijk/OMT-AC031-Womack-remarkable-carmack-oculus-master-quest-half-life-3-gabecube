@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "backend_recorded": "cuda",
+  "attempted_epochs": 1,
+  "committed_epochs": 1,
+  "rejected_epochs": 0,
+  "u_transitions": 6,
+  "committed_u_transitions": 6,
+  "k1_lane_epochs": 27,
+  "u_statuses": [
+    "halted"
+  ],
+  "max_float_difference_radians": 4.440892098500626e-16,
+  "tolerance_radians": 2e-11,
+  "invariant_counts": [
+    137,
+    0,
+    25
+  ],
+  "all_packed_words_and_tails_verified": true,
+  "rollback_verified": false,
+  "program_states": 2,
+  "alphabet": 2
+}

@@ -1,0 +1,11 @@
+{
+  "status": "defect_reproduced",
+  "scope": "CPU execution of the actual pre-fix verifier AST branch; no GPU run",
+  "source_sha256": "58dde82a3fc26830080f2d5e29c187cff9b4225ab5bf15e02288d7acf072c81c",
+  "executed_source": "if expected is not None and expected.get('growing'):\n    low = min([u_state['head'] - expected['budget'], *u_state['tape']])\n    high = max([u_state['head'] + expected['budget'], *u_state['tape']])\n    _require_equal((origin, cell_count), (low, high - low + 1), 'growing tape extent')",
+  "head": 9223372036854775807,
+  "budget": 8,
+  "correct_origin": 9223372036854775799,
+  "correct_cells": 9,
+  "observed_error": "growing tape extent: (9223372036854775799, 9) != (9223372036854775799, 17)"
+}

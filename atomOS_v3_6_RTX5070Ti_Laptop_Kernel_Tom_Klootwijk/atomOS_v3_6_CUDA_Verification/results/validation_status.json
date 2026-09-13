@@ -1,14 +1,14 @@
 {
   "engine": "atomOS v3.6",
-  "kernel_revision": "K1",
+  "kernel_revision": "K1 + U1",
   "date": "2026-09-13",
-  "status": "execution_validated_residency_observed",
+  "status": "execution_validated_programmable_U_and_capacity_measured",
   "concept_author": "Tom Klootwijk",
-  "cpp_test_groups": 32,
-  "cpp_assertions": 134521,
+  "cpp_test_groups": 34,
+  "cpp_assertions": 259957,
   "cpp_tests": "passed",
-  "cpu_ctest_cases": 7,
-  "python_unit_tests": 37,
+  "cpu_ctest_cases": 8,
+  "python_unit_tests": 57,
   "python_unit_status": "passed",
   "symbolic_obligations": 15,
   "symbolic_result": "all_unsat",
@@ -43,8 +43,8 @@
   "review_summary": "results/review_20260913/review_summary.json",
   "preparation_status": "results/review_20260913/preparation_validation_status.json",
   "evidence": {
-    "cpu": "C:\\Users\\Tom\\.cache\\ak1\\cpu_fold_final\\evidence_1789299038566882500\\validation.json",
-    "gpu": "C:\\Users\\Tom\\.cache\\ak1\\gpu_fold_final\\evidence_1789299027401576500\\validation.json",
+    "cpu": "C:\\Users\\Tom\\.cache\\ak1\\cpu_opt_final\\evidence_1789301536940708800\\validation.json",
+    "gpu": "C:\\Users\\Tom\\.cache\\ak1\\gpu_opt_final\\evidence_1789301537057744900\\validation.json",
     "benchmark": "C:\\Users\\Tom\\.cache\\ak1\\cache_benchmark\\benchmark.json",
     "cache_counters": "C:\\Users\\Tom\\.cache\\ak1\\cache_profiles\\profile_summary.json",
     "supplemental_memchecks": "C:\\Users\\Tom\\.cache\\ak1\\launch_memchecks\\supplemental.json",
@@ -52,7 +52,9 @@
     "bulk_final": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\summary.json",
     "bulk_study": "C:\\Users\\Tom\\.cache\\ak1\\bulk_final_study_v2\\study.json",
     "bulk_edges": "C:\\Users\\Tom\\.cache\\ak1\\bulk_final_edges\\study.json",
-    "bulk_native": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\final_native.json"
+    "bulk_native": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\final_native.json",
+    "latest": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\optimization_20260913\\summary.json",
+    "universal": "C:\\Users\\Tom\\.cache\\ak1\\universal_validation_release\\summary.json"
   },
   "residency_continuation": {
     "status": "execution_validated_residency_partial",
@@ -67,10 +69,10 @@
     "cache_pinning": "not_established"
   },
   "current_pdf": {
-    "path": "output/pdf/atomOS_v3_6_Kernel_Validation_Texture_Cache.pdf",
-    "sha256": "b7ed304f9c4b6c89405ba6ba0ab3bef5e29fc78e5f11ad3c134333320bf31a48",
-    "pages": 8,
-    "qa": "results/residency_followup/pdf_qa.json"
+    "path": "output/pdf/Tom_Klootwijk_atomOS_Kernel_Universality_Applications.pdf",
+    "sha256": "3e995b4b586fc938feb20bf1ea8366fcc67720e4e319a8977e4b8077282543a7",
+    "pages": 12,
+    "qa": "results/optimization_20260913/pdf_qa.json"
   },
   "historical_review_counts": {
     "benchmark_configurations": 36,
@@ -82,7 +84,7 @@
   },
   "gpu_lane_epochs": 612000,
   "gpu_lane_epochs_including_memcheck": 614754,
-  "production_executable_sha256": "cdfe79ac3e48e35f7837954b680ad9bbef0a2a4ba353422e54724ff6bed75d95",
+  "production_executable_sha256": "f40626c9ef5330cbc4003c5df200069015c98c00b5f874369bf197c0ded57374",
   "bulk_final_review": {
     "summary": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk\\atomOS_v3_6_CUDA_Verification\\results\\residency_followup\\summary.json",
     "status": "execution_validated_residency_observed",
@@ -115,5 +117,43 @@
       "cold_profiles_at_compulsory_floor": 24,
       "cold_profiles_above_compulsory_floor": 0
     }
-  }
+  },
+  "universal_cpp_assertions": 33199,
+  "universal_python_tests": 20,
+  "latest_review": "results/optimization_20260913/summary.json",
+  "universal_validation": {
+    "status": "passed",
+    "cases": 47,
+    "gpu_cases": 43,
+    "prelaunch_refusals": 4,
+    "sanitizers": 9,
+    "transitions": 12718
+  },
+  "parallel_capacity": {
+    "status": "passed",
+    "machines": 70656,
+    "transitions": 26201011200,
+    "tape_bytes": 9825423360,
+    "kernel_ms": 337.0064325071871,
+    "wall_seconds": 11.6526986,
+    "stop": "tape_range"
+  },
+  "latest_bulk": {
+    "status": "passed",
+    "cache_profiles": 20,
+    "at_compulsory_floor": 20,
+    "registers": 88,
+    "compute_threads": 256,
+    "conformance_cases": 212,
+    "binary_sha256": "ee4024ba75837b47c34b7126f045d331205db04cbd89cd45ac6234eaa88e2009"
+  },
+  "previous_pdf": {
+    "path": "output/pdf/atomOS_v3_6_Kernel_Validation_Texture_Cache.pdf",
+    "sha256": "b7ed304f9c4b6c89405ba6ba0ab3bef5e29fc78e5f11ad3c134333320bf31a48",
+    "pages": 8,
+    "qa": "results/residency_followup/pdf_qa.json"
+  },
+  "python_word_unit_tests": 37,
+  "universal_packing_obligations": 2,
+  "universal_packing_result": "both_unsat"
 }

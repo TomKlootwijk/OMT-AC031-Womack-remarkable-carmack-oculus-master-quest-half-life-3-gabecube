@@ -1,0 +1,14 @@
+# Binary increment: least-significant digit at address 0. Initial value 31.
+# The same program works on any finite run of binary ones followed by blank 0.
+atomos-universal 1
+states 2
+alphabet 2
+start 0 0
+halt 1
+cell 0 1
+cell 1 1
+cell 2 1
+cell 3 1
+cell 4 1
+rule 0 1 0 0 R
+rule 0 0 1 1 S

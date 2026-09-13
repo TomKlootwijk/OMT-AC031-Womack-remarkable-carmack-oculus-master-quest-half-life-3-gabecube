@@ -3,9 +3,12 @@
 ## Source and implementation choices
 S0 is the initial source corpus; A is the WHITE KING continuation; B is the five-page
 blend source; O is the seven-page OTAN2 source. M is the integrated v3.6 master
-contract in the preceding conversation. M's binary/PDF artifact is not present in
-this preparation runtime, so its hash and a copied PDF are not invented. The code
-implements the word equations explicitly written in M and mapped in coverage.csv.
+contract in the preceding conversation. The supplied 43-page M1 PDF is now available
+and was read directly for this extension: atomOS_v3.6_Total_Integrated_Engine_Tom_Klootwijk.pdf,
+SHA-256 b51651c007c560775ff1950e278789cd7674e131ec71a09ebd9254cebe9c19ce.
+Tom Klootwijk's latest instruction makes it a design reference rather than a limit
+on implementation changes. The implemented profile and departures are recorded
+explicitly; mathematical statements and actual execution evidence remain distinct.
 
 K01: each logical word owns its own JK bit. A batch is an independent JK bit bank,
 not concurrent writes to one shared scalar q. This instantiates M's bit-bank option.
@@ -49,6 +52,12 @@ remain available. Host fixture files and canonical output order do not change.
 `--cache max-l1` requests the preferred shared-memory carveout; it does not pin
 texture lines. `--block-size 64|128|256` changes scheduling only. Each variant
 still produces one candidate per logical lane and validates before state commit.
+K12: angle wrapping skips the general remainder operation when abs(x) < period,
+where that operation would return x exactly. All normalization and exceptional
+fallback behavior remains unchanged. Exact-bit regression covers seams, arbitrary
+binary64 inputs and unusual periods. Bulk computation may group several 64-texel
+tiles while reusing the same shared staging allocation; the receipt records the
+compiled compute group count separately from the physical tile size.
 
 ## Exact state values
 Angle status: 0 defined; 1 zero_increment; 2 ratio_undefined; 3 nonfinite_input;

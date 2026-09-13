@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "exe_sha256": "61795746b1d3b1adda77c78e688d7f2b6df63db6405b48b211dbc94c76df221b",
+  "cases": [
+    {
+      "tool": "memcheck",
+      "alphabet": 3,
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\compute-sanitizer\\compute-sanitizer.exe",
+        "--tool",
+        "memcheck",
+        "--error-exitcode",
+        "86",
+        "C:\\Users\\Tom\\.cache\\ak1\\universal_final\\Release\\atomos_universal_stress.exe",
+        "--machines",
+        "128",
+        "--memory-fraction",
+        "0.001",
+        "--steps-per-launch",
+        "64",
+        "--rounds",
+        "2",
+        "--alphabet",
+        "3"
+      ],
+      "returncode": 0,
+      "status": "passed",
+      "stdout": "stress_memcheck_3.stdout.log",
+      "stderr": "stress_memcheck_3.stderr.log"
+    },
+    {
+      "tool": "memcheck",
+      "alphabet": 5,
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\compute-sanitizer\\compute-sanitizer.exe",
+        "--tool",
+        "memcheck",
+        "--error-exitcode",
+        "86",
+        "C:\\Users\\Tom\\.cache\\ak1\\universal_final\\Release\\atomos_universal_stress.exe",
+        "--machines",
+        "128",
+        "--memory-fraction",
+        "0.001",
+        "--steps-per-launch",
+        "64",
+        "--rounds",
+        "2",
+        "--alphabet",
+        "5"
+      ],
+      "returncode": 0,
+      "status": "passed",
+      "stdout": "stress_memcheck_5.stdout.log",
+      "stderr": "stress_memcheck_5.stderr.log"
+    },
+    {
+      "tool": "synccheck",
+      "alphabet": 5,
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\compute-sanitizer\\compute-sanitizer.exe",
+        "--tool",
+        "synccheck",
+        "--error-exitcode",
+        "86",
+        "C:\\Users\\Tom\\.cache\\ak1\\universal_final\\Release\\atomos_universal_stress.exe",
+        "--machines",
+        "128",
+        "--memory-fraction",
+        "0.001",
+        "--steps-per-launch",
+        "64",
+        "--rounds",
+        "2",
+        "--alphabet",
+        "5"
+      ],
+      "returncode": 0,
+      "status": "passed",
+      "stdout": "stress_synccheck_5.stdout.log",
+      "stderr": "stress_synccheck_5.stderr.log"
+    },
+    {
+      "tool": "racecheck",
+      "alphabet": 5,
+      "command": [
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\compute-sanitizer\\compute-sanitizer.exe",
+        "--tool",
+        "racecheck",
+        "--error-exitcode",
+        "86",
+        "C:\\Users\\Tom\\.cache\\ak1\\universal_final\\Release\\atomos_universal_stress.exe",
+        "--machines",
+        "128",
+        "--memory-fraction",
+        "0.001",
+        "--steps-per-launch",
+        "64",
+        "--rounds",
+        "2",
+        "--alphabet",
+        "5"
+      ],
+      "returncode": 0,
+      "status": "passed",
+      "stdout": "stress_racecheck_5.stdout.log",
+      "stderr": "stress_racecheck_5.stderr.log"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Replace every symbol 1 with 2 in a sequence; retain existing 2s; halt at blank.
+atomos-universal 1
+states 2
+alphabet 3
+start 0 -2
+halt 1
+cell -2 1
+cell -1 2
+cell 0 1
+cell 1 1
+rule 0 1 0 2 R
+rule 0 2 0 2 R
+rule 0 0 1 0 S

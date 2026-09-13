@@ -1,0 +1,12 @@
+# Erase marks until the first blank, then halt.
+atomos-universal 1
+states 2
+alphabet 2
+start 0 -2
+halt 1
+cell -2 1
+cell -1 1
+cell 0 1
+cell 1 1
+rule 0 1 0 0 R
+rule 0 0 1 0 S

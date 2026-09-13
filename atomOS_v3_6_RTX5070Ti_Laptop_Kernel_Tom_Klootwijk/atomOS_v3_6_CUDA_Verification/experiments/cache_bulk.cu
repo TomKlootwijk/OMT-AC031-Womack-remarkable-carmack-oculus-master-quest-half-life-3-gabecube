@@ -13,8 +13,14 @@
 using namespace atomos;
 namespace fs=std::filesystem;
 
+#ifndef ATOMOS_BULK_COMPUTE_TILES
+#define ATOMOS_BULK_COMPUTE_TILES 4
+#endif
+
 namespace cache_bulk_detail {
 constexpr u32 THREADS=512, TILE=64, SM_RECORD_MAGIC=0x544d4131u;
+constexpr u32 COMPUTE_TILES=ATOMOS_BULK_COMPUTE_TILES;
+static_assert(COMPUTE_TILES>=1 && COMPUTE_TILES<=THREADS/TILE,"bulk compute tiles must fit block threads");
 struct InputTile {Lane lanes[TILE]; State states[TILE];};
 union alignas(16) SharedTile {
  InputTile input;
@@ -136,52 +142,66 @@ __global__ void atomos_epoch_bulk_probe(Config c,const State*state,const Lane*la
  cooperative_groups::this_grid().sync();
 
  u32 parity=0;
- for(u64 base=begin;base<end;base+=TILE){
-  u32 r0,w0;inverse_physical(c.shape,u32(base),c.layout,r0,w0);
-  if(tid==0){
-   if(c.layout==Layout::linear){
-    bulk_load(tile.input.lanes,lanes+base,TILE*sizeof(Lane),&input_barrier);
-    bulk_load(tile.input.states,state+base,TILE*sizeof(State),&input_barrier);
-   }else{
-    // The physical Morton tile is one padded 8x8 patch. Global records use
-    // padded row-major backing; shared input/output tiles are row-major.
-    for(u32 row=0;row<8;row++){
-     const u32 i=(r0+row)*c.shape.padded_words+w0;
-     bulk_load(tile.input.lanes+row*8,lanes+i,8*sizeof(Lane),&input_barrier);
-     bulk_load(tile.input.states+row*8,state+i,8*sizeof(State),&input_barrier);
-    }
-   }
-   // One arrival per phase; every bulk copy above completes bytes on this bar.
-   barrier_arrive_bytes(&input_barrier,sizeof(InputTile));
-  }
-  barrier_wait(&input_barrier,parity);parity^=1;
-
+ for(u64 base=begin;base<end;base+=u64(TILE)*COMPUTE_TILES){
+  const u32 remaining=u32((end-base)/TILE);
+  const u32 waves=remaining<COMPUTE_TILES?remaining:COMPUTE_TILES;
+  const u32 owner=tid/TILE,local=tid%TILE;
   Lane lane{};State current{};uint4 m{};u32 slot=0,r=0,w=0;
-  if(tid<TILE){
-   inverse_physical(c.shape,u32(base)+tid,c.layout,r,w);
-   slot=c.layout==Layout::linear?tid:(r-r0)*8+w-w0;
-   lane=tile.input.lanes[slot];current=tile.input.states[slot];
-   if(r<c.shape.rows&&w<c.shape.words)m=tex1Dfetch<uint4>(masks,int(base+tid));
+  // Each 64-thread group captures one input tile into private registers.
+  // Serial staging keeps the existing 10.5 KiB union and L1 carveout, while
+  // the complete epoch below can execute on several groups concurrently.
+  for(u32 wave=0;wave<waves;wave++){
+   const u64 input_base=base+u64(wave)*TILE;
+   u32 r0,w0;inverse_physical(c.shape,u32(input_base),c.layout,r0,w0);
+   if(tid==0){
+    if(c.layout==Layout::linear){
+     bulk_load(tile.input.lanes,lanes+input_base,TILE*sizeof(Lane),&input_barrier);
+     bulk_load(tile.input.states,state+input_base,TILE*sizeof(State),&input_barrier);
+    }else{
+     // Each physical Morton tile is one padded 8x8 patch. Global records
+     // and the shared staging tile retain their padded row-major backing.
+     for(u32 row=0;row<8;row++){
+      const u32 i=(r0+row)*c.shape.padded_words+w0;
+      bulk_load(tile.input.lanes+row*8,lanes+i,8*sizeof(Lane),&input_barrier);
+      bulk_load(tile.input.states+row*8,state+i,8*sizeof(State),&input_barrier);
+     }
+    }
+    // One arrival per phase; every copy completes bytes on this barrier.
+    barrier_arrive_bytes(&input_barrier,sizeof(InputTile));
+   }
+   barrier_wait(&input_barrier,parity);parity^=1;
+   if(owner==wave){
+    inverse_physical(c.shape,u32(input_base)+local,c.layout,r,w);
+    slot=c.layout==Layout::linear?local:(r-r0)*8+w-w0;
+    lane=tile.input.lanes[slot];current=tile.input.states[slot];
+    if(r<c.shape.rows&&w<c.shape.words)m=tex1Dfetch<uint4>(masks,int(input_base+local));
+   }
+   // Finish every private capture before the next bulk input overwrites
+   // the union, or before the output waves use that same storage.
+   __syncthreads();
   }
-  // Every shared input has been copied to thread-private values before any
-  // thread writes an overlapping Result into the shared union.
-  __syncthreads();
-  if(tid<TILE){
-   Result value{};
-   if(r<c.shape.rows&&w<c.shape.words)
-    value=epoch_word(current,lane,m.x,m.y,m.z,m.w,
-                     valid_mask(c.shape,w),c.producer,c.fringe);
-   tile.output[slot]=value;
+
+  Result value{};
+  if(owner<waves&&r<c.shape.rows&&w<c.shape.words)
+   value=epoch_word(current,lane,m.x,m.y,m.z,m.w,
+                    valid_mask(c.shape,w),c.producer,c.fringe);
+
+  // Results stay private until their export wave. All block threads follow
+  // the same wave count, including a short last group or an empty partition.
+  for(u32 wave=0;wave<waves;wave++){
+   const u64 output_base=base+u64(wave)*TILE;
+   u32 r0,w0;inverse_physical(c.shape,u32(output_base),c.layout,r0,w0);
+   if(owner==wave)tile.output[slot]=value;
+   proxy_fence();__syncthreads();
+   if(tid==0){
+    if(c.layout==Layout::linear)bulk_store(out+output_base,tile.output,TILE*sizeof(Result));
+    else for(u32 row=0;row<8;row++)
+     bulk_store(out+(r0+row)*c.shape.padded_words+w0,tile.output+row*8,8*sizeof(Result));
+    // Full write completion, including global destinations, before reuse.
+    bulk_store_finish();
+   }
+   __syncthreads();
   }
-  proxy_fence();__syncthreads();
-  if(tid==0){
-   if(c.layout==Layout::linear)bulk_store(out+base,tile.output,TILE*sizeof(Result));
-   else for(u32 row=0;row<8;row++)
-    bulk_store(out+(r0+row)*c.shape.padded_words+w0,tile.output+row*8,8*sizeof(Result));
-   // Full write completion, including global destinations, before reuse.
-   bulk_store_finish();
-  }
-  __syncthreads();
  }
  cooperative_groups::this_grid().sync();
 
@@ -394,6 +414,7 @@ int main(int argc,char**argv){fs::path staging;try{
   <<",\"io\":\"native_cp_async_bulk_1d\",\"barrier\":\"grid\",\"phase_order_scope\":\"whole_cooperative_grid\",\"padding_and_tails_supported\":true"
   <<",\"device_records\":\"padded_row_major\",\"results\":\"canonical_row_major\",\"padded_rows\":"<<s.padded_rows<<",\"padded_words\":"<<s.padded_words
   <<",\"block_size\":"<<THREADS<<",\"tile_texels\":"<<TILE<<",\"grid_blocks\":"<<grid<<",\"multiprocessors\":"<<grid<<",\"active_blocks_per_sm_limit\":"<<active_blocks
+  <<",\"compute_tiles\":"<<COMPUTE_TILES<<",\"compute_threads\":"<<TILE*COMPUTE_TILES
   <<",\"registers_per_thread\":"<<attributes.numRegs<<",\"local_bytes_per_thread\":"<<attributes.localSizeBytes<<",\"static_shared_bytes\":"<<attributes.sharedSizeBytes
   <<",\"shared_union_bytes\":"<<sizeof(SharedTile)<<",\"input_tile_bytes\":"<<sizeof(InputTile)<<",\"result_tile_bytes\":"<<TILE*sizeof(Result)<<",\"bulk_barrier_bytes\":"<<sizeof(u64)
   <<",\"preferred_shared_carveout\":"<<attributes.preferredShmemCarveout<<",\"max_l1_requested\":true,\"binary_version\":"<<attributes.binaryVersion

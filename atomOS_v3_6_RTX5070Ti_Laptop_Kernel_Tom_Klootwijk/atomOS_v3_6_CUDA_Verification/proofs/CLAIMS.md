@@ -112,3 +112,26 @@ implementation checks remain distinct from these specification proofs.
 A working software kernel establishes that the declared computations can be executed
 and compared. It is not a proof of every causal, external-system or application claim
 contained in earlier AI-export transcripts. The supplied kernel has no such interfaces.
+
+## 7. Programmable U1 extension
+
+The M1 machine-simulation theorem on page 32 assumes logical addresses and enough
+storage for each finite prefix. Encoding preserves tape symbols, head and program
+control initially; every defined transition preserves that correspondence by
+reading the same symbol, applying the same rule and changing only that symbol
+block. Induction gives agreement over each defined prefix. This is the theorem's
+mathematical scope, not an infinite-hardware or compiled-binary proof.
+
+`universal_packing.smt2` checks two additional bit-vector obligations: reading a
+newly written 1..32-bit symbol returns that symbol, and all outside bits remain
+unchanged in its 64-bit backing window. Run `python proofs/check_universal_proofs.py`.
+Both negated properties were UNSAT. These obligations are separate from the
+original 15 and do not prove the C++ parser, compiler or every GPU execution.
+
+U1 now has executable CUDA implementations. `atomos_engine` stages U and K1
+proposals and verifies every transition, every packed word and every K1 candidate
+before their shared commit. A required failure preserves the accepted prefix.
+`atomos_universal_stress` checks many independent tapes and their full allocation.
+Exact counts, capacity stops, source hashes, commands and toolchain evidence are
+in `results/optimization_20260913/summary.json`. The combined profile's cache
+residency is unmeasured; it does not inherit the separate bulk-word observation.

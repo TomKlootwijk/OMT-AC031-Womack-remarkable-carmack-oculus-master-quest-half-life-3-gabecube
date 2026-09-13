@@ -36,7 +36,10 @@ AO_HD inline bool finite(double x){
 }
 AO_HD inline double absd(double x){return x<0?-x:x;}
 AO_HD inline double wrap(double x,double period=TAU){
- double v=::fmod(x,period);if(v>=period/2)v-=period;if(v< -period/2)v+=period;return v==0?0.0:v;
+ // For positive period and |x| < period, fmod(x,period) is exactly x.
+ // Every value outside that range retains the original library reduction;
+ // the same normalization below also preserves the canonical positive zero.
+ double v=absd(x)<period ? x : ::fmod(x,period);if(v>=period/2)v-=period;if(v< -period/2)v+=period;return v==0?0.0:v;
 }
 AO_HD inline u32 spread3(u32 x){return (x&1u)|((x&2u)<<1u)|((x&4u)<<2u);}
 AO_HD inline u32 compact3(u32 x){return (x&1u)|((x>>1u)&2u)|((x>>2u)&4u);}

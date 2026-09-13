@@ -1,0 +1,44 @@
+verified launch 1/32: 70656 machine states, 1157627904 transitions, 15.748 ms
+verified launch 2/32: 70656 machine states, 1157627904 transitions, 15.7917 ms
+verified launch 3/32: 70656 machine states, 1157627904 transitions, 15.8545 ms
+verified launch 4/32: 70656 machine states, 1157627904 transitions, 15.8306 ms
+verified launch 5/32: 70656 machine states, 1157627904 transitions, 15.8592 ms
+verified launch 6/32: 70656 machine states, 1157627904 transitions, 15.8524 ms
+verified launch 7/32: 70656 machine states, 1157627904 transitions, 15.8439 ms
+verified launch 8/32: 70656 machine states, 1157627904 transitions, 15.832 ms
+verified launch 9/32: 70656 machine states, 1157627904 transitions, 16.0019 ms
+verified launch 10/32: 70656 machine states, 1157627904 transitions, 14.2579 ms
+verified launch 11/32: 70656 machine states, 1157627904 transitions, 14.2542 ms
+verified launch 12/32: 70656 machine states, 1157627904 transitions, 14.2414 ms
+verified launch 13/32: 70656 machine states, 1157627904 transitions, 14.203 ms
+verified launch 14/32: 70656 machine states, 1157627904 transitions, 14.2164 ms
+verified launch 15/32: 70656 machine states, 1157627904 transitions, 14.2431 ms
+verified launch 16/32: 70656 machine states, 1157627904 transitions, 14.1821 ms
+verified launch 17/32: 70656 machine states, 1157627904 transitions, 14.2009 ms
+verified launch 18/32: 70656 machine states, 1157627904 transitions, 14.2221 ms
+verified launch 19/32: 70656 machine states, 1157627904 transitions, 14.2053 ms
+verified launch 20/32: 70656 machine states, 1157627904 transitions, 14.2464 ms
+verified launch 21/32: 70656 machine states, 1157627904 transitions, 14.1975 ms
+verified launch 22/32: 70656 machine states, 1157627904 transitions, 14.2143 ms
+verified launch 23/32: 70656 machine states, 733197312 transitions, 9.08915 ms
+verified launch 24/32: 70656 machine states, 0 transitions, 0.09392 ms
+verified launch 25/32: 70656 machine states, 0 transitions, 0.041824 ms
+verified launch 26/32: 70656 machine states, 0 transitions, 0.05392 ms
+verified launch 27/32: 70656 machine states, 0 transitions, 0.041504 ms
+verified launch 28/32: 70656 machine states, 0 transitions, 0.053664 ms
+verified launch 29/32: 70656 machine states, 0 transitions, 0.040288 ms
+verified launch 30/32: 70656 machine states, 0 transitions, 0.037632 ms
+verified launch 31/32: 70656 machine states, 0 transitions, 0.019168 ms
+verified launch 32/32: 70656 machine states, 0 transitions, 0.03664 ms
+{
+"schema":"atomos-universal-stress-v1",
+"concept_author":"Tom Klootwijk",
+"status":"passed",
+"scope":"finite GPU prefixes; generic table interpreter; all physical tape words verified; no unbounded-hardware claim",
+"device":{"name":"NVIDIA GeForce RTX 5070 Ti Laptop GPU","ordinal":0,"cc_major":12,"cc_minor":0,"multiprocessors":46,"max_threads_per_sm":1536,"total_bytes":12820480000,"free_before_bytes":11561598976,"free_after_allocation_bytes":1732247552},
+"allocation":{"memory_fraction":0.84999999999999998,"reserve_bytes":536870912,"budget_bytes":9827359129,"actual_allocated_bytes":9827119692,"tape_bytes":9825423360,"state_bytes":1695744,"rule_and_halt_bytes":588,"seed_bytes":0,"allocation_attempts":1,"requested_words_per_machine":34765,"actual_words_per_machine":34765,"host_download_buffer_bytes":67108864},
+"program":{"source":"generated dense write/walk control-cycle table","states":7,"alphabet":5,"bits_per_symbol":3,"initial_head":-185413,"initial_control_groups":7,"rules":[[0,0,1,1,1,1],[0,1,1,1,1,1],[0,2,1,1,1,1],[0,3,1,1,1,1],[0,4,1,1,1,1],[1,0,2,2,1,1],[1,1,2,2,1,1],[1,2,2,2,1,1],[1,3,2,2,1,1],[1,4,2,2,1,1],[2,0,3,3,1,1],[2,1,3,3,1,1],[2,2,3,3,1,1],[2,3,3,3,1,1],[2,4,3,3,1,1],[3,0,4,4,1,1],[3,1,4,4,1,1],[3,2,4,4,1,1],[3,3,4,4,1,1],[3,4,4,4,1,1],[4,0,5,1,1,1],[4,1,5,1,1,1],[4,2,5,1,1,1],[4,3,5,1,1,1],[4,4,5,1,1,1],[5,0,6,2,1,1],[5,1,6,2,1,1],[5,2,6,2,1,1],[5,3,6,2,1,1],[5,4,6,2,1,1],[6,0,0,3,1,1],[6,1,0,3,1,1],[6,2,0,3,1,1],[6,3,0,3,1,1],[6,4,0,3,1,1]],"halt":[0,0,0,0,0,0,0]},
+"execution":{"machines":70656,"cells_per_machine":370826,"origin":-185413,"layout":"coalesced word-major machine columns","rounds":32,"steps_per_launch":16384,"executed_transitions":26201011200,"kernel_ms":337.00643250718713,"transitions_per_second":77746323727.637527,"block_size":256,"registers_per_thread":36,"local_bytes_per_thread":0,"active_blocks_per_sm_limit":6,"launches":[{"kernel_ms":15.748031616210938,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":15.791744232177734,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":15.854496002197266,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":15.830559730529785,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":15.859231948852539,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":15.852383613586426,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":15.843903541564941,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":15.831968307495117,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":16.001920700073242,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.257856369018555,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.254176139831543,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.241439819335938,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.202976226806641,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.216383934020996,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.243136405944824,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.182111740112305,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.200927734375,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.222080230712891,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.205280303955078,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.246368408203125,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.197471618652344,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":14.214271545410156,"executed_transitions":1157627904,"machine_states_verified":70656},{"kernel_ms":9.0891523361206055,"executed_transitions":733197312,"machine_states_verified":70656},{"kernel_ms":0.093919999897480011,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.04182400181889534,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.053920000791549683,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.041503999382257462,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.05366399884223938,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.040288001298904419,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.03763199970126152,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.019168000668287277,"executed_transitions":0,"machine_states_verified":70656},{"kernel_ms":0.036639999598264694,"executed_transitions":0,"machine_states_verified":70656}]},
+"verification":{"reference":"independent sparse-map interpreter and single-bit host packer","machine_comparisons":2260992,"packed_words_verified":2456355840,"packed_bytes_verified":9825423360,"distinct_transition_cells":26201011200,"distinct_transition_words":2456355840,"program_touched_tape_bytes":9825423360,"all_written_symbols":true,"untouched_blanks":true,"unused_padding_bits":true,"full_tape_check_seconds":4.3022342,"final_stop_counts":{"running":0,"halted":0,"missing_rule":0,"tape_range":70656,"invalid":0},"final_control_groups":[{"group":0,"control":0,"head":185412,"steps":370825,"stop":"tape_range"},{"group":1,"control":1,"head":185412,"steps":370825,"stop":"tape_range"},{"group":2,"control":2,"head":185412,"steps":370825,"stop":"tape_range"},{"group":3,"control":3,"head":185412,"steps":370825,"stop":"tape_range"},{"group":4,"control":4,"head":185412,"steps":370825,"stop":"tape_range"},{"group":5,"control":5,"head":185412,"steps":370825,"stop":"tape_range"},{"group":6,"control":6,"head":185412,"steps":370825,"stop":"tape_range"}]},
+"wall_seconds":11.652698600000001
+}
