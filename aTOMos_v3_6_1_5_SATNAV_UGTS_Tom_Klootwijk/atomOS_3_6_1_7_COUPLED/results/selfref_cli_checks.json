@@ -1,0 +1,135 @@
+{
+  "version": "3.6.1.6",
+  "profile": "SRK-R1",
+  "status": "pass",
+  "cases": 25,
+  "executable": "C:\\tmp\\atomos3617_cpu\\Release\\self_reference.exe",
+  "checks": [
+    {
+      "case": "negative_id",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field trajectory_id: expected unsigned decimal integer"
+    },
+    {
+      "case": "id_overflow",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field trajectory_id: integer out of range"
+    },
+    {
+      "case": "word_overflow",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field q0: integer out of range"
+    },
+    {
+      "case": "non_decimal",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field drive: expected unsigned decimal integer"
+    },
+    {
+      "case": "fraction",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field drive: expected unsigned decimal integer"
+    },
+    {
+      "case": "spaces",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field drive: expected unsigned decimal integer"
+    },
+    {
+      "case": "outside_present",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field q0: state must be a subset of present"
+    },
+    {
+      "case": "x_lut_overflow",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field x_lut: integer out of range"
+    },
+    {
+      "case": "j_lut_overflow",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field j_lut: integer out of range"
+    },
+    {
+      "case": "k_lut_overflow",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field k_lut: integer out of range"
+    },
+    {
+      "case": "zero_steps",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field steps: must be nonzero"
+    },
+    {
+      "case": "steps_overflow",
+      "status": "pass",
+      "message": "self_reference: CSV row 2 field steps: integer out of range"
+    },
+    {
+      "case": "allocation_overflow",
+      "status": "pass",
+      "message": "self_reference: trace rows exceed addressable vector capacity"
+    },
+    {
+      "case": "duplicate_id",
+      "status": "pass",
+      "message": "self_reference: CSV row 3 field trajectory_id: duplicate identifier"
+    },
+    {
+      "case": "empty_jobs",
+      "status": "pass",
+      "message": "self_reference: input CSV has no trajectories"
+    },
+    {
+      "case": "bad_header",
+      "status": "pass",
+      "message": "self_reference: input CSV header must be: trajectory_id,q0,drive,present,asa_mask,na_mask,boundary_mask,x_lut,j_lut,k_lut,steps"
+    },
+    {
+      "case": "missing_field",
+      "status": "pass",
+      "message": "self_reference: CSV row 2: expected 11 fields"
+    },
+    {
+      "case": "blank_row",
+      "status": "pass",
+      "message": "self_reference: CSV row 2: expected 11 fields"
+    },
+    {
+      "case": "valid_maximum_words_and_id",
+      "status": "pass",
+      "trace_rows": 6
+    },
+    {
+      "case": "existing_output_preserved",
+      "status": "pass",
+      "message": "self_reference: output directory already exists; choose a new directory"
+    },
+    {
+      "case": "unknown_option",
+      "status": "pass",
+      "message": "self_reference: unknown argument: --wat"
+    },
+    {
+      "case": "duplicate_option",
+      "status": "pass",
+      "message": "self_reference: duplicate option: --backend"
+    },
+    {
+      "case": "negative_device",
+      "status": "pass",
+      "message": "self_reference: --device: expected unsigned decimal integer"
+    },
+    {
+      "case": "missing_option_value",
+      "status": "pass",
+      "message": "self_reference: missing value for --device"
+    },
+    {
+      "case": "unbuilt_cuda_reports_not_run",
+      "status": "pass",
+      "exit_code": 3,
+      "message": "self_reference: not_run: CUDA backend not built; configure SATNAV_ENABLE_CUDA=ON"
+    }
+  ]
+}

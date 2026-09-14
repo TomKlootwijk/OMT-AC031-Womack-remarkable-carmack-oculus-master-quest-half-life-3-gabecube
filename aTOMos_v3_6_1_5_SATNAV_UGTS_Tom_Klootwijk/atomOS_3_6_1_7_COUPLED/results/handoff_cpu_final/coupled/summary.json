@@ -1,0 +1,58 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "status": "passed",
+  "input_sha256": "9f63c922342666513862e7ecb60fc017ef396f851d6ce5c8b6f6146ee3ff3597",
+  "compiled_sha256": {
+    "channels.csv": "eba3409977275d2ac1dcedce55302d5053cb11220802d36959eee237e4487868",
+    "equations.csv": "590169537ec7db06d5deee325faaeb87d17fb242da7a42801ca90f50d5440971",
+    "manifest.csv": "7e220de012d01b152ebffa2bff7c81f1355916abb40387306868d7094e4e7e45",
+    "samples.csv": "e006fa9c927d121228023c425522468dfb317331b47f19812101665e8cadb264"
+  },
+  "native_execution": "passed",
+  "native_trace_verified": true,
+  "native_command": [
+    "C:\\tmp\\atomos3617_cpu\\Release\\coupled_kernel.exe",
+    "--input",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_7_COUPLED\\results\\handoff_cpu_final\\coupled\\compiled",
+    "--out",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_7_COUPLED\\results\\handoff_cpu_final\\coupled\\native",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "native_binary_sha256": "95a40ed14bfa3b8b7bd15ec1c5362f644a568b0614b9ebc71800fda525797fe6",
+  "native_returncode": 0,
+  "transitions": 256,
+  "field_comparisons": 24832,
+  "trajectories": [
+    {
+      "trajectory_id": 0,
+      "steps": 256,
+      "statuses": {
+        "advanced": 256
+      },
+      "final_q": 63,
+      "final_p": [
+        630.568214732241,
+        72.0903121009618,
+        6.756847413660552
+      ],
+      "final_v": [
+        6.2366237741581845,
+        24.106445344734198,
+        -40.814499834683566
+      ],
+      "specification_sha256": "f88954148a6936ac504cc2f1a5426cadebccb56a01868a0b3ae3a89189e0ee69",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y & (limit | fringe)",
+        "k": "align & ~limit & ~fringe"
+      }
+    }
+  ],
+  "reference_trace_sha256": "a81b117993396becd3f79e4fca5dff204f4a82bfca81308438c9df324240d174",
+  "native_trace_sha256": "10c0cc70bfb457efbee9303cfe0a4d04bd1a8d23c85547cf19f71bad8ae62c91"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "epochs": 128,
+  "solved": 128,
+  "checks": 1792,
+  "status_counts": {
+    "ok": 128
+  },
+  "max_independent_state_difference_m": 3.725290298461914e-09,
+  "max_formal_sigma_difference_m": 3.1086244689504383e-15,
+  "max_fixture_position_error_m": 7.951260226093784e-09,
+  "fixture_position_rmse_m": 2.9198174043174907e-09,
+  "oracle": "NumPy lstsq (independent of C++ streaming Givens QR)",
+  "dataset": "clean",
+  "result": "clean_cpu.csv"
+}

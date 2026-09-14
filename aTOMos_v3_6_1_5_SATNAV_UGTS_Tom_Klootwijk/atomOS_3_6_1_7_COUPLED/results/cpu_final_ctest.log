@@ -1,0 +1,51 @@
+Start testing: Sep 14 22:51 W. Europe Daylight Time
+----------------------------------------------------------
+1/3 Testing: core_reference
+1/3 Test: core_reference
+Command: "C:/tmp/atomos3617_cpu/Release/core_tests.exe"
+Directory: C:/tmp/atomos3617_cpu
+"core_reference" start time: Sep 14 22:51 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+PASS counted_checks=105559 epoch_bytes=72 result_bytes=376
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"core_reference" end time: Sep 14 22:51 W. Europe Daylight Time
+"core_reference" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: self_reference_equations
+2/3 Test: self_reference_equations
+Command: "C:/tmp/atomos3617_cpu/Release/self_reference_tests.exe"
+Directory: C:/tmp/atomos3617_cpu
+"self_reference_equations" start time: Sep 14 22:51 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+5060172 SRK-R1 checks passed
+<end of output>
+Test time =   0.59 sec
+----------------------------------------------------------
+Test Passed.
+"self_reference_equations" end time: Sep 14 22:51 W. Europe Daylight Time
+"self_reference_equations" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: coupled_geometry_physics
+3/3 Test: coupled_geometry_physics
+Command: "C:/tmp/atomos3617_cpu/Release/coupled_tests.exe"
+Directory: C:/tmp/atomos3617_cpu
+"coupled_geometry_physics" start time: Sep 14 22:51 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+CGK-R1: 202 checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"coupled_geometry_physics" end time: Sep 14 22:51 W. Europe Daylight Time
+"coupled_geometry_physics" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 14 22:51 W. Europe Daylight Time

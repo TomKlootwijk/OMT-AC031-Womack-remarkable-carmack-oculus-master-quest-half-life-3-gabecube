@@ -1,0 +1,27 @@
+{
+  "version": "3.6.1.5",
+  "dataset": "synthetic corrected-code geometric fixture",
+  "epochs": 128,
+  "satellites_per_epoch": 12,
+  "noise_amplitude_m": 0,
+  "edge_cases": false,
+  "time_scale": "GPST",
+  "tick_unit": "millisecond",
+  "single_receiver": true,
+  "anchor": {
+    "lat_deg": 52.0,
+    "lon_deg": 5.0,
+    "height_m": 20.0
+  },
+  "satellite_coordinates": "transmit-epoch positions already expressed in receive-time ECEF; synthetic values",
+  "code": "corrected for all nonreceiver-clock terms by fixture construction",
+  "chart": {
+    "r0_m": 10000.0,
+    "core_radius_m": 0.01,
+    "rho_min": -20.0,
+    "rho_max": 0.0,
+    "theta": "atan2(north,east)",
+    "hinge": "explicit independent input",
+    "time_key": "full GPST tick_ms modulo 16384"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": "3.6.1.5",
+  "cpp_compile": "passed",
+  "cpp_test_groups": 26,
+  "cpp_assertions": 217707,
+  "python_unit_tests": 15,
+  "independent_epochs": 320,
+  "independent_checks": 4462,
+  "expected_solution_epochs": 317,
+  "cpu_asan_ubsan": "passed",
+  "cuda_compile": "not_run",
+  "cuda_execution": "not_run",
+  "compute_sanitizer": "not_run",
+  "reason_cuda": "No nvcc or accessible NVIDIA GPU in preparation environment",
+  "windows_build": "not_run",
+  "tests_are": "Synthetic prepared-code positioning and finite operator/layout tests",
+  "clean_max_position_error_m": 7.951260226093784e-09,
+  "noisy_position_rmse_m": 1.7169366414284222,
+  "python": "3.13.5"
+}

@@ -1,0 +1,74 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "status": "passed",
+  "backend": "cuda",
+  "artifact": "results\\handoff_cuda_final",
+  "audit_script_sha256": "31524a85b70f861920e030ba956a29c64bae6ff61fa57fd4a059774431ee9ae6",
+  "audit_method": "Independent standard-library publication audit: direct CSV/JSON equality, explicit ECEF/ENU equations, both key formulas, invalid-observation mechanics, q-dependent stiffness sums and standalone hashlib chain reconstruction. No publisher or coupled-reference functions imported; full native replay is separately bound by file hashes.",
+  "checks": {
+    "complete_native_trace_rows_equal": 256,
+    "original_solver_epoch_residual_records_equal": 256,
+    "ecef_enu_clock_variance_status_retained": 256,
+    "modeled_enu_ecef_velocity_jk_hoop_bound": 256,
+    "q_controls_full_stiffness_matrix": 256,
+    "modeled_both_keys_full_time_winding_up_and_hoop": 256,
+    "independent_hash_chain_records": 256,
+    "persistent_state_links": 255,
+    "failed_observation_prediction_dynamics_verified": 3,
+    "unchanged_source_file_hashes": 7
+  },
+  "rows": 256,
+  "packed_rows": 256,
+  "native_replay_field_comparisons": 24832,
+  "q_transitions": 51,
+  "distinct_q_states": [
+    0,
+    29,
+    31,
+    47,
+    55,
+    59,
+    61,
+    62,
+    63
+  ],
+  "observed_and_modeled_positions_differ": 255,
+  "invalid_predictions": [
+    {
+      "epoch_id": 250,
+      "solver_status": "TOO_FEW",
+      "motion_m": 2.107129483005999,
+      "q_before": 63,
+      "q_after": 63,
+      "target_spring_terms": 0
+    },
+    {
+      "epoch_id": 251,
+      "solver_status": "MASK_ABSORBED",
+      "motion_m": 1.6159595586363762,
+      "q_before": 63,
+      "q_after": 63,
+      "target_spring_terms": 0
+    },
+    {
+      "epoch_id": 252,
+      "solver_status": "RANK_DEFICIENT",
+      "motion_m": 1.240553074085177,
+      "q_before": 63,
+      "q_after": 63,
+      "target_spring_terms": 0
+    }
+  ],
+  "residual_alerts_still_drive_model": [
+    253
+  ],
+  "head_sha256": "1fe7f21be33ca1bdc0e22b20224503e24bdc05f6a492219bda73ae4bafe8b673",
+  "verified_binary_path": "C:\\tmp\\atomos3617_gpu128\\Release\\coupled_kernel.exe",
+  "hashes": {
+    "events": "7066a05822129a9ff9aa7ca872131482229eec1ac8c2cc75f0e0fdf0e390844c",
+    "model": "43ab54a55d2d292dafb153fd8e5ddbfa3d88cfd2129f939320106431fdaf3ce4",
+    "native_trace": "06b023010e3d6544125a8a6fbb30ca282ac9b1d343be5c93dde4c792bb03a812",
+    "native_binary": "3117d3486ae13c3f35a150e3078844e7e20a47f17c144870db4c347749c7001c"
+  }
+}

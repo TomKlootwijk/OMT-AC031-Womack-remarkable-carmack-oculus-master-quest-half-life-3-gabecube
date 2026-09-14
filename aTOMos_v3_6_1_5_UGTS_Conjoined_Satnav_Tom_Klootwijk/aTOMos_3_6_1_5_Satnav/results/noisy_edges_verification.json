@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "epochs": 192,
+  "solved": 189,
+  "checks": 2670,
+  "status_counts": {
+    "ok": 189,
+    "whole_word_absorbed": 1,
+    "insufficient_observations": 1,
+    "rank_deficient": 1
+  },
+  "max_independent_state_difference_m": 4.212779458612204e-09,
+  "max_formal_sigma_difference_m": 3.3306690738754696e-15,
+  "max_fixture_position_error_m": 4.424750061817424,
+  "fixture_position_rmse_m": 1.7169366414284222,
+  "oracle": "NumPy lstsq (independent of C++ streaming Givens QR)",
+  "dataset": "noisy_edges",
+  "result": "noisy_edges_cpu.csv"
+}

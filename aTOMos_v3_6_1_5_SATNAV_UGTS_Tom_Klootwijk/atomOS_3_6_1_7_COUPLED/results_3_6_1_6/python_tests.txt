@@ -1,0 +1,36 @@
+test_boundary_absorption_does_not_override_explicit_j_equation (test_self_reference.EquationTests.test_boundary_absorption_does_not_override_explicit_j_equation) ... ok
+test_cli_reference_and_existing_output_protection (test_self_reference.EquationTests.test_cli_reference_and_existing_output_protection) ... ok
+test_compilation_and_every_trace_field_mutation_rejected (test_self_reference.EquationTests.test_compilation_and_every_trace_field_mutation_rejected) ... ok
+test_exact_truth_table_input_order (test_self_reference.EquationTests.test_exact_truth_table_input_order) ... ok
+test_examples_have_real_feedback_and_reproducible_compilation (test_self_reference.EquationTests.test_examples_have_real_feedback_and_reproducible_compilation) ... ok
+test_input_domains_duplicates_and_missing_equations (test_self_reference.EquationTests.test_input_domains_duplicates_and_missing_equations) ... ok
+test_jk_uses_old_q_synchronously_and_masks_only_after (test_self_reference.EquationTests.test_jk_uses_old_q_synchronously_and_masks_only_after) ... ok
+test_latch_fixed_point_and_toggle_cycle (test_self_reference.EquationTests.test_latch_fixed_point_and_toggle_cycle) ... ok
+test_literals_precedence_and_complement_are_word_semantics (test_self_reference.EquationTests.test_literals_precedence_and_complement_are_word_semantics) ... ok
+test_parser_rejects_executable_or_ambiguous_syntax (test_self_reference.EquationTests.test_parser_rejects_executable_or_ambiguous_syntax) ... ok
+test_partial_equation_override_and_canonical_hash (test_self_reference.EquationTests.test_partial_equation_override_and_canonical_hash) ... ok
+test_whole_word_absorption_is_not_per_bit_clearing (test_self_reference.EquationTests.test_whole_word_absorption_is_not_per_bit_clearing) ... ok
+test_word_ast_agrees_with_independent_scalar_lut (test_self_reference.EquationTests.test_word_ast_agrees_with_independent_scalar_lut) ... ok
+test_all_prefixes (test_ugts.SourceContracts.test_all_prefixes) ... ok
+test_cone_axis (test_ugts.SourceContracts.test_cone_axis) ... ok
+test_cone_base_apex (test_ugts.SourceContracts.test_cone_base_apex) ... ok
+test_cone_exterior (test_ugts.SourceContracts.test_cone_exterior) ... ok
+test_digest_changes (test_ugts.SourceContracts.test_digest_changes) ... ok
+test_enu_inverse (test_ugts.SourceContracts.test_enu_inverse) ... ok
+test_geodesy_roundtrip (test_ugts.SourceContracts.test_geodesy_roundtrip) ... ok
+test_golden_key (test_ugts.SourceContracts.test_golden_key) ... ok
+test_jitter_interval_distinction (test_ugts.SourceContracts.test_jitter_interval_distinction) ... ok
+test_key_overflow (test_ugts.SourceContracts.test_key_overflow) ... ok
+test_negative_tick (test_ugts.SourceContracts.test_negative_tick) ... ok
+test_otan2_source_is_not_heading (test_ugts.SourceContracts.test_otan2_source_is_not_heading) ... ok
+test_quantization_widths (test_ugts.SourceContracts.test_quantization_widths) ... ok
+test_random_key_roundtrips (test_ugts.SourceContracts.test_random_key_roundtrips) ... ok
+test_sweep_bound_against_dense (test_ugts.SourceContracts.test_sweep_bound_against_dense) ... ok
+test_tick_winding_source (test_ugts.SourceContracts.test_tick_winding_source) ... ok
+test_topology_separate (test_ugts.SourceContracts.test_topology_separate) ... ok
+test_zero_length_sweep (test_ugts.SourceContracts.test_zero_length_sweep) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.344s
+
+OK

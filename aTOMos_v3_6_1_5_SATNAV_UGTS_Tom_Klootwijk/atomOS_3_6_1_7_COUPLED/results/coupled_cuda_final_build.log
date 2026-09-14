@@ -1,0 +1,16 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  satnav_core.vcxproj -> C:\tmp\atomos3617_gpu128\Release\satnav_core.lib
+  self_reference_tests.vcxproj -> C:\tmp\atomos3617_gpu128\Release\self_reference_tests.exe
+  core_tests.vcxproj -> C:\tmp\atomos3617_gpu128\Release\core_tests.exe
+  satnav.vcxproj -> C:\tmp\atomos3617_gpu128\Release\satnav.exe
+  self_reference.vcxproj -> C:\tmp\atomos3617_gpu128\Release\self_reference.exe
+  coupled_tests.cpp
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_7_COUPLED\cuda\coupled_kernel.cu...
+  
+  C:\tmp\atomos3617_gpu128>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_7_COUPLED\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir coupled_kernel\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -DWIN32 -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W4 /nologo /O2 /FS   /MD " -Xcompiler "/Fdcoupled_kernel.dir\Release\vc143.pdb" -o coupled_kernel.dir\Release\cuda/coupled_kernel.cu.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_7_COUPLED\cuda\coupled_kernel.cu" 
+  coupled_kernel.cu
+  tmpxft_00006cd8_00000000-7_coupled_kernel.cudafe1.cpp
+  coupled_tests.vcxproj -> C:\tmp\atomos3617_gpu128\Release\coupled_tests.exe
+  coupled_kernel.cpp
+  coupled_kernel.vcxproj -> C:\tmp\atomos3617_gpu128\Release\coupled_kernel.exe

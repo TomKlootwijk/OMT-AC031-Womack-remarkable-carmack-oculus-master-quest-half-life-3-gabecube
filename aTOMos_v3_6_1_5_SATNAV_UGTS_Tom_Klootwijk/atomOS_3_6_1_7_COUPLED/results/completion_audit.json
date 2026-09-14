@@ -1,0 +1,63 @@
+{
+  "version": "3.6.1.7",
+  "status": "passed",
+  "scope": "Eight implementation requirements from docs/COUPLED_CONTRACT.md. Archive byte integrity is verified by tools/build_package.py during final packaging.",
+  "requirements": [
+    {
+      "requirement": 1,
+      "description": "Persistent 3D state, q, phase and full time",
+      "status": "passed",
+      "implementation": "include/coupled_kernel.hpp",
+      "evidence": "results/coupled_validation_cpu_final/summary.json"
+    },
+    {
+      "requirement": 2,
+      "description": "Actual decoded SATNAV input with original records retained",
+      "status": "passed",
+      "implementation": "tools/coupled_handoff.py",
+      "evidence": "results/handoff_cpu_final/publication_audit.json"
+    },
+    {
+      "requirement": 3,
+      "description": "Geometry words and editable literal ASA/NA/JK",
+      "status": "passed",
+      "implementation": "python/coupled.py",
+      "evidence": "results/coupled_validation_cpu_final/summary.json"
+    },
+    {
+      "requirement": 4,
+      "description": "q controls mechanics and advanced geometry feeds later predicates",
+      "status": "passed",
+      "implementation": "include/coupled_kernel.hpp",
+      "evidence": "results/coupled_validation_cuda_final/summary.json"
+    },
+    {
+      "requirement": 5,
+      "description": "Defined blend, encoders and physical eigensystem",
+      "status": "passed",
+      "implementation": "docs/COUPLED_CONTRACT.md",
+      "evidence": "results/coupled_validation_cuda_final/summary.json"
+    },
+    {
+      "requirement": 6,
+      "description": "CPU/CUDA direct independent replay of full loop",
+      "status": "passed",
+      "implementation": "tools/validate_coupled.py",
+      "evidence": "results/coupled_validation_cuda_final/summary.json"
+    },
+    {
+      "requirement": 7,
+      "description": "Causal/analytic, missing/failed state, multiblock GPU and tamper checks",
+      "status": "passed",
+      "implementation": "tests/test_coupled.py",
+      "evidence": "results/coupled_cuda_memcheck_replay/summary.json"
+    },
+    {
+      "requirement": 8,
+      "description": "Updated editable PDF, inputs, binaries and release contents",
+      "status": "passed",
+      "implementation": "docs/coupled.tex",
+      "evidence": "results/pdf_preflight.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+PASS JK and encoded blend
+PASS uint32 population counts
+PASS core absorption not per-bit clearing
+PASS exhaustive small word idempotence
+PASS SCLP reference exact key pair
+PASS both key codecs random round trips
+PASS quantizer ends and periodic values
+PASS half-turn and Klein differ
+PASS cone exact reference point
+PASS cone translation invariance
+PASS cone Lipschitz finite cases
+PASS sweep interval contains denser minimum
+PASS sphere and three-valued relation
+PASS WGS84 equator and ENU orthonormal
+PASS weighted solution recovers known four-state
+PASS clock-shift equivariance
+PASS common sigma scale preserves estimate
+PASS explicit measurement permutation
+PASS ASA selection and whole-group disposition
+PASS singular geometry
+PASS invalid observation and initial state
+PASS iteration-limit status distinct from converged
+PASS corrected observations fixed while nonlinear iterate moves
+PASS conjoined enrichment and independent height
+PASS enrichment does not mutate position or JK
+PASS full time survives modular alias
+RESULT groups=26 assertions=217707 passed

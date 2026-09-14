@@ -1,0 +1,17 @@
+{
+  "version":"3.6.1.7",
+  "profile":"CGK-R1",
+  "status":"completed_with_numeric_failures",
+  "backend":"cuda",
+  "device":{"index":0,"name":"NVIDIA GeForce RTX 5070 Ti Laptop GPU","capability_major":12,"capability_minor":0,"driver_version":13010,"runtime_version":12080,"nvcc_major":12,"nvcc_minor":8,"free_bytes_before_allocation":11561598976,"total_bytes":12820480000,"allocation_bytes":3909664,"threads_per_block":128,"blocks":3},
+  "toolchain":"MSVC 194435221",
+  "trajectories":272,
+  "samples":3308,
+  "trace_rows":3308,
+  "advanced":3301,
+  "numeric_failure":3,
+  "previous_failure":4,
+  "kernel_ms":2.8556480407714844,
+  "kernel_time_scope":"trajectory evolution only; excludes allocation, transfers, parsing, serialization",
+  "input":"C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_7_COUPLED\\results\\coupled_validation_cuda_final\\compiled"
+}

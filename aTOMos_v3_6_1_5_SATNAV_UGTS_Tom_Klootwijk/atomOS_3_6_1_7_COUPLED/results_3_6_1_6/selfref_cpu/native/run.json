@@ -1,0 +1,24 @@
+{
+  "version": "3.6.1.6",
+  "profile": "SRK-R1",
+  "status": "completed",
+  "backend": "cpu",
+  "device": null,
+  "kernel_ms": 0.0011999999999999999,
+  "elapsed_ms": 0.85109999999999997,
+  "elapsed_scope": "input parsing through trace file close, excluding run.json",
+  "input": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_6_SELFREF\\results\\selfref_cpu\\input.csv",
+  "trajectories": 6,
+  "trace_rows": 34,
+  "step_record_bytes": 40,
+  "job_record_bytes": 56,
+  "trace_and_job_bytes": 1696,
+  "trace_lengths": [
+    {"trajectory_id": 0, "steps": 6, "offset": 0, "final_state": 5},
+    {"trajectory_id": 1, "steps": 8, "offset": 6, "final_state": 0},
+    {"trajectory_id": 2, "steps": 4, "offset": 14, "final_state": 2},
+    {"trajectory_id": 3, "steps": 6, "offset": 18, "final_state": 2147483648},
+    {"trajectory_id": 4, "steps": 8, "offset": 24, "final_state": 2},
+    {"trajectory_id": 5, "steps": 2, "offset": 32, "final_state": 0}
+  ]
+}

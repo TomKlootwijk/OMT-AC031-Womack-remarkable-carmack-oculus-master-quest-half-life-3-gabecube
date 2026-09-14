@@ -1,0 +1,18 @@
+{
+  "version": "3.6.1.5",
+  "cpu_compile": "passed",
+  "cpu_execution": "passed",
+  "cpp_counted_checks": 105559,
+  "python_tests": 18,
+  "cli_tests": 11,
+  "independent_epochs": 256,
+  "independent_counted_comparisons": 4828,
+  "cpu_sanitizers": "passed",
+  "cuda_compile": "not_run",
+  "cuda_execution": "not_run",
+  "compute_sanitizer": "not_run",
+  "windows_build": "not_run",
+  "reason": "No nvcc or accessible NVIDIA GPU in preparation environment",
+  "data": "synthetic corrected-code fixtures only",
+  "cpu_sanitized_full_demo": "passed"
+}

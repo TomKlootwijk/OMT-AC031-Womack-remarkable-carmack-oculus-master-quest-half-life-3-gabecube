@@ -1,0 +1,108 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "status": "passed",
+  "input_sha256": "f8a7995983511aca95e87be8f66a3390f00bb322ad030099c365ee59155c8137",
+  "compiled_sha256": {
+    "channels.csv": "0f96a789b8e3e3a409a3ee2875c7d950452e49b75aa044b82e98f83572a97504",
+    "equations.csv": "72115e6d675171b3a30358670a69f620311dd340cbf46c4f11091db5f5caec92",
+    "manifest.csv": "e6a1c15f912947ea21e08ddee318c32cf8d1abd82178c395a03d68629797df51",
+    "samples.csv": "5611cf88715b18eb12da9b792c459f68a1f964a457357f34139edc967bfa7b02"
+  },
+  "native_execution": "passed",
+  "native_trace_verified": true,
+  "native_command": [
+    "C:\\tmp\\atomos3617_cpu\\Release\\coupled_kernel.exe",
+    "--input",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_7_COUPLED\\results\\coupled_native_cpu_verified_v2\\compiled",
+    "--out",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_7_COUPLED\\results\\coupled_native_cpu_verified_v2\\native",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "native_binary_sha256": "4349de2af2cbb07b70ce4a225740489bfcdd48f31c96e6b2e4d5f3fcd7e64d6c",
+  "native_returncode": 0,
+  "transitions": 72,
+  "field_comparisons": 6984,
+  "trajectories": [
+    {
+      "trajectory_id": 0,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 5,
+      "final_p": [
+        10.348554704925444,
+        0.8379216790409596,
+        -0.3347902744158491
+      ],
+      "final_v": [
+        1.0773230913065341,
+        -0.6098667709081527,
+        -0.37038822549560335
+      ],
+      "specification_sha256": "fc67b764da515179d0ed28419570db5664f202e5b5b707a8ce62f987461c5131",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 5,
+      "final_p": [
+        10.208112654259576,
+        0.6840082003389908,
+        -0.1358600817400446
+      ],
+      "final_v": [
+        1.0055832184148437,
+        -0.5912942723618845,
+        -0.3528713194994212
+      ],
+      "specification_sha256": "a0cf6ecd3ed353e777ceecbe532cf617cb62afa4d091026a13e05e630b4f4f04",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 2,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 6,
+      "final_p": [
+        9.459335699524487,
+        0.7626291261295265,
+        -0.2225981987362948
+      ],
+      "final_v": [
+        0.8849415007244241,
+        -0.35237297143344903,
+        -0.2705497388605863
+      ],
+      "specification_sha256": "62df1d38084ccaa43a0043201868cdb3a96dc966cbc9f6a7260bee6e0e8e2d35",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    }
+  ],
+  "reference_trace_sha256": "1c7e86c9bed613fc23dbaed2a4c7171021c4ddc51abf5750788b4d7fdab5101e",
+  "native_trace_sha256": "000b232ac2650e479a4fcb597bd963830095c6b9fc6679a27c01f70cf36b6ed6"
+}
