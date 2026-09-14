@@ -1,0 +1,38 @@
+\ProvidesFile{ot1zpltlf.fd}[2021/05/25 v1.0 font definition file for OT1/zpl/TLF]
+
+\@ifundefined{ifzpl@sl}{\let\ifzpl@sl\iftrue}{}
+
+\expandafter\ifx\csname zpl@scaled\endcsname\relax
+  \global\let\zpl@scaled\@empty%
+\fi
+\gdef\zpl@lsfx{}
+\def\zpl@makelsfx{\ifzpl@largesc\gdef\zpl@lsfx{l}\fi}
+\ifdefined\zpl@largescfalse \zpl@makelsfx\fi
+\ifdefined\zpl@spacing \else\global\let\zpl@spacing\@empty\fi
+
+\DeclareFontFamily{OT1}{zplTLF}{\zpl@spacing}
+\DeclareFontShape{OT1}{zplTLF}{b}{sc}{<-> \zpl@scaled zpl-Bold-tlf-sc\zpl@lsfx-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{b}{n}{<-> \zpl@scaled zpl-Bold-tlf-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{b}{scit}{<-> \zpl@scaled zpl-BoldItalic-tlf-sc\zpl@lsfx-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{b}{it}{<-> \zpl@scaled zpl-BoldItalic-tlf-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{m}{sc}{<-> \zpl@scaled zpl-Regular-tlf-sc\zpl@lsfx-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{m}{n}{<-> \zpl@scaled zpl-Regular-tlf-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{m}{scit}{<-> \zpl@scaled zpl-Italic-tlf-sc\zpl@lsfx-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{m}{it}{<-> \zpl@scaled zpl-Italic-tlf-ot1}{}
+\DeclareFontShape{OT1}{zplTLF}{bx}{sc}{<->ssub * zplTLF/b/sc}{}
+\DeclareFontShape{OT1}{zplTLF}{bx}{n}{<->ssub * zplTLF/b/n}{}
+\DeclareFontShape{OT1}{zplTLF}{bx}{scit}{<->ssub * zplTLF/b/scit}{}
+\DeclareFontShape{OT1}{zplTLF}{bx}{it}{<->ssub * zplTLF/b/it}{}
+\ifzpl@sl % point to real slanted fonts
+  \DeclareFontShape{OT1}{zplTLF}{m}{sl}{<-> \zpl@scaled zpl-Slanted-tlf-ot1}{}
+  \DeclareFontShape{OT1}{zplTLF}{b}{sl}{<-> \zpl@scaled zpl-BoldSlanted-tlf-ot1}{}
+  \DeclareFontShape{OT1}{zplTLF}{bx}{sl}{<->ssub * zplTLF/b/sl}{}
+\else %point to theorem font
+  \DeclareFontShape{OT1}{zplTLF}{m}{sl}{<-> \zpl@scaled zplth-Italic-tlf-ot1}{}
+  \DeclareFontShape{OT1}{zplTLF}{b}{sl}{<->ssub * zplTLF/m/sl}{}
+  \DeclareFontShape{OT1}{zplTLF}{bx}{sl}{<->ssub * zplTLF/m/sl}{}
+\fi
+\DeclareFontShape{OT1}{zplTLF}{b}{scsl}{<->ssub * zplTLF/b/scit}{}
+\DeclareFontShape{OT1}{zplTLF}{bx}{scsl}{<->ssub * zplTLF/b/scit}{}
+\DeclareFontShape{OT1}{zplTLF}{m}{scsl}{<->ssub * zplTLF/m/scit}{}
+\endinput

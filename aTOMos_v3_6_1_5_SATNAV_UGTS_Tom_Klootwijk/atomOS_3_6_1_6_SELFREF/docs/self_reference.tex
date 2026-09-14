@@ -1,0 +1,181 @@
+\section{Literal self-reference: the completed recurrence}
+\label{sec:selfref}
+Version 3.6.1.6 adds the executable profile \textbf{SRK-R1}. Its state is a
+32-bit word $q_t$ that occurs in its own next-state equation. The old release
+provided literal ASA/NA and J--K primitives but its observation adapter used a
+constant hold event. This subversion supplies an explicit feedback composition,
+editable equation input, CPU/CUDA execution and independent equation replay.
+
+Let $W=\{0,\ldots,2^{32}-1\}$, and let $V,A,N,B,d\in W$ denote the present,
+ASA, NA, boundary and external drive words. All complements below are 32-bit
+complements. The initial state satisfies $q_0\land\neg V=0$. A trajectory supplies
+three Boolean expressions $E_X,E_J,E_K$ and a requested number of steps $T>0$.
+The complete transition, in evaluation order, is
+\begin{align}
+x_t &= E_X(q_t,d),\label{eq:sr-x}\\
+a_t &= x_t\land A\land V,\\
+n_t &= a_t\land N,\\
+h_t &= \pop(n_t\land B),\\
+y_t &= \begin{cases}0,&h_t>0,\\ n_t,&h_t=0,\end{cases}\label{eq:sr-asa}\\
+J_t &= E_J(q_t,y_t,d),\qquad K_t=E_K(q_t,y_t,d),\\
+q_{t+1} &= \big[(J_t\land\neg q_t)\lor(\neg K_t\land q_t)\big]\land V.
+\label{eq:sr-jk}
+\end{align}
+The ASA tuple $(a_t,n_t,h_t,y_t)$ is the retained whole-word rule. The bracketed
+part of \eqref{eq:sr-jk} is the retained literal J--K equation. The supplied
+expression bindings and final projection to $V$ are explicit SRK-R1 definitions.
+For a single active bit they give hold, set, reset and toggle for $(J,K)$ equal
+to $(0,0),(1,0),(0,1),(1,1)$ respectively.
+
+\begin{panel}
+\textbf{Self-reference is an executable dependency}\par
+$q_t\longrightarrow x_t\longrightarrow(a_t,n_t,h_t,y_t)
+\longrightarrow(J_t,K_t)\longrightarrow q_{t+1}$, with $q_t$ also read directly
+by both J/K expressions and by the final update. Every right-hand side reads the
+same old state. Only the final line commits the next state.
+\end{panel}
+Boundary absorption sets the whole output word $y_t$ to zero. It does not
+silently replace the user's J/K expressions with hold: those expressions still
+evaluate with that zero word. Thus the equations determine the transition even
+in an absorbed step. Numerical GNSS residual classifications do not gate SRK-R1.
+\clearpage
+
+\section{Actual equations are input data}
+The editable input is \code{examples/self\_reference/equations.json}. The root
+declares version \code{3.6.1.6}, profile \code{SRK-R1}, optional default
+\code{equations}, and a \code{trajectories} array. Each trajectory supplies an ID,
+initial state, drive, four masks and step count; it may override the equations.
+For example:
+\begin{lstlisting}
+{
+  "version": "3.6.1.6", "profile": "SRK-R1",
+  "equations": {"x": "q | d", "j": "y", "k": "y"},
+  "trajectories": [{
+    "id": 1, "q0": 0, "drive": 15, "present": 15,
+    "asa_mask": 15, "na_mask": 15, "boundary_mask": 0,
+    "steps": 6
+  }]
+}
+\end{lstlisting}
+The expression vocabulary is \code{\&}, \code{|}, \code{\textasciicircum}, \code{\textasciitilde},
+parentheses, the names \code{q}, \code{d}, and, for J/K, \code{y}. The literal
+\code{0} means the zero word; \code{1} means the all-ones word. Decimal state and
+mask fields remain ordinary unsigned integers. Operator precedence is complement,
+AND, XOR, OR; parentheses can specify every grouping explicitly.
+
+The expression trees define an exact finite Boolean algebra. They are parsed
+and evaluated as that algebra; they are not passed to a general-purpose evaluator.
+Each expression is applied independently to each bit. Whole-word absorption
+couples the bits through $h_t$. Arbitrary cross-bit arithmetic, shift operators
+and continuous-state formulae would require a separately defined extension.
+
+\subsection{Exact truth-table compilation}
+For bits $q_i,y_i,d_i\in\{0,1\}$, the compiler creates
+\begin{align}
+L_X &= \sum_{u,v\in\{0,1\}} E_X(u,v)\,2^{2u+v},\\
+L_J &= \sum_{u,v,w\in\{0,1\}} E_J(u,v,w)\,2^{4u+2v+w},\\
+L_K &= \sum_{u,v,w\in\{0,1\}} E_K(u,v,w)\,2^{4u+2v+w}.
+\end{align}
+The CPU/CUDA kernel reads the corresponding table bit. For the example above,
+$(L_X,L_J,L_K)=(14,204,204)$. For the latch with $K=0$, the tuple is
+$(14,204,0)$. Every allowed expression has a truth table on these inputs, and
+every Boolean function on these inputs is expressible in this vocabulary.
+The compilation is exact: each possible input assignment is evaluated, and the
+native table read retrieves that assignment's value.
+\clearpage
+
+\section{Fixed points, cycles and complete finite execution}
+During one trajectory, equations, drive and masks are constant. They define a
+deterministic function $F:Q_V\to Q_V$, where
+\begin{equation}
+Q_V=\{q\in W:q\land\neg V=0\},\qquad |Q_V|=2^{\pop(V)},\qquad
+q_{t+1}=F(q_t).
+\end{equation}
+\begin{proposition}[Closure and eventual periodicity]
+Every computed state belongs to $Q_V$. Every infinite orbit of this fixed-input
+transition is eventually periodic. A fixed point is a cycle of length one.
+\end{proposition}
+\begin{proof}
+The input requires $q_0\in Q_V$ and the final AND with $V$ places every successor
+in $Q_V$. Among $|Q_V|+1$ consecutive states at least two are equal. If
+$q_i=q_j$ for $i<j$, determinism gives $q_{i+k}=q_{j+k}$ for every $k\ge0$.
+This proves periodicity after the first repeated state; it does not assert
+that the period is one.
+\end{proof}
+The implementation emits every requested step, including those after a repeat.
+Independent replay records a fixed point, a cycle, or no repeat observed within
+the requested budget. The last case is finite evidence only; it does not imply
+divergence or the absence of a later repeat. With 32 active bits the general
+state bound is $2^{32}$, so this theorem alone gives no short runtime bound.
+
+\subsection{Worked exact trajectories}
+Set $V=A=N=d=15$, $B=0$, $q_0=0$, and $E_X=q\lor d$, $E_J=y$.
+For the latch $E_K=0$, $x=a=n=y=15$ and
+\begin{equation}
+q_{t+1}=y\lor q_t=15,\qquad (q_0,q_1,q_2,\ldots)=(0,15,15,\ldots).
+\end{equation}
+For toggle $E_K=y$, $J=K=15$ and
+\begin{equation}
+q_{t+1}=q_t\mathbin{\oplus}15,\qquad
+(q_0,q_1,q_2,q_3,\ldots)=(0,15,0,15,\ldots).
+\end{equation}
+With $B=8$ and $E_J=E_K=y$, $h=1$ absorbs all of $y$ and the state holds.
+With the same absorbed word but $E_J=d$, $E_K=0$, the state becomes 15.
+These outcomes follow directly from the supplied equations and expose the
+difference between output absorption and state reset.
+
+Synchronous evaluation matters. For one active bit with $E_J=\neg q$ and
+$E_K=q$, the result is toggle. Both expressions use $q_t$, never a partially
+updated state. State projection preserves inactive bits as zero, including when
+an input expression uses the all-ones constant.
+\clearpage
+
+\section{Native execution and independent equation replay}
+The shared \code{include/self\_reference.hpp} implements the truth-table and
+literal transition operations. The CPU walks each trajectory in step order.
+CUDA assigns one thread to each independently seeded trajectory, then executes
+its recurrence sequentially within that thread. No ordering between independent
+trajectories is needed; different trajectories never share a mutable state.
+
+The compilation interface is a decimal CSV with columns
+\begin{lstlisting}
+trajectory_id,q0,drive,present,asa_mask,na_mask,boundary_mask,
+x_lut,j_lut,k_lut,steps
+\end{lstlisting}
+The header is physically one line. Every trace row retains
+\begin{lstlisting}
+trajectory_id,step,before,drive,x,asa,na,hits,output,j,k,after
+\end{lstlisting}
+The native run also records backend, device, timing and trace lengths. The
+Python reference evaluates the original expression trees on whole integer words;
+it does not use the compiled truth tables as its transition oracle. It compares
+every trace field, row count and trajectory ordering, and records equation/input
+provenance. This cross-check can detect table compilation, transition and output
+corruption; it is finite execution evidence rather than a machine-checked proof.
+
+\subsection{Reproduce the equation-input run}
+From the package directory, build CPU and run:
+\begin{lstlisting}
+cmake -S . -B build_cpu
+cmake --build build_cpu --config Release --parallel 2
+python tools/self_reference.py \
+  --input examples/self_reference/equations.json \
+  --out results/selfref_local \
+  --binary build_cpu/Release/self_reference.exe --backend cpu
+\end{lstlisting}
+For single-configuration systems the binary is \code{build\_cpu/self\_reference}.
+For CUDA, enable \code{SATNAV\_ENABLE\_CUDA=ON}, choose the GPU binary and use
+\code{--backend cuda}. Each run uses a new output directory. The JSON expressions
+are editable without recompiling C++ or CUDA; the compiler regenerates their tables.
+
+\subsection{Relation to the existing SATNAV and UGTS equations}
+SATNAV-R1 retains its corrected-code equations, QR solve, OTAN2 source ratio,
+both 64-bit codecs and full coordinate/time records. Its observation adapter's
+hold event remains that profile's explicit choice. SRK-R1 is the new formal word
+state-feedback computation and runs without a GNSS residual admission condition.
+The new bindings are identified as definitions of this release. The unavailable
+earlier M2 circle-plus encoder and physical eigenmatrix are not asserted to have
+been reconstructed from the surviving primitives.
+\clearpage
+
+\input{validation_current.tex}

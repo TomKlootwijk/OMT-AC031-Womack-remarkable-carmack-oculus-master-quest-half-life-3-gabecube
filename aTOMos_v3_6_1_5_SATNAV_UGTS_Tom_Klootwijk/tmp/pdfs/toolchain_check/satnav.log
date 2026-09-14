@@ -1,0 +1,1570 @@
+**
+(satnav.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+ (t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (newpxtext.sty
+Package: newpxtext 2022/01/30 v1.504(Michael Sharpe) latex and unicode latex su
+pport for TeXGyrePagellaX
+
+`newpxtext' v1.504, 2022/01/30 Text macros taking advantage of TeXGyre Pagella 
+and its extensions (msharpe) (fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+ (iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+(ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+ (xkeyval (xkvutils
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
+ (keyval))
+\XKV@depth=\count189
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count190
+)
+(textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (xstring.sty (xstring.tex
+\integerpart=\count191
+\decimalpart=\count192
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+) (ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (scalefnt.sty)
+LaTeX Font Info:    Setting zplLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting zplTLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting zplOsF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting zplTOsF sub-encoding to TS1/0 on input line 24.
+\zpl@cnt=\count193
+
+(fontspec.sty (xparse.sty (expl3.sty
+Package: expl3 2022-02-24 L3 programming layer (loader) 
+ (l3backend-xetex.def
+File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
+\c__kernel_sys_dvipdfmx_version_int=\count194
+\l__color_backend_stack_int=\count195
+\g__color_backend_stack_int=\count196
+\g__graphics_track_int=\count197
+\l__pdf_internal_box=\box50
+\g__pdf_backend_object_int=\count198
+\g__pdf_backend_annotation_int=\count199
+\g__pdf_backend_link_int=\count266
+))
+Package: xparse 2022-01-12 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count267
+\l__fontspec_language_int=\count268
+\l__fontspec_strnum_int=\count269
+\l__fontspec_tmp_int=\count270
+\l__fontspec_tmpa_int=\count271
+\l__fontspec_tmpb_int=\count272
+\l__fontspec_tmpc_int=\count273
+\l__fontspec_em_int=\count274
+\l__fontspec_emdef_int=\count275
+\l__fontspec_strong_int=\count276
+\l__fontspec_strongdef_int=\count277
+\l__fontspec_tmpa_dim=\dimen139
+\l__fontspec_tmpb_dim=\dimen140
+\l__fontspec_tmpc_dim=\dimen141
+ (fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (fontspec.cfg)))
+LaTeX Info: Redefining \textsl on input line 425.
+ (realscripts.sty
+Package: realscripts 2016/02/13 v0.3d Access OpenType subscripts and superscrip
+ts
+\subsupersep=\dimen142
+)
+LaTeX Info: Redefining \textsu on input line 492.
+LaTeX Info: Redefining \oldstylenums on input line 572.
+LaTeX Info: Redefining \liningnums on input line 574.
+)
+(helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count278
+\Gm@cntv=\count279
+\c@Gm@tempcnt=\count280
+\Gm@bindingoffset=\dimen143
+\Gm@wd@mp=\dimen144
+\Gm@odd@mp=\dimen145
+\Gm@even@mp=\dimen146
+\Gm@layoutwidth=\dimen147
+\Gm@layoutheight=\dimen148
+\Gm@layouthoffset=\dimen149
+\Gm@layoutvoffset=\dimen150
+\Gm@dimlist=\toks20
+) (microtype.sty
+Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
+\MT@toks=\toks21
+\MT@tempbox=\box51
+\MT@count=\count281
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1027.
+LaTeX Info: Redefining \leftprotrusion on input line 1028.
+LaTeX Info: Redefining \rightprotrusion on input line 1036.
+LaTeX Info: Redefining \textls on input line 1195.
+\MT@outer@kern=\dimen151
+LaTeX Info: Redefining \textmicrotypecontext on input line 1781.
+\MT@listname@count=\count282
+ (microtype-xetex.def
+File: microtype-xetex.def 2022/03/14 v3.0d Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 236.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(microtype.cfg
+File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
+)) (amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen152
+)) (amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen153
+) (amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count283
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count284
+\leftroot@=\count285
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count286
+\DOTSCASE@=\count287
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+\big@size=\dimen154
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count288
+\c@MaxMatrixCols=\count289
+\dotsspace@=\muskip16
+\c@parentequation=\count290
+\dspbrk@lvl=\count291
+\tag@help=\toks23
+\row@=\count292
+\column@=\count293
+\maxfields@=\count294
+\andhelp@=\toks24
+\eqnshift@=\dimen155
+\alignsep@=\dimen156
+\tagshift@=\dimen157
+\tagwidth@=\dimen158
+\totwidth@=\dimen159
+\lineht@=\dimen160
+\@envbody=\toks25
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks27
+\thm@bodyfont=\toks28
+\thm@headfont=\toks29
+\thm@notefont=\toks30
+\thm@headpunct=\toks31
+\thm@preskip=\skip52
+\thm@postskip=\skip53
+\thm@headsep=\skip54
+\dth@everypar=\toks32
+) (mathtools.sty
+Package: mathtools 2022/02/07 v1.28a mathematical typesetting tools
+ (calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count295
+\calc@Bcount=\count296
+\calc@Adimen=\dimen161
+\calc@Bdimen=\dimen162
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count297
+\calc@Cskip=\skip57
+) (mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count298
+\l_MT_multwidth_dim=\dimen163
+\origjot=\skip58
+\l_MT_shortvdotswithinadjustabove_dim=\dimen164
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen165
+\l_MT_above_intertext_sep=\dimen166
+\l_MT_below_intertext_sep=\dimen167
+\l_MT_above_shortintertext_sep=\dimen168
+\l_MT_below_shortintertext_sep=\dimen169
+\xmathstrut@box=\box54
+\xmathstrut@dim=\dimen170
+)
+(newpxmath.sty
+Package: newpxmath 2021/12/04 v1.5
+
+`newpxmath' v1.5, 2021/12/04 Math macros based on pxfonts (msharpe) (binhex)
+(centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+\px@tA=\toks33
+\px@tB=\toks34
+\px@su=\read2
+\px@Isdigit=\count299
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 211.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 211.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/m/n on input line 211.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/m/n --> OT1/lmr/b/n on input line 212.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 215.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/phv/m/n on input line 215.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/phv/m/n on input line 215.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 216.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 216.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/m/it on input line 216.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 217.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 217.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 217.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 219.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/b/n on input line 219.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/b/n on input line 219.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/m/it --> OT1/lmr/b/it on input line 220.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  TU/phv/m/n --> TU/phv/b/n on input line 222.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 223.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 234.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/npxmi/m/it on input line 234.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/npxmi/m/it on input line 234.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/npxmi/m/it --> OML/npxmi/b/it on input line 235.
+\symlettersA=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/npxmia/m/it --> U/npxmia/b/it on input line 253.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 255.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 263.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 263.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> LMS/npxsy/m/n on input line 263.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 263.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> LMS/npxsy/m/n on input line 263.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  LMS/npxsy/m/n --> LMS/npxsy/b/n on input line 264.
+\symAMSm=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
+(Font)                  U/npxsym/m/n --> U/npxsym/b/n on input line 284.
+\symsymbolsC=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/npxsyc/m/n --> U/npxsyc/b/n on input line 306.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 326.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 3
+26.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 326.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 326
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> LMX/npxexx/m/n on input line 326.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/npxexx/m/n --> LMX/npxexx/b/n on input line 327.
+\symlargesymbolsPXA=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `largesymbolsPXA' in version `bold'
+
+(Font)                  U/npxexa/m/n --> U/npxexa/b/n on input line 334.
+\px@cntz=\count300
+\px@IsAlNum=\count301
+\px@sbptoks=\toks35
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 489.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 490.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 491.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 492.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 493.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 494.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 495.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 497.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 501.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 502.
+LaTeX Font Info:    Redeclaring math symbol \parallel on input line 503.
+LaTeX Font Info:    Redeclaring math delimiter \Arrowvert on input line 504.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 544.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 545.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 546.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 547.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 548.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 549.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 550.
+LaTeX Font Info:    Redeclaring math accent \check on input line 551.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 555.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 556.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 1598.
+LaTeX Info: Redefining \Bbbk on input line 2175.
+LaTeX Info: Redefining \not on input line 2457.
+LaTeX Info: Redefining \textsquare on input line 2472.
+LaTeX Info: Redefining \openbox on input line 2474.
+) (xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+ (color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+ (xetex.def
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+ (trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+)
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
+) (booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen173
+\lightrulewidth=\dimen174
+\cmidrulewidth=\dimen175
+\belowrulesep=\dimen176
+\belowbottomsep=\dimen177
+\aboverulesep=\dimen178
+\abovetopsep=\dimen179
+\cmidrulesep=\dimen180
+\cmidrulekern=\dimen181
+\defaultaddspace=\dimen182
+\@cmidla=\count302
+\@cmidlb=\count303
+\@aboverulesep=\dimen183
+\@belowrulesep=\dimen184
+\@thisruleclass=\count304
+\@lastruleclass=\count305
+\@thisrulewidth=\dimen185
+) (tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+
+(array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen186
+\ar@mcellbox=\box55
+\extrarowheight=\dimen187
+\NC@list=\toks36
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box56
+)
+\TX@col@width=\dimen188
+\TX@old@table=\dimen189
+\TX@old@col=\dimen190
+\TX@target=\dimen191
+\TX@delta=\dimen192
+\TX@cols=\count306
+\TX@ftn=\toks37
+) (longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip61
+\LTright=\skip62
+\LTpre=\skip63
+\LTpost=\skip64
+\LTchunksize=\count307
+\LTcapwidth=\dimen193
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@gbox=\box61
+\LT@cols=\count308
+\LT@rows=\count309
+\c@LT@tables=\count310
+\c@LT@chunks=\count311
+\LT@p@ftn=\toks38
+) (enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\enitkv@toks@=\toks39
+\labelindent=\skip65
+\enit@outerparindent=\dimen194
+\enit@toks=\toks40
+\enit@inbox=\box62
+\enit@count@id=\count312
+\enitdp@description=\count313
+) (tcolorbox.sty
+Package: tcolorbox 2022/01/07 version 5.0.2 text color boxes
+ (pgf.sty (pgfrcs.sty (pgfutil-common.tex
+\pgfutil@everybye=\toks41
+\pgfutil@tempdima=\dimen195
+\pgfutil@tempdimb=\dimen196
+ (pgfutil-common-lists.tex)) (pgfutil-latex.def
+\pgfutil@abb=\box63
+)
+(pgfrcs.code.tex (pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+ (pgfcore.sty (pgfsys.sty (pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+(pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks42
+\pgfkeys@temptoks=\toks43
+ (pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks44
+))
+\pgf@x=\dimen197
+\pgf@y=\dimen198
+\pgf@xa=\dimen199
+\pgf@ya=\dimen256
+\pgf@xb=\dimen257
+\pgf@yb=\dimen258
+\pgf@xc=\dimen259
+\pgf@yc=\dimen260
+\pgf@xd=\dimen261
+\pgf@yd=\dimen262
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count314
+\c@pgf@countb=\count315
+\c@pgf@countc=\count316
+\c@pgf@countd=\count317
+\t@pgf@toka=\toks45
+\t@pgf@tokb=\toks46
+\t@pgf@tokc=\toks47
+\pgf@sys@id@count=\count318
+ (pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-xetex.def
+ (pgfsys-xetex.def
+File: pgfsys-xetex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2021/05/15 v3.1.9a (3.1.9a)
+ (pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)
+\pgfsys@objnum=\count319
+))) (pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count320
+\pgfsyssoftpath@bigbuffer@items=\count321
+)
+(pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (pgfmath.code.tex
+(pgfmathcalc.code.tex (pgfmathutil.code.tex) (pgfmathparser.code.tex
+\pgfmath@dimen=\dimen263
+\pgfmath@count=\count322
+\pgfmath@box=\box64
+\pgfmath@toks=\toks48
+\pgfmath@stack@operand=\toks49
+\pgfmath@stack@operation=\toks50
+)
+(pgfmathfunctions.code.tex (pgfmathfunctions.basic.code.tex)
+(pgfmathfunctions.trigonometric.code.tex) (pgfmathfunctions.random.code.tex)
+(pgfmathfunctions.comparison.code.tex) (pgfmathfunctions.base.code.tex)
+(pgfmathfunctions.round.code.tex) (pgfmathfunctions.misc.code.tex)
+(pgfmathfunctions.integerarithmetics.code.tex))) (pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count323
+))
+(pgfint.code.tex) (pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen264
+\pgf@picmaxx=\dimen265
+\pgf@picminy=\dimen266
+\pgf@picmaxy=\dimen267
+\pgf@pathminx=\dimen268
+\pgf@pathmaxx=\dimen269
+\pgf@pathminy=\dimen270
+\pgf@pathmaxy=\dimen271
+\pgf@xx=\dimen272
+\pgf@xy=\dimen273
+\pgf@yx=\dimen274
+\pgf@yy=\dimen275
+\pgf@zx=\dimen276
+\pgf@zy=\dimen277
+) (pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen278
+\pgf@path@lasty=\dimen279
+)
+(pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen280
+\pgf@shorten@start@additional=\dimen281
+) (pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box65
+\pgf@hbox=\box66
+\pgf@layerbox@main=\box67
+\pgf@picture@serial@count=\count324
+)
+(pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen282
+) (pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen283
+\pgf@pt@y=\dimen284
+\pgf@pt@temp=\dimen285
+)
+(pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen286
+)
+(pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen287
+\pgf@sys@shading@range@num=\count325
+\pgf@shadingcount=\count326
+) (pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box68
+))
+(pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box69
+)
+(pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+) (pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen288
+\pgf@nodesepend=\dimen289
+) (pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)) (verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks51
+\verbatim@line=\toks52
+\verbatim@in@stream=\read4
+) (environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box70
+\tcb@upperbox=\box71
+\tcb@lowerbox=\box72
+\tcb@phantombox=\box73
+\c@tcbbreakpart=\count327
+\c@tcblayer=\count328
+\c@tcolorbox@number=\count329
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+\tcb@temp=\box77
+ (tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '5.0.2'
+\c@tcbrastercolumn=\count330
+\c@tcbrasterrow=\count331
+\c@tcbrasternum=\count332
+\c@tcbraster=\count333
+) (tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '5.0.2'
+(tikz.sty (pgffor.sty (pgfkeys.sty (pgfkeys.code.tex)) (pgfmath.sty
+(pgfmath.code.tex)) (pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+ (pgfmath.code.tex)
+\pgffor@iter=\dimen290
+\pgffor@skip=\dimen291
+\pgffor@stack=\toks53
+\pgffor@toks=\toks54
+)) (tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count334
+\pgfplotmarksize=\dimen292
+)
+\tikz@lastx=\dimen293
+\tikz@lasty=\dimen294
+\tikz@lastxsaved=\dimen295
+\tikz@lastysaved=\dimen296
+\tikz@lastmovetox=\dimen297
+\tikz@lastmovetoy=\dimen298
+\tikzleveldistance=\dimen299
+\tikzsiblingdistance=\dimen300
+\tikz@figbox=\box78
+\tikz@figbox@bg=\box79
+\tikz@tempbox=\box80
+\tikz@tempbox@bg=\box81
+\tikztreelevel=\count335
+\tikznumberofchildren=\count336
+\tikznumberofcurrentchild=\count337
+\tikz@fig@count=\count338
+ (pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count339
+\pgfmatrixcurrentcolumn=\count340
+\pgf@matrix@numberofcolumns=\count341
+)
+\tikz@expandcount=\count342
+
+(tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+\tcb@waterbox=\box82
+ (tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '5.0.2'
+)) (tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '5.0.2'
+(pdfcol.sty
+Package: pdfcol 2019/12/29 v1.6 Handle new color stacks for pdfTeX (HO)
+ (ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdfcol Info: Interface disabled because of missing PDF mode of pdfTeX.
+)
+Package pdfcol Info: pdfTeX's color stacks are not available.
+\tcb@testbox=\box83
+\tcb@totalupperbox=\box84
+\tcb@totallowerbox=\box85
+) (tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '5.0.2'
+) (tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '5.0.2'
+) (tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '5.0.2'
+\tcbfitdim=\dimen301
+\tcb@lowerfitdim=\dimen302
+\tcb@upperfitdim=\dimen303
+\tcb@cur@hbadness=\count343
+) (tcbxparse.code.tex
+Library (tcolorbox): 'tcbxparse.code.tex' version '5.0.2'
+) (tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '5.0.2'
+(tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '5.0.2'
+(listings.sty
+\lst@mode=\count344
+\lst@gtempboxa=\box86
+\lst@token=\toks55
+\lst@length=\count345
+\lst@currlwidth=\dimen304
+\lst@column=\count346
+\lst@pos=\count347
+\lst@lostspace=\dimen305
+\lst@width=\dimen306
+\lst@newlines=\count348
+\lst@lineno=\count349
+\lst@maxwidth=\dimen307
+ (lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count350
+\lst@skipnumbers=\count351
+\lst@framebox=\box87
+) (listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '5.0.2'
+(tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '5.0.2'
+(pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+
+
+Package shellesc Warning: Shell escape disabled on input line 73.
+
+))
+\c@tcblisting=\count352
+))
+Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. 
+Library `listings` is loaded instead. on input line 29.
+) (tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '5.0.2'
+) (tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '5.0.2'
+) (tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '5.0.2'
+(tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '5.0.2'
+)) (fancyhdr.sty
+Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip66
+\f@nch@O@elh=\skip67
+\f@nch@O@erh=\skip68
+\f@nch@O@olh=\skip69
+\f@nch@O@orh=\skip70
+\f@nch@O@elf=\skip71
+\f@nch@O@erf=\skip72
+\f@nch@O@olf=\skip73
+\f@nch@O@orf=\skip74
+) (titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box88
+\beforetitleunit=\skip75
+\aftertitleunit=\skip76
+\ttl@plus=\dimen308
+\ttl@minus=\dimen309
+\ttl@toksa=\toks56
+\titlewidth=\dimen310
+\titlewidthlast=\dimen311
+\titlewidthfirst=\dimen312
+) (xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+ (url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)) (needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+(hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+ (kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen313
+\Hy@linkcounter=\count353
+\Hy@pagecounter=\count354
+ (pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+) (intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count355
+ (puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count356
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen314
+Requested font "pzdr" at 0.00002pt
+ -> pzdr
+ (bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count357
+\Field@Width=\dimen315
+\Fld@charsize=\dimen316
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+ (atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count358
+\c@Item=\count359
+\c@Hfootnote=\count360
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(hxetex.def
+File: hxetex.def 2022-02-21 v7.00n Hyperref driver for XeTeX
+ (stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box89
+\c@Hy@AnnotLevel=\count361
+\HyField@AnnotCount=\count362
+\Fld@listcount=\count363
+\c@bookmark@seq@number=\count364
+ (rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip77
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 20.
+\c@proposition=\count365
+ (TeXGyrePagellaX.fontspec)
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT" at 10.94997pt
+ -> TeXGyrePagellaX-Regular.otf
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT" at 10.95003pt
+ -> TeXGyrePagellaX-Regular.otf
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT:script=latn;language=dflt;" at
+ 10.95003pt
+ -> TeXGyrePagellaX-Regular.otf
+Requested font "[TeXGyrePagellaX-Bold.otf]/OT:script=latn;language=dflt;" at 10
+.95003pt
+ -> TeXGyrePagellaX-Bold.otf
+Requested font "[TeXGyrePagellaX-Italic.otf]/OT:script=latn;language=dflt;" at 
+10.95003pt
+ -> TeXGyrePagellaX-Italic.otf
+Requested font "[TeXGyrePagellaX-Slanted.otf]/OT:script=latn;language=dflt;" at
+ 10.95003pt
+ -> TeXGyrePagellaX-Slanted.otf
+Requested font "[TeXGyrePagellaX-BoldItalic.otf]/OT:script=latn;language=dflt;"
+ at 10.95003pt
+ -> TeXGyrePagellaX-BoldItalic.otf
+Requested font "[TeXGyrePagellaX-BoldSlanted.otf]/OT:script=latn;language=dflt;
+" at 10.95003pt
+ -> TeXGyrePagellaX-BoldSlanted.otf
+
+Package fontspec Info: Font family 'TeXGyrePagellaX(0)' created for font
+(fontspec)             'TeXGyrePagellaX' with options [Ligatures = TeX,Scale =
+(fontspec)             1,Extension = .otf,SmallCapsFeatures={RawFeature =
+(fontspec)             +pcap, },RawFeature=-ss05,Ligatures=TeX,Extension =
+(fontspec)             .otf,UprightFont = TeXGyrePagellaX-Regular,BoldFont =
+(fontspec)             TeXGyrePagellaX-Bold,ItalicFont =
+(fontspec)             TeXGyrePagellaX-Italic,BoldItalicFont =
+(fontspec)             TeXGyrePagellaX-BoldItalic,SlantedFont =
+(fontspec)             TeXGyrePagellaX-Slanted,BoldSlantedFont =
+(fontspec)             TeXGyrePagellaX-BoldSlanted,Numbers =
+(fontspec)             {Monospaced,Lining},UprightFont = *-Regular,ItalicFont
+(fontspec)             = *-Italic,SlantedFont = *-Slanted,BoldFont =
+(fontspec)             *-Bold,BoldItalicFont = *-BoldItalic,BoldSlantedFont=
+(fontspec)             *-BoldSlanted].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Regular.otf]/OT:script=latn;la
+nguage=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Regular.otf]/OT:script=latn;la
+nguage=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Bold.otf]/OT:script=latn;langu
+age=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Bold.otf]/OT:script=latn;langu
+age=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Italic.otf]/OT:script=latn;lan
+guage=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Italic.otf]/OT:script=latn;lan
+guage=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Slanted.otf]/OT:script=latn;la
+nguage=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-Slanted.otf]/OT:script=latn;la
+nguage=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-BoldItalic.otf]/OT:script=latn
+;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-BoldItalic.otf]/OT:script=latn
+;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-BoldSlanted.otf]/OT:script=lat
+n;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;"
+(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
+(fontspec)             <->s*[1]"[TeXGyrePagellaX-BoldSlanted.otf]/OT:script=lat
+n;language=dflt;-ss05;+tnum;+lnum;+smcp;+pcap;mapping=tex-text;"
+
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 57.
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT:script=latn;language=dflt;-ss0
+5;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+ -> TeXGyrePagellaX-Regular.otf
+ (satnav.aux)
+\openout1 = `satnav.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 57.
+LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
+ 57.
+ (omlnpxmi.fd
+File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
+)
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
+7.
+
+(ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 57.
+LaTeX Font Info:    Trying to load font information for U+npxexa on input line 
+57.
+ (unpxexa.fd
+File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
+)
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 57.
+LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line
+ 57.
+ (lmsnpxsy.fd
+File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
+)
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 57.
+LaTeX Font Info:    Trying to load font information for LMX+npxexx on input lin
+e 57.
+ (lmxnpxexx.fd
+File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
+)
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(65.44133pt, 466.62521pt, 65.44133pt)
+* v-part:(T,H,B)=(62.59605pt, 717.00946pt, 65.44133pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=466.62521pt
+* \textheight=717.00946pt
+* \oddsidemargin=-6.82866pt
+* \evensidemargin=-6.82866pt
+* \topmargin=-49.67393pt
+* \headheight=15.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \microtypecontext on input line 57.
+Package microtype Info: Applying patch `item' on input line 57.
+Package microtype Info: Applying patch `toc' on input line 57.
+Package microtype Info: Applying patch `eqnum' on input line 57.
+Package microtype Info: Applying patch `footnote' on input line 57.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `TeXGyrePagellaX' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+\c@lstlisting=\count366
+Package hyperref Info: Link coloring ON on input line 57.
+(nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+ (refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count367
+)
+LaTeX Info: Redefining \ref on input line 57.
+LaTeX Info: Redefining \pageref on input line 57.
+LaTeX Info: Redefining \nameref on input line 57.
+ (satnav.out) (satnav.out)
+\@outlinefile=\write4
+\openout4 = `satnav.out'.
+
+LaTeX Font Info:    Trying to load font information for TU+phv on input line 60
+.
+LaTeX Font Info:    No file TUphv.fd. on input line 60.
+
+
+LaTeX Font Warning: Font shape `TU/phv/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 60.
+
+(mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+Requested font "[lmroman12-regular]:mapping=tex-text;" at 12.0pt
+ -> lmroman12-regular
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `phv' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
+(Font)              using `TU/phv/m/n' instead on input line 62.
+
+Requested font "[lmroman17-regular]:mapping=tex-text;" at 54.0pt
+ -> lmroman17-regular
+Requested font "[lmroman17-regular]:mapping=tex-text;" at 31.0pt
+ -> lmroman17-regular
+Requested font "[lmroman17-regular]:mapping=tex-text;" at 21.0pt
+ -> lmroman17-regular
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 69.
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT:script=latn;language=dflt;-ss0
+5;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+ -> TeXGyrePagellaX-Regular.otf
+Requested font "[lmroman12-regular]:mapping=tex-text;" at 14.4pt
+ -> lmroman12-regular
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+3.
+(ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Requested font "rm-lmr10" at 10.95pt
+ -> rm-lmr10
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Requested font "rm-lmr8" at 8.0pt
+ -> rm-lmr8
+Requested font "rm-lmr6" at 6.1pt
+ -> rm-lmr6
+Requested font "zplmi" at 10.95pt
+ -> zplmi
+Requested font "zplmi" at 8.0pt
+ -> zplmi
+Requested font "zplmi" at 6.1pt
+ -> zplmi
+Requested font "zplsy" at 10.95pt
+ -> zplsy
+Requested font "zplsy" at 8.0pt
+ -> zplsy
+Requested font "zplsy" at 6.1pt
+ -> zplsy
+Requested font "zplexx" at 10.95pt
+ -> zplexx
+Requested font "zplexx" at 8.0pt
+ -> zplexx
+Requested font "zplexx" at 6.1pt
+ -> zplexx
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+
+ (umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+Requested font "msam10" at 10.95pt
+ -> msam10
+ (mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+Requested font "msam10" at 8.0pt
+ -> msam10
+Requested font "msam7" at 6.1pt
+ -> msam7
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+
+ (umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Requested font "msbm10" at 10.95pt
+ -> msbm10
+ (mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+Requested font "msbm10" at 8.0pt
+ -> msbm10
+Requested font "msbm7" at 6.1pt
+ -> msbm7
+LaTeX Font Info:    Trying to load font information for U+npxmia on input line 
+73.
+ (unpxmia.fd
+File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
+)
+Requested font "zplmia" at 10.95pt
+ -> zplmia
+Requested font "zplmia" at 8.0pt
+ -> zplmia
+Requested font "zplmia" at 6.1pt
+ -> zplmia
+LaTeX Font Info:    Trying to load font information for U+npxsym on input line 
+73.
+
+(unpxsym.fd
+File: unpxsym.fd 2015/03/21 Fontinst v1.933 font definitions for U/npxsym.
+)
+Requested font "zplsym" at 10.95pt
+ -> zplsym
+Requested font "zplsym" at 8.0pt
+ -> zplsym
+Requested font "zplsym" at 6.1pt
+ -> zplsym
+LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 
+73.
+ (unpxsyc.fd
+File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
+)
+Requested font "zplsyc" at 10.95pt
+ -> zplsyc
+Requested font "zplsyc" at 8.0pt
+ -> zplsyc
+Requested font "zplsyc" at 6.1pt
+ -> zplsyc
+Requested font "zplexa" at 10.95pt
+ -> zplexa
+Requested font "zplexa" at 8.0pt
+ -> zplexa
+Requested font "zplexa" at 6.1pt
+ -> zplexa
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/b/n' will be
+(Font)              scaled to size 10.95pt on input line 74.
+Requested font "[TeXGyrePagellaX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+
+tnum;+lnum;mapping=tex-text;" at 10.95pt
+ -> TeXGyrePagellaX-Bold.otf
+Requested font "[lmmono10-regular]:" at 10.95pt
+ -> lmmono10-regular
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 89.
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT:script=latn;language=dflt;-ss0
+5;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+ -> TeXGyrePagellaX-Regular.otf
+ [1
+
+]
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 95.
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT:script=latn;language=dflt;-ss0
+5;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+ -> TeXGyrePagellaX-Regular.otf
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/m/it' will be
+(Font)              scaled to size 10.95pt on input line 120.
+Requested font "[TeXGyrePagellaX-Italic.otf]/OT:script=latn;language=dflt;-ss05
+;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+ -> TeXGyrePagellaX-Italic.otf
+Requested font "[lmroman10-regular]:mapping=tex-text;" at 10.0pt
+ -> lmroman10-regular
+Requested font "[lmroman9-regular]:mapping=tex-text;" at 9.0pt
+ -> lmroman9-regular
+ [2] [3
+
+] (satnav.toc [4
+
+])
+\tf@toc=\write5
+\openout5 = `satnav.toc'.
+
+ [5] [6
+
+]
+Requested font "rm-lmr10" at 10.0pt
+ -> rm-lmr10
+Requested font "rm-lmr7" at 7.3pt
+ -> rm-lmr7
+Requested font "rm-lmr6" at 5.5pt
+ -> rm-lmr6
+Requested font "zplmi" at 10.0pt
+ -> zplmi
+Requested font "zplmi" at 7.3pt
+ -> zplmi
+Requested font "zplmi" at 5.5pt
+ -> zplmi
+Requested font "zplsy" at 10.0pt
+ -> zplsy
+Requested font "zplsy" at 7.3pt
+ -> zplsy
+Requested font "zplsy" at 5.5pt
+ -> zplsy
+Requested font "zplexx" at 10.0pt
+ -> zplexx
+Requested font "zplexx" at 7.3pt
+ -> zplexx
+Requested font "zplexx" at 5.5pt
+ -> zplexx
+Requested font "msam10" at 10.0pt
+ -> msam10
+Requested font "msam7" at 7.3pt
+ -> msam7
+Requested font "msam5" at 5.5pt
+ -> msam5
+Requested font "msbm10" at 10.0pt
+ -> msbm10
+Requested font "msbm7" at 7.3pt
+ -> msbm7
+Requested font "msbm5" at 5.5pt
+ -> msbm5
+Requested font "zplmia" at 10.0pt
+ -> zplmia
+Requested font "zplmia" at 7.3pt
+ -> zplmia
+Requested font "zplmia" at 5.5pt
+ -> zplmia
+Requested font "zplsym" at 10.0pt
+ -> zplsym
+Requested font "zplsym" at 7.3pt
+ -> zplsym
+Requested font "zplsym" at 5.5pt
+ -> zplsym
+Requested font "zplsyc" at 10.0pt
+ -> zplsyc
+Requested font "zplsyc" at 7.3pt
+ -> zplsyc
+Requested font "zplsyc" at 5.5pt
+ -> zplsyc
+Requested font "zplexa" at 10.0pt
+ -> zplexa
+Requested font "zplexa" at 7.3pt
+ -> zplexa
+Requested font "zplexa" at 5.5pt
+ -> zplexa
+Requested font "[TeXGyrePagellaX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+
+tnum;+lnum;mapping=tex-text;" at 10.0pt
+ -> TeXGyrePagellaX-Bold.otf
+Requested font "rm-lmb10" at 10.0pt
+ -> rm-lmb10
+Requested font "rm-lmb10" at 7.3pt
+ -> rm-lmb10
+Requested font "rm-lmb10" at 5.5pt
+ -> rm-lmb10
+Requested font "zplbmi" at 10.0pt
+ -> zplbmi
+Requested font "zplbmi" at 7.3pt
+ -> zplbmi
+Requested font "zplbmi" at 5.5pt
+ -> zplbmi
+Requested font "zplbsy" at 10.0pt
+ -> zplbsy
+Requested font "zplbsy" at 7.3pt
+ -> zplbsy
+Requested font "zplbsy" at 5.5pt
+ -> zplbsy
+Requested font "zplbexx" at 10.0pt
+ -> zplbexx
+Requested font "zplbexx" at 7.3pt
+ -> zplbexx
+Requested font "zplbexx" at 5.5pt
+ -> zplbexx
+Requested font "zplbmia" at 10.0pt
+ -> zplbmia
+Requested font "zplbmia" at 7.3pt
+ -> zplbmia
+Requested font "zplbmia" at 5.5pt
+ -> zplbmia
+Requested font "zplbsym" at 10.0pt
+ -> zplbsym
+Requested font "zplbsym" at 7.3pt
+ -> zplbsym
+Requested font "zplbsym" at 5.5pt
+ -> zplbsym
+Requested font "zplbsyc" at 10.0pt
+ -> zplbsyc
+Requested font "zplbsyc" at 7.3pt
+ -> zplbsyc
+Requested font "zplbsyc" at 5.5pt
+ -> zplbsyc
+Requested font "zplbexa" at 10.0pt
+ -> zplbexa
+Requested font "zplbexa" at 7.3pt
+ -> zplbexa
+Requested font "zplbexa" at 5.5pt
+ -> zplbexa
+ [7
+
+]
+Requested font "rm-lmb10" at 10.95pt
+ -> rm-lmb10
+Requested font "rm-lmb10" at 8.0pt
+ -> rm-lmb10
+Requested font "rm-lmb10" at 6.1pt
+ -> rm-lmb10
+Requested font "zplbmi" at 10.95pt
+ -> zplbmi
+Requested font "zplbmi" at 8.0pt
+ -> zplbmi
+Requested font "zplbmi" at 6.1pt
+ -> zplbmi
+Requested font "zplbsy" at 10.95pt
+ -> zplbsy
+Requested font "zplbsy" at 8.0pt
+ -> zplbsy
+Requested font "zplbsy" at 6.1pt
+ -> zplbsy
+Requested font "zplbexx" at 10.95pt
+ -> zplbexx
+Requested font "zplbexx" at 8.0pt
+ -> zplbexx
+Requested font "zplbexx" at 6.1pt
+ -> zplbexx
+Requested font "zplbmia" at 10.95pt
+ -> zplbmia
+Requested font "zplbmia" at 8.0pt
+ -> zplbmia
+Requested font "zplbmia" at 6.1pt
+ -> zplbmia
+Requested font "zplbsym" at 10.95pt
+ -> zplbsym
+Requested font "zplbsym" at 8.0pt
+ -> zplbsym
+Requested font "zplbsym" at 6.1pt
+ -> zplbsym
+Requested font "zplbsyc" at 10.95pt
+ -> zplbsyc
+Requested font "zplbsyc" at 8.0pt
+ -> zplbsyc
+Requested font "zplbsyc" at 6.1pt
+ -> zplbsyc
+Requested font "zplbexa" at 10.95pt
+ -> zplbexa
+Requested font "zplbexa" at 8.0pt
+ -> zplbexa
+Requested font "zplbexa" at 6.1pt
+ -> zplbexa
+ [8
+
+] [9
+
+]
+[10
+
+]
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 371.
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT:script=latn;language=dflt;-ss0
+5;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+ -> TeXGyrePagellaX-Regular.otf
+LaTeX Font Info:    Font shape `TU/TeXGyrePagellaX(0)/m/n' will be
+(Font)              scaled to size 6.1pt on input line 371.
+Requested font "[TeXGyrePagellaX-Regular.otf]/OT:script=latn;language=dflt;-ss0
+5;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+ -> TeXGyrePagellaX-Regular.otf
+ [11
+
+]
+Requested font "[lmmono10-regular]:" at 10.0pt
+ -> lmmono10-regular
+ [12
+
+] [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
+
+] [19
+
+] [20
+
+] (lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 754.
+Requested font "[lmmonolt10-bold]:" at 10.0pt
+ -> lmmonolt10-bold
+ [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+]
+[30
+
+] [31
+
+] [32
+
+] (satnav.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package rerunfilecheck Info: File `satnav.out' has not changed.
+(rerunfilecheck)             Checksum: 58716BF2F94AC575DD0AA4289BB6E3B5;7307.
+ )
+Output written on satnav.xdv (32 pages, 642996 bytes).

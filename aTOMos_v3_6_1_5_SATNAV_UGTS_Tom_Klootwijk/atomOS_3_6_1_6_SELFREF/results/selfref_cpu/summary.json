@@ -1,0 +1,184 @@
+{
+  "version": "3.6.1.6",
+  "profile": "SRK-R1",
+  "status": "passed",
+  "input_sha256": "08bf78adcdd82dc7d911e44d93861b779ac36430060626ba3672e034f34b6bb3",
+  "compiled_csv_sha256": "e0e80a39c8bbba56d7b4e731a131d1c889f858c2b288d516a95d475916312c28",
+  "native_execution": "passed",
+  "native_trace_verified": true,
+  "native_command": [
+    "C:\\tmp\\atomos3616_cpu\\Release\\self_reference.exe",
+    "--input",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_6_SELFREF\\results\\selfref_cpu\\input.csv",
+    "--out",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_6_SELFREF\\results\\selfref_cpu\\native",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "native_binary_sha256": "8f4f9f6308579e80c1be99c7b5db7cf73170a79749badf4755d82567ebd9e7d9",
+  "native_returncode": 0,
+  "transitions": 34,
+  "field_comparisons": 408,
+  "trajectories": [
+    {
+      "trajectory_id": 0,
+      "steps": 6,
+      "initial_state": 0,
+      "final_state": 5,
+      "orbit": {
+        "kind": "fixed_point",
+        "entry_step": 1,
+        "period": 1,
+        "first_repeat_step": 2,
+        "repeated_state": 5
+      },
+      "finite_state_count": 16,
+      "equation_sha256": "188f4e76fd989b88046ce5c7d53111bd18a777ceaddffd02075b74e167298a0a",
+      "specification_sha256": "ef860c85d67b1ef54e826f900f1b43f6c6f2d7536a85fc2cab54dba04ba7af4b",
+      "equations": {
+        "x": "q | d",
+        "j": "y",
+        "k": "0"
+      },
+      "lookup_tables": {
+        "x": 14,
+        "j": 204,
+        "k": 0
+      }
+    },
+    {
+      "trajectory_id": 1,
+      "steps": 8,
+      "initial_state": 0,
+      "final_state": 0,
+      "orbit": {
+        "kind": "cycle",
+        "entry_step": 0,
+        "period": 2,
+        "first_repeat_step": 2,
+        "repeated_state": 0
+      },
+      "finite_state_count": 16,
+      "equation_sha256": "9f3f8ec0c82d92bad1a99b92ba2486c6595e895493d04c5386068fc917bfe3fb",
+      "specification_sha256": "56d44ea328ecf5f04101b95f894b37c59e0a3d1928e748df3987d6b8e8257a70",
+      "equations": {
+        "x": "q | d",
+        "j": "y",
+        "k": "y"
+      },
+      "lookup_tables": {
+        "x": 14,
+        "j": 204,
+        "k": 204
+      }
+    },
+    {
+      "trajectory_id": 2,
+      "steps": 4,
+      "initial_state": 2,
+      "final_state": 2,
+      "orbit": {
+        "kind": "fixed_point",
+        "entry_step": 0,
+        "period": 1,
+        "first_repeat_step": 1,
+        "repeated_state": 2
+      },
+      "finite_state_count": 16,
+      "equation_sha256": "188f4e76fd989b88046ce5c7d53111bd18a777ceaddffd02075b74e167298a0a",
+      "specification_sha256": "902dfcc65f8735b69b9066252e181327e1031c9fe7af36649c0b51ee3796d17d",
+      "equations": {
+        "x": "q | d",
+        "j": "y",
+        "k": "0"
+      },
+      "lookup_tables": {
+        "x": 14,
+        "j": 204,
+        "k": 0
+      }
+    },
+    {
+      "trajectory_id": 3,
+      "steps": 6,
+      "initial_state": 2147483648,
+      "final_state": 2147483648,
+      "orbit": {
+        "kind": "cycle",
+        "entry_step": 0,
+        "period": 2,
+        "first_repeat_step": 2,
+        "repeated_state": 2147483648
+      },
+      "finite_state_count": 2,
+      "equation_sha256": "34c6a42d406b539d0d2bfaa2ddf254bd612da2de3a26ac3a5655807c90d62533",
+      "specification_sha256": "c7d50494f1b3391e00d619a7bf4b25957018f0987b0f3eac71437975772c0266",
+      "equations": {
+        "x": "q ^ d",
+        "j": "1",
+        "k": "1"
+      },
+      "lookup_tables": {
+        "x": 6,
+        "j": 255,
+        "k": 255
+      }
+    },
+    {
+      "trajectory_id": 4,
+      "steps": 8,
+      "initial_state": 10,
+      "final_state": 2,
+      "orbit": {
+        "kind": "cycle",
+        "entry_step": 1,
+        "period": 2,
+        "first_repeat_step": 3,
+        "repeated_state": 6
+      },
+      "finite_state_count": 16,
+      "equation_sha256": "90ce511d9b564489f46239a58ee448a89cc48d2a43f636058a5f01cea79141f1",
+      "specification_sha256": "87313cc83d74a98577b51fedbbc88c10e36362b1683a5f97287a74c0ea2639b6",
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "(~q & y) | (q & d)",
+        "k": "(q & ~y) | (~q & d)"
+      },
+      "lookup_tables": {
+        "x": 6,
+        "j": 172,
+        "k": 58
+      }
+    },
+    {
+      "trajectory_id": 5,
+      "steps": 2,
+      "initial_state": 0,
+      "final_state": 0,
+      "orbit": {
+        "kind": "fixed_point",
+        "entry_step": 0,
+        "period": 1,
+        "first_repeat_step": 1,
+        "repeated_state": 0
+      },
+      "finite_state_count": 1,
+      "equation_sha256": "188f4e76fd989b88046ce5c7d53111bd18a777ceaddffd02075b74e167298a0a",
+      "specification_sha256": "a12bfa566e21cbc8e8bba56bc32a873b92855445bb132e064b3b6669283833b1",
+      "equations": {
+        "x": "q | d",
+        "j": "y",
+        "k": "0"
+      },
+      "lookup_tables": {
+        "x": 14,
+        "j": 204,
+        "k": 0
+      }
+    }
+  ],
+  "reference_trace_sha256": "ab10e37f4a4b3e5bbb3141705295a35ad35767197101a9b2124242d9450c1094",
+  "native_trace_sha256": "2d884ddd1a90a60fb559d63647666f74edfb5f2fa101e8130e5d050dd2bb9e70"
+}

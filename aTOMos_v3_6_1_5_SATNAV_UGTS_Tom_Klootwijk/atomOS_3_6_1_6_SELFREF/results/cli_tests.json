@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "cases": 11,
+  "details": [
+    {
+      "case": "help",
+      "exit_code": 0
+    },
+    {
+      "case": "unknown option",
+      "exit_code": 1
+    },
+    {
+      "case": "invalid backend",
+      "exit_code": 1
+    },
+    {
+      "case": "zero iterations",
+      "exit_code": 1
+    },
+    {
+      "case": "missing file",
+      "exit_code": 1
+    },
+    {
+      "case": "existing output",
+      "exit_code": 1
+    },
+    {
+      "case": "duplicate_channel",
+      "exit_code": 1
+    },
+    {
+      "case": "negative_sigma",
+      "exit_code": 1
+    },
+    {
+      "case": "nan_coordinate",
+      "exit_code": 1
+    },
+    {
+      "case": "valid run",
+      "exit_code": 0
+    },
+    {
+      "case": "iteration status recorded",
+      "exit_code": 0
+    }
+  ]
+}

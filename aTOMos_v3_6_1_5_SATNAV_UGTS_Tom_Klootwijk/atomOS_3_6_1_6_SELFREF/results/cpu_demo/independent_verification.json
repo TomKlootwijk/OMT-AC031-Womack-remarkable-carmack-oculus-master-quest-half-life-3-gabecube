@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "epochs": 256,
+  "counted_comparisons": 4828,
+  "statuses": {
+    "CONVERGED": 253,
+    "TOO_FEW": 1,
+    "MASK_ABSORBED": 1,
+    "RANK_DEFICIENT": 1
+  },
+  "fit_counts": {
+    "WITHIN_RESIDUAL_BUDGET": 251,
+    "RESIDUAL_ALERT": 1,
+    "NO_REDUNDANCY": 1
+  },
+  "max_absolute_state_difference_m": 9.400537237524986e-09,
+  "max_covariance_diagonal_difference_m2": 6.394884621840902e-14,
+  "synthetic_truth_metrics": {
+    "noiseless": {
+      "epochs": 128,
+      "position_rmse_m": 3.573332344255619e-09,
+      "max_position_error_m": 8.524789659729438e-09
+    },
+    "noisy": {
+      "epochs": 122,
+      "position_rmse_m": 1.6017023653351474,
+      "max_position_error_m": 3.388232688961513
+    },
+    "outlier": {
+      "epochs": 1,
+      "position_rmse_m": 147.09872369650003,
+      "max_position_error_m": 147.09872369650003
+    },
+    "four_only": {
+      "epochs": 1,
+      "position_rmse_m": 1.1079045015366404e-08,
+      "max_position_error_m": 1.1079045015366404e-08
+    },
+    "channels32": {
+      "epochs": 1,
+      "position_rmse_m": 3.892956908607382e-09,
+      "max_position_error_m": 3.892956908607382e-09
+    }
+  },
+  "scope": "Independent finite corrected-code mathematical reference. No real receiver data or integrity certification."
+}
