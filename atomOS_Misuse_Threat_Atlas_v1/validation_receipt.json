@@ -1,0 +1,71 @@
+{
+  "output": "Tom_Klootwijk_atomOS_Misuse_Threat_Atlas_Rainbow_v1.pdf",
+  "sha256": "9925511534821650dbedee3003c2cca102f1b983765e817190e8e8bc1033b07b",
+  "bytes": 155219,
+  "pages": 23,
+  "scenario_count": 40,
+  "bands": 7,
+  "checks": {
+    "ordered_ids": true,
+    "page_mapping": true,
+    "text_overflow_guard": true,
+    "required_labels": true,
+    "source_hashes": true,
+    "links_count": 48,
+    "bookmarks_count": 23
+  },
+  "visual_review": {
+    "status": "passed",
+    "method": "Poppler rasterization at 110 dpi; all 23 pages visually inspected by the authoring/review team",
+    "final_changed_pages_reinspected": [
+      3,
+      4,
+      12,
+      15,
+      16
+    ],
+    "unchanged_pages": "18 other final renders are byte-identical to the visually reviewed draft renders",
+    "defects_observed": 0,
+    "render_hashes": {
+      "page-01.png": "4ea07f4e11ca69e51768804ac5d16a0122be2ba9eb5b643a702e50a469f1b071",
+      "page-02.png": "0b3e0cc3feda14827172db09c276b3a12e118901ed98a7af5e186ce347c87be2",
+      "page-03.png": "c33259366f39760cc090795360f89eae928851ef2b731ae5f93dc9e8cb3b2e02",
+      "page-04.png": "1e3144d6b0696491a9a1ebb7fcd85d1b468e07686fc43277d3800b77803f110e",
+      "page-05.png": "7ccb1722750e7c7ac274afaa2d28d4e4617646ba366b2ffa5dbcf71cbf88e190",
+      "page-06.png": "2137ac15117b46fb59d8b148bd32eb994bf2be7d54f967a720d770fce9584b77",
+      "page-07.png": "fffd8631af92a70e70773fb7b834cea6a033adf46e157d8ae1f49ef8819e755c",
+      "page-08.png": "1780619564c182382544721e627a045f41667583d73aa5356a8a339c287fed30",
+      "page-09.png": "e88566643d5e64e4800a73dcf9f6d11e85897e4aaeadc580e8563f2c5c49fda7",
+      "page-10.png": "bc71ed1818638347c2e275b4d91305ca74eb61800b0ba751a50819a72f37a0a9",
+      "page-11.png": "74f4a68585ca5e3477e89875799c59d942289adb4c3f16b6495722cc9a138d43",
+      "page-12.png": "5f80d0048512c42f79ef28176fbb72a81c852184c542e8349dd94ac75c1d811f",
+      "page-13.png": "0a36c2b58636722744b6b5ce354ce09071dc6f9f574bc0a001e142578140a3ba",
+      "page-14.png": "55eda31314dfd6fe383ded0a303dc943aa54995cd43d0ff1e0e46acdcd4f4130",
+      "page-15.png": "ca4b868e997699f51bfd5ebfcd9514a22421e324561e12aedccfb28a2fcf4784",
+      "page-16.png": "05ba430e5f1c3cc3f4b476fb36cf994846d7d7d0ab2e523d477ba5df5da09e84",
+      "page-17.png": "d683054c51777c6ae8c4899394f92eb6d46de32b475daccabd45e05087e61ece",
+      "page-18.png": "65e775e4474eb564845b175fee3fe8db02bd4de877bf912fe5277a5c43d44ce3",
+      "page-19.png": "d86427a0fab0069998d3d7e0165622260f1fb41819bb64666a0a27a2ea977929",
+      "page-20.png": "ba8879bf17278f79a1d7e1c3ec682af64b295d1c8ececd956764ce180ae0ff16",
+      "page-21.png": "3ec2edec686e8ece0477460ec36836d054b16f0a0460e3bc12c28d88d2ec4e3c",
+      "page-22.png": "2ae3162ea53452bc32b24c94d64e85b948f27e1569bf9561b16840e21153f201",
+      "page-23.png": "a7f90f4a39ed4febacb0d46012767042325245dd16401fc6276b4ef8fc8ed059"
+    }
+  },
+  "kernel_tests": "not_run - documentation-only task; no kernel changes",
+  "implementation_change": "none",
+  "new_empirical_threat_validation": "none; conditional threat analysis",
+  "document_toolchain": {
+    "python": "3.13.11",
+    "reportlab": "5.0.0",
+    "pypdf": "6.9.2",
+    "renderer": "Poppler pdftoppm",
+    "font": "Windows Arial, embedded subsets"
+  },
+  "content_review": {
+    "source_boundaries": "reviewed",
+    "conditional_level_rationale": "reviewed and corrected",
+    "operational_harm_instructions": "none",
+    "caveat": "This is not empirical validation of the threat scenarios or a security audit."
+  }
+}

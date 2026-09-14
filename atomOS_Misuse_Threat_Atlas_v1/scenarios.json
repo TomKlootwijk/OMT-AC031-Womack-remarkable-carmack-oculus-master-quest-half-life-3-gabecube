@@ -1,0 +1,464 @@
+{
+  "groups": [
+    {
+      "title": "D1 - Trust and entry points",
+      "intro": "Who can supply inputs, replace content or claim authority determines the entry points for misuse, from reversible nuisance to consequential unauthorized changes.",
+      "scenarios": [
+        {
+          "id": "T01",
+          "title": "Local demo sabotage",
+          "level": 1,
+          "path": "K/A",
+          "prerequisite_harm": "Access to a disposable local demo could permit misleading display or fixture changes, causing confusion and wasted attention. This level assumes no sensitive data, persistent assets, external decisions or physical outputs.",
+          "warning": "Displayed behavior differs from the retained synthetic fixture.",
+          "safeguard": "Keep demos isolated and resettable; label synthetic inputs, retain reference outputs, and compare fixtures before presentation.",
+          "source": "K1; R1"
+        },
+        {
+          "id": "T02",
+          "title": "Game cheating and unfair simulation",
+          "level": 2,
+          "path": "A",
+          "prerequisite_harm": "A game trusting client-generated rules or outcomes could permit unauthorized advantages, altered scores and unfair play. This level assumes recoverable recreational harm.",
+          "warning": "Competitive results depend on unchecked local banks or unexplained rule changes.",
+          "safeguard": "Validate authoritative outcomes independently, identify the active rule version, separate experiments from competition, and provide replayable disputes and restoration.",
+          "source": "R1; R2"
+        },
+        {
+          "id": "T03",
+          "title": "Unauthorized program-bank substitution",
+          "level": 4,
+          "path": "K",
+          "prerequisite_harm": "Replacing an accepted bank or manifest could redirect significant downstream decisions to an unauthorized function. Level 4 assumes consequential use, not a harmless demo.",
+          "warning": "Bank changes lack an approved publication receipt, or provenance and active versions disagree.",
+          "safeguard": "Authenticate publishers, bind publication to checked content, verify before loading, preserve a known-good epoch, and record accountable changes.",
+          "source": "K1; K2; R1"
+        },
+        {
+          "id": "T04",
+          "title": "Compiler or parser input abuse",
+          "level": 3,
+          "path": "K",
+          "prerequisite_harm": "Malformed replies or packed content reaching a vulnerable parser could cause disruption, unintended interpretation or local compromise. No current exploit is asserted.",
+          "warning": "Inputs exceed declared limits, parsing becomes inconsistent, or processing touches unexpected files.",
+          "safeguard": "Use declarative formats, bounded parsing and isolated compilation; reject executable input, retain malformed regression samples, and stop publication on validation failure.",
+          "source": "K1; K2; R1"
+        }
+      ]
+    },
+    {
+      "title": "D2 - Validation and provenance",
+      "intro": "Trustworthy execution depends on trustworthy specifications, evidence and publication authority. Hashes and successful checks cannot repair a corrupted source of expected behavior.",
+      "scenarios": [
+        {
+          "id": "T05",
+          "title": "Oracle or verifier capture",
+          "level": 5,
+          "path": "K",
+          "prerequisite_harm": "Control over expected results, checking logic or evidence could give wrong or harmful programs a verified label. Severe harm requires consequential downstream reliance.",
+          "warning": "Candidate and expected outputs change together, failures disappear, or independent specifications vanish.",
+          "safeguard": "Separate proposal, specification and publication authority; freeze originals, independently reproduce acceptance, review verifier changes, and reject self-comparison as external confirmation.",
+          "source": "K1; K2; R1"
+        },
+        {
+          "id": "T06",
+          "title": "Unauthorized rollback or mixed versions",
+          "level": 4,
+          "path": "K/A",
+          "prerequisite_harm": "Unauthorized rollback or inconsistent publication could restore withdrawn behavior or mix incompatible state. Level 4 assumes significant downstream consequences rather than a disposable demonstration.",
+          "warning": "Versions reverse without explanation, lineage breaks, or state and program epochs disagree.",
+          "safeguard": "Require authorized transitions and compatible versions; publish atomically after checks, record complete receipts, and preserve recoverable versions still eligible for use.",
+          "source": "K1; K2; R1"
+        },
+        {
+          "id": "T07",
+          "title": "False novelty through repetition",
+          "level": 3,
+          "path": "K",
+          "prerequisite_harm": "Counting new seeds, names or equivalent circuits as knowledge could inflate the bank, waste review resources and misrepresent progress.",
+          "warning": "Pages and lineage grow without new useful input-output behavior.",
+          "safeguard": "Compare semantics within the declared domain, preserve interface meaning, require independent correctness and usefulness, cap acquisition work, and record duplicate rejection without adding an active page.",
+          "source": "K2; R1; R2"
+        },
+        {
+          "id": "T08",
+          "title": "Hash or provenance impersonation",
+          "level": 4,
+          "path": "K",
+          "prerequisite_harm": "Presenting a digest or lineage as proof of truth, consent or authorship could give false claims authority. Hashes bind bytes, not those conclusions.",
+          "warning": "Hash-verified claims lack authenticated origin, factual support or relevant consent.",
+          "safeguard": "Explain each digest's scope, authenticate publishers separately, retain source context and permissions, and require independent evidence for substantive claims.",
+          "source": "K1; K2; R1"
+        }
+      ]
+    },
+    {
+      "title": "D3 - Runtime and data boundaries",
+      "intro": "Bounded progress, isolation and output controls complement resource limits and immutable texture reads, especially when applications process confidential information or share hardware.",
+      "scenarios": [
+        {
+          "id": "T09",
+          "title": "Unproductive self-reference",
+          "level": 3,
+          "path": "K",
+          "prerequisite_harm": "Unbounded recurrence could exhaust resources or recycle a program's outputs into supposed evidence.",
+          "warning": "States and claims recur, descendants cite only themselves, and work grows without validated gains.",
+          "safeguard": "Set time, memory and proposal budgets; detect repeated states, require independent evidence, preserve legitimate bounded recurrence, and stop acquisition when useful progress cannot be demonstrated.",
+          "source": "K1; K2; R1"
+        },
+        {
+          "id": "T10",
+          "title": "Resource denial and monopolization",
+          "level": 3,
+          "path": "K/A",
+          "prerequisite_harm": "Excessive allocation or scheduling privileges could exhaust VRAM, compute or verification capacity and interrupt other work.",
+          "warning": "Memory pressure persists, unrelated jobs starve, or admission repeatedly fails with little useful output.",
+          "safeguard": "Enforce quotas, fair scheduling, cancellation and reserves; account for acquisition and verification costs, and preserve resources for the user and recovery processes.",
+          "source": "K1; R1"
+        },
+        {
+          "id": "T11",
+          "title": "Shared-GPU information leakage",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Shared hardware could expose confidential information if an adversarial observer can exploit a real leakage mechanism. Cache measurements alone demonstrate no such extraction.",
+          "warning": "Sensitive tenants share resources against policy, or controlled assessment finds reproducible information leakage.",
+          "safeguard": "Assess the actual platform, isolate sensitive workloads appropriately, minimize secret-dependent behavior, and retain supported isolation controls.",
+          "source": "K1; R1"
+        },
+        {
+          "id": "T12",
+          "title": "Logs and outputs as disclosure channels",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "An application handling confidential inputs could disclose them through exported traces, logs, receipts or answers despite correct computation.",
+          "warning": "Private inputs appear in public evidence, unnecessary logs persist, or destinations exceed the approved workflow.",
+          "safeguard": "Minimize sensitive retention, separate public receipts from protected evidence, control exports and destinations, and preserve sufficient restricted information for an independent audit.",
+          "source": "K1; K2; R1"
+        }
+      ]
+    },
+    {
+      "title": "D4 - Knowledge and evidence",
+      "intro": "Deterministic procedures can carry false assumptions, restricted information or overstated claims. Exact computation does not establish truth, scope or legitimate use.",
+      "scenarios": [
+        {
+          "id": "T13",
+          "title": "Restricted knowledge extraction",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Acquisition accessing confidential, personal or restricted sources could reproduce information without permission. Repacking does not remove confidentiality or source obligations.",
+          "warning": "Admitted content contains secrets or identifiable records with unclear provenance.",
+          "safeguard": "Use authorized sources, retain acquisition provenance, review disclosure before publication, restrict sensitive packs, and support tracing, withdrawal and replacement when source permissions fail.",
+          "source": "K2; R1; R2"
+        },
+        {
+          "id": "T14",
+          "title": "Exact amplification of false premises",
+          "level": 4,
+          "path": "K/A",
+          "prerequisite_harm": "Treating empirical or conditional assertions as universally true could produce repeatable wrong decisions.",
+          "warning": "Rules omit scope, dates or uncertainty, discard contradictions, or answer outside their validated applicability.",
+          "safeguard": "Represent scope and dependencies, preserve unknown and conflict states, review changing claims, and require independent domain evidence rather than treating teacher agreement or finite procedural correctness as general truth.",
+          "source": "K2; R1; R2"
+        },
+        {
+          "id": "T15",
+          "title": "Fabricated research or benchmark evidence",
+          "level": 4,
+          "path": "K/A",
+          "prerequisite_harm": "Synthetic traces, selective tests or generated observations presented as measurements could mislead research and downstream decisions.",
+          "warning": "Raw data are absent, failures disappear, synthetic inputs become reported experiments, or thresholds change after failure.",
+          "safeguard": "Retain originals and failures, label synthetic and not-run evidence, bind results to exact sources and binaries, disclose exclusions, and enable independent reproduction.",
+          "source": "K1; K2; R1"
+        },
+        {
+          "id": "T16",
+          "title": "Universality, residency or AI claim fraud",
+          "level": 3,
+          "path": "K",
+          "prerequisite_harm": "Marketing finite tests as unlimited intelligence, permanent cache pinning or established physical control could induce costly reliance through deception.",
+          "warning": "Claims jump from NOR completeness or cache counters to untested abilities and guarantees.",
+          "safeguard": "Maintain a claim-to-evidence ledger; distinguish assumptions, proofs, native execution and measurements, publish limitations beside results, and require application-specific evidence before expanding claims.",
+          "source": "M1 p. 32; K1; K2; R1"
+        }
+      ]
+    },
+    {
+      "title": "D5 - Geometry and sensing",
+      "intro": "Coordinates and predicates require explicit meaning. Physical consequences need additional sensing, physical coupling or output hardware connecting representations to the world.",
+      "scenarios": [
+        {
+          "id": "T17",
+          "title": "Identity and occupancy confusion",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Confusing cell predicates, blocked-region bits, object identifiers and personal identity could cause false matches or consequential misclassification.",
+          "warning": "Data cross incompatible dictionaries, or sampled membership is presented as proof of identity.",
+          "safeguard": "Type representations, bind dictionaries and sampling conventions, verify conversions, preserve missing classifications, and require independent identification evidence before attributing geometric results to a person or object.",
+          "source": "M1 pp. 8, 16-17, 24; K1; R1"
+        },
+        {
+          "id": "T18",
+          "title": "Frame, unit or quantization deception",
+          "level": 5,
+          "path": "A/P",
+          "prerequisite_harm": "Concealed changes to frames, units, reference lengths or quantization could corrupt geometry and cause serious harm where physical decisions rely on it.",
+          "warning": "Units or frame identities disappear, seams disagree, or precision claims exceed resolution.",
+          "safeguard": "Bind units, frames and uncertainty to data; validate conversions and boundaries, preserve undefined states, and independently calibrate safety-relevant physical use.",
+          "source": "M1 pp. 9-10; K1; R3"
+        },
+        {
+          "id": "T19",
+          "title": "Sensor or input poisoning",
+          "level": 5,
+          "path": "A/P",
+          "prerequisite_harm": "False or altered observations entering a connected sensing pipeline could drive dangerous conclusions despite correct LUT evaluation.",
+          "warning": "Independent observations conflict, calibration changes lack explanation, or implausible measurements receive certainty.",
+          "safeguard": "Protect data paths, cross-check independent sources, monitor quality and calibration, retain uncertainty, and ensure the application responds safely when inputs violate its operating assumptions.",
+          "source": "K1; R1; R3"
+        },
+        {
+          "id": "T20",
+          "title": "Optical, RF or acoustic device misuse",
+          "level": 6,
+          "path": "P",
+          "prerequisite_harm": "A coupled optical, RF or acoustic device could cause injury, interference or unauthorized sensing. Level 6 applies only where death or multiple severe injuries are credible; otherwise rate the stated harm.",
+          "warning": "Outputs exceed the approved purpose, safeguards are bypassed, or calibration is unsupported.",
+          "safeguard": "Enforce independent device limits, authorize outputs, validate the apparatus, monitor effects, and stop on uncertainty.",
+          "source": "M1 p. 18; K1; R3"
+        }
+      ]
+    },
+    {
+      "title": "D6 - Privacy and social decisions",
+      "intro": "Personal data and decision authority create risks absent from synthetic fixtures. Purpose, evidence, consent and effective challenge are central safeguards.",
+      "scenarios": [
+        {
+          "id": "T21",
+          "title": "Persistent person tracking",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Access to identifiable observations and persistent tracking could enable covert monitoring, stalking or coercive surveillance.",
+          "warning": "Identity links exceed the stated purpose, retention becomes indefinite, or people cannot identify who monitors them.",
+          "safeguard": "Limit collection and purpose, require an appropriate authorization basis, minimize retention, audit access, and provide meaningful control and remedies for affected people.",
+          "source": "K1; R1; R2"
+        },
+        {
+          "id": "T22",
+          "title": "Private XR-map abuse",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Exported XR maps or movement histories could expose private spaces and the routines of occupants and bystanders, regardless of who owns the premises.",
+          "warning": "Exports reveal private areas or people without appropriate permission.",
+          "safeguard": "Prefer local processing, redact sensitive zones and identities, limit retention and exports, provide revocable permissions, and protect occupants' and bystanders' privacy.",
+          "source": "R1; R6; R7"
+        },
+        {
+          "id": "T23",
+          "title": "Biometric or emotional inference coercion",
+          "level": 4,
+          "path": "A/P",
+          "prerequisite_harm": "Interpreting gaze, voice, movement or physiological signals as identity or internal state could enable coercive or discriminatory decisions.",
+          "warning": "Confidence exceeds evidence, sensitive traits are inferred without permission, or inferred emotion controls access.",
+          "safeguard": "Minimize collection, independently validate each inference, preserve uncertainty, reject unsupported mental-state claims, and provide consent, contestability and alternatives without biometric participation.",
+          "source": "R1; R4; R6; R7"
+        },
+        {
+          "id": "T24",
+          "title": "Automated discrimination and exclusion",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Rule packs controlling employment, housing, education or essential access could encode unfair criteria, inappropriate proxies or unjustified generalizations.",
+          "warning": "Adverse outcomes concentrate without justification, proxies dominate, or affected people cannot obtain reasons or appeal.",
+          "safeguard": "Assess actual outcomes and decision context, review criteria and evidence, provide intelligible reasons and effective appeal, and retain accountable human authority.",
+          "source": "R1; R2"
+        }
+      ]
+    },
+    {
+      "title": "D7 - Entertainment and interaction",
+      "intro": "Entertainment applications affect trust, attention, perception and intimate boundaries through their objectives and their identity, media or sensory interfaces.",
+      "scenarios": [
+        {
+          "id": "T25",
+          "title": "Impersonation and deceptive interaction",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Presenting generated interaction as a real person or trusted authority could enable fraud and manipulation.",
+          "warning": "Synthetic origin is hidden, authority is fabricated, or trust is requested without verifiable identity.",
+          "safeguard": "Disclose synthetic origin, verify authority before consequential actions, require permission to represent others, retain accountable records, and provide a clear route to challenge or report impersonation.",
+          "source": "R1; R2"
+        },
+        {
+          "id": "T26",
+          "title": "Exploitative adaptive engagement",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "Profiling and feedback optimization could target compulsive use, dependency or exploitative spending rather than participant welfare.",
+          "warning": "Metrics reward distress, escalating spending or overriding user limits, while stopping becomes difficult.",
+          "safeguard": "Give users control over objectives and limits, assess welfare separately from engagement, avoid exploiting vulnerability, make disengagement easy, and review harmful patterns in adaptive content.",
+          "source": "R1; R2; R7"
+        },
+        {
+          "id": "T27",
+          "title": "Unsafe XR or sensory output",
+          "level": 5,
+          "path": "A/P",
+          "prerequisite_harm": "Connected displays, haptics or sensory outputs could cause distress, disorientation, falls or collision when they conflict with the environment or user abilities.",
+          "warning": "Tracking degrades, discomfort is ignored, or real-world awareness and accessibility are overridden.",
+          "safeguard": "Validate comfort and accessibility, retain environmental awareness, respect participant limits, provide immediate pause, and preserve independent device controls and safe failure responses.",
+          "source": "R6; R7"
+        },
+        {
+          "id": "T28",
+          "title": "Nonconsensual intimate simulation",
+          "level": 4,
+          "path": "A/P",
+          "prerequisite_harm": "Unauthorized personal likenesses or connected intimate experiences could enable humiliation, exploitation or coercion, including ignored withdrawal and overridden boundaries.",
+          "warning": "Likenesses lack permission, boundaries change without agreement, or participation is pressured.",
+          "safeguard": "Require explicit, revocable consent, appropriate age protections and likeness authorization; enforce boundaries, stop immediately on withdrawal, and provide private reporting and removal mechanisms.",
+          "source": "R1; R2; R7"
+        }
+      ]
+    },
+    {
+      "title": "D8 - Neurotechnology and health",
+      "intro": "Health claims and neural or physiological effects need separate evidence. Physical harm requires an external interface; the kernel alone establishes none.",
+      "scenarios": [
+        {
+          "id": "T29",
+          "title": "Neural privacy and false mind claims",
+          "level": 4,
+          "path": "A/P",
+          "prerequisite_harm": "Neural recordings could expose sensitive signals; unsupported claims to read thoughts could also coerce or stigmatize people without any working neural device.",
+          "warning": "Interpretations exceed evidence, participation becomes compulsory, or recordings are reused beyond consent.",
+          "safeguard": "Protect data and autonomy, validate inferences independently, reject unsupported mind-reading claims, limit retention and purposes, and preserve meaningful refusal.",
+          "source": "R4; K1"
+        },
+        {
+          "id": "T30",
+          "title": "Unsafe neural modulation",
+          "level": 6,
+          "path": "P",
+          "prerequisite_harm": "An externally coupled stimulation device could cause injury under unsafe control. Level 6 assumes credible death or multiple severe injuries; otherwise rate the stated harm.",
+          "warning": "Adaptive output bypasses independent limits, adverse effects lack review, or mathematical claims replace empirical evidence.",
+          "safeguard": "Keep independent device safeguards, require qualified oversight and informed consent, validate interventions, and provide immediate cessation and adverse-event review.",
+          "source": "R4; R3; K1"
+        },
+        {
+          "id": "T31",
+          "title": "Biochemical or physiological misuse",
+          "level": 6,
+          "path": "P",
+          "prerequisite_harm": "Connected delivery or physiological-control hardware could cause poisoning, injury or coercive exposure. Level 6 assumes credible death or multiple severe injuries; otherwise rate the stated harm.",
+          "warning": "Delivery lacks consent, interventions lack review, or revisions bypass safeguards.",
+          "safeguard": "Separate entertainment logic from hazardous control, retain independent interlocks, require appropriate expertise and evidence, and stop unauthorized delivery or unexplained effects.",
+          "source": "R4; R5; K1"
+        },
+        {
+          "id": "T32",
+          "title": "Unvalidated clinical claims",
+          "level": 5,
+          "path": "A/P",
+          "prerequisite_harm": "Presenting exact rules as clinically valid diagnosis or treatment could cause missed care, harmful intervention or false reassurance.",
+          "warning": "Health claims rely on mathematical certainty without clinical evidence, or deterioration produces no qualified escalation.",
+          "safeguard": "Define intended use and evidence limits, independently validate clinical claims where applicable, retain uncertainty and escalation, and preserve qualified accountability for consequential care decisions.",
+          "source": "R1; R4; R5"
+        }
+      ]
+    },
+    {
+      "title": "D9 - Physical control and services",
+      "intro": "These harms require actuators, operational access or independently capable external systems. Simulation and GPU checks do not establish safe physical control.",
+      "scenarios": [
+        {
+          "id": "T33",
+          "title": "Unsafe robotics or machinery",
+          "level": 6,
+          "path": "P",
+          "prerequisite_harm": "Access to coupled moving machinery could cause collision or crushing under unsafe control. Level 6 assumes credible death or multiple severe injuries; otherwise rate the stated harm.",
+          "warning": "Motion exceeds operating limits, revisions cause surprises, or safety checks are disabled.",
+          "safeguard": "Use independent safety control, physical limits and safe stopping; validate installations, authorize changes, and protect people during uncertainty.",
+          "source": "R3; K1"
+        },
+        {
+          "id": "T34",
+          "title": "Critical-service or OT sabotage",
+          "level": 6,
+          "path": "P",
+          "prerequisite_harm": "Access to operational technology could enable malicious control that disrupts essential services or creates potentially fatal process conditions.",
+          "warning": "Control changes are unscheduled, process behavior diverges without explanation, or protective systems are disabled.",
+          "safeguard": "Segregate operational access, authenticate and review changes, preserve independent process protections, monitor unsafe departures, and maintain practiced recovery and service-continuity procedures.",
+          "source": "R3; K1"
+        },
+        {
+          "id": "T35",
+          "title": "Hazardous navigation",
+          "level": 5,
+          "path": "P",
+          "prerequisite_harm": "Vehicles, drones or mobility systems relying on invalid spatial rules could choose hazardous routes or move despite uncertain localization.",
+          "warning": "Routes ignore restrictions, confidence exceeds evidence, or adaptation loses operator intent.",
+          "safeguard": "Validate the full sensor-to-motion chain and operating domain, enforce independent collision protection, respect route authority, and require safe handoff or stopping when localization or assumptions fail.",
+          "source": "R3; K1"
+        },
+        {
+          "id": "T36",
+          "title": "Weapon-system adaptation",
+          "level": 7,
+          "path": "P",
+          "prerequisite_harm": "Catastrophic harm requires an independently capable external weapons system, harmful objectives, relevant data and actual integration. Current kernel evidence establishes none of these.",
+          "warning": "Integration assigns harmful selection or actuation objectives and removes independent safeguards.",
+          "safeguard": "Do not authorize harmful integration; govern interfaces and access, assess the complete external system, and retain independent oversight. This flag describes conditional consequence.",
+          "source": "R1; R3; K1"
+        }
+      ]
+    },
+    {
+      "title": "D10 - Science and institutions",
+      "intro": "Deployment can magnify governance failures. High-consequence science and environmental harms require external capabilities, while institutional and resource harms follow from application choices.",
+      "scenarios": [
+        {
+          "id": "T37",
+          "title": "Hazardous science enablement",
+          "level": 7,
+          "path": "A/P",
+          "prerequisite_harm": "Extreme harm requires independently high-consequence research capability, hazardous access and harmful use. Present finite Boolean skills establish no dangerous scientific competence.",
+          "warning": "Acquisition pursues harmful outcomes, hazardous access or avoidance of accountable review.",
+          "safeguard": "Review actual purpose and downstream capability, restrict hazardous workflows, retain independent expert oversight, and stop harmful integrations. Grade the external consequence rather than the word universal.",
+          "source": "R5; R1; K2"
+        },
+        {
+          "id": "T38",
+          "title": "Harmful environmental intervention",
+          "level": 5,
+          "path": "A/P",
+          "prerequisite_harm": "Access to environmental intervention could amplify invalid models or exploitative objectives into widespread ecological harm.",
+          "warning": "Decisions omit ecological uncertainty, external costs or affected communities, while deployment outpaces independent monitoring.",
+          "safeguard": "Assess actual interventions and alternatives, involve affected stakeholders, bound scale, monitor independent environmental outcomes, and preserve reversibility and stopping authority when assumptions or impacts prove wrong.",
+          "source": "R1; R3; R5"
+        },
+        {
+          "id": "T39",
+          "title": "Institutional gatekeeping and lock-in",
+          "level": 4,
+          "path": "A",
+          "prerequisite_harm": "An exclusive runtime controlling essential decisions or knowledge access could create dependency, coercion and denial of recourse.",
+          "warning": "Knowledge and evidence cannot be exported, updates occur unilaterally, or reasons and appeals are inaccessible.",
+          "safeguard": "Use interoperable formats, portable evidence and accountable publication governance; separate duties, preserve alternatives, and provide independent review and remedies for consequential decisions and access restrictions.",
+          "source": "R1; R2"
+        },
+        {
+          "id": "T40",
+          "title": "Energy and economic externalities",
+          "level": 3,
+          "path": "A",
+          "prerequisite_harm": "Large-scale acquisition, verification and deployment without demonstrated benefit could waste energy, equipment and investment.",
+          "warning": "Compute and storage grow while useful outcomes stagnate, and claims omit teacher, verification or replacement costs.",
+          "safeguard": "Measure whole-pipeline energy, cost and useful performance; compare simpler alternatives, set progress-based budgets, disclose major assumptions, and stop expansion when evidence does not justify resource demands.",
+          "source": "K1; K2; R1"
+        }
+      ]
+    }
+  ]
+}

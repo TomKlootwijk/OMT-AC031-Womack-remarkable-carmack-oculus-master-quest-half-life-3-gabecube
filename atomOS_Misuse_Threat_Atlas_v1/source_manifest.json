@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-14",
+  "evidence_baseline_commit": "aa30933014e4689decfc9af822ef043c89cd2923",
+  "sources": [
+    {
+      "path": "atomOS_v3.6_Total_Integrated_Engine_Tom_Klootwijk.pdf",
+      "sha256": "b51651c007c560775ff1950e278789cd7674e131ec71a09ebd9254cebe9c19ce",
+      "bytes": 361306
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/README.md",
+      "sha256": "fe9363e3139920b25c4a5750939e3f0f4e20e0a8ce8171b947d52722f4dc5131",
+      "bytes": 18240
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/docs/CONTRACT.md",
+      "sha256": "f3c724839151201cb11fd58ab65451b515cb9caa71c3a085701400f9b7b0c256",
+      "bytes": 8814
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/docs/coverage.csv",
+      "sha256": "c7a07f85776090ade1402a78e3316674390e5f837244327d4ca3b99cbcb69b00",
+      "bytes": 7502
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/proofs/CLAIMS.md",
+      "sha256": "a0eb2299e401923a5afea5023758a93a6f82505a45705192f981f7031cb63efe",
+      "bytes": 11523
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/docs/SOURCE_OPERATOR_SDF_AUDIT.md",
+      "sha256": "c768addcbecf9635ea8e42209d69eef88ad06940bffac862c7dd8fefe4b7d9e4",
+      "bytes": 28368
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/docs/TEACHER_EXPRESSION_QUERIES.md",
+      "sha256": "ec19c8a4f0956528c9d6e5d2ed31d152953204c3027513dfce35e98445e50e2d",
+      "bytes": 4769
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/docs/TEACHER_REPAIR_AND_TEMPLATE_AUDIT.md",
+      "sha256": "72e8c60060c40370b9b674fffc9ee7ff6c5e4d2eac4533cd9da586a9930a1a15",
+      "bytes": 5605
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/docs/KNOWLEDGE_EXTRACTION_ARCHITECTURE.md",
+      "sha256": "a3f6864fe3c1ed2bd321670f0bc870803f0d0845c5667d50883cfa1c24c8fe17",
+      "bytes": 6145
+    },
+    {
+      "path": "atomOS_v3_6_RTX5070Ti_Laptop_Kernel_Tom_Klootwijk/atomOS_v3_6_CUDA_Verification/docs/ENTERTAINMENT_POSSIBILITY_SPACES.md",
+      "sha256": "6b0fcb882a338fa0facae0ff01a7b419a8bc67c50c4a2dc0252221370b05742f",
+      "bytes": 56673
+    }
+  ],
+  "attribution": {
+    "formalization": "Tom Klootwijk",
+    "analysis_and_scale": "AI-assisted synthesis for Tom Klootwijk; original threat rubric, not a mathematical proof"
+  },
+  "review_scope": "Selected relevant primary pages and named kernel records; no comprehensive historical-PDF or security audit claimed."
+}

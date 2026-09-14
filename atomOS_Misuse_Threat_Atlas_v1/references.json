@@ -1,0 +1,76 @@
+{
+  "references": [
+    {
+      "id": "R1",
+      "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+      "date": "2023-01-26",
+      "status": "NIST AI 100-1; voluntary risk-management framework",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "support": "Separates harm magnitude from likelihood, calls for contextual evidence, and states that unmeasurable risk is not automatically high or low.",
+      "limit": "Does not validate atomOS capabilities. The rainbow and musical-note scale is an original analyst rubric, not official NIST scoring."
+    },
+    {
+      "id": "R2",
+      "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+      "date": "2024-07-26",
+      "status": "NIST AI 600-1; voluntary companion profile",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "support": "Supports empirical capability evaluation, provenance review and incident monitoring; cautions against extrapolating performance from narrow assessments and covers information, privacy and integration risks.",
+      "limit": "Applies to generative AI contexts, including teacher acquisition; it does not establish that the LUT engine has general language capabilities."
+    },
+    {
+      "id": "R3",
+      "title": "Guide to Operational Technology (OT) Security",
+      "date": "2023-09-28",
+      "status": "NIST SP 800-82 Rev. 3; final technical guidance",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf",
+      "support": "Addresses security where programmable systems interact with physical processes, including safety-system independence, network separation, tested updates and recovery planning.",
+      "limit": "Relevant to actual physical-system integration. It neither certifies this kernel nor establishes that a software formalization directly controls matter."
+    },
+    {
+      "id": "R4",
+      "title": "Recommendation on the Ethics of Neurotechnology",
+      "date": "2025-11-11",
+      "status": "UNESCO Recommendation; adopted ethical standard-setting instrument",
+      "url": "https://www.unesco.org/en/legal-affairs/recommendation-ethics-neurotechnology",
+      "support": "Supports informed, voluntary and withdrawable participation; safeguards against coercion and manipulation; protects mental privacy and limits sensitive-data collection and processing.",
+      "limit": "An ethical Recommendation, not itself binding national law or evidence that atomOS can read minds or control mental states."
+    },
+    {
+      "id": "R5",
+      "title": "Global guidance framework for the responsible use of the life sciences: mitigating biorisks and governing dual-use research",
+      "date": "2022-09-13",
+      "status": "WHO global guidance framework",
+      "url": "https://www.who.int/publications/i/item/9789240056107",
+      "support": "Supports anticipatory biorisk assessment and shared governance responsibilities across the research lifecycle, including researchers, institutions, funders and other stakeholders.",
+      "limit": "Provides governance principles, not biological procedures or proof that this kernel enables a particular biological capability."
+    },
+    {
+      "id": "R6",
+      "title": "WebXR Device API",
+      "date": "2026-06-09",
+      "status": "W3C Candidate Recommendation Draft",
+      "url": "https://www.w3.org/TR/webxr/",
+      "support": "Identifies XR privacy, security and comfort concerns involving sensitive pose data, user intention, consent, profiling and user control over immersive sessions.",
+      "limit": "A draft technical specification, not a safety certification or evidence that the present kernel implements XR sensing."
+    },
+    {
+      "id": "R7",
+      "title": "XR Accessibility User Requirements",
+      "date": "2021-08-25",
+      "status": "W3C Working Group Note; exploratory user requirements",
+      "url": "https://www.w3.org/TR/2021/NOTE-xaur-20210825/",
+      "support": "Discusses accessible escape controls, time awareness, orientation reset, alternative output routes, adjustable interaction speed and avoidance of sickness triggers.",
+      "limit": "Explicitly not baseline conformance requirements; supports design considerations rather than certification, binding law or universal medical safety guarantees."
+    },
+    {
+      "id": "R8",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "date": "2024-12-12",
+      "status": "W3C Recommendation; dated edition",
+      "url": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+      "support": "Success Criterion 1.4.1 supports labels and other visual distinctions alongside color, so the atlas remains understandable without identifying its rainbow swatches.",
+      "limit": "Using this principle does not establish PDF accessibility conformance. The musical labels and severity assignments are original analyst choices."
+    }
+  ]
+}
