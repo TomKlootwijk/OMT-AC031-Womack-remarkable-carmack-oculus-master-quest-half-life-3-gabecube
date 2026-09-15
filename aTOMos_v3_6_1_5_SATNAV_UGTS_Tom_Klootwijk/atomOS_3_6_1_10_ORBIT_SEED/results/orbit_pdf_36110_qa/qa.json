@@ -1,7 +1,7 @@
 {
-  "pdf_sha256": "3456d659b95586accdd511942fd096c5764a7a42b2e339798a7555f24d748b72",
-  "pdf_bytes": 741607,
-  "page_count": 73,
+  "pdf_sha256": "d69e333e7c1e10b19a73a3dd61ce0ad7c214b408cf93c92a3a240fe04f159a64",
+  "pdf_bytes": 747543,
+  "page_count": 74,
   "metadata": {
     "/Creator": "LaTeX with hyperref",
     "/Title": "aTOMos v3.6.1.10 - Orbital Seeds, Timestamp Queries and Literal Kernel",
@@ -9,9 +9,9 @@
     "/Author": "Tom Klootwijk",
     "/Keywords": "aTOMos,atomOS,3.6.1.10,UGTS,SCLP,RTCM,NTRIP,GNSS,CUDA,Tom Klootwijk",
     "/Producer": "xdvipdfmx (0.1)",
-    "/CreationDate": "D:20260915051435-00'00'"
+    "/CreationDate": "D:20260915053014-00'00'"
   },
-  "checked_utc": "2026-09-15T05:15:32.083487+00:00",
+  "checked_utc": "2026-09-15T05:31:04.857163+00:00",
   "all_pages_rendered_dpi": 60,
   "detail_pages_rendered_dpi": 120,
   "detail_pages": [
@@ -87,7 +87,8 @@
     70,
     71,
     72,
-    73
+    73,
+    74
   ],
   "pages": [
     {
@@ -132,14 +133,14 @@
     },
     {
       "page": 3,
-      "text_characters": 1193,
-      "body_characters": 943,
+      "text_characters": 1201,
+      "body_characters": 950,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
         "Contents",
         "Release and implementation record 2",
         "1 Seed execution optimization in 3.6.1.10 5",
-        "2 ORBIT-SEED-R1: compact physical seeds and timestamp queries 9"
+        "2 Gregorian calendar continuity and exact phase carry 9"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
@@ -152,14 +153,14 @@
     },
     {
       "page": 4,
-      "text_characters": 1139,
-      "body_characters": 876,
+      "text_characters": 1189,
+      "body_characters": 918,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "21 The weighted positioning step 51",
-        "22 Streaming QR, rank and formal covariance 52",
-        "23 Solver status and residual diagnostics 53",
-        "24 Local ENU and the UGTS log chart 54"
+        "21 Input epochs, channels and aTOMos selection 51",
+        "22 The weighted positioning step 52",
+        "23 Streaming QR, rank and formal covariance 53",
+        "24 Solver status and residual diagnostics 54"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
@@ -252,8 +253,8 @@
     },
     {
       "page": 9,
-      "text_characters": 3347,
-      "body_characters": 2772,
+      "text_characters": 2942,
+      "body_characters": 2397,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
         "The accepted R10 packing construction. For a 64\u0002 64 bit array , the transpose is",
@@ -264,42 +265,82 @@
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
-        64.73867,
+        64.77137999999997,
         26.623897675999956,
-        531.898947264,
+        531.9858364320002,
         808.398928752
       ]
     },
     {
       "page": 10,
-      "text_characters": 2642,
-      "body_characters": 2104,
+      "text_characters": 2628,
+      "body_characters": 2175,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "The Chandra input is labelled TDB and is explicitly converted during construction and review.",
-        "GPST , UTC, TT and TDB calendar labels are not interchanged. At this example epoch GPST is 18",
-        "seconds ahead of UTC.",
-        "2.2 Explicit Earth frame and compact forcing"
+        "The contiguous and Morton key layouts store the remainder \ud835\udc5f in their time \ufb01eld. A key may",
+        "repeat after \ud835\udc43 ticks while winding \ud835\udc64 increases. Tests check both layouts against independently",
+        "assembled bit strings and retain absolute tick, winding and remainder in every daily chart record.",
+        "At a one-second tick period, the phase repeats after 16,384 seconds; it is not a calendar month or"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        531.9967355199999,
+        808.398928752
+      ]
+    },
+    {
+      "page": 11,
+      "text_characters": 2739,
+      "body_characters": 2202,
+      "first_lines": [
+        "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
+        "Complete binary seeds; sizes are measured in the execution table.",
+        "Each seed includes the initial state, force constants, compact Sun/Moon and frame coe\ufb03-",
+        "cients, provenance, both demonstration stations, time/query settings, two ASA/NA mask",
+        "sets and editable Boolean equations. No future target trajectory table is stored. The native"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
         64.65139999999997,
         26.623897675999956,
-        531.996727248,
+        531.996757248,
         808.398928752
       ]
     },
     {
-      "page": 11,
-      "text_characters": 2162,
-      "body_characters": 1666,
+      "page": 12,
+      "text_characters": 2600,
+      "body_characters": 2074,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "\ufb01eld is",
-        "\ud835\udc48\u00b9p\u00ba = \ud835\udf07",
-        "\ud835\udc45",
-        "12\u00d5"
+        "Published daily \ud835\udc65\ud835\udc5d , \ud835\udc66\ud835\udc5d and DUT1 values are linearly interpolated. The ERA correction is \ud835\udeff\ud835\udc4e\u00b9\ud835\udf0f\u00ba =",
+        "\u00a4\ud835\udc4e\u00bbDUT1\u00b9\ud835\udf0f\u00ba\u0000DUT1\u00b90\u00ba\u00bc, with\u00a4\ud835\udc4e = 2\ud835\udf0b\u00b91.00273781191135448\u00ba\u009d86400. The velocity derivative includes",
+        "\u00a4\ud835\udc43, \u00a4\ud835\udeff\ud835\udc4e and \u00a4\ud835\udc44. TIO locator \ud835\udc600 is zero. Published EOP predictions carry their own uncertainty; their",
+        "interpolation is not a future observed-EOP measurement."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.9858664320003,
+        808.398928752
+      ]
+    },
+    {
+      "page": 13,
+      "text_characters": 2891,
+      "body_characters": 2311,
+      "first_lines": [
+        "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
+        "The diagonal recurrence uses \ud835\udc5a = 1, . . . , 12; the o\ufb00-diagonal recurrence uses \ud835\udc5a = 0, . . . , 12",
+        "and \ud835\udc5b = \ud835\udc5a\u00b8 1, . . . , 12. For \ud835\udc5b = \ud835\udc5a\u00b8 1 the second term is absent. Each native recurrence",
+        "value carries three analytic Cartesian derivatives; the product rule produces r\ud835\udc48. Independent",
+        "Python validation di\ufb00erentiates the scalar potential with complex steps, and native tests compare"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
@@ -311,172 +352,152 @@
       ]
     },
     {
-      "page": 12,
-      "text_characters": 2915,
-      "body_characters": 2369,
+      "page": 14,
+      "text_characters": 3004,
+      "body_characters": 2404,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "The three signed empirical accelerations and \ud835\udc34 are \ufb01tted only on the declared training arc. Their",
-        "continuation is a physical approximation, not knowledge of future spacecraft operations. The",
-        "same ten-parameter \ufb01t is \ufb01xed for all four objects: state six, SRP one and RTN three. Earlier",
-        "training-window candidates of one, three and seven days are compared against the earlier January"
-      ],
-      "outside_media_characters": 0,
-      "replacement_characters": 0,
-      "bbox": [
-        64.85867,
-        26.623897675999956,
-        531.985826432,
-        808.398928752
-      ]
-    },
-    {
-      "page": 13,
-      "text_characters": 3186,
-      "body_characters": 2558,
-      "first_lines": [
-        "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "One selected boundary hit therefore absorbs the entire output word. It does not merely clear the",
-        "intersecting bit. At ordered query \ud835\udc57,",
-        "s\ud835\udc57 = \u03a6\u00b9S, \ud835\udf0f\ud835\udc57\u00ba, \ud835\udc54\ud835\udc57 = \ud835\udc3a\u00b9s\ud835\udc57 ,G, \ud835\udf0f\ud835\udc57\u00ba, (26)",
-        "\ud835\udc51\ud835\udc57 = \ud835\udc38\ud835\udc37\u00b9\ud835\udc54\ud835\udc57 , \ud835\udf0f\ud835\udc57\u00ba, \ud835\udc65 \ud835\udc57 = \ud835\udc38\ud835\udc4b\u00b9\ud835\udc5e \ud835\udc57 , \ud835\udc51 \ud835\udc57\u00ba, (27)"
+        "fractional step of length \ud835\udf16 from the canonical state at \ud835\udc5b \u210e. Fractional results never become canonical",
+        "checkpoints. This makes the physical query independent of the order in which the timeline was",
+        "scrubbed.",
+        "The CPU worker retains at most the declared number of sparse checkpoints (256 in the examples, at"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
         64.65138999999999,
         26.623897675999956,
-        531.996423104,
+        531.985806432,
         808.398928752
       ]
     },
     {
-      "page": 14,
-      "text_characters": 3762,
-      "body_characters": 3165,
+      "page": 15,
+      "text_characters": 3460,
+      "body_characters": 2828,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "2.7 Original UGTS keys and complete time",
-        "The orbital chart uses \ud835\udf0c = log\u00b9\ud835\udc3b\u009d\ud835\udc5f0\u00ba, \ud835\udf03 = atan2\u00b9\ud835\udc41 , \ud835\udc38\u00ba and the explicit separate hoop angle \ud835\udf19. The",
-        "source chart is used only when\u000020\u0014 \ud835\udf0c\u0014 0; out-of-range coordinates are not wrapped into a valid",
-        "key. The full tick is \ud835\udc58 =b\ud835\udc61\u009d\ud835\udeff\ud835\udc61c, with integer winding and remainder from \ud835\udc58 = 16384\ud835\udc64\u00b8 \ud835\udc58\ud835\udc5d \u210e\ud835\udc4e\ud835\udc60\ud835\udc52 ."
+        "Set \ud835\udc3b =",
+        "p",
+        "\ud835\udc382\u00b8 \ud835\udc41 2 and \ud835\udc37 =kzk. The returned quantities are",
+        "az = atan2\u00b9\ud835\udc38, \ud835\udc41\u00ba mod 2\ud835\udf0b, el = atan2\u00b9\ud835\udc48 , \ud835\udc3b\u00ba, (33)"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
-        64.77141999999992,
+        64.73870000000005,
         26.623897675999956,
         531.9967455199998,
         808.398928752
       ]
     },
     {
-      "page": 15,
-      "text_characters": 3346,
-      "body_characters": 2786,
+      "page": 16,
+      "text_characters": 3484,
+      "body_characters": 2952,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "2.9 Packed execution and regression evidence",
-        "The following numbers are derived from the \ufb01nal decoded seeds and veri\ufb01ed native binaries. The",
-        "isolated replay child receives only the packed seed, shared runtime source and native executable;",
-        "an audit hook denies every read under the original release directory. The reconstructed fractional,"
+        "but does not change \ufb02oating-point arithmetic in propagation. The measured example packs are",
+        "slightly larger with this representation than with codec 1. The decoder checks exact lengths,",
+        "bounded expansion and nesting, complete stream termination, canonical re-encoding, digest,",
+        "model schema and time domains. There is no executable payload or pickle."
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
         64.65139000000003,
         26.623897675999956,
-        531.985816432,
+        531.99470808,
         808.398928752
       ]
     },
     {
-      "page": 16,
-      "text_characters": 2865,
-      "body_characters": 2321,
+      "page": 17,
+      "text_characters": 3518,
+      "body_characters": 2910,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "2.10 R2 physical-position results and separate con\ufb01rmation",
-        "The R2 models stay below the adopted 10 m three-dimensional reference-discrepancy budget at",
-        "every tested sample through 24 hours for all four targets, on both the January benchmark and the",
-        "separate February con\ufb01rmation date. This statement concerns sampled positions of these seeds;"
+        "The table is 12.45 times the size of the largest complete packed seed. The shared CPU executable",
+        "is 77,824 bytes, and the isolated shared Python source is 89,342 bytes at validation. Installed",
+        "libraries and the OS/C++ runtime are additional shared dependencies. The default codec packs",
+        "64 one-bit planes into uint64 words without discarding any numeric bit. The canonical codec"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
         64.83686,
         26.623897675999956,
+        531.8876346400001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 18,
+      "text_characters": 2895,
+      "body_characters": 2347,
+      "first_lines": [
+        "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
+        "Table 3: R2 January discrepancy in metres at the nearest actual sample to each requested horizon.",
+        "Individual samples are not worst-case interval errors.",
+        "Target 15 min 1 h 6 h 24 h 72 h 7 d",
+        "G05 / MEO 0.474 0.655 0.272 0.713 2.228 12.531"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
         531.987618032,
         808.398928752
       ]
     },
     {
-      "page": 17,
-      "text_characters": 3252,
-      "body_characters": 2673,
+      "page": 19,
+      "text_characters": 3765,
+      "body_characters": 3142,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "The seven-day 10 m budget isnot met for all targets. C06 stays below it at every seven-day sample",
-        "on both dates; G05 exceeds it later on both dates. C03 and Chandra have additional reference qual-",
-        "i\ufb01cations below. The original R1 seven-day maxima were 7402.960/532.582/1237.242/19399.307",
-        "m in the same object order. The R2 \ufb01rst-day improvement must not be extended into a claim that"
+        "C03 February coverage. GFZ contains no C03 records on February 5 and 6. Adjacent daily",
+        "endpoints leave a 48-hour reference gap and 575 missing \ufb01ve-minute samples. Wuhan also lacks",
+        "C03 on February 6 and cannot certify the missing interval. GFZ remains the predeclared primary",
+        "source. The \ufb01rst post-gap discrepancy is 29256.547 m and the later maximum is 100604.174 m; these"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
         64.73867,
         26.623897675999956,
-        531.9858164320001,
+        531.99672552,
         808.398928752
       ]
     },
     {
-      "page": 18,
-      "text_characters": 4262,
-      "body_characters": 3618,
+      "page": 20,
+      "text_characters": 3752,
+      "body_characters": 3224,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "\ufb01rst sample; the wider January evidence above comes from the separate, target-independent",
-        "physical audit. Native CPU/CUDA checks and exact word/packing checks remain separate",
-        "evidence. The frame test compares the embedded daily-EOP/Chebyshev frame with direct SOFA",
-        "IAU 2006/2000A evaluation of the same published prediction. It excludes actual future EOP"
+        "3.13 Chronology, source conventions and reproducible evidence",
+        "The R2 physical model uses the documented degree/order-12 EGM96 \ufb01eld, cuto\ufb00-available daily",
+        "Earth orientation, and external Sun/Moon forcing. EGM96\u2019s original mu, reference radius, tide-",
+        "free convention and fully normalized coe\ufb03cients are preserved with explicit conversion in sour"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
       "bbox": [
         64.62959000000001,
         26.623897675999956,
-        532.93281288,
-        808.398928752
-      ]
-    },
-    {
-      "page": 19,
-      "text_characters": 1889,
-      "body_characters": 1587,
-      "first_lines": [
-        "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "CC BY-NC 4.0 . The DOI names an ultra-rapid series whereas these GBM \ufb01les are rapid",
-        "products without a separate per-\ufb01le grant. The \ufb01xture bundle conservatively retains that",
-        "noncommercial quali\ufb01cation and is not claimed as unrestricted commercial data. IGS terms:",
-        "https://www.igs.org/wp-content/uploads/2020/09/IGS-Data-and-Product-Disclaime"
-      ],
-      "outside_media_characters": 0,
-      "replacement_characters": 0,
-      "bbox": [
-        64.77139000000004,
-        26.623897675999956,
         534.0747540959998,
         808.398928752
       ]
     },
     {
-      "page": 20,
+      "page": 21,
       "text_characters": 936,
       "body_characters": 735,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "2.14 R2 January benchmark curves",
+        "3.14 R2 January benchmark curves",
         "0 20 40 60 80 100 120 140 160",
         "Hours after frozen seed cutoff",
         "100"
@@ -491,12 +512,12 @@
       ]
     },
     {
-      "page": 21,
+      "page": 22,
       "text_characters": 990,
       "body_characters": 781,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "2.15 Separate February con\ufb01rmation curves",
+        "3.15 Separate February con\ufb01rmation curves",
         "0 20 40 60 80 100 120 140 160",
         "Hours after frozen seed cutoff",
         "100"
@@ -511,7 +532,7 @@
       ]
     },
     {
-      "page": 22,
+      "page": 23,
       "text_characters": 3526,
       "body_characters": 2925,
       "first_lines": [
@@ -519,7 +540,7 @@
         "Retained receiver, geometry and source contracts",
         "The following sections retain the earlier executable mathematical pro\ufb01les and their dated mea-",
         "surements. References to the 3.6.1.8 live receiver are historical. The current orbital seed pro\ufb01le,",
-        "timestamp queries and satellite forecast evidence are in Section 2. The baseline regression results"
+        "timestamp queries and satellite forecast evidence are in Section 3. The baseline regression results"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
@@ -531,13 +552,13 @@
       ]
     },
     {
-      "page": 23,
+      "page": 24,
       "text_characters": 2409,
       "body_characters": 2031,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
         "but no ambiguity state is estimated by this pro\ufb01le.",
-        "3.2 Time, provenance and reproducible execution",
+        "4.2 Time, provenance and reproducible execution",
         "Times are unwrapped GPS seconds from 1980-01-06. RTCM week ambiguity is resolved against",
         "the recorded reception date, with an explicit GPS-minus-UTC o\ufb00set of 18 seconds for these"
       ],
@@ -551,12 +572,12 @@
       ]
     },
     {
-      "page": 24,
+      "page": 25,
       "text_characters": 1995,
       "body_characters": 1537,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.3 LIVE-R1 time contract and broadcast orbit",
+        "4.3 LIVE-R1 time contract and broadcast orbit",
         "A raw observation is\u00b9\ud835\udc61tag",
         "\ud835\udc5f , \ud835\udc43\ud835\udc56 , PRN\ud835\udc56 , \ud835\udf0e0\ud835\udc56\u00ba. Time is full, unwrapped GPS seconds from 1980-01-06;",
         "\ud835\udc43\ud835\udc56 is the original GPS L1 C/A pseudorange in metres. Receiver time tags and code share one clock"
@@ -571,12 +592,12 @@
       ]
     },
     {
-      "page": 25,
+      "page": 26,
       "text_characters": 2132,
       "body_characters": 1673,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.4 Satellite clock, emission time and reception axes",
+        "4.4 Satellite clock, emission time and reception axes",
         "Let \ud835\udc650 = \ud835\udc5f cos \ud835\udc62 and \ud835\udc660 = \ud835\udc5f sin \ud835\udc62. The satellite position in the Earth-\ufb01xed axes at emission is",
         "e\ud835\udc99\ud835\udc60 =",
         "\u00a9\u00ad\u00ad"
@@ -591,12 +612,12 @@
       ]
     },
     {
-      "page": 26,
+      "page": 27,
       "text_characters": 1889,
       "body_characters": 1490,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.5 Complete Klobuchar L1 ionosphere",
+        "4.5 Complete Klobuchar L1 ionosphere",
         "WGS84 ECEF-to-geodetic conversion supplies receiver latitude \ud835\udf11\ud835\udc5f, longitude \ud835\udf06\ud835\udc5f and ellipsoidal",
         "height \u210e. Rotating the line of sight into local ENU gives azimuth \ud835\udc34\ud835\udc67 clockwise from north",
         "and elevationE. A default 10\u000e elevation mask is applied after the receiver geometry has been"
@@ -611,12 +632,12 @@
       ]
     },
     {
-      "page": 27,
+      "page": 28,
       "text_characters": 1758,
       "body_characters": 1382,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.6 Troposphere, observation variance and native solve",
+        "4.6 Troposphere, observation variance and native solve",
         "LIVE-R1 uses a speci\ufb01ed standard atmosphere with relative humidity \ud835\udc3b = 0.7. For \u0000100\u0014 \u210e\u0014",
         "10000 m andE > 0, de\ufb01ne",
         "\u210e0 = max\u00b9\u210e, 0\u00ba, (67)"
@@ -631,12 +652,12 @@
       ]
     },
     {
-      "page": 28,
+      "page": 29,
       "text_characters": 3273,
       "body_characters": 2707,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.7 Persistent receiver execution and correction feedback",
+        "4.7 Persistent receiver execution and correction feedback",
         "The persistent native worker receives complete epochs. The preparation layer and native solve",
         "form the outer state-feedback map",
         "O\u00b9\ud835\udc58\u00ba"
@@ -651,7 +672,7 @@
       ]
     },
     {
-      "page": 29,
+      "page": 30,
       "text_characters": 1936,
       "body_characters": 1592,
       "first_lines": [
@@ -671,12 +692,12 @@
       ]
     },
     {
-      "page": 30,
+      "page": 31,
       "text_characters": 2248,
       "body_characters": 1852,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.9 Current live execution and independent validation",
+        "4.9 Current live execution and independent validation",
         "Both \ufb01nal sessions ran on 14 September 2026 UTC (the local Netherlands date crossed into 15",
         "September during the work). Each captured 180 complete one-second epochs using one public",
         "caster connection. CPU and CUDA ran sequential sessions: CPU: 21:55:20\u201321:58:20 UTC; CUDA:"
@@ -691,12 +712,12 @@
       ]
     },
     {
-      "page": 31,
+      "page": 32,
       "text_characters": 1372,
       "body_characters": 1101,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.10 Measured position series and independent checks",
+        "4.10 Measured position series and independent checks",
         "Figure. East/North/Up and three-dimensional separation from the advertised ARP in the two",
         "actual live sessions. The blank beginning is ephemeris warmup; no position is fabricated for",
         "it. These are di\ufb00erent time windows, so their physical di\ufb00erences are not a CPU-versus-GPU"
@@ -711,12 +732,12 @@
       ]
     },
     {
-      "page": 32,
+      "page": 33,
       "text_characters": 2988,
       "body_characters": 2492,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.11 Regression, real-model checks and retained state connection",
+        "4.11 Regression, real-model checks and retained state connection",
         "The older GSI recording solved all 120 real epochs from ECEF zero. Its raw physical model",
         "and weight-isolation experiment are described with the equations above. Prepared \ufb01nal live CPU",
         "observations passed 3,324 independent Householder checks across all 180 epochs, with maximum"
@@ -731,12 +752,12 @@
       ]
     },
     {
-      "page": 33,
+      "page": 34,
       "text_characters": 2299,
       "body_characters": 1927,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "3.12 Scope of the resulting navigation kernel",
+        "4.12 Scope of the resulting navigation kernel",
         "This release now contains real raw-data ingestion, satellite ephemeris propagation, explicit",
         "physical code corrections, continuous native position/clock computation, and independent",
         "real-observation evidence. It is a working single-point GPS L1 receiver backend. The validation"
@@ -751,12 +772,12 @@
       ]
     },
     {
-      "page": 34,
+      "page": 35,
       "text_characters": 2516,
       "body_characters": 2058,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "4 The completed geometry\u2013state feedback connection",
+        "5 The completed geometry\u2013state feedback connection",
         "Version 3.6.1.7 de\ufb01nes and implements CGK-R1, a coupled continuous and discrete state kernel.",
         "Prepared GNSS observations are solved by SATNA V-R1. Their unquantized position estimates",
         "become inputs to a persistent modeled mechanical state. Geometry of that state is encoded into"
@@ -771,12 +792,12 @@
       ]
     },
     {
-      "page": 35,
+      "page": 36,
       "text_characters": 1919,
       "body_characters": 1503,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "5 Literal chart motion and an explicit circle-plus",
+        "6 Literal chart motion and an explicit circle-plus",
         "For the old modeled position \ud835\udc5d =\u00b9\ud835\udc38, \ud835\udc41 , \ud835\udc48\u00ba, set \ud835\udc5f =",
         "p",
         "\ud835\udc382\u00b8 \ud835\udc41 2. For \ud835\udc5f\u0015 \ud835\udc5fcore > 0, use the retained"
@@ -791,12 +812,12 @@
       ]
     },
     {
-      "page": 36,
+      "page": 37,
       "text_characters": 2130,
       "body_characters": 1688,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "6 The geometry-to-bit encoders",
+        "7 The geometry-to-bit encoders",
         "Each present channel \ud835\udc56 supplies a unit mechanical direction \ud835\udc62\ud835\udc56, angle center \ud835\udefd\ud835\udc56, alignment tolerance",
         "\ud835\udf16\ud835\udc56, projected-error limit \ud835\udc3f\ud835\udc56, support geometry and fringe width \ud835\udf02\ud835\udc56. Parameters and their units are",
         "input data; changing them changes the executed model."
@@ -811,12 +832,12 @@
       ]
     },
     {
-      "page": 37,
+      "page": 38,
       "text_characters": 2001,
       "body_characters": 1598,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "7 The physical operator supplied by the feedback state",
+        "8 The physical operator supplied by the feedback state",
         "The modeled dynamics have diagonal positive mass \ud835\udc40, diagonal damping \ud835\udc36, and a supplied",
         "symmetric base sti\ufb00ness \ud835\udc3e0. For each present channel,",
         "\ud835\udf05\ud835\udc56\u00b9\ud835\udc5e\ud835\udc56\u00ba = \ud835\udf05o\ufb00"
@@ -831,12 +852,12 @@
       ]
     },
     {
-      "page": 38,
+      "page": 39,
       "text_characters": 2049,
       "body_characters": 1637,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "8 The physical eigenmatrix and mechanical checks",
+        "9 The physical eigenmatrix and mechanical checks",
         "Because \ud835\udc40 is positive diagonal and \ud835\udc3e symmetric, de\ufb01ne",
         "\ud835\udc37\u00b9\ud835\udc5e\u00ba = \ud835\udc40\u00001\u009d2\ud835\udc3e\u00b9\ud835\udc5e\u00ba\ud835\udc40\u00001\u009d2. (104)",
         "This is the explicit CGK-R1 physical eigenmatrix. It is distinct from the SATNA V observation"
@@ -851,12 +872,12 @@
       ]
     },
     {
-      "page": 39,
-      "text_characters": 2558,
-      "body_characters": 2134,
+      "page": 40,
+      "text_characters": 2561,
+      "body_characters": 2137,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "9 Actual SATNAV/UGTS handoff and editable model input",
+        "10 Actual SATNAV/UGTS handoff and editable model input",
         "The updated tools/ugts_handoff.py invokes the coupled pro\ufb01le by default. It consumes the",
         "actual solution and pro\ufb01le \ufb01les, creates the coupled model input, executes the native backend and",
         "independently replays its complete trace. The earlier hold-only behavior is available explicitly as"
@@ -871,12 +892,12 @@
       ]
     },
     {
-      "page": 40,
+      "page": 41,
       "text_characters": 2593,
       "body_characters": 2170,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "10 Preserved 3.6.1.7 coupled implementation validation",
+        "11 Preserved 3.6.1.7 coupled implementation validation",
         "These results were executed for parent version 3.6.1.7 on the local Windows machine.",
         "source/baseline_3_6_1_7_validation.json preserves its index. The unchanged sibling 3.6.1.7",
         "release contains its full run \ufb01les. These totals are historical evidence, not new 3.6.1.8 live-receiver"
@@ -891,12 +912,12 @@
       ]
     },
     {
-      "page": 41,
+      "page": 42,
       "text_characters": 2681,
       "body_characters": 2261,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "11 Coupled handoff evidence and reproducibility",
+        "12 Coupled handoff evidence and reproducibility",
         "The actual 256-row SATNA V stream produces 253 observation-driven advances and three pre-",
         "diction advances. There are 51 J/K changes across nine distinct word states. At unavailable-",
         "observation epochs 250, 251 and 252, modeled motion continues by approximately 2.10713 m,"
@@ -911,12 +932,12 @@
       ]
     },
     {
-      "page": 42,
+      "page": 43,
       "text_characters": 2009,
       "body_characters": 1566,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "12 Literal self-reference: the completed recurrence",
+        "13 Literal self-reference: the completed recurrence",
         "Version 3.6.1.6 adds the executable pro\ufb01le SRK-R1. Its state is a 32-bit word \ud835\udc5e\ud835\udc61 that occurs in",
         "its own next-state equation. The old release provided literal ASA/NA and J\u2013K primitives but its",
         "observation adapter used a constant hold event. This subversion supplies an explicit feedback"
@@ -931,12 +952,12 @@
       ]
     },
     {
-      "page": 43,
+      "page": 44,
       "text_characters": 1994,
       "body_characters": 1604,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "13 Actual equations are input data",
+        "14 Actual equations are input data",
         "The editable input is examples/self_reference/equations.json. The root declares version",
         "3.6.1.6, pro\ufb01le SRK-R1, optional default equations, and a trajectories array. Each trajectory",
         "supplies an ID, initial state, drive, four masks and step count; it may override the equations. For"
@@ -951,12 +972,12 @@
       ]
     },
     {
-      "page": 44,
+      "page": 45,
       "text_characters": 2073,
       "body_characters": 1588,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "14 Fixed points, cycles and complete \ufb01nite execution",
+        "15 Fixed points, cycles and complete \ufb01nite execution",
         "During one trajectory , equations, drive and masks are constant. They de\ufb01ne a deterministic",
         "function \ud835\udc39 : \ud835\udc44\ud835\udc49! \ud835\udc44\ud835\udc49 , where",
         "\ud835\udc44\ud835\udc49 =f\ud835\udc5e2 \ud835\udc4a : \ud835\udc5e^: \ud835\udc49 = 0g, j\ud835\udc44\ud835\udc49j = 2popcount\u00b9\ud835\udc49\u00ba, \ud835\udc5e \ud835\udc61\u00b81 = \ud835\udc39\u00b9\ud835\udc5e\ud835\udc61\u00ba. (118)"
@@ -971,12 +992,12 @@
       ]
     },
     {
-      "page": 45,
+      "page": 46,
       "text_characters": 2584,
       "body_characters": 2169,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "15 Native execution and independent equation replay",
+        "16 Native execution and independent equation replay",
         "The shared include/self_reference.hpp implements the truth-table and literal transition oper-",
         "ations. The CPU walks each trajectory in step order. CUDA assigns one thread to each indepen-",
         "dently seeded trajectory , then executes its recurrence sequentially within that thread. No ordering"
@@ -991,12 +1012,12 @@
       ]
     },
     {
-      "page": 46,
+      "page": 47,
       "text_characters": 2701,
       "body_characters": 2244,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "16 SRK-R1 baseline validation, version 3.6.1.6",
+        "17 SRK-R1 baseline validation, version 3.6.1.6",
         "All entries here concern the executable 3.6.1.6 source on the current Windows machine. The",
         "3.6.1.5 preparation record is preserved separately under results_3_6_1_5/. Finite comparisons",
         "check the requested trajectories; the closure and eventual-periodicity argument is given separately"
@@ -1011,12 +1032,12 @@
       ]
     },
     {
-      "page": 47,
+      "page": 48,
       "text_characters": 2044,
       "body_characters": 1674,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "17 The imported UGTS and aTOMos contracts",
+        "18 The imported UGTS and aTOMos contracts",
         "The supplied prototype de\ufb01nes a \ufb01nite, query-\ufb01rst state-and-relation package. It includes cone/-",
         "sphere relations, a bounded translational sweep, log-polar metric and kinematics, explicit time",
         "and winding, separate topology pro\ufb01les, \ufb01nite grammar, 64-bit key codecs and audited uncertain-"
@@ -1031,12 +1052,12 @@
       ]
     },
     {
-      "page": 48,
+      "page": 49,
       "text_characters": 1665,
       "body_characters": 1322,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "18 Receiver state and source-symbol separation",
+        "19 Receiver state and source-symbol separation",
         "The authoritative positioning state is",
         "\ud835\udc67\ud835\udc52 =\u00b9\ud835\udc65\ud835\udc52 , \ud835\udc66\ud835\udc52 , \ud835\udc67\ud835\udc52 , \ud835\udc4f\ud835\udc52\u00ba2 R4, \ud835\udc4f \ud835\udc52 = \ud835\udc50 \ud835\udeff\ud835\udc61\ud835\udc52 , (122)",
         "where the \ufb01rst three components are ECEF metres and the fourth is receiver clock bias in metres."
@@ -1051,12 +1072,12 @@
       ]
     },
     {
-      "page": 49,
+      "page": 50,
       "text_characters": 1905,
       "body_characters": 1541,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "19 The corrected-code observation model",
+        "20 The corrected-code observation model",
         "A decoded code measurement can be modelled as a geometric range, receiver/satellite clock",
         "terms and selected propagation/instrumental delays. SATNA V-R1 accepts an upstream additive",
         "correction \ud835\udc4e\ud835\udc56 and de\ufb01nes"
@@ -1071,12 +1092,12 @@
       ]
     },
     {
-      "page": 50,
+      "page": 51,
       "text_characters": 2103,
       "body_characters": 1687,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "20 Input epochs, channels and aTOMos selection",
+        "21 Input epochs, channels and aTOMos selection",
         "Each independent epoch binds its receive-time label, approximate initial state and 32-bit channel",
         "masks. Each observation row points to that epoch and names a unique channel in 0, . . . , 31.",
         "Channel IDs, not row order, de\ufb01ne mask bits."
@@ -1091,12 +1112,12 @@
       ]
     },
     {
-      "page": 51,
+      "page": 52,
       "text_characters": 1579,
       "body_characters": 1236,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "21 The weighted positioning step",
+        "22 The weighted positioning step",
         "For current estimate \ud835\udc67\u00b9\ud835\udc58\u00ba =\u00b9\ud835\udc93\u00b9\ud835\udc58\u00ba, \ud835\udc4f\u00b9\ud835\udc58\u00ba\u00ba, de\ufb01ne",
         "\ud835\udc45\u00b9\ud835\udc58\u00ba",
         "\ud835\udc56 =k\ud835\udc93\u00b9\ud835\udc58\u00ba\u0000 \ud835\udc94 \ud835\udc56k, (130)"
@@ -1111,12 +1132,12 @@
       ]
     },
     {
-      "page": 52,
+      "page": 53,
       "text_characters": 1731,
       "body_characters": 1369,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "22 Streaming QR, rank and formal covariance",
+        "23 Streaming QR, rank and formal covariance",
         "The kernel maintains an upper-triangular 4\u0002 4 matrix \ud835\udc45 and a transformed right-hand side \ud835\udc67.",
         "Each whitened row is appended by rotations that eliminate its components against the current",
         "triangular diagonal."
@@ -1131,12 +1152,12 @@
       ]
     },
     {
-      "page": 53,
+      "page": 54,
       "text_characters": 1573,
       "body_characters": 1271,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "23 Solver status and residual diagnostics",
+        "24 Solver status and residual diagnostics",
         "Convergence, residual \ufb01t and the later UGTS event are separate \ufb01elds.",
         "Solver status Meaning",
         "CONVERGED Numerical increment thresholds reached with valid \ufb01nal"
@@ -1151,12 +1172,12 @@
       ]
     },
     {
-      "page": 54,
+      "page": 55,
       "text_characters": 1501,
       "body_characters": 1160,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "24 Local ENU and the UGTS log chart",
+        "25 Local ENU and the UGTS log chart",
         "The receiver solution remains three-dimensional. For a declared geodetic anchor \u00b9\ud835\udf110, \ud835\udf060, \u210e 0\u00ba,",
         "convert ECEF di\ufb00erences to East/North/Up using",
         "\ud835\udc45\ud835\udc38\ud835\udc41\ud835\udc48 ="
@@ -1171,12 +1192,12 @@
       ]
     },
     {
-      "page": 55,
+      "page": 56,
       "text_characters": 2131,
       "body_characters": 1736,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "25 OTAN2 in satnav: preserve the observable",
+        "26 OTAN2 in satnav: preserve the observable",
         "The inherited literal operator remains",
         "otan2\ud835\udc60\u00b9\u0394\ud835\udf03, \u0394\ud835\udf0c\u00ba = arctan\u00b9\u0394\ud835\udf03\u009d\u0394\ud835\udf0c\u00ba, \u0394\ud835\udf0c \u2260 0, (142)",
         "with a separately supplied reference-axis subtraction when selected. This is a log-chart motion slope."
@@ -1191,14 +1212,14 @@
       ]
     },
     {
-      "page": 56,
+      "page": 57,
       "text_characters": 2026,
       "body_characters": 1650,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "26 Paired supports and the canonical UGTS event",
+        "27 Paired supports and the canonical UGTS event",
         "This section records the retained observation-only adapter, selected with \u2013legacy-hold. The",
-        "default coupled hando\ufb00 is speci\ufb01ed in Section 4; it retains residual diagnostics without using this",
+        "default coupled hando\ufb00 is speci\ufb01ed in Section 5; it retains residual diagnostics without using this",
         "earlier admission rule to override its equations."
       ],
       "outside_media_characters": 0,
@@ -1211,12 +1232,12 @@
       ]
     },
     {
-      "page": 57,
+      "page": 58,
       "text_characters": 1920,
       "body_characters": 1536,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "27 Finite cones and translational sweeps retained",
+        "28 Finite cones and translational sweeps retained",
         "For the source\u2019s slant length \ud835\udc47 > 0 and half-angle 0 < \ud835\udefc \ud835\udc50 < \ud835\udf0b\u009d2,",
         "\u210e = \ud835\udc47 cos \ud835\udefc\ud835\udc50 , \ud835\udc45 = \ud835\udc47 sin \ud835\udefc\ud835\udc50. (146)",
         "With apex \ud835\udc50, unit axis \ud835\udc4e and query \ud835\udc65, set"
@@ -1231,12 +1252,12 @@
       ]
     },
     {
-      "page": 58,
+      "page": 59,
       "text_characters": 1654,
       "body_characters": 1288,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "28 Jitter intervals and the explicit source correction",
+        "29 Jitter intervals and the explicit source correction",
         "U de\ufb01nes \ud835\udc53\ud835\udc57 = \ud835\udc53\u00b8 \ud835\udf16 \ud835\udc57 \ud835\udf0e with \ud835\udf0e2f\u0000 1,\u00b81g, then prints the equality",
         "\u00bb \ud835\udc53\ud835\udc57\u0000 \ud835\udf16 \ud835\udc57 , \ud835\udc53 \ud835\udc57\u00b8 \ud835\udf16 \ud835\udc57\u00bc =\u00bb \ud835\udc53\u0000 \ud835\udf16 \ud835\udc57 , \ud835\udc53 \u00b8 \ud835\udf16 \ud835\udc57\u00bc. (149)",
         "That equality is generally false for nonzero \ud835\udf16 \ud835\udc57. This edition preserves its source location and"
@@ -1251,12 +1272,12 @@
       ]
     },
     {
-      "page": 59,
+      "page": 60,
       "text_characters": 1551,
       "body_characters": 1223,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "29 Two exact 64-bit key layouts",
+        "30 Two exact 64-bit key layouts",
         "U\u2019s \ufb01eld widths and layouts are retained exactly:",
         "Field Bits Contiguous range Domain",
         "Log-radius index 20 63:44 Declared \ud835\udf0c2\u00bb\u0000 20, 0\u00bc"
@@ -1271,12 +1292,12 @@
       ]
     },
     {
-      "page": 60,
+      "page": 61,
       "text_characters": 1809,
       "body_characters": 1445,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "30 Quantization, error and explicit origin handling",
+        "31 Quantization, error and explicit origin handling",
         "SATNA V-R1 declares nearest-node radial quantization over\u00bb\u000020, 0\u00bc:",
         "\u210e\ud835\udf0c = 20",
         "220\u0000 1 , \ud835\udc5e \ud835\udf0c = round\u00b8"
@@ -1291,12 +1312,12 @@
       ]
     },
     {
-      "page": 61,
+      "page": 62,
       "text_characters": 1662,
       "body_characters": 1307,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "31 Linear time, winding and separate topology pro\ufb01les",
+        "32 Linear time, winding and separate topology pro\ufb01les",
         "For reference tick \ud835\udc4b0, period \ud835\udc43 > 0 and full linear tick \ud835\udc4b,",
         "\ud835\udc62 = \ud835\udc4b\u0000 \ud835\udc4b0",
         "\ud835\udc43 , \ud835\udc64 =b\ud835\udc62c, \ud835\udf13 = \ud835\udc62\u0000 \ud835\udc642\u00bb 0, 1\u00ba. (157)"
@@ -1311,12 +1332,12 @@
       ]
     },
     {
-      "page": 62,
+      "page": 63,
       "text_characters": 2101,
       "body_characters": 1729,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "32 GPU kernel: one independent solve per thread",
+        "33 GPU kernel: one independent solve per thread",
         "The kernel takes a bounded batch of immutable epoch metadata and a structure-of-arrays obser-",
         "vation bu\ufb00er. One thread evaluates one full independent four-state solution. Each thread owns",
         "its QR workspace, iterative estimate, status and residual record. There is no cross-epoch update"
@@ -1331,12 +1352,12 @@
       ]
     },
     {
-      "page": 63,
+      "page": 64,
       "text_characters": 1844,
       "body_characters": 1484,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "33 Texture and global input paths",
+        "34 Texture and global input paths",
         "For \ud835\udc41 independent epochs, channel \ud835\udc502\u00bb 0, 31\u00bc and observation \ufb01eld \ud835\udc532\u00bb 0, 5\u00bc, \ufb02atten the input as",
         "index\u00b9\ud835\udc52 , \ud835\udc50, \ud835\udc53\u00ba =\u00b96\ud835\udc50\u00b8 \ud835\udc53\u00ba\ud835\udc41\u00b8 \ud835\udc52. (160)",
         "At a \ufb01xed channel/\ufb01eld, neighboring epoch threads therefore read neighboring values. The six"
@@ -1351,12 +1372,12 @@
       ]
     },
     {
-      "page": 64,
+      "page": 65,
       "text_characters": 2110,
       "body_characters": 1710,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "34 The RTX 5070 Ti Laptop target and VRAM plan",
+        "35 The RTX 5070 Ti Laptop target and VRAM plan",
         "NVIDIA lists the RTX 5070 Ti Laptop GPU with a 12 GB GDDR7 memory con\ufb01guration.",
         "NVIDIA \u2019s CUDA table lists the GeForce RTX 5070 Ti family at compute capability 12.0; the build",
         "selects sm_120 and matching virtual code. CUDA 12.8 introduced compiler support for SM_120."
@@ -1371,12 +1392,12 @@
       ]
     },
     {
-      "page": 65,
+      "page": 66,
       "text_characters": 1963,
       "body_characters": 1622,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "35 Actual input and result \ufb01les",
+        "36 Actual input and result \ufb01les",
         "The executable reads two CSV \ufb01les with exact headers. The source-to-domain model is recorded",
         "separately in profile.json; prepared real data must supply its own correction/product prove-",
         "nance."
@@ -1391,12 +1412,12 @@
       ]
     },
     {
-      "page": 66,
+      "page": 67,
       "text_characters": 1969,
       "body_characters": 1628,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "36 Ordered coupled records and source lineage",
+        "37 Ordered coupled records and source lineage",
         "A CGK-R1 event binds the original solution and residuals, modeled position and velocity , executed",
         "J/K transition, complete native trace row , both compact keys, full time and prior digest. A",
         "condensed structural sketch is:"
@@ -1411,12 +1432,12 @@
       ]
     },
     {
-      "page": 67,
+      "page": 68,
       "text_characters": 2055,
       "body_characters": 1681,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "37 The retained deterministic satnav batch",
+        "38 The retained deterministic satnav batch",
         "The shipped demo has 256 arti\ufb01cial receiver epochs. The anchor is a declared WGS84 location at",
         "52\u000e latitude, 5\u000e longitude and 100 m ellipsoidal height. Receiver points are generated from a local",
         "ENU path, with a known clock bias near 75,000 m. Satellite directions and ranges are constructed"
@@ -1431,12 +1452,12 @@
       ]
     },
     {
-      "page": 68,
+      "page": 69,
       "text_characters": 1575,
       "body_characters": 1271,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "38 Independent results and error measures",
+        "39 Independent results and error measures",
         "The C++ solve is compared against a separately written Python Householder solver. The compar-",
         "ison checks epoch identity , all mask \ufb01elds, status/\ufb01t, position and clock, formal covariance and",
         "residual statistics, yielding 4,828 checked comparisons over the 256 epochs."
@@ -1451,15 +1472,15 @@
       ]
     },
     {
-      "page": 69,
+      "page": 70,
       "text_characters": 2131,
       "body_characters": 1764,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "39 Prior release veri\ufb01cation record",
+        "40 Prior release veri\ufb01cation record",
         "This section retains the 3.6.1.5 preparation record. Archived 3.6.1.6 evidence is given in the SRK-",
         "R1 validation section; historical 3.6.1.7 checks appear in the coupled implementation validation",
-        "section. Retained 3.6.1.8 evidence appears in Section 3.9. The following unexecuted CUDA"
+        "section. Retained 3.6.1.8 evidence appears in Section 4.9. The following unexecuted CUDA"
       ],
       "outside_media_characters": 0,
       "replacement_characters": 0,
@@ -1471,12 +1492,12 @@
       ]
     },
     {
-      "page": 70,
+      "page": 71,
       "text_characters": 1942,
       "body_characters": 1618,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "40 Build, run and verify on the requested laptop",
+        "41 Build, run and verify on the requested laptop",
         "Use a CUDA-supported host compiler, CMake 3.24 or newer, and CUDA T oolkit 12.8 or newer",
         "for the requested SM120 target. The installed NVIDIA driver must support the chosen runtime/-",
         "toolchain. This speci\ufb01es a minimum architecture-capable toolkit, not a claim that 12.8 is the"
@@ -1491,12 +1512,12 @@
       ]
     },
     {
-      "page": 71,
+      "page": 72,
       "text_characters": 2617,
       "body_characters": 2187,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "41 Integration decisions and source issue register",
+        "42 Integration decisions and source issue register",
         "ID Decision E\ufb00ect",
         "N01 Corrected-code satnav model The GNSS observation equation and solver are explicit new",
         "additions, not attributed to U."
@@ -1511,12 +1532,12 @@
       ]
     },
     {
-      "page": 72,
+      "page": 73,
       "text_characters": 1919,
       "body_characters": 1586,
       "first_lines": [
         "aTOMos / v3.6.1.10 ORBIT SEEDS / LITERAL ST A TE",
-        "42 Source and artifact inventory",
+        "43 Source and artifact inventory",
         "U. UGTS_KC_3_6_2_SCLP_T om_Klootw\u0133k(1).pdf. The \ufb01le has 19 physical pages and a 16-page",
         "numbered main/appendix sequence. The source\u2019s referenced 13-page precursor and software",
         "ZIP were not supplied. The inherited source manifest records its PDF SHA-256 as"
@@ -1531,7 +1552,7 @@
       ]
     },
     {
-      "page": 73,
+      "page": 74,
       "text_characters": 1771,
       "body_characters": 1457,
       "first_lines": [
@@ -1626,7 +1647,7 @@
     }
   },
   "visual_status": "passed",
-  "visual_review_utc": "2026-09-15T05:17:13.125697+00:00",
+  "visual_review_utc": "2026-09-15T05:33:39.862050+00:00",
   "visual_contact_pages_checked": [
     1,
     2,
@@ -1700,181 +1721,207 @@
     70,
     71,
     72,
-    73
+    73,
+    74
   ],
   "visual_detail_pages_checked": [
-    5,
-    6,
-    7,
-    8,
     9,
-    16,
+    10,
+    11,
     17,
     18,
-    20,
-    21
+    19
   ],
   "visual_notes": [
-    "All 73 pages reviewed on contact sheets; no clipping, overlap, unexpected blank pages or broken tables observed.",
-    "New transpose equations, final packing benchmarks, prepared-query/native evidence, source-audit counterexamples and table reviewed at 120 dpi.",
-    "January and February accuracy tables, source qualifications and scientific plots reviewed in detail; missing C03 interval remains blank and longer-horizon failures remain visible.",
-    "Executable-corrections paragraph remains together after the final chapter update.",
-    "The 1,040-query CUDA audit and the broader 15,553-epoch replay are explicitly distinguished; the February maximum is reported as 0.220015 mm.",
-    "All 18 fonts embedded; no text beyond media bounds and no Unicode replacement characters."
+    "All 74 current pages reviewed on contact sheets, with the new calendar equations/table and adjacent/reflowed physical-evidence pages inspected at 120 dpi.",
+    "The split Julian-day formula on page 9 fits the text width; no overlap, clipping, broken tables or unexpected blank pages observed.",
+    "Calendar evidence on pages 9-10 distinguishes the Gregorian pattern, continuing absolute year/time, integer phase/winding, GPST formatting and physical forecast limits.",
+    "The source-audit layout and exact transpose equations remain intact. Retained physical error tables, missing C03 interval and longer-horizon failure plots remain present and readable.",
+    "All 18 fonts embedded; no text outside media bounds or Unicode replacement characters.",
+    "The obsolete task-generated contact_73_73.png was removed after checking its exact path; current final contact is contact_73_74.png."
   ],
+  "pre_calendar_baseline": {
+    "status": "historical; superseded for final release QA",
+    "qa_path": "qa_before_calendar.json",
+    "qa_sha256": "cecadbfdddbe197b2d397a8791845ecc2e479138323f43daba81b1117c80f3d1",
+    "pdf_path": "before_calendar.pdf",
+    "pdf_sha256": "3456d659b95586accdd511942fd096c5764a7a42b2e339798a7555f24d748b72",
+    "page_count": 73
+  },
+  "calendar_evidence": {
+    "path": "results/calendar_phase_36110/summary.json",
+    "sha256": "3d1ec0c762d16508b48634dbaaf03331dffa36bfba70cb16218866ec72203f3d",
+    "status": "passed",
+    "checks": 9519315,
+    "failure_count": 0,
+    "runtime_changes": "none; verification tool and tests only"
+  },
   "rendered_artifact_sha256": {
-    "contact_01_12.png": "32b9595b016b2cb21306645b54f97d813bced983d0f2d934f43a4740d866e2d1",
-    "contact_13_24.png": "1875b603e6f050e920d78eca2b4d71ff63fadd51b8ebd4bd251e3baf8b6db539",
-    "contact_25_36.png": "107fd1689e40796357f32432b503182ae1a6f51fdf081d12beeab0d19ec3acf3",
-    "contact_37_48.png": "6944f8af5108cede4e23f769f4cea3ff43260c63062516d565a09914c792a21c",
-    "contact_49_60.png": "ab4ed2ca734f745328cf8db68b09f1e49708a14a05c24d737d8a9f4987bc56ca",
-    "contact_61_72.png": "82c837cef8f067843c4348860dc3fce9127036e64e677d63f12199c6ebb0e7dc",
-    "contact_73_73.png": "3698feaea1e1ed942acd06eea6ed267243724d8282cc36b82c3673c7d43e1884",
+    "contact_01_12.png": "cfaaa39c82d00173e48029695238f864e3dd5a4c85d260d2eb05b0c88274c0bb",
+    "contact_13_24.png": "ba769c3be922fc5f446bd6b3dade45f596c176e5cb09ac83415447f00627e066",
+    "contact_25_36.png": "a5bab14b24788d2ab6a32fedf05a355f1cbecaf24d7954996ecc474b758566b7",
+    "contact_37_48.png": "780c27f2db4d06a7fa5b854185642a2ec00bc8cfabe3fbf7d8196491ca4a2fdd",
+    "contact_49_60.png": "b7ff100527ec76a061e2628eb1eb334c679b16c466e757a1d6d9bf836d6f03b1",
+    "contact_61_72.png": "7c805d700956c29c82040fe3a5ae87bc511033d5a194340ce272efc4461437fa",
+    "contact_73_74.png": "7cc391d3bd4adcadc0d703f9ccc94db359616070c179d497912b08e0cb0438b1",
     "full/page-01.png": "e958bbd6e6f8dbadfba329fffee975f95a5775469a6df8e9104935bd64a64e89",
     "full/page-02.png": "cc3457add9e44e47e537ac7aefce61a9eb833dc9041670d0b56fbdc4ad9742fc",
-    "full/page-03.png": "6e1782f57ad836160b01ec94bde75cd81b076641dee4f2fa41b0be6bef69ce38",
-    "full/page-04.png": "61313341a211f8dac789f6f22d1b4ae24e9d478d1bda9cde79aa0fb2c1e6c892",
+    "full/page-03.png": "042cc98f5f5c3f4f1cca500cbb461eba43a5d021bc2b2f8550750135224b8d4c",
+    "full/page-04.png": "b3be4e6a778796d658419e688edda1222f5196fc7322a7b23423acac533a0c2c",
     "full/page-05.png": "fdaf67cf12e9085924b4e96ce9de113d0cf1b35e6242834c0f442aa7a38fa44e",
     "full/page-06.png": "8093b24d69d03415c7393f0cdb5c5936c3f40ffdfa593c34cc29be3226335e3c",
     "full/page-07.png": "720f34298e6d50701f0ff77d7fac4d9ae8b67c889151b4abcf198e1a8591cbbf",
     "full/page-08.png": "976a73d9d7187580fd9fc50d7948a0d90a8c9ec2002d85efe12a8508245f0607",
-    "full/page-09.png": "4bd318baa122c819cdfe4003508e40f5ba94b7abb707b8133351d145f79eb0c2",
-    "full/page-10.png": "42f4318aeedc513f1e223f56a2e2f326ab62c2c220058a108c114e9f5b787301",
-    "full/page-11.png": "a53485e6a5b0f2868735b16f701637b41168db0f9c7a96242129654101501df3",
-    "full/page-12.png": "3039689898f2e454bb1076020b7eb513bb82996e8ad43ce86539b54d3ac7d32b",
-    "full/page-13.png": "6ad58b931c301d38977d1c97a781d34f62f828eff22b59b39739a08b0602fa3a",
-    "full/page-14.png": "edda1924009bed723775eae2ff8f3c5363815fa41fe55ee265579ca081e66f9b",
-    "full/page-15.png": "a7e507200b0557303b9740099c5296bf1f716c76637e5feb08044f6726fcdbbd",
-    "full/page-16.png": "1962259f8c72788619206ce3f57edb36d6c2206eebd22ee94754fa89d78c8ab6",
-    "full/page-17.png": "da1bcb9dd24647cfbd212dabfd6bc6840fd09a3184837c21e602eeb15102e38c",
-    "full/page-18.png": "9f5c360a68066a44716d8e4b747bb53b9273bb429658c5c7b87c44b792a6d0b3",
-    "full/page-19.png": "93eab2d46b3bf2e5bc74363fc2a46dcf938cdf072698b86ff8839ded658e0017",
-    "full/page-20.png": "583c8f1572f68668cb465647167aa0e5fa7b46b5dbae5f988c74d4bde3dbc88b",
-    "full/page-21.png": "11965b580f80225ceeb67d05812f07ec494077fd223a1611208b6e34a2285215",
-    "full/page-22.png": "099f00f060863006a65f443d3ed51ff2c8cc0a31289666ed17f46983f9096086",
-    "full/page-23.png": "3c4c30a370a48db6c0ebecc8e0d489d95e8fdbdc754112d09906ea3165c8cc2f",
-    "full/page-24.png": "97afa2116e523b2c0b52be935c1d92c3739bee91b513348069b162005f665b55",
-    "full/page-25.png": "c62e677520cf41222941e53e01157e97d96897d721cfa4d87a990b12f56cd721",
-    "full/page-26.png": "596986050fdd1a882553a4ca3a62e4000ce31e326fb787dad57658e315b01157",
-    "full/page-27.png": "d90dcd5d9b2ed5656f1902ce3fef317edbb9d4b7364180bb8f4489648f89723f",
-    "full/page-28.png": "5ddd30ea4c045b4e374c002c6de884642ec0a48bf687144c6de7b03b40a830d1",
-    "full/page-29.png": "6bf506b4a02586747d295f1c0881dea06871a6fa978796972785cd6269f6cb66",
-    "full/page-30.png": "6e072b7d776a21eff1468ba44ab06537a853d90b8218630260f6d99c689babcd",
-    "full/page-31.png": "30262d8c6cb31a23866688a3b67c7c067cb87ee623dd11cee9382e1c8fb864bd",
-    "full/page-32.png": "88cdf631e56431cb791e6367c5cdb92a3bd6302a9f6208dfa5274db2a396d50d",
-    "full/page-33.png": "736b545f2b87fa362236694b22596a6ce772bcb83a5f800e3fa580025a3cdea5",
-    "full/page-34.png": "8b04fa7a5c66839488600087060a48d267e9dae34587a41086a7ae2d70e03c42",
-    "full/page-35.png": "f62e92da8c257c46305f272ef09e1db0a310ab26fc03cfdcd727ed57b7d7de3e",
-    "full/page-36.png": "8b5e6a2017d8e937b90564848e48aa278765915b72ea2ad8fea1a3f5a0862006",
-    "full/page-37.png": "9e8a1ee9300dfcad7ad5b31b0e14d15d5f26e867121bdb425a025f6e5ebc203f",
-    "full/page-38.png": "5b343d0ea5a1202283c74e5105b0891b17d6c019dc806d55239a9e74171b2ed9",
-    "full/page-39.png": "9ab70c992d903ec8353ad617210077a837a60773d169a1686fe3b1a9f82864bf",
-    "full/page-40.png": "515073fc3fad88c32233a3a9463073dc747f8197b9b71b199b84d7d5d5d29326",
-    "full/page-41.png": "cc36e9ad607d433dfd49fa7f583adcd8a212cf52c67d4fca1292c16f4cb6e097",
-    "full/page-42.png": "503e7bab5ca9309c3a47b47d9c2d104959a93a0c6c643d32e5a09bacf99ef08b",
-    "full/page-43.png": "b6dc48ba3bd804b1920b42a44893d4ab0608756285ef2876470e5d75bb6c92c7",
-    "full/page-44.png": "dbd27f26fbd0c1760a68e96ac5ae0958a255bd8abb8e7c237cc4ef6bac7b29f2",
-    "full/page-45.png": "a256c5c5a9eb46791a83a351a7e672ff4a091dab93be82c2b82b968126fa2f5b",
-    "full/page-46.png": "87bfa06e6ac3b3915b7c8870af8c54ad9b6f461178a664e79d53622386fd3f6d",
-    "full/page-47.png": "586dd1b03c12514b946c517c881b24e5745f21faa71a7759ffb0d7a337eeeb1a",
-    "full/page-48.png": "06b0ef2685521ae6479a31483668510fb7c13d799456d53a827b2de0241248d6",
-    "full/page-49.png": "e989a3580a9cc719331c7a4f8d475cc37c68efecafabf01dcd1e2defd2bc7f2e",
-    "full/page-50.png": "ca822ff06dfbb2c9b8c7a0624070fc41b49c84bb9ef424803e45992c4a0f7417",
-    "full/page-51.png": "5bbf1e53cecd30a531ab45ed91c19dd6a0b1214830c189a678e646e145e96691",
-    "full/page-52.png": "9abbfb7a607f6ded2abce8e361ed23916e23d14c87a064fcc598d02d270f75a4",
-    "full/page-53.png": "834b7ea6a5f1d5ddc87e119cd4ca2c19272b6355a85eb622893ba5918e785925",
-    "full/page-54.png": "ea86dc55c4762ab580a1dee1f0368f3953beefb23a98beb6c5f056fe0d329d7e",
-    "full/page-55.png": "d162bb4fec8419cd12bdfaf95070b22a98f46e6dd1796eab1f017b4d1abf8e1e",
-    "full/page-56.png": "b19d2a888b8e6f8d22a2a236cca9a1ae8662f6ab9995733d6219853154a2a066",
-    "full/page-57.png": "dcda3f9601db4fb8a4e227ac86a8f0a44bd2a0af43441b8504c1eaa0a4557f6c",
-    "full/page-58.png": "a5e858382bb770277a75cf2a7d89226f700f36f940c028fb233166dd6be11bc8",
-    "full/page-59.png": "dca13575038a92d4146239d7edd24e366b3711bd4fcf4002cfa84b3276a1e81a",
-    "full/page-60.png": "602f5ec2bee1c7fdf6343bd449648df6b2cf0275e6259ff5fffa167cab5aea07",
-    "full/page-61.png": "5c4d29d892844b1b9dd996fd9879a0cacf3e815981620f95b209e3d2998ad984",
-    "full/page-62.png": "ce7a454c6c892bb6e1b66547d31ad1db961fe9792ec1690ec2d4851432734236",
-    "full/page-63.png": "55becd715e24128c9258c7066550aaf7aa4a500cc013bf75cfc81aa09995fdb8",
-    "full/page-64.png": "d40ee07e93cf8e40da3d69318ac9028ee5f81291430fbb20919bbfb995200df8",
-    "full/page-65.png": "1c75a054966740a08c36a7c526d47472a5a88f85720ebb65e2d1905ecc9dd6e7",
-    "full/page-66.png": "e4087001ed7d0a1e894c4f6bb587b10eebbbc3528678a2fdbd2c4f3052c6abe9",
-    "full/page-67.png": "431a4097c4f563849ae42985a19ed013cdcd68f81e20f73d4be93aaa37e22a51",
-    "full/page-68.png": "aed278e547c141969c26f33fa8cf7eb33f05f5c9f38da7a8fa2a913b70ce09d2",
-    "full/page-69.png": "8e7bdfa3da1693289d063513299807ce924d9ec5814b5a6fd23d66b78a48f576",
-    "full/page-70.png": "da06e86e697f9ca01fb4641046be577201938951506b880868e973084229ad60",
-    "full/page-71.png": "5468667e7258f648348f3bd79af311d5abbe1a1115f0913337970df878481288",
-    "full/page-72.png": "db193c155e4fd78510d8f380dc0326be1c41820bc76906a7b5d3190ca7fb3bf6",
-    "full/page-73.png": "bfa33a7cc4beaf9fdbdba346cd096a9fcedbafdf37165cf3a6950bb8ab46119a",
+    "full/page-09.png": "a86f5197599bbf2a1b8892e7c3449a8d764242b7f24d0f70faca8ba43fa88ac4",
+    "full/page-10.png": "7cf2269d3ffac34bdf3e44f3432198a31137adf59d9793955719eddb08d7013d",
+    "full/page-11.png": "fa879d0a24feabcf49183a208d0e3feb8761ebb4996f6c6b60a6a834c1d4fc54",
+    "full/page-12.png": "1e47817a51b0885694e8771557c07c8bb56270378d19397e12a20f83e6bb6fb0",
+    "full/page-13.png": "05b256b1b944589ae758e4c84d5c4d54e163b81fa36626750e285758283d7be3",
+    "full/page-14.png": "65941329a400ba108daa6cd11592c94fda5af252f4fb65c80b1142387bc143e9",
+    "full/page-15.png": "806b2481707b8286a26f6d4fa39b76be112fbd5563fb6e3e49e7790f27a93f0f",
+    "full/page-16.png": "c46a77b70074134cc93a2f4336cc2ad0010d00c1a510d17a823db5cbe90841e4",
+    "full/page-17.png": "68f124a84e508b293eaccf8a5b21a6953cb3e839fdec1415cb9153c99c8e2197",
+    "full/page-18.png": "93010cec4f6dbb50a29817c95a68aa2a6c21734130afdb07f33a065d179ba4c0",
+    "full/page-19.png": "e8e55c5c8476f80e88470e8de6110871e089132f3e335f85573c3ddde9173970",
+    "full/page-20.png": "4e2c148f976061c1e56197983a8d7b961d5dc15cc59692f18d8f4ba590425f11",
+    "full/page-21.png": "c99816d3b0c8d3438a30314330f5c255c823be3d6d26999a5c7c9254b6d034ee",
+    "full/page-22.png": "fdf542bbab93566d7b97cd05f4343540ded52062ab95c2ffa3e8fae7c2def97e",
+    "full/page-23.png": "4786509ae1639202a0b9da5c5c6110101acdd5be2aec80a9be1231c909f33338",
+    "full/page-24.png": "dde78f35452aa702954afc693739f293d4a3198312175c4ca4043b8b20853dd3",
+    "full/page-25.png": "04cf4e4a9a3e7e0803760cfdf8ef67687774e85b3fb8e3d2cccb13fcb85e9d35",
+    "full/page-26.png": "06f32f53bd348d22fbaf3d0e1ddd9c9dee17490d22a11850d9a311df4da7108a",
+    "full/page-27.png": "b2188e0f56ab81a5cf87296b82c974cec3bb40ba0311c72b4c433043411e73c6",
+    "full/page-28.png": "31a17a0aac708a3b5f8f0d42ff9a1abd962d90e90d65cd781a0a5eaf53eae064",
+    "full/page-29.png": "b6bd747003eb1b39caa27a3fb89235407058218e951cf7f98f6c244be0ad360a",
+    "full/page-30.png": "dc32d80d9ba93c7916c1a1d127ba48c1ab83b1cc6000fec1a0a5f435339c8887",
+    "full/page-31.png": "61d897704cec5b5ef6b9eb999c620f66ba2af83d3218533f72e103607cc34858",
+    "full/page-32.png": "84edde756624aaf90086fa6f4f16c6534e435b246ba67660bd70e756fb7cef4b",
+    "full/page-33.png": "f82d34763bee4cd75b0c37a80b60c2b7f66445509f2cce9a4aeacd2c89c47aea",
+    "full/page-34.png": "777be04866c83539f7b058d2c3c268e39ca88841e374060b9fce0b6b79cdef4b",
+    "full/page-35.png": "67866115012a4b7d52498e926f91d16d33d1a3fca5f3e82b288c81bb6503d6e9",
+    "full/page-36.png": "35b9948534af378e111e169ccea921b40774fb54ae751cf15184491fb5dc8785",
+    "full/page-37.png": "2081ea7d6b80a73f567a6318eb3988bb185bba4855162131e6500f0c5a8b4433",
+    "full/page-38.png": "a5a235f1c987017aaf42ea6be91f32e0573d170c93436bc3db822a44de1d7744",
+    "full/page-39.png": "3575adfd509fbca57ac6e26da76ac5b85ba5cfec3679dc4632c49461a34d4067",
+    "full/page-40.png": "b2b3802ff5290dbb3e5a94a26418586c1553f8085d07dfaf220a760ef71feaa3",
+    "full/page-41.png": "8eb19b05c91710779e46e1aa84affc70d10fb9a8bc3df9aeb1e5bcf424841bb5",
+    "full/page-42.png": "91f729ef340a3986c80299620e30146817dd065195b972c665d6b3c31ab0d090",
+    "full/page-43.png": "0e97e0bdd3b606b9f5c807d71be295482df16ed6a43cf43957629197f9b3b5f8",
+    "full/page-44.png": "8d9c9a5d3c4948399935bdadb9b77b6d6eb693a02ac5aa624978c1d698d55606",
+    "full/page-45.png": "239dbbac6b8832e5d2351f9e99484e0b92f303d12da1b3c40109cc0ddb60004d",
+    "full/page-46.png": "24e32a4fc610465b13d9b60bc979178d4f3e56249d30673e2a45c3e35b18e65d",
+    "full/page-47.png": "ec6882725f4e137ecae0e4132e712f8a6543b5b217862b21f36a2920ce30ead8",
+    "full/page-48.png": "60138aa6170c652e12689770526d6dd744520babdb2c200d13da6d120b645f0a",
+    "full/page-49.png": "27366e9a06396303d03ea6d11678c3f0219b3dc81d6d7fb547ecd09e320d9dbe",
+    "full/page-50.png": "127d4fec304e8a9f51028b25587e1ff1d6d19cf8f3875b15ad51fecaffed3034",
+    "full/page-51.png": "c7f5187880e2f09a68d318004b4446303c14bcc6065550b3436e5a7bf5b1af1b",
+    "full/page-52.png": "c38076ecbc3ac57fa764fbdbb2415a47be405fc6d26436e76e317c0b034c5b6b",
+    "full/page-53.png": "9a553463b2960bdbe38f5090a0e2d678d7619c2914e596d4b1fbee2728c6261f",
+    "full/page-54.png": "5defd3c3d1b21310b265e35af87de693b5d25075617db2ddf530bacef6af0f31",
+    "full/page-55.png": "f4916962bcac59d057ec36a59738436df5f3479bc40f02718a27064d0c6da8c3",
+    "full/page-56.png": "f69b7ef77c937a47b64e8401dc15c916ea433e959ff075761ba2cf760f1e6ef4",
+    "full/page-57.png": "0982cbece41d1cc98d35a26524f3fa673a5bb4a48f29a9ea815ba2233b168349",
+    "full/page-58.png": "8665ba144f8e62f183252243f8dac292f67e1f3ca6c502b76013141e4a9b03f0",
+    "full/page-59.png": "3e350235f5390f28ce28ed5300e4e04e19d0e79039527b56b349b0164f59dd0b",
+    "full/page-60.png": "8a8e5fe45fea99e9b9fa90a82d3b7a142d2bc4475227fe212bed99902dcc7cb1",
+    "full/page-61.png": "a46b504aeae61360d76765a43c05c19aa0439cb4c2ca32cd9561f3bc8afa7296",
+    "full/page-62.png": "c34c74d38be0b79ccb0ae4069dfa6d7a33b41558a4411761a9222efb1292a234",
+    "full/page-63.png": "3f1dcc9cbe5c6fcb3e2d5359033ed6d28cf3e44e690d2417ba20abd7a52f9a60",
+    "full/page-64.png": "d030697947fa9e27fcdaba86e7f47a1743914c883b5dc51d55248410b6fa663a",
+    "full/page-65.png": "b2f139633d044d3d8b690f29056eb46d740d5988b9339a8fd86b3c48201dca91",
+    "full/page-66.png": "56c98257ce169641810fe465793699e4dde56e4ef3972448d281c5466d8c161c",
+    "full/page-67.png": "872856dbb7d207c8360c2d28d95bab7e2efa10a954ecf76f2406220ab3b62453",
+    "full/page-68.png": "63d3778b65c39c0326d49ca51c3d3c900467d73a7e9e8f853ad573ef4836b093",
+    "full/page-69.png": "0597931fec264a5e050f193a894edb484645ab66d7787f3cfb08ecea94fea88d",
+    "full/page-70.png": "a49f29e31a90985836764d03beb42ecc80bc068da0440a339b26566157336294",
+    "full/page-71.png": "d05099e43c97173fe6e5bddb515134c7a146dfdb283f88e423f5eeead08b3b70",
+    "full/page-72.png": "a4c21ee3ed61c2f19585fe750da23ad7531565a5e69874e30443a2a36e0237b9",
+    "full/page-73.png": "375e832a0c562e29ded2a27d4b0aaa70ef44d35b6a021a03d88d4533822523c6",
+    "full/page-74.png": "3d070c971ba6535c79f9180d862efb602e77acf8459ac3c901a6cf374ab7741d",
     "low/page-01.png": "aaa218bbe2d1cb083a97ada7890ccc155f4a1ef8079b468910e349be04c76dda",
     "low/page-02.png": "5430b5a11997f97ea946caf04397c417d4b532c8c697849ed4b895464d4a918a",
-    "low/page-03.png": "d74d16494f3ad9db1d80d00012de147e81760e1310180d69ae0a0b46fe9afa05",
-    "low/page-04.png": "b53aa2068b340ef8f3dad50cf302838b30d0fb0d2ebcc037627459150f277d7b",
+    "low/page-03.png": "b70d0963e79d42191454ba75be4980a19cf22787e87e9cbdaf13a9dc1ee37b88",
+    "low/page-04.png": "6a64fb494435d66e070b1c83e67476701c850cd9a47984a805cd6dafc87cbebc",
     "low/page-05.png": "28c99b26c4e7504342e34a243599043f923e23d1d844a59e47ecc411f89b37a0",
     "low/page-06.png": "6ca26076e4502a9ee64025ca31ec91dba2fff0e30a02ceb4f991f0daecacb7c2",
     "low/page-07.png": "c69888ca7cb9bad6ff89ed31514358212b2c81edd3d07f7cb6df3ad1156b503f",
     "low/page-08.png": "c9e3e4f971053e874d94251ed1a5f15378b16a0b17ad10d084e7bdd987f075ec",
-    "low/page-09.png": "fa26bc229cb428fb7a0e6f59054ab73c244c7218b89f566095ea11e06797ebf0",
-    "low/page-10.png": "fa591dfdcc6b3db77e9a4ad0bf67f814b0f620d3028b4321e5dde455ab5eb2d9",
-    "low/page-11.png": "a7755fb7eef3ca96c61cfde4f94cfce15d4dcd4237894c4104bf9bbb70223530",
-    "low/page-12.png": "dc8bcca84d14fc2500825667eb9425e37c3dc265802291d6265b9b3566577504",
-    "low/page-13.png": "297bbb1ad6d9ab6ba8b75bee60f9976ce3db1b49b248b59a984ba270138fe969",
-    "low/page-14.png": "982a396bae87aa6ed57aea39c1394b2a0d3598e0609d3a8c32ef4eee6cf680d9",
-    "low/page-15.png": "33062806cef6d2d504f7d2f95db17cdd98bb3246fc7e078dd9d06a8870ee5cc5",
-    "low/page-16.png": "8e21503ce871032c15bc6dad5a31b47eb29cc3d07cd9e2aa08d7469e122b4d33",
-    "low/page-17.png": "e9173b92597be003c25f3906e0ac5b2460b4f5ed76603bf3a83796d35799ebb9",
-    "low/page-18.png": "4a0001cdaf1e982801b2a7d5bc2150bbf0f429c972af39c078afafca5f49a350",
-    "low/page-19.png": "7af06d3dc224dd9383e311d8c70675af6a9072b88b8cf0b6996187498d7eb1e5",
-    "low/page-20.png": "da66273a0c6d03e23ff8f537f7ecb8e39e99eb292cbdb32c7457844e846b9c77",
-    "low/page-21.png": "f4b4c31df5dd984b1424399720a97ba7730d20e4a3401fdcab2a2806fcbd3232",
-    "low/page-22.png": "82455c172cbbbc5a966df893ed7ef754dc93a6731936308b58c127a4403e5654",
-    "low/page-23.png": "3273b94a03fa61d51f4c430117c50959ce008ef800d5c05b9f3a47d27f2c7664",
-    "low/page-24.png": "533a5bb6ead789972c0013603e22385ef70475b5c09c54e1a921181704d17f9d",
-    "low/page-25.png": "69151c2966c80e620bac8735a007bf0018123d5c47cfcace4d93a749d48323cd",
-    "low/page-26.png": "e2e278ff7a21142f5c8dd1fa793c3a9c41017366df996ecc7d3145b2bef9b44b",
-    "low/page-27.png": "2b9ad2aa1489b9c6c0b24566b2f25e054ec0e37b5b01b8137189ef1547f2b214",
-    "low/page-28.png": "41a21658923740f5ebf9369c8d2d576a8749f1380ed6b2d01c3de03fcf28f293",
-    "low/page-29.png": "ae1a887128cd76e12d86e3dc2956202050f1aefe3004a0b1b599b39232be96a0",
-    "low/page-30.png": "8e6e9cfcb7b28d06f8a224c4a4e71a25203247dc1fb6e66d6a20d07054917a4b",
-    "low/page-31.png": "0a94166624a2f60059ab6a1de24fb8182b413f7926af22c60106b972d463834c",
-    "low/page-32.png": "1d916861f8b4f68abcf8b1f84b613fbe27810692bb723ded0cbc34688ded3058",
-    "low/page-33.png": "8123cbb29204a6fc841eb8c965e38662dda21c09885481a8b837495259da71cf",
-    "low/page-34.png": "b2477dd2d6a508448a303a7628a886a851de696b8be650b552691af21b8b787e",
-    "low/page-35.png": "dd993859031da1655f7c35f60e6ae625ac9085c43eb1f0e6cb150a26e64595be",
-    "low/page-36.png": "675074d3b5e1064466cc72975b76c33ece5b3bc6d16dafc371836cae3a341364",
-    "low/page-37.png": "e389fdb06d090af38b80bdeba1974b0a1d85f0c56b6103ba9948ce2abdf66bb2",
-    "low/page-38.png": "7954333f7f6a5b0f1bd32d1a67bc8cdd6d31622449e65607f8f51a54a38b6b08",
-    "low/page-39.png": "e88daa27198e333119a6bc46bdbcf704c997d85f3028466065786131384bb6ec",
-    "low/page-40.png": "c8cb8f38df10b94b564f8beacbb97949525043167cdfbbc4e14990e9af18fa50",
-    "low/page-41.png": "132107c5f2f4255cd155010aea165ebacb9f6f6cd542bcccb2dc62056c3ba9ca",
-    "low/page-42.png": "463f8069de245c1dab8c1133937e9e5d70509c3a9d0dcbc73885da6fc3a5e47b",
-    "low/page-43.png": "aa431e2b142384950cffa9f0d1d01d113ab6268f8273bae55bce571a9bcf8070",
-    "low/page-44.png": "aa159390d163e194d854bef40d3db2bbeef2a252a8640074e2207f4d63f4d4e2",
-    "low/page-45.png": "511c6d09261f2986eba7f1982f0571f15e716b24a2918630793b79f1c60709b2",
-    "low/page-46.png": "147aafa59e1a4e4e1d8ce6e1567bc54f0c9131b35907698a942bebd624be1c39",
-    "low/page-47.png": "c6aee150823237353ed1ea461d734671cf4aaeb7fd92d57b24d19e6a4836cdb5",
-    "low/page-48.png": "2935b5483b3967216a1ee3d6c112ed656bab8fce6c3046b909cb1562f8605b86",
-    "low/page-49.png": "bf4469b673b3f077d0eed8e9245d2a50b2415e37a894c8020b73661873222394",
-    "low/page-50.png": "f47ffbb30f7c0890913d7940b20ff26fee99c19eaf8fb93bdcad9c49db260de1",
-    "low/page-51.png": "b8af0fcf5aab6f2b396fd6bb7a47b5d8c45fff92870d66de2c4384b38432326b",
-    "low/page-52.png": "c71165be5aee8b98da50f6edc547e60e146fcd8298baf0bcadb0cff9d3014d6d",
-    "low/page-53.png": "b642a163d21f7d923d0e6de2cef02e7f64dd3f29cdfb3e71fdebb8f6c1250d25",
-    "low/page-54.png": "f7b372161163e9990126d73fc05e78664480d0084e97afd1b4154ee70f869797",
-    "low/page-55.png": "ae2d424991fd9d94b734f1c571179c8360ac0f50f79288203f3cd7a070c55a3e",
-    "low/page-56.png": "45ea44f678b1a63d327a7c7a595a309c60dbdb3d7ab6b54942ed0773e7cf48e1",
-    "low/page-57.png": "868227eff76d42d817031f29a0113d4d918e8c2c331ef387e42fe102913a6dab",
-    "low/page-58.png": "2481903294a952ab9b6a9424982da757b2b8b178fc64c8b8083852b55f623081",
-    "low/page-59.png": "ed8f9d05441fdcc9a114e3ed77d769827a23e62d9f34c407e766f5ce7922210e",
-    "low/page-60.png": "63072ac89c359e509e85cc2ebe7182a109a820fbab95b51295e94328589bd2c1",
-    "low/page-61.png": "88adc1bb89e55d157851162190b2699e96fb7c13a968c9a7393ed0b71a28e898",
-    "low/page-62.png": "8637b21af4a8bccfd128c025c795e56227448183628907690817f453de5349c3",
-    "low/page-63.png": "13853dff667e6c50d67010fafeeb6f3e5f0abf07a27f0e96942fd7ee328cf2ac",
-    "low/page-64.png": "432e4f310a7162ed146ccd6dfc6277d723d3ea3e815e9ab1a9c0ee0e254ad08e",
-    "low/page-65.png": "ded3f5ac516cda6fcf5fb7d0a28fd3adcc039c83abdb2b5f99c3e8658415b8a1",
-    "low/page-66.png": "435738214841d6353c3f66e038c4d555b56927aba6c561e74020ce50c8edc514",
-    "low/page-67.png": "a04f0b5dac0c3d324a4265ea013ea89071d20f466a2f52f1e33d60d2d23a1c95",
-    "low/page-68.png": "64ef49ed09575ae0cff156bdb9915fb3e7241ff94a18e36b817362129fc5eed3",
-    "low/page-69.png": "0af82a030cd8ae1c66f3b4bd81468d4d4fe0daab7a6f81716df9231f0f25854e",
-    "low/page-70.png": "eff0147584a9abefdc4562cdbd5046ebbb63a34a9d3518974b5fbb82872c8729",
-    "low/page-71.png": "b9d66d8dd7b73e66a5e9ea2a57ed8c5c38e56681ac8f47b1dbab01d395fa5c51",
-    "low/page-72.png": "1e3ba593c806ee9605fb6b884a28fa81a48d799c6696a28627099e4de20b16bf",
-    "low/page-73.png": "e21c4ec3369ff9450952cf09a335ff0b27ecece21cb8246fd0f9f017ded30d24"
+    "low/page-09.png": "a1f69685040c90861263d4a239425057fedec0d419e6faf229f170a033193731",
+    "low/page-10.png": "83eaf2ccc5c7c21ba6a4eb410e48d42220b59d44744f3579634c401f334e6271",
+    "low/page-11.png": "9b9a38a0ebead1a96db865414a117d0c363d51a9af66bcadbdf954f38526a420",
+    "low/page-12.png": "008c5221ae4d959d9ad73da1d4eb248e3e7ff484fec5b874f4d9b6468d5b2949",
+    "low/page-13.png": "b8672d86077bf0751003ed6660a48d306243ad13152646afc6c93af3cfe904d4",
+    "low/page-14.png": "7e9bf1466ba01d6abc880181efc388027b2a64876408178da2e7bae088ffa11b",
+    "low/page-15.png": "4f034f5b40ac4f728c55b8e6980338e4a89f1d4e504e140fc7f2d253d0ba237e",
+    "low/page-16.png": "03827535c44494a2281ae068e3cd9484dc88c152775249f7644c9c8c44991a2f",
+    "low/page-17.png": "99b4726dc9d26ae5f149a4d279c632d799be68c9d69e5c32255946963c5fc478",
+    "low/page-18.png": "86e02870d8ae02484174d00646b6a4e70ac89c99062c158bd4408d3756f22558",
+    "low/page-19.png": "db5d9f992489089f82d5a9fee26e08304de1db6d8f03d6839e5d1badda5bcf8c",
+    "low/page-20.png": "46aa5376c66fa75b9873478f916ce20aa4daf2813d7ba346d1ff10dc79ca4c60",
+    "low/page-21.png": "63de85dfb29583f4f06bd25c34d6d04d4ddfa0fa69dce946f6c11d5437e21364",
+    "low/page-22.png": "a67f5586cfb0fa23015a389da0766aaf2a3a7829a2014374d042957087b57b22",
+    "low/page-23.png": "087de8bd01584afc85eebf320bdbdcd3791de9ecb411c5faf0aa87702b647a6d",
+    "low/page-24.png": "ed0098af25d005148b6fbc830a02ed8ebbf4c43467b1d02c3a41a9d15deb6d62",
+    "low/page-25.png": "2f98948e412d6afca5613db0715c04d1d1661b0e486fa8de589dd1dad2373fdb",
+    "low/page-26.png": "e2e57b5615fa575a6dc9029486c4d5e586791aa40eb6da43e4a464b774cd395e",
+    "low/page-27.png": "2ca43b32f687d4e9299aeacdff6bbda71bb05793419bb0bfc03fc2432598d25b",
+    "low/page-28.png": "bcd73519be128f8efbbe855488c589d011e265a19941ff477595af5cbce482ad",
+    "low/page-29.png": "18aea2b37c798e998567ec2ef60740dbcb379f85172815b3d2482d3cd6e4863f",
+    "low/page-30.png": "9b23c7f049ded8e8676e8b74952d1fa9c83a4dfcffa785b76baa7955186f7227",
+    "low/page-31.png": "5c6ed8e3a147ecf1b116a30638724dc2715704d756965c29387827d4f3b3d7e0",
+    "low/page-32.png": "78022cd513c34452ce1d8d4632c72bab2cca602a7988ad6a856f5b0a27c557c2",
+    "low/page-33.png": "c4ad456d7be9c4cd0c36786e6e4c1b3711340aff0ff605b831fdab5ae6b32996",
+    "low/page-34.png": "fa5468617f564b16d318d7a32eaadbe5329ae70df25c32e77880a7c0d95a1f12",
+    "low/page-35.png": "a6540024c317deca4b8a5fd5ce8a6dd2f174d7975138dc86cb3b2c8ea9cf09cd",
+    "low/page-36.png": "eaaa8c34b87ccaddd5813210b90e6bc7f1cece16f99dd5e60c8ae46b04867d40",
+    "low/page-37.png": "172172d8492b3cdf56067a979a2d2252c9b0660ed459f623fd8c175716bf8885",
+    "low/page-38.png": "2075b90ea9771edef1ef5b0de97ef000d395735164c622835528e437822199d5",
+    "low/page-39.png": "a3b9f96f5233c7536e21786f23bca5b41b8bc9c1156138a18abadf201dcc516d",
+    "low/page-40.png": "d24ee1eadba3938cc5adf55462c1ea6fbef24db22fa920d29f646c29f84e83dd",
+    "low/page-41.png": "bf5133b3661291be63609a743ffa8afa8dacb125d43308120d7db28d4e23ce1e",
+    "low/page-42.png": "9ad1c881ae73d14b1175fd4fe9ac88d29515a9e27cf5a84246cca55e615099e8",
+    "low/page-43.png": "9ffb4803b505b9f9ffdd55c95635d3e83885b511d42359ad95f84b67a78e6c94",
+    "low/page-44.png": "a701ed93e5a5cd0f90185c696628f6e73a5bea088e1a439c1e9b0477fd0b5aff",
+    "low/page-45.png": "d3ec50bef3fc5a05937031c4c4dbb33a00bdf9a937641199cfe6b6c7a215e4a8",
+    "low/page-46.png": "af95a8ffd9cad8aacc4098f75d6dfee2e06cfb7f989afb0bb7987301a7bc3fad",
+    "low/page-47.png": "3f507667ae6fd41903c526a01dfffd3adade09575bdd9419ae71f80e0faf36f4",
+    "low/page-48.png": "a63de345b069543e85d6bfcc186178bf5cf016ee9170acbd5f41ae61dac8ecbf",
+    "low/page-49.png": "ae323e324be5467961b7f78276c05f52a8d2324185aef698e6eeb28c7e5c57c5",
+    "low/page-50.png": "f51064c948cb284285279db2cd255f5abf353c391531497c647f2836bc27a327",
+    "low/page-51.png": "a3cb0efccf20029aa9931ece6f16e030dffc86bc1c69f3e3133a47c566983188",
+    "low/page-52.png": "75a50b85b0c9a8c9368790903f4338bdb9c1a0a9207fe9bdc238b68565ea60e4",
+    "low/page-53.png": "7b43a46c036bee0f5c61bc6d27f252fe15c80d3c45bf9eceba4920558e215438",
+    "low/page-54.png": "b6accbbe7e3cd39305a185a2fd29df4e01be08fd90256a5cf829e4e9d8aa0b12",
+    "low/page-55.png": "6b5a69c8b1cd771878827b0be03f0c34f8bc61daf172e366d0c4006d9d2209e3",
+    "low/page-56.png": "e49aeaa100c99e3ec96c8d383baedea2ee1cafe7d1ec2789d6b1a052e5e3e264",
+    "low/page-57.png": "5c088154335144e12cca24e239970f3b537f6e36dc4e4836adb178d9fc8d240a",
+    "low/page-58.png": "9c6d26916748d19ec8b583bfd5788c36e00a98986dce8496f429cbea571aa271",
+    "low/page-59.png": "95c453dc2d25895aa4f941c59394194ccf11886b39b2c899c245055771892c54",
+    "low/page-60.png": "b9f31b0a0b4148ca56602febb9de3db8f21dc770287d2a048bf4b2a62872e2e8",
+    "low/page-61.png": "58900fe225357813fd38ff47644b668b8b360761d388f4d62d0793a380e10b32",
+    "low/page-62.png": "6fc5022d5f170ab442141cfc0c31683c3d7f60b3236b8b8bcf74a99615a1f18d",
+    "low/page-63.png": "cbd2585e170be6fbb888142cbcabf2a2b3f4de012c08d9cff369514af3da69d6",
+    "low/page-64.png": "cfc15cef23896e0db20bd1643a279383e7891daf6fccf2ebb194dcfdcb29096a",
+    "low/page-65.png": "19ffc64c8f96700f18f43088032206c99bbd633865c953bd9161f7f082e80602",
+    "low/page-66.png": "34a5b8e68397492768764280ea5ee0a3e1afac611871b295edf3f74ce017a9d6",
+    "low/page-67.png": "df5c77a546c8e319e04cfbc08ab27a651f50d23a4c0ed4583dd813a90c82ffbb",
+    "low/page-68.png": "7206412cffba0e89fe78de233041f80c8d51f1a25cf34d8dd0858eed43f5b0fd",
+    "low/page-69.png": "62234ca6c05ecaf55ee9977e6e6cd49e7bcf8a888a998cf56e6a54ae5ec12b5c",
+    "low/page-70.png": "9fd06522bba07d15964110297433442123382192678952ee2eb5a49a6d32cfae",
+    "low/page-71.png": "b0125be917db80a260712ec30f4e75cc6298affc0cf7b6afb925961f8aecdca4",
+    "low/page-72.png": "83ebba3efca3d96def1fa78950c076880b22ed3be04d9858e49f7f362b9ade2e",
+    "low/page-73.png": "64d661a66d9d1ee6aab1cea6f6bcb4079d6c8c22c433c69250913b342c791e8f",
+    "low/page-74.png": "4863694e00175956e9663c1ee61c65fe03c3a8d0b53a22e67b36ad412409f07b"
+  },
+  "secondary_visual_review": {
+    "reviewer": "root",
+    "reported_utc": "2026-09-15T05:34:11.770118+00:00",
+    "pages": [
+      9,
+      10
+    ],
+    "detail_dpi": 120,
+    "result": "passed",
+    "observations": "Gregorian oracle equations and floor operators fully within margins and readable; counts, phase-wrap equation and results table clean; no change needed."
   }
 }
