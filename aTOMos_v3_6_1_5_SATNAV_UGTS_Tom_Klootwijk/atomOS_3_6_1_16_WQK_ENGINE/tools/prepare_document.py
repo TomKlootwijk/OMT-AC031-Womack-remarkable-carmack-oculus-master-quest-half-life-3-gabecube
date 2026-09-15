@@ -8,7 +8,7 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 NAME = 'aTOMos_v3_6_1_16_WQK_Engine_Tom_Klootwijk'
 REQUIRED_CHAPTERS = (
-    'wqk_integration.tex', 'wqk_events.tex', 'hinge_core.tex',
+    'wqk_integration.tex', 'wqk_events.tex', 'wqk_evidence.tex', 'hinge_core.tex',
     'spatial_calculus.tex', 'runtime_evidence.tex', 'resident_gpu.tex',
     'word_optimization.tex', 'word_profile.tex', 'exact_core.tex',
     'kernel_bridge.tex', 'physics_core.tex', 'physics_energy.tex',

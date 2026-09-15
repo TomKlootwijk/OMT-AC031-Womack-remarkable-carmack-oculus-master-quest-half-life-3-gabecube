@@ -49,9 +49,12 @@ state size 64, and six zero reserved words. Admission requires $N>0$,
 an entry below $N$, opcodes in $[0,15]$, successors below $N$, and
 strictly increasing unique unsigned keys $(K_{hi},K_{lo})$.
 
-State64 comprises sixteen raw 32-bit words. The signed coordinate/rate
-fields are $(\rho,\theta,t,\phi,v_\rho,v_\theta,v_t,v_\phi)$, followed
-by unsigned orientation, sheet, branch, cell, lineage, and output;
+State64 comprises sixteen raw 32-bit words. The signed coordinate and rate
+fields are
+\[
+ (\rho,\theta,t,\phi,\;v_\rho,v_\theta,v_t,v_\phi).
+\]
+They are followed by unsigned orientation, sheet, branch, cell, lineage, and output;
 residual is signed and status unsigned. Cell48 has twelve words:
 two key words, opcode, flags, four signed arguments, two successors,
 payload, and auxiliary word.
