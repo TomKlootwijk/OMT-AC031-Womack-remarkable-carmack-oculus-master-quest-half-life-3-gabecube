@@ -1,0 +1,133 @@
+\section{A finite exact field kernel with work and heat balance}
+\label{sec:r14-field-step}
+The common continuous energy law needs a separately derived finite update.
+This section supplies one for a fixed quadratic electromagnetic/mechanical
+reduction with one thermal store. It extends the linear mechanical midpoint
+profile to a coupled passive finite field. Temperature-dependent coefficients,
+nonlinear energy and moving bases retain the continuous model and need their
+own selected update; they are not covered by this fixed-coefficient proof.
+
+\subsection{FIELD-MIDPOINT-QUADRATIC-R1}
+Let $x$ contain the retained field and mechanical coordinates after resolving
+algebraic constraints. Declare constant matrices
+\begin{equation}
+ \mathsf Q=\mathsf Q^T\succ0,\qquad
+ \mathsf J^T=-\mathsf J,\qquad
+ \mathsf R=\mathsf R^T\succeq0,\qquad
+ \mathsf A=(\mathsf J-\mathsf R)\mathsf Q,
+\end{equation}
+and a constant input map $\mathsf B$. The model is
+\begin{equation}
+ \dot x=\mathsf A x+\mathsf B u,\qquad
+ E_f(x)=\tfrac12 x^T\mathsf Qx,\qquad
+ y=\mathsf B^T\mathsf Qx.
+ \label{eq:r14-field-linear}
+\end{equation}
+Each coordinate keeps its own dimensions. In particular
+$[\mathsf Q_{ij}]=\mathrm{J}/([x_i][x_j])$, the input/output pairing
+$u^Ty$ has power units, and $\mathsf A_{ij}$ has units
+$[x_i]/([x_j]\,\mathrm{s})$. Positive definiteness refers to the energy form
+on independent coordinates; it cannot be asserted before removing gauge or
+other null directions. Fixed constrained Maxwell--Lorentz modes and a fixed
+positive mechanical stiffness are examples when their energy has this form.
+
+For $h\ge0$, held discrete input $\bar u$ and
+$\bar x=(x^++x)/2$, define the undivided midpoint equation
+\begin{equation}
+ x^+-x=h(\mathsf A\bar x+\mathsf B\bar u).
+ \label{eq:r14-field-midpoint}
+\end{equation}
+Its complete finite body is
+\begin{align}
+ \mathsf D_h&=I-\tfrac h2\mathsf A,\nonumber\\
+ b_h&=(I+\tfrac h2\mathsf A)x+h\mathsf B\bar u,\nonumber\\
+ x^+&=\operatorname{SOLVE\_LINEAR}(\mathsf D_h,b_h),
+ \qquad \bar x=\tfrac12(x^++x).
+ \label{eq:r14-field-solve}
+\end{align}
+For $h=0$ this gives $x^+=x$ without a division by time.
+
+\begin{proposition}[Unique finite solve]
+Under the stated hypotheses, $\mathsf D_h$ is invertible for every $h\ge0$.
+If the matrix entries, state, step and input are rational, the output is rational.
+\end{proposition}
+\begin{proof}
+If $\mathsf D_hw=0$, then $w=(h/2)(\mathsf J-\mathsf R)\mathsf Qw$.
+Multiplication by $w^T\mathsf Q$ gives
+\[
+ w^T\mathsf Qw=-\tfrac h2(\mathsf Qw)^T\mathsf R(\mathsf Qw)\le0.
+\]
+Positive definiteness forces $w=0$, so the square matrix is nonsingular.
+A finite nonsingular rational linear system has a rational solution.
+\end{proof}
+
+\subsection{The same update supplies its exact energy ledger}
+Define the interval work and deposited dissipative energy
+\begin{equation}
+ W=h\bar u^T\mathsf B^T\mathsf Q\bar x,\qquad
+ D=h(\mathsf Q\bar x)^T\mathsf R(\mathsf Q\bar x)\ge0.
+ \label{eq:r14-field-ledger}
+\end{equation}
+Symmetry and the midpoint equation give
+\begin{align}
+ E_f(x^+)-E_f(x)
+ &=\bar x^T\mathsf Q(x^+-x)\nonumber\\
+ &=h(\mathsf Q\bar x)^T(\mathsf J-\mathsf R)\mathsf Q\bar x
+   +h\bar x^T\mathsf Q\mathsf B\bar u=W-D.
+ \label{eq:r14-field-energy}
+\end{align}
+Thus a lossless unforced instance preserves the selected quadratic field
+energy, and a passive unforced instance cannot increase it. The skew term
+exchanges energy between retained coordinates without creating it.
+
+Here $\mathsf R$ represents only losses thermalized in the selected store.
+Outgoing radiation or power delivered to an external load belongs in boundary
+ports or its own store; it is not automatically deposited as local heat.
+Connect all of this profile's dissipation to one thermal store of fixed heat
+capacity $C_\theta>0$, with $T>0$, no external heat flow and
+\begin{equation}
+ E_\theta=C_\theta T,\qquad
+ S_\theta=C_\theta\log(T/T_\star),\quad T_\star>0,\qquad
+ T^+=T+D/C_\theta.
+ \label{eq:r14-field-thermal}
+\end{equation}
+The arbitrary energy reference is omitted. The temperature remains positive,
+and direct substitution proves
+\begin{align}
+ \Delta(E_f+E_\theta)&=W,\nonumber\\
+ \Delta S_\theta&=C_\theta\log\left(1+\frac{D}{C_\theta T}\right)\ge0.
+ \label{eq:r14-field-total}
+\end{align}
+This is a complete finite field/heat update. It deposits the energy $D$ once;
+adding the same loss again as an independent heater would violate the identity.
+Heat leaving the selected thermal store requires an additional explicit
+exchange model. This one-store closure deliberately has no feedback from its
+temperature into $\mathsf Q,\mathsf R$ during the interval.
+
+\subsection{Constraints and representation}
+For a constant linear constraint map $\mathsf L$ such that
+$\mathsf L\mathsf A=0$ and
+$\mathsf L\mathsf B\bar u=0$, multiplication of
+\eqref{eq:r14-field-midpoint} yields
+$\mathsf Lx^+=\mathsf Lx$. This is a conditional preservation result;
+an arbitrary modal discretization need not satisfy those identities. For
+charge-driven Maxwell fields, changing charge and currents need a compatible
+continuity state and constraint law, rather than a falsely constant constraint.
+
+The template exports $(x^+,T^+,W,D)$ and reads one old snapshot. Its body uses
+finite scalar operations, typed matrix contraction and the existing
+\code{SOLVE\_LINEAR} operator. Rational $C_\theta,T$ also give a rational
+next temperature; the logarithm may remain exact syntax if entropy is exported.
+The packing transform then preserves these operators and operands literally.
+No PDE opcode, arbitrary-sign oracle or new executable backend is required by
+the mathematical definition.
+
+The exact residual
+\[
+ r_{\rm total}=E_f(x^+)+C_\theta T^+-E_f(x)-C_\theta T-W
+\]
+vanishes by the displayed proof. These are discrete work and heat quantities,
+not a claim that they equal the integrals along the continuous trajectory.
+Conservation does not establish trajectory accuracy at an arbitrary step size.
+Changing a coefficient first requires its parameter-work ledger; nonlinear
+coupling cannot be added to this step while retaining the fixed quadratic proof.

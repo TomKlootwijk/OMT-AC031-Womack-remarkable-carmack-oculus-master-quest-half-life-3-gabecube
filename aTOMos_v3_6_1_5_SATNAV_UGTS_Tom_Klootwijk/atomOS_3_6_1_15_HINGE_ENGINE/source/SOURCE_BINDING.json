@@ -1,0 +1,185 @@
+{
+  "version": "3.6.1.15",
+  "parent_commit": "01a7f7d5af43ae32cf6df9adcb0d4acd8f0f38ec",
+  "parents": [
+    {
+      "directory": "atomOS_3_6_1_14_UNIFIED_FIELD",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_14_Unified_Field_Formalization_Tom_Klootwijk.pdf",
+          "bytes": 346338,
+          "sha256": "2f1fe051b588402fdaf9a9828bb004bccd49b0e2feea9b28d0e4757a8be80ccd"
+        }
+      ]
+    }
+  ],
+  "inspected_or_adapted_sources": [
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/CLOCK_BINDING.md",
+      "bytes": 7241,
+      "sha256": "265786cf69e68440c8fa6d269385e58dc1e2c93ea1dc7e4834bba97e0a42b5ea"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/GRAVITY_TIME.md",
+      "bytes": 5494,
+      "sha256": "b34e4c0da78fbeee0fe35c6cf42a0712c961643ee296587ff01010e41c1aeaa9"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/KERNEL_INTEGRATION.md",
+      "bytes": 7173,
+      "sha256": "acb059f04de40711403b7128aec150d2d2a6a3a5c984cffd010d3fae46c52f95"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/PHYSICS_PROFILE.md",
+      "bytes": 5489,
+      "sha256": "31ebfc85942759f9254d780735bf1367dbb256600d13db97fb50654f2e9a2470"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/UNIFIED_COUPLING.md",
+      "bytes": 10243,
+      "sha256": "c9f601c3ca31d7d81e715c2fec70dba7f4d1ba3799b13ce94b0c63a608e3e372"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/exact_core.tex",
+      "bytes": 27790,
+      "sha256": "97eacdf254c841ba2b9a1bb0a19f3f10483c85440439c7e6e1c05373edfb6b22"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/anchor_state.json",
+      "bytes": 3696,
+      "sha256": "8e57befdf4e50cf595d7b6a1bb3fe7a2312d168b6207c00bff0ef87d8c42d82f"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/capture.json",
+      "bytes": 2163,
+      "sha256": "e9108f4b87ebdc331fe717c0afcd590820c66b6fc3ca23cb088fd15f4bfc9fa3"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/leap-seconds.list",
+      "bytes": 5065,
+      "sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/leap_source.json",
+      "bytes": 233,
+      "sha256": "296b0dc2b0f6528f775dea564de52c227f11b988db986959e70d57fe5ddfbcc6"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_capture.json",
+      "bytes": 1999,
+      "sha256": "6d29fc205767c080c2cbb703f8904412a678cc3398ae332362d42afee05944ca"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_reply.bin",
+      "bytes": 48,
+      "sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_request.bin",
+      "bytes": 48,
+      "sha256": "f8d1399b333b6e11e1ee9be5a1ce5dd239daed728e534de73e53e7e0ae87a866"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/time_cloudflare_com_reply.bin",
+      "bytes": 48,
+      "sha256": "7bf8a777db65b4b0f8174aa4fd28878dcda028c436790b351fd77f7174e8d878"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/time_cloudflare_com_request.bin",
+      "bytes": 48,
+      "sha256": "8959f1070061ac99faaaad9f12fbb62531ec3638a88d578d92c06e89dff1ec5b"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/SOURCE_BINDING.json",
+      "bytes": 4889,
+      "sha256": "da378c22289a734f6aaec37e42ca907e1df941157f7a805e04aac0bed93166e5"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/source/embedded/Pasted markdown.md",
+      "bytes": 61608,
+      "sha256": "1869efeab782774dd7af09cc2ca9e4dfd7f0317acf1549a375bbb4f8cb53d136"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/phi_source_audit.tex",
+      "bytes": 7055,
+      "sha256": "963737829e4073aba200a9f08d7a778e366060f8fd0d4f2b1e421482da74b307"
+    }
+  ],
+  "source_clock": "Immutable inherited NIST observation; no new live synchronization claim.",
+  "execution": "R15 correctness checks and S2 benchmarks authorized explicitly by the user.",
+  "runtime_profiles": [
+    "ATOMOS-HINGE-R1",
+    "R15 native spatial/word profiles"
+  ],
+  "catalog_scope": "Inherited XOP catalog remains a specification; the new executors implement explicitly bounded subsets."
+}

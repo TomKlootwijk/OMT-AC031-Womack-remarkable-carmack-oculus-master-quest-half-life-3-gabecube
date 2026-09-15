@@ -49,6 +49,23 @@ inputs, not unknown physical truth or arbitrary transcendental evaluation.
 
 ## Completion status
 
-Open. No S2 benchmark result has yet been collected for R15. No aggregate
-superiority or complete S2 feature replacement is claimed. Results will name
-the operation, correctness contract, data, device and measured costs.
+Measured on 15 September 2026. The predeclared contract above is retained.
+The compacted hybrid radius-ID path matches all 36 workloads and beats the
+best measured 1/4/20-worker S2 median in 22. The resident count path matches
+all 27 workloads and beats that S2 baseline in 20 host-complete cases.
+It also beats the best measured CPU method (including the allocation-free
+aTOMos BVH) in 13 cases. Setup is separately reported and excluded from
+these persistent-use timings. All losing regimes remain in the reports.
+
+The packed exact operator profile, reference hinge/seam transitions and
+native delayed count-to-ASA/NA+JK loop are implemented and checked. A separate
+banked integer word-feedback sweep exercises every record through large
+VRAM working sets; it does not measure the S2 geometry operation. Texture
+and ordinary loads are reported separately, without attributing generic GPU
+parallelism to texture-cache superiority.
+
+Full native transcendental lowering, dynamic refit/rebinding and the complete
+log-spherical LUT lifecycle remain outside this release's measured scope.
+CPU nearest/k-nearest correctness is checked; broad region/polygon S2 parity
+and performance are not established. See review/COMPARISON.md and
+review/RESIDENT_RESULTS.md for complete conditions and source-bound results.

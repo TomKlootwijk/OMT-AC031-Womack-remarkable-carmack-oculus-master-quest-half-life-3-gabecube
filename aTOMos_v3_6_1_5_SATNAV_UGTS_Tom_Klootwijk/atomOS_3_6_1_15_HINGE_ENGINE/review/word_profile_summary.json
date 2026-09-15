@@ -1,0 +1,93 @@
+{
+  "source_commit": "59a7e7d",
+  "baseline_source_commit": "4d89922",
+  "source_sha256": "742c25e582bd2d5c4d0868051b61a03d6d224d477029caaff949ba552b2890d2",
+  "profiler": "Nsight Compute 2025.1.0",
+  "device": "RTX 5070 Ti Laptop GPU, sm_120",
+  "working_bytes": 536870912,
+  "profiled_chunk_logical_bytes": 8388608,
+  "threads_per_block": 128,
+  "blocks": 2048,
+  "replay": "kernel",
+  "cache_control": "none",
+  "clock_control": "none",
+  "sample": "first chunk of first measured epoch for each mode; separate process per mode",
+  "command": "ncu --kernel-name-base function --kernel-name regex:epoch_kernel --launch-skip SKIP --launch-count 1 --replay-mode kernel --cache-control none --clock-control none --metrics METRICS --csv --log-file RECEIPT word_cache_benchmark --only-max --max-mib 512 --trials 1 --epochs 1 --warm-epochs 0 --out RUN_RECEIPT",
+  "metric_names": {
+    "dram_pct": "dram__throughput.avg.pct_of_peak_sustained_elapsed",
+    "sm_pct": "sm__throughput.avg.pct_of_peak_sustained_elapsed",
+    "l1tex_hit_pct": "l1tex__t_sector_hit_rate.pct",
+    "l2_hit_pct": "lts__t_sector_hit_rate.pct",
+    "active_warp_pct": "sm__warps_active.avg.pct_of_peak_sustained_active"
+  },
+  "optimized_samples": [
+    {
+      "mode": "stream_texture",
+      "matching_launch_skip": 0,
+      "kernel": "void <unnamed>::epoch_kernel<1, 0>(const <unnamed>::Bank *, <unnamed>::AddressMap, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned int, unsigned long long, <unnamed>::Digest *)",
+      "dram_pct": 58.55,
+      "sm_pct": 37.67,
+      "l1tex_hit_pct": 43.15,
+      "l2_hit_pct": 43.56,
+      "active_warp_pct": 84.89,
+      "receipt": "ncu_word_optimized_stream_texture.csv",
+      "sha256": "90985c5f47cba3895ced6d4d50cc260b48695d259e8f46307f0d335b08d3d4db"
+    },
+    {
+      "mode": "stream_global",
+      "matching_launch_skip": 64,
+      "kernel": "void <unnamed>::epoch_kernel<0, 0>(const <unnamed>::Bank *, <unnamed>::AddressMap, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned int, unsigned long long, <unnamed>::Digest *)",
+      "dram_pct": 66.48,
+      "sm_pct": 48.8,
+      "l1tex_hit_pct": 43.24,
+      "l2_hit_pct": 43.19,
+      "active_warp_pct": 83.05,
+      "receipt": "ncu_word_optimized_stream_global.csv",
+      "sha256": "89a66a415f3f005ac5a03b2c793c807c9ec8c8cabc754eed0dfa940f74bb4679"
+    },
+    {
+      "mode": "affine_texture",
+      "matching_launch_skip": 128,
+      "kernel": "void <unnamed>::epoch_kernel<1, 1>(const <unnamed>::Bank *, <unnamed>::AddressMap, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned int, unsigned long long, <unnamed>::Digest *)",
+      "dram_pct": 32.2,
+      "sm_pct": 3.27,
+      "l1tex_hit_pct": 3.39,
+      "l2_hit_pct": 23.63,
+      "active_warp_pct": 90.25,
+      "receipt": "ncu_word_optimized_affine_texture.csv",
+      "sha256": "759a907c58e701d79c3536a62640c810c335e40b3b8d7d06292210989285f596"
+    },
+    {
+      "mode": "affine_global",
+      "matching_launch_skip": 192,
+      "kernel": "void <unnamed>::epoch_kernel<0, 1>(const <unnamed>::Bank *, <unnamed>::AddressMap, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned int, unsigned long long, <unnamed>::Digest *)",
+      "dram_pct": 32.49,
+      "sm_pct": 3.02,
+      "l1tex_hit_pct": 8.17,
+      "l2_hit_pct": 20.52,
+      "active_warp_pct": 90.6,
+      "receipt": "ncu_word_optimized_affine_global.csv",
+      "sha256": "ac408380038a98c875d8082cddee2ac4a7a37a7d8742e5b08426c90ffe2acbde"
+    }
+  ],
+  "baseline_stream_texture": {
+    "kernel": "void <unnamed>::epoch_kernel<1>(const <unnamed>::Bank *, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned long long, unsigned int, unsigned long long, <unnamed>::Digest *)",
+    "dram_pct": 37.06,
+    "sm_pct": 40.42,
+    "l1tex_hit_pct": 10.34,
+    "l2_hit_pct": 56.54,
+    "active_warp_pct": 88.37,
+    "sha256": "8b47ee14a49afa73bc0f077d9de45a8e3b06a054dc8d34598bda34ea5cc22635",
+    "matching_launch_skip": 316
+  },
+  "baseline_command_difference": "No --only-max; same 512 MiB final set after smaller sets.",
+  "sass_sha256": "3eb3bf7b78cc3826030b8286d745fbad0c7130628c7d0decf3c1f8fb297187c6",
+  "resource_receipt_sha256": "4707596c58df188c6694ef7a5d8637d333b3663bd218d0aaf5c93ae290f34502",
+  "limitations": [
+    "One selected chunk per mode, not a whole-epoch or full-VRAM hardware-counter average.",
+    "Profiler replay perturbs execution; use unprofiled reports for speed comparisons.",
+    "Caches are not flushed and clocks are not locked; counters are observations, not guaranteed bounds.",
+    "L1/TEX hit ratio aggregates the shared unit and is not a seed-texture-only hit ratio.",
+    "Working-set capacity, cache residency and DRAM bandwidth saturation are different quantities."
+  ]
+}

@@ -1,0 +1,298 @@
+\section{Resident count predicates and delayed device feedback}
+\label{sec:r15-resident-gpu}
+The resident profile keeps point seeds, a derived hierarchy and a query batch
+in device memory across selected launches. Its output is a count and a
+resolution status. This is a different interface from returning every point
+identity; comparisons must use the same requested output. A separate
+working-set experiment evaluates delayed exact word feedback. Its timing
+does not by itself measure a spherical-query improvement.
+
+\subsection{The exact distance target and a bounded binary64 body}
+For the original finite binary64 triples $p,q$ accepted by the pinned S2
+unit-length predicate, define
+\begin{equation}
+ P=p/\|p\|,\qquad Q=q/\|q\|,\qquad
+ D=\|P-Q\|^2,\qquad 0\le D\le4.
+ \label{eq:r15-resident-target}
+\end{equation}
+The supplied binary64 radius $R^2\in[0,4]$ denotes its exact dyadic value;
+membership is $D\le R^2$. The stored triples are not silently assumed to
+have exact norm one. This normalized-direction meaning is the one declared
+by the official
+\href{https://github.com/google/s2geometry/blob/079611b654ad89afd9c3c3a1796d64bdd6a6b340/src/s2/s2predicates.h}
+{S2 distance predicate}.
+
+Let $\varepsilon=2^{-52}$ and assume strict binary64 round-to-nearest,
+gradual underflow and the displayed non-fused operation sequence. S2's
+computed norm tolerance is $5\varepsilon$. Its three-square evaluation error
+gives $|\|p\|^2-1|<9\varepsilon$, hence
+$|\|p\|-1|<5\varepsilon$ and the conservative coordinate bound
+$|p_i-P_i|<8\varepsilon$. Apply the same bound to $q$.
+
+The direct device body is
+\begin{equation}
+ d_i=\operatorname{RN}(p_i-q_i),\quad
+ s_i=\operatorname{RN}(d_i^2),\quad
+ \widehat D=\operatorname{RN}
+       \bigl(\operatorname{RN}(s_1+s_2)+s_3\bigr).
+ \label{eq:r15-resident-distance}
+\end{equation}
+Writing $\Delta_i=P_i-Q_i$, raw coordinate error plus subtraction rounding
+gives $|d_i-\Delta_i|<18\varepsilon$. Since $|\Delta_i|\le2$,
+the square error before rounding is below
+$18\varepsilon(4+18\varepsilon)<73\varepsilon$; product rounding adds less
+than $3\varepsilon$. Each of the two additions adds less than
+$8\varepsilon$. Therefore
+\begin{equation}
+ |\widehat D-D|<3(76\varepsilon)+2(8\varepsilon)
+             =244\varepsilon<256\varepsilon.
+ \label{eq:r15-resident-error}
+\end{equation}
+The detailed proof includes the elementary absolute underflow allowance
+$2^{-1075}$ and the norm-admission bound in
+\code{formal/RESIDENT\_PREDICATE\_PROOF.md}. No overflow is possible in this
+bounded coordinate body. This is an error certificate in dimensionless
+squared-chord units, not a physical position tolerance.
+
+\subsection{A wide interval produces definite or unresolved results}
+Use the exactly representable margin $m=2^{-40}=4096\varepsilon$ and
+\begin{equation}
+ t_-=\operatorname{RN}(R^2-m),\qquad
+ t_+=\operatorname{RN}(R^2+m).
+ \label{eq:r15-resident-thresholds}
+\end{equation}
+Each threshold's rounding error is below $3\varepsilon$, including zero,
+subnormal radii and $R^2=4$. Thus
+\begin{equation}
+ \begin{array}{lll}
+ \widehat D\le t_-&\Longrightarrow D<R^2&\text{definitely inside},\\
+ \widehat D>t_+&\Longrightarrow D>R^2&\text{definitely outside},\\
+ \text{otherwise}&&\text{unresolved by this interval}.
+ \end{array}
+ \label{eq:r15-resident-classification}
+\end{equation}
+For example, the first implication follows from
+$D<\widehat D+256\varepsilon
+ <R^2-(4096-3-256)\varepsilon$ after the threshold comparison.
+The second follows from the corresponding lower bound. An exact boundary
+cannot be assigned to outside by either proved rule.
+
+The resident implementation uses componentwise equality of the original
+triples as an exact
+zero-distance certificate, including signed zeros. A rounded distance equal
+to zero is not: distinct subnormal separations can square to zero. Distinct
+proportional triples may also denote the same direction and require an
+appropriate exact certificate or unresolved result. The endpoint $R^2=4$
+separately accepts every admitted direction from
+equation~\eqref{eq:r15-resident-target}.
+
+\subsection{Complete counts and a visible resolution path}
+The conservative binary32 hierarchy filter can reject only proved outside
+subtrees. Surviving raw binary64 point words reach the predicate above. If
+$I$ points are definitely inside and $U$ remain unresolved, then
+\begin{equation}
+ I\le\operatorname{Count}(q,R^2)\le I+U.
+ \label{eq:r15-resident-count}
+\end{equation}
+Only $U=0$ establishes a complete resident count. Otherwise the query status
+remains unresolved until a selected exact host query supplies the whole
+answer. Partial counts are not final answers. The count profile does not
+truncate an ID list or inherit a candidate-capacity prefix as its result.
+
+Seeds, query words and bounds share the selected epoch. Derived outputs use
+separate storage, and their consumers wait for completed producer launches.
+An immutable point hierarchy can be reused; changed geometry needs a new
+valid bound and binding. Texture instructions do not guarantee a cache hit
+or that every resident VRAM word is resident in the texture cache.
+
+\subsection{The implemented count-to-word feedback binding}
+The \code{ResidentFeedback} profile assigns immutable query alternatives
+$\mathcal Q_i^0,\mathcal Q_i^1$ to lane $i$. A count kernel reads the old
+64-bit state word $q_i^n$ and evaluates
+\begin{equation}
+ (I_i^n,U_i^n)=\operatorname{ResidentCount}
+       \bigl(\mathcal Q_i^{\,q_i^n\mathbin{\&}1}\bigr).
+ \label{eq:r15-resident-selection}
+\end{equation}
+A following commit kernel consumes that summary. If $U_i^n>0$, its word,
+parity, hinge count and last committed epoch hold; the status is unresolved.
+This feedback profile does not silently run a host resolver. For a resolved
+summary, the drive is $d_i^n=[I_i^n>0]$. A new resolved epoch uses the explicit
+pulse-on-first rule
+\begin{equation}
+ h_i^n=[\text{uninitialized}]
+        \mathbin{\lor}[d_i^n\ne d_i^{\rm last}].
+ \label{eq:r15-resident-pulse}
+\end{equation}
+Replaying the last committed epoch holds; an older epoch is rejected.
+Only resolved, ordered epochs update the remembered drive and epoch.
+Thus the first sample is a declared initialization event, not an inferred
+geometric crossing.
+
+Let $T_x,T_J,T_K$ be the supplied bitwise four-entry Boolean tables, let $M$
+be the valid-word mask, and write the two ordered ASA/NA stages as
+\begin{equation}
+ \mathcal A_j(v)=
+ \begin{cases}
+ 0,&(v\mathbin{\&}A_j\mathbin{\&}N_j)\mathbin{\&}B_j\ne0,\\
+ v\mathbin{\&}A_j\mathbin{\&}N_j,&\text{otherwise}.
+ \end{cases}
+ \label{eq:r15-resident-mask}
+\end{equation}
+For an accepted pulse, all three tables refer to the same old word:
+\begin{align}
+ y&=\mathcal A_1\bigl(\mathcal A_0(T_x(q,d)\mathbin{\&}M)\bigr),\\
+ J&=T_J(q,y)\mathbin{\&}M,\qquad K=T_K(q,y)\mathbin{\&}M,\\
+ q^+&=((J\mathbin{\&}\neg q)\mathbin{\lor}
+                      (\neg K\mathbin{\&}q))\mathbin{\&}M,
+ \qquad p^+=p\mathbin{\oplus}1.
+ \label{eq:r15-resident-jk}
+\end{align}
+Otherwise the logical state holds. Exhausted hinge-count storage rejects the
+commit. This profile has a fixed chart, so its orientation stays zero.
+
+The source and query table outlive the feedback object. Each external phase
+acquires a fresh invalidated device view, and calls sharing that source are
+serialized. The count kernel reads state; the distinct commit kernel writes
+it. Their common stream orders these operations before the next count kernel,
+so a second state buffer is unnecessary for this two-kernel binding. No
+per-epoch host data readback is required. This is delayed feedback through a
+geometric predicate, with unresolved results still visible.
+
+\subsection{A separate exact integer working-set profile}
+The working-set executable binds a smaller independent operator profile.
+Each immutable 16-byte record holds integer $a,b\in[-1023,1023]$, an opcode
+$o\in\{0,1,2,3\}$ and a 32-bit salt $w$. Its old state is a 32-bit word $q$
+and a parity bit. Define
+\begin{equation}
+ s=(q\mathbin{\&}31)-16,\qquad
+ c=(q\mathbin{\&}3)-1,\qquad
+ d=((q\gg2)\mathbin{\&}3)-1,
+\end{equation}
+where subtraction occurs in a signed integer domain. With
+$\phi=(1+\sqrt5)/2$, the selected exact coefficient pair is
+\begin{equation}
+ (a',b')=
+ \begin{cases}
+ (a+s,b),&o=0,\\
+ (b,a+b),&o=1,\\
+ (ac+bd,\ ad+bc+bd),&o=2,\\
+ (a-s,b),&o=3.
+ \end{cases}
+ \label{eq:r15-working-phi}
+\end{equation}
+The third row is literal multiplication by $c+d\phi$, using
+$\phi^2=\phi+1$. No floating-point approximation to $\phi$ is evaluated.
+The bounds $|a'|\le4092$, $|b'|\le6138$ and
+$|2a'+b'|\le14322$ give
+\begin{equation}
+ (2a'+b')^2\le205119684,\qquad
+ 5b'^2\le188375220<2^{31}-1.
+ \label{eq:r15-working-sign32}
+\end{equation}
+Both squares and every preceding coefficient temporary fit signed 32-bit
+arithmetic. The optimized device body uses that width without narrowing loss;
+the independent CPU recurrence retains 64-bit intermediates.
+Same-sign terms are handled directly; the square comparison is used only
+for opposing signs in $2(a'+b'\phi)=2a'+b'+b'\sqrt5$.
+This proof is specific to the small procedural coefficient domain above.
+It does not narrow the separate native expression profile whose coefficients
+may approach $2^{30}-1$.
+
+For $\sigma=\operatorname{sign}(a'+b'\phi)=0$ the state holds. Otherwise
+the drive word is $w$ for $\sigma<0$ and $\neg w$ for $\sigma>0$;
+$x=q\mathbin{\oplus}\text{drive}$ passes through the two fixed mask stages
+in equation~\eqref{eq:r15-resident-mask}. The selected $J=y,K=\neg y$
+specialization gives $q^+=y$ and toggles parity. Every launch epoch supplies
+one fresh internal event opportunity per record; repeated nonzero signs do
+not imply repeated physical side crossings. Old $q$ changes the next
+operands and word body, making this an explicit delayed self-reference.
+
+\subsection{Bank coverage and coherence}
+The immutable seed records are expanded from integer bit planes through raw
+integer texture reads. In this executable, only immutable records use the
+texture/global comparison; the two state buffers use global memory in both
+variants. Every record reads its epoch's old buffer and writes the distinct
+next buffer. All chunks finish before buffer roles change. The packed scratch
+producer and its texture consumer are also separate completed launches.
+These boundaries follow the ordering and texture-coherence requirements in
+the official
+\href{https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-programming-guide/index.html#streams}
+{CUDA stream} and
+\href{https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-programming-guide/index.html#read-write-coherency}
+{texture-coherence} documentation; they do not assume coherent simultaneous
+texture reads and global writes to the same address.
+
+For $N$ records, streaming visits ordinal $k$ directly. The other pattern uses
+\begin{equation}
+ i(k)=(\alpha k+\beta)\bmod N,\qquad
+ \gcd(\alpha,N)=1,\qquad 0\le k<N.
+ \label{eq:r15-working-permutation}
+\end{equation}
+Checked integer products avoid overflow, and coprimality makes this a
+bijection. Thus each full epoch visits every record exactly once, including
+every bank, rather than probing a small subset of a large allocation.
+The declared working set contains $16N$ seed bytes and $16N$ bytes in the two
+persistent state buffers. Its size is admitted against available VRAM with
+a reserve; only completed runs establish an exercised size. This accounting
+does not mean that all VRAM allocations fit in hardware caches.
+
+\subsection{Exact address and digest implementation}
+The optimized address body preserves equation~\eqref{eq:r15-working-permutation}.
+Streaming uses $i=k$ directly. For a power-of-two record count, the remainder
+is the low-bit mask. For every other admitted $N\ge2048$, put $W=2^{64}$
+and, for the checked numerator $0\le x=\alpha k+\beta<W$, use
+\begin{equation}
+ m=\left\lfloor\frac WN\right\rfloor,\qquad
+ q_0=\left\lfloor\frac{xm}{W}\right\rfloor,\qquad
+ r=x-q_0N,\qquad
+ i=\begin{cases}r-N,&r\ge N,\\r,&r<N.\end{cases}
+ \label{eq:r15-working-reciprocal}
+\end{equation}
+The device obtains $q_0$ from the high half of an exact unsigned 64-bit
+product. Since
+$0\le x/N-xm/W\le x/W<1$, $q_0$ is either
+$\lfloor x/N\rfloor$ or one less. Hence $0\le r<2N$ and one subtraction
+produces the exact remainder. The implementation computes $m$ on the host
+from $W-1$, avoiding a stored integer equal to $W$; the existing checked
+affine product and addition remain required. This replaces division, not the
+permutation or its coverage contract.
+
+Each full bank has a verified capacity $C=2^b$ within the device texture
+element limit and the selected cap. Its index and offset are exactly
+$i\gg b$ and $i\mathbin{\&}(C-1)$. The final bank retains its actual valid
+count. Both immutable-record texture and global-load variants use the same
+address mapping, operands, recurrence and old/new state allocation rules.
+
+The 128-thread digest now reduces four warp summaries, then combines those
+summaries in the first warp after one block barrier. All lanes participate;
+invalid ordinals contribute zero XOR, zero sum and zero count. XOR and
+unsigned addition modulo $2^{64}$ are associative, and the block count is at
+most 128, so regrouping changes no digest bits. The implementation contract
+and independent-oracle limits are recorded in
+\href{formal/WORD_CACHE_BENCHMARK.md}{\code{formal/WORD\_CACHE\_BENCHMARK.md}}.
+These exact transformations provide no speed claim without the corresponding
+compiled checks and matched measurements.
+
+\subsection{Validation and measurement scope}
+Paired texture/global trials reset both state buffers to the same procedural
+snapshot outside timing. Per-epoch validation combines full-record XOR, sum
+and count digests with sampled independent CPU state replay. For
+$N\le65536$, an additional full CPU digest is computed. Digests can collide;
+they are evidence distinct from exhaustive bitwise state comparison. The
+timed kernel includes arithmetic, masks, JK and digest work. The reported
+$32N$ logical bytes per epoch count seed read, old-state read and next-state
+write; their effective rate is not a hardware DRAM-bandwidth measurement.
+
+The count predicate and this word recurrence have different outputs and
+costs. Their measurements keep resident kernel time, transfers, host
+resolution, matched global loads and validation overhead separate. Neither a
+large working set nor their shared texture path establishes a speed advantage
+for the other's task, a cache-hit guarantee or physical navigation accuracy.
+
+\IfFileExists{resident_results.tex}{\input{resident_results.tex}}{%
+\begin{panel}
+The resident and working-set run record is pending. No timing, cache-hit
+ratio, completed working-set size or new correctness count is asserted by
+this mathematical scaffold.
+\end{panel}}

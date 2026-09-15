@@ -1,0 +1,219 @@
+\section{Exact spatial templates without a prescribed raster}
+\label{sec:r15-spatial-calculus}
+This new spherical profile supplies coordinate geometry and direct primitive
+evaluation to the hinge engine. It is distinct from the inherited horizontal
+chart $\rho=\log(H/r_0)$, $\theta=\operatorname{atan2}(N,E)$ and from the
+quantized WANT.W64 address. An expression-template table stores complete
+functions and parameters. It is not a table of sampled distances whose
+interpolant is silently declared exact.
+
+\subsection{Spherical logarithmic coordinates retain the Euclidean metric}
+For a fixed positive reference length $r_0$, let $\rho\in\R$, polar angle
+$0<\theta<\pi$, and azimuth $\varphi$ modulo $2\pi$. In fixed Cartesian axes,
+\begin{equation}
+ r=r_0e^\rho,\qquad
+ x=o+r e_r,\qquad
+ e_r=(\sin\theta\cos\varphi,\sin\theta\sin\varphi,\cos\theta).
+ \label{eq:r15-log-spherical}
+\end{equation}
+The orthonormal tangents are
+$e_\theta=(\cos\theta\cos\varphi,\cos\theta\sin\varphi,-\sin\theta)$
+and $e_\varphi=(-\sin\varphi,\cos\varphi,0)$. Differentiation gives the
+metric and volume element
+\begin{equation}
+ ds^2=r^2(d\rho^2+d\theta^2+\sin^2\theta\,d\varphi^2),
+ \qquad dV=r^3\sin\theta\,d\rho\,d\theta\,d\varphi.
+ \label{eq:r15-spherical-metric}
+\end{equation}
+Thus equal coordinate increments do not have equal physical length. The
+standard orthogonal-coordinate gradient/divergence construction is given in
+\href{https://web.mit.edu/8.Math/www/lectures/lec14/lec14.pdf}
+{SC1: MIT Mathematical Methods, lecture 14}; substitution $r=r_0e^\rho$
+gives the following explicit bodies for a smooth scalar $f$:
+\begin{align}
+ \nabla f&=\frac1r\left(e_r f_\rho+e_\theta f_\theta
+                  +e_\varphi\frac{f_\varphi}{\sin\theta}\right),\nonumber\\
+ \nabla^2f&=\frac1{r^2}\left(f_{\rho\rho}+f_\rho+
+             f_{\theta\theta}+\cot\theta f_\theta+
+             \csc^2\theta f_{\varphi\varphi}\right).
+ \label{eq:r15-spherical-differential}
+\end{align}
+These factors are required if a selected gravity, diffusion or field equation
+is expressed in this chart. Removing them changes the physical equation.
+The origin is outside the logarithmic chart; the polar-axis and angular-seam
+coordinate ambiguities use an explicit alternate chart or absent-chart status.
+They are not physical holes. Full azimuth winding is retained separately from
+a periodic address.
+
+For twice differentiable coordinate functions of time and a translating
+origin $o(t)$, with the Cartesian axes held fixed, direct kinematics are
+\begin{align}
+ \dot x-\dot o&=r(\dot\rho e_r+\dot\theta e_\theta+
+                                \sin\theta\dot\varphi e_\varphi),\nonumber\\
+ \ddot x-\ddot o&=r(a_r e_r+a_\theta e_\theta+a_\varphi e_\varphi),\nonumber\\
+ a_r&=\ddot\rho+\dot\rho^2-\dot\theta^2-\sin^2\theta\dot\varphi^2,\nonumber\\
+ a_\theta&=\ddot\theta+2\dot\rho\dot\theta
+                          -\sin\theta\cos\theta\dot\varphi^2,\nonumber\\
+ a_\varphi&=\sin\theta\ddot\varphi
+       +2\dot\rho\sin\theta\dot\varphi+2\cos\theta\dot\theta\dot\varphi.
+ \label{eq:r15-spherical-kinematics}
+\end{align}
+These are derivatives of the same seeded trajectory, rather than finite
+differences of rendered points. Rotating axes additionally require R14's
+frame-velocity and acceleration terms. A specified trajectory supplies
+kinematics; its physical realization still needs the corresponding force and
+energy model. Exact expression differentiation does not identify an unknown
+trajectory from an uncalibrated observation.
+
+\subsection{Distance, defining function and occupancy remain different outputs}
+For a declared solid $A$ with boundary $\partial A$, its signed Euclidean
+distance is the distance to $\partial A$, negative inside, positive outside
+and zero on the boundary. Where differentiable away from exceptional closest-
+point sets, its gradient has unit norm. In the chart above this becomes
+\begin{equation}
+ f_\rho^2+f_\theta^2+\csc^2\theta f_\varphi^2=r^2.
+ \label{eq:r15-sdf-eikonal}
+\end{equation}
+The metric-weighted equation is a necessary local property; boundary data,
+sign and the selected global distance definition are still required. The
+unweighted expression $f_\rho^2+f_\theta^2+f_\varphi^2=1$ is not the Euclidean
+SDF condition in logarithmic spherical coordinates.
+
+A sphere has the exact direct SDF $f(x)=\|x-a\|-R$. Its squared guard in
+equation~\eqref{eq:r15-sphere-guard} has the same sign but different units and
+gradient. A normalized plane has $f(x)=n\cdot x-c$, $\|n\|=1$.
+The retained segment and finite-cone templates likewise provide explicit
+piecewise distance bodies under their own domains. An absolute-value pyramid
+inequality is a valid defining predicate when its region is intended; it is
+not automatically a Euclidean distance. A scalar sphere formula cannot be
+replaced by an unspecified angular LUT and an assertion of identical shape.
+
+Occupancy is $[f<0]$ with its declared boundary policy. Boolean combinations
+of defining functions retain their predicate logic. For example,
+$\min(f_A,f_B)<0$ describes a union, but inside overlapping solids that
+minimum need not be the distance to the union's exterior boundary. Therefore
+the engine exposes whether a returned scalar is a true distance, a distance
+bound, a defining guard, or only a Boolean. A proof requiring a Lipschitz
+constant uses the actual selected function, not its informal SDF label.
+
+\subsection{Rigid and uniform-scale transport is exactly solvable}
+Let $f_0$ be a signed distance in material coordinates. For a translation
+$a(t)$, rotation $R(t)\in SO(3)$ and uniform scale $\lambda(t)>0$, set
+\begin{equation}
+ x=a+\lambda R X,\qquad X=R^T(x-a)/\lambda,
+ \qquad f_t(x)=\lambda f_0(X).
+ \label{eq:r15-similarity-sdf}
+\end{equation}
+For every pair $X,Y$, the transform multiplies their Euclidean separation by
+$\lambda$. Taking the infimum over the original boundary proves that
+\eqref{eq:r15-similarity-sdf} is exactly the transformed signed distance.
+On its differentiable domain, $\nabla_x f_t=R\nabla_Xf_0$, preserving unit
+normal length.
+
+Write $\dot R=[\omega]_\times R$ in world components. The velocity of a
+material point, expressed at its current position, is
+\begin{equation}
+ v(x,t)=\dot a+\omega\times(x-a)+(\dot\lambda/\lambda)(x-a).
+ \label{eq:r15-material-velocity}
+\end{equation}
+Differentiating $f_t(a+\lambda RX)=\lambda f_0(X)$ at fixed $X$ gives
+\begin{equation}
+ \partial_t f_t+v\cdot\nabla_x f_t=(\dot\lambda/\lambda)f_t.
+ \label{eq:r15-sdf-material-rate}
+\end{equation}
+Rigid transport has $\lambda=1$ and zero material derivative. On the moving
+boundary $f_t=0$, the same relation gives its normal velocity. Corners and
+medial sets keep their nondifferentiability status; a unit normal is not
+invented where the selected derivative has no value.
+
+For an arbitrary diffeomorphism $\Phi$, the pullback guard
+$g_t=f_0\circ\Phi^{-1}$ preserves the transformed boundary and inside sign,
+but
+\begin{equation}
+ \nabla_x g_t=(D\Phi)^{-T}\nabla_X f_0
+ \label{eq:r15-deformed-normal}
+\end{equation}
+generally has nonunit length. Dividing by this local length does not in
+general recover the global Euclidean distance. If the full transformation is
+globally bi-Lipschitz with constants $0<\ell\le L$, the actual transformed
+distance satisfies the useful bound
+\begin{equation}
+ \ell|f_0(X)|\le |f_t(\Phi(X))|\le L|f_0(X)|.
+ \label{eq:r15-deformed-bound}
+\end{equation}
+This follows by taking the boundary infimum of the two distance inequalities.
+Local Jacobian values alone do not establish those global constants on an
+arbitrary domain. A deformation or its inverse supplied only through an ODE
+retains that solution/inversion obligation.
+
+\subsection{Direct template evaluation has a precise computational scope}
+A template-table entry contains an identifier, complete expression body,
+parameters, domains, frame/time binding and declared output type. At supplied
+$x,t$ the selected sphere, plane, affine-coordinate or admitted algebraic
+guard can be evaluated directly. Their derivatives can be supplied as exact
+bodies. No spatial raster or marching search is required for that selected
+evaluation. This is the useful meaning of a direct or ``query-free'' primitive
+profile; it does not remove the supplied point/time or the work of evaluating
+its expression.
+
+Finding a first ray hit instead asks for a selected root of
+$f(o+\tau d)=0$. Finding a general nearest feature asks for a minimum with its
+domain and selection conditions. A closed primitive may supply a finite
+formula; an arbitrary composite, deformation or trajectory may require root
+selection, a search, or an unresolved result. Exact encoding does not turn
+these different tasks into one constant-cost lookup. A finite dictionary of
+templates is not a dictionary containing every possible continuous shape.
+
+\subsection{PSI excludes a certified descendant set, not future events}
+Let $N$ identify a branch and its declared descendants $\mathcal D_N$ over
+the time interval $I$. Here descendant points include every point of a
+represented primitive's extent, not only one origin per instance. Its bound
+must assert
+\begin{equation}
+ \forall D\in\mathcal D_N,\ \forall t\in I:
+       \|P_D(t)-P_N(t)\|\le R_N(t).
+ \label{eq:r15-descendant-bound}
+\end{equation}
+Primitive extent, transformed children, motion and any represented uncertainty
+must all be included. A center-only bound is insufficient for a finite solid.
+For a 1-Lipschitz query guard $f_t$ with excluded side $f_t>0$, the condition
+\begin{equation}
+ f_t(P_N(t))>R_N(t)
+ \label{eq:r15-psi}
+\end{equation}
+implies $f_t(P_D(t))>0$ for every enclosed point: subtract the distance bound
+from the center value. For a whole-interval exclusion the condition must hold
+throughout $I$, or follow from a common interval lower bound. Equality is not
+excluded. For Lipschitz constant $L_f$, replace the right side by $L_fR_N$.
+If evaluation returns $\underline f_N\le f_t(P_N)$, a certified decision
+uses $\underline f_N>L_fR_N$, including all additional margins in compatible
+units.
+
+One concrete slab version is
+\begin{equation}
+ |n\cdot P_N-c|>w/2+R_N+d_N+\delta_N,\qquad \|n\|=1,
+ \label{eq:r15-psi-slab}
+\end{equation}
+where $R_N$ encloses projected descendants, $d_N$ bounds their projected
+deformation and $\delta_N$ bounds remaining projected uncertainty. It is the
+retained corrected PSI proof: every descendant, not merely an undeformed
+parent hull, is on the excluded side. Monotone-looking branch indices or a
+positive depth counter cannot replace the quantified enclosure.
+
+A finite AABB hierarchy realizes another enclosure. Each parent contains all
+child bounds; leaf bounds include their actual points/primitive extents.
+After motion, changed leaves are refitted and their ancestors recomputed, or
+a previously certified all-time bound is used. Geometry and bounds carry the
+same epoch before pruning; mixed old/new bounds do not establish enclosure.
+A self-referential return that changes the root or transforms descendants
+starts a new bound evaluation unless the old certificate explicitly covered
+that return. An infinite descendant family requires a proved finite bound or
+cannot be pruned by that finite-radius certificate.
+
+Pruning here removes only a proved irrelevant geometric evaluation for a
+specified query and epoch. It does not skip accepted hinge events, JK updates,
+clock progression, winding or future seam returns. Diffraction, thermal
+coupling, force or sensor contributions require their R14 error/energy
+obligations before they are omitted from a physical model. Keeping those
+obligations preserves the distinction between a fast spatial engine and a
+proved physical simulation.
