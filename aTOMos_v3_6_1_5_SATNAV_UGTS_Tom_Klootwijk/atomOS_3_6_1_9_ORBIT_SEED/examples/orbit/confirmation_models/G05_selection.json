@@ -1,0 +1,144 @@
+{
+  "status": "selected",
+  "selected_window_days": 1.0,
+  "candidates": [
+    {
+      "window_days": 1.0,
+      "training_fit": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -172800.0,
+        "training_end_s": -86400.0,
+        "training_rows": 289,
+        "fitted_rows": 49,
+        "fit_reference_anchor_s": -129600.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 16,
+        "training_rms_3d_m": 0.11547556400866762,
+        "training_max_3d_m": 0.26941478896020143,
+        "parameter_values_scaled": [
+          -0.00032061803526522135,
+          -3.1047731543806464e-05,
+          -6.29485283968394e-05,
+          -4.18763473685243e-06,
+          -7.83597251513354e-05,
+          -7.438211799076429e-05,
+          0.9887621842659339,
+          0.0061273502338627505,
+          0.003455670174188996,
+          -0.007829739724801709
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          21043105.639829002,
+          9233442.723015727,
+          -13434839.924644047,
+          336.3668967647139,
+          2885.99701450926,
+          2549.48678605256
+        ]
+      },
+      "internal_holdout_start_s": -86100.0,
+      "internal_holdout_end_s": 0.0,
+      "internal_holdout_rows": 288,
+      "internal_holdout_rms_m": 0.7057607555366316,
+      "internal_holdout_max_m": 1.2227409430498273,
+      "internal_holdout_endpoint_m": 1.2227409430498273,
+      "future_target_rows_used": 0
+    },
+    {
+      "window_days": 3.0,
+      "training_fit": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -345600.0,
+        "training_end_s": -86400.0,
+        "training_rows": 865,
+        "fitted_rows": 145,
+        "fit_reference_anchor_s": -216000.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 17,
+        "training_rms_3d_m": 0.36583301026346965,
+        "training_max_3d_m": 0.7889670423824436,
+        "parameter_values_scaled": [
+          -0.00043538384895069654,
+          -3.830552386156304e-05,
+          -0.0002948668874020497,
+          7.112114558348102e-05,
+          -0.00011131626781194846,
+          -0.00010231979752517975,
+          0.9884923323806145,
+          0.011524263847678046,
+          0.0038214099791881824,
+          -0.0020919992780778396
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          20942621.88369691,
+          8544174.829526817,
+          -14043729.303225381,
+          441.6479971383947,
+          2931.772170608232,
+          2479.131379506238
+        ]
+      },
+      "internal_holdout_start_s": -86100.0,
+      "internal_holdout_end_s": 0.0,
+      "internal_holdout_rows": 288,
+      "internal_holdout_rms_m": 0.8605445381094396,
+      "internal_holdout_max_m": 1.3644240370432967,
+      "internal_holdout_endpoint_m": 0.8942566682676485,
+      "future_target_rows_used": 0
+    },
+    {
+      "window_days": 7.0,
+      "training_fit": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -691200.0,
+        "training_end_s": -86400.0,
+        "training_rows": 2017,
+        "fitted_rows": 337,
+        "fit_reference_anchor_s": -388800.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 21,
+        "training_rms_3d_m": 0.7437140114291533,
+        "training_max_3d_m": 1.8315781307663561,
+        "parameter_values_scaled": [
+          0.0004250005250972899,
+          -0.0011456839042724616,
+          0.0001184020986570416,
+          0.0002451499302334303,
+          -0.00020644479046047482,
+          -2.056900540401553e-05,
+          0.9888613659457164,
+          0.021360863421293834,
+          0.003806710935630939,
+          0.015776402244154896
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          20666797.75773789,
+          7134822.567561382,
+          -15208677.583544409,
+          650.0852838704143,
+          3012.6860800825043,
+          2329.531100943081
+        ]
+      },
+      "internal_holdout_start_s": -86100.0,
+      "internal_holdout_end_s": 0.0,
+      "internal_holdout_rows": 288,
+      "internal_holdout_rms_m": 1.5917874094208597,
+      "internal_holdout_max_m": 2.3741146862650173,
+      "internal_holdout_endpoint_m": 1.7102159568396869,
+      "future_target_rows_used": 0
+    }
+  ]
+}

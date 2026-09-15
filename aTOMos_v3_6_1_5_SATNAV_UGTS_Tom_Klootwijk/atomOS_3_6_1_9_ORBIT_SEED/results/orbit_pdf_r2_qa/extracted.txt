@@ -1,0 +1,2733 @@
+=== PAGE 1 ===
+AC031 / AC130 A TOMOS ORBIT -SEED-R1
+aTOMos v3.6.1.9
+Orbital seeds and
+timestamp queries
+Ground-station horizons
+with the literal self-referential kernel
+MEO / GEO / inclined geosynchronous / high elliptical
+T wo ASA/NA sets · synchronous JK · CPU / CUDA
+Tom Klootwijk
+Author-supplied identiﬁer NL200678942
+Author-supplied date 10-07-1990
+Source lineage aTOMos 3.6.1 / UGTS-KC 3.6.2 SCLP
+Preserved parent 3.6.1.8 LIVE-GPS-L1-R1
+Target RTX 5070 Ti Laptop / SM120 / FP64
+Release 3.6.1.9 / 15 September 2026
+8.51–8.86 KiB per complete demonstration seed
+Reconstruct physical satellite states at requested timestamps. Keep full state, time, Up and
+model dependencies. Measure forecast error against later reference orbit data and report
+when each accuracy budget is exceeded.
+Editable equations, native binaries, packed examples, a local timeline interface and veriﬁed evidence.
+Prepared with AI assistance.
+
+=== PAGE 2 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+Release and implementation record
+This subversion implements ORBIT-SEED-R1. It packs a complete physical model and recon-
+structs a satellite’s ground-station-relative position at an arbitrary supported timestamp. The
+examples cover real MEO, GEO, IGSO and high elliptical targets. T wo explicit ASA/NA mask
+sets feed the existing synchronous JK operation; the resulting state changes the ordered query
+schedule.
+Delivered capability Concrete implementation
+Compact seeds 8,716–9,074 bytes, including all per-seed physical, frame, forcing,
+station, query and word parameters.
+Timestamp scrubbing Native CPU canonical checkpoints, bounded memory , exact
+fractional query time and query-order-independent states.
+Physical prediction Full degree/order-12 Earth gravity , Sun/Moon forcing, radiation
+pressure, ﬁtted RTN acceleration, varying EOP and Schwarzschild
+correction.
+Literal state T wo ordered whole-word ASA/NA stages, editable X/J/K
+equations, synchronous JK and a trace of the selected next
+timestamp.
+Station geometry Full ECEF/ENU position and velocity , Up, range/range rate,
+azimuth/elevation, original UGTS keys and complete
+time/winding.
+Both horizons Reﬁned visibility events and sampled prediction-error horizons
+against withheld later orbit data.
+Execution evidence Native CPU/CUDA, independent equations and propagation,
+isolated packed-only replay , physical reference comparisons and
+actual-device sanitizer.
+User interface Local timeline, exact timestamp input, satellite/station selection,
+pass search and ordered feedback replay.
+The seed epoch is 2 January 2025. A ﬁxed rule chooses among one-, three- and seven-day earlier
+training windows using an earlier validation day. R2 keeps all four January examples below 10
+metres at every tested ﬁrst-day reference sample. Longer intervals still have failures. January
+is a reused development benchmark; a separate February conﬁrmation follows in the evidence.
+The default codec uses lossless one-bit planes in machine words. Propagation still uses binary64
+arithmetic, with measured CPU/GPU and independent integration diﬀerences.
+The prior LIVE-GPS-L1-R1, CGK-R1, SRK-R1 and SATNA V-R1 equations remain in the second
+part of this volume. Their previous receiver-position measurements are historical component
+evidence, not satellite forecast accuracy. Fresh retained component regressions are recorded for
+this subversion. The parent release and its delivered ﬁles are preserved separately.
+T om Klootwijk | 15 September 2026 2
+
+=== PAGE 3 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+Contents
+Release and implementation record 2
+1 ORBIT-SEED-R1: compact physical seeds and timestamp queries 5
+Retained receiver, geometry and source contracts 18
+2 Live GPS receiver-to-position pipeline 18
+3 The completed geometry–state feedback connection 30
+4 Literal chart motion and an explicit circle-plus 31
+5 The geometry-to-bit encoders 32
+6 The physical operator supplied by the feedback state 33
+7 The physical eigenmatrix and mechanical checks 34
+8 Actual SATNA V/UGTS handoﬀ and editable model input 35
+9 Preserved 3.6.1.7 coupled implementation validation 36
+10 Coupled handoﬀ evidence and reproducibility 37
+11 Literal self-reference: the completed recurrence 38
+12 Actual equations are input data 39
+13 Fixed points, cycles and complete ﬁnite execution 40
+14 Native execution and independent equation replay 41
+15 SRK-R1 baseline validation, version 3.6.1.6 42
+16 The imported UGTS and aTOMos contracts 43
+17 Receiver state and source-symbol separation 44
+18 The corrected-code observation model 45
+19 Input epochs, channels and aTOMos selection 46
+20 The weighted positioning step 47
+T om Klootwijk | 15 September 2026 3
+
+=== PAGE 4 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+21 Streaming QR, rank and formal covariance 48
+22 Solver status and residual diagnostics 49
+23 Local ENU and the UGTS log chart 50
+24 OTAN2 in satnav: preserve the observable 51
+25 Paired supports and the canonical UGTS event 52
+26 Finite cones and translational sweeps retained 53
+27 Jitter intervals and the explicit source correction 54
+28 Two exact 64-bit key layouts 55
+29 Quantization, error and explicit origin handling 56
+30 Linear time, winding and separate topology proﬁles 57
+31 GPU kernel: one independent solve per thread 58
+32 Texture and global input paths 59
+33 The RTX 5070 Ti Laptop target and VRAM plan 60
+34 Actual input and result ﬁles 61
+35 Ordered coupled records and source lineage 62
+36 The retained deterministic satnav batch 63
+37 Independent results and error measures 64
+38 Prior release veriﬁcation record 65
+39 Build, run and verify on the requested laptop 66
+40 Integration decisions and source issue register 67
+41 Source and artifact inventory 68
+Primary implementation references 69
+T om Klootwijk | 15 September 2026 4
+
+=== PAGE 5 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+1 ORBIT -SEED-R1: compact physical seeds and timestamp queries
+This proﬁle predicts the position of a satellite relative to a speciﬁed ground station. It includes
+real MEO, GEO, inclined geosynchronous and high elliptical examples. A small, complete model
+seed is the input; a requested timestamp is the query. The model regenerates position and velocity
+with explicit dynamics. The two ordered ASA/NA sets and the synchronous JK recurrence select
+subsequent query times in ordered replay. Direct scrubbing obtains the same physical state
+without replaying the preceding display interactions.
+Complete binary seeds; sizes are measured in the execution table.
+Each seed includes the initial state, force constants, compact Sun/Moon and frame coeﬃ-
+cients, provenance, both demonstration stations, time/query settings, two ASA/NA mask
+sets and editable Boolean equations. No future target trajectory table is stored. The native
+executable and its declared runtime are shared dependencies, accounted for separately from
+per-seed bytes.
+The four ﬁtted states use data at or before 2 January 2025 00:00 GPST. The following seven days
+are excluded from ﬁtting. Their earlier R1 results were inspected before R2 development, so this
+interval is a reused benchmark. These are archived examples, not a statement of current satellite
+positions. An arbitrary future manoeuvre cannot be recovered from a prior seed that does not
+contain that manoeuvre. Compactness is a consequence of a speciﬁed dynamical model and initial
+conditions; it does not provide lossless compression of every possible orbit.
+1.1 The complete state seed
+Let the decoded seed be
+S =¹I, 𝑡0, r0, v0,F ,C,M,N ,G,Q,W,Pº, (1)
+whereI identiﬁes the object and model version, F contains all force constants and ﬁtted acceler-
+ations,C contains compact planetary forcing, M deﬁnes the frame/time conversion, N deﬁnes
+numerical integration,G deﬁnes the stations,Q deﬁnes query/chart parameters,W deﬁnes the
+literal word equations and masks, and P records construction provenance. Position and velocity
+are six IEEE 754 binary64 SI numbers, not quantized UGTS addresses.
+The upgraded physical model is ORBIT-DYNAMICS-R2; the decoder also retains R1 support. Its
+state is geocentric and aligned with GCRS/ICRF axes. Full GPST seconds since 6 January 1980
+are retained. For an elapsed query 𝜏, 𝑡 = 𝑡0¸ 𝜏 and
+TT = GPST¸ 51.184 s, JD𝑇𝑇 = 2444244.5¸¹ 𝑡¸ 51.184º86400. (2)
+The Chandra input is labelled TDB and is explicitly converted during construction and review.
+GPST , UTC, TT and TDB calendar labels are not interchanged. At this example epoch GPST is 18
+seconds ahead of UTC.
+T om Klootwijk | 15 September 2026 5
+
+=== PAGE 6 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+1.2 Explicit Earth frame and compact forcing
+Deﬁne the passive Earth rotation matrix and polar-motion matrix as
+𝑅𝑧¹𝑎º =
+©­­
+«
+cos 𝑎 sin 𝑎 0
+  sin 𝑎 cos 𝑎 0
+0 0 1
+ª®®
+¬
+, (3)
+𝑃 =
+©­­
+«
+𝑐𝑥 0 𝑠𝑥
+𝑠𝑦 𝑠𝑥 𝑐𝑦  𝑠𝑦 𝑐𝑥
+ 𝑐𝑦 𝑠𝑥 𝑠𝑦 𝑐𝑦 𝑐𝑥
+ª®®
+¬
+, 𝑐 𝑥 = cos 𝑥𝑝 , 𝑠 𝑥 = sin 𝑥𝑝 , 𝑐 𝑦 = cos 𝑦𝑝 , 𝑠 𝑦 = sin 𝑦𝑝. (4)
+With the embedded slowly varying celestial matrix 𝑄¹𝜏º,
+𝑎¹𝜏º = 𝑎0¸¤𝑎𝜏¸ 𝛿𝑎¹𝜏º, 𝑀¹𝜏º = 𝑃¹𝜏º𝑅𝑧¹𝑎¹𝜏ºº𝑄¹𝜏º, (5)
+r𝐸 = 𝑀r, v𝐸 = 𝑀v¸ ¤𝑀r. (6)
+Thus Earth-ﬁxed velocity includes the time derivative of the frame. The construction uses IAU
+2006/2000A and the IERS Bulletin A published on 26 December 2024, before the forecast epoch.
+Published daily 𝑥𝑝 , 𝑦𝑝 and DUT1 values are linearly interpolated. The ERA correction is 𝛿𝑎¹𝜏º =
+¤𝑎»DUT1¹𝜏º DUT1¹0º¼, with¤𝑎 = 2𝜋¹1.00273781191135448º86400. The velocity derivative includes
+¤𝑃, ¤𝛿𝑎 and ¤𝑄. TIO locator 𝑠0 is zero. Published EOP predictions carry their own uncertainty; their
+interpolation is not a future observed-EOP measurement.
+Each slowly varying scalar coeﬃcient block uses a ﬁnite Chebyshev expansion:
+𝑢¹𝜏º = 2𝜏  𝜏𝑎  𝜏𝑏
+𝜏𝑏  𝜏𝑎
+, 𝑓 ¹𝜏º =
+𝑑Õ
+𝑘=0
+𝑐𝑘𝑇𝑘¹𝑢º, 𝑇 0 = 1, 𝑇 1 = 𝑢, 𝑇 𝑘¸1 = 2𝑢𝑇𝑘  𝑇𝑘 1. (7)
+The seed stores the interval, degree and every coeﬃcient. 𝑄 has nine degree-eighteen rows; Sun
+and Moon forcing have three rows of degree sixteen and thirty respectively over the ﬁfteen-day
+construction domain. Daily EOP blocks have three degree-one rows: 𝛿𝑎, 𝑥 𝑝 , 𝑦𝑝. Rapid Earth
+rotation remains a direct trigonometric rotation. At shared segment boundaries the later segment
+applies. Queries outside the embedded domain return an error rather than silently extrapolating
+the coeﬃcient blocks.
+The Sun/Moon coeﬃcients approximate the DE440s planetary model published in 2020. They
+describe known forcing from other bodies, not withheld positions of the target satellite. The
+measured oﬀ-node forcing discrepancies are about 1.99 m for the Sun and 0.060 m for the Moon.
+These quantities are not satellite orbit accuracy. Original DE440 ﬁles are unnecessary during
+packed replay.
+1.3 Actual orbital differential equations
+The physical state evolves as
+𝑑r
+𝑑𝜏 = v, 𝑑v
+𝑑𝜏 = 𝑀𝑇rp𝑈¹pº¸ a¸ a𝑀𝑜𝑜𝑛¸ a𝑆𝑅𝑃¸ a𝑅𝑇𝑁¸ a𝐺𝑅 , p = 𝑀r. (8)
+Here the Moon acceleration symbol denotes the declared lunar third-body term. For 𝑅 =kpk,
+latitude sine 𝑠 = 𝑝𝑧𝑅, longitude 𝜆, Earth radius 𝑎𝐸 and parameter 𝜇, the full degree/order twelve
+ﬁeld is
+𝑈¹pº = 𝜇
+𝑅
+12Õ
+𝑛=0
+ 𝑎𝐸
+𝑅
+ 𝑛 𝑛Õ
+𝑚=0
+𝑃𝑛𝑚¹𝑠º»𝐶𝑛𝑚 cos¹𝑚𝜆º¸ 𝑆𝑛𝑚 sin¹𝑚𝜆º¼. (9)
+T om Klootwijk | 15 September 2026 6
+
+=== PAGE 7 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+𝑃𝑛𝑚 has no Condon–Shortley phase. The seed stores unnormalized 𝐶𝑛𝑚 , 𝑆𝑛𝑚 , converted from the
+EGM96 fully normalized coeﬃcients by
+𝐶𝑛𝑚 =
+s
+¹2  𝛿𝑚0º¹2𝑛¸ 1º¹𝑛  𝑚º!
+¹𝑛¸ 𝑚º! 𝐶 𝑛𝑚 , (10)
+and the same factor for 𝑆. It includes 𝐶00 = 1 and 𝑆00 = 0. The positive-potential convention uses
+¸r𝑈.
+Native evaluation avoids longitude and polar division. Deﬁne 𝑋 = 𝑎𝐸𝑝𝑥𝑅2, 𝑌 = 𝑎𝐸𝑝𝑦𝑅2,
+𝑍 = 𝑎𝐸𝑝𝑧𝑅2, 𝐷 = 𝑎2
+𝐸𝑅2, 𝑉00 = 𝑎𝐸𝑅 and 𝑊00 = 0. The Cartesian Cunningham recurrence is
+𝑉𝑚𝑚 =¹2𝑚  1º¹𝑋𝑉𝑚 1,𝑚 1  𝑌𝑊𝑚 1,𝑚 1º, (11)
+𝑊𝑚𝑚 =¹2𝑚  1º¹𝑋𝑊𝑚 1,𝑚 1¸ 𝑌𝑉𝑚 1,𝑚 1º, (12)
+𝑉𝑛𝑚 = 2𝑛  1
+𝑛  𝑚 𝑍𝑉𝑛 1,𝑚  𝑛¸ 𝑚  1
+𝑛  𝑚 𝐷𝑉𝑛 2,𝑚 , (13)
+𝑊𝑛𝑚 = 2𝑛  1
+𝑛  𝑚 𝑍𝑊𝑛 1,𝑚  𝑛¸ 𝑚  1
+𝑛  𝑚 𝐷𝑊𝑛 2,𝑚 , (14)
+𝑈 = 𝜇
+𝑎𝐸
+12Õ
+𝑛=0
+𝑛Õ
+𝑚=0
+¹𝐶𝑛𝑚 𝑉𝑛𝑚¸ 𝑆𝑛𝑚 𝑊𝑛𝑚º. (15)
+The diagonal recurrence uses 𝑚 = 1, . . . , 12; the oﬀ-diagonal recurrence uses 𝑚 = 0, . . . , 12
+and 𝑛 = 𝑚¸ 1, . . . , 12. For 𝑛 = 𝑚¸ 1 the second term is absent. Each native recurrence
+value carries three analytic Cartesian derivatives; the product rule produces r𝑈. Independent
+Python validation diﬀerentiates the scalar potential with complex steps, and native tests compare
+a separately coded spherical-gradient oracle. The constants are 𝜇 = 3.986004415 1014 SI and
+𝑎𝐸 = 6378136.3 m. This is the tide-free EGM96 ﬁeld truncated at degree/order twelve.
+For each third body 𝑏 with Earth-centred position r𝑏,
+a𝑏 = 𝜇𝑏
+ r𝑏  r
+kr𝑏  rk3  r𝑏
+kr𝑏k3
+
+. (16)
+The indirect term removes the acceleration of the Earth. With d = r  r, the ﬁtted radiation-
+pressure term is
+a𝑆𝑅𝑃 = 𝜒𝐴
+ AU
+kdk
+ 2 d
+kdk . (17)
+𝜒 = 0 in the declared cylindrical Earth shadow when the seed’s shadow ﬂag is enabled, and 1
+otherwise. With shadow disabled, 𝜒 = 1 everywhere. Explicitly , if s = rkrk, shadow requires
+r s < 0 andkr ¹ r sº sk < 𝑎𝐸. There is no hidden penumbra, attitude or manoeuvre model.
+Finally ,
+ R = rkrk,  N =¹r vºkr vk,  T = N R, (18)
+a𝑅𝑇𝑁 = 𝑎𝑅 R¸ 𝑎𝑇 T¸ 𝑎𝑁 N. (19)
+The Schwarzschild correction is explicit, with 𝑟 =krk:
+a𝐺𝑅 = 𝜇
+𝑐2𝑟3
+ 4𝜇
+𝑟   v v
+
+r¸ 4¹r vºv
+
+, 𝑐 = 299792458 ms. (20)
+The three signed empirical accelerations and 𝐴 are ﬁtted only on the declared training arc. Their
+continuation is a physical approximation, not knowledge of future spacecraft operations. The
+same ten-parameter ﬁt is ﬁxed for all four objects: state six, SRP one and RTN three. Earlier
+training-window candidates of one, three and seven days are compared against the earlier January
+T om Klootwijk | 15 September 2026 7
+
+=== PAGE 8 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+1 interval; the lowest maximum error selects the window. The ﬁnal ﬁt uses only data at or before
+the January 2 cutoﬀ. This past-only selection is distinct from the already inspected January 2–
+9 comparison benchmark. Harmonics above degree twelve, tides, detailed radiation pressure,
+attitude changes and manoeuvres remain possible sources of forecast disagreement.
+1.4 Bottom-up timestamp reconstruction and scrubbing
+Native CPU/CUDA integrate these equations with classical RK4. For a six-vector y =¹r, vº and
+derivative 𝐹,
+k1 = 𝐹¹𝑡, yº, k2 = 𝐹¹𝑡¸ ℎ2, y¸ ℎk12º, (21)
+k3 = 𝐹¹𝑡¸ ℎ2, y¸ ℎk22º, k4 = 𝐹¹𝑡¸ ℎ, y¸ ℎk3º, (22)
+y¸ = y¸ ℎ
+6¹k1¸ 2k2¸ 2k3¸ k4º. (23)
+MEO/GEO/IGSO use ℎ = 30 seconds; Chandra uses 7.5 seconds, selected through an indepen-
+dent numerical-convergence check. Its ﬁtted initial state and forces were not reﬁtted against
+future positions. Independent Python propagation uses DOP853 rather than the native RK4
+implementation.
+For any elapsed time 𝜏, deﬁne 𝑛 = trunc¹𝜏ℎº and 𝜖 = 𝜏  𝑛 ℎ. Canonical lattice states are
+obtained by repeated signed steps from the packed epoch. The exact requested state is one ﬁnal
+fractional step of length 𝜖 from the canonical state at 𝑛 ℎ. Fractional results never become canonical
+checkpoints. This makes the physical query independent of the order in which the timeline was
+scrubbed.
+The CPU worker retains at most the declared number of sparse checkpoints (256 in the examples, at
+one-hour spacing). Missing checkpoints regenerate from an available earlier canonical state or the
+epoch. Eviction changes work, not the mathematical trajectory. Cold-query work is proportional
+to elapsed integration steps; compact storage does not imply constant-time propagation. CUDA
+batches assign independent timestamp queries to device work and integrate from the epoch.
+They currently do not share the CPU checkpoint cache. CPU scrubbing and parallel CUDA batch
+execution are distinct measured paths.
+1.5 Two vacuum/set stages and synchronous JK
+The user’s “double vacuum, double set” is concretely deﬁned here as exactly two independently
+stored ASA/NA/boundary mask triples, ¹𝐴1, 𝑁1, 𝐵1º and¹𝐴2, 𝑁2, 𝐵2º, applied in order. No
+unspeciﬁed operation is inferred from the phrase. All operators below are 32-bit word operators,
+and 𝑃 is the present mask. For stage 𝑖 and input 𝑤,
+𝑎𝑖¹𝑤º = 𝑤 & 𝐴𝑖 & 𝑃, 𝑛 𝑖¹𝑤º = 𝑎𝑖¹𝑤º & 𝑁𝑖 , (24)
+ℎ𝑖¹𝑤º = popcount¹𝑛𝑖¹𝑤º & 𝐵𝑖º, 𝑉 𝑖¹𝑤º =
+(
+0, ℎ 𝑖¹𝑤º > 0,
+𝑛𝑖¹𝑤º, ℎ 𝑖¹𝑤º = 0. (25)
+One selected boundary hit therefore absorbs the entire output word. It does not merely clear the
+intersecting bit. At ordered query 𝑗,
+s𝑗 = Φ¹S, 𝜏𝑗º, 𝑔𝑗 = 𝐺¹s𝑗 ,G, 𝜏𝑗º, (26)
+𝑑𝑗 = 𝐸𝐷¹𝑔𝑗 , 𝜏𝑗º, 𝑥 𝑗 = 𝐸𝑋¹𝑞 𝑗 , 𝑑 𝑗º, (27)
+𝑦𝑗 = 𝑉2¹𝑉1¹𝑥 𝑗ºº, 𝐽𝑗 = 𝐸𝐽¹𝑞 𝑗 , 𝑦 𝑗 , 𝑑 𝑗º, (28)
+𝐾 𝑗 = 𝐸𝐾¹𝑞 𝑗 , 𝑦 𝑗 , 𝑑 𝑗º, 𝑞 𝑗¸1 =»¹𝐽𝑗 &:𝑞 𝑗ºj¹: 𝐾 𝑗 & 𝑞 𝑗º¼ & 𝑃, (29)
+𝜏𝑗¸1 = min¹𝜏𝑒𝑛𝑑 , 𝜏𝑗¸ Δ¹𝑞 𝑗¸1ºº. (30)
+T om Klootwijk | 15 September 2026 8
+
+=== PAGE 9 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+Both JK right-hand sides read the same old 𝑞 𝑗. Boundary absorption does not implicitly freeze
+JK. The editable X expression accepts 𝑞, 𝑑 ; J and K accept 𝑞, 𝑦, 𝑑 . They support word constants
+zero/ones and bitwise AND, OR, XOR and complement with parentheses. They compile to literal
+Boolean truth tables; an independent AST interpreter checks the complete trace.
+Default predicate bits are, in ascending order: above the station elevation mask, within three de-
+grees of that mask, absolute seed agej𝜏j at least 24 hours, positive elevation rate, and approaching
+range. The actual default expressions are
+𝑥 = 𝑞j 𝑑, 𝐽 = 𝑦 & 𝑑, 𝐾 =:𝑑. (31)
+With both unabsorbed identity mask sets these reduce to 𝑞¸ = 𝑑. The state still selects the
+next physical query timestamp: Δ = 30 seconds when¹𝑞¸ & 6º ≠ 0, and 300 seconds otherwise.
+Diﬀerent mask/equation inputs change that recurrence, as the counterfactual and absorption
+tests demonstrate. Physical acceleration never reads 𝑞; the CGK spring equations are retained
+separately rather than renamed orbital gravity.
+1.6 Station-relative geometry and both horizons
+For WGS84 station position r𝑔 and its standard East/North/Up rotation 𝐿¹𝜑, 𝜆º,
+z =¹𝐸, 𝑁 , 𝑈º𝑇 = 𝐿¹r𝐸  r𝑔º, ¤z = 𝐿v𝐸. (32)
+Set 𝐻 =
+p
+𝐸2¸ 𝑁 2 and 𝐷 =kzk. The returned quantities are
+az = atan2¹𝐸, 𝑁º mod 2𝜋, el = atan2¹𝑈 , 𝐻º, (33)
+¤𝐷 = z¤z𝐷, 𝑑 sin el
+𝑑𝑡 =¤𝑈𝐷  𝑈¤𝐷𝐷2. (34)
+Azimuth is clockwise from North. At the horizontal origin azimuth and its derivative are explicitly
+undeﬁned. Angles are simultaneous geometric values: there is no atmospheric refraction or
+retarded light-time correction here.
+Visibility events solve
+𝑓¹𝑡º = sin el¹𝑡º  sin el𝑚𝑎𝑠 𝑘 = 0. (35)
+The search reﬁnes sign brackets and derivative-bracketed extrema, so it can recover a short pass
+whose sampled endpoints are both below the mask. It reports grazing candidates and numerical
+root tolerances. The validation compares 120-second and 30-second searches over seven days for
+both stations and every object. Without a global interval bound this is not a proof that arbitrarily
+many roots cannot occur between samples. Always-visible/hidden labels mean visible/hidden
+over the searched interval under the stated search policy.
+The second horizon is an error-budget horizon. Given withheld reference samples r
+𝑘, 𝑒𝑘 =
+kr¹𝑡𝑘º  r
+𝑘k. For budget 𝑏 the report records the ﬁrst sample with 𝑒𝑘 > 𝑏 and its predecessor.
+The interval brackets a sampled exceedance; it does not certify continuous error below 𝑏 before it.
+An epoch can be inside the model’s coeﬃcient domain while outside a useful accuracy horizon.
+Maximum error across the whole interval is reported alongside endpoint error because an orbit
+can diverge and later approach the reference.
+1.7 Original UGTS keys and complete time
+The orbital chart uses 𝜌 = log¹𝐻𝑟0º, 𝜃 = atan2¹𝑁 , 𝐸º and the explicit separate hoop angle 𝜙. The
+source chart is used only when 20 𝜌 0; out-of-range coordinates are not wrapped into a valid
+key. The full tick is 𝑘 =b𝑡𝛿𝑡c, with integer winding and remainder from 𝑘 = 16384𝑤¸ 𝑘𝑝 ℎ𝑎𝑠𝑒 .
+The normalized fraction is separately labelled 𝑘𝑝 ℎ𝑎𝑠𝑒16384. Source quantization produces the
+T om Klootwijk | 15 September 2026 9
+
+=== PAGE 10 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+original¹20, 18, 14, 12º-bit tuple. Both the contiguous and original Morton layouts are retained.
+Full position, velocity , Up, absolute time and provenance remain in the result. Source OTAN2
+uses Δ𝜃 = wrap¹𝜃𝑗  𝜃𝑗 1º and is still arctan¹Δ𝜃Δ𝜌º, with its explicit undeﬁned-ratio cases, and
+is not replaced by azimuth.
+1.8 Binary packing, integrity and executable entry points
+The 52-byte little-endian header contains magic ATOMORB1, format/codec versions, compressed
+and raw lengths, and the SHA-256 of the domain-preﬁxed canonical payload. The payload uses
+tagged null/Boolean/signed and unsigned 64-bit integer/binary64/string/list/map values. Map
+keys are sorted, unique UTF-8 strings. Codec 1 compresses those canonical bytes directly. The
+default codec 2 packs the numeric bit patterns into one-bit planes before Zlib compression. It
+preserves all 64 bits per numeric value. For numeric word 𝑤 𝑗, deﬁne
+𝑃𝑏,𝑔 =
+63Õ
+ℓ =0
+ 𝑤64𝑔¸ℓ shr 𝑏 & 1
+
+2ℓ , 𝑏 = 0, . . . , 63. (36)
+Absent ﬁnal lanes are zero. The inverse restores bit 𝑏 of word 𝑗 from lane 𝑗 mod 64 of 𝑃𝑏,b𝑗64c.
+The plane-major uint64 words follow a structural template with original numeric type tags, and
+a 16-byte BITPLN64 header with template length and word count. Signed integers, unsigned
+integers and binary64 preserve their original bits; the structural template retains Boolean tokens.
+Both codecs share the same canonical content digest. Plane packing adds zero numerical error,
+but does not change ﬂoating-point arithmetic in propagation. The measured example packs are
+slightly larger with this representation than with codec 1. The decoder checks exact lengths,
+bounded expansion and nesting, complete stream termination, canonical re-encoding, digest,
+model schema and time domains. There is no executable payload or pickle.
+The digest domain is atomOS:ORBIT-SEED-R1:canonical-binary followed by a zero byte.
+Physical-model and complete-seed hashes diﬀer by scope. Runtime timings and cache occupancy
+are excluded from the deterministic trace digest; all mathematical query ﬁelds and both mask/JK
+stages remain covered. Independent veriﬁcation reconstructs the native orbit, checks the full
+station geometry , keys/time, OTAN2, the AST recurrence, next query time and ﬁnal chain.
+python tools/orbital_seed.py inspect --seed examples/orbit/seeds/C03.orbseed
+python tools/orbital_seed.py query --seed examples/orbit/seeds/C03.orbseed --worker bin
+/cpu/orbit_worker.exe --station singapore_demo --time-s 12345.678 --out NEW_QUERY.
+json
+python tools/orbital_seed.py predict --seed examples/orbit/seeds/G05.orbseed --worker
+bin/cpu/orbit_worker.exe --end-s 86400 --out NEW_RUN
+python tools/verify_orbit_run.py --seed examples/orbit/seeds/G05.orbseed --worker bin/
+cpu/orbit_worker.exe --run NEW_RUN --out NEW_VERIFY.json
+python tools/orbit_scrub.py --worker bin/cpu/orbit_worker.exe
+The local timeline is served at http://127.0.0.1:3619. It accepts exact fractional-second queries,
+a slider, object/station selection, ordered feedback playback and visibility events. The JSON
+companions are editable; packing them rebuilds the binary .orbseed ﬁles with a new content
+identity. Accuracy reports are associated only when their canonical physical-model hash matches
+the loaded seed.
+1.9 Packed execution and regression evidence
+The following numbers are derived from the ﬁnal decoded seeds and veriﬁed native binaries. The
+isolated replay child receives only the packed seed, shared runtime source and native executable;
+an audit hook denies every read under the original release directory. The reconstructed fractional,
+past and seven-day timestamp states match the normal native run bit for bit.
+T om Klootwijk | 15 September 2026 10
+
+=== PAGE 11 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+Object Seed bytes Default queries Altered JK Warm max (ms)
+G05 9,066 397 2,881 0.816
+C03 9,074 289 2,881 0.956
+C06 9,073 417 2,881 0.834
+CHANDRA 8,716 520 2,881 2.075
+Query counts cover one day. The counterfactual sets 𝐽 = 1, 𝐾 = 0 and changes the actual times-
+tamps selected by the native recurrence. Physical states at shared timestamps remain identical.
+Warm timing is end-to-end Python/native geometry latency on this host for the recorded frac-
+tional seek sequence, not a universal performance bound. Cold seeks may require thousands of
+integration steps.
+Across eight seven-day station/object searches, 83 rise/set events were found. The largest event-
+time change under reﬁnement from 120-second to 30-second sampling was 0.002508 seconds. The
+event algorithm’s grazing and no-global-root-exclusion qualiﬁcations still apply.
+A ﬁve-minute, seven-day table containing time and six binary64 state components would occupy
+112,952 bytes before its metadata. This compares a generated state table to its speciﬁed model,
+not arbitrary-trajectory compression. The demonstration archive also contains large reference
+datasets and audit traces, which are not per-seed replay inputs.
+The table is 12.45 times the size of the largest complete packed seed. The shared CPU executable
+is 77,824 bytes, and the isolated shared Python source is 89,342 bytes at validation. Installed
+libraries and the OS/C++ runtime are additional shared dependencies. The default codec packs
+64 one-bit planes into uint64 words without discarding any numeric bit. The canonical codec
+remains readable; bit-plane packing is slightly larger for these examples.
+The new native orbital checks compare 1,040 CPU/CUDA positions across the four models, with
+maximum disagreement 0.00004320 m. All 256 complete CPU/CUDA two-stage word traces
+match. Bounded-cache stress tests remain bit-exact through repeated eviction. Compute Sanitizer
+reports zero errors for 129 orbital queries and the word operation. The full Python suite passes 139
+tests, including bit-plane reconstruction, rehashed-false-geometry , OTAN2 rejection and missing-
+reference-interval acceptance.
+Fresh retained-component regression passes four CTests on each build, 256 SATNA V epochs per
+backend with independent reconstruction, 4,225 SRK transitions and 3,308 CGK transitions per
+backend, and 6,861 persistent live-worker comparisons per backend. The required GPU review
+tool also records zero errors under both texture and global-memory Compute Sanitizer runs on
+the actual RTX 5070 Ti Laptop.
+The ﬁrst orbital RK4 test exposed an omitted ﬁnal state assignment; that defect was ﬁxed before
+these ﬁnal results. Earlier failed and superseded investigation folders are retained as such and are
+not used as ﬁnal validation. Numerical agreement is separate from the physical future-reference
+errors below.
+1.10 R2 physical-position results and separate conﬁrmation
+The R2 models stay below the adopted 10 m three-dimensional reference-discrepancy budget at
+every tested sample through 24 hours for all four targets, on both the January benchmark and the
+separate February conﬁrmation date. This statement concerns sampled positions of these seeds;
+it is not a universal or continuous-time orbit guarantee. The January window was previously
+inspected during R1 development and is explicitly a reused benchmark. The February selection
+procedure was frozen before its future errors were evaluated; no model was retuned afterward.
+T om Klootwijk | 15 September 2026 11
+
+=== PAGE 12 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+The forecast quantity is
+𝑒𝑖 =kb𝒓¹𝑡𝑖º  𝒓 reference¹𝑡𝑖ºk 2, 𝑡 𝑖 > 𝑡0.
+The January origin is 2 January 2025 00:00 GPST , 𝑡0 = 1419811200; February uses 2 February
+2025 00:00 GPST , 𝑡0 = 1422489600. All cutoﬀ and earlier target rows are excluded from the
+forecast curves. R2 selects among 1-, 3- and 7-day training windows using an internal validation
+day entirely before the forecast origin. The selected January windows are 3/3/3/1 days for
+G05/C03/C06/Chandra; the unchanged rule selects 1/7/3/3 days for February. External EGM96
+gravity and planetary forcing are distinct from future target observations.
+Table 1: Maximum discrepancy over all ﬁrst-day samples (metres). Each R2 column has 288
+samples per target through 24 h; Chandra’s ﬁnal sample is approximately 51.185 s before the exact
+endpoint.
+Target R1 January R2 January R2 February
+G05 / MEO 285.330 1.057 3.072
+C03 / GEO 20.600 5.304 4.654
+C06 / IGSO 44.684 1.172 2.108
+Chandra / HEO 76.506 8.093 0.290
+Table 2: R2 January discrepancy in metres at the nearest actual sample to each requested horizon.
+Individual samples are not worst-case interval errors.
+Target 15 min 1 h 6 h 24 h 72 h 7 d
+G05 / MEO 0.474 0.655 0.272 0.713 2.228 12.531
+C03 / GEO 1.368 1.702 4.350 4.172 17.939 73.481
+C06 / IGSO 0.547 0.609 0.615 1.172 2.335 2.360
+Chandra / HEO 0.003 0.008 0.074 2.052 28.338 3680.247
+Time grid. GNSS is on the exact requested GPST grid. Chandra is supplied on a 300 s TDB grid,
+converted using the periodic TDB–TT correction and GPST = TT  51.184 s. The nearest 15 min
+sample is 848.816057 s after the January origin and 848.815204 s after the February origin. The
+ﬁnal samples are respectively 604748.815856 s and 604748.815036 s. Exact oﬀsets remain in the
+CSV/JSON, including all six requested horizons for both dates.
+Table 3: R2 whole-window statistics (metres). January has 2,016 samples per target. February has
+2,016 each except C03, which has 1,441 and a 48 h gap.
+Target Jan. RMS Jan. maximum Feb. RMS Feb. maximum
+G05 / MEO 5.294 12.998 33.113 71.800
+C03 / GEO 37.434 78.717 39382.862 100604.174
+C06 / IGSO 2.943 8.084 3.494 7.629
+Chandra / HEO 5412.235 25635.951 2055.685 5663.182
+The seven-day 10 m budget isnot met for all targets. C06 stays below it at every seven-day sample
+on both dates; G05 exceeds it later on both dates. C03 and Chandra have additional reference qual-
+iﬁcations below. The original R1 seven-day maxima were 7402.960/532.582/1237.242/19399.307
+m in the same object order. The R2 ﬁrst-day improvement must not be extended into a claim that
+every seven-day maximum improved or passed. RMS and percentiles describe correlated samples,
+not independent-sample conﬁdence intervals. Reports additionally retain interval RMS/maxima
+and sample percentiles.
+T om Klootwijk | 15 September 2026 12
+
+=== PAGE 13 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+1.11 Sampled thresholds and incomplete reference coverage
+Table 4: Preceding sample and ﬁrst sampled exceedance, in hours after the origin, rounded to
+0.001 h. These pairs are not certiﬁed continuous crossing brackets. “None” means no exceedance
+at the available samples.
+Date Target 10 m 100 m 1 km
+January G05 / MEO ¹145.083, 145.167¼ None at samples None at samples
+January C03 / GEO ¹29.000, 29.083¼ None at samples None at samples
+January C06 / IGSO None at samples None at samples None at samples
+January Chandra / HEO ¹50.402, 50.486¼ ¹82.569, 82.652¼ ¹83.986, 84.069¼
+February G05 / MEO ¹50.833, 50.917¼ None at samples None at samples
+February C03 / GEO ¹72.000, 120.000¼ ¹72.000, 120.000¼ ¹72.000, 120.000¼
+February C06 / IGSO None at samples None at samples None at samples
+February Chandra / HEO ¹83.986, 84.069¼ ¹83.986, 84.069¼ ¹83.986, 84.069¼
+For 10 km, January Chandra ﬁrst exceeds the level at 302648.815956 s, following the sample at
+302348.815956 s; all January GNSS targets remain below 10 km at their samples. February C03
+ﬁrst exceeds 10 km at the ﬁrst sample after its gap, 432000 s; the previous sample is at 259200 s.
+Other February targets remain below 10 km at the sampled times.
+C03 February coverage. GFZ contains no C03 records on February 5 and 6. Adjacent daily
+endpoints leave a 48-hour reference gap and 575 missing ﬁve-minute samples. Wuhan also lacks
+C03 on February 6 and cannot certify the missing interval. GFZ remains the predeclared primary
+source. The ﬁrst post-gap discrepancy is 29256.547 m and the later maximum is 100604.174 m; these
+observed exceedances are retained. Full-window coverage is indeterminate, and no continuous
+tolerance passage through the gap is inferred. No maneuver or other cause is assigned from
+missing records alone. The ﬁgures leave the missing interval blank.
+1.12 Numerical error and reference discontinuities
+Table 5: Separate numerical and frame comparisons, in metres. January’s independent physical
+audit uses 11 times across the past/future domain; February compares nine future checkpoints
+with adaptive DOP853. The frame column is the larger of the two complete sampled frame-
+approximation maxima.
+Target Jan. RK4/DOP853 Feb. RK4/DOP853 Frame approximation
+G05 / MEO 0.031716 0.026461 0.002007
+C03 / GEO 0.001232 0.001023 0.003260
+C06 / IGSO 0.001252 0.001026 0.003169
+Chandra / HEO 0.036582 0.147044 0.009135
+Native RK4 uses 30 s for GNSS and 7.5 s for Chandra. Same-seed integration agreement tests
+arithmetic, not orbit truth. The January forecast report’s own DOP853 check covers only its
+ﬁrst sample; the wider January evidence above comes from the separate, target-independent
+physical audit. Native CPU/CUDA checks and exact word/packing checks remain separate
+evidence. The frame test compares the embedded daily-EOP/Chebyshev frame with direct SOFA
+IAU 2006/2000A evaluation of the same published prediction. It excludes actual future EOP
+error, station uncertainty and a complete relativistic ICRF/GCRS coordinate error budget; it is not
+subtracted as an independent scalar variance.
+T om Klootwijk | 15 September 2026 13
+
+=== PAGE 14 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+Chandra source discontinuities. The January error rises from 123.204 m to 23839.033 m between
+two ﬁve-minute samples. A separate one-second Horizons query shows that at January 5 TDB
+12:01:09–12:01:10 the source position displacement diﬀers from the integral of its own reported
+velocity by 24317.077 m; outside the neighboring jump intervals the same local check is at most
+0.0654 m. Native RK4 agrees with independently tightened DOP853 to about 1.5 mm at the two
+forecast endpoints surrounding that jump. The source header identiﬁes CFA ’s merged trajectory ,
+but no local join or maneuver cause. The large discontinuity therefore cannot be attributed solely
+to smooth force error or native integration.
+The February reference has a corresponding kinematic discontinuity at February 5 TDB 12:01:09–
+12:01:10: 2487.123 m displacement-minus-velocity integral mismatch, versus at most2.26 𝜇m away
+from its neighboring intervals. The forecast’s next ﬁve-minute error rises from 1.053 m to 2492.098
+m. These diagnostics use only the source’s positions and velocities; no model is ﬁtted to them.
+All original discrepancy samples and whole-window maxima are retained. The cause of the
+provider discontinuities is not established, and no corrected “true orbit” accuracy is invented.
+Original queries, hashes and calculations are in source/orbit_data/diagnostics/.
+Reference uncertainty. January GFZ/Wuhan comparisons give 3D RMS 0.0263 m for G05, 2.074
+m for C03 and 0.1692 m for C06; C03’s maximum provider disagreement is 3.575 m. These are
+product diﬀerences, not certiﬁed absolute bounds. Providers share some underlying observations.
+Chandra supplies no state covariance or absolute position guarantee. A millimetre or sub-metre
+match to a selected reference is therefore not a matching physical-accuracy claim.
+1.13 Chronology, source conventions and reproducible evidence
+The R2 physical model uses the documented degree/order-12 EGM96 ﬁeld, cutoﬀ-available daily
+Earth orientation, and external Sun/Moon forcing. EGM96’s original mu, reference radius, tide-
+free convention and fully normalized coeﬃcients are preserved with explicit conversion in sour
+ce/orbit_data/gravity_reference/ . The format’s normalization default is documented by
+ICGEM: https://icgem.gfz.de/docs/ICGEM-Format-2023.pdf .
+The EOP sources were published before their cutoﬀs: IERS Bulletin A of 26 December 2024 and
+30 January 2025, respectively: https://datacenter.iers.org/data/6/bulletina-xxxvii-0
+52.txt and https://datacenter.iers.org/data/6/bulletina-xxxviii-005.txt . Both
+permit public release and unlimited distribution. The February GFZ reference changes from
+IGS20 to IGb20. IGSMAIL-8543, published 9 December 2024, speciﬁes zero datum transformation
+parameters because origin, scale and orientation remain aligned; individual reference-station
+coordinates are updated. Preserve each source label and apply no ﬁtted alignment: https:
+//lists.igs.org/pipermail/igsmail/2024/008539.html.
+Precise target products were retrieved retrospectively; their earlier estimates can incorporate
+later observations within provider processing. Neither date proves that identical seeds were
+available live in 2025. January is a reused comparison, while February applies the already-frozen
+selection rule to a separate date. The conﬁrmation freeze manifest binds the rule and model-ﬁle
+hashes. Raw source acquisition and coverage inspection preceded any February prediction-error
+evaluation. No later error was used to reﬁt a seed.
+• GFZ and IGS. Retain GFZ/IGS provider and network attribution. The cited GFZ product-
+series DOI is https://doi.org/10.5880/GFZ.1.1.2016.003 ; its DataCite record declares
+CC BY-NC 4.0 . The DOI names an ultra-rapid series whereas these GBM ﬁles are rapid
+products without a separate per-ﬁle grant. The ﬁxture bundle conservatively retains that
+noncommercial qualiﬁcation and is not claimed as unrestricted commercial data. IGS terms:
+https://www.igs.org/wp-content/uploads/2020/09/IGS-Data-and-Product-Disclaime
+r-and-Terms-of-Use-200805.pdf .
+T om Klootwijk | 15 September 2026 14
+
+=== PAGE 15 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+• CODE and Wuhan. CODE’s reference https://doi.org/10.48350/197028 lists open
+access/BORIS terms, not a blanket MIT grant. Wuhan ﬁnal products retain provider/IGS
+attribution. Original archive URLs and per-ﬁle hashes remain in the source manifests.
+• NASA/JPL and CFA. Acknowledge Giorgini and the JPL Solar System Dynamics Group,
+NASA/JPL Horizons, and CFA for Chandra: https://ssd.jpl.nasa.gov/horizons/ . Re-
+trieval date is 15 September 2026. Geometric ICRF/TDB settings and original responses are
+retained. Sun/Moon Horizons responses identify DE441; the construction oracle is DE440s, a
+distinct planetary ephemeris version.
+Authoritative reports. Use results/orbit_accuracy_r2_cpu_verified/accuracy_summary.
+json, its CUDA counterpart, and results/orbit_accuracy_confirmation_cpu_verified/a
+ccuracy_summary.json . R1 evidence remains in results/orbit_accuracy_cpu_final/ for
+comparison. The pre-ﬁx failed trial and superseded intermediate models are not ﬁnal accuracy
+evidence. CSVs retain every measured error, exact horizon oﬀset, source and frame. Each report
+distinguishes model_file_sha256 from physical_model_sha256 =orbit_seed.digest(model) ;
+legacy model_sha256 is explicitly the ﬁle-hash alias. Accuracy displayed for a custom packed
+seed applies only when the physical-model digest matches. Reference ﬁxtures, publications and
+the DE440s construction binary are separate from the complete replay seed byte count.
+T om Klootwijk | 15 September 2026 15
+
+=== PAGE 16 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+1.14 R2 January benchmark curves
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+100
+101
+102
+103
+104
+Position discrepancy (m)
+G05 / MEO
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+100
+101
+102
+103
+104
+Position discrepancy (m)
+C03 / GEO
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+100
+101
+102
+103
+104
+Position discrepancy (m)
+C06 / IGSO
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+10 2
+10 1
+100
+101
+102
+103
+104
+Position discrepancy (m)
+CHANDRA / HEO
+Frozen-seed forecast versus later external trajectory samples
+This is the reused January benchmark. Dotted lines are reporting thresholds, not ﬁtted constraints.
+The Chandra source discontinuity remains visible and its errors remain counted. First-day detail
+is also supplied as forecast_error_first_day.pdf in the same result directory.
+T om Klootwijk | 15 September 2026 16
+
+=== PAGE 17 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+1.15 Separate February conﬁrmation curves
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+100
+101
+102
+103
+104
+Position discrepancy (m)
+G05 / MEO
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+101
+102
+103
+104
+105
+Position discrepancy (m)
+C03 / GEO
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+100
+101
+102
+103
+104
+Position discrepancy (m)
+C06 / IGSO
+0 20 40 60 80 100 120 140 160
+Hours after frozen seed cutoff
+10 1
+100
+101
+102
+103
+104
+Position discrepancy (m)
+CHANDRA / HEO
+Frozen-seed forecast versus later external trajectory samples
+The selection rule was frozen before this date’s errors were evaluated. The C03 reference gap
+is blank; connecting its endpoints would imply unavailable measurements. Chandra’s source
+discontinuity is retained. Lines join only available adjacent samples and do not certify error
+between samples or beyond the declared window.
+T om Klootwijk | 15 September 2026 17
+
+=== PAGE 18 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+Retained receiver, geometry and source contracts
+The following sections retain the earlier executable mathematical proﬁles and their dated mea-
+surements. References to the 3.6.1.8 live receiver are historical. The current orbital seed proﬁle,
+timestamp queries and satellite forecast evidence are in Section 1. Fresh regression results link
+these retained implementations to the 3.6.1.9 binaries without relabelling the earlier receiver
+measurements as orbital accuracy.
+2 Live GPS receiver-to-position pipeline
+LIVE-GPS-L1-R1 supplies the actual GPS equations and transport inputs missing from the
+prepared-observation kernel. The implemented chain is
+RTCM bytes !¹ 𝑃𝑖 , 𝑒𝑖 , 𝑡𝑟º !¹ 𝑥𝑟𝑥
+𝑠,𝑖 , 𝛿𝑡𝑠,𝑖 , 𝐼𝑖 , 𝑇𝑖º !¹ 𝑥𝑟 , 𝑦𝑟 , 𝑧𝑟 , 𝑏𝑟º. (37)
+The raw code 𝑃𝑖 and satellite ephemeris 𝑒𝑖 come from a real remote receiver; the physical cor-
+rections are calculated locally. The orbit and atmospheric model is Python; the position/clock
+solution is the existing FP64 native CPU/CUDA kernel, reached through a persistent process.
+This closes the reception-to-position chain without assuming an upstream program has already
+solved the geometry.
+Meaning of the live demonstration
+The user has no local GNSS hardware. The Internet supplies observations from the LIENSS
+reference receiver in the public Centipede network. Every computed coordinate in this
+experiment locates that remote receiver. Its transmitted antenna reference point (ARP) is
+held out of the estimator and used only for subsequent comparison. No host-computer
+location is inferred from it.
+2.1 What crosses the network boundary
+The bounded client performs a read-only NTRIP/HTTP GET , or reads a TCP byte stream. It sup-
+ports HTTP chunk framing, optional ICY headers, timeouts and bounded reconnection. Centipede
+permits one NTRIP client per public IP; the recorded CPU and GPU sessions run sequentially.
+The public service is documented at Centipede: connecting to the caster . The exact source URL,
+bytes, UTC reception records, connection boundaries and SHA-256 ﬁngerprints accompany each
+capture. No local coordinate/GGA is sent.
+RTCM3 uses preambleD3, a ten-bit payload length and CRC24Q with polynomial0x1864CFB. CRC
+is transport-error detection, not authentication. The implemented receiver extracts GPS LNA V
+message 1019; station metadata 1005/1006; legacy GPS code 1004; and GPS MSM4/5/6/7 (1074–
+1077). Other constellation MSM messages are consumed so their terminal ﬂags correctly close the
+shared observation epoch. Their measurements do not enter the GPS-only solve.
+An epoch is keyed by station ID and full GPST time. The multiple-message ﬂag keeps fragments
+together until a terminal fragment arrives. CRC loss, reconnect, changed epoch before termination
+and end-of-input produce explicit incomplete records. RTCM has no fragment count or sequence-
+start ﬂag: a newly connected client cannot prove that it saw the ﬁrst fragment. This limitation is
+retained in the event metadata; missing ranges are not reconstructed from station geometry.
+The one selected signal per satellite is C1C (L1 C/A), mapped to channel 𝑖 = PRN  1. MSM7’s
+ﬁner positive pseudorange takes precedence over legacy 1004 for the same signal. A valid legacy
+value may ﬁll an unavailable MSM value. All original signal ﬁelds are retained; zero, absent or
+invalid code does not become a solver row. Carrier phase is decoded/preserved where present
+T om Klootwijk | 15 September 2026 18
+
+=== PAGE 19 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+but no ambiguity state is estimated by this proﬁle.
+2.2 Time, provenance and reproducible execution
+Times are unwrapped GPS seconds from 1980-01-06. RTCM week ambiguity is resolved against
+the recorded reception date, with an explicit GPS-minus-UTC oﬀset of 18 seconds for these
+sessions. This value is stated by USNO Earth-orientation values ; it is a conﬁgurable input, not
+an automatically maintained leap-second service. RINEX epochs already tagged GPST receive no
+additional UTC oﬀset.
+No RTCM 1019 message contains the Klobuchar coeﬃcients. The demonstrated sessions use only
+the GPSA/GPSB header of the same-day BKG broadcast ﬁle BRDC00WRD_R_20262570000_01D_MN
+.rnx:
+𝛼 =¹1.210710 8, 1.490110 8, 5.960510 8, 1.192110 7º, (38)
+𝛽 =¹96256, 81920, 196610, 393220º. (39)
+Its orbital records arenot loaded during RTCM operation. Every usable satellite orbit/clock arrives
+in message 1019 from the stream itself. Download URLs, UTC acquisition time and hashes are in
+the source-data manifests. With no ionosphere header, the model explicitly labels its 5 ns baseline
+approximation.
+Run the included Windows CPU worker from the release directory:
+python tools/live_satnav.py
+--binary bin/cpu/satnav_stream.exe
+--url ntrip://caster.centipede.fr:2101/LIENSS
+--iono-nav source/live_data/
+BRDC00WRD_R_20262570000_01D_MN.rnx
+--seconds 180 --out results/my_live_run
+The display wraps one command for readability; join it onto one line and keep the navigation-ﬁle
+path continuous. Select the CUDA binary and add –backend cuda for the GPU path. Use a new
+output directory for each run. The dated ionosphere ﬁle reproduces this experiment; future-day
+operation should supply a current header or explicitly select the documented fallback.
+The same ﬁnal received bytes can be replayed with an explicit full-time reference:
+python tools/live_satnav.py
+--binary bin/cpu/satnav_stream.exe
+--rtcm source/live_data/
+centipede_lienss_20260914/capture.rtcm3
+--reference-gpst 1473457283
+--iono-nav source/live_data/
+BRDC00WRD_R_20262570000_01D_MN.rnx
+--out results/my_recorded_run
+RINEX input uses –rinex-obs and –nav; it is explicitly recorded as ﬁle replay. The input contract,
+all optional arguments, live-to-CGK bridge and independent oracle commands are supplied in
+docs/LIVE_INPUT.md, docs/LIVE_HANDOFF.md and the source-data README.
+T om Klootwijk | 15 September 2026 19
+
+=== PAGE 20 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.3 LIVE-R1 time contract and broadcast orbit
+A raw observation is¹𝑡tag
+𝑟 , 𝑃𝑖 , PRN𝑖 , 𝜎0𝑖º. Time is full, unwrapped GPS seconds from 1980-01-06;
+𝑃𝑖 is the original GPS L1 C/A pseudorange in metres. Receiver time tags and code share one clock
+convention. GPS-labelled RINEX calendar ﬁelds receive no UTC conversion. The ﬁnal physical
+reception-time estimate is
+b𝑡𝑟 = 𝑡tag
+𝑟   b𝑏𝑟𝑐, 𝑐 = 299 792 458 m s 1. (40)
+Here 𝑏𝑟 is the estimated receiver clock bias in metres. The raw tag remains in the trace. RTCM
+week rollover is resolved against an explicit reception-date reference; age tests use full time, never
+a modulo-week age.
+Each GPS ephemeris provides
+p
+𝐴, 𝑒 , 𝑖0, Ω0, 𝜔, 𝑀0, Δ𝑛,¤𝑖,¤Ω, six harmonic coeﬃcients, 𝑡𝑜𝑒 , 𝑡𝑜𝑐 , three
+clock coeﬃcients, 𝑇𝐺𝐷 , health and issue identiﬁers. The selected record has matching PRN, healthy
+status and IODC mod 256 = IODE. Both clock and orbit age are bounded by 7200 s; a shorter
+declared half-ﬁt interval further limits orbit age. A nearer unhealthy issue is not replaced by an
+older healthy issue.
+For signal emission time 𝑡𝑠, deﬁne
+𝐴 =¹
+p
+𝐴º2, 𝑡𝑘 = 𝑡𝑠  𝑡𝑜𝑒 , (41)
+𝑛 =
+q
+𝜇𝐴3¸ Δ𝑛, 𝑀 = 𝑀0¸ 𝑛𝑡 𝑘 , 𝜇 = 3.986005 1014 m3 s 2. (42)
+Newton’s method solves 𝐸  𝑒 sin 𝐸 = 𝑀:
+𝐸𝑗¸1 = 𝐸𝑗 
+𝐸𝑗  𝑒 sin 𝐸𝑗  𝑀
+1  𝑒 cos 𝐸𝑗
+. (43)
+The implementation reduces 𝑀 modulo 2𝜋, starts at 𝐸0 = 𝑀, and requires an increment below
+10 14 rad within 30 iterations. For 0 𝑒 < 1,
+𝜈 = atan2
+p
+1  𝑒2 sin 𝐸, cos 𝐸  𝑒
+
+, 𝜙 = 𝜈¸ 𝜔, (44)
+𝑢 = 𝜙¸ 𝐶𝑢𝑠 sin 2𝜙¸ 𝐶𝑢𝑐 cos 2𝜙, (45)
+𝑟 = 𝐴¹1  𝑒 cos 𝐸º¸ 𝐶𝑟𝑠 sin 2𝜙¸ 𝐶𝑟𝑐 cos 2𝜙, (46)
+𝑖 = 𝑖0¸¤𝑖 𝑡 𝑘¸ 𝐶𝑖𝑠 sin 2𝜙¸ 𝐶𝑖𝑐 cos 2𝜙, (47)
+Ω = Ω 0¸¹¤Ω  𝜔𝑒º𝑡𝑘  𝜔𝑒¹𝑡𝑜𝑒 mod 604800º, (48)
+𝜔𝑒 = 7.2921151467 10 5 rad s 1. (49)
+All angles are radians. Radius harmonics are metres; the other harmonics are angular corrections.
+These deﬁnitions implement the GPS LNA V user algorithm in IS-GPS-200N, section 20.3.3.4.3 ;
+they are new GPS-speciﬁc additions to this kernel package.
+T om Klootwijk | 15 September 2026 20
+
+=== PAGE 21 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.4 Satellite clock, emission time and reception axes
+Let 𝑥0 = 𝑟 cos 𝑢 and 𝑦0 = 𝑟 sin 𝑢. The satellite position in the Earth-ﬁxed axes at emission is
+e𝒙𝑠 =
+©­­
+«
+𝑥0 cos Ω  𝑦0 cos 𝑖 sin Ω
+𝑥0 sin Ω¸ 𝑦0 cos 𝑖 cos Ω
+𝑦0 sin 𝑖
+ª®®
+¬
+. (50)
+With Δ𝑡𝑐 = 𝑡𝑠  𝑡𝑜𝑐 , the broadcast clock polynomial, eccentric-orbit relativity correction, and L1
+code clock are
+𝛿𝑡poly = 𝑎 𝑓 0¸ 𝑎 𝑓 1Δ𝑡𝑐¸ 𝑎 𝑓 2Δ𝑡2
+𝑐 , (51)
+𝛿𝑡rel = 𝐹𝑒
+p
+𝐴 sin 𝐸, 𝐹 = 4.442807633 10 10 s m 12, (52)
+𝛿𝑡𝑠,𝐿 1 = 𝛿𝑡poly¸ 𝛿𝑡rel  𝑇𝐺𝐷 . (53)
+The trace stores all three contributions separately. The  𝑇𝐺𝐷 sign is speciﬁc to this L1 proﬁle.
+An external diﬀerential C1–P1 bias is not invented. Alternate code types are rejected until their
+signal-bias model is explicit. See IS-GPS-200N, sections 20.3.3.3.3.1–20.3.3.3.3.2 .
+The measured code connects the receiver and satellite clock tags:
+𝑡tag
+𝑠 = 𝑡tag
+𝑟   𝑃𝑐, 𝑡 ¹𝑗¸1º
+𝑠 = 𝑡tag
+𝑠   𝛿𝑡𝑠,𝐿 1¹𝑡¹𝑗º
+𝑠 º. (54)
+The adapter uses three clock iterations starting at 𝑡tag
+𝑠 . The receiver clock cancels in 𝑡tag
+𝑟   𝑃𝑐,
+because it occurs in both raw quantities. Subtracting the receiver clock again here would double-
+correct the emission time. This construction follows ESA ’s pseudorange-based emission-time
+algorithm.
+Earth rotation over the travel time is applied once, before the native solve:
+𝑅3¹𝑎º =
+©­­
+«
+cos 𝑎 sin 𝑎 0
+  sin 𝑎 cos 𝑎 0
+0 0 1
+ª®®
+¬
+, (55)
+𝒙𝑟𝑥
+𝑠 = 𝑅3¹𝜔𝑒 𝜏ºe𝒙𝑠 , 𝜏 =k𝒙𝑟𝑥
+𝑠   𝒙𝑟k𝑐. (56)
+Four range iterations, initially 𝜏0 = 𝑃𝑐, determine the reception-frame satellite position for the
+current receiver estimate. The native model never rotates it a second time. The rotation sign and
+frame convention follow ESA ’s reception-frame coordinate construction.
+The ﬁrst GSI epoch supplies an independent component check: all eight emission positions match
+the native RTKLIB trace within 0.000578 m and its clock values within 0.000438 ns. The RTKLIB
+trace rounds coordinates to millimetres and clocks to 0.001 ns, and excludes 𝑇𝐺𝐷 from its reported
+satellite clock. The comparison therefore adds 𝑇𝐺𝐷 back to Equation ( 53) for that check only.
+T om Klootwijk | 15 September 2026 21
+
+=== PAGE 22 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.5 Complete Klobuchar L1 ionosphere
+WGS84 ECEF-to-geodetic conversion supplies receiver latitude 𝜑𝑟, longitude 𝜆𝑟 and ellipsoidal
+height ℎ. Rotating the line of sight into local ENU gives azimuth 𝐴𝑧 clockwise from north
+and elevationE. A default 10 elevation mask is applied after the receiver geometry has been
+initialized.
+Klobuchar latitude, longitude and elevation arguments are in semicircles: 𝜑𝑢 = 𝜑𝑟𝜋, 𝜆𝑢 =
+𝜆𝑟𝜋 and 𝜖 =E𝜋. Azimuth remains in radians. The complete pierce-point and geomagnetic
+construction is
+𝜓 = 0.0137
+𝜖¸ 0.11  0.022, (57)
+𝜑𝐼 = min¹0.416, max¹ 0.416, 𝜑𝑢¸ 𝜓 cos 𝐴𝑧ºº , (58)
+𝜆𝐼 = 𝜆𝑢¸ 𝜓 sin 𝐴𝑧
+cos¹𝜋𝜑𝐼º , (59)
+𝜑𝑚 = 𝜑𝐼¸ 0.064 cos¹𝜋¹𝜆𝐼  1.617ºº , (60)
+𝑡local =¹43200𝜆𝐼¸ 𝑡tag
+𝑟 º mod 86400. (61)
+With the four broadcast alpha and four beta coeﬃcients,
+𝐴𝐼 = max©­
+«
+0,
+3Õ
+𝑗=0
+𝛼 𝑗 𝜑 𝑗
+𝑚
+ª®
+¬
+, (62)
+𝑃𝐼 = max©­
+«
+72000,
+3Õ
+𝑗=0
+𝛽 𝑗 𝜑 𝑗
+𝑚
+ª®
+¬
+, (63)
+𝑋 = 2𝜋¹𝑡local  50400º
+𝑃𝐼
+, (64)
+𝐹𝐼 = 1¸ 16¹0.53  𝜖º3. (65)
+Amplitude 𝐴𝐼 is seconds and period 𝑃𝐼 is seconds. The slant L1 delay , converted to metres, is
+𝐼 = 𝑐𝐹 𝐼
+(
+5 10 9¸ 𝐴𝐼
+ 1  𝑋22¸ 𝑋424 , j𝑋j < 1.57,
+5 10 9, otherwise. (66)
+Every trigonometric operation on a semicircle value explicitly multiplies by𝜋. The limits on pierce
+latitude, amplitude and period are part of the published model. See ESA ’s Klobuchar equations,
+and GPS LNA V ionosphere parameters in IS-GPS-200N, section 20.3.3.5.2.5.
+When broadcast coeﬃcients are unavailable, the adapter explicitly selects 𝛼 𝑗 = 𝛽 𝑗 = 0 and records
+klobuchar_zero_coefficients_5ns_baseline. This still produces 𝑐𝐹 𝐼 5 10 9 metres of delay;
+it is not zero ionosphere. For the internet capture, an independently downloaded BKG broadcast
+navigation header provides the coeﬃcients, with its source hash retained. Receiver ephemerides
+can still come from the actual RTCM 1019 stream.
+T om Klootwijk | 15 September 2026 22
+
+=== PAGE 23 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.6 Troposphere, observation variance and native solve
+LIVE-R1 uses a speciﬁed standard atmosphere with relative humidity 𝐻 = 0.7. For  100 ℎ
+10000 m andE > 0, deﬁne
+ℎ0 = max¹ℎ, 0º, (67)
+𝑝 = 1013.25¹1  2.2557 10 5 ℎ0º5.2568 »hPa¼, (68)
+𝑇 = 288.16  0.0065ℎ0 »K¼, (69)
+𝑒𝑤 = 6.108𝐻 exp
+ 17.15𝑇  4684
+𝑇  38.45
+
+»hPa¼. (70)
+The hydrostatic and wet Saastamoinen delays are
+𝑇ℎ = 0.0022768𝑝
+¹1  0.00266 cos 2𝜑𝑟  0.00028ℎ01000º sinE , (71)
+𝑇𝑤 = 0.002277¹1255𝑇¸ 0.05º𝑒𝑤
+sinE , 𝑇𝑑 = 𝑇ℎ¸ 𝑇𝑤. (72)
+Negative terrestrial heights use sea-level weather and carry a speciﬁc status. Outside the height
+domain, atmosphere is omitted with an explicit diagnostic; no calibrated weather is inferred.
+These constants and equations match the independent RTKLIB tropmodel source.
+The default nominal code uncertainty is 𝜎0𝑖 = 3 m. The executed native proﬁle weights observa-
+tions by
+𝜎𝑖 = 𝜎0𝑖
+max¹sinE𝑖 , 0.1º , 𝑊 𝑖𝑖 = 𝜎 2
+𝑖 . (73)
+CN0 is retained when supplied, without an invented CN0-to-variance calibration. These are
+nominal independent variances, not measured position errors or protection levels.
+The full measurement equation and its single additive correction are
+𝑃𝑖 =k𝒙𝑟  𝒙𝑟𝑥
+𝑠,𝑖k¸ 𝑏𝑟  𝑐𝛿𝑡𝑠,𝑖,𝐿 1¸ 𝐼𝑖¸ 𝑇𝑑,𝑖¸ 𝜖𝑖 , (74)
+𝑎𝑖 = 𝑐𝛿𝑡𝑠,𝑖,𝐿 1  𝐼𝑖  𝑇𝑑,𝑖 , 𝑃𝑖, corr = 𝑃𝑖¸ 𝑎𝑖. (75)
+The native CPU/CUDA solver estimates 𝒔 = ¹𝑥𝑟 , 𝑦𝑟 , 𝑧𝑟 , 𝑏𝑟ºT by weighted least squares. For
+𝜌𝑖 =k𝒙𝑟  𝒙𝑟𝑥
+𝑠,𝑖k,
+𝑟𝑖 = 𝑃𝑖, corr  𝜌𝑖  𝑏𝑟 , 𝐻 𝑖 =
+
+¹𝒙𝑟  𝒙𝑟𝑥
+𝑠,𝑖ºT𝜌𝑖 1
+
+. (76)
+An online Givens QR solve of the whitened system gives Δ𝒔; 𝒔 𝒔¸ Δ𝒔. Rank, iteration, ﬁnite-
+value and residual-ﬁt results remain explicit. Literal ASA/NA selection is unchanged, including
+whole-word absorption on a selected boundary hit.
+T om Klootwijk | 15 September 2026 23
+
+=== PAGE 24 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.7 Persistent receiver execution and correction feedback
+The persistent native worker receives complete epochs. The preparation layer and native solve
+form the outer state-feedback map
+O¹𝑘º
+𝑛 = Prepare¹𝑃𝑛 , 𝑡tag
+𝑛 ,E𝑛 , 𝒔¹𝑘º
+𝑛º, (77)
+𝒔¹𝑘¸1º
+𝑛 = NativeSolve¹O¹𝑘º
+𝑛 , 𝒔¹𝑘º
+𝑛º, (78)
+whereE𝑛 denotes the available ephemeris set. Preparation recomputes reception-frame geometry ,
+elevation selection, ionosphere, troposphere and weights from the new position. The default
+outer limit is eight passes. A valid position requires initialized terrestrial geometry , a converged
+native solve, and
+max
+
+k𝒙¹𝑘¸1º
+𝑛   𝒙¹𝑘º
+𝑛 k,j𝑏¹𝑘¸1º
+𝑛   𝑏¹𝑘º
+𝑛 j
+
+< 10 3 m. (79)
+At the ﬁrst receiver epoch, the complete state is zero. Geometry initialization uses all available
+healthy GPS codes with orbit and clock corrections; the trace explicitly marks atmosphere and
+elevation as uninitialized. After the ﬁrst coarse Earth position is solved, the next pass activates
+the physical models. Reference-station coordinates are never read as seeds. Subsequent epochs
+start from this worker’s preceding valid solution:
+𝒔¹0º
+𝑛¸1 = b𝒔 𝑛. (80)
+A failed epoch does not overwrite that state. A detected receiver/station change resets the seed.
+Duplicate or out-of-order epochs do not produce a new ﬁx. This is per-epoch code positioning
+with a warm start; it does not silently add a motion prior or carrier-phase ambiguities.
+The geometric mechanics proﬁle remains a downstream consumer of position results. Its JK state
+is not injected into satellite orbit/clock corrections or used as a ﬁctitious GNSS observation. The
+live feedback in Equation ( 78) closes the formerly missing receiver preparation loop around the
+existing position kernel.
+Separate observable evidence. The journal stores raw measurements, every preparation
+pass, every native solution and ﬁnal availability. Correction components retain signs and
+units. A recorded-ﬁle replay , a local timed replay , and a current internet receiver stream are
+distinct source modes. A remote reference receiver’s position is its antenna position; it does
+not measure the position of the user’s computer.
+The GSI 120-epoch run starts at ECEF zero, converges on all epochs, and agrees with independent
+NumPy solves of all 263 converged passes within1.17 10 8 m per state component. The executed
+weighting diﬀers from RTKLIB’s broadcast-variance weighting: their ﬁnal positions diﬀer by a
+mean 0.529 m and a maximum 1.589 m. A controlled NumPy re-solve with the same physical
+corrections and RTKLIB weights reduces those diﬀerences to a mean 0.000174 m and a maximum
+0.000346 m. This experiment isolates the weighting choice; it is recorded separately from the
+executed native proﬁle. The full report is results/real_0759_cpu/independent_comparison.j
+son.
+2.8 Persistent execution and exact records
+satnav_stream starts once and accepts successive complete requests. Each request contains
+the epoch ID/time, four-component seed, unchanged ASA/NA/boundary words and up to 32
+observation rows. Replies contain status, ﬁt classiﬁcation, ECEF/clock, formal variance, residuals,
+iteration count and kernel timing. Both CPU and CUDA dispatch the same SATNA V equations. A
+T om Klootwijk | 15 September 2026 24
+
+=== PAGE 25 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+rejected request produces an error record; a Python response timeout closes the worker so a late
+response cannot be assigned to the next epoch.
+Each completed decoded epoch triggers correction preparation and native solves while the socket
+session is still open. There is no whole-ﬁle staging step in the live path. Warm starts carry only
+the last complete position/clock estimate; they do not introduce velocity ﬁltering or modify raw
+ranges. Native failure, missing ephemeris and exhausted outer correction iterations publish a
+null position with an explicit status. Diagnostics still retain the partial iterate. Fit classiﬁcation
+remains separate from numerical convergence.
+Artifact Recorded content
+capture.rtcm3 + sidecars Raw received body , SHA-256, host times and connection
+boundaries.
+events.jsonl Decoded original ﬁelds, orbital issues, station metadata and
+incomplete/error records.
+trace.jsonl Raw epoch; every preparation and native pass; ﬁnal
+position/clock/time and validity.
+prepared/ Exact ﬁnal-pass CSV geometry/corrections for independent
+Householder and native batch replay.
+summary.json Source identity , counts, worker binary identity , timing scope
+and capture outcome.
+Only one synchronous callback operates on received bytes. If decoding, disk I/O or positioning
+becomes slower than delivery , TCP backpressure accumulates upstream. The local demonstration
+measures a 1 Hz station and is bounded in duration/bytes; it establishes neither continuous service
+availability nor a hard real-time bound. Socket timeouts, CRC/epoch-loss tests and recorded
+continuity expose the tested failure semantics. Clock-tag freshness is reported separately from
+local compute time: this host’s UTC clock was about two seconds behind the incoming GPST tags,
+so a negative tag-to-host interval is not interpreted as negative network latency.
+T om Klootwijk | 15 September 2026 25
+
+=== PAGE 26 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.9 Current live execution and independent validation
+Both ﬁnal sessions ran on 14 September 2026 UTC (the local Netherlands date crossed into 15
+September during the work). Each captured 180 complete one-second epochs using one public
+caster connection. CPU and CUDA ran sequential sessions: CPU: 21:55:20–21:58:20 UTC; CUDA:
+21:58:54–22:01:54 UTC. The source is caster.centipede.fr:2101/LIENSS.
+Measured quantity CPU CUDA
+Complete received epochs 180 180
+Published native positions 172 175
+Initial unavailable epochs (ephemeris warmup) 8 5
+Initial ECEF/clock seed Zero Zero
+Mean 3D separation from advertised ARP (m) 1.644 1.854
+Maximum ARP separation (m) 2.232 2.267
+Mean 3D diﬀerence from RTKLIB (m) 0.649 0.622
+Maximum RTKLIB diﬀerence (m) 0.969 0.931
+Median complete-input-to-position (ms) 2.205 5.947
+Maximum complete-input-to-position (ms) 11.611 14.346
+All positions emitted during socket capture Yes Yes
+The native outputs and their timestamps were checked against the exact raw-frame hashes and
+receive-chunk sidecars. The latency above runs from the host receiving the ﬁnal required input
+fragment to publication of a valid position. It includes local decoding and solving; it is not a
+calibrated radio/network transit time. It excludes unavailable warmup epochs. CUDA ’s ﬁrst
+unavailable live epoch took 2.59 seconds inside processing, including initial device work. A
+separate persistent-worker regression measured about 1.05 seconds for its ﬁrst request. CPU is
+faster for this small 1 Hz workload; these results establish CUDA correctness, not a speedup. The
+CUDA device was the RTX 5070 Ti Laptop, compute capability 12.0, built with CUDA 12.8 and
+driver 591.59.
+The comparison coordinate is the stream’s advertised antenna reference point:
+¹4426043.0455, 89429.1998, 4576296.6447º m. (81)
+It was neither a supplied initial estimate nor an observation. It is not an independently surveyed
+truth coordinate in this experiment. Consequently the table reports separation from advertised
+ARP , not certiﬁed absolute accuracy. RTKLIB also performs single-point code positioning here;
+its output quality code is 5, not an RTK ﬁxed-ambiguity solution.
+T om Klootwijk | 15 September 2026 26
+
+=== PAGE 27 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.10 Measured position series and independent checks
+Figure. East/North/Up and three-dimensional separation from the advertised ARP in the two
+actual live sessions. The blank beginning is ephemeris warmup; no position is fabricated for
+it. These are diﬀerent time windows, so their physical diﬀerences are not a CPU-versus-GPU
+numerical comparison.
+For that numerical comparison, the same ﬁnal raw capture was replayed through both backends
+with the same preparation model and receive order. Both produced 175 positions from 180
+epochs; their maximum ECEF/clock component diﬀerence was 1.21 10 8 m. Live CUDA and its
+archived-byte replay also passed the same epoch/status/position comparison. results/live_c
+ross_backend.json records it.
+The independent published RTKLIB convbin decoded each capture to RINEX. The ﬁnal CPU and
+CUDA decoded satellite/epoch sets matched exactly; 1980 and 2094 common C1C ranges agreed
+to 0.279 mm, within RINEX decimal rounding. Respectively 280 and 588 ephemeris numeric
+ﬁelds agreed. A separate pyrtcm ﬁeld audit on the ﬁve-minute source capture passed 96,880
+comparisons. The orbit/clock oracle matched eight satellite positions to 0.578 mm and clocks to
+0.000438 ns, limited by its printed output precision. Source hashes and commands are retained.
+T om Klootwijk | 15 September 2026 27
+
+=== PAGE 28 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.11 Regression, real-model checks and retained state connection
+The older GSI recording solved all 120 real epochs from ECEF zero. Its raw physical model
+and weight-isolation experiment are described with the equations above. Prepared ﬁnal live CPU
+observations passed 3,324 independent Householder checks across all 180 epochs, with maximum
+state-component diﬀerence below 8.4 10 9 m. All partial/warmup statuses were retained. The
+persistent CUDA worker processed those same real ﬁnal-pass inputs under Compute Sanitizer:
+zero memory errors, 180 responses and 1,048 independent checks.
+Current native builds passed all three CTest suites on CPU and CUDA. Python passed 118 test
+methods. The persistent-interface regression passed 6,861 comparisons per backend, including
+rejected requests followed by successful recovery. The existing texture/global CUDA paths also
+passed independent comparison and Compute Sanitizer through validate_gpu.py –sanitizer .
+Analytic/parser tests cover wrong CRC, fragments, missing data, stream truncation, HTTP chunk-
+ing, reconnection, callback failure, stale epochs, native failure and cold-start rules.
+Independent NumPy re-solves veriﬁed all 698 converged outer passes across both ﬁnal live sessions
+to 1.40 10 8 m per component. The physical audit checked 6,284 prepared rows, including
+original code, correction signs and proof that every chosen 1019 issue had already arrived before
+its epoch was solved. All 347 published ﬁxes preserve the corrected reception-time equation.
+The same live position records also cross the retained CGK-R1 handoﬀ after capture. Only
+completed positions enter that downstream replay; omitted warmup epochs remain listed in its
+manifest. ENU is anchored at the ﬁrst computed position, never at the advertised ARP . Original
+IDs, ECEF, receiver clock and full time remain attached. Both key layouts are emitted wherever
+the chart is deﬁned. The stationary demonstration does not require the word state to switch,
+and its modeled mechanics are not interpreted as a measured receiver velocity. The ﬁnal CPU
+bridge retained 172 ﬁxes and listed eight warmup omissions; its native batch position/clock replay
+exactly matched the stream. CGK replay passed 16,684 ﬁeld comparisons, and a separate binding
+audit passed 1,042 checks. The word remained 𝑞 = 0 in this static session. Both keys were emitted
+for 153 positions; 19 remained inside the chart core. These facts do not assert dynamic switching.
+Evidence index. results/validation_status.json links current reports and their hashes. resu
+lts/network_probes/ contains the independent conversion, raw-ﬁeld and RTKLIB comparisons.
+source/live_data/README.md records data provenance and third-party attribution. Parent
+3.6.1.7 totals in the following chapters are explicitly historical and are not added to these live-
+session results. The original sibling release remains unchanged.
+T om Klootwijk | 15 September 2026 28
+
+=== PAGE 29 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+2.12 Scope of the resulting navigation kernel
+This release now contains real raw-data ingestion, satellite ephemeris propagation, explicit
+physical code corrections, continuous native position/clock computation, and independent
+real-observation evidence. It is a working single-point GPS L1 receiver backend. The validation
+uses a static public base station and an older real receiver recording; it does not establish
+moving-receiver ﬁeld performance.
+The retained CGK-R1 equations provide an explicit geometry/word/mechanics model down-
+stream. Their modeled motion must remain distinguishable from receiver measurements;
+ASA/NA and JK feedback alone do not add independent observables or cancel unknown GNSS
+errors. Full ECEF, Up, receiver clock, linear time and both UGTS key layouts remain represented
+under their existing contracts.
+Additional applications can consume the position/time records: maps, logging, spatial queries,
+digital twins or a later motion estimator. A moving local satnav still needs its own receiver
+observation source; higher precision needs additional models such as diﬀerential corrections or
+carrier ambiguities. RTK/PPP , Doppler velocity , multi-constellation clock states, map routing
+and calibrated antenna/code bias estimation are separate implementations. The delivered static-
+session statistics and formal covariance do not stand in for those missing capabilities.
+Use case Available output or mechanism Additional work for
+deployment
+Remote position logging Live ECEF, clock, full time, raw
+observations and reproducible
+lineage.
+Long-duration operation,
+service monitoring and
+application storage.
+Local moving satnav Executable receiver-to-position
+backend.
+Local receiver observations,
+motion validation and the
+desired map/routing interface.
+Spatial indexing ENU/Up, chart state, full time
+and both exact UGTS key
+layouts.
+Application database, spatial
+extent and query policy.
+Digital simulation Editable literal equations and
+coupled geometry/mechanics.
+Calibrated model parameters
+and validation against the
+intended system.
+Precise positioning Raw code and available carrier
+metadata retained.
+Diﬀerential/precise corrections,
+bias models and ambiguity
+estimation.
+T om Klootwijk | 15 September 2026 29
+
+=== PAGE 30 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+3 The completed geometry–state feedback connection
+Version 3.6.1.7 deﬁnes and implements CGK-R1, a coupled continuous and discrete state kernel.
+Prepared GNSS observations are solved by SATNA V-R1. Their unquantized position estimates
+become inputs to a persistent modeled mechanical state. Geometry of that state is encoded into
+the literal ASA/NA and J–K word operations. Their result changes the mechanical operator, and
+the advanced position supplies geometry for the following step.
+The complete executed dependency
+Corrected-code observations ! SATNA V ECEF estimate! local target 𝑧𝑛! geometry
+of the carried state 𝑝𝑛 1! predicate words! editable drive/X/J/K equations ! 𝑞𝑛!
+stiﬀness and force!¹ 𝑝𝑛 , 𝑣𝑛º! next geometry.
+The actual UGTS handoﬀ publishes the carried J/K state and both the original measurement
+estimate and the modeled physical state.
+The source did not supply complete M2 circle-plus, predicate-encoder or physical eigenmatrix
+deﬁnitions. This release supplies explicit new deﬁnitions for all three roles. Their equations,
+input parameters, units and execution order are given here and in docs/COUPLED_CONTRACT.md.
+They are new formalizations using the retained primitives, not claims of reconstructing unavailable
+text.
+3.1 State, observations and time identity
+For each independently seeded trajectory , retain
+𝑆 =¹𝑝, 𝑣, 𝑞, 𝜙, 𝑡, 𝜌prev, 𝜃prev, 𝜒prevº, (82)
+where 𝑝 2 R3 is ENU position in metres, 𝑣 2 R3 is velocity in m/s, 𝑞 is a 32-bit word, 𝜙 is
+the separate hoop phase, 𝑡 is full unwrapped time and 𝜒prev records whether the previous chart
+exists. Satellite geometry , clock bias, formal covariance and original observation identity remain
+available in the measurement record outside this state and its compact keys.
+Sample 𝑛 supplies time 𝑡𝑛, target 𝑧𝑛, observation validity 𝑜𝑛2f 0, 1g, and external force 𝑓𝑛. Deﬁne
+Δ𝑡 = 𝑡𝑛  𝑡𝑛 1 > 0. Predicates read the old state together with the endpoint observation. The
+observed target and force are the piecewise constant inputs of the declared discrete observer
+interval; the resulting mechanical state is labeled 𝑡𝑛. The trace records both interval endpoints,
+and input rows are never silently reordered.
+For a solved ECEF position 𝑟𝑛, the ﬁxed ENU transform gives
+𝑧𝑛 = 𝑅ENU¹ 𝑟𝑛  𝑟ECEF
+0 º. (83)
+The modeled position 𝑝𝑛 is a separate quantity. It is not substituted into the original receiver
+solution or represented as another independent GNSS measurement.
+T om Klootwijk | 15 September 2026 30
+
+=== PAGE 31 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+4 Literal chart motion and an explicit circle-plus
+For the old modeled position 𝑝 =¹𝐸, 𝑁 , 𝑈º, set 𝑟 =
+p
+𝐸2¸ 𝑁 2. For 𝑟 𝑟core > 0, use the retained
+chart
+𝜌 = log¹𝑟𝑟0º, 𝜃 = atan2¹𝑁 , 𝐸º. (84)
+The preceding chart belongs to the preceding step’s before state. Thus the next step compares the
+newly advanced physical geometry with the geometry that produced that advance. The ﬁrst step
+has no chart increment.
+For two deﬁned charts, set
+Δ𝜃 = wrap¹𝜃  𝜃prevº, Δ𝜌 = 𝜌  𝜌prev, 𝛼 = arctan¹Δ𝜃Δ𝜌º  𝑎0. (85)
+This is literal source OTAN2. A zero pair, zero denominator, missing chart or ﬂoating-point range
+failure retains its explicit status. It is never replaced by quadrant-resolving atan2 while keeping
+the source name.
+4.1 CGK-R1 circle-plus deﬁnition
+Let wrap : R!»  𝜋, 𝜋º, with the 𝜋 tie represented by 𝜋. For 0 𝑤 1, deﬁne
+𝑎𝑤 𝑏 := wrap 𝑎¸ 𝑤 wrap¹𝑏  𝑎º . (86)
+This is interpolation along the selected shortest angular arc. It is not Boolean XOR, and associativity
+is not assumed. At 𝑤 = 0 it selects wrap¹𝑎º; at 𝑤 = 1 it selects wrap¹𝑏º. Common full-turn changes
+in either input do not change the selected phase, subject to the declared tie convention.
+With 𝑒 = 𝑧𝑛  𝑝, the target bearing 𝛽 = atan2¹𝑒𝑁 , 𝑒𝐸º exists when 𝑜𝑛 = 1 and the horizontal error
+is at least 𝑟core. The actual blended phase used by the encoder is
+𝜓 = wrap 𝛽𝑤 𝛼¸ 𝜙 . (87)
+Both angular inputs must be deﬁned. If they are not, only the alignment predicate is false. Limit,
+fringe, support, editable Boolean equations and the physical step still evaluate according to their
+deﬁnitions.
+4.2 Independent hoop evolution
+The hoop has its own supplied angular rate 𝜔ℎ and evolves as
+𝜙𝑛 = wrap¹𝜙𝑛 1¸ Δ𝑡 𝜔ℎº. (88)
+Its role stays distinct from geodetic latitude, modeled chart angle and full time winding. It enters
+the blend explicitly and is preserved in the key tuple.
+T om Klootwijk | 15 September 2026 31
+
+=== PAGE 32 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+5 The geometry-to-bit encoders
+Each present channel 𝑖 supplies a unit mechanical direction 𝑢𝑖, angle center 𝛽𝑖, alignment tolerance
+𝜖𝑖, projected-error limit 𝐿𝑖, support geometry and fringe width 𝜂𝑖. Parameters and their units are
+input data; changing them changes the executed model.
+For a sphere with center 𝑐𝑖 and radius 𝑅𝑖,
+𝑠𝑖¹𝑝º =k𝑝  𝑐𝑖k  𝑅𝑖. (89)
+A channel may instead select the inherited ﬁnite-cone signed-distance function: reduce the point
+to axial/radial coordinates and take the signed distance to its closed triangular meridian. Slant
+length, half-angle, apex and unit axis are supplied explicitly. The cone deﬁnition is the same one
+given later in this volume; it is evaluated on the evolving modeled position.
+The four Boolean features are exactly
+𝐴geom
+𝑖 =»𝜓 deﬁned¼^»j wrap¹𝜓  𝛽𝑖ºj 𝜖𝑖¼, (90)
+𝐿geom
+𝑖 =»𝑜𝑛 = 1¼^»j 𝑢𝑇
+𝑖 𝑒j > 𝐿𝑖¼, (91)
+𝐹geom
+𝑖 =»j 𝑠𝑖¹𝑝ºj 𝜂𝑖¼, (92)
+𝑆geom
+𝑖 =»𝑠𝑖¹𝑝º 0¼. (93)
+Channel 𝑖 occupies bit 𝑖; absent channels contribute zero. The resulting words are named align,
+limit, fringe and support. The separate valid word is all ones for a valid sample and zero
+otherwise.
+5.1 Four actual input equations
+The editable JSON supplies drive, input, J and K expressions. The default handoﬀ proﬁle uses
+"equations": {
+"d": "limit | fringe",
+"x": "(q | d) & support",
+"j": "y & (limit | fringe)",
+"k": "align & ~limit & ~fringe"
+}
+The vocabulary is the exact Boolean algebra &, |, ^, ~, parentheses and word constants 0/1. All
+expressions read the old 𝑞. The drive sees six inputs, X sees those plus drive, and J/K additionally
+see the ASA output 𝑦. The compiler enumerates their exact 64-, 128- and 256-bit truth tables. The
+direct Python reference evaluates the original expression trees rather than these tables.
+The source ASA masks and whole-word boundary operation then produce
+𝑎 = 𝑥^ 𝐴^ 𝑉 , 𝑛 = 𝑎^ 𝑁 , ℎ = popcount¹𝑛^ 𝐵º, 𝑦 =
+(
+0 ℎ > 0,
+𝑛 ℎ = 0, (94)
+followed by the synchronous literal update
+𝑞𝑛 =
+
+¹𝐽^: 𝑞𝑛 1º_¹: 𝐾^ 𝑞𝑛 1º
+
+^ 𝑉 . (95)
+Absorption determines 𝑦; it does not override the supplied J/K equations.
+T om Klootwijk | 15 September 2026 32
+
+=== PAGE 33 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+6 The physical operator supplied by the feedback state
+The modeled dynamics have diagonal positive mass 𝑀, diagonal damping 𝐶, and a supplied
+symmetric base stiﬀness 𝐾0. For each present channel,
+𝜅𝑖¹𝑞𝑖º = 𝜅oﬀ
+𝑖 ¸¹ 𝜅on
+𝑖   𝜅oﬀ
+𝑖 º𝑞𝑖 , (96)
+𝑔𝑖¹𝑞𝑖º = 𝑔oﬀ
+𝑖 ¸¹ 𝑔on
+𝑖   𝑔oﬀ
+𝑖 º𝑞𝑖 , (97)
+𝐾¹𝑞º = 𝐾0¸
+Õ
+𝑖2𝑉
+𝜅𝑖¹𝑞𝑖º𝑢𝑖𝑢𝑇
+𝑖 , (98)
+𝐹¹𝑞º = 𝑓𝑛¸
+Õ
+𝑖2𝑉
+𝑔𝑖¹𝑞𝑖º𝑢𝑖. (99)
+Mass entries are kilograms, damping entries kg/s, stiﬀness entries N/m and force entries newtons.
+Directions are dimensionless. Signed stiﬀness and damping are accepted; they can represent an
+active or unstable model and are reported without silently clipping them to a passive case.
+The declared equation of motion over this sample interval is
+𝑀¥𝑝¸ 𝐶¤𝑝¸ 𝑜𝑛 𝐾¹𝑞𝑛º¹𝑝  𝑧𝑛º = 𝐹¹𝑞𝑛º. (100)
+The newly committed word therefore changes a physical operator, not just an annotation on an
+independently calculated trajectory. On an unavailable observation, 𝑜𝑛 = 0 removes the target
+spring term. The discrete equations, external force, state-dependent force and velocity evolution
+continue.
+6.1 A complete discrete advance
+Backward Euler gives the actual linear system solved at every step:
+𝐺 = 𝑀¸ Δ𝑡 𝐶¸ Δ𝑡2𝑜𝑛 𝐾¹𝑞𝑛º, (101)
+𝑏 = 𝑀𝑣 𝑛 1¸ Δ𝑡»𝐹¹𝑞𝑛º¸ 𝑜𝑛 𝐾¹𝑞𝑛º¹𝑧𝑛  𝑝𝑛 1º¼, (102)
+𝑣𝑛 = 𝐺 1𝑏, 𝑝 𝑛 = 𝑝𝑛 1¸ Δ𝑡 𝑣 𝑛. (103)
+The implementation solves the three-dimensional system with pivoting; it does not form an inverse
+as its numerical algorithm. The independent reference uses a separate numerical linear solver.
+Every matrix entry , right-hand side, before state and after state is retained in the trace.
+For signed coeﬃcients 𝐺 can become singular. This is an explicit numerical failure, not a valid
+state advance. The computed 𝑞𝑛 remains recorded; the mechanical state and its valid time stay
+unchanged. Later rows of that trajectory carry a previous-failure status, while other trajectories
+continue. Nonﬁnite diagnostic components are represented as null only on failure records.
+T om Klootwijk | 15 September 2026 33
+
+=== PAGE 34 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+7 The physical eigenmatrix and mechanical checks
+Because 𝑀 is positive diagonal and 𝐾 symmetric, deﬁne
+𝐷¹𝑞º = 𝑀 12𝐾¹𝑞º𝑀 12. (104)
+This is the explicit CGK-R1 physical eigenmatrix. It is distinct from the SATNA V observation
+Jacobian. The native code computes its sorted real eigenvalues and orthonormal eigenvectors,
+retaining 𝐷, 𝐾, eigenvectors and a residual. Upper-triangle construction is mirrored to maintain
+exact ﬂoating-point symmetry. The native Jacobi solver scales by the largest matrix entry and
+uses a pair-relative 2 10 15 oﬀ-diagonal criterion with at most 64 rotations, preserving small
+independent modes in matrices with widely separated stiﬀness scales.
+If 𝐷𝑤 𝑗 = 𝜆𝑗𝑤 𝑗 and 𝜑𝑗 = 𝑀 12𝑤 𝑗, then
+𝐾𝜑𝑗 = 𝜆𝑗 𝑀𝜑𝑗 , 𝑤 𝑇
+𝑖 𝑤 𝑗 = 𝛿𝑖𝑗 . (105)
+For 𝜆𝑗 > 0 the undamped natural angular frequency is
+p
+𝜆𝑗 rad/s. For 𝜆𝑗 < 0,
+p
+ 𝜆𝑗 is the
+undamped modal growth rate; a negative value is not reported as a real oscillation frequency.
+Zero eigenvalues represent neutral stiﬀness modes. Damping can change the actual transient
+growth or decay; these are stiﬀness-mode quantities.
+The recorded eigensystem residual is
+𝑟𝜆 = max
+𝑎,𝑗
+j¹𝐷𝑊  𝑊 diag 𝜆º𝑎 𝑗j. (106)
+Veriﬁcation also checks orthonormality and the independently computed spectrum. Signs of
+eigenvectors and the choice of basis inside repeated eigenspaces are not used as correctness
+criteria.
+7.1 What stability can actually be proved
+For a ﬁxed target, zero force, ﬁxed 𝑞, 𝑜𝑛 = 1, 𝐶 0 and 𝐾 0, let 𝐸 = 1
+2 𝑣𝑇 𝑀𝑣¸ 1
+2¹𝑝  𝑧º𝑇 𝐾¹𝑝  𝑧º.
+The implemented backward-Euler step satisﬁes
+𝐸𝑛  𝐸𝑛 1 =  Δ𝑡 𝑣𝑇
+𝑛 𝐶𝑣 𝑛  1
+2¹𝑣𝑛  𝑣𝑛 1º𝑇 𝑀¹𝑣𝑛  𝑣𝑛 1º
+  1
+2¹𝑝𝑛  𝑝𝑛 1º𝑇 𝐾¹𝑝𝑛  𝑝𝑛 1º 0. (107)
+This follows by substituting the discrete equation and the quadratic diﬀerence identity. A changed
+word changes 𝐾 and can change stored potential energy; signed coeﬃcients, external forces and
+moving observations are also outside this ﬁxed-operator inequality. No general convergence claim
+is substituted for those actual dynamics.
+T om Klootwijk | 15 September 2026 34
+
+=== PAGE 35 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+8 Actual SATNAV/UGTS handoff and editable model input
+The updated tools/ugts_handoff.py invokes the coupled proﬁle by default. It consumes the
+actual solution and proﬁle ﬁles, creates the coupled model input, executes the native backend and
+independently replays its complete trace. The earlier hold-only behavior is available explicitly as
+–legacy-hold.
+Each published record retains the original solver result and a separately labeled modeled state.
+J/K before, input values and after now come from the executed recurrence. The modeled ENU
+state is transformed back to ECEF for publication, and its local chart feeds both original 64-bit
+codecs. Full time, winding, Up, clock bias and original formal covariance remain outside the
+compact addresses. Failed and unavailable observation rows retain their identity and lineage.
+8.1 Inputs are inspectable and editable
+examples/coupled/model.json declares version 3.6.1.7, proﬁle CGK-R1, the four Boolean equa-
+tions and a list of trajectories. Each trajectory deﬁnes initial time/position/velocity/word/phase,
+mass, damping, base stiﬀness, chart and hoop parameters, masks, channel geometries and timed
+samples. Sphere and cone supports, on/oﬀ force and stiﬀness, directional encoders and the ob-
+servation sequence are all supplied as data. No geometric-to-bit encoder or physical coeﬃcient is
+silently inferred from a name.
+The native compiler writes four exact CSV schemas: trajectory manifest, channels, samples and
+equation truth tables. Their order and ﬁeld meanings are speciﬁed in COUPLED_CONTRACT.md. The
+resulting trace has one row per sample, including full geometry , predicate words, ASA tuple, J/K
+operands, physical matrices, eigensystem and state advance. Hashes bind the supplied model
+and trace.
+8.2 Run the complete connection
+From the package directory , using the delivered Windows binaries:
+bin/cpu/satnav.exe --input examples/demo \
+--out results/my_satnav --backend cpu --verify
+python tools/ugts_handoff.py --input examples/demo \
+--run results/my_satnav --backend cpu
+The coupled tool also runs a directly supplied model:
+python tools/coupled.py --input examples/coupled/model.json \
+--out results/my_coupled \
+--binary bin/cuda/coupled_kernel.exe --backend cuda
+Output directories are new for each run. A CUDA thread owns one complete trajectory; it advances
+that trajectory in time order. Parallelism spans independent trajectories and does not break the
+carried dependence within a trajectory.
+T om Klootwijk | 15 September 2026 35
+
+=== PAGE 36 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+9 Preserved 3.6.1.7 coupled implementation validation
+These results were executed for parent version 3.6.1.7 on the local Windows machine.
+source/baseline_3_6_1_7_validation.json preserves its index. The unchanged sibling 3.6.1.7
+release contains its full run ﬁles. These totals are historical evidence, not new 3.6.1.8 live-receiver
+tests.
+Executed check Result
+CPU and CUDA builds / CTest Passed; three suites per build
+Coupled C++ assertions 202 passed
+Retained Boolean / SATNA V assertions 5,060,172 / 105,559 passed
+Python test methods 70 passed
+Retained command-line scenarios 25 Boolean + 11 SATNA V passed
+Editable coupled example, each backend 72 steps; 6,984 comparisons
+Full coupled suite, each backend 272 trajectories; 3,308 steps
+Independent full-suite comparisons 320,876 per backend
+Native analytic / causal invariants 20 passed per backend
+Deliberate trace corruptions rejected Eight per backend
+Coupled CUDA Compute Sanitizer Zero errors; full replay passed
+Actual SATNA V-to-coupled handoﬀ 256 steps per backend
+Independent actual handoﬀ comparisons 24,832 per backend
+Separate publication/key/lineage audit Passed on CPU and CUDA
+Retained SATNA V texture/global CUDA Independent replay and memcheck
+passed
+The comprehensive suite includes 257 trajectories with varying sample counts, so the CUDA run
+uses three 128-thread blocks with a partial ﬁnal block. It produces 3,301 advanced states, three
+deliberately induced singular/overﬂow failures and four correctly frozen subsequent records.
+Expected failure records are checked against the independent reference; they are not counted as
+successful advances.
+9.1 Evidence that both directions actually execute
+Counterfactual native trajectories share observations while changing the initial word: position
+and velocity change, and later geometric drive changes. A second pair shares its initial state
+while changing target geometry: drive and J/K state change, then the physical trajectory changes.
+Edited Boolean equations also change both state and later predicates. These are executed causal
+comparisons, beyond agreement between two implementations.
+Known free-motion, constant-force and diagonal-spring updates are checked against closed forms
+of the stated discrete method. Oﬀ-diagonal generalized eigenmodes, signed coeﬃcients, missing
+observations, whole-word absorption, chart-domain cases and numerical failure semantics are
+exercised. CPU regression checks also retain small independent eigenmodes beside a stiﬀness of
+10308.
+T om Klootwijk | 15 September 2026 36
+
+=== PAGE 37 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+10 Coupled handoff evidence and reproducibility
+The actual 256-row SATNA V stream produces 253 observation-driven advances and three pre-
+diction advances. There are 51 J/K changes across nine distinct word states. At unavailable-
+observation epochs 250, 251 and 252, modeled motion continues by approximately 2.10713 m,
+1.61596 m and 1.24055 m respectively. Residual-alert epoch 253 remains an input observation
+with its diagnostic intact.
+A separate publication audit checks every complete native trace binding, original solver/e-
+poch/residual/clock/variance record, both key encodings, full time, winding, Up and hoop,
+all 255 state-carry links, all 256 state-dependent stiﬀness sums and every hash-chain record. Its
+implementation reads the output independently from the publisher. Original solver records
+remain distinct from modeled positions.
+10.1 Reproduce the full native ﬁxture suite
+python tools/validate_coupled.py \
+--binary bin/cpu/coupled_kernel.exe \
+--backend cpu --out results/my_cpu_validation
+python tools/validate_coupled.py \
+--binary bin/cuda/coupled_kernel.exe \
+--backend cuda --out results/my_cuda_validation
+compute-sanitizer --tool memcheck --error-exitcode 99 \
+bin/cuda/coupled_kernel.exe \
+--input results/my_cuda_validation/compiled \
+--out results/my_memcheck --backend cuda
+python tools/coupled.py \
+--input results/my_cuda_validation/model.json \
+--out results/my_memcheck_replay --verify results/my_memcheck
+The replay-only command labels execution as not run because it reads an existing trace; the
+preceding native command and sanitizer log establish that execution. The native report retains
+actual backend/device identity and binary/model hashes.
+10.2 Toolchain and limits of these results
+The builds use MSVC 19.44.35221.0 and NVIDIA CUDA compiler 12.8.61. CUDA executes on an
+NVIDIA GeForce RTX 5070 Ti Laptop GPU, compute capability 12.0, with driver 591.59. Short
+build directories avoid this workspace’s long Windows scratch paths. Python replay uses NumPy
+2.1.2. CPU Address/UndeﬁnedBehavior Sanitizer was not run in this Windows release; its earlier
+Linux record remains archived.
+These checks establish the declared coupled implementation on the supplied ﬁnite ﬁxtures. Phys-
+ical coeﬃcients are editable model inputs; this release has not calibrated them against a measured
+mechanical system or validated live GNSS data. No general switched-system convergence or mea-
+sured speedup is inferred. The new blend, encoders and mechanical matrix are fully speciﬁed
+CGK-R1 deﬁnitions. They do not purport to recover unavailable original M2 equations.
+T om Klootwijk | 15 September 2026 37
+
+=== PAGE 38 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+11 Literal self-reference: the completed recurrence
+Version 3.6.1.6 adds the executable proﬁle SRK-R1. Its state is a 32-bit word 𝑞𝑡 that occurs in
+its own next-state equation. The old release provided literal ASA/NA and J–K primitives but its
+observation adapter used a constant hold event. This subversion supplies an explicit feedback
+composition, editable equation input, CPU/CUDA execution and independent equation replay.
+Let 𝑊 =f0, . . . , 232  1g, and let 𝑉 , 𝐴, 𝑁 , 𝐵, 𝑑2 𝑊 denote the present, ASA, NA, boundary and
+external drive words. All complements below are 32-bit complements. The initial state satisﬁes
+𝑞0^: 𝑉 = 0. A trajectory supplies three Boolean expressions 𝐸𝑋 , 𝐸𝐽 , 𝐸𝐾 and a requested number
+of steps 𝑇 > 0. The complete transition, in evaluation order, is
+𝑥𝑡 = 𝐸𝑋¹𝑞𝑡 , 𝑑º, (108)
+𝑎𝑡 = 𝑥𝑡^ 𝐴^ 𝑉 , (109)
+𝑛𝑡 = 𝑎𝑡^ 𝑁 , (110)
+ℎ𝑡 = popcount¹𝑛𝑡^ 𝐵º, (111)
+𝑦𝑡 =
+(
+0, ℎ 𝑡 > 0,
+𝑛𝑡 , ℎ 𝑡 = 0, (112)
+𝐽𝑡 = 𝐸𝐽¹𝑞𝑡 , 𝑦𝑡 , 𝑑º, 𝐾 𝑡 = 𝐸𝐾¹𝑞𝑡 , 𝑦𝑡 , 𝑑º, (113)
+𝑞𝑡¸1 =
+
+¹𝐽𝑡^: 𝑞𝑡º_¹: 𝐾𝑡^ 𝑞𝑡º
+
+^ 𝑉 . (114)
+The ASA tuple¹𝑎𝑡 , 𝑛𝑡 , ℎ 𝑡 , 𝑦𝑡º is the retained whole-word rule. The bracketed part of ( 114) is the
+retained literal J–K equation. The supplied expression bindings and ﬁnal projection to 𝑉 are
+explicit SRK-R1 deﬁnitions. For a single active bit they give hold, set, reset and toggle for ¹𝐽, 𝐾º
+equal to¹0, 0º,¹1, 0º,¹0, 1º,¹1, 1º respectively.
+Self-reference is an executable dependency
+𝑞𝑡 ! 𝑥𝑡 !¹ 𝑎𝑡 , 𝑛𝑡 , ℎ 𝑡 , 𝑦𝑡º !¹ 𝐽𝑡 , 𝐾𝑡º ! 𝑞𝑡¸1, with 𝑞𝑡 also read directly by both J/K
+expressions and by the ﬁnal update. Every right-hand side reads the same old state. Only
+the ﬁnal line commits the next state.
+Boundary absorption sets the whole output word 𝑦𝑡 to zero. It does not silently replace the
+user’s J/K expressions with hold: those expressions still evaluate with that zero word. Thus
+the equations determine the transition even in an absorbed step. Numerical GNSS residual
+classiﬁcations do not gate SRK-R1.
+T om Klootwijk | 15 September 2026 38
+
+=== PAGE 39 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+12 Actual equations are input data
+The editable input is examples/self_reference/equations.json. The root declares version
+3.6.1.6, proﬁle SRK-R1, optional default equations, and a trajectories array. Each trajectory
+supplies an ID, initial state, drive, four masks and step count; it may override the equations. For
+example:
+{
+"version": "3.6.1.6", "profile": "SRK-R1",
+"equations": {"x": "q | d", "j": "y", "k": "y"},
+"trajectories": [{
+"id": 1, "q0": 0, "drive": 15, "present": 15,
+"asa_mask": 15, "na_mask": 15, "boundary_mask": 0,
+"steps": 6
+}]
+}
+The expression vocabulary is &, |, ^, ~, parentheses, the names q, d, and, for J/K, y. The literal 0
+means the zero word; 1 means the all-ones word. Decimal state and mask ﬁelds remain ordinary
+unsigned integers. Operator precedence is complement, AND, XOR, OR; parentheses can specify
+every grouping explicitly.
+The expression trees deﬁne an exact ﬁnite Boolean algebra. They are parsed and evaluated as
+that algebra; they are not passed to a general-purpose evaluator. Each expression is applied
+independently to each bit. Whole-word absorption couples the bits through ℎ𝑡. Arbitrary cross-
+bit arithmetic, shift operators and continuous-state formulae would require a separately deﬁned
+extension.
+12.1 Exact truth-table compilation
+For bits 𝑞𝑖 , 𝑦𝑖 , 𝑑𝑖2f 0, 1g, the compiler creates
+𝐿𝑋 =
+Õ
+𝑢,𝑣2f0,1g
+𝐸𝑋¹𝑢, 𝑣º 22𝑢¸𝑣 , (115)
+𝐿𝐽 =
+Õ
+𝑢,𝑣,𝑤2f0,1g
+𝐸𝐽¹𝑢, 𝑣, 𝑤º 24𝑢¸2𝑣¸𝑤 , (116)
+𝐿𝐾 =
+Õ
+𝑢,𝑣,𝑤2f0,1g
+𝐸𝐾¹𝑢, 𝑣, 𝑤º 24𝑢¸2𝑣¸𝑤. (117)
+The CPU/CUDA kernel reads the corresponding table bit. For the example above, ¹𝐿𝑋 , 𝐿𝐽 , 𝐿𝐾º =
+¹14, 204, 204º. For the latch with 𝐾 = 0, the tuple is ¹14, 204, 0º. Every allowed expression has
+a truth table on these inputs, and every Boolean function on these inputs is expressible in this
+vocabulary. The compilation is exact: each possible input assignment is evaluated, and the native
+table read retrieves that assignment’s value.
+T om Klootwijk | 15 September 2026 39
+
+=== PAGE 40 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+13 Fixed points, cycles and complete ﬁnite execution
+During one trajectory , equations, drive and masks are constant. They deﬁne a deterministic
+function 𝐹 : 𝑄𝑉! 𝑄𝑉 , where
+𝑄𝑉 =f𝑞2 𝑊 : 𝑞^: 𝑉 = 0g, j𝑄𝑉j = 2popcount¹𝑉º, 𝑞 𝑡¸1 = 𝐹¹𝑞𝑡º. (118)
+Proposition 13.1 (Closure and eventual periodicity) . Every computed state belongs to 𝑄𝑉 . Every
+inﬁnite orbit of this ﬁxed-input transition is eventually periodic. A ﬁxed point is a cycle of length one.
+Proof. The input requires 𝑞02 𝑄𝑉 and the ﬁnal AND with 𝑉 places every successor in 𝑄𝑉 . Among
+j𝑄𝑉j¸ 1 consecutive states at least two are equal. If 𝑞𝑖 = 𝑞 𝑗 for 𝑖 < 𝑗, determinism gives 𝑞𝑖¸𝑘 = 𝑞 𝑗¸𝑘
+for every 𝑘 0. This proves periodicity after the ﬁrst repeated state; it does not assert that the
+period is one. □
+The implementation emits every requested step, including those after a repeat. Independent
+replay records a ﬁxed point, a cycle, or no repeat observed within the requested budget. The last
+case is ﬁnite evidence only; it does not imply divergence or the absence of a later repeat. With 32
+active bits the general state bound is 232, so this theorem alone gives no short runtime bound.
+13.1 Worked exact trajectories
+Set 𝑉 = 𝐴 = 𝑁 = 𝑑 = 15, 𝐵 = 0, 𝑞0 = 0, and 𝐸𝑋 = 𝑞_ 𝑑, 𝐸𝐽 = 𝑦. For the latch 𝐸𝐾 = 0,
+𝑥 = 𝑎 = 𝑛 = 𝑦 = 15 and
+𝑞𝑡¸1 = 𝑦_ 𝑞𝑡 = 15, ¹𝑞0, 𝑞1, 𝑞2, . . .º =¹0, 15, 15, . . .º. (119)
+For toggle 𝐸𝐾 = 𝑦, 𝐽 = 𝐾 = 15 and
+𝑞𝑡¸1 = 𝑞𝑡 15, ¹𝑞0, 𝑞1, 𝑞2, 𝑞3, . . .º =¹0, 15, 0, 15, . . .º. (120)
+With 𝐵 = 8 and 𝐸𝐽 = 𝐸𝐾 = 𝑦, ℎ = 1 absorbs all of 𝑦 and the state holds. With the same absorbed
+word but 𝐸𝐽 = 𝑑, 𝐸𝐾 = 0, the state becomes 15. These outcomes follow directly from the supplied
+equations and expose the diﬀerence between output absorption and state reset.
+Synchronous evaluation matters. For one active bit with 𝐸𝐽 =:𝑞 and 𝐸𝐾 = 𝑞, the result is toggle.
+Both expressions use 𝑞𝑡, never a partially updated state. State projection preserves inactive bits as
+zero, including when an input expression uses the all-ones constant.
+T om Klootwijk | 15 September 2026 40
+
+=== PAGE 41 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+14 Native execution and independent equation replay
+The shared include/self_reference.hpp implements the truth-table and literal transition oper-
+ations. The CPU walks each trajectory in step order. CUDA assigns one thread to each indepen-
+dently seeded trajectory , then executes its recurrence sequentially within that thread. No ordering
+between independent trajectories is needed; diﬀerent trajectories never share a mutable state.
+The compilation interface is a decimal CSV with columns
+trajectory_id,q0,drive,present,asa_mask,na_mask,boundary_mask,
+x_lut,j_lut,k_lut,steps
+The header is physically one line. Every trace row retains
+trajectory_id,step,before,drive,x,asa,na,hits,output,j,k,after
+The native run also records backend, device, timing and trace lengths. The Python reference
+evaluates the original expression trees on whole integer words; it does not use the compiled truth
+tables as its transition oracle. It compares every trace ﬁeld, row count and trajectory ordering, and
+records equation/input provenance. This cross-check can detect table compilation, transition and
+output corruption; it is ﬁnite execution evidence rather than a machine-checked proof.
+14.1 Reproduce the equation-input run
+From the package directory , build CPU and run:
+cmake -S . -B build_cpu
+cmake --build build_cpu --config Release --parallel 2
+python tools/self_reference.py \
+--input examples/self_reference/equations.json \
+--out results/selfref_local \
+--binary build_cpu/Release/self_reference.exe --backend cpu
+For single-conﬁguration systems the binary is build_cpu/self_reference. For CUDA, enable
+SATNAV_ENABLE_CUDA=ON, choose the GPU binary and use –backend cuda . Each run uses a new
+output directory. The JSON expressions are editable without recompiling C++ or CUDA; the
+compiler regenerates their tables.
+14.2 Relation to the existing SATNAV and UGTS equations
+SATNA V-R1 retains its corrected-code equations, QR solve, OTAN2 source ratio, both 64-bit codecs
+and full coordinate/time records. The earlier observation adapter’s hold event is retained by the
+explicit legacy option. SRK-R1 is the retained formal word state-feedback computation and runs
+without a GNSS residual admission condition. The new bindings are identiﬁed as deﬁnitions
+of this release. CGK-R1 now provides explicit new circle-plus, encoder and physical-matrix
+deﬁnitions and connects the observation path, as detailed in Section 3. The unavailable earlier M2
+deﬁnitions are not claimed to have been reconstructed.
+T om Klootwijk | 15 September 2026 41
+
+=== PAGE 42 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+15 SRK-R1 baseline validation, version 3.6.1.6
+All entries here concern the executable 3.6.1.6 source on the current Windows machine. The
+3.6.1.5 preparation record is preserved separately under results_3_6_1_5/. Finite comparisons
+check the requested trajectories; the closure and eventual-periodicity argument is given separately
+above.
+Executed check Result
+CPU CMake build and CTest Passed, 2 test programs
+Retained SATNA V C++ checks 105,559 passed
+New literal feedback C++ checks 5,060,172 passed
+Python test methods 31 passed
+Native command-line scenarios 25 feedback + 11 SATNA V passed
+Editable six-trajectory example 34 transitions, 408 exact ﬁeld comparisons
+per backend
+257-trajectory stress input 4,225 transitions, 50,700 exact ﬁeld
+comparisons per backend
+CPU and CUDA equation replay Both passed sample and stress inputs
+Feedback GPU Compute Sanitizer Zero memory errors; sanitized trace replay
+passed
+Retained SATNA V independent reference 256 epochs, 4,828 comparisons passed
+SATNA V CUDA texture/global paths Both passed independent comparisons
+and memcheck
+CPU sanitizers in this Windows run Not run; earlier Linux evidence archived
+15.1 Recorded toolchain and device
+MSVC 19.44.35221.0, Visual Studio 2022 BuildT ools; NVIDIA CUDA compiler 12.8.61; NVIDIA
+GeForce RTX 5070 Ti Laptop GPU, compute capability 12.0, driver 591.59. The source targets
+sm_120 and compute_120. Device, runtime, allocation sizes and kernel-only times are retained in
+each native run record. The short external build directories used on this machine avoid Windows
+compiler scratch-path limits caused by the long workspace path.
+The stress input uses seed 3616, varying 1–32 steps per trajectory , full 32-bit operands and 257
+trajectories so that the 128-thread CUDA blocks include a partial ﬁnal block. Direct AST replay
+checks all 12 trace columns. The Python suite also rejects deliberate mutations of every trace
+column, missing/extra rows and reordered rows. The C++ checks include independent bit oracles
+and exhaustive small domains.
+15.2 Evidence and delivered implementation
+source/baseline_3_6_1_6_validation.json indexes the archived baseline evidence. The exact
+equation JSON, compiled CSV , complete native/reference traces and their hashes are retained. The
+baseline delivered Windows CPU and CUDA executables under bin/windows/; CUDA execution
+uses the installed NVIDIA runtime and driver. No measured speedup is inferred from these small
+ﬁxtures. The PDF is built with Tectonic 0.17.0 and visually checked in that release. Source and
+delivered artifacts were listed in the regenerated SHA-256 manifest.
+T om Klootwijk | 15 September 2026 42
+
+=== PAGE 43 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+16 The imported UGTS and aTOMos contracts
+The supplied prototype deﬁnes a ﬁnite, query-ﬁrst state-and-relation package. It includes cone/-
+sphere relations, a bounded translational sweep, log-polar metric and kinematics, explicit time
+and winding, separate topology proﬁles, ﬁnite grammar, 64-bit key codecs and audited uncertain-
+ty/memory claims. Its authoritative handoﬀ is
+support! compatibility! guard! veriﬁed event! transition! lineage. (121)
+This order is retained in the downstream satnav event adapter. [U, pp. 1, 9–12]
+16.1 What U does not deﬁne
+U contains no satellite ephemeris propagation, receiver clock observation equation, code-delay
+correction model, geodetic datum or GNSS position estimator. These are new SATNA V-R1 def-
+initions, grounded in primary GNSS references rather than attributed to the earlier prototype.
+[N01]
+The base aTOMos contracts retained here are the four-ﬁeld ASA word rule, explicit JK bit se-
+mantics, source-ratio OTAN2, typed unavailable values, immutable input snapshots and ordered
+result/provenance records. The new matrix in the receiver solve is the explicit GNSS design ma-
+trix. It is not a silently completed physical beamforming/eigenmatrix from an earlier proﬁle. [A,
+retained M2 project contract]
+16.2 Source ﬁgures and key table
+U’s Figure 4 on printed p. 5 keeps the half-turn state bundle distinct from the orientation-reversing
+Klein quotient. Its Table 1 and Figure 6 on printed p. 8 keep contiguous packing distinct from
+MSB-round-robin Morton interleaving. Figure 8 on printed p. 10 returns the result to the canonical
+event sequence. All three distinctions survive the specialization.
+The complete earlier 50-operator catalog remains a source catalog, not a claim that every operator
+is necessary for positioning. The delivered helpers implement the subset selected below. A source
+mechanism omitted from the default satnav path is identiﬁed rather than repurposed without a
+declared meaning.
+T om Klootwijk | 15 September 2026 43
+
+=== PAGE 44 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+17 Receiver state and source-symbol separation
+The authoritative positioning state is
+𝑧𝑒 =¹𝑥𝑒 , 𝑦𝑒 , 𝑧𝑒 , 𝑏𝑒º2 R4, 𝑏 𝑒 = 𝑐 𝛿𝑡𝑒 , (122)
+where the ﬁrst three components are ECEF metres and the fourth is receiver clock bias in metres.
+Clock seconds are 𝑏𝑒𝑐 with 𝑐 = 299792458 m/s in this proﬁle. This is the standard code-
+positioning unknown set. [G1]
+Quantity Role Representation
+𝒓 Receiver location Three unquantized ECEF doubles.
+𝑏 Receiver clock bias Metres, not a branch bit.
+𝑃𝑖 Code observation Metres, after the explicitly recorded
+correction convention.
+𝜌 Local log-radius UGTS chart quantity , not the code range.
+𝜃 Local angular coordinate atan2¹𝑁 , 𝐸º in a ﬁxed ENU chart.
+𝜙ℎ UGTS hoop phase Separate supplied periodic ﬁeld; not silently
+geographic latitude.
+𝜑𝑔 , 𝜆𝑔 , ℎ 𝑔 Geodetic coordinates Latitude, longitude and ellipsoidal height.
+𝑋 , 𝑤 Tick and winding Full integer time identity retained beside its
+modular key ﬁeld.
+𝐾𝐶 , 𝐾𝑀 Quantized addresses T wo distinct 64-bit codecs, not complete
+navigation states.
+The source’s lower-case hoop 𝜙 is retained as 𝜙ℎ to avoid colliding with geodetic latitude. The
+earlier aTOMos phase alias is resolved through a named adapter: OTAN2 receives increments
+of local 𝜌, 𝜃, while the key retains its separate UGTS hoop ﬁeld. No 3D coordinate is silently
+removed. [U, p. 2][N02]
+The authoritative records also include epoch identity , time scale, satellite/channel mapping, in-
+put/product provenance, statuses and uncertainty assumptions. All ﬁt results preserve the full
+ECEF estimate and clock value outside the compact key.
+T om Klootwijk | 15 September 2026 44
+
+=== PAGE 45 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+18 The corrected-code observation model
+A decoded code measurement can be modelled as a geometric range, receiver/satellite clock
+terms and selected propagation/instrumental delays. SATNA V-R1 accepts an upstream additive
+correction 𝑎𝑖 and deﬁnes
+e𝑃𝑖 = 𝑃𝑖¸ 𝑎𝑖 =k𝒔 𝑖  𝒓k¸ 𝑏¸ 𝜀𝑖. (123)
+This is the reduced standard code-positioning model after the declared upstream terms are ac-
+counted for. [G1, G4]
+For the convention
+𝑃𝑖 = 𝑅𝑖¸ 𝑏  𝑐𝛿𝑡sat
+𝑖 ¸ 𝑇𝑖¸ 𝐼𝑖¸ 𝐵𝑖¸ 𝜀𝑖 , (124)
+the matching additive correction is
+𝑎𝑖 = 𝑐𝛿𝑡sat
+𝑖   𝑇𝑖  𝐼𝑖  𝐵𝑖. (125)
+The adapter must deﬁne the exact code, satellite clock convention, relativistic clock terms and
+hardware/group biases it uses. The kernel adds the supplied term once. It does not repeat an
+already applied correction or invent a missing ionosphere/troposphere model.
+18.1 Satellite coordinates and Earth rotation
+𝒔 𝑖 is the satellite position at signal emission expressed in the Earth-ﬁxed axes associated with
+reception. The upstream stage must perform the necessary transmit-time and frame handling
+consistently. A satellite coordinate computed in emission-time ECEF axes cannot simply be
+treated as already in the reception axes. [G2]
+The solver keeps these supplied positions and corrections ﬁxed during its four-state iteration.
+The proﬁle is therefore an adapter boundary for prepared code data, not a complete broadcast-
+navigation decoder. Raw receiver or RINEX values require an upstream modelling adapter before
+using the named CSV contract. [N01]
+18.2 One clock system
+There is exactly one receiver-clock unknown. Unaligned measurements from multiple GNSS time
+systems generally need additional bias treatment; this release does not estimate a hidden inter-
+system oﬀset. Use compatible code/clock data, or supply and document an upstream alignment
+under a separate proﬁle.
+T om Klootwijk | 15 September 2026 45
+
+=== PAGE 46 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+19 Input epochs, channels and aTOMos selection
+Each independent epoch binds its receive-time label, approximate initial state and 32-bit channel
+masks. Each observation row points to that epoch and names a unique channel in 0, . . . , 31.
+Channel IDs, not row order, deﬁne mask bits.
+Let 𝑉 contain present channels and 𝑋 contain channels marked ready. The retained word selection
+is
+𝑎 = 𝑋^ 𝑀ASA^ 𝑉 , (126)
+𝑛 = 𝑎^ 𝑀NA, (127)
+ℎ = popcount¹𝑛^ 𝑀𝜕º, (128)
+𝑦 =
+(
+0, ℎ > 0,
+𝑛, ℎ = 0. (129)
+The solver uses precisely the channels selected by 𝑦. These four ﬁelds are emitted unchanged in
+the result. The default ASA/NA masks are all ones and the default boundary is zero. [A, retained
+M2 project contract] [N04]
+19.1 Whole-word behavior remains literal
+A boundary bit intersecting the selected word absorbs the entire epoch group. It does not mean
+“drop only this satellite.” T o explicitly omit an individual observation, use a selector bit, a not-
+ready ﬂag or an upstream policy with its own provenance. Replacing the boundary behavior with
+per-bit clearing would change the base engine.
+A remaining support of fewer than four channels returnsTOO_FEW. Four channels must still provide
+a numerically independent design matrix. A full bit count cannot prove observability by itself.
+The new GNSS solver checks the resulting matrix rather than treating POPCNT as a complete
+position solution. [G1][N03]
+19.2 Timeline and schema consistency
+An epoch identiﬁer binds rows from one receiver event. The time column is full unwrapped GPST
+seconds under the supplied upstream convention; modular UGTS time is added later. Duplicate
+epoch IDs, duplicate channels or duplicate satellite IDs within an epoch are errors. Correcting a
+false upstream time label is not something a CSV parser can infer from equal strings.
+The current CSV reader uses ﬁnite bounded numeric ﬁelds and explicit nonnegative IDs. Phys-
+ical correction provenance belongs to the input proﬁle; metadata consistency is not a physical
+synchronization measurement.
+T om Klootwijk | 15 September 2026 46
+
+=== PAGE 47 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+20 The weighted positioning step
+For current estimate 𝑧¹𝑘º =¹𝒓¹𝑘º, 𝑏¹𝑘ºº, deﬁne
+𝑅¹𝑘º
+𝑖 =k𝒓¹𝑘º  𝒔 𝑖k, (130)
+𝑣¹𝑘º
+𝑖 = e𝑃𝑖  𝑅¹𝑘º
+𝑖   𝑏¹𝑘º, (131)
+𝐻¹𝑘º
+𝑖 =
+"
+𝑥¹𝑘º  𝑠𝑖𝑥
+𝑅¹𝑘º
+𝑖
+,
+𝑦¹𝑘º  𝑠𝑖 𝑦
+𝑅¹𝑘º
+𝑖
+, 𝑧¹𝑘º  𝑠𝑖𝑧
+𝑅¹𝑘º
+𝑖
+, 1
+#
+. (132)
+Linearization gives 𝐻Δ𝑧' 𝑣. With declared independent code standard deviations 𝜎𝑖 > 0, whiten
+the rows as
+𝐴𝑖 = 𝐻𝑖𝜎𝑖 , 𝑑 𝑖 = 𝑣𝑖𝜎𝑖 , Δb𝑧 = arg min
+Δ
+k𝐴Δ  𝑑k2
+2. (133)
+Then update 𝑧¹𝑘¸1º = 𝑧¹𝑘º¸ Δb𝑧. The nonlinear model and iterative linearization follow the code-
+positioning references; the QR implementation is the explicit numerical choice of this specializa-
+tion. [G1, G4][N03]
+20.1 No normal-equation update
+The C++/CUDA implementation uses streaming Givens QR on the whitened rows. It does not
+form and invert 𝐴𝑇 𝐴 for the update. This avoids squaring the design matrix’s condition number
+as part of the solution method. The independent Python reference uses a diﬀerent Householder
+QR implementation on the full row matrix.
+All four unknowns use metres, including the clock bias. A ﬂoating-point conversion to seconds is
+applied only to a displayed/consumer clock oﬀset. This keeps a factor of the speed of light out of
+the fourth Jacobian column.
+The default iteration stops when both position-increment norm and absolute clock increment are
+at most 10 4 m, with at most 12 steps. These are numerical convergence controls, not a statement
+that real measurements yield 0.1 mm accuracy. The convergence domain depends on the input
+model and initial approximation.
+T om Klootwijk | 15 September 2026 47
+
+=== PAGE 48 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+21 Streaming QR, rank and formal covariance
+The kernel maintains an upper-triangular 4 4 matrix 𝑅 and a transformed right-hand side 𝑧.
+Each whitened row is appended by rotations that eliminate its components against the current
+triangular diagonal.
+For diagonal 𝑅 𝑗 𝑗 and current row component 𝑎 𝑗, let
+𝛾 = hypot¹𝑅 𝑗 𝑗, 𝑎 𝑗º, 𝑐 𝑗 = 𝑅 𝑗 𝑗𝛾, 𝑠 𝑗 = 𝑎 𝑗𝛾. (134)
+The same rotation is applied to the remaining row and right-hand-side entries. A zero pair needs
+no rotation. The result is solved by back substitution.
+21.1 The implemented rank screen
+The retained check is
+j𝑅 𝑗 𝑗j > 𝜏 max
+𝑘
+j𝑅𝑘 𝑘j for all 𝑗, 𝜏 = 10 10. (135)
+This is a declared unpivoted triangular-diagonal screen. It detects the tested rank-deﬁcient cases,
+but is not an SVD condition-number certiﬁcate or a proof of well-conditioned geometry for all
+possible inputs. A failed screen produces RANK_DEFICIENT, not a coordinate ﬁlled with zeros.
+[N03]
+21.2 Covariance is tied to the assumed sigmas
+After convergence the Jacobian is rebuilt at the ﬁnal estimate. From 𝑅 1, compute the diagonal of
+𝑃 =¹𝐻𝑇𝑊 𝐻º 1 = 𝑅 1𝑅 𝑇 , 𝑊 = diag¹𝜎 2
+𝑖 º. (136)
+The implementation obtains this from triangular solves, not a dense matrix inverse of 𝐻𝑇𝑊 𝐻.
+It returns coordinate/clock variances in squared metres. This is formal uncertainty under the
+declared local linear and noise model. [G5]
+It is not measured error against truth, and not a guaranteed bound on faulty or mis-modelled
+measurements. The independent ﬁxture comparisons check both estimates and these formal
+diagonal values; true-error metrics are separately computed only because the artiﬁcial ﬁxture has
+a known generating position.
+T om Klootwijk | 15 September 2026 48
+
+=== PAGE 49 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+22 Solver status and residual diagnostics
+Convergence, residual ﬁt and the later UGTS event are separate ﬁelds.
+Solver status Meaning
+CONVERGED Numerical increment thresholds reached with valid ﬁnal
+calculations.
+MASK_ABSORBED Selected word intersected the retained whole-word boundary.
+TOO_FEW Fewer than four selected observations.
+RANK_DEFICIENT Triangular rank/covariance check failed.
+ITERATION_LIMIT The selected number of iterations did not satisfy convergence.
+NUMERIC_FAILURE Invalid range, nonﬁnite result or unusable numeric intermediate.
+For a converged solution, preserve every selected post-ﬁt residual 𝑟𝑖 = e𝑃𝑖 k 𝒔 𝑖 b𝒓k  b𝑏, and report
+RMS =
+s
+1
+𝑚
+Õ
+𝑖
+𝑟2
+𝑖 , 𝑆 =
+Õ
+𝑖
+¹𝑟𝑖𝜎𝑖º2, 𝑍 max = max
+𝑖
+j𝑟𝑖𝜎𝑖j. (137)
+The default comparison 𝑍max 6 is a named residual budget. It is not a leverage-normalized
+test or a claimed false-alarm probability. The solver does not automatically discard a channel and
+retry until this ﬂag passes. [N09]
+Exactly four observations give NO_REDUNDANCY, even if their residuals are small. For more obser-
+vations, the ﬂag is WITHIN_RESIDUAL_BUDGET or RESIDUAL_ALERT. A single gross-outlier ﬁxture
+converges numerically but produces the latter alert; the data record retains its large actual position
+error.
+RAIM/ARAIM, HPL/VPL, continuity risk, certiﬁed spoof detection and navigation-action au-
+thority are not supplied by these ﬂags. A valid solution record can be useful for replay and
+analysis without representing those additional guarantees.
+T om Klootwijk | 15 September 2026 49
+
+=== PAGE 50 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+23 Local ENU and the UGTS log chart
+The receiver solution remains three-dimensional. For a declared geodetic anchor ¹𝜑0, 𝜆0, ℎ 0º,
+convert ECEF diﬀerences to East/North/Up using
+𝑅𝐸𝑁𝑈 =
+2666664
+  sin 𝜆0 cos 𝜆0 0
+  sin 𝜑0 cos 𝜆0   sin 𝜑0 sin 𝜆0 cos 𝜑0
+cos 𝜑0 cos 𝜆0 cos 𝜑0 sin 𝜆0 sin 𝜑0
+3777775
+. (138)
+Then¹𝐸, 𝑁 , 𝑈º𝑇 = 𝑅𝐸𝑁𝑈¹𝒓  𝒓 0º. The transform is an explicit GNSS/geodesy addition, separate
+from the source’s abstract local chart. [G3]
+With horizontal radius 𝑟ℎ =
+p
+𝐸2¸ 𝑁 2, use
+𝜌 = ln¹𝑟ℎ𝑟0º, 𝜃 = atan2¹𝑁 , 𝐸º. (139)
+Up remains a separate value. A declared core radius returns origin_core instead of evaluating
+a singular logarithm. Out-of-range 𝜌 is not automatically wrapped into a diﬀerent geographic
+position. [U, pp. 3–4] [N02]
+23.1 Metric and ﬁnite steps carried from U
+For the planar chart,
+𝑑𝑠 2 = 𝑟2
+ℎ¹𝑑𝜌2¸ 𝑑𝜃2º, Δ𝑟ℎ = 𝑟ℎ¹𝑒Δ𝜌  1º, (140)
+𝐽 = 𝑟ℎ
+"
+cos 𝜃   sin 𝜃
+sin 𝜃 cos 𝜃
+#
+. (141)
+These identities explain the local representation; the new satellite-range solve still uses full ECEF
+coordinates. Quantizing this chart does not improve the original measurement precision or create
+a third coordinate. [U, p. 4]
+The geodetic utility uses the declared WGS84 ellipsoid constants 𝑎 = 6378137 m and 1 𝑓 =
+298.257223563. Its height is ellipsoidal height, not an unprovided geoid-corrected height above
+mean sea level. The reference tests its conversions and inverse relation over a ﬁnite set of points.
+[G6]
+T om Klootwijk | 15 September 2026 50
+
+=== PAGE 51 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+24 OTAN2 in satnav: preserve the observable
+The inherited literal operator remains
+otan2𝑠¹Δ𝜃, Δ𝜌º = arctan¹Δ𝜃Δ𝜌º, Δ𝜌 ≠ 0, (142)
+with a separately supplied reference-axis subtraction when selected. This is a log-chart motion slope.
+It is not used to solve pseudoranges, and is not relabeled as the receiver’s geographic heading or
+satellite azimuth. [A, retained M2 project contract]
+The passive adapter compares successive deﬁned local chart records in the same frame. It uses
+an explicitly named principal-diﬀerence policy for Δ𝜃; that policy does not reconstruct missed
+revolutions. Full linear time and the chosen phase convention are stored with the observation.
+24.1 Missing direction remains a status
+A ﬁrst observation has no previous chart increment. A zero pair has no direction. A pure
+angular increment has an undeﬁned literal ratio. The adapter records first_observation,
+zero_increment or ratio_undefined rather than inventing a perfect zero angle. A sequence
+with non-increasing time is identiﬁed instead of being silently reordered into a new physical
+history.
+A change in the axis alone changes the raw residual by the opposite angle. A common positive
+scaling of both increments preserves the ratio, and simultaneous reversal also preserves the literal
+ratio while reversing the actual directed motion. These are inherited operator laws, not new
+navigation-sensor guarantees.
+24.2 Literal J/K and the explicit feedback proﬁle
+The retained equation is
+𝑞¸ =¹𝐽^: 𝑞º_¹: 𝐾^ 𝑞º. (143)
+SRK-R1 binds J and K to supplied expressions that read the old state and literal ASA output, then
+carries 𝑞¸ into the next step. The full recurrence, expression input and execution semantics are
+given in Section 11.
+The default observation adapter now invokes CGK-R1 and publishes its actual carried state. The
+earlier hold event remains available through the explicit legacy option. CGK-R1 supplies new
+circle-plus, encoder and mechanical-operator deﬁnitions in Section 3; the unavailable original M2
+forms are not claimed to have been recovered.
+T om Klootwijk | 15 September 2026 51
+
+=== PAGE 52 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+25 Paired supports and the canonical UGTS event
+This section records the retained observation-only adapter, selected with –legacy-hold. The
+default coupled handoﬀ is speciﬁed in Section 3; it retains residual diagnostics without using this
+earlier admission rule to override its equations.
+U normalizes the two spherical supports as
+𝑓𝐿¹𝑥º =k𝑥  𝑐𝐿k  𝑅𝐿, 𝑓 𝑅¹𝑥º =k𝑥  𝑐𝑅k  𝑅𝑅, (144)
+with a proﬁle selecting union, intersection or either-with-tag. The overlap ﬂag is retained sepa-
+rately. [U, p. 3]
+SATNA V-R1 uses the union of two declared local processing domains for its worked event adapter.
+With supplied deterministic position-radius allowance 𝑢𝑝, its per-sphere margin is
+𝑚𝑗 = 𝑅 𝑗 k 𝑥  𝑐 𝑗k  𝑢𝑝. (145)
+Admission means at least one margin is nonnegative. This is a geometric/query policy for the
+supplied local frame, not a claim that the true receiver error is bounded by 𝑢𝑝. Its origin is
+explicitly recorded. [N09]
+The corresponding handoﬀ is implemented in order:
+UGTS stage Satnav realization
+Support Candidate lies within at least one declared local support under the
+supplied allowance.
+Compatibility Fixed frame and increasing unwrapped time; supported
+estimator-clock convention.
+Guard Residual interval compared with a named metre-domain budget.
+Veriﬁed event Candidate satisﬁes those computational/model conditions with
+residual redundancy.
+Transition Publish an observation record only. No external control command.
+Lineage Source/proﬁle IDs, full time, source keys and the preceding record
+digest.
+For the demo, 𝑢𝑝 = 5 m, the two support radii are 10,000 m, and centres are¹0, 0, 0º and¹100, 100, 0º
+ENU metres. These are labelled worked parameters, not values extracted from the attached
+prototype or a real site survey.
+The phrase POSITION_CANDIDATE_VERIFIED means veriﬁed under this declared computational
+handoﬀ. It does not supply certiﬁed GNSS integrity or prove the physical correctness of the
+upstream observations.
+T om Klootwijk | 15 September 2026 52
+
+=== PAGE 53 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+26 Finite cones and translational sweeps retained
+For the source’s slant length 𝑇 > 0 and half-angle 0 < 𝛼 𝑐 < 𝜋2,
+ℎ = 𝑇 cos 𝛼𝑐 , 𝑅 = 𝑇 sin 𝛼𝑐. (146)
+With apex 𝑐, unit axis 𝑎 and query 𝑥, set
+𝑧 = 𝑎¹ 𝑥  𝑐º, 𝑞 =k¹𝑥  𝑐º  𝑧𝑎k. (147)
+The exact primitive relation is the signed meridian distance to the triangle ¹ 𝑅, ℎº,¹𝑅, ℎº,¹0, 0º,
+with negative interior and zero boundary. The implementation computes distances to the three
+boundary segments and uses the source’s inside test 0 𝑧 ℎ, 𝑞 𝑧 tan 𝛼𝑐. [U, pp. 2–3]
+These are optional UGTS query helpers in the archive. A ﬁnite cone is not silently substituted for
+the satellite pseudorange sphere or a physical antenna response. The default receiver solve uses
+the actual distance-to-satellite equations already stated.
+For a ﬁxed-orientation cone translated along a segment of length 𝐿, 𝑛 2 uniform samples and
+sample minimum 𝑚𝑛, retain
+𝑚𝑛  𝐿
+2¹𝑛  1º inf
+𝑢2»0,1¼
+𝑑𝐶¹𝑥  𝑠¹𝑢ºº 𝑚𝑛. (148)
+The source derives this using the one-Lipschitz distance response to translation and the nearest
+sample spacing. It is not a general exact SDF for arbitrary rotated sweeps. [U, p. 3]
+26.1 Numerical and nesting distinction
+The helper evaluates this analytic interval in ordinary ﬂoating arithmetic. It does not implement
+directed rounding or a proven machine-error enclosure. The interval’s width decreases with
+sample spacing. Intervals from arbitrary nonnested sample grids need not be nested, so the
+implementation does not claim that stronger property. [N07]
+The source’s constraint-release and hinge-torque mechanisms remain separately typed geomet-
+ric/mechanical proﬁles. Removing a constraint is not an automatic improvement to satellite
+observability , nor does the existence of a hinge model supply a physical receiver trajectory. They
+are not inserted into the default position estimator.
+T om Klootwijk | 15 September 2026 53
+
+=== PAGE 54 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+27 Jitter intervals and the explicit source correction
+U deﬁnes 𝑓𝑗 = 𝑓¸ 𝜖 𝑗 𝜎 with 𝜎2f  1,¸1g, then prints the equality
+» 𝑓𝑗  𝜖 𝑗 , 𝑓 𝑗¸ 𝜖 𝑗¼ =» 𝑓  𝜖 𝑗 , 𝑓 ¸ 𝜖 𝑗¼. (149)
+That equality is generally false for nonzero 𝜖 𝑗. This edition preserves its source location and
+explicitly separates the two interpretations rather than silently changing the supplied page. [U,
+p. 5][N06]
+27.1 Two valid, different interval statements
+The perturbation family obeys
+𝑓𝑗2» 𝑓  𝜖 𝑗 , 𝑓 ¸ 𝜖 𝑗¼. (150)
+If 𝑓𝑗 is the available perturbed observation andj 𝑓𝑗  𝑓j 𝜖 𝑗, then
+𝑓2» 𝑓𝑗  𝜖 𝑗 , 𝑓 𝑗¸ 𝜖 𝑗¼. (151)
+Both are valid enclosure statements, but the interval centres diﬀer. The helper returns both named
+intervals and a test veriﬁes that they are not falsely equated. The source’s example centred around
+𝑓 is treated as the perturbation-family interval.
+No jitter is added to the GNSS code observations or to solved ECEF coordinates. The deter-
+ministic bit can be metadata or a separate query perturbation, not a method for manufacturing
+measurement precision or removing multipath.
+27.2 Metre-domain guard in the legacy event adapter
+For the largest absolute post-ﬁt residual𝑚 = max𝑖j𝑟𝑖j and a supplied absolute residual perturbation
+allowance 𝑢𝑟, form
+»max¹0, 𝑚  𝑢𝑟º, 𝑚¸ 𝑢𝑟¼ . (152)
+A budget 𝐵 is met when the upper endpoint is at most 𝐵, exceeded when the lower endpoint is
+greater than 𝐵, and otherwise unresolved. This is a conditional model classiﬁcation. The demo
+uses 𝑢𝑟 = 0.1 m and 𝐵 = 20 m as stated ﬁxture parameters. It does not identify nominal 𝜎𝑖 with a
+hard worst-case bound.
+T om Klootwijk | 15 September 2026 54
+
+=== PAGE 55 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+28 Two exact 64-bit key layouts
+U’s ﬁeld widths and layouts are retained exactly:
+Field Bits Contiguous range Domain
+Log-radius index 20 63:44 Declared 𝜌2»  20, 0¼
+Chart angle 18 43:26 Periodic »0, 2𝜋º
+Modular tick 14 25:12 0, . . . , 16383
+Hoop phase 12 11:0 Periodic »0, 2𝜋º
+The contiguous word is
+𝐾𝐶 =¹𝑞𝜌 44º_¹ 𝑞𝜃 26º_¹ 𝑞𝑋 12º_ 𝑞𝜙ℎ . (153)
+The Morton word emits source bits in MSB round-robin order
+𝜌19, 𝜃17, 𝑋13, 𝜙11, 𝜌18, 𝜃16, 𝑋12, 𝜙10, . . . (154)
+until each source ﬁeld is exhausted. They are intentionally diﬀerent encodings. [U, pp. 7–8]
+28.1 The source’s exact golden pair
+For¹949111, 0, 1920, 227º, the new tests recover
+contiguous: e7b77000007800e3
+Morton: 88823bb88099128b
+Both decode to the same quantized tuple. Random round trips and preﬁx-reﬁnement bounds are
+tested separately from the new positioning arithmetic.
+28.2 Address identity is not state identity
+The 64-bit key has exactly 264 possible words. A key does not encode arbitrary clock bias, full
+linear time, Up, formal covariance, correction products or lineage. Those remain separate full
+ﬁelds in the event record. The 12-bit ﬁeld is the named hoop phase, not a simultaneously hidden
+arbitrary matrix and grammar payload. [U, pp. 8–9] [N05]
+The address construction follows the position estimate; it is not used to quantize satellite coordi-
+nates or code ranges before the receiver solve. A matching key is an index match, not proof that
+two entire navigation events are identical.
+T om Klootwijk | 15 September 2026 55
+
+=== PAGE 56 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+29 Quantization, error and explicit origin handling
+SATNA V-R1 declares nearest-node radial quantization over» 20, 0¼:
+ℎ𝜌 = 20
+220  1 , 𝑞 𝜌 = round¸
+ 𝜌¸ 20
+20 ¹220  1º
+
+. (155)
+Angles use nearest periodic nodes with upward half ties, while the source’s bit widths and range
+remain unchanged. This tie/quantization choice is an explicit specialization, not an unquoted
+algorithm recovered from an unavailable source ZIP . [N05]
+For an angular width 𝑏, ℎ𝜃 = 2𝜋2𝑏. A nearest-node quantization gives j𝛿𝜌j ℎ𝜌2 and circular
+j𝛿𝜃j ℎ𝜃2 within the chosen range. Using the exact source radial step, a conservative planar
+error bound is
+kb𝑥  𝑥k 𝑟ℎ¹𝑒 ℎ𝜌2  1º¸ 2𝑟ℎ 𝑒 ℎ𝜌2 sin¹ℎ𝜃4º. (156)
+It follows from adding a radial displacement and an angular chord at the enlarged radius. The
+bound scales with radius; log packing is not uniform physical resolution. [U, pp. 4, 8–9]
+29.1 Default diagnostic chart
+The demo chooses 𝑟0 = 100000 m and a 0.1 m origin core. It keys only values with  20 𝜌 0.
+These choices deﬁne an indexed diagnostic domain, not the receiver’s positioning accuracy or a
+geographic route. Out-of-range or core values keep the full position and a chart status without
+wrapping them into a new position.
+29.2 No equal-information compression claim
+U explicitly audits the ratios 19264, 321 and 51212 as nominal width ratios between records
+with diﬀerent semantics. This specialization does not reintroduce a claim that one address is
+equivalent to all original ﬂoating information. [U, pp. 8–11]
+The packed key is useful for lookup and local indexing after the relevant state exists. Position
+estimation, corrected observations, uncertainty and event veriﬁcation remain real computational
+and storage costs.
+T om Klootwijk | 15 September 2026 56
+
+=== PAGE 57 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+30 Linear time, winding and separate topology proﬁles
+For reference tick 𝑋0, period 𝑃 > 0 and full linear tick 𝑋,
+𝑢 = 𝑋  𝑋0
+𝑃 , 𝑤 =b𝑢c, 𝜓 = 𝑢  𝑤2» 0, 1º. (157)
+The source’s example 𝑋 = 1920, 𝑋0 = 1135, 𝑃 = 256 yields 𝑤 = 3 and 𝜓 = 0.06640625. The new
+helper reproduces that value, including ﬂoor-division behavior for negative ticks. [U, p. 5]
+The satnav key stores only the 14-bit tick residue, while the event retains full tick, GPST coordinate,
+origin/period and winding. A period of 16384 one-second ticks repeats its residue after 4 h 33
+min 4 s. It does not identify events across those repetitions without the additional time/lineage
+ﬁelds.
+30.1 The source half-turn is not the reﬂective quotient
+U’s literal odd radial-wrap bundle applies
+¹𝜌, 𝜃, 𝜙ℎ , 𝑜º7!¹ 𝜌0, 𝜃¸ 𝜋, 𝜙ℎ , 𝑜º. (158)
+Its separately named reﬂective Klein proﬁle applies
+¹𝜌, 𝜃, 𝜙ℎ , 𝑜º7!¹ 𝜌0, 𝜋  𝜃, 𝜙ℎ , 𝑜º. (159)
+The second reverses angular orientation; the ﬁrst is a rotation on the base circle with a changed
+internal state. The archive retains independent helpers and tests, matching the distinction in U’s
+Figure 4. [U, pp. 5–6]
+Neither rule is applied to the GNSS receiver’s ECEF position, a satellite orbit or the physical Earth.
+A local index experiment may select either proﬁle explicitly; it does not make a geographical
+discontinuity an actual displacement. [N08]
+The source’s ﬁnite grammar and radix reﬁnement remain local state/index mechanisms. Their
+existence does not turn one receiver solution into an unbounded tree or prove that every possible
+trajectory is retrieved in constant time.
+T om Klootwijk | 15 September 2026 57
+
+=== PAGE 58 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+31 GPU kernel: one independent solve per thread
+The kernel takes a bounded batch of immutable epoch metadata and a structure-of-arrays obser-
+vation buﬀer. One thread evaluates one full independent four-state solution. Each thread owns
+its QR workspace, iterative estimate, status and residual record. There is no cross-epoch update
+or unordered reduction of position states.
+const size_t e = size_t(blockIdx.x) * blockDim.x + threadIdx.x;
+if (e < count) {
+output[e] = solve_epoch(epochs[e], observations, e, config);
+}
+The launch uses 128 threads per block. Repeated jobs can supply thousands of independent
+epochs; a single live low-rate receiver does not by itself provide enough parallel work to establish
+a GPU speed advantage. This kernel is a batch/replay specialization.
+31.1 Numerical implementation
+The actual shared implementation is in include/satnav_core.hpp. It performs the retained ASA
+arithmetic, row construction, QR update, convergence and ﬁnal covariance/residual calculation.
+The CUDA translation unit invokes that implementation with its device reader. The CPU uses the
+same word and numerical function with a plain double reader.
+An independent Python implementation uses separate matrix construction and Householder QR.
+It is not merely calling back into the shared C++ function. The two veriﬁcation levels therefore
+distinguish device/host conformance from an additional numerical reference comparison.
+31.2 Potential performance costs remain visible
+Independent threads may ﬁnish in diﬀerent iterations, producing normal warp imbalance. QR
+uses FP64 arithmetic and square roots; no tensor-core speed claim is made. The source keeps full
+precision where satellite-range subtraction requires it, rather than forcing coordinates into ﬂoat
+textures or one-bit words.
+The build disables fused contraction for the shared review proﬁle and does not enable fast math.
+The acceptance checks use named tolerances, not a claim of bit-identical ﬂoating evaluation across
+every compiler and processor.
+T om Klootwijk | 15 September 2026 58
+
+=== PAGE 59 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+32 Texture and global input paths
+For 𝑁 independent epochs, channel 𝑐2» 0, 31¼ and observation ﬁeld 𝑓2» 0, 5¼, ﬂatten the input as
+index¹𝑒 , 𝑐, 𝑓º =¹6𝑐¸ 𝑓º𝑁¸ 𝑒. (160)
+At a ﬁxed channel/ﬁeld, neighboring epoch threads therefore read neighboring values. The six
+ﬁelds are satellite 𝑥, 𝑦, 𝑧 , raw code, additive correction and nominal sigma.
+32.1 Exact FP64 bit transport in the texture path
+A CUDA linear texture resource uses an int2 channel. Each texel carries the 64 raw bits of one
+double; the device reconstructs the value using the low and high 32-bit words. The read uses
+an integer tex1Dfetch; there is no interpolation, normalized-coordinate lookup or conversion of
+ranges into ﬂoat values. [H4][N10]
+const int2 bits = tex1Dfetch<int2>(texture, integer_index);
+const double value = __hiloint2double(bits.y, bits.x);
+The global path reads the same double buﬀer directly. Both paths use the same solver and output
+record. Equality of decoded inputs is a data-representation property; it does not guarantee a
+texture speedup for this access pattern.
+32.2 Ownership and publication
+Device buﬀers and events use local ownership wrappers. A texture object is destroyed before
+its backing buﬀer. Each launched epoch has one writer. The program checks CUDA allocation,
+copies, launch and completion before publishing downloaded result ﬁles. A failed device call is
+an error, not a CPU fallback labelled as a GPU success.
+The ﬁrst chunk receives an untimed warmup. Device events measure subsequent kernel intervals
+and their sum is reported. CSV parsing, allocations, texture construction, host packing, uploads,
+downloads and the Python event adapter are outside that sum. A CPU loop interval and a full
+application latency are therefore distinct quantities.
+T om Klootwijk | 15 September 2026 59
+
+=== PAGE 60 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+33 The RTX 5070 Ti Laptop target and VRAM plan
+NVIDIA lists the RTX 5070 Ti Laptop GPU with a 12 GB GDDR7 memory conﬁguration.
+NVIDIA ’s CUDA table lists the GeForce RTX 5070 Ti family at compute capability 12.0; the build
+selects sm_120 and matching virtual code. CUDA 12.8 introduced compiler support for SM_120.
+These are supporting implementation facts, not equations supplied by the UGTS prototype. [H1–
+H3]
+The program’s –probe path records the actual device name, major/minor capability , driver/run-
+time versions, total/free memory and linear-texture limit. This edition’s targeted binary reports
+a mismatching capability rather than assuming that a marketing label guarantees the compiled
+architecture.
+33.1 Payload accounting
+The executed CPU build reports 72 bytes per epoch metadata record and 376 bytes per result. The
+ﬁxed observation representation is 32 6 8 = 1536 bytes per epoch, so the tested ABI payload is
+𝑀payload¹𝑁º = 𝑁¹72¸ 376¸ 1536º = 1984𝑁 bytes. (161)
+The 256-epoch demo therefore uses 507,904 payload bytes. A maximum chunk of 65,536 epochs
+uses 124 MiB before a separate 64 MiB planning margin. These ﬁgures do not count the entire
+driver/context or all host copies.
+Admission uses the actual free/total bytes, the user budget and reserve. The defaults are a 512
+MiB budget and 1536 MiB total-device reserve. After checking that each subtraction is valid,
+capacity is bounded by
+𝐵usable = min¹𝐵user, 0.7𝐹, 𝑇  𝑅reserveº  64 MiB. (162)
+The integer implementation rounds the free-memory fraction downward, caps each chunk at
+65,536 epochs and checks texture/index limits. Another process may consume memory after
+probing, so actual allocation errors still propagate.
+The package does not ﬁll all 12 GB to demonstrate activity. Useful payload depends on the
+batch; automatically leaving space for other laptop processes is a resource plan, not a claim of
+permanent texture-cache residency. No operating-system ring-0 driver or executable-code-in-
+texture mechanism is part of the CUDA interface.
+T om Klootwijk | 15 September 2026 60
+
+=== PAGE 61 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+34 Actual input and result ﬁles
+The executable reads two CSV ﬁles with exact headers. The source-to-domain model is recorded
+separately in profile.json; prepared real data must supply its own correction/product prove-
+nance.
+epochs.csv:
+epoch_id,t_rx_gpst_s,x0_m,y0_m,z0_m,b0_m,
+asa_mask,na_mask,boundary_mask
+observations.csv:
+epoch_id,channel,satellite_id,sx_rx_m,sy_rx_m,sz_rx_m,
+code_m,add_correction_m,sigma_m,ready
+The display above wraps the headers for readability; the actual ﬁles use one header line each.
+docs/INPUT.md deﬁnes their exact names, ranges and physical meaning. The reader rejects
+malformed headers, duplicate channels, nonﬁnite ﬁelds and invalid sigmas before passing data
+to a backend.
+34.1 Results
+solutions.csv retains one row per input epoch: source/time identity , solver and ﬁt status,
+iteration count, channel count, all four ASA ﬁelds, position/clock, formal diagonal covariance and
+residual statistics. residuals.csv records each active post-ﬁt channel when the solver converges.
+For a failed solve, estimate ﬁelds may contain the starting guess or a partial iterate. The status
+is authoritative; those ﬁelds must not be published as a valid ﬁx. Zero variances in an unevalu-
+ated result do not mean a perfectly known position. The parser and status record prevent that
+interpretation without hiding the original calculation state.
+run.json records the backend, timing scope, selected numerical settings and actual device report
+where available. ugts_events.jsonl and ugts_summary.json are produced by the explicit post-
+processing step. They do not replace the original solution or residual ﬁles.
+A new output directory is required for each run. Completed runs can be compared without
+silently overwriting earlier evidence. Corruption of a source ﬁle or a changed result is visible in
+the delivered integrity manifest or retained event chain.
+T om Klootwijk | 15 September 2026 61
+
+=== PAGE 62 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+35 Ordered coupled records and source lineage
+A CGK-R1 event binds the original solution and residuals, modeled position and velocity , executed
+J/K transition, complete native trace row , both compact keys, full time and prior digest. A
+condensed structural sketch is:
+{
+"version": "3.6.1.7", "profile": "CGK-R1",
+"trajectory_id": 0, "epoch_id": 0, "input_index": 0,
+"event": "COUPLED_OBSERVATION_ADVANCED",
+"observation": {"solver_record": {}, "epoch_record": {},
+"residual_records": [], "formal_variance_m2": {}},
+"modeled": {"enu_m": [], "ecef_m": [],
+"velocity_enu_m_s": [], "q": 0, "hoop_phi_rad": 0},
+"jk": {"before": 0, "j": 0, "k": 0, "after": 0},
+"native_state": {"complete executed trace row": "..."},
+"chart": {"up_m": 0, "time_gpst_s": 0, "winding": 0},
+"packing": {"contiguous_hex": "...", "morton_hex": "..."},
+"lineage": {"sources": {}, "native": {}},
+"previous_hash": "...", "record_hash": "..."
+}
+This is a structural sketch; the delivered exports contain full numeric arrays, source records, sta-
+tuses and hashes. Unavailable observations produce explicit prediction events; a failed mechanical
+advance produces a failure event. The modeled state is never presented as the original receiver
+measurement.
+The chain uses a domain-tagged SHA-256 of canonical local JSON and retains the prior head.
+It binds the emitted sequence to a retained reference. It is not a signature, a satellite-signal
+authentication primitive or proof that an upstream observation was physically true.
+Author attribution is included as supplied: T om Klootwĳk, with the identiﬁer and date in the
+release metadata. A full proﬁle/source digest remains separate from the 64-bit coordinate key or a
+one-bit event ﬁeld. This preserves the base engine’s identity/state distinction and U’s requirement
+that uncertainty and lineage survive packing. [A, retained M2 project contract] [U, pp. 8–10]
+T om Klootwijk | 15 September 2026 62
+
+=== PAGE 63 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+36 The retained deterministic satnav batch
+The shipped demo has 256 artiﬁcial receiver epochs. The anchor is a declared WGS84 location at
+52 latitude, 5 longitude and 100 m ellipsoidal height. Receiver points are generated from a local
+ENU path, with a known clock bias near 75,000 m. Satellite directions and ranges are constructed
+ﬁxtures, not a downloaded constellation or an observation session from the user’s laptop.
+The ﬁrst 128 cases are noiseless model data. The next ordinary cases add independent Gaussian
+ﬁxture noise with their speciﬁed sigmas. The ﬁnal six cases deliberately exercise failure and edge
+conditions. Corrections are labelled artiﬁcial additive test values, not an atmosphere or ephemeris
+model.
+Outcome Observed count / result
+Converged numerical epochs 253 of 256
+T oo few selected satellites 1
+Whole-word absorbed 1
+Rank-deﬁcient geometry 1
+Converged within chosen residual
+budget
+251
+Gross-outlier residual alert 1
+Exactly four, no residual redundancy 1
+The exact-four and 32-channel cases verify those interface boundaries. The outlier case adds an
+artiﬁcial 200 m error to one code observation. It converges to an incorrect candidate with a large
+residual alert, demonstrating why convergence and navigation reliability are not the same ﬁeld.
+The earlier observation-only geometry-support adapter emits 251 veriﬁed candidate records, three
+no-solution records and two unresolved candidates under its declared conditions. The exact-
+four case remains unresolved because no redundancy is present; the outlier remains unresolved
+because the chosen residual criteria are exceeded. CGK-R1 instead advances 253 observation-
+driven and three prediction-only states; residual classiﬁcations remain diagnostics beside the
+original solutions.
+These are ﬁnite results of a known model. The demo is useful for reviewing signs, units, frame
+adapters and implementation agreement. It is not a real-world accuracy measurement or a GPU
+speed result.
+T om Klootwijk | 15 September 2026 63
+
+=== PAGE 64 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+37 Independent results and error measures
+The C++ solve is compared against a separately written Python Householder solver. The compar-
+ison checks epoch identity , all mask ﬁelds, status/ﬁt, position and clock, formal covariance and
+residual statistics, yielding 4,828 checked comparisons over the 256 epochs.
+Cross-reference quantity Observed maximum
+Absolute state-component diﬀerence 1.210719347 10 8 m
+Formal covariance diagonal diﬀerence 6.394884622 10 14 m2
+The comparison tolerance for each state component is 10 4 m. Small algorithmic agreement does
+not make the underlying physical inputs exact; it shows that the two implementations solve the
+same declared ﬁnite problem to closely matching values.
+Fixture class Epochs 3D position RMSE Maximum error
+Noiseless 128 3.61 10 9 m 7.84 10 9 m
+Noisy 122 1.6017 m 3.3883 m
+Gross outlier 1 147.0987 m 147.0987 m
+Exactly four 1 1.23 10 8 m 1.23 10 8 m
+32 channels 1 5.71 10 9 m 5.71 10 9 m
+Errors above are measured only against the synthetic generating truth. The nanometre- scale
+noiseless ﬁgures reﬂect arithmetic roundoﬀ in matched artiﬁcial data, not an achievable GNSS
+hardware accuracy. The noisy ﬁxture demonstrates the selected noise model; a real receiver’s
+error includes its actual correction/model limitations.
+Formal covariance, predicted geometry quality and empirical truth error are diﬀerent quanti-
+ties. The package keeps them separate, following the distinction made in the positioning-error
+reference. [G5]
+T om Klootwijk | 15 September 2026 64
+
+=== PAGE 65 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+38 Prior release veriﬁcation record
+This section retains the 3.6.1.5 preparation record. Archived 3.6.1.6 evidence is given in the SRK-
+R1 validation section; historical 3.6.1.7 checks appear in the coupled implementation validation
+section. Retained 3.6.1.8 evidence appears in Section 2.9. The following unexecuted CUDA
+statements refer to the prior preparation environment only.
+Category Recorded result
+CPU C++ build and CTest Passed
+C++ explicit checks 105,559 passed
+Python UGTS/geodesy tests 18 passed
+Command-line scenarios 11 passed
+Independent solver comparisons 4,828 passed
+CPU Address/UndeﬁnedBehavior Sanitizer CTest passed
+CUDA compilation not_run: nvcc unavailable
+CUDA execution / memory sanitizer not_run: no accessible NVIDIA GPU
+Windows native build not_run in preparation
+Live GNSS observation validation Not performed; synthetic ﬁxtures only
+The C++ count includes all 65,536 possible 16-bit population-count cases and 10,000 independent
+random word-mask comparisons. It also checks the full JK truth table, QR identities, covariance,
+rank rejection and the retained whole-word rule. A large assertion count is not a count of separate
+receivers tested.
+The Python suite checks both key codecs against the source’s golden pair and 5,000 random tuples,
+all preﬁx lengths for the reference key , quantization bounds, full winding, two separate topologies,
+cone/sweep relations, the jitter-interval distinction, geodetic/ENU round trips and literal OTAN2
+semantics.
+The CLI scenarios include malformed IDs/channels, negative sigma, NaN input, invalid back-
+end/options, existing-output protection, a normal run and an iteration-limit run. These prior
+outcomes remain in the preserved sibling releases, with earlier source test claims kept separate
+from these actual executions.
+In the prior preparation, the device validation script was invoked and recorded its unavailable-tool
+result. Later releases supply separate actual laptop execution records. No general CUDA speedup
+or texture-residency claim is made in this edition.
+T om Klootwijk | 15 September 2026 65
+
+=== PAGE 66 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+39 Build, run and verify on the requested laptop
+Use a CUDA-supported host compiler, CMake 3.24 or newer, and CUDA T oolkit 12.8 or newer
+for the requested SM120 target. The installed NVIDIA driver must support the chosen runtime/-
+toolchain. This speciﬁes a minimum architecture-capable toolkit, not a claim that 12.8 is the
+newest available release. [H2, H3]
+cmake -S . -B build_gpu -DSATNAV_ENABLE_CUDA=ON \
+-DCMAKE_BUILD_TYPE=Release
+cmake --build build_gpu --config Release --parallel 2
+ctest --test-dir build_gpu -C Release --output-on-failure
+./build_gpu/satnav --probe
+./build_gpu/satnav --input examples/demo --out run_gpu \
+--backend cuda --read texture --verify
+python tools/verify_run.py --input examples/demo --run run_gpu
+python tools/ugts_handoff.py --input examples/demo --run run_gpu
+On a Windows multi-conﬁguration build, use the following executable path:
+build_gpu/Release/satnav.exe
+Run conﬁguration from the matching x64 compiler developer terminal so that CMake can locate
+the host toolchain.
+39.1 Complete device comparison
+python tools/validate_gpu.py --sanitizer
+The script records compilation, device probing, texture/global runs, shared CPU comparisons,
+independent Python comparisons and requested memcheck results. It uses fresh run directories.
+Missing required tooling produces a separate unavailable status and exit code 3. A real build/test
+error remains a failed status.
+39.2 CPU-only review
+cmake -S . -B build_cpu -DCMAKE_BUILD_TYPE=Release
+cmake --build build_cpu --config Release --parallel 2
+./build_cpu/satnav --input examples/demo --out run_cpu
+python tools/verify_run.py --input examples/demo --run run_cpu
+python -m unittest discover -s tests -p "test_*.py" -v
+The retained SATNA V reference uses the Python standard library. The coupled reference addi-
+tionally requires NumPy , installed fromrequirements.txt.
+T om Klootwijk | 15 September 2026 66
+
+=== PAGE 67 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+40 Integration decisions and source issue register
+ID Decision Eﬀect
+N01 Corrected-code satnav model The GNSS observation equation and solver are explicit new
+additions, not attributed to U.
+N02 Full receiver state retained Solve in 3D ECEF plus clock; use a separate local log chart
+and retain Up and provenance.
+N03 Independent QR methods Shared CPU/CUDA Givens implementation and
+independent Python Householder solve; named rank and
+convergence policy.
+N04 Fixed channel-to-bit mapping One epoch is one at-most-32-channel word. Boundary
+absorption stays whole-word.
+N05 Source key layouts preserved Exact contiguous/Morton pair retained; quantization ties
+named; key does not replace full state.
+N06 T wo jitter intervals separated Explicit source equality issue documented;
+perturbation-family and measurement-centred intervals are
+not silently equated.
+N07 Bounded sweep
+interpretation
+Translation-only analytic interval; ﬂoating arithmetic and
+nonnested grids not promoted to stronger certiﬁcates.
+N08 T opology does not rewrite
+Earth
+Bundle/reﬂection helpers remain separate local contracts,
+not GNSS propagation rules.
+N09 Computational event
+semantics
+Declared support/residual policies produce observation
+records, not a protection level, spoof-proof ﬁx or actuator
+command.
+N10 Recorded hardware evidence CUDA was unexecuted in 3.6.1.5 preparation; current device
+builds, replay and memcheck results are recorded separately.
+N11 Explicit literal feedback SRK-R1 composes ASA/NA and JK with supplied Boolean
+expressions and synchronous state carry.
+N12 Complete geometric coupling CGK-R1 deﬁnes circle-plus, predicate encoders,
+state-dependent mechanics and eigenmatrix; the actual
+handoﬀ executes and publishes the coupled state.
+N13 Live receiver positioning LIVE-GPS-L1-R1 decodes real GPS observations and
+streamed ephemerides, applies explicit physical corrections
+and solves the remote receiver position during capture.
+These decisions deﬁne the explicit proﬁles of aTOMos 3.6.1 with the retained UGTS prototype
+integrated at explicit interfaces. They do not discard the user’s operator vocabulary or pretend
+that all missing GNSS physics were already encoded in a name.
+A later variant can extend the estimator with new states, observable types or correction adapters.
+It must identify the changed observation model and preserve a projection or compatibility test to
+this proﬁle where appropriate. An unreported inter-system bias, new residual exclusion rule or
+changed topology is not a transparent optimization.
+T om Klootwijk | 15 September 2026 67
+
+=== PAGE 68 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+41 Source and artifact inventory
+U. UGTS_KC_3_6_2_SCLP_T om_Klootwĳk(1).pdf. The ﬁle has 19 physical pages and a 16-page
+numbered main/appendix sequence. The source’s referenced 13-page precursor and software
+ZIP were not supplied. The inherited source manifest records its PDF SHA-256 as
+6987490a0a7b7ed76b0091057a2e69ab831fee786434a0b4219782923f5ea580
+The U page references in this formalization point to the printed main numbers. For example, its
+key table on printed p. 8 is physical PDF page 11. The relevant ﬁgure, table and jitter-equation
+pages were inspected as rendered pages as well as text.
+A. aTOMos v3.6.1 / M2 source and code contract in this project conversation. The prior archive
+was not mounted in this turn; the specialization preserves the written ASA/JK/OTAN2 contracts
+rather than claiming a binary patch to an unavailable artifact. The actual new source is included
+and tested to the extent recorded above.
+Delivered ﬁle family Purpose
+include/, src/, cuda/ Shared solver, executable and real CUDA backend source.
+python/ Independent solution and source-derived UGTS/geodesy
+helpers.
+examples/demo/ Prepared artiﬁcial epochs, observations, truth and proﬁle.
+tests/, results/ Reproducible checks and the actual recorded outcomes.
+tools/ Build/review , independent comparison, event adapter and
+integrity tools.
+docs/ This editable formalization, input contract and
+source-decision register.
+source/manifest.json Exact source availability and ﬁngerprint record.
+SHA256SUMS.txt Delivered-byte integrity manifest.
+Source font ﬁles and proprietary binaries are not distributed. The current uploaded UGTS refer-
+ence may be retained separately for source comparison; its equations and selected mechanisms
+are integrated into this volume instead of concatenating unrelated older transcripts into the kernel
+package.
+T om Klootwijk | 15 September 2026 68
+
+=== PAGE 69 ===
+aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE
+Primary implementation references
+Recorded by the 3.6.1.5 preparation, 14 September 2026. These external references support the
+satnav model and hardware contract; they are separate from the user’s source corpus.
+G1 ESA Navipedia, J. Sanz Subirana, J.M. Juan Zornoza and M. Hernández-Pajares, Code Based Position-
+ing (SPS). Four-state model, correction terms, linearized geometry and iterative position update.
+G2 ESA Navipedia, Satellite Coordinates Computation . Emission-time satellite state and reception-time
+frame treatment.
+G3 ESA Navipedia, Transformations between ECEF and ENU coordinates . Local frame conversion and
+angular conventions.
+G4 ESA Navipedia, Parameters adjustment. Linearized residual and least-squares framework.
+G5 ESA Navipedia, Positioning Error. Formal covariance, predicted geometry and measured error distin-
+guished.
+G6 NGA Oﬃce of Geomatics, World Geodetic System 1984 . Ellipsoid/reference-system deﬁnition and
+constants used in the coordinate utility.
+H1 NVIDIA, GeForce RTX 50 Series Laptops . RTX 5070 Ti Laptop memory speciﬁcation.
+H2 NVIDIA, CUDA GPU Compute Capability . GeForce RTX 5070 Ti family listed at compute capability
+12.0.
+H3 NVIDIA, CUDA 12.8 Features Archive. Introduction of SM_120 compiler support.
+H4 NVIDIA, CUDA Runtime API: Texture Object Management . Linear resource and element-read con-
+tract.
+aTOMos v3.6.1.9 — Orbital seeds and literal state
+T om Klootwĳk NL200678942 10-07-1990
+Proﬁles: ORBIT-SEED-R1, LIVE-GPS-L1-R1, CGK-R1, SRK-R1 and SATNA V-R1.
+Release date: 15 September 2026.
+Compact explicit state, timestamp reconstruction, two ASA/NA sets, synchronous JK,
+ground-station horizons and measured forecast limits.
+T om Klootwijk | 15 September 2026 69

@@ -1,0 +1,1009 @@
+{
+  "deduplication": "Earlier source filename wins, retaining the previous day midnight estimate; conflicting source samples are recorded.",
+  "GBM": {
+    "satellites": {
+      "C01": {
+        "samples": 1730,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 42142.38104652279,
+        "radius_max_km": 42185.50393034599
+      },
+      "C03": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 42131.36822340772,
+        "radius_max_km": 42200.02303399945
+      },
+      "C05": {
+        "samples": 2018,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 42109.143721023895,
+        "radius_max_km": 42220.97043313298
+      },
+      "C06": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 41982.569116322,
+        "radius_max_km": 42345.90181608039
+      },
+      "C07": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 41995.92557016107,
+        "radius_max_km": 42324.979809287186
+      },
+      "C59": {
+        "samples": 1730,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 42156.956533508994,
+        "radius_max_km": 42170.14421652063
+      },
+      "G01": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 26554.80033303264,
+        "radius_max_km": 26567.249665433093
+      },
+      "G05": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 26411.75691452065,
+        "radius_max_km": 26709.474638922296
+      },
+      "G12": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 26322.070876596958,
+        "radius_max_km": 26800.14231234656
+      },
+      "J02": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 38993.39758763065,
+        "radius_max_km": 45330.98779916018
+      },
+      "J07": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 42155.006175471215,
+        "radius_max_km": 42176.89516885831
+      }
+    },
+    "flags": {},
+    "duplicate_midnight_count": 69,
+    "duplicate_midnight_max_difference_m": 4.789505403842799,
+    "duplicate_midnight_details": [
+      {
+        "satellite": "C01",
+        "gpst_s": 1419811200.0,
+        "difference_m": 1.1679216638252745,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C03",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.3302075128178306,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C05",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.7925761771525687,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.2968181253899406,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.16232682941675056,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C59",
+        "gpst_s": 1419811200.0,
+        "difference_m": 2.848923481244374,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.4086171804478462,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.02722131461024456,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.035524641069871535,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.16454482988481908,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J07",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.622592171251327,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C03",
+        "gpst_s": 1419897600.0,
+        "difference_m": 1.0989581438657612,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C05",
+        "gpst_s": 1419897600.0,
+        "difference_m": 1.915728060834724,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.3377735947052888,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.08897752520393525,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C59",
+        "gpst_s": 1419897600.0,
+        "difference_m": 1.680769465740009,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.5720777915174358,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.06300000048109466,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.02973213810808174,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.20873428121258125,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J07",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.5308690909455939,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C03",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.3671334967538454,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C05",
+        "gpst_s": 1419984000.0,
+        "difference_m": 4.1576181856876815,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.24799596868594007,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.09092304519281165,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.473026427491032,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.04370354700464417,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.027892650775242,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.2374110373797734,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J07",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.5775932836435269,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C03",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.7948012334462071,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C05",
+        "gpst_s": 1420070400.0,
+        "difference_m": 4.789505403842799,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.38580953807688784,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.07435724596926244,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.46544387395592185,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.043462630505512884,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.019390719630235802,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.38065600931012944,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J07",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.8870687692738828,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C01",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.6865930380549149,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C03",
+        "gpst_s": 1420156800.0,
+        "difference_m": 1.1219652403326732,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.5208781062554746,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.15434053404066836,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.44022380613744855,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.040012497762961854,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.028740215916810776,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.19179676807175283,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J07",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.5327982772592775,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C01",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.9016551472818056,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C03",
+        "gpst_s": 1420243200.0,
+        "difference_m": 1.2246930231021051,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.31554080165328363,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.11970797681567283,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C59",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.7545952551540597,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.41897255342645634,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.060942594988153846,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.038065731979699056,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.1441422936837595,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J07",
+        "gpst_s": 1420243200.0,
+        "difference_m": 1.0624674123060698,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C01",
+        "gpst_s": 1420329600.0,
+        "difference_m": 2.107233972550252,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C03",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.8937191945970799,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C05",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.3991240381389383,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.14500689622395996,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.2668801255384422,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C59",
+        "gpst_s": 1420329600.0,
+        "difference_m": 2.535239239449303,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.42991394488465745,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.05492722608834823,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.0550908321799988,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.3577541054056526,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J07",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.3015228041568922,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3"
+      }
+    ]
+  },
+  "COD": {
+    "satellites": {
+      "G01": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 26554.80047824953,
+        "radius_max_km": 26567.249565209317
+      },
+      "G05": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 26411.756892968497,
+        "radius_max_km": 26709.474608451437
+      },
+      "G12": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 26322.07086805154,
+        "radius_max_km": 26800.14232143054
+      },
+      "C06": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 41982.56897685029,
+        "radius_max_km": 42345.90193660245
+      },
+      "C07": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 41995.925583796954,
+        "radius_max_km": 42324.97974501822
+      },
+      "J02": {
+        "samples": 2305,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420416000.0,
+        "radius_min_km": 38993.39763965155,
+        "radius_max_km": 45330.98786421957
+      }
+    },
+    "flags": {},
+    "duplicate_midnight_count": 42,
+    "duplicate_midnight_max_difference_m": 0.0839821413337953,
+    "duplicate_midnight_details": [
+      {
+        "satellite": "G01",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.009055384771178098,
+        "later_source": "COD0MGXFIN_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.004898980288571669,
+        "later_source": "COD0MGXFIN_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.005744562939655704,
+        "later_source": "COD0MGXFIN_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.0694046128749566,
+        "later_source": "COD0MGXFIN_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.049203656585307655,
+        "later_source": "COD0MGXFIN_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1419811200.0,
+        "difference_m": 0.03841873872249277,
+        "later_source": "COD0MGXFIN_20250020000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.015811387476213943,
+        "later_source": "COD0MGXFIN_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.008306621636702144,
+        "later_source": "COD0MGXFIN_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.020832667924904,
+        "later_source": "COD0MGXFIN_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.023537206075842594,
+        "later_source": "COD0MGXFIN_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.011045357262676076,
+        "later_source": "COD0MGXFIN_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1419897600.0,
+        "difference_m": 0.07692853817769353,
+        "later_source": "COD0MGXFIN_20250030000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.006708203782559485,
+        "later_source": "COD0MGXFIN_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.007348468658540525,
+        "later_source": "COD0MGXFIN_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.00632455635701216,
+        "later_source": "COD0MGXFIN_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.051419838017375465,
+        "later_source": "COD0MGXFIN_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.05162363718545484,
+        "later_source": "COD0MGXFIN_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1419984000.0,
+        "difference_m": 0.03469870188172594,
+        "later_source": "COD0MGXFIN_20250040000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.021236758756205863,
+        "later_source": "COD0MGXFIN_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.007280109547459964,
+        "later_source": "COD0MGXFIN_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.011532562708375167,
+        "later_source": "COD0MGXFIN_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.0710844560480436,
+        "later_source": "COD0MGXFIN_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.08244998326297072,
+        "later_source": "COD0MGXFIN_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420070400.0,
+        "difference_m": 0.059143889376367983,
+        "later_source": "COD0MGXFIN_20250050000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.018466185010822925,
+        "later_source": "COD0MGXFIN_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.006082761996256191,
+        "later_source": "COD0MGXFIN_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.006782328073883901,
+        "later_source": "COD0MGXFIN_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.051516987708380785,
+        "later_source": "COD0MGXFIN_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.029563493890870714,
+        "later_source": "COD0MGXFIN_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420156800.0,
+        "difference_m": 0.01649242497991047,
+        "later_source": "COD0MGXFIN_20250060000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.007071066995271298,
+        "later_source": "COD0MGXFIN_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.002449488623443383,
+        "later_source": "COD0MGXFIN_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.013928392733339973,
+        "later_source": "COD0MGXFIN_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.044181447684979926,
+        "later_source": "COD0MGXFIN_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.01878829016971841,
+        "later_source": "COD0MGXFIN_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420243200.0,
+        "difference_m": 0.01926135795350534,
+        "later_source": "COD0MGXFIN_20250070000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G01",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.01268857609714145,
+        "later_source": "COD0MGXFIN_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G05",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.004242639187394175,
+        "later_source": "COD0MGXFIN_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "G12",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.006082763144569787,
+        "later_source": "COD0MGXFIN_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C06",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.0839821413337953,
+        "later_source": "COD0MGXFIN_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "C07",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.02372762280513961,
+        "later_source": "COD0MGXFIN_20250080000_01D_05M_ORB.SP3"
+      },
+      {
+        "satellite": "J02",
+        "gpst_s": 1420329600.0,
+        "difference_m": 0.031780498285344856,
+        "later_source": "COD0MGXFIN_20250080000_01D_05M_ORB.SP3"
+      }
+    ]
+  },
+  "IGS": {
+    "satellites": {
+      "G01": {
+        "samples": 768,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415100.0,
+        "radius_min_km": 26554.80638088576,
+        "radius_max_km": 26567.23165256747
+      },
+      "G05": {
+        "samples": 768,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415100.0,
+        "radius_min_km": 26411.78908326252,
+        "radius_max_km": 26709.411364420648
+      },
+      "G12": {
+        "samples": 768,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415100.0,
+        "radius_min_km": 26322.07417401834,
+        "radius_max_km": 26799.946158934417
+      }
+    },
+    "flags": {},
+    "duplicate_midnight_count": 0,
+    "duplicate_midnight_max_difference_m": 0,
+    "duplicate_midnight_details": []
+  },
+  "WUM": {
+    "satellites": {
+      "G05": {
+        "samples": 2304,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 26411.756897666553,
+        "radius_max_km": 26709.4746258098
+      },
+      "G12": {
+        "samples": 2304,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 26322.07087138096,
+        "radius_max_km": 26800.14233406173
+      },
+      "C01": {
+        "samples": 2016,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 42142.38085471794,
+        "radius_max_km": 42185.50417216635
+      },
+      "C03": {
+        "samples": 2304,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 42131.36816714525,
+        "radius_max_km": 42200.023036866674
+      },
+      "C05": {
+        "samples": 2016,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 42109.14330970792,
+        "radius_max_km": 42220.97047833909
+      },
+      "C06": {
+        "samples": 2304,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 41982.56904144715,
+        "radius_max_km": 42345.901913861715
+      },
+      "C07": {
+        "samples": 2304,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 41995.925612435814,
+        "radius_max_km": 42324.979656137104
+      },
+      "J02": {
+        "samples": 2304,
+        "first_gpst_s": 1419724800.0,
+        "last_gpst_s": 1420415700.0,
+        "radius_min_km": 38993.397524719345,
+        "radius_max_km": 45330.987731999616
+      }
+    },
+    "flags": {},
+    "duplicate_midnight_count": 0,
+    "duplicate_midnight_max_difference_m": 0,
+    "duplicate_midnight_details": []
+  },
+  "cross_product_disagreement_m": {
+    "GBM_vs_COD": {
+      "G01": {
+        "n": 2305,
+        "rms": 0.16374659938085534,
+        "max": 0.3234996131547822,
+        "p95": 0.26736865956380906
+      },
+      "G05": {
+        "n": 2305,
+        "rms": 0.029494048853421412,
+        "max": 0.0886227954530119,
+        "p95": 0.04802083020775712
+      },
+      "G12": {
+        "n": 2305,
+        "rms": 0.02325148743092508,
+        "max": 0.04588027862203035,
+        "p95": 0.03706750658428025
+      },
+      "C06": {
+        "n": 2305,
+        "rms": 0.35446460867505036,
+        "max": 0.610084426319614,
+        "p95": 0.5231500748836199
+      },
+      "C07": {
+        "n": 2305,
+        "rms": 0.1257894600757152,
+        "max": 0.22525540894529986,
+        "p95": 0.17808986490365855
+      },
+      "J02": {
+        "n": 2305,
+        "rms": 0.1444141594803743,
+        "max": 0.38359613352612904,
+        "p95": 0.21654791947502475
+      }
+    },
+    "GBM_vs_IGS": {
+      "G01": {
+        "n": 768,
+        "rms": 0.1451760962997187,
+        "max": 0.379006595865814,
+        "p95": 0.25257473953183474
+      },
+      "G05": {
+        "n": 768,
+        "rms": 0.019218318078738188,
+        "max": 0.061229078208794134,
+        "p95": 0.03085449845002614
+      },
+      "G12": {
+        "n": 768,
+        "rms": 0.015627999608571225,
+        "max": 0.03993745206832255,
+        "p95": 0.02501999201294489
+      }
+    },
+    "GBM_vs_WUM": {
+      "G05": {
+        "n": 2304,
+        "rms": 0.026299968965978658,
+        "max": 0.07704544153274458,
+        "p95": 0.044732538662912796
+      },
+      "G12": {
+        "n": 2304,
+        "rms": 0.021222214204672282,
+        "max": 0.05976621031219005,
+        "p95": 0.03421987536204162
+      },
+      "C01": {
+        "n": 1728,
+        "rms": 3.945165717491565,
+        "max": 5.889660511087312,
+        "p95": 5.785852224682672
+      },
+      "C03": {
+        "n": 2304,
+        "rms": 2.073833593157025,
+        "max": 3.57509636025586,
+        "p95": 3.4802037316311885
+      },
+      "C05": {
+        "n": 2016,
+        "rms": 2.570711335264648,
+        "max": 4.531345719714169,
+        "p95": 4.451997976616717
+      },
+      "C06": {
+        "n": 2304,
+        "rms": 0.16915550696904738,
+        "max": 0.5851273323226888,
+        "p95": 0.2855503458965795
+      },
+      "C07": {
+        "n": 2304,
+        "rms": 0.12686962045647526,
+        "max": 0.3543896148397805,
+        "p95": 0.19683749997703032
+      },
+      "J02": {
+        "n": 2304,
+        "rms": 0.17698499592811162,
+        "max": 0.40417942069430945,
+        "p95": 0.268577733253674
+      }
+    }
+  }
+}

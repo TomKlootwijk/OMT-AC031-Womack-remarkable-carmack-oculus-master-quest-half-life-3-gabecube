@@ -1,0 +1,38 @@
+{
+  "schema": "ORBIT-CONFIRMATION-DATA-PROTOCOL-1",
+  "defined_utc": "2026-09-15T04:02:59.704898+00:00",
+  "cutoff_gpst_seconds": 1422489600,
+  "cutoff_label": "2025-02-02 00:00 GPST",
+  "training_bounds_seconds": [
+    -691200,
+    0
+  ],
+  "validation_bounds_seconds": [
+    0,
+    604800
+  ],
+  "validation_lower_bound_exclusive": true,
+  "primary_reference": {
+    "G05": "GFZ rapid SP3 holdout/",
+    "C03": "GFZ rapid SP3 holdout/; partial coverage explicitly retained",
+    "C06": "GFZ rapid SP3 holdout/",
+    "CHANDRA": "Horizons geometric ICRF/TDB holdout/"
+  },
+  "alternate_source": "holdout_wum preserved as ancillary source only; also lacks C03 Feb6; no switch chosen from error comparisons",
+  "source_selection_basis": "Preselected four targets and Feb2 cutoff; source coverage checks only. No predicted target states or prediction errors evaluated during acquisition.",
+  "frame_policy": "Preserve IGS20 training and IGb20 GFZ holdout labels; apply official zero datum transformation from IGSMAIL-8543; no fitted alignment",
+  "C03_coverage": {
+    "expected_5min_holdout_rows": 2016,
+    "available_GFZ_rows": 1441,
+    "missing_rows": 575,
+    "maximum_gap_s": 172800,
+    "gap_open_t_s": [
+      259200,
+      432000
+    ],
+    "full_window_tolerance_verdict": "indeterminate_due_to_reference_gap"
+  },
+  "prior_future_error_inspection": false,
+  "model_selection_requirement": "Freeze the R2 selection procedure and construct each seed from training/ only before computing any confirmation errors. Do not retune after these results are read.",
+  "retrospective_product_qualification": "Earlier provider estimates can use later observations internally; this is a retrospective confirmation of a selection procedure, not proof of live product availability."
+}

@@ -1,0 +1,210 @@
+{
+  "schema": "IERS-BULLETINA-20250130-EOP-TABLE-1",
+  "published_date": "2025-01-30",
+  "source": "bulletina-xxxviii-005.txt",
+  "source_sha256": "1f8143aae17b77da49b1fe0313d549e84fb286c0e2ff0682756b6bcc7cdfa378",
+  "source_url": "https://datacenter.iers.org/data/6/bulletina-xxxviii-005.txt",
+  "time_scale": "UTC MJD",
+  "prediction_uncertainties": "Sxy=0.00068*(MJD-60705)^0.80 arcsec; St=0.00025*(MJD-60705)^0.75 s; estimates, not guaranteed bounds",
+  "lod_note": "No observed LOD column; derivatives from DUT1 must be identified as derived.",
+  "rows": [
+    {
+      "utc_date": "2025-01-24",
+      "mjd_utc": 60699,
+      "xp_arcsec": 0.11832,
+      "yp_arcsec": 0.3047,
+      "dut1_s": 0.044803,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 1.5e-05
+    },
+    {
+      "utc_date": "2025-01-25",
+      "mjd_utc": 60700,
+      "xp_arcsec": 0.1161,
+      "yp_arcsec": 0.30511,
+      "dut1_s": 0.045478,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 1.4e-05
+    },
+    {
+      "utc_date": "2025-01-26",
+      "mjd_utc": 60701,
+      "xp_arcsec": 0.11386,
+      "yp_arcsec": 0.30562,
+      "dut1_s": 0.046177,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 1.5e-05
+    },
+    {
+      "utc_date": "2025-01-27",
+      "mjd_utc": 60702,
+      "xp_arcsec": 0.11177,
+      "yp_arcsec": 0.30607,
+      "dut1_s": 0.04693,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 1.3e-05
+    },
+    {
+      "utc_date": "2025-01-28",
+      "mjd_utc": 60703,
+      "xp_arcsec": 0.10977,
+      "yp_arcsec": 0.30642,
+      "dut1_s": 0.047534,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 1.3e-05
+    },
+    {
+      "utc_date": "2025-01-29",
+      "mjd_utc": 60704,
+      "xp_arcsec": 0.10802,
+      "yp_arcsec": 0.30695,
+      "dut1_s": 0.04788,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 1.3e-05
+    },
+    {
+      "utc_date": "2025-01-30",
+      "mjd_utc": 60705,
+      "xp_arcsec": 0.10663,
+      "yp_arcsec": 0.30767,
+      "dut1_s": 0.047976,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 5.5e-05
+    },
+    {
+      "utc_date": "2025-01-31",
+      "mjd_utc": 60706,
+      "xp_arcsec": 0.1053,
+      "yp_arcsec": 0.3084,
+      "dut1_s": 0.0478,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.00068,
+      "yp_error_arcsec": 0.00068,
+      "dut1_error_s": 0.00025
+    },
+    {
+      "utc_date": "2025-02-01",
+      "mjd_utc": 60707,
+      "xp_arcsec": 0.1042,
+      "yp_arcsec": 0.3093,
+      "dut1_s": 0.04734,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.001183948766082729,
+      "yp_error_arcsec": 0.001183948766082729,
+      "dut1_error_s": 0.00042044820762685725
+    },
+    {
+      "utc_date": "2025-02-02",
+      "mjd_utc": 60708,
+      "xp_arcsec": 0.1031,
+      "yp_arcsec": 0.3101,
+      "dut1_s": 0.04672,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.001637592785990871,
+      "yp_error_arcsec": 0.001637592785990871,
+      "dut1_error_s": 0.0005698767642386944
+    },
+    {
+      "utc_date": "2025-02-03",
+      "mjd_utc": 60709,
+      "xp_arcsec": 0.1021,
+      "yp_arcsec": 0.3109,
+      "dut1_s": 0.04609,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.002061374530454142,
+      "yp_error_arcsec": 0.002061374530454142,
+      "dut1_error_s": 0.0007071067811865476
+    },
+    {
+      "utc_date": "2025-02-04",
+      "mjd_utc": 60710,
+      "xp_arcsec": 0.101,
+      "yp_arcsec": 0.3118,
+      "dut1_s": 0.04557,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.002464250856504165,
+      "yp_error_arcsec": 0.002464250856504165,
+      "dut1_error_s": 0.0008359253812205275
+    },
+    {
+      "utc_date": "2025-02-05",
+      "mjd_utc": 60711,
+      "xp_arcsec": 0.1001,
+      "yp_arcsec": 0.3125,
+      "dut1_s": 0.04529,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.002851214644588044,
+      "yp_error_arcsec": 0.002851214644588044,
+      "dut1_error_s": 0.0009584146563694087
+    },
+    {
+      "utc_date": "2025-02-06",
+      "mjd_utc": 60712,
+      "xp_arcsec": 0.0991,
+      "yp_arcsec": 0.3133,
+      "dut1_s": 0.04533,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.0032254279477862895,
+      "yp_error_arcsec": 0.0032254279477862895,
+      "dut1_error_s": 0.0010758792676647127
+    },
+    {
+      "utc_date": "2025-02-07",
+      "mjd_utc": 60713,
+      "xp_arcsec": 0.0982,
+      "yp_arcsec": 0.3141,
+      "dut1_s": 0.04565,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.0035890615173022732,
+      "yp_error_arcsec": 0.0035890615173022732,
+      "dut1_error_s": 0.001189207115002721
+    },
+    {
+      "utc_date": "2025-02-08",
+      "mjd_utc": 60714,
+      "xp_arcsec": 0.0973,
+      "yp_arcsec": 0.3148,
+      "dut1_s": 0.04615,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.003943691371660797,
+      "yp_error_arcsec": 0.003943691371660797,
+      "dut1_error_s": 0.001299038105676658
+    },
+    {
+      "utc_date": "2025-02-09",
+      "mjd_utc": 60715,
+      "xp_arcsec": 0.0965,
+      "yp_arcsec": 0.3156,
+      "dut1_s": 0.04669,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.004290509942465315,
+      "yp_error_arcsec": 0.004290509942465315,
+      "dut1_error_s": 0.0014058533129758727
+    },
+    {
+      "utc_date": "2025-02-10",
+      "mjd_utc": 60716,
+      "xp_arcsec": 0.0956,
+      "yp_arcsec": 0.3164,
+      "dut1_s": 0.04718,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.004630448526715166,
+      "yp_error_arcsec": 0.004630448526715166,
+      "dut1_error_s": 0.0015100263386343092
+    }
+  ]
+}

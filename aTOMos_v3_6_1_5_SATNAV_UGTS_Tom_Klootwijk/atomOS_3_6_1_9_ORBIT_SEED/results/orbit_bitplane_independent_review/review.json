@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "scope": "Independent bit-plane byte layout, inner-payload rejection, numeric bits and model identities",
+  "checks": {
+    "independent_layout_counts": [
+      0,
+      1,
+      2,
+      63,
+      64,
+      65,
+      127,
+      128,
+      129,
+      257
+    ],
+    "numeric_extremes_and_signed_zero_exact": true,
+    "both_codecs_model_digest_equal": true,
+    "inner_corruption_rejections": [
+      "wrong_template_length",
+      "wrong_word_count",
+      "excess_word_count",
+      "nonzero_final_lane_padding",
+      "extra_plane_word",
+      "truncated_plane_word",
+      "trailing_deflate_stream"
+    ]
+  },
+  "known_encoder_structural_limit_bug": "Resolved: encoder now rejects the reproduced 100001-entry container for both codecs before producing a file; shared recursive item budget and container checks added.",
+  "structural_limit_fix_verified": true
+}

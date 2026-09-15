@@ -1,0 +1,374 @@
+{
+  "object_id": "C06",
+  "orbit_class": "IGSO",
+  "model_file": "C06.json",
+  "model_sha256": "c66117181899257ebc21cd080fd6b20b63e590ffce006a7901109b600be21319",
+  "native_binary_sha256": "f009464be2f64ebae827b95430bd8bffb7c6ffc2bb9b4dbf341e948663adb96b",
+  "cutoff_gpst_s": 1419811200.0,
+  "selection_policy": "Frozen model; all reference samples strictly after seed epoch and inside declared model domain",
+  "excluded_samples_at_or_before_cutoff": 289,
+  "first_holdout_seconds": 300.0,
+  "last_holdout_seconds": 604800.0,
+  "maximum_sample_gap_seconds": 300.0,
+  "backend": "cuda",
+  "native_batch_wall_seconds": 4.069092699999601,
+  "position_error": {
+    "count": 2016,
+    "rms_m": 572.1610561229248,
+    "max_m": 1237.2416115679423,
+    "median_m": 347.2937808762971,
+    "p95_m": 1161.9577085175188
+  },
+  "threshold_horizons": [
+    {
+      "threshold_m": 10.0,
+      "observed_exceedance": true,
+      "first_sample_seconds": 31200.0,
+      "first_sample_error_m": 10.068851509835165,
+      "previous_sample_seconds": 30900.0,
+      "previous_sample_error_m": 9.843862063911528,
+      "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+    },
+    {
+      "threshold_m": 100.0,
+      "observed_exceedance": true,
+      "first_sample_seconds": 136200.0,
+      "first_sample_error_m": 100.33916481959159,
+      "previous_sample_seconds": 135900.0,
+      "previous_sample_error_m": 99.70636405315041,
+      "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+    },
+    {
+      "threshold_m": 1000.0,
+      "observed_exceedance": true,
+      "first_sample_seconds": 553200.0,
+      "first_sample_error_m": 1001.3933981679446,
+      "previous_sample_seconds": 552900.0,
+      "previous_sample_error_m": 999.3858042367239,
+      "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+    },
+    {
+      "threshold_m": 10000.0,
+      "observed_exceedance": false,
+      "tested_through_seconds": 604800.0,
+      "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+    }
+  ],
+  "reference": {
+    "sources": [
+      {
+        "file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+        "sha256": "b621496c51ff39c68966dbb81b9a23b9ea0157d9d6edb484b7decd84a7b6efc2",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+        "sha256": "e323f161a666f7cfe879b852279df96a97b613af3acd352047881d85a32d4a34",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+        "sha256": "2b91a83a750d3ce7153f60627ccb4e241a191987a8d2baf765114d59632e7fa5",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+        "sha256": "fc872a1ee3c4cd09044d4b97c28067adeef9e3d8335e76902ccfefe549406c4c",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+        "sha256": "22819dea348770a047a711dcec73d4eb18f2b26e33dd835d25dde6ff97f58f83",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+        "sha256": "76fdcc79c40a3f67d739134a6adb2350e12005e89b19ca0430ace3a73dc141aa",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+        "sha256": "a08b55b90e7088b9029f56ef7ca4a8929efb34edfa9647bc5bbe7acec537a791",
+        "selected_records": 289
+      }
+    ],
+    "duplicate_convention": "Earlier filename wins",
+    "duplicate_details": [
+      {
+        "gpst_s": 1419811200.0,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.2968181253899406
+      },
+      {
+        "gpst_s": 1419897600.0,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.3377735947052888
+      },
+      {
+        "gpst_s": 1419984000.0,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.24799596868594007
+      },
+      {
+        "gpst_s": 1420070400.0,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.38580953807688784
+      },
+      {
+        "gpst_s": 1420156800.0,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.5208781062554747
+      },
+      {
+        "gpst_s": 1420243200.0,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.31554080165328363
+      },
+      {
+        "gpst_s": 1420329600.0,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.14500689622395996
+      }
+    ]
+  },
+  "training_metadata": {
+    "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+    "training_start_s": -86400.0,
+    "training_end_s": 0.0,
+    "training_rows": 289,
+    "fitted_rows": 49,
+    "fit_reference_anchor_s": -43200.0,
+    "solver_success": true,
+    "solver_message": "`xtol` termination condition is satisfied.",
+    "nfev": 18,
+    "training_rms_3d_m": 0.7564316614526789,
+    "training_max_3d_m": 1.410932122380114,
+    "parameter_values_scaled": [
+      -0.0004916836492693625,
+      -0.0015326911931198295,
+      -0.0033464754404003427,
+      0.0006335150642249846,
+      -0.0009476226674998251,
+      0.0001163609430177208,
+      1.1576380204093442,
+      0.02653380900897223,
+      0.04881520157780104,
+      0.10833719966616459
+    ],
+    "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+    "optimizer_step_s": 30.0,
+    "future_target_rows_used": 0,
+    "anchor_state_gcrs": [
+      34256818.91133277,
+      8955083.124068262,
+      -22572414.903069012,
+      -1695.6511119267868,
+      1767.5618333727332,
+      -1879.3793025027699
+    ],
+    "satellite": "C06",
+    "orbit_class": "IGSO",
+    "training_source": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+    "training_source_sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+    "elapsed_s": 3.805746400001226,
+    "rk4_vs_dop853_training_max_m": 0.00013992183811264812
+  },
+  "construction_metadata": {
+    "planetary_source": "NASA/JPL DE440s, published 2020-12-21",
+    "planetary_sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+    "planetary_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp",
+    "earth_orientation_source": "IERS Bulletin A XXXVII 052, published 2024-12-26",
+    "earth_orientation_url": "https://datacenter.iers.org/data/6/bulletina-xxxvii-052.txt",
+    "earth_orientation_policy": "frozen xp/yp at epoch from published Jan1/Jan2 forecasts; constant UT1 slope from same forecasts; no later measured EOP",
+    "eop_at_epoch": {
+      "dut1_s": 0.04655996875,
+      "xp_arcsec": 0.14180027083333335,
+      "yp_arcsec": 0.3053,
+      "lod_s": -0.00014999999999999736
+    },
+    "frame": "GCRS-like geocentric axes with IAU2006/2000A Q; ITRF/IGS20 compared using approximate EOP prediction",
+    "time": "full GPST seconds since1980-01-06; TT=GPST+51.184s; geocentric Fairhead-Bretagnon TT/TDB periodic correction for DE440 and Horizons",
+    "coefficient_compression_checks": {
+      "q_matrix_max_abs": 3.644111054579291e-12,
+      "sun_forcing_max_m": 1.7394038962784661,
+      "moon_forcing_max_m": 0.048483157851448674
+    },
+    "force_model_selection": "fixed for all four objects before future-target comparisons",
+    "replay_dependencies": "all numerical forcing and frame coefficients embedded in model; no DE440 or ERFA lookup at replay"
+  },
+  "requested_horizon_nearest_samples": [
+    {
+      "requested_seconds": 900.0,
+      "sample_seconds": 900.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 1.260443134175529
+    },
+    {
+      "requested_seconds": 3600.0,
+      "sample_seconds": 3600.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 1.5380839486595008
+    },
+    {
+      "requested_seconds": 21600.0,
+      "sample_seconds": 21600.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 4.8766839052359625
+    },
+    {
+      "requested_seconds": 86400.0,
+      "sample_seconds": 86400.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 44.68437010031101
+    },
+    {
+      "requested_seconds": 259200.0,
+      "sample_seconds": 259200.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 267.05617182675365
+    },
+    {
+      "requested_seconds": 604800.0,
+      "sample_seconds": 604800.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 1234.6112913886484
+    }
+  ],
+  "intervals": [
+    {
+      "lower_open_hours": 0.0,
+      "upper_closed_hours": 0.25,
+      "count": 3,
+      "rms_m": 1.2325936157113693,
+      "max_m": 1.260443134175529,
+      "median_m": 1.2317647066785695,
+      "p95_m": 1.257575291425833
+    },
+    {
+      "lower_open_hours": 0.25,
+      "upper_closed_hours": 1.0,
+      "count": 9,
+      "rms_m": 1.4130213779505472,
+      "max_m": 1.5380839486595008,
+      "median_m": 1.4087804035941323,
+      "p95_m": 1.5247726002630457
+    },
+    {
+      "lower_open_hours": 1.0,
+      "upper_closed_hours": 6.0,
+      "count": 60,
+      "rms_m": 3.0785305442972426,
+      "max_m": 4.8766839052359625,
+      "median_m": 2.7966005045989757,
+      "p95_m": 4.585134849090667
+    },
+    {
+      "lower_open_hours": 6.0,
+      "upper_closed_hours": 12.0,
+      "count": 72,
+      "rms_m": 12.922055768396023,
+      "max_m": 21.6809197446961,
+      "median_m": 11.129442906210318,
+      "p95_m": 20.513631838487292
+    },
+    {
+      "lower_open_hours": 12.0,
+      "upper_closed_hours": 24.0,
+      "count": 144,
+      "rms_m": 38.541542004216716,
+      "max_m": 44.68437010031101,
+      "median_m": 40.64495435851893,
+      "p95_m": 44.54334613036217
+    },
+    {
+      "lower_open_hours": 24.0,
+      "upper_closed_hours": 48.0,
+      "count": 288,
+      "rms_m": 94.45681028084077,
+      "max_m": 133.7454791776376,
+      "median_m": 86.27319168184994,
+      "p95_m": 133.63658345035353
+    },
+    {
+      "lower_open_hours": 48.0,
+      "upper_closed_hours": 72.0,
+      "count": 288,
+      "rms_m": 204.52166319837187,
+      "max_m": 267.2111580270635,
+      "median_m": 194.7202526609895,
+      "p95_m": 267.11699535351596
+    },
+    {
+      "lower_open_hours": 72.0,
+      "upper_closed_hours": 168.0,
+      "count": 1152,
+      "rms_m": 748.3381916787584,
+      "max_m": 1237.2416115679423,
+      "median_m": 663.2998537913949,
+      "p95_m": 1223.1472444681378
+    }
+  ],
+  "frame_error_scope": "ECEF comparison includes declared seed EOP/frame approximations; independent EOP uncertainty is not removed from orbit error",
+  "frame_approximation": {
+    "comparison": "Embedded frozen polar motion/linear ERA/Chebyshev Q versus SOFA full Q and linearly interpolated daily forecasts in IERS BulletinA published26Dec2024",
+    "source": "bulletina-xxxvii-052.txt",
+    "source_sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+    "qualification": "Frame approximation disagreement only. Both use published predictions; disagreement with actual future Earth orientation and station uncertainty are not measured here.",
+    "position_displacement": {
+      "count": 2016,
+      "rms_m": 7.19968049756756,
+      "max_m": 15.80476137894678,
+      "median_m": 4.894504316111349,
+      "p95_m": 13.696916457230685
+    }
+  },
+  "native_vs_independent_DOP853": {
+    "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+    "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+    "samples": 9,
+    "position_error": {
+      "count": 9,
+      "rms_m": 0.0006298871777083048,
+      "max_m": 0.0011034955873167537,
+      "median_m": 0.000511385007560675,
+      "p95_m": 0.001032181650487725
+    },
+    "times_seconds": [
+      300.0,
+      75600.0,
+      151200.0,
+      226800.0,
+      302400.0,
+      378000.0,
+      453600.0,
+      529200.0,
+      604800.0
+    ],
+    "position_errors_m": [
+      1.5592910004002115e-07,
+      0.00014629020659385342,
+      0.00028270964137296843,
+      0.000403057280242615,
+      0.000511385007560675,
+      0.0006263465703899166,
+      0.0007612475693827561,
+      0.000925210745244182,
+      0.0011034955873167537
+    ]
+  },
+  "curve_file": "C06_holdout.csv",
+  "curve_sha256": "e56943555767590ff64bed8cecf0fffb44df18ef93aaf9b9c5593a5d6f43531a",
+  "model_file_sha256": "c66117181899257ebc21cd080fd6b20b63e590ffce006a7901109b600be21319",
+  "model_sha256_semantics": "Legacy alias for SHA256 of entire model JSON envelope file",
+  "physical_model_sha256": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d",
+  "model_binding": {
+    "physical_model_sha256": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d",
+    "method": "orbit_seed.digest(model)",
+    "scope": "Exact canonical physical model; report eligibility for a custom packed seed requires this digest to match"
+  }
+}

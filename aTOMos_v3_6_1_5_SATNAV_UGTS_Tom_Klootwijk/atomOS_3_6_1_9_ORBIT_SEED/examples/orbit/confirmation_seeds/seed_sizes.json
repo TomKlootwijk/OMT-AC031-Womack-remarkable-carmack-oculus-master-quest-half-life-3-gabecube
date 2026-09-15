@@ -1,0 +1,134 @@
+[
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "G05",
+      "orbit_class": "MEO"
+    },
+    "file_bytes": 9141,
+    "file_sha256": "900bf67616fbbcf9892a105f98be385fe9ec1931e181ea42620161bcb1c573a5",
+    "seed_sha256": "3a4c6945e773dafe5d1c8b233e67f2a4ab645b05da00b75ee2341a22f5803bac",
+    "model_sha256": "1e3b444f2a5c3820053b1e1f825126c43ac9f62266be0810ce4842489c6b2ccb",
+    "payload_uncompressed_bytes": 14935,
+    "payload_compressed_bytes": 9089,
+    "header_bytes": 52,
+    "codec": "bitplanes64-zlib",
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless 64 bit planes in uint64 words; original binary64/int64/uint64 bits restored",
+    "arithmetic_scope": "Packing is exact; native orbit propagation still uses binary64 floating point",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    },
+    "canonical_codec_comparison_bytes": 8678,
+    "packing_error_bits": 0
+  },
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "C03",
+      "orbit_class": "GEO"
+    },
+    "file_bytes": 9143,
+    "file_sha256": "1b0cf39ad71a1ec1739354dccd8c211497c531b147fc3ac70cf55f61b1ba840c",
+    "seed_sha256": "d784db06901be15cfa3c4d557fe2cd77611dd7240ff8f503bd38dd7c0a8501f9",
+    "model_sha256": "b253c8a13b6ae3264988788ba9bba9b000798fdd220217d1d91293d6814c3668",
+    "payload_uncompressed_bytes": 14935,
+    "payload_compressed_bytes": 9091,
+    "header_bytes": 52,
+    "codec": "bitplanes64-zlib",
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless 64 bit planes in uint64 words; original binary64/int64/uint64 bits restored",
+    "arithmetic_scope": "Packing is exact; native orbit propagation still uses binary64 floating point",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    },
+    "canonical_codec_comparison_bytes": 8675,
+    "packing_error_bits": 0
+  },
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "C06",
+      "orbit_class": "IGSO"
+    },
+    "file_bytes": 9147,
+    "file_sha256": "4c963e6fdd40d6edb3d136517953bbe39e00240480498113cc22c6cfcc5c02ff",
+    "seed_sha256": "da44ea6361fa49af5722daca88dff0f9b667319ea582a676c331d95a321e8626",
+    "model_sha256": "0dd9833368ac7472a79cda65fb22c145f490b24ab567a910cb422c82c6e44937",
+    "payload_uncompressed_bytes": 14937,
+    "payload_compressed_bytes": 9095,
+    "header_bytes": 52,
+    "codec": "bitplanes64-zlib",
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless 64 bit planes in uint64 words; original binary64/int64/uint64 bits restored",
+    "arithmetic_scope": "Packing is exact; native orbit propagation still uses binary64 floating point",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    },
+    "canonical_codec_comparison_bytes": 8682,
+    "packing_error_bits": 0
+  },
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "CHANDRA",
+      "orbit_class": "HEO"
+    },
+    "file_bytes": 8731,
+    "file_sha256": "61b4124629bee9c558eeabdd6bbbc9e0bb45d5b3020d76526e5c091dd3d5e2f0",
+    "seed_sha256": "6f6461be71ab3ba9e20520feae7c0e01ae0e18296f98f23b4be6f579307cd203",
+    "model_sha256": "5194e34a3b088c6b7f486b72c0df458330ac023fadb58bb4458486f946a13af1",
+    "payload_uncompressed_bytes": 13640,
+    "payload_compressed_bytes": 8679,
+    "header_bytes": 52,
+    "codec": "bitplanes64-zlib",
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless 64 bit planes in uint64 words; original binary64/int64/uint64 bits restored",
+    "arithmetic_scope": "Packing is exact; native orbit propagation still uses binary64 floating point",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    },
+    "canonical_codec_comparison_bytes": 8276,
+    "packing_error_bits": 0
+  }
+]

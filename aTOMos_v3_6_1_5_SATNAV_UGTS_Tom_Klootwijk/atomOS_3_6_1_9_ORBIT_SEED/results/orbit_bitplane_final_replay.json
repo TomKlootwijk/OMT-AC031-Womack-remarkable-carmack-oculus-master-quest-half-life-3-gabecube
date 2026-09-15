@@ -1,0 +1,270 @@
+{
+  "status": "passed",
+  "scope": "Post-fix structural rejection and four packed-only isolated replay checks; no event search repeated",
+  "structural_limit_rejection": {
+    "canonical-zlib": "Excessive container size",
+    "bitplanes64-zlib": "Excessive container size"
+  },
+  "objects": {
+    "G05": {
+      "status": "passed",
+      "seed_file_sha256": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+      "seed_sha256": "814fb8ae189811c6e8443608e2bdf44794d7232a9dae24a7b688e3177a2816b2",
+      "model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+      "pack_repack_bytes_exact": true,
+      "identities_unchanged": true,
+      "states_bit_exact_to_previous_validation": true,
+      "isolation": {
+        "seed_sha256": "814fb8ae189811c6e8443608e2bdf44794d7232a9dae24a7b688e3177a2816b2",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              8977500.959339857,
+              -12245769.418297535,
+              -21971973.932440173,
+              2739.7963832822766,
+              2682.4731018934535,
+              -372.2863959939067
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              16453622.88302671,
+              20662820.248148177,
+              2260562.0536215575,
+              -1890.0850198789797,
+              1129.1062294286837,
+              3196.577602956168
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              13275347.983186832,
+              -7433042.100171214,
+              -21939858.17210765,
+              2356.6087630912784,
+              3021.1432117289655,
+              411.9779461338642
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              8637860.206521727,
+              -12574951.369981034,
+              -21922514.955748864,
+              2762.540147035533,
+              2650.4263397829714,
+              -428.9714888452934
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 89342,
+        "shared_native_worker_bytes": 77824,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      }
+    },
+    "C03": {
+      "status": "passed",
+      "seed_file_sha256": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+      "seed_sha256": "ae1fe95b21c6621a60aae7140b43b14b0d990ca0fed730ee093b7afad7a2ac4d",
+      "model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+      "pack_repack_bytes_exact": true,
+      "identities_unchanged": true,
+      "states_bit_exact_to_previous_validation": true,
+      "isolation": {
+        "seed_sha256": "ae1fe95b21c6621a60aae7140b43b14b0d990ca0fed730ee093b7afad7a2ac4d",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              -35740465.470334195,
+              -22417303.444266297,
+              876814.4911485815,
+              1629.5839275820813,
+              -2602.975903098375,
+              -86.31493305816278
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              -4724915.316191349,
+              -41926364.87993463,
+              -382222.57198862947,
+              3051.8023886115375,
+              -341.49057058572276,
+              -103.72634351499306
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              -32843278.568074573,
+              -26485576.65885252,
+              738443.4932063448,
+              1926.18243848854,
+              -2391.6534489619153,
+              -93.77887665324606
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              -35940190.14900222,
+              -22095064.212056566,
+              887434.4817315063,
+              1606.1120046246567,
+              -2617.5516363391293,
+              -85.73721835114016
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 89342,
+        "shared_native_worker_bytes": 77824,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      }
+    },
+    "C06": {
+      "status": "passed",
+      "seed_file_sha256": "6ef34a15c13013354a909b12d2f7f0e8badf9c78fc17959be10f835b6c437d64",
+      "seed_sha256": "1b32e0329827db71f074ea0a78486ab24f91ee10d7acbb2d276adbd7e90da72f",
+      "model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421",
+      "pack_repack_bytes_exact": true,
+      "identities_unchanged": true,
+      "states_bit_exact_to_previous_validation": true,
+      "isolation": {
+        "seed_sha256": "1b32e0329827db71f074ea0a78486ab24f91ee10d7acbb2d276adbd7e90da72f",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              -34454260.1802409,
+              -9113412.289257267,
+              22853125.58686415,
+              1697.0632939503216,
+              -1749.1191688441463,
+              1853.919890979995
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              -3279201.9048170582,
+              -24514381.03467005,
+              34229967.299691446,
+              3012.2571754294045,
+              -575.088915424798,
+              -138.4357546805082
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              -31422122.301264904,
+              -11895347.511154555,
+              25749164.45998612,
+              1981.578290538167,
+              -1659.5707174131524,
+              1642.7464466494478
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              -34662380.86060075,
+              -8897121.609500019,
+              22623347.49678327,
+              1674.6548017653704,
+              -1754.959163369411,
+              1868.6649980519262
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 89342,
+        "shared_native_worker_bytes": 77824,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      }
+    },
+    "CHANDRA": {
+      "status": "passed",
+      "seed_file_sha256": "9beca3919475dfe9dc7e793c8da83dda3b7fdf70e676003ed51940f42239c568",
+      "seed_sha256": "7186cf16ddecc78f9aa7359a59572c5d923c07ed6dad6e59bd05c62995cfdf6f",
+      "model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453",
+      "pack_repack_bytes_exact": true,
+      "identities_unchanged": true,
+      "states_bit_exact_to_previous_validation": true,
+      "isolation": {
+        "seed_sha256": "7186cf16ddecc78f9aa7359a59572c5d923c07ed6dad6e59bd05c62995cfdf6f",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              29469950.614618346,
+              -115292956.23847264,
+              68064691.90336227,
+              405.40717741449566,
+              511.2733578922823,
+              -675.7010312394161
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              34082445.01610005,
+              -107555759.88732436,
+              58899559.119387224,
+              337.66521168164746,
+              748.204749821441,
+              -810.8063862376838
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              -10808797.837331923,
+              -106366447.76050313,
+              89308239.62583809,
+              509.1561408533444,
+              -705.181168036685,
+              180.9878695406571
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              29419868.45902059,
+              -115355937.08809932,
+              68148026.79149377,
+              405.9680385632594,
+              509.07299523077376,
+              -674.3985429856141
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 89342,
+        "shared_native_worker_bytes": 77824,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      }
+    }
+  },
+  "native_binary_sha256": "f69f1bd95c4a5f3e8bf95500ff4fe744ded8671dbf98ff56d1b87871236f1501",
+  "previous_validation_source": "results/orbit_seed_r2_release_validation/summary.json",
+  "shared_runtime_source_sha256": {
+    "orbit_seed.py": "bb9ce92465e1863fcee1cbfa055dfab03f5ee491f35f6813efba501db6edc3bf",
+    "orbit_native.py": "b7f00b9f0dc8ed61ecd170060b5df3a23906ba732301b0ef3c0eeee57073e540",
+    "orbit_dynamics.py": "609caec198965726dd3341735034ad65000c79391ca131e28ac77526ce53857c",
+    "orbit_precision.py": "1d23f874e5ae12d683bfc3867ed0f1f66b88357f9ab2cca994621a80a81068f4",
+    "orbit_query.py": "2b616c1f6f59328d168aef72f3b05567e433868febc55aef3f45442babd1d3f2",
+    "self_reference.py": "607371faba493ce9d532691abfeea55982c0681dec62210922efdf5710ba6fbc",
+    "ugts.py": "ddccfb284c48c028a788b7597cdd27d8caa7e5819456993c1b42292ff9901fec",
+    "geodesy.py": "c7050adc44894d96285b7f40b6f93dece990578cbb136e8b9b665190e3016acf"
+  }
+}

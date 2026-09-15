@@ -1,0 +1,157 @@
+{
+  "profile": "ORBIT-WORKER-1",
+  "status": "passed",
+  "cpu_binary_sha256": "467613b0c0331da688a6ec50c8845fe50629fe464ce77a9b20fe6d99119cbe5f",
+  "models": {
+    "G05": {
+      "model_sha256": "a3fd9302ad6bf27c949b7951693df0d11de2359bb9ca777b1aeabd5e9d6b3153",
+      "query_count": 27,
+      "cache_order_bit_exact": true,
+      "cache_stats": {
+        "type": "stats",
+        "cache_count": 4,
+        "cache_capacity": 4,
+        "cache_hits": 1,
+        "cpu_rk_steps": 75654,
+        "cpu_queries": 18,
+        "evictions": 3777,
+        "checkpoint_stride_steps": 20
+      },
+      "force_vs_python_max_m_s2": 2.884444029575346e-16,
+      "frame_vs_python_max_abs": 2.220446049250313e-16,
+      "cuda": {
+        "queries": 260,
+        "cpu_position_max_m": 4.5514744629489184e-05,
+        "cpu_velocity_max_m_s": 6.648913331245409e-09,
+        "word_transitions_exact": 64,
+        "device": {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+          "capability_major": 12,
+          "capability_minor": 0,
+          "runtime_version": 12080,
+          "driver_version": 13010,
+          "query_mode": "independent_from_epoch"
+        }
+      }
+    },
+    "C03": {
+      "model_sha256": "17bcf4e3c2dce5334c737a58c3318982282aa3ccd2651454360df25fefe55eb5",
+      "query_count": 27,
+      "cache_order_bit_exact": true,
+      "cache_stats": {
+        "type": "stats",
+        "cache_count": 4,
+        "cache_capacity": 4,
+        "cache_hits": 3,
+        "cpu_rk_steps": 46854,
+        "cpu_queries": 18,
+        "evictions": 2337,
+        "checkpoint_stride_steps": 20
+      },
+      "force_vs_python_max_m_s2": 5.551115123125783e-17,
+      "frame_vs_python_max_abs": 2.220446049250313e-16,
+      "cuda": {
+        "queries": 260,
+        "cpu_position_max_m": 9.118422095868903e-06,
+        "cpu_velocity_max_m_s": 5.76640163059907e-10,
+        "word_transitions_exact": 64,
+        "device": {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+          "capability_major": 12,
+          "capability_minor": 0,
+          "runtime_version": 12080,
+          "driver_version": 13010,
+          "query_mode": "independent_from_epoch"
+        }
+      }
+    },
+    "C06": {
+      "model_sha256": "c66117181899257ebc21cd080fd6b20b63e590ffce006a7901109b600be21319",
+      "query_count": 27,
+      "cache_order_bit_exact": true,
+      "cache_stats": {
+        "type": "stats",
+        "cache_count": 4,
+        "cache_capacity": 4,
+        "cache_hits": 2,
+        "cpu_rk_steps": 70654,
+        "cpu_queries": 18,
+        "evictions": 3527,
+        "checkpoint_stride_steps": 20
+      },
+      "force_vs_python_max_m_s2": 2.104670727712685e-16,
+      "frame_vs_python_max_abs": 2.220446049250313e-16,
+      "cuda": {
+        "queries": 260,
+        "cpu_position_max_m": 4.527973295417466e-05,
+        "cpu_velocity_max_m_s": 3.302702819596195e-09,
+        "word_transitions_exact": 64,
+        "device": {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+          "capability_major": 12,
+          "capability_minor": 0,
+          "runtime_version": 12080,
+          "driver_version": 13010,
+          "query_mode": "independent_from_epoch"
+        }
+      }
+    },
+    "CHANDRA": {
+      "model_sha256": "778a5454129c64ce41580dd52298e583cbc5ab54446264d9a1c8e160d2ab95be",
+      "query_count": 27,
+      "cache_order_bit_exact": true,
+      "cache_stats": {
+        "type": "stats",
+        "cache_count": 4,
+        "cache_capacity": 4,
+        "cache_hits": 3,
+        "cpu_rk_steps": 282558,
+        "cpu_queries": 18,
+        "evictions": 14123,
+        "checkpoint_stride_steps": 20
+      },
+      "force_vs_python_max_m_s2": 8.770652787438943e-18,
+      "frame_vs_python_max_abs": 2.220446049250313e-16,
+      "cuda": {
+        "queries": 260,
+        "cpu_position_max_m": 2.3052291863321087e-05,
+        "cpu_velocity_max_m_s": 9.609420068504842e-09,
+        "word_transitions_exact": 64,
+        "device": {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+          "capability_major": 12,
+          "capability_minor": 0,
+          "runtime_version": 12080,
+          "driver_version": 13010,
+          "query_mode": "independent_from_epoch"
+        }
+      }
+    }
+  },
+  "scope": "numerical implementation, random-access cache and memory execution; not physical forecast truth",
+  "cuda_binary_sha256": "f009464be2f64ebae827b95430bd8bffb7c6ffc2bb9b4dbf341e948663adb96b",
+  "compute_sanitizer": {
+    "status": "passed",
+    "queries": 129,
+    "word_transitions": 1,
+    "command": [
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\compute-sanitizer.BAT",
+      "--tool",
+      "memcheck",
+      "--error-exitcode",
+      "99",
+      "--log-file",
+      "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\results\\orbit_native_validation_final\\memcheck.log",
+      "C:\\tmp\\atomos3619_gpu128\\Release\\orbit_worker.exe",
+      "--model",
+      "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\results\\orbit_native_validation_final\\sanitizer_model.txt",
+      "--backend",
+      "cuda"
+    ],
+    "error_count": 0
+  }
+}

@@ -1,0 +1,1047 @@
+\input{live.tex}
+\input{coupled.tex}
+\input{self_reference.tex}
+
+\section{The imported UGTS and aTOMos contracts}
+The supplied prototype defines a finite, query-first state-and-relation package. It
+includes cone/sphere relations, a bounded translational sweep, log-polar metric and
+kinematics, explicit time and winding, separate topology profiles, finite grammar,
+64-bit key codecs and audited uncertainty/memory claims. Its authoritative handoff is
+\begin{equation}
+\mathrm{support}\to\mathrm{compatibility}\to\mathrm{guard}\to\mathrm{verified\ event}
+\to\mathrm{transition}\to\mathrm{lineage}.
+\end{equation}
+This order is retained in the downstream satnav event adapter. \src{pp.\,1, 9--12}
+
+\subsection{What U does not define}
+U contains no satellite ephemeris propagation, receiver clock observation equation,
+code-delay correction model, geodetic datum or GNSS position estimator. These are
+new SATNAV-R1 definitions, grounded in primary GNSS references rather than attributed
+to the earlier prototype. \dec{01}
+
+The base aTOMos contracts retained here are the four-field ASA word rule, explicit JK
+bit semantics, source-ratio OTAN2, typed unavailable values, immutable input snapshots
+and ordered result/provenance records. The new matrix in the receiver solve is the
+explicit \emph{GNSS design matrix}. It is not a silently completed physical
+beamforming/eigenmatrix from an earlier profile. \base
+
+\subsection{Source figures and key table}
+U's Figure 4 on printed p.\,5 keeps the half-turn state bundle distinct from the
+orientation-reversing Klein quotient. Its Table 1 and Figure 6 on printed p.\,8 keep
+contiguous packing distinct from MSB-round-robin Morton interleaving. Figure 8 on
+printed p.\,10 returns the result to the canonical event sequence. All three distinctions
+survive the specialization.
+
+The complete earlier 50-operator catalog remains a source catalog, not a claim that
+every operator is necessary for positioning. The delivered helpers implement the
+subset selected below. A source mechanism omitted from the default satnav path is
+identified rather than repurposed without a declared meaning.
+\clearpage
+
+\section{Receiver state and source-symbol separation}
+The authoritative positioning state is
+\begin{equation}
+z_e=(x_e,y_e,z_e,b_e)\in\R^4,\qquad b_e=c\,\delta t_e,
+\end{equation}
+where the first three components are ECEF metres and the fourth is receiver clock
+bias in metres. Clock seconds are $b_e/c$ with $c=299792458$ m/s in this profile.
+This is the standard code-positioning unknown set. \ext{G1}
+
+\par\small
+\begin{tabularx}{\textwidth}{@{}P{.22\textwidth}P{.30\textwidth}Y@{}}\toprule
+\textbf{Quantity} & \textbf{Role} & \textbf{Representation}\\\midrule
+$\boldsymbol r$ & Receiver location & Three unquantized ECEF doubles.\\
+$b$ & Receiver clock bias & Metres, not a branch bit.\\
+$P_i$ & Code observation & Metres, after the explicitly recorded correction convention.\\
+$\rho$ & Local log-radius & UGTS chart quantity, not the code range.\\
+$\theta$ & Local angular coordinate & $\operatorname{atan2}(N,E)$ in a fixed ENU chart.\\
+$\phi_h$ & UGTS hoop phase & Separate supplied periodic field; not silently geographic latitude.\\
+$\varphi_g,\lambda_g,h_g$ & Geodetic coordinates & Latitude, longitude and ellipsoidal height.\\
+$X,w$ & Tick and winding & Full integer time identity retained beside its modular key field.\\
+$K_C,K_M$ & Quantized addresses & Two distinct 64-bit codecs, not complete navigation states.\\\bottomrule
+\end{tabularx}
+\par\normalsize
+
+The source's lower-case hoop $\phi$ is retained as $\phi_h$ to avoid colliding with
+geodetic latitude. The earlier aTOMos phase alias is resolved through a named adapter:
+OTAN2 receives increments of local $\rho,\theta$, while the key retains its separate
+UGTS hoop field. No 3D coordinate is silently removed. \src{p.\,2}\dec{02}
+
+The authoritative records also include epoch identity, time scale, satellite/channel
+mapping, input/product provenance, statuses and uncertainty assumptions. All fit
+results preserve the full ECEF estimate and clock value outside the compact key.
+\clearpage
+
+\section{The corrected-code observation model}
+A decoded code measurement can be modelled as a geometric range, receiver/satellite
+clock terms and selected propagation/instrumental delays. SATNAV-R1 accepts an
+upstream additive correction $a_i$ and defines
+\begin{equation}
+\widetilde P_i=P_i+a_i=\|\boldsymbol s_i-\boldsymbol r\|+b+\varepsilon_i.
+\end{equation}
+This is the reduced standard code-positioning model after the declared upstream
+terms are accounted for. \ext{G1, G4}
+
+For the convention
+\begin{equation}
+P_i=R_i+b-c\delta t_i^{\rm sat}+T_i+I_i+B_i+\varepsilon_i,
+\end{equation}
+the matching additive correction is
+\begin{equation}
+a_i=c\delta t_i^{\rm sat}-T_i-I_i-B_i.
+\end{equation}
+The adapter must define the exact code, satellite clock convention, relativistic
+clock terms and hardware/group biases it uses. The kernel adds the supplied term
+\emph{once}. It does not repeat an already applied correction or invent a missing
+ionosphere/troposphere model.
+
+\subsection{Satellite coordinates and Earth rotation}
+$\boldsymbol s_i$ is the satellite position at signal emission expressed in the
+Earth-fixed axes associated with reception. The upstream stage must perform the
+necessary transmit-time and frame handling consistently. A satellite coordinate
+computed in emission-time ECEF axes cannot simply be treated as already in the
+reception axes. \ext{G2}
+
+The solver keeps these supplied positions and corrections fixed during its four-state
+iteration. The profile is therefore an adapter boundary for prepared code data,
+not a complete broadcast-navigation decoder. Raw receiver or RINEX values require
+an upstream modelling adapter before using the named CSV contract. \dec{01}
+
+\subsection{One clock system}
+There is exactly one receiver-clock unknown. Unaligned measurements from multiple
+GNSS time systems generally need additional bias treatment; this release does not
+estimate a hidden inter-system offset. Use compatible code/clock data, or supply
+and document an upstream alignment under a separate profile.
+\clearpage
+
+\section{Input epochs, channels and aTOMos selection}
+Each independent epoch binds its receive-time label, approximate initial state and
+32-bit channel masks. Each observation row points to that epoch and names a unique
+channel in $0,\ldots,31$. Channel IDs, not row order, define mask bits.
+
+Let $V$ contain present channels and $X$ contain channels marked ready. The retained
+word selection is
+\begin{align}
+a&=X\land M_{\rm ASA}\land V,\\
+n&=a\land M_{\rm NA},\\
+h&=\pop(n\land M_\partial),\\
+y&=\begin{cases}0,&h>0,\\n,&h=0.\end{cases}
+\end{align}
+The solver uses precisely the channels selected by $y$. These four fields are emitted
+unchanged in the result. The default ASA/NA masks are all ones and the default boundary
+is zero. \base\ \dec{04}
+
+\subsection{Whole-word behavior remains literal}
+A boundary bit intersecting the selected word absorbs the entire epoch group. It
+does not mean ``drop only this satellite.'' To explicitly omit an individual observation,
+use a selector bit, a not-ready flag or an upstream policy with its own provenance.
+Replacing the boundary behavior with per-bit clearing would change the base engine.
+
+A remaining support of fewer than four channels returns \code{TOO\_FEW}. Four channels
+must still provide a numerically independent design matrix. A full bit count cannot
+prove observability by itself. The new GNSS solver checks the resulting matrix rather
+than treating POPCNT as a complete position solution. \ext{G1}\dec{03}
+
+\subsection{Timeline and schema consistency}
+An epoch identifier binds rows from one receiver event. The time column is full
+unwrapped GPST seconds under the supplied upstream convention; modular UGTS time is
+added later. Duplicate epoch IDs, duplicate channels or duplicate satellite IDs within
+an epoch are errors. Correcting a false upstream time label is not something a CSV
+parser can infer from equal strings.
+
+The current CSV reader uses finite bounded numeric fields and explicit nonnegative
+IDs. Physical correction provenance belongs to the input profile; metadata consistency
+is not a physical synchronization measurement.
+\clearpage
+
+\section{The weighted positioning step}
+For current estimate $z^{(k)}=(\boldsymbol r^{(k)},b^{(k)})$, define
+\begin{align}
+R_i^{(k)}&=\|\boldsymbol r^{(k)}-\boldsymbol s_i\|,\\
+v_i^{(k)}&=\widetilde P_i-R_i^{(k)}-b^{(k)},\\
+H_i^{(k)}&=\left[\frac{x^{(k)}-s_{ix}}{R_i^{(k)}},
+\frac{y^{(k)}-s_{iy}}{R_i^{(k)}},
+\frac{z^{(k)}-s_{iz}}{R_i^{(k)}},1\right].
+\end{align}
+Linearization gives $H\Delta z\simeq v$. With declared independent code standard
+deviations $\sigma_i>0$, whiten the rows as
+\begin{equation}
+A_i=H_i/\sigma_i,\qquad d_i=v_i/\sigma_i,
+\qquad\Delta\widehat z=\arg\min_\Delta\|A\Delta-d\|_2^2.
+\end{equation}
+Then update $z^{(k+1)}=z^{(k)}+\Delta\widehat z$. The nonlinear model and iterative
+linearization follow the code-positioning references; the QR implementation is the
+explicit numerical choice of this specialization. \ext{G1, G4}\dec{03}
+
+\subsection{No normal-equation update}
+The C++/CUDA implementation uses streaming Givens QR on the whitened rows. It does
+not form and invert $A^TA$ for the update. This avoids squaring the design matrix's
+condition number as part of the solution method. The independent Python reference
+uses a different Householder QR implementation on the full row matrix.
+
+All four unknowns use metres, including the clock bias. A floating-point conversion
+to seconds is applied only to a displayed/consumer clock offset. This keeps a factor
+of the speed of light out of the fourth Jacobian column.
+
+The default iteration stops when both position-increment norm and absolute clock
+increment are at most $10^{-4}$ m, with at most 12 steps. These are numerical
+convergence controls, not a statement that real measurements yield $0.1$ mm accuracy.
+The convergence domain depends on the input model and initial approximation.
+\clearpage
+
+\section{Streaming QR, rank and formal covariance}
+The kernel maintains an upper-triangular $4\times4$ matrix $R$ and a transformed
+right-hand side $z$. Each whitened row is appended by rotations that eliminate its
+components against the current triangular diagonal.
+
+For diagonal $R_{jj}$ and current row component $a_j$, let
+\begin{equation}
+\gamma=\operatorname{hypot}(R_{jj},a_j),\qquad c_j=R_{jj}/\gamma,
+\qquad s_j=a_j/\gamma.
+\end{equation}
+The same rotation is applied to the remaining row and right-hand-side entries. A zero
+pair needs no rotation. The result is solved by back substitution.
+
+\subsection{The implemented rank screen}
+The retained check is
+\begin{equation}
+|R_{jj}|>\tau\max_k|R_{kk}|\quad\text{for all }j,
+\qquad\tau=10^{-10}.
+\end{equation}
+This is a declared unpivoted triangular-diagonal screen. It detects the tested
+rank-deficient cases, but is not an SVD condition-number certificate or a proof of
+well-conditioned geometry for all possible inputs. A failed screen produces
+\code{RANK\_DEFICIENT}, not a coordinate filled with zeros. \dec{03}
+
+\subsection{Covariance is tied to the assumed sigmas}
+After convergence the Jacobian is rebuilt at the final estimate. From $R^{-1}$,
+compute the diagonal of
+\begin{equation}
+P=(H^TWH)^{-1}=R^{-1}R^{-T},\qquad
+W=\operatorname{diag}(\sigma_i^{-2}).
+\end{equation}
+The implementation obtains this from triangular solves, not a dense matrix inverse
+of $H^TWH$. It returns coordinate/clock variances in squared metres. This is formal
+uncertainty under the declared local linear and noise model. \ext{G5}
+
+It is not measured error against truth, and not a guaranteed bound on faulty or
+mis-modelled measurements. The independent fixture comparisons check both estimates
+and these formal diagonal values; true-error metrics are separately computed only
+because the artificial fixture has a known generating position.
+\clearpage
+
+\section{Solver status and residual diagnostics}
+Convergence, residual fit and the later UGTS event are separate fields.
+\par\small
+\begin{tabularx}{\textwidth}{@{}P{.35\textwidth}Y@{}}\toprule
+\textbf{Solver status} & \textbf{Meaning}\\\midrule
+\code{CONVERGED} & Numerical increment thresholds reached with valid final calculations.\\
+\code{MASK\_ABSORBED} & Selected word intersected the retained whole-word boundary.\\
+\code{TOO\_FEW} & Fewer than four selected observations.\\
+\code{RANK\_DEFICIENT} & Triangular rank/covariance check failed.\\
+\code{ITERATION\_LIMIT} & The selected number of iterations did not satisfy convergence.\\
+\code{NUMERIC\_FAILURE} & Invalid range, nonfinite result or unusable numeric intermediate.\\\bottomrule
+\end{tabularx}
+\par\normalsize
+
+For a converged solution, preserve every selected post-fit residual
+$r_i=\widetilde P_i-\|\boldsymbol s_i-\widehat{\boldsymbol r}\|-\widehat b$,
+and report
+\begin{equation}
+\mathrm{RMS}=\sqrt{\frac1m\sum_i r_i^2},\qquad
+S=\sum_i(r_i/\sigma_i)^2,\qquad
+Z_{\max}=\max_i|r_i/\sigma_i|.
+\end{equation}
+The default comparison $Z_{\max}\le6$ is a named residual budget. It is not a
+leverage-normalized test or a claimed false-alarm probability. The solver does not
+automatically discard a channel and retry until this flag passes. \dec{09}
+
+Exactly four observations give \code{NO\_REDUNDANCY}, even if their residuals are
+small. For more observations, the flag is \code{WITHIN\_RESIDUAL\_BUDGET} or
+\code{RESIDUAL\_ALERT}. A single gross-outlier fixture converges numerically but
+produces the latter alert; the data record retains its large actual position error.
+
+RAIM/ARAIM, HPL/VPL, continuity risk, certified spoof detection and navigation-action
+authority are not supplied by these flags. A valid solution record can be useful for
+replay and analysis without representing those additional guarantees.
+\clearpage
+\section{Local ENU and the UGTS log chart}
+The receiver solution remains three-dimensional. For a declared geodetic anchor
+$(\varphi_0,\lambda_0,h_0)$, convert ECEF differences to East/North/Up using
+\begin{equation}
+R_{ENU}=\begin{bmatrix}
+-\sin\lambda_0&\cos\lambda_0&0\\
+-\sin\varphi_0\cos\lambda_0&-\sin\varphi_0\sin\lambda_0&\cos\varphi_0\\
+\cos\varphi_0\cos\lambda_0&\cos\varphi_0\sin\lambda_0&\sin\varphi_0
+\end{bmatrix}.
+\end{equation}
+Then $(E,N,U)^T=R_{ENU}(\boldsymbol r-\boldsymbol r_0)$. The transform is an explicit
+GNSS/geodesy addition, separate from the source's abstract local chart. \ext{G3}
+
+With horizontal radius $r_h=\sqrt{E^2+N^2}$, use
+\begin{equation}
+\rho=\ln(r_h/r_0),\qquad\theta=\operatorname{atan2}(N,E).
+\end{equation}
+Up remains a separate value. A declared core radius returns \code{origin\_core}
+instead of evaluating a singular logarithm. Out-of-range $\rho$ is not automatically
+wrapped into a different geographic position. \src{pp.\,3--4}\dec{02}
+
+\subsection{Metric and finite steps carried from U}
+For the planar chart,
+\begin{equation}
+ds^2=r_h^2(d\rho^2+d\theta^2),\qquad
+\Delta r_h=r_h(e^{\Delta\rho}-1),
+\end{equation}
+\begin{equation}
+J=r_h\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}.
+\end{equation}
+These identities explain the local representation; the new satellite-range solve
+still uses full ECEF coordinates. Quantizing this chart does not improve the original
+measurement precision or create a third coordinate. \src{p.\,4}
+
+The geodetic utility uses the declared WGS84 ellipsoid constants $a=6378137$ m and
+$1/f=298.257223563$. Its height is ellipsoidal height, not an unprovided geoid-corrected
+height above mean sea level. The reference tests its conversions and inverse relation
+over a finite set of points. \ext{G6}
+\clearpage
+
+\section{OTAN2 in satnav: preserve the observable}
+The inherited literal operator remains
+\begin{equation}
+\ot_s(\Delta\theta,\Delta\rho)=\arctan(\Delta\theta/\Delta\rho),
+\qquad \Delta\rho\ne0,
+\end{equation}
+with a separately supplied reference-axis subtraction when selected. This is a
+\emph{log-chart motion slope}. It is not used to solve pseudoranges, and is not
+relabeled as the receiver's geographic heading or satellite azimuth. \base
+
+The passive adapter compares successive defined local chart records in the same
+frame. It uses an explicitly named principal-difference policy for $\Delta\theta$;
+that policy does not reconstruct missed revolutions. Full linear time and the
+chosen phase convention are stored with the observation.
+
+\subsection{Missing direction remains a status}
+A first observation has no previous chart increment. A zero pair has no direction.
+A pure angular increment has an undefined literal ratio. The adapter records
+\code{first\_observation}, \code{zero\_increment} or \code{ratio\_undefined} rather
+than inventing a perfect zero angle. A sequence with non-increasing time is identified
+instead of being silently reordered into a new physical history.
+
+A change in the axis alone changes the raw residual by the opposite angle. A common
+positive scaling of both increments preserves the ratio, and simultaneous reversal
+also preserves the literal ratio while reversing the actual directed motion. These
+are inherited operator laws, not new navigation-sensor guarantees.
+
+\subsection{Literal J/K and the explicit feedback profile}
+The retained equation is
+\begin{equation}
+q^+=(J\land\neg q)\lor(\neg K\land q).
+\end{equation}
+SRK-R1 binds J and K to supplied expressions that read the old state and literal
+ASA output, then carries $q^+$ into the next step. The full recurrence, expression
+input and execution semantics are given in Section~\ref{sec:selfref}.
+
+The default observation adapter now invokes CGK-R1 and publishes its actual
+carried state. The earlier hold event remains available through the explicit
+legacy option. CGK-R1 supplies new circle-plus, encoder and mechanical-operator
+definitions in Section~\ref{sec:coupled}; the unavailable original M2 forms are
+not claimed to have been recovered.
+\clearpage
+
+\section{Paired supports and the canonical UGTS event}
+This section records the retained observation-only adapter, selected with
+\code{--legacy-hold}. The default coupled handoff is specified in
+Section~\ref{sec:coupled}; it retains residual diagnostics without using this
+earlier admission rule to override its equations.
+
+U normalizes the two spherical supports as
+\begin{equation}
+f_L(x)=\|x-c_L\|-R_L,\qquad f_R(x)=\|x-c_R\|-R_R,
+\end{equation}
+with a profile selecting union, intersection or either-with-tag. The overlap flag
+is retained separately. \src{p.\,3}
+
+SATNAV-R1 uses the union of two \emph{declared local processing domains} for its
+worked event adapter. With supplied deterministic position-radius allowance $u_p$,
+its per-sphere margin is
+\begin{equation}
+m_j=R_j-\|x-c_j\|-u_p.
+\end{equation}
+Admission means at least one margin is nonnegative. This is a geometric/query policy
+for the supplied local frame, not a claim that the true receiver error is bounded by
+$u_p$. Its origin is explicitly recorded. \dec{09}
+
+The corresponding handoff is implemented in order:
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.24\textwidth}Y@{}}\toprule
+\textbf{UGTS stage} & \textbf{Satnav realization}\\\midrule
+Support & Candidate lies within at least one declared local support under the supplied allowance.\\
+Compatibility & Fixed frame and increasing unwrapped time; supported estimator-clock convention.\\
+Guard & Residual interval compared with a named metre-domain budget.\\
+Verified event & Candidate satisfies those computational/model conditions with residual redundancy.\\
+Transition & Publish an observation record only. No external control command.\\
+Lineage & Source/profile IDs, full time, source keys and the preceding record digest.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+For the demo, $u_p=5$ m, the two support radii are 10,000 m, and centres are
+$(0,0,0)$ and $(100,100,0)$ ENU metres. These are labelled worked parameters, not values
+extracted from the attached prototype or a real site survey.
+
+The phrase \code{POSITION\_CANDIDATE\_VERIFIED} means verified under this declared
+computational handoff. It does not supply certified GNSS integrity or prove the
+physical correctness of the upstream observations.
+\clearpage
+
+\section{Finite cones and translational sweeps retained}
+For the source's slant length $T>0$ and half-angle $0<\alpha_c<\pi/2$,
+\begin{equation}
+h=T\cos\alpha_c,\qquad R=T\sin\alpha_c.
+\end{equation}
+With apex $c$, unit axis $a$ and query $x$, set
+\begin{equation}
+z=a\cdot(x-c),\qquad q=\|(x-c)-za\|.
+\end{equation}
+The exact primitive relation is the signed meridian distance to the triangle
+$(-R,h),(R,h),(0,0)$, with negative interior and zero boundary. The implementation
+computes distances to the three boundary segments and uses the source's inside test
+$0\le z\le h$, $q\le z\tan\alpha_c$. \src{pp.\,2--3}
+
+These are optional UGTS query helpers in the archive. A finite cone is not silently
+substituted for the satellite pseudorange sphere or a physical antenna response.
+The default receiver solve uses the actual distance-to-satellite equations already stated.
+
+For a fixed-orientation cone translated along a segment of length $L$, $n\ge2$ uniform
+samples and sample minimum $m_n$, retain
+\begin{equation}
+m_n-\frac{L}{2(n-1)}\le\inf_{u\in[0,1]}d_C(x-s(u))\le m_n.
+\end{equation}
+The source derives this using the one-Lipschitz distance response to translation and
+the nearest sample spacing. It is not a general exact SDF for arbitrary rotated sweeps.
+\src{p.\,3}
+
+\subsection{Numerical and nesting distinction}
+The helper evaluates this analytic interval in ordinary floating arithmetic. It does
+not implement directed rounding or a proven machine-error enclosure. The interval's
+\emph{width} decreases with sample spacing. Intervals from arbitrary nonnested sample
+grids need not be nested, so the implementation does not claim that stronger property.
+\dec{07}
+
+The source's constraint-release and hinge-torque mechanisms remain separately typed
+geometric/mechanical profiles. Removing a constraint is not an automatic improvement
+to satellite observability, nor does the existence of a hinge model supply a physical
+receiver trajectory. They are not inserted into the default position estimator.
+\clearpage
+
+\section{Jitter intervals and the explicit source correction}
+U defines $f_j=f+\epsilon_j\sigma$ with $\sigma\in\{-1,+1\}$, then prints the equality
+\begin{equation}
+[f_j-\epsilon_j,f_j+\epsilon_j]=[f-\epsilon_j,f+\epsilon_j].
+\end{equation}
+That equality is generally false for nonzero $\epsilon_j$. This edition preserves
+its source location and explicitly separates the two interpretations rather than
+silently changing the supplied page. \src{p.\,5}\dec{06}
+
+\subsection{Two valid, different interval statements}
+The perturbation family obeys
+\begin{equation}
+f_j\in[f-\epsilon_j,f+\epsilon_j].
+\end{equation}
+If $f_j$ is the available perturbed observation and $|f_j-f|\le\epsilon_j$, then
+\begin{equation}
+f\in[f_j-\epsilon_j,f_j+\epsilon_j].
+\end{equation}
+Both are valid enclosure statements, but the interval centres differ. The helper
+returns both named intervals and a test verifies that they are not falsely equated.
+The source's example centred around $f$ is treated as the perturbation-family interval.
+
+No jitter is added to the GNSS code observations or to solved ECEF coordinates.
+The deterministic bit can be metadata or a separate query perturbation, not a method
+for manufacturing measurement precision or removing multipath.
+
+\subsection{Metre-domain guard in the legacy event adapter}
+For the largest absolute post-fit residual $m=\max_i|r_i|$ and a \emph{supplied}
+absolute residual perturbation allowance $u_r$, form
+\begin{equation}
+\left[\max(0,m-u_r),m+u_r\right].
+\end{equation}
+A budget $B$ is met when the upper endpoint is at most $B$, exceeded when the lower
+endpoint is greater than $B$, and otherwise unresolved. This is a conditional model
+classification. The demo uses $u_r=0.1$ m and $B=20$ m as stated fixture parameters.
+It does not identify nominal $\sigma_i$ with a hard worst-case bound.
+\clearpage
+
+\section{Two exact 64-bit key layouts}
+U's field widths and layouts are retained exactly:
+\begin{center}
+\begin{tabular}{@{}lrrl@{}}\toprule
+\textbf{Field} & \textbf{Bits} & \textbf{Contiguous range} & \textbf{Domain}\\\midrule
+Log-radius index &20&63:44&Declared $\rho\in[-20,0]$\\
+Chart angle &18&43:26&Periodic $[0,2\pi)$\\
+Modular tick &14&25:12&$0,\ldots,16383$\\
+Hoop phase &12&11:0&Periodic $[0,2\pi)$\\\bottomrule
+\end{tabular}
+\end{center}
+The contiguous word is
+\begin{equation}
+K_C=(q_\rho\ll44)\lor(q_\theta\ll26)\lor(q_X\ll12)\lor q_{\phi_h}.
+\end{equation}
+The Morton word emits source bits in MSB round-robin order
+\begin{equation}
+\rho_{19},\theta_{17},X_{13},\phi_{11},\rho_{18},\theta_{16},X_{12},\phi_{10},\ldots
+\end{equation}
+until each source field is exhausted. They are intentionally different encodings.
+\src{pp.\,7--8}
+
+\subsection{The source's exact golden pair}
+For $(949111,0,1920,227)$, the new tests recover
+\begin{lstlisting}
+contiguous: e7b77000007800e3
+Morton:     88823bb88099128b
+\end{lstlisting}
+Both decode to the same quantized tuple. Random round trips and prefix-refinement
+bounds are tested separately from the new positioning arithmetic.
+
+\subsection{Address identity is not state identity}
+The 64-bit key has exactly $2^{64}$ possible words. A key does not encode arbitrary
+clock bias, full linear time, Up, formal covariance, correction products or lineage.
+Those remain separate full fields in the event record. The 12-bit field is the named
+hoop phase, not a simultaneously hidden arbitrary matrix and grammar payload.
+\src{pp.\,8--9}\dec{05}
+
+The address construction follows the position estimate; it is not used to quantize
+satellite coordinates or code ranges before the receiver solve. A matching key is an
+index match, not proof that two entire navigation events are identical.
+\clearpage
+
+\section{Quantization, error and explicit origin handling}
+SATNAV-R1 declares nearest-node radial quantization over $[-20,0]$:
+\begin{equation}
+h_\rho=\frac{20}{2^{20}-1},\quad
+q_\rho=\operatorname{round}_{+}\!\left(\frac{\rho+20}{20}(2^{20}-1)\right).
+\end{equation}
+Angles use nearest periodic nodes with upward half ties, while the source's bit widths
+and range remain unchanged. This tie/quantization choice is an explicit specialization,
+not an unquoted algorithm recovered from an unavailable source ZIP. \dec{05}
+
+For an angular width $b$, $h_\theta=2\pi/2^b$. A nearest-node quantization gives
+$|\delta\rho|\le h_\rho/2$ and circular $|\delta\theta|\le h_\theta/2$ within the
+chosen range. Using the exact source radial step, a conservative planar error bound is
+\begin{equation}
+\|\widehat x-x\|\le r_h(e^{h_\rho/2}-1)
++2r_he^{h_\rho/2}\sin(h_\theta/4).
+\end{equation}
+It follows from adding a radial displacement and an angular chord at the enlarged
+radius. The bound scales with radius; log packing is not uniform physical resolution.
+\src{pp.\,4, 8--9}
+
+\subsection{Default diagnostic chart}
+The demo chooses $r_0=100000$ m and a 0.1 m origin core. It keys only values with
+$-20\le\rho\le0$. These choices define an indexed diagnostic domain, not the
+receiver's positioning accuracy or a geographic route. Out-of-range or core values
+keep the full position and a chart status without wrapping them into a new position.
+
+\subsection{No equal-information compression claim}
+U explicitly audits the ratios $192/64$, $32/1$ and $512/12$ as nominal width ratios
+between records with different semantics. This specialization does not reintroduce
+a claim that one address is equivalent to all original floating information.
+\src{pp.\,8--11}
+
+The packed key is useful for lookup and local indexing after the relevant state exists.
+Position estimation, corrected observations, uncertainty and event verification remain
+real computational and storage costs.
+\clearpage
+
+\section{Linear time, winding and separate topology profiles}
+For reference tick $X_0$, period $P>0$ and full linear tick $X$,
+\begin{equation}
+u=\frac{X-X_0}{P},\qquad w=\lfloor u\rfloor,\qquad\psi=u-w\in[0,1).
+\end{equation}
+The source's example $X=1920$, $X_0=1135$, $P=256$ yields $w=3$ and
+$\psi=0.06640625$. The new helper reproduces that value, including floor-division
+behavior for negative ticks. \src{p.\,5}
+
+The satnav key stores only the 14-bit tick residue, while the event retains full tick,
+GPST coordinate, origin/period and winding. A period of 16384 one-second ticks repeats
+its residue after 4 h 33 min 4 s. It does not identify events across those repetitions
+without the additional time/lineage fields.
+
+\subsection{The source half-turn is not the reflective quotient}
+U's literal odd radial-wrap bundle applies
+\begin{equation}
+(\rho,\theta,\phi_h,o)\mapsto(\rho',\theta+\pi,-\phi_h,-o).
+\end{equation}
+Its separately named reflective Klein profile applies
+\begin{equation}
+(\rho,\theta,\phi_h,o)\mapsto(\rho',\pi-\theta,-\phi_h,-o).
+\end{equation}
+The second reverses angular orientation; the first is a rotation on the base circle
+with a changed internal state. The archive retains independent helpers and tests,
+matching the distinction in U's Figure 4. \src{pp.\,5--6}
+
+Neither rule is applied to the GNSS receiver's ECEF position, a satellite orbit or the
+physical Earth. A local index experiment may select either profile explicitly; it does
+not make a geographical discontinuity an actual displacement. \dec{08}
+
+The source's finite grammar and radix refinement remain local state/index mechanisms.
+Their existence does not turn one receiver solution into an unbounded tree or prove
+that every possible trajectory is retrieved in constant time.
+\clearpage
+
+\section{GPU kernel: one independent solve per thread}
+The kernel takes a bounded batch of immutable epoch metadata and a structure-of-arrays
+observation buffer. One thread evaluates one full independent four-state solution.
+Each thread owns its QR workspace, iterative estimate, status and residual record.
+There is no cross-epoch update or unordered reduction of position states.
+
+\begin{lstlisting}[language=C++]
+const size_t e = size_t(blockIdx.x) * blockDim.x + threadIdx.x;
+if (e < count) {
+    output[e] = solve_epoch(epochs[e], observations, e, config);
+}
+\end{lstlisting}
+The launch uses 128 threads per block. Repeated jobs can supply thousands of independent
+epochs; a single live low-rate receiver does not by itself provide enough parallel work
+to establish a GPU speed advantage. This kernel is a batch/replay specialization.
+
+\subsection{Numerical implementation}
+The actual shared implementation is in \code{include/satnav\_core.hpp}. It performs
+the retained ASA arithmetic, row construction, QR update, convergence and final
+covariance/residual calculation. The CUDA translation unit invokes that implementation
+with its device reader. The CPU uses the same word and numerical function with a
+plain double reader.
+
+An independent Python implementation uses separate matrix construction and Householder
+QR. It is not merely calling back into the shared C++ function. The two verification
+levels therefore distinguish device/host conformance from an additional numerical
+reference comparison.
+
+\subsection{Potential performance costs remain visible}
+Independent threads may finish in different iterations, producing normal warp
+imbalance. QR uses FP64 arithmetic and square roots; no tensor-core speed claim is
+made. The source keeps full precision where satellite-range subtraction requires it,
+rather than forcing coordinates into float textures or one-bit words.
+
+The build disables fused contraction for the shared review profile and does not enable
+fast math. The acceptance checks use named tolerances, not a claim of bit-identical
+floating evaluation across every compiler and processor.
+\clearpage
+
+\section{Texture and global input paths}
+For $N$ independent epochs, channel $c\in[0,31]$ and observation field $f\in[0,5]$,
+flatten the input as
+\begin{equation}
+\operatorname{index}(e,c,f)=(6c+f)N+e.
+\end{equation}
+At a fixed channel/field, neighboring epoch threads therefore read neighboring values.
+The six fields are satellite $x,y,z$, raw code, additive correction and nominal sigma.
+
+\subsection{Exact FP64 bit transport in the texture path}
+A CUDA linear texture resource uses an \code{int2} channel. Each texel carries the
+64 raw bits of one double; the device reconstructs the value using the low and high
+32-bit words. The read uses an integer \code{tex1Dfetch}; there is no interpolation,
+normalized-coordinate lookup or conversion of ranges into float values.
+\ext{H4}\dec{10}
+
+\begin{lstlisting}[language=C++]
+const int2 bits = tex1Dfetch<int2>(texture, integer_index);
+const double value = __hiloint2double(bits.y, bits.x);
+\end{lstlisting}
+The global path reads the same double buffer directly. Both paths use the same solver
+and output record. Equality of decoded inputs is a data-representation property; it
+does not guarantee a texture speedup for this access pattern.
+
+\subsection{Ownership and publication}
+Device buffers and events use local ownership wrappers. A texture object is destroyed
+before its backing buffer. Each launched epoch has one writer. The program checks CUDA
+allocation, copies, launch and completion before publishing downloaded result files.
+A failed device call is an error, not a CPU fallback labelled as a GPU success.
+
+The first chunk receives an untimed warmup. Device events measure subsequent kernel
+intervals and their sum is reported. CSV parsing, allocations, texture construction,
+host packing, uploads, downloads and the Python event adapter are outside that sum.
+A CPU loop interval and a full application latency are therefore distinct quantities.
+\clearpage
+\section{The RTX 5070 Ti Laptop target and VRAM plan}
+NVIDIA lists the \textbf{RTX 5070 Ti Laptop GPU} with a \textbf{12 GB GDDR7} memory
+configuration. NVIDIA's CUDA table lists the GeForce RTX 5070 Ti family at compute
+capability 12.0; the build selects \code{sm\_120} and matching virtual code.
+CUDA 12.8 introduced compiler support for SM\_120. These are supporting implementation
+facts, not equations supplied by the UGTS prototype. \ext{H1--H3}
+
+The program's \code{--probe} path records the actual device name, major/minor
+capability, driver/runtime versions, total/free memory and linear-texture limit.
+This edition's targeted binary reports a mismatching capability rather than assuming
+that a marketing label guarantees the compiled architecture.
+
+\subsection{Payload accounting}
+The executed CPU build reports 72 bytes per epoch metadata record and 376 bytes per
+result. The fixed observation representation is $32\cdot6\cdot8=1536$ bytes per epoch,
+so the tested ABI payload is
+\begin{equation}
+M_{\rm payload}(N)=N(72+376+1536)=1984N\ \text{bytes}.
+\end{equation}
+The 256-epoch demo therefore uses 507,904 payload bytes. A maximum chunk of 65,536
+epochs uses 124 MiB before a separate 64 MiB planning margin. These figures do not
+count the entire driver/context or all host copies.
+
+Admission uses the actual free/total bytes, the user budget and reserve. The defaults
+are a 512 MiB budget and 1536 MiB total-device reserve. After checking that each
+subtraction is valid, capacity is bounded by
+\begin{equation}
+B_{\rm usable}=\min(B_{\rm user},0.7F,T-R_{\rm reserve})-64\ \mathrm{MiB}.
+\end{equation}
+The integer implementation rounds the free-memory fraction downward, caps each chunk
+at 65,536 epochs and checks texture/index limits. Another process may consume memory
+after probing, so actual allocation errors still propagate.
+
+The package does not fill all 12 GB to demonstrate activity. Useful payload depends
+on the batch; automatically leaving space for other laptop processes is a resource
+plan, not a claim of permanent texture-cache residency. No operating-system ring-0
+driver or executable-code-in-texture mechanism is part of the CUDA interface.
+\clearpage
+
+\section{Actual input and result files}
+The executable reads two CSV files with exact headers. The source-to-domain model is
+recorded separately in \code{profile.json}; prepared real data must supply its own
+correction/product provenance.
+
+\begin{lstlisting}
+epochs.csv:
+epoch_id,t_rx_gpst_s,x0_m,y0_m,z0_m,b0_m,
+asa_mask,na_mask,boundary_mask
+
+observations.csv:
+epoch_id,channel,satellite_id,sx_rx_m,sy_rx_m,sz_rx_m,
+code_m,add_correction_m,sigma_m,ready
+\end{lstlisting}
+The display above wraps the headers for readability; the actual files use one header
+line each. \code{docs/INPUT.md} defines their exact names, ranges and physical meaning.
+The reader rejects malformed headers, duplicate channels, nonfinite fields and invalid
+sigmas before passing data to a backend.
+
+\subsection{Results}
+\code{solutions.csv} retains one row per input epoch: source/time identity, solver and
+fit status, iteration count, channel count, all four ASA fields, position/clock,
+formal diagonal covariance and residual statistics. \code{residuals.csv} records each
+active post-fit channel when the solver converges.
+
+For a failed solve, estimate fields may contain the starting guess or a partial
+iterate. The status is authoritative; those fields must not be published as a valid
+fix. Zero variances in an unevaluated result do not mean a perfectly known position.
+The parser and status record prevent that interpretation without hiding the original
+calculation state.
+
+\code{run.json} records the backend, timing scope, selected numerical settings and
+actual device report where available. \code{ugts\_events.jsonl} and
+\code{ugts\_summary.json} are produced by the explicit post-processing step. They do
+not replace the original solution or residual files.
+
+A new output directory is required for each run. Completed runs can be compared
+without silently overwriting earlier evidence. Corruption of a source file or a
+changed result is visible in the delivered integrity manifest or retained event chain.
+\clearpage
+
+\section{Ordered coupled records and source lineage}
+A CGK-R1 event binds the original solution and residuals, modeled position and
+velocity, executed J/K transition, complete native trace row, both compact keys,
+full time and prior digest. A condensed structural sketch is:
+
+\begin{lstlisting}
+{
+  "version": "3.6.1.7", "profile": "CGK-R1",
+  "trajectory_id": 0, "epoch_id": 0, "input_index": 0,
+  "event": "COUPLED_OBSERVATION_ADVANCED",
+  "observation": {"solver_record": {}, "epoch_record": {},
+    "residual_records": [], "formal_variance_m2": {}},
+  "modeled": {"enu_m": [], "ecef_m": [],
+    "velocity_enu_m_s": [], "q": 0, "hoop_phi_rad": 0},
+  "jk": {"before": 0, "j": 0, "k": 0, "after": 0},
+  "native_state": {"complete executed trace row": "..."},
+  "chart": {"up_m": 0, "time_gpst_s": 0, "winding": 0},
+  "packing": {"contiguous_hex": "...", "morton_hex": "..."},
+  "lineage": {"sources": {}, "native": {}},
+  "previous_hash": "...", "record_hash": "..."
+}
+\end{lstlisting}
+This is a structural sketch; the delivered exports contain full numeric arrays,
+source records, statuses and hashes. Unavailable observations produce explicit
+prediction events; a failed mechanical advance produces a failure event. The
+modeled state is never presented as the original receiver measurement.
+
+The chain uses a domain-tagged SHA-256 of canonical local JSON and retains the prior
+head. It binds the emitted sequence to a retained reference. It is not a signature,
+a satellite-signal authentication primitive or proof that an upstream observation
+was physically true.
+
+Author attribution is included as supplied: Tom Klootwijk, with the identifier and
+date in the release metadata. A full profile/source digest remains separate from the
+64-bit coordinate key or a one-bit event field. This preserves the base engine's
+identity/state distinction and U's requirement that uncertainty and lineage survive
+packing. \base\ \src{pp.\,8--10}
+\clearpage
+
+\section{The retained deterministic satnav batch}
+The shipped demo has 256 artificial receiver epochs. The anchor is a declared WGS84
+location at $52^\circ$ latitude, $5^\circ$ longitude and 100 m ellipsoidal height.
+Receiver points are generated from a local ENU path, with a known clock bias near
+75,000 m. Satellite directions and ranges are constructed fixtures, not a downloaded
+constellation or an observation session from the user's laptop.
+
+The first 128 cases are noiseless model data. The next ordinary cases add independent
+Gaussian fixture noise with their specified sigmas. The final six cases deliberately
+exercise failure and edge conditions. Corrections are labelled artificial additive
+test values, not an atmosphere or ephemeris model.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.42\textwidth}Y@{}}\toprule
+\textbf{Outcome} & \textbf{Observed count / result}\\\midrule
+Converged numerical epochs & 253 of 256\\
+Too few selected satellites & 1\\
+Whole-word absorbed & 1\\
+Rank-deficient geometry & 1\\
+Converged within chosen residual budget & 251\\
+Gross-outlier residual alert & 1\\
+Exactly four, no residual redundancy & 1\\\bottomrule
+\end{tabularx}
+\end{center}
+
+The exact-four and 32-channel cases verify those interface boundaries. The outlier
+case adds an artificial 200 m error to one code observation. It converges to an
+incorrect candidate with a large residual alert, demonstrating why convergence and
+navigation reliability are not the same field.
+
+The earlier observation-only geometry-support adapter emits 251 verified candidate
+records, three no-solution records and two unresolved candidates under its declared
+conditions. The exact-four case remains unresolved because no redundancy is present;
+the outlier remains unresolved because the chosen residual criteria are exceeded.
+CGK-R1 instead advances 253 observation-driven and three prediction-only states;
+residual classifications remain diagnostics beside the original solutions.
+
+These are finite results of a known model. The demo is useful for reviewing signs,
+units, frame adapters and implementation agreement. It is not a real-world accuracy
+measurement or a GPU speed result.
+\clearpage
+
+\section{Independent results and error measures}
+The C++ solve is compared against a separately written Python Householder solver.
+The comparison checks epoch identity, all mask fields, status/fit, position and clock,
+formal covariance and residual statistics, yielding \textbf{4,828 checked comparisons}
+over the 256 epochs.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.54\textwidth}Y@{}}\toprule
+\textbf{Cross-reference quantity} & \textbf{Observed maximum}\\\midrule
+Absolute state-component difference & $1.210719347\times10^{-8}$ m\\
+Formal covariance diagonal difference & $6.394884622\times10^{-14}$ m$^2$\\\bottomrule
+\end{tabularx}
+\end{center}
+
+The comparison tolerance for each state component is $10^{-4}$ m. Small algorithmic
+agreement does not make the underlying physical inputs exact; it shows that the two
+implementations solve the same declared finite problem to closely matching values.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.31\textwidth}rYY@{}}\toprule
+\textbf{Fixture class} & \textbf{Epochs} & \textbf{3D position RMSE} & \textbf{Maximum error}\\\midrule
+Noiseless &128&$3.61\times10^{-9}$ m&$7.84\times10^{-9}$ m\\
+Noisy &122&1.6017 m&3.3883 m\\
+Gross outlier &1&147.0987 m&147.0987 m\\
+Exactly four &1&$1.23\times10^{-8}$ m&$1.23\times10^{-8}$ m\\
+32 channels &1&$5.71\times10^{-9}$ m&$5.71\times10^{-9}$ m\\\bottomrule
+\end{tabularx}
+\end{center}
+
+Errors above are measured only against the synthetic generating truth. The nanometre-
+scale noiseless figures reflect arithmetic roundoff in matched artificial data, not
+an achievable GNSS hardware accuracy. The noisy fixture demonstrates the selected
+noise model; a real receiver's error includes its actual correction/model limitations.
+
+Formal covariance, predicted geometry quality and empirical truth error are different
+quantities. The package keeps them separate, following the distinction made in the
+positioning-error reference. \ext{G5}
+\clearpage
+
+\section{Prior release verification record}
+This section retains the 3.6.1.5 preparation record. Archived 3.6.1.6 evidence
+is given in the SRK-R1 validation section; historical 3.6.1.7 checks appear in the
+coupled implementation validation section. Retained 3.6.1.8 evidence appears in
+Section~\ref{sec:live-validation}. The following unexecuted
+CUDA statements refer to the prior preparation environment only.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.48\textwidth}Y@{}}\toprule
+\textbf{Category} & \textbf{Recorded result}\\\midrule
+CPU C++ build and CTest & Passed\\
+C++ explicit checks & 105,559 passed\\
+Python UGTS/geodesy tests & 18 passed\\
+Command-line scenarios & 11 passed\\
+Independent solver comparisons & 4,828 passed\\
+CPU Address/UndefinedBehavior Sanitizer & CTest passed\\
+CUDA compilation & \code{not\_run}: nvcc unavailable\\
+CUDA execution / memory sanitizer & \code{not\_run}: no accessible NVIDIA GPU\\
+Windows native build & \code{not\_run} in preparation\\
+Live GNSS observation validation & Not performed; synthetic fixtures only\\\bottomrule
+\end{tabularx}
+\end{center}
+
+The C++ count includes all 65,536 possible 16-bit population-count cases and 10,000
+independent random word-mask comparisons. It also checks the full JK truth table,
+QR identities, covariance, rank rejection and the retained whole-word rule. A large
+assertion count is not a count of separate receivers tested.
+
+The Python suite checks both key codecs against the source's golden pair and 5,000
+random tuples, all prefix lengths for the reference key, quantization bounds, full
+winding, two separate topologies, cone/sweep relations, the jitter-interval distinction,
+geodetic/ENU round trips and literal OTAN2 semantics.
+
+The CLI scenarios include malformed IDs/channels, negative sigma, NaN input, invalid
+backend/options, existing-output protection, a normal run and an iteration-limit run.
+These prior outcomes remain in the preserved sibling releases, with earlier source test claims
+kept separate from these actual executions.
+
+In the prior preparation, the device validation script was invoked and recorded
+its unavailable-tool result. Later releases supply separate actual laptop execution records. No general CUDA speedup or texture-residency claim is made
+in this edition.
+\clearpage
+
+\section{Build, run and verify on the requested laptop}
+Use a CUDA-supported host compiler, CMake 3.24 or newer, and CUDA Toolkit 12.8 or newer
+for the requested SM120 target. The installed NVIDIA driver must support the chosen
+runtime/toolchain. This specifies a minimum architecture-capable toolkit, not a claim
+that 12.8 is the newest available release. \ext{H2, H3}
+
+\begin{lstlisting}
+cmake -S . -B build_gpu -DSATNAV_ENABLE_CUDA=ON \
+  -DCMAKE_BUILD_TYPE=Release
+cmake --build build_gpu --config Release --parallel 2
+ctest --test-dir build_gpu -C Release --output-on-failure
+./build_gpu/satnav --probe
+./build_gpu/satnav --input examples/demo --out run_gpu \
+  --backend cuda --read texture --verify
+python tools/verify_run.py --input examples/demo --run run_gpu
+python tools/ugts_handoff.py --input examples/demo --run run_gpu
+\end{lstlisting}
+On a Windows multi-configuration build, use the following executable path:
+\begin{lstlisting}
+build_gpu/Release/satnav.exe
+\end{lstlisting}
+Run configuration from the matching x64 compiler developer terminal so that CMake can locate the host toolchain.
+
+\subsection{Complete device comparison}
+\begin{lstlisting}
+python tools/validate_gpu.py --sanitizer
+\end{lstlisting}
+The script records compilation, device probing, texture/global runs, shared CPU
+comparisons, independent Python comparisons and requested memcheck results. It
+uses fresh run directories. Missing required tooling produces a separate unavailable
+status and exit code 3. A real build/test error remains a failed status.
+
+\subsection{CPU-only review}
+\begin{lstlisting}
+cmake -S . -B build_cpu -DCMAKE_BUILD_TYPE=Release
+cmake --build build_cpu --config Release --parallel 2
+./build_cpu/satnav --input examples/demo --out run_cpu
+python tools/verify_run.py --input examples/demo --run run_cpu
+python -m unittest discover -s tests -p "test_*.py" -v
+\end{lstlisting}
+The retained SATNAV reference uses the Python standard library. The coupled
+reference additionally requires NumPy, installed from \code{requirements.txt}.
+\clearpage
+
+\section{Integration decisions and source issue register}
+\small
+\begin{longtable}{@{}P{.075\textwidth}P{.28\textwidth}P{.575\textwidth}@{}}\toprule
+\textbf{ID} & \textbf{Decision} & \textbf{Effect}\\\midrule
+\endfirsthead
+\toprule\textbf{ID} & \textbf{Decision} & \textbf{Effect}\\\midrule\endhead
+N01 & Corrected-code satnav model & The GNSS observation equation and solver are explicit new additions, not attributed to U.\\
+N02 & Full receiver state retained & Solve in 3D ECEF plus clock; use a separate local log chart and retain Up and provenance.\\
+N03 & Independent QR methods & Shared CPU/CUDA Givens implementation and independent Python Householder solve; named rank and convergence policy.\\
+N04 & Fixed channel-to-bit mapping & One epoch is one at-most-32-channel word. Boundary absorption stays whole-word.\\
+N05 & Source key layouts preserved & Exact contiguous/Morton pair retained; quantization ties named; key does not replace full state.\\
+N06 & Two jitter intervals separated & Explicit source equality issue documented; perturbation-family and measurement-centred intervals are not silently equated.\\
+N07 & Bounded sweep interpretation & Translation-only analytic interval; floating arithmetic and nonnested grids not promoted to stronger certificates.\\
+N08 & Topology does not rewrite Earth & Bundle/reflection helpers remain separate local contracts, not GNSS propagation rules.\\
+N09 & Computational event semantics & Declared support/residual policies produce observation records, not a protection level, spoof-proof fix or actuator command.\\
+N10 & Recorded hardware evidence & CUDA was unexecuted in 3.6.1.5 preparation; current device builds, replay and memcheck results are recorded separately.\\
+N11 & Explicit literal feedback & SRK-R1 composes ASA/NA and JK with supplied Boolean expressions and synchronous state carry.\\
+N12 & Complete geometric coupling & CGK-R1 defines circle-plus, predicate encoders, state-dependent mechanics and eigenmatrix; the actual handoff executes and publishes the coupled state.\\
+N13 & Live receiver positioning & LIVE-GPS-L1-R1 decodes real GPS observations and streamed ephemerides, applies explicit physical corrections and solves the remote receiver position during capture.\\\bottomrule
+\end{longtable}
+\normalsize
+
+These decisions define the explicit profiles of aTOMos 3.6.1 with the retained UGTS
+prototype integrated at explicit interfaces. They do not discard the user's operator
+vocabulary or pretend that all missing GNSS physics were already encoded in a name.
+
+A later variant can extend the estimator with new states, observable types or correction
+adapters. It must identify the changed observation model and preserve a projection or
+compatibility test to this profile where appropriate. An unreported inter-system bias,
+new residual exclusion rule or changed topology is not a transparent optimization.
+\clearpage
+
+\section{Source and artifact inventory}
+\textbf{U.} \emph{UGTS\_KC\_3\_6\_2\_SCLP\_Tom\_Klootwijk(1).pdf}. The file has
+19 physical pages and a 16-page numbered main/appendix sequence. The source's referenced
+13-page precursor and software ZIP were not supplied. The inherited source manifest records its PDF SHA-256 as
+\begin{lstlisting}
+6987490a0a7b7ed76b0091057a2e69ab831fee786434a0b4219782923f5ea580
+\end{lstlisting}
+The U page references in this formalization point to the printed main numbers. For
+example, its key table on printed p.\,8 is physical PDF page 11. The relevant figure,
+table and jitter-equation pages were inspected as rendered pages as well as text.
+
+\textbf{A.} aTOMos v3.6.1 / M2 source and code contract in this project conversation.
+The prior archive was not mounted in this turn; the specialization preserves the
+written ASA/JK/OTAN2 contracts rather than claiming a binary patch to an unavailable
+artifact. The actual new source is included and tested to the extent recorded above.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.34\textwidth}Y@{}}\toprule
+\textbf{Delivered file family} & \textbf{Purpose}\\\midrule
+\code{include/}, \code{src/}, \code{cuda/} & Shared solver, executable and real CUDA backend source.\\
+\code{python/} & Independent solution and source-derived UGTS/geodesy helpers.\\
+\code{examples/demo/} & Prepared artificial epochs, observations, truth and profile.\\
+\code{tests/}, \code{results/} & Reproducible checks and the actual recorded outcomes.\\
+\code{tools/} & Build/review, independent comparison, event adapter and integrity tools.\\
+\code{docs/} & This editable formalization, input contract and source-decision register.\\
+\code{source/manifest.json} & Exact source availability and fingerprint record.\\
+\code{SHA256SUMS.txt} & Delivered-byte integrity manifest.\\\bottomrule
+\end{tabularx}
+\end{center}
+Source font files and proprietary binaries are not distributed. The current uploaded
+UGTS reference may be retained separately for source comparison; its equations and
+selected mechanisms are integrated into this volume instead of concatenating unrelated
+older transcripts into the kernel package.
+\clearpage
+
+\section*{Primary implementation references}
+\addcontentsline{toc}{section}{Primary implementation references}
+Recorded by the 3.6.1.5 preparation, 14 September 2026. These external references support the satnav model and
+hardware contract; they are separate from the user's source corpus.
+\small
+\begin{description}[style=nextline,leftmargin=8mm]
+\item[G1] ESA Navipedia, J. Sanz Subirana, J.M. Juan Zornoza and M. Hern\'andez-Pajares,
+\href{https://gssc.esa.int/navipedia/index.php?title=Code_Based_Positioning_(SPS)}{Code Based Positioning (SPS)}.
+Four-state model, correction terms, linearized geometry and iterative position update.
+\item[G2] ESA Navipedia, \href{https://gssc.esa.int/navipedia/index.php/Satellite_Coordinates_Computation}{Satellite Coordinates Computation}.
+Emission-time satellite state and reception-time frame treatment.
+\item[G3] ESA Navipedia, \href{https://gssc.esa.int/navipedia/index.php/Transformations_between_ECEF_and_ENU_coordinates}{Transformations between ECEF and ENU coordinates}.
+Local frame conversion and angular conventions.
+\item[G4] ESA Navipedia, \href{https://gssc.esa.int/navipedia/index.php?title=Parameters_adjustment}{Parameters adjustment}.
+Linearized residual and least-squares framework.
+\item[G5] ESA Navipedia, \href{https://gssc.esa.int/navipedia/index.php/Positioning_Error}{Positioning Error}.
+Formal covariance, predicted geometry and measured error distinguished.
+\item[G6] NGA Office of Geomatics, \href{https://earth-info.nga.mil/index.php?action=wgs84\&dir=wgs84}{World Geodetic System 1984}.
+Ellipsoid/reference-system definition and constants used in the coordinate utility.
+\item[H1] NVIDIA, \href{https://www.nvidia.com/en-us/geforce/laptops/50-series/}{GeForce RTX 50 Series Laptops}.
+RTX 5070 Ti Laptop memory specification.
+\item[H2] NVIDIA, \href{https://developer.nvidia.com/cuda/gpus}{CUDA GPU Compute Capability}.
+GeForce RTX 5070 Ti family listed at compute capability 12.0.
+\item[H3] NVIDIA, \href{https://docs.nvidia.com/cuda/archive/12.8.0/cuda-features-archive/index.html}{CUDA 12.8 Features Archive}.
+Introduction of SM\_120 compiler support.
+\item[H4] NVIDIA, \href{https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TEXTURE__OBJECT.html}{CUDA Runtime API: Texture Object Management}.
+Linear resource and element-read contract.
+\end{description}
+\normalsize

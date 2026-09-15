@@ -1,0 +1,44 @@
+\subsection{Packed execution and regression evidence}
+The following numbers are derived from the final decoded seeds and verified
+native binaries. The isolated replay child receives only the packed seed, shared
+runtime source and native executable; an audit hook denies every read under the
+original release directory. The reconstructed fractional, past and seven-day
+timestamp states match the normal native run bit for bit.
+
+\begin{center}\begin{tabular}{@{}lrrrr@{}}\toprule
+Object & Seed bytes & Default queries & Altered JK & Warm max (ms)\\\midrule
+G05 & 9,066 & 397 & 2,881 & 0.816\\
+C03 & 9,074 & 289 & 2,881 & 0.956\\
+C06 & 9,073 & 417 & 2,881 & 0.834\\
+CHANDRA & 8,716 & 520 & 2,881 & 2.075\\
+\bottomrule\end{tabular}\end{center}
+Query counts cover one day. The counterfactual sets $J=1,K=0$ and changes the
+actual timestamps selected by the native recurrence. Physical states at shared
+timestamps remain identical. Warm timing is end-to-end Python/native geometry
+latency on this host for the recorded fractional seek sequence, not a universal
+performance bound. Cold seeks may require thousands of integration steps.
+
+Across eight seven-day station/object searches, 83 rise/set events were found. The largest event-time change under refinement from 120-second to 30-second sampling was 0.002508 seconds. The event algorithm's grazing and no-global-root-exclusion qualifications still apply.
+
+
+A five-minute, seven-day table containing time and six binary64 state components
+would occupy 112,952 bytes before its metadata. This compares a generated state
+table to its specified model, not arbitrary-trajectory compression.
+The demonstration archive also contains
+large reference datasets and audit traces, which are not per-seed replay inputs.
+
+The table is 12.45 times the size of the largest complete packed seed. The shared CPU executable is 77,824 bytes, and the isolated shared Python source is 89,342 bytes at validation. Installed libraries and the OS/C++ runtime are additional shared dependencies. The default codec packs 64 one-bit planes into uint64 words without discarding any numeric bit. The canonical codec remains readable; bit-plane packing is slightly larger for these examples.
+
+The new native orbital checks compare 1,040 CPU/CUDA positions across the four models, with maximum disagreement 0.00004320 m. All 256 complete CPU/CUDA two-stage word traces match. Bounded-cache stress tests remain bit-exact through repeated eviction. Compute Sanitizer reports zero errors for 129 orbital queries and the word operation. The full Python suite passes 139 tests, including bit-plane reconstruction, rehashed-false-geometry, OTAN2 rejection and missing-reference-interval acceptance.
+
+
+Fresh retained-component regression passes four CTests on each build, 256 SATNAV
+epochs per backend with independent reconstruction, 4,225 SRK transitions and
+3,308 CGK transitions per backend, and 6,861 persistent live-worker comparisons
+per backend. The required GPU review tool also records zero errors under both
+texture and global-memory Compute Sanitizer runs on the actual RTX 5070 Ti Laptop.
+
+The first orbital RK4 test exposed an omitted final state assignment; that defect
+was fixed before these final results. Earlier failed and superseded investigation
+folders are retained as such and are not used as final validation. Numerical
+agreement is separate from the physical future-reference errors below.

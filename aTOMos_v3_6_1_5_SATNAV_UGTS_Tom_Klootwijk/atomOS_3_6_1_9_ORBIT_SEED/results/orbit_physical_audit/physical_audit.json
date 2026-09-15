@@ -1,0 +1,40 @@
+{
+  "scope": "independent force potential/frame and training-only numerical audit; no held-out target data read",
+  "models": {
+    "G05": {
+      "gravity_potential_gradient_error_m_s2": 2.6739033239352084e-11,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 2.6766507790745728e-16,
+      "rk4_30_vs_15_training_max_m": 0.00279781664191768,
+      "rk4_15_vs_7_5_training_max_m": 0.00017511545982387496,
+      "rk4_30_vs_dop853_training_max_m": 0.0029824105151725943,
+      "refit_15s_training_rms_m": 4.968049274299634,
+      "refit_15s_training_max_m": 18.665566065677194
+    },
+    "C03": {
+      "gravity_potential_gradient_error_m_s2": 3.3855828605235474e-11,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 8.33073745070314e-17,
+      "rk4_30_vs_15_training_max_m": 0.00013457880725972898,
+      "rk4_15_vs_7_5_training_max_m": 5.156197720580441e-06,
+      "rk4_30_vs_dop853_training_max_m": 0.000140252587852469
+    },
+    "C06": {
+      "gravity_potential_gradient_error_m_s2": 1.1571631701637504e-11,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 3.98609107286759e-17,
+      "rk4_30_vs_15_training_max_m": 0.00013280651183354542,
+      "rk4_15_vs_7_5_training_max_m": 6.732875829274692e-06,
+      "rk4_30_vs_dop853_training_max_m": 0.00013992183811264812
+    },
+    "CHANDRA": {
+      "gravity_potential_gradient_error_m_s2": 7.554222679718658e-12,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 7.757919228897728e-18,
+      "rk4_30_vs_15_training_max_m": 7.868060929974674e-07,
+      "rk4_15_vs_7_5_training_max_m": 4.5765005582380933e-07,
+      "rk4_30_vs_dop853_training_max_m": 6.228257579805364e-07
+    }
+  },
+  "pass": true
+}

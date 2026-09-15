@@ -1,0 +1,647 @@
+{
+  "status": "passed",
+  "objects": {
+    "C03": {
+      "seed": {
+        "profile": "ORBIT-SEED-R1",
+        "object": {
+          "id": "C03",
+          "orbit_class": "GEO"
+        },
+        "file_bytes": 4377,
+        "file_sha256": "062d2a6fac66ae835660c2e8f8383105d6fd70a6e01e86035a31bb976d223cab",
+        "seed_sha256": "ca6e1d7cc09e9c1956182e1d4be8a223d939a589a242f1eea574bfd169090842",
+        "model_sha256": "f082874c18f713acbe1b893ddfbcdc3424123c4d338765325f400cdeffe5f296",
+        "payload_uncompressed_bytes": 6552,
+        "payload_compressed_bytes": 4325,
+        "header_bytes": 52,
+        "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+        "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+        "stations": [
+          "delft_demo",
+          "singapore_demo"
+        ],
+        "query": {
+          "chart_r0_m": 1000000000.0,
+          "end_s": 604800.0,
+          "event_step_s": 120.0,
+          "event_tolerance_s": 0.01,
+          "phi_rad": 0.0,
+          "start_s": 0.0,
+          "tick_s": 1.0
+        }
+      },
+      "isolation": {
+        "seed_sha256": "ca6e1d7cc09e9c1956182e1d4be8a223d939a589a242f1eea574bfd169090842",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              -35740465.94496165,
+              -22417303.410404995,
+              876815.2234784465,
+              1629.5839091695427,
+              -2602.975847149566,
+              -86.31489686365825
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              -4724915.93118179,
+              -41926364.11949922,
+              -382221.6706302103,
+              3051.8023989556996,
+              -341.490486051274,
+              -103.72635483627619
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              -32842986.911525685,
+              -26485944.182239845,
+              738431.7188605969,
+              1926.2090707447376,
+              -2391.6310200073567,
+              -93.77948420439057
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              -35940190.621372916,
+              -22095064.185107008,
+              887435.2095710826,
+              1606.1119864773336,
+              -2617.55158031238,
+              -85.73718179958676
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 68201,
+        "shared_native_worker_bytes": 71680,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      },
+      "scrubbing": {
+        "queries": 24,
+        "unique_fractional_times": 8,
+        "bit_exact_on_repeated_timestamp": true,
+        "cold_max_end_to_end_ms": 12.957099999766797,
+        "warm_max_end_to_end_ms": 0.38130000029923394,
+        "rk_steps_per_query": [
+          0,
+          20160,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1,
+          0,
+          120,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1,
+          0,
+          120,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1
+        ],
+        "cache": {
+          "type": "stats",
+          "cache_count": 168,
+          "cache_capacity": 256,
+          "cache_hits": 8,
+          "cpu_rk_steps": 20628,
+          "cpu_queries": 24,
+          "evictions": 0,
+          "checkpoint_stride_steps": 120
+        }
+      },
+      "feedback": {
+        "original_queries": 289,
+        "counterfactual_queries": 2881,
+        "common_time_states_equal": 289
+      },
+      "independent_run": {
+        "status": "passed",
+        "queries": 289,
+        "max_fresh_position_difference_m": 0.0,
+        "seed_sha256": "ca6e1d7cc09e9c1956182e1d4be8a223d939a589a242f1eea574bfd169090842",
+        "final_record_sha256": "8724f7177527d56320174b1396020f33f6b6fd359e2cfcf8ae603bc3827d4e58",
+        "scope": "Independent AST schedule, full mask stages, keys/time/geometry and fresh native state; physical accuracy validated separately"
+      },
+      "event_searches": [
+        {
+          "station": "delft_demo",
+          "classification": "hidden_over_searched_interval",
+          "events": 0,
+          "max_refinement_time_delta_s": 0.0
+        },
+        {
+          "station": "singapore_demo",
+          "classification": "visible_over_searched_interval",
+          "events": 0,
+          "max_refinement_time_delta_s": 0.0
+        }
+      ],
+      "storage_comparison": {
+        "seven_day_300s_fp64_time_state_bytes": 112952,
+        "seed_bytes": 4377,
+        "state_table_to_seed_ratio": 25.80580306145762,
+        "scope": "Time+6state table vs complete seed; no claim of compressing arbitrary trajectories into initial conditions"
+      }
+    },
+    "C06": {
+      "seed": {
+        "profile": "ORBIT-SEED-R1",
+        "object": {
+          "id": "C06",
+          "orbit_class": "IGSO"
+        },
+        "file_bytes": 4374,
+        "file_sha256": "1a0ed701de7e29e8287ea77d5775225141f4ffa2f534b264d80f44d5407b4d2f",
+        "seed_sha256": "38213ce908ceaa201933266f0140f85886a337f26a20cf85b08e755c1a4c7f20",
+        "model_sha256": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d",
+        "payload_uncompressed_bytes": 6554,
+        "payload_compressed_bytes": 4322,
+        "header_bytes": 52,
+        "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+        "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+        "stations": [
+          "delft_demo",
+          "singapore_demo"
+        ],
+        "query": {
+          "chart_r0_m": 1000000000.0,
+          "end_s": 604800.0,
+          "event_step_s": 120.0,
+          "event_tolerance_s": 0.01,
+          "phi_rad": 0.0,
+          "start_s": 0.0,
+          "tick_s": 1.0
+        }
+      },
+      "isolation": {
+        "seed_sha256": "38213ce908ceaa201933266f0140f85886a337f26a20cf85b08e755c1a4c7f20",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              -34454260.40296997,
+              -9113412.305050276,
+              22853127.037456717,
+              1697.0632833544378,
+              -1749.1190977557562,
+              1853.9199747174318
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              -3279202.4164300617,
+              -24514380.838973373,
+              34229970.04989359,
+              3012.2571594132282,
+              -575.088995337373,
+              -138.43560004552234
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              -31422914.029798627,
+              -11894678.31767806,
+              25748516.244803615,
+              1981.5133815525785,
+              -1659.5955102513055,
+              1642.8013069244469
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              -34662381.0820321,
+              -8897121.634068012,
+              22623348.937039193,
+              1674.6547913343518,
+              -1754.9590923006901,
+              1868.6650817777236
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 68201,
+        "shared_native_worker_bytes": 71680,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      },
+      "scrubbing": {
+        "queries": 24,
+        "unique_fractional_times": 8,
+        "bit_exact_on_repeated_timestamp": true,
+        "cold_max_end_to_end_ms": 14.130100000329548,
+        "warm_max_end_to_end_ms": 0.41930000224965625,
+        "rk_steps_per_query": [
+          0,
+          20160,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1,
+          0,
+          120,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1,
+          0,
+          120,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1
+        ],
+        "cache": {
+          "type": "stats",
+          "cache_count": 168,
+          "cache_capacity": 256,
+          "cache_hits": 8,
+          "cpu_rk_steps": 20628,
+          "cpu_queries": 24,
+          "evictions": 0,
+          "checkpoint_stride_steps": 120
+        }
+      },
+      "feedback": {
+        "original_queries": 417,
+        "counterfactual_queries": 2881,
+        "common_time_states_equal": 417
+      },
+      "independent_run": {
+        "status": "passed",
+        "queries": 417,
+        "max_fresh_position_difference_m": 0.0,
+        "seed_sha256": "38213ce908ceaa201933266f0140f85886a337f26a20cf85b08e755c1a4c7f20",
+        "final_record_sha256": "e2f524bec2d0eeb7f701490d032f00b3fa5a9821ad21927d68c2b841b9744702",
+        "scope": "Independent AST schedule, full mask stages, keys/time/geometry and fresh native state; physical accuracy validated separately"
+      },
+      "event_searches": [
+        {
+          "station": "delft_demo",
+          "classification": "crossings_found",
+          "events": 14,
+          "max_refinement_time_delta_s": 0.002558610518462956
+        },
+        {
+          "station": "singapore_demo",
+          "classification": "visible_over_searched_interval",
+          "events": 0,
+          "max_refinement_time_delta_s": 0.0
+        }
+      ],
+      "storage_comparison": {
+        "seven_day_300s_fp64_time_state_bytes": 112952,
+        "seed_bytes": 4374,
+        "state_table_to_seed_ratio": 25.82350251486054,
+        "scope": "Time+6state table vs complete seed; no claim of compressing arbitrary trajectories into initial conditions"
+      }
+    },
+    "CHANDRA": {
+      "seed": {
+        "profile": "ORBIT-SEED-R1",
+        "object": {
+          "id": "CHANDRA",
+          "orbit_class": "HEO"
+        },
+        "file_bytes": 4391,
+        "file_sha256": "a9c6b7a3cb47e3cc0cc3a18e1024e8b5bc918c7a523c7318c65749982662abd1",
+        "seed_sha256": "ce61491ca38a3577e146691fe44abb4ba45a54f9ac0b6fce437704a2a8b0051e",
+        "model_sha256": "5430cd9547413239892c19e14499b8012dfae618110193af2677f7e1c467a327",
+        "payload_uncompressed_bytes": 6570,
+        "payload_compressed_bytes": 4339,
+        "header_bytes": 52,
+        "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+        "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+        "stations": [
+          "delft_demo",
+          "singapore_demo"
+        ],
+        "query": {
+          "chart_r0_m": 1000000000.0,
+          "end_s": 604800.0,
+          "event_step_s": 120.0,
+          "event_tolerance_s": 0.01,
+          "phi_rad": 0.0,
+          "start_s": 0.0,
+          "tick_s": 1.0
+        }
+      },
+      "isolation": {
+        "seed_sha256": "ce61491ca38a3577e146691fe44abb4ba45a54f9ac0b6fce437704a2a8b0051e",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              29469950.613910533,
+              -115292956.23554708,
+              68064691.90372162,
+              405.4071773800063,
+              511.2733584554189,
+              -675.7010311881187
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              34082445.01641183,
+              -107555759.87607132,
+              58899559.12212315,
+              337.66521182467795,
+              748.2047505224355,
+              -810.8063858401646
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              -10807784.866337977,
+              -106367281.83285208,
+              89308275.15476198,
+              509.1604760357203,
+              -705.1605265082832,
+              180.9695522098133
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              29419868.45831717,
+              -115355937.08524303,
+              68148026.79184686,
+              405.9680385265646,
+              509.072995789978,
+              -674.3985429353811
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 68201,
+        "shared_native_worker_bytes": 71680,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      },
+      "scrubbing": {
+        "queries": 24,
+        "unique_fractional_times": 8,
+        "bit_exact_on_repeated_timestamp": true,
+        "cold_max_end_to_end_ms": 53.99249999754829,
+        "warm_max_end_to_end_ms": 0.7772000026307069,
+        "rk_steps_per_query": [
+          0,
+          80640,
+          2,
+          1,
+          43,
+          207,
+          40,
+          1,
+          0,
+          480,
+          2,
+          1,
+          43,
+          207,
+          40,
+          1,
+          0,
+          480,
+          2,
+          1,
+          43,
+          207,
+          40,
+          1
+        ],
+        "cache": {
+          "type": "stats",
+          "cache_count": 168,
+          "cache_capacity": 256,
+          "cache_hits": 8,
+          "cpu_rk_steps": 82482,
+          "cpu_queries": 24,
+          "evictions": 0,
+          "checkpoint_stride_steps": 480
+        }
+      },
+      "feedback": {
+        "original_queries": 520,
+        "counterfactual_queries": 2881,
+        "common_time_states_equal": 520
+      },
+      "independent_run": {
+        "status": "passed",
+        "queries": 520,
+        "max_fresh_position_difference_m": 0.0,
+        "seed_sha256": "ce61491ca38a3577e146691fe44abb4ba45a54f9ac0b6fce437704a2a8b0051e",
+        "final_record_sha256": "272d2c6d7184315bba0be39305de4e8e3fe0e72eae629c75bbfdaf7f6d18a02c",
+        "scope": "Independent AST schedule, full mask stages, keys/time/geometry and fresh native state; physical accuracy validated separately"
+      },
+      "event_searches": [
+        {
+          "station": "delft_demo",
+          "classification": "crossings_found",
+          "events": 14,
+          "max_refinement_time_delta_s": 0.002423264493700117
+        },
+        {
+          "station": "singapore_demo",
+          "classification": "crossings_found",
+          "events": 13,
+          "max_refinement_time_delta_s": 0.0016420960309915245
+        }
+      ],
+      "storage_comparison": {
+        "seven_day_300s_fp64_time_state_bytes": 112952,
+        "seed_bytes": 4391,
+        "state_table_to_seed_ratio": 25.72352539284901,
+        "scope": "Time+6state table vs complete seed; no claim of compressing arbitrary trajectories into initial conditions"
+      }
+    },
+    "G05": {
+      "seed": {
+        "profile": "ORBIT-SEED-R1",
+        "object": {
+          "id": "G05",
+          "orbit_class": "MEO"
+        },
+        "file_bytes": 4371,
+        "file_sha256": "84b0be080d113695ec6381465db57613408dbb2d512cb934efac33fe6fce2de5",
+        "seed_sha256": "84a0c5da23195b9a0ac0e2144dcb5def8846ad694eccc43c6cce31cf18d28577",
+        "model_sha256": "5deb26d1f0cb9efbf8457bf5d375ea78f1e8e90ce47551009168e379a3b11680",
+        "payload_uncompressed_bytes": 6552,
+        "payload_compressed_bytes": 4319,
+        "header_bytes": 52,
+        "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+        "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+        "stations": [
+          "delft_demo",
+          "singapore_demo"
+        ],
+        "query": {
+          "chart_r0_m": 1000000000.0,
+          "end_s": 604800.0,
+          "event_step_s": 120.0,
+          "event_tolerance_s": 0.01,
+          "phi_rad": 0.0,
+          "start_s": 0.0,
+          "tick_s": 1.0
+        }
+      },
+      "isolation": {
+        "seed_sha256": "84a0c5da23195b9a0ac0e2144dcb5def8846ad694eccc43c6cce31cf18d28577",
+        "rows": [
+          {
+            "time_s": 0.0,
+            "state": [
+              8977498.718587676,
+              -12245783.659269301,
+              -21971986.22140299,
+              2739.796127364159,
+              2682.470993323161,
+              -372.288933072884
+            ]
+          },
+          {
+            "time_s": 12345.678,
+            "state": [
+              16453671.323431483,
+              20662815.375542846,
+              2260497.7924099225,
+              -1890.0770167905707,
+              1129.113736032869,
+              3196.576431667322
+            ]
+          },
+          {
+            "time_s": 604800.0,
+            "state": [
+              13270869.046407862,
+              -7438869.285807981,
+              -21940797.493243404,
+              2357.137692903917,
+              3020.831161339818,
+              411.0847394888433
+            ]
+          },
+          {
+            "time_s": -123.45,
+            "state": [
+              8637857.999730313,
+              -12574965.351769507,
+              -21922526.935408767,
+              2762.5398530789453,
+              2650.4242495040453,
+              -428.97396288349256
+            ]
+          }
+        ],
+        "original_release_reads": "denied_by_audit_hook",
+        "shared_runtime_source_bytes": 68201,
+        "shared_native_worker_bytes": 71680,
+        "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+      },
+      "scrubbing": {
+        "queries": 24,
+        "unique_fractional_times": 8,
+        "bit_exact_on_repeated_timestamp": true,
+        "cold_max_end_to_end_ms": 12.95630000095116,
+        "warm_max_end_to_end_ms": 0.3572000023268629,
+        "rk_steps_per_query": [
+          0,
+          20160,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1,
+          0,
+          120,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1,
+          0,
+          120,
+          1,
+          1,
+          11,
+          52,
+          10,
+          1
+        ],
+        "cache": {
+          "type": "stats",
+          "cache_count": 168,
+          "cache_capacity": 256,
+          "cache_hits": 8,
+          "cpu_rk_steps": 20628,
+          "cpu_queries": 24,
+          "evictions": 0,
+          "checkpoint_stride_steps": 120
+        }
+      },
+      "feedback": {
+        "original_queries": 397,
+        "counterfactual_queries": 2881,
+        "common_time_states_equal": 397
+      },
+      "independent_run": {
+        "status": "passed",
+        "queries": 397,
+        "max_fresh_position_difference_m": 0.0,
+        "seed_sha256": "84a0c5da23195b9a0ac0e2144dcb5def8846ad694eccc43c6cce31cf18d28577",
+        "final_record_sha256": "2ff18402840067fb763c8f6e08b2d37dd1202caaa81fbc7d8d437b27f7160388",
+        "scope": "Independent AST schedule, full mask stages, keys/time/geometry and fresh native state; physical accuracy validated separately"
+      },
+      "event_searches": [
+        {
+          "station": "delft_demo",
+          "classification": "crossings_found",
+          "events": 28,
+          "max_refinement_time_delta_s": 0.0024864571751095355
+        },
+        {
+          "station": "singapore_demo",
+          "classification": "crossings_found",
+          "events": 14,
+          "max_refinement_time_delta_s": 0.002262515772599727
+        }
+      ],
+      "storage_comparison": {
+        "seven_day_300s_fp64_time_state_bytes": 112952,
+        "seed_bytes": 4371,
+        "state_table_to_seed_ratio": 25.84122626401281,
+        "scope": "Time+6state table vs complete seed; no claim of compressing arbitrary trajectories into initial conditions"
+      }
+    }
+  },
+  "seed_format": "ORBIT-SEED-R1",
+  "accuracy_scope": "Encoding, execution, feedback and visibility algorithms; real forecast accuracy is a separate report"
+}

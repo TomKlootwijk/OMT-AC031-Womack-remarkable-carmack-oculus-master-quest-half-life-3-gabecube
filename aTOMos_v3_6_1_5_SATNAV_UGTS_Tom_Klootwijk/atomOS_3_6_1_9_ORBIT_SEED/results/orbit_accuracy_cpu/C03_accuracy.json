@@ -1,0 +1,355 @@
+{
+  "object_id": "C03",
+  "orbit_class": "GEO",
+  "model_file": "C03.json",
+  "model_sha256": "17bcf4e3c2dce5334c737a58c3318982282aa3ccd2651454360df25fefe55eb5",
+  "cutoff_gpst_s": 1419811200.0,
+  "selection_policy": "Frozen model; all reference samples strictly after seed epoch and inside declared model domain",
+  "excluded_samples_at_or_before_cutoff": 289,
+  "first_holdout_seconds": 300.0,
+  "last_holdout_seconds": 604800.0,
+  "maximum_sample_gap_seconds": 300.0,
+  "backend": "cpu",
+  "native_batch_wall_seconds": 0.15200689999983297,
+  "position_error": {
+    "count": 2016,
+    "rms_m": 59540201.98563644,
+    "max_m": 84331983.17937782,
+    "median_m": 59483508.28590806,
+    "p95_m": 84068340.26593608
+  },
+  "threshold_horizons": [
+    {
+      "threshold_m": 10.0,
+      "observed_exceedance": true,
+      "first_sample_seconds": 300.0,
+      "first_sample_error_m": 921641.9148667414,
+      "previous_sample_seconds": null,
+      "previous_sample_error_m": null,
+      "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+    },
+    {
+      "threshold_m": 100.0,
+      "observed_exceedance": true,
+      "first_sample_seconds": 300.0,
+      "first_sample_error_m": 921641.9148667414,
+      "previous_sample_seconds": null,
+      "previous_sample_error_m": null,
+      "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+    },
+    {
+      "threshold_m": 1000.0,
+      "observed_exceedance": true,
+      "first_sample_seconds": 300.0,
+      "first_sample_error_m": 921641.9148667414,
+      "previous_sample_seconds": null,
+      "previous_sample_error_m": null,
+      "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+    },
+    {
+      "threshold_m": 10000.0,
+      "observed_exceedance": true,
+      "first_sample_seconds": 300.0,
+      "first_sample_error_m": 921641.9148667414,
+      "previous_sample_seconds": null,
+      "previous_sample_error_m": null,
+      "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+    }
+  ],
+  "reference": {
+    "sources": [
+      {
+        "file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+        "sha256": "b621496c51ff39c68966dbb81b9a23b9ea0157d9d6edb484b7decd84a7b6efc2",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+        "sha256": "e323f161a666f7cfe879b852279df96a97b613af3acd352047881d85a32d4a34",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+        "sha256": "2b91a83a750d3ce7153f60627ccb4e241a191987a8d2baf765114d59632e7fa5",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+        "sha256": "fc872a1ee3c4cd09044d4b97c28067adeef9e3d8335e76902ccfefe549406c4c",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+        "sha256": "22819dea348770a047a711dcec73d4eb18f2b26e33dd835d25dde6ff97f58f83",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+        "sha256": "76fdcc79c40a3f67d739134a6adb2350e12005e89b19ca0430ace3a73dc141aa",
+        "selected_records": 289
+      },
+      {
+        "file": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+        "sha256": "a08b55b90e7088b9029f56ef7ca4a8929efb34edfa9647bc5bbe7acec537a791",
+        "selected_records": 289
+      }
+    ],
+    "duplicate_convention": "Earlier filename wins",
+    "duplicate_details": [
+      {
+        "gpst_s": 1419811200.0,
+        "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.3302075128178306
+      },
+      {
+        "gpst_s": 1419897600.0,
+        "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 1.0989581438657612
+      },
+      {
+        "gpst_s": 1419984000.0,
+        "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.3671334967538454
+      },
+      {
+        "gpst_s": 1420070400.0,
+        "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.7948012334462071
+      },
+      {
+        "gpst_s": 1420156800.0,
+        "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 1.1219652403326732
+      },
+      {
+        "gpst_s": 1420243200.0,
+        "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 1.2246930231021051
+      },
+      {
+        "gpst_s": 1420329600.0,
+        "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+        "disagreement_m": 0.8937191945970799
+      }
+    ]
+  },
+  "training_metadata": {
+    "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+    "training_start_s": -86400.0,
+    "training_end_s": 0.0,
+    "training_rows": 289,
+    "fitted_rows": 49,
+    "fit_reference_anchor_s": -43200.0,
+    "solver_success": true,
+    "solver_message": "`xtol` termination condition is satisfied.",
+    "nfev": 13,
+    "training_rms_3d_m": 0.39453656283486943,
+    "training_max_3d_m": 0.6974888692867844,
+    "parameter_values_scaled": [
+      0.00040401483731678927,
+      -0.002300415776713883,
+      -0.0017151583434081488,
+      0.00015842590557612395,
+      0.00043810337612158035,
+      0.00015529614699319246,
+      1.1291664086417905,
+      -0.04703618528612626,
+      0.10160339971265976,
+      -0.09678388180828502
+    ],
+    "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+    "optimizer_step_s": 30.0,
+    "future_target_rows_used": 0,
+    "anchor_state_gcrs": [
+      35899240.45101625,
+      22038559.578939322,
+      -885421.2816445929,
+      -1608.332740121386,
+      2621.701215631903,
+      85.84906832471586
+    ],
+    "satellite": "C03",
+    "orbit_class": "GEO",
+    "training_source": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+    "training_source_sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+    "elapsed_s": 3.171972199997981,
+    "rk4_vs_dop853_training_max_m": 0.000140252587852469
+  },
+  "construction_metadata": {
+    "planetary_source": "NASA/JPL DE440s, published 2020-12-21",
+    "planetary_sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+    "planetary_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp",
+    "earth_orientation_source": "IERS Bulletin A XXXVII 052, published 2024-12-26",
+    "earth_orientation_url": "https://datacenter.iers.org/data/6/bulletina-xxxvii-052.txt",
+    "earth_orientation_policy": "frozen xp/yp at epoch from published Jan1/Jan2 forecasts; constant UT1 slope from same forecasts; no later measured EOP",
+    "eop_at_epoch": {
+      "dut1_s": 0.04655996875,
+      "xp_arcsec": 0.14180027083333335,
+      "yp_arcsec": 0.3053,
+      "lod_s": -0.00014999999999999736
+    },
+    "frame": "GCRS-like geocentric axes with IAU2006/2000A Q; ITRF/IGS20 compared using approximate EOP prediction",
+    "time": "full GPST seconds since1980-01-06; TT=GPST+51.184s; geocentric Fairhead-Bretagnon TT/TDB periodic correction for DE440 and Horizons",
+    "coefficient_compression_checks": {
+      "q_matrix_max_abs": 3.644111054579291e-12,
+      "sun_forcing_max_m": 1.7394038962784661,
+      "moon_forcing_max_m": 0.048483157851448674
+    },
+    "force_model_selection": "fixed for all four objects before future-target comparisons",
+    "replay_dependencies": "all numerical forcing and frame coefficients embedded in model; no DE440 or ERFA lookup at replay"
+  },
+  "requested_horizon_nearest_samples": [
+    {
+      "requested_seconds": 900.0,
+      "sample_seconds": 900.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 2764471.553994863
+    },
+    {
+      "requested_seconds": 3600.0,
+      "sample_seconds": 3600.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 11028009.124328475
+    },
+    {
+      "requested_seconds": 21600.0,
+      "sample_seconds": 21600.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 59726984.04903098
+    },
+    {
+      "requested_seconds": 86400.0,
+      "sample_seconds": 86400.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 720362.664182538
+    },
+    {
+      "requested_seconds": 259200.0,
+      "sample_seconds": 259200.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 2153280.758745379
+    },
+    {
+      "requested_seconds": 604800.0,
+      "sample_seconds": 604800.0,
+      "sample_offset_seconds": 0.0,
+      "position_error_m": 4996311.212481293
+    }
+  ],
+  "intervals": [
+    {
+      "lower_open_hours": 0.0,
+      "upper_closed_hours": 0.25,
+      "count": 3,
+      "rms_m": 1990728.4343040162,
+      "max_m": 2764471.553994863,
+      "median_m": 1843169.0929899933,
+      "p95_m": 2672341.3078943756
+    },
+    {
+      "lower_open_hours": 0.25,
+      "upper_closed_hours": 1.0,
+      "count": 9,
+      "rms_m": 7732971.947114133,
+      "max_m": 11028009.124328475,
+      "median_m": 7363777.089882577,
+      "p95_m": 10662267.701498583
+    },
+    {
+      "lower_open_hours": 1.0,
+      "upper_closed_hours": 6.0,
+      "count": 60,
+      "rms_m": 39705766.61783627,
+      "max_m": 59726984.04903098,
+      "median_m": 37776882.17118765,
+      "p95_m": 57775545.637663424
+    },
+    {
+      "lower_open_hours": 6.0,
+      "upper_closed_hours": 12.0,
+      "count": 72,
+      "rms_m": 76518350.48371048,
+      "max_m": 84331143.61996786,
+      "median_m": 78172392.61308457,
+      "p95_m": 84279379.59583068
+    },
+    {
+      "lower_open_hours": 12.0,
+      "upper_closed_hours": 24.0,
+      "count": 144,
+      "rms_m": 59173197.06266288,
+      "max_m": 84322385.13420361,
+      "median_m": 58901761.93154466,
+      "p95_m": 83964938.65748028
+    },
+    {
+      "lower_open_hours": 24.0,
+      "upper_closed_hours": 48.0,
+      "count": 288,
+      "rms_m": 59539260.14097097,
+      "max_m": 84331854.20684539,
+      "median_m": 59480746.33651148,
+      "p95_m": 84055326.26704979
+    },
+    {
+      "lower_open_hours": 48.0,
+      "upper_closed_hours": 72.0,
+      "count": 288,
+      "rms_m": 59539890.745910145,
+      "max_m": 84331983.17937782,
+      "median_m": 59481842.416028515,
+      "p95_m": 84056689.29415523
+    },
+    {
+      "lower_open_hours": 72.0,
+      "upper_closed_hours": 168.0,
+      "count": 1152,
+      "rms_m": 59540893.27631706,
+      "max_m": 84331558.18428737,
+      "median_m": 59483508.28590806,
+      "p95_m": 84064434.63380691
+    }
+  ],
+  "frame_error_scope": "ECEF comparison includes declared seed EOP/frame approximations; independent EOP uncertainty is not removed from orbit error",
+  "native_vs_independent_DOP853": {
+    "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+    "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+    "samples": 9,
+    "position_error": {
+      "count": 9,
+      "rms_m": 56733961.650655515,
+      "max_m": 84295143.15781748,
+      "median_m": 58718684.39601482,
+      "p95_m": 82195013.26886289
+    },
+    "times_seconds": [
+      300.0,
+      75600.0,
+      151200.0,
+      226800.0,
+      302400.0,
+      378000.0,
+      453600.0,
+      529200.0,
+      604800.0
+    ],
+    "position_errors_m": [
+      921642.1944272384,
+      31669561.93150413,
+      58718684.39601482,
+      77169397.73587734,
+      84295143.15781748,
+      79044818.435431,
+      62201649.057825476,
+      36250561.65570599,
+      4996836.245415163
+    ]
+  },
+  "curve_file": "C03_holdout.csv",
+  "curve_sha256": "26984610ec1c39633fe6f07bea9d77ebc55ac9e8cd5b67c4343fa5bfedbdcc3b"
+}

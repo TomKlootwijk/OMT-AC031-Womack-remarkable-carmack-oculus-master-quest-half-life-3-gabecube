@@ -1,0 +1,314 @@
+[
+  {
+    "station": {
+      "description": "Demonstration station; not a surveyed receiver location",
+      "elevation_mask_deg": 10.0,
+      "height_m": 0.0,
+      "id": "delft_demo",
+      "lat_deg": 51.986,
+      "lon_deg": 4.387
+    },
+    "coarse": {
+      "events": [
+        {
+          "time_s": 19794.8179053364,
+          "kind": "set",
+          "residual_sin_elevation": 6.523752246745396e-08
+        },
+        {
+          "time_s": 83682.02837083486,
+          "kind": "rise",
+          "residual_sin_elevation": 5.936921232407855e-09
+        },
+        {
+          "time_s": 105959.26295479287,
+          "kind": "set",
+          "residual_sin_elevation": 9.64967186711796e-09
+        },
+        {
+          "time_s": 169843.68371403916,
+          "kind": "rise",
+          "residual_sin_elevation": 6.27050472656876e-09
+        },
+        {
+          "time_s": 192125.31943108892,
+          "kind": "set",
+          "residual_sin_elevation": 5.730761726274736e-08
+        },
+        {
+          "time_s": 256005.89388604628,
+          "kind": "rise",
+          "residual_sin_elevation": 6.7109304779933154e-09
+        },
+        {
+          "time_s": 278292.35333816643,
+          "kind": "set",
+          "residual_sin_elevation": -7.117238956522165e-08
+        },
+        {
+          "time_s": 342168.52371289895,
+          "kind": "rise",
+          "residual_sin_elevation": 7.224566500596552e-09
+        },
+        {
+          "time_s": 364459.5612609139,
+          "kind": "set",
+          "residual_sin_elevation": -1.0745484807506145e-08
+        },
+        {
+          "time_s": 428331.33133868605,
+          "kind": "rise",
+          "residual_sin_elevation": 7.75592481905285e-09
+        },
+        {
+          "time_s": 450626.1629630929,
+          "kind": "set",
+          "residual_sin_elevation": -9.739431483524186e-13
+        },
+        {
+          "time_s": 514494.0493484768,
+          "kind": "rise",
+          "residual_sin_elevation": 8.248911331776299e-09
+        },
+        {
+          "time_s": 536791.5653403797,
+          "kind": "set",
+          "residual_sin_elevation": -1.2661816040093754e-12
+        },
+        {
+          "time_s": 600656.4689381076,
+          "kind": "rise",
+          "residual_sin_elevation": 8.66625204931637e-09
+        }
+      ],
+      "grazing_candidates_s": [],
+      "extrema_s": [
+        7779.827067487585,
+        59492.470011171965,
+        93942.14292322967,
+        145656.0225109653,
+        180105.4273426455,
+        231820.25131551773,
+        266269.45359005017,
+        317984.69223437854,
+        352433.8265470355,
+        404148.9036383228,
+        438598.0770451247,
+        490312.5855198455,
+        524761.7979234479,
+        576475.6417101647
+      ],
+      "classification": "crossings_found",
+      "start_visible": true,
+      "end_visible": true,
+      "start_s": 0.0,
+      "end_s": 604800.0,
+      "evaluations": 5118,
+      "max_sampling_step_s": 120.0,
+      "root_time_tolerance_s": 0.01,
+      "coverage": "Sampled values plus derivative-bracketed extrema; no certified exclusion of multiple roots between samples",
+      "uncertainty": "Time tolerance is numerical refinement, not predicted physical pass-time accuracy"
+    },
+    "dense": {
+      "events": [
+        {
+          "time_s": 19794.819227296248,
+          "kind": "set",
+          "residual_sin_elevation": 1.3322383335401256e-08
+        },
+        {
+          "time_s": 83682.028265627,
+          "kind": "rise",
+          "residual_sin_elevation": 1.1208084460534451e-10
+        },
+        {
+          "time_s": 105959.26314354087,
+          "kind": "set",
+          "residual_sin_elevation": 2.236969942615019e-09
+        },
+        {
+          "time_s": 169843.6836031797,
+          "kind": "rise",
+          "residual_sin_elevation": 1.3154330402720404e-10
+        },
+        {
+          "time_s": 192125.32055618567,
+          "kind": "set",
+          "residual_sin_elevation": 1.3120146719058923e-08
+        },
+        {
+          "time_s": 256005.89376487536,
+          "kind": "rise",
+          "residual_sin_elevation": -2.7591817719496703e-13
+        },
+        {
+          "time_s": 278292.3509700831,
+          "kind": "set",
+          "residual_sin_elevation": 2.1834032581935503e-08
+        },
+        {
+          "time_s": 342168.5235824725,
+          "kind": "rise",
+          "residual_sin_elevation": -2.453870440177752e-13
+        },
+        {
+          "time_s": 364459.5604648793,
+          "kind": "set",
+          "residual_sin_elevation": 2.051813596803953e-08
+        },
+        {
+          "time_s": 428331.33119867736,
+          "kind": "rise",
+          "residual_sin_elevation": -1.8932078127420482e-13
+        },
+        {
+          "time_s": 450626.1627052593,
+          "kind": "set",
+          "residual_sin_elevation": 1.0124585864135227e-08
+        },
+        {
+          "time_s": 514494.04817933316,
+          "kind": "rise",
+          "residual_sin_elevation": -5.6518366403635056e-08
+        },
+        {
+          "time_s": 536791.5652301344,
+          "kind": "set",
+          "residual_sin_elevation": 4.327813468707475e-09
+        },
+        {
+          "time_s": 600656.4663794971,
+          "kind": "rise",
+          "residual_sin_elevation": -1.330671538513073e-07
+        }
+      ],
+      "grazing_candidates_s": [],
+      "extrema_s": [
+        7779.827068511623,
+        59492.47006932952,
+        93942.14292446492,
+        145656.0225568087,
+        180105.4273428038,
+        231820.2513480105,
+        266269.45359013847,
+        317984.69225477986,
+        352433.8265470677,
+        404148.9036475524,
+        438598.07704512804,
+        490312.5855239684,
+        524761.7979233337,
+        576475.6417115899
+      ],
+      "classification": "crossings_found",
+      "start_visible": true,
+      "end_visible": true,
+      "start_s": 0.0,
+      "end_s": 604800.0,
+      "evaluations": 20233,
+      "max_sampling_step_s": 30.0,
+      "root_time_tolerance_s": 0.01,
+      "coverage": "Sampled values plus derivative-bracketed extrema; no certified exclusion of multiple roots between samples",
+      "uncertainty": "Time tolerance is numerical refinement, not predicted physical pass-time accuracy"
+    },
+    "max_event_time_difference_s": 0.002558610518462956
+  },
+  {
+    "station": {
+      "description": "Demonstration station for Asian GEO visibility",
+      "elevation_mask_deg": 10.0,
+      "height_m": 0.0,
+      "id": "singapore_demo",
+      "lat_deg": 1.35,
+      "lon_deg": 103.82
+    },
+    "coarse": {
+      "events": [],
+      "grazing_candidates_s": [],
+      "extrema_s": [
+        12089.526199716598,
+        33262.304039215,
+        55032.34865232883,
+        76942.12158087664,
+        98251.83827674086,
+        119425.02338439085,
+        141195.03857131978,
+        163104.9634198746,
+        184414.74706956986,
+        205588.21277066285,
+        227358.2076938583,
+        249268.37742986812,
+        270578.0711374385,
+        291751.65597786533,
+        313521.58850118495,
+        335431.9869099254,
+        356741.52360960195,
+        377915.11663444975,
+        399684.9036508318,
+        421595.37632717064,
+        442904.7918876634,
+        464078.3790764063,
+        485847.94128024287,
+        507758.24201766227,
+        529067.6382605081,
+        550241.2853792814,
+        572010.6024329681,
+        593920.4957483425
+      ],
+      "classification": "visible_over_searched_interval",
+      "start_visible": true,
+      "end_visible": true,
+      "start_s": 0.0,
+      "end_s": 604800.0,
+      "evaluations": 5120,
+      "max_sampling_step_s": 120.0,
+      "root_time_tolerance_s": 0.01,
+      "coverage": "Sampled values plus derivative-bracketed extrema; no certified exclusion of multiple roots between samples",
+      "uncertainty": "Time tolerance is numerical refinement, not predicted physical pass-time accuracy"
+    },
+    "dense": {
+      "events": [],
+      "grazing_candidates_s": [],
+      "extrema_s": [
+        12089.526193123127,
+        33262.30403914935,
+        55032.34874105699,
+        76942.12155461455,
+        98251.8382603016,
+        119425.02351805307,
+        141195.03865983477,
+        163104.96325826747,
+        184414.7470295891,
+        205588.21262086142,
+        227358.2077749047,
+        249268.3775519356,
+        270578.07107521023,
+        291751.65585000167,
+        313521.58856666426,
+        335431.9870706294,
+        356741.5235307131,
+        377915.1167839214,
+        399684.9036944936,
+        421595.3762063021,
+        442904.7918002206,
+        464078.37907628686,
+        485847.94129914645,
+        507758.2420167422,
+        529067.6381722369,
+        550241.2853791517,
+        572010.6024413777,
+        593920.4957473521
+      ],
+      "classification": "visible_over_searched_interval",
+      "start_visible": true,
+      "end_visible": true,
+      "start_s": 0.0,
+      "end_s": 604800.0,
+      "evaluations": 20220,
+      "max_sampling_step_s": 30.0,
+      "root_time_tolerance_s": 0.01,
+      "coverage": "Sampled values plus derivative-bracketed extrema; no certified exclusion of multiple roots between samples",
+      "uncertainty": "Time tolerance is numerical refinement, not predicted physical pass-time accuracy"
+    },
+    "max_event_time_difference_s": 0.0
+  }
+]

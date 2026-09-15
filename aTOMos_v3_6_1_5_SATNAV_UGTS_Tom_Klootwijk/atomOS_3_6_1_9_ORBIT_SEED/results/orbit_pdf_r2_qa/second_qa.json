@@ -1,0 +1,1555 @@
+{
+  "pdf_sha256": "7a31b4262ef29239588bee50dcb18176170a3233b4a970c2a536ea0d81c7c2af",
+  "pdf_bytes": 720925,
+  "page_count": 69,
+  "metadata": {
+    "/Creator": "LaTeX with hyperref",
+    "/Title": "aTOMos v3.6.1.9 - Orbital Seeds, Timestamp Queries and Literal Kernel",
+    "/Subject": "Compact orbital seeds; two ASA/NA sets; synchronous JK; ground-station horizons and held-out forecast accuracy",
+    "/Author": "Tom Klootwijk",
+    "/Keywords": "aTOMos,atomOS,3.6.1.9,UGTS,SCLP,RTCM,NTRIP,GNSS,CUDA,Tom Klootwijk",
+    "/Producer": "xdvipdfmx (0.1)",
+    "/CreationDate": "D:20260915042249-00'00'"
+  },
+  "checked_utc": "2026-09-15T04:24:19.374188+00:00",
+  "all_pages_rendered_dpi": 60,
+  "detail_pages_rendered_dpi": 120,
+  "detail_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "text_characters": 903,
+      "body_characters": 774,
+      "first_lines": [
+        "AC031 / AC130 A TOMOS ORBIT -SEED-R1",
+        "aTOMos v3.6.1.9",
+        "Orbital seeds and",
+        "timestamp queries",
+        "Ground-station horizons"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.4964,
+        64.62691274199994,
+        531.82698232,
+        779.4926818399999
+      ]
+    },
+    {
+      "page": 2,
+      "text_characters": 2546,
+      "body_characters": 2137,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "Release and implementation record",
+        "This subversion implements ORBIT-SEED-R1. It packs a complete physical model and recon-",
+        "structs a satellite\u2019s ground-station-relative position at an arbitrary supported timestamp. The",
+        "examples cover real MEO, GEO, IGSO and high elliptical targets. T wo explicit ASA/NA mask"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.99672552,
+        808.398928752
+      ]
+    },
+    {
+      "page": 3,
+      "text_characters": 1183,
+      "body_characters": 935,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "Contents",
+        "Release and implementation record 2",
+        "1 ORBIT-SEED-R1: compact physical seeds and timestamp queries 5",
+        "Retained receiver, geometry and source contracts 18"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        65.19685,
+        26.623897675999956,
+        530.080557432,
+        808.398928752
+      ]
+    },
+    {
+      "page": 4,
+      "text_characters": 1102,
+      "body_characters": 846,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "21 Streaming QR, rank and formal covariance 48",
+        "22 Solver status and residual diagnostics 49",
+        "23 Local ENU and the UGTS log chart 50",
+        "24 OTAN2 in satnav: preserve the observable 51"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        65.19685,
+        26.623897675999956,
+        530.080557432,
+        808.398928752
+      ]
+    },
+    {
+      "page": 5,
+      "text_characters": 2714,
+      "body_characters": 2228,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "1 ORBIT -SEED-R1: compact physical seeds and timestamp queries",
+        "This pro\ufb01le predicts the position of a satellite relative to a speci\ufb01ed ground station. It includes",
+        "real MEO, GEO, inclined geosynchronous and high elliptical examples. A small, complete model",
+        "seed is the input; a requested timestamp is the query. The model regenerates position and velocity"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        531.996757248,
+        808.398928752
+      ]
+    },
+    {
+      "page": 6,
+      "text_characters": 2513,
+      "body_characters": 1993,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "1.2 Explicit Earth frame and compact forcing",
+        "De\ufb01ne the passive Earth rotation matrix and polar-motion matrix as",
+        "\ud835\udc45\ud835\udc67\u00b9\ud835\udc4e\u00ba =",
+        "\u00a9\u00ad\u00ad"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65139999999997,
+        26.623897675999956,
+        531.9858664320003,
+        808.398928752
+      ]
+    },
+    {
+      "page": 7,
+      "text_characters": 2459,
+      "body_characters": 1926,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "\ud835\udc43\ud835\udc5b\ud835\udc5a has no Condon\u2013Shortley phase. The seed stores unnormalized \ud835\udc36\ud835\udc5b\ud835\udc5a , \ud835\udc46\ud835\udc5b\ud835\udc5a , converted from the",
+        "EGM96 fully normalized coe\ufb03cients by",
+        "\ud835\udc36\ud835\udc5b\ud835\udc5a =",
+        "s"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85865999999999,
+        26.623897675999956,
+        531.981693056,
+        808.398928752
+      ]
+    },
+    {
+      "page": 8,
+      "text_characters": 2907,
+      "body_characters": 2329,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "1 interval; the lowest maximum error selects the window. The \ufb01nal \ufb01t uses only data at or before",
+        "the January 2 cuto\ufb00. This past-only selection is distinct from the already inspected January 2\u2013",
+        "9 comparison benchmark. Harmonics above degree twelve, tides, detailed radiation pressure,",
+        "attitude changes and manoeuvres remain possible sources of forecast disagreement."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.985826432,
+        808.398928752
+      ]
+    },
+    {
+      "page": 9,
+      "text_characters": 3233,
+      "body_characters": 2626,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "Both JK right-hand sides read the same old \ud835\udc5e \ud835\udc57. Boundary absorption does not implicitly freeze",
+        "JK. The editable X expression accepts \ud835\udc5e, \ud835\udc51 ; J and K accept \ud835\udc5e, \ud835\udc66, \ud835\udc51 . They support word constants",
+        "zero/ones and bitwise AND, OR, XOR and complement with parentheses. They compile to literal",
+        "Boolean truth tables; an independent AST interpreter checks the complete trace."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65138999999999,
+        26.623897675999956,
+        531.996423104,
+        808.398928752
+      ]
+    },
+    {
+      "page": 10,
+      "text_characters": 3751,
+      "body_characters": 3167,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "original\u00b920, 18, 14, 12\u00ba-bit tuple. Both the contiguous and original Morton layouts are retained.",
+        "Full position, velocity , Up, absolute time and provenance remain in the result. Source OTAN2",
+        "uses \u0394\ud835\udf03 = wrap\u00b9\ud835\udf03\ud835\udc57\u0000 \ud835\udf03\ud835\udc57\u00001\u00ba and is still arctan\u00b9\u0394\ud835\udf03\u009d\u0394\ud835\udf0c\u00ba, with its explicit unde\ufb01ned-ratio cases, and",
+        "is not replaced by azimuth."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77141999999992,
+        26.623897675999956,
+        531.9967455199998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 11,
+      "text_characters": 3551,
+      "body_characters": 2964,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "Object Seed bytes Default queries Altered JK Warm max (ms)",
+        "G05 9,066 397 2,881 0.816",
+        "C03 9,074 289 2,881 0.956",
+        "C06 9,073 417 2,881 0.834"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65139000000003,
+        26.623897675999956,
+        531.985816432,
+        808.398928752
+      ]
+    },
+    {
+      "page": 12,
+      "text_characters": 2835,
+      "body_characters": 2296,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "The forecast quantity is",
+        "\ud835\udc52\ud835\udc56 =kb\ud835\udc93\u00b9\ud835\udc61\ud835\udc56\u00ba\u0000 \ud835\udc93 reference\u00b9\ud835\udc61\ud835\udc56\u00bak 2, \ud835\udc61 \ud835\udc56 > \ud835\udc610.",
+        "The January origin is 2 January 2025 00:00 GPST , \ud835\udc610 = 1419811200; February uses 2 February",
+        "2025 00:00 GPST , \ud835\udc610 = 1422489600. All cuto\ufb00 and earlier target rows are excluded from the"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.83686,
+        26.623897675999956,
+        531.987618032,
+        808.398928752
+      ]
+    },
+    {
+      "page": 13,
+      "text_characters": 3160,
+      "body_characters": 2600,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "1.11 Sampled thresholds and incomplete reference coverage",
+        "Table 4: Preceding sample and \ufb01rst sampled exceedance, in hours after the origin, rounded to",
+        "0.001 h. These pairs are not certi\ufb01ed continuous crossing brackets. \u201cNone\u201d means no exceedance",
+        "at the available samples."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        531.9858164320001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 14,
+      "text_characters": 4211,
+      "body_characters": 3584,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "Chandra source discontinuities. The January error rises from 123.204 m to 23839.033 m between",
+        "two \ufb01ve-minute samples. A separate one-second Horizons query shows that at January 5 TDB",
+        "12:01:09\u201312:01:10 the source position displacement di\ufb00ers from the integral of its own reported",
+        "velocity by 24317.077 m; outside the neighboring jump intervals the same local check is at most"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.62959000000001,
+        26.623897675999956,
+        532.93281288,
+        808.398928752
+      ]
+    },
+    {
+      "page": 15,
+      "text_characters": 1437,
+      "body_characters": 1188,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "access/BORIS terms, not a blanket MIT grant. Wuhan \ufb01nal products retain provider/IGS",
+        "attribution. Original archive URLs and per-\ufb01le hashes remain in the source manifests.",
+        "\u2022 NASA/JPL and CFA. Acknowledge Giorgini and the JPL Solar System Dynamics Group,",
+        "NASA/JPL Horizons, and CFA for Chandra: https://ssd.jpl.nasa.gov/horizons/ . Re-"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77139000000004,
+        26.623897675999956,
+        534.0747540959998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 16,
+      "text_characters": 935,
+      "body_characters": 735,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "1.14 R2 January benchmark curves",
+        "0 20 40 60 80 100 120 140 160",
+        "Hours after frozen seed cutoff",
+        "100"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.9967272480001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 17,
+      "text_characters": 989,
+      "body_characters": 781,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "1.15 Separate February con\ufb01rmation curves",
+        "0 20 40 60 80 100 120 140 160",
+        "Hours after frozen seed cutoff",
+        "100"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        530.294907792,
+        808.398928752
+      ]
+    },
+    {
+      "page": 18,
+      "text_characters": 3477,
+      "body_characters": 2884,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "Retained receiver, geometry and source contracts",
+        "The following sections retain the earlier executable mathematical pro\ufb01les and their dated mea-",
+        "surements. References to the 3.6.1.8 live receiver are historical. The current orbital seed pro\ufb01le,",
+        "timestamp queries and satellite forecast evidence are in Section 1. Fresh regression results link"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77140000000004,
+        26.623897675999956,
+        531.9967255199997,
+        808.398928752
+      ]
+    },
+    {
+      "page": 19,
+      "text_characters": 2408,
+      "body_characters": 2031,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "but no ambiguity state is estimated by this pro\ufb01le.",
+        "2.2 Time, provenance and reproducible execution",
+        "Times are unwrapped GPS seconds from 1980-01-06. RTCM week ambiguity is resolved against",
+        "the recorded reception date, with an explicit GPS-minus-UTC o\ufb00set of 18 seconds for these"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.4459123839998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 20,
+      "text_characters": 1994,
+      "body_characters": 1537,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.3 LIVE-R1 time contract and broadcast orbit",
+        "A raw observation is\u00b9\ud835\udc61tag",
+        "\ud835\udc5f , \ud835\udc43\ud835\udc56 , PRN\ud835\udc56 , \ud835\udf0e0\ud835\udc56\u00ba. Time is full, unwrapped GPS seconds from 1980-01-06;",
+        "\ud835\udc43\ud835\udc56 is the original GPS L1 C/A pseudorange in metres. Receiver time tags and code share one clock"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73866999999998,
+        26.623897675999956,
+        531.985820864,
+        808.398928752
+      ]
+    },
+    {
+      "page": 21,
+      "text_characters": 2131,
+      "body_characters": 1673,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.4 Satellite clock, emission time and reception axes",
+        "Let \ud835\udc650 = \ud835\udc5f cos \ud835\udc62 and \ud835\udc660 = \ud835\udc5f sin \ud835\udc62. The satellite position in the Earth-\ufb01xed axes at emission is",
+        "e\ud835\udc99\ud835\udc60 =",
+        "\u00a9\u00ad\u00ad"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65140999999983,
+        26.623897675999956,
+        531.9884550399998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 22,
+      "text_characters": 1888,
+      "body_characters": 1490,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.5 Complete Klobuchar L1 ionosphere",
+        "WGS84 ECEF-to-geodetic conversion supplies receiver latitude \ud835\udf11\ud835\udc5f, longitude \ud835\udf06\ud835\udc5f and ellipsoidal",
+        "height \u210e. Rotating the line of sight into local ENU gives azimuth \ud835\udc34\ud835\udc67 clockwise from north",
+        "and elevationE. A default 10\u000e elevation mask is applied after the receiver geometry has been"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65139999999997,
+        26.623897675999956,
+        531.443102,
+        808.398928752
+      ]
+    },
+    {
+      "page": 23,
+      "text_characters": 1757,
+      "body_characters": 1382,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.6 Troposphere, observation variance and native solve",
+        "LIVE-R1 uses a speci\ufb01ed standard atmosphere with relative humidity \ud835\udc3b = 0.7. For \u0000100\u0014 \u210e\u0014",
+        "10000 m andE > 0, de\ufb01ne",
+        "\u210e0 = max\u00b9\u210e, 0\u00ba, (67)"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73865000000013,
+        26.623897675999956,
+        531.99672552,
+        808.398928752
+      ]
+    },
+    {
+      "page": 24,
+      "text_characters": 3272,
+      "body_characters": 2707,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.7 Persistent receiver execution and correction feedback",
+        "The persistent native worker receives complete epochs. The preparation layer and native solve",
+        "form the outer state-feedback map",
+        "O\u00b9\ud835\udc58\u00ba"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73866999999996,
+        26.623897675999956,
+        531.9858208639998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 25,
+      "text_characters": 1935,
+      "body_characters": 1592,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "rejected request produces an error record; a Python response timeout closes the worker so a late",
+        "response cannot be assigned to the next epoch.",
+        "Each completed decoded epoch triggers correction preparation and native solves while the socket",
+        "session is still open. There is no whole-\ufb01le staging step in the live path. Warm starts carry only"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        65.19684999999998,
+        26.623897675999956,
+        531.440362032,
+        808.398928752
+      ]
+    },
+    {
+      "page": 26,
+      "text_characters": 2247,
+      "body_characters": 1852,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.9 Current live execution and independent validation",
+        "Both \ufb01nal sessions ran on 14 September 2026 UTC (the local Netherlands date crossed into 15",
+        "September during the work). Each captured 180 complete one-second epochs using one public",
+        "caster connection. CPU and CUDA ran sequential sessions: CPU: 21:55:20\u201321:58:20 UTC; CUDA:"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77140000000004,
+        26.623897675999956,
+        531.4512711200001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 27,
+      "text_characters": 1371,
+      "body_characters": 1101,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.10 Measured position series and independent checks",
+        "Figure. East/North/Up and three-dimensional separation from the advertised ARP in the two",
+        "actual live sessions. The blank beginning is ephemeris warmup; no position is fabricated for",
+        "it. These are di\ufb00erent time windows, so their physical di\ufb00erences are not a CPU-versus-GPU"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        530.3058168800002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 28,
+      "text_characters": 2987,
+      "body_characters": 2492,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.11 Regression, real-model checks and retained state connection",
+        "The older GSI recording solved all 120 real epochs from ECEF zero. Its raw physical model",
+        "and weight-isolation experiment are described with the equations above. Prepared \ufb01nal live CPU",
+        "observations passed 3,324 independent Householder checks across all 180 epochs, with maximum"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77140000000003,
+        26.623897675999956,
+        531.988984368,
+        808.398928752
+      ]
+    },
+    {
+      "page": 29,
+      "text_characters": 2298,
+      "body_characters": 1927,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "2.12 Scope of the resulting navigation kernel",
+        "This release now contains real raw-data ingestion, satellite ephemeris propagation, explicit",
+        "physical code corrections, continuous native position/clock computation, and independent",
+        "real-observation evidence. It is a working single-point GPS L1 receiver backend. The validation"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        531.8985454560002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 30,
+      "text_characters": 2515,
+      "body_characters": 2058,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "3 The completed geometry\u2013state feedback connection",
+        "Version 3.6.1.7 de\ufb01nes and implements CGK-R1, a coupled continuous and discrete state kernel.",
+        "Prepared GNSS observations are solved by SATNA V-R1. Their unquantized position estimates",
+        "become inputs to a persistent modeled mechanical state. Geometry of that state is encoded into"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73868000000004,
+        26.623897675999956,
+        531.988692,
+        808.398928752
+      ]
+    },
+    {
+      "page": 31,
+      "text_characters": 1918,
+      "body_characters": 1503,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "4 Literal chart motion and an explicit circle-plus",
+        "For the old modeled position \ud835\udc5d =\u00b9\ud835\udc38, \ud835\udc41 , \ud835\udc48\u00ba, set \ud835\udc5f =",
+        "p",
+        "\ud835\udc382\u00b8 \ud835\udc41 2. For \ud835\udc5f\u0015 \ud835\udc5fcore > 0, use the retained"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65144000000002,
+        26.623897675999956,
+        531.440372032,
+        808.398928752
+      ]
+    },
+    {
+      "page": 32,
+      "text_characters": 2129,
+      "body_characters": 1688,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "5 The geometry-to-bit encoders",
+        "Each present channel \ud835\udc56 supplies a unit mechanical direction \ud835\udc62\ud835\udc56, angle center \ud835\udefd\ud835\udc56, alignment tolerance",
+        "\ud835\udf16\ud835\udc56, projected-error limit \ud835\udc3f\ud835\udc56, support geometry and fringe width \ud835\udf02\ud835\udc56. Parameters and their units are",
+        "input data; changing them changes the executed model."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77139,
+        26.623897675999956,
+        531.4430819999999,
+        808.398928752
+      ]
+    },
+    {
+      "page": 33,
+      "text_characters": 2000,
+      "body_characters": 1598,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "6 The physical operator supplied by the feedback state",
+        "The modeled dynamics have diagonal positive mass \ud835\udc40, diagonal damping \ud835\udc36, and a supplied",
+        "symmetric base sti\ufb00ness \ud835\udc3e0. For each present channel,",
+        "\ud835\udf05\ud835\udc56\u00b9\ud835\udc5e\ud835\udc56\u00ba = \ud835\udf05o\ufb00"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85866999999999,
+        26.623897675999956,
+        531.9967255200002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 34,
+      "text_characters": 2048,
+      "body_characters": 1637,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "7 The physical eigenmatrix and mechanical checks",
+        "Because \ud835\udc40 is positive diagonal and \ud835\udc3e symmetric, de\ufb01ne",
+        "\ud835\udc37\u00b9\ud835\udc5e\u00ba = \ud835\udc40\u00001\u009d2\ud835\udc3e\u00b9\ud835\udc5e\u00ba\ud835\udc40\u00001\u009d2. (104)",
+        "This is the explicit CGK-R1 physical eigenmatrix. It is distinct from the SATNA V observation"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867000000001,
+        26.623897675999956,
+        531.99673552,
+        808.398928752
+      ]
+    },
+    {
+      "page": 35,
+      "text_characters": 2557,
+      "body_characters": 2134,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "8 Actual SATNAV/UGTS handoff and editable model input",
+        "The updated tools/ugts_handoff.py invokes the coupled pro\ufb01le by default. It consumes the",
+        "actual solution and pro\ufb01le \ufb01les, creates the coupled model input, executes the native backend and",
+        "independently replays its complete trace. The earlier hold-only behavior is available explicitly as"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.05141000000002,
+        26.623897675999956,
+        531.99674552,
+        808.398928752
+      ]
+    },
+    {
+      "page": 36,
+      "text_characters": 2590,
+      "body_characters": 2168,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "9 Preserved 3.6.1.7 coupled implementation validation",
+        "These results were executed for parent version 3.6.1.7 on the local Windows machine.",
+        "source/baseline_3_6_1_7_validation.json preserves its index. The unchanged sibling 3.6.1.7",
+        "release contains its full run \ufb01les. These totals are historical evidence, not new 3.6.1.8 live-receiver"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        531.996727216,
+        808.398928752
+      ]
+    },
+    {
+      "page": 37,
+      "text_characters": 2680,
+      "body_characters": 2261,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "10 Coupled handoff evidence and reproducibility",
+        "The actual 256-row SATNA V stream produces 253 observation-driven advances and three pre-",
+        "diction advances. There are 51 J/K changes across nine distinct word states. At unavailable-",
+        "observation epochs 250, 251 and 252, modeled motion continues by approximately 2.10713 m,"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        531.8985481600001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 38,
+      "text_characters": 2008,
+      "body_characters": 1566,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "11 Literal self-reference: the completed recurrence",
+        "Version 3.6.1.6 adds the executable pro\ufb01le SRK-R1. Its state is a 32-bit word \ud835\udc5e\ud835\udc61 that occurs in",
+        "its own next-state equation. The old release provided literal ASA/NA and J\u2013K primitives but its",
+        "observation adapter used a constant hold event. This subversion supplies an explicit feedback"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.80413,
+        26.623897675999956,
+        530.809684608,
+        808.398928752
+      ]
+    },
+    {
+      "page": 39,
+      "text_characters": 1993,
+      "body_characters": 1604,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "12 Actual equations are input data",
+        "The editable input is examples/self_reference/equations.json. The root declares version",
+        "3.6.1.6, pro\ufb01le SRK-R1, optional default equations, and a trajectories array. Each trajectory",
+        "supplies an ID, initial state, drive, four masks and step count; it may override the equations. For"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85866999999996,
+        26.623897675999956,
+        531.887191968,
+        808.398928752
+      ]
+    },
+    {
+      "page": 40,
+      "text_characters": 2072,
+      "body_characters": 1588,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "13 Fixed points, cycles and complete \ufb01nite execution",
+        "During one trajectory , equations, drive and masks are constant. They de\ufb01ne a deterministic",
+        "function \ud835\udc39 : \ud835\udc44\ud835\udc49! \ud835\udc44\ud835\udc49 , where",
+        "\ud835\udc44\ud835\udc49 =f\ud835\udc5e2 \ud835\udc4a : \ud835\udc5e^: \ud835\udc49 = 0g, j\ud835\udc44\ud835\udc49j = 2popcount\u00b9\ud835\udc49\u00ba, \ud835\udc5e \ud835\udc61\u00b81 = \ud835\udc39\u00b9\ud835\udc5e\ud835\udc61\u00ba. (118)"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65142000000014,
+        26.623897675999956,
+        531.9981758080002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 41,
+      "text_characters": 2583,
+      "body_characters": 2169,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "14 Native execution and independent equation replay",
+        "The shared include/self_reference.hpp implements the truth-table and literal transition oper-",
+        "ations. The CPU walks each trajectory in step order. CUDA assigns one thread to each indepen-",
+        "dently seeded trajectory , then executes its recurrence sequentially within that thread. No ordering"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        531.899511888,
+        808.398928752
+      ]
+    },
+    {
+      "page": 42,
+      "text_characters": 2700,
+      "body_characters": 2244,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "15 SRK-R1 baseline validation, version 3.6.1.6",
+        "All entries here concern the executable 3.6.1.6 source on the current Windows machine. The",
+        "3.6.1.5 preparation record is preserved separately under results_3_6_1_5/. Finite comparisons",
+        "check the requested trajectories; the closure and eventual-periodicity argument is given separately"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        530.5021804639998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 43,
+      "text_characters": 2043,
+      "body_characters": 1674,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "16 The imported UGTS and aTOMos contracts",
+        "The supplied prototype de\ufb01nes a \ufb01nite, query-\ufb01rst state-and-relation package. It includes cone/-",
+        "sphere relations, a bounded translational sweep, log-polar metric and kinematics, explicit time",
+        "and winding, separate topology pro\ufb01les, \ufb01nite grammar, 64-bit key codecs and audited uncertain-"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85865999999993,
+        26.623897675999956,
+        531.9967255200002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 44,
+      "text_characters": 1664,
+      "body_characters": 1322,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "17 Receiver state and source-symbol separation",
+        "The authoritative positioning state is",
+        "\ud835\udc67\ud835\udc52 =\u00b9\ud835\udc65\ud835\udc52 , \ud835\udc66\ud835\udc52 , \ud835\udc67\ud835\udc52 , \ud835\udc4f\ud835\udc52\u00ba2 R4, \ud835\udc4f \ud835\udc52 = \ud835\udc50 \ud835\udeff\ud835\udc61\ud835\udc52 , (122)",
+        "where the \ufb01rst three components are ECEF metres and the fourth is receiver clock bias in metres."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867999999999,
+        26.623897675999956,
+        531.985828128,
+        808.398928752
+      ]
+    },
+    {
+      "page": 45,
+      "text_characters": 1904,
+      "body_characters": 1541,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "18 The corrected-code observation model",
+        "A decoded code measurement can be modelled as a geometric range, receiver/satellite clock",
+        "terms and selected propagation/instrumental delays. SATNA V-R1 accepts an upstream additive",
+        "correction \ud835\udc4e\ud835\udc56 and de\ufb01nes"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        531.9967272479998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 46,
+      "text_characters": 2102,
+      "body_characters": 1687,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "19 Input epochs, channels and aTOMos selection",
+        "Each independent epoch binds its receive-time label, approximate initial state and 32-bit channel",
+        "masks. Each observation row points to that epoch and names a unique channel in 0, . . . , 31.",
+        "Channel IDs, not row order, de\ufb01ne mask bits."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        63.56049,
+        26.623897675999956,
+        531.9884619999999,
+        808.398928752
+      ]
+    },
+    {
+      "page": 47,
+      "text_characters": 1578,
+      "body_characters": 1236,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "20 The weighted positioning step",
+        "For current estimate \ud835\udc67\u00b9\ud835\udc58\u00ba =\u00b9\ud835\udc93\u00b9\ud835\udc58\u00ba, \ud835\udc4f\u00b9\ud835\udc58\u00ba\u00ba, de\ufb01ne",
+        "\ud835\udc45\u00b9\ud835\udc58\u00ba",
+        "\ud835\udc56 =k\ud835\udc93\u00b9\ud835\udc58\u00ba\u0000 \ud835\udc94 \ud835\udc56k, (130)"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77140000000001,
+        26.623897675999956,
+        531.8876246400001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 48,
+      "text_characters": 1730,
+      "body_characters": 1369,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "21 Streaming QR, rank and formal covariance",
+        "The kernel maintains an upper-triangular 4\u0002 4 matrix \ud835\udc45 and a transformed right-hand side \ud835\udc67.",
+        "Each whitened row is appended by rotations that eliminate its components against the current",
+        "triangular diagonal."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        531.9885019999999,
+        808.398928752
+      ]
+    },
+    {
+      "page": 49,
+      "text_characters": 1572,
+      "body_characters": 1271,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "22 Solver status and residual diagnostics",
+        "Convergence, residual \ufb01t and the later UGTS event are separate \ufb01elds.",
+        "Solver status Meaning",
+        "CONVERGED Numerical increment thresholds reached with valid \ufb01nal"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.8586800000001,
+        26.623897675999956,
+        531.9007043199999,
+        808.398928752
+      ]
+    },
+    {
+      "page": 50,
+      "text_characters": 1500,
+      "body_characters": 1160,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "23 Local ENU and the UGTS log chart",
+        "The receiver solution remains three-dimensional. For a declared geodetic anchor \u00b9\ud835\udf110, \ud835\udf060, \u210e 0\u00ba,",
+        "convert ECEF di\ufb00erences to East/North/Up using",
+        "\ud835\udc45\ud835\udc38\ud835\udc41\ud835\udc48 ="
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.6514,
+        26.623897675999956,
+        531.985786432,
+        808.398928752
+      ]
+    },
+    {
+      "page": 51,
+      "text_characters": 2130,
+      "body_characters": 1736,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "24 OTAN2 in satnav: preserve the observable",
+        "The inherited literal operator remains",
+        "otan2\ud835\udc60\u00b9\u0394\ud835\udf03, \u0394\ud835\udf0c\u00ba = arctan\u00b9\u0394\ud835\udf03\u009d\u0394\ud835\udf0c\u00ba, \u0394\ud835\udf0c \u2260 0, (142)",
+        "with a separately supplied reference-axis subtraction when selected. This is a log-chart motion slope."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73866999999993,
+        26.623897675999956,
+        531.988582,
+        808.398928752
+      ]
+    },
+    {
+      "page": 52,
+      "text_characters": 2025,
+      "body_characters": 1650,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "25 Paired supports and the canonical UGTS event",
+        "This section records the retained observation-only adapter, selected with \u2013legacy-hold. The",
+        "default coupled hando\ufb00 is speci\ufb01ed in Section 3; it retains residual diagnostics without using this",
+        "earlier admission rule to override its equations."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65139000000005,
+        26.623897675999956,
+        531.995643344,
+        808.398928752
+      ]
+    },
+    {
+      "page": 53,
+      "text_characters": 1919,
+      "body_characters": 1536,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "26 Finite cones and translational sweeps retained",
+        "For the source\u2019s slant length \ud835\udc47 > 0 and half-angle 0 < \ud835\udefc \ud835\udc50 < \ud835\udf0b\u009d2,",
+        "\u210e = \ud835\udc47 cos \ud835\udefc\ud835\udc50 , \ud835\udc45 = \ud835\udc47 sin \ud835\udefc\ud835\udc50. (146)",
+        "With apex \ud835\udc50, unit axis \ud835\udc4e and query \ud835\udc65, set"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.65139000000005,
+        26.623897675999956,
+        531.8985454560001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 54,
+      "text_characters": 1653,
+      "body_characters": 1288,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "27 Jitter intervals and the explicit source correction",
+        "U de\ufb01nes \ud835\udc53\ud835\udc57 = \ud835\udc53\u00b8 \ud835\udf16 \ud835\udc57 \ud835\udf0e with \ud835\udf0e2f\u0000 1,\u00b81g, then prints the equality",
+        "\u00bb \ud835\udc53\ud835\udc57\u0000 \ud835\udf16 \ud835\udc57 , \ud835\udc53 \ud835\udc57\u00b8 \ud835\udf16 \ud835\udc57\u00bc =\u00bb \ud835\udc53\u0000 \ud835\udf16 \ud835\udc57 , \ud835\udc53 \u00b8 \ud835\udf16 \ud835\udc57\u00bc. (149)",
+        "That equality is generally false for nonzero \ud835\udf16 \ud835\udc57. This edition preserves its source location and"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77141,
+        26.623897675999956,
+        531.8985637280001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 55,
+      "text_characters": 1550,
+      "body_characters": 1223,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "28 Two exact 64-bit key layouts",
+        "U\u2019s \ufb01eld widths and layouts are retained exactly:",
+        "Field Bits Contiguous range Domain",
+        "Log-radius index 20 63:44 Declared \ud835\udf0c2\u00bb\u0000 20, 0\u00bc"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85864999999995,
+        26.623897675999956,
+        531.8985454559999,
+        808.398928752
+      ]
+    },
+    {
+      "page": 56,
+      "text_characters": 1808,
+      "body_characters": 1445,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "29 Quantization, error and explicit origin handling",
+        "SATNA V-R1 declares nearest-node radial quantization over\u00bb\u000020, 0\u00bc:",
+        "\u210e\ud835\udf0c = 20",
+        "220\u0000 1 , \ud835\udc5e \ud835\udf0c = round\u00b8"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73864000000003,
+        26.623897675999956,
+        531.988532,
+        808.398928752
+      ]
+    },
+    {
+      "page": 57,
+      "text_characters": 1661,
+      "body_characters": 1307,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "30 Linear time, winding and separate topology pro\ufb01les",
+        "For reference tick \ud835\udc4b0, period \ud835\udc43 > 0 and full linear tick \ud835\udc4b,",
+        "\ud835\udc62 = \ud835\udc4b\u0000 \ud835\udc4b0",
+        "\ud835\udc43 , \ud835\udc64 =b\ud835\udc62c, \ud835\udf13 = \ud835\udc62\u0000 \ud835\udc642\u00bb 0, 1\u00ba. (157)"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        531.9858164320002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 58,
+      "text_characters": 2100,
+      "body_characters": 1729,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "31 GPU kernel: one independent solve per thread",
+        "The kernel takes a bounded batch of immutable epoch metadata and a structure-of-arrays obser-",
+        "vation bu\ufb00er. One thread evaluates one full independent four-state solution. Each thread owns",
+        "its QR workspace, iterative estimate, status and residual record. There is no cross-epoch update"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77139000000001,
+        26.623897675999956,
+        531.9858181600002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 59,
+      "text_characters": 1843,
+      "body_characters": 1484,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "32 Texture and global input paths",
+        "For \ud835\udc41 independent epochs, channel \ud835\udc502\u00bb 0, 31\u00bc and observation \ufb01eld \ud835\udc532\u00bb 0, 5\u00bc, \ufb02atten the input as",
+        "index\u00b9\ud835\udc52 , \ud835\udc50, \ud835\udc53\u00ba =\u00b96\ud835\udc50\u00b8 \ud835\udc53\u00ba\ud835\udc41\u00b8 \ud835\udc52. (160)",
+        "At a \ufb01xed channel/\ufb01eld, neighboring epoch threads therefore read neighboring values. The six"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        531.440362032,
+        808.398928752
+      ]
+    },
+    {
+      "page": 60,
+      "text_characters": 2109,
+      "body_characters": 1710,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "33 The RTX 5070 Ti Laptop target and VRAM plan",
+        "NVIDIA lists the RTX 5070 Ti Laptop GPU with a 12 GB GDDR7 memory con\ufb01guration.",
+        "NVIDIA \u2019s CUDA table lists the GeForce RTX 5070 Ti family at compute capability 12.0; the build",
+        "selects sm_120 and matching virtual code. CUDA 12.8 introduced compiler support for SM_120."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.77141999999996,
+        26.623897675999956,
+        531.99766416,
+        808.398928752
+      ]
+    },
+    {
+      "page": 61,
+      "text_characters": 1962,
+      "body_characters": 1622,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "34 Actual input and result \ufb01les",
+        "The executable reads two CSV \ufb01les with exact headers. The source-to-domain model is recorded",
+        "separately in profile.json; prepared real data must supply its own correction/product prove-",
+        "nance."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73865999999998,
+        26.623897675999956,
+        531.9955717280001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 62,
+      "text_characters": 1968,
+      "body_characters": 1628,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "35 Ordered coupled records and source lineage",
+        "A CGK-R1 event binds the original solution and residuals, modeled position and velocity , executed",
+        "J/K transition, complete native trace row , both compact keys, full time and prior digest. A",
+        "condensed structural sketch is:"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        531.9858181600002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 63,
+      "text_characters": 2054,
+      "body_characters": 1681,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "36 The retained deterministic satnav batch",
+        "The shipped demo has 256 arti\ufb01cial receiver epochs. The anchor is a declared WGS84 location at",
+        "52\u000e latitude, 5\u000e longitude and 100 m ellipsoidal height. Receiver points are generated from a local",
+        "ENU path, with a known clock bias near 75,000 m. Satellite directions and ranges are constructed"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.898543728,
+        808.398928752
+      ]
+    },
+    {
+      "page": 64,
+      "text_characters": 1574,
+      "body_characters": 1271,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "37 Independent results and error measures",
+        "The C++ solve is compared against a separately written Python Householder solver. The compar-",
+        "ison checks epoch identity , all mask \ufb01elds, status/\ufb01t, position and clock, formal covariance and",
+        "residual statistics, yielding 4,828 checked comparisons over the 256 epochs."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.8985454560002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 65,
+      "text_characters": 2130,
+      "body_characters": 1764,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "38 Prior release veri\ufb01cation record",
+        "This section retains the 3.6.1.5 preparation record. Archived 3.6.1.6 evidence is given in the SRK-",
+        "R1 validation section; historical 3.6.1.7 checks appear in the coupled implementation validation",
+        "section. Retained 3.6.1.8 evidence appears in Section 2.9. The following unexecuted CUDA"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.8985454560003,
+        808.398928752
+      ]
+    },
+    {
+      "page": 66,
+      "text_characters": 1941,
+      "body_characters": 1618,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "39 Build, run and verify on the requested laptop",
+        "Use a CUDA-supported host compiler, CMake 3.24 or newer, and CUDA T oolkit 12.8 or newer",
+        "for the requested SM120 target. The installed NVIDIA driver must support the chosen runtime/-",
+        "toolchain. This speci\ufb01es a minimum architecture-capable toolkit, not a claim that 12.8 is the"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.85867,
+        26.623897675999956,
+        531.9967255199998,
+        808.398928752
+      ]
+    },
+    {
+      "page": 67,
+      "text_characters": 2616,
+      "body_characters": 2187,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "40 Integration decisions and source issue register",
+        "ID Decision E\ufb00ect",
+        "N01 Corrected-code satnav model The GNSS observation equation and solver are explicit new",
+        "additions, not attributed to U."
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.7714,
+        26.623897675999956,
+        531.9967299520001,
+        808.398928752
+      ]
+    },
+    {
+      "page": 68,
+      "text_characters": 1918,
+      "body_characters": 1586,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "41 Source and artifact inventory",
+        "U. UGTS_KC_3_6_2_SCLP_T om_Klootw\u0133k(1).pdf. The \ufb01le has 19 physical pages and a 16-page",
+        "numbered main/appendix sequence. The source\u2019s referenced 13-page precursor and software",
+        "ZIP were not supplied. The inherited source manifest records its PDF SHA-256 as"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        64.73867,
+        26.623897675999956,
+        531.8985437280002,
+        808.398928752
+      ]
+    },
+    {
+      "page": 69,
+      "text_characters": 1769,
+      "body_characters": 1456,
+      "first_lines": [
+        "aTOMos / v3.6.1.9 ORBIT SEEDS / LITERAL ST A TE",
+        "Primary implementation references",
+        "Recorded by the 3.6.1.5 preparation, 14 September 2026. These external references support the",
+        "satnav model and hardware contract; they are separate from the user\u2019s source corpus.",
+        "G1 ESA Navipedia, J. Sanz Subirana, J.M. Juan Zornoza and M. Hern\u00e1ndez-Pajares, Code Based Position-"
+      ],
+      "outside_media_characters": 0,
+      "replacement_characters": 0,
+      "bbox": [
+        65.19685,
+        26.623897675999956,
+        531.7500000800001,
+        808.398928752
+      ]
+    }
+  ],
+  "fonts": {
+    "/IHAIZV+NimbusSanL-Regu": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/BZIVMZ+NimbusSanL-Bold": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/IXFAWU+TeXGyrePagellaX-Regular": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/TQTHRL+TeXGyrePagellaX-Regular": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/YEUUOC+TeXGyrePagellaX-Bold": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/AKHCZK+pxsys": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/VDVGTR+pxmiaX": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/DDIEWW+NewPXMI": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/FKPJSN+TeXGyrePagellaX-Regular": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/PVTTLK+TeXGyrePagellaX-Bold": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/JAGKKY+t1xtt": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/CAFSZL+NewPXMI_gnu": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/NOMARO+txexs": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/KPXLOM+NewPXBMI": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/UTACNV+TeXGyrePagellaX-Italic": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/FZDNHS+txsyb": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/DZGKAF+txsya": {
+      "subtype": "/Type1",
+      "embedded": true
+    },
+    "/GJMHKB+t1xbtt": {
+      "subtype": "/Type1",
+      "embedded": true
+    }
+  },
+  "visual_status": "revision_required",
+  "visual_findings": [
+    {
+      "page": 14,
+      "issue": "CODE/Wuhan attribution item starts with one stranded line; continuation on15."
+    }
+  ],
+  "resolved_findings": [
+    "Chandra paragraph now starts on14 with complete introductory lines.",
+    "Seven-day10m wording now says budget."
+  ]
+}

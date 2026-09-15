@@ -1,0 +1,45 @@
+{
+  "seed": {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "G05",
+      "orbit_class": "MEO"
+    },
+    "file_bytes": 9066,
+    "file_sha256": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+    "seed_sha256": "814fb8ae189811c6e8443608e2bdf44794d7232a9dae24a7b688e3177a2816b2",
+    "model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+    "payload_uncompressed_bytes": 14629,
+    "payload_compressed_bytes": 9014,
+    "header_bytes": 52,
+    "codec": "bitplanes64-zlib",
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless 64 bit planes in uint64 words; original binary64/int64/uint64 bits restored",
+    "arithmetic_scope": "Packing is exact; native orbit propagation still uses binary64 floating point",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    }
+  },
+  "station": {
+    "description": "Demonstration station; not a surveyed receiver location",
+    "elevation_mask_deg": 10.0,
+    "height_m": 0.0,
+    "id": "delft_demo",
+    "lat_deg": 51.986,
+    "lon_deg": 4.387
+  },
+  "queries": 397,
+  "start_s": 0.0,
+  "end_s": 86400.0,
+  "final_record_sha256": "d6c64f6ef62e866eddf4551b013f3ad96d8f3f2f948ade92c7718ebc43f05e02"
+}

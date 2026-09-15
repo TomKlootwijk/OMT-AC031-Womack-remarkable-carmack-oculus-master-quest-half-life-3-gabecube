@@ -1,0 +1,139 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+ Revised: Sep 02, 2026  Chandra Spacecraft (X-ray observatory) / (Earth)   -151
+                          http://xrtpub.harvard.edu/index.html
+
+ Chandra X-ray Observatory:
+  Deployment (STS-93)    = July 23, 1999   Data storage             = 1.8 gbs
+  Science mission        = ~5 years        Length (sun shade open)  = 45.3 m
+  Orbital check-out      = 2 months        Length (sun shade clsd)  = 38.7 m
+
+ ORBITAL DATA:
+  Inclination            = 28.5 degrees    Orbital period           = ~64 hours 
+  Apogee altitude        = ~ 86,487 km     Observing time / orbit   = ~55 hours
+  Perigee altitude       = ~  5,999 km   
+
+ WEIGHTS & PROPULSION:
+  Dry                    = 10,560 lbs      Propellant               = 2,153 lbs
+  Pressurant             = 10 lb           Total launch weight      = 12,930 lb
+  Engines                = 4               Thrust per engine        = 105 lb
+
+ SPACECRAFT TRAJECTORY (from CFA): 
+  Trajectory after 2026-Sep-01 is a prediction
+
+  Trajectory name               Start        Stop
+  ----------------------------  -----------  -----------
+  cxo_99219_06045               1999-Aug-07  2006-Feb-14
+  cxo_06002_10103               2006-Feb-03  2010-Feb-25 
+  CXO_10056_27061               2010-Feb-25  2027-Mar-02
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Mon Sep 14 21:07:39 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Chandra Observatory (spacecraft) (-151) {source: chandra_merged}
+Center body name: Earth (399)                     {source: chandra_merged}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2025-Jan-05 11:55:00.0000 TDB
+Stop  time      : A.D. 2025-Jan-05 12:10:00.0000 TDB
+Step-size       : 1 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : KM-S
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : GEOMETRIC cartesian states
+Output format   : 2 (position and velocity)
+EOP file        : eop.260914.p261211
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-SEP-14. PREDICTS-> 2026-DEC-10
+Reference frame : ICRF
+*******************************************************************************
+            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,
+**************************************************************************************************************************************************************************************************
+$$SOE
+2460680.996527778, A.D. 2025-Jan-05 11:55:00.0000, -9.930753745050810E+03,  8.871879498557753E+03,  1.501798716634597E+02, -5.405478225297078E+00, -1.404891782220781E+00,  4.872834967280083E+00,
+2460680.997222222, A.D. 2025-Jan-05 11:56:00.0000, -1.025207390971132E+04,  8.784936191829760E+03,  4.424752658872822E+02, -5.305415429277728E+00, -1.492441784841203E+00,  4.869903111185419E+00,
+2460680.997916667, A.D. 2025-Jan-05 11:57:00.0000, -1.056742611866944E+04,  8.692876264057408E+03,  7.345150114303616E+02, -5.206521465934181E+00, -1.575473350665799E+00,  4.864316975432795E+00,
+2460680.998611111, A.D. 2025-Jan-05 11:58:00.0000, -1.087688388352721E+04,  8.595966164699257E+03,  1.026145808863695E+03, -5.108951079414788E+00, -1.654147177169392E+00,  4.856308924157616E+00,
+2460680.999305556, A.D. 2025-Jan-05 11:59:00.0000, -1.118053010453785E+04,  8.494462349459465E+03,  1.317228645110296E+03, -5.012832186489757E+00, -1.728631873287794E+00,  4.846098548021744E+00,
+2460681.000000000, A.D. 2025-Jan-05 12:00:00.0000, -1.147845505002553E+04,  8.388610982416227E+03,  1.607637601751890E+03, -4.918269671450672E+00, -1.799099836746821E+00,  4.833892160902525E+00,
+2460681.000694444, A.D. 2025-Jan-05 12:01:00.0000, -1.177075477383009E+04,  8.278647801708676E+03,  1.897258845649943E+03, -4.825348362302003E+00, -1.865724366078142E+00,  4.819882670809483E+00,
+2460681.001388889, A.D. 2025-Jan-05 12:02:00.0000, -1.207325718329366E+04,  8.157017671077231E+03,  2.202636972592840E+03, -4.729138414315862E+00, -1.932398991091250E+00,  4.803448534784902E+00,
+2460681.002083333, A.D. 2025-Jan-05 12:03:00.0000, -1.235431590007166E+04,  8.039279261022411E+03,  2.490335461103849E+03, -4.639769059940630E+00, -1.991662079025657E+00,  4.786275275046850E+00,
+2460681.002777778, A.D. 2025-Jan-05 12:04:00.0000, -1.263006550255249E+04,  7.918085051684663E+03,  2.776963917911672E+03, -4.552201020166100E+00, -2.047597568278749E+00,  4.767808122437797E+00,
+2460681.003472222, A.D. 2025-Jan-05 12:05:00.0000, -1.290061546162291E+04,  7.793630200750786E+03,  3.062449147490746E+03, -4.466458513920829E+00, -2.100369551417381E+00,  4.748190299598749E+00,
+2460681.004166667, A.D. 2025-Jan-05 12:06:00.0000, -1.316607609444278E+04,  7.666099981807346E+03,  3.346726150699496E+03, -4.382555514699464E+00, -2.150136453377754E+00,  4.727553469115630E+00,
+2460681.004861111, A.D. 2025-Jan-05 12:07:00.0000, -1.342655808840755E+04,  7.535670198113117E+03,  3.629737471993969E+03, -4.300497007977355E+00, -2.197050884037056E+00,  4.706018504070953E+00,
+2460681.005555556, A.D. 2025-Jan-05 12:08:00.0000, -1.368217207325159E+04,  7.402507587611439E+03,  3.911432587217022E+03, -4.220280145149543E+00, -2.241259536425440E+00,  4.683696220946807E+00,
+2460681.006250000, A.D. 2025-Jan-05 12:09:00.0000, -1.393302823894476E+04,  7.266770218980229E+03,  4.191767330468299E+03, -4.141895298642305E+00, -2.282903127577386E+00,  4.660688075839452E+00,
+2460681.006944444, A.D. 2025-Jan-05 12:10:00.0000, -1.417923599703453E+04,  7.128607878517339E+03,  4.470703358560267E+03, -4.065327022845522E+00, -2.322116379021558E+00,  4.637086824945900E+00,
+$$EOE
+**************************************************************************************************************************************************************************************************
+ 
+TIME
+
+  Barycentric Dynamical Time ("TDB" or T_eph) output was requested. This
+continuous coordinate time is equivalent to the relativistic proper time
+of a clock at rest in a reference frame co-moving with the solar system
+barycenter but outside the system's gravity well. It is the independent
+variable in the solar system relativistic equations of motion.
+
+  TDB runs at a uniform rate of one SI second per second and is independent
+of irregularities in Earth's rotation.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      X      X-component of position vector (km)
+      Y      Y-component of position vector (km)
+      Z      Z-component of position vector (km)
+      VX     X-component of velocity vector (km/sec)                           
+      VY     Y-component of velocity vector (km/sec)                           
+      VZ     Z-component of velocity vector (km/sec)                           
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric state vectors have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

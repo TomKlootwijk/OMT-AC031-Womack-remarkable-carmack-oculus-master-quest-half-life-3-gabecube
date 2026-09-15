@@ -1,0 +1,95 @@
+{
+  "profile": "ORBIT-PHYSICAL-ACCEPTANCE-R1",
+  "budget_m": 10.0,
+  "budget_origin": "Explicit engineering acceptance budget; separate from native functional tolerances",
+  "reference_sampling": "Discrete external product epochs; no continuous-time or true-orbit guarantee",
+  "source_report_sha256": "82d94ddb50286af98424dc692d0b1eb04d3c2f2c21b542697f33de58831204e6",
+  "objects": [
+    {
+      "object_id": "G05",
+      "physical_model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+      "first_sample_exceedance_seconds": 522600.0,
+      "previous_sample_seconds": 522300.0,
+      "maximum_over_full_test_window_m": 12.998084174854771,
+      "durations": [
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86400.0,
+          "max_error_m": 1.0566454205381106,
+          "worst_sample_seconds": 54600.0,
+          "coverage_complete_at_nominal_cadence": true,
+          "nominal_sample_gap_seconds": 300.0,
+          "maximum_gap_in_prefix_seconds": 300.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 8.94335457946189
+        }
+      ]
+    },
+    {
+      "object_id": "C03",
+      "physical_model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+      "first_sample_exceedance_seconds": 104700.0,
+      "previous_sample_seconds": 104400.0,
+      "maximum_over_full_test_window_m": 78.71731190580223,
+      "durations": [
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86400.0,
+          "max_error_m": 5.304255269103576,
+          "worst_sample_seconds": 36900.0,
+          "coverage_complete_at_nominal_cadence": true,
+          "nominal_sample_gap_seconds": 300.0,
+          "maximum_gap_in_prefix_seconds": 300.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 4.695744730896424
+        }
+      ]
+    },
+    {
+      "object_id": "C06",
+      "physical_model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421",
+      "first_sample_exceedance_seconds": null,
+      "previous_sample_seconds": null,
+      "maximum_over_full_test_window_m": 8.083522160286135,
+      "durations": [
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86400.0,
+          "max_error_m": 1.1723338290572496,
+          "worst_sample_seconds": 86400.0,
+          "coverage_complete_at_nominal_cadence": true,
+          "nominal_sample_gap_seconds": 300.0,
+          "maximum_gap_in_prefix_seconds": 300.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 8.82766617094275
+        }
+      ]
+    },
+    {
+      "object_id": "CHANDRA",
+      "physical_model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453",
+      "first_sample_exceedance_seconds": 181748.81599664688,
+      "previous_sample_seconds": 181448.81599664688,
+      "maximum_over_full_test_window_m": 25635.95112864787,
+      "durations": [
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86348.81602859497,
+          "max_error_m": 8.092835636702235,
+          "worst_sample_seconds": 72248.81603312492,
+          "coverage_complete_at_nominal_cadence": true,
+          "nominal_sample_gap_seconds": 300.0,
+          "maximum_gap_in_prefix_seconds": 300.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 1.907164363297765
+        }
+      ]
+    }
+  ],
+  "all_requested_durations_within_budget_at_samples": true,
+  "status": "passed_at_tested_samples"
+}

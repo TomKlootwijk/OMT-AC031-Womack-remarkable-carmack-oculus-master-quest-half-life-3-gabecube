@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "epochs": 256,
+  "counted_comparisons": 4828,
+  "statuses": {
+    "CONVERGED": 253,
+    "TOO_FEW": 1,
+    "MASK_ABSORBED": 1,
+    "RANK_DEFICIENT": 1
+  },
+  "fit_counts": {
+    "WITHIN_RESIDUAL_BUDGET": 251,
+    "RESIDUAL_ALERT": 1,
+    "NO_REDUNDANCY": 1
+  },
+  "max_absolute_state_difference_m": 9.400537237524986e-09,
+  "max_covariance_diagonal_difference_m2": 6.394884621840902e-14,
+  "synthetic_truth_metrics": {
+    "noiseless": {
+      "epochs": 128,
+      "position_rmse_m": 3.573332344255619e-09,
+      "max_position_error_m": 8.524789659729438e-09
+    },
+    "noisy": {
+      "epochs": 122,
+      "position_rmse_m": 1.6017023653351474,
+      "max_position_error_m": 3.388232688961513
+    },
+    "outlier": {
+      "epochs": 1,
+      "position_rmse_m": 147.09872369650003,
+      "max_position_error_m": 147.09872369650003
+    },
+    "four_only": {
+      "epochs": 1,
+      "position_rmse_m": 1.1079045015366404e-08,
+      "max_position_error_m": 1.1079045015366404e-08
+    },
+    "channels32": {
+      "epochs": 1,
+      "position_rmse_m": 3.892956908607382e-09,
+      "max_position_error_m": 3.892956908607382e-09
+    }
+  },
+  "scope": "Independent Householder check of supplied corrected-code geometry and native position/clock. Raw-data and physical-model validation are recorded separately.",
+  "input_profile": {
+    "version": "3.6.1.5",
+    "profile": "SATNAV-R1",
+    "data_origin": "synthetic_geometry_and_corrected_code; no live observations",
+    "constellation": "single_receiver_clock_fixture",
+    "frame": "ECEF_reception_axes_satellite_at_emission",
+    "time_scale": "GPST",
+    "corrections": "add_correction_m is added once; no other correction performed by kernel",
+    "anchor_geodetic_rad_m": [
+      0.9075712110370514,
+      0.08726646259971647,
+      100.0
+    ],
+    "anchor_ecef_m": [
+      3920048.08597242,
+      342959.7679990834,
+      5002882.146557996
+    ],
+    "chart_r0_m": 100000.0,
+    "chart_core_m": 0.1,
+    "rho_interval": [
+      -20.0,
+      0.0
+    ],
+    "hoop_phi_rad": 0.3490658503988659,
+    "epoch_tick_period_s": 1.0,
+    "tick_origin_gpst_s": 1400000000,
+    "support_spheres_enu_m": [
+      {
+        "center": [
+          0,
+          0,
+          0
+        ],
+        "radius": 10000
+      },
+      {
+        "center": [
+          100,
+          100,
+          0
+        ],
+        "radius": 10000
+      }
+    ],
+    "support_position_bound_m": 5.0,
+    "code_residual_budget_m": 20.0,
+    "code_residual_bound_m": 0.1,
+    "bounds_origin": "declared demonstration bounds, not GNSS protection levels",
+    "jk_events": "none; hold previous record state"
+  }
+}

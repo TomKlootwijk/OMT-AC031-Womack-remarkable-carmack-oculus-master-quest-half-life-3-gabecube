@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "error": "No module named 'erfa'",
+  "objects_completed": [
+    "G05",
+    "C03",
+    "C06"
+  ],
+  "identified_native_defect": "RK4 final state update omitted in original binary; huge same-model native/DOP853 discrepancies invalidate all preceding object measurements in this folder.",
+  "final_replacement": "../orbit_accuracy_cpu_final/accuracy_summary.json",
+  "usable_accuracy_evidence": false
+}

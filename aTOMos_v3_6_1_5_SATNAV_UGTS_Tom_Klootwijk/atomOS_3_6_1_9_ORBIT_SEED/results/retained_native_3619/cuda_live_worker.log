@@ -1,0 +1,37 @@
+{
+  "version": "3.6.1.8",
+  "status": "passed",
+  "backend": "cuda",
+  "epochs": 256,
+  "comparisons": 6861,
+  "status_counts": {
+    "CONVERGED": 253,
+    "TOO_FEW": 1,
+    "MASK_ABSORBED": 1,
+    "RANK_DEFICIENT": 1
+  },
+  "max_absolute_state_difference_m": 8.818460628390312e-09,
+  "rejected_requests_then_worker_recovered": [
+    "malformed",
+    "negative_id",
+    "nonfinite_time",
+    "count_mismatch",
+    "long_request"
+  ],
+  "request_latency_ms": {
+    "median": 1.4891500013618497,
+    "p95": 1.7364000013913028,
+    "max": 1088.8154999993276,
+    "scope": "local request serialization, native worker and response parsing; excludes raw transport and correction preparation"
+  },
+  "binary_sha256": "dd9fb85ef7ac67c7dedc0c69de1390ce6644de88c57bbabb4e780be73e7b9c9e",
+  "command": [
+    "C:\\tmp\\atomos3619_gpu128\\Release\\satnav_stream.exe",
+    "--backend",
+    "cuda",
+    "--device",
+    "0"
+  ],
+  "pid": 67176,
+  "scope": "Synthetic interface regression only; real-observation and Internet validations have separate reports."
+}

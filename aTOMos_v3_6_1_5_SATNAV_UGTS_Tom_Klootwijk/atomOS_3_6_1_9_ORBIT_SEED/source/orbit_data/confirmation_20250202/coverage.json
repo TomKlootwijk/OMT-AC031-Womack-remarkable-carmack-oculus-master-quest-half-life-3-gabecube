@@ -1,0 +1,628 @@
+{
+  "schema": "ORBIT-CONFIRMATION-COVERAGE-1",
+  "cutoff_gpst_seconds": 1422489600.0,
+  "prediction_errors_computed": false,
+  "model_fitting_performed": false,
+  "coverage_only": true,
+  "files": {
+    "training/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1421798400.0,
+      "last_gpst_seconds": 1421884800.0
+    },
+    "training/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1421884800.0,
+      "last_gpst_seconds": 1421971200.0
+    },
+    "training/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1421971200.0,
+      "last_gpst_seconds": 1422057600.0
+    },
+    "training/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422057600.0,
+      "last_gpst_seconds": 1422144000.0
+    },
+    "training/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422144000.0,
+      "last_gpst_seconds": 1422230400.0
+    },
+    "training/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422230400.0,
+      "last_gpst_seconds": 1422316800.0
+    },
+    "training/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422316800.0,
+      "last_gpst_seconds": 1422403200.0
+    },
+    "training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422403200.0,
+      "last_gpst_seconds": 1422489600.0
+    },
+    "holdout/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGb20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422489600.0,
+      "last_gpst_seconds": 1422576000.0
+    },
+    "holdout/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGb20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422576000.0,
+      "last_gpst_seconds": 1422662400.0
+    },
+    "holdout/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGb20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422662400.0,
+      "last_gpst_seconds": 1422748800.0
+    },
+    "holdout/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGb20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 0,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422748800.0,
+      "last_gpst_seconds": 1422835200.0
+    },
+    "holdout/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGb20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 0,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422835200.0,
+      "last_gpst_seconds": 1422921600.0
+    },
+    "holdout/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGb20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1422921600.0,
+      "last_gpst_seconds": 1423008000.0
+    },
+    "holdout/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGb20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 289,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 289,
+      "first_gpst_seconds": 1423008000.0,
+      "last_gpst_seconds": 1423094400.0
+    },
+    "holdout_wum/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 288,
+      "first_gpst_seconds": 1422489600.0,
+      "last_gpst_seconds": 1422575700.0
+    },
+    "holdout_wum/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 288,
+      "first_gpst_seconds": 1422576000.0,
+      "last_gpst_seconds": 1422662100.0
+    },
+    "holdout_wum/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 288,
+      "first_gpst_seconds": 1422662400.0,
+      "last_gpst_seconds": 1422748500.0
+    },
+    "holdout_wum/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 288,
+      "first_gpst_seconds": 1422748800.0,
+      "last_gpst_seconds": 1422834900.0
+    },
+    "holdout_wum/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 0,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 288,
+      "first_gpst_seconds": 1422835200.0,
+      "last_gpst_seconds": 1422921300.0
+    },
+    "holdout_wum/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 288,
+      "first_gpst_seconds": 1422921600.0,
+      "last_gpst_seconds": 1423007700.0
+    },
+    "holdout_wum/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz": {
+      "frame": "IGS20",
+      "time_system": "GPS",
+      "targets": {
+        "G05": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C03": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        },
+        "C06": {
+          "position_records": 288,
+          "position_prediction_flags": 0
+        }
+      },
+      "raw_epoch_count": 288,
+      "first_gpst_seconds": 1423008000.0,
+      "last_gpst_seconds": 1423094100.0
+    },
+    "training/HORIZONS_CHANDRA_20250125_20250202_ICRF_TDB.txt": {
+      "raw_epoch_count": 2305,
+      "frame": "Earth-centered ICRF geometric",
+      "source_time_scale": "TDB",
+      "position_units": "km",
+      "velocity_units": "km/s",
+      "first_calendar_tdb": "A.D. 2025-Jan-25 00:00:00.0000",
+      "last_calendar_tdb": "A.D. 2025-Feb-02 00:00:00.0000",
+      "first_t_s": -691251.1845862865,
+      "last_t_s": -51.18479585647583
+    },
+    "holdout/HORIZONS_CHANDRA_20250202_20250209_ICRF_TDB.txt": {
+      "raw_epoch_count": 2016,
+      "frame": "Earth-centered ICRF geometric",
+      "source_time_scale": "TDB",
+      "position_units": "km",
+      "velocity_units": "km/s",
+      "first_calendar_tdb": "A.D. 2025-Feb-02 00:05:00.0000",
+      "last_calendar_tdb": "A.D. 2025-Feb-09 00:00:00.0000",
+      "first_t_s": 248.81520414352417,
+      "last_t_s": 604748.81503582
+    },
+    "forcing/HORIZONS_MOON_20250124_20250210_ICRF_TDB.txt": {
+      "raw_epoch_count": 4897,
+      "frame": "Earth-centered ICRF geometric",
+      "source_time_scale": "TDB",
+      "position_units": "km",
+      "velocity_units": "km/s",
+      "first_calendar_tdb": "A.D. 2025-Jan-24 00:00:00.0000",
+      "last_calendar_tdb": "A.D. 2025-Feb-10 00:00:00.0000",
+      "first_t_s": -777651.1845593452,
+      "last_t_s": 691148.8150131702
+    },
+    "forcing/HORIZONS_SUN_20250124_20250210_ICRF_TDB.txt": {
+      "raw_epoch_count": 4897,
+      "frame": "Earth-centered ICRF geometric",
+      "source_time_scale": "TDB",
+      "position_units": "km",
+      "velocity_units": "km/s",
+      "first_calendar_tdb": "A.D. 2025-Jan-24 00:00:00.0000",
+      "last_calendar_tdb": "A.D. 2025-Feb-10 00:00:00.0000",
+      "first_t_s": -777651.1845593452,
+      "last_t_s": 691148.8150131702
+    }
+  },
+  "targets": {
+    "G05": {
+      "training": {
+        "unique_eligible_epochs": 2305,
+        "expected_grid_epochs": 2305,
+        "missing_grid_epochs": 0,
+        "first_t_s": -691200.0,
+        "last_t_s": 0.0,
+        "maximum_gap_s": 300.0,
+        "gaps": []
+      },
+      "holdout": {
+        "unique_eligible_epochs": 2016,
+        "expected_grid_epochs": 2016,
+        "missing_grid_epochs": 0,
+        "first_t_s": 300.0,
+        "last_t_s": 604800.0,
+        "maximum_gap_s": 300.0,
+        "gaps": []
+      },
+      "holdout_wum": {
+        "unique_eligible_epochs": 2015,
+        "expected_grid_epochs": 2016,
+        "missing_grid_epochs": 1,
+        "first_t_s": 300.0,
+        "last_t_s": 604500.0,
+        "maximum_gap_s": 300.0,
+        "gaps": []
+      }
+    },
+    "C03": {
+      "training": {
+        "unique_eligible_epochs": 2305,
+        "expected_grid_epochs": 2305,
+        "missing_grid_epochs": 0,
+        "first_t_s": -691200.0,
+        "last_t_s": 0.0,
+        "maximum_gap_s": 300.0,
+        "gaps": []
+      },
+      "holdout": {
+        "unique_eligible_epochs": 1441,
+        "expected_grid_epochs": 2016,
+        "missing_grid_epochs": 575,
+        "first_t_s": 300.0,
+        "last_t_s": 604800.0,
+        "maximum_gap_s": 172800.0,
+        "gaps": [
+          {
+            "previous_t_s": 259200.0,
+            "next_t_s": 432000.0,
+            "gap_s": 172800.0
+          }
+        ]
+      },
+      "holdout_wum": {
+        "unique_eligible_epochs": 1727,
+        "expected_grid_epochs": 2016,
+        "missing_grid_epochs": 289,
+        "first_t_s": 300.0,
+        "last_t_s": 604500.0,
+        "maximum_gap_s": 86700.0,
+        "gaps": [
+          {
+            "previous_t_s": 345300.0,
+            "next_t_s": 432000.0,
+            "gap_s": 86700.0
+          }
+        ]
+      }
+    },
+    "C06": {
+      "training": {
+        "unique_eligible_epochs": 2305,
+        "expected_grid_epochs": 2305,
+        "missing_grid_epochs": 0,
+        "first_t_s": -691200.0,
+        "last_t_s": 0.0,
+        "maximum_gap_s": 300.0,
+        "gaps": []
+      },
+      "holdout": {
+        "unique_eligible_epochs": 2016,
+        "expected_grid_epochs": 2016,
+        "missing_grid_epochs": 0,
+        "first_t_s": 300.0,
+        "last_t_s": 604800.0,
+        "maximum_gap_s": 300.0,
+        "gaps": []
+      },
+      "holdout_wum": {
+        "unique_eligible_epochs": 2015,
+        "expected_grid_epochs": 2016,
+        "missing_grid_epochs": 1,
+        "first_t_s": 300.0,
+        "last_t_s": 604500.0,
+        "maximum_gap_s": 300.0,
+        "gaps": []
+      }
+    },
+    "CHANDRA": {
+      "training": {
+        "unique_eligible_epochs": 2304,
+        "first_t_s": -690951.184586525,
+        "last_t_s": -51.18479585647583
+      },
+      "holdout": {
+        "unique_eligible_epochs": 2016,
+        "first_t_s": 248.81520414352417,
+        "last_t_s": 604748.81503582
+      }
+    }
+  }
+}

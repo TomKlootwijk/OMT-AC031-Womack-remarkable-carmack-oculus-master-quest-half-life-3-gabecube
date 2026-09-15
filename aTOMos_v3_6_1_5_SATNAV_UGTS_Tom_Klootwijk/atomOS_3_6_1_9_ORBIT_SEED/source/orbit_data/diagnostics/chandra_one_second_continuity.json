@@ -1,0 +1,149 @@
+{
+  "status": "reference_diagnostic_only",
+  "source": {
+    "file": "HORIZONS_CHANDRA_20250105_1155_1210_UNITLESS900_ICRF_TDB.txt",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-05+11%3A55%3A00%27&STOP_TIME=%272025-01-05+12%3A10%3A00%27&STEP_SIZE=%27900%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27&TIME_DIGITS=%27FRACSEC%27",
+    "resolved_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-05+11%3A55%3A00%27&STOP_TIME=%272025-01-05+12%3A10%3A00%27&STEP_SIZE=%27900%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27&TIME_DIGITS=%27FRACSEC%27",
+    "parameters": {
+      "format": "text",
+      "COMMAND": "'-151'",
+      "OBJ_DATA": "'YES'",
+      "MAKE_EPHEM": "'YES'",
+      "EPHEM_TYPE": "'VECTORS'",
+      "CENTER": "'500@399'",
+      "START_TIME": "'2025-01-05 11:55:00'",
+      "STOP_TIME": "'2025-01-05 12:10:00'",
+      "STEP_SIZE": "'900'",
+      "VEC_TABLE": "'2'",
+      "REF_PLANE": "'FRAME'",
+      "REF_SYSTEM": "'ICRF'",
+      "VEC_CORR": "'NONE'",
+      "OUT_UNITS": "'KM-S'",
+      "CSV_FORMAT": "'YES'",
+      "TIME_TYPE": "'TDB'",
+      "TIME_DIGITS": "'FRACSEC'"
+    },
+    "bytes": 181960,
+    "sha256": "c6376bb783d6aec46f22dbe137f390d1c10823af7cb401b1734a1202be7665a4",
+    "retrieved_utc": "2026-09-15T04:08:34.024376+00:00"
+  },
+  "calculation": "Cubic velocity quadrature at one-second intervals using four source velocity nodes and weights[-1,13,13,-1]/24; compare to source position difference. No orbit-model states or fitted parameters used.",
+  "maximum": {
+    "from_tdb": "A.D. 2025-Jan-05 12:01:09.0000",
+    "to_tdb": "A.D. 2025-Jan-05 12:01:10.0000",
+    "displacement_m": 31370.149098880847,
+    "mean_reported_speed_m_s": 7060.502761708274,
+    "trapezoid_velocity_residual_m": 24317.076783668086,
+    "cubic_velocity_quadrature_residual_m": 24317.076706547694,
+    "velocity_change_m_s": 8.302947130157031,
+    "position_minus_integrated_velocity_vector_m": [
+      -15978.9820467433,
+      -7589.617638001347,
+      16685.024914902544
+    ]
+  },
+  "ordinary_max_residual_m": 0.06536109290657174,
+  "ordinary_median_residual_m": 0.010096214790647064,
+  "neighbor_rows": [
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:06.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:07.0000",
+      "displacement_m": 7064.732241864084,
+      "mean_reported_speed_m_s": 7064.748012898242,
+      "trapezoid_velocity_residual_m": 0.015834782052665673,
+      "cubic_velocity_quadrature_residual_m": 0.015867227054074947,
+      "velocity_change_m_s": 1.8865378511949797,
+      "position_minus_integrated_velocity_vector_m": [
+        0.00964365790332522,
+        0.005750352372388079,
+        -0.011211699435079936
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:07.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:08.0000",
+      "displacement_m": 7063.801926351104,
+      "mean_reported_speed_m_s": 7063.817754182206,
+      "trapezoid_velocity_residual_m": 0.015887978862438323,
+      "cubic_velocity_quadrature_residual_m": 0.015920155819704192,
+      "velocity_change_m_s": 1.8856334668698962,
+      "position_minus_integrated_velocity_vector_m": [
+        0.009695232358353678,
+        0.0057458351709556155,
+        -0.011244519066167413
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:08.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:09.0000",
+      "displacement_m": 7062.871745875205,
+      "mean_reported_speed_m_s": 7062.887629097313,
+      "trapezoid_velocity_residual_m": 0.015939827404012064,
+      "cubic_velocity_quadrature_residual_m": 0.2734343846959815,
+      "velocity_change_m_s": 1.8847295525354206,
+      "position_minus_integrated_velocity_vector_m": [
+        0.2206861878739801,
+        -0.15601210804493348,
+        -0.04152338328094629
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:09.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:10.0000",
+      "displacement_m": 31370.149098880847,
+      "mean_reported_speed_m_s": 7060.502761708274,
+      "trapezoid_velocity_residual_m": 24317.076783668086,
+      "cubic_velocity_quadrature_residual_m": 24317.076706547694,
+      "velocity_change_m_s": 8.302947130157031,
+      "position_minus_integrated_velocity_vector_m": [
+        -15978.9820467433,
+        -7589.617638001347,
+        16685.024914902544
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:10.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:11.0000",
+      "displacement_m": 7058.145503528992,
+      "mean_reported_speed_m_s": 7058.118164372045,
+      "trapezoid_velocity_residual_m": 0.06740984607260882,
+      "cubic_velocity_quadrature_residual_m": 0.33506134491360795,
+      "velocity_change_m_s": 1.8802698214442706,
+      "position_minus_integrated_velocity_vector_m": [
+        -0.26341204768232274,
+        0.20417874482518528,
+        0.034514318082983664
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:11.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:12.0000",
+      "displacement_m": 7057.2155482803855,
+      "mean_reported_speed_m_s": 7057.18871375845,
+      "trapezoid_velocity_residual_m": 0.06633951194752445,
+      "cubic_velocity_quadrature_residual_m": 0.06642102301299561,
+      "velocity_change_m_s": 1.8793664948037914,
+      "position_minus_integrated_velocity_vector_m": [
+        -0.05156309343783505,
+        0.041655759503782974,
+        0.004218695696181385
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:12.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:13.0000",
+      "displacement_m": 7056.285733572237,
+      "mean_reported_speed_m_s": 7056.259398247051,
+      "trapezoid_velocity_residual_m": 0.06527954961774222,
+      "cubic_velocity_quadrature_residual_m": 0.06536109290657174,
+      "velocity_change_m_s": 1.878463657561464,
+      "position_minus_integrated_velocity_vector_m": [
+        -0.05071542109999427,
+        0.04102624157530954,
+        0.004106827339455776
+      ]
+    }
+  ],
+  "header_segment_evidence": "Response identifies chandra_merged and CFA CXO_10056_27061 spanning2010Feb25..2027Mar02; no internal January5 segment boundary or maneuver is identified in the header.",
+  "interpretation": "A large kinematic discontinuity exists in the supplied reference position series near this interval; the provider header does not identify its cause. Retain all benchmark residuals, but do not attribute the full jump solely to smooth-model force error or native numerical integration."
+}

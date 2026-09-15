@@ -1,0 +1,295 @@
+{
+  "scope": "Station-relative consequences of the measured orbit discrepancy; no antenna beam or operational acceptance limit is assumed",
+  "angles": "Simultaneous geometric, no atmospheric refraction or retarded light time",
+  "source_accuracy_sha256": "82d94ddb50286af98424dc692d0b1eb04d3c2f2c21b542697f33de58831204e6",
+  "objects": [
+    {
+      "object_id": "G05",
+      "physical_model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+      "stations": [
+        {
+          "station": {
+            "id": "delft_demo",
+            "lat_deg": 51.986,
+            "lon_deg": 4.387,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station; not a surveyed receiver location"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 628,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 1.1165625553784527e-05,
+            "max_abs": 3.0425912587849145e-05
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 628,
+            "rms": 1.1966394221606541e-05,
+            "max_abs": 3.0425912587849145e-05
+          },
+          "visible_elevation_error_deg": {
+            "count": 628,
+            "rms": 7.0040073957739484e-06,
+            "max_abs": 2.2017681033048575e-05
+          },
+          "visible_range_error_m": {
+            "count": 628,
+            "rms": 0.7642372588452381,
+            "max_abs": 2.6777519918978214
+          },
+          "curve": "G05_delft_demo.csv"
+        },
+        {
+          "station": {
+            "id": "singapore_demo",
+            "lat_deg": 1.35,
+            "lon_deg": 103.82,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station for Asian GEO visibility"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 732,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 1.1689509266174933e-05,
+            "max_abs": 3.5444280255406374e-05
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 732,
+            "rms": 1.4741704254887475e-05,
+            "max_abs": 3.5444280255406374e-05
+          },
+          "visible_elevation_error_deg": {
+            "count": 732,
+            "rms": 9.92476329609155e-06,
+            "max_abs": 3.224740353857669e-05
+          },
+          "visible_range_error_m": {
+            "count": 732,
+            "rms": 1.050485441621955,
+            "max_abs": 3.5864616706967354
+          },
+          "curve": "G05_singapore_demo.csv"
+        }
+      ]
+    },
+    {
+      "object_id": "C03",
+      "physical_model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+      "stations": [
+        {
+          "station": {
+            "id": "delft_demo",
+            "lat_deg": 51.986,
+            "lon_deg": 4.387,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station; not a surveyed receiver location"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 0,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 4.882494978361358e-05,
+            "max_abs": 0.0001025635543557508
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 0,
+            "rms": null,
+            "max_abs": null
+          },
+          "visible_elevation_error_deg": {
+            "count": 0,
+            "rms": null,
+            "max_abs": null
+          },
+          "visible_range_error_m": {
+            "count": 0,
+            "rms": null,
+            "max_abs": null
+          },
+          "curve": "C03_delft_demo.csv"
+        },
+        {
+          "station": {
+            "id": "singapore_demo",
+            "lat_deg": 1.35,
+            "lon_deg": 103.82,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station for Asian GEO visibility"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 2016,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 5.962399232642529e-05,
+            "max_abs": 0.0001258528162666986
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 5.962399232642529e-05,
+            "max_abs": 0.0001258528162666986
+          },
+          "visible_elevation_error_deg": {
+            "count": 2016,
+            "rms": 5.716309761929068e-05,
+            "max_abs": 0.00011677746478255813
+          },
+          "visible_range_error_m": {
+            "count": 2016,
+            "rms": 3.195928676266789,
+            "max_abs": 7.349063642323017
+          },
+          "curve": "C03_singapore_demo.csv"
+        }
+      ]
+    },
+    {
+      "object_id": "C06",
+      "physical_model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421",
+      "stations": [
+        {
+          "station": {
+            "id": "delft_demo",
+            "lat_deg": 51.986,
+            "lon_deg": 4.387,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station; not a surveyed receiver location"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 526,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 3.494251818325772e-06,
+            "max_abs": 1.043010413921091e-05
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 526,
+            "rms": 2.3840361227846552e-06,
+            "max_abs": 4.978405403121907e-06
+          },
+          "visible_elevation_error_deg": {
+            "count": 526,
+            "rms": 1.0622270564191687e-06,
+            "max_abs": 4.851978181008576e-06
+          },
+          "visible_range_error_m": {
+            "count": 526,
+            "rms": 1.1676519579706297,
+            "max_abs": 2.484302841126919
+          },
+          "curve": "C06_delft_demo.csv"
+        },
+        {
+          "station": {
+            "id": "singapore_demo",
+            "lat_deg": 1.35,
+            "lon_deg": 103.82,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station for Asian GEO visibility"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 2016,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 4.101823763051115e-06,
+            "max_abs": 1.281238145530799e-05
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 4.101823763051115e-06,
+            "max_abs": 1.281238145530799e-05
+          },
+          "visible_elevation_error_deg": {
+            "count": 2016,
+            "rms": 2.080319977861858e-06,
+            "max_abs": 1.2099836439460887e-05
+          },
+          "visible_range_error_m": {
+            "count": 2016,
+            "rms": 1.2990647286637986,
+            "max_abs": 2.9205002933740616
+          },
+          "curve": "C06_singapore_demo.csv"
+        }
+      ]
+    },
+    {
+      "object_id": "CHANDRA",
+      "physical_model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453",
+      "stations": [
+        {
+          "station": {
+            "id": "delft_demo",
+            "lat_deg": 51.986,
+            "lon_deg": 4.387,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station; not a surveyed receiver location"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 1197,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 0.010723121978263405,
+            "max_abs": 0.12499124411995713
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 1197,
+            "rms": 0.008769513010334188,
+            "max_abs": 0.12221335720651286
+          },
+          "visible_elevation_error_deg": {
+            "count": 1197,
+            "rms": 0.006896994583357211,
+            "max_abs": 0.11090379935404648
+          },
+          "visible_range_error_m": {
+            "count": 1197,
+            "rms": 3610.1578629576675,
+            "max_abs": 11281.513353671879
+          },
+          "curve": "CHANDRA_delft_demo.csv"
+        },
+        {
+          "station": {
+            "id": "singapore_demo",
+            "lat_deg": 1.35,
+            "lon_deg": 103.82,
+            "height_m": 0.0,
+            "elevation_mask_deg": 10.0,
+            "description": "Demonstration station for Asian GEO visibility"
+          },
+          "all_samples": 2016,
+          "visible_reference_samples": 804,
+          "all_line_of_sight_error_deg": {
+            "count": 2016,
+            "rms": 0.008702235662616692,
+            "max_abs": 0.09032707249736362
+          },
+          "visible_line_of_sight_error_deg": {
+            "count": 804,
+            "rms": 0.0007172189681613943,
+            "max_abs": 0.0025064362769842956
+          },
+          "visible_elevation_error_deg": {
+            "count": 804,
+            "rms": 0.0004575349251304613,
+            "max_abs": 0.001989570080633385
+          },
+          "visible_range_error_m": {
+            "count": 804,
+            "rms": 1932.5192998539212,
+            "max_abs": 6235.747249677777
+          },
+          "curve": "CHANDRA_singapore_demo.csv"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "scope": "independent force potential/frame and training-only numerical audit; no held-out target data read",
+  "models": {
+    "G05": {
+      "gravity_potential_gradient_error_m_s2": 2.6739033239352084e-11,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 2.6766507790745728e-16,
+      "rk4_30_vs_15_training_max_m": 0.00279781664191768,
+      "rk4_15_vs_7_5_training_max_m": 0.00017511545982387496,
+      "rk4_30_vs_dop853_training_max_m": 0.0029824105151725943
+    },
+    "C03": {
+      "gravity_potential_gradient_error_m_s2": 3.3855828605235474e-11,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 8.33073745070314e-17,
+      "rk4_30_vs_15_training_max_m": 0.00013457880725972898,
+      "rk4_15_vs_7_5_training_max_m": 5.156197720580441e-06,
+      "rk4_30_vs_dop853_training_max_m": 0.000140252587852469
+    },
+    "C06": {
+      "gravity_potential_gradient_error_m_s2": 1.1571631701637504e-11,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 3.98609107286759e-17,
+      "rk4_30_vs_15_training_max_m": 0.00013280651183354542,
+      "rk4_15_vs_7_5_training_max_m": 6.732875829274692e-06,
+      "rk4_30_vs_dop853_training_max_m": 0.00013992183811264812
+    },
+    "CHANDRA": {
+      "gravity_potential_gradient_error_m_s2": 7.554222679718658e-12,
+      "direct_erfa_frame_max_abs": 3.5368999395934964e-12,
+      "python_vector_vs_numba_scalar_force_m_s2": 7.757919228897728e-18,
+      "rk4_30_vs_15_training_max_m": 7.868060929974674e-07,
+      "rk4_15_vs_7_5_training_max_m": 4.5765005582380933e-07,
+      "rk4_30_vs_dop853_training_max_m": 6.228257579805364e-07,
+      "week_numerics": {
+        "times_s": [
+          0.0,
+          900.0,
+          3600.0,
+          21600.0,
+          86400.0,
+          259200.0,
+          432000.0,
+          604800.0
+        ],
+        "rk4_vs_dop853_errors_m": {
+          "30.0": [
+            0.0,
+            4.7706993203109864e-08,
+            6.746787680787904e-08,
+            1.8980710510696465e-07,
+            0.27512030612168664,
+            1.0235508520003151,
+            2.0936204806399576,
+            3.0693219261433615
+          ],
+          "15.0": [
+            0.0,
+            2.9802322387695312e-08,
+            3.3527612686157227e-08,
+            9.094592642585711e-08,
+            0.016414686424867545,
+            0.030929981854632565,
+            0.08652319500027059,
+            0.11966987429709798
+          ],
+          "7.5": [
+            0.0,
+            1.5359765386647212e-08,
+            4.998001405968792e-08,
+            2.167081769145874e-07,
+            0.0006259796243689838,
+            0.02441908562599155,
+            0.028780750473279326,
+            0.03660483387121051
+          ]
+        },
+        "dop853_tighter_vs_default_max_m": 0.04402974889209837,
+        "selection": "replay step7.5s chosen from numerical oracle only; state and forces unchanged; no future target data opened"
+      }
+    }
+  },
+  "pass": true
+}

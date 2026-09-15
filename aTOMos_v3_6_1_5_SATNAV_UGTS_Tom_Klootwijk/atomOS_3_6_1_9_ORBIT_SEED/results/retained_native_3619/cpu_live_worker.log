@@ -1,0 +1,37 @@
+{
+  "version": "3.6.1.8",
+  "status": "passed",
+  "backend": "cpu",
+  "epochs": 256,
+  "comparisons": 6861,
+  "status_counts": {
+    "CONVERGED": 253,
+    "TOO_FEW": 1,
+    "MASK_ABSORBED": 1,
+    "RANK_DEFICIENT": 1
+  },
+  "max_absolute_state_difference_m": 9.400537237524986e-09,
+  "rejected_requests_then_worker_recovered": [
+    "malformed",
+    "negative_id",
+    "nonfinite_time",
+    "count_mismatch",
+    "long_request"
+  ],
+  "request_latency_ms": {
+    "median": 0.19025000074179843,
+    "p95": 0.2548000011302065,
+    "max": 0.43339999683666974,
+    "scope": "local request serialization, native worker and response parsing; excludes raw transport and correction preparation"
+  },
+  "binary_sha256": "5a0f85273662f905c84cff37a2602a4df9a86d9ef03f7dc16dfcb85193733d86",
+  "command": [
+    "C:\\tmp\\atomos3619_cpu\\Release\\satnav_stream.exe",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "pid": 67240,
+  "scope": "Synthetic interface regression only; real-observation and Internet validations have separate reports."
+}

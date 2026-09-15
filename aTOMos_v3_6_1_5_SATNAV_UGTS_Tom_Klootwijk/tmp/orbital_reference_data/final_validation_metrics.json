@@ -1,0 +1,1414 @@
+{
+  "R1": {
+    "G05": {
+      "firstday_max": 285.3302893234722,
+      "firstday_count": 288,
+      "rms": 3528.799613517677,
+      "p95": 7022.086079751113,
+      "max": 7402.959661484532,
+      "fitdays": null,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 300.0,
+          "first_sample_error_m": 19.64377355192377,
+          "previous_sample_seconds": null,
+          "previous_sample_error_m": null,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 16800.0,
+          "first_sample_error_m": 101.03204211970005,
+          "previous_sample_seconds": 16500.0,
+          "previous_sample_error_m": 99.85763919144608,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 183600.0,
+          "first_sample_error_m": 1000.7594999305618,
+          "previous_sample_seconds": 183300.0,
+          "previous_sample_error_m": 995.4882862655443,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 21.742452669430822
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 32.98045648195486
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 114.99216052104093
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 285.3302893234722
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1614.4130473119915
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 7402.959661484532
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.014887656030506239,
+          "max_m": 0.026742379666466927,
+          "median_m": 0.01165910272322606,
+          "p95_m": 0.024810858849311872
+        },
+        "times_seconds": [
+          300.0,
+          75600.0,
+          151200.0,
+          226800.0,
+          302400.0,
+          378000.0,
+          453600.0,
+          529200.0,
+          604800.0
+        ],
+        "position_errors_m": [
+          3.387281019693328e-06,
+          0.002861522603665758,
+          0.005209327282358566,
+          0.007934339017297549,
+          0.01165910272322606,
+          0.015259776656072841,
+          0.018230369027775018,
+          0.021913577623579296,
+          0.026742379666466927
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 4.480628977820272,
+        "max_m": 9.889315656447808,
+        "median_m": 3.1642147449753226,
+        "p95_m": 8.520697763124211
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "5deb26d1f0cb9efbf8457bf5d375ea78f1e8e90ce47551009168e379a3b11680"
+    },
+    "C03": {
+      "firstday_max": 20.599831398227774,
+      "firstday_count": 288,
+      "rms": 256.3371697730723,
+      "p95": 526.1358827108227,
+      "max": 532.5819298168335,
+      "fitdays": null,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 31200.0,
+          "first_sample_error_m": 10.114622888752757,
+          "previous_sample_seconds": 30900.0,
+          "previous_sample_error_m": 9.969673723809874,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 214500.0,
+          "first_sample_error_m": 100.17621105013426,
+          "previous_sample_seconds": 214200.0,
+          "previous_sample_error_m": 99.74685773047867,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.5076106824387339
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.8785695728763521
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 5.900783892315065
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 18.439780476646888
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 111.13228042303406
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 526.3087409202553
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.0005995326804032071,
+          "max_m": 0.0010319660574626694,
+          "median_m": 0.000497296908714901,
+          "p95_m": 0.0009693479764751189
+        },
+        "times_seconds": [
+          300.0,
+          75600.0,
+          151200.0,
+          226800.0,
+          302400.0,
+          378000.0,
+          453600.0,
+          529200.0,
+          604800.0
+        ],
+        "position_errors_m": [
+          1.8195446664475982e-07,
+          0.00014272993339414035,
+          0.0002737578453573571,
+          0.0003910123423976181,
+          0.000497296908714901,
+          0.0006083920605443535,
+          0.0007334768607005122,
+          0.0008754208549937932,
+          0.0010319660574626694
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 8.706250325294436,
+        "max_m": 15.905535801566241,
+        "median_m": 6.48739815479966,
+        "p95_m": 15.171001800702989
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "f082874c18f713acbe1b893ddfbcdc3424123c4d338765325f400cdeffe5f296"
+    },
+    "C06": {
+      "firstday_max": 44.684370187353956,
+      "firstday_count": 288,
+      "rms": 572.1610768455081,
+      "p95": 1161.9577509774228,
+      "max": 1237.241656286258,
+      "fitdays": null,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 31200.0,
+          "first_sample_error_m": 10.068851509835165,
+          "previous_sample_seconds": 30900.0,
+          "previous_sample_error_m": 9.843862063911528,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 136200.0,
+          "first_sample_error_m": 100.33916564247842,
+          "previous_sample_seconds": 135900.0,
+          "previous_sample_error_m": 99.70636487031652,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 553200.0,
+          "first_sample_error_m": 1001.3934372706375,
+          "previous_sample_seconds": 552900.0,
+          "previous_sample_error_m": 999.3858432876124,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.260443134175529
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.5380839486595008
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 4.8766839052359625
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 44.684370187353956
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 267.056180459234
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1234.6113366550549
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.0006083416211965539,
+          "max_m": 0.001058227573660416,
+          "median_m": 0.0004993045226864064,
+          "p95_m": 0.000990773457092235
+        },
+        "times_seconds": [
+          300.0,
+          75600.0,
+          151200.0,
+          226800.0,
+          302400.0,
+          378000.0,
+          453600.0,
+          529200.0,
+          604800.0
+        ],
+        "position_errors_m": [
+          1.5592910004002115e-07,
+          0.0001462308821790996,
+          0.0002816791102594205,
+          0.00039677185643882017,
+          0.0004993045226864064,
+          0.0006083914635793592,
+          0.0007361358737881218,
+          0.0008895922822399636,
+          0.001058227573660416
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 7.199680497567679,
+        "max_m": 15.80476137894746,
+        "median_m": 4.894504316111104,
+        "p95_m": 13.696916457232305
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d"
+    },
+    "CHANDRA": {
+      "firstday_max": 76.50633887318128,
+      "firstday_count": 288,
+      "rms": 4060.74732221137,
+      "p95": 9127.34377592752,
+      "max": 19399.30731946993,
+      "fitdays": null,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 72248.81603312492,
+          "first_sample_error_m": 11.57417184045001,
+          "previous_sample_seconds": 71948.81603336334,
+          "previous_sample_error_m": 7.793940110615707,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 109148.81602096558,
+          "first_sample_error_m": 100.03033754066354,
+          "previous_sample_seconds": 108848.81602096558,
+          "previous_sample_error_m": 99.80598789395076,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 260048.81597042084,
+          "first_sample_error_m": 1003.8918478353901,
+          "previous_sample_seconds": 259748.81597042084,
+          "previous_sample_error_m": 998.2544478170944,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 302648.8159561157,
+          "first_sample_error_m": 19399.30731946993,
+          "previous_sample_seconds": 302348.81595635414,
+          "previous_sample_error_m": 4500.385948089174,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 848.8160572052002,
+          "sample_offset_seconds": -51.183942794799805,
+          "position_error_m": 0.002047615135334206
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3548.816056251526,
+          "sample_offset_seconds": -51.18394374847412,
+          "position_error_m": 0.008470509549273716
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21548.81605029106,
+          "sample_offset_seconds": -51.1839497089386,
+          "position_error_m": 0.07694858368688462
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86348.81602859497,
+          "sample_offset_seconds": -51.1839714050293,
+          "position_error_m": 76.50633887318128
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259148.81597065926,
+          "sample_offset_seconds": -51.18402934074402,
+          "position_error_m": 987.1289017903346
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604748.8158562183,
+          "sample_offset_seconds": -51.18414378166199,
+          "position_error_m": 2662.642041019094
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.13664173872445365,
+          "max_m": 0.39093278493976474,
+          "median_m": 0.014384491327403546,
+          "p95_m": 0.27793752100403396
+        },
+        "times_seconds": [
+          248.81605744361877,
+          75548.81603217125,
+          151148.81600689888,
+          226748.8159816265,
+          302348.81595635414,
+          377948.8159310818,
+          453548.8159060478,
+          529148.8158810139,
+          604748.8158562183
+        ],
+        "position_errors_m": [
+          2.1073424255447017e-08,
+          0.0002797731874906071,
+          0.003910505170289073,
+          0.014384491327403546,
+          0.10844462510043805,
+          0.011290659255496915,
+          0.041941617684205484,
+          0.39093278493976474,
+          0.03662160026511881
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 18.510531306646534,
+        "max_m": 42.37483295944314,
+        "median_m": 11.04431188048204,
+        "p95_m": 35.36634478066438
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "5430cd9547413239892c19e14499b8012dfae618110193af2677f7e1c467a327"
+    }
+  },
+  "R2": {
+    "G05": {
+      "firstday_max": 1.0566454205381106,
+      "firstday_count": 288,
+      "rms": 5.293968794543943,
+      "p95": 10.813125452878946,
+      "max": 12.998084174854771,
+      "fitdays": 3.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 522600.0,
+          "first_sample_error_m": 10.059913743723753,
+          "previous_sample_seconds": 522300.0,
+          "previous_sample_error_m": 9.984191534312268,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.47417449580428256
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.6552979257075414
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.27153051642499965
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.7128239148392012
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 2.228217159032648
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 12.531258656836025
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 1,
+        "position_error": {
+          "count": 1,
+          "rms_m": 3.387623104322347e-06,
+          "max_m": 3.387623104322347e-06,
+          "median_m": 3.387623104322347e-06,
+          "p95_m": 3.387623104322347e-06
+        },
+        "times_seconds": [
+          300.0
+        ],
+        "position_errors_m": [
+          3.387623104322347e-06
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 0.0005613824135628431,
+        "max_m": 0.0016557010657240398,
+        "median_m": 0.0003764565399196921,
+        "p95_m": 0.001097823451635096
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1"
+    },
+    "C03": {
+      "firstday_max": 5.304255269103576,
+      "firstday_count": 288,
+      "rms": 37.43440657800271,
+      "p95": 72.38508013341273,
+      "max": 78.71731190580223,
+      "fitdays": 3.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 104700.0,
+          "first_sample_error_m": 10.033932548364117,
+          "previous_sample_seconds": 104400.0,
+          "previous_sample_error_m": 9.952758188321644,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.367501468469248
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.7024594443626018
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 4.350051079916787
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 4.171826624258138
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 17.93912257110626
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 73.48084646904019
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 1,
+        "position_error": {
+          "count": 1,
+          "rms_m": 1.6687981067993603e-07,
+          "max_m": 1.6687981067993603e-07,
+          "median_m": 1.6687981067993603e-07,
+          "p95_m": 1.6687981067993603e-07
+        },
+        "times_seconds": [
+          300.0
+        ],
+        "position_errors_m": [
+          1.6687981067993603e-07
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 0.0010977527936950596,
+        "max_m": 0.0028296394840204276,
+        "median_m": 0.0007610295328724017,
+        "p95_m": 0.0021376823338689704
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4"
+    },
+    "C06": {
+      "firstday_max": 1.1723338290572496,
+      "firstday_count": 288,
+      "rms": 2.9428793248356526,
+      "p95": 6.021302092939892,
+      "max": 8.083522160286135,
+      "fitdays": 3.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.5467425809679891
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.6091402268307639
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.6147268834399072
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.1723338290572496
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 2.335349489586732
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 2.3596760076178005
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 1,
+        "position_error": {
+          "count": 1,
+          "rms_m": 1.809739738924968e-07,
+          "max_m": 1.809739738924968e-07,
+          "median_m": 1.809739738924968e-07,
+          "p95_m": 1.809739738924968e-07
+        },
+        "times_seconds": [
+          300.0
+        ],
+        "position_errors_m": [
+          1.809739738924968e-07
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 0.0008946674629538095,
+        "max_m": 0.0025809485351710004,
+        "median_m": 0.0006088033835758766,
+        "p95_m": 0.001749788620310482
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421"
+    },
+    "CHANDRA": {
+      "firstday_max": 8.092835636702235,
+      "firstday_count": 288,
+      "rms": 5412.234981150967,
+      "p95": 12253.052046954515,
+      "max": 25635.95112864787,
+      "fitdays": 1.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 181748.81599664688,
+          "first_sample_error_m": 10.022163879200335,
+          "previous_sample_seconds": 181448.81599664688,
+          "previous_sample_error_m": 9.983450308197641,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 297548.8159580231,
+          "first_sample_error_m": 102.4658525259209,
+          "previous_sample_seconds": 297248.8159580231,
+          "previous_sample_error_m": 99.09663013538763,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 302648.8159561157,
+          "first_sample_error_m": 23839.032804950726,
+          "previous_sample_seconds": 302348.81595635414,
+          "previous_sample_error_m": 123.20415481716935,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 302648.8159561157,
+          "first_sample_error_m": 23839.032804950726,
+          "previous_sample_seconds": 302348.81595635414,
+          "previous_sample_error_m": 123.20415481716935,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 848.8160572052002,
+          "sample_offset_seconds": -51.183942794799805,
+          "position_error_m": 0.002923846991147711
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3548.816056251526,
+          "sample_offset_seconds": -51.18394374847412,
+          "position_error_m": 0.007876820046553363
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21548.81605029106,
+          "sample_offset_seconds": -51.1839497089386,
+          "position_error_m": 0.07375458659411713
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86348.81602859497,
+          "sample_offset_seconds": -51.1839714050293,
+          "position_error_m": 2.0516062512454543
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259148.81597065926,
+          "sample_offset_seconds": -51.18402934074402,
+          "position_error_m": 28.33807483541711
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604748.8158562183,
+          "sample_offset_seconds": -51.18414378166199,
+          "position_error_m": 3680.2474519519255
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 1,
+        "position_error": {
+          "count": 1,
+          "rms_m": 3.1828894262453654e-08,
+          "max_m": 3.1828894262453654e-08,
+          "median_m": 3.1828894262453654e-08,
+          "p95_m": 3.1828894262453654e-08
+        },
+        "times_seconds": [
+          248.81605744361877
+        ],
+        "position_errors_m": [
+          3.1828894262453654e-08
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 0.002351758400322924,
+        "max_m": 0.007819397169629112,
+        "median_m": 0.0014093316215657724,
+        "p95_m": 0.004805386102604415
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453"
+    }
+  },
+  "confirmation": {
+    "G05": {
+      "firstday_max": 3.0718084989178207,
+      "firstday_count": 288,
+      "rms": 33.112835223355404,
+      "p95": 65.25883732100338,
+      "max": 71.79958488701931,
+      "fitdays": 1.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 183300.0,
+          "first_sample_error_m": 10.021394844223707,
+          "previous_sample_seconds": 183000.0,
+          "previous_sample_error_m": 9.994295726596745,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.385513801654425
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.5179231933062007
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 0.9420459837789419
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 3.0718084989178207
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 15.71892981370917
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 71.79958488701931
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.014877973135406295,
+          "max_m": 0.026461075466321864,
+          "median_m": 0.011544399041426043,
+          "p95_m": 0.024571535628296226
+        },
+        "times_seconds": [
+          300.0,
+          75600.0,
+          151200.0,
+          226800.0,
+          302400.0,
+          378000.0,
+          453600.0,
+          529200.0,
+          604800.0
+        ],
+        "position_errors_m": [
+          3.496531755012215e-06,
+          0.0029334856873055788,
+          0.005352911295697625,
+          0.00785841195758635,
+          0.011544399041426043,
+          0.015534633246588955,
+          0.01859783940345152,
+          0.021737225871257773,
+          0.026461075466321864
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 0.0007088384487730724,
+        "max_m": 0.002007156167009746,
+        "median_m": 0.0005088865279001254,
+        "p95_m": 0.0013532492069877524
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "1e3b444f2a5c3820053b1e1f825126c43ac9f62266be0810ce4842489c6b2ccb"
+    },
+    "C03": {
+      "firstday_max": 4.654148101348493,
+      "firstday_count": 288,
+      "rms": 39382.86230891091,
+      "p95": 81141.91915906077,
+      "max": 100604.17371492105,
+      "fitdays": 7.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 432000.0,
+          "first_sample_error_m": 29256.54669475127,
+          "previous_sample_seconds": 259200.0,
+          "previous_sample_error_m": 3.855422788334176,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 432000.0,
+          "first_sample_error_m": 29256.54669475127,
+          "previous_sample_seconds": 259200.0,
+          "previous_sample_error_m": 3.855422788334176,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 432000.0,
+          "first_sample_error_m": 29256.54669475127,
+          "previous_sample_seconds": 259200.0,
+          "previous_sample_error_m": 3.855422788334176,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 432000.0,
+          "first_sample_error_m": 29256.54669475127,
+          "previous_sample_seconds": 259200.0,
+          "previous_sample_error_m": 3.855422788334176,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 3.0177483723804883
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 2.961748600563228
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 2.7135381097633275
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 3.3590497708469327
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 3.855422788334176
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 100604.17371492105
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.0006105569442925231,
+          "max_m": 0.0010227105471583586,
+          "median_m": 0.0003543385979944528,
+          "p95_m": 0.0009746026313826659
+        },
+        "times_seconds": [
+          300.0,
+          54300.0,
+          108300.0,
+          162300.0,
+          216300.0,
+          442800.0,
+          496800.0,
+          550800.0,
+          604800.0
+        ],
+        "position_errors_m": [
+          1.7017774205069285e-07,
+          0.00011236218450755334,
+          0.00014396551415984173,
+          0.00028459502682277464,
+          0.0003543385979944528,
+          0.0007143622988885769,
+          0.0008628249135388962,
+          0.0009024407577191268,
+          0.0010227105471583586
+        ]
+      },
+      "frame": {
+        "count": 1441,
+        "rms_m": 0.0014076279423267046,
+        "max_m": 0.003259787100826517,
+        "median_m": 0.0010619403799098292,
+        "p95_m": 0.0026315522290526784
+      },
+      "count": 1441,
+      "maxgap": 172800.0,
+      "modelhash": "b253c8a13b6ae3264988788ba9bba9b000798fdd220217d1d91293d6814c3668"
+    },
+    "C06": {
+      "firstday_max": 2.107834964016492,
+      "firstday_count": 288,
+      "rms": 3.4937876796826712,
+      "p95": 6.218864478626598,
+      "max": 7.628694796156033,
+      "fitdays": 3.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604800.0,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 900.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.1192667705291626
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.2459161062344466
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21600.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 1.072440889761925
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86400.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 2.107834964016492
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259200.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 3.743288850543958
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604800.0,
+          "sample_offset_seconds": 0.0,
+          "position_error_m": 7.628694796156033
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.0005925392795682201,
+          "max_m": 0.0010259827320708052,
+          "median_m": 0.000495861292249357,
+          "p95_m": 0.0009594623978469391
+        },
+        "times_seconds": [
+          300.0,
+          75600.0,
+          151200.0,
+          226800.0,
+          302400.0,
+          378000.0,
+          453600.0,
+          529200.0,
+          604800.0
+        ],
+        "position_errors_m": [
+          1.6701602765515368e-07,
+          0.00014618186611263019,
+          0.0002803824995621383,
+          0.0003947888639865959,
+          0.000495861292249357,
+          0.000596334013812182,
+          0.0007147707426447663,
+          0.0008596818965111402,
+          0.0010259827320708052
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 0.0011293279808566334,
+        "max_m": 0.0031692875718980513,
+        "median_m": 0.0008335230747659756,
+        "p95_m": 0.0021278463676721007
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "0dd9833368ac7472a79cda65fb22c145f490b24ab567a910cb422c82c6e44937"
+    },
+    "CHANDRA": {
+      "firstday_max": 0.289813080890197,
+      "firstday_count": 288,
+      "rms": 2055.6847480782294,
+      "p95": 4394.2077899816595,
+      "max": 5663.182315034143,
+      "fitdays": 3.0,
+      "thresholds": [
+        {
+          "threshold_m": 10.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 302648.815117836,
+          "first_sample_error_m": 2492.098409637725,
+          "previous_sample_seconds": 302348.815117836,
+          "previous_sample_error_m": 1.0526567237306674,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 100.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 302648.815117836,
+          "first_sample_error_m": 2492.098409637725,
+          "previous_sample_seconds": 302348.815117836,
+          "previous_sample_error_m": 1.0526567237306674,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 1000.0,
+          "observed_exceedance": true,
+          "first_sample_seconds": 302648.815117836,
+          "first_sample_error_m": 2492.098409637725,
+          "previous_sample_seconds": 302348.815117836,
+          "previous_sample_error_m": 1.0526567237306674,
+          "qualification": "First sampled exceedance, not a proven first continuous crossing; errors can cross and return between samples"
+        },
+        {
+          "threshold_m": 10000.0,
+          "observed_exceedance": false,
+          "tested_through_seconds": 604748.81503582,
+          "qualification": "No exceedance at tested samples; no continuous-time or later-time guarantee"
+        }
+      ],
+      "horizons": [
+        {
+          "requested_seconds": 900.0,
+          "sample_seconds": 848.8152039051056,
+          "sample_offset_seconds": -51.18479609489441,
+          "position_error_m": 0.12907520987507032
+        },
+        {
+          "requested_seconds": 3600.0,
+          "sample_seconds": 3548.81520318985,
+          "sample_offset_seconds": -51.18479681015015,
+          "position_error_m": 0.1328485352180361
+        },
+        {
+          "requested_seconds": 21600.0,
+          "sample_seconds": 21548.81519794464,
+          "sample_offset_seconds": -51.18480205535889,
+          "position_error_m": 0.1569060928700736
+        },
+        {
+          "requested_seconds": 86400.0,
+          "sample_seconds": 86348.81517910957,
+          "sample_offset_seconds": -51.184820890426636,
+          "position_error_m": 0.289813080890197
+        },
+        {
+          "requested_seconds": 259200.0,
+          "sample_seconds": 259148.81512999535,
+          "sample_offset_seconds": -51.18487000465393,
+          "position_error_m": 0.5847548738970678
+        },
+        {
+          "requested_seconds": 604800.0,
+          "sample_seconds": 604748.81503582,
+          "sample_offset_seconds": -51.184964179992676,
+          "position_error_m": 4463.679683006754
+        }
+      ],
+      "num": {
+        "scope": "Same forces and initial seed; integration arithmetic comparison, not orbit truth",
+        "method": "Adaptive SciPy DOP853, rtol2e-12,atol1e-6,maxstep300s",
+        "samples": 9,
+        "position_error": {
+          "count": 9,
+          "rms_m": 0.05405893984062003,
+          "max_m": 0.14704444675525594,
+          "median_m": 0.01424333385657998,
+          "p95_m": 0.10806699642294385
+        },
+        "times_seconds": [
+          248.81520414352417,
+          75548.81518220901,
+          151148.81516051292,
+          226748.81513905525,
+          302348.815117836,
+          377948.8150970936,
+          453548.81507635117,
+          529148.8150560856,
+          604748.81503582
+        ],
+        "position_errors_m": [
+          2.9816870751943665e-08,
+          2.690732595286422e-07,
+          0.00046317869956219465,
+          0.004595910032852299,
+          0.01565107595608623,
+          0.04183114115991213,
+          0.01424333385657998,
+          0.049600820924475826,
+          0.14704444675525594
+        ]
+      },
+      "frame": {
+        "count": 2016,
+        "rms_m": 0.0031243620302582294,
+        "max_m": 0.00913539825527618,
+        "median_m": 0.0019604030951796488,
+        "p95_m": 0.006206690525851858
+      },
+      "count": 2016,
+      "maxgap": 300.0,
+      "modelhash": "5194e34a3b088c6b7f486b72c0df458330ac023fadb58bb4458486f946a13af1"
+    }
+  }
+}
