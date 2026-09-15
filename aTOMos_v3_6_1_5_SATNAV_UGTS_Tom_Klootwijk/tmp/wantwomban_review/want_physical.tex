@@ -1,0 +1,508 @@
+\section{Rim, strain and calibrated mechanical feedback}
+\label{sec:want-physical}
+\textbf{Source binding.} This chapter lifts the geometry, strain, energy,
+reporter and event models of WANTWOMBAN Operator I 1.1 (W1, physical PDF
+pages 5--10, 13--17 and 20) into the R11 exact expression strategy. Source
+equations are retained with their hypotheses; additional bounds below are
+deductions for this subversion. No specimen, calibration series or photonic
+gate performance is inferred from a mathematical expression.
+
+The useful physical connection is explicit: a rim changes displacement;
+displacement changes aperture geometry and gauge resistance; measurements
+qualify the next completed event; the next command can change the physical
+state. This supplies an instrument interface to the exact seed. It does not
+yet implement the seed's arithmetic in an optical device.
+
+\subsection{Geometry and a finite, declared mechanical realization}
+Using W1 equations (4.1)--(4.7), choose a sheet radius $R>0$, positive
+thicknesses $t,t_r$, rim height $h_r\ge0$, and a specified finite rib family:
+\begin{align}
+ \Omega_d&=\{(r,\vartheta,z):0\le r\le R,\ -t\le z\le0\},\\
+ \Omega_r&=\{(r,\vartheta,z):R-t_r\le r\le R,\ 0\le z\le h_r\},\\
+ \Omega_g&=(\Omega_d\cup\Omega_r\cup\bigcup_j\Omega_{{\rm rib},j})
+                 \setminus\Omega_{\rm removed},\qquad
+ m_g=\int_{\Omega_g}\rho_m\,dV .
+\end{align}
+Here $0<t_r\le R$, the angular coordinate covers a full turn, overlaps are
+counted once, and removed material includes any actual slit or notch.
+The word-decoded reference point $X$ has physical units only after a scale,
+frame and origin are declared. Its deformed position is
+$x(X,t)=X+u(X,t)$. A code for log-radius and a mechanical displacement are
+different types even when both are carried by one-bit word streams.
+
+For the small-gradient thermoelastic model,
+\begin{equation}
+ \epsilon=\tfrac12(\nabla u+\nabla u^T),\quad
+ \epsilon_{\rm th}=\alpha_T(T-T_0)I,\quad
+ \sigma=\mathbb C:(\epsilon-\epsilon_{\rm th}),\quad
+ \rho_m\ddot u=\nabla\!\cdot\sigma+f .
+\end{equation}
+Displacement constraints, surface tractions, initial displacement and velocity,
+material tensor and temperature field are part of this definition.
+Positive elastic energy requires the appropriate symmetry and positivity of
+$\mathbb C$ on the admissible strain space. A circular outline does not imply
+isotropic material. A finite rotation with large displacement gradients is
+outside this small-gradient constitutive model even if strain is small.
+
+R11's finite-vector \code{ODE} is not a continuum PDE solver. To obtain a
+closed finite profile, declare dimensionless admissible basis fields
+$\phi_1,\ldots,\phi_m$ satisfying homogeneous displacement constraints and set
+\begin{equation}
+ u_m(X,t)=\sum_{i=1}^m q_i(t)\phi_i(X),\qquad
+ B_i=\operatorname{sym}\nabla\phi_i .
+\end{equation}
+The coordinates $q_i$ have length units. For fixed geometry/material and a
+declared damping matrix $D_m$, the weak-form coefficients are
+\begin{align}
+ M_{ij}&=\int_{\Omega_g}\rho_m\phi_i\!\cdot\!\phi_j\,dV,
+ &K_{ij}&=\int_{\Omega_g}B_i:\mathbb C:B_j\,dV,\\
+ (F_{\rm ext})_i&=\int_{\Omega_g}\phi_i\!\cdot f\,dV
+                  +\int_{\Gamma_N}\phi_i\!\cdot\bar t\,dA,
+ &(F_{\rm th})_i&=\int_{\Omega_g}B_i:\mathbb C:\epsilon_{\rm th}\,dV,\\
+ M\ddot q+D_m\dot q+Kq&=F_{\rm ext}+F_{\rm th}.&&
+\end{align}
+With $M$ invertible this becomes the first-order exact declaration
+\begin{equation}
+ \dot q=v_q,\qquad
+ \dot v_q=M^{-1}(F_{\rm ext}+F_{\rm th}-D_mv_q-Kq).
+\end{equation}
+For positive mass density and linearly independent admissible basis fields,
+$z^TMz=\int\rho_m|\sum_i z_i\phi_i|^2dV>0$ for $z\ne0$, so the inverse
+exists. Coefficient integrals require explicit charts, integrable functions
+and Jacobians; nested finite \code{INTEGRAL} nodes can represent a selected
+chart formula. They are not replaced by an unspecified measurement oracle.
+Nonhomogeneous or moving supports require a lifting field and its extra
+inertial/forcing terms. The basis can be analytic or modal: no raster grid is
+mandated. Exact integration of this finite model still does not establish
+that its basis truncation represents every deformation of a real specimen.
+
+\subsection{What the rim benefit proves}
+The same rectangular section in two orientations has
+\begin{equation}
+ I_{\rm upright}=t_rh_r^3/12,\qquad
+ I_{\rm flat}=h_rt_r^3/12,\qquad
+ I_{\rm upright}/I_{\rm flat}=(h_r/t_r)^2
+\end{equation}
+when $h_r>0$. This is a local section identity, not a complete assembly
+stiffness ratio. W1's stronger assembly statement is conditional.
+\begin{proposition}[Compliance under a positive stiffness addition]
+If supported $K_0$ is symmetric positive definite, $K_r$ is symmetric
+positive semidefinite, and the coordinate/load convention is unchanged, then
+\begin{equation}
+ F^T(K_0+K_r)^{-1}F\le F^TK_0^{-1}F.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Let $A=K_0^{-1/2}K_rK_0^{-1/2}\succeq0$. The eigenvalues of
+$(I+A)^{-1}$ lie in $(0,1]$. Congruence by $K_0^{-1/2}$ and evaluation on
+$F$ gives the result.
+\end{proof}
+Mass redistribution, changed supports, prestress and buckling do not
+automatically supply such a $K_r$. Nor does the inequality bound every local
+strain component. In the scalar example $q=F/K$ and $\epsilon_g=a_qq$,
+\begin{equation}
+ V_o\simeq-\frac{V_{\rm ex}GF\,a_q}{4K}F.
+\end{equation}
+Increasing $K$ reduces displacement and this force-to-voltage sensitivity.
+Thus aperture stability, sensing response and collecting area must be
+specified together. A conditional design objective, retained from W1, is
+\begin{equation}
+ \min_{\mathcal G}\frac{m_g}{m_0}
+   +w_c\frac{F^TK(\mathcal G)^{-1}F}{C_0},\quad
+ P_{\rm det}\ge P_{\min},\quad
+ |\partial V_o/\partial F|\ge S_{\min} .
+\end{equation}
+Its positive normalization scales, allowed geometries and load cases are
+inputs. No optimum or optical performance is asserted. If the kernel switches
+$K$, the storage change $\tfrac12q^T(K_{\rm new}-K_{\rm old})q$ enters the
+work ledger; a passive fixed-$K$ proof does not erase this term.
+
+\subsection{Exact resistance and bridge arithmetic}
+For a uniform trace segment with positive electrical resistivity and lengths,
+W1 equations (6.1)--(6.4) give
+\begin{align}
+ R_e&=\rho_eL/A, &\frac{R'_e}{R_e}
+   &=\frac{\rho'_e}{\rho_e}\frac{\lambda_{\parallel}}
+                                  {\lambda_{\perp1}\lambda_{\perp2}},\\
+ \frac{\Delta R_e}{R_e}&\simeq\frac{\Delta\rho_e}{\rho_e}
+   +\epsilon_{\parallel}-\epsilon_{\perp1}-\epsilon_{\perp2},
+ &\epsilon_a&=a^T\epsilon a\quad(\|a\|=1),\\
+ R_{\rm grid}&=\sum_iR_i,
+ &\frac{\Delta R_{\rm grid}}{R_{\rm grid}}
+    &=\sum_i\frac{R_i}{R_{\rm grid}}\frac{\Delta R_i}{R_i}.
+\end{align}
+The finite-stretch ratio assumes homogeneous stretches aligned with the
+segment axes; the following strain expression is a first-order approximation.
+The weights in the final identity are the reference resistances, so it is
+an exact finite-change identity for the same series segments. Under isotropic
+uniaxial stress, $\epsilon_{\perp j}=-\nu\epsilon_{\parallel}$ and the
+small-signal gauge factor is
+$GF\simeq1+2\nu+(\Delta\rho_e/\rho_e)/\epsilon_{\parallel}$ where that
+ratio is defined. Adhesive strain transfer, transverse response and any
+crystal-frame piezoresistivity require their own constitutive inputs.
+
+Declare $R_1,R_2$ the left upper/lower arms, $R_3,R_4$ the right upper/lower
+arms, all positive, with $V_o=V_L-V_R$ and $V_{\rm ex}>0$. Then
+\begin{equation}
+ v:=V_o/V_{\rm ex}=\frac{R_2}{R_1+R_2}-\frac{R_4}{R_3+R_4}.
+ \label{eq:want-bridge}
+\end{equation}
+For $R_1=R_2=R_3=R$ and $R_4=R(1+x)$,
+\begin{equation}
+ x>-1,\qquad v=-\frac{x}{4+2x},\qquad
+ x=-\frac{4v}{1+2v},\qquad -\tfrac12<v<\tfrac12 .
+ \label{eq:want-inverse}
+\end{equation}
+Substitution proves inverse composition exactly. The denominator never
+vanishes on the physical open domain, and $dv/dx=-1/(2+x)^2<0$, proving a
+one-to-one map onto the stated interval. With rational resistance ratios,
+these are rational operator graphs; no series expansion is needed.
+The first-order output is $-V_{\rm ex}GF\epsilon/4$, with this lead polarity.
+Replacing the exact nonzero output by $-x/4$ has signed relative error $x/2$.
+R11 therefore preserves the rational transfer instead of accumulating that
+known linearization error in the seed.
+
+For four small changes, $v\simeq(-x_1+x_2+x_3-x_4)/4$.
+An axial $R_4$ and bonded transverse $R_3$ with equal gauge factors give
+$v\simeq-GF(1+\nu)\epsilon/4$ under the stated uniaxial model. The
+transverse element contributes strain signal. Common multiplicative scaling
+of each individual divider's two arms cancels exactly in
+\eqref{eq:want-bridge}; cancellation of other thermal changes is a separate
+matched-arm condition.
+
+An exact source-decimal calibration profile can retain
+\begin{equation}
+ x=GF_0\epsilon+c_T\Delta T+c_{\epsilon T}\epsilon\Delta T
+            +c_2\epsilon^2+c_0 .
+\end{equation}
+After exact bridge inversion, define $A=c_2$,
+$B=GF_0+c_{\epsilon T}\Delta T$ and $C=c_T\Delta T+c_0-x$.
+The strain is a selected root of $A\epsilon^2+B\epsilon+C=0$.
+For $A=0,B\ne0$ it is $-C/B$; for $A\ne0$ the real candidates require
+$B^2-4AC\ge0$ and are $(-B\pm\sqrt{B^2-4AC})/(2A)$.
+A calibrated strain interval and root-selection rule are mandatory. If
+$B+2A\epsilon$ has one strict sign throughout that interval, there is at
+most one root there. Existence still requires the measured value to lie in
+the model's range. Rational coefficients admit R11's algebraic root type;
+more general real coefficients require its separate real-root declaration
+and domain obligations. A convenient root cannot be silently selected.
+
+\subsection{Measurement uncertainty survives an exact inverse}
+For an isothermal profile with calibrated $GF=g>0$,
+\begin{equation}
+ \widehat\epsilon(v,g)=-\frac{4v}{g(1+2v)},\quad
+ \frac{\partial\widehat\epsilon}{\partial v}
+    =-\frac4{g(1+2v)^2},\quad
+ \frac{\partial\widehat\epsilon}{\partial g}=-\widehat\epsilon/g .
+\end{equation}
+The inverse becomes increasingly sensitive as $v$ approaches $-1/2$.
+This is conditioning of the physical inference, not a floating-point defect.
+If $v\in[v_-,v_+]\subset(-1/2,1/2)$ with $g$ fixed, monotonicity gives
+the exact enclosure
+\begin{equation}
+ \epsilon\in\left[
+  -\frac{4v_+}{g(1+2v_+)},\ -\frac{4v_-}{g(1+2v_-)}\right].
+ \label{eq:want-strain-enclosure}
+\end{equation}
+Interval calibration quantities can be propagated with denominator-sign
+certificates and any model-residual bound. First-order uncertainty instead
+uses $u_\epsilon^2\simeq J\Sigma J^T$ and retains covariance; it is not an
+exact enclosure for arbitrary nonlinear uncertainty.
+
+A digitizer code $m$ and its scale $\Delta$ can be retained exactly, while
+the physical voltage lies in a declared uncertainty set around $m\Delta$.
+An ideal rounding quantizer contributes at most $\Delta/2$ inside its valid
+range; real offset, gain, drift and noise require additional characterization.
+The exact code is evidence of a code, not an exact reconstruction of every
+analogue quantity that could have produced it. W1's design matrix with rows
+$[1,\epsilon,\Delta T,\epsilon\Delta T,\epsilon^2]$ must have rank five
+to identify five independent coefficients in the noise-free linear fit.
+Repeating one condition cannot repair deficient rank.
+
+\section{Energy, reporter memory and completed optical events}
+\label{sec:want-energy}
+\subsection{Separate supplied energy from internal transfers}
+W1 equations (14.1)--(14.3) introduce a useful closure:
+\begin{equation}
+ \Delta(U_{\rm th}+E_{\rm elastic}+K_{\rm mech}+E_{\rm chem})
+ =E_{\rm abs}+E_{\rm electrical}+W_{\rm ext}
+                   -Q_{\rm bath}-E_{\rm other,out}.
+ \label{eq:want-ledger}
+\end{equation}
+The stores must form a nonduplicating constitutive partition. Light already
+reflected or transmitted is excluded from absorbed energy; luminescence or
+electricity exported after absorption belongs in the outgoing terms.
+Chemical and mechanical heating transfer previously stored or supplied
+energy, rather than adding independent copies of absorbed energy.
+
+Electrical interrogation contributes real heat. The exact arm powers are
+\begin{equation}
+ P_i=\frac{V_{\rm ex}^2R_i}{(R_1+R_2)^2}\ (i=1,2),\qquad
+ P_i=\frac{V_{\rm ex}^2R_i}{(R_3+R_4)^2}\ (i=3,4).
+\end{equation}
+At balance $P_i=V_{\rm ex}^2/(4R)$ and $P_{\rm total}=V_{\rm ex}^2/R$.
+Only the characterized fractions coupled to each thermal node enter that
+node. A bridge heater transient can affect the same reporter intended to
+witness optical absorption. The electrical source and acquisition duty cycle
+therefore belong in the physical model, regardless of exact digital arithmetic.
+
+For $N$ thermal nodes use constant $C_i>0$, reciprocal
+$G_{ij}=G_{ji}\ge0$, and $G_{i0}\ge0$:
+\begin{equation}
+ C_i\dot T_i=P_i-G_{i0}(T_i-T_a)
+                    -\sum_jG_{ij}(T_i-T_j).
+ \label{eq:want-network}
+\end{equation}
+$P_i$ includes separately accounted heater, bridge, absorbed-to-heat and
+internal dissipation terms. Let $C=\operatorname{diag}(C_i)$,
+$L_{ii}=G_{i0}+\sum_{j\ne i}G_{ij}$, $L_{ij}=-G_{ij}$ for $i\ne j$,
+and $b=P+(G_{i0}T_a)_i$. Then $\dot T=-C^{-1}LT+C^{-1}b$ is a finite
+R11 \code{ODE}. For constant coefficients its exact solution is denoted
+\begin{equation}
+ T(t+h)=e^{-C^{-1}Lh}T(t)
+               +\int_0^h e^{-C^{-1}L(h-s)}C^{-1}b\,ds .
+\end{equation}
+Here the matrix exponential is derived notation: each column is the solution
+of the corresponding linear finite ODE with a unit-vector initial value.
+It is not a new opaque primitive or a claim of constant-cost evaluation.
+This form permits a singular $L$; no unjustified $L^{-1}$ is introduced.
+
+For one node, held $P,T_a,C$ and $G>0$, and duration $h\ge0$,
+\begin{equation}
+ T^+=T_a+P/G+(T-T_a-P/G)e^{-Gh/C}.
+ \label{eq:want-thermal-step}
+\end{equation}
+For $G=0$ the correct branch is $T^+=T+hP/C$. The exponential step is exact
+for the constant-input model. If absorption, heater power or material
+coefficients change during the interval, their specified time dependence
+must be included or the interval must be split. Exact evaluation of a held
+approximation does not make the physical input constant.
+
+\subsection{Bounded material-state memory}
+For a reporter fraction $\zeta\in[0,1]$, W1 uses
+\begin{equation}
+ \dot\zeta=k_+(1-\zeta)-k_-\zeta,\qquad k_+,k_-\ge0 .
+\end{equation}
+A candidate photoactivation contribution is
+$k_{\rm ph}=\int Y_\lambda\sigma_\lambda\Phi_\lambda\,d\lambda$,
+with flux per area, time and wavelength, cross-section $\sigma_\lambda$,
+and dimensionless conversion yield $Y_\lambda$; the product integrates to a
+rate. Other activation/recovery processes are separate terms. The source
+does not supply a material formulation or measured rates.
+
+For held rates and $k=k_++k_->0$,
+\begin{equation}
+ \zeta^+=\zeta_{\rm eq}+(\zeta-\zeta_{\rm eq})e^{-kh},\qquad
+ \zeta_{\rm eq}=k_+/k;qquad
+ k=0:\ \zeta^+=\zeta .
+ \label{eq:want-reporter}
+\end{equation}
+\begin{proposition}[Reporter interval preservation]
+For $h\ge0$, nonnegative held rates, and $\zeta\in[0,1]$,
+equation \eqref{eq:want-reporter} produces $\zeta^+\in[0,1]$.
+\end{proposition}
+\begin{proof}
+For $k>0$, $r=e^{-kh}\in(0,1]$ and
+$\zeta^+=r\zeta+(1-r)\zeta_{\rm eq}$ is a convex combination of two
+members of $[0,1]$. The zero-rate branch is the identity.
+\end{proof}
+For time-varying integrable nonnegative rates the variation-of-constants
+solution, with $K(t)=\int_{t_0}^t(k_++k_-)ds$, is
+\begin{equation}
+ \zeta(t)=e^{-K(t)}\zeta(t_0)
+           +\int_{t_0}^t e^{-[K(t)-K(s)]}k_+(s)\,ds .
+\end{equation}
+It is nonnegative; applying the same formula to $1-\zeta$ with $k_+$ and
+$k_-$ exchanged proves the upper bound. This extends interval preservation
+without pretending the held-rate formula covers arbitrary inputs.
+
+Reporter state can generate a fluorescence, resistance or thermal readout
+only through a declared transduction law and noise model. Recovery and prior
+dose are part of state. Two readouts of a shared absorption event can be
+correlated; they do not provide two independent copies of its energy.
+
+The retained ideal thermochromic update is
+\begin{equation}
+ a^+=\begin{cases}
+ 1,&T^+\le T_{\rm low},\\
+ 0,&T^+\ge T_{\rm high},\\
+ a,&T_{\rm low}<T^+<T_{\rm high},
+ \end{cases}\qquad T_{\rm low}<T_{\rm high},\quad a\in\B .
+\end{equation}
+This is a sampled hysteresis profile. A continuous relay with crossings
+inside an interval requires an explicit event convention. Its state is also
+distinct from a measured darkness bit with threshold noise. If an exact
+expression comparison is unresolved, an expression evaluator must retain a
+pending branch; a physical acquisition policy separately handles uncertain
+or absent observations.
+
+\subsection{One event bit from more than one observable}
+For primary/secondary evidence $X,Y$, timing $C_t$, validity $V$, saturation
+$S$ and fault $F$, W1 equation (12.1) is
+\begin{equation}
+ e=X\land Y\land C_t\land V\land\neg S\land\neg F.
+\end{equation}
+All six inputs are bits. Geometry-qualified mode uses strain to qualify
+aperture conditions; this is not a second detection of photon absorption.
+Pulse mode requires an absorber-linked physical response in a declared
+energy range. Reporter mode additionally carries dose/recovery history.
+Photon-resolved mode requires a characterized quantum instrument. These are
+different event profiles, not a ladder of performance established by a flag.
+
+The source's nominal lag gate is
+\begin{equation}
+ C_t=\mathbf1\{|(t_Y-t_X)-\tau_{\rm lag}|\le\Delta_c/2\},
+ \qquad\Delta_c\ge0.
+\end{equation}
+For bounded timestamp/lag uncertainties, write the nominal difference as
+$\widehat d$ and assume $|d-\widehat d|\le\delta_t$ with
+$\delta_t\ge0$. The following stronger decisions are immediate:
+\begin{align}
+ |\widehat d|+\delta_t\le\Delta_c/2&\ \Longrightarrow\ 
+                \text{all admitted timings pass},\\
+ |\widehat d|-\delta_t>\Delta_c/2&\ \Longrightarrow\ 
+                \text{all admitted timings fail}.
+\end{align}
+The remaining case is timing-uncertain. These follow from the triangle and
+reverse triangle inequalities. Replacing it by a valid zero would change the
+meaning of the observation; an event bit can still be withheld while keeping
+the uncertainty status in the measurement record.
+
+\subsection{Joint statistics with explicit conditioning}
+Let $G=C_t\land V\land\neg S\land\neg F$ denote the quality/timing event.
+For a null hypothesis $H_0$ and $P(G\mid H_0)>0$, the full false-acceptance
+probability is
+\begin{align}
+ p_{\rm FA}&=P(G\mid H_0)P(X=1,Y=1\mid H_0,G),\\
+ P(X=1,Y=1\mid H_0,G)
+  &=\alpha_X\alpha_Y+\operatorname{Cov}(X,Y\mid H_0,G),
+ \quad\alpha_X=P(X=1\mid H_0,G).
+\end{align}
+Define $\alpha_Y$ with the same conditioning. If $P(G\mid H_0)=0$ then
+$p_{\rm FA}=0$ without invoking undefined conditional probabilities. Within
+the conditioned population the sharp event bounds are
+\begin{equation}
+ \max(0,\alpha_X+\alpha_Y-1)
+ \le P(X=1,Y=1\mid H_0,G)\le\min(\alpha_X,\alpha_Y).
+\end{equation}
+The lower bound follows from $P(X\cup Y)\le1$; the upper follows from set
+inclusion. Products require independence under these same conditions, which
+quality selection can itself alter. The same reasoning applies to detection
+under $H_1$. If $Y$ is determined by $X$, then $I(H;Y\mid X)=0$; copied
+software evidence is not an additional independent physical observation.
+
+Under independent stationary Poisson background streams and a coincidence
+window of total width $\Delta_c$, the expected pair rate is
+$r_Xr_Y\Delta_c$. Counting each primary trigger at most once instead gives
+$r_X(1-e^{-r_Y\Delta_c})$. These are specified stochastic models, not
+measured rates for this assembly. Likewise, after $N>0$ independent identical
+null trials with zero accepted events, a one-sided confidence $1-\alpha$
+bound would be $p_{\rm FA,upper}=1-\alpha^{1/N}$ for $0<\alpha<1$.
+Solving $(1-p)^N=\alpha$ derives the expression. No trials were run here,
+and no confidence bound has been earned by this formalization.
+
+\section{Deformation-aware exclusion and separate energy bounds}
+\label{sec:want-pruning}
+W1 equation (15.2) is a useful logical pruning certificate. For a fixed unit
+slab normal $n$, centre coordinate $c$ and half-width $w/2$, suppose every
+relevant physical descendant has
+$x=P+(X-P)+u+e_x$ with
+$|n\cdot(X-P)|\le R_N$, $|n\cdot u|\le d_N$ and
+$|n\cdot e_x|\le\delta_N$ throughout the certified interval. Then
+\begin{equation}
+ |n\cdot P-c|>w/2+R_N+d_N+\delta_N
+ \quad\Longrightarrow\quad |n\cdot x-c|>w/2
+ \label{eq:want-slit-prune}
+\end{equation}
+by the reverse triangle inequality. Equality is retained. The descendants,
+time interval and complete transformed child set must be covered; a tree
+depth alone is not a geometric bound. The slab normal is the across-width
+direction in the aperture plane, not automatically the optical propagation
+axis. Exclusion from either enclosing width/height slab excludes a rectangular
+aperture, provided all represented physical points use the same plane/frame.
+
+\subsection{A moving-aperture certificate}
+For a moving plane normal $n(t)$ and centre coordinate $c(t)$, assume
+\begin{equation}
+ \|n(t)-n_0\|\le\eta_n,\quad |c(t)-c_0|\le\eta_c,\quad
+ \|x(t)\|\le B_x,\quad w(t)\le w_{\max}.
+\end{equation}
+If the previous projected $R_N,d_N,\delta_N$ bounds use $n_0$, then
+\begin{equation}
+ |n_0\cdot P-c_0|>
+ w_{\max}/2+R_N+d_N+\delta_N+\eta_nB_x+\eta_c
+ \label{eq:want-moving-prune}
+\end{equation}
+certifies exclusion for the whole interval. Indeed
+$|n(t)\cdot x-c(t)|\ge|n_0\cdot x-c_0|-\eta_nB_x-\eta_c$.
+All coordinates and $B_x$ share one declared origin; a large arbitrary
+origin can make this bound unnecessarily loose. A local fixed origin with
+the correspondingly transformed $c(t)$ improves its usefulness without
+changing the proof. Exact packing can remove numerical encoding error from
+a declared coordinate, but it cannot set physical deformation or mounting
+uncertainty to zero.
+
+For the source's rounded log-radius and phase codes, a relative radial
+rounding envelope is $2^{\Delta\rho/2}-1$, and nearest 2048-bin phase has
+angular envelope $\pi/2048$. These are inherited representation-profile
+errors. An exact symbolic coordinate need not be rounded into those codes,
+but using the existing W64 code does not restore the omitted information.
+Convert angular/radial errors to physical length at the relevant scale before
+adding them to a length bound.
+
+\subsection{Omitted heating with a signed error budget}
+Geometric exclusion does not prove absence of diffraction, scattering or
+thermal coupling. For the constant passive network
+\eqref{eq:want-network}, compare two runs with identical coefficients,
+initial temperature and bath inputs, differing by heating $\delta P$.
+If $\delta P_i(t)\ge0$, W1's thermal omission statement is
+\begin{equation}
+ 0\le\delta T_i(t)\le E_{\rm omit}(t)/C_i,\qquad
+ E_{\rm omit}(t)=\int_{t_0}^t\sum_j\delta P_j(s)\,ds.
+\end{equation}
+The following extension also handles a signed heat-model difference.
+\begin{proposition}[Absolute heat-omission enclosure]
+For the same passive linear network, zero initial temperature difference
+and integrable signed $\delta P$, define
+$E_{\rm abs}(t)=\int_{t_0}^t\sum_j|\delta P_j(s)|ds$. Then
+\begin{equation}
+ |\delta T_i(t)|\le E_{\rm abs}(t)/C_i.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The matrix $A=-C^{-1}L$ has nonnegative off-diagonal entries, so its transition
+matrix $e^{A(t-s)}$ is entrywise nonnegative. For example choose $\gamma$
+so $A+\gamma I$ is entrywise nonnegative; the convergent exponential series
+proves $e^{A\tau}=e^{-\gamma\tau}e^{(A+\gamma I)\tau}\ge0$ for $\tau\ge0$.
+Thus the zero-initial solution $z$ driven by $|\delta P|$ satisfies
+$|\delta T|\le z$ componentwise and $z\ge0$.
+Summing $C_i\dot z_i$ cancels internal conductances and yields
+$d(\sum_iC_iz_i)/dt=\sum_i|\delta P_i|-\sum_iG_{i0}z_i
+\le\sum_i|\delta P_i|$. Integration gives
+$C_iz_i\le\sum_jC_jz_j\le E_{\rm abs}$, proving the bound.
+\end{proof}
+The exponential series is used in the proof, not introduced as a finite
+wire-format opcode. Feedback-dependent changes to power, conductance,
+capacity, aperture or initial state violate this comparison's common-model
+hypotheses and require a coupled bound. An optical omitted-field budget is
+separate because coherent field interference is not bounded merely by a
+geometrical occupancy bit.
+
+\subsection{Integrated physical benefit and remaining obligations}
+The new exact seed can retain the rational bridge law and calibrated roots,
+exponential reporter/thermal states, deformation certificates, typed
+uncertainty records and joint-event decision without rounding those internal
+expressions back into persistent state. These are specific improvements to
+the representation and auditability of a photonic sensing/control system.
+Rim stiffness, optical transfer, reporter sensitivity and channel statistics
+remain selected physical models with specimen-specific parameters.
+
+The causal lift consumes a completed measurement at $t_n$, computes the next
+command from that state, holds or otherwise declares that command over the
+next interval, and records the resulting observation at $t_{n+1}$. Its event
+can then affect the next branch. Delaying the feedback this way closes the
+recurrence without requiring an observation to precede its own cause.
+It is conditional on a uniquely defined plant update and declared noise or
+input realization. Causality alone is neither stability nor a bound on
+tracking error. An exact symbolic model can be useful before an optical
+arithmetic device exists; demonstrating that device is a different task.

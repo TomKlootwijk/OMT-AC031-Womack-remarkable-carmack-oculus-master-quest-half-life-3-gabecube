@@ -1,0 +1,60 @@
+{
+  "edition": "WANTWOMBAN | Operator I, sub-version 1.1",
+  "date": "2026-09-15",
+  "attribution_as_supplied": "Tom Klootwijk NL200678942 10-07-1990",
+  "sources": [
+    {
+      "id": "S0",
+      "filename": "WANTWOMBAN.pdf",
+      "bytes": 660794,
+      "sha256": "cc0d81471fe33497873faa6339aa487532c8861902761994d3c88b16c17ea662"
+    },
+    {
+      "id": "S1",
+      "filename": "lily pad upwards rims.pdf",
+      "bytes": 4162018,
+      "sha256": "8041a9018ac3eafc0e3867a3de80bbb3aad0f642f0125341b641608881e6d673"
+    },
+    {
+      "id": "S2",
+      "filename": "strain gauge coil mechanism geometrically.pdf",
+      "bytes": 168730,
+      "sha256": "1ea40e5a40660f51b9d40a86c2c07007b02c5a5b5cdbd7e72627b4702af618a3"
+    },
+    {
+      "id": "S3",
+      "filename": "Pasted markdown.md",
+      "bytes": 61608,
+      "sha256": "1869efeab782774dd7af09cc2ca9e4dfd7f0317acf1549a375bbb4f8cb53d136"
+    }
+  ],
+  "software": [
+    {
+      "filename": "wantwomban_reference.py",
+      "bytes": 8027,
+      "sha256": "0a6ded209a265c6a27b7330ef026121bb14d0f54f9dd4ab9c6bbfaf3ca7f2c60"
+    },
+    {
+      "filename": "operator_i_reference.py",
+      "bytes": 11922,
+      "sha256": "f2bfc4694c38aa777d2e2465b7c6f26d2613ab15325b9e5a95d37e77bd629911"
+    },
+    {
+      "filename": "operator_i_results.json",
+      "bytes": 2126,
+      "sha256": "87f86109352d14d27bba9e587b948ea4f8f80f1191b37dfd7462ab17fba46007"
+    }
+  ],
+  "supporting_sources": [
+    {
+      "filename": "operator_i.tex",
+      "bytes": 73791,
+      "sha256": "11588312580c063de1b00106ae92fdd9bcd65a1567f5b3f94e3d3441edc771d3"
+    },
+    {
+      "filename": "source_gauge_figure.png",
+      "bytes": 38983,
+      "sha256": "f86563337ad51c3fd2fd482bf1ea04555757e3e68949b4116ddf46b8ef733524"
+    }
+  ]
+}

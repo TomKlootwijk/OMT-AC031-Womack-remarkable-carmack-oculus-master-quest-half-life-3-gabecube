@@ -1,0 +1,53 @@
+{
+  "version": "1.1",
+  "tests": {
+    "parent": {
+      "word_roundtrips": 10000,
+      "field_isolations": 10000,
+      "seam_involutions": 2048,
+      "transition_cases": 2000,
+      "OTAN2_inputs_per_profile": 4096,
+      "matrix_entries": 16
+    },
+    "bridge_inverse_cases": 10001,
+    "bridge_inverse_max_abs_error": 1.1102230246251565e-16,
+    "gate_truth_table_cases": 64,
+    "gate_accepting_rows": 1,
+    "packet_roundtrips": 1000,
+    "single_bit_corruptions_rejected": 512,
+    "bounded_kinetic_updates": 1000,
+    "random_enclosure_cases": 2000,
+    "pruned_enclosures_checked": 1618,
+    "enclosed_points_checked": 40450,
+    "parent_compatibility_cases": 1000,
+    "event_branch_policy_cases": 1000,
+    "crc_check_vector": "CBF43926",
+    "status": "PASS - arithmetic, logical and transport checks only"
+  },
+  "calculations": {
+    "classification": "specified calculation inputs; not experimental observations",
+    "rim_section_I_ratio_h_over_t_10": 100.0,
+    "foil_x_GF2_e100micro": 0.0002,
+    "foil_Vout_Vex1_V": -4.999500049995001e-05,
+    "silicon_Vout_Vex1_V_GF100": -0.0024875621890547268,
+    "bridge_gauge_power_Vex1_R350_W": 0.0007142857142857143,
+    "bridge_gauge_power_Vex3p3_R350_W": 0.007778571428571428,
+    "slit_first_zero_rad_w100um": 0.0055,
+    "slit_first_zero_rad_h2mm": 0.000275,
+    "photon_550nm_J": 3.611719740270779e-19,
+    "photon_550nm_eV": 2.254258153330914,
+    "one_photon_deltaT_C1micro_JperK_K": 3.611719740270779e-13,
+    "one_photon_deltaT_parent_C0p02_K": 1.8058598701353894e-17,
+    "pulse_absorbed_J": 4.000000000000001e-06,
+    "pulse_absorbed_photons_mean": 11075056448593.963,
+    "pulse_time_constant_s": 0.009999999999999998,
+    "pulse_peak_deltaT_K": 3.147754722298933,
+    "pulse_stored_heat_J": 3.1477547222989328e-06,
+    "pulse_heat_lost_J": 8.522452777010679e-07,
+    "pFA_independent_1e_minus3_times_1e_minus3": 1e-06,
+    "pD_independent_0p95_times_0p90": 0.855,
+    "zero_false_events_N10000_upper95": 0.00029952835977661195,
+    "N_for_zero_failures_to_bound_pFA_1e_minus6_at95": 2995731,
+    "accidental_rate_rX10_rY20_window5ms_per_s": 1.0
+  }
+}

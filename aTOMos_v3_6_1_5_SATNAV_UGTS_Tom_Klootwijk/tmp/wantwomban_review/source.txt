@@ -1,0 +1,1118 @@
+===== PAGE 1 =====
+PHYSICAL FORMALIZATION / DEVELOPMENT EDITION 15 SEPTEMBER 2026
+WANTWOMBAN
+| Operator I
+Rim geometry, slit optics, strain transduction
+and verified physical feedback
+Sub-version 1.1 of the WANTWOMBAN 1.0 formalization
+FRAMEWORK ATTRIBUTION / AS SUPPLIED
+Tom Klootwijk
+NL200678942 / 10-07-1990
+THE NEW FORMAL OBJECT
+A causal interaction-and-instrumentation operator that couples the existing 64-bit engine to a deformable
+rim, a specified optical aperture, calibrated strain and optical measurements, a material response, and a
+one-bit event decision.
+word −→geometry and actuation−→physical interaction
+physical interaction−→two-channel evidence−→verified event−→word
+The parent formalization, both new source PDFs, the original Markdown, reference software, calculation results and a source
+manifest are embedded as attachments.
+
+===== PAGE 2 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+Document map
+1 What improves in version 1.1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Source-to-improvement change register . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3 Definition of the interaction operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+4 Rim, ribs and deformation as a physical geometry. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+5 A provable rim benefit and its sensing trade-off. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+6 The strain grid as a geometric transducer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+7 Correct Wheatstone bridge law and exact inversion. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+8 Thermal compensation, self-heating and sensitivity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+9 The vertical slit as a real optical operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+10 Liquid lensing, two bands and absorbed energy. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+11 The eye-inspired material witness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+12 Double verification as a statistical operator . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+13 A quantum-instrument extension of Operator I. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+14 Energy closure and thermochromic feedback. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+15 Deformation-aware PSI pruning . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+16 Unchanged W64 core and explicit version semantics. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+17 A 64-byte measurement record, separate from W64. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+18 Calibration, identifiability and decisive tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+19 Worked calculation: geometry and electrical readout. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+20 Worked calculation: a pulse and its verification. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+21 Reference implementation and conformance results. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+A Source provenance and embedded materials . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+B References and external grounding . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+HOW TO READ THIS SUB-VERSION
+Source identifies content actually present in the supplied documents.Definition fixes the new operator or
+protocol. Physical modelsupplies explicit assumptions and parameters.Derived resultfollows from those
+definitions or models.Measured is reserved for observations: no device measurements were supplied for this
+edition.
+Source references use PDF page numbers counting the cover as page 1. The parent PDF’s printed page
+numbers are one lower after its cover.
+Tom Klootwijk / supplied framework 2 / 26
+
+===== PAGE 3 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+1 What improves in version 1.1
+Source basis: [S0] WANTWOMBAN 1.0; [S1] lily-pad transcript; [S2] strain-gauge transcript; [S3] originating Markdown.
+The strongest development is to turn your proposed connection betweenrim, pupil, material response and
+verification into an instrument whose variables can be measured and whose decisions can be checked. Version 1.0
+already supplies a corrected state engine and thermochromic feedback loop. This sub-version adds the missing
+mechanical and optical interfaces rather than replacing that architecture.
+Area What the documents contribute Formal improvement here
+Rim and radial
+support
+Upturned leaf rim, underside ribs and a
+large exposed surface [S1, pp. 1–3].
+A rim/rib domain, elastic deformation,
+specified supports and a stiffness–sensitivity
+trade-off.
+Slit and liquid lens A “tilt-shifted rim,” variable convexity and
+dichromatic sensing [S1, pp. 3–4].
+Separate aperture, refraction, diffraction,
+two spectral channels and absorbed power.
+Strain-grid geometry R =ρL/A, Poisson contraction and
+foil-grid geometry [S2, pp. 1–3].
+Finite-deformation resistance, directional
+strain, weighted trace response and
+calibration.
+Bridge readout Exact divider equation and a quarter-bridge
+approximation [S2, p. 5].
+One declared polarity, its correct negative
+sign, exact inverse and thermal-bias
+accounting.
+Double verification A primary optical response and a second
+material-state witness [S1, pp. 5–7].
+A joint-event rule with timing,
+false-acceptance and missed-event
+probabilities.
+Engine and feedback OTAN2, pinion matrices, parity, Klein
+closure, PSI and thermochromic output
+[S0].
+An unchanged core word with typed sensor
+records and deformation-aware pruning.
+The proposed meaning of Operator I
+The title requested here isWANTWOMBAN | Operator I. In this edition,I is defined as theinteraction-and-
+instrumentation operator. The vertical bar is the title separator and a visual reference to the slit. This is a new
+definition introduced for this sub-version; the source PDFs do not already specify a mathematical operator named
+I.
+What remains intact
+The parent word layout, grouped OTAN2 profile, fixed-point Pinion Double Hadamard map, parity shifts, finite-depth
+seam rule, external thermal registers and distinction between occupancy and signed distance are retained. The
+originalχand cycle labels remain symbolic inputs; no new biological interpretation is attached to their bits. [S0,
+PDF pp. 5–12.]
+Tom Klootwijk / supplied framework 3 / 26
+
+===== PAGE 4 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+2 Source-to-improvement change register
+The new PDFs are saved conversations, containing your prompts and earlier generated explanations. The register
+below distinguishes an originating idea from a later explanation that overstates what the idea establishes. Original
+files are preserved unchanged.
+Source location Point requiring precision Version 1.1 resolution
+[S1], pp. 2–3 Rim is said to ensure flat radial growth
+and make a “solar dish.”
+Structural support and optical concentration are
+different mechanisms. Use elastic compliance and
+intercepted power; do not identify an upturned
+rim with a focusing reflector.
+[S1], pp. 1–3 Fixed carrying capacity and complete
+exclusion of light beneath the leaf.
+No load geometry, specimen dimensions,
+transmission spectrum or measurements
+accompany those numbers. Replace them with
+load/support and optical-transmission variables.
+[S1], p. 4 Slit edges are described as a waveguide;
+lensing allegedly increases photon speed
+and eliminates aberrations.
+Aperture transmission, lens phase and
+propagation are separately specified. A static
+passive lens redistributes the field; it does not
+increase hν. Aberration and diffraction remain
+test quantities.
+[S1], p. 4 The panda example is assigned exact
+blue/green cone channels.
+Retain a two-band engineering profile. The cited
+behavioral study supports color discrimination,
+not a measurement of two exact cone-response
+curves. [R4]
+[S1], pp. 5–7 Cellulose “burning,” two observations of
+one photon, and absolute zero false
+positives.
+Preserve a material-state witness as a proposed
+engineered channel. Specify absorption, supplied
+energy, chemistry and noise; compute a joint
+detection probability.
+[S1], p. 6 Five to nine photons within a fixed
+interval are presented as a universal gate
+for seeing.
+Separate rod response from behavioral detection.
+Controlled single-photon studies report
+probabilistic performance, not such a universal
+deterministic gate. [R5,R6]
+[S2], p. 5 The exact bridge equation and the
+positive quarter-bridge approximation
+disagree.
+With the source’s terminal order and active
+lower-right arm,v = −x/(4 + 2x). Reversing
+output leads reverses this sign.
+[S2], p. 6 A bonded transverse gauge is treated as
+an unstrained temperature reference.
+Under uniaxial stress it measures−νϵ. A
+mechanical dummy must instead be mechanically
+isolated, or its transverse response must be
+included. [R7]
+[S2], pp. 5–6 Gauge-factor ranges become a universal
+“100 times” advantage and a
+direct-readout claim.
+Use each calibrated factor and the exact bridge
+transfer. Input noise, bandwidth, drift and
+converter range determine readout requirements.
+[S0], PDF pp. 6,12 Core bits are full; PSI is geometric. Add measurement storage outside W. Expand
+geometric bounds for deformation and encoding;
+separately bound optical and thermal coupling.
+These changes do not discard the connecting idea. They identify exactly which physical quantity each part controls,
+and which additional evidence would demonstrate the proposed benefit.
+Tom Klootwijk / supplied framework 4 / 26
+
+===== PAGE 5 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+3 Definition of the interaction operator
+Source basis: [S0], PDF pp. 4,10,13–17; [S1], pp. 3–7; [S2], pp. 1–6.
+Definition 3.1(Typed state and output). Let Wn∈{0,..., 264−1}be one active node word. LetQn be the
+remaining tree/queue state,L the lookup tables, andPn the pinion-site data. Define
+Sn = (Wn,Qn,L,Pn,qn, ˙qn,Tn,an,ζn,mn,ηn). (3.1)
+Hereq is a chosen set of mechanical displacement coordinates;T is absolute temperature;a is thermochromic
+state;ζis optional material-reporter state;m is a completed measurement record; andηholds calibration, controller
+and validity memory. Define
+I∆t(Sn;Lin,F ext,bn) = (Sn+1,mn+1,en+1) , e n+1∈{0, 1}. (3.2)
+Lin specifies incident light over the next interval andFext its mechanical loading. These are inputs, not information
+hidden inWn.
+Causal evaluation order
+Attn, validate the already completed recordmn and obtain its optical-darkness bitDn and accepted-event biten.
+Decode geometry and use the parent kernel to compute a candidate word and raw heater command:
+˜bn =bn⊕(βen), β ∈{0, 1}, (3.3)
+(Wn+1,cn) = step1.0(Wn,˜bn,Dn), (3.4)
+un =cnV control
+n 1{Tn <T max, |ϵn|<ϵmax}. (3.5)
+V control
+n includes arming, current calibration, freshness and hardware health. The external limits belong to a selected
+specimen. An invalid observation does not silently become a valid zero: use the declared last-valid observation only
+while within its timeout, otherwise inhibit actuation.
+Hold un during [tn,tn+1). The physical evolution generatesqn+1,Tn+1,an+1,ζn+1 and the next sensor record.
+The event gate is then evaluated onmn+1. The event modifies thenext branch input whenβ= 1. Settingβ= 0
+recovers the parent’s branch-input policy exactly.
+Proposition 3.1 (Causal closure). For specified initial state, inputs, physical models and noise realization, a
+uniquely solvable physical update determines a unique sequence of state and event records.
+Proof. Attn every argument of the kernel and command rule is already known. The held command and external
+inputs determine the next physical update and observation. Apply the same construction inductively. No unmeasured
+future event is needed to compute its own cause.
+Tom Klootwijk / supplied framework 5 / 26
+
+===== PAGE 6 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+4 Rim, ribs and deformation as a physical geometry
+Source basis: [S1], pp. 1–3, including the user’s radial-width question on p. 2.
+The transferable structural idea is a thin collecting surface supported by a raised edge and branching ribs. Research
+on Victoria leaves explicitly examines the economy of their supporting vein structure. That supports using a ribbed
+plate as inspiration, not assigning all its stiffness to the rim alone. [R1]
+Reference domain and design parameters
+A proposed engineered specimen has radiusR, sheet thicknesst, rim heighthr, rim thicknesstr, and a declared rib
+graphE. Let
+Ωd ={(r,ϑ,z) : 0≤r≤R, −t≤z≤0}, (4.1)
+Ωr ={(r,ϑ,z) :R−tr≤r≤R, 0≤z≤hr}, (4.2)
+Ωg = Ωd∪Ωr∪
+⋃
+j∈E
+Ω rib,j. (4.3)
+Each rib is a specified solid with width, height, endpoints and junctions; overlapping solid volumes are counted
+once. The mass ismg =
+∫
+Ω g
+ρm dV. A slit or drainage notch is a removed part of this domain, and changes both
+stiffness and transmission.
+The source’s phyllotaxis can place sensor sites or ribs through the existing phase increments. It does not itself
+determine rib thickness or material modulus. A physical point is obtained from the parent’s calibrated log-polar
+map and then deformed:
+x(X,t ) =X +u(X,t ), X =R(W,P;r0, ∆ρ,∆z). (4.4)
+Small-strain thermoelastic realization
+For a bonded solid in the small-displacement-gradient model, use
+ϵ= sym∇u, ϵth =αT (T−T0)1, (4.5)
+σ= C : (ϵ−ϵth), (4.6)
+ρm ¨u =∇·σ+f. (4.7)
+C is the elastic stiffness tensor. Isotropy is a choice, not a consequence of circular outline; a ribbed composite can
+be anisotropic. Specify displacement constraints at supports, tractions on loaded faces, and free-surface tractions
+elsewhere. These determine whether the rim is free, elastically restrained or clamped. [R8]
+An optional floating-plate reduction, with downward displacementw, neglecting inertia, surface tension and imposed
+membrane tension, is
+D∇4w +ρwgw =p, D = Et3
+12(1−ν2). (4.8)
+This is a hydrostatic small-deflection model. A fixed mechanical test stand uses its actual support conditions
+instead of the water term. Neither model is a growth law for living leaves.
+Tom Klootwijk / supplied framework 6 / 26
+
+===== PAGE 7 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+5 A provable rim benefit and its sensing trade-off
+Source basis: [S1], p. 2, “structural rigidity for radial growth”; [S2], pp. 1–2.
+Local section calculation
+For a rectangular strip turned upright, the second moment of area for out-of-plane bending is
+Iupright = trh3
+r
+12 , I flat = hrt3
+r
+12 , Iupright
+Iflat
+=
+(hr
+tr
+)2
+. (5.1)
+This compares the same cross-sectional area in two orientations. It explains a geometric advantage of a tall section.
+It is not a prediction that a complete leaf or rimmed plate becomes stiffer by that exact ratio.
+Proposition 5.1 (Added-stiffness compliance). Let K0 be a positive-definite stiffness matrix after support
+constraints. Suppose the modeled rim/rib addition gives a positive-semidefinite incrementKr. For the same applied
+force vectorF,
+FT (K0 +Kr)−1F ≤FTK−1
+0 F. (5.2)
+Proof. Set A =K−1/2
+0 KrK−1/2
+0 ⪰0. All eigenvalues of(1 +A)−1 are at most one. Sandwich this inequality by
+K−1/2
+0 and then byF to obtain the result.
+This establishes a precise meaning for reduced static compliance under a fixed load. Redistributing material at
+fixed total mass, changing a support, or including buckling requires a fresh comparison; those changes are not
+automatically positive-semidefinite additions.
+Why maximum rigidity is not the only objective
+A strain gauge senses deformation, so a structure that almost never deforms may produce little strain signal. A
+one-mode example makes the conflict explicit:
+q =F/K, ϵ g =aqq, V o≃−VexGFa q
+4K F. (5.3)
+Here aq has units m−1 and converts modal displacement into gauge strain. IncreasingK reduces deflectionand
+force-to-voltage sensitivity. The appropriate design balances aperture stability, strain resolution, mass and optical
+collection.
+One declared optimization objective is
+min
+G
+mg
+m0
++wc
+FTK(G)−1F
+C0
+subject to Pdet≥Pmin,
+⏐⏐⏐⏐
+∂Vo
+∂F
+⏐⏐⏐⏐≥Smin, (5.4)
+with specified load cases and admissible geometryG. The scalesm0,C 0 make the objective dimensionless. This
+optimization problem is a new development target; no optimum is asserted from the supplied material.
+Tom Klootwijk / supplied framework 7 / 26
+
+===== PAGE 8 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+6 The strain grid as a geometric transducer
+Source basis: [S2], pp. 1–3, particularly the foil-grid diagram on p. 3.
+Figure 1: Excerpt of the supplied p. 3
+diagram: long axial strands, widened
+end loops and two solder tabs.
+The diagram depicts a continuous serpentine resistive path, not a three-
+dimensional inductor. Its long strands and short, wider turns contribute
+different fractions of the total resistance. This geometry should enter the
+model rather than being described only as a “coil.”
+For a uniform segment,
+R =ρe
+L
+A.
+For homogeneous principal stretches,
+R′
+R = ρ′
+e
+ρe
+λ∥
+λ⊥1λ⊥2
+. (6.1)
+ρe is electrical resistivity, distinct from mass densityρm and packed
+log-radius ρ. The stretches are positive length ratios.
+Small-strain limit and gauge factor
+Taking a first-order logarithmic differential gives
+∆R
+R ≃∆ρe
+ρe
++ϵ∥−ϵ⊥1−ϵ⊥2. (6.2)
+Under isotropic uniaxial stress,ϵ⊥1 =ϵ⊥2 =−νϵ∥, so
+GF = ∆R/R
+ϵ∥
+≃1 + 2ν+ ∆ρe/ρe
+ϵ∥
+. (6.3)
+For a grid with unit strand directiona, the directional substrate strain isϵa =aTϵa. A bonded gauge also needs a
+strain-transfer factor or calibrated transfer model for its adhesive and backing. Metallic gauges commonly haveGF
+near two, but the actual factor is a specimen input. [R7]
+Weighted grid and semiconductor extension
+For trace segments connected in series,
+Rgrid =
+∑
+i
+Ri, ∆Rgrid
+Rgrid
+=
+∑
+i
+Ri
+Rgrid
+∆Ri
+Ri
+. (6.4)
+Widened returns reduce their resistance weighting; they do not make transverse sensitivity identically zero. For
+crystalline gauges, add a stress-dependent resistivity model, for example∆ρij/ρ0 =πijklσkl in the specified crystal
+frame. The coefficients πijkl, temperature and doping are calibration/material data, not consequences of the
+meander’s appearance.
+Tom Klootwijk / supplied framework 8 / 26
+
+===== PAGE 9 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+7 Correct Wheatstone bridge law and exact inversion
+Source basis: [S2], p. 5: exact bridge formula and quarter-bridge approximation.
+Declare two voltage dividers.R1 is upper left,R2 lower left,R3 upper right andR4 lower right. The upper nodes
+are atVex > 0 and lower nodes at zero. MeasureVo =VL−VR. Kirchhoff’s laws give
+v := Vo
+Vex
+= R2
+R1 +R2
+− R4
+R3 +R4
+. (7.1)
+This preserves the terminal convention in the supplied equation, withR4 =Rx. The two-divider interpretation is
+also the standard bridge construction. [R7]
+Vex
+0
+R1
+R2
+VL
+R3
+R4
+VRVo =VL −VR
+Quarter bridge
+Set R1 =R2 =R3 =R and R4 =R(1 +x), withx> −1. Then
+v =−x
+4 + 2x, x =−4v
+1 + 2v , −1
+2 <v < 1
+2. (7.2)
+For an isothermal, linear calibrated gauge,x =GFϵand
+Vo≃−VexGFϵ
+4 . (7.3)
+The positive sign on [S2, p. 5] therefore requires reversing the measurement leads or changing the active arm. It
+does not follow from that page’s stated exact formula. Retaining this polarity throughout prevents a feedback
+controller from responding in the wrong direction.
+Linearization error and multiple active arms
+The signed relative error of replacing−x/(4 + 2x) by−x/4, measured relative to the exact nonzero output, is
+x/2; its magnitude is|x|/2. A largerGF can therefore make bridge nonlinearity relevant at a smaller strain. For
+Ri =R(1 +xi),
+v≃−x1 +x2 +x3−x4
+4 . (7.4)
+This formula fixes the signs of all half- and full-bridge arrangements before any gain or thermal-cancellation claim
+is made.
+Tom Klootwijk / supplied framework 9 / 26
+
+===== PAGE 10 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+8 Thermal compensation, self-heating and sensitivity
+Source basis: [S2], pp. 5–6; [S0], PDF pp. 13–17.
+A transverse gauge is not automatically a dummy
+Under uniaxial stress in an isotropic specimen,
+ϵ⊥=−νϵ∥. (8.1)
+With axialR4 and bonded transverseR3, equal factors givex4 =GFϵand x3 =−GFνϵ. Hence the declared
+bridge polarity gives
+v≃−GF(1 +ν)ϵ
+4 . (8.2)
+The transverse gauge contributes signal. A mechanical dummy instead has negligible load strain while sharing the
+relevant temperature; the source’s bonded-transverse description does not establish that condition. NI explicitly
+distinguishes these configurations. [R7]
+A common multiplicative change ofall arm resistances leaves equation(7.1) unchanged exactly. More limited
+cancellation requires matched temperature coefficients, matched temperatures and an appropriate arm arrangement.
+Thermal gradients, adhesive expansion and lead resistance can remain.
+Separate mechanical signal from temperature
+A selected calibration model for each installed gauge is
+x(ϵ,T) =GF0ϵ+cT ∆T +cϵTϵ∆T +c2ϵ2 +c0, ∆T =T−T0. (8.3)
+This is a fitted constitutive approximation, not a material law with universal coefficients. For a quarter bridge with
+the other three arms fixed at the reference resistance, obtainx from the exact inverse before removing the fitted
+temperature and offset terms. With multiple varying arms, fit the full divider equation instead. Measure the actual
+excitation voltage to form the ratiov.
+At balance, each arm dissipates
+Pg = V 2
+ex
+4R, P bridge,total = V 2
+ex
+R . (8.4)
+ForR = 350 Ω, one arm dissipates0.7143 mW at 1 V and7.7786 mW at 3.3 V. These are calculated values. Only
+the heat of arms physically coupled to the specimen enters its local thermal model. Reducing excitation lowers
+signal linearly but Joule heating quadratically.
+Measurement is a physical perturbation
+Forascalarsteadythermalpath, ∆Tbias =Pcoupled/Gth. Thiscanalterthelens, thereporterandthethermochromic
+coating. Pulsed excitation is an option, but its duty cycle, electrical settling and thermal transient must all be
+included.
+A semiconductor gauge with an assigned largerGF does not by itself remove the need for an amplifier or
+temperature measurement. Compare the complete transfer function with input-referred noise, required bandwidth,
+drift, headroom and calibration residual. The source’s foil-versus-semiconductor voltage categories are not universal.
+Tom Klootwijk / supplied framework 10 / 26
+
+===== PAGE 11 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+9 The vertical slit as a real optical operator
+Source basis: [S1], pp. 3–4; [S0], PDF p. 12.
+Aperture geometry
+In an aperture plane, choose orthogonal in-plane unit directionsa across the slit andb along it. Let its centre be
+rc, widthws > 0 and heighths > 0. Define the binary amplitude aperture
+A(r) = 1{|a·(r−rc)|≤ws/2}1{|b·(r−rc)|≤hs/2}. (9.1)
+A tilt changes the plane/frame; a shift changesrc. Deformation changes the edge locations according to the
+mechanical model. These are independent parameters, not automatic results of using an elongated pupil. Pupil-
+shape research supports orientation-dependent optical behavior, not equivalence between a pupil and a leaf rim.
+[R2]
+Proposition 9.1(Slit restriction). On a scalar fieldU, define PAU =AU. Then
+P2
+A = PA,
+∫
+|PAU|2 dA≤
+∫
+|U|2 dA. (9.2)
+Proof. The indicator satisfiesA2 = A and 0≤A≤1 pointwise. Multiply by U, then integrate the squared
+magnitude.
+This is a precise mathematical role for the slit: it selects a field region without creating optical power. A real
+coating with complex transmissiontλis not generally an idempotent projection.
+Transmission, lens phase and propagation
+A selected scalar optical model is
+Udet,λ= Hz,λ
+[
+Atλ(T,a,ζ) exp(iφlens,λ)Uin,λ
+]
+. (9.3)
+H is a declared diffraction propagator, or its experimentally calibrated transfer. The physical optics can be
+characterized offline and compiled into a lookup table. The parent kernel can still avoid ray tracing, ray marching
+and coordinate squaring at runtime; that instruction choice does not remove diffraction from the physical device.
+For a uniformly illuminated rectangular slit in the Fraunhofer regime, with vacuum wavelengthλand propagation-
+medium indexnm, the first-zero angles satisfy
+sinαx =λ/(nmws), sinαy =λ/(nmhs) (9.4)
+when those ratios are at most one. A narrower slit increases diffraction across its narrow direction. These relations
+follow from the zeros of the Fourier transform of a rectangle; they are not a guarantee of sharper focus in every
+regime.
+Tom Klootwijk / supplied framework 11 / 26
+
+===== PAGE 12 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+10 Liquid lensing, two bands and absorbed energy
+Source basis: [S1], p. 4, “variable convexity” and “dichromatic funneling”.
+A liquid lens needs its own constitutive model
+At a static interface, Snell’s law isn1 sinθ1 =n2 sinθ2. A fluid interface at mechanical equilibrium also obeys the
+Young–Laplace pressure jump,
+∆p =γ
+( 1
+R1
++ 1
+R2
+)
+. (10.1)
+Here the signed principal radii belong to the fluid surface. In a thin, paraxial lens surrounded by the same medium
+on both sides,
+1
+fλ
+=
+(nℓ(λ)
+nm(λ)−1
+)( 1
+Rfront
+−1
+Rback
+)
+. (10.2)
+The front/back radii use one declared optical sign convention. Contact angle, pressure or another actuator sets the
+shape. Electrowetting-controlled focal length has an experimental literature; its existence does not determine a
+focal law for the supplied geometry. [R3]
+A slit aperture is not automatically a waveguide and does not force the lens edge to become more convex. Those
+behaviors require a specified material/interface and a solved or measured shape. A static passive lens changes
+propagation direction and intensity distribution, not the energy of an individual photon at fixed frequency.
+Two spectral channels are not one binary measurement
+Letλdenote vacuum wavelength andPλincident spectral power at a declared input plane inW m−1 of wavelength.
+Let τk(λ) be the fraction delivered to channelk and ηk(λ) its quantum efficiency. For an exposure interval,
+µk =
+∫ tn+1
+tn
+∫
+ηk(λ)τk(λ)Pλ(t) λ
+hc dλdt, k = 1, 2. (10.3)
+The observations include background and readout noise. The bands and response curves are calibrated inputs. For
+nonoverlapping branches of a passive splitter, the power fractions must share one energy budget; they are not two
+copies of the incident power.
+Two channel counts remain two observables. A later rule produces the one-bit event. In single-photon mode,
+requiring a count inboth nonoverlapping spectral branches would reject an ideally routed single photon; use a
+declared primary score or band selection instead.
+Absorption ledger
+For a passive incident-light interaction, at a specified wavelength and geometry,
+Rλ+Tλ+Aλ= 1, P abs =
+∫
+AλPλdλ. (10.4)
+Here reflection and transmission include their relevant outgoing directions. Stored excitation, emitted light, electrical
+extraction and subsequent heat must be accounted for after absorption; absorption is not necessarily instantaneous
+conversion of all energy into heat.
+Tom Klootwijk / supplied framework 12 / 26
+
+===== PAGE 13 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+11 The eye-inspired material witness
+Source basis: [S1], pp. 3,5–7: cellulose/jelly, double verification and quantum sensing.
+The optical analogy has two distinct realizations. Retinal phototransduction begins with a pigment’s light-induced
+molecular change and subsequent biochemical amplification; rod responses and behavioral detection are different
+levels of observation. Single-photon rod responses and probabilistic human single-photon detection have been
+experimentally studied. Neither establishes cellulose combustion as the mechanism of an eye. [R5,R6]
+The transferable proposal is instead anengineered material-state witness: a change of a specified absorber or
+reporter that accompanies an optical interaction. A cellulose-containing hydrogel may be retained as a proposed
+supporting matrix. Its formulation, absorber, reaction pathway, response time and regeneration mechanism are not
+specified by the supplied files.
+A minimal, bounded reporter model
+Defineζ∈[0, 1] as the fraction of reporter sites in the changed state. A chosen two-state kinetic model is
+˙ζ=k+(1−ζ)−k−ζ, k +,k−≥0. (11.1)
+One candidate photoactivation rate iskph =
+∫
+YλσλΦλdλ, where Φλis photon flux per area and wavelength,σλ
+an absorption cross-section, andYλthe conversion yield. Other activation and recovery processes enterk+ and k−.
+Their measured values determine the model, not the word “burn.”
+For constant rates during a step, letk =k+ +k−. Whenk> 0,
+ζn+1 = k+
+k +
+(
+ζn−k+
+k
+)
+e−k∆t; k = 0 : ζn+1 =ζn. (11.2)
+Both the equilibrium and initial state lie in[0, 1], and this update is their convex combination. It therefore
+preserves the state interval exactly. A readoutY can be formed from a calibrated change in fluorescence, resistance,
+temperature or another specified observable; the present documents do not select one.
+Declare what the second channel actually verifies
+Mode Profile name Meaning of the accepted event
+0 Geometry-qualified optical Optical evidence while strain/aperture state is acceptable. Strain qualifies
+geometry; it is not a second proof of photon absorption.
+1 Absorber-coupled pulse A primary optical/electrical pulse with a matching absorber-linked thermal or
+other physical response. The calibrated pulse-energy range is explicit.
+2 Material-state reporter Primary evidence plus a changed reporter state. Recovery, accumulated dose
+and prior history enter the gate.
+3 Characterized single photon A separately characterized single-photon instrument and its recorded auxiliary
+evidence. Photon-number response, dark events and timing are measured.
+These are new profile definitions, not measured performance levels. Recovery or replacement of the material
+consumes time and may consume supplied energy. A downstream reporter cannot absorb the entire same photon
+after that photon was already destroyed in a separate primary absorber.
+Tom Klootwijk / supplied framework 13 / 26
+
+===== PAGE 14 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+12 Double verification as a statistical operator
+Source basis: [S1], pp. 5–7; the definitions and probability derivations below are new.
+Let H0 mean no event of the selected profile andH1 mean its declared event. LetX,Y be thresholded primary
+and secondary evidence;Ct a timing-match bit;V record validity;S saturation; andF a fault bit. Each is in{0, 1}.
+Define
+e =X∧Y∧Ct∧V∧¬S∧¬F . (12.1)
+A lag-corrected timing gate is
+Ct = 1{|(tY−tX)−τlag|≤∆ c/2}. (12.2)
+The delay and window are calibrated for the chosen material and readout. A slow thermal response can verify an
+integrated pulse; it does not automatically identify one photon among many arrivals during its integration time.
+What two observations can and cannot guarantee
+With all quality and timing conditions satisfied, the false-acceptance probability obeys
+pFA =P (X = 1,Y = 1|H0) (12.3)
+=αXαY + Cov(X,Y |H0), αX =P(X = 1|H0), αY =P (Y = 1|H0), (12.4)
+0≤pFA≤min(αX,αY ). (12.5)
+Only conditional independence removes the covariance term. Shared temperature drift, supply interference, scattered
+light or copied software flags can create common-mode errors. IfY is a deterministic function ofX, it adds no
+conditional information about the event:I(H;Y|X) = 0.
+The same intersection also reduces detection probability. Under conditional independence,pD =pD,XpD,Y; values
+0.95 and 0.90 give 0.855, not perfect detection. The full gate is calibrated jointly, including quality conditions;
+conditional channel rates must not be mixed with unconditional system rates.
+For independent stationary Poisson background streams with ratesrX,rY, counting every pair whose separation
+lies in a window of total width∆ c gives
+rpair =rXrY ∆ c. (12.6)
+If eachX trigger is counted only once when at least oneY lies in its window, the expected trigger rate is instead
+rX(1−e−rY ∆ c). Dead time and non-Poisson correlations require a different model.
+Evidence for a small false-acceptance rate
+ForN independent, identically distributed null trials with zero accepted events, the one-sided confidence-1−α
+upper bound is
+pFA,upper = 1−α1/N. (12.7)
+This follows by solving(1−p)N =α. Zero events in10,000 trials give a 95% upper bound of about2.9953×10−4
+per trial. A finite no-failure test therefore establishes a bound, not absolute zero false positives.
+Tom Klootwijk / supplied framework 14 / 26
+
+===== PAGE 15 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+13 A quantum-instrument extension of Operator I
+Source basis: [S1], pp. 6–7, the request to extend the idea to quantum sensing.
+For a photon-resolved profile, the physical measurement can be specified as a quantum instrument rather than
+inferred from the binary output. The mathematical instrument framework describes outcome probabilities and the
+associated state changes. [R13]
+Let ϱQ⪰0, trϱQ = 1 be the optical input density operator, including any explicitly modeled auxiliary system. It is
+distinct from the packed log-radiusρ. Choose outcome operatorsKjℓsatisfying
+∑
+j,ℓ
+K†
+jℓKjℓ= 1. (13.1)
+Define the outcome map, probability and conditional state by
+Jj(ϱQ) =
+∑
+ℓ
+KjℓϱQK†
+jℓ, p j = trJj(ϱQ), ϱQ|j =Jj(ϱQ)/pj (13.2)
+forpj > 0. The outcome recordj may include both sensors, a timing bin and quality flags. Operator I applies the
+classical gateg(j) from equation (12.1):
+Je(ϱQ) =
+∑
+j:g(j)=e
+Jj(ϱQ), P (e) = trJe(ϱQ). (13.3)
+Proposition 13.1(Normalized event instrument). The coarse-grained event maps are completely positive and
+trace non-increasing, andP(e = 0) +P (e = 1) = 1.
+Proof. Each map is a sum of operator-sandwich terms and therefore completely positive. The completeness relation
+gives∑
+j trJj(ϱQ) = trϱQ = 1. Partitioning the outcomes intog(j) = 0 and g(j) = 1 preserves this sum, and
+each nonnegative part is at most one.
+One absorption, potentially several readouts
+Several macroscopic signals may originate in one absorbed-energy event. Their correlations and supplied amplification
+energy belong in the instrument and energy model. They are not multiple independent copies of the full incident
+photon energy. A destructive absorption also changes the optical state, so repeatability must be defined for the
+detector record rather than assumed for the original photon.
+NIST describes superconducting transition-edge sensors that resolve the temperature change associated with photon
+absorption under specialized cryogenic operating conditions. That is a physically established route to a thermal
+photon witness, separate from an unspecified ambient cellulose matrix. [R9]
+The operatorsKjℓare model inputs to be characterized; they have not been measured for this proposed device. A
+claim of quantum advantage would additionally require a stated estimation task, resources and comparison baseline.
+The present extension supplies an instrument specification into which such evidence can be placed.
+Tom Klootwijk / supplied framework 15 / 26
+
+===== PAGE 16 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+14 Energy closure and thermochromic feedback
+Source basis: [S0], PDF pp. 13–17; [S1], pp. 5–7; [S2], p. 6.
+One energy ledger for every coupled mechanism
+For a fixed material system with its energy stores explicitly partitioned, write the first law over an interval as
+∆(Uth +Eelastic +Kmech +Echem) =Eabs +Eelectrical +Wext−Qbath−Eother,out. (14.1)
+Unabsorbed reflected/transmitted light is already excluded fromEabs. Eother,out contains any energy subsequently
+exported as luminescence, electricity or another separately specified channel. A consistent thermoelastic free-energy
+model must avoid counting coupled thermal/elastic storage twice.
+A selected reduced thermal node model is
+Ci ˙Ti =Pheater,i +Pbridge,i +Pabs→heat,i +Pchem→heat,i +Pmech→heat,i
+−Gi0(Ti−Ta)−
+∑
+j
+Gij(Ti−Tj), (14.2)
+where Ci > 0, Gij =Gji≥0, andGi0≥0. The chemical and mechanical heat terms are internal transfers from
+explicitly tracked stores or dissipation of supplied work. They are not independent new energy sources. A model
+using all absorbed power as immediate heat must not add the same delayed relaxation heat a second time.
+For one node with constant net applied heatP, C and G> 0,
+Tn+1 =Ta +P/G + (Tn−Ta−P/G)e−G∆t/C. (14.3)
+This exact step is useful for pulse-response calibration and avoids the step-size instability of a careless explicit Euler
+update. The spatial parent model remains available when one thermal node is insufficient.
+Hysteresis is material memory, not a word inversion
+Retain the parent’s calibrated two-threshold darkness model. ForTlow<T high, a selected idealized statea follows
+an+1 =
+
+
+
+1, T n+1≤Tlow,
+0, T n+1≥Thigh,
+an, T low<T n+1 <T high.
+(14.4)
+A measured darkness bitD is obtained from optical reflectance/transmittance and its threshold; it need not
+equal this ideal state on every noisy observation. Thermochromic color and phase behavior depend on the actual
+composite. [R14; S0, PDF p. 15.]
+The Klein bit changes a logical mapping; it does not reverse a passive thermal conductance or supply heat-pump
+work. Likewise, the Landauer lower boundkBT ln 2concerns erasure of an unknown, unbiased bit in its standard
+isothermal setting, not a fixed heat payment for every XOR, shift or bit flip. The corrected parent energy-accounting
+distinction is retained. [S0, PDF p. 14; R15]
+Tom Klootwijk / supplied framework 16 / 26
+
+===== PAGE 17 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+15 Deformation-aware PSI pruning
+Source basis: [S0], PDF p. 12, descendant-enclosure condition; [S1], rim geometry; [S2], strain.
+The physical rim and aperture can move. A PSI bound must consequently enclose deformed descendants, not only
+their undeformed centers. Let a slit be the slab
+As ={x :|n·x−c|≤ws/2}, ∥n∥= 1. (15.1)
+Suppose the entire relevant undeformed descendant set obeys|n·(X−P )|≤RN. Also suppose projected
+deformation is bounded bydN and all remaining projected encoding/alignment uncertainty byδN.
+Proposition 15.1(Conservative deformed-slit exclusion). If
+|n·P−c|>w s/2 +RN +dN +δN , (15.2)
+no enclosed physical descendant intersects the slit slab during the certified interval.
+Proof. For a represented pointx =P + (X−P ) +u +e, the reverse triangle inequality gives
+|n·x−c|≥|n·P−c|−RN−dN−δN >w s/2.
+The assumptions apply to every descendant and every time in the interval, so the exclusion applies to the entire
+certified set.
+Equality is not excluded. The radiusRN must bound all descendants to be removed, including transformed children;
+a depth counter by itself is not such a bound. Deformation estimates require an uncertainty margin. A later Klein
+return to a new root is a new evaluation epoch, not an excuse to discard future state updates forever.
+For rounded log-radius spacing∆ρ, a useful upper relative radial encoding error is2∆ρ/2−1. Rounded 2048-bin
+phase has maximum angular errorπ/2048. Convert these and mounting uncertainties into a length bound for the
+relevant physical scale before adding them in equation (15.2).
+Geometric exclusion is not thermal or optical silence
+Diffraction and scattering can couple fields across a geometrical boundary. Heat can cross it through the connected
+substrate. Therefore an occupancy-pruned node is not automatically removed from the physical forward model.
+Bound its omitted optical contribution by a declared optical-error budget and its omitted heating by a separate
+thermal budget.
+For a constant-capacitance passive linear thermal network, an additional nonnegative omitted heat input of
+cumulative energyEomit, starting from zero temperature difference between two runs with all other inputs equal,
+satisfies
+0≤∆Ti≤Eomit/Ci. (15.3)
+The network preserves nonnegative temperature increments; summing its incremental energy balances cancels
+internal conductances and leaves only nonnegative bath losses. ThusCi∆Ti≤∑
+jCj∆Tj≤Eomit. Nonlinear
+feedback changes require a new bound.
+Tom Klootwijk / supplied framework 17 / 26
+
+===== PAGE 18 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+16 Unchanged W64 core and explicit version semantics
+Source basis: [S0], PDF pp. 6–12 and embedded reference implementation.
+The parent word uses every bit. Sensor temperature, strain, photon-channel evidence and validity metadata remain
+outside it. One bit is the event output, not a claim that every physical degree of freedom is stored in one bit.
+Bit range Field Width Preserved interpretation
+63 χ 1 Symbolic channel/control label
+62:52 ρ 11 Signed packed log-radius code
+51:41 θ 11 Unsigned phase modulo 2048
+40:30 z 11 Signed axial code
+29:20 Φ 10 Unsigned pinion/phyllotaxis register
+19:15 depth 5 Tree depth 0–31
+14:10 phase 5 Discrete cycle phase, parent FT label
+9:3 LUT 7 Polar lookup index
+2 κ 1 Seam parity bit
+1:0 cycle 2 Symbolic cycle selector
+Operator profiles stay distinguishable
+The grouped parent phase generator remains
+OTAN2G0(r,O ) =
+[
+(r & 2047)⊕(O≪10)
+]
+& 2047. (16.1)
+It is a defined integer phase map, not an inverse Cartesian angle function. The literal ungrouped left-fold profile
+has different semantics and only two possible outputs; it is not silently substituted. The low-three-bit parity reads
+cycle and seam metadata, not the coordinate sign bits.
+The real-valued reference Pinion Double Hadamard map remains
+Aϕ= diag(ϕ,ϕ−1, 1,−1)H4, H 4 = 1
+2
+
+
+1 1 1 1
+1 −1 1 −1
+1 1 −1 −1
+1 −1 −1 1
+
+
+. (16.2)
+H4 is orthogonal;Aϕhas determinant−1 and preserves four-dimensional volume, not all lengths or physical energy.
+The parent’s rational integer coefficients, rounding, clipping and modular phase rules remain authoritative for
+executable results.
+The seam reflection usesθ↦→(1024−θ) mod 2048 andκ↦→κ⊕1. Its additional log-radius inversion is applied on
+the parent’s symmetric code range. A double seam crossing is a logical involution; two dissipative physical cycles
+need not restore temperature or reporter state. Settingβ= 0 in section 3 retains the parent kernel exactly.
+Tom Klootwijk / supplied framework 18 / 26
+
+===== PAGE 19 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+17 A 64-byte measurement record, separate from W64
+New transport definition.All multi-byte values are little-endian. The 64-byte record is 512 bits, including one
+unchanged 64-bit node word. It is not a repacking of the parent’s occupied bits.
+Bytes Field Type Meaning / constraint
+0–1 magic 2 bytes ASCII WI
+2, 3 version 2 uint8 Major 1; minor 1
+4–7 sequence uint32 Session record number, modulo 232
+8–15 tick_ns uint64 Monotonic acquisition timestamp in ns
+16–23 word uint64 Parent W64 state associated with record
+24–27 temperature_mK int32 Nonnegative absolute temperature in mK; zero invalid
+28–31 strain_nano int32 Dimensionless strain multiplied by 109
+32–35 band1_counts uint32 Calibrated primary-band acquisition code
+36–39 band2_counts uint32 Calibrated second-band acquisition code
+40–43 secondary_counts int32 Secondary physical-witness summary
+44–45 flags uint16 Bit meanings below
+46 mode uint8 Profile 0–3 from section 11
+47 reserved uint8 Must be zero
+48–51 calibration_id uint32 Registry key; nonzero for a valid record
+52–55 window_ns uint32 Integration duration, 1 to 232 − 1 ns
+56–59 site_id uint32 Physical pinion/sensor site identifier
+60–63 checksum uint32 CRC-32 over bytes 0–59
+The timestamp identifies the end of the acquisition interval on the declared session clock. Store clock epoch,
+synchronization uncertainty, gains, band response curves, secondary-channel units, event lag and window, reporter
+history policy, and physical limits in the calibration registry. The maximum represented integration duration is
+about 4.295 s; longer integrations need another declared profile or multiple records, not integer wraparound.
+Flags and receiver contract
+Bits 0–3 areX,Y,C t,V . Bit 4 is accepted evente. Bits 5–6 are saturation and fault. Bit 7 is measured optical
+darknessD. Bits 8–10 mark temperature, strain and the paired band acquisition valid. Bits 11–15 are zero. The
+receiver checks that bit 4 agrees exactly with equation (12.1).
+A valid flag is an acquisition assertion, not something a checksum can independently prove. The controller
+additionally checks calibration availability, session, freshness and required channel validity. A calibration profile may
+use one band as the primary score; paired acquisition does not require both bands to contain photons.
+The encoder uses Python’szlib.crc32; its check value for123456789 is CBF43926. This detects transmission
+errors, not malicious tampering. [R12] Out-of-range encodings are rejected. Saturated hardware measurements
+retain the saturation flag; they are not accepted as verified events. Acquisition “counts” are not photon numbers
+unless the instrument’s calibration establishes that interpretation.
+Tom Klootwijk / supplied framework 19 / 26
+
+===== PAGE 20 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+18 Calibration, identifiability and decisive tests
+The files supply concepts, equations and software architecture, but no specimen-specific measurement series. The
+next physical improvement is a calibration design that separates the mechanisms rather than fitting every change
+to “light.”
+Controlled experiment Quantity or distinction established
+Known loads at
+controlled temperature
+Elastic response, gauge strain transfer, bridge polarity, stiffness and load-to-voltage sensitivity.
+Temperature sweep at
+specified fixed load
+Gauge drift, thermal expansion, thermochromic hysteresis and temperature-dependent optical
+response.
+Optical pulses at fixed
+geometry, heater
+command off
+Band response, detection efficiency at a declared plane, pulse lag, reporter/thermal response
+and optical background.
+Heater-only and
+mechanical-only trials in
+controlled darkness
+Non-optical triggers that might imitate the secondary witness; coupling from bridge self-heating.
+Combined inputs with
+randomized, held-out
+trials
+Joint detection/false-acceptance rates, timing gate, saturation behavior and feedback stability
+under defined operating conditions.
+Why independent parameter variation matters
+For equation (8.3), a fitted design matrix with rows
+[ 1, ϵ,∆T, ϵ∆T, ϵ2 ] (18.1)
+must have column rank five to identify five coefficients in a noise-free linear parameter fit. Good conditioning is
+also needed with noise. If every illumination change causes the same linked temperature and strain changes, the
+observations may not separate their coefficients. A large number of repetitions at one condition does not repair
+that identifiability problem.
+Uncertainty attached to an inferred strain
+For an isothermal quarter bridge, the exact estimate is
+ˆϵ=− 4v
+GF(1 + 2v), ∂ˆϵ
+∂v=− 4
+GF(1 + 2v)2, ∂ˆϵ
+∂GF=−ˆϵ
+GF. (18.2)
+For input vectorz containing v,GF and the relevant thermal/calibration quantities, first-order propagation is
+u2
+ϵ≃JΣzJT, J =∂ˆϵ/∂z. (18.3)
+Covariance terms are retained. The uncertainty budget records voltage-reference noise, offsets, drift, calibration
+residuals and strain transfer rather than presenting an ADC code as exact strain. This follows the measurement-
+uncertainty approach documented in NIST TN 1297. [R11]
+Minimum profile information
+A testable release needs geometry and supports; material/adhesive data; calibrated gauge and bridge parameters;
+spectral transfer and lens-actuation response; thermal capacities and conductances; reporter kinetics where used;
+channel noise and timing; and explicit acceptance limits. Analog evidence should be retained beside the one-bit
+decision so a rejected or missing measurement remains distinguishable from a valid negative result.
+Tom Klootwijk / supplied framework 20 / 26
+
+===== PAGE 21 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+19 Worked calculation: geometry and electrical readout
+All numerical values in sections 19–20 areassigned calculation inputs, not measurements of your proposed device.
+The embedded reference script reproduces the numbers.
+A section-height example
+Forhr/tr = 10, the upright-to-flat second-moment ratio is 100. This is the local section result from section 5;
+support geometry, ring deformation and rib joints still determine the complete assembly’s compliance.
+Same strain, same excitation, different assigned gauge factors
+Takeϵ= 100µϵ= 10−4 and Vex = 1 V. AssignGF = 2 to one gauge andGF = 100 to another, with identical
+ideal quarter-bridge topology. Equation (7.2) gives
+GF = 2 : x = 0.0002, V o =−49.9950 µV, (19.1)
+GF = 100 : x = 0.0100, V o =−2.48756 mV. (19.2)
+The magnitude ratio is about 49.756, not a universal 100. The linearization’s relative error is 0.01% in the first case
+and 0.5% in the second. Whether either signal can be read without further gain depends on the chosen converter,
+noise, bandwidth and required uncertainty.
+AtR = 350 Ω and 1 V excitation, the active arm’s balance dissipation is0.7143 mW. At 3.3 V, it is7.7786 mW.
+This is a particularly important control input when the same structure is intended to report absorbed optical heat.
+A slit example
+Assign vacuum wavelengthλ= 550 nm, slit widthws = 100µm and heighths = 2 mm, with propagation index
+approximated bynm = 1. The small-angle first-zero approximations are
+αx≃0.0055 rad, α y≃0.000275 rad. (19.3)
+The narrower dimension produces the wider diffraction spread. The exact first-zero angles are the arcsines of these
+ratios. These are aperture diffraction estimates, not a model of a panda’s full eye or a demonstrated lens assembly.
+The photon-energy scale
+Using the SI constantsh = 6.62607015×10−34 J s andc = 299792458 m/s, a 550 nm photon has [R10]
+Eγ= hc
+λ= 3.61172×10−19 J = 2.25426 eV. (19.4)
+If fully thermalized in an assigned lumped heat capacityC = 10−6 J/K, its ideal immediate temperature rise is
+3.61172×10−13 K. With the parent’s illustrativeC = 0.02 J/K, the rise is1.80586×10−17 K. A passive focusing
+change does not multiply these energies. The size and noise of the actual absorbing system determine whether a
+thermal signature can be resolved.
+Tom Klootwijk / supplied framework 21 / 26
+
+===== PAGE 22 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+20 Worked calculation: a pulse and its verification
+An absorber-coupled pulse, not a one-photon claim
+Assign an incident optical pulse of 1 mW for 5 ms, absorption fraction 0.8, thermal capacitanceC = 10−6 J/K,
+conductance G = 10−4 W/K, and initial equilibrium atTa. Assume all absorbed pulse energy thermalizes in that
+node and ignore other changing heat inputs. Then
+Pabs = 0.8 mW, E abs = 4.00000 µJ, (20.1)
+τ=C/G = 10 ms, ∆Tpeak = Pabs
+G
+(
+1−e−5 ms/τ
+)
+= 3.14775 K. (20.2)
+The heat stored at pulse end is3.14775µJ, and heat lost to the bath during the pulse is0.852245µJ. Their sum is
+the absorbed energy. At 550 nm the absorbed-energy equivalent is approximately1.10751×1013 photons.
+This calculation supplies a pulse-scale test regime for a physical witness. It does not assign these thermal parameters
+to cellulose or certify the response of an unbuilt specimen. The 1 V bridge-arm heat from the preceding page is
+comparable to the assigned absorbed power; its stable bias must be included or its transient separately measured.
+Otherwise electrical self-heating could imitate the very witness intended to verify optical absorption.
+Independence must be demonstrated, not named
+Assign independent conditional false-trigger probabilitiesαX =αY = 10−3 with timing and quality conditions
+satisfied. Their joint false acceptance is10−6 per trial. With independent conditional detections 0.95 and 0.90,
+joint detection is 0.855. Shared disturbances invalidate the multiplication assumption.
+For background ratesrX = 10 per second,rY = 20 per second and a coincidence window of total width 5 ms, the
+expected accidental pair rate is
+rpair = 10×20×0.005 = 1 s−1. (20.3)
+This demonstrates why merely adding a second slow sensor can leave substantial false coincidence. The unique-X
+trigger rate is instead10(1−e−0.1)≃0.9516 per second under the same Poisson assumptions.
+A quantitative acceptance target
+At 95% confidence, zero failures in10,000 independent null trials bound the per-trial false-acceptance probability
+by 0.000299528. To put that zero-failure bound below10−6 requires at least2,995,731 such trials. Changes of
+temperature, light spectrum, timing window or mechanical setup define new conditions to which this evidence may
+not automatically transfer.
+MEASURABLE REPLACEMENT FOR “DOUBLE VERIFICATION”
+Report the event profile, input plane, pulse range, two physical observables, lag/window, joint false-acceptance
+and detection rates, saturation exclusions, uncertainty and test conditions. This makes the source’s verification
+idea an auditable sensing specification.
+Tom Klootwijk / supplied framework 22 / 26
+
+===== PAGE 23 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+21 Reference implementation and conformance results
+The embedded operator_i_reference.py implements the exact bridge transfer/inverse, event truth table,
+measurement encoding/decoding, bounded reporter update, projected deformation test and optional event-to-
+branch policy. It imports the parent’s embedded kernel unchanged aswantwomban_reference.py.
+These checks were executed during preparation of this edition. The attached JSON contains the actual results,
+including the calculated examples.
+Executed check Count / result Interpretation
+Parent word round-trips / field isolation 10,000 / 10,000 Existing field semantics
+preserved
+Parent seam involutions 2,048 Parent seam tests pass
+Parent transitions / OTAN2 inputs per profile 2,000 / 4,096 Existing kernel tests pass
+Bridge inverse over−0.5 ≤ x ≤ 0.5 10,001 cases Max error1.12 × 10−16 or
+less
+Event truth table All 64 inputs Exactly one accepting
+combination
+Record encode/decode round-trips 1,000 records Exact 64-byte recovery
+Single-bit corruption of one record All 512 bits Every corruption rejected
+Bounded constant-rate reporter updates 1,000 cases All remain in [0, 1]
+Random projected descendant envelopes 2,000 cases 1,618 pruned enclosures
+Points sampled within pruned enclosures 40,450 No sampled slit
+intersection
+Parent compatibility / event-branch policy 1,000 / 1,000 Exact equality with
+specified parent calls
+CRC check vector CBF43926 Matches reference
+function
+The enclosure samples test implementation consistency; the all-points justification is the proof in section 15, not
+the finite sample. The CRC test concerns single-bit corruption of one packet, not every possible multi-bit error or
+deliberate forgery. Software conformance is not an experiment demonstrating optical, chemical or single-photon
+performance.
+Reproduction
+Extract the two Python files to one directory and run:
+python operator_i_reference.py
+The script uses the Python standard library and writesoperator_i_results.json beside itself. It validates
+ranges instead of silently inserting invalid values into neighboring bit fields. The full material, mechanical and
+optical equations in this document remain parameterized physical models; a finite-element solver, instrument driver
+and fitted quantum-instrument model are not claimed as part of this reference script.
+Result of this sub-version
+Operator I now has typed inputs, a causal update order, measurable outputs, a preserved core, a transport contract
+and testable criteria. The rim, slit and gauge are connected through deformation and energy rather than through a
+shared visual analogy alone. The main new formal objects are the interaction operator, the material/event profiles,
+the deformed PSI bound and the auditable joint-event gate.
+Tom Klootwijk / supplied framework 23 / 26
+
+===== PAGE 24 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+A Source provenance and embedded materials
+The framework attribution is preserved as supplied:Tom Klootwijk, NL200678942, 10-07-1990. The parent
+version is 1.0; this development edition is 1.1,WANTWOMBAN | Operator I. The attribution and date are
+preserved as project metadata supplied by the author.
+Key Embedded source file Extent
+S0 WANTWOMBAN.pdf 25 pages
+S1 lily pad upwards rims.pdf 7 pages
+S2 strain gauge coil mechanism geometrically.pdf 6 pages
+S3 Pasted markdown.md Original text
+Page citations use physical PDF page order, counting each cover as page 1. The p. 3 foil-grid figure from S2 is
+reproduced as an attributed excerpt; it is not presented as a newly designed prototype. Original source files are
+attached byte-for-byte, including statements revised in the change register.
+Source SHA-256 fingerprints
+S0
+cc0d81471fe33497873faa6339aa487532c8861902761994d3c88b16c17ea662
+S1
+8041a9018ac3eafc0e3867a3de80bbb3aad0f642f0125341b641608881e6d673
+S2
+1ea40e5a40660f51b9d40a86c2c07007b02c5a5b5cdbd7e72627b4702af618a3
+S3
+1869efeab782774dd7af09cc2ca9e4dfd7f0317acf1549a375bbb4f8cb53d136
+Reproducible supporting files
+wantwomban_reference.py is the unchanged kernel extracted from S0. operator_i_reference.py is
+the new extension. operator_i_results.json records the executed checks and numerical calculations.
+operator_i_manifest.json records source and software byte counts and SHA-256 fingerprints. The editable
+LaTeX source and the source-figure excerpt are also embedded.
+The physical source files do not provide an assembled device, material recipe, raw calibration series or detector
+response measurements. Assigned examples are labeled calculations; proposed constitutive laws are labeled models;
+corrected source claims are recorded explicitly rather than changed inside the original attachments.
+Tom Klootwijk / supplied framework 24 / 26
+
+===== PAGE 25 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+B References and external grounding
+The source keys S0–S3 refer to the embedded documents described in Appendix A. The references below supply
+physical and measurement context. Equations labeled as new definitions or propositions are developed in this
+edition; citing a physical precedent does not assert that it validates the whole proposed assembly. Online records
+were checked during preparation on 15 September 2026; publisher abstracts/records are used where full text was
+not available.
+[R1] Box, F., Erlich, A., Guan, J. H., and Thorogood, C. (2022). “Gigantic floating leaves occupy a large surface area
+at an economical material cost.”Science Advances8, eabg3790. doi:10.1126/sciadv.abg3790. Primary study of
+giant-leaf structural economy.
+[R2] Banks, M. S., Sprague, W. W., Schmoll, J., Parnell, J. A. Q., and Love, G. D. (2015). “Why do animal eyes have
+pupils of different shapes?”Science Advances1, e1500391. doi:10.1126/sciadv.1500391. Pupil shape, orientation
+and visual-function analysis; not a specification of the proposed device.
+[R3] Berge, B., and Peseux, J. (2000). “Variable focal lens controlled by an external voltage: An application of
+electrowetting.”European Physical Journal E3, 159–163. doi:10.1007/s101890070029. Publisher abstract/record;
+electrically controlled liquid-lens precedent.
+[R4] Kelling, A. S., Snyder, R. J., Marr, M. J., Bloomsmith, M. A., Gardner, W., and Maple, T. L. (2006). “Color
+vision in the giant panda (Ailuropoda melanoleuca).”Learning & Behavior34, 154–161. doi:10.3758/BF03193191.
+Behavioral color discrimination; not measured cone spectral curves.
+[R5] Baylor, D. A., Lamb, T. D., and Yau, K. W. (1979). “Responses of retinal rods to single photons.”Journal of
+Physiology 288, 613–634. doi:10.1113/jphysiol.1979.sp012716. Primary electrophysiological study.
+[R6] Tinsley, J. N., et al. (2016). “Direct detection of a single photon by humans.”Nature Communications7, 12172.
+doi:10.1038/ncomms12172. Probabilistic behavioral single-photon experiment.
+[R7] NI. “Measuring Strain with Strain Gages.” Official measurement documentation, NI source page. Gauge factors,
+bridge configurations and the distinction between a thermal dummy and a bonded transverse gauge. Exact sign and
+inverse calculations in this edition follow the explicitly declared divider convention.
+[R8] Sönnerlind, H. (2015). “Modeling Linear Elastic Materials – How Difficult Can It Be?” COMSOL, 29 June 2015.
+Official technical article. Linear elastic constitutive tensors and material symmetry.
+Tom Klootwijk / supplied framework 25 / 26
+
+===== PAGE 26 =====
+WANTWOMBAN | OPERATOR I SUB-VERSION 1.1
+References / continued
+[R9] NIST, Physical Measurement Laboratory. “Single-Photon Detectors.” Official laboratory technology description.
+Transition-edge and other detectors; thermal single-photon readout requires a specified detector and operating
+regime.
+[R10] BIPM. “SI defining constants.” Official SI reference. Exact defining values of the Planck constant, speed of light,
+elementary charge and Boltzmann constant used for the energy conversion.
+[R11] Taylor, B. N., and Kuyatt, C. E. (1994).Guidelines for Evaluating and Expressing the Uncertainty of NIST
+Measurement Results. NIST Technical Note 1297. Official NIST publication page. Measurement uncertainty and
+propagation; this edition supplies the bridge-specific derivatives.
+[R12] Python Software Foundation.Python Standard Library: zlib. Official documentation. CRC-32 function used by the
+attached transport reference implementation.
+[R13] Davies, E. B., and Lewis, J. T. (1970). “An operational approach to quantum probability.”Communications
+in Mathematical Physics 17, 239–260. doi:10.1007/BF01647093. Foundational instrument framework; the
+finite/countable operator-sum and event grouping here are the proposed profile specification.
+[R14] Bašnec, K., et al. (2018). “Relation between colour- and phase changes of a leuco dye-based thermochromic
+composite.”Scientific Reports 8, 5511. doi:10.1038/s41598-018-23789-2. Thermochromic material reference
+retained from S0; hysteresis parameters in this edition remain specimen-specific.
+[R15] Landauer, R. (1961). “Irreversibility and Heat Generation in the Computing Process.”IBM Journal of Research and
+Development 5, 183–191. doi:10.1147/rd.53.0183. Bennett, C. H. (1973). “Logical Reversibility of Computation.”
+Same journal 17, 525–532. doi:10.1147/rd.176.0525. These foundational references and their interpretation are
+retained from the parent’s energy-accounting section.
+WANTWOMBAN | OPERATOR I / 1.1
+Preserved: OTAN2, pinions, the 64-bit core, parity, Klein seam and the parent thermal architecture.
+Added: a source-traceable physical interaction operator, strain and optical transfer laws, bounded material
+memory, statistical verification, deformation-aware PSI and a tested measurement interface.
+Tom Klootwijk / supplied framework 26 / 26
