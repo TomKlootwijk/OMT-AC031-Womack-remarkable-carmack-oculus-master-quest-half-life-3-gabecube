@@ -3,7 +3,7 @@
   "parent": "3.6.1.17",
   "profile": "ATOMOS-SEEDED-EMIT-R1",
   "foundation": "XOP-UNIFIED-FIELD-R1",
-  "status": "validated_implementation_document_review_pending",
+  "status": "verified_release",
   "goal": "Continue the work of optimizing the kernel and enhancing the .pdf of aTOMos",
   "realization_requested": "Lossless ordered native EMIT streams verified against original seeded artifacts, exact bounded 32-bit phase and seam arithmetic, matched execution measurements and full PDF formalization; matched Orekit propagation and SPICE ephemeris representation with explicit physical and numerical scopes",
   "validation_authorization": "User explicitly allowed correctness checks and S2 benchmarks on 2026-09-15",
@@ -17,5 +17,10 @@
     "full log-spherical LUT lifecycle",
     "broader S2 region and polygon operations"
   ],
-  "orbital_validation": "Eight frozen Jan/Feb R2 cases, 15553 exact reference epochs, native CPU/CUDA and Orekit13.1.8 standard/refined runs; 84 separately scoped SPICE representation cases."
+  "orbital_validation": "Eight frozen Jan/Feb R2 cases, 15553 exact reference epochs, native CPU/CUDA and Orekit13.1.8 standard/refined runs; 84 separately scoped SPICE representation cases.",
+  "document": {
+    "pages": 103,
+    "sha256": "a62e3d7a57ec4c01c18308d9eb4b3c2f16172baf0e88276fbf6e64e591390cf0",
+    "complete_visual_review": true
+  }
 }

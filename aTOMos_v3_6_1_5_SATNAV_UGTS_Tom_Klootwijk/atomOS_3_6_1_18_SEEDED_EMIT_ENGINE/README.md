@@ -110,6 +110,32 @@ alone establishes no VRAM saturation or cache-hit rate.
 
 ## Formalization and continuing work
 
+The orbital comparison executes the preserved R10 CPU/CUDA propagators and
+Orekit 13.1.8 on eight frozen January/February MEO, GEO, IGSO and HEO cases,
+then scores all 15,553 available future reference epochs without refitting.
+The worst same-model CPU/Orekit difference is 0.02676 m; CPU/CUDA is 0.000221 m.
+First-day sampled position maxima are below 10 m for all eight cases, while
+seven-day physical errors range from metres to over 100 km. This establishes
+close numerical agreement, not better orbit determination or guaranteed
+navigation accuracy. Full per-horizon evidence is in
+`formal/ORBIT_COMPARISON_RESULTS.md` and
+`review/orbit_comparison/matched_forecast_summary.json`.
+
+The separate SPICE experiment preserves native forecast samples in real SPKs.
+Its tested degree-9 profiles (300-second GNSS / 60-second Chandra nodes)
+add at most 1.083 mm at sampled interval midpoints. Coarser failures remain
+reported. SPICE query timings separate the cost of constructing and storing
+the ephemeris from later queries; they do not rank GPU propagation speed.
+See `formal/SPICE_EPHEMERIS_COMPARISON.md`.
+
+Orbital reproduction requires the retained R10 sibling release and its frozen
+reference data. Runtime dependencies are isolated outside the release and
+pinned in the recorded manifests. `tools/fetch_orbit_comparison_dependencies.py`
+fetches the declared Java libraries; `tools/run_orekit_comparison.py` compiles
+the scalar adapter and verifies tighter integration plus independent forces.
+The frozen reference protocol refuses silent overwrite; use the existing
+requests, or a fresh protocol/output directory for a separate experiment.
+
 The editable master is `docs/unified.tex`, with new journal/phase chapters
 followed by the full retained earlier formalization. Source preparation
 verifies authored inputs; rendering, review and packaging bind reviewed
