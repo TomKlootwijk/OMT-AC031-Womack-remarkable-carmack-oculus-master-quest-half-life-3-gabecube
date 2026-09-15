@@ -1,0 +1,36 @@
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main12epoch_kernelILb0ELb1EEEvPKNS_4BankENS_10AddressMapEyyyyjyPNS_6DigestE:
+  REG:26 STACK:40 SHARED:1104 LOCAL:0 CONSTANT[2]:24 CONSTANT[0]:992 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main12epoch_kernelILb1ELb1EEEvPKNS_4BankENS_10AddressMapEyyyyjyPNS_6DigestE:
+  REG:28 STACK:40 SHARED:1104 LOCAL:0 CONSTANT[2]:24 CONSTANT[0]:992 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main12epoch_kernelILb0ELb0EEEvPKNS_4BankENS_10AddressMapEyyyyjyPNS_6DigestE:
+  REG:26 STACK:40 SHARED:1104 LOCAL:0 CONSTANT[2]:24 CONSTANT[0]:992 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main12epoch_kernelILb1ELb0EEEvPKNS_4BankENS_10AddressMapEyyyyjyPNS_6DigestE:
+  REG:28 STACK:40 SHARED:1104 LOCAL:0 CONSTANT[2]:24 CONSTANT[0]:992 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main6gatherEPKNS_4BankENS_10AddressMapEPKyyjPNS_6SampleE:
+  REG:20 STACK:40 SHARED:0 LOCAL:0 CONSTANT[0]:968 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main12reset_statesEPNS_4BankENS_10AddressMapEyyy:
+  REG:12 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:960 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main13expand_planesEyPjy:
+  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:920 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN52_GLOBAL__N__b91aa80d_23_word_cache_benchmark_cu_main11make_planesEPjyyy:
+  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[2]:24 CONSTANT[0]:928 TEXTURE:0 SURFACE:0 SAMPLER:0

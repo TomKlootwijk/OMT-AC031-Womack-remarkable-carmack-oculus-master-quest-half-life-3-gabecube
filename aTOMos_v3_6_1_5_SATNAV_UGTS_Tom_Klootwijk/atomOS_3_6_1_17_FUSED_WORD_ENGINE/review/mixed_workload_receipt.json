@@ -1,0 +1,31 @@
+{
+  "profile": "ATOMOS-TOMAGI-MIXED-WORKLOAD-R1",
+  "recipe": "examples/mixed_workload.json",
+  "recipe_sha256": "615096e670c961f9b316c151556fdd74e37af1a59bb7ad46f12b2f1c22d9428c",
+  "generator_sha256": "828d51a5e6438b6bda24bd21b4903f973dc41648775e326f37451a6041828681",
+  "derived_path": "review/workloads/mixed_1048576.tmg",
+  "bytes": 50331776,
+  "sha256": "8cbf32314fc60e615893b3fabf1f4e4c313ecbd42d0c6567e045b28409fc63b4",
+  "cell_count": 1048576,
+  "opcode_counts": [
+    69906,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    69905,
+    0
+  ],
+  "program_only": true,
+  "precomputed_vm_outputs": false,
+  "inventory_note": "The derived binary is reproducible and excluded from Git and release archives."
+}

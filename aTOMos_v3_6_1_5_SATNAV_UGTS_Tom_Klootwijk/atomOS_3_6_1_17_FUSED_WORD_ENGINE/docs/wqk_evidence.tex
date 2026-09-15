@@ -1,0 +1,86 @@
+\section{R16 execution evidence}
+\label{sec:r16-evidence}
+The R16 build ran on the NVIDIA GeForce RTX 5070 Ti Laptop GPU, compute
+capability 12.0, using CUDA 12.8 and Visual Studio 2022 Build Tools. This
+section records the new word and event profiles. The later S2 and large-memory
+chapters preserve their original R15 measurements.
+
+\subsection{Independent semantics and feedback checks}
+All eight native CTest suites passed. The TOMAGI suite completed 28,794
+assertions against the unmodified source C implementation. It covers all
+sixteen opcodes, all SET/JIT1 target fields, raw initial branch 2, signed
+extremes, wrap and division behavior, successor selection, REKEY, bank
+boundaries, exact upload reconstruction and fresh/sticky emission receipts.
+Both integer-texture and ordinary-load paths are checked.
+
+The feedback suite passed 1,718 checks. Its three-cell literal source compiles
+to 272 canonical bytes. The unmodified source Python transition function
+generates a separate 24-step reference, including every State64 and feedback
+word. Both native fetch paths match every recorded word at every step;
+257 lanes also match after a complete device batch. Additional cases cover
+whole-word absorption, full 64-bit inputs, repeated identical fresh payloads,
+EMIT-HALT, sticky status, refused VM steps, duplicate receipts and managed
+state-generation changes.
+
+The fixture originally numbered receipts from one while the VM begins at zero.
+The first feedback run exposed that discrepancy. The generator now distinguishes
+one-based display steps from zero-based receipt epochs; subsequent checks pass.
+This correction changed the fixture's expected receipt identity, not the VM
+transition. The retained report records the current program and expected-byte
+hashes.
+
+The Python suites passed all 49 tests: 22 inherited hinge tests and 27 new
+event tests, including 100 independently constructed rational-root cases.
+A separate public-API evidence script passed 36 checks and preserves its own
+literal profiles, exact certificates and transitions. It confirms the
+turnaround roots $1/4$, $1/2$ and $3/4$, horizon-event handling, duplicate
+holds, and byte-exact semantic replay. Rehashed false roots, omitted earlier
+events, incomplete simultaneous sets and packed sessions missing a certificate
+are rejected.
+
+\subsection{Matched native word runs}
+The command-line runner executes one ordered device batch and then reads all
+final arrays. The paired report uses the same three-cell RADIX/EMIT program,
+96 steps, three fresh-process repetitions and alternating fetch order. Each
+lane starts identically. ``Copy32'' enables the explicit emitted-word feedback
+profile; ``pure'' executes the imported VM without that binding.
+
+\begin{center}\small
+\begin{tabular}{@{}l r r r r r@{}}
+\toprule
+ & & \multicolumn{2}{c}{Device batch median (ms)} &
+\multicolumn{2}{c}{Host-complete median (ms)}\\
+Profile & Lanes & Texture & Global & Texture & Global\\\midrule
+Pure & 1 & 0.738 & 0.786 & 83.330 & 83.076\\
+Pure & 4,096 & 0.812 & 0.731 & 82.269 & 79.922\\
+Pure & 262,144 & 5.926 & 5.764 & 127.801 & 126.556\\
+Copy32 & 1 & 2.181 & 2.110 & 83.479 & 80.220\\
+Copy32 & 4,096 & 2.132 & 2.210 & 79.486 & 83.853\\
+Copy32 & 262,144 & 15.481 & 15.333 & 168.847 & 170.766\\
+\bottomrule
+\end{tabular}\end{center}
+
+All six cases agree across fetch paths and repetitions on the full-array
+FNV-1a-64 digest and the exact first-lane fields. The digest is
+noncryptographic; these large comparisons supplement the independent
+word-by-word correctness suites. The largest coupled case accepts
+12,582,912 fresh emissions across 25,165,824 VM instructions. A separate
+one-lane runner result matches the independent 24-step Python fixture.
+
+Device time uses CUDA events over the ordered batch. Host-complete time
+includes cold setup, allocations, upload, dispatch, final readback and digest;
+it excludes JSON output. The source report preserves every trial and the
+separate setup, batch-wall and readback times. No per-step host readback is
+included in the batch. The tiny immutable program is shared by many lanes;
+this does not measure a large program working set or a saturated memory bus.
+Global loads have the lower device median in four of six cases. These are
+finite instruction workloads, with no corresponding S2 query output.
+
+\subsection{Reproducible release inputs}
+The new executable is \path{wqk_run}; its inspectable source is
+\path{tools/wqk_run.cpp}. \path{tools/measure_wqk.py} creates the paired
+report. The standalone CMake option \code{ATOMOS\_SPATIAL=OFF} omits
+inherited S2-dependent targets while retaining the VM, feedback and their
+checks. The full build retains all previous native profiles.
+
+\clearpage

@@ -1,0 +1,22 @@
+{
+  "profile": "ATOMOS-WQK-NATIVE-RUN-R1",
+  "status": "completed",
+  "device": {"index": 0, "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "compute_major": 12, "compute_minor": 0, "multiprocessors": 46, "total_global_bytes": 12820480000, "free_bytes_before_setup": 11561598976, "runtime_total_bytes": 12820480000, "max_texture_1d_linear_texels": 268435456, "driver_version": 13010, "runtime_version": 12080},
+  "program_bytes": 272, "source_vm_cells": 3,
+  "lanes": 1, "steps": 24, "fetch": "texture", "feedback": "copy32",
+  "vm_resident_bytes": 404, "word_state_bytes": 64, "setup_allocation_estimate_bytes": 852,
+  "timings_ms": {"setup": 981.317200, "batch_device": 0.663520, "batch_wall": 0.677100, "readback": 0.056700, "host_complete": 982.055400},
+  "timing_contract": "setup includes input, CUDA initialization, upload and lane allocation; device batch uses CUDA events on the ordered default stream; batch wall includes dispatch and completion; readback includes final vector allocation and copies; host complete includes validation and digest but excludes JSON serialization/output; no warmup or per-step host readback",
+  "memory_contract": "resident bytes count owned arrays, excluding CUDA driver/texture/event overhead; setup estimate includes temporary packed-plane storage; allocation may still fail",
+  "vm_fault_lanes": 0, "feedback_fault_lanes": 0,
+  "last_dispatch_executed_lanes": 1, "last_dispatch_emitted_lanes": 1,
+  "total_accepted_feedback_emissions": 12,
+  "pure_vm_cumulative_emissions": null,
+  "emission_contract": "feedback counts every accepted fresh EMIT; pure VM retains only the final receipt and does not collect cumulative EMIT counts",
+  "hash64": "0xe5c6300cc37c6fad",
+  "hash64_algorithm": "FNV-1a-64; noncryptographic, collisions possible",
+  "hash64_serialization": "NUL-terminated profile tag, lanes/steps u32 LE, NUL-terminated State64 tag and all raw state words, Fault32 tag and all fault words, Receipt40 tag and all receipt fields in declaration order, WordState64 tag/count u64 and all feedback fields; all integers little endian, no padding, fetch and timings excluded",
+  "receipt_epoch_base": 0, "next_vm_epoch": 24,
+  "first_lane": {"state_words_u32": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 227779084, 0, 0, 8], "vm_fault": 0, "last_receipt": {"epoch": 23, "executed": 1, "emitted": 1, "cell_before": 2, "opcode": 14, "flags": 0, "payload": 0, "branch_after": 1, "error": 0}, "feedback_words_u64_hex": ["0x0000000000000000", "0x0000000000000000", "0x0000000000000017", "0x0000000000000000", "0x000000000000000c", "0x0000000000000001", "0x0000000000000000", "0x0000000000000000"]},
+  "feedback_word_order": ["q","parity","last_epoch","last_drive","hinges","initialized","status","reserved"]
+}

@@ -1,0 +1,9 @@
+{
+  "release": "3.6.1.15",
+  "date": "2026-09-15",
+  "build": "CMake Visual Studio 17 2022 x64, Release, CUDA toolset 12.8, sm_120, MSVC /fp:strict, CUDA --fmad=false",
+  "python_reference": {"command": "python -m unittest discover -s atomOS_3_6_1_15_HINGE_ENGINE/tests -p test_hinge.py -v", "tests": 22, "passed": true},
+  "native_spatial": {"executable": "C:/aTOMosBuild/r15cuda/Release/spatial_index_tests.exe", "checks": 34633, "passed": true},
+  "native_texture": {"executable": "C:/aTOMosBuild/r15cuda/Release/texture_tests.exe", "radius_queries": 512, "passed": true, "coverage": ["original point word identity after GPU bit-plane expansion", "texture/global and exact host equality", "inclusive and adjacent-ULP boundaries", "overflow fallback", "duplicate and stale hinge events", "immutable profile and event payload", "Boolean seam flags", "host rounding mode rejection", "empty index"]},
+  "scope": "Implementation correctness checks in declared domains, not a physical validation or complete XOP execution proof. Benchmark conclusions are recorded separately."
+}

@@ -1,0 +1,21 @@
+{
+  "purpose": "Document rendering and structural inspection, not algorithm validation",
+  "pdf": "output/pdf/aTOMos_v3_6_1_15_Native_Hinge_Engine_Tom_Klootwijk.pdf",
+  "sha256": "ee29c15fc790ad4cd3907e0ddea2131dad2de26f41a674a52645853085b5be2b",
+  "pages": 78,
+  "extractable_text_all_pages": true,
+  "tex_layout_glyph_reference_warnings": [],
+  "page_boundary_violations": [],
+  "visual_review": {
+    "status": "complete",
+    "reviewed_sha256": "ee29c15fc790ad4cd3907e0ddea2131dad2de26f41a674a52645853085b5be2b",
+    "date": "2026-09-15",
+    "coverage": "All 78 pages visually inspected",
+    "reviews": [
+      {"pages": "1-18", "method": "Contact sheets 01-03, with individual full-size checks on pages 14, 17 and 18", "result": "No clipping, overlap, missing glyphs or illegible tables"},
+      {"pages": "19-48", "method": "Contact sheets 04-08 and every individual full-size page", "result": "No clipping, overlap, missing glyphs or illegible tables"},
+      {"pages": "49-78", "method": "Contact sheets 09-13 and every individual full-size page", "result": "No clipping, overlap, missing glyphs or illegible tables"}
+    ],
+    "issues": []
+  }
+}

@@ -1,0 +1,295 @@
+\section{The exact kernel, physical fields and acquired observations}
+\label{sec:r14-kernel-bridge}
+
+\subsection{A shared state with explicit causal boundaries}
+The literal operators and one-bit word grammar are fixed in
+Sections~\ref{sec:exact-core} and~\ref{sec:exact-registry}. Their application to
+physics uses the delayed state
+\begin{equation}
+ s_n=(q_n,W_n,\xi_n,\ell_n,c_n;\mathcal E_n).
+ \label{eq:r14-shared-state}
+\end{equation}
+Here $q_n$ is the ASA/NA--JK word, $W_n$ an optional WANT word, $\xi_n$ the
+selected finite physical-model state, $\ell_n$ consumed-record memory, $c_n$
+controller/calibration memory, and $\mathcal E_n$ their exact expression roots
+and immutable dependencies. Unused components are omitted explicitly. An actual
+plant state $x_{\rm phys}(t)$ is outside this digital record. Its unknown
+parameters and disturbances do not become known literals by naming $\xi$.
+
+Let $R_n$ be a completed immutable measurement record available at control time
+$t_n$. Its acquisition interval, source timestamp, availability time, channel
+validity and calibration binding remain distinct. The following is the selected
+sample-and-hold chronology, with $h_n=t_{n+1}-t_n>0$:
+\begin{align}
+ (\widehat m_n,e_n)&=\mathcal C(R_n,c_n),\qquad
+ d_n=E_D(\widehat m_n,e_n,t_n,c_n),\nonumber\\
+ (x_n,y_n,J_n,K_n,q_{n+1}^{\rm base})&=\mathcal W(q_n,d_n),\nonumber\\
+ q_{n+1}&=\begin{cases}
+ [(J_n^*\land\neg_w q_n)\lor(\neg_w K_n^*\land q_n)]\land P,
+     &\text{event adapter enabled},\\
+ q_{n+1}^{\rm base},&\text{event adapter disabled},
+ \end{cases}\nonumber\\
+ (W_{n+1},\ell_{n+1},c_{n+1},u_n)
+     &=\mathcal A(W_n,\ell_n,c_n,R_n,q_n,q_{n+1}).
+ \label{eq:r14-word-schedule}
+\end{align}
+Here $P$ is the present mask. The enabled $J_n^*,K_n^*$ are defined by
+\eqref{eq:r14-event-lane}; the command adapter reads this same final
+$q_{n+1}$. The model step and its predicted observation are then
+\begin{align}
+ \xi_{n+1}&=\Psi_{\Pi,h_n}(\xi_n,u_n,v_{[t_n,t_{n+1}]};\theta),\nonumber\\
+ \widehat M_{n+1}&=\mathcal O_\Pi(\xi_{[t_n,t_{n+1}]},\theta).
+ \label{eq:r14-model-schedule}
+\end{align}
+$\mathcal W$ is exactly the declared $E_X$, two ordered independent ASA/NA mask
+sets, $E_J,E_K$ and synchronous JK composition. All its J/K expressions read
+the same old $q_n$; $y_n$ is the second whole-word output. $\mathcal C,E_D,
+\mathcal A$ are pure typed templates with complete bodies, including their
+projection and domain rules. A profile without a WANT transition defines
+$W_{n+1}=W_n$. Enabling a historical WANT transition requires its complete
+versioned body; the name W64 alone selects none.
+
+$\Psi$ denotes either the separately specified continuous solution over the
+interval or a selected finite update. It cannot silently alternate between them.
+$\mathcal O$ needs the selected trajectory or an explicitly defined acquisition
+reconstruction; two finite endpoint states alone do not define its integral.
+$v$ comprises declared external loads/inputs; a continuous input needs its finite
+function definition or an explicit acquisition/model binding. $\widehat M$ is
+a model prediction. The actual next sample is separately acquired from
+$x_{\rm phys}$ and its instrument; it is never substituted by this prediction
+without an explicitly selected synthetic-input profile. Sensor latency enters
+the next availability time. A measurement completed after $t_n$ cannot affect
+the command already applied at $t_n$. Changing $h_n$ changes the recurrence.
+
+All logical next roots are evaluated from one snapshot and commit together.
+The physical command and interval schedule form a separate timed interface;
+an unimplemented mathematical transition is not an actuator. The plant's
+control authority, command limits and timeout/held-command behavior must be
+specified by the chosen interface when that interface is used.
+
+\subsection{Events, non-values and exact information retention}
+For the retained Operator I observation, the Boolean event is
+\begin{equation}
+ e_n=X_n\land Y_n\land C_{t,n}\land V_n\land\neg S_n\land\neg F_n.
+ \label{eq:r14-event}
+\end{equation}
+These are acquired/calibrated threshold, coincidence, validity, saturation and
+fault facts; they are not inferred from the word masks. The optional event-lane
+adapter binds one ordered site/session stream, a reserved present-bit mask
+$M_e$, and the last consumed identity $\ell_n$. For a valid ordered record,
+\begin{align}
+ p_n&=e_n\land\operatorname{new}(R_n,\ell_n),&
+ E_n&=\begin{cases}M_e,&p_n,\\0,&\neg p_n,\end{cases}\nonumber\\
+ J_n^*&=(J_n\land\neg_w M_e)\lor E_n,&
+ K_n^*&=(K_n\land\neg_w M_e)\lor E_n.
+ \label{eq:r14-event-lane}
+\end{align}
+The enabled reserved lane holds for $p_n=0$ and toggles for $p_n=1$; other lanes
+have the base one-step JK result. Later base expressions can read the changed
+lane, so this is not a global noninterference theorem. Disabling the adapter
+restores the base J/K expressions. Enabling starts with a recorded baseline
+without a pulse and consumes only later records. Tracker and word commit
+atomically. Repeated identical records are a no-new-pulse case; the same
+identity with changed bytes, calibration or time binding is invalid.
+
+Missing, stale or calibration-unresolved demanded input is an explicit
+non-value, not a valid false event. Likewise an unknown real comparison is not
+zero. A selected application's defined failure result is different: the
+inherited CGK word-first failure can be represented by the single tagged value
+\begin{equation}
+ (q^+,\xi,t,\text{chart history},\mathrm{failed}=1),
+ \label{eq:r14-tagged-failure}
+\end{equation}
+which updates the word while keeping those other fields. A lazy failure branch
+does not demand its undefined inverse. This remains one atomic transition; it
+does not authorize a partial commit of a non-value operator. Physical time and
+external plant evolution continue if a digital transition does not commit.
+
+An exact checkpoint retains sufficient exact operands, roots, source samples
+and dependencies for the declared state. A rounded rendering is an output
+projection. Feeding it back instead of the retained state creates a different
+recurrence. Source rounding, clipping, modulo and ADC quantization remain
+explicit functions when selected; the exact word envelope preserves their
+input and output representations without reversing lost source information.
+
+\subsection{W64 is a finite chart/control record}
+\label{sec:r14-w64-binding}
+The retained WANT.W64 fields are fixed below. They are distinct from the JK
+word, spatial UGTS keys and the Operator I measurement packet.
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Bits & Field & Interpretation\\\midrule
+63 & $\chi$ & channel/control bit\\
+62:52 & $\rho$ & signed 11-bit log-radius code\\
+51:41 & $\vartheta$ & unsigned phase modulo 2048\\
+40:30 & $z$ & signed 11-bit axial code\\
+29:20 & $\Phi$ & unsigned 10-bit register\\
+19:15; 14:10 & depth; phase & two independent 5-bit registers\\
+9:3; 2; 1:0 & LUT; $\kappa$; cycle & 7-bit index; seam bit; 2-bit selector\\\bottomrule
+\end{tabular}\end{center}
+Extraction is $(W\gg s)\land(2^w-1)$; signed interpretation is $u$ for
+$u<2^{w-1}$ and $u-2^w$ otherwise. With positive scales, an actual chart is
+\begin{align}
+ r&=r_W2^{\Delta_\rho\operatorname{signed}_{11}(\rho)},&
+ \theta&=2\pi\vartheta/2048,&
+ z_{\rm phys}&=\Delta_z\operatorname{signed}_{11}(z),\nonumber\\
+ x&=o+r\cos\theta\,e_1+r\sin\theta\,e_2+z_{\rm phys}e_3.
+ \label{eq:r14-w64-chart}
+\end{align}
+The origin $o$, orthonormal frame $(e_1,e_2,e_3)$, scales and their calibration
+are declared inputs. This code has no exact radius-zero point. Decoding the
+integer tuple is lossless; recovering an arbitrary pre-quantization location
+from that tuple is not defined. A changed origin or frame needs its full
+transform. The corresponding log-radius chart uses
+$\log(r/r_U)=\log(r_W/r_U)+\log(2)\Delta_\rho\operatorname{signed}_{11}(\rho)$.
+Neither this geometry nor an OTAN2 spelling supplies an optical transfer.
+
+The preserved integer pinion uses $s=(2H_4)v$ and
+\begin{equation}
+ \widehat A(v)=\left(
+ \mathcal R\!\left(\frac{106039s_0}{131072}\right),
+ \mathcal R\!\left(\frac{40503s_1}{131072}\right),
+ \mathcal R(s_2/2),\mathcal R(-s_3/2)\right),
+ \quad \mathcal R(x)=\operatorname{sgn}(x)\lfloor|x|+1/2\rfloor.
+ \label{eq:r14-integer-pinion}
+\end{equation}
+Its input is the selected normalized dimensionless coordinate tuple; any
+subsequent clip, seam or register projection belongs to its full transition
+template. This exact integer expression is distinct from the algebraic
+$A_\phi$ below. Retaining a pre-projection expression does not entitle a control
+decision to bypass the selected projection.
+
+\subsection{Optical fields close through a measured acquisition}
+\label{sec:r14-optical-observation}
+The coupled optical chain is
+\begin{equation}
+ U_{\rm det,\lambda}=H_{z,\lambda}
+ \left[A_{\rm ap}\,t_\lambda(T,a,\zeta)
+ e^{i\varphi_{\rm lens,\lambda}}U_{\rm in,\lambda}\right].
+ \label{eq:r14-optical-chain}
+\end{equation}
+The electromagnetic chapter supplies Maxwell, material storage/loss and
+admitted propagation reductions. Here $A_{\rm ap}$ is the physical aperture,
+$a,\zeta$ material states, and $\varphi_{\rm lens}$ a declared phase field.
+In a scalar fixed-plane monochromatic profile, normalize $U$ so $|U|^2$ is
+power per area. In its spectral version use power per area per wavelength;
+with that corresponding convention define
+\begin{equation}
+ P_\lambda(t)=\int_{\mathcal D}|U_{\rm det,\lambda}(x,t)|^2\,dA,
+ \qquad
+ \mu_k=\int_{t^-}^{t^+}\int_{\Lambda_k}
+ \eta_k(\lambda)\frac{\lambda P_\lambda(t)}{hc}\,d\lambda\,dt.
+ \label{eq:r14-optical-acquisition}
+\end{equation}
+In the wavelength integral $P_\lambda$ is spectral power density; for a discrete
+monochromatic mode use its power and a finite wavelength sum instead. The
+spectral power-sum profile requires mutually incoherent components, separately
+resolved orthogonal frequency channels, or acquisition averaging that removes
+inter-frequency beat terms. For arbitrary coherent multi-frequency illumination
+over a finite window, the detector's full field-response equation must retain
+the relevant cross terms instead. The
+efficiency $0\le\eta_k\le1$ assumes at most one primary detection per incident
+photon and the selected band. $\mu_k$ is an ideal expected primary count, not
+the observed count. Dark counts, gain, saturation, dead time and count
+statistics belong to the detector model when relevant. A thermal or analogue
+instrument instead uses its calibrated measurand and acquisition weighting.
+The actual code is imported with its original bits and exact code-unit map;
+the measurement chapter supplies its discrepancy, noise and uncertainty terms.
+
+Use one input/field/material energy ledger: polarization storage, transmitted
+or reflected flux, absorbed energy and heat are the transfers already defined
+by the selected physical equations. Sensor gain or reporter output does not
+create a second incident budget. For an ideal binary aperture,
+$A_{\rm ap}^2=A_{\rm ap}$ and $\|A_{\rm ap}U\|^2\le\|U\|^2$.
+A general material transmission $t$ is not idempotent; the ASA rule that one
+hit zeros an entire word is not supplied by this pointwise aperture equation.
+
+\subsection{An exact passive target for the algebraic pinion}
+\label{sec:r14-passive-pinion}
+For dimensionless coordinates, or separately declared power-normalized optical
+amplitudes, define
+\begin{equation}
+ H_4=\frac12\begin{pmatrix}1&1&1&1\\1&-1&1&-1\\1&1&-1&-1\\1&-1&-1&1\end{pmatrix},
+ \quad \phi=\frac{1+\sqrt5}{2},\quad
+ A_\phi=\operatorname{diag}(\phi,\phi^{-1},1,-1)H_4.
+ \label{eq:r14-pinion}
+\end{equation}
+$H_4H_4^T=I$, so the singular values of $A_\phi$ are
+$\phi,\phi^{-1},1,1$. Thus $A_\phi$ is not a passive direct amplitude map for
+all inputs: $H_4^Te_1$ is a unit input amplified by $\phi>1$. Instead
+\begin{equation}
+ B=A_\phi/\phi=\operatorname{diag}(1,\phi^{-2},\phi^{-1},-\phi^{-1})H_4,
+ \quad B^TB\preceq I.
+ \label{eq:r14-passive-map}
+\end{equation}
+For each diagonal entry $d_j$, pair the mode with an auxiliary mode using
+\begin{equation}
+ O_j=\begin{pmatrix}d_j&\sqrt{1-d_j^2}\\-\sqrt{1-d_j^2}&d_j\end{pmatrix},
+ \qquad O_j^TO_j=I.
+ \label{eq:r14-dilation}
+\end{equation}
+After $H_4$, zero classical auxiliary input amplitude gives $B$ on the selected
+outputs and carries the remaining power to side ports. This proves an ideal
+enlarged norm-preserving target with exact algebraic coefficients. A negative
+$d_j$ requires relative phase; side-port energy is retained. A quantum use also
+needs its auxiliary states and noise model.
+
+The identity $A_\phi v=\phi(Bv)$ permits an exact symbolic scale factor. It does
+not restore lost output power or remove measured amplitude uncertainty. An
+active direct map needs supplied gain and its noise model. A digital photonic
+encoding of the bits has a different relation between optical power and
+represented numeric magnitude; it is governed by the next contract.
+
+\subsection{Physical realization and minimal specializations}
+Let $\operatorname{Dec}(p)=s$ relate an admitted physical carrier state to a
+finite digital state. A physical step $\mathcal H_\delta$ under admitted
+disturbance $\delta$ realizes the defined exact step $F_\Pi$ only if
+\begin{equation}
+ \operatorname{Dec}\bigl(\mathcal H_\delta(p,\operatorname{Enc}(u))\bigr)
+       =F_\Pi(s,u)
+ \quad\text{for every reached admitted }p\text{ with }\operatorname{Dec}(p)=s.
+ \label{eq:r14-refinement}
+\end{equation}
+The output must again be an admitted representative, or undergo a declared
+restoration. With the same acquired snapshots and initial decoded state,
+induction proves agreement for every defined finite prefix within the declared
+resources. Encoding, carry/borrow, memory, synchronization and atomic commit
+are obligations of a selected realization; the one-bit transport does not
+choose a physical carrier or discharge them. For an intensity bit with low
+level at most $a_0$, high level at least $a_1$ and additive error bounded by
+$\epsilon$, a threshold satisfying $a_0+\epsilon<\theta<a_1-\epsilon$ proves
+correct decoding. This conditional margin preserves a logical bit, not an
+unknown analogue measurand to infinite precision.
+
+Only the dependency closure required by an application is imported:
+\begin{itemize}
+\item \textbf{Digital.} Omit the plant and detector; retain exact operands,
+word/expression state, sample ports and declared outputs. A physical hardware
+claim additionally needs \eqref{eq:r14-refinement}.
+\item \textbf{Analogue/mechanical/thermal.} Use the selected finite or continuum
+physical equations, measured coefficients and boundary ports. A finite basis
+is an explicit approximation to the continuum, without prescribing a raster.
+The exact mechanical midpoint identity applies only to its own fixed linear
+profile; it does not assert conservation for every sampled coupled model.
+\item \textbf{Photonic.} Bind \eqref{eq:r14-optical-chain} to the material and
+propagation equations and \eqref{eq:r14-optical-acquisition} to the instrument.
+Choose an analogue transfer or a digital realization explicitly.
+\item \textbf{Orbital/spatial.} Choose $\dot r=v$, $\dot v=a_\Pi(t,r,v)$ with
+its gravity/forcing, time and frame model. A fixed station observes
+$z=L(M(t)r-r_g)$, $D=\|z\|$, azimuth $\operatorname{atan2}(z_E,z_N)$ and
+elevation $\operatorname{atan2}(z_U,\sqrt{z_E^2+z_N^2})$ on their nonsingular
+domains. This is simultaneous geometry. A received-signal observation needs
+its emission time, propagation and clock model. In the inherited orbit seed,
+JK chooses query cadence and does not enter $a_\Pi$. Store full time as well as
+phase: $k-k_0=Pw+r$, $0\le r<P$; $(w,r)$ reconstructs $k$.
+\item \textbf{Optional attitude.} A unit quaternion $Q$ has kinematic equation
+$\dot Q=\tfrac12Q\otimes[0,\omega]$. A selected sampled correction defines
+$U=Q+h(\dot Q_\omega-\beta e)$ and $Q^+=U/\sqrt{U^TU}$ for $U^TU>0$.
+The residual/gradient $e$, calibrated rate, gain, frame, bias and missing-sample
+branches need their complete profile. This proves unit norm after a defined
+normalization; it does not supply heading, position or filter convergence.
+\end{itemize}
+These bindings retain the R6/R10 word lineage, R11 exact grammar, R12 word,
+optical and event derivations, and R13 physical/measurement contracts. Historical
+application recipes and results remain versioned dependencies when selected;
+none is silently promoted into evidence for a new physical device.

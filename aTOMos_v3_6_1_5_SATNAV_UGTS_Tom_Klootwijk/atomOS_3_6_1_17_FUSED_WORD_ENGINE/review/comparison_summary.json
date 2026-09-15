@@ -1,0 +1,18 @@
+{
+  "report": "s2_compacted.json",
+  "sha256": "b80e983fa12f60681e484e307bf1a119524df1fd025e252816d5ec2c699da57f",
+  "workloads": 36,
+  "correctness_failures": 0,
+  "cpu_bvh_faster_than_best_s2": 36,
+  "cpu_bvh_over_s2_speedup_range": [
+    1.4285714285714286,
+    7.860810891502956
+  ],
+  "texture_pipeline_faster_than_best_s2": 22,
+  "texture_pipeline_over_s2_speedup_range": [
+    0.008156606851549755,
+    5.49001209391551
+  ],
+  "global_pipeline_faster_than_texture": 21,
+  "scope": "Observed median host-visible inclusive spherical point radius queries on the recorded laptop, with all requested CPU configurations retained. Not universal superiority or whole-engine completion."
+}

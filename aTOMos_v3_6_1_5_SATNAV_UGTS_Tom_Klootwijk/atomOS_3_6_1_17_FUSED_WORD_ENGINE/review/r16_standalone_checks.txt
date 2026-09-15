@@ -1,0 +1,28 @@
+UpdateCTestConfiguration  from :C:/aTOMosBuild/r16vm/DartConfiguration.tcl
+Test project C:/aTOMosBuild/r16vm
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: native_tomagi_word_machine
+
+1: Test command: C:\aTOMosBuild\r16vm\Release\tomagi_vm_tests.exe
+1: Working Directory: C:/aTOMosBuild/r16vm
+1: Test timeout computed to be: 10000000
+1: tomagi_vm_tests: 28794 assertions passed against C oracle on CUDA
+1/2 Test #1: native_tomagi_word_machine .......   Passed    1.10 sec
+test 2
+    Start 2: native_tomagi_word_feedback
+
+2: Test command: C:\aTOMosBuild\r16vm\Release\tomagi_feedback_tests.exe "C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_16_WQK_ENGINE/examples/wqk_feedback.tmg" "C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_16_WQK_ENGINE/examples/wqk_feedback.expected.bin"
+2: Working Directory: C:/aTOMosBuild/r16vm
+2: Test timeout computed to be: 10000000
+2: tomagi_feedback_tests: 1718 checks passed; Python-matched 24-step feedback, both fetch paths, 257 lanes
+2/2 Test #2: native_tomagi_word_feedback ......   Passed    0.14 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   1.28 sec

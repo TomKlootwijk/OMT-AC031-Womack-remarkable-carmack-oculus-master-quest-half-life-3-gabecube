@@ -1,0 +1,56 @@
+\section*{Exact words with fewer execution boundaries}
+\addcontentsline{toc}{section}{Exact words with fewer execution boundaries}
+R17 optimizes the native operator engine by composing several complete
+transitions inside one GPU launch. The canonical Cell48 program and every
+State64, fault, receipt and ASA/NA/JK word retain their existing meanings.
+The reference path remains available for intermediate observation and matched
+comparison. The exact event solver and the full earlier formalization are
+preserved.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{33mm}Y Y@{}}
+\toprule Component & Mechanism & Observable contract\\\midrule
+Pure VM chunk & Several canonical instructions in one lane-local loop & Final state, fault and final requested epoch's receipt\\
+Feedback chunk & Inject old word, execute instruction, commit fresh EMIT; repeat & Complete word feedback and emission count at chunk completion\\
+Texture program & Same immutable Cell48 banks and integer element reads & Canonical program bits and instruction order preserved\\
+Reference execution & Retained instruction-by-instruction launches & Full intermediate observation remains available\\
+Exact events and physics & Preserved R16/R15/R14 profiles and sources & Their original mathematical and application domains\\
+\bottomrule
+\end{tabularx}\end{center}
+
+Each lane reads immutable program cells and owns its mutable state. With no
+observer or dependency between intermediate steps, its finite transition can
+be composed locally. The proof is an induction over the same complete
+transition, including injection, refusal, lineage, successor choice and fresh
+receipt creation. It is not an approximation to that transition.
+
+The pure batch API accepts up to 256 requested epochs. Feedback divides a
+longer run into configurable chunks, defaulting to 32 epochs. Chunk size is
+an execution parameter and does not alter the mathematical word width.
+At a completed chunk, the published state equals the reference after the same
+number of requested epochs. A lane that halted or faulted still has the proper
+final no-op receipt; repeated payloads at different successful EMIT epochs
+remain distinct events.
+
+The native code inspection and measurements are separate evidence. A local
+C++ variable does not itself prove physical register residency. The release
+records actual compiler resources and machine instructions for its sm\_120
+build. It also compares reference and fused paths on the small literal
+feedback fixture and a 48 MiB synthetic mixed-operator program, including
+spread lane states. Setup and complete host-visible times remain distinct
+from device execution times.
+
+\subsection*{Preserved lineage and continuing scope}
+The R16 opcode, affine-event and feedback equations follow the new R17
+chapters. The earlier exact operator, spherical-index, field, clock and
+measurement contracts remain intact. The inherited R15 S2 and VRAM reports,
+and R16 word-machine reports, retain their original hardware, operations and
+measurement boundaries. They do not become new measurements by appearing here.
+
+The imported PHI is still a finite phase counter, distinct from exact
+$a+b\varphi$ arithmetic; SDF0 still assigns zero. Fusion changes scheduling
+and state traffic, not those definitions. Broader native expression lowering,
+non-affine event discovery and dynamic geometry/cache rebinding remain
+continuing engine work. Source provenance, final-byte document review and
+release integrity are verified separately.
+\clearpage

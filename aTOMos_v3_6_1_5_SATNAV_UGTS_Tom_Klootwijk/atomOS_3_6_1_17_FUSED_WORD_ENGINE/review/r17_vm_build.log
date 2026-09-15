@@ -1,0 +1,60 @@
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- The C compiler identification is MSVC 19.44.35221.0
+-- The CXX compiler identification is MSVC 19.44.35221.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The CUDA compiler identification is NVIDIA 12.8.61 with host compiler MSVC 19.44.35221.0
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/bin/nvcc.exe - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDAToolkit: C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8/include (found suitable version "12.8.61", minimum required is "12.8")
+-- Configuring done (15.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/aTOMosBuild/r17vm
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_17_FUSED_WORD_ENGINE\cuda\tomagi_feedback.cu...
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_17_FUSED_WORD_ENGINE\cuda\tomagi_vm.cu...
+  tomagi.c
+  
+  
+  C:\aTOMosBuild\r17vm>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_17_FUSED_WORD_ENGINE\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_tomagi\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/FdC:\aTOMosBuild\r17vm\Release\atomos_tomagi.pdb" -o atomos_tomagi.dir\Release\tomagi_feedback.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_17_FUSED_WORD_ENGINE\cuda\tomagi_feedback.cu" 
+  C:\aTOMosBuild\r17vm>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_17_FUSED_WORD_ENGINE\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_tomagi\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/FdC:\aTOMosBuild\r17vm\Release\atomos_tomagi.pdb" -o atomos_tomagi.dir\Release\tomagi_vm.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_17_FUSED_WORD_ENGINE\cuda\tomagi_vm.cu" 
+  tomagi_reference.vcxproj -> C:\aTOMosBuild\r17vm\Release\tomagi_reference.lib
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_17_FUSED_WORD_ENGINE\cuda\tomagi_vm.cu(39): warning #177-D: function "atomos::tomagi::<unnamed>::Texture::operator=(atomos::tomagi::<unnamed>::Texture &&) noexcept" was declared but never referenced [C:\aTOMosBuild\r17vm\atomos_tomagi.vcxproj]
+        Texture& operator=(Texture&& o)noexcept{if(this!=&o){if(value)cudaDestroyTextureObject(value);value=o.value;o.value=0;}return *this;}
+                 ^
+  
+  Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+  
+  tomagi_vm.cu
+  tomagi_feedback.cu
+  tmpxft_0001e600_00000000-7_tomagi_feedback.cudafe1.cpp
+  tmpxft_0001f584_00000000-7_tomagi_vm.cudafe1.cpp
+  atomos_tomagi.vcxproj -> C:\aTOMosBuild\r17vm\Release\atomos_tomagi.lib
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt
+  tomagi_vm_tests.cpp
+  wqk_run.cpp
+  tomagi_feedback_tests.cpp
+  tomagi_fused_tests.cpp
+  tomagi_feedback_tests.vcxproj -> C:\aTOMosBuild\r17vm\Release\tomagi_feedback_tests.exe
+  tomagi_vm_tests.vcxproj -> C:\aTOMosBuild\r17vm\Release\tomagi_vm_tests.exe
+  tomagi_fused_tests.vcxproj -> C:\aTOMosBuild\r17vm\Release\tomagi_fused_tests.exe
+  wqk_run.vcxproj -> C:\aTOMosBuild\r17vm\Release\wqk_run.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt

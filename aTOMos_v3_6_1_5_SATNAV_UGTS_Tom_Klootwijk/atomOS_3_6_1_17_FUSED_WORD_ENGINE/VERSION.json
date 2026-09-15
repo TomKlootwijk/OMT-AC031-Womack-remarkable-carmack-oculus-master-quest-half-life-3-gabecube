@@ -1,0 +1,20 @@
+{
+  "version": "3.6.1.17",
+  "parent": "3.6.1.16",
+  "profile": "ATOMOS-FUSED-WORD-EXECUTION-R1",
+  "foundation": "XOP-UNIFIED-FIELD-R1",
+  "status": "native_validated_document_review_pending",
+  "goal": "Continue the work of optimizing the kernel and enhancing the .pdf of aTOMos",
+  "realization_requested": "Exact multi-step native VM and word-feedback fusion, matched tiny and 48MiB mixed-operator workloads, preserved formalization with fusion proof and measured results",
+  "validation_authorization": "User explicitly allowed correctness checks and S2 benchmarks on 2026-09-15",
+  "superiority_status": "16 matched R17 device ratios 3.347–20.277x; cold host-complete ratios 0.965–1.098x with 3 losing cases; inherited S2 scope unchanged.",
+  "source_import": "TOM World & Query Kernel 0.6.0; 42 unmodified source files pinned by source/WQK_IMPORTS.json",
+  "native_vm_validation": "All 9 native suites and 49 Python tests pass; fused suite 1,513,078 checks against unchanged C and independent scalar feedback.",
+  "remaining_native_scope": [
+    "complete XOP lowering",
+    "certified transcendental resolution",
+    "dynamic geometry refit and cache rebinding",
+    "full log-spherical LUT lifecycle",
+    "broader S2 region and polygon operations"
+  ]
+}

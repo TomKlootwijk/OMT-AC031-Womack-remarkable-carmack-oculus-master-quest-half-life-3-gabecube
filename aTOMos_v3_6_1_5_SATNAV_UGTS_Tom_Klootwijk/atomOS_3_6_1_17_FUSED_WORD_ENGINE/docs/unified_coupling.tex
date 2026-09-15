@@ -1,0 +1,303 @@
+\section{One coupled field state and one physical energy}
+\label{sec:r14-coupling}
+The physical unification supplied here is an explicit composition of
+electromagnetic, polarization, mechanical and thermal state. Its coupling
+terms come from one energy function and its dissipative channels have named
+destinations. Maxwell's equations, material constitutive assumptions and
+thermodynamic balances keep their established meanings. No additional force
+law is inferred from a shared notation.
+
+R13 already supplies separate field and mechanical stores, a Lorentz material
+law and a thermoelastic free energy. The missing connection addressed here
+is a common evolution when those stores depend on the same material or
+mechanical state. Independently changing optical coefficients, adding a force
+and depositing absorbed power as heat need not conserve their combined energy.
+The following construction makes those dependencies part of the formalization.
+
+\subsection{The common continuous model}
+Let $z$ be a finite tuple of nonthermal state coordinates and let
+$s=(s_1,\ldots,s_n)$ contain local-equilibrium entropy coordinates, in
+$\mathrm{J/K}$. Choose a twice continuously differentiable total energy
+$\mathcal H(z,s)$, in joules, and define
+\begin{equation}
+ e_z=\partial_z\mathcal H,\qquad
+ T_i=\partial_{s_i}\mathcal H>0,\qquad
+ S_{\rm tot}=\sum_i s_i.
+ \label{eq:r14-conjugates}
+\end{equation}
+These derivatives hold all other state coordinates fixed. Distinct physical
+units are retained componentwise; a matrix below represents the corresponding
+typed contractions. The temperature is the derivative of the \emph{complete}
+energy, including its constitutive coupling, rather than an unrelated lookup.
+The use of thermodynamic potentials and their natural-variable derivatives is
+established in
+\href{https://www.nist.gov/publications/use-legendre-transforms-chemical-thermodynamics}
+{UC1: Alberty et al., \emph{Use of Legendre Transforms in Chemical Thermodynamics}}.
+
+Choose $\mathcal J^T=-\mathcal J$, dissipative maps
+$\mathcal R_\ell=\mathcal R_\ell^T\succeq0$, an input map $\mathcal G$ and
+nonnegative allocation fractions $\alpha_{i\ell}$ with
+$\sum_i\alpha_{i\ell}=1$. Let $k_{ij}=k_{ji}\ge0$ be thermal conductances
+in $\mathrm{W/K}$, with $k_{ii}=0$, and $Q_i$ be externally supplied heat
+rates in watts. Define the versioned coupled model
+\begin{align}
+ \dot z&=\mathcal J e_z-\sum_\ell\mathcal R_\ell e_z+\mathcal G u,
+ &y&=\mathcal G^T e_z,\nonumber\\
+ D_\ell&=e_z^T\mathcal R_\ell e_z\ge0,
+ &\dot s_i&=\frac{\displaystyle\sum_\ell\alpha_{i\ell}D_\ell
+              +\displaystyle\sum_j k_{ij}(T_j-T_i)+Q_i}{T_i}.
+ \label{eq:r14-coupled-state}
+\end{align}
+The input/output pairing $u^Ty$ is supplied nonthermal power. Each $D_\ell$
+is power removed from the nonthermal coordinates and thermalized in the
+declared stores on the modeled time scale. A channel that stores excitation,
+emits radiation or exports power must retain that state or output instead of
+being wholly allocated as heat. The heat entropy term $Q_i/T_i$ uses the
+receiving node's local-equilibrium temperature. An external reservoir at a
+different temperature needs its own entropy flux and interface production;
+coherent incident optical power is not assigned a heat entropy $P/T_i$.
+
+This is a selected finite thermodynamic composition. Energy-preserving,
+entropy-producing coupling is part of established irreversible
+port-Hamiltonian modeling; see
+\href{https://arxiv.org/html/2306.08914v2#S2.SS1}
+{UC2: Philipp et al., section 2.1}.
+The explicit identities below follow directly from the equations here; no
+control, stability or convergence result from that source is imported.
+
+\Needspace{15\baselineskip}
+\begin{proposition}[Combined first and second laws]
+For a differentiable solution in the stated positive-temperature domain,
+\begin{align}
+ \dot{\mathcal H}&=u^Ty+\sum_i Q_i,\label{eq:r14-total-energy}\\
+ \dot S_{\rm tot}-\sum_i\frac{Q_i}{T_i}
+ &=\sum_{i,\ell}\frac{\alpha_{i\ell}D_\ell}{T_i}
+   +\sum_{i<j}\frac{k_{ij}(T_i-T_j)^2}{T_iT_j}\ge0.
+ \label{eq:r14-total-entropy}
+\end{align}
+\end{proposition}
+\begin{proof}
+The chain rule gives
+$\dot{\mathcal H}=e_z^T\dot z+\sum_i T_i\dot s_i$.
+The skew contraction vanishes. Each $-D_\ell$ is canceled by
+$\sum_i\alpha_{i\ell}D_\ell$; the two heat rates on every reciprocal
+conduction link cancel. This proves the energy identity. Summing the entropy
+equations pairs a link's terms as
+$k_{ij}[(T_j-T_i)/T_i+(T_i-T_j)/T_j]
+=k_{ij}(T_i-T_j)^2/(T_iT_j)$. All remaining production terms are nonnegative.
+\end{proof}
+Thus an isolated selected model conserves its total energy while dissipation
+increases entropy. Energy has not vanished when mechanical or field amplitude
+decays: it has entered the same model's thermal state. Positivity hypotheses
+are constitutive assumptions, not conclusions about every proposed device.
+
+The maps may depend smoothly on state. Local Lipschitz regularity of the
+resulting right-hand side, regular finite coordinates, admissible initial data
+and a prescribed regular input give the usual local ODE obligation. These
+conditions do not prove global continuation, material stability, or that a
+trajectory remains in the positive-temperature domain. Lower-bounded energy,
+constitutive stability and any further operating-region invariance are checked
+for the selected application. Explicit time dependence adds
+$\partial_t\mathcal H$ to equation~\eqref{eq:r14-total-energy}.
+
+\subsection{A concrete Maxwell--Lorentz, mechanical and thermal specialization}
+Select a finite electromagnetic representation on a fixed reference topology
+with power-dual coordinates. Let $d$ be electric displacement-flux coordinates
+in coulombs, $b$ magnetic flux coordinates in webers, and $\mathsf C$
+a fixed signed curl/interconnection matrix. Their conjugates $e,h$ have
+voltage and current units. Matrix entries and coordinate normalization are
+part of the selected field reduction; these are not point samples or pixel
+intensities. The skew pair $(\mathsf C,-\mathsf C^T)$ is the finite
+counterpart of curl integration by parts, with boundary power supplied through
+explicit ports. A compatible field reduction must derive this pair and its
+boundary terms. Such preservation of Maxwell power structure is developed in
+\href{https://arxiv.org/html/2202.04390v2}
+{UC3: Brugnoli, Rashad and Stramigioli, \emph{Dual field structure-preserving
+discretization of port-Hamiltonian systems}}.
+
+Add mechanical coordinates $q$, momenta $p$, polarization-charge coordinates
+$P_j$ of the same dimension as $d$, and their conjugate flux coordinates
+$\pi_j$. Here $q$ is a local mechanical coordinate, distinct from the digital
+JK word $q_n$. Set $\delta=d-\sum_j P_j$ and choose
+\begin{align}
+ \mathcal H={}&\tfrac12p^TM^{-1}p+U(q,s)
+       +\tfrac12\delta^T C_e(q,s)^{-1}\delta
+       +\tfrac12 b^TL_b(q,s)^{-1}b\nonumber\\
+       &+\sum_{j=1}^{m}\left(
+          \tfrac{f_j}{2}\pi_j^T\pi_j
+          +\tfrac{\omega_j^2}{2f_j}P_j^TP_j\right).
+ \label{eq:r14-concrete-energy}
+\end{align}
+Here $M=M^T\succ0$ is fixed, $C_e=C_e^T\succ0$ and $L_b=L_b^T\succ0$
+are selected electric and magnetic energy matrices, $m$ is finite, and
+$f_j>0$, $\omega_j>0$ are fixed oscillator coefficients. Under the stated
+flux/charge normalization $C_e,L_b,f_j$ have units
+$\mathrm F,\mathrm H,\mathrm{F/s^2}$; $\pi_j$ has units $\mathrm{V\,s}$.
+These finite coefficients are projected/material parameters and are not
+numerically identified with the continuum coefficients of
+equation~\eqref{eq:r13-em-lorentz} without the actual normalization map.
+Mixed mechanical dimensions retain the inherited typed-block convention.
+
+The internal energy $U(q,s)$ includes elastic/thermal coupling once. In
+particular it may be the entropy-variable form of R13's thermoelastic free
+energy, rather than an independently added second elastic store. Define
+\begin{align}
+ v&=M^{-1}p,& e&=C_e^{-1}\delta,& h&=L_b^{-1}b,\nonumber\\
+ V_j&=f_j\pi_j,&
+ w_j&=-e+\frac{\omega_j^2}{f_j}P_j,&
+ T_i&=\partial_{s_i}\mathcal H.
+ \label{eq:r14-concrete-efforts}
+\end{align}
+For symmetric positive-semidefinite mechanical damping $C_m$ and electric
+conductance $G_e$, and $\gamma_j\ge0$, the nonthermal equations are
+\begin{align}
+ \dot q&=v,&\dot p&=-\partial_q\mathcal H-C_m v+F_{\rm ext},\nonumber\\
+ \dot d&=\mathsf C h-G_e e+i_{\rm ext},&
+ \dot b&=-\mathsf C^T e,\nonumber\\
+ \dot P_j&=V_j,&
+ \dot\pi_j&=-w_j-\frac{\gamma_j}{f_j}V_j.
+ \label{eq:r14-concrete-evolution}
+\end{align}
+The displayed supply is $v^TF_{\rm ext}+e^Ti_{\rm ext}$.
+Additional selected electromagnetic boundary ports are paired by the same
+power convention. The dissipation channels deposited through
+equation~\eqref{eq:r14-coupled-state} are exactly
+\begin{equation}
+ D_m=v^TC_m v,\qquad D_e=e^TG_e e,\qquad
+ D_j=\frac{\gamma_j}{f_j}V_j^TV_j.
+ \label{eq:r14-concrete-loss}
+\end{equation}
+The curl powers cancel as $e^T\mathsf C h-h^T\mathsf C^Te=0$;
+each mechanical or polarization canonical pair cancels in the same way.
+The remaining nonthermal power is the supply minus the displayed losses,
+so the preceding energy and entropy theorem applies without an additional
+unidentified transfer coefficient.
+
+For the fixed $f_j$, differentiating $V_j=f_j\pi_j$ gives
+\begin{equation}
+ \dot V_j=f_j e-\omega_j^2P_j-\gamma_jV_j.
+ \label{eq:r14-finite-lorentz}
+\end{equation}
+This is the finite-coordinate Lorentz oscillator. The same $P_j$ enters
+$\delta$ in field energy, supplies the electromagnetic response and receives
+the work that its damping converts to heat. No separate full ``absorption
+heat'' is added on top of $D_j$. The constitutive origin and continuum energy
+proof remain those of equations~\eqref{eq:r13-em-lorentz}--\eqref{eq:r13-em-storage}.
+
+\subsection{Reciprocal optical force and thermal response}
+For fixed $d,b,P_j,\pi_j,p,s$, matrix inverse differentiation gives the
+mechanical load contributed by the two field stores:
+\begin{equation}
+ (F_{\rm field})_a
+  =\tfrac12 e^T(\partial_{q_a}C_e)e
+   +\tfrac12 h^T(\partial_{q_a}L_b)h.
+ \label{eq:r14-field-force}
+\end{equation}
+Thus $-\partial_{q_a}\mathcal H=-\partial_{q_a}U+(F_{\rm field})_a$
+for the selected fixed $M,f_j,\omega_j$. This derives the reciprocal force
+from the same geometry/material dependence that changes the field response.
+It does not insert a generic radiation-pressure formula into every medium.
+The scalar electroquasistatic restriction is the familiar
+$F=(e^2/2)\,\partial_q C_e$, with energy differentiation performed at fixed
+charge, as derived in
+\href{https://ocw.mit.edu/courses/6-641-electromagnetic-fields-forces-and-motion-spring-2009/044362926d4b6bc9f849f4ece0c4c1f7_MIT6_641s09_lec12.pdf}
+{UC4: MIT Electromagnetic Fields, Forces, and Motion, lecture 12, pages 1--2}.
+Holding voltage by a source changes the charge and supplies electrical work;
+one cannot differentiate a fixed-voltage expression as though that source
+were absent.
+
+Likewise the common thermal derivative is
+\begin{equation}
+ T_i=\partial_{s_i}U
+       -\tfrac12 e^T(\partial_{s_i}C_e)e
+       -\tfrac12 h^T(\partial_{s_i}L_b)h.
+ \label{eq:r14-field-temperature}
+\end{equation}
+The positivity domain applies to this complete expression. Simply prescribing
+both arbitrary $C_e(q,s)$ and an unrelated $T_i(s_i)$ would overdetermine the
+thermodynamic constitutive model. As a simple uncoupled thermal store,
+$U_i(s_i)=c_iT_{i0}\exp[(s_i-s_{i0})/c_i]$ with $c_i,T_{i0}>0$ gives
+$\partial_{s_i}U_i=T_{i0}\exp[(s_i-s_{i0})/c_i]>0$; the exponent is
+dimensionless. Once field or elastic storage depends on entropy, its derivative
+must also be included. This identity is a constitutive illustration, not a
+numerical example or a universal material law.
+
+Material data are often supplied versus temperature. For one thermal
+coordinate, a twice differentiable Helmholtz energy $\mathcal F(z,T)$ gives
+\begin{equation}
+ s=-\partial_T\mathcal F(z,T),\qquad
+ c_z=-T\partial_T^2\mathcal F>0,\qquad
+ \mathcal H(z,s)=\mathcal F(z,T(z,s))+T(z,s)s.
+ \label{eq:r14-legendre}
+\end{equation}
+At fixed $z$, $\partial_Ts=c_z/T>0$ permits a local inverse on the declared
+branch. Differentiation cancels the $\partial T$ terms and yields
+$\partial_s\mathcal H=T$ and
+$\partial_z\mathcal H=\partial_z\mathcal F|_T$. For several temperatures the
+corresponding $-\partial_T^2\mathcal F$ must be nonsingular on the selected
+branch; positive definiteness supplies local thermodynamic stability of that
+temperature block. A constitutive inversion still needs its supplied exact
+finite definition and domain. This connects R13's free-energy closure to the
+common entropy state without omitting its reciprocal thermoelastic term.
+
+The force theorem is a theorem about the chosen reduced energy. To represent
+a moving physical device, $q$ must describe a declared deformation or component
+coordinate with a valid energy reduction and boundary work. Fixed reference
+topology with parameterized energy matrices can describe selected small-motion
+or quasistatic couplings; it is not an arbitrary moving-medium Maxwell model.
+Unmodeled basis motion, motional electromotive terms, relativistic effects or
+unrepresented mechanical momentum are not supplied by writing a derivative.
+
+\subsection{Field constraints, material modes and exact seed binding}
+The Maxwell divergence conditions still constrain any proposed field
+representation. For an unreduced compatible flux description, let
+$N_e\mathsf C=0$ and $N_b\mathsf C^T=0$ express the boundary-of-boundary
+identities. If $N_ed=\rho$ initially and the free-charge coordinates obey
+\begin{equation}
+ \dot\rho=N_e(-G_e e+i_{\rm ext}),\qquad N_bb=0\ \hbox{initially},
+ \label{eq:r14-charge-compatible}
+\end{equation}
+then differentiation preserves both constraints. Compatible boundary ports
+contribute their corresponding charge term. The signs use
+$i_{\rm ext}$ as an injected electric-flow input; an impressed current leaving
+the field has the opposite sign. Polarization is already part of $d$ and is
+not an additional free-charge source.
+
+For the exact finite ODE binding, the selected representation builds these
+constraints into a regular basis or supplies their explicit elimination and
+compatible independent inputs, as required by R13. The invariance calculation
+does not solve incompatible initial data, provide an unspecified boundary
+condition, or add a differential-algebraic solver to XOP. Modal truncation,
+constitutive fit and the mapping from finite fluxes to physical fields remain
+explicit approximation/evidence obligations.
+
+ASA/NA and JK can select a constitutive mode $\chi$, an actuator input or a
+boundary configuration. In a fixed mode the equations use
+$\mathcal H(z,s;\chi)$. At a mode change with unchanged physical coordinates,
+\begin{equation}
+ W_{\rm switch}=\mathcal H(z,s;\chi^+)-\mathcal H(z,s;\chi^-).
+ \label{eq:r14-mode-energy}
+\end{equation}
+The value is a required signed supply or export, not proof that an actuator
+can deliver it. A reset of coordinates or entropy has its own complete
+before/after balance. A dynamic reporter or hysteretic state affecting energy
+must likewise have its conjugate exchange and evolution; a declared empirical
+readout may remain an observation without being counted as an energy store.
+
+The seed specialization records $\mathcal H$, its explicit conjugate bodies,
+the selected matrices, thermal allocations, inputs, initial state and domains
+in one typed operator graph. Existing scalar arithmetic, finite sums,
+\code{EXP}, and nonsingular \code{SOLVE\_LINEAR} express the displayed finite
+bodies when their operands meet the inherited contracts. Gradients in this
+chapter are mathematical definitions; the specialization supplies their
+derived finite bodies. Existing \code{DIFF} can denote a derivative on its
+declared domain; it does not by itself provide an automatic differentiation
+algorithm. The finite ODE notation retains the inherited existence and denotation
+contract. One-bit words preserve this authoritative graph and its operands.
+
+R13's midpoint balance applies to its fixed linear mechanical specialization.
+It does not automatically extend to the nonlinear coupled energy
+\eqref{eq:r14-concrete-energy}. Any selected finite update for the combined
+model needs its own discrete work, heat and entropy identities or stated
+defects. This chapter adds the integrated physical equations and their
+continuous proofs; it does not silently claim a new time-step implementation.

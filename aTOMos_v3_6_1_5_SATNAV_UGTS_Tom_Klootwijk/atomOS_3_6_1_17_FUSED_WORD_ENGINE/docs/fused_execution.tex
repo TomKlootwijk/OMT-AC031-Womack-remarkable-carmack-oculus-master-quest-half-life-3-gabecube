@@ -1,0 +1,199 @@
+\section{R17: fused word execution with exact boundaries}
+\label{sec:r17-fused}
+
+R17 moves several consecutive per-lane epochs into one native kernel
+chunk. It retains the R16 canonical Cell48 instruction, its mandatory
+postlude, the literal two ASA/NA stages, and JK feedback. The reference
+launch modes remain available. This changes when the mutable state is
+published, while preserving the operator sequence inside each chunk.
+The full contract is \path{formal/FUSED_WORD_EXECUTION.md}; the source
+authority remains the imported, pinned C/Python TOMAGI implementation
+and the R16 feedback binding.
+
+\subsection{The complete per-lane transition}
+
+For lane $i$, write $z_i=(s_i,f_i,r_i,w_i,k)$ for its complete State64,
+sticky VM fault, last receipt, optional feedback state, and next dispatch
+epoch. Let $P$ denote the immutable program, seed, bank descriptors,
+word profile, and injection binding. A coupled epoch is
+\begin{equation}
+ C_k=\operatorname{commit}_k\circ\operatorname{VM}_k
+                         \circ\operatorname{inject}_k.
+ \label{eq:r17-composition}
+\end{equation}
+The extended transition also advances $k$ by one. For pure VM execution,
+injection and word commit are identities; the canonical transition and
+receipt behavior remain.
+
+Injection reads the old committed $q$, applying the enabled low/high-word
+mapping to raw rho and $v_\rho$ only under the existing eligibility rule.
+The VM reads that injected state, computes its pre-key, executes the
+canonical body and postlude, and issues the receipt at epoch $k$.
+Commit then reads this actual receipt and the same old feedback word,
+applies the declared word bodies and two masks, and performs JK once
+for a fresh accepted EMIT. The three operations cannot be commuted.
+
+All raw words, alias-sensitive writes, floor-versus-truncating division,
+word wrapping, and old-key/old-cell lineage inputs retain their source
+meanings. A refused VM instruction holds the state presented to the VM;
+it does not undo an earlier authorized injection. A feedback fault
+suppresses later work only where the reference binding specifies that
+behavior. No recovery or extra emission is introduced by fusion.
+
+\subsection{Inductive equivalence of a fused chunk}
+
+A fused thread loads one complete lane state, repeats the same ordered
+transition $n$ times locally, and publishes the final state. Denote
+this operation by $F_n$. For $n>0$, its required equality is
+\begin{equation}
+ F_n(z_i;P,k)=
+ \bigl(C_{k+n-1}\circ\cdots\circ C_{k+1}\circ C_k\bigr)(z_i;P).
+ \label{eq:r17-chunk-equality}
+\end{equation}
+Equality covers every State64 word, VM fault, complete final receipt,
+all feedback fields, and next epoch. A permitted zero-length call is
+identity: it neither executes an instruction nor changes a receipt.
+
+\begin{proposition}[Exact fused execution]
+Equation~\eqref{eq:r17-chunk-equality} holds if the two paths use the
+same integer transitions and immutable inputs, each thread exclusively
+owns its lane, and no intermediate observer or mutable cross-lane
+dependency is required inside the chunk. The epoch range and resources
+must be admitted, and launches sharing mutable state must be ordered.
+\end{proposition}
+\begin{proof}
+Both paths start from the same complete state. Suppose they agree
+after $j$ iterations. Their next injection sees the same old word and
+eligibility; the VM therefore sees the same injected state and immutable
+program and computes the same instruction, postlude, fault result, and
+receipt at $k+j$. Commit sees the same old feedback state and receipt
+and produces the same word and metadata. Thus they agree after $j+1$.
+Induction gives the final equality. Every lane reads only its own mutable
+state and common immutable data, so the proof applies independently to
+all lanes without a cross-lane barrier.
+\end{proof}
+
+The ownership premise requires one ordered CUDA stream or explicit
+cross-stream dependencies. Sequential host calls alone do not order
+independent streams. A future opcode that reads another lane's mutable
+state, a program edit, or an external sensor sample inside a chunk would
+change these hypotheses and require another boundary or synchronization
+contract. The existing borrow lifetime, state-generation, and epoch
+checks remain in force; direct DeviceView mutation must not bypass them.
+
+\subsection{Halt, fault, and final-receipt fidelity}
+
+Dispatch count is distinct from successful instruction count and from
+accepted hinge count. A chunk starting at $k$ with $n>0$ requested epochs
+ends with
+\begin{equation}
+ k_{\rm next}=k+n,\qquad
+ \operatorname{epoch}(r_{\rm final})=k+n-1.
+ \label{eq:r17-final-epoch}
+\end{equation}
+These equations still hold if the lane halted or faulted earlier. The
+fused loop evaluates the later reference no-execution epochs too.
+
+If EMIT-HALT occurs in the final requested iteration, its receipt is freshly
+emitted and that payload commits once. If it occurs earlier, the final
+receipt is a later halted no-execution receipt; the feedback state still
+retains the earlier emission count and committed word. A HALT executed
+in the final iteration retains its successful instruction receipt,
+normalization, and lineage, with no successor change.
+
+A fault first raised in the final iteration retains that refusal's
+available instruction metadata. A fault already sticky before the last
+iteration produces the reference faulted no-execution receipt, including
+the appropriate default fields and final epoch. Raw initially halted
+state is not normalized to simplify this case. Existing word-state
+faults retain the exact reference ordering and effects.
+
+An optimization that merely breaks on HALT or fault can leave a stale
+receipt. Such a shortcut would need an additional proof that it constructs
+the exact final held state and receipt; the ordinary local loop needs
+no shortcut. A final receipt describes one dispatch. Cumulative accepted
+EMIT count is held separately by the feedback profile, and a final pure-VM
+receipt alone does not count earlier emissions. Recommitting an already
+consumed final receipt remains a hold.
+
+\subsection{Chunk composition and observation}
+
+For admitted lengths $a,b$, the same transition law gives
+\begin{equation}
+ F_{a+b}(z;P,k)=F_b\bigl(F_a(z;P,k);P,k+a\bigr).
+ \label{eq:r17-chunk-associativity}
+\end{equation}
+Hence any ordered partition of a requested run preserves its final
+state and total epoch count. Each completed chunk publishes an observation
+boundary. An application requiring a callback, state edit, sensor input,
+or receipt consumer after every logical epoch must choose chunk length
+one or preserve the needed finer boundary. Final-state equivalence is
+not identity of all intermediate global-memory traces.
+
+The native \code{VM.enqueue\_batch} accepts chunks from zero through
+256 epochs; zero holds and a larger chunk rejects before mutation.
+The feedback \code{run\_steps\_fused} admits a chunk size from one
+through 256, with default 32, and partitions the requested unsigned
+32-bit total count. A zero total holds state, receipt, and epoch while
+resetting its timing record; the chunk-size argument is still validated.
+The complete epoch range must fit before dispatch. These finite chunk
+limits are execution choices, not arithmetic approximations or permission
+to skip internal emissions. Each eligible internal EMIT reaches commit.
+
+\subsection{Exact LSYS rate division without signed overflow}
+
+LSYS divides each signed rate $x$ by $2^s$, truncated toward zero,
+where $s=\operatorname{clamp}(\mathrm{arg}_1,0,30)$.
+For its raw word $w$, let $b=w\gg31$. With all word negations
+evaluated modulo $2^{32}$, the shared transition uses
+\begin{equation}
+ m=\begin{cases}w&b=0,\\-w\pmod{2^{32}}&b=1,\end{cases}
+ \quad d=m\gg s,\quad
+ w'=\begin{cases}d&b=0,\\-d\pmod{2^{32}}&b=1.\end{cases}
+ \label{eq:r17-trunc-shift}
+\end{equation}
+The unsigned magnitude $m$ equals $|x|\leq2^{31}$, even for
+$x=-2^{31}$. Thus $d=\lfloor |x|/2^s\rfloor$, and sign restoration
+returns exactly the raw word of $\operatorname{trunc}(x/2^s)$.
+No overflowing signed negation is needed; shift zero preserves
+the minimum signed word. An arithmetic right shift of a negative
+signed value would generally implement a different rounding rule.
+
+This identity lowers the four LSYS rate divisions in the common
+reference/fused helper. It does not alter the phase update or replace
+PHI/TIME floor division. Equal subexpressions preserve the transition
+proof above; compiled instructions and timing remain separate evidence.
+
+\subsection{Texture reads, local storage, and evidence scope}
+
+The texture path continues to fetch immutable integer Cell48 records
+through raw element texture reads, including canonical key searches.
+The global path reads the same records. Neither introduces floating
+interpolation, filtered values, rasterization, or altered operator bits.
+Mutable lane state is held in local program variables during a chunk
+and published at its end.
+
+For $N>0$ coupled epochs, the reference uses $2N$ kernel launches
+without injection and $3N$ with injection; fixed chunk size $c$ reduces
+these to $\lceil N/c\rceil$ fused launches. Setup and readback are
+excluded from these counts. The internal logical epochs and accepted
+emissions remain the same; a launch-count reduction is not a measured
+speed ratio.
+
+Local variables do not establish physical register residency. Registers,
+spills to local memory, occupancy, cache hits, and scheduling depend on
+the compiled kernel and device. Their measurements are separate from
+this equivalence proof. A texture object alone promises neither cache
+hits nor speedup.
+
+Reference and fused comparisons must use matched seeds, initial states,
+profiles, epoch counts, and output boundaries. Setup, device batch,
+host dispatch/completion, final readback, and digest/output costs remain
+distinct. Comparing a trace-producing reference run with an unobserved
+fused batch would include an extra workload difference.
+
+R17 specializes execution of the finite word machine and its declared
+feedback. It does not lower all XOP expressions, move the exact rational
+affine event solver onto the GPU, supply cross-lane world synchronization,
+or establish physical accuracy. The inherited phase, winding, arithmetic,
+event, and physical-profile distinctions remain unchanged.

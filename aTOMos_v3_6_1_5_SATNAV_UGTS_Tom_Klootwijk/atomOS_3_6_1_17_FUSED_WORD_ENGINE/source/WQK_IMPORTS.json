@@ -1,0 +1,218 @@
+{
+  "source_directory": "C:\\TOM\\TOM_World_Query_Kernel_0_6_0_Tom_Klootwijk\\TOM_World_Query_Kernel_0_6_0_Tom_Klootwijk",
+  "version": "TOM World & Query Kernel 0.6.0",
+  "use": "Unmodified reference source and specifications; native CUDA and affine event integration are new R16 implementations",
+  "license": "No explicit project license found; user explicitly requested reuse of their source. Attribution and NOTICE preserved.",
+  "files": [
+    {
+      "path": "NOTICE.md",
+      "bytes": 2128,
+      "sha256": "5f1f564b7385977a0e7a0d743e79e734207d2c75dd25816d6347b9f64538c8d4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6891,
+      "sha256": "9a115a0446f82b185a44381acdf228d6fd3f4dc22573164df43fa7c0f1c8ffa4"
+    },
+    {
+      "path": "TOM_seed_genome_2026-09-01.txt",
+      "bytes": 244,
+      "sha256": "d1417a3136772c0cf3eddcd4962ce07d42cbf87616f7b5bae09fc652d9b807b5"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "97a5d6e540a6120d09c39ddb667e0e8e2bac7fcc2ffef813b82e08fd60365bce"
+    },
+    {
+      "path": "src/c/tomagi.c",
+      "bytes": 20124,
+      "sha256": "c88242ea069a78ca8fc52531f47182c8399fe6962152c58998a6a5731147a22d"
+    },
+    {
+      "path": "src/c/tomagi.h",
+      "bytes": 3720,
+      "sha256": "38489426f2a34ecf48040bf8c4e52f79ee61714f07d81885195e1476b27b2587"
+    },
+    {
+      "path": "src/c/tomagi_cli.c",
+      "bytes": 3885,
+      "sha256": "38cc611ca7671a92fde4e863c3c6e4dc625c022c6cb735d7c999ef72e25deff4"
+    },
+    {
+      "path": "src/gpu/tomagi_step.cl",
+      "bytes": 6704,
+      "sha256": "e8fb07848ec315b0dc4897c4fed3b74dc54940710f0edd95ba65a1700a05e07c"
+    },
+    {
+      "path": "src/gpu/tomagi_step.comp",
+      "bytes": 9028,
+      "sha256": "1187b02ddffe338400a04668dc6079ea6e78d8295db6bb39480a4baca062c9b9"
+    },
+    {
+      "path": "src/gpu/tomagi_step.wgsl",
+      "bytes": 8246,
+      "sha256": "f646528c0bfae086e1575f51a093121144b4b5956fd616ee69d8308797bde4f8"
+    },
+    {
+      "path": "spec/BINARY_FORMAT.md",
+      "bytes": 1916,
+      "sha256": "5593a150cc0f408e35643e7223ca91154cdfb93cd5639fbb5f70ce9d5b33289a"
+    },
+    {
+      "path": "spec/GPU_ABI.md",
+      "bytes": 1413,
+      "sha256": "87a2ecf10695fec3f4284d229af7c452cc020b28322901dc369e8d3752fa285f"
+    },
+    {
+      "path": "spec/TOMAGI_1_0_FORMAL_DEFINITION.md",
+      "bytes": 19912,
+      "sha256": "6278c607594f999554e93b135b392d9491d732ebcb735b1619a0d3a69e72b0d5"
+    },
+    {
+      "path": "spec/TOM_SEEDED_COMPILATION_1_0.md",
+      "bytes": 20626,
+      "sha256": "8c88fd93f04ff5ba085bd32e1a5c42274d93ba6feb1687cf0db9927aa02aa28a"
+    },
+    {
+      "path": "spec/TOM_WORLD_QUERY_KERNEL_0_4_REBUILT.md",
+      "bytes": 15328,
+      "sha256": "4a913c74e33f2dec606bd2c3afbbec18a86f8ee5dd6185ca637942db671d291c"
+    },
+    {
+      "path": "spec/TOM_LEARNER_0_2_WORLD_QUERY_KERNEL_0_6.md",
+      "bytes": 20870,
+      "sha256": "6df40e0451ea38b35c23f6633b7605382862699fe6268170c7b32c4aef018c0e"
+    },
+    {
+      "path": "spec/tom_seed_token_registry_1_0.json",
+      "bytes": 886,
+      "sha256": "5caa96342c280e7e8ae9f18ae8ddfbd0e3ce149059effabca001ad5eeb908d21"
+    },
+    {
+      "path": "spec/opcode_table.json",
+      "bytes": 2149,
+      "sha256": "c22941dec821f2642dc34a551dc2fe8367308aa7254d2ddd913a14b201be76ce"
+    },
+    {
+      "path": "spec/state64_layout.json",
+      "bytes": 2406,
+      "sha256": "6322b9e6127d99e193de0f04216d318e54051aacbe1423ccfe8eaacf89204c88"
+    },
+    {
+      "path": "spec/cell48_layout.json",
+      "bytes": 1781,
+      "sha256": "4aef894685430adff53829f2aae2d90044619ad462221583de51aaf9365a179f"
+    },
+    {
+      "path": "src/python/tomagi/__init__.py",
+      "bytes": 270,
+      "sha256": "79041891dcf3516337e8006561d6d23437ce301141220258812316fbcb73f2e5"
+    },
+    {
+      "path": "src/python/tomagi/core.py",
+      "bytes": 18928,
+      "sha256": "58c64eaa07e583c619b0c51aba61d7630561e94f911b82e49f99dde0f970f3a9"
+    },
+    {
+      "path": "src/python/tomagi/format.py",
+      "bytes": 2353,
+      "sha256": "e7265dbd4677a5a350ed3675207e4b15f38eafe6d4806328d1b7e971d6f00d55"
+    },
+    {
+      "path": "src/python/tomagi/canonical.py",
+      "bytes": 1702,
+      "sha256": "830ac16eb7fd517d9a06533d8ba87da7efef6fbd3ab58b83cde0e2395a87df40"
+    },
+    {
+      "path": "src/python/tomagi/compiler.py",
+      "bytes": 69668,
+      "sha256": "2e1f1b5f1e3f348a1e9ae3561062390a000b5f74120a5e238313676b0e32b368"
+    },
+    {
+      "path": "src/python/tomagi/formal.py",
+      "bytes": 43577,
+      "sha256": "ca472619fcb3e2d34c5ccaac8081bb3f60896cfd2f0c60297a4de2ad9872237e"
+    },
+    {
+      "path": "src/python/tomagi/materialize.py",
+      "bytes": 5013,
+      "sha256": "41689d2a01a303327fd60df66a243136e3385f3ba0418a7020e1d53e42bb64c0"
+    },
+    {
+      "path": "src/python/tom_world04r/solver.py",
+      "bytes": 13387,
+      "sha256": "4c763de3229ec63f4e77d519a54fb257b07739ac0c2c2eb9b382a6c24aa84e47"
+    },
+    {
+      "path": "src/python/tom_world04r/transition.py",
+      "bytes": 13617,
+      "sha256": "7d5857d14d023eaa7bf195d5bd801c86ccc2de8eaebd6e928018a946280b4c4a"
+    },
+    {
+      "path": "src/python/tom_world04r/model.py",
+      "bytes": 20964,
+      "sha256": "fffb6432f974d543bc137333c14721ee07c4af06edba14d114864d840dd9c223"
+    },
+    {
+      "path": "src/python/tom_world04r/baseline.py",
+      "bytes": 10885,
+      "sha256": "f66c07adaeb9270558e2b6f07d46f84b8db921af7d1131fa45223bb836fe68eb"
+    },
+    {
+      "path": "src/python/tom_world04r/journal.py",
+      "bytes": 30771,
+      "sha256": "0ece41355d7d85a347e6e260840fa84f332f02835df962ac61604e4ac79b89e5"
+    },
+    {
+      "path": "src/python/tom_world04r/index.py",
+      "bytes": 8500,
+      "sha256": "4184d596ff4689fa65936b2385fd055c583311ccd3dae0447ef964d5b338ced4"
+    },
+    {
+      "path": "src/python/tom_world03/rational.py",
+      "bytes": 4224,
+      "sha256": "91004ee7418a3ad33815039ffdd54d9032c2f9c6112e86b47ced5ef5c778b6c7"
+    },
+    {
+      "path": "src/python/tom_learner06/oracle.py",
+      "bytes": 10151,
+      "sha256": "bc2d4da01bf8b083548e47037e6b62303e099cee602a3c9ef6e2bd1e3360d53e"
+    },
+    {
+      "path": "tests/test_tomagi_runtime_contracts.py",
+      "bytes": 14515,
+      "sha256": "33a6742bf000c6e36a4a0e02833766ba667629dc3b9f7256375903fb171f3a7f"
+    },
+    {
+      "path": "tests/test_tomagi.py",
+      "bytes": 11474,
+      "sha256": "4bf4f46af3a407ac4e7a097eab45ca8420c1a7cf36867df49dbc2eaebaf478a8"
+    },
+    {
+      "path": "tests/test_seeded_compilation.py",
+      "bytes": 25022,
+      "sha256": "93be898675130304abb3e83dac4f9a458ae0478c2948d76f9037fe4591e5728e"
+    },
+    {
+      "path": "examples/polar_loop.json",
+      "bytes": 8650,
+      "sha256": "d1721835bff4ea091c57e299a33d8536588174f32c0ae1c8729369c750bf7201"
+    },
+    {
+      "path": "examples/polar_loop.tmg",
+      "bytes": 656,
+      "sha256": "26ac0a911ac50c9681cb381b158b4ebd07c527673f453f416cfff31ffd68eb73"
+    },
+    {
+      "path": "examples/nineteen_hinge.json",
+      "bytes": 503,
+      "sha256": "8409f1197faae4144e9c32c42bfe135563344c952da2ca94aaccf951f48e75db"
+    },
+    {
+      "path": "examples/exact19_rule.json",
+      "bytes": 2543,
+      "sha256": "de4784927a24ea9930959e5cc63ff1e0343321c2d4db763773ebe3cb7c3c8e6c"
+    }
+  ]
+}

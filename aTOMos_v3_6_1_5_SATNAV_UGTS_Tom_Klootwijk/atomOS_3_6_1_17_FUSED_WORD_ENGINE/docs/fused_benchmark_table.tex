@@ -1,0 +1,15 @@
+\begin{center}\small
+\begin{tabular}{@{}l r l r r r r@{}}
+\toprule
+Program & Lanes & Mode & Ref. tex. & Fused tex. & Tex. gain & Global gain\\
+ & & & \multicolumn{2}{c}{Device median (ms)} & \multicolumn{2}{c}{Reference/fused}\\\midrule
+3 cells & 1 & pure & 0.803 & 0.082 & 9.76$\times$ & 7.78$\times$\\
+3 cells & 1 & copy32 & 2.337 & 0.295 & 7.92$\times$ & 7.01$\times$\\
+3 cells & 4,096 & pure & 0.749 & 0.064 & 11.66$\times$ & 14.92$\times$\\
+3 cells & 4,096 & copy32 & 2.387 & 0.212 & 11.25$\times$ & 11.35$\times$\\
+3 cells & 262,144 & pure & 5.992 & 0.336 & 17.82$\times$ & 20.28$\times$\\
+3 cells & 262,144 & copy32 & 16.051 & 0.830 & 19.33$\times$ & 20.05$\times$\\
+48 MiB & 65,536 & pure & 3.003 & 0.897 & 3.35$\times$ & 4.21$\times$\\
+48 MiB & 65,536 & copy32 & 5.767 & 1.135 & 5.08$\times$ & 6.21$\times$\\
+\bottomrule
+\end{tabular}\end{center}
