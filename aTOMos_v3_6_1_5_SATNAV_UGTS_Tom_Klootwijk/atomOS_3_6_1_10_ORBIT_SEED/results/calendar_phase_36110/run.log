@@ -1,0 +1,101 @@
+{
+  "profile": "GREGORIAN-PHASE-AUDIT-R1",
+  "status": "passed",
+  "scope": "Uniform 86400-second GPST-labelled calendar formatting and exact integer time addresses. No UTC leap-second-table validation, orbital propagation outside seed domain, or 400-year physical forecast.",
+  "calendar": {
+    "years": [
+      2000,
+      2399
+    ],
+    "dates_in_cycle": 146097,
+    "included_next_boundary": "2400-01-01T00:00:00.000 GPST",
+    "midnights_checked": 146098,
+    "formatter_checks": 438293,
+    "month_starts_in_cycle": 4800,
+    "year_starts_in_cycle": 400,
+    "leap_days_in_cycle": 97,
+    "cycle_days": 146097,
+    "cycle_weekday_remainder": 0,
+    "first_tick_gpst_s": 630720000,
+    "next_boundary_tick_gpst_s": 13253500800,
+    "oracle": "Manual Gregorian month enumeration, March-based integer JDN, and independent January-based ordinal; no datetime used as expected-value oracle"
+  },
+  "extra_boundaries": {
+    "century_transitions": [
+      [
+        "1900-02-28T00:00:00.000 GPST",
+        "1900-03-01T00:00:00.000 GPST"
+      ],
+      [
+        "1999-12-31T00:00:00.000 GPST",
+        "2000-01-01T00:00:00.000 GPST"
+      ],
+      [
+        "2000-02-28T00:00:00.000 GPST",
+        "2000-02-29T00:00:00.000 GPST"
+      ],
+      [
+        "2000-02-29T00:00:00.000 GPST",
+        "2000-03-01T00:00:00.000 GPST"
+      ],
+      [
+        "2100-02-28T00:00:00.000 GPST",
+        "2100-03-01T00:00:00.000 GPST"
+      ],
+      [
+        "2200-02-28T00:00:00.000 GPST",
+        "2200-03-01T00:00:00.000 GPST"
+      ],
+      [
+        "2300-02-28T00:00:00.000 GPST",
+        "2300-03-01T00:00:00.000 GPST"
+      ],
+      [
+        "2399-12-31T00:00:00.000 GPST",
+        "2400-01-01T00:00:00.000 GPST"
+      ],
+      [
+        "2400-02-28T00:00:00.000 GPST",
+        "2400-02-29T00:00:00.000 GPST"
+      ],
+      [
+        "2400-02-29T00:00:00.000 GPST",
+        "2400-03-01T00:00:00.000 GPST"
+      ]
+    ],
+    "formatter_checks": 22,
+    "scope": "Individual century/epoch boundary cases, including next-cycle 2400 leap day"
+  },
+  "phase": {
+    "period_ticks": 16384,
+    "calendar_interval_wraps": 770433,
+    "adjacent_wrap_ticks_checked": 2311299,
+    "exhaustive_phase_cases": 49152,
+    "signed_large_integer_reference_cases": 210,
+    "largest_test_tick_magnitude": "10**100 + 16385",
+    "periodic_key_carry_cases": 6,
+    "daily_chart_records": 146098,
+    "integer_scope": "Arbitrary-size Python integer phase helper; not a claim that binary64 timestamps preserve arbitrary-size integer ticks"
+  },
+  "checks": 9519315,
+  "failure_count": 0,
+  "failures": [],
+  "elapsed_s": 8.136874499999976,
+  "source_sha256": {
+    "python/orbit_query.py": "8e1340922335ce16265cb22b62896bca2430a849f4541659280a515b002c9471",
+    "python/ugts.py": "ddccfb284c48c028a788b7597cdd27d8caa7e5819456993c1b42292ff9901fec",
+    "tools/validate_calendar_phase.py": "ff3d4c1b0239e7acf7b258f5353f9156ae0d8dccffd703a222efb1725984a7e1",
+    "tests/test_calendar_phase.py": "d50a5e446f910fd21e8dc3adcdc72a45613d33c1e0008fa06b5e6bc3e5db151d"
+  },
+  "seed_sha256": {
+    "examples/orbit/seeds/C03.orbseed": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+    "examples/orbit/seeds/C06.orbseed": "6ef34a15c13013354a909b12d2f7f0e8badf9c78fc17959be10f835b6c437d64",
+    "examples/orbit/seeds/CHANDRA.orbseed": "9beca3919475dfe9dc7e793c8da83dda3b7fdf70e676003ed51940f42239c568",
+    "examples/orbit/seeds/G05.orbseed": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+    "examples/orbit/confirmation_seeds/C03.orbseed": "1b0cf39ad71a1ec1739354dccd8c211497c531b147fc3ac70cf55f61b1ba840c",
+    "examples/orbit/confirmation_seeds/C06.orbseed": "4c963e6fdd40d6edb3d136517953bbe39e00240480498113cc22c6cfcc5c02ff",
+    "examples/orbit/confirmation_seeds/CHANDRA.orbseed": "61b4124629bee9c558eeabdd6bbbc9e0bb45d5b3020d76526e5c091dd3d5e2f0",
+    "examples/orbit/confirmation_seeds/G05.orbseed": "900bf67616fbbcf9892a105f98be385fe9ec1931e181ea42620161bcb1c573a5"
+  },
+  "runtime_changes": "none; verification tool and tests only"
+}

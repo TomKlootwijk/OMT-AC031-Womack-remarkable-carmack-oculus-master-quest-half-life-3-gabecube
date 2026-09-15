@@ -60,3 +60,9 @@ as the inner primitive; prepare edited feedback/stations without stale caches an
 native/Python model-domain and reference-surface behavior; retain valid numerical
 states under duplicate batch reuse; rebind new binaries/modules and evidence;
 and distinguish inherited physical accuracy from new execution measurements.
+
+Calendar verification must cover a complete 400-year Gregorian cycle rather
+than one January-to-December sequence, with leap/century transitions and the
+next cycle boundary. Absolute time and winding must survive phase/key wraps.
+This is a calendar/address requirement; it does not extend the physical orbit
+domain or validate UTC leap-second tables.

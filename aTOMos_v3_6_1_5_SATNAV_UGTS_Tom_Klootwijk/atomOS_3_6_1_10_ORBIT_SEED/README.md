@@ -15,6 +15,8 @@ Open `http://127.0.0.1:3619`. The release is 3.6.1.10; compatible seed schema ve
 
 See [the audited source decisions](docs/PHI_SOURCE_AUDIT.md), [native transport](docs/ORBIT_NATIVE.md), [seed/session input](docs/ORBIT_INPUT.md), and [release evidence](validation_results.json). The editable full formalization is `docs/satnav.tex`; build it with `tools/build_pdf.py`. Reproduce the packing comparison with `tools/benchmark_seed_words.py --out NEW_BENCHMARK.json` and the complete frozen-epoch comparison with `tools/validate_optimization_replay.py --worker bin/cpu/orbit_worker.exe --out NEW_REPLAY`.
 
+The calendar audit verifies all 146,097 days of the 2000-2399 Gregorian cycle, its next-year boundary, century exceptions and both packed key layouts. The absolute date continues when the phase wraps; winding retains elapsed cycles. All 9,519,315 exact comparisons pass. This calendar coverage does not extend the seeds' physical forecast domains. See [calendar arithmetic and coverage](docs/CALENDAR_PHASE.md); reproduce with `python tools/validate_calendar_phase.py`.
+
 The following 3.6.1.9 capability and accuracy record is preserved baseline documentation. Fresh optimization measurements and checks are indexed separately above.
 
 # aTOMos 3.6.1.9 — orbital seeds and timestamp queries

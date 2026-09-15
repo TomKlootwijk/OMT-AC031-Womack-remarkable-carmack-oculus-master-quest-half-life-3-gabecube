@@ -1,0 +1,90 @@
+\section{Gregorian calendar continuity and exact phase carry}
+\label{sec:calendar-phase}
+
+One January-to-December sequence does not cover the Gregorian leap rules. The
+calendar proceeds into the next year; a wrapped address phase does not restart
+the calendar. The new verification enumerates every date from 1 January 2000
+through 31 December 2399 and includes the following 1 January 2400 boundary.
+This is a calendar and address check, separate from satellite forecast accuracy.
+
+\subsection{Independent date arithmetic}
+For year $Y$, month $M$ and day $D$, the arithmetic oracle is
+\begin{align*}
+a&=\left\lfloor(14-M)/12\right\rfloor,\qquad
+y=Y+4800-a,\qquad m=M+12a-3,\\
+J&=D+\left\lfloor(153m+2)/5\right\rfloor+365y\\
+ &\quad+\left\lfloor y/4\right\rfloor-\left\lfloor y/100\right\rfloor
+ +\left\lfloor y/400\right\rfloor-32045,\\
+T&=86400\,[J-J(1980,1,6)].
+\end{align*}
+Here $J$ is the astronomical-noon Julian day number associated with a date;
+integer date differences produce the corresponding midnight tick $T$.
+Expected dates use explicit month enumeration, checked against both this
+March-based formula and an independent January-based ordinal sum. The expected
+value oracle does not use the runtime's \texttt{datetime} implementation.
+
+A year is leap when divisible by four, except centuries not divisible by 400.
+The complete cycle therefore has
+\[
+97=100-4+1\quad\hbox{leap days},\qquad
+400\cdot365+97=146097=7\cdot20871\quad\hbox{days}.
+\]
+The month/leap pattern and weekdays repeat after 400 years. The year number and
+absolute time continue. For each enumerated date, the arithmetic difference
+to the same date 400 years later is also checked; this does not add another
+400 years of formatter or physical-orbit coverage.
+
+\subsection{The phase wraps; absolute time continues}
+For integer reference $T_0$ and period $P=2^{14}$, the literal address helper uses
+\[
+(w,r)=\operatorname{divmod}(T-T_0,P),\qquad
+T=T_0+Pw+r,\quad 0\le r<P,\qquad f=r/P.
+\]
+Arithmetic right shift and a 14-bit mask form the independent test oracle.
+The fraction $f$ is exactly representable in binary64. All phase values are
+tested at three signed winding offsets, with additional signed tick/reference
+cases reaching $10^{100}+16385$. This arbitrary-size claim concerns the integer
+helper, not binary64 timestamp input.
+
+The contiguous and Morton key layouts store the remainder $r$ in their time
+field. A key may repeat after $P$ ticks while winding $w$ increases. Tests check
+both layouts against independently assembled bit strings and retain absolute
+tick, winding and remainder in every daily chart record. At a one-second tick
+period, the phase repeats after 16,384 seconds; it is not a calendar month or year.
+
+\subsection{Recorded result and limits}
+\begin{center}\begin{tabular}{@{}lr@{}}\toprule
+Check coverage & Count\\\midrule
+Dates in the complete cycle & 146,097\\
+Daily midnights including the next boundary & 146,098\\
+Month starts / year starts & 4,800 / 400\\
+Leap days & 97\\
+Daily GPST formatter comparisons & 438,293\\
+Additional century/epoch formatter comparisons & 22\\
+Phase wraps / adjacent tested ticks & 770,433 / 2,311,299\\
+Complete phase cases at three signed offsets & 49,152\\
+Large signed tick/reference cases & 210\\
+Complete daily chart/key records & 146,098\\\midrule
+Exact comparisons / failures & 9,519,315 / 0\\\bottomrule
+\end{tabular}\end{center}
+
+Seven focused regression tests also pass, including checks that deliberately
+broken calendar-reset and lost-winding substitutes are detected. Explicit
+century cases cover common years 1900, 2100, 2200 and 2300, and leap years 2000
+and 2400. The 2400 leap-day cases are separate checks outside the enumerated
+cycle. Daily checks exercise midnight, an exact 0.125-second fraction, and
+the preceding date's last whole second.
+
+The machine-readable result is
+\path{results/calendar_phase_36110/summary.json}; it records the checked source
+hashes and all eight unchanged seed hashes. Reproduce it with
+\texttt{python tools/validate\_calendar\_phase.py}.
+No runtime equations, floating-point propagation or force-model values changed.
+
+\begin{panel}
+The formatter labels uniform 86,400-second days as GPST. This audit does not
+validate a UTC leap-second table, predict future UTC offsets, certify
+sub-millisecond display accuracy, or expand any seed's physical timestamp
+domain. The calendar check supplies no 400-year orbit forecast or additional
+satellite-position accuracy guarantee.
+\end{panel}

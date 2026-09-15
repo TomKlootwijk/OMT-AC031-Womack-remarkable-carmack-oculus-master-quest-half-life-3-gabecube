@@ -8,6 +8,11 @@ mutable model identities. Updated formal equations, source decisions, input
 contracts, independent evidence and the complete PDF. Seed schema remains
 3.6.1.9; prior releases are preserved.
 
+Verified the full 400-year Gregorian calendar cycle, century boundaries and
+exact phase/winding continuity with 9,519,315 comparisons and no failures.
+The complete Python suite now passes 164 tests. Calendar coverage is separate
+from the declared physical orbit prediction domains.
+
 # 3.6.1.8 - live GPS receiver pipeline
 
 Added raw RTCM3/NTRIP/TCP and RINEX2/3 observations, streamed GPS1019 ephemerides,
