@@ -23,6 +23,15 @@ def selected_files():
 
 
 def main():
+    binding = json.loads((ROOT / 'source/SOURCE_BINDING.json').read_text(encoding='utf-8'))
+    supplied = ROOT / 'source' / binding['source_pdf']
+    if digest(supplied) != binding['source_sha256']:
+        raise ValueError('Supplied PDF digest differs from the source binding')
+    attachments = json.loads((ROOT / 'source/embedded/extraction_manifest.json').read_text(encoding='utf-8'))
+    for record in attachments:
+        path = ROOT / 'source/embedded' / record['name']
+        if path.stat().st_size != record['bytes'] or digest(path) != record['sha256']:
+            raise ValueError(f"Preserved attachment differs: {record['name']}")
     inherited = []
     for local in sorted((ROOT / 'docs').glob('*.tex')):
         parent = PARENT / 'docs' / local.name
@@ -32,10 +41,28 @@ def main():
         if original != copied:
             raise ValueError(f'Inherited document bytes differ: {local.name}')
         inherited.append({'path': f'docs/{local.name}', 'sha256': copied})
+    other_inherited = []
+    for folder in ('formal', 'results', 'docs/figures'):
+        for parent in sorted((PARENT / folder).rglob('*')):
+            if not parent.is_file():
+                continue
+            rel = parent.relative_to(PARENT)
+            local = ROOT / rel
+            if not local.exists():
+                continue
+            if digest(parent) != digest(local):
+                raise ValueError(f'Inherited source differs: {rel}')
+            other_inherited.append({'path': rel.as_posix(), 'sha256': digest(local)})
+    for local in sorted((ROOT / 'formal/inherited_r11').glob('*.md')):
+        if digest(local) != digest(PARENT / 'formal' / local.name):
+            raise ValueError(f'Grouped inherited Markdown differs: {local.name}')
     (ROOT / 'source/parent_preservation.json').write_text(json.dumps({
         'purpose': 'Document source provenance, not algorithm verification',
         'parent_commit': 'f5c2c9e4ab10d7c2aae08e2128eaf82b1d786d13',
         'inherited_tex_files_byte_identical': inherited,
+        'other_inherited_files_byte_identical': other_inherited,
+        'original_pdf_and_ten_embedded_attachments_match_source_binding': True,
+        'grouped_r11_markdown_matches_parent': True,
         'intentional_new_master_and_preamble': ['docs/satnav.tex', 'docs/preamble.tex'],
     }, indent=2) + '\n', encoding='utf-8')
     files = selected_files()

@@ -1,10 +1,43 @@
 {
   "purpose": "Document rendering and structural inspection, not algorithm validation",
   "pdf": "output/pdf/aTOMos_v3_6_1_12_Photonic_Interface_Formalization_Tom_Klootwijk.pdf",
-  "sha256": "0289dc3913abd8c4447c920920951261a7bbed6711abf0c9774481e80030c529",
+  "sha256": "482c941b6f17b7ceffebf3a01d0e7abe6311074e672d8f546989fab2e83d93a7",
   "pages": 145,
   "extractable_text_all_pages": true,
   "tex_layout_glyph_reference_warnings": [],
   "page_boundary_violations": [],
-  "visual_review": "Pending visual inspection of this exact PDF revision"
+  "visual_review": "Complete: all 145 pages visually covered; all new technical pages individually inspected; final changed pages 32\u201333 reinspected",
+  "visual_coverage": {
+    "root": [
+      "Full pages1,6\u20139,24,31\u201333",
+      "Contact sheets1,2,6,25: pages1\u201312,31\u201336,145"
+    ],
+    "word_reviewer": [
+      "Full pages10\u201316",
+      "Contact sheets19\u201324: pages109\u2013144"
+    ],
+    "optics_reviewer": [
+      "Full pages17\u201322",
+      "Contact sheets13\u201318: pages73\u2013108"
+    ],
+    "physical_reviewer": [
+      "Full pages23\u201330",
+      "Contact sheets7\u201312: pages37\u201372"
+    ]
+  },
+  "prior_reviewed_pdf_sha256": "0289dc3913abd8c4447c920920951261a7bbed6711abf0c9774481e80030c529",
+  "final_render_comparison": {
+    "changed_pages": [
+      32,
+      33
+    ],
+    "other_143_page_png_files_byte_identical": true,
+    "changed_pages_reinspected_by": "root"
+  },
+  "resolved_findings": [
+    "Wide pinion display split into complete vector/row equations",
+    "Modal coefficient paragraph spacing corrected without warning suppression",
+    "Final result panel kept together and editable derivation index added on page33",
+    "Reported missing header on page24 not reproduced: final rendered page24 has complete running header; final page bytes match prior render"
+  ]
 }

@@ -85,7 +85,35 @@ source's programs or reclassify their outputs as new evidence. The release
 includes the editable source, provenance, review records and distribution
 manifest so each adopted statement can be traced to its source or derivation.
 
-\begin{panel}
+\clearpage
+\subsection{Editable derivation and source index}
+The following files make the new derivations independently traceable without
+searching the inherited chapters. All paths are relative to the R12 release.
+The original source equations and their adopted hypotheses are mapped in the
+corresponding Markdown records; the TeX chapters supply the typeset equations.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{37mm}Y@{}}
+\toprule Topic & Editable record\\\midrule
+Aggregate and hardware proof & \code{docs/want\_integration.tex}\\
+Word, pinion and event adapter & \code{formal/WORD\_AND\_EVENT\_MAPPING.md}\\
+Optics and passive construction & \code{formal/PHOTONIC\_REALIZATION.md}\\
+Mechanics, readout and heat & \code{formal/PHYSICAL\_OPERATOR\_LIFT.md}\\
+Source decisions and coverage & \code{formal/INTEGRATION\_DECISIONS.md}\\
+Original PDF binding & \code{source/SOURCE\_BINDING.json}\\
+Embedded source hashes & \code{source/embedded/extraction\_manifest.json}\\
+Delivery and source integrity & \code{source/release\_manifest.json}\\
+\bottomrule
+\end{tabularx}\end{center}
+
+The distribution preserves the supplied Operator I PDF and its embedded parent,
+rim and strain documents, editable TeX, reference programs, source results and
+manifests. These are original evidence, with their original wording. R12's
+integration decisions identify which definitions are adopted and which claims
+remain conditional or unsupported. The preserved attachments are not rewritten
+to appear as new measurements.
+
+\begin{panel}[unbreakable]
 \textbf{Result.} WANTWOMBAN materially helps formalize an optical sensing and
 feedback interface and supplies an ideal passive candidate for a scaled pinion.
 The exact seed can retain the relevant operators and input lineage losslessly.
