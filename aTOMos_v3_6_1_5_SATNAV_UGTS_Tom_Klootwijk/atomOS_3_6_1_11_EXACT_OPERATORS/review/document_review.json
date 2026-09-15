@@ -1,0 +1,96 @@
+{
+  "purpose": "Document rendering and structural inspection, not algorithm validation",
+  "pdf": "output/pdf/aTOMos_v3_6_1_11_Exact_Operator_Seed_Formalization_Tom_Klootwijk.pdf",
+  "sha256": "2cfc3235c4ad018b9deb5795032b04e1fd8337b0fe1d6d99f4767d7aab424658",
+  "pages": 115,
+  "extractable_text_all_pages": true,
+  "tex_layout_glyph_reference_warnings": [],
+  "page_boundary_violations": [],
+  "visual_review": "All 115 pages inspected in rendered contact sheets, with dense equations, tables, code, plots and references inspected individually. No visible clipping, overlap, missing glyphs or material formatting defects remain.",
+  "status": "reviewed",
+  "coverage": [
+    {
+      "pages": "1-24",
+      "reviewer": "registry and attitude reviewer",
+      "full_pages": [
+        1,
+        10,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "pages": "25-48",
+      "reviewer": "primary reviewer",
+      "full_pages": [
+        27,
+        34,
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "pages": "49-84",
+      "reviewer": "physical-domain reviewer",
+      "full_pages": [
+        52,
+        53,
+        56,
+        58,
+        59,
+        62,
+        63,
+        66,
+        68,
+        69,
+        72,
+        73,
+        75,
+        78,
+        80,
+        82,
+        84
+      ]
+    },
+    {
+      "pages": "85-115",
+      "reviewer": "core-contract reviewer",
+      "full_pages": [
+        85,
+        88,
+        90,
+        93,
+        95,
+        96,
+        98,
+        100,
+        101,
+        110,
+        112,
+        113,
+        114,
+        115
+      ]
+    }
+  ],
+  "final_layout_revision": {
+    "change": "Shortened a sentence to remove a one-word carryover at the top of page 44",
+    "previous_pdf_sha256": "2db1f61b14324d7df48ec609f0ebd4e7a9f68bb9fa2ec790a53fb76826992ea0",
+    "changed_rendered_pages": [
+      43,
+      44
+    ],
+    "unchanged_rendered_pages_byte_identical": 113,
+    "changed_pages_reinspected": true
+  },
+  "algorithm_tests": "Not run; this report inspects document artifacts only",
+  "renderer": "Poppler pdftoppm, 100 dpi PNG",
+  "typesetter": "Tectonic 0.17.0, newpx Type1 text and math"
+}

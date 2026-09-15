@@ -1,0 +1,256 @@
+{
+  "version": "3.6.1.11",
+  "purpose": "Distribution file integrity; no proposed arithmetic is executed",
+  "excludes": [
+    "this manifest",
+    "distribution archive",
+    "temporary document build and render files"
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 37,
+      "sha256": "01190cd5db8d66316c14414592c19944af778e3206a0aa6f304e3153d4948a64"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 90,
+      "sha256": "01a66acb78582568e23a06c8e8515c3ee507fb3b61f66b12e2afbe654a0ce683"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 559,
+      "sha256": "d23bdaf93c7af47891754e3f31fa69c66b2e2650c97ff8fae7a450166cff2a85"
+    },
+    {
+      "path": "docs/calendar_phase.tex",
+      "bytes": 4479,
+      "sha256": "4bcdb0e26b1dfc2d1d9bd9961dc47b75ad5a0f328fde097741f68cceb686923b"
+    },
+    {
+      "path": "docs/coupled.tex",
+      "bytes": 15088,
+      "sha256": "65e1fd9c262788fc5c8c099b54cfede8d4c8814abe78c3059d7b225598c65a23"
+    },
+    {
+      "path": "docs/coupled_validation.tex",
+      "bytes": 5464,
+      "sha256": "4682f1304f6dc8c04236c9a60d584937bee4134f8ce09853e95323c8e87111b7"
+    },
+    {
+      "path": "docs/exact_completion.tex",
+      "bytes": 4878,
+      "sha256": "48c794a9bf5075497d5924f346f349f9be7e9191246e3d7aee5a1e4d652abac3"
+    },
+    {
+      "path": "docs/exact_core.tex",
+      "bytes": 27742,
+      "sha256": "df7ff42719008603927ee2b884052e2c052f4c1ae3b8ff312d63205ad82ebf9c"
+    },
+    {
+      "path": "docs/exact_domains.tex",
+      "bytes": 40135,
+      "sha256": "5b60d81e09b10634e4d26c55faf905d636ca7b55cd15c7898a20b78f7368bab0"
+    },
+    {
+      "path": "docs/exact_madgwick.tex",
+      "bytes": 21901,
+      "sha256": "64708267e53c135f7be9ca1ac882c78117ded0688c525c55813c7adf569c291c"
+    },
+    {
+      "path": "docs/exact_registry.tex",
+      "bytes": 34402,
+      "sha256": "c4f8bc070baf0a8bf23abefbf9dda355da6d1fdc489c76432bae26d9fff690a8"
+    },
+    {
+      "path": "docs/exact_strategy.tex",
+      "bytes": 12669,
+      "sha256": "ccc0d5f957942ea6e869a65375ecf49b67317437649f8a61733f94d67a6af69c"
+    },
+    {
+      "path": "docs/figures/live_position_evidence.png",
+      "bytes": 341969,
+      "sha256": "dc58b74b7fc9af152674a4c5c67f125719cfb7fd010347cefac831dc939d6636"
+    },
+    {
+      "path": "docs/live.tex",
+      "bytes": 10805,
+      "sha256": "77c764de2c2f29cab1e497aae4c3ee570902bbbe7f7d289a5be0b5a307805fff"
+    },
+    {
+      "path": "docs/live_equations.tex",
+      "bytes": 13618,
+      "sha256": "3140b3778ff4742165b6d1707e0e824be089c93a4d8e80234afefc02b73ed1c6"
+    },
+    {
+      "path": "docs/live_validation.tex",
+      "bytes": 7037,
+      "sha256": "3483208205dcef0ceaef761508475f5292c6c21fa95f42bbfa2a19a4a31d22ca"
+    },
+    {
+      "path": "docs/orbit.tex",
+      "bytes": 19923,
+      "sha256": "99f51079efb50c2f01820e9fe12098ff208711615087101cbfa6488bf6a01454"
+    },
+    {
+      "path": "docs/orbit_runtime_validation.tex",
+      "bytes": 3468,
+      "sha256": "0a4d4250b0899964a53c73107dab700bcad11f1d40b32e37107b72272f334b96"
+    },
+    {
+      "path": "docs/orbit_validation.tex",
+      "bytes": 15335,
+      "sha256": "a77490d641d89f46d41a7789cb5603997d26d8c39f520d4d94840edd8ea7ff0e"
+    },
+    {
+      "path": "docs/phi_source_audit.tex",
+      "bytes": 7055,
+      "sha256": "963737829e4073aba200a9f08d7a778e366060f8fd0d4f2b1e421482da74b307"
+    },
+    {
+      "path": "docs/preamble.tex",
+      "bytes": 3213,
+      "sha256": "18972281490fd88ab751bf04178e9b733a48e5fdd2e5efec758fc27aef0492cc"
+    },
+    {
+      "path": "docs/retained_satnav_body.tex",
+      "bytes": 56778,
+      "sha256": "295262d0a9eaa85a68af66b70ec934faecedf8a0f25c600a4db61ef2eae8b9b9"
+    },
+    {
+      "path": "docs/satnav.tex",
+      "bytes": 4403,
+      "sha256": "2aad71ccfec33dd7d46ef67c67f7b2cce1da08584a587c6185ac2061eac84ae4"
+    },
+    {
+      "path": "docs/seed_optimization.tex",
+      "bytes": 8671,
+      "sha256": "ba7e609b636a8334736505c646f282703bd6bc6d87acfbe9946904a24f9b24e5"
+    },
+    {
+      "path": "docs/self_reference.tex",
+      "bytes": 9547,
+      "sha256": "77ca8915b7b08abbe921361e299e2f223a3c0870ab4cb88df4645e50475458d9"
+    },
+    {
+      "path": "docs/validation_current.tex",
+      "bytes": 2938,
+      "sha256": "8d27b17af9a5bd2ad67ad405adea3a2e8303348184326c1000256ed0def7f0d4"
+    },
+    {
+      "path": "formal/COVERAGE_AND_PROOFS.md",
+      "bytes": 5471,
+      "sha256": "04c8c1527b6504324c57b65a41c211a50c18fbdf1d81cd991ffb3a7fbe00be3d"
+    },
+    {
+      "path": "formal/DOMAIN_LIFT.md",
+      "bytes": 10889,
+      "sha256": "0d3e40cdc532701463a37b734ab22e2150442709b6335b2402e7a648cb5ac533"
+    },
+    {
+      "path": "formal/MADGWICK_DERIVATION.md",
+      "bytes": 18662,
+      "sha256": "c699291e09651ceea3215b9dd9a094384aea38cf1a7964267955c1a131365e65"
+    },
+    {
+      "path": "formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "formal/SCOPE_AND_CLAIMS.md",
+      "bytes": 3850,
+      "sha256": "5ade9d7844aa41f61f673dd90a2988909af9c3967a286f111cddecaf17ac8642"
+    },
+    {
+      "path": "formal/STRATEGY_REVISIONS.md",
+      "bytes": 7535,
+      "sha256": "d065cdaca9ac538f871649abd7a7efb123cfc1a8aeb88f2d5e166aaa0be396f6"
+    },
+    {
+      "path": "output/pdf/aTOMos_v3_6_1_11_Exact_Operator_Seed_Formalization_Tom_Klootwijk.pdf",
+      "bytes": 958662,
+      "sha256": "2cfc3235c4ad018b9deb5795032b04e1fd8337b0fe1d6d99f4767d7aab424658"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2667,
+      "sha256": "733756010686cf8351171dabc740a8d773c02ba3ef56c229d293bafd64ae1b50"
+    },
+    {
+      "path": "results/orbit_accuracy_confirmation_cpu_verified/forecast_error_curves.pdf",
+      "bytes": 30336,
+      "sha256": "ebe0f49b5eaae192b6001c51a8a8c3058531ce0a9f3fc041c9c56fb504d5f492"
+    },
+    {
+      "path": "results/orbit_accuracy_confirmation_cpu_verified/forecast_error_curves.png",
+      "bytes": 169593,
+      "sha256": "7e191bce21eea7214ce4f3187b6d9921d65114fc14bac9b4238f71b99936ad8e"
+    },
+    {
+      "path": "results/orbit_accuracy_confirmation_cpu_verified/forecast_error_first_day.png",
+      "bytes": 130123,
+      "sha256": "dafcb2981ade69cab98a33d87c88a8b9bc23172fcf5db4c195c1d93769f65cd2"
+    },
+    {
+      "path": "results/orbit_accuracy_r2_cpu_verified/forecast_error_curves.pdf",
+      "bytes": 32935,
+      "sha256": "6967e18194dc0a150a74fade7abe8239faef034b5de64f9f2118eb70363a115f"
+    },
+    {
+      "path": "results/orbit_accuracy_r2_cpu_verified/forecast_error_curves.png",
+      "bytes": 190804,
+      "sha256": "7129df9cb7ff00feb1362aabe928336ea8765925dfa69221fa7c709c5f69d70b"
+    },
+    {
+      "path": "results/orbit_accuracy_r2_cpu_verified/forecast_error_first_day.png",
+      "bytes": 145621,
+      "sha256": "e32db041d153f326ad596b59ba2d9f4c7a79e1359f27bb057fb2d1f5749b87cd"
+    },
+    {
+      "path": "review/document_review.json",
+      "bytes": 2331,
+      "sha256": "d91253a019cfdbb7333f9aa1f4409ce6e7fe825272345b4d7283e30d4d6fc320"
+    },
+    {
+      "path": "review/logical_review.md",
+      "bytes": 5849,
+      "sha256": "b354a2b5ecd8e97c5551aaae00c0c373dcd6e105a55c975a0eff1af761d6eadb"
+    },
+    {
+      "path": "source/parent_binding.json",
+      "bytes": 227,
+      "sha256": "799b449b4caca25ec31ed38e400d06100cb33c16b60948bdb9e40527b91c72dc"
+    },
+    {
+      "path": "source/parent_preservation.json",
+      "bytes": 2235,
+      "sha256": "e69c2510e5d1cf06bcad0c27de56eb87b669c17f741632e31b74fdd95425791c"
+    },
+    {
+      "path": "source/REFERENCES.md",
+      "bytes": 2305,
+      "sha256": "0cc6056f20ff8cb0c7c202bc191a4f2605759bf40b3b6f1f2611214f03923d23"
+    },
+    {
+      "path": "tools/build_pdf.py",
+      "bytes": 897,
+      "sha256": "5c20dbf9b680265480d66cc7cb875fd98702172cdf8c45f3c60355184c451e61"
+    },
+    {
+      "path": "tools/package_release.py",
+      "bytes": 2940,
+      "sha256": "6664e881c669b7a47da5146a49c82e4b2f61f4a4b850cf9ddee05fbdfb8de985"
+    },
+    {
+      "path": "tools/review_pdf.py",
+      "bytes": 3160,
+      "sha256": "5de8b2168ae93ddaaeee418dc22aaa4cefed48060f09fa6959173a79b74c8bd7"
+    },
+    {
+      "path": "VERSION.json",
+      "bytes": 429,
+      "sha256": "81d2112f6b9ad1a039e3f6e61e40664fe76da91ea30a7cd797bf8f83ff4583be"
+    }
+  ]
+}

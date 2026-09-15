@@ -1,0 +1,66 @@
+{
+  "purpose": "Document source provenance, not algorithm verification",
+  "parent_commit": "090c0fa",
+  "inherited_tex_files_byte_identical": [
+    {
+      "path": "docs/calendar_phase.tex",
+      "sha256": "4bcdb0e26b1dfc2d1d9bd9961dc47b75ad5a0f328fde097741f68cceb686923b"
+    },
+    {
+      "path": "docs/coupled.tex",
+      "sha256": "65e1fd9c262788fc5c8c099b54cfede8d4c8814abe78c3059d7b225598c65a23"
+    },
+    {
+      "path": "docs/coupled_validation.tex",
+      "sha256": "4682f1304f6dc8c04236c9a60d584937bee4134f8ce09853e95323c8e87111b7"
+    },
+    {
+      "path": "docs/live.tex",
+      "sha256": "77c764de2c2f29cab1e497aae4c3ee570902bbbe7f7d289a5be0b5a307805fff"
+    },
+    {
+      "path": "docs/live_equations.tex",
+      "sha256": "3140b3778ff4742165b6d1707e0e824be089c93a4d8e80234afefc02b73ed1c6"
+    },
+    {
+      "path": "docs/live_validation.tex",
+      "sha256": "3483208205dcef0ceaef761508475f5292c6c21fa95f42bbfa2a19a4a31d22ca"
+    },
+    {
+      "path": "docs/orbit.tex",
+      "sha256": "99f51079efb50c2f01820e9fe12098ff208711615087101cbfa6488bf6a01454"
+    },
+    {
+      "path": "docs/orbit_runtime_validation.tex",
+      "sha256": "0a4d4250b0899964a53c73107dab700bcad11f1d40b32e37107b72272f334b96"
+    },
+    {
+      "path": "docs/orbit_validation.tex",
+      "sha256": "a77490d641d89f46d41a7789cb5603997d26d8c39f520d4d94840edd8ea7ff0e"
+    },
+    {
+      "path": "docs/phi_source_audit.tex",
+      "sha256": "963737829e4073aba200a9f08d7a778e366060f8fd0d4f2b1e421482da74b307"
+    },
+    {
+      "path": "docs/retained_satnav_body.tex",
+      "sha256": "295262d0a9eaa85a68af66b70ec934faecedf8a0f25c600a4db61ef2eae8b9b9"
+    },
+    {
+      "path": "docs/seed_optimization.tex",
+      "sha256": "ba7e609b636a8334736505c646f282703bd6bc6d87acfbe9946904a24f9b24e5"
+    },
+    {
+      "path": "docs/self_reference.tex",
+      "sha256": "77ca8915b7b08abbe921361e299e2f223a3c0870ab4cb88df4645e50475458d9"
+    },
+    {
+      "path": "docs/validation_current.tex",
+      "sha256": "8d27b17af9a5bd2ad67ad405adea3a2e8303348184326c1000256ed0def7f0d4"
+    }
+  ],
+  "intentional_new_master_and_preamble": [
+    "docs/satnav.tex",
+    "docs/preamble.tex"
+  ]
+}
