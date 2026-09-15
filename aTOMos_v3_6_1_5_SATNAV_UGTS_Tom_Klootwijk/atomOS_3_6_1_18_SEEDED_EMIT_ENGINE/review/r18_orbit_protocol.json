@@ -1,0 +1,1921 @@
+{
+  "schema": "ATOMOS-OREKIT-MATCHED-FORECAST-R1",
+  "frozen_utc": "2026-09-15T15:19:11.947777+00:00",
+  "status_at_freeze": "Inputs and sample selections frozen before R18 numerical comparison results",
+  "horizon_hours": [
+    1,
+    6,
+    12,
+    24,
+    48,
+    72,
+    168
+  ],
+  "selection": "Every available primary target row strictly after model epoch and within its declared future domain; no time interpolation or gap filling",
+  "execution": "Same initial state, frozen forces, forcing coefficients, frame and GPST offsets; native R2 CPU/CUDA versus an external Orekit adapter",
+  "timing_match": "Engine times_s must equal the frozen IEEE-754 decoded request times exactly; nearest reference row substitution is rejected",
+  "python_runtime": {
+    "version": "3.13.11",
+    "numpy": "2.1.2",
+    "pyerfa": "2.0.1.5"
+  },
+  "native_binaries": {
+    "cpu": "atomOS_3_6_1_10_ORBIT_SEED/bin/cpu/orbit_worker.exe",
+    "cuda": "atomOS_3_6_1_10_ORBIT_SEED/bin/cuda/orbit_worker.exe"
+  },
+  "limits": [
+    "The January and February 2025 sets were measured in R10. Neither is a newly blind confirmation set for R18.",
+    "Models remain frozen; no later target position enters fitting, parameter selection, initial state, force forcing or frame construction in this comparison.",
+    "Provider orbit products are retrospective and may use later observations internally. Past target timestamps do not establish real-time model availability.",
+    "Precise orbit products and Horizons are external references, not exact truth. No state covariance or certified position bound is provided by this experiment.",
+    "Samples are correlated and discrete. Reported errors do not certify continuous-time bounds, general future accuracy or operational navigation availability.",
+    "A common frozen GCRS-to-ECEF transform is used to score GNSS states. This deliberately matches frame approximations; it does not validate future EOP accuracy.",
+    "Horizons geocentric ICRF axes are compared with model GCRS orientation. Omitted relativistic coordinate distinctions are not certified by this comparison.",
+    "No clock, orientation, spatial alignment, orbit refit or post-hoc time shift is estimated from future reference rows.",
+    "Native batch timing includes worker startup, model initialization, queries and teardown. One timing sample is diagnostic and does not establish a speed ranking against Java.",
+    "SPICE ephemeris interpolation is a separate representation experiment; interpolating future reference samples is not a forward forecast."
+  ],
+  "cases": [
+    {
+      "case_id": "jan_G05",
+      "object_id": "G05",
+      "orbit_class": "MEO",
+      "period": "jan",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/G05.json",
+      "model_sha256": "29974b357a55a6d0459e5ebf92d4cf1a37aa90907f69a9896de8ea815be1a3a2",
+      "physical_model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz"
+      ],
+      "secondary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250010000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250020000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250030000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250040000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250050000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250060000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250070000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250080000_01D_05M_ORB.SP3.gz"
+      ],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/bulletina-xxxvii-052.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\bulletina-xxxvii-052.txt",
+        "sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+        "published_date": "2024-12-26",
+        "cutoff_utc": "2025-01-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 30.0,
+        "checkpoint_stride_steps": 120,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -259200.0,
+        "training_end_s": 0.0,
+        "training_rows": 865,
+        "fitted_rows": 145,
+        "fit_reference_anchor_s": -129600.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 16,
+        "training_rms_3d_m": 0.26439431211772085,
+        "training_max_3d_m": 0.5305350841838358,
+        "parameter_values_scaled": [
+          -0.0003331758057465665,
+          -0.00045770691057273315,
+          0.0005935022869964303,
+          8.381711474283268e-05,
+          -0.00011901561159550328,
+          -7.014412501251679e-05,
+          0.9909589253740526,
+          0.0002388911819838652,
+          0.0029935076957412795,
+          0.001357422373911495
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          7982148.643968589,
+          -13195629.080171946,
+          -21806645.412639543,
+          2801.531782062194,
+          2588.5705091347522,
+          -538.9916526540117
+        ],
+        "satellite": "G05",
+        "orbit_class": "MEO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243600000_01D_05M_ORB.SP3.gz",
+            "sha256": "911ac14500e898fc89658e93e58eb0d3a8c775a89d7efc6f085281d7ae016fd6"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+            "sha256": "62323eb9ff1fdb8f8dcd501add09c465378806438504395bfc7a6d335019fb73"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+            "sha256": "bb4cc49c539a1c014a1bece050b1373bb0d693a11ff8ebe8249b93fad74b7737"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+            "sha256": "2690c8bdaafc0dd1ba22fd44d569a91229204244c7f7383a2ea39bd9e0561495"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+            "sha256": "ed95f3638a9dfa1290f9aeab48eeaff4fc0993d2feb3ab54b970e36e9c01952f"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+            "sha256": "ed849eca25cd4042b0e59b25b2e2ab16c42ce93fc4f3373c1d3c48a3db3d29ae"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+            "sha256": "950f0ce7b4e75795aaa8123f16e7f589828db479c2dbfb6f6d27b26e068972f3"
+          },
+          {
+            "path": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+            "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516"
+          }
+        ],
+        "training_source": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "training_source_sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+        "selected_window_days": 3.0,
+        "internal_selection": "minimize maximum Jan1 residual; all Jan2-Jan9 target rows excluded",
+        "outer_benchmark": "Previously inspected R1 comparative benchmark; not blind new data",
+        "elapsed_s": 69.25632819999737,
+        "selection_report": "G05_selection.json"
+      },
+      "cutoff_gpst_s": 1419811200.0,
+      "sample_count": 2016,
+      "first_seconds": 300.0,
+      "last_seconds": 604800.0,
+      "maximum_sample_gap_seconds": 300.0,
+      "times_sha256": "74804f909c4d30feedc5ed3e6b834e10f6dd2be6c4ef4470948651d66e717ea8",
+      "reference_positions_sha256": "19af0536d6e88cb7eb867b4a489fd23a624b21634a8e7013eafb01c0634c5552",
+      "reference_frames": [
+        "IGS20_ECEF"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+            "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+            "sha256": "b621496c51ff39c68966dbb81b9a23b9ea0157d9d6edb484b7decd84a7b6efc2",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+            "sha256": "e323f161a666f7cfe879b852279df96a97b613af3acd352047881d85a32d4a34",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+            "sha256": "2b91a83a750d3ce7153f60627ccb4e241a191987a8d2baf765114d59632e7fa5",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+            "sha256": "fc872a1ee3c4cd09044d4b97c28067adeef9e3d8335e76902ccfefe549406c4c",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+            "sha256": "22819dea348770a047a711dcec73d4eb18f2b26e33dd835d25dde6ff97f58f83",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+            "sha256": "76fdcc79c40a3f67d739134a6adb2350e12005e89b19ca0430ace3a73dc141aa",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+            "sha256": "a08b55b90e7088b9029f56ef7ca4a8929efb34edfa9647bc5bbe7acec537a791",
+            "selected_records": 289,
+            "frame": "IGS20"
+          }
+        ],
+        "duplicate_convention": "Earlier filename wins",
+        "duplicate_details": [
+          {
+            "gpst_s": 1419811200.0,
+            "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.02722131461024456
+          },
+          {
+            "gpst_s": 1419897600.0,
+            "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.06300000048109466
+          },
+          {
+            "gpst_s": 1419984000.0,
+            "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.04370354700464417
+          },
+          {
+            "gpst_s": 1420070400.0,
+            "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.043462630505512884
+          },
+          {
+            "gpst_s": 1420156800.0,
+            "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.040012497762961854
+          },
+          {
+            "gpst_s": 1420243200.0,
+            "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.060942594988153846
+          },
+          {
+            "gpst_s": 1420329600.0,
+            "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.05492722608834823
+          }
+        ],
+        "frames": [
+          "IGS20"
+        ]
+      }
+    },
+    {
+      "case_id": "jan_C03",
+      "object_id": "C03",
+      "orbit_class": "GEO",
+      "period": "jan",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/C03.json",
+      "model_sha256": "7fa68b5a83ce167517892923c943af7d2d2fc77060a95629d100057d24786d1c",
+      "physical_model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz"
+      ],
+      "secondary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250010000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250020000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250030000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250040000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250050000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250060000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250070000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250080000_01D_05M_ORB.SP3.gz"
+      ],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/bulletina-xxxvii-052.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\bulletina-xxxvii-052.txt",
+        "sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+        "published_date": "2024-12-26",
+        "cutoff_utc": "2025-01-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 30.0,
+        "checkpoint_stride_steps": 120,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -259200.0,
+        "training_end_s": 0.0,
+        "training_rows": 865,
+        "fitted_rows": 145,
+        "fit_reference_anchor_s": -129600.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 21,
+        "training_rms_3d_m": 0.8570799980169898,
+        "training_max_3d_m": 2.4416288848874066,
+        "parameter_values_scaled": [
+          -0.0017043478149065118,
+          0.0010664684193706561,
+          -0.0003473517819505449,
+          0.00017608038855769717,
+          0.0003334860566361154,
+          0.00016953284616976218,
+          1.116043682916708,
+          0.0015634698321305121,
+          0.0019165418644106088,
+          -0.10046716549722494
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          36272790.611262694,
+          21417458.59853441,
+          -902199.5153941127,
+          -1563.069817166706,
+          2648.975923488195,
+          84.67694616384887
+        ],
+        "satellite": "C03",
+        "orbit_class": "GEO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243600000_01D_05M_ORB.SP3.gz",
+            "sha256": "911ac14500e898fc89658e93e58eb0d3a8c775a89d7efc6f085281d7ae016fd6"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+            "sha256": "62323eb9ff1fdb8f8dcd501add09c465378806438504395bfc7a6d335019fb73"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+            "sha256": "bb4cc49c539a1c014a1bece050b1373bb0d693a11ff8ebe8249b93fad74b7737"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+            "sha256": "2690c8bdaafc0dd1ba22fd44d569a91229204244c7f7383a2ea39bd9e0561495"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+            "sha256": "ed95f3638a9dfa1290f9aeab48eeaff4fc0993d2feb3ab54b970e36e9c01952f"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+            "sha256": "ed849eca25cd4042b0e59b25b2e2ab16c42ce93fc4f3373c1d3c48a3db3d29ae"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+            "sha256": "950f0ce7b4e75795aaa8123f16e7f589828db479c2dbfb6f6d27b26e068972f3"
+          },
+          {
+            "path": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+            "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516"
+          }
+        ],
+        "training_source": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "training_source_sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+        "selected_window_days": 3.0,
+        "internal_selection": "minimize maximum Jan1 residual; all Jan2-Jan9 target rows excluded",
+        "outer_benchmark": "Previously inspected R1 comparative benchmark; not blind new data",
+        "elapsed_s": 90.13285949999408,
+        "selection_report": "C03_selection.json"
+      },
+      "cutoff_gpst_s": 1419811200.0,
+      "sample_count": 2016,
+      "first_seconds": 300.0,
+      "last_seconds": 604800.0,
+      "maximum_sample_gap_seconds": 300.0,
+      "times_sha256": "74804f909c4d30feedc5ed3e6b834e10f6dd2be6c4ef4470948651d66e717ea8",
+      "reference_positions_sha256": "85b50cd67a7f0e808612ac42f650effb4063112a68b4891f4cb85b71511e8af4",
+      "reference_frames": [
+        "IGS20_ECEF"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+            "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+            "sha256": "b621496c51ff39c68966dbb81b9a23b9ea0157d9d6edb484b7decd84a7b6efc2",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+            "sha256": "e323f161a666f7cfe879b852279df96a97b613af3acd352047881d85a32d4a34",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+            "sha256": "2b91a83a750d3ce7153f60627ccb4e241a191987a8d2baf765114d59632e7fa5",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+            "sha256": "fc872a1ee3c4cd09044d4b97c28067adeef9e3d8335e76902ccfefe549406c4c",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+            "sha256": "22819dea348770a047a711dcec73d4eb18f2b26e33dd835d25dde6ff97f58f83",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+            "sha256": "76fdcc79c40a3f67d739134a6adb2350e12005e89b19ca0430ace3a73dc141aa",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+            "sha256": "a08b55b90e7088b9029f56ef7ca4a8929efb34edfa9647bc5bbe7acec537a791",
+            "selected_records": 289,
+            "frame": "IGS20"
+          }
+        ],
+        "duplicate_convention": "Earlier filename wins",
+        "duplicate_details": [
+          {
+            "gpst_s": 1419811200.0,
+            "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.3302075128178306
+          },
+          {
+            "gpst_s": 1419897600.0,
+            "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 1.0989581438657612
+          },
+          {
+            "gpst_s": 1419984000.0,
+            "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.3671334967538454
+          },
+          {
+            "gpst_s": 1420070400.0,
+            "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.7948012334462071
+          },
+          {
+            "gpst_s": 1420156800.0,
+            "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 1.1219652403326732
+          },
+          {
+            "gpst_s": 1420243200.0,
+            "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 1.2246930231021051
+          },
+          {
+            "gpst_s": 1420329600.0,
+            "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.8937191945970799
+          }
+        ],
+        "frames": [
+          "IGS20"
+        ]
+      }
+    },
+    {
+      "case_id": "jan_C06",
+      "object_id": "C06",
+      "orbit_class": "IGSO",
+      "period": "jan",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/C06.json",
+      "model_sha256": "775d4e2da694fbc3dfca11381523ea1bf08140a4515d33873bf688965ae8ad39",
+      "physical_model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz"
+      ],
+      "secondary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250010000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250020000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250030000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250040000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250050000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250060000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250070000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250080000_01D_05M_ORB.SP3.gz"
+      ],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/bulletina-xxxvii-052.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\bulletina-xxxvii-052.txt",
+        "sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+        "published_date": "2024-12-26",
+        "cutoff_utc": "2025-01-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 30.0,
+        "checkpoint_stride_steps": 120,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -259200.0,
+        "training_end_s": 0.0,
+        "training_rows": 865,
+        "fitted_rows": 145,
+        "fit_reference_anchor_s": -129600.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 18,
+        "training_rms_3d_m": 0.3570169550056266,
+        "training_max_3d_m": 0.6424058792760095,
+        "parameter_values_scaled": [
+          -0.0005538449127152152,
+          -0.0037016450778200875,
+          -0.000668046104016859,
+          0.00013481179291599418,
+          -0.00017178073915102084,
+          -0.00010839516644036749,
+          1.2427754991208708,
+          0.005676439184216341,
+          -0.0006693063532257438,
+          0.013590063052503223
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          34656434.34113652,
+          8538700.699404245,
+          -22118027.32634786,
+          -1651.5046851443908,
+          1778.7276697992525,
+          -1908.0096999146415
+        ],
+        "satellite": "C06",
+        "orbit_class": "IGSO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243600000_01D_05M_ORB.SP3.gz",
+            "sha256": "911ac14500e898fc89658e93e58eb0d3a8c775a89d7efc6f085281d7ae016fd6"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+            "sha256": "62323eb9ff1fdb8f8dcd501add09c465378806438504395bfc7a6d335019fb73"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+            "sha256": "bb4cc49c539a1c014a1bece050b1373bb0d693a11ff8ebe8249b93fad74b7737"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+            "sha256": "2690c8bdaafc0dd1ba22fd44d569a91229204244c7f7383a2ea39bd9e0561495"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+            "sha256": "ed95f3638a9dfa1290f9aeab48eeaff4fc0993d2feb3ab54b970e36e9c01952f"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+            "sha256": "ed849eca25cd4042b0e59b25b2e2ab16c42ce93fc4f3373c1d3c48a3db3d29ae"
+          },
+          {
+            "path": "source/orbit_data/earlier_training/GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+            "sha256": "950f0ce7b4e75795aaa8123f16e7f589828db479c2dbfb6f6d27b26e068972f3"
+          },
+          {
+            "path": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+            "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516"
+          }
+        ],
+        "training_source": "source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+        "training_source_sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+        "selected_window_days": 3.0,
+        "internal_selection": "minimize maximum Jan1 residual; all Jan2-Jan9 target rows excluded",
+        "outer_benchmark": "Previously inspected R1 comparative benchmark; not blind new data",
+        "elapsed_s": 66.03229550000106,
+        "selection_report": "C06_selection.json"
+      },
+      "cutoff_gpst_s": 1419811200.0,
+      "sample_count": 2016,
+      "first_seconds": 300.0,
+      "last_seconds": 604800.0,
+      "maximum_sample_gap_seconds": 300.0,
+      "times_sha256": "74804f909c4d30feedc5ed3e6b834e10f6dd2be6c4ef4470948651d66e717ea8",
+      "reference_positions_sha256": "d93f3b13f465af8ab0aeeece7e219c9c73a69805d5eb3801a2d0c378da398450",
+      "reference_frames": [
+        "IGS20_ECEF"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+            "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+            "sha256": "b621496c51ff39c68966dbb81b9a23b9ea0157d9d6edb484b7decd84a7b6efc2",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+            "sha256": "e323f161a666f7cfe879b852279df96a97b613af3acd352047881d85a32d4a34",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+            "sha256": "2b91a83a750d3ce7153f60627ccb4e241a191987a8d2baf765114d59632e7fa5",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+            "sha256": "fc872a1ee3c4cd09044d4b97c28067adeef9e3d8335e76902ccfefe549406c4c",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+            "sha256": "22819dea348770a047a711dcec73d4eb18f2b26e33dd835d25dde6ff97f58f83",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+            "sha256": "76fdcc79c40a3f67d739134a6adb2350e12005e89b19ca0430ace3a73dc141aa",
+            "selected_records": 289,
+            "frame": "IGS20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+            "sha256": "a08b55b90e7088b9029f56ef7ca4a8929efb34edfa9647bc5bbe7acec537a791",
+            "selected_records": 289,
+            "frame": "IGS20"
+          }
+        ],
+        "duplicate_convention": "Earlier filename wins",
+        "duplicate_details": [
+          {
+            "gpst_s": 1419811200.0,
+            "later_source": "GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.2968181253899406
+          },
+          {
+            "gpst_s": 1419897600.0,
+            "later_source": "GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.3377735947052888
+          },
+          {
+            "gpst_s": 1419984000.0,
+            "later_source": "GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.24799596868594007
+          },
+          {
+            "gpst_s": 1420070400.0,
+            "later_source": "GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.38580953807688784
+          },
+          {
+            "gpst_s": 1420156800.0,
+            "later_source": "GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.5208781062554747
+          },
+          {
+            "gpst_s": 1420243200.0,
+            "later_source": "GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.31554080165328363
+          },
+          {
+            "gpst_s": 1420329600.0,
+            "later_source": "GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.14500689622395996
+          }
+        ],
+        "frames": [
+          "IGS20"
+        ]
+      }
+    },
+    {
+      "case_id": "jan_CHANDRA",
+      "object_id": "CHANDRA",
+      "orbit_class": "HEO",
+      "period": "jan",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/CHANDRA.json",
+      "model_sha256": "f4282006c3210438bbcdb0c0d97c764aaefd68711ca5ab153488eba57e618e4f",
+      "physical_model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/HORIZONS_CHANDRA_20250101_20250109_ICRF_TDB.txt"
+      ],
+      "secondary_sources": [],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/bulletina-xxxvii-052.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\bulletina-xxxvii-052.txt",
+        "sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+        "published_date": "2024-12-26",
+        "cutoff_utc": "2025-01-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 7.5,
+        "checkpoint_stride_steps": 480,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -86151.18392854929,
+        "training_end_s": -51.183950901031494,
+        "training_rows": 288,
+        "fitted_rows": 49,
+        "fit_reference_anchor_s": -42951.18392854929,
+        "solver_success": true,
+        "solver_message": "`ftol` termination condition is satisfied.",
+        "nfev": 27,
+        "training_rms_3d_m": 0.018763060694101823,
+        "training_max_3d_m": 0.05172080874933153,
+        "parameter_values_scaled": [
+          -0.00015493918567931225,
+          2.8315762691134684e-05,
+          8.607516887391346e-05,
+          -2.614415737145482e-06,
+          -4.139584531992452e-06,
+          5.292410443111545e-06,
+          0.007891283474295265,
+          0.004018668344724155,
+          0.004614476760653806,
+          -0.005393068293181549
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          9169017.496638052,
+          -122480417.03328672,
+          87729916.9617994,
+          515.6830303136502,
+          -151.45864725213795,
+          -242.47040328309333
+        ],
+        "satellite": "CHANDRA",
+        "orbit_class": "HEO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/earlier_training/HORIZONS_CHANDRA_20241225_20250101_ICRF_TDB.txt",
+            "sha256": "944064719ccbf70e1cb4f881aeadc15a2c2ca094fb5970a92b9d0583f4318057"
+          },
+          {
+            "path": "source/orbit_data/HORIZONS_CHANDRA_20250101_20250109_ICRF_TDB.txt",
+            "sha256": "c3e8f96b14a6a862277ae438855d2d424268d7b41bb0feb5cd9990ebe33e97d0"
+          }
+        ],
+        "training_source": "source/orbit_data/HORIZONS_CHANDRA_20250101_20250109_ICRF_TDB.txt",
+        "training_source_sha256": "c3e8f96b14a6a862277ae438855d2d424268d7b41bb0feb5cd9990ebe33e97d0",
+        "selected_window_days": 1.0,
+        "internal_selection": "minimize maximum Jan1 residual; all Jan2-Jan9 target rows excluded",
+        "outer_benchmark": "Previously inspected R1 comparative benchmark; not blind new data",
+        "elapsed_s": 107.92081080000207,
+        "selection_report": "CHANDRA_selection.json"
+      },
+      "cutoff_gpst_s": 1419811200.0,
+      "sample_count": 2016,
+      "first_seconds": 248.81605744361877,
+      "last_seconds": 604748.8158562183,
+      "maximum_sample_gap_seconds": 300.0,
+      "times_sha256": "4b62a696ecff84e9f8e2376692ea9264b713a3eac9c7ea88916e2bb90885a17e",
+      "reference_positions_sha256": "c5a243bba2404be94cc37282567e2b54bfed643b658d2212d8d30624b0c19613",
+      "reference_frames": [
+        "ICRF_geocentric"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "HORIZONS_CHANDRA_20250101_20250109_ICRF_TDB.txt",
+            "sha256": "c3e8f96b14a6a862277ae438855d2d424268d7b41bb0feb5cd9990ebe33e97d0",
+            "selected_records": 2305
+          }
+        ],
+        "time_conversion": "Geocentric SOFA/ERFA dtdb iterative TDB->TT; GPST=TT-51.184s",
+        "printed_JDTDB_max_rounding_s": 4.023313522338867e-05,
+        "reference_accuracy": "No state covariance or certified positional bound supplied",
+        "frame_qualification": "Horizons geocentric ICRF axes compared with the model GCRS orientation; omitted geocentric relativistic coordinate distinctions are not certified by this test"
+      }
+    },
+    {
+      "case_id": "feb_G05",
+      "object_id": "G05",
+      "orbit_class": "MEO",
+      "period": "feb",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/G05.json",
+      "model_sha256": "a52cc59a3f0ea3053a262a7c1216006b999b2067fba87834413ba55ec28d9a41",
+      "physical_model_sha256": "1e3b444f2a5c3820053b1e1f825126c43ac9f62266be0810ce4842489c6b2ccb",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz"
+      ],
+      "secondary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz"
+      ],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/eop/bulletina-xxxviii-005.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\confirmation_20250202\\eop\\bulletina-xxxviii-005.txt",
+        "sha256": "1f8143aae17b77da49b1fe0313d549e84fb286c0e2ff0682756b6bcc7cdfa378",
+        "published_date": "2025-01-30",
+        "cutoff_utc": "2025-02-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 30.0,
+        "checkpoint_stride_steps": 120,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -86400.0,
+        "training_end_s": 0.0,
+        "training_rows": 289,
+        "fitted_rows": 49,
+        "fit_reference_anchor_s": -43200.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 15,
+        "training_rms_3d_m": 0.14829502032885244,
+        "training_max_3d_m": 0.3081037623827951,
+        "parameter_values_scaled": [
+          -0.0004302293686691438,
+          8.43429520897073e-05,
+          -0.00019983436502860508,
+          -1.8740236731538147e-05,
+          -0.00011600787297577023,
+          -2.2415744678641527e-05,
+          0.9882658342158276,
+          -0.0012074502939089327,
+          0.0028230117316251344,
+          -0.009219913357794885
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          21118346.76711169,
+          9911246.190582642,
+          -12809576.70840707,
+          230.56359741305718,
+          2836.7576421432436,
+          2616.726396063905
+        ],
+        "satellite": "G05",
+        "orbit_class": "MEO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz",
+            "sha256": "a42ecab89ee1b174e1b7aa2d9db582bcdb97904a000ae59c4aae21c89258feb2"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz",
+            "sha256": "e31fa69dab78f5adad2d5d5ce41165388570505ca1d7b9eafd4d008ff8275f78"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz",
+            "sha256": "ece0bc6e69b7f66a19da34efd55e7ecf28edcb84f9f9149ed716c6fb2c2c5132"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz",
+            "sha256": "3f07a0b41defba75c4b848db9ef89dfb862a9800ad8954bfe9e7a4b3c76f9b4a"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz",
+            "sha256": "549093cf235f5f4f09648b8191890617cc0a0b421528491e3416b71768ec984f"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz",
+            "sha256": "0d1d6a535432710e2ea57e8f2e72d8ef1af3dec0023b58bfdca960e95eb34fa7"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz",
+            "sha256": "b9475a2664a5532a454ba10436196a7f562d6bc247e8b56b1fa350076be384d0"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+            "sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb"
+          }
+        ],
+        "training_source": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+        "training_source_sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb",
+        "selected_window_days": 1.0,
+        "internal_selection": "minimize maximum last-past-day residual; all post-epoch target rows excluded",
+        "selection_policy_sha256": "102d9a5cf41e8ed01666416d235ab3223115b448e75d538ebcb5024907a57068",
+        "outer_benchmark": "Fresh confirmation target arc; no post-epoch target inspection before model freeze",
+        "elapsed_s": 50.16091520000191,
+        "selection_report": "G05_selection.json"
+      },
+      "cutoff_gpst_s": 1422489600.0,
+      "sample_count": 2016,
+      "first_seconds": 300.0,
+      "last_seconds": 604800.0,
+      "maximum_sample_gap_seconds": 300.0,
+      "times_sha256": "74804f909c4d30feedc5ed3e6b834e10f6dd2be6c4ef4470948651d66e717ea8",
+      "reference_positions_sha256": "7cbe50d87419eb96cd27a68bb7b4cbdd74574f41df0848f52ad6d78ebfc67cf2",
+      "reference_frames": [
+        "IGb20_ECEF"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+            "sha256": "c8f01d8ef4774928d999f743e1e1e6f59447d0ad029854a2d93ba846de10b155",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+            "sha256": "5b7f1587c109f5ecf2fe6737fc5d2ef6e9c90692e2a4bd9261a3ccd1bd3ddd4c",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+            "sha256": "5eebda195a85f27dd44b4d4be927d5523647063e75a26a42052e203a9fe0d971",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+            "sha256": "085eee3638039769ebf2db88814000d49b35ed56abbb843c09fc560c4a41ab7d",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+            "sha256": "f30e50ce954b611237daba68893f523e6593ceead279b9cd841f5597939c8073",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+            "sha256": "70da188f1f0b9be21de858c4a7c5c3697c2e03d8f2d3aade3df1c8bf4caad240",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+            "sha256": "52b551dff15441a54ca7c25418e3daca5ceb0262ccf88bacf6ccc069217ad79e",
+            "selected_records": 289,
+            "frame": "IGb20"
+          }
+        ],
+        "duplicate_convention": "Earlier filename wins",
+        "duplicate_details": [
+          {
+            "gpst_s": 1422576000.0,
+            "later_source": "GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.04661544901120382
+          },
+          {
+            "gpst_s": 1422662400.0,
+            "later_source": "GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.014317819637459499
+          },
+          {
+            "gpst_s": 1422748800.0,
+            "later_source": "GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.053197746817955346
+          },
+          {
+            "gpst_s": 1422835200.0,
+            "later_source": "GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.06126173290910975
+          },
+          {
+            "gpst_s": 1422921600.0,
+            "later_source": "GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.07191661784508187
+          },
+          {
+            "gpst_s": 1423008000.0,
+            "later_source": "GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.05399074043045323
+          }
+        ],
+        "frames": [
+          "IGb20"
+        ],
+        "frame_alignment": {
+          "source": "https://lists.igs.org/pipermail/igsmail/2024/008539.html",
+          "published_date": "2024-12-09",
+          "convention": "IGS20 and IGb20 retain the same origin, scale and orientation; IGSMAIL-8543 specifies zero transformation parameters. No fitted alignment is applied.",
+          "qualification": "IGb20 updates individual reference-station coordinates. Preserve source realization labels; product alignment effects are not independently bounded here."
+        }
+      }
+    },
+    {
+      "case_id": "feb_C03",
+      "object_id": "C03",
+      "orbit_class": "GEO",
+      "period": "feb",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/C03.json",
+      "model_sha256": "6dd3c4eff7452d698316c8b206fd7a39c188099efde1bb5dc8e9ff21feea67ed",
+      "physical_model_sha256": "b253c8a13b6ae3264988788ba9bba9b000798fdd220217d1d91293d6814c3668",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz"
+      ],
+      "secondary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz"
+      ],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/eop/bulletina-xxxviii-005.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\confirmation_20250202\\eop\\bulletina-xxxviii-005.txt",
+        "sha256": "1f8143aae17b77da49b1fe0313d549e84fb286c0e2ff0682756b6bcc7cdfa378",
+        "published_date": "2025-01-30",
+        "cutoff_utc": "2025-02-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 30.0,
+        "checkpoint_stride_steps": 120,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -604800.0,
+        "training_end_s": 0.0,
+        "training_rows": 2017,
+        "fitted_rows": 337,
+        "fit_reference_anchor_s": -302400.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 18,
+        "training_rms_3d_m": 2.0233483029179005,
+        "training_max_3d_m": 5.040516228434887,
+        "parameter_values_scaled": [
+          -0.003549109268378782,
+          -0.003509649118146232,
+          -0.0009766334495035344,
+          -1.1418510403091934e-05,
+          0.0004448155245675943,
+          0.00012486867916057184,
+          1.1443416745715878,
+          0.02494738658279454,
+          0.0034905352641851723,
+          -0.06880992089202377
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          21600827.79696208,
+          36169678.10162914,
+          -271685.9369593248,
+          -2639.7821001319394,
+          1577.583739421137,
+          109.62540926369803
+        ],
+        "satellite": "C03",
+        "orbit_class": "GEO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz",
+            "sha256": "a42ecab89ee1b174e1b7aa2d9db582bcdb97904a000ae59c4aae21c89258feb2"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz",
+            "sha256": "e31fa69dab78f5adad2d5d5ce41165388570505ca1d7b9eafd4d008ff8275f78"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz",
+            "sha256": "ece0bc6e69b7f66a19da34efd55e7ecf28edcb84f9f9149ed716c6fb2c2c5132"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz",
+            "sha256": "3f07a0b41defba75c4b848db9ef89dfb862a9800ad8954bfe9e7a4b3c76f9b4a"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz",
+            "sha256": "549093cf235f5f4f09648b8191890617cc0a0b421528491e3416b71768ec984f"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz",
+            "sha256": "0d1d6a535432710e2ea57e8f2e72d8ef1af3dec0023b58bfdca960e95eb34fa7"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz",
+            "sha256": "b9475a2664a5532a454ba10436196a7f562d6bc247e8b56b1fa350076be384d0"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+            "sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb"
+          }
+        ],
+        "training_source": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+        "training_source_sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb",
+        "selected_window_days": 7.0,
+        "internal_selection": "minimize maximum last-past-day residual; all post-epoch target rows excluded",
+        "selection_policy_sha256": "102d9a5cf41e8ed01666416d235ab3223115b448e75d538ebcb5024907a57068",
+        "outer_benchmark": "Fresh confirmation target arc; no post-epoch target inspection before model freeze",
+        "elapsed_s": 101.43762740000238,
+        "selection_report": "C03_selection.json"
+      },
+      "cutoff_gpst_s": 1422489600.0,
+      "sample_count": 1441,
+      "first_seconds": 300.0,
+      "last_seconds": 604800.0,
+      "maximum_sample_gap_seconds": 172800.0,
+      "times_sha256": "5a0378ebdc4bb37cffb88a4ff2606ef86051b7e056da2563b499d0d44b6fa74b",
+      "reference_positions_sha256": "e6cc796acf0a1e4bf0ac4d5dd260da8f1bb8745413d4b2ae05c958316583bf72",
+      "reference_frames": [
+        "IGb20_ECEF"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+            "sha256": "c8f01d8ef4774928d999f743e1e1e6f59447d0ad029854a2d93ba846de10b155",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+            "sha256": "5b7f1587c109f5ecf2fe6737fc5d2ef6e9c90692e2a4bd9261a3ccd1bd3ddd4c",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+            "sha256": "5eebda195a85f27dd44b4d4be927d5523647063e75a26a42052e203a9fe0d971",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+            "sha256": "085eee3638039769ebf2db88814000d49b35ed56abbb843c09fc560c4a41ab7d",
+            "selected_records": 0,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+            "sha256": "f30e50ce954b611237daba68893f523e6593ceead279b9cd841f5597939c8073",
+            "selected_records": 0,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+            "sha256": "70da188f1f0b9be21de858c4a7c5c3697c2e03d8f2d3aade3df1c8bf4caad240",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+            "sha256": "52b551dff15441a54ca7c25418e3daca5ceb0262ccf88bacf6ccc069217ad79e",
+            "selected_records": 289,
+            "frame": "IGb20"
+          }
+        ],
+        "duplicate_convention": "Earlier filename wins",
+        "duplicate_details": [
+          {
+            "gpst_s": 1422576000.0,
+            "later_source": "GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 1.4454196609220356
+          },
+          {
+            "gpst_s": 1422662400.0,
+            "later_source": "GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.6980465646388252
+          },
+          {
+            "gpst_s": 1423008000.0,
+            "later_source": "GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.5870817673416049
+          }
+        ],
+        "frames": [
+          "IGb20"
+        ],
+        "frame_alignment": {
+          "source": "https://lists.igs.org/pipermail/igsmail/2024/008539.html",
+          "published_date": "2024-12-09",
+          "convention": "IGS20 and IGb20 retain the same origin, scale and orientation; IGSMAIL-8543 specifies zero transformation parameters. No fitted alignment is applied.",
+          "qualification": "IGb20 updates individual reference-station coordinates. Preserve source realization labels; product alignment effects are not independently bounded here."
+        }
+      }
+    },
+    {
+      "case_id": "feb_C06",
+      "object_id": "C06",
+      "orbit_class": "IGSO",
+      "period": "feb",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/C06.json",
+      "model_sha256": "9e382982dbe7acbe005320a174c66ac37c27c62df2a83e8797f9cada13fb3c91",
+      "physical_model_sha256": "0dd9833368ac7472a79cda65fb22c145f490b24ab567a910cb422c82c6e44937",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz"
+      ],
+      "secondary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz",
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz"
+      ],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/eop/bulletina-xxxviii-005.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\confirmation_20250202\\eop\\bulletina-xxxviii-005.txt",
+        "sha256": "1f8143aae17b77da49b1fe0313d549e84fb286c0e2ff0682756b6bcc7cdfa378",
+        "published_date": "2025-01-30",
+        "cutoff_utc": "2025-02-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 30.0,
+        "checkpoint_stride_steps": 120,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -259200.0,
+        "training_end_s": 0.0,
+        "training_rows": 865,
+        "fitted_rows": 145,
+        "fit_reference_anchor_s": -129600.0,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 20,
+        "training_rms_3d_m": 0.5087088162493403,
+        "training_max_3d_m": 1.0880996161412213,
+        "parameter_values_scaled": [
+          -0.0007797201992067341,
+          -0.0009359825110353119,
+          -0.0004300334952358727,
+          5.0130755037297254e-05,
+          -0.0001243093079615866,
+          -2.5949752539546637e-05,
+          1.254462639539157,
+          0.01374243787343123,
+          -0.0003065537584683814,
+          -0.004094508333760748
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          18506780.868796315,
+          19539007.01519405,
+          -32292928.803248346,
+          -2707.4260999324433,
+          1227.032633991646,
+          -821.6599975882169
+        ],
+        "satellite": "C06",
+        "orbit_class": "IGSO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz",
+            "sha256": "a42ecab89ee1b174e1b7aa2d9db582bcdb97904a000ae59c4aae21c89258feb2"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz",
+            "sha256": "e31fa69dab78f5adad2d5d5ce41165388570505ca1d7b9eafd4d008ff8275f78"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz",
+            "sha256": "ece0bc6e69b7f66a19da34efd55e7ecf28edcb84f9f9149ed716c6fb2c2c5132"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz",
+            "sha256": "3f07a0b41defba75c4b848db9ef89dfb862a9800ad8954bfe9e7a4b3c76f9b4a"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz",
+            "sha256": "549093cf235f5f4f09648b8191890617cc0a0b421528491e3416b71768ec984f"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz",
+            "sha256": "0d1d6a535432710e2ea57e8f2e72d8ef1af3dec0023b58bfdca960e95eb34fa7"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz",
+            "sha256": "b9475a2664a5532a454ba10436196a7f562d6bc247e8b56b1fa350076be384d0"
+          },
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+            "sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb"
+          }
+        ],
+        "training_source": "source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+        "training_source_sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb",
+        "selected_window_days": 3.0,
+        "internal_selection": "minimize maximum last-past-day residual; all post-epoch target rows excluded",
+        "selection_policy_sha256": "102d9a5cf41e8ed01666416d235ab3223115b448e75d538ebcb5024907a57068",
+        "outer_benchmark": "Fresh confirmation target arc; no post-epoch target inspection before model freeze",
+        "elapsed_s": 61.834787400002824,
+        "selection_report": "C06_selection.json"
+      },
+      "cutoff_gpst_s": 1422489600.0,
+      "sample_count": 2016,
+      "first_seconds": 300.0,
+      "last_seconds": 604800.0,
+      "maximum_sample_gap_seconds": 300.0,
+      "times_sha256": "74804f909c4d30feedc5ed3e6b834e10f6dd2be6c4ef4470948651d66e717ea8",
+      "reference_positions_sha256": "4bb6af4e87bab7f8131832009dd1a74246c87d2b7485e59f1a0fb4bbbd3f0dce",
+      "reference_frames": [
+        "IGb20_ECEF"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+            "sha256": "c8f01d8ef4774928d999f743e1e1e6f59447d0ad029854a2d93ba846de10b155",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+            "sha256": "5b7f1587c109f5ecf2fe6737fc5d2ef6e9c90692e2a4bd9261a3ccd1bd3ddd4c",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+            "sha256": "5eebda195a85f27dd44b4d4be927d5523647063e75a26a42052e203a9fe0d971",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+            "sha256": "085eee3638039769ebf2db88814000d49b35ed56abbb843c09fc560c4a41ab7d",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+            "sha256": "f30e50ce954b611237daba68893f523e6593ceead279b9cd841f5597939c8073",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+            "sha256": "70da188f1f0b9be21de858c4a7c5c3697c2e03d8f2d3aade3df1c8bf4caad240",
+            "selected_records": 289,
+            "frame": "IGb20"
+          },
+          {
+            "file": "GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+            "sha256": "52b551dff15441a54ca7c25418e3daca5ceb0262ccf88bacf6ccc069217ad79e",
+            "selected_records": 289,
+            "frame": "IGb20"
+          }
+        ],
+        "duplicate_convention": "Earlier filename wins",
+        "duplicate_details": [
+          {
+            "gpst_s": 1422576000.0,
+            "later_source": "GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.25918332733197186
+          },
+          {
+            "gpst_s": 1422662400.0,
+            "later_source": "GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.1370547297186876
+          },
+          {
+            "gpst_s": 1422748800.0,
+            "later_source": "GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.3051589761585013
+          },
+          {
+            "gpst_s": 1422835200.0,
+            "later_source": "GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.43923683944751163
+          },
+          {
+            "gpst_s": 1422921600.0,
+            "later_source": "GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.31260998280552826
+          },
+          {
+            "gpst_s": 1423008000.0,
+            "later_source": "GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+            "disagreement_m": 0.2658006799309318
+          }
+        ],
+        "frames": [
+          "IGb20"
+        ],
+        "frame_alignment": {
+          "source": "https://lists.igs.org/pipermail/igsmail/2024/008539.html",
+          "published_date": "2024-12-09",
+          "convention": "IGS20 and IGb20 retain the same origin, scale and orientation; IGSMAIL-8543 specifies zero transformation parameters. No fitted alignment is applied.",
+          "qualification": "IGb20 updates individual reference-station coordinates. Preserve source realization labels; product alignment effects are not independently bounded here."
+        }
+      }
+    },
+    {
+      "case_id": "feb_CHANDRA",
+      "object_id": "CHANDRA",
+      "orbit_class": "HEO",
+      "period": "feb",
+      "model_file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/CHANDRA.json",
+      "model_sha256": "96d57913e5bfa73455b74c3b742cf9d074c23c2042dedece1eb50abddc8c03d3",
+      "physical_model_sha256": "5194e34a3b088c6b7f486b72c0df458330ac023fadb58bb4458486f946a13af1",
+      "primary_sources": [
+        "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/HORIZONS_CHANDRA_20250202_20250209_ICRF_TDB.txt"
+      ],
+      "secondary_sources": [],
+      "bulletin": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/eop/bulletina-xxxviii-005.txt",
+      "earth_orientation_publication": {
+        "file": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\source\\orbit_data\\confirmation_20250202\\eop\\bulletina-xxxviii-005.txt",
+        "sha256": "1f8143aae17b77da49b1fe0313d549e84fb286c0e2ff0682756b6bcc7cdfa378",
+        "published_date": "2025-01-30",
+        "cutoff_utc": "2025-02-01T23:59:42Z",
+        "published_before_cutoff": true
+      },
+      "model_integration": {
+        "step_s": 7.5,
+        "checkpoint_stride_steps": 480,
+        "max_checkpoints": 256,
+        "max_steps_per_query": 100000
+      },
+      "training_metadata": {
+        "method": "bounded least_squares; fixed initial6 + SRP1 + constant RTN3",
+        "training_start_s": -258951.184733212,
+        "training_end_s": -51.184795796871185,
+        "training_rows": 864,
+        "fitted_rows": 145,
+        "fit_reference_anchor_s": -129351.18477344513,
+        "solver_success": true,
+        "solver_message": "`xtol` termination condition is satisfied.",
+        "nfev": 35,
+        "training_rms_3d_m": 0.35962367401860434,
+        "training_max_3d_m": 4.679695461688709,
+        "parameter_values_scaled": [
+          5.597139773910291e-05,
+          0.00024728652162373405,
+          -0.00025208617464415737,
+          5.051591536853689e-06,
+          2.896128366522063e-05,
+          -2.6153328420597733e-05,
+          1.6839674004971905e-15,
+          -0.0010023584200091586,
+          0.00014674926393175346,
+          -3.103827769957629e-06
+        ],
+        "selection_policy": "fixed model and parameter bounds chosen before any future-target comparison",
+        "optimizer_step_s": 30.0,
+        "future_target_rows_used": 0,
+        "anchor_state_gcrs": [
+          39295056.43728015,
+          -83755288.51588775,
+          35159065.88802314,
+          107.16220863822885,
+          1359.9624662527851,
+          -1123.5650691462238
+        ],
+        "satellite": "CHANDRA",
+        "orbit_class": "HEO",
+        "training_sources": [
+          {
+            "path": "source/orbit_data/confirmation_20250202/training/HORIZONS_CHANDRA_20250125_20250202_ICRF_TDB.txt",
+            "sha256": "4d7fdbbbdb7288b799562d7da07ce40dc3a08e0a61db8b775b3c27ab509badc7"
+          }
+        ],
+        "training_source": "source/orbit_data/confirmation_20250202/training/HORIZONS_CHANDRA_20250125_20250202_ICRF_TDB.txt",
+        "training_source_sha256": "4d7fdbbbdb7288b799562d7da07ce40dc3a08e0a61db8b775b3c27ab509badc7",
+        "selected_window_days": 3.0,
+        "internal_selection": "minimize maximum last-past-day residual; all post-epoch target rows excluded",
+        "selection_policy_sha256": "102d9a5cf41e8ed01666416d235ab3223115b448e75d538ebcb5024907a57068",
+        "outer_benchmark": "Fresh confirmation target arc; no post-epoch target inspection before model freeze",
+        "elapsed_s": 121.82498530000157,
+        "selection_report": "CHANDRA_selection.json"
+      },
+      "cutoff_gpst_s": 1422489600.0,
+      "sample_count": 2016,
+      "first_seconds": 248.81520414352417,
+      "last_seconds": 604748.81503582,
+      "maximum_sample_gap_seconds": 300.0,
+      "times_sha256": "8508628941edacbf66185e771b2b9854cf81179803cf227e7c4d4dbc14835304",
+      "reference_positions_sha256": "3733b1bdc4aa306d48a593060e1bf6ecbd632f2ffe23b0960e2551e698b85830",
+      "reference_frames": [
+        "ICRF_geocentric"
+      ],
+      "reference_metadata": {
+        "sources": [
+          {
+            "file": "HORIZONS_CHANDRA_20250202_20250209_ICRF_TDB.txt",
+            "sha256": "fcf4e2ce2f01e045681deb6a54a92317c5a66a1c3b9d5f2804c00a5af4c6955b",
+            "selected_records": 2016
+          }
+        ],
+        "time_conversion": "Geocentric SOFA/ERFA dtdb iterative TDB->TT; GPST=TT-51.184s",
+        "printed_JDTDB_max_rounding_s": 4.023313522338867e-05,
+        "reference_accuracy": "No state covariance or certified positional bound supplied",
+        "frame_qualification": "Horizons geocentric ICRF axes compared with the model GCRS orientation; omitted geocentric relativistic coordinate distinctions are not certified by this test"
+      }
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/bin/cpu/orbit_worker.exe",
+      "bytes": 85504,
+      "sha256": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/bin/cuda/orbit_worker.exe",
+      "bytes": 1975296,
+      "sha256": "f6b640d5f984c5e2226794649fd22391c1819ad1e7ee2df5db3a81e527262ef3"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/C03.json",
+      "bytes": 35380,
+      "sha256": "6dd3c4eff7452d698316c8b206fd7a39c188099efde1bb5dc8e9ff21feea67ed"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/C06.json",
+      "bytes": 35386,
+      "sha256": "9e382982dbe7acbe005320a174c66ac37c27c62df2a83e8797f9cada13fb3c91"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/CHANDRA.json",
+      "bytes": 33932,
+      "sha256": "96d57913e5bfa73455b74c3b742cf9d074c23c2042dedece1eb50abddc8c03d3"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/confirmation_models/G05.json",
+      "bytes": 35383,
+      "sha256": "a52cc59a3f0ea3053a262a7c1216006b999b2067fba87834413ba55ec28d9a41"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/C03.json",
+      "bytes": 35048,
+      "sha256": "7fa68b5a83ce167517892923c943af7d2d2fc77060a95629d100057d24786d1c"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/C06.json",
+      "bytes": 35051,
+      "sha256": "775d4e2da694fbc3dfca11381523ea1bf08140a4515d33873bf688965ae8ad39"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/CHANDRA.json",
+      "bytes": 33900,
+      "sha256": "f4282006c3210438bbcdb0c0d97c764aaefd68711ca5ab153488eba57e618e4f"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/examples/orbit/precision_models/G05.json",
+      "bytes": 35052,
+      "sha256": "29974b357a55a6d0459e5ebf92d4cf1a37aa90907f69a9896de8ea815be1a3a2"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/python/orbit_dynamics.py",
+      "bytes": 14787,
+      "sha256": "a106ef9c81197e9501d897fa01c926ab91eb0ba32f5a486e1c389d05c2eb69f8"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/python/orbit_native.py",
+      "bytes": 9071,
+      "sha256": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/python/orbit_precision.py",
+      "bytes": 15620,
+      "sha256": "9efa1426d7c6947e487c0ce069e4f601de6945284069789ba7020675ab2be92f"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/python/orbit_seed.py",
+      "bytes": 20584,
+      "sha256": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/python/self_reference.py",
+      "bytes": 13679,
+      "sha256": "607371faba493ce9d532691abfeea55982c0681dec62210922efdf5710ba6fbc"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/bulletina-xxxvii-052.txt",
+      "bytes": 34669,
+      "sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/download_manifest.json",
+      "bytes": 22488,
+      "sha256": "637c55dc5fdc1d1a40128a72969cd8983fff5c394b4b4da36375e96f79a019a4"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/eop/bulletina-xxxviii-005.txt",
+      "bytes": 37099,
+      "sha256": "1f8143aae17b77da49b1fe0313d549e84fb286c0e2ff0682756b6bcc7cdfa378"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+      "bytes": 1056286,
+      "sha256": "c8f01d8ef4774928d999f743e1e1e6f59447d0ad029854a2d93ba846de10b155"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+      "bytes": 1047880,
+      "sha256": "5b7f1587c109f5ecf2fe6737fc5d2ef6e9c90692e2a4bd9261a3ccd1bd3ddd4c"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+      "bytes": 1055826,
+      "sha256": "5eebda195a85f27dd44b4d4be927d5523647063e75a26a42052e203a9fe0d971"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+      "bytes": 1063926,
+      "sha256": "085eee3638039769ebf2db88814000d49b35ed56abbb843c09fc560c4a41ab7d"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+      "bytes": 1079525,
+      "sha256": "f30e50ce954b611237daba68893f523e6593ceead279b9cd841f5597939c8073"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087957,
+      "sha256": "70da188f1f0b9be21de858c4a7c5c3697c2e03d8f2d3aade3df1c8bf4caad240"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+      "bytes": 1096058,
+      "sha256": "52b551dff15441a54ca7c25418e3daca5ceb0262ccf88bacf6ccc069217ad79e"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout/HORIZONS_CHANDRA_20250202_20250209_ICRF_TDB.txt",
+      "bytes": 399385,
+      "sha256": "fcf4e2ce2f01e045681deb6a54a92317c5a66a1c3b9d5f2804c00a5af4c6955b"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz",
+      "bytes": 971242,
+      "sha256": "bee117675d029804ff4cbc27f88d704cbb715311a531957f1438892f94a1a154"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz",
+      "bytes": 970942,
+      "sha256": "b7e51e478f1c02db7de305022952eb2ff59afe972271024856b853ff97302175"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz",
+      "bytes": 970999,
+      "sha256": "88a187d2c1aef4734fa8aff30dc4597dffe634d1c41f647072c6c305db12199d"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz",
+      "bytes": 978998,
+      "sha256": "8ab90982bef6a21506f0173e8fd7739ba7c16b704f9c61e15b9f2a36635ad1b4"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz",
+      "bytes": 963230,
+      "sha256": "4fdbf7b8e483f3c05b98d71b7c3099651e0058f945f72b3508b2fd9b1f3ddc34"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz",
+      "bytes": 978762,
+      "sha256": "6cde3475ed79d7a302b38855f95ad8344e5562ed35ab23bdb95ef69be0000c5b"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/holdout_wum/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz",
+      "bytes": 978570,
+      "sha256": "18314e89df3dea0bf685114977a4bc1f942acb31887a4ba0b73fb817c76ffde3"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087486,
+      "sha256": "a42ecab89ee1b174e1b7aa2d9db582bcdb97904a000ae59c4aae21c89258feb2"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz",
+      "bytes": 1071090,
+      "sha256": "e31fa69dab78f5adad2d5d5ce41165388570505ca1d7b9eafd4d008ff8275f78"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz",
+      "bytes": 1062936,
+      "sha256": "ece0bc6e69b7f66a19da34efd55e7ecf28edcb84f9f9149ed716c6fb2c2c5132"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz",
+      "bytes": 1071173,
+      "sha256": "3f07a0b41defba75c4b848db9ef89dfb862a9800ad8954bfe9e7a4b3c76f9b4a"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz",
+      "bytes": 1079592,
+      "sha256": "549093cf235f5f4f09648b8191890617cc0a0b421528491e3416b71768ec984f"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz",
+      "bytes": 1047594,
+      "sha256": "0d1d6a535432710e2ea57e8f2e72d8ef1af3dec0023b58bfdca960e95eb34fa7"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz",
+      "bytes": 1078651,
+      "sha256": "b9475a2664a5532a454ba10436196a7f562d6bc247e8b56b1fa350076be384d0"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+      "bytes": 1078720,
+      "sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/confirmation_20250202/training/HORIZONS_CHANDRA_20250125_20250202_ICRF_TDB.txt",
+      "bytes": 455740,
+      "sha256": "4d7fdbbbdb7288b799562d7da07ce40dc3a08e0a61db8b775b3c27ab509badc7"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/download_manifest.json",
+      "bytes": 22172,
+      "sha256": "4c578c3aa3f68b7a8d1508700fa333c6ea1d1ffe1094411e6bd0b67d0765643a"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/GBM0MGXRAP_20243600000_01D_05M_ORB.SP3.gz",
+      "bytes": 1078642,
+      "sha256": "911ac14500e898fc89658e93e58eb0d3a8c775a89d7efc6f085281d7ae016fd6"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+      "bytes": 1071520,
+      "sha256": "62323eb9ff1fdb8f8dcd501add09c465378806438504395bfc7a6d335019fb73"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+      "bytes": 1070953,
+      "sha256": "bb4cc49c539a1c014a1bece050b1373bb0d693a11ff8ebe8249b93fad74b7737"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+      "bytes": 1078511,
+      "sha256": "2690c8bdaafc0dd1ba22fd44d569a91229204244c7f7383a2ea39bd9e0561495"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087603,
+      "sha256": "ed95f3638a9dfa1290f9aeab48eeaff4fc0993d2feb3ab54b970e36e9c01952f"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+      "bytes": 1096025,
+      "sha256": "ed849eca25cd4042b0e59b25b2e2ab16c42ce93fc4f3373c1d3c48a3db3d29ae"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087347,
+      "sha256": "950f0ce7b4e75795aaa8123f16e7f589828db479c2dbfb6f6d27b26e068972f3"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/earlier_training/HORIZONS_CHANDRA_20241225_20250101_ICRF_TDB.txt",
+      "bytes": 399580,
+      "sha256": "944064719ccbf70e1cb4f881aeadc15a2c2ca094fb5970a92b9d0583f4318057"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087626,
+      "sha256": "af64a33acbcc83155de79937cbb148b28023b1b7819a19d7b3d7147c70805516"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250020000_01D_05M_ORB.SP3.gz",
+      "bytes": 1095610,
+      "sha256": "b621496c51ff39c68966dbb81b9a23b9ea0157d9d6edb484b7decd84a7b6efc2"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250030000_01D_05M_ORB.SP3.gz",
+      "bytes": 1088052,
+      "sha256": "e323f161a666f7cfe879b852279df96a97b613af3acd352047881d85a32d4a34"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250040000_01D_05M_ORB.SP3.gz",
+      "bytes": 1080064,
+      "sha256": "2b91a83a750d3ce7153f60627ccb4e241a191987a8d2baf765114d59632e7fa5"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250050000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087907,
+      "sha256": "fc872a1ee3c4cd09044d4b97c28067adeef9e3d8335e76902ccfefe549406c4c"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250060000_01D_05M_ORB.SP3.gz",
+      "bytes": 1079898,
+      "sha256": "22819dea348770a047a711dcec73d4eb18f2b26e33dd835d25dde6ff97f58f83"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250070000_01D_05M_ORB.SP3.gz",
+      "bytes": 1080353,
+      "sha256": "76fdcc79c40a3f67d739134a6adb2350e12005e89b19ca0430ace3a73dc141aa"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/GBM0MGXRAP_20250080000_01D_05M_ORB.SP3.gz",
+      "bytes": 1088584,
+      "sha256": "a08b55b90e7088b9029f56ef7ca4a8929efb34edfa9647bc5bbe7acec537a791"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/HORIZONS_CHANDRA_20250101_20250109_ICRF_TDB.txt",
+      "bytes": 455740,
+      "sha256": "c3e8f96b14a6a862277ae438855d2d424268d7b41bb0feb5cd9990ebe33e97d0"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250010000_01D_05M_ORB.SP3.gz",
+      "bytes": 986927,
+      "sha256": "585a0f5ad646e64143cb72d6d08304a07cfbcf6583ad89dcbc4d97105ea267c6"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250020000_01D_05M_ORB.SP3.gz",
+      "bytes": 986741,
+      "sha256": "0eebfe851099c3f8a397a69c8c52089f2b5080ef240e264692e80cab25a6ec13"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250030000_01D_05M_ORB.SP3.gz",
+      "bytes": 979540,
+      "sha256": "b28182fb511891edd5fb794298d96318eb99b6d1a96e5307f55da28e41322f1a"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250040000_01D_05M_ORB.SP3.gz",
+      "bytes": 986660,
+      "sha256": "4eadeeacd7debf5402c8e0e9ce2c971afb848297e99c4fe6b82f3974a8813b75"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250050000_01D_05M_ORB.SP3.gz",
+      "bytes": 986658,
+      "sha256": "887f1bcace40dafa9a548527e237bbea62b189f3b8c64d3719d4173259632840"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250060000_01D_05M_ORB.SP3.gz",
+      "bytes": 978794,
+      "sha256": "4e610de0ca63db4eaae22d820e22508f2352267b53ed7fd7b01d8dc644709dc6"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250070000_01D_05M_ORB.SP3.gz",
+      "bytes": 978626,
+      "sha256": "42b2f9070ae98e9e96036097c603ade77078fdb6fcf1b2f33f3e98a56d602864"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/source/orbit_data/WUM0MGXFIN_20250080000_01D_05M_ORB.SP3.gz",
+      "bytes": 978689,
+      "sha256": "9a82322ce8b214bc57e3bf8f90cc67696006bbcc16daf2e13b32412dc010b349"
+    },
+    {
+      "file": "atomOS_3_6_1_10_ORBIT_SEED/tools/validate_orbit_accuracy.py",
+      "bytes": 27462,
+      "sha256": "238b68bece53ba850471f6d7e1d60caa6dce11f2198f471d8d80b35705bfd79c"
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/formal/ORBIT_COMPARISON_PROTOCOL.md",
+      "bytes": 7012,
+      "sha256": "a22aa539a8f18752fa2b128339fd702c505a513a488e5d07ec1ace88dc3ef4f4"
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/tools/compare_orbit_references.py",
+      "bytes": 22241,
+      "sha256": "098c0e6a87cadbd772e37c9fd8a174e875f90268bfb84929fdb6ffcf99c1c645"
+    }
+  ]
+}

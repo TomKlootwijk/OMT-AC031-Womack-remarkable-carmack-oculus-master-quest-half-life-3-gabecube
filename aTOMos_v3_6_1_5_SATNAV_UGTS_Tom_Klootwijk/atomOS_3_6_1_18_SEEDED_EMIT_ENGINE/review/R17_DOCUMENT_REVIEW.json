@@ -1,0 +1,579 @@
+{
+  "purpose": "Document rendering and structural inspection, not algorithm validation",
+  "pdf": "output/pdf/aTOMos_v3_6_1_17_Fused_Word_Engine_Tom_Klootwijk.pdf",
+  "sha256": "e3017c42607fb277c2562ab43d8a019e0a00b507408f038ff015cf620d05257c",
+  "pages": 90,
+  "extractable_text_all_pages": true,
+  "tex_layout_glyph_reference_warnings": [],
+  "page_boundary_violations": [],
+  "tex_inputs": [
+    {
+      "path": "docs/benchmark_table.tex",
+      "bytes": 3515,
+      "sha256": "302e8e57596c0a8ff033da8a425c8f584042e7398b4bda52c6b7e670add982a8"
+    },
+    {
+      "path": "docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "docs/completion.tex",
+      "bytes": 2308,
+      "sha256": "14999fa679f51a5a0ac37cca7006d3823a53d33f307f58441e8c61e34d3feacc"
+    },
+    {
+      "path": "docs/exact_core.tex",
+      "bytes": 28497,
+      "sha256": "02c03b50260c8e7788f1c3fb9ed620297587f5993a8fb89eef728c01c23727bb"
+    },
+    {
+      "path": "docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "docs/fused_benchmark_table.tex",
+      "bytes": 871,
+      "sha256": "2c2863f8d24f577b3f03236f048b05f8bbc96a565a50b1485ed84f9efa6aa006"
+    },
+    {
+      "path": "docs/fused_evidence.tex",
+      "bytes": 6900,
+      "sha256": "b29ddb36667bec1848890ae04ee1cef7d613948c308e6e7418708ccc2e43f29b"
+    },
+    {
+      "path": "docs/fused_execution.tex",
+      "bytes": 10287,
+      "sha256": "2a180fdbf2f247d4e821682f22d4943c44393a426ee34b87a3b8c5af6a89833a"
+    },
+    {
+      "path": "docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "docs/hinge_core.tex",
+      "bytes": 14498,
+      "sha256": "c501c198bcc34509f170fb41768d9d8fe7f7d3f230b40775b76d8a4ba5c6ece3"
+    },
+    {
+      "path": "docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "docs/overview.tex",
+      "bytes": 3511,
+      "sha256": "a85acefba492b67002b4e26b93e57b0f7d998845bc4dc2ffcca4757a16c66d80"
+    },
+    {
+      "path": "docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "docs/preamble.tex",
+      "bytes": 3178,
+      "sha256": "9ab61157bc23061b3e4d4a86bc4adf3aecd77a39536598226b29c462a02959c7"
+    },
+    {
+      "path": "docs/resident_gpu.tex",
+      "bytes": 14745,
+      "sha256": "19aacc02d3cea158927d5bbf2cae3b7ff490fbcadc6c744bb705caf13b0e5092"
+    },
+    {
+      "path": "docs/resident_results.tex",
+      "bytes": 15568,
+      "sha256": "8ef0e481a57813a1c8dac988773e28aff8fd6bad10d64d721229fcec981d3845"
+    },
+    {
+      "path": "docs/runtime_evidence.tex",
+      "bytes": 10026,
+      "sha256": "27969e123e64f5a11bc3c23ce0e5b0f6f8f186b798628870e101735af0788f4d"
+    },
+    {
+      "path": "docs/spatial_calculus.tex",
+      "bytes": 11642,
+      "sha256": "921eeef6e2d431d45644752fc5a26d78eb8a3d4be36a4a9ac1de87c024ac2baa"
+    },
+    {
+      "path": "docs/unified.tex",
+      "bytes": 2329,
+      "sha256": "5370bb776b21b6d912bdc24d76a6dfd6a06e9b1e4d7c3cebae99ddbd0572d101"
+    },
+    {
+      "path": "docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "docs/word_optimization.tex",
+      "bytes": 15731,
+      "sha256": "64b8be3d023506bd713aa71fd19cfb76a85f1ad9fc5522f64197b5de9c70b29c"
+    },
+    {
+      "path": "docs/word_profile.tex",
+      "bytes": 1900,
+      "sha256": "53a3b4d9ab5514fada0b0e05678be5301635a78e1ef2c9252343ef52fef9b78b"
+    },
+    {
+      "path": "docs/wqk_events.tex",
+      "bytes": 10856,
+      "sha256": "b12d83af695fa21aba99a7b2fcb6fb3a41dd94c25610e33874ad2068b03d5407"
+    },
+    {
+      "path": "docs/wqk_evidence.tex",
+      "bytes": 4705,
+      "sha256": "c4a12544bcf45af1d81d73d8b0cb9c2653281af90b64c910a2e96975907ac8eb"
+    },
+    {
+      "path": "docs/wqk_integration.tex",
+      "bytes": 13224,
+      "sha256": "e36196c9cd46806ff23eec0d931fcb3923ac1b3d619ff0d5bd43ffb12a890762"
+    }
+  ],
+  "required_section_headings": [
+    {
+      "chapter": "clock_binding.tex",
+      "heading": "An atomic-time observation, literal latch and domain bindings",
+      "pages": [
+        3,
+        73
+      ],
+      "present": true
+    },
+    {
+      "chapter": "completion.tex",
+      "heading": "Specialization and remaining engine scope",
+      "pages": [
+        3,
+        80
+      ],
+      "present": true
+    },
+    {
+      "chapter": "exact_core.tex",
+      "heading": "Exact operator seeds: a mathematical contract",
+      "pages": [
+        3,
+        40
+      ],
+      "present": true
+    },
+    {
+      "chapter": "exact_registry.tex",
+      "heading": "Normative XOP-R1 grammar and operator registry",
+      "pages": [
+        3,
+        81
+      ],
+      "present": true
+    },
+    {
+      "chapter": "field_step.tex",
+      "heading": "A finite exact field kernel with work and heat balance",
+      "pages": [
+        3,
+        68
+      ],
+      "present": true
+    },
+    {
+      "chapter": "fused_evidence.tex",
+      "heading": "R17: native evidence and return to the original",
+      "pages": [
+        3,
+        7
+      ],
+      "present": true
+    },
+    {
+      "chapter": "fused_execution.tex",
+      "heading": "R17: fused word execution with exact boundaries",
+      "pages": [
+        3,
+        4
+      ],
+      "present": true
+    },
+    {
+      "chapter": "gravity_time.tex",
+      "heading": "Gravity, clocks and station observations from one state",
+      "pages": [
+        3,
+        70
+      ],
+      "present": true
+    },
+    {
+      "chapter": "hinge_core.tex",
+      "heading": "An exact seed and event-driven hinge engine",
+      "pages": [
+        3,
+        17
+      ],
+      "present": true
+    },
+    {
+      "chapter": "kernel_bridge.tex",
+      "heading": "The exact kernel, physical fields and acquired observations",
+      "pages": [
+        3,
+        47
+      ],
+      "present": true
+    },
+    {
+      "chapter": "overview.tex",
+      "heading": "Exact words with fewer execution boundaries",
+      "pages": [
+        2,
+        3
+      ],
+      "present": true
+    },
+    {
+      "chapter": "physics_core.tex",
+      "heading": "A minimal physical-law layer for application kernels",
+      "pages": [
+        3,
+        51
+      ],
+      "present": true
+    },
+    {
+      "chapter": "physics_core.tex",
+      "heading": "An exact finite step with a derived mechanical energy balance",
+      "pages": [
+        3,
+        53
+      ],
+      "present": true
+    },
+    {
+      "chapter": "physics_em.tex",
+      "heading": "Electromagnetic closure of the optical interface",
+      "pages": [
+        3,
+        60
+      ],
+      "present": true
+    },
+    {
+      "chapter": "physics_energy.tex",
+      "heading": "Momentum, energy and admissible physical coupling",
+      "pages": [
+        3,
+        55
+      ],
+      "present": true
+    },
+    {
+      "chapter": "physics_measurement.tex",
+      "heading": "Measurement, constants and output tolerances",
+      "pages": [
+        3,
+        76
+      ],
+      "present": true
+    },
+    {
+      "chapter": "resident_gpu.tex",
+      "heading": "Resident count predicates and delayed device feedback",
+      "pages": [
+        3,
+        27
+      ],
+      "present": true
+    },
+    {
+      "chapter": "resident_results.tex",
+      "heading": "Measured resident counts and word working sets",
+      "pages": [
+        3,
+        31
+      ],
+      "present": true
+    },
+    {
+      "chapter": "runtime_evidence.tex",
+      "heading": "Implemented native profiles and measured scope",
+      "pages": [
+        3,
+        23
+      ],
+      "present": true
+    },
+    {
+      "chapter": "spatial_calculus.tex",
+      "heading": "Exact spatial templates without a prescribed raster",
+      "pages": [
+        3,
+        20
+      ],
+      "present": true
+    },
+    {
+      "chapter": "unified_coupling.tex",
+      "heading": "One coupled field state and one physical energy",
+      "pages": [
+        3,
+        64
+      ],
+      "present": true
+    },
+    {
+      "chapter": "word_optimization.tex",
+      "heading": "Measured exact word-kernel optimization",
+      "pages": [
+        3,
+        35
+      ],
+      "present": true
+    },
+    {
+      "chapter": "word_profile.tex",
+      "heading": "Native instructions and hardware-counter receipts",
+      "pages": [
+        3,
+        39
+      ],
+      "present": true
+    },
+    {
+      "chapter": "wqk_events.tex",
+      "heading": "Exact affine event discovery and atomic hinges",
+      "pages": [
+        3,
+        12
+      ],
+      "present": true
+    },
+    {
+      "chapter": "wqk_evidence.tex",
+      "heading": "R16 execution evidence",
+      "pages": [
+        3,
+        15
+      ],
+      "present": true
+    },
+    {
+      "chapter": "wqk_integration.tex",
+      "heading": "R16: a source-pinned native word machine",
+      "pages": [
+        3,
+        9
+      ],
+      "present": true
+    }
+  ],
+  "required_headings_present": true,
+  "visual_review": {
+    "status": "complete",
+    "sha256": "e3017c42607fb277c2562ab43d8a019e0a00b507408f038ff015cf620d05257c",
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
+    ],
+    "method": "All 15 final Poppler contact sheets inspected, with individual full-resolution page checks for dense tables and equations.",
+    "assignments": [
+      {
+        "full_page_checks": [
+          6,
+          8
+        ],
+        "reviewer": "root",
+        "pages": [
+          1,
+          18
+        ]
+      },
+      {
+        "full_page_checks": [
+          21,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "reviewer": "r14_physics_bridge",
+        "pages": [
+          19,
+          30
+        ]
+      },
+      {
+        "full_page_checks": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60
+        ],
+        "reviewer": "r14_gravity_time",
+        "pages": [
+          31,
+          60
+        ]
+      },
+      {
+        "full_page_checks": [
+          66,
+          67,
+          69,
+          71,
+          72,
+          76,
+          77,
+          82,
+          86,
+          87,
+          88,
+          89
+        ],
+        "reviewer": "r14_kernel_integration",
+        "pages": [
+          61,
+          90
+        ]
+      }
+    ],
+    "findings": "No clipping, overlap, missing glyphs, unintended blank pages, table defects, or header/footer collisions in the reviewed final render."
+  }
+}

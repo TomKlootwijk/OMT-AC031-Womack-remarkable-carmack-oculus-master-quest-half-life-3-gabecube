@@ -1,0 +1,422 @@
+{
+  "$schema": "../spec/tomagi.schema.json",
+  "tomagi_version": "1.0.0",
+  "title": "TOMAGI literal SDF0 log-polar kinematic loop",
+  "seed": 19900710,
+  "default_ticks": 12,
+  "entry": "cell:sdf0",
+  "initial_state": {
+    "rho": 1048568,
+    "theta": 131072,
+    "tick": 0,
+    "phi": 2000,
+    "vrho": 16,
+    "vtheta": 0,
+    "vtick": 0,
+    "vphi": 0,
+    "orientation": 0,
+    "sheet": 0,
+    "branch": 0,
+    "lineage": "0x12345678"
+  },
+  "definitions": [
+    {
+      "id": "op:sdf0-v1",
+      "kind": "zero_field",
+      "domain": "defined_cell",
+      "codomain": "zero_relation",
+      "evaluation_phase": 0,
+      "dependencies": [],
+      "parameters": {
+        "value": 0
+      },
+      "provenance": {
+        "source": "1bit-PDF pp.16-18; SCLP 3.6.2"
+      },
+      "content_hash": "sha256:e913ab7ec1ead0448ce75599bc0b244deb33d05d1fa3e1a41654e9e019ef9631"
+    },
+    {
+      "id": "op:jitter1-v1",
+      "kind": "one_bit_jitter",
+      "domain": "key_tick_seed",
+      "codomain": "signed_unit_branch",
+      "evaluation_phase": 1,
+      "dependencies": [
+        "op:sdf0-v1"
+      ],
+      "parameters": {
+        "hash": "mix32",
+        "parity": "popcount mod 2"
+      },
+      "provenance": {
+        "source": "1bit-PDF; SCLP jitter bit"
+      },
+      "content_hash": "sha256:df249c06cd5f5b44cb0141b56791c7e79e65deb9c0bd66a9b6e53f21f52aaaba"
+    },
+    {
+      "id": "op:kin2-v1",
+      "kind": "discrete_kinematics",
+      "domain": "state_cell",
+      "codomain": "state",
+      "evaluation_phase": 2,
+      "dependencies": [
+        "op:jitter1-v1"
+      ],
+      "parameters": {
+        "update": "v'=v+a; q'=q+v'"
+      },
+      "provenance": {
+        "source": "kinematic calculus packed into LUT"
+      },
+      "content_hash": "sha256:0429b35940b05c6148da77c0280c142e3f24b277ea3217be79154a520815706d"
+    },
+    {
+      "id": "op:klein-v1",
+      "kind": "reflective_klein_wrap",
+      "domain": "log_polar_state",
+      "codomain": "log_polar_state",
+      "evaluation_phase": 3,
+      "dependencies": [
+        "op:kin2-v1"
+      ],
+      "parameters": {
+        "theta": "half_turn-theta",
+        "phi": "-phi",
+        "orientation": "xor1"
+      },
+      "provenance": {
+        "source": "SCLP 3.6.2 reflective Klein profile"
+      },
+      "content_hash": "sha256:f7e1c608985f322faffa30950c94e7a6dd932dceb3c9483c4bd28f5b3483d482"
+    },
+    {
+      "id": "op:hinge-v1",
+      "kind": "parity_hinge",
+      "domain": "branch_state",
+      "codomain": "state",
+      "evaluation_phase": 4,
+      "dependencies": [
+        "op:klein-v1"
+      ],
+      "parameters": {
+        "map0": "identity",
+        "map1": "declared delta"
+      },
+      "provenance": {
+        "source": "UGTS 3.6 hinge calculus"
+      },
+      "content_hash": "sha256:3aac5a65e8393a29aa5ea468162bed3b50891fa4418fb42e6b6fc6903b8ab3c3"
+    },
+    {
+      "id": "op:lsys-v1",
+      "kind": "binary_lsystem",
+      "domain": "branch_state",
+      "codomain": "state",
+      "evaluation_phase": 5,
+      "dependencies": [
+        "op:hinge-v1"
+      ],
+      "parameters": {
+        "turn": "signed lower-case phi phase",
+        "scale": "dyadic"
+      },
+      "provenance": {
+        "source": "SCLP 3.6.2 bounded binary L-system"
+      },
+      "content_hash": "sha256:9f8ccae8a77a0a353db26c979139f26c60fd79c3af65af402a2ab82c21038d1f"
+    },
+    {
+      "id": "op:cone-v1",
+      "kind": "log_polar_cone_relation",
+      "domain": "packed_chart",
+      "codomain": "signed_integer_relation",
+      "evaluation_phase": 6,
+      "dependencies": [
+        "op:lsys-v1"
+      ],
+      "parameters": {
+        "relation": "max(radial_interval, angular_interval)"
+      },
+      "provenance": {
+        "source": "analytic sweeping cone / cone support"
+      },
+      "content_hash": "sha256:7edb191f0bc5359b18f27b23b5bf05bdd7c0ba606c64c9174c239afe466111a1"
+    },
+    {
+      "id": "op:emit-v1",
+      "kind": "symbol_emit",
+      "domain": "state",
+      "codomain": "token",
+      "evaluation_phase": 7,
+      "dependencies": [
+        "op:cone-v1"
+      ],
+      "parameters": {},
+      "provenance": {
+        "source": "projection and query output"
+      },
+      "content_hash": "sha256:aa4961030ffc8a17579be30fca1522a676b1a962913b4cf293fbff0328497115"
+    }
+  ],
+  "cells": [
+    {
+      "id": "cell:sdf0",
+      "key": {
+        "rho": 0,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:sdf0-v1",
+      "op": "SDF0",
+      "args": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:jitter",
+        "cell:jitter"
+      ],
+      "payload": "0x5a45524f",
+      "aux": 1
+    },
+    {
+      "id": "cell:jitter",
+      "key": {
+        "rho": 1,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:jitter1-v1",
+      "op": "JIT1",
+      "flags": 7,
+      "args": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:kin-minus",
+        "cell:kin-plus"
+      ],
+      "payload": "0x4a495431",
+      "aux": "0x9e3779b9"
+    },
+    {
+      "id": "cell:kin-minus",
+      "key": {
+        "rho": 2,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:kin2-v1",
+      "op": "KIN2",
+      "args": [
+        0,
+        -7,
+        1,
+        -2
+      ],
+      "next": [
+        "cell:klein",
+        "cell:klein"
+      ],
+      "payload": "0x4b494e2d",
+      "aux": 2
+    },
+    {
+      "id": "cell:kin-plus",
+      "key": {
+        "rho": 3,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:kin2-v1",
+      "op": "KIN2",
+      "args": [
+        0,
+        7,
+        1,
+        2
+      ],
+      "next": [
+        "cell:klein",
+        "cell:klein"
+      ],
+      "payload": "0x4b494e2b",
+      "aux": 3
+    },
+    {
+      "id": "cell:klein",
+      "key": {
+        "rho": 4,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:klein-v1",
+      "op": "KLEIN",
+      "flags": 2,
+      "args": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:phi",
+        "cell:hinge"
+      ],
+      "payload": "0x4b4c4549",
+      "aux": 4
+    },
+    {
+      "id": "cell:phi",
+      "key": {
+        "rho": 5,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:hinge-v1",
+      "op": "PHI",
+      "flags": 32,
+      "args": [
+        64,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:lsys",
+        "cell:lsys"
+      ],
+      "payload": "0x50484920",
+      "aux": 5
+    },
+    {
+      "id": "cell:hinge",
+      "key": {
+        "rho": 6,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:hinge-v1",
+      "op": "HINGE",
+      "flags": 1,
+      "args": [
+        0,
+        32,
+        0,
+        16
+      ],
+      "next": [
+        "cell:lsys",
+        "cell:lsys"
+      ],
+      "payload": "0x48494e47",
+      "aux": 6
+    },
+    {
+      "id": "cell:lsys",
+      "key": {
+        "rho": 7,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:lsys-v1",
+      "op": "LSYS",
+      "args": [
+        64,
+        1,
+        0,
+        0
+      ],
+      "next": [
+        "cell:cone",
+        "cell:cone"
+      ],
+      "payload": "0x4c535953",
+      "aux": 7
+    },
+    {
+      "id": "cell:cone",
+      "key": {
+        "rho": 8,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:cone-v1",
+      "op": "CONE",
+      "args": [
+        0,
+        1048575,
+        131072,
+        65536
+      ],
+      "next": [
+        "cell:emit-pyramid",
+        "cell:emit-circle"
+      ],
+      "payload": "0x434f4e45",
+      "aux": 8
+    },
+    {
+      "id": "cell:emit-pyramid",
+      "key": {
+        "rho": 9,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:emit-v1",
+      "op": "EMIT",
+      "flags": 1,
+      "args": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:emit-pyramid",
+        "cell:emit-pyramid"
+      ],
+      "payload": "0x50595241",
+      "aux": 9
+    },
+    {
+      "id": "cell:emit-circle",
+      "key": {
+        "rho": 10,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "op:emit-v1",
+      "op": "EMIT",
+      "flags": 1,
+      "args": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:emit-circle",
+        "cell:emit-circle"
+      ],
+      "payload": "0x43495243",
+      "aux": 10
+    }
+  ]
+}

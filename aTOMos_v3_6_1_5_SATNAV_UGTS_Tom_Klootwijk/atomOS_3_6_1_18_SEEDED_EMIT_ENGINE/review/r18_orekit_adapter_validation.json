@@ -1,0 +1,20 @@
+{
+  "rejected_development_configuration": "Orekit orbit-type Cartesian with automatic Newtonian attraction disabled omits position derivative; results rejected before scoring.",
+  "corrected_configuration": "AbsolutePVCoordinates and null OrbitType; explicit full acceleration; Orekit adds dr/dt=v.",
+  "added_admission": "Every final run audits a 0.01-second position increment against initial r + v*dt + 0.5*a*dt^2 before report writing.",
+  "smoke_native_position_difference_m": [
+    0.0,
+    3.3859282179299907e-06,
+    3.9177737820458085e-05
+  ],
+  "smoke_times_s": [
+    0.0,
+    300.0,
+    3600.0
+  ],
+  "smoke_kinematics": {
+    "second_order_position_residual_m": 4.16500117164066e-09,
+    "duration_s": 0.01,
+    "maximum_admitted_m": 0.001
+  }
+}

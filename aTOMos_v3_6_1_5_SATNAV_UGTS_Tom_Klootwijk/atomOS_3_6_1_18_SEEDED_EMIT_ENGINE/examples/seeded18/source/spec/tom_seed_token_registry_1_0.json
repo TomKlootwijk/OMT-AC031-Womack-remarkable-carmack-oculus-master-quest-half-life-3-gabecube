@@ -1,0 +1,37 @@
+{
+  "content_hash": "sha256:d330f7cc3ba5bff2f2e0eb05e32847c295b69e328ed0852fd612b716819044bb",
+  "grammar_id": "TOM-SEED-GRAMMAR-1.0",
+  "purpose": "Minimal deterministic token registry used by the 0.3 release-document seeded artifact source.",
+  "registry_id": "TOM-SEED-TOKEN-REGISTRY-1.0",
+  "seed_sha256": "d1417a3136772c0cf3eddcd4962ce07d42cbf87616f7b5bae09fc652d9b807b5",
+  "tokens": [
+    {
+      "present_in_seed": true,
+      "token": "TOM1"
+    },
+    {
+      "present_in_seed": true,
+      "token": "TopologicalOpenModular"
+    },
+    {
+      "present_in_seed": true,
+      "token": "Pi"
+    },
+    {
+      "present_in_seed": true,
+      "token": "guard"
+    },
+    {
+      "present_in_seed": true,
+      "token": "event"
+    },
+    {
+      "present_in_seed": true,
+      "token": "transition"
+    },
+    {
+      "present_in_seed": true,
+      "token": "lineage"
+    }
+  ]
+}

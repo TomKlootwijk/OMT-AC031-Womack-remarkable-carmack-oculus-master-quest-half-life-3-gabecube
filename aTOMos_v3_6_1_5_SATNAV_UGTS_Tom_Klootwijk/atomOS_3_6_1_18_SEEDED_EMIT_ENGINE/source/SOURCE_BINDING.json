@@ -1,0 +1,2053 @@
+{
+  "version": "3.6.1.18",
+  "parent_commit": "55c143c7877e92b900535bbf47b39ae74e3dac46",
+  "parents": [
+    {
+      "directory": "atomOS_3_6_1_14_UNIFIED_FIELD",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_14_Unified_Field_Formalization_Tom_Klootwijk.pdf",
+          "bytes": 346338,
+          "sha256": "2f1fe051b588402fdaf9a9828bb004bccd49b0e2feea9b28d0e4757a8be80ccd"
+        }
+      ]
+    },
+    {
+      "directory": "atomOS_3_6_1_15_HINGE_ENGINE",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_15_Native_Hinge_Engine_Tom_Klootwijk.pdf",
+          "bytes": 441970,
+          "sha256": "ee29c15fc790ad4cd3907e0ddea2131dad2de26f41a674a52645853085b5be2b"
+        }
+      ]
+    },
+    {
+      "directory": "atomOS_3_6_1_16_WQK_ENGINE",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_16_WQK_Engine_Tom_Klootwijk.pdf",
+          "bytes": 476896,
+          "sha256": "f18cefe71bbb4732a934a064e71ed36e7ca73147b1e9f9c148969de86fb6506e"
+        }
+      ]
+    },
+    {
+      "directory": "atomOS_3_6_1_17_FUSED_WORD_ENGINE",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_17_Fused_Word_Engine_Tom_Klootwijk.pdf",
+          "bytes": 497675,
+          "sha256": "e3017c42607fb277c2562ab43d8a019e0a00b507408f038ff015cf620d05257c"
+        }
+      ]
+    }
+  ],
+  "inspected_or_adapted_sources": [
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/CLOCK_BINDING.md",
+      "bytes": 7241,
+      "sha256": "265786cf69e68440c8fa6d269385e58dc1e2c93ea1dc7e4834bba97e0a42b5ea"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/GRAVITY_TIME.md",
+      "bytes": 5494,
+      "sha256": "b34e4c0da78fbeee0fe35c6cf42a0712c961643ee296587ff01010e41c1aeaa9"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/KERNEL_INTEGRATION.md",
+      "bytes": 7173,
+      "sha256": "acb059f04de40711403b7128aec150d2d2a6a3a5c984cffd010d3fae46c52f95"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/PHYSICS_PROFILE.md",
+      "bytes": 5489,
+      "sha256": "31ebfc85942759f9254d780735bf1367dbb256600d13db97fb50654f2e9a2470"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/UNIFIED_COUPLING.md",
+      "bytes": 10243,
+      "sha256": "c9f601c3ca31d7d81e715c2fec70dba7f4d1ba3799b13ce94b0c63a608e3e372"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/exact_core.tex",
+      "bytes": 27790,
+      "sha256": "97eacdf254c841ba2b9a1bb0a19f3f10483c85440439c7e6e1c05373edfb6b22"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/anchor_state.json",
+      "bytes": 3696,
+      "sha256": "8e57befdf4e50cf595d7b6a1bb3fe7a2312d168b6207c00bff0ef87d8c42d82f"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/capture.json",
+      "bytes": 2163,
+      "sha256": "e9108f4b87ebdc331fe717c0afcd590820c66b6fc3ca23cb088fd15f4bfc9fa3"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/leap-seconds.list",
+      "bytes": 5065,
+      "sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/leap_source.json",
+      "bytes": 233,
+      "sha256": "296b0dc2b0f6528f775dea564de52c227f11b988db986959e70d57fe5ddfbcc6"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_capture.json",
+      "bytes": 1999,
+      "sha256": "6d29fc205767c080c2cbb703f8904412a678cc3398ae332362d42afee05944ca"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_reply.bin",
+      "bytes": 48,
+      "sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_request.bin",
+      "bytes": 48,
+      "sha256": "f8d1399b333b6e11e1ee9be5a1ce5dd239daed728e534de73e53e7e0ae87a866"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/time_cloudflare_com_reply.bin",
+      "bytes": 48,
+      "sha256": "7bf8a777db65b4b0f8174aa4fd28878dcda028c436790b351fd77f7174e8d878"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/time_cloudflare_com_request.bin",
+      "bytes": 48,
+      "sha256": "8959f1070061ac99faaaad9f12fbb62531ec3638a88d578d92c06e89dff1ec5b"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/SOURCE_BINDING.json",
+      "bytes": 4889,
+      "sha256": "da378c22289a734f6aaec37e42ca907e1df941157f7a805e04aac0bed93166e5"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/source/embedded/Pasted markdown.md",
+      "bytes": 61608,
+      "sha256": "1869efeab782774dd7af09cc2ca9e4dfd7f0317acf1549a375bbb4f8cb53d136"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/phi_source_audit.tex",
+      "bytes": 7055,
+      "sha256": "963737829e4073aba200a9f08d7a778e366060f8fd0d4f2b1e421482da74b307"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/AGENTS.md",
+      "bytes": 857,
+      "sha256": "31631f320a181136565a5c858375993772e477561cfdd48a58fafe9417bde9c5"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/CMakeLists.txt",
+      "bytes": 5382,
+      "sha256": "24de7d88758ec676c0eca0a88c66e5ec52d68b688989fffb442f442f00485c96"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/exact_program.cu",
+      "bytes": 17502,
+      "sha256": "2db48f15a2baa7b1383a5d87b699b48f3bb491d1255ae1b6182c208e8c00aaf4"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/resident_feedback.cu",
+      "bytes": 4684,
+      "sha256": "fc2aa21208f9eb19cd16463198927cc9e2441dc54fd280d0bdb0dcd24d312ebf"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/resident_index.cu",
+      "bytes": 4898,
+      "sha256": "0d95da060d1d9a3bce8bc90ecd5fc296901cb46cade1b3053412dbe5e5c663cc"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/texture_index.cu",
+      "bytes": 6295,
+      "sha256": "b27bd9b7259615492f36805f3f294b71b9626b7cca08b1b9b6a7c16bb29ff258"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/word_cache_benchmark.cu",
+      "bytes": 27781,
+      "sha256": "742c25e582bd2d5c4d0868051b61a03d6d224d477029caaff949ba552b2890d2"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/benchmark_table.tex",
+      "bytes": 3515,
+      "sha256": "302e8e57596c0a8ff033da8a425c8f584042e7398b4bda52c6b7e670add982a8"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/completion.tex",
+      "bytes": 2281,
+      "sha256": "a3726afc73d5cd545a4e3b9690f2f274d8fb43b807d9b0ed567879728a77b91e"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/exact_core.tex",
+      "bytes": 28497,
+      "sha256": "02c03b50260c8e7788f1c3fb9ed620297587f5993a8fb89eef728c01c23727bb"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/hinge_core.tex",
+      "bytes": 14498,
+      "sha256": "c501c198bcc34509f170fb41768d9d8fe7f7d3f230b40775b76d8a4ba5c6ece3"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/overview.tex",
+      "bytes": 4517,
+      "sha256": "102b0fb9a7885792b452a7c109e2ab5e65adc699c3cd9ca6b7ed4afb8632bd22"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/preamble.tex",
+      "bytes": 3182,
+      "sha256": "c26dc98ddc4122bb3df4c88443a201e468fb1cffeacb3121cf575d134263794a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/resident_gpu.tex",
+      "bytes": 14745,
+      "sha256": "19aacc02d3cea158927d5bbf2cae3b7ff490fbcadc6c744bb705caf13b0e5092"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/resident_results.tex",
+      "bytes": 15568,
+      "sha256": "8ef0e481a57813a1c8dac988773e28aff8fd6bad10d64d721229fcec981d3845"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/runtime_evidence.tex",
+      "bytes": 10026,
+      "sha256": "27969e123e64f5a11bc3c23ce0e5b0f6f8f186b798628870e101735af0788f4d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/spatial_calculus.tex",
+      "bytes": 11642,
+      "sha256": "921eeef6e2d431d45644752fc5a26d78eb8a3d4be36a4a9ac1de87c024ac2baa"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/unified.tex",
+      "bytes": 2100,
+      "sha256": "1da9a1265d6dc6f0426afd40c7fd1bf4fd3c810a0e97a1a4ec9734f7af998f4e"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/word_optimization.tex",
+      "bytes": 15731,
+      "sha256": "64b8be3d023506bd713aa71fd19cfb76a85f1ad9fc5522f64197b5de9c70b29c"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/word_profile.tex",
+      "bytes": 1900,
+      "sha256": "53a3b4d9ab5514fada0b0e05678be5301635a78e1ef2c9252343ef52fef9b78b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/CLOCK_BINDING.md",
+      "bytes": 7241,
+      "sha256": "265786cf69e68440c8fa6d269385e58dc1e2c93ea1dc7e4834bba97e0a42b5ea"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/COMPARISON_CONTRACT.md",
+      "bytes": 3999,
+      "sha256": "acb4bd961ffaa97509320a4c7bf1cc707404cd84862d649db5558c765ddc88f0"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/CORE_RUNTIME.md",
+      "bytes": 11571,
+      "sha256": "25a76bd636adb8e47aaecda1a34610c67a342bb3faef052dfd5414c2ef1757d6"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/EXACT_GPU_PROFILE.md",
+      "bytes": 9287,
+      "sha256": "e748168865f8d2f0d8d518d6a014e627a33a4ee210a504d3708e90f2c1b378a4"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/GRAVITY_TIME.md",
+      "bytes": 5494,
+      "sha256": "b34e4c0da78fbeee0fe35c6cf42a0712c961643ee296587ff01010e41c1aeaa9"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/KERNEL_INTEGRATION.md",
+      "bytes": 7173,
+      "sha256": "acb059f04de40711403b7128aec150d2d2a6a3a5c984cffd010d3fae46c52f95"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/NATIVE_GPU.md",
+      "bytes": 23620,
+      "sha256": "e1d50a7a5faa1092a2f7deceb6de2ce90fcfc5043b632047a84a88e292e0fb24"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/PHYSICS_PROFILE.md",
+      "bytes": 5489,
+      "sha256": "31ebfc85942759f9254d780735bf1367dbb256600d13db97fb50654f2e9a2470"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/RESIDENT_INDEX.md",
+      "bytes": 9587,
+      "sha256": "789a2bde9203243e51a31112cb6ac98490ce1b3a2f175ea23b5911abde7d6163"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/RESIDENT_PREDICATE_PROOF.md",
+      "bytes": 13374,
+      "sha256": "ee43a71be8ebb789e2eaf342117143c7708864ca83b599aa23d8f1bfc383843d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/SPATIAL_INDEX.md",
+      "bytes": 10714,
+      "sha256": "52ade39dc74ded95eb3ffaed04f75dab79ee48e9e33609c62aa162a17d5349ef"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/UNIFIED_COUPLING.md",
+      "bytes": 10243,
+      "sha256": "c9f601c3ca31d7d81e715c2fec70dba7f4d1ba3799b13ce94b0c63a608e3e372"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/WORD_CACHE_BENCHMARK.md",
+      "bytes": 17244,
+      "sha256": "6b2e60ac8f1050d566e712ab8feb8a290b2bc0870d09e2e77bb996565d8cb6a0"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/exact_program.hpp",
+      "bytes": 2874,
+      "sha256": "aedd1300d465bbf9413940755f526162685e223330be9a79d248e583dde05768"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/gpu_kernels.cuh",
+      "bytes": 842,
+      "sha256": "b52b2ebdcf9f224ac606fc41475f0d0dc3e87398a2c55d9fd1f66387f7f9c817"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/point.hpp",
+      "bytes": 272,
+      "sha256": "6daaa5854bfaa5681f4f04a148e5bb955da51f71d787ce1467e5b1cd08266c43"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/resident_feedback.hpp",
+      "bytes": 1152,
+      "sha256": "882f3a5b2898bdcaf56d0f565b1ea386403485723d542535c610f4bb5e5fb838"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/resident_index.hpp",
+      "bytes": 2188,
+      "sha256": "3c07e31c8b93089dcf5b2ed108168876cce623d35823f557f3bec3a795f47441"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/resident_kernels.cuh",
+      "bytes": 1400,
+      "sha256": "14de510d35b32fa64669a5664ab9a77aaca54372bcb2cab0348f1e3bc29af813"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/spatial_index.hpp",
+      "bytes": 13941,
+      "sha256": "148384aad568a6a0716a058d089cca2f990921b205eac26a2c78ef2b582caf12"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/texture_index.hpp",
+      "bytes": 2127,
+      "sha256": "ce21b462bdf7fe95d390fb6a9b39862db9578c00ad5364a9fa25d0491c5da5fe"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/worker_pool.hpp",
+      "bytes": 4101,
+      "sha256": "d26ab0ee3be857211ee89a6f62e14ff4619cd39356c5d439859d2e8216ec129a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/python/atomos_hinge.py",
+      "bytes": 37771,
+      "sha256": "6aee773ea5e703b1112432dafdf483e04b9f632646ec6d6791b224ab8cf5e522"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/README.md",
+      "bytes": 6439,
+      "sha256": "c5033afeec48af9a6ef84d77d39e453ec2f327477312b18813b030448189caf9"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/anchor_state.json",
+      "bytes": 3696,
+      "sha256": "8e57befdf4e50cf595d7b6a1bb3fe7a2312d168b6207c00bff0ef87d8c42d82f"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/capture.json",
+      "bytes": 2163,
+      "sha256": "e9108f4b87ebdc331fe717c0afcd590820c66b6fc3ca23cb088fd15f4bfc9fa3"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/leap-seconds.list",
+      "bytes": 5065,
+      "sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/leap_source.json",
+      "bytes": 233,
+      "sha256": "296b0dc2b0f6528f775dea564de52c227f11b988db986959e70d57fe5ddfbcc6"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/nist_capture.json",
+      "bytes": 1999,
+      "sha256": "6d29fc205767c080c2cbb703f8904412a678cc3398ae332362d42afee05944ca"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/nist_reply.bin",
+      "bytes": 48,
+      "sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/nist_request.bin",
+      "bytes": 48,
+      "sha256": "f8d1399b333b6e11e1ee9be5a1ce5dd239daed728e534de73e53e7e0ae87a866"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/time_cloudflare_com_reply.bin",
+      "bytes": 48,
+      "sha256": "7bf8a777db65b4b0f8174aa4fd28878dcda028c436790b351fd77f7174e8d878"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/time_cloudflare_com_request.bin",
+      "bytes": 48,
+      "sha256": "8959f1070061ac99faaaad9f12fbb62531ec3638a88d578d92c06e89dff1ec5b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/DEPENDENCIES.json",
+      "bytes": 771,
+      "sha256": "d7c328e7d42dfe69522dd757ac44067da417600226857de6748e134dce9f4e5d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/MAIN_REPOSITORY_PDF.json",
+      "bytes": 305,
+      "sha256": "92102c72556865593b8069be7bf059a1e2380f62daebad889b1b94953be55e99"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/SOURCE_BINDING.json",
+      "bytes": 7280,
+      "sha256": "b3ab287a3a7fc446c094bcc905f41ca606b258df990bcd8a2b926084fe5e9e4a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/THIRD_PARTY.md",
+      "bytes": 1074,
+      "sha256": "a068b1e60a3348311521864e017379a8c7085a726b41853d2392e0557a42848d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/compare_resident.cpp",
+      "bytes": 9291,
+      "sha256": "4d0709ec853521fb80733af302db73654cb128d3f265d39360593f6cf3a85b79"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/compare_s2.cpp",
+      "bytes": 18658,
+      "sha256": "40fc0f1d53b24e9854434485f4eedac56f384d26319f91adb6d0a583bcd6e4b1"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/engine_demo.cpp",
+      "bytes": 3802,
+      "sha256": "2e1624c572b5ce299465aa32498e38c1fa2bf7fac49db8ff4271a70bb2a250f8"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/resident_index.cpp",
+      "bytes": 9376,
+      "sha256": "40c048984c65e874dc7540e01ee0410a27d43d89899436d193052e5c0d2e6edb"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/texture_index.cpp",
+      "bytes": 16471,
+      "sha256": "197a3b0bc8c9b46a1a446dfe5c4d69574b7cec31976d7a1c0a7933e4b8069e06"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/exact_program_tests.cpp",
+      "bytes": 8427,
+      "sha256": "c4cde2f6383caa02a2b8f041e508922bec8f2d96963675b62e2609258cabb085"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/resident_feedback_tests.cpp",
+      "bytes": 2427,
+      "sha256": "6a3396a1bc4846d7a0b0b2d21d3a52822dabf63458ae41fa7d0a9a6bdb23ce04"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/resident_index_tests.cpp",
+      "bytes": 7269,
+      "sha256": "9790f46a9c9f26bfc28a912f9a66ce8842392aa2371f02a5bf87b4f3cc4545f8"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/spatial_index_tests.cpp",
+      "bytes": 9475,
+      "sha256": "d1f1cf4ccfc1286608edbc21197de62c2821062c3dec48282dc165e02f83e188"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/test_hinge.py",
+      "bytes": 14710,
+      "sha256": "0a8375eee47031de0be8d0363496794987ac68527fe94f07b2b2ff43ba0de486"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/texture_tests.cpp",
+      "bytes": 5101,
+      "sha256": "b008dd9e79fdaff239c9c5fd54942b09ada8c7406e80f912f80e489e458e2478"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/build_native.ps1",
+      "bytes": 1370,
+      "sha256": "feee8f7d53bcb2c77e0fb8b4573f75a692397848703c0469912c35eac1ec9d37"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/build_pdf.py",
+      "bytes": 910,
+      "sha256": "98d7c5db99af51538317e7b12afc076a724c0072719e83525457d849c2069552"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/package_release.py",
+      "bytes": 4517,
+      "sha256": "29c3061f3f39c610229efb37a74d26c1503f625c1bb52ebbeaa1f1c358e38a9a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/prepare_document.py",
+      "bytes": 5251,
+      "sha256": "9ca45c00635890b44713640cfd194088b757079a23cd5448bec1677c1443179b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/review_pdf.py",
+      "bytes": 3216,
+      "sha256": "9969e369df442d135f6ec0b5bab0c4433b0d26326b0b7b74cd50ac35b96e938a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_comparison.py",
+      "bytes": 5865,
+      "sha256": "5095a6734163ff7fbd8bc210a9187c3195edc09076a43a1238a108c51b53f75b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_resident.py",
+      "bytes": 36205,
+      "sha256": "fc6f4bd81ef67142a9c29c1f1a3017563a04379b8a8f066df908d5906ef5348c"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_word_optimization.py",
+      "bytes": 25063,
+      "sha256": "7402280f1dbcc002dfa2a3cba094aaef7a417090cbce8c8ba62c4d3e9f902335"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_word_profile.py",
+      "bytes": 8149,
+      "sha256": "64364c3b845f40c3cc615983f1fc4bd3dabf2a14931c6612a8841bf446418519"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/VERSION.json",
+      "bytes": 1053,
+      "sha256": "c840f2650c27a6e7e1cc96087cf20607a75862eb99abca7fb930661c1aa3b59d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/release_manifest.json",
+      "bytes": 25133,
+      "sha256": "9d3d939861a967b99df1ad32367f12ea18cf383253afce37c093ec36e9c7f9bc"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/.gitattributes",
+      "bytes": 86,
+      "sha256": "1244f2ebe470f728a2e9c608022dde928d2e3e3a62e67dbb621d710ece077eb2"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/.gitignore",
+      "bytes": 99,
+      "sha256": "af28dec3e5ae59087aa7a8121e27115b59009f2888fd599386462bd88587222b"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/AGENTS.md",
+      "bytes": 1223,
+      "sha256": "78e50b344b36d8461d63f2a566b6e139675755808f5a57af1cedd0849c11a753"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/CMakeLists.txt",
+      "bytes": 6860,
+      "sha256": "19eb407a25baaef758083408d83e36885e6734f0568d1fc8932ea5e3507942c2"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/cuda/exact_program.cu",
+      "bytes": 17502,
+      "sha256": "2db48f15a2baa7b1383a5d87b699b48f3bb491d1255ae1b6182c208e8c00aaf4"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/cuda/resident_feedback.cu",
+      "bytes": 4684,
+      "sha256": "fc2aa21208f9eb19cd16463198927cc9e2441dc54fd280d0bdb0dcd24d312ebf"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/cuda/resident_index.cu",
+      "bytes": 4898,
+      "sha256": "0d95da060d1d9a3bce8bc90ecd5fc296901cb46cade1b3053412dbe5e5c663cc"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/cuda/texture_index.cu",
+      "bytes": 6295,
+      "sha256": "b27bd9b7259615492f36805f3f294b71b9626b7cca08b1b9b6a7c16bb29ff258"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/cuda/tomagi_feedback.cu",
+      "bytes": 6362,
+      "sha256": "a20adc8a25839caca3bfa891a0e2fd5acc7c3e5723c12e8dfaa1ae1c737b914a"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/cuda/tomagi_vm.cu",
+      "bytes": 18447,
+      "sha256": "8b606c2afef85c1fb7d8c693701cd3e6b77319319079b640192511ec8cc9a76b"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/cuda/word_cache_benchmark.cu",
+      "bytes": 27781,
+      "sha256": "742c25e582bd2d5c4d0868051b61a03d6d224d477029caaff949ba552b2890d2"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/benchmark_table.tex",
+      "bytes": 3515,
+      "sha256": "302e8e57596c0a8ff033da8a425c8f584042e7398b4bda52c6b7e670add982a8"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/completion.tex",
+      "bytes": 2087,
+      "sha256": "dc82ffb6faf9805a2a1403d88d7005fcedbd6c772088405ced8535b69e324cbc"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/exact_core.tex",
+      "bytes": 28497,
+      "sha256": "02c03b50260c8e7788f1c3fb9ed620297587f5993a8fb89eef728c01c23727bb"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/hinge_core.tex",
+      "bytes": 14498,
+      "sha256": "c501c198bcc34509f170fb41768d9d8fe7f7d3f230b40775b76d8a4ba5c6ece3"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/overview.tex",
+      "bytes": 3619,
+      "sha256": "637069109857a65e60ced7808baa460e1f2955dfd99d88b9ece81ab29d209cd9"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/preamble.tex",
+      "bytes": 3172,
+      "sha256": "45f5dcfccd75ca8c613b817e2f9c0ac99318a4f7f4f570ebc8b64a1ff9cf231c"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/resident_gpu.tex",
+      "bytes": 14745,
+      "sha256": "19aacc02d3cea158927d5bbf2cae3b7ff490fbcadc6c744bb705caf13b0e5092"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/resident_results.tex",
+      "bytes": 15568,
+      "sha256": "8ef0e481a57813a1c8dac988773e28aff8fd6bad10d64d721229fcec981d3845"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/runtime_evidence.tex",
+      "bytes": 10026,
+      "sha256": "27969e123e64f5a11bc3c23ce0e5b0f6f8f186b798628870e101735af0788f4d"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/spatial_calculus.tex",
+      "bytes": 11642,
+      "sha256": "921eeef6e2d431d45644752fc5a26d78eb8a3d4be36a4a9ac1de87c024ac2baa"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/unified.tex",
+      "bytes": 2212,
+      "sha256": "e67a984f1169e549b5351bc76e37253c2f5a215334271b0d2b25ed35f0eb9231"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/word_optimization.tex",
+      "bytes": 15731,
+      "sha256": "64b8be3d023506bd713aa71fd19cfb76a85f1ad9fc5522f64197b5de9c70b29c"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/word_profile.tex",
+      "bytes": 1900,
+      "sha256": "53a3b4d9ab5514fada0b0e05678be5301635a78e1ef2c9252343ef52fef9b78b"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/wqk_events.tex",
+      "bytes": 10856,
+      "sha256": "b12d83af695fa21aba99a7b2fcb6fb3a41dd94c25610e33874ad2068b03d5407"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/wqk_evidence.tex",
+      "bytes": 4705,
+      "sha256": "c4a12544bcf45af1d81d73d8b0cb9c2653281af90b64c910a2e96975907ac8eb"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/docs/wqk_integration.tex",
+      "bytes": 13224,
+      "sha256": "e36196c9cd46806ff23eec0d931fcb3923ac1b3d619ff0d5bd43ffb12a890762"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/examples/wqk_feedback.cells.json",
+      "bytes": 539,
+      "sha256": "183c15a8b69f7693e8a1bcb498a99a198b8299c82cca14374e0a57d05d02bdf8"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/examples/wqk_feedback.expected.bin",
+      "bytes": 3088,
+      "sha256": "8409d3c97d05b6ddd3d99fbaf75cf2d5406665c830ed5917390b9e9cbf9c54f5"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/examples/wqk_feedback.tmg",
+      "bytes": 272,
+      "sha256": "53a4462178722eb121b601ba7a859a82571c40bf814a8e5a9d92e9aab720f1b7"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/CLOCK_BINDING.md",
+      "bytes": 7241,
+      "sha256": "265786cf69e68440c8fa6d269385e58dc1e2c93ea1dc7e4834bba97e0a42b5ea"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/COMPARISON_CONTRACT.md",
+      "bytes": 3999,
+      "sha256": "acb4bd961ffaa97509320a4c7bf1cc707404cd84862d649db5558c765ddc88f0"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/CORE_RUNTIME.md",
+      "bytes": 11571,
+      "sha256": "25a76bd636adb8e47aaecda1a34610c67a342bb3faef052dfd5414c2ef1757d6"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/EXACT_AFFINE_EVENTS.md",
+      "bytes": 15212,
+      "sha256": "4ce6e7b702be797121650b29bdd5ba27a524119a0dfb8e3d3699eda45a327687"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/EXACT_GPU_PROFILE.md",
+      "bytes": 9287,
+      "sha256": "e748168865f8d2f0d8d518d6a014e627a33a4ee210a504d3708e90f2c1b378a4"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/GRAVITY_TIME.md",
+      "bytes": 5494,
+      "sha256": "b34e4c0da78fbeee0fe35c6cf42a0712c961643ee296587ff01010e41c1aeaa9"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/KERNEL_INTEGRATION.md",
+      "bytes": 7173,
+      "sha256": "acb059f04de40711403b7128aec150d2d2a6a3a5c984cffd010d3fae46c52f95"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/NATIVE_GPU.md",
+      "bytes": 23620,
+      "sha256": "e1d50a7a5faa1092a2f7deceb6de2ce90fcfc5043b632047a84a88e292e0fb24"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/PHYSICS_PROFILE.md",
+      "bytes": 5489,
+      "sha256": "31ebfc85942759f9254d780735bf1367dbb256600d13db97fb50654f2e9a2470"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/RESIDENT_INDEX.md",
+      "bytes": 9587,
+      "sha256": "789a2bde9203243e51a31112cb6ac98490ce1b3a2f175ea23b5911abde7d6163"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/RESIDENT_PREDICATE_PROOF.md",
+      "bytes": 13374,
+      "sha256": "ee43a71be8ebb789e2eaf342117143c7708864ca83b599aa23d8f1bfc383843d"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/SPATIAL_INDEX.md",
+      "bytes": 10714,
+      "sha256": "52ade39dc74ded95eb3ffaed04f75dab79ee48e9e33609c62aa162a17d5349ef"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/TOMAGI_NATIVE.md",
+      "bytes": 14657,
+      "sha256": "1283457a021fb90d88b22e90445c4c436c352895e472b49f7359ffb080cc8b64"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/UNIFIED_COUPLING.md",
+      "bytes": 10243,
+      "sha256": "c9f601c3ca31d7d81e715c2fec70dba7f4d1ba3799b13ce94b0c63a608e3e372"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/WORD_CACHE_BENCHMARK.md",
+      "bytes": 17244,
+      "sha256": "6b2e60ac8f1050d566e712ab8feb8a290b2bc0870d09e2e77bb996565d8cb6a0"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/formal/WQK_INTEGRATION.md",
+      "bytes": 20666,
+      "sha256": "e9ebb7e267ef43d31c59e6656247f21b690b2d2a8a91902d5c91102ec17466ee"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/exact_program.hpp",
+      "bytes": 2874,
+      "sha256": "aedd1300d465bbf9413940755f526162685e223330be9a79d248e583dde05768"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/gpu_kernels.cuh",
+      "bytes": 842,
+      "sha256": "b52b2ebdcf9f224ac606fc41475f0d0dc3e87398a2c55d9fd1f66387f7f9c817"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/point.hpp",
+      "bytes": 272,
+      "sha256": "6daaa5854bfaa5681f4f04a148e5bb955da51f71d787ce1467e5b1cd08266c43"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/resident_feedback.hpp",
+      "bytes": 1152,
+      "sha256": "882f3a5b2898bdcaf56d0f565b1ea386403485723d542535c610f4bb5e5fb838"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/resident_index.hpp",
+      "bytes": 2188,
+      "sha256": "3c07e31c8b93089dcf5b2ed108168876cce623d35823f557f3bec3a795f47441"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/resident_kernels.cuh",
+      "bytes": 1400,
+      "sha256": "14de510d35b32fa64669a5664ab9a77aaca54372bcb2cab0348f1e3bc29af813"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/spatial_index.hpp",
+      "bytes": 13941,
+      "sha256": "148384aad568a6a0716a058d089cca2f990921b205eac26a2c78ef2b582caf12"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/texture_index.hpp",
+      "bytes": 2127,
+      "sha256": "ce21b462bdf7fe95d390fb6a9b39862db9578c00ad5364a9fa25d0491c5da5fe"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/tomagi_feedback.hpp",
+      "bytes": 1612,
+      "sha256": "358f49485683a1e975fc18d950c3cc8231cca2a802ec46efcf6663476ff76c17"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/tomagi_vm.hpp",
+      "bytes": 3600,
+      "sha256": "6c7b3a82eddfc9081f61a39060c621b07a5c97f9e6e8c7c80fa0c3bcf5eecfe9"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/include/atomos/worker_pool.hpp",
+      "bytes": 4101,
+      "sha256": "d26ab0ee3be857211ee89a6f62e14ff4619cd39356c5d439859d2e8216ec129a"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/python/atomos_events.py",
+      "bytes": 20118,
+      "sha256": "227d05fa668366581f08f9420c520481e6d7bb15792a304a854eec0eff808b3d"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/python/atomos_hinge.py",
+      "bytes": 46010,
+      "sha256": "3d12050261eb1f00cdc90bb54690b347f174ca43926aed1185b4f7147bbf71c9"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/README.md",
+      "bytes": 4710,
+      "sha256": "0f4f89a177047bb2270bc5ebf61d503890c7835d984ff49dab4666a34371d508"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/anchor_state.json",
+      "bytes": 3696,
+      "sha256": "8e57befdf4e50cf595d7b6a1bb3fe7a2312d168b6207c00bff0ef87d8c42d82f"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/capture.json",
+      "bytes": 2163,
+      "sha256": "e9108f4b87ebdc331fe717c0afcd590820c66b6fc3ca23cb088fd15f4bfc9fa3"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/leap-seconds.list",
+      "bytes": 5065,
+      "sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/leap_source.json",
+      "bytes": 233,
+      "sha256": "296b0dc2b0f6528f775dea564de52c227f11b988db986959e70d57fe5ddfbcc6"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/nist_capture.json",
+      "bytes": 1999,
+      "sha256": "6d29fc205767c080c2cbb703f8904412a678cc3398ae332362d42afee05944ca"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/nist_reply.bin",
+      "bytes": 48,
+      "sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/nist_request.bin",
+      "bytes": 48,
+      "sha256": "f8d1399b333b6e11e1ee9be5a1ce5dd239daed728e534de73e53e7e0ae87a866"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/time_cloudflare_com_reply.bin",
+      "bytes": 48,
+      "sha256": "7bf8a777db65b4b0f8174aa4fd28878dcda028c436790b351fd77f7174e8d878"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/clock_capture/time_cloudflare_com_request.bin",
+      "bytes": 48,
+      "sha256": "8959f1070061ac99faaaad9f12fbb62531ec3638a88d578d92c06e89dff1ec5b"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/DEPENDENCIES.json",
+      "bytes": 771,
+      "sha256": "d7c328e7d42dfe69522dd757ac44067da417600226857de6748e134dce9f4e5d"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/MAIN_REPOSITORY_PDF.json",
+      "bytes": 429,
+      "sha256": "2d6469ffd1bcfbc3edba0687bc66c5ade4b828c16af587fb6ac83bd45371a440"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/SOURCE_BINDING.json",
+      "bytes": 26469,
+      "sha256": "76b75c3e5d19332e706b8d91615aa03b04412137ddc89be58dfb87e56debfd9b"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/THIRD_PARTY.md",
+      "bytes": 1074,
+      "sha256": "a068b1e60a3348311521864e017379a8c7085a726b41853d2392e0557a42848d"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/WQK_IMPORTS.json",
+      "bytes": 7480,
+      "sha256": "7aa38f11ced4f1f0fa8c701c1aedf221f7b521c0a0d6550ee04c069770c82554"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/src/compare_resident.cpp",
+      "bytes": 9291,
+      "sha256": "4d0709ec853521fb80733af302db73654cb128d3f265d39360593f6cf3a85b79"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/src/compare_s2.cpp",
+      "bytes": 18658,
+      "sha256": "40fc0f1d53b24e9854434485f4eedac56f384d26319f91adb6d0a583bcd6e4b1"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/src/engine_demo.cpp",
+      "bytes": 3802,
+      "sha256": "2e1624c572b5ce299465aa32498e38c1fa2bf7fac49db8ff4271a70bb2a250f8"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/src/resident_index.cpp",
+      "bytes": 9376,
+      "sha256": "40c048984c65e874dc7540e01ee0410a27d43d89899436d193052e5c0d2e6edb"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/src/texture_index.cpp",
+      "bytes": 16471,
+      "sha256": "197a3b0bc8c9b46a1a446dfe5c4d69574b7cec31976d7a1c0a7933e4b8069e06"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/exact_program_tests.cpp",
+      "bytes": 8427,
+      "sha256": "c4cde2f6383caa02a2b8f041e508922bec8f2d96963675b62e2609258cabb085"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/resident_feedback_tests.cpp",
+      "bytes": 2427,
+      "sha256": "6a3396a1bc4846d7a0b0b2d21d3a52822dabf63458ae41fa7d0a9a6bdb23ce04"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/resident_index_tests.cpp",
+      "bytes": 7269,
+      "sha256": "9790f46a9c9f26bfc28a912f9a66ce8842392aa2371f02a5bf87b4f3cc4545f8"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/spatial_index_tests.cpp",
+      "bytes": 9475,
+      "sha256": "d1f1cf4ccfc1286608edbc21197de62c2821062c3dec48282dc165e02f83e188"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/test_events.py",
+      "bytes": 17842,
+      "sha256": "059e5c167137b88b52d3110f67d9d45eb2794782dd09db4275b3ced8e9d99240"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/test_hinge.py",
+      "bytes": 14710,
+      "sha256": "0a8375eee47031de0be8d0363496794987ac68527fe94f07b2b2ff43ba0de486"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/texture_tests.cpp",
+      "bytes": 5101,
+      "sha256": "b008dd9e79fdaff239c9c5fd54942b09ada8c7406e80f912f80e489e458e2478"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/tomagi_feedback_tests.cpp",
+      "bytes": 7809,
+      "sha256": "dd5a58539aa164238b60e95c91474815f84ff0d1ac0f71b40c8671def196e593"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tests/tomagi_vm_tests.cpp",
+      "bytes": 11403,
+      "sha256": "a92762b8d17bb587ce209a585b0285586764d324287b4d4b6186b7de40632e86"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/build_native.ps1",
+      "bytes": 1370,
+      "sha256": "bc3ec972ded74debd2411c54e2441c43441b7e2853e162f59f2ab525a1e497c2"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/build_pdf.py",
+      "bytes": 1342,
+      "sha256": "abb9e247253b85f4b24b76c731970fc6c54ec8ff2d9bf5909eaa88bd1d67d6f5"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/build_wqk_fixtures.py",
+      "bytes": 4238,
+      "sha256": "4d30f771c555cce74fe8625ad74e6b196420544afb22dcb6fa5cf6448bc7d567"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/check_exact_events.py",
+      "bytes": 11756,
+      "sha256": "0f31ca93685527ecce31dd1c8359c2bb64390ca6584446567546953313230387"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/measure_wqk.py",
+      "bytes": 4373,
+      "sha256": "975e7065627e30981ce2c0785f12b50169b8a6ad560c856681c39cf4a5e25909"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/package_release.py",
+      "bytes": 4314,
+      "sha256": "8f3dde100ebdb301e5b1a079917f1ce141f19322100bae40dbd095b5cdce1f98"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/prepare_document.py",
+      "bytes": 6012,
+      "sha256": "1bad197a53697b50a7734c9a8ef051021868d6efac8c6bd62c82c3d8fd0bf634"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/review_pdf.py",
+      "bytes": 4405,
+      "sha256": "4e189898d3d6d6c3299f858de6ffe7ac51812edcb446a6dede139dd5c79ce967"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/summarize_comparison.py",
+      "bytes": 5865,
+      "sha256": "5095a6734163ff7fbd8bc210a9187c3195edc09076a43a1238a108c51b53f75b"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/summarize_resident.py",
+      "bytes": 36205,
+      "sha256": "fc6f4bd81ef67142a9c29c1f1a3017563a04379b8a8f066df908d5906ef5348c"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/summarize_word_optimization.py",
+      "bytes": 25063,
+      "sha256": "7402280f1dbcc002dfa2a3cba094aaef7a417090cbce8c8ba62c4d3e9f902335"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/summarize_word_profile.py",
+      "bytes": 8149,
+      "sha256": "64364c3b845f40c3cc615983f1fc4bd3dabf2a14931c6612a8841bf446418519"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/tools/wqk_run.cpp",
+      "bytes": 19888,
+      "sha256": "403aa33ee26e548771c2b359b3c1b0b9f4ac40f61832e948b029a6c2fa359484"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/examples/exact19_rule.json",
+      "bytes": 2543,
+      "sha256": "de4784927a24ea9930959e5cc63ff1e0343321c2d4db763773ebe3cb7c3c8e6c"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/examples/nineteen_hinge.json",
+      "bytes": 503,
+      "sha256": "8409f1197faae4144e9c32c42bfe135563344c952da2ca94aaccf951f48e75db"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/examples/polar_loop.json",
+      "bytes": 8650,
+      "sha256": "d1721835bff4ea091c57e299a33d8536588174f32c0ae1c8729369c750bf7201"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/examples/polar_loop.tmg",
+      "bytes": 656,
+      "sha256": "26ac0a911ac50c9681cb381b158b4ebd07c527673f453f416cfff31ffd68eb73"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/NOTICE.md",
+      "bytes": 2128,
+      "sha256": "5f1f564b7385977a0e7a0d743e79e734207d2c75dd25816d6347b9f64538c8d4"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/README.md",
+      "bytes": 6891,
+      "sha256": "9a115a0446f82b185a44381acdf228d6fd3f4dc22573164df43fa7c0f1c8ffa4"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/BINARY_FORMAT.md",
+      "bytes": 1916,
+      "sha256": "5593a150cc0f408e35643e7223ca91154cdfb93cd5639fbb5f70ce9d5b33289a"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/cell48_layout.json",
+      "bytes": 1781,
+      "sha256": "4aef894685430adff53829f2aae2d90044619ad462221583de51aaf9365a179f"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/GPU_ABI.md",
+      "bytes": 1413,
+      "sha256": "87a2ecf10695fec3f4284d229af7c452cc020b28322901dc369e8d3752fa285f"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/opcode_table.json",
+      "bytes": 2149,
+      "sha256": "c22941dec821f2642dc34a551dc2fe8367308aa7254d2ddd913a14b201be76ce"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/state64_layout.json",
+      "bytes": 2406,
+      "sha256": "6322b9e6127d99e193de0f04216d318e54051aacbe1423ccfe8eaacf89204c88"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/TOM_LEARNER_0_2_WORLD_QUERY_KERNEL_0_6.md",
+      "bytes": 20870,
+      "sha256": "6df40e0451ea38b35c23f6633b7605382862699fe6268170c7b32c4aef018c0e"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/tom_seed_token_registry_1_0.json",
+      "bytes": 886,
+      "sha256": "5caa96342c280e7e8ae9f18ae8ddfbd0e3ce149059effabca001ad5eeb908d21"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/TOM_SEEDED_COMPILATION_1_0.md",
+      "bytes": 20626,
+      "sha256": "8c88fd93f04ff5ba085bd32e1a5c42274d93ba6feb1687cf0db9927aa02aa28a"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/TOM_WORLD_QUERY_KERNEL_0_4_REBUILT.md",
+      "bytes": 15328,
+      "sha256": "4a913c74e33f2dec606bd2c3afbbec18a86f8ee5dd6185ca637942db671d291c"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/spec/TOMAGI_1_0_FORMAL_DEFINITION.md",
+      "bytes": 19912,
+      "sha256": "6278c607594f999554e93b135b392d9491d732ebcb735b1619a0d3a69e72b0d5"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/c/tomagi.c",
+      "bytes": 20124,
+      "sha256": "c88242ea069a78ca8fc52531f47182c8399fe6962152c58998a6a5731147a22d"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/c/tomagi.h",
+      "bytes": 3720,
+      "sha256": "38489426f2a34ecf48040bf8c4e52f79ee61714f07d81885195e1476b27b2587"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/c/tomagi_cli.c",
+      "bytes": 3885,
+      "sha256": "38cc611ca7671a92fde4e863c3c6e4dc625c022c6cb735d7c999ef72e25deff4"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/gpu/tomagi_step.cl",
+      "bytes": 6704,
+      "sha256": "e8fb07848ec315b0dc4897c4fed3b74dc54940710f0edd95ba65a1700a05e07c"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/gpu/tomagi_step.comp",
+      "bytes": 9028,
+      "sha256": "1187b02ddffe338400a04668dc6079ea6e78d8295db6bb39480a4baca062c9b9"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/gpu/tomagi_step.wgsl",
+      "bytes": 8246,
+      "sha256": "f646528c0bfae086e1575f51a093121144b4b5956fd616ee69d8308797bde4f8"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_learner06/oracle.py",
+      "bytes": 10151,
+      "sha256": "bc2d4da01bf8b083548e47037e6b62303e099cee602a3c9ef6e2bd1e3360d53e"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_world03/rational.py",
+      "bytes": 4224,
+      "sha256": "91004ee7418a3ad33815039ffdd54d9032c2f9c6112e86b47ced5ef5c778b6c7"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_world04r/baseline.py",
+      "bytes": 10885,
+      "sha256": "f66c07adaeb9270558e2b6f07d46f84b8db921af7d1131fa45223bb836fe68eb"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_world04r/index.py",
+      "bytes": 8500,
+      "sha256": "4184d596ff4689fa65936b2385fd055c583311ccd3dae0447ef964d5b338ced4"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_world04r/journal.py",
+      "bytes": 30771,
+      "sha256": "0ece41355d7d85a347e6e260840fa84f332f02835df962ac61604e4ac79b89e5"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_world04r/model.py",
+      "bytes": 20964,
+      "sha256": "fffb6432f974d543bc137333c14721ee07c4af06edba14d114864d840dd9c223"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_world04r/solver.py",
+      "bytes": 13387,
+      "sha256": "4c763de3229ec63f4e77d519a54fb257b07739ac0c2c2eb9b382a6c24aa84e47"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tom_world04r/transition.py",
+      "bytes": 13617,
+      "sha256": "7d5857d14d023eaa7bf195d5bd801c86ccc2de8eaebd6e928018a946280b4c4a"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tomagi/__init__.py",
+      "bytes": 270,
+      "sha256": "79041891dcf3516337e8006561d6d23437ce301141220258812316fbcb73f2e5"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tomagi/canonical.py",
+      "bytes": 1702,
+      "sha256": "830ac16eb7fd517d9a06533d8ba87da7efef6fbd3ab58b83cde0e2395a87df40"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tomagi/compiler.py",
+      "bytes": 69668,
+      "sha256": "2e1f1b5f1e3f348a1e9ae3561062390a000b5f74120a5e238313676b0e32b368"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tomagi/core.py",
+      "bytes": 18928,
+      "sha256": "58c64eaa07e583c619b0c51aba61d7630561e94f911b82e49f99dde0f970f3a9"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tomagi/formal.py",
+      "bytes": 43577,
+      "sha256": "ca472619fcb3e2d34c5ccaac8081bb3f60896cfd2f0c60297a4de2ad9872237e"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tomagi/format.py",
+      "bytes": 2353,
+      "sha256": "e7265dbd4677a5a350ed3675207e4b15f38eafe6d4806328d1b7e971d6f00d55"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/src/python/tomagi/materialize.py",
+      "bytes": 5013,
+      "sha256": "41689d2a01a303327fd60df66a243136e3385f3ba0418a7020e1d53e42bb64c0"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/tests/test_seeded_compilation.py",
+      "bytes": 25022,
+      "sha256": "93be898675130304abb3e83dac4f9a458ae0478c2948d76f9037fe4591e5728e"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/tests/test_tomagi.py",
+      "bytes": 11474,
+      "sha256": "4bf4f46af3a407ac4e7a097eab45ca8420c1a7cf36867df49dbc2eaebaf478a8"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/tests/test_tomagi_runtime_contracts.py",
+      "bytes": 14515,
+      "sha256": "33a6742bf000c6e36a4a0e02833766ba667629dc3b9f7256375903fb171f3a7f"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/TOM_seed_genome_2026-09-01.txt",
+      "bytes": 244,
+      "sha256": "d1417a3136772c0cf3eddcd4962ce07d42cbf87616f7b5bae09fc652d9b807b5"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/vendor/wqk_0_6/VERSION",
+      "bytes": 6,
+      "sha256": "97a5d6e540a6120d09c39ddb667e0e8e2bac7fcc2ffef813b82e08fd60365bce"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/VERSION.json",
+      "bytes": 1290,
+      "sha256": "54aab24b01aa73c7322a09c3874f819d535d7d5db5d9387c45afb8eac9cdcd03"
+    },
+    {
+      "path": "atomOS_3_6_1_16_WQK_ENGINE/source/release_manifest.json",
+      "bytes": 40194,
+      "sha256": "c31a0049b52966a09f987b4d6f511a53d238345c5043472d14ebf812f453156c"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/AGENTS.md",
+      "bytes": 1301,
+      "sha256": "84b1e4847c11eae08cd1f0040cc7899cda610eb418391d77b1bd5a684eb6d532"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/CMakeLists.txt",
+      "bytes": 7207,
+      "sha256": "73c2e342099014702456bf422d8d444dbd951c2901d1e080dac451281e03cd14"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/exact_program.cu",
+      "bytes": 17502,
+      "sha256": "2db48f15a2baa7b1383a5d87b699b48f3bb491d1255ae1b6182c208e8c00aaf4"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/resident_feedback.cu",
+      "bytes": 4684,
+      "sha256": "fc2aa21208f9eb19cd16463198927cc9e2441dc54fd280d0bdb0dcd24d312ebf"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/resident_index.cu",
+      "bytes": 4898,
+      "sha256": "0d95da060d1d9a3bce8bc90ecd5fc296901cb46cade1b3053412dbe5e5c663cc"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/texture_index.cu",
+      "bytes": 6295,
+      "sha256": "b27bd9b7259615492f36805f3f294b71b9626b7cca08b1b9b6a7c16bb29ff258"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/tomagi_feedback.cu",
+      "bytes": 9575,
+      "sha256": "29828d2245a01cb105a8d61c341e3e55d2781993b0232fea3d77129d0fb91dee"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/tomagi_transition.cuh",
+      "bytes": 7508,
+      "sha256": "865ca36eecb407940f23c133b1e1d3e059da5d1ece299463e715b46dc2692d26"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/tomagi_vm.cu",
+      "bytes": 13797,
+      "sha256": "6ba839ac4c4e8aaa16a2928113330569161d3a3dac8e9866915024d9d3d824c1"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/cuda/word_cache_benchmark.cu",
+      "bytes": 27781,
+      "sha256": "742c25e582bd2d5c4d0868051b61a03d6d224d477029caaff949ba552b2890d2"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/benchmark_table.tex",
+      "bytes": 3515,
+      "sha256": "302e8e57596c0a8ff033da8a425c8f584042e7398b4bda52c6b7e670add982a8"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/completion.tex",
+      "bytes": 2308,
+      "sha256": "14999fa679f51a5a0ac37cca7006d3823a53d33f307f58441e8c61e34d3feacc"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/exact_core.tex",
+      "bytes": 28497,
+      "sha256": "02c03b50260c8e7788f1c3fb9ed620297587f5993a8fb89eef728c01c23727bb"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/fused_benchmark_table.tex",
+      "bytes": 871,
+      "sha256": "2c2863f8d24f577b3f03236f048b05f8bbc96a565a50b1485ed84f9efa6aa006"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/fused_evidence.tex",
+      "bytes": 6900,
+      "sha256": "b29ddb36667bec1848890ae04ee1cef7d613948c308e6e7418708ccc2e43f29b"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/fused_execution.tex",
+      "bytes": 10287,
+      "sha256": "2a180fdbf2f247d4e821682f22d4943c44393a426ee34b87a3b8c5af6a89833a"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/hinge_core.tex",
+      "bytes": 14498,
+      "sha256": "c501c198bcc34509f170fb41768d9d8fe7f7d3f230b40775b76d8a4ba5c6ece3"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/overview.tex",
+      "bytes": 3511,
+      "sha256": "a85acefba492b67002b4e26b93e57b0f7d998845bc4dc2ffcca4757a16c66d80"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/preamble.tex",
+      "bytes": 3178,
+      "sha256": "9ab61157bc23061b3e4d4a86bc4adf3aecd77a39536598226b29c462a02959c7"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/resident_gpu.tex",
+      "bytes": 14745,
+      "sha256": "19aacc02d3cea158927d5bbf2cae3b7ff490fbcadc6c744bb705caf13b0e5092"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/resident_results.tex",
+      "bytes": 15568,
+      "sha256": "8ef0e481a57813a1c8dac988773e28aff8fd6bad10d64d721229fcec981d3845"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/runtime_evidence.tex",
+      "bytes": 10026,
+      "sha256": "27969e123e64f5a11bc3c23ce0e5b0f6f8f186b798628870e101735af0788f4d"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/spatial_calculus.tex",
+      "bytes": 11642,
+      "sha256": "921eeef6e2d431d45644752fc5a26d78eb8a3d4be36a4a9ac1de87c024ac2baa"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/unified.tex",
+      "bytes": 2329,
+      "sha256": "5370bb776b21b6d912bdc24d76a6dfd6a06e9b1e4d7c3cebae99ddbd0572d101"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/word_optimization.tex",
+      "bytes": 15731,
+      "sha256": "64b8be3d023506bd713aa71fd19cfb76a85f1ad9fc5522f64197b5de9c70b29c"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/word_profile.tex",
+      "bytes": 1900,
+      "sha256": "53a3b4d9ab5514fada0b0e05678be5301635a78e1ef2c9252343ef52fef9b78b"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/wqk_events.tex",
+      "bytes": 10856,
+      "sha256": "b12d83af695fa21aba99a7b2fcb6fb3a41dd94c25610e33874ad2068b03d5407"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/wqk_evidence.tex",
+      "bytes": 4705,
+      "sha256": "c4a12544bcf45af1d81d73d8b0cb9c2653281af90b64c910a2e96975907ac8eb"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/docs/wqk_integration.tex",
+      "bytes": 13224,
+      "sha256": "e36196c9cd46806ff23eec0d931fcb3923ac1b3d619ff0d5bd43ffb12a890762"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/CLOCK_BINDING.md",
+      "bytes": 7241,
+      "sha256": "265786cf69e68440c8fa6d269385e58dc1e2c93ea1dc7e4834bba97e0a42b5ea"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/COMPARISON_CONTRACT.md",
+      "bytes": 3999,
+      "sha256": "acb4bd961ffaa97509320a4c7bf1cc707404cd84862d649db5558c765ddc88f0"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/CORE_RUNTIME.md",
+      "bytes": 11571,
+      "sha256": "25a76bd636adb8e47aaecda1a34610c67a342bb3faef052dfd5414c2ef1757d6"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/EXACT_AFFINE_EVENTS.md",
+      "bytes": 15212,
+      "sha256": "4ce6e7b702be797121650b29bdd5ba27a524119a0dfb8e3d3699eda45a327687"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/EXACT_GPU_PROFILE.md",
+      "bytes": 9287,
+      "sha256": "e748168865f8d2f0d8d518d6a014e627a33a4ee210a504d3708e90f2c1b378a4"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/FUSED_WORD_EXECUTION.md",
+      "bytes": 14708,
+      "sha256": "4564afd85342a0946a9dcf48d3a51335fc5d6909e9aaa90891c751dd761b360a"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/GRAVITY_TIME.md",
+      "bytes": 5494,
+      "sha256": "b34e4c0da78fbeee0fe35c6cf42a0712c961643ee296587ff01010e41c1aeaa9"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/KERNEL_INTEGRATION.md",
+      "bytes": 7173,
+      "sha256": "acb059f04de40711403b7128aec150d2d2a6a3a5c984cffd010d3fae46c52f95"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/NATIVE_GPU.md",
+      "bytes": 23620,
+      "sha256": "e1d50a7a5faa1092a2f7deceb6de2ce90fcfc5043b632047a84a88e292e0fb24"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/PHYSICS_PROFILE.md",
+      "bytes": 5489,
+      "sha256": "31ebfc85942759f9254d780735bf1367dbb256600d13db97fb50654f2e9a2470"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/RESIDENT_INDEX.md",
+      "bytes": 9587,
+      "sha256": "789a2bde9203243e51a31112cb6ac98490ce1b3a2f175ea23b5911abde7d6163"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/RESIDENT_PREDICATE_PROOF.md",
+      "bytes": 13374,
+      "sha256": "ee43a71be8ebb789e2eaf342117143c7708864ca83b599aa23d8f1bfc383843d"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/SPATIAL_INDEX.md",
+      "bytes": 10714,
+      "sha256": "52ade39dc74ded95eb3ffaed04f75dab79ee48e9e33609c62aa162a17d5349ef"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/TOMAGI_NATIVE.md",
+      "bytes": 14657,
+      "sha256": "1283457a021fb90d88b22e90445c4c436c352895e472b49f7359ffb080cc8b64"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/UNIFIED_COUPLING.md",
+      "bytes": 10243,
+      "sha256": "c9f601c3ca31d7d81e715c2fec70dba7f4d1ba3799b13ce94b0c63a608e3e372"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/WORD_CACHE_BENCHMARK.md",
+      "bytes": 17244,
+      "sha256": "6b2e60ac8f1050d566e712ab8feb8a290b2bc0870d09e2e77bb996565d8cb6a0"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/formal/WQK_INTEGRATION.md",
+      "bytes": 20666,
+      "sha256": "e9ebb7e267ef43d31c59e6656247f21b690b2d2a8a91902d5c91102ec17466ee"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/exact_program.hpp",
+      "bytes": 2874,
+      "sha256": "aedd1300d465bbf9413940755f526162685e223330be9a79d248e583dde05768"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/gpu_kernels.cuh",
+      "bytes": 842,
+      "sha256": "b52b2ebdcf9f224ac606fc41475f0d0dc3e87398a2c55d9fd1f66387f7f9c817"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/point.hpp",
+      "bytes": 272,
+      "sha256": "6daaa5854bfaa5681f4f04a148e5bb955da51f71d787ce1467e5b1cd08266c43"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/resident_feedback.hpp",
+      "bytes": 1152,
+      "sha256": "882f3a5b2898bdcaf56d0f565b1ea386403485723d542535c610f4bb5e5fb838"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/resident_index.hpp",
+      "bytes": 2188,
+      "sha256": "3c07e31c8b93089dcf5b2ed108168876cce623d35823f557f3bec3a795f47441"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/resident_kernels.cuh",
+      "bytes": 1400,
+      "sha256": "14de510d35b32fa64669a5664ab9a77aaca54372bcb2cab0348f1e3bc29af813"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/spatial_index.hpp",
+      "bytes": 13941,
+      "sha256": "148384aad568a6a0716a058d089cca2f990921b205eac26a2c78ef2b582caf12"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/texture_index.hpp",
+      "bytes": 2127,
+      "sha256": "ce21b462bdf7fe95d390fb6a9b39862db9578c00ad5364a9fa25d0491c5da5fe"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/tomagi_feedback.hpp",
+      "bytes": 1927,
+      "sha256": "af493f2d9de71fea6094170f38433eddbc9133e4f546c5fcbbaef138f4357c31"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/tomagi_vm.hpp",
+      "bytes": 4176,
+      "sha256": "dd59ed86b92fbb122c95cb61f41aa42063b3b01880650aead7e73648c926cb36"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/include/atomos/worker_pool.hpp",
+      "bytes": 4101,
+      "sha256": "d26ab0ee3be857211ee89a6f62e14ff4619cd39356c5d439859d2e8216ec129a"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/python/atomos_events.py",
+      "bytes": 20118,
+      "sha256": "227d05fa668366581f08f9420c520481e6d7bb15792a304a854eec0eff808b3d"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/python/atomos_hinge.py",
+      "bytes": 46010,
+      "sha256": "3d12050261eb1f00cdc90bb54690b347f174ca43926aed1185b4f7147bbf71c9"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/README.md",
+      "bytes": 5064,
+      "sha256": "1204a75bc7665cc8068756b08aab2739306e311045cbfe8ee45d768cda6e493f"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/FUSED_RESULTS.md",
+      "bytes": 1813,
+      "sha256": "1615682e38eb29bd0569ac13e887ff527c3469c8332168527b09577a2881291f"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/fused_runs.json",
+      "bytes": 587563,
+      "sha256": "3a20c4794067ace9a38002f6884c0367b4e3068d146c64376b24e9b2084e13df"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/r17_native_checks.txt",
+      "bytes": 4800,
+      "sha256": "3780c360292eb1b76726d5a83e61e32ed88966e88dc6cd6c8fe16aab52e6603a"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/r17_native_code.json",
+      "bytes": 16084,
+      "sha256": "28afc067b7b4563bae9ee86692eb4a4614d9fe1c96d8ff428971cbf573a78f64"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/R17_NATIVE_CODE.md",
+      "bytes": 5436,
+      "sha256": "de50c266a7735861049f0890f7eeee1b2a5b14876fad235e94dff0458baf2aec"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/R17_ORIGINAL_RETURN.md",
+      "bytes": 8056,
+      "sha256": "f643c4c258b2d209a4357f15a2cec9e10328a76f173d6b9919acc9a80f480cda"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/r17_python_checks.txt",
+      "bytes": 6625,
+      "sha256": "7174f0851e4de9975fea8a3d813778da2a62089ff1f58b112377546ef678f799"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/R17_SEEDED_RUNTIME_AUDIT.md",
+      "bytes": 16596,
+      "sha256": "1391047a19b02abdcd4f9aac83cd6592aa388a1b63febfe7f263c55b1dd1c683"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/review/R17_VALIDATION.md",
+      "bytes": 2802,
+      "sha256": "1c2d3693f5696cce102743a134f1dabc04fbef6f775787ce923e9a3eba043840"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/src/compare_resident.cpp",
+      "bytes": 9291,
+      "sha256": "4d0709ec853521fb80733af302db73654cb128d3f265d39360593f6cf3a85b79"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/src/compare_s2.cpp",
+      "bytes": 18658,
+      "sha256": "40fc0f1d53b24e9854434485f4eedac56f384d26319f91adb6d0a583bcd6e4b1"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/src/engine_demo.cpp",
+      "bytes": 3802,
+      "sha256": "2e1624c572b5ce299465aa32498e38c1fa2bf7fac49db8ff4271a70bb2a250f8"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/src/resident_index.cpp",
+      "bytes": 9376,
+      "sha256": "40c048984c65e874dc7540e01ee0410a27d43d89899436d193052e5c0d2e6edb"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/src/texture_index.cpp",
+      "bytes": 16471,
+      "sha256": "197a3b0bc8c9b46a1a446dfe5c4d69574b7cec31976d7a1c0a7933e4b8069e06"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/exact_program_tests.cpp",
+      "bytes": 8427,
+      "sha256": "c4cde2f6383caa02a2b8f041e508922bec8f2d96963675b62e2609258cabb085"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/resident_feedback_tests.cpp",
+      "bytes": 2427,
+      "sha256": "6a3396a1bc4846d7a0b0b2d21d3a52822dabf63458ae41fa7d0a9a6bdb23ce04"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/resident_index_tests.cpp",
+      "bytes": 7269,
+      "sha256": "9790f46a9c9f26bfc28a912f9a66ce8842392aa2371f02a5bf87b4f3cc4545f8"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/spatial_index_tests.cpp",
+      "bytes": 9475,
+      "sha256": "d1f1cf4ccfc1286608edbc21197de62c2821062c3dec48282dc165e02f83e188"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/test_events.py",
+      "bytes": 17842,
+      "sha256": "059e5c167137b88b52d3110f67d9d45eb2794782dd09db4275b3ced8e9d99240"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/test_hinge.py",
+      "bytes": 14710,
+      "sha256": "0a8375eee47031de0be8d0363496794987ac68527fe94f07b2b2ff43ba0de486"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/texture_tests.cpp",
+      "bytes": 5101,
+      "sha256": "b008dd9e79fdaff239c9c5fd54942b09ada8c7406e80f912f80e489e458e2478"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/tomagi_feedback_tests.cpp",
+      "bytes": 7809,
+      "sha256": "dd5a58539aa164238b60e95c91474815f84ff0d1ac0f71b40c8671def196e593"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/tomagi_fused_tests.cpp",
+      "bytes": 28441,
+      "sha256": "a09ef31887e604014761f682785939fcb8a46a5bdab4af92b158a53d7bb62583"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tests/tomagi_vm_tests.cpp",
+      "bytes": 11403,
+      "sha256": "a92762b8d17bb587ce209a585b0285586764d324287b4d4b6186b7de40632e86"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/build_mixed_workload.py",
+      "bytes": 2910,
+      "sha256": "828d51a5e6438b6bda24bd21b4903f973dc41648775e326f37451a6041828681"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/build_native.ps1",
+      "bytes": 1396,
+      "sha256": "615c8c2c27bb8af411df99e98e074f0063a881ea96ec911abb7903eaa57daeeb"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/build_pdf.py",
+      "bytes": 1359,
+      "sha256": "7043d91340c42c13d02cc898f2c653732992ae8ab6309ada08a65f92a5955846"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/build_wqk_fixtures.py",
+      "bytes": 4238,
+      "sha256": "4d30f771c555cce74fe8625ad74e6b196420544afb22dcb6fa5cf6448bc7d567"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/check_exact_events.py",
+      "bytes": 11756,
+      "sha256": "0f31ca93685527ecce31dd1c8359c2bb64390ca6584446567546953313230387"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/measure_fused.py",
+      "bytes": 5274,
+      "sha256": "634f9e55717e6722d2818fa3d95725bc8ac4c8b990340ea94ac6a0f2f8d600e9"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/measure_wqk.py",
+      "bytes": 4373,
+      "sha256": "975e7065627e30981ce2c0785f12b50169b8a6ad560c856681c39cf4a5e25909"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/package_release.py",
+      "bytes": 4444,
+      "sha256": "9d67423d7fce43f745dd8daaacdd4a5fc54fff773759a1ae8335809a1de0a25c"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/prepare_document.py",
+      "bytes": 6210,
+      "sha256": "2f7c9f965de29d46c6a291cf5bebeda6ab93f3c7c5afd039415c744b05c898b4"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/review_pdf.py",
+      "bytes": 4436,
+      "sha256": "438a47430ac3c2feafb0347c4d38779971df0fdc4187e67bd51f4b1b346f66df"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/summarize_comparison.py",
+      "bytes": 5865,
+      "sha256": "5095a6734163ff7fbd8bc210a9187c3195edc09076a43a1238a108c51b53f75b"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/summarize_fused.py",
+      "bytes": 3380,
+      "sha256": "d59aa1231ea24c82d0b7b9d42be05efc641ce3cc9c003d9daabeaf4c25ea0d54"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/summarize_resident.py",
+      "bytes": 36205,
+      "sha256": "fc6f4bd81ef67142a9c29c1f1a3017563a04379b8a8f066df908d5906ef5348c"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/summarize_word_optimization.py",
+      "bytes": 25063,
+      "sha256": "7402280f1dbcc002dfa2a3cba094aaef7a417090cbce8c8ba62c4d3e9f902335"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/summarize_word_profile.py",
+      "bytes": 8149,
+      "sha256": "64364c3b845f40c3cc615983f1fc4bd3dabf2a14931c6612a8841bf446418519"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/tools/wqk_run.cpp",
+      "bytes": 22101,
+      "sha256": "f3e4e0c8cc7a3698cf2ada7a14228fada7cd601390d4cc12ebaa23cbd8ff0927"
+    },
+    {
+      "path": "atomOS_3_6_1_17_FUSED_WORD_ENGINE/VERSION.json",
+      "bytes": 1286,
+      "sha256": "44e4038e7c95c376eb2549967864253fb53b707456ceb2336b0c5771bef3bbc4"
+    }
+  ],
+  "source_clock": "Immutable inherited NIST observation; no new live synchronization claim.",
+  "execution": "R18 adds ordered native EMIT journals and seeded artifact reproduction, and evaluates exact 32-bit phase/seam lowering against the preserved wide reference.",
+  "runtime_profiles": [
+    "ATOMOS-WQK-ENGINE-R1",
+    "TOMAGI-1.0-Cell48-State64",
+    "ATOMOS-TOMAGI-EMIT-FEEDBACK-R1",
+    "R16 exact affine event adapter",
+    "ATOMOS-HINGE-R1",
+    "Inherited R15 native spatial/word profiles",
+    "ATOMOS-FUSED-WORD-EXECUTION-R1",
+    "ATOMOS-SEEDED-EMIT-R1",
+    "ATOMOS-EXACT-PHASE32-R1"
+  ],
+  "catalog_scope": "Inherited XOP catalog remains a specification; the new executors implement explicitly bounded subsets.",
+  "foundational_parent_commit": "01a7f7d5af43ae32cf6df9adcb0d4acd8f0f38ec",
+  "external_imports": {
+    "manifest": {
+      "path": "source/WQK_IMPORTS.json",
+      "bytes": 7480,
+      "sha256": "7aa38f11ced4f1f0fa8c701c1aedf221f7b521c0a0d6550ee04c069770c82554"
+    },
+    "vendor_directory": "vendor/wqk_0_6",
+    "expected_files": 42,
+    "verification": "Verify the pinned import manifest, exact file inventory, byte count and SHA-256 of every local unmodified vendor file before packaging."
+  }
+}

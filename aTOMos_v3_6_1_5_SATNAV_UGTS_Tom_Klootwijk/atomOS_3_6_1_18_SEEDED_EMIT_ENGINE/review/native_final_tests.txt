@@ -1,0 +1,17 @@
+Test project C:/aTOMosBuild/r15cuda
+    Start 1: spatial_exact_queries
+1/6 Test #1: spatial_exact_queries ...............   Passed    1.26 sec
+    Start 2: native_texture_hinges
+2/6 Test #2: native_texture_hinges ...............   Passed    2.65 sec
+    Start 3: native_exact_phi_program
+3/6 Test #3: native_exact_phi_program ............   Passed    0.14 sec
+    Start 4: packed_operator_hinge_integration
+4/6 Test #4: packed_operator_hinge_integration ...   Passed    0.16 sec
+    Start 5: native_resident_feedback
+5/6 Test #5: native_resident_feedback ............   Passed    0.15 sec
+    Start 6: native_resident_counts
+6/6 Test #6: native_resident_counts ..............   Passed    0.17 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   4.54 sec

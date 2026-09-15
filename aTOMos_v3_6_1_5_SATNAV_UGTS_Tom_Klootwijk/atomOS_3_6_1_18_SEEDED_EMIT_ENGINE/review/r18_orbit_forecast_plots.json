@@ -1,0 +1,171 @@
+{
+  "profile": "ATOMOS-ORBIT-FORECAST-PLOTS-R1",
+  "summary_sha256": "609ef6b224cf6e90037eb0d6cceb3bf3fe2820e90b251e4939add48c5a01102b",
+  "numerical_audit_sha256": "240b5aaff76eec1b41d97f1b4a10367fb1f3820ad8b93af5d54f29e2495a40cb",
+  "generator_sha256": "1b485a8320f0b48e12ea43594d257d07b29acbe3f6cede37822f51630bdf98b9",
+  "source_bindings": [
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_jan_G05.json",
+      "sha256": "dc94f8dc732f97af280e156ef440e621bb21c28fd99ccc7819482564fec01fdb",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_jan_G05.json",
+      "sha256": "29865e62e3ae79140d785d549045fd62f535e39125266aebfe3d9ec211556057",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_jan_G05.json",
+      "sha256": "4df06a4a2249e973aebe3940740881b6dad7eb74a02b02070e685af1eb795870",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_jan_C03.json",
+      "sha256": "e4667508ab8d1ba63b0df064f456c6608e78a7db829549a563a73c8d25ffd20e",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_jan_C03.json",
+      "sha256": "afb17a037c25687c2aca2f69e34186217f79b584fdb3271d0efb1c69493d02e0",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_jan_C03.json",
+      "sha256": "1b332b910ef7dd9ab7e9c85b2feb0b9cd96ae811dd5cd31961fd31489c94fb55",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_jan_C06.json",
+      "sha256": "41b5c9c3f883834debf461bd0127ce39358a7a6cac21c7afa138b18b6b76a1e4",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_jan_C06.json",
+      "sha256": "5282ddf86b22a03c3d0e8b4206d52bf4505a495aadd3a40ac2a515fbfadaab92",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_jan_C06.json",
+      "sha256": "d1ab5631209e28ac8d95cddda938839d17cc4e8e78340967fdfc7ae2c2d26e0d",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_jan_CHANDRA.json",
+      "sha256": "3cf8e7aa465cf9399f416502d95698981e6b9fae7dd70df8eaf758d7f2f0569b",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_jan_CHANDRA.json",
+      "sha256": "7190183d6f0a8ab54feade0bbda841314e3e006dabc6e3fa7c3074263ed33321",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_jan_CHANDRA.json",
+      "sha256": "b70f9a6d3f8a5cf639b69ec8d756732245e23e410f9658e0689433d50b06e997",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_feb_G05.json",
+      "sha256": "e41e1ae60a8b3702dd0b96a91f5b0f0da19b593d39b82dc8e08499a6b6219aef",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_feb_G05.json",
+      "sha256": "592efc3931b80d81b9f70198c7e710430fc50265173f8cde4cfe119cdaa83d04",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_feb_G05.json",
+      "sha256": "be55bab3d157412a878e9fc3f2aef2db32b48617dea433c4852e9a1b40e0f0f9",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_feb_C03.json",
+      "sha256": "4ce42ccaf0234940004de503ee861d444113acdf4bc7737558bc3ba20ab93a00",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 1441
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_feb_C03.json",
+      "sha256": "0ef3a83c8f8f2d533a98031815cf27d04005180214e746deaeeff5c8998f04e1",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 1441
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_feb_C03.json",
+      "sha256": "b3ade2efaae39820141e2b38f1ffb760e3f0bc333f4f5f2be2513d9ccebd073c",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 1441
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_feb_C06.json",
+      "sha256": "8783a8000473d3c0ae42c8873a9fea5d2d1a6d1f0cbe780bf13cb596fa015880",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_feb_C06.json",
+      "sha256": "b302d0b3aa028b02b91554e307285ba72deb2333fefe38daf4cd5cd7a5c9d709",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_feb_C06.json",
+      "sha256": "349f78f799471c69e25bd538523b23671dd8964f5480157033d8a81e46783521",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cpu_feb_CHANDRA.json",
+      "sha256": "2dad1240451027b7c08151ab7335c615b63178f51d297a3de71b7e4101ad7a98",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/native_cuda_feb_CHANDRA.json",
+      "sha256": "585de597614ebc68cd87b53a0e151a52b143f8ed4e47fbae8dd86ba79545f7a2",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/review/orbit_comparison/orekit_feb_CHANDRA.json",
+      "sha256": "d84b7f9f3e0dcbf4b64c2d8f96491d946a0ba74f5c6779767e1571ff7ac41b38",
+      "max_absolute_time_offset_seconds": 0.0,
+      "exact_epoch_matches": 2016
+    }
+  ],
+  "outputs": [
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/docs/figures/r18_orbit_forecast_jan.pdf",
+      "sha256": "5332342159fc4c3426838dcc6697b6d5840133c851268946a9e2b826fb609bb9"
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/docs/figures/r18_orbit_forecast_jan.png",
+      "sha256": "339d6c96fa87d5cd8020538e840e488804b143e78c6320a9602e2099241fbab2"
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/docs/figures/r18_orbit_forecast_feb.pdf",
+      "sha256": "0dee388542bd24cac6a5d9e4ed329e2ae6b65e6be8246e813e6fccde120fa34f"
+    },
+    {
+      "file": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/docs/figures/r18_orbit_forecast_feb.png",
+      "sha256": "a36ef656b51af55ff458bac5e1b82eab3531c671a405845e4287dae214e55fee"
+    }
+  ],
+  "conventions": "Logarithmic metre errors; common per-object y limits across dates; gap breaks and shading; 10 m descriptive line and 24 h vertical marker; no interpolated reference rows or fitted alignment"
+}

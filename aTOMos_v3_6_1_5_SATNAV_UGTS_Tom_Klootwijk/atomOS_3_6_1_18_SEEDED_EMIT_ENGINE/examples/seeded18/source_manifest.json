@@ -1,0 +1,209 @@
+{
+  "profile": "ATOMOS-R18-ORIGINAL-SEEDED-INPUTS-R1",
+  "original_root": "C:\\TOM\\TOM_World_Query_Kernel_0_6_0_Tom_Klootwijk\\TOM_World_Query_Kernel_0_6_0_Tom_Klootwijk",
+  "files": [
+    {
+      "path": "TOM_seed_genome_2026-09-01.txt",
+      "bytes": 244,
+      "sha256": "d1417a3136772c0cf3eddcd4962ce07d42cbf87616f7b5bae09fc652d9b807b5"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_cross-family-ambiguity.json",
+      "bytes": 3328,
+      "sha256": "fb41907a90cd02996df3fac67113ed5b2c4673fca35e5a1a708dcdbf8466d322"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_expr-abs.json",
+      "bytes": 2980,
+      "sha256": "316bf5c9346d4668d212c5dc947c491ae04965174087d539ba5c38d490aa4b6e"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_expr-identity-ambiguity.json",
+      "bytes": 3328,
+      "sha256": "e9dc9c45067183bdb828320339043ee5980913b3dd385fc76f4e43a0061a1d88"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_expr-square-plus-one.json",
+      "bytes": 3258,
+      "sha256": "0cdceb17052ad16efddf2e3538f8c7ae404270b98dd6db748b8e9fa4884094d4"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_piecewise-ambiguity.json",
+      "bytes": 3949,
+      "sha256": "614d7c5a665816478bad3f81385b3cad88ddb2ae6346e3c4b93fac81fdfad7ee"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_piecewise-ramp.json",
+      "bytes": 3801,
+      "sha256": "a4b6b4a35a7312270e0f9b7f9947dfc54d754ee90054fdbd069d8ead6a796a9c"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_piecewise-v.json",
+      "bytes": 3720,
+      "sha256": "d1561394492a8dd4c7ce1da35a7149f21b83070c0a9758810aac5239c9c74328"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_poly-affine-supersession.json",
+      "bytes": 4176,
+      "sha256": "a9073bde2f50bda09519724ac4583e70cdb851f0cf73495b9afc54026718d7d8"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_poly-constant.json",
+      "bytes": 3775,
+      "sha256": "bc8ee0f0393a86ad4e8ffe1232580e8e6fd9db36e31fa14b3e106f43b437231c"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_poly-outside-search-space.json",
+      "bytes": 4121,
+      "sha256": "8ee868ffdfa37174268db4765a7dae9e65a3a5dc08885355fdb1082708f79105"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_poly-quadratic.json",
+      "bytes": 3800,
+      "sha256": "ef72205952f97d2becdc68166dadaa6c39999285da5006956d9d1b684eda3556"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_poly-validation-outlier.json",
+      "bytes": 4059,
+      "sha256": "f2f3309d178a1a13dcfadbd97802f46af1a7ce2577c727c15bd9da21dd90cb52"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_supersession-regression-failure.json",
+      "bytes": 4379,
+      "sha256": "054987eacc7d782d66532fb4941e4aec5df874e70dbd2ca06838e88ca1729e95"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_table-colours.json",
+      "bytes": 2605,
+      "sha256": "e1fcd5bfb3fc449f2557b3ba316b2f8f69d24b53047afa9aa53e807dc0a3e596"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_table-contradiction.json",
+      "bytes": 2726,
+      "sha256": "5f1eb707f276159b61ad5b9926bd81bd3e16950e5fa5d81595fce98e66cc12ae"
+    },
+    {
+      "path": "examples/learner06/datasets/dataset_table-shared.json",
+      "bytes": 2581,
+      "sha256": "37fb6d0e731a3f63a020823243aa354ee8b11628164c35e5fbb12571798847bf"
+    },
+    {
+      "path": "examples/learner06/family_registry.json",
+      "bytes": 42873,
+      "sha256": "a2adce8062692f65a0f104c20b4b5a88ac14af66a1437aa47baa3ac410c8423f"
+    },
+    {
+      "path": "examples/learner06/learner06_family_authority.formal.json",
+      "bytes": 910171,
+      "sha256": "32ef3fa896bc8fb6493c8fc55fb33052910b8e59c11baba8e923084d6918391e"
+    },
+    {
+      "path": "examples/learner06/learner06_family_authority.literal.json",
+      "bytes": 17691,
+      "sha256": "442fbaeea1e50d6da15b1479bb60a07971aeec1c25303c4be96a5ef3a7147389"
+    },
+    {
+      "path": "examples/learner06/learner06_family_authority.tmg",
+      "bytes": 1578368,
+      "sha256": "5feac19609ed9577688990e1e5adeb7caa81c05d9e26da559ec93be45899c3cf"
+    },
+    {
+      "path": "examples/learner06/learner06_family_authority.tmg.compile.json",
+      "bytes": 10117813,
+      "sha256": "b6d9c72bbed5ae18ba07dce4645bba8449c2d599f038c9da768afc1192f39d6f"
+    },
+    {
+      "path": "examples/learner06/partition_policy.json",
+      "bytes": 334,
+      "sha256": "d7a537f68c155711bb748704dcba6eb2fdf9ccc344d850ba2f19a8ba0a01fec5"
+    },
+    {
+      "path": "examples/learner06/prior_authority.json",
+      "bytes": 15730,
+      "sha256": "aed0ca209e6bfc8a550dbbc95ad65f80c5006cf14562b8a578ca122b477d3769"
+    },
+    {
+      "path": "examples/learner06/repair_handoff_proof.json",
+      "bytes": 1252,
+      "sha256": "4537c677e87da0fc7a760042ba627357c5cd9c4d381b4b4c4376ab6e2e60a199"
+    },
+    {
+      "path": "examples/world03/world03_release_artifact.literal.json",
+      "bytes": 11883,
+      "sha256": "5714ad00e296e46b8a7113259382b55cb566843458ccf9eef91627a29b560e2c"
+    },
+    {
+      "path": "examples/world03/world03_release_artifact.tmg",
+      "bytes": 41696,
+      "sha256": "8ccb42637c304c446949652dae58106e50ede227b92733e37b16fcac8c23f21b"
+    },
+    {
+      "path": "examples/world03/world03_release_artifact.tmg.compile.json",
+      "bytes": 253862,
+      "sha256": "4c707fecb0f5043ff9695c6da1295face6de099f331837e3b433b3d26952f219"
+    },
+    {
+      "path": "spec/tom_seed_token_registry_1_0.json",
+      "bytes": 886,
+      "sha256": "5caa96342c280e7e8ae9f18ae8ddfbd0e3ce149059effabca001ad5eeb908d21"
+    },
+    {
+      "path": "spec/tom_seeded_program.schema.json",
+      "bytes": 14646,
+      "sha256": "ca9f5af781df20ba72ef2116b7d62f340b441753ee6488390c2440fac7547d8c"
+    },
+    {
+      "path": "validation/learner06/learner_authority.direct.json",
+      "bytes": 131517,
+      "sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a"
+    },
+    {
+      "path": "validation/learner06/learner_authority.materialized.json",
+      "bytes": 131517,
+      "sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a"
+    },
+    {
+      "path": "validation/world03/TOM_WORLD_QUERY_KERNEL_0_3_RELEASE.materialized.md",
+      "bytes": 3461,
+      "sha256": "3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0"
+    }
+  ],
+  "unchanged_vendor_implementation": [
+    {
+      "path": "src/python/tomagi/__init__.py",
+      "bytes": 270,
+      "sha256": "79041891dcf3516337e8006561d6d23437ce301141220258812316fbcb73f2e5"
+    },
+    {
+      "path": "src/python/tomagi/canonical.py",
+      "bytes": 1702,
+      "sha256": "830ac16eb7fd517d9a06533d8ba87da7efef6fbd3ab58b83cde0e2395a87df40"
+    },
+    {
+      "path": "src/python/tomagi/compiler.py",
+      "bytes": 69668,
+      "sha256": "2e1f1b5f1e3f348a1e9ae3561062390a000b5f74120a5e238313676b0e32b368"
+    },
+    {
+      "path": "src/python/tomagi/core.py",
+      "bytes": 18928,
+      "sha256": "58c64eaa07e583c619b0c51aba61d7630561e94f911b82e49f99dde0f970f3a9"
+    },
+    {
+      "path": "src/python/tomagi/formal.py",
+      "bytes": 43577,
+      "sha256": "ca472619fcb3e2d34c5ccaac8081bb3f60896cfd2f0c60297a4de2ad9872237e"
+    },
+    {
+      "path": "src/python/tomagi/format.py",
+      "bytes": 2353,
+      "sha256": "e7265dbd4677a5a350ed3675207e4b15f38eafe6d4806328d1b7e971d6f00d55"
+    },
+    {
+      "path": "src/python/tomagi/materialize.py",
+      "bytes": 5013,
+      "sha256": "41689d2a01a303327fd60df66a243136e3385f3ba0418a7020e1d53e42bb64c0"
+    }
+  ],
+  "note": "Exact copied source bytes; original tree read only. Existing vendor NOTICE/provenance applies; no new license asserted."
+}

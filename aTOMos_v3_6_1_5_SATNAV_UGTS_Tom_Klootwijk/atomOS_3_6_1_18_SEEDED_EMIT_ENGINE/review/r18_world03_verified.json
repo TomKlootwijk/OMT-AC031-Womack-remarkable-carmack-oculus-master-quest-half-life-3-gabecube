@@ -1,0 +1,18 @@
+{
+  "fixture": "world03",
+  "status": "verified_complete",
+  "program_sha256": "8ccb42637c304c446949652dae58106e50ede227b92733e37b16fcac8c23f21b",
+  "requested_ticks": 869,
+  "compared_events": 866,
+  "compared_event_fields": 10392,
+  "compared_final_state_words": 16,
+  "compared_output_bytes": 3461,
+  "output_sha256": "3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0",
+  "native_status": "complete",
+  "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+  "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host.",
+  "native_report": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\review\\r18_world03_journal.json",
+  "native_report_sha256": "41fb3022dc03c442d22b14526fc7c741eb8731e5187b2df9048ff72d056e3f5d",
+  "native_artifact": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\review\\r18_world03.bin",
+  "source_manifest_sha256": "bef6406e20a0324f6d5be51f7d89abaea36539fd71dfce17b5cc2ac1d64f1edd"
+}

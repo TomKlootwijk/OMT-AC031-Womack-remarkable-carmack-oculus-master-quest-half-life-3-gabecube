@@ -1,0 +1,2309 @@
+{
+  "recorded_after_validation_utc": "2026-09-15T15:28:34.013957+00:00",
+  "qualification": "Supplemental complete installed runtime-file audit after evaluation. Original pre-evaluation CSPICE DLL/interface pins and both harness pins were independently reverified unchanged. This does not retroactively preregister new dependencies.",
+  "python_executable": {
+    "path": "C:\\Users\\Tom\\miniconda3\\python.exe",
+    "bytes": 104264,
+    "sha256": "ec0ea8d6907787b76dcf8524aaa93e52e167ceee62fa8778e182ea637a3dbc1d"
+  },
+  "packages": [
+    {
+      "name": "numpy",
+      "version": "2.1.2",
+      "files": [
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\__config__.py",
+          "bytes": 5536,
+          "sha256": "3ab47251dd8e8eebf0edeaa68b01f6a2aafad0bd17a6d24725ca74f320968834"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\__init__.py",
+          "bytes": 22881,
+          "sha256": "929f922b19440f235795665cce23ded28ba8853f5a8663d986da5ded64c3a2f9"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_array_api_info.py",
+          "bytes": 10727,
+          "sha256": "41dff6c7fa5440b741b673caa1d119cb665db3e4798b60ca41a70c98c5516919"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_configtool.py",
+          "bytes": 1046,
+          "sha256": "0a0743592bfd017e9734a2226c15c18acbee0aed1a52455529b36e7497c4448c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\__init__.py",
+          "bytes": 5792,
+          "sha256": "ce2570bfe792aeb1ba8c04181f779070fb4db1d459696067bf32828f832bb5b0"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_add_newdocs.py",
+          "bytes": 218469,
+          "sha256": "857a1f8f8dcfccec4eb3a8ac7c64276bf8693301e16b4ffc659c6efaba0c40eb"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_add_newdocs_scalars.py",
+          "bytes": 13002,
+          "sha256": "cf485b41c5fcd3cd8e4bc9f8cec69cdb5d5bb5638f8412cbfd2e34bf858dbd7e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_asarray.py",
+          "bytes": 4045,
+          "sha256": "c578be17426f1093295247e101eeb7ee48dad7bfe1618fd01a7ad363a5c14d23"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_dtype.py",
+          "bytes": 11108,
+          "sha256": "8ad5e5a023a0967e6aaf998c16f180e78004a42d2e794037aa2107e99efdf0ed"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_dtype_ctypes.py",
+          "bytes": 3838,
+          "sha256": "79b37d53f41bca648ffa899b60161ce05ec7b600b7562b9c356f7532aa4d86b3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_exceptions.py",
+          "bytes": 5551,
+          "sha256": "df977eb68e3c11132081c8caeb484acc7621649514031598d467095a1f5b3c91"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_internal.py",
+          "bytes": 30127,
+          "sha256": "7fb3cdb50232c0741883bac69cbed6828dbb5b0b307309758b9b6544a9e3826c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_machar.py",
+          "bytes": 11922,
+          "sha256": "ffa0a341f506f9793433cffd2814f7be1a062b1be397624a1bffd9092d7d31d9"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_methods.py",
+          "bytes": 9915,
+          "sha256": "6e94d955a1c0d05cd473d9dc7ac45dca148e5829e6363d7fb5abbd6b6c3c3abd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_multiarray_tests.cp313-win_amd64.pyd",
+          "bytes": 63488,
+          "sha256": "b87e40952000c43cdba9a25a6b367bd2b58ca507885d7a1a51b16f7aa501af94"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_multiarray_umath.cp313-win_amd64.pyd",
+          "bytes": 4157952,
+          "sha256": "cabb1334caae965004163eedfab6a3e121aff6915a294c9cf3a29734ce246365"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_operand_flag_tests.cp313-win_amd64.pyd",
+          "bytes": 11776,
+          "sha256": "3d20905db7a004870f0ceb8c887da0f500beeb5edd2e08a22b50c2950f5cbd1b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_rational_tests.cp313-win_amd64.pyd",
+          "bytes": 40448,
+          "sha256": "f2aefa9ba7521b09790908be506932bb5fedbce1e057b46a7ba123f61a310e88"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_simd.cp313-win_amd64.pyd",
+          "bytes": 2236928,
+          "sha256": "2faed972a8a97c8c99797f1ca309b176a338adf2116259e584cc7890761573d2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_string_helpers.py",
+          "bytes": 2937,
+          "sha256": "caa8585e74b74a09cfff83ef3fb35462f609edce46785273f1af3323fb94d032"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_struct_ufunc_tests.cp313-win_amd64.pyd",
+          "bytes": 13824,
+          "sha256": "dfb4abca8eec93b7bff4ab72f0fd362f942c434b72b55fd18d6409d844ad4344"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_type_aliases.py",
+          "bytes": 3612,
+          "sha256": "152ec645526d8cb9ea17f097f28338afb44a67b1041acb21e15f95e9e281190c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_ufunc_config.py",
+          "bytes": 16080,
+          "sha256": "473df096533519babb145d6f01c7c53921de589642e88c21dca60f343c7c23e8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\_umath_tests.cp313-win_amd64.pyd",
+          "bytes": 34304,
+          "sha256": "40e8f03631a1493d0382c6e6ce67174161c95bd6af938ce604ca5eb284182b61"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\arrayprint.py",
+          "bytes": 66032,
+          "sha256": "c66435fa70e715882960dc8ef7553977fc6fe7ee7f22a759b331e2ea2fd5075d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\cversions.py",
+          "bytes": 360,
+          "sha256": "1484afd5de11f75ec18b9c498ca2b2f0ba3a025164574d16bd2a01ee5dda700e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\defchararray.py",
+          "bytes": 38910,
+          "sha256": "142c7a50f2d0bf32fe60a48f85031022970590e8a5579882c503bd72d45a3a3b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\einsumfunc.py",
+          "bytes": 54426,
+          "sha256": "043b0e199d7ab2bf11f55119fd8791a5077df400cc5c051c007c1ec022a276bd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\fromnumeric.py",
+          "bytes": 148545,
+          "sha256": "e09347121d3bdd61d1acab307a12f6a2c467979e0e34ea56e2f0d97bd22f62fc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\function_base.py",
+          "bytes": 20588,
+          "sha256": "2319115045d34652d2e0463d956c4de9f41a21a2347255fbe41fe346ef961b45"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\getlimits.py",
+          "bytes": 26727,
+          "sha256": "0457ce33ecaeb02899f7b8d4a458538f014601f6d70b5fdee33de5045da7fff8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\memmap.py",
+          "bytes": 12563,
+          "sha256": "fe4a394366dd99d19822ba0837fc7a82c7d8cd5f64fcef108cd666033ba175f5"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\multiarray.py",
+          "bytes": 59418,
+          "sha256": "3fa5b229431ae5e9f361e9eceb66dd525d4966c584cd8d083ba28dd16aa96671"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\numeric.py",
+          "bytes": 84554,
+          "sha256": "3a39eb8431431f6785ce870316f75a41cf62ad6958e67ac24d5c822cc92dfaaf"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\numerictypes.py",
+          "bytes": 16742,
+          "sha256": "2135341810a541211abb6eb8343ab6cb5c63bcb72af88dc94135bbddb19f10ff"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\overrides.py",
+          "bytes": 7275,
+          "sha256": "c38a7f7b9e70ea5a7fbc2df8b459c7dc67cdec413e6444abbe6c2d1c4531a210"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\printoptions.py",
+          "bytes": 1095,
+          "sha256": "6edc727e2b2327fec307926d64a02d68b60bf6a99c9939e727ca4715cc27d967"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\records.py",
+          "bytes": 37958,
+          "sha256": "04b63252c6daa0ba7bda9be3febbae984df81bb39cccb8fd0722b60b63be4d37"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\shape_base.py",
+          "bytes": 33433,
+          "sha256": "bc377a43ba02538f2ed2c094d964757b916cda0e885982189da08d65d86a1901"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\strings.py",
+          "bytes": 44739,
+          "sha256": "24d7df48310e6ca44eafc0758fb880673a59e4be98316dd3131622916f7b3ef7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\_locales.py",
+          "bytes": 2280,
+          "sha256": "7ac1a9ff00aa3e9c45c72dde505fabfd693eca3163ad01309204b3a2547352bd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\_natype.py",
+          "bytes": 6457,
+          "sha256": "b955c709a866c836d9640690f8e2aa6969ce809448611113534e9daecb1248fd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\examples\\cython\\setup.py",
+          "bytes": 894,
+          "sha256": "b4f43d9ba76be3c252bcba60995f9a567316315d22b25ce54abca7079c866036"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\examples\\limited_api\\setup.py",
+          "bytes": 457,
+          "sha256": "37b92ab15a78888136d0879b8a0109516de75b617497a56d85be6a36f2870663"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test__exceptions.py",
+          "bytes": 2970,
+          "sha256": "832efe999abb5d2e73ff0faeb388112330b41fb5ea0bfeb6c5a410996a8bcd2c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_abc.py",
+          "bytes": 2275,
+          "sha256": "bbcdb0ad229727657b02636b8789251f1622a8ec74058589e23ee1a93307fbe0"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_api.py",
+          "bytes": 23548,
+          "sha256": "142c9becc26fdfee7f455b080ab74af77c45228df0a6fa4f797db11df206ec5d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_argparse.py",
+          "bytes": 2914,
+          "sha256": "bcf72dbb14e83e464c95b8239f313ddb85e4c57614741c6547a2ec3f6ffe6903"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_array_api_info.py",
+          "bytes": 3174,
+          "sha256": "837bb1aa7362857539aceb7c7acfc0bd670c82e63ae3b1496c1ac51982405daf"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_array_coercion.py",
+          "bytes": 35763,
+          "sha256": "a32b8785e37f696691547a71bfcff3ccb1c178bc27899ff18dbb980d4610d534"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_array_interface.py",
+          "bytes": 7986,
+          "sha256": "13a411f832584c95ff17e8bbd0f6a440c9afc737d2043f96d6b16f7bbd0c1538"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_arraymethod.py",
+          "bytes": 3351,
+          "sha256": "cde3e35e6df7ddb20a088524ab091ad1251adbbbdd630c6b5082948ba949aaf0"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_arrayobject.py",
+          "bytes": 823,
+          "sha256": "c11afe24ad7d932f3a42a47023e3bce5cf3b2e26a4214d44dee3cbf1fa772ccc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_arrayprint.py",
+          "bytes": 49198,
+          "sha256": "58701c68834bea5d0b38667ffb7646eae498bed6946bd5b783bb922a81ab3f82"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_casting_floatingpoint_errors.py",
+          "bytes": 5228,
+          "sha256": "151456241a696b9bf56b18a3e8bd7810d9b3a194bc47f4b224a807880148d8a4"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_casting_unittests.py",
+          "bytes": 35126,
+          "sha256": "ba27930d8dceff6ab69af23f0f8b742222cfbea89cea612e628285736c8fa806"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_conversion_utils.py",
+          "bytes": 6814,
+          "sha256": "733d961220984843fd9bfed11dada94bc596d0f7163b413e2efa4b4ceef63e41"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_cpu_dispatcher.py",
+          "bytes": 1597,
+          "sha256": "0696ff7a9ee44f739f372a55d6948e58236593ca13e3a9236411064b7daa7c22"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_cpu_features.py",
+          "bytes": 15723,
+          "sha256": "279f487a80ae06df78d5993c2d73c6dd7545240ed01e70af50155ba7ce26dcfb"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_custom_dtypes.py",
+          "bytes": 11945,
+          "sha256": "d11143daf5059f7894295eb4c1d89f5f4898f1e81e72155c18493924e2ce20c8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_cython.py",
+          "bytes": 8800,
+          "sha256": "1ead754d07176d5363dc935b4650852c87769492e3236d1ae921b0d553825d2e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_datetime.py",
+          "bytes": 119982,
+          "sha256": "65307f1d726fa41df29b96553c8716069a72dcef7715aadd3fa1b3df8fdca80f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_defchararray.py",
+          "bytes": 31423,
+          "sha256": "88e3bc01404ec2169d4c8f145253b0fad2340ddd25e24d6b2d8f60585b902dbc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_deprecations.py",
+          "bytes": 29424,
+          "sha256": "4d9192c7360be6195246dfe8845e1c963c89b5b1d2cbdadebe81697be8fe0d34"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_dlpack.py",
+          "bytes": 5653,
+          "sha256": "1a5361b283b93dfda372f19e15a0358c4f9bce3d72bd38267c9716b9afe27b73"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_dtype.py",
+          "bytes": 80221,
+          "sha256": "e743b1054d23409212c7fc998c49385cc0c113da14b114d485abd48757c9d27f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_einsum.py",
+          "bytes": 54176,
+          "sha256": "bc20a6108c71e628f0ace78febeb7e7c6a517ddbde798ac38e3964c6980bc19b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_errstate.py",
+          "bytes": 4775,
+          "sha256": "556abaceb29d0969614b3b873c324612f36de14b9d4ff66ea40ff07c67bf011e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_extint128.py",
+          "bytes": 5863,
+          "sha256": "60a217d2af44356d2a7a126d75a000076b051b499ee36536c899aad242bac464"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_function_base.py",
+          "bytes": 17601,
+          "sha256": "053344d4d1d574e09901c5cf52584cf22f7fc3f2f5e9f492c893a280afcfde05"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_getlimits.py",
+          "bytes": 6932,
+          "sha256": "e1fcaf98753235b9095d606cf0011a1a8415db7a381c9248a7d9ebb9bffefc45"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_half.py",
+          "bytes": 25165,
+          "sha256": "637d55bc27d63cb0d953ccb2dd18b2f6871600c405dad8dbdd0192032cb5816d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_hashtable.py",
+          "bytes": 1182,
+          "sha256": "f9997eba9a496dcf64c0f37f665c49300efac8040ab201a6410588f18facc5a3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_indexerrors.py",
+          "bytes": 4858,
+          "sha256": "91e59c94dbc5bb7ba485549773def0ddb24cf01be43a9ba5ea48cdb9d7f51764"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_indexing.py",
+          "bytes": 56504,
+          "sha256": "2c2e8cd84e9968991a5665a463c2a29f6cee235fc233259d7074e80825011dcf"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_item_selection.py",
+          "bytes": 6623,
+          "sha256": "cda1ae31c4c3b1b0a940ed64f5cf71b9ce2351685b02b7e7ff520d7e295ff619"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_limited_api.py",
+          "bytes": 2915,
+          "sha256": "a7b8e12a137a49c01e5177f66d92bbd64c13296b6cfdfaa409fa8a7e6cbca6c2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_longdouble.py",
+          "bytes": 14285,
+          "sha256": "91cbb60e93eec3e8f4a27d08370f8b34c3a3c38c2e5c8fdf3dbbe7fbd9fe3a4b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_machar.py",
+          "bytes": 1099,
+          "sha256": "cf49b0c9fe8048523e82d31e98501a83ef1e1172a36f5da6675052a4b600e764"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_mem_overlap.py",
+          "bytes": 30073,
+          "sha256": "8cd83f5c4da0964565604a346b845ea4869137ec6fa2c850c0597452bb5fc2df"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_mem_policy.py",
+          "bytes": 17126,
+          "sha256": "43b59e1f25b1a99911d168262f933327bc6b3a8caacac80e365aac28651f7966"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_memmap.py",
+          "bytes": 7964,
+          "sha256": "979770c9f60ae99eef38383a451ed858f2cdca80d820a2591050b01510b28289"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_multiarray.py",
+          "bytes": 400979,
+          "sha256": "00e037014c97a8b659e8bdbc8edc153b0e449e682d7c8186359cfb0288d8b766"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_multithreading.py",
+          "bytes": 3674,
+          "sha256": "a343d9d240c00de5bf2f3c3c24840a4a886b325e96d5632e944936b9fef13413"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_nditer.py",
+          "bytes": 134633,
+          "sha256": "909ecee0eabacb4af5c692efe8a3ebf032a180857862bd939518260a31b0a507"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_nep50_promotions.py",
+          "bytes": 13208,
+          "sha256": "8fcc8658197f3a3a9798903b437850433869a55fab1b1d32d21de56ce0c265e7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_numeric.py",
+          "bytes": 161605,
+          "sha256": "427451ecfadce2c9070fef46c0d88910a9fa4cc36ead4dc432b23356623e398e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_numerictypes.py",
+          "bytes": 23912,
+          "sha256": "850d58a9ab10ea6abefbb7e728ed3c928a95ae7b0ad88c25a1671d125281ed4e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_overrides.py",
+          "bytes": 26433,
+          "sha256": "bee2bda019a59c48b868a1a1c345257000202df6c6f01526e7e4622066eb1930"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_print.py",
+          "bytes": 7038,
+          "sha256": "1e138c0b8ae836b9d7767720a573e6160b095b0711a4273dbb728e20c491c43c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_protocols.py",
+          "bytes": 1234,
+          "sha256": "d7dc972c92979b2d7e02b01c959f85ecfb6037a2e62076e23ef83a562d8f9099"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_records.py",
+          "bytes": 21075,
+          "sha256": "409b45cadc4c4dfbab4f05ed21e371bbea27e2602e5d6499ccf544f58a6bd420"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_regression.py",
+          "bytes": 97515,
+          "sha256": "38b4cb1726e37a71bfd205db6733d6629fd80b247b2ac1072adf1af3ec0d0377"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_scalar_ctors.py",
+          "bytes": 6923,
+          "sha256": "0ab3d88fac68e40e76555a9e71cf52f10d094163cfc94da9343e4a50d5fffa9c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_scalar_methods.py",
+          "bytes": 8407,
+          "sha256": "d7ac81ddbf6191aed6b86c0ecb8c8ac33c220d9565412b2829a156449f9ee8c7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_scalarbuffer.py",
+          "bytes": 5735,
+          "sha256": "d1df0b83221c9609a2e3024cdb5f1facd0d76b8578d3c31c0c50e489e069245a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_scalarinherit.py",
+          "bytes": 2697,
+          "sha256": "3db4c08147a36da6f09bc306b9beb1aa5ce08937b958ae8b004262527b313ec7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_scalarmath.py",
+          "bytes": 47738,
+          "sha256": "a130d35cb60de953bce563f1408f113a2e386fe76bfc5911945308e09104e22c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_scalarprint.py",
+          "bytes": 19170,
+          "sha256": "b66a8cbc0a6a252ca98fb1ef224c29017d16ac2e779a8c6b116b773d54560650"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_shape_base.py",
+          "bytes": 31869,
+          "sha256": "25ae6e2135191dba296a6c7e5940dfdbcba10528b889626a9bb2d869ede0666f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_simd.py",
+          "bytes": 50031,
+          "sha256": "44139f0a4327cfd9d3bac69b8abfb0ee4dc02650f628a8bcf2cae8946ff4d7bf"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_simd_module.py",
+          "bytes": 4004,
+          "sha256": "b36dada98b60374c7ee41dc74d78867c85766935f24101f5f1cd5f623e954618"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_stringdtype.py",
+          "bytes": 54907,
+          "sha256": "6096a8a900190389e5398b238bd81cad69d53e39610626ecb2c37c71a054c98d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_strings.py",
+          "bytes": 49872,
+          "sha256": "91839bc72d4242b6203035d97deff12dd51f8530d9e1ffb1654151a6e6d7c4bc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_ufunc.py",
+          "bytes": 134797,
+          "sha256": "baee3e56e88d7d0af9183cfeb313ca8c074bec0f68929e7dccf86d1be92503dc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_umath.py",
+          "bytes": 197188,
+          "sha256": "8a48a6a523fdf2683d85fd462f04914a499b7aa21b0bda57c698b0095a570635"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_umath_accuracy.py",
+          "bytes": 5569,
+          "sha256": "ffe5946e18b29a0072e4ce5e9e03e827f01d39d00c8609b0f6517b6d1882dd0b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_umath_complex.py",
+          "bytes": 23912,
+          "sha256": "6519c9b85a3a0d03f3e6d754519c8749a9ad688d811652d7cf3e80b6520b548c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\tests\\test_unicode.py",
+          "bytes": 13236,
+          "sha256": "bb675d08324063b37294f101a1bb9c22f2215a5cceabf2336489b27dbabb49ea"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_core\\umath.py",
+          "bytes": 2103,
+          "sha256": "99e7f38b5356995901f32ae31bfc8ad267b0bdfbca8aa6ca041f9424eea788aa"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_distributor_init.py",
+          "bytes": 422,
+          "sha256": "6a105b64fcfe98666b9b0c77e451d0dba0228a7493efc171beea62041286169e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_expired_attrs_2_0.py",
+          "bytes": 3993,
+          "sha256": "577fea88d74131e53dd2c307016c741d9209ff7d327e7bf67a84d0d8c0cac733"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_globals.py",
+          "bytes": 3185,
+          "sha256": "15653122da3d850e4c8b6368c4fe83786a48ddb812f07f71abb8dfcda54bb46d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_pyinstaller\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_pyinstaller\\hook-numpy.py",
+          "bytes": 1429,
+          "sha256": "1851a2cd816377d1ec60c3ad6f2ee07b0f780a4bd3ad15bbec40863cd5201867"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_pyinstaller\\tests\\__init__.py",
+          "bytes": 345,
+          "sha256": "64aa8d8ea94ac35a588afe7ba276e30c99c9755acb6b06d901c97e98f673712c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_pyinstaller\\tests\\pyinstaller-smoke.py",
+          "bytes": 1175,
+          "sha256": "c6dddd97f0e3c6ecd54cfaea99598c3999b9fb6e30046d93c6575097bf17b758"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_pyinstaller\\tests\\test_pyinstaller.py",
+          "bytes": 1170,
+          "sha256": "df5cd696f9400b6b1f85d7b0f7bc7c683bdc614695dd373fd02c0593ca6029a3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_pytesttester.py",
+          "bytes": 6486,
+          "sha256": "e54a226db52a57985c8c452e5ca5c35a23b379c739922073d0ca4428d566d51d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\__init__.py",
+          "bytes": 7317,
+          "sha256": "dbfc5c9053a0cc7ce06301336ef07b5acd4115d23199fc05de75fc472a935d1b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_add_docstring.py",
+          "bytes": 4122,
+          "sha256": "943ced599e943854c3a37330a3107bd4fe670f0008893e3dbce8a802d4e2cb55"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_array_like.py",
+          "bytes": 4863,
+          "sha256": "f4429a49288219642ab6399144a6ede83e5a791a572bfea89547f5d78a17579a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_char_codes.py",
+          "bytes": 7121,
+          "sha256": "82046b7af904780e50f33e153901fbaec27f5fb99e252d1b8e9f9bdced7852f2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_dtype_like.py",
+          "bytes": 6138,
+          "sha256": "15f5743303510d42ddba442bcca26e95240ef3685bdd27586194a7f344108e42"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_extended_precision.py",
+          "bytes": 804,
+          "sha256": "e4f863113e0d911a7e2d281f7c9a9f719d42e42a7ec44441d7814d5df52f4645"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_nbit.py",
+          "bytes": 378,
+          "sha256": "2ed7936b4f409482a985a25af93729c98bfd4f3608deee318c1682e591d4929c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_nested_sequence.py",
+          "bytes": 2652,
+          "sha256": "34d10223f2e8def00a1781a7b86b2b1ae7e86b25011b9b09bf746133bc9800e9"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_scalars.py",
+          "bytes": 1058,
+          "sha256": "b0a69a10466a010b621228deb87e14e4a3cda46ec562c06d18eef797d76d8bd4"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_typing\\_shape.py",
+          "bytes": 238,
+          "sha256": "de0d2b369647c4ceeb3c89c124c486a5b543f58d0bc3542d90510dff2ad611ea"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_utils\\__init__.py",
+          "bytes": 3311,
+          "sha256": "0ca9ee514285d6b5af0e56df08ee37aeaeb5332d840b54479c19bb803e733410"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_utils\\_convertions.py",
+          "bytes": 347,
+          "sha256": "bdeb5916a0b5a81f99f63bdced12ae53fe444ce6926e385b29afac570615f135"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_utils\\_inspect.py",
+          "bytes": 7638,
+          "sha256": "e0f583543fa21379591ab04259d88b327da84b2b6cb2e16ccee6d4902d28aee0"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\_utils\\_pep440.py",
+          "bytes": 14556,
+          "sha256": "cb93a9a6adcac67d9d1f711605848436ffe3f178c65175af34088d08427e7ae2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\char\\__init__.py",
+          "bytes": 95,
+          "sha256": "a1065200eb3bac799ee82c5f74bf67ada611348dcd535f0c8f343891098ada40"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\compat\\__init__.py",
+          "bytes": 756,
+          "sha256": "a2ab107982a942e269b932ea324657eacb2a41f497b342688ff4bc32cf4a48d5"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\compat\\py3k.py",
+          "bytes": 3978,
+          "sha256": "c3920c20813a6253f7b10ce17beac23c2f769a803a82c7b3977ee71eafc0ab51"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\compat\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\conftest.py",
+          "bytes": 8649,
+          "sha256": "bba769454dc873d7e778c4a13c6cca01863f5df89b359205cf82ef84feb45cf2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\__init__.py",
+          "bytes": 1307,
+          "sha256": "fe5a5c688a8d8374c7e77244d09295283e17d03393922d9d4af4208c78fa11e9"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\_dtype.py",
+          "bytes": 331,
+          "sha256": "3dc4829fb0c2a60aef0639be93878231c1224e71fe8cfcd09a1f05cb32d5c3d2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\_dtype_ctypes.py",
+          "bytes": 359,
+          "sha256": "7a264d28225bcd9d448bd4e477b15f7f1f2f594b002a71522bee6fcdadef9844"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\_internal.py",
+          "bytes": 972,
+          "sha256": "1c2d4daea0c480afba33533afbc653652645ef19c860f87f1bfe23d8114134b3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\_multiarray_umath.py",
+          "bytes": 2151,
+          "sha256": "bcee3dff8c7949883e0524f9e3597bdd19819bba64a9bc25b2c9b0b1149d53cd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\_utils.py",
+          "bytes": 938,
+          "sha256": "3fc540af95af53b1c10680c6eeb9cb93856be7f84522b08b6d91d9178ef3e2e5"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\arrayprint.py",
+          "bytes": 347,
+          "sha256": "aa8f4621f744996f5fa31bcfd2fb452d16809526cea0e18953e841950e612250"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\defchararray.py",
+          "bytes": 355,
+          "sha256": "fa00a373d72220b852cc0c6d5578224f0769b8d303dd1ea9f6d5c77bf30bc7d0"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\einsumfunc.py",
+          "bytes": 347,
+          "sha256": "2e40928d14371c81787dd473eee12097ed53c9e4f482d195e72f31f5c418b19d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\fromnumeric.py",
+          "bytes": 351,
+          "sha256": "890b2287bd7cafa416f346ae3c96ef6bdf6a7967d3e482b64b4dacbf8005314b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\function_base.py",
+          "bytes": 359,
+          "sha256": "57ffad50665f8236338d9c6f84b351b555d5dbfbf5dab26cbc01a90d76dfabcc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\getlimits.py",
+          "bytes": 343,
+          "sha256": "490b13943a43573f40bc50bec6f0096e1726e6cbc10f4daaa44f872e0b75ed10"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\multiarray.py",
+          "bytes": 816,
+          "sha256": "d8aee0de35db1fbc2aba94accabe703f4628412a5795969bf6e0c36c9b73d819"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\numeric.py",
+          "bytes": 370,
+          "sha256": "9d3bf073002a9330a7626a84b7827776fa94a1dcd7525688f07e58179c7ae718"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\numerictypes.py",
+          "bytes": 355,
+          "sha256": "8e643d7355ab5b1971f0e0c364a380aab8b152edc6c7f3490f54b34f7c2d6f9d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\overrides.py",
+          "bytes": 343,
+          "sha256": "0eafa54dbf36f60be0f877d1b58d0113a184d946c8ea25e430887c1af933b758"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\records.py",
+          "bytes": 335,
+          "sha256": "e633ed804b47689eb8d82b7e1bdb84c2717dcbf4d99d90145e6fc4509105f09f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\shape_base.py",
+          "bytes": 347,
+          "sha256": "8ad8abcf884ddccf0d7608a3e3f65572b6b8aad4642b8d8ec29f2aafd7c57b9c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\core\\umath.py",
+          "bytes": 327,
+          "sha256": "d3db8dc9b52a7d6c5daa4a181f3bfa8eb4c3097aba0c323e11dc1a38a7628e7e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ctypeslib.py",
+          "bytes": 18187,
+          "sha256": "3edc93d46257cdddd11836d7666341d3285e1c2f1c1558715009c858c9f8c2b1"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\doc\\ufuncs.py",
+          "bytes": 5552,
+          "sha256": "8cc9df4214649d5221805552f73da5e6860cf0dd6db90b5fe5b5cc04be38f682"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\dtypes.py",
+          "bytes": 1353,
+          "sha256": "70f912e812d1be97ec53385ded59352fbfd571e9d66f59ee1ee0b173d7d80b82"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\exceptions.py",
+          "bytes": 8123,
+          "sha256": "19129e3d7e838705772345c21715a04e607cbf33e944c80f40321ccd9fa56e9c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\__init__.py",
+          "bytes": 2614,
+          "sha256": "1e074a2a492f5eb4996aa4c403e9e9d74eeef7539f6b650abac77d46c2b5733b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\__main__.py",
+          "bytes": 135,
+          "sha256": "4c37accbfd9f0d7fa0dbbb89b78c972175b34a8af5dfc476b7657b1c51f0a809"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\__version__.py",
+          "bytes": 35,
+          "sha256": "4e2b0abe0720e2f879169b70d864b5241ff76c042c59920a85c9445fa65c021a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\_backends\\__init__.py",
+          "bytes": 308,
+          "sha256": "c48547885faf7a59010cf2b0152db43d283e5e4156e642c0563e424aa34b75d3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\_backends\\_backend.py",
+          "bytes": 1233,
+          "sha256": "f51643bb8142c0233b1b7f445f6604b7e5676b3d14d964a9f904807f3d750461"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\_backends\\_distutils.py",
+          "bytes": 2463,
+          "sha256": "08dff196d0b3efe708c017fa5fadbdf0433fd26df44c028b0487e90cf4acf160"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\_backends\\_meson.py",
+          "bytes": 8350,
+          "sha256": "20adb0a6efbaa1458aa600b8f8f417393154c5a7a11be6e9f20a66b5d309675c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\_isocbind.py",
+          "bytes": 2422,
+          "sha256": "415a11fe90ff6d8f488136921c7530ffc1018349a469fdc965fc212df1dbcf54"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\_src_pyf.py",
+          "bytes": 7893,
+          "sha256": "766819b0b825f2f6cdf02f956025f1cda9a48c32784c341b78bf3ef8d24c7aa4"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\auxfuncs.py",
+          "bytes": 27821,
+          "sha256": "f60376787cec067a5645bf0ce02a945b27759cb6116a0bc4d69c96347d343746"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\capi_maps.py",
+          "bytes": 31448,
+          "sha256": "a0770f46b1caaf3dfa9fabeace7147d70d654f8fe338e9a4ec0b07cff7bc2a77"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\cb_rules.py",
+          "bytes": 25648,
+          "sha256": "8402de98ab2a6b5aa44c3d8aa8171d1a64438524c0baad59e59b0f9498d6757c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\cfuncs.py",
+          "bytes": 53670,
+          "sha256": "81d6d1195e716231d84a63febda3a49635004f43f6cd7784bdd5d91d1335221e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\common_rules.py",
+          "bytes": 5277,
+          "sha256": "d7d54310f43df8fcf3927bf4dd4db781661eb260c0cc9ac6c70757aa7ec2c614"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\crackfortran.py",
+          "bytes": 151778,
+          "sha256": "a9bbab222178f3ca6291266ed6753549ecde329a07408c6e3f70bb7e246288c7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\diagnose.py",
+          "bytes": 5351,
+          "sha256": "faddd5a50aa47baa848f1a48ad5d4e037545b9044036299cd22add8c6c8ef110"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\f2py2e.py",
+          "bytes": 29728,
+          "sha256": "c2d45577379e479c2d5127ebca802dc89e003f55d8f21304c406f86aadd53632"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\f90mod_rules.py",
+          "bytes": 10264,
+          "sha256": "f3c6e9578145bb597e98d86863e6faab732c4146f331a64c429722d17d8ac261"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\func2subr.py",
+          "bytes": 10621,
+          "sha256": "5aba340b734648efb5836cf1048f2a83f4e5e8ac9cceb0ad09326f84de0ab544"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\rules.py",
+          "bytes": 64447,
+          "sha256": "004f666716197c94fdd26f7867e98d9f1efaf117ae8246f4e8b0a140a7464be6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\symbolic.py",
+          "bytes": 54785,
+          "sha256": "29f49d465108aba221a2ee75a06a79921a491ff6147702eef0f6b116428a42fe"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\__init__.py",
+          "bytes": 343,
+          "sha256": "862417d65bc8eeb21844d79c5698390ffd0de84d30f7805299ec61104aeeb662"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_abstract_interface.py",
+          "bytes": 876,
+          "sha256": "1cf77798e2212dca9bc887f4ff14f8caac682e8c71429d926d9a326331a85cbe"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_array_from_pyobj.py",
+          "bytes": 24462,
+          "sha256": "94c4ca92cf12141fbf48d7184a61cd96cc73ffecaa3ecb90421865032c75a1fe"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_assumed_shape.py",
+          "bytes": 1515,
+          "sha256": "232a893c6a4656ffd16910b0ae4a3fefdde32f1242d78f79b51f6001b993951f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_block_docstring.py",
+          "bytes": 600,
+          "sha256": "d0387519795a0a0df70e695b842d3c30e04c5dda4c6e4f7cdcc401da107b5e10"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_callback.py",
+          "bytes": 6806,
+          "sha256": "ec650693bafb34f6b1a7e149f34808e2ee6817006e17138524df7e099408e3a7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_character.py",
+          "bytes": 22565,
+          "sha256": "9d3f5ac7b0358b16df968a90df867a32569c247c1ebc570ccb6fc739eb092a9a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_common.py",
+          "bytes": 661,
+          "sha256": "cf5aa83a6e8716f2da97f70e08fb8d9fb355a215a358170edafd6669515f4614"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_crackfortran.py",
+          "bytes": 16295,
+          "sha256": "41316c28eb4993dd3bf8c38887352b9bb501dd6eed5ea3a4809b25b343b91bdf"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_data.py",
+          "bytes": 2969,
+          "sha256": "d2020f2d8135f3b19fdfadb2b245e9adcff37bc7f30c5b54f696c3dcc5a6022a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_docs.py",
+          "bytes": 1933,
+          "sha256": "cd8a88dcc313732b473f5f8ab32c0ca7c781be962eadfef090771c0f2b826f27"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_f2cmap.py",
+          "bytes": 400,
+          "sha256": "d98cb8cee16b927d10bc29224631a21ea8aba7d6d77bc3834a733f2d834052c3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_f2py2e.py",
+          "bytes": 28803,
+          "sha256": "50f25415fec21a351871e3775637cb738970ffb560b369c7041174f95aa50327"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_isoc.py",
+          "bytes": 1481,
+          "sha256": "2865228da37642e9bfa900f545cee6ec1ddd313c78ee846e77c65635f7393346"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_kind.py",
+          "bytes": 1843,
+          "sha256": "a0cfacfab0924033b75deac40a349e3a54a2d1f8b88603bdc416f3317a003dce"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_mixed.py",
+          "bytes": 904,
+          "sha256": "095c3b71ead584dc2f8ae44394b961a246d8497a40b48ffe1a055589b72b4685"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_modules.py",
+          "bytes": 2380,
+          "sha256": "98c2f372310d549de89fefb3f6a99b52d86bb96cf4d93e3d5e263f034c5bce4c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_parameter.py",
+          "bytes": 4764,
+          "sha256": "95a422f8c40396a332e177ce0459e2c61c4d91c744fb07d8cdef26716088b2ba"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_pyf_src.py",
+          "bytes": 1179,
+          "sha256": "44b9bde5a00d19a910602ce4fd426351cab498e407d0bb43e87a1962412222b5"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_quoted_character.py",
+          "bytes": 493,
+          "sha256": "70b3d132136208ed2ffbf0398cf91383e66fdfc53e6db26d7ae2ce2fd5526629"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_regression.py",
+          "bytes": 4878,
+          "sha256": "8a4bb5dc910a53ce655b152aac59668a5d9f99ef3d7bd31295702187b23715c8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_return_character.py",
+          "bytes": 1557,
+          "sha256": "f61014ad35a61e44a7450338a73e3770b141484214e6c37c83633cc5aa81a811"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_return_complex.py",
+          "bytes": 2481,
+          "sha256": "ca749a68c4b18814c0a69fad206c171cb7b98028ea9b8a890aafd03708a11969"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_return_integer.py",
+          "bytes": 1830,
+          "sha256": "3cd79e7b2921d10f683f150272e2c2dd0d5715b46b93b8e14302ba7ab8dabb43"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_return_logical.py",
+          "bytes": 2081,
+          "sha256": "80f04eeb3c66c1e9347d422f0838326e296d88daa2330688aaab18da8d0f5ed8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_return_real.py",
+          "bytes": 3361,
+          "sha256": "001d0bfffdd0a22d681dbe265ed7d8e88f29136175675a91b44ccf35525538dc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_semicolon_split.py",
+          "bytes": 1728,
+          "sha256": "1459b919d783630437e3cba8ebfde814f1b20b4c091ffb961a30d1c36239b6da"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_size.py",
+          "bytes": 1209,
+          "sha256": "432f0a1fd0a8d482fa19b9c32792031913c3d47290dc72facd70a4376c29b946"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_string.py",
+          "bytes": 3062,
+          "sha256": "bd23102a8d522b8635c69815c3c8aab871c7da499e945b26a6130c29886701a3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_symbolic.py",
+          "bytes": 18835,
+          "sha256": "664e21dd60b67ad32b204c8cadac8fa46b61a567ee4b7e58cfee17cf3185718e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\test_value_attrspec.py",
+          "bytes": 354,
+          "sha256": "af35213e57452895e4080c734606652c578025aadf2420045787c583ef9817ad"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\tests\\util.py",
+          "bytes": 12661,
+          "sha256": "af949c28762bfd905be1ac2cc6c24ab1c749f6641814b416c8fccc58afb2550a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\f2py\\use_rules.py",
+          "bytes": 3633,
+          "sha256": "c528b80f5d5937afceee4419feffdd0fed38de04de0f5cbb62fa8a06ae7c1588"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\__init__.py",
+          "bytes": 8541,
+          "sha256": "3305448c8a37c03c4c01b284466997ddc1e1f042bd9c8c3dbe550d4e93a0372a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\_helper.py",
+          "bytes": 7010,
+          "sha256": "9c0b5043b78766b421c2cdc810806da670960387a63eb89c3a63675eb9bf6e78"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\_pocketfft.py",
+          "bytes": 64883,
+          "sha256": "d5871f7e4ed5410df79f814e0a89bb0a82d10563e7710470b0b41242767ea30c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\_pocketfft_umath.cp313-win_amd64.pyd",
+          "bytes": 279040,
+          "sha256": "18dbf9a0b99feebd1bc25624fd5b5a01196aa6fc937da58a431a4f846eb90cb5"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\helper.py",
+          "bytes": 626,
+          "sha256": "0ef7fa0d2f691d30a6ba0310cb9201c24e4b952b793e375286fd4846c5324886"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\tests\\test_helper.py",
+          "bytes": 6316,
+          "sha256": "f82ad9bc6c680f5c6114d56c1c94b7a0d4f0eb262836ad3a08a1e658eff47d29"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\fft\\tests\\test_pocketfft.py",
+          "bytes": 25001,
+          "sha256": "8bac5cebdc3eb2163cadf3e4e0c82188844f941d8196dceedfb998a7bbf772dd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\__init__.py",
+          "bytes": 3279,
+          "sha256": "d11c5f71e72bdd88c185300775536f0cf37542efa642412427ff0a1bd83c954a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_array_utils_impl.py",
+          "bytes": 1751,
+          "sha256": "f15e61876258ccbd0b2b2d8a06b44f87e1591e37caae7ee7c92fd536bbd148ed"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_arraypad_impl.py",
+          "bytes": 33303,
+          "sha256": "b22123209f713e74769c6aa34980f3a11e288d338a3848a0da1736686561dde4"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_arraysetops_impl.py",
+          "bytes": 40761,
+          "sha256": "e49ef89577169d012deb55736a71e118205c5e58dfafeaabe9a821818a348503"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_arrayterator_impl.py",
+          "bytes": 7390,
+          "sha256": "acd2291bc6daa1c73ec6efeb59ec8d321c6da93883597808382430a11edb08f3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_datasource.py",
+          "bytes": 23429,
+          "sha256": "1fb1ca1470b27bdaf698b0eea7a2989ee29c8d4ace77719cdb014c9fbf2b5466"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_function_base_impl.py",
+          "bytes": 200017,
+          "sha256": "01b7487b4b9ddaba2ddaff429262b17c9c43c16c36ece7f0e2480137f4b2da92"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_histograms_impl.py",
+          "bytes": 39749,
+          "sha256": "d602aad25f86b92c18847a2ca88e89bd3399b67088b3a9e454be0042237bb037"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_index_tricks_impl.py",
+          "bytes": 33384,
+          "sha256": "5b94ea4a7959f8949fa7497175302bbd4a38cb99ad0d3ab9a6fdba24e39ecfec"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_iotools.py",
+          "bytes": 31840,
+          "sha256": "81fc382f032ccd6e5b0c7efc98cd58fd5596099feedb8b96fadba86405413369"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_nanfunctions_impl.py",
+          "bytes": 74705,
+          "sha256": "4974e817062ad0390a1d4fa30619b48972e2bd9bce18d0f684b14f49591f3148"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_npyio_impl.py",
+          "bytes": 101589,
+          "sha256": "4d5de1b5e028c7798d7634b17c5572400d2f8b2a79d7cbd294ef584f8beac94e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_polynomial_impl.py",
+          "bytes": 45752,
+          "sha256": "a3941df9549edfa82c804b8906b8c9ad6e23e5930c7d8baaea1a301d1dd36b31"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_scimath_impl.py",
+          "bytes": 16176,
+          "sha256": "fc7a238b272fd2e33c3ac4b8d815c29e66a3f07aafd4d89527e482efea465942"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_shape_base_impl.py",
+          "bytes": 40953,
+          "sha256": "34cd8838acc09272843c01478417f5543ccfd47737885dc9b1cdb5e767023dcf"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_stride_tricks_impl.py",
+          "bytes": 18765,
+          "sha256": "7093555c2f33ef76b31094baeea089b255c306e7949d128e757495c9792ad028"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_twodim_base_impl.py",
+          "bytes": 34906,
+          "sha256": "841c19729dec7923745b040d416bd8b52bbddfacddb28807efa7bbb46ff60804"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_type_check_impl.py",
+          "bytes": 20059,
+          "sha256": "dc04e19078820b23fe5852ce10a0f00a8333d78334a2e4e42958cf2567508da6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_ufunclike_impl.py",
+          "bytes": 6551,
+          "sha256": "0332086a179604f952018bed5076dcd45e58b37f6406053585b637adb1803d9c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_user_array_impl.py",
+          "bytes": 8179,
+          "sha256": "60b30a460856a21e46845df1a65365e3ace0c4e68f0edab07f64856ef6653f5d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_utils_impl.py",
+          "bytes": 24180,
+          "sha256": "72dfb039d98d3da1b7276d7227d2b0d43b37c694d91b38cf50b2cbe597bd44fd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\_version.py",
+          "bytes": 5008,
+          "sha256": "c8b0d073b174eb917aeed4d239ad4477a875a4031401102168b9fd57e50a7336"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\array_utils.py",
+          "bytes": 137,
+          "sha256": "4b23075e5b0e24c2b0c648d0c63b31c77276720c7fdc9d8dd2aaa62d94d080c7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\format.py",
+          "bytes": 37325,
+          "sha256": "8f62cf956321334e4e9bf8fc46cbf057ff60f4cef52b2119ced031ec41fb628f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\introspect.py",
+          "bytes": 2833,
+          "sha256": "f53f2c2fb343c4a58d743bf6f4409b2aaec145fb19da390609a2f0e1d45965ff"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\mixins.py",
+          "bytes": 7548,
+          "sha256": "ddeee4cb0ffd553817006019a494a0a79661bfe1ac0bb87b6a557317cb1fd50e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\npyio.py",
+          "bytes": 65,
+          "sha256": "9d969d83520a4574cb657ff9d93a6353e62eb4d1f9400fd4538e7bac77e7ea87"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\recfunctions.py",
+          "bytes": 61598,
+          "sha256": "ab0e372e7307cbb56d0c58facb3546618d8fbe23707e56239e83ae9f443be386"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\scimath.py",
+          "bytes": 122,
+          "sha256": "1e016dde25ab81cc6057863a53ec7265904cfcc31ec17eb6b8ff0784ec61bde6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\stride_tricks.py",
+          "bytes": 85,
+          "sha256": "043a85925590e1e540a00bed75bff79d3d18c5778c64eb4fa7a9c1afb80a1bae"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test__datasource.py",
+          "bytes": 10921,
+          "sha256": "1fa3d9290d2d63aaf56e1adc2d128c8d6756a29e4fe118ff498beb53dba40f37"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test__iotools.py",
+          "bytes": 14097,
+          "sha256": "7a36c6ed256f4e6e792eae4b754cdaf3e9c8bc5da6b7e5d8bdfa739f5dead37f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test__version.py",
+          "bytes": 2063,
+          "sha256": "bf64ce947e1fd4f9b3c67d4759bcb778180b3bdb469e1c07d8bbc15e55ed1cfe"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_array_utils.py",
+          "bytes": 1152,
+          "sha256": "172f3f3d1e861de77e992b6a71b7e34def10e733199c9f56cc5cd7e838e8451d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_arraypad.py",
+          "bytes": 57503,
+          "sha256": "6701601ee1c64ec109e40d8567333e0d367d27580725690bac669ea735efcd1c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_arraysetops.py",
+          "bytes": 39012,
+          "sha256": "f70d1d794da79aeda120e665a61773591119f549b092799b49dc42b20044a22d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_arrayterator.py",
+          "bytes": 1337,
+          "sha256": "211566cf16ebf6275ba098ce1cab97ffc35084c00ab3ba43d715aa994dd9111c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_format.py",
+          "bytes": 41978,
+          "sha256": "58abd744ff50979cb8aa9fa7a8c020b8768cb638cb6c4bbdac09daf95910695c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_function_base.py",
+          "bytes": 171261,
+          "sha256": "e9f9f6aa34fb5f991dcc57139ef16b9742250c0296e7e3cb40db3b09b55d2bfc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_histograms.py",
+          "bytes": 34391,
+          "sha256": "eb692f6c9696e5c7cb40299291df021732d1eab3d516aee22bbd7284652cac21"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_index_tricks.py",
+          "bytes": 20921,
+          "sha256": "b605e92c6a53f57a4efdd8d70932a9334f9617e015139185f256ef232533f57e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_io.py",
+          "bytes": 112192,
+          "sha256": "461db538791de88ab33b2937ba1ca2a11dc0692028dfa373fb4027384f61461e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_loadtxt.py",
+          "bytes": 40574,
+          "sha256": "d1896bfae93cd7eebd677284647d11a787203fdc8102a2fa83ab9eb0bb8b68c1"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_mixins.py",
+          "bytes": 7246,
+          "sha256": "9c879cfc36480f1ece367969abf6364cb90850b00fbd0ecb3eab4cc041ee5785"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_nanfunctions.py",
+          "bytes": 54769,
+          "sha256": "6bab8475f3e3322c42ee04abc3ba6d609abef863a5d7fafdad687ab364798713"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_packbits.py",
+          "bytes": 17920,
+          "sha256": "c8df2b61b3c3b5e38f25fedd11e6648129f2cc850a7bf8adb8b61db2ac5ca9b4"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_polynomial.py",
+          "bytes": 11703,
+          "sha256": "2126fa424974b854a913cd7ade3021c32542a43c761385c4af322f7ebcafdeb1"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_recfunctions.py",
+          "bytes": 45044,
+          "sha256": "381ac2187487df000f563d21563317d397aff7b2d5a9e0149b56d34d966810c5"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_regression.py",
+          "bytes": 7942,
+          "sha256": "d39372be25b7c883160aa57bce0e4fe872190818a5df57b3881636186d9a0f92"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_shape_base.py",
+          "bytes": 28296,
+          "sha256": "7d82b219d2d333e976ae54c70330c96ce6dcfd24165d717c4282addbae85ecae"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_stride_tricks.py",
+          "bytes": 23644,
+          "sha256": "10a1d888fa1ac06fefbbfb4598a8b92e6bdfb345440dc516edf7a25b26d41970"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_twodim_base.py",
+          "bytes": 19382,
+          "sha256": "98d357b03293de13e9cfe1c1ff593c6135a9c1dc7b767be6ad6592fcb91ec37d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_type_check.py",
+          "bytes": 15167,
+          "sha256": "8485fdd36cae8cece3eb68faaadba819d055fe3e0bff3c479bb819d68f9416f8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_ufunclike.py",
+          "bytes": 3123,
+          "sha256": "f42f4b5775d92da1cd428c9155997e0b8c3d1dc393109303c36b9761785fd6ee"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\tests\\test_utils.py",
+          "bytes": 2454,
+          "sha256": "28dd6af9e14b99c9186ce313c4f293c0530fb730477403dbd23f67b5f79aff23"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\lib\\user_array.py",
+          "bytes": 50,
+          "sha256": "bf774208db3e3d9eed1d9d6fa86a9d795e452c74622cb5ab31985dcd04d24403"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\__init__.py",
+          "bytes": 2201,
+          "sha256": "0199c7d859cc93f6c3cbc56e3ac8a19a84be9c80aba4a21130f35ae4fbb2937d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\_linalg.py",
+          "bytes": 119135,
+          "sha256": "d70680f460b3c36be28627a9e52ebc8461ac858eac47bef7e8c38037aaa04ad2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\_umath_linalg.cp313-win_amd64.pyd",
+          "bytes": 108032,
+          "sha256": "11f89ed25f6cd17171c18e61d97d8ef59d3e0f010a4aa0ef40c00f844b283e0d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\lapack_lite.cp313-win_amd64.pyd",
+          "bytes": 17920,
+          "sha256": "7bc765772473c7e31a55640afe063fe7b71c092baf25ba334e59785d34429aa8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\linalg.py",
+          "bytes": 600,
+          "sha256": "d420bd8dcfaeeb519e3c2e40ba27838b2332ad5be02c3f1925b4cfbcb7ca8c77"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\tests\\test_deprecations.py",
+          "bytes": 660,
+          "sha256": "19a784dc99d09492e801f6d8f772e6802154955e4cf0816643b12117859bab05"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\tests\\test_linalg.py",
+          "bytes": 85741,
+          "sha256": "92ddc1184f503f5248c949623b52048d5c49b7956ca2cb00d47ed140475ccaf4"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\linalg\\tests\\test_regression.py",
+          "bytes": 6883,
+          "sha256": "108f93c4da1acc186eb55f35deaa78938231ea3286201b29a27de9b87646a69f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\__init__.py",
+          "bytes": 1473,
+          "sha256": "1057b7aa4e6237fed9fff070964116eb1a3665ce8d9c8f05ec6d9bd54556e2e6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\core.py",
+          "bytes": 296559,
+          "sha256": "861ea1536720aca6b17a829d959e92feea9948dd7093b00529a75d8082712d69"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\extras.py",
+          "bytes": 73367,
+          "sha256": "9b4a0122bda74265c39602e293206fe94136b9731442e45fc5ec4a8e4c41be46"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\mrecords.py",
+          "bytes": 27976,
+          "sha256": "cb0a9c65d1652ad47a580335477f49827d1a6c309ed69b5f41479f5b324d5a8f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_arrayobject.py",
+          "bytes": 1139,
+          "sha256": "6a9d3a0b46b474659c3a49e972d6e12dbcc748d77633da7f24bda3112a810469"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_core.py",
+          "bytes": 221592,
+          "sha256": "05d457e5e0367f75ee86ef152eef6be7130a7836d8131a34ddf0d3e18845203b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_deprecations.py",
+          "bytes": 2650,
+          "sha256": "5aeaca4ae37a86c5e65b1468c6cb5d5415dc2824ef631958cfe9ed4a45baa8a7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_extras.py",
+          "bytes": 80274,
+          "sha256": "0bf6aec54191277f28fbb2d918d4cde487408b8f1cd50218f1bcccd8da3307a8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_mrecords.py",
+          "bytes": 20348,
+          "sha256": "4f343096f6358899ca1fb011b0e23d9cd68d793b75b06819023f0d1233fb8d8d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_old_ma.py",
+          "bytes": 33629,
+          "sha256": "b50f88a8a67534c1eae7ff2a90e6995a0feb664581a5168f9e5a1d05177f0010"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_regression.py",
+          "bytes": 3384,
+          "sha256": "2757ed1c329f205dd2508810971269942b184eb3e9032378adfe4ad54c394fcc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\tests\\test_subclassing.py",
+          "bytes": 17486,
+          "sha256": "60ae5662ae3348c8fa8264cd65f236125685a53f5f6f7d57a4e67137fdcc0a73"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\testutils.py",
+          "bytes": 10564,
+          "sha256": "f3a7bc6dc925f82db82412025f354c23fb3846ab5b819a832c3d0be6d64f4e07"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\ma\\timer_comparison.py",
+          "bytes": 16136,
+          "sha256": "c6bbbe5f7a8efdc1bdf121581d73741e0f8f3bc220e9cc97e694d90ac9070660"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matlib.py",
+          "bytes": 11072,
+          "sha256": "4cbedb85176d94c3a66b1b9ad0feff434cf865af0e5ebe00b44bd09622efcf49"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\__init__.py",
+          "bytes": 253,
+          "sha256": "f7e0cc96674bc4e9391d2189db402e4e32a4199dcc50f1c2163844eac6f834ca"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\defmatrix.py",
+          "bytes": 31871,
+          "sha256": "e01e6b07ffbcaed570b8132cc0b0b3e95f202bebf9502af445166fba541073d6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\test_defmatrix.py",
+          "bytes": 15488,
+          "sha256": "ddc4938c58a515956ad9f3207e8525c7a85ff4de0c4af04c84771e9a8894ccb0"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\test_interaction.py",
+          "bytes": 12249,
+          "sha256": "f65a0cc1229704ebb4f59e9a67afd11bba236c47e7d7d03c377f61d76179ebaf"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\test_masked_matrix.py",
+          "bytes": 9146,
+          "sha256": "4a3b94b38221137c76cbca0cf6ea1684a5f82b5b17d893642d032584c96fcc3d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\test_matrix_linalg.py",
+          "bytes": 2152,
+          "sha256": "f52f59ae4f0f30b7c4128f70071e4bcab57f4db5e123aafe1dce6de7de254056"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\test_multiarray.py",
+          "bytes": 570,
+          "sha256": "1398ef597f72a5660d1c7ee2a805b7c73ded32b115fa83608cddffa0fcd9cf0b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\test_numeric.py",
+          "bytes": 458,
+          "sha256": "97e2c504a3e83f7fced6279adb73266800812f1fed49274f7140414538936f39"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\matrixlib\\tests\\test_regression.py",
+          "bytes": 963,
+          "sha256": "c295958cce291d16a2557fd8e7fcdceb236be08e7359d9897c74f06e605485ec"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\__init__.py",
+          "bytes": 6947,
+          "sha256": "2409cf2066d1ed02629722211e356f03b4ac58648ed529b43c2b1ef975a4ddd6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\_polybase.py",
+          "bytes": 41115,
+          "sha256": "5201dae8f38f87a9f3e491a3004deea85ae61218d2dda2c300d72dd66a42ef56"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\chebyshev.py",
+          "bytes": 65025,
+          "sha256": "af3d829f76607faa5f77e88a4c82aadf7d0dea4e61249e17536d03eff8576acc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\hermite.py",
+          "bytes": 56851,
+          "sha256": "ceb14f10b2e44e79a503f3e13d730a014af19a5495968b79b697a58c12b96a9d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\hermite_e.py",
+          "bytes": 54511,
+          "sha256": "69aaed315af8e99ceb10fa4d648bbea58f75b8c1f5163207c1844bbee8c0b40f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\laguerre.py",
+          "bytes": 54667,
+          "sha256": "05e4fca416c0506252b2d7fad8929aed7df1fd98f8cb0b025c2c2578b60ecf8c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\legendre.py",
+          "bytes": 53263,
+          "sha256": "1031cbf3f0531461b812b9783ce68f52cee887eda8646c5b90bee965588636d3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\polynomial.py",
+          "bytes": 54363,
+          "sha256": "88d3acff16fd7abe94f22fb9b958c0194076b1e909e879d3e33a20df6e5eab44"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\polyutils.py",
+          "bytes": 23243,
+          "sha256": "2fa7f9914123b6d53cfd31eec0646e71cab0a24890bcfc73fa8f1dff38f42e12"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_chebyshev.py",
+          "bytes": 21141,
+          "sha256": "3c8d97c2f186a902840754716ec61181e4c6d1cba707ff0eb5df52049a33abef"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_classes.py",
+          "bytes": 19057,
+          "sha256": "542706d8808eb5e0689501f27f3633314872a8795b009c55f0b7509bd34ee745"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_hermite.py",
+          "bytes": 19132,
+          "sha256": "cc660ddb889adb1c78207d7a0fab1f031222a6766b1ab21eec3f1030964fc386"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_hermite_e.py",
+          "bytes": 19467,
+          "sha256": "e5906d1a2da091e95d6154a1f3195038b5035ba7dc4f861d6624eb07a01a1895"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_laguerre.py",
+          "bytes": 18048,
+          "sha256": "841828f30ff7884428b17d82aa34e452cb538ae4cf2d999f40d42dc8ab9d64ba"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_legendre.py",
+          "bytes": 19241,
+          "sha256": "bf76a38e9d2c835a3b9e3a0b85b3dfb7168859ac69634a41a75b2e22666a24cc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_polynomial.py",
+          "bytes": 22669,
+          "sha256": "095cbd0017c5f1cf9952c7a43ff6c092feea4257472006f321048b88f0872979"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_polyutils.py",
+          "bytes": 3897,
+          "sha256": "6f7bddb495630b7e00984bfdeacc3622f20004d0ea9988429cc6190af86d5b35"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_printing.py",
+          "bytes": 21885,
+          "sha256": "3d6a3a8a3b083185e8dfbda093a63b1837aad48dd7a9452339d876fe64b8ed87"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\polynomial\\tests\\test_symbol.py",
+          "bytes": 5588,
+          "sha256": "1999ea0783cb8d90d66a544454e008deabacf648d40e1096f9667ff3b8d198f6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\__init__.py",
+          "bytes": 7721,
+          "sha256": "5bf845cc6b0a5507dd877f94d79833b0e28a024f2e6608a80e4c4acaea2ee160"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_bounded_integers.cp313-win_amd64.pyd",
+          "bytes": 224768,
+          "sha256": "86b8ea2005812f18190d419cbe716de5ea2d1d8570c3bf442939f7570dd16635"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_common.cp313-win_amd64.pyd",
+          "bytes": 168448,
+          "sha256": "bcfd57b645aba23b7de6be9bb99a44781f0e1cc9a0003fbc547fd2bdb974bf99"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_examples\\cffi\\extending.py",
+          "bytes": 920,
+          "sha256": "060c9d6046016fa843821305f8a40555cf2cb145351790e0fb71b27a2953dd58"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_examples\\cffi\\parse.py",
+          "bytes": 1825,
+          "sha256": "adb8b7345e9b872937e728602b58fc7c57aa95f3bd3a6f2f8d2f38260f065f6d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_examples\\numba\\extending.py",
+          "bytes": 2041,
+          "sha256": "be7a94a9046f94023edd5603cc8c5240395bfac9810328fc7c0d7e33622b390c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_examples\\numba\\extending_distributions.py",
+          "bytes": 2103,
+          "sha256": "f9a4f12c8aa75d6d173ed984a74c897da05305c8c4a3d43d49e6ca1bf74e2efc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_generator.cp313-win_amd64.pyd",
+          "bytes": 747008,
+          "sha256": "346ecd0e8cfc5d99e14a1374ddb479a96ac3608547fa85df5cee16294e7ba819"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_mt19937.cp313-win_amd64.pyd",
+          "bytes": 89088,
+          "sha256": "d6247a4db6cb4966a0a89d496ffd1a510ece7ae9d155688006ddc29615f710ab"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_pcg64.cp313-win_amd64.pyd",
+          "bytes": 95232,
+          "sha256": "19890e31989b8e71313bbcacd345190ba6bb8950d8259613ed371e7623d218f1"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_philox.cp313-win_amd64.pyd",
+          "bytes": 80384,
+          "sha256": "f248f4c68190bcaeac6f283be7ec5aa3fc2a0bd6471847a2a9e5eacbbfa7ec23"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_pickle.py",
+          "bytes": 2832,
+          "sha256": "0f932bb3347fa030f8cacb376edf7830fc39e05348c87e9fe0cb4e5816110ef9"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\_sfc64.cp313-win_amd64.pyd",
+          "bytes": 59904,
+          "sha256": "be09e6da678f8edfe9a8fc208551d466c153cd13c39a83e43492d727d73adc43"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\bit_generator.cp313-win_amd64.pyd",
+          "bytes": 171008,
+          "sha256": "b8816875c8794f1079865bee6fe46f654817a194ccc166f482370e181dd9fe0c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\mtrand.cp313-win_amd64.pyd",
+          "bytes": 632832,
+          "sha256": "22f05a3cc7cd7b2a3d7a3e4912836e3f23dc512000f3e3a7e2bbfc67b68d7186"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\data\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_direct.py",
+          "bytes": 19812,
+          "sha256": "f4bcd7fafd98972970a94d85443ec035195522cd4c4c37e576cd27947676ce0c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_extending.py",
+          "bytes": 4107,
+          "sha256": "2eddb49fb7e471c417fbc536b937f875ec70d831a8cc1333854bc01fed462d42"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_generator_mt19937.py",
+          "bytes": 120091,
+          "sha256": "5a06b5e07d0664cd166edb5023a4c8b4b5e90932d6689cebedfb9bde39a6a762"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_generator_mt19937_regressions.py",
+          "bytes": 8300,
+          "sha256": "e70950aa7ea374bc0f6c6359ac5dd13f02e7ff1463d82080e83635ebb74737b7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_random.py",
+          "bytes": 71901,
+          "sha256": "4d6fa291989c0d58138bd59e64e4302c208267f43f8160289ba3e8ced5d26799"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_randomstate.py",
+          "bytes": 87399,
+          "sha256": "46b80578adabe49703e0af2969639b4bc9cab9f746ba62cdd9f767be9f7be242"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_randomstate_regression.py",
+          "bytes": 8215,
+          "sha256": "f052f8b315f50f5a0c557fc5f6ee6f47c65ace8e55d188f86cbef3b21e7b57e6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_regression.py",
+          "bytes": 5611,
+          "sha256": "fdea046be408621df7b4449a84c1ec559b42cbd5bfb394f944fcc8e90612ecb6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_seed_sequence.py",
+          "bytes": 3391,
+          "sha256": "cd652f8560f10664cdd96b5e48541e276f56d3eda4dd95337bfdd8b4be0a826b"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\random\\tests\\test_smoke.py",
+          "bytes": 28992,
+          "sha256": "4ad4f179e99a98a784fc7fd41d05b20f12172526cb408e18af9b03a77cba647e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\rec\\__init__.py",
+          "bytes": 85,
+          "sha256": "48c33af40f94cd7e4b0fa2714985cef8cf6de20af0cd172a4805d7b8c5393d26"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\strings\\__init__.py",
+          "bytes": 85,
+          "sha256": "34b17185a767e75dd30177fc920560b82be6cb35e73f5269567349b6a7c4ad7e"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\__init__.py",
+          "bytes": 617,
+          "sha256": "10d734f4837f0fbe3136f1f7dd9eb943676469212f9631c5fedcfe055fa0fdd5"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\_private\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\_private\\extbuild.py",
+          "bytes": 8367,
+          "sha256": "0d5ae0c9572cb3a7ea884257bbcf70a965ecc0bb1cbf8f2985945454200fa208"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\_private\\utils.py",
+          "bytes": 96287,
+          "sha256": "4e415c215bcdaa8058ce127c3cf32b951129d54749d7778ed819adadb344e3e7"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\overrides.py",
+          "bytes": 2208,
+          "sha256": "f441f7fc8488e72fe8ab084ef214b411689e01de5040cd8ab0b9798b46ef897a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\print_coercion_tables.py",
+          "bytes": 6424,
+          "sha256": "0464e0671bf19d4358a8ec2c71e311f714352c3e9051e3ec28b06cabc73c572a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\testing\\tests\\test_utils.py",
+          "bytes": 72390,
+          "sha256": "7c4577d79d67a4ca9bd5c5d84473d07c4b63f0c7c100254fca8f6a84d6415ad4"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test__all__.py",
+          "bytes": 230,
+          "sha256": "273880f7a294c97c1608f1316d070906a7bf454d71415ad5c22d7184ef2dcea3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_configtool.py",
+          "bytes": 1598,
+          "sha256": "828a8e22946af07ae283f77abf1646bbcce5b9031a9c42e190618397783daada"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_ctypeslib.py",
+          "bytes": 12728,
+          "sha256": "3d2890b04a53dc2a0b169e7ace7b4012468927554c1e4bc4d29afcfa29dfcca3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_lazyloading.py",
+          "bytes": 1200,
+          "sha256": "674d71ea3c64f787b61cfa077651c18268078e6f6d343134f64b89993f83605a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_matlib.py",
+          "bytes": 1910,
+          "sha256": "4d4690986a33f5fbd043c16ba284eafa0f411625621968e84c8190494505ebe6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_numpy_config.py",
+          "bytes": 1285,
+          "sha256": "c69d37e995f7f91db41631a7e3ea2476414f8e44e142161d16d1ade4c3bae6c2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_numpy_version.py",
+          "bytes": 1808,
+          "sha256": "9f872081436733da249adc70ca160158117026f2a963b373631320acdc11538d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_public_api.py",
+          "bytes": 23511,
+          "sha256": "4d570a0f9070bb9647bae64c11cf875192aee7f6181aa7e9f7e8b0a37c03092a"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_reloading.py",
+          "bytes": 2441,
+          "sha256": "b291257549bf9e6574b41a141b9ddad8e4423a3c1f96d8a6a4a7c6193a9aee92"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_scripts.py",
+          "bytes": 1692,
+          "sha256": "eab64de5b9c6a5e478bc48cb06228450c5c9884d8d5676d8d50f3128f94ea80f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\tests\\test_warnings.py",
+          "bytes": 2422,
+          "sha256": "8808a9c25b000ca218d017511ddea846fe11cce234a749f172a4abf43a2a78b2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\__init__.py",
+          "bytes": 5442,
+          "sha256": "ac697cf372f816744f4b335ed59cb3eff2ab1efc483286d23282ee18f3e128d2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\mypy_plugin.py",
+          "bytes": 6606,
+          "sha256": "f113f989d2651c1d5a4a3f3a8dab62a96c4098570d4202af90d56e26aa54da76"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\arithmetic.py",
+          "bytes": 8127,
+          "sha256": "511a94fb891f208028f8f2da51401ead7af81ee17340467325ed04af4b9868fd"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\array_constructors.py",
+          "bytes": 2584,
+          "sha256": "306ce00adeee4de0bf6fbc14d9a3e5bd3b83cd77e03ae8f1fe547456a7e99f2f"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\array_like.py",
+          "bytes": 1061,
+          "sha256": "87b3f741d27f79302660899b97027185ef1b546ce2e515a330dc8b4e450374d9"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\arrayprint.py",
+          "bytes": 803,
+          "sha256": "353c35809f6fdd30d5c11a2fe33b20ff6eeb23e9dd2ae1b898389d05610a5727"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\arrayterator.py",
+          "bytes": 420,
+          "sha256": "cf8a341f4f13eed6f3ccc5a1bb9657755a9b8af8c189cb858111c193f96939c9"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\bitwise_ops.py",
+          "bytes": 1095,
+          "sha256": "f257e381ac9f4c30dc5a2d4efab9f12eee0566abec92f187bc55c9a4c4164207"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\comparisons.py",
+          "bytes": 3294,
+          "sha256": "4d6a5de1644527a2b056cacdfd4d11518710a5349271cc3cb8928153001ef030"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\dtype.py",
+          "bytes": 1127,
+          "sha256": "611b13c0a110e6226d74a084408c9b53f9cbf33f16abd854f8166610eec78d01"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\einsumfunc.py",
+          "bytes": 1406,
+          "sha256": "09774bbd0b14da20ea41ceddd93451092c20b90cc9d12243167db748378e3ae6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\flatiter.py",
+          "bytes": 190,
+          "sha256": "db1b4c3ef0e07e1823648aa23770775afcba43da017a8f6e87852408040d9b08"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\fromnumeric.py",
+          "bytes": 4263,
+          "sha256": "6cfd211106184093a7efe71ed2b01ff1cbeec595f725ae86492942b4d8440543"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\index_tricks.py",
+          "bytes": 1556,
+          "sha256": "567e6212e5a535d6ebd37ccc130007be3060236e7eb82a910097d4bd15564a9d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\lib_utils.py",
+          "bytes": 336,
+          "sha256": "5c4734bfb6f0112f82e43e069122504924d2025e6783bb6aead0968f78f16c23"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\lib_version.py",
+          "bytes": 317,
+          "sha256": "4e52d92bcb1e902326fff596a36d8565f65ce34ce973310d7facbf4cd8c1a42c"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\literal.py",
+          "bytes": 1408,
+          "sha256": "100cf504ada2907b9fa1408c26f251b47c15890aa956b456e4080366f9c04561"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\ma.py",
+          "bytes": 179,
+          "sha256": "2df2b82d70962cb2b9ab473531ef124d66e11a3f5bff8e8b62f6705c6a5a1234"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\mod.py",
+          "bytes": 1725,
+          "sha256": "2f5a8bc2376b468f53c7b9b15a97ffba074a754a6b0d884f45b0af41de508d76"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\modules.py",
+          "bytes": 670,
+          "sha256": "6eeccbbab6ade13206989b96de61ac1a4edd28d9a90437d03965905c57dbf547"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\multiarray.py",
+          "bytes": 1407,
+          "sha256": "8ba554f9537de90d7a9911b3568637a131365b5cf5e863864ce545c5619169c3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\ndarray_conversion.py",
+          "bytes": 1612,
+          "sha256": "e939efb9c57c56db5eedd1968a1c7b626ac794d39a9ea98b2481f55bc5a89341"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\ndarray_misc.py",
+          "bytes": 2795,
+          "sha256": "fb51caeafa9394a9793fbad4d7310cdd41871d69dd97c17895a8c8bca2103da2"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\ndarray_shape_manipulation.py",
+          "bytes": 687,
+          "sha256": "c9a04ade15b97ded95a6f011927fcd31e17e257f8e6a323c262456380fd493b6"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\numeric.py",
+          "bytes": 1622,
+          "sha256": "0fe40087be4eb562f0604fea90f88e1984763381b12566dbcbe508bb01519004"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\numerictypes.py",
+          "bytes": 348,
+          "sha256": "25a0a3938cd03ce23aed7cea1b28b7748f8650c14cd80bc3ba78b0cd243bfd19"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\random.py",
+          "bytes": 63307,
+          "sha256": "dd4c3eea9457591fcee10d01b121d0521e598a043513b7c83f6005088f5b2cc8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\scalars.py",
+          "bytes": 3633,
+          "sha256": "f6b7c8c5a74cf7257239856092054f9d1808900449d20eaf7f52caab934895a3"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\shape.py",
+          "bytes": 387,
+          "sha256": "a417caf4b73994a510f35598139378283206f5cccca79570ed877267033c8ccc"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\simple.py",
+          "bytes": 2901,
+          "sha256": "3349cd82da4f38824c443cb4aea8220951296d024e8768985fccd3897ea52f95"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\simple_py3.py",
+          "bytes": 102,
+          "sha256": "381a680e67f9bb86d16e5ba0a2488e673b9f112b049a8534dccaa2a4446b8cb8"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\ufunc_config.py",
+          "bytes": 1269,
+          "sha256": "8263133ebabc80b5c9652050a0ea49720cc8cd680cc7e93f7ad28f5782924c99"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\ufunclike.py",
+          "bytes": 1172,
+          "sha256": "8f14d1eb57746e6160ec91d99b0f7dd9c711b9ad34bb85d6258b5c411270152d"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\ufuncs.py",
+          "bytes": 438,
+          "sha256": "82f75c08da0651f3740a74269fa9358fa82176df331a425d71172072d994e3c0"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\data\\pass\\warnings_and_errors.py",
+          "bytes": 167,
+          "sha256": "ab77354a633087260b610b0b8cad36017a61937fbde9896d4937537eb1252734"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\test_isfile.py",
+          "bytes": 897,
+          "sha256": "b25a55075907b6b1b9ba796063197de10fe43b30c13e70ed1594212d976af493"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\test_runtime.py",
+          "bytes": 3384,
+          "sha256": "a7e61dbedd11b7a98f1e600a60e3801b1c574278e801125255999588a3005f40"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\typing\\tests\\test_typing.py",
+          "bytes": 8592,
+          "sha256": "1ad63155ea2b0dd55ad157e3654e02e0f389374ebd96cbb835f707b077c147fe"
+        },
+        {
+          "path": "C:\\Users\\Tom\\miniconda3\\Lib\\site-packages\\numpy\\version.py",
+          "bytes": 304,
+          "sha256": "cf9531918cfac25c11053630d5c7d975bcfb195224e97ee4cb26d91dea48067b"
+        }
+      ]
+    },
+    {
+      "name": "spiceypy",
+      "version": "8.2.0",
+      "files": [
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\__init__.py",
+          "bytes": 21607,
+          "sha256": "4bb527657b3d47da30451ec07d2afb5815dd689365de7d696ee017a2af303488"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\benchmarks\\__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\benchmarks\\test_cyice.py",
+          "bytes": 108499,
+          "sha256": "bc1de94f6ffc05bca67d7fcfb43f7b9d3ce70cee46f2941cead95371a61df12f"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\config.py",
+          "bytes": 1148,
+          "sha256": "3bae7bf8ead6a059a744fdadc117f4a8e98295473875aafa497ab0bfebfdc123"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\cyice\\__init__.py",
+          "bytes": 10952,
+          "sha256": "bcfac1cb15300ebd13c899c515f18d913c980bf57437fa24fd6d6047a8829214"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\cyice\\cyice.cp313-win_amd64.pyd",
+          "bytes": 1500160,
+          "sha256": "fc58ad0e3ac6d0ead24fb0b4bc46c000eb3ee10544dae288b8f5261ebd8a3ded"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\found_catcher.py",
+          "bytes": 4316,
+          "sha256": "7ef1c2e3f894cecf8489aa650fa12c6e4329caf805ef3f74ddf3a1afe377b921"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\spiceypy.py",
+          "bytes": 568265,
+          "sha256": "b3fb11eeb02e42da52653288c3d9fa0c63d45b1fc62f536b553a3185343b6158"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\__init__.py",
+          "bytes": 1119,
+          "sha256": "42bea40fba2bbc4311140493dc3325610d9c1d1ca231404ba30c8c776f7a50c9"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\gettestkernels.py",
+          "bytes": 14730,
+          "sha256": "5dfc58d14a303e322690e39f2ab6ebbe0dc71922f929e8504b926992cfa0298c"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\test_context_manager.py",
+          "bytes": 4000,
+          "sha256": "3e62a7fcd968c46c260443fc84d72759315de32740b60e96a78cc57f2794653e"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\test_gettestkernels.py",
+          "bytes": 2173,
+          "sha256": "edbc050f221639a4a4ee0896da7b98a5f945c40b548b9c6c608d14c56bbbd917"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\test_imports.py",
+          "bytes": 1950,
+          "sha256": "aa09a8ae5db6820eb1f6fa95fa3bf8779a683df337cd177023edc34fda98bb7f"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\test_logging.py",
+          "bytes": 3798,
+          "sha256": "2edff5163f26706f3ae55d59c46e0d645fcada4bb1b583f4e986b13f33faedc0"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\test_spiceerrors.py",
+          "bytes": 8229,
+          "sha256": "70c47f2ea4efc89d4ed8bef7776854685cc317e7f6954d79483eeb4d5dde7a7f"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\test_support_types.py",
+          "bytes": 10875,
+          "sha256": "9f64d5602154979ddfcc8171201c1e0cabec1e34b0b08f86210b5647edfbc8bc"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\tests\\test_wrapper.py",
+          "bytes": 341011,
+          "sha256": "616006e37179621a64380fa9b6e512493418c088a97382b4c78ac5a874574891"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\__init__.py",
+          "bytes": 1119,
+          "sha256": "42bea40fba2bbc4311140493dc3325610d9c1d1ca231404ba30c8c776f7a50c9"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\callbacks.py",
+          "bytes": 6238,
+          "sha256": "9e05bdce7ef90fd1933d68d18f147278527d2f44d8d76564af82bb365477816a"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\cspice.dll",
+          "bytes": 2717184,
+          "sha256": "36d165dd78817df3a94f7b088652f981ae75151ed3813e5203e8508ac6050894"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\exceptions.py",
+          "bytes": 135209,
+          "sha256": "27696460996e4b97afb393c0bd8a82dbaf30a6c70bb6825ea19f1d2115d52246"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\libspicehelper.py",
+          "bytes": 70693,
+          "sha256": "a921c0177b748113e0905821c18df2a4cce8f97d807debc019603817ab936d6b"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\support_types.py",
+          "bytes": 28222,
+          "sha256": "ec94aff7ebbaa001450c05150d949c277eb39e550f4009688edc5022dedc9943"
+        }
+      ]
+    },
+    {
+      "name": "erfa",
+      "version": "2.0.1.5",
+      "files": [
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\__init__.py",
+          "bytes": 442,
+          "sha256": "a91cb710a3df6b1894e32c5cccbf571f1843eab163f3146685f3209dfbe5cd7e"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\_version.py",
+          "bytes": 432,
+          "sha256": "d0aff392b16b28878a5325023c082a69087f5fe5b70cf2119b139d6ab2ebdad5"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\core.py",
+          "bytes": 759894,
+          "sha256": "24b8091f3d945d36e92656ba6341a8a2e2c7e3909d7b1d8ca550a9165b1c3433"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\helpers.py",
+          "bytes": 14025,
+          "sha256": "46b4487e38858ff9c71a324b8c6c852b7c242f7909f7e0c27307646922060f30"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\tests\\__init__.py",
+          "bytes": 65,
+          "sha256": "26aba8fbd8bc78dad91006e0866f7e020a2cad0c1ac7381b4ec241b5fcf10665"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\tests\\test_erfa.py",
+          "bytes": 20517,
+          "sha256": "29f23f50500694a6fd9dee79bba27ac04a2a37745ea002668971a273ca58a3f7"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\tests\\test_ufunc.py",
+          "bytes": 158732,
+          "sha256": "590e5a5ee1703843616b5db92f7d9ec57daeff4f07c06b663c9aa6d4aa01297e"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\ufunc.pyd",
+          "bytes": 581632,
+          "sha256": "e048837cf3fd1517135d176d44b1cddffe95caac033f4db25802247386c3ba05"
+        },
+        {
+          "path": "C:\\aTOMosBuild\\orbitdeps\\python\\erfa\\version.py",
+          "bytes": 2107,
+          "sha256": "6cae120561aeadea9b41da6cd4d6801100b2f9805a3678cf30f7f06c18f03b06"
+        }
+      ]
+    }
+  ]
+}

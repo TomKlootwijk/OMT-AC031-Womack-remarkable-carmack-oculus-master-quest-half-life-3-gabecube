@@ -1,0 +1,169 @@
+{
+  "profile": "ATOMOS-MATERIALIZE-CLI-CHECK-R1",
+  "binary_sha256": "09d954089d2a7fe67975bc87e4785007d43ea344d1bb28ac36582a87c41fd7e5",
+  "script_sha256": "1181c240522b606ba5d8e0ab21b212c139a2d161a1f36477d2cd97f127ee39d9",
+  "completed_cases": [
+    {
+      "fetch": "texture",
+      "dispatch": "fused",
+      "fixture": "world03",
+      "status": "verified_complete",
+      "program_sha256": "8ccb42637c304c446949652dae58106e50ede227b92733e37b16fcac8c23f21b",
+      "requested_ticks": 869,
+      "compared_events": 866,
+      "compared_event_fields": 10392,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 3461,
+      "output_sha256": "3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    },
+    {
+      "fetch": "texture",
+      "dispatch": "reference",
+      "fixture": "world03",
+      "status": "verified_complete",
+      "program_sha256": "8ccb42637c304c446949652dae58106e50ede227b92733e37b16fcac8c23f21b",
+      "requested_ticks": 869,
+      "compared_events": 866,
+      "compared_event_fields": 10392,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 3461,
+      "output_sha256": "3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    },
+    {
+      "fetch": "global",
+      "dispatch": "fused",
+      "fixture": "world03",
+      "status": "verified_complete",
+      "program_sha256": "8ccb42637c304c446949652dae58106e50ede227b92733e37b16fcac8c23f21b",
+      "requested_ticks": 869,
+      "compared_events": 866,
+      "compared_event_fields": 10392,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 3461,
+      "output_sha256": "3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    },
+    {
+      "fetch": "global",
+      "dispatch": "reference",
+      "fixture": "world03",
+      "status": "verified_complete",
+      "program_sha256": "8ccb42637c304c446949652dae58106e50ede227b92733e37b16fcac8c23f21b",
+      "requested_ticks": 869,
+      "compared_events": 866,
+      "compared_event_fields": 10392,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 3461,
+      "output_sha256": "3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    },
+    {
+      "fetch": "texture",
+      "dispatch": "fused",
+      "fixture": "family_authority",
+      "status": "verified_complete",
+      "program_sha256": "5feac19609ed9577688990e1e5adeb7caa81c05d9e26da559ec93be45899c3cf",
+      "requested_ticks": 32883,
+      "compared_events": 32880,
+      "compared_event_fields": 394560,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 131517,
+      "output_sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    },
+    {
+      "fetch": "texture",
+      "dispatch": "reference",
+      "fixture": "family_authority",
+      "status": "verified_complete",
+      "program_sha256": "5feac19609ed9577688990e1e5adeb7caa81c05d9e26da559ec93be45899c3cf",
+      "requested_ticks": 32883,
+      "compared_events": 32880,
+      "compared_event_fields": 394560,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 131517,
+      "output_sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    },
+    {
+      "fetch": "global",
+      "dispatch": "fused",
+      "fixture": "family_authority",
+      "status": "verified_complete",
+      "program_sha256": "5feac19609ed9577688990e1e5adeb7caa81c05d9e26da559ec93be45899c3cf",
+      "requested_ticks": 32883,
+      "compared_events": 32880,
+      "compared_event_fields": 394560,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 131517,
+      "output_sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    },
+    {
+      "fetch": "global",
+      "dispatch": "reference",
+      "fixture": "family_authority",
+      "status": "verified_complete",
+      "program_sha256": "5feac19609ed9577688990e1e5adeb7caa81c05d9e26da559ec93be45899c3cf",
+      "requested_ticks": 32883,
+      "compared_events": 32880,
+      "compared_event_fields": 394560,
+      "compared_final_state_words": 16,
+      "compared_output_bytes": 131517,
+      "output_sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a",
+      "native_status": "complete",
+      "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+      "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host."
+    }
+  ],
+  "admission_cases": [
+    {
+      "case": "prefix_preserves_existing_artifact",
+      "ticks": 0,
+      "exit_code": 2
+    },
+    {
+      "case": "prefix_preserves_existing_artifact",
+      "ticks": 1,
+      "exit_code": 2
+    },
+    {
+      "case": "prefix_preserves_existing_artifact",
+      "ticks": 10,
+      "exit_code": 2
+    },
+    {
+      "case": "complete_without_emit_refused",
+      "exit_code": 1
+    },
+    {
+      "case": "source_or_report_alias_refused",
+      "exit_code": 1
+    },
+    {
+      "case": "source_or_report_alias_refused",
+      "exit_code": 1
+    },
+    {
+      "case": "source_or_report_alias_refused",
+      "exit_code": 1
+    }
+  ],
+  "complete": true
+}

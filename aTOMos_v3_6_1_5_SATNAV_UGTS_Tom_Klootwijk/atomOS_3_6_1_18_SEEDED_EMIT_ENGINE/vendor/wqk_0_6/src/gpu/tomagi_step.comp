@@ -1,0 +1,197 @@
+#version 450
+
+// TOMAGI 1.0: one deterministic state transition per invocation.
+// Bindings: 0 = State64[], 1 = Cell48[], 2 = Params.
+layout(local_size_x = 64, local_size_y = 1, local_size_z = 1) in;
+
+struct State64 { uvec4 q; uvec4 v; uvec4 topo; uvec4 outv; };
+struct Cell48 { uvec4 head; uvec4 args; uvec4 tail; };
+struct WideI32 { int hi; uint lo; };
+
+layout(std430, binding = 0) buffer StateBuffer { State64 states[]; };
+layout(std430, binding = 1) readonly buffer CellBuffer { Cell48 cells[]; };
+layout(std140, binding = 2) uniform Params { uint state_count; uint cell_count; uint seed; uint reserved; };
+
+const uint RHO_N = 1u << 20;
+const uint THETA_N = 1u << 18;
+const uint TIME_N = 1u << 14;
+const uint PHI_N = 1u << 12;
+const uint STATUS_HALT = 1u << 0;
+const uint STATUS_ZERO = 1u << 1;
+const uint STATUS_WRAP = 1u << 2;
+const uint STATUS_EMIT = 1u << 3;
+const uint STATUS_CONE = 1u << 4;
+const uint STATUS_SPHERE = 1u << 5;
+const uint STATUS_REKEY_MISS = 1u << 6;
+const uint STATUS_PHI_WRAP = 1u << 7;
+const uint FLAG_REKEY = 1u << 31;
+
+uint mix32(uint x) {
+    x ^= x >> 16;
+    x *= 0x7feb352du;
+    x ^= x >> 15;
+    x *= 0x846ca68bu;
+    x ^= x >> 16;
+    return x;
+}
+uint rotl32(uint x, uint r) { r &= 31u; return (x << r) | (x >> ((32u-r)&31u)); }
+int normi(int x, int n) { int r = x % n; return r < 0 ? r + n : r; }
+int floordiv(int x, int n) { int q = x / n; int r = x % n; return r < 0 ? q - 1 : q; }
+int cycdelta(int x, int c, int n) { int d = normi(x-c,n); return d >= n/2 ? d-n : d; }
+ivec2 addDivmod(int a, int b, int n) {
+    int qa=floordiv(a,n), qb=floordiv(b,n);
+    int ra=a-qa*n, rb=b-qb*n, sum=ra+rb, carry=sum/n;
+    return ivec2(qa+qb+carry,sum-carry*n);
+}
+WideI32 wideFromI32(int value) { return WideI32(value<0?-1:0,uint(value)); }
+WideI32 wideSub(WideI32 a, WideI32 b) {
+    int borrow=a.lo<b.lo?1:0;
+    return WideI32(a.hi-b.hi-borrow,a.lo-b.lo);
+}
+WideI32 wideSubI32(int a, int b) { return wideSub(wideFromI32(a),wideFromI32(b)); }
+WideI32 wideNeg(WideI32 value) {
+    int borrow=value.lo!=0u?1:0;
+    return WideI32(0-value.hi-borrow,0u-value.lo);
+}
+WideI32 wideAbs(WideI32 value) { if (value.hi<0) return wideNeg(value); return value; }
+WideI32 wideAbsI32(int value) { return wideAbs(wideFromI32(value)); }
+bool wideLess(WideI32 a, WideI32 b) { return a.hi<b.hi || (a.hi==b.hi && a.lo<b.lo); }
+WideI32 wideMax(WideI32 a, WideI32 b) { if (wideLess(a,b)) return b; return a; }
+
+void packKey(State64 s, out uint hi, out uint lo) {
+    uint rho = uint(normi(int(s.q.x), int(RHO_N)));
+    uint theta = uint(normi(int(s.q.y), int(THETA_N)));
+    uint tick = uint(normi(int(s.q.z), int(TIME_N)));
+    uint phi = uint(normi(int(s.q.w), int(PHI_N)));
+    hi = (rho << 12) | (theta >> 6);
+    lo = ((theta & 63u) << 26) | (tick << 12) | phi;
+}
+
+void normalize(inout State64 s) {
+    s.q.y = uint(normi(int(s.q.y), int(THETA_N)));
+    s.q.z = uint(normi(int(s.q.z), int(TIME_N)));
+    s.q.w = uint(normi(int(s.q.w), int(PHI_N)));
+    s.topo.x &= 1u;
+    s.topo.z &= 1u;
+}
+
+void setField(inout State64 s, uint idx, int value, bool add) {
+    uint u = uint(value);
+    if (idx == 0u) s.q.x = add ? s.q.x + u : u;
+    else if (idx == 1u) s.q.y = add ? s.q.y + u : u;
+    else if (idx == 2u) s.q.z = add ? s.q.z + u : u;
+    else if (idx == 3u) s.q.w = add ? s.q.w + u : u;
+    else if (idx == 4u) s.v.x = add ? s.v.x + u : u;
+    else if (idx == 5u) s.v.y = add ? s.v.y + u : u;
+    else if (idx == 6u) s.v.z = add ? s.v.z + u : u;
+    else if (idx == 7u) s.v.w = add ? s.v.w + u : u;
+    else if (idx == 8u) s.topo.x = add ? s.topo.x + u : u;
+    else if (idx == 9u) s.topo.y = add ? s.topo.y + u : u;
+    else if (idx == 10u) s.topo.z = add ? s.topo.z + u : u;
+    else if (idx == 11u) s.topo.w = add ? s.topo.w + u : u;
+    else if (idx == 12u) s.outv.x = add ? s.outv.x + u : u;
+    else if (idx == 13u) s.outv.y = add ? s.outv.y + u : u;
+    else if (idx == 14u) s.outv.z = add ? s.outv.z + u : u;
+    else if (idx == 15u) s.outv.w = add ? s.outv.w + u : u;
+}
+
+int compareKey(uint ahi, uint alo, uint bhi, uint blo) {
+    if (ahi < bhi) return -1; if (ahi > bhi) return 1;
+    if (alo < blo) return -1; if (alo > blo) return 1; return 0;
+}
+uint findKey(uint hi, uint lo, out bool found) {
+    uint left=0u, right=cell_count;
+    while (left < right) {
+        uint mid = left + (right-left)/2u;
+        Cell48 c = cells[mid];
+        int cmp = compareKey(c.head.x,c.head.y,hi,lo);
+        if (cmp < 0) left = mid+1u; else right = mid;
+    }
+    found = left < cell_count && compareKey(cells[left].head.x,cells[left].head.y,hi,lo)==0;
+    return left;
+}
+
+void main() {
+    uint gid = gl_GlobalInvocationID.x;
+    if (gid >= state_count) return;
+    State64 s = states[gid];
+    if ((s.outv.w & STATUS_HALT) != 0u || s.topo.w >= cell_count) { states[gid]=s; return; }
+    uint cellIndex = s.topo.w;
+    Cell48 c = cells[cellIndex];
+    uint keyHi,keyLo; packKey(s,keyHi,keyLo);
+    int a0=int(c.args.x), a1=int(c.args.y), a2=int(c.args.z), a3=int(c.args.w);
+    uint op=c.head.z, flags=c.head.w;
+
+    if (op==1u) setField(s,flags&15u,a0,false);
+    else if (op==2u) {
+        uint h=mix32(seed ^ keyHi ^ rotl32(keyLo,13u) ^ s.q.z ^ c.tail.w);
+        s.topo.z=uint(bitCount(h))&1u;
+        uint delta=s.topo.z!=0u?c.args.x:0u-c.args.x;
+        setField(s,flags&15u,int(delta),true);
+    } else if (op==3u) {
+        s.v += c.args; s.q += s.v;
+    } else if (op==4u) {
+        ivec2 wr=addDivmod(int(s.q.w),a0,int(PHI_N)); int wraps=wr.x;
+        s.q.w=uint(wr.y);
+        if (((uint(wraps)&1u)!=0u) && ((flags&(1u<<4))!=0u)) s.topo.x^=1u;
+        if (wraps!=0) s.outv.w|=STATUS_PHI_WRAP; else s.outv.w&=~STATUS_PHI_WRAP;
+        s.topo.z=((flags&(1u<<5))!=0u)?((s.q.w>>11)&1u):(uint(wraps)&1u);
+    } else if (op==5u) {
+        ivec2 wr=addDivmod(int(s.q.z),a0,int(TIME_N)); int wraps=wr.x;
+        s.q.z=uint(wr.y); s.topo.z=uint(wraps)&1u;
+        if (wraps!=0) s.outv.x=mix32(s.outv.x ^ uint(wraps) ^ c.tail.w);
+    } else if (op==6u) {
+        s.outv.z=0u; s.outv.w|=STATUS_ZERO; s.topo.z=1u;
+    } else if (op==7u) {
+        int rho=normi(int(s.q.x),int(RHO_N)); int theta=normi(int(s.q.y),int(THETA_N));
+        WideI32 radial=wideMax(wideSubI32(a0,rho),wideSubI32(rho,a1));
+        WideI32 angular=wideSub(wideAbsI32(cycdelta(theta,normi(a2,int(THETA_N)),int(THETA_N))),wideAbsI32(a3));
+        WideI32 result=wideMax(radial,angular); int residual=int(result.lo);
+        s.outv.z=result.lo; s.topo.z=residual<=0?1u:0u;
+        if (s.topo.z!=0u) s.outv.w|=STATUS_CONE; else s.outv.w&=~STATUS_CONE;
+    } else if (op==8u) {
+        int rho=normi(int(s.q.x),int(RHO_N)); int phi=normi(int(s.q.w),int(PHI_N));
+        WideI32 result=wideSub(wideAbs(wideSubI32(rho,a0)),wideAbsI32(a1));
+        if (a3>=0) {
+            WideI32 angular=wideSub(wideAbsI32(cycdelta(phi,normi(a2,int(PHI_N)),int(PHI_N))),wideAbsI32(a3));
+            result=wideMax(result,angular);
+        }
+        int residual=int(result.lo); s.outv.z=result.lo; s.topo.z=residual<=0?1u:0u;
+        if (s.topo.z!=0u) s.outv.w|=STATUS_SPHERE; else s.outv.w&=~STATUS_SPHERE;
+    } else if (op==9u) {
+        int rho=int(s.q.x); int wraps=floordiv(rho,int(RHO_N)); s.q.x=uint(rho-wraps*int(RHO_N));
+        uint odd=uint(wraps)&1u;
+        if (odd!=0u) {
+            int theta=normi(int(s.q.y),int(THETA_N));
+            s.q.y=((flags&1u)!=0u)
+                ?uint(normi(theta+int(THETA_N/2u),int(THETA_N)))
+                :uint(normi(int(THETA_N/2u)-theta,int(THETA_N)));
+            s.q.w=0u-s.q.w; s.topo.x^=1u; if ((flags&2u)!=0u) s.topo.y^=1u; s.outv.w|=STATUS_WRAP;
+        } else s.outv.w&=~STATUS_WRAP;
+        s.topo.z=odd; normalize(s);
+    } else if (op==10u) {
+        if (a0<0 || a0>=64) { states[gid]=s; return; }
+        uint bi=uint(a0); s.topo.z=bi<32u?((keyLo>>bi)&1u):((keyHi>>(bi-32u))&1u);
+    } else if (op==11u) {
+        if ((s.topo.z&1u)!=0u) { s.q += c.args; if ((flags&1u)!=0u) s.topo.x^=1u; if ((flags&2u)!=0u) s.topo.y^=1u; normalize(s); }
+    } else if (op==12u) {
+        int sh=clamp(a1,0,30); int div=1<<sh;
+        bool positive=((s.topo.x^s.topo.z)&1u)!=0u;
+        uint turn=positive?c.args.x:0u-c.args.x;
+        s.q.w=(s.q.w+turn)&(PHI_N-1u);
+        s.v=uvec4(uint(int(s.v.x)/div),uint(int(s.v.y)/div),uint(int(s.v.z)/div),uint(int(s.v.w)/div));
+    } else if (op==13u) s.outv.y=c.tail.z;
+    else if (op==14u) { s.outv.y=c.tail.z; s.outv.w|=STATUS_EMIT; if ((flags&1u)!=0u) s.outv.w|=STATUS_HALT; }
+    else if (op==15u) s.outv.w|=STATUS_HALT;
+
+    normalize(s);
+    s.outv.x=mix32(s.outv.x ^ c.tail.z ^ c.tail.w ^ keyHi ^ rotl32(keyLo,7u) ^ s.topo.z ^ cellIndex);
+    if ((s.outv.w&STATUS_HALT)==0u) {
+        if ((flags&FLAG_REKEY)!=0u) {
+            uint nhi,nlo; packKey(s,nhi,nlo); bool found; uint idx=findKey(nhi,nlo,found);
+            if (found) { s.outv.w&=~STATUS_REKEY_MISS; s.topo.w=idx; }
+            else { s.outv.w|=STATUS_REKEY_MISS; s.topo.w=(s.topo.z&1u)!=0u?c.tail.y:c.tail.x; }
+        } else s.topo.w=(s.topo.z&1u)!=0u?c.tail.y:c.tail.x;
+    }
+    states[gid]=s;
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "comparison_sha256": "6a9acd7d08be99bfcf148d28964c51f012de52089912eac75e8884147498fee0",
+  "pinned_files_verified": 99,
+  "spk_files_reopened": 72,
+  "midpoint_states_requeried": 72576,
+  "all_reported_max_position_errors_reproduced_exactly": true,
+  "method": "Fresh Python process: verify all declared SHA-256 pins, reopen each SPK, query every declared midpoint, independently recompute Euclidean position errors using stored native state arrays, compare each case count and exact maximum."
+}

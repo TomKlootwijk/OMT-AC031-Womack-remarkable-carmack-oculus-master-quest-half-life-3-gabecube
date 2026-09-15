@@ -1,0 +1,268 @@
+\section{R16: a source-pinned native word machine}
+\label{sec:r16-wqk}
+
+R16 imports the finite TOMAGI 1.0 execution semantics from Tom Klootwijk's
+World Query Kernel 0.6 package and gives them a native CUDA realization.
+Its Cell48 operators execute against resident State64 words. An explicit
+fresh-emission binding connects that machine to the inherited two ASA/NA
+mask stages and JK state; a separate exact rational adapter discovers
+affine plane crossings. These are two bounded engine profiles within the
+retained aTOMos formalization.
+
+The source authorities are \path{src/c/tomagi.h},
+\path{src/c/tomagi.c}, the source Python TOMAGI implementation, and
+\path{spec/TOMAGI_1_0_FORMAL_DEFINITION.md} in the supplied WQK package.
+The release provenance manifest pins file contents and preserves the
+source attribution. No license grant or independent authorship finding
+is inferred from a notice. The complete integration contract is
+\path{formal/WQK_INTEGRATION.md}.
+
+\begin{panel}
+The source opcode \code{PHI} advances a finite phase. It is distinct
+from the exact $a+b\varphi$ algebra. \code{SDF0} assigns zero; it does
+not calculate Euclidean distance. \code{KLEIN} retains a reduced chart
+and wrap parity; it does not retain the full winding lift. These precise
+meanings preserve compatibility without changing the inherited physical
+or geometric contracts.
+\end{panel}
+
+\subsection{Canonical words, address, and admission}
+
+For an integer $z$, define unsigned reduction $u_{32}(z)=z\bmod2^{32}$
+and signed interpretation $s_{32}$ of that word. Thus
+\begin{equation}
+ \wrap_{32}(z)=s_{32}(u_{32}(z)),\qquad
+ \operatorname{mod}_m(z)=z-m\lfloor z/m\rfloor,\quad m>0.
+ \label{eq:r16-word-wrap}
+\end{equation}
+Modulo addition of unsigned raw words implements the source wrapping
+addition without signed overflow. Where the source specifies a wider
+intermediate, reduction occurs after that intermediate is evaluated.
+Signed division in \code{LSYS} truncates toward zero; phase and tick
+wrap counts use floor division. They are different operations for
+negative inputs.
+
+The canonical little-endian stream contains a 128-byte header and $N$
+48-byte cells, exactly $128+48N$ bytes. It declares the eight-byte magic
+\code{TOMAGI1\textbackslash0}, version \code{0x00010000}, cell size 48,
+state size 64, and six zero reserved words. Admission requires $N>0$,
+an entry below $N$, opcodes in $[0,15]$, successors below $N$, and
+strictly increasing unique unsigned keys $(K_{hi},K_{lo})$.
+
+State64 comprises sixteen raw 32-bit words. The signed coordinate and rate
+fields are
+\[
+ (\rho,\theta,t,\phi,\;v_\rho,v_\theta,v_t,v_\phi).
+\]
+They are followed by unsigned orientation, sheet, branch, cell, lineage, and output;
+residual is signed and status unsigned. Cell48 has twelve words:
+two key words, opcode, flags, four signed arguments, two successors,
+payload, and auxiliary word.
+
+The constructor's \code{header\_state()} retains the entire initial
+state. Its \code{entry\_state()} changes only the cell index to the
+declared entry; that is the constructor's initial lane. Explicit
+\code{set\_states()} preserves supplied raw words and resets sidecar
+faults, receipts, and dispatch epoch. It does not normalize an initial
+branch or phase before the first instruction.
+
+With periods
+\begin{equation}
+ (M_\rho,M_\theta,M_t,M_\phi)=(2^{20},2^{18},2^{14},2^{12}),
+ \label{eq:r16-periods}
+\end{equation}
+the pre-instruction key is the exact bit-field concatenation
+\begin{equation}
+ \begin{split}
+ K={}&\operatorname{mod}_{M_\rho}(\rho)2^{44}
+      +\operatorname{mod}_{M_\theta}(\theta)2^{26}\\
+    &+\operatorname{mod}_{M_t}(t)2^{12}
+      +\operatorname{mod}_{M_\phi}(\phi).
+ \end{split}
+ \label{eq:r16-address}
+\end{equation}
+It is a finite address, not a metric. Physical coordinates, units, and
+chart identifications need an explicit application binding.
+
+\subsection{Instruction bodies and the mandatory postlude}
+
+Each row below denotes the instruction body before the shared postlude.
+The source write order is part of its semantics: \code{SET} and
+\code{JIT1} can address any state field, including branch, status,
+cell, and lineage. A JIT1 target that aliases branch can modify its
+earlier parity assignment.
+
+{\small
+\begin{longtable}{@{}P{.19\textwidth}P{.77\textwidth}@{}}
+\toprule
+Opcode & Source body retained in R16 \\
+\midrule
+\endfirsthead
+\toprule Opcode & Source body retained in R16 \\
+\midrule
+\endhead
+0 NOP & No body change. \\
+1 SET & Write argument bits to field \code{flags\,\&\,15}. \\
+2 JIT1 & Source hash/parity from seed and pre-state; assign branch, then add the selected signed perturbation with word wrapping. \\
+3 KIN2 & Update each rate, then its position by the updated rate, modulo $2^{32}$. \\
+4 PHI & Wide signed phase addition; Euclidean reduction by $2^{12}$, wrap status, selected branch and orientation action. \\
+5 TIME & Wide signed tick addition; reduction by $2^{14}$, wrap-parity branch and conditional lineage mix. \\
+6 SDF0 & Residual zero, ZERO status set, branch one. \\
+7 CONE & Radial/angular interval maximum; wrap residual first, then test signed residual $\leq0$. \\
+8 SPHERE & Radial and optional cyclic-phase interval maximum; wrap residual first, then test signed residual $\leq0$. \\
+9 KLEIN & Reduce signed rho; odd wrap parity applies the selected theta map, phase negation, orientation and optional sheet flip. \\
+10 RADIX & Select the declared bit of the pre-instruction key; shifts outside $[0,63]$ refuse. \\
+11 HINGE & If branch low bit is one, add coordinate arguments with wrapping and apply selected flips. \\
+12 LSYS & Signed orientation/branch phase turn and rate division by $2^{\operatorname{clamp}(arg_1,0,30)}$, truncating toward zero. \\
+13 PROJECT & Assign payload to output. \\
+14 EMIT & Assign payload, set EMIT, optionally HALT. \\
+15 HALT & Set HALT. \\
+\bottomrule
+\end{longtable}}
+
+The \code{CONE}/\code{SPHERE} residual wraps before its inside test.
+R16 preserves that finite behavior. An application wanting the
+unwrapped interval geometry must additionally prove a no-overflow
+domain. Neither opcode is a general Euclidean signed-distance field.
+
+For \code{PHI}, for example, the exact wider intermediate is
+\begin{equation}
+ r=s_{32}(\phi)+arg_0,\qquad
+ w=\lfloor r/2^{12}\rfloor,\qquad \phi_{\rm body}=r-w2^{12}.
+ \label{eq:r16-phase}
+\end{equation}
+The branch is the selected wrap-parity or half-phase bit. This is not
+a multiplication by the golden ratio. Likewise, \code{KLEIN} uses the
+parity of $\lfloor s_{32}(\rho)/2^{20}\rfloor$ and does not preserve
+that integer after reduction. A 32-bit lineage hash cannot recover
+an unbounded winding count.
+
+Every successful body, including HALT and EMIT-HALT, then normalizes
+$\theta,t,\phi$, masks orientation and branch to one bit, and updates
+lineage. It does not globally normalize rho or sheet. Writing $i^-$
+for the executed cell and $K^-$ for the pre-instruction key,
+\begin{equation}
+ \begin{split}
+ L^+=\operatorname{mix32}\bigl(&L_{\rm body}\oplus payload\oplus aux
+       \oplus K_{hi}^-\\
+       &\oplus\operatorname{rotl}_{32}(K_{lo}^-,7)
+       \oplus b^+\oplus i^-\bigr).
+ \end{split}
+ \label{eq:r16-lineage}
+\end{equation}
+The source unsigned hash retains its exact constants and operations.
+If the resulting state is not halted, the normalized branch chooses
+a successor. With REKEY enabled, an exact lookup of the new key takes
+precedence on a hit; a miss sets REKEY\_MISS and uses that successor.
+HALT takes no successor. An already halted lane executes no instruction.
+
+The native fault sidecar reports bad cell, opcode, or RADIX shift. A
+refused transition publishes an error receipt and leaves State64
+unchanged. This result is separate from a successful source transition.
+The reviewed source OpenCL HINGE uses a whole-word nonzero branch test,
+where C/Python use \code{branch\,\&\,1}. Raw initial branch $2$ exposes
+the difference. R16 follows the C/Python low-bit rule; agreement on
+already-normalized states would not detect this discrepancy.
+
+\subsection{Literal one-bit planes and immutable texture records}
+
+For 32 source words $w_j$, with zero padding only for missing terminal
+lanes, define the transport and its inverse:
+\begin{equation}
+ P_b=\sum_{j=0}^{31}\bigl((w_j\gg b)\mathbin\&1\bigr)2^j,
+ \qquad
+ w_j=\sum_{b=0}^{31}\bigl((P_b\gg j)\mathbin\&1\bigr)2^b.
+ \label{eq:r16-planes}
+\end{equation}
+The two transformations are inverse because both address the same bit
+$(j,b)$. Signs, flags, operands, and instructions are preserved. This
+packing changes storage order, not operator meaning or arithmetic precision.
+
+The native upload reconstructs the header and cells on the GPU from
+raw integer plane textures. Decoded Cell48 records remain immutable,
+banked within device limits, and are read by three
+\code{tex1Dfetch<uint4>} operations per cell. The matching global-memory
+variant reads the same records. Element reads use integer indices and
+no filtering or normalized-value conversion. The canonical source,
+decoded program, and mutable State64/receipt arrays are separate objects.
+
+Program-bank capacities obey device resource limits and the signed
+texture-index range. Integer texture access establishes use of that
+hardware path, not a cache-hit rate, permanent cache residency, or
+a speed guarantee. Memory access and execution measurements belong
+to the recorded evidence. This profile does not extend the lowering
+domain of every inherited exact expression or transcendental operator.
+
+\subsection{Fresh EMIT and actual state feedback}
+
+The versioned binding \code{ATOMOS-TOMAGI-EMIT-FEEDBACK-R1} wraps the
+pure VM. Before an enabled coupled step, it copies the low and high
+32-bit halves of the old hinge word $q_k$ to raw State64 rho and
+$v_\rho$, respectively; halted or faulted lanes are skipped. This is
+an explicit application state mapping, not an implicit change to the
+pure TOMAGI transition. The VM can still run without the binding.
+
+After one canonical instruction, a fresh receipt is eligible exactly
+when that instruction executed successfully and was EMIT:
+\begin{equation}
+ e_{k,i}=[executed_{k,i}=1]\land[opcode_{k,i}=14]
+                  \land[error_{k,i}=0].
+ \label{eq:r16-emission}
+\end{equation}
+Each $(\text{epoch},\text{lane})$ is consumed at most once. The drive
+word is the zero-extended 32-bit payload. PROJECT, an instruction after
+an earlier EMIT, an already halted lane, a refusal, or a duplicate
+receipt supplies no fresh event. EMIT-HALT supplies exactly one.
+Equal payloads in different successful EMIT epochs remain distinct events.
+
+Let $P$ be the present mask, $M=2^{64}-1$, and let the declared Boolean
+word body give $x=X(q_k,d_k)$. The literal two mask stages are
+\begin{align}
+ a_i(x)&=x\mathbin\&A_i\mathbin\&P,
+ &n_i(x)&=a_i(x)\mathbin\&N_i,\nonumber\\
+ T_i(x)&=\begin{cases}n_i(x),&n_i(x)\mathbin\&B_i=0,\\
+                         0,&\text{otherwise},\end{cases}
+ &y_k&=T_1(T_0(x)).
+ \label{eq:r16-mask-stages}
+\end{align}
+Here NA is the retained mask stage, not logical complement. The
+declared $J,K$ word bodies read the same old $q_k$ and the derived
+$y_k$, then commit
+\begin{equation}
+ q_{k+1}=\bigl[(J_k\mathbin\&(M\oplus q_k))\mathbin\vert
+      ((M\oplus K_k)\mathbin\&q_k)\bigr]\mathbin\&P.
+ \label{eq:r16-emit-jk}
+\end{equation}
+An accepted emission toggles the separate event parity once. This
+fixed-chart binding leaves chart orientation zero; VM orientation
+remains its own state field and is not a geometric seam declaration.
+
+Ordered native dispatches make the committed $q_{k+1}$ available to
+the next enabled pre-step binding, without a whole-state host readback.
+The coupler's lifetime, state-generation, and expected-epoch checks
+detect replacement or advancement through the managed VM API. Direct
+DeviceView writes or low-level launches remain caller-owned operations
+and must not bypass this ownership while coupled execution is active.
+Dispatches sharing mutable lanes require one ordered stream or explicit
+cross-stream dependencies; host call order alone does not order distinct
+CUDA streams. These conditions preserve the declared execution sequence;
+they do not make the finite recurrence a physical measurement.
+
+\subsection{What is deliberately outside this import}
+
+The WQK finite learner's exact candidate survival, explicit ambiguity,
+and separate validation gates are useful design material. Its delivered
+candidate families remain evaluated source material in R16. They are
+not imported as additional CPU toy families or claimed as native GPU
+model search. The source compiler's \code{formal.evaluate} can compute
+an answer in Python and lower its serialized bytes to EMIT cells.
+Running those cells executes the materialization, not the preceding
+Python search or proof.
+
+A future exact calibration profile would need to retain unresolved
+eligible candidates, not discard overflow or unsupported evaluation as
+a mismatch. Unique selection requires exactly one verified fitting
+candidate and none unresolved. Noise, observability, physical units,
+and independent observations remain part of that application's model.
+The retained physics chapters supply their existing physical equations;
+this source import supplies a concrete finite execution and event interface.

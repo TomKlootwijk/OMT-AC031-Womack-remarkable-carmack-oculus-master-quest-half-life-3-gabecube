@@ -1,0 +1,11 @@
+{
+  "version": "3.6.1.15",
+  "date": "2026-09-15",
+  "configuration": "CMake Release, MSVC 19.44, CUDA 12.8, sm_120; strict host FP and non-fused CUDA radius arithmetic",
+  "native_ctest": {"tests": 4, "passed": 4, "failed": 0, "seconds": 4.35},
+  "exact_program": {"assertions_passed_on_cuda": 135},
+  "operator_hinge_integration": {"trace": "operator_hinge_trace.json", "canonical_seed_words": 104, "word_roundtrip_equal": true, "sampled_crossings": 2, "boundary_and_unresolved_hold": true, "duplicate_holds": true, "fixed_frame_no_seam_reversal": true},
+  "texture_compaction": {"mixed_inclusive_queries": 512, "additional_checks": ["parallel refinement exercised", "cap+1 saturation", "exact capacity retained", "4/0/overflow/3 interval offsets produce 28 candidate bytes", "all-overflow exact fallback with zero candidate readback", "zero retained batch skips compaction and candidate readback"]},
+  "matched_id_query_benchmarks": {"initial": "s2_full.json", "parallel_and_saturated": "s2_optimized.json", "selective_readback": "s2_compacted.json", "workloads_each": 36, "correctness_failures_each": 0},
+  "scope": "Measured subset. Resident GPU counting, deep VRAM word-state workloads and the broader user goal continue separately."
+}

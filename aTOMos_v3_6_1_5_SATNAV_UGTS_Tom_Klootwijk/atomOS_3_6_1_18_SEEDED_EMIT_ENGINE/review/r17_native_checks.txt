@@ -1,0 +1,84 @@
+UpdateCTestConfiguration  from :C:/aTOMosBuild/r17cuda/DartConfiguration.tcl
+Test project C:/aTOMosBuild/r17cuda
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: spatial_exact_queries
+
+1: Test command: C:\aTOMosBuild\r17cuda\Release\spatial_index_tests.exe
+1: Working Directory: C:/aTOMosBuild/r17cuda
+1: Test timeout computed to be: 10000000
+1: spatial_index_tests: PASS (37837 checks)
+1/9 Test #1: spatial_exact_queries ...............   Passed    1.24 sec
+test 2
+    Start 2: native_texture_hinges
+
+2: Test command: C:\aTOMosBuild\r17cuda\Release\texture_tests.exe
+2: Working Directory: C:/aTOMosBuild/r17cuda
+2: Test timeout computed to be: 10000000
+2: PASS: texture bit-plane expansion, 512 exact radius queries, global parity, overflow, hinge events and profile identity
+2/9 Test #2: native_texture_hinges ...............   Passed    2.88 sec
+test 3
+    Start 3: native_exact_phi_program
+
+3: Test command: C:\aTOMosBuild\r17cuda\Release\exact_program_tests.exe
+3: Working Directory: C:/aTOMosBuild/r17cuda
+3: Test timeout computed to be: 10000000
+3: exact_program_tests: 135 assertions passed on CUDA
+3/9 Test #3: native_exact_phi_program ............   Passed    0.13 sec
+test 4
+    Start 4: packed_operator_hinge_integration
+
+4: Test command: C:\aTOMosBuild\r17cuda\Release\engine_demo.exe
+4: Working Directory: C:/aTOMosBuild/r17cuda
+4: Test timeout computed to be: 10000000
+4: {"profile":"R15-PACKED-OPERATOR-HINGE","seed_words":104,"word_roundtrip_equal":true,"events":[{"sample":0,"guard_status":0,"sign":-1,"accepted_crossing":false,"q":0,"parity":0,"orientation":0},{"sample":1,"guard_status":0,"sign":1,"accepted_crossing":true,"q":1,"parity":1,"orientation":0},{"sample":2,"guard_status":1,"sign":0,"accepted_crossing":false,"q":1,"parity":1,"orientation":0},{"sample":3,"guard_status":2,"sign":0,"accepted_crossing":false,"q":1,"parity":1,"orientation":0},{"sample":4,"guard_status":0,"sign":-1,"accepted_crossing":true,"q":0,"parity":0,"orientation":0}],"accepted_events":2,"passed":true}
+4/9 Test #4: packed_operator_hinge_integration ...   Passed    0.14 sec
+test 5
+    Start 5: native_resident_feedback
+
+5: Test command: C:\aTOMosBuild\r17cuda\Release\resident_feedback_tests.exe
+5: Working Directory: C:/aTOMosBuild/r17cuda
+5: Test timeout computed to be: 10000000
+5: PASS: resident GPU query -> complete count -> ASA/NA+JK -> next query, 10 epochs; texture/global equality; unresolved/duplicate/stale holds
+5/9 Test #5: native_resident_feedback ............   Passed    0.13 sec
+test 6
+    Start 6: native_resident_counts
+
+6: Test command: C:\aTOMosBuild\r17cuda\Release\resident_index_tests.exe
+6: Working Directory: C:/aTOMosBuild/r17cuda
+6: Test timeout computed to be: 10000000
+6: resident_index_tests: PASS (4365 checks)
+6/9 Test #6: native_resident_counts ..............   Passed    0.15 sec
+test 7
+    Start 7: native_tomagi_word_machine
+
+7: Test command: C:\aTOMosBuild\r17cuda\Release\tomagi_vm_tests.exe
+7: Working Directory: C:/aTOMosBuild/r17cuda
+7: Test timeout computed to be: 10000000
+7: tomagi_vm_tests: 28794 assertions passed against C oracle on CUDA
+7/9 Test #7: native_tomagi_word_machine ..........   Passed    0.22 sec
+test 8
+    Start 8: native_tomagi_fused_equivalence
+
+8: Test command: C:\aTOMosBuild\r17cuda\Release\tomagi_fused_tests.exe
+8: Working Directory: C:/aTOMosBuild/r17cuda
+8: Test timeout computed to be: 10000000
+8: tomagi_fused_tests: 1513078 checks passed; State64 words 722912, Receipt40 words 451820, WordState64 words 292264; canonical C plus independent scalar per-bit ASA/NA/JK; both fetch paths; chunks 1/7/32/256; all LSYS shifts and signed extremes
+8/9 Test #8: native_tomagi_fused_equivalence .....   Passed    0.49 sec
+test 9
+    Start 9: native_tomagi_word_feedback
+
+9: Test command: C:\aTOMosBuild\r17cuda\Release\tomagi_feedback_tests.exe "C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/examples/wqk_feedback.tmg" "C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_17_FUSED_WORD_ENGINE/examples/wqk_feedback.expected.bin"
+9: Working Directory: C:/aTOMosBuild/r17cuda
+9: Test timeout computed to be: 10000000
+9: tomagi_feedback_tests: 1718 checks passed; Python-matched 24-step feedback, both fetch paths, 257 lanes
+9/9 Test #9: native_tomagi_word_feedback .........   Passed    0.16 sec
+
+100% tests passed, 0 tests failed out of 9
+
+Total Test time (real) =   5.63 sec

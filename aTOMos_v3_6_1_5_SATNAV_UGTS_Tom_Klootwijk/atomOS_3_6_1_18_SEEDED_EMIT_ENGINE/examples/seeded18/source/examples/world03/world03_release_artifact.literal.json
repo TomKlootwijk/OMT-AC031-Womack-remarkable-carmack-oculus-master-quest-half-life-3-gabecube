@@ -1,0 +1,273 @@
+{
+  "$schema": "../../spec/tom_seeded_program.schema.json",
+  "budgets": {
+    "max_cells": 866,
+    "max_definitions": 16,
+    "max_expression_depth": 16,
+    "max_expression_nodes": 2048,
+    "max_output_bytes": 3461,
+    "max_repeat": 1,
+    "max_sequence_items": 64,
+    "max_string_bytes": 2048
+  },
+  "compilation_profile": "TOM-SEEDED-COMPILATION-1.0",
+  "definitions": [
+    {
+      "codomain": "bytes",
+      "content_hash": "sha256:77da183f84f0c6d54dcc84fae2f3662f45ca6ba5ce2ad13e86ff85cdac5d5e34",
+      "dependencies": [],
+      "domain": "none",
+      "id": "tom:seed",
+      "kind": "canonical-seed",
+      "limits": {},
+      "operation": {
+        "op": "seed.bytes"
+      },
+      "order": 0,
+      "parameters": {},
+      "phase": "parse",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      },
+      "seed_tokens": [
+        "TOM1"
+      ]
+    },
+    {
+      "codomain": "record",
+      "content_hash": "sha256:25eadbc3dfca2d978f493dab1a2a53fbc8226a5a93eef209a7e34e22b93d3e4b",
+      "dependencies": [
+        "tom:seed"
+      ],
+      "domain": "bytes",
+      "id": "tom:tokens",
+      "kind": "seed-parse",
+      "limits": {},
+      "operation": {
+        "op": "seed.tokens"
+      },
+      "order": 0,
+      "parameters": {},
+      "phase": "resolve",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      },
+      "seed_tokens": [
+        "TopologicalOpenModular"
+      ]
+    },
+    {
+      "codomain": "bytes",
+      "content_hash": "sha256:ac60f423f1985fa017119640acf3b47327513b3fbd899a027ffab6c0c249d7c4",
+      "dependencies": [
+        "tom:tokens"
+      ],
+      "domain": "seed-record",
+      "id": "doc:bytes",
+      "kind": "literal-document",
+      "limits": {},
+      "operation": {
+        "op": "literal"
+      },
+      "order": 0,
+      "parameters": {
+        "result_type": "bytes",
+        "value": {
+          "data": "IyBUT00gV29ybGQgJiBRdWVyeSBLZXJuZWwgMC4zLjAKCiMjIENlcnRpZmllZCBpbnRlcnZhbCBldmVudHMgYW5kIHNpbXVsdGFuZW91cyBldmVudCBzZXRzCgpUT00gMC4zIGNvbnRpbnVlcyB0aGUgcGVyc2lzdGVudCB3b3JsZC9xdWVyeSB3b3JrIHdpdGggdGhlIGZpcnN0IGV4YWN0IGJldHdlZW4tdGljayBldmVudCBsYXllci4gSXQgYWRkcyBleGFjdCByYXRpb25hbCB2YWx1ZXMsIGNsb3NlZCByYXRpb25hbCBpbnRlcnZhbHMsIGNvbnRpbnVvdXMgcmVsYXRpb24gZXhwcmVzc2lvbnMgb3ZlciBhZmZpbmUgdHJhamVjdG9yaWVzLCBzaWduLWNoYW5nZSBjZXJ0aWZpY2F0ZXMsIGRlcml2YXRpdmUtYmFzZWQgdW5pcXVlbmVzcyBjZXJ0aWZpY2F0ZXMsIGV4YWN0IGFmZmluZSByb290cywgc2ltdWx0YW5lb3VzIGV2ZW50IHNldHMsIGRldGVybWluaXN0aWMgZXZlbnQgb3JkZXIsIGNvbmZsaWN0LWNoZWNrZWQgdHJhbnNpdGlvbiBtZXJnZSwgYW5kIGFuIGluZGVwZW5kZW50IHRydXN0ZWQgYmFzZWxpbmUuCgpObyBUT01BR0kgb3Bjb2RlIG9yIEFCSSBmaWVsZCBjaGFuZ2VkLgoKIyMgSW1wbGVtZW50ZWQgY2hhaW4KCmBgYHRleHQKVE9NQUdJIGludGVnZXIgYW5jaG9ycwotPiBleGFjdCBhZmZpbmUgcmF0aW9uYWwgdHJhamVjdG9yeQotPiB0eXBlZCBTREYwQERlZiByZWxhdGlvbiBleHByZXNzaW9uCi0+IGV4YWN0IGVuZHBvaW50IHJlc2lkdWFscwotPiBpbnRlcnZhbCByZXNpZHVhbCBhbmQgZGVyaXZhdGl2ZSBlbmNsb3N1cmUKLT4gc2lnbi1jaGFuZ2UvZXhhY3QtZW5kcG9pbnQgZXhpc3RlbmNlIGNlcnRpZmljYXRlCi0+IGV4YWN0IGFmZmluZSByb290IG9yIHJhdGlvbmFsIGJpc2VjdGlvbiBicmFja2V0Ci0+IHN1cHBvcnQgYW5kIGNvbXBhdGliaWxpdHkgZ2F0ZXMKLT4gZWFybGllc3Qgc2ltdWx0YW5lb3VzIGV2ZW50IHNldAotPiBkZXRlcm1pbmlzdGljIGNvbmZsaWN0LWNoZWNrZWQgdHJhbnNpdGlvbgotPiBjb250ZW50LWFkZHJlc3NlZCBjZXJ0aWZpY2F0ZXMKYGBgCgojIyBDYW5vbmljYWwgZGVtb25zdHJhdGlvbgoKVGhlIHJlZmVyZW5jZSB0cmFqZWN0b3J5IGlzIGB4KHQpPTJ0YCwgYGNsb2NrKHQpPXRgLCBgbW9kZSh0KT0xYCBvdmVyIGAwPD10PD0xMGAuIFRocmVlIHJlbGF0aW9ucyBtZWV0IGF0IHRoZSBzYW1lIGV4YWN0IHJhdGlvbmFsIHRpbWU6CgpgYGB0ZXh0CnRpbWUgLSA1LzIgPSAwCjMqeCAtIDE1ICAgPSAwCnggLSA1ICAgICAgPSAwCmBgYAoKVGhlIGNyb3NzaW5nIGJyYWNrZXQgYFsyLDNdYCBmb3IgYHgtNWAgaGFzIGVuZHBvaW50IHJlc2lkdWFscyBgLTFgIGFuZCBgKzFgLCByZXNpZHVhbCBpbnRlcnZhbCBgWy0xLCsxXWAsIGRlcml2YXRpdmUgaW50ZXJ2YWwgYFsyLDJdYCwgYW5kIGV4YWN0IHVuaXF1ZSByb290IGA1LzJgLgoKVGhlIGRldGVybWluaXN0aWMgc2ltdWx0YW5lb3VzIG9yZGVyIGlzIHByaW9yaXR5IGZpcnN0IGFuZCB0aGVuIHJlbGF0aW9uL2V2ZW50IGlkZW50aXR5LiBBbGwgb3BlcmF0aW9ucyByZWFkIHRoZSBjb21tb24gcHJlLWV2ZW50IHN0YXRlLiBUd28gYGFkZGAgb3BlcmF0aW9ucyBtZXJnZSB0byBgY291bnRlciArPSAzYDsgb25lIGluZGVwZW5kZW50IGBzZXRgIG9wZXJhdGlvbiBwcm9kdWNlcyBgb3V0cHV0PTI1YC4KCkEgbGF0ZXIgYWNjZXB0ZWQgZXZlbnQgYHgtMTA9MGAgb2NjdXJzIGF0IHRpbWUgYDVgLiBEZWxpYmVyYXRlbHkgaW5hY3RpdmUsIHVuc3VwcG9ydGVkLCBhbmQgaW5jb21wYXRpYmxlIHJvb3RzIGFyZSByZXRhaW5lZCBhcyByZWplY3Rpb24gZXZpZGVuY2UgcmF0aGVyIHRoYW4gc2lsZW50bHkgYWNjZXB0ZWQuCgojIyBJbmRlcGVuZGVudCBiYXNlbGluZQoKVGhlIGJhc2VsaW5lIHVzZXMgYGZyYWN0aW9ucy5GcmFjdGlvbmAgYW5kIGEgc2VwYXJhdGUgYWZmaW5lIGxpbmVhcml6ZXIuIEl0IGRvZXMgbm90IGltcG9ydCB0aGUgMC4zIGludGVydmFsIHNvbHZlci4gSXRzIGFjY2VwdGVkIHJlbGF0aW9uIElEcyBhbmQgZXhhY3Qgcm9vdCB0aW1lcyBtdXN0IG1hdGNoIHRoZSBzb2x2ZXIncyBjYW5vbmljYWwgZXZlbnQgbGlzdC4KCiMjIEZpbGVzCgotIGBzcGVjL1RPTV9XT1JMRF9RVUVSWV9LRVJORUxfMF8zLm1kYCDigJQgbm9ybWF0aXZlIHByb2ZpbGUuCi0gYHNwZWMvdG9tX3dvcmxkX3F1ZXJ5X2tlcm5lbF8wXzMuc2NoZW1hLmpzb25gIOKAlCBzdHJpY3Qgd29ybGQgc2NoZW1hLgotIGBzcmMvcHl0aG9uL3RvbV93b3JsZDAzL2Ag4oCUIGV4YWN0IGFyaXRobWV0aWMsIGV4cHJlc3Npb24sIG1vZGVsLCBzb2x2ZXIsIHRyYW5zaXRpb24sIGJhc2VsaW5lLCBhbmQgQ0xJIGltcGxlbWVudGF0aW9uLgotIGBleGFtcGxlcy93b3JsZDAzL2ludGVydmFsX2V2ZW50X3dvcmxkLmpzb25gIOKAlCBhdXRob3JpdGF0aXZlIGxpdGVyYWwgd29ybGQgc291cmNlLgotIGBleGFtcGxlcy93b3JsZDAzL2FmZmluZV9yZWZlcmVuY2UudG1nYCDigJQgb25lLWNlbGwgVE9NQUdJIGludGVnZXItYW5jaG9yIHByb2dyYW0uCi0gYHZhbGlkYXRpb24vd29ybGQwMy9jZXJ0aWZpZWRfY3Jvc3NpbmdfeDUuanNvbmAg4oCUIGNyb3NzaW5nIGNlcnRpZmljYXRlLgotIGB2YWxpZGF0aW9uL3dvcmxkMDMvbmV4dF9ldmVudF9zZXQuanNvbmAg4oCUIHNpbXVsdGFuZW91cyBldmVudC1zZXQgY2VydGlmaWNhdGUuCi0gYHZhbGlkYXRpb24vd29ybGQwMy9zaW11bHRhbmVvdXNfdHJhbnNpdGlvbi5qc29uYCDigJQgYXRvbWljIG1lcmdlIGNlcnRpZmljYXRlLgotIGB2YWxpZGF0aW9uL3dvcmxkMDMvdHJ1c3RlZF9iYXNlbGluZV9jb21wYXJpc29uLmpzb25gIOKAlCBzb2x2ZXIvYmFzZWxpbmUgZXF1YWxpdHkuCi0gYHZhbGlkYXRpb24vd29ybGQwMy90b21hZ2lfdHJhamVjdG9yeV9iYXNlbGluZS5qc29uYCDigJQgVE9NQUdJIGFuY2hvciBhbmQgUHl0aG9uL0MgZXZpZGVuY2UuCi0gYHZhbGlkYXRpb24vd29ybGQwMy92YWxpZGF0aW9uX3JlcG9ydC5qc29uYCDigJQgZmluYWwgcmVsZWFzZSBjaGVja3MuCi0gYFRPTV9BR0lfUk9BRE1BUF9BTkRfU1RBUlRFUl8wXzMubWRgIOKAlCB1cGRhdGVkIHJlc2VhcmNoIHBhdGguCgojIyBDdXJyZW50IGJvdW5kYXJ5CgpUaGUgaW1wbGVtZW50YXRpb24gY2VydGlmaWVzIGNvbnRpbnVvdXMgcm9vdHMgb25seSBvdmVyIGV4YWN0IHJhdGlvbmFsIGFmZmluZSB0cmFqZWN0b3JpZXMgdXNpbmcgZmluaXRlIGV4cHJlc3Npb25zIHdpdGggYCtgLCBgLWAsIGFuZCBgKmAuIEl0IGRvZXMgbm90IGNsYWltIGEgZ2VuZXJhbCB2YWxpZGF0ZWQgT0RFIHNvbHZlciBvciBBR0kuCgpUaGUgbmV4dCBtaWxlc3RvbmUgaXMgMC40OiBwaWVjZXdpc2UgdmFsaWRhdGVkIGR5bmFtaWNzLCBpbnRlcnZhbCBjYW5kaWRhdGUgaW5kZXhlcywgc2ltdWx0YW5lb3VzIGV2ZW50LXNldCBjb21taXRzIGludG8gdGhlIHBlcnNpc3RlbnQgd29ybGQsIGFuZCBwb3N0LWV2ZW50IHRyYWplY3RvcnkgY29udGludWF0aW9uLgo=",
+          "encoding": "base64"
+        }
+      },
+      "phase": "construct",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      },
+      "seed_tokens": [
+        "Pi"
+      ]
+    },
+    {
+      "codomain": "string",
+      "content_hash": "sha256:0982d0ca5d607254277cc198ae41a669a8cc56dd109fb91342ed901ad3af9231",
+      "dependencies": [
+        "tom:tokens"
+      ],
+      "domain": "seed-record",
+      "id": "doc:expected-hash",
+      "kind": "literal-hash",
+      "limits": {},
+      "operation": {
+        "op": "literal"
+      },
+      "order": 1,
+      "parameters": {
+        "result_type": "string",
+        "value": "sha256:3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0"
+      },
+      "phase": "construct",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      }
+    },
+    {
+      "codomain": "state64",
+      "content_hash": "sha256:ab37086a42d182d58df0ea1a8ab69fae9f8a26dd5304c6530831319c8dbbf12d",
+      "dependencies": [
+        "tom:tokens"
+      ],
+      "domain": "seed-record",
+      "id": "doc:state",
+      "kind": "initial-state",
+      "limits": {},
+      "operation": {
+        "op": "state64.construct"
+      },
+      "order": 2,
+      "parameters": {
+        "fields": {
+          "lineage": "0x57303344"
+        }
+      },
+      "phase": "construct",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      },
+      "seed_tokens": [
+        "lineage"
+      ]
+    },
+    {
+      "codomain": "string",
+      "content_hash": "sha256:a481e4554176a3bc39f99f1f8bf47292a11cae24cc0ca3074378ec089814e1fd",
+      "dependencies": [
+        "doc:bytes"
+      ],
+      "domain": "bytes",
+      "id": "doc:actual-hash",
+      "kind": "computed-hash",
+      "limits": {},
+      "operation": {
+        "op": "hash.sha256"
+      },
+      "order": 0,
+      "parameters": {
+        "prefix": true
+      },
+      "phase": "transform",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      }
+    },
+    {
+      "codomain": "cell_graph",
+      "content_hash": "sha256:f841a08bf73dfdeb3fb6d095351a105bf027fa945e5ace4d4e6780b6aec26fed",
+      "dependencies": [
+        "doc:bytes"
+      ],
+      "domain": "bytes",
+      "id": "doc:emit",
+      "kind": "byte-emission",
+      "limits": {},
+      "operation": {
+        "op": "emit.graph"
+      },
+      "order": 1,
+      "parameters": {
+        "aux_base": "0x57303300",
+        "byte_order": "little",
+        "chunk_bytes": 4,
+        "halt_last": true,
+        "id_prefix": "cell:world03-release",
+        "key_base": {
+          "phi": 0,
+          "rho": 300000,
+          "theta": 0,
+          "tick": 0
+        },
+        "key_field": "rho"
+      },
+      "phase": "transform",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      },
+      "seed_tokens": [
+        "transition"
+      ]
+    },
+    {
+      "codomain": "bool",
+      "content_hash": "sha256:9da68e3e5cf299e8148c7056aa87916c60c2f795a3062b8eee797b3e87147045",
+      "dependencies": [
+        "doc:actual-hash",
+        "doc:expected-hash"
+      ],
+      "domain": "hash-pair",
+      "id": "doc:guard",
+      "kind": "hash-guard",
+      "limits": {},
+      "operation": {
+        "op": "assert.equal"
+      },
+      "order": 0,
+      "parameters": {},
+      "phase": "guard",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      },
+      "seed_tokens": [
+        "guard"
+      ]
+    },
+    {
+      "codomain": "program",
+      "content_hash": "sha256:9d972ddfa85845e4ab59c8d40d192cf780137c05e04143201527cfd31480d260",
+      "dependencies": [
+        "doc:state",
+        "doc:emit",
+        "doc:guard"
+      ],
+      "domain": "state-graph-guard",
+      "id": "program:world03-release",
+      "kind": "artifact-program",
+      "limits": {},
+      "operation": {
+        "op": "program.construct"
+      },
+      "order": 0,
+      "parameters": {
+        "default_ticks": 866,
+        "emit_bytes": true,
+        "entry": "cell:world03-release:000",
+        "flags": 0,
+        "seed": "0x57303330"
+      },
+      "phase": "lineage",
+      "provenance": {
+        "date": "2026-09-01",
+        "source": "TOM World & Query Kernel 0.3 release documentation literal artifact"
+      },
+      "seed_tokens": [
+        "event",
+        "transition",
+        "lineage"
+      ]
+    }
+  ],
+  "root_definition": "program:world03-release",
+  "seed_genome": {
+    "bytes": 244,
+    "grammar_id": "TOM-SEED-GRAMMAR-1.0",
+    "path": "../../TOM_seed_genome_2026-09-01.txt",
+    "sha256": "d1417a3136772c0cf3eddcd4962ce07d42cbf87616f7b5bae09fc652d9b807b5",
+    "token_registry": "../../spec/tom_seed_token_registry_1_0.json"
+  },
+  "title": "TOM World & Query Kernel 0.3 release document literal artifact",
+  "tomagi_version": "1.0.0"
+}

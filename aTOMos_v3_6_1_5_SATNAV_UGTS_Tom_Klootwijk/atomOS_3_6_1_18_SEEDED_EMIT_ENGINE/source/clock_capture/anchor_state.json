@@ -1,0 +1,79 @@
+{
+  "profile": "ATOMOS-ATOMIC-TIME-ANCHOR-R1",
+  "status": "materialized_immutable_source_snapshot",
+  "runtime_status": "Source input and latch specification; no running XOP executor or clock discipline service",
+  "authority_source": "NIST Internet Time Service / UTC(NIST)",
+  "record_identity_sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4",
+  "packet": {
+    "file": "nist_reply.bin",
+    "type": "Bits(384)",
+    "bytes": 48,
+    "preservation": "Entire actual reply; no float conversion"
+  },
+  "latch": {
+    "armed_epoch": "R14-NIST-2026-09-15",
+    "accepted": true,
+    "latched_record_sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4",
+    "commit_meaning": "Initial immutable anchor artifact; later observations require explicit new capture/acceptance"
+  },
+  "timestamp": {
+    "era": 0,
+    "wire_transmit_u64": "17173213285462662115",
+    "source_event": "server_transmit",
+    "utc_nominal_unix_seconds": {
+      "numerator": "7685678632232377315",
+      "denominator": "4294967296"
+    },
+    "display_utc_microsecond_truncated": "2026-09-15T08:38:22.859456+00:00"
+  },
+  "time_mappings": {
+    "domain": "Observed ordinary UTC second in current IANA interval; source treated as nominal UTC(NIST), physical scale error retained",
+    "leap_table_sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433",
+    "effective_ntp_second": 3692217600,
+    "valid_until_ntp_second_exclusive": 4023129600,
+    "tai_minus_utc_seconds": 37,
+    "gps_minus_utc_seconds": 18,
+    "tai_seconds_since_1970_01_01_TAI": {
+      "numerator": "7685678791146167267",
+      "denominator": "4294967296"
+    },
+    "gpst_seconds_since_1980_01_06_GPST": {
+      "numerator": "6328620226854607843",
+      "denominator": "4294967296"
+    },
+    "tt_seconds_since_1970_01_01_TT": {
+      "numerator": "960709866171924340183",
+      "denominator": "536870912000"
+    },
+    "tcg_seconds_since_1977_01_01_00_00_32_184_TCG": {
+      "numerator": "128494529729286698665618896484375",
+      "denominator": "81919999942907575222272"
+    },
+    "tcg_scale_LG": {
+      "numerator": "3484645067",
+      "denominator": "5000000000000000000"
+    }
+  },
+  "acquisition": {
+    "local_send_unix_ns": "1789461500098680700",
+    "local_receive_unix_ns": "1789461500226279700",
+    "local_elapsed_monotonic_ns": "127594000",
+    "receiver_utc_bound": "not established by this single unauthenticated source observation"
+  },
+  "domain_anchors": {
+    "digital": "Logical step index and anchor identity remain distinct; latch equations bind record",
+    "electromagnetic": "Absolute input-envelope/material time via declared map; carrier phase also needs phase origin",
+    "mechanical": "Initial state time and held-force interval reference anchor; initial state remains independently measured",
+    "thermal": "Initial entropy/temperature and heating/acquisition history reference anchor",
+    "orbital": "Nominal TCG epoch above and explicit coordinate realization; source/trajectory errors remain attached",
+    "calibration": "Session/time identity plus actual sensor acquisition and availability intervals",
+    "spatial": "Frame epoch anchor; origin/orientation/site remain explicit independent inputs"
+  },
+  "claims": {
+    "literal_timestamp_arithmetic": "exact rational transformation of observed packet",
+    "atomic_time_source": "NIST service linked to UTC(NIST), packet source not cryptographically authenticated",
+    "local_atomic_oscillator": false,
+    "all_domains_physically_calibrated": false,
+    "spatial_or_temporal_raster_required": false
+  }
+}

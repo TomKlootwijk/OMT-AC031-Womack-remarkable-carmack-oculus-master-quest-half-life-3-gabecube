@@ -1,0 +1,195 @@
+% Generated only from complete, validated reports by tools/summarize_resident.py.
+
+\section{Measured resident counts and word working sets}
+
+\label{sec:resident-results}
+
+All 27 resident count cases were measured; every complete answer matched.
+
+The texture path with complete host-visible counts beat the best measured S2 configuration in 20 of 27 cases and the best measured CPU implementation in 13 of 27 cases.
+
+These results concern inclusive spherical \emph{counts} over the supplied exact IEEE seeds. They are not ID-return, general-S2, physical-position-accuracy or photonics measurements.
+
+The word-cache results below are the preserved baseline in \path{review/word_cache_full.json}; later optimizations require separate measurement records.
+
+\subsection{Every resident count case}
+
+All entries are median milliseconds; CPU cells show the chosen worker count in parentheses. T/G mean integer texture/global loads. Device time is per resident launch, with five launches per sample. Complete time includes launch, count readback and any host exact fallback. The last column is unresolved points / texture fallback queries / global fallback queries.
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{lrrrrrrrrr}
+\toprule
+Family & $N$ & $Q$ & S2 best & BVH best & T dev. & T comp. & G dev. & G comp. & U/Ft/Fg \\
+\midrule\endfirsthead
+\toprule
+Family & $N$ & $Q$ & S2 best & BVH best & T dev. & T comp. & G dev. & G comp. & U/Ft/Fg \\
+\midrule\endhead
+\bottomrule\endfoot
+uniform & 16384 & 256 & 0.1165 (20) & 0.0476 (20) & 0.2154 & 0.2685 & 0.2031 & 0.2571 & 0/0/0 \\
+uniform & 16384 & 4096 & 1.038 (20) & 0.3499 (20) & 0.2341 & 0.3236 & 0.2237 & 0.3168 & 0/0/0 \\
+uniform & 16384 & 65536 & 11.42 (20) & 3.458 (20) & 1.304 & 1.776 & 1.276 & 1.826 & 0/0/0 \\
+uniform & 262144 & 256 & 0.1888 (20) & 0.0799 (20) & 0.2536 & 0.3096 & 0.2447 & 0.2975 & 0/0/0 \\
+uniform & 262144 & 4096 & 1.52 (20) & 0.4807 (20) & 0.2771 & 0.3811 & 0.2642 & 0.3538 & 0/0/0 \\
+uniform & 262144 & 65536 & 19.96 (20) & 6.063 (20) & 1.587 & 2.15 & 1.552 & 2.007 & 0/0/0 \\
+uniform & 1048576 & 256 & 0.2667 (20) & 0.1105 (20) & 0.3203 & 0.3787 & 0.3051 & 0.3612 & 0/0/0 \\
+uniform & 1048576 & 4096 & 2.365 (20) & 0.628 (20) & 0.3155 & 0.4242 & 0.3005 & 0.3899 & 0/0/0 \\
+uniform & 1048576 & 65536 & 28.74 (20) & 6.631 (20) & 2.793 & 3.913 & 2.754 & 3.92 & 0/0/0 \\
+clustered & 16384 & 256 & 1.423 (20) & 0.234 (20) & 1.529 & 1.629 & 1.428 & 1.531 & 0/0/0 \\
+clustered & 16384 & 4096 & 13.8 (20) & 2.232 (20) & 1.573 & 1.847 & 1.472 & 1.73 & 0/0/0 \\
+clustered & 16384 & 65536 & 213.4 (20) & 26.94 (20) & 12.57 & 13.1 & 12.36 & 12.85 & 0/0/0 \\
+clustered & 262144 & 256 & 3.168 (20) & 0.4402 (20) & 8.505 & 8.633 & 8.06 & 8.193 & 0/0/0 \\
+clustered & 262144 & 4096 & 35.02 (20) & 4.232 (20) & 8.864 & 8.964 & 8.366 & 8.503 & 0/0/0 \\
+clustered & 262144 & 65536 & 548.8 (20) & 66.61 (20) & 64.18 & 64.95 & 63.23 & 63.95 & 2/2/2 \\
+clustered & 1048576 & 256 & 4.473 (20) & 0.5397 (20) & 18.65 & 18.79 & 17.76 & 17.9 & 0/0/0 \\
+clustered & 1048576 & 4096 & 52.52 (20) & 6.573 (20) & 18.65 & 18.79 & 17.77 & 17.9 & 0/0/0 \\
+clustered & 1048576 & 65536 & 744 (20) & 76.54 (20) & 132.3 & 133.3 & 130.4 & 131.5 & 7/7/7 \\
+great\_circle & 16384 & 256 & 0.563 (20) & 0.0843 (4) & 0.2874 & 0.3448 & 0.272 & 0.3235 & 0/0/0 \\
+great\_circle & 16384 & 4096 & 3.613 (20) & 0.502 (20) & 0.3082 & 0.4366 & 0.2926 & 0.4139 & 0/0/0 \\
+great\_circle & 16384 & 65536 & 42.77 (20) & 5.61 (20) & 2.04 & 2.505 & 2.002 & 2.438 & 0/0/0 \\
+great\_circle & 262144 & 256 & 1.495 (20) & 0.1508 (20) & 1.138 & 1.25 & 1.082 & 1.197 & 0/0/0 \\
+great\_circle & 262144 & 4096 & 10.49 (20) & 1.129 (20) & 1.142 & 1.41 & 1.09 & 1.341 & 0/0/0 \\
+great\_circle & 262144 & 65536 & 175.9 (20) & 20.45 (20) & 7.901 & 8.489 & 7.776 & 8.395 & 0/0/0 \\
+great\_circle & 1048576 & 256 & 2.122 (20) & 0.2988 (20) & 2.943 & 3.098 & 2.79 & 2.975 & 0/0/0 \\
+great\_circle & 1048576 & 4096 & 25.14 (20) & 3.806 (20) & 3.935 & 4.06 & 3.779 & 3.9 & 0/0/0 \\
+great\_circle & 1048576 & 65536 & 380.9 (20) & 44.99 (20) & 21.58 & 22.19 & 21.23 & 21.78 & 0/0/0 \\
+\end{longtable}
+\endgroup
+
+There were 9 unresolved point decisions across 2 cases; 9 queries per access mode required complete host fallback. Texture beat global loads in 0 of 27 device-time comparisons and 2 of 27 complete-time comparisons. The GPU-over-CPU gain therefore does not establish a texture-cache advantage.
+
+The first GPU construction cost 2547.1377 ms, including 2546.8671 ms reported source preparation/upload. This cold setup is excluded from repeated-query timings; later setup costs remain in the complete report.
+
+Device-only counts are complete only where the unresolved count is zero. Every 1/4/20-worker configuration and raw trial is retained in \path{review/resident_summary.json}; best means the lowest measured median, not an unreported preferred configuration.
+
+S2 uses its public closest-point API with reused candidate vectors, followed by exact refinement/counting. The BVH count avoids ID allocation. Setup is excluded. GPU device-mode order alternates; CPU/configuration and host-complete mode blocks have fixed order. Five warm trials provide no confidence interval or universal speed guarantee.
+
+\subsection{Word/state coverage through the memory hierarchy}
+
+NVIDIA GeForce RTX 5070 Ti Laptop GPU reports 36 MiB of L2 (37748736 bytes). The largest working set was 9.744 GiB, 277.2 times L2 and 81.61\% of reported device memory. The configured VRAM reserve remained available.
+
+This is a separate bounded integer phi-expression and ASA/NA+JK word/state workload, \emph{not an S2 comparison}. Working bytes include immutable records plus both persistent state buffers. Every record is visited in every epoch; zero-sign holds may leave a value unchanged.
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrl}
+\toprule
+Working MiB & L2 multiple & Records/epoch & Allocated MiB & Sampled & CPU oracle \\
+\midrule\endfirsthead
+\toprule
+Working MiB & L2 multiple & Records/epoch & Allocated MiB & Sampled & CPU oracle \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 2048 & 0.09888 & 124 & Full replay \\
+0.25 & 0.006944 & 8192 & 0.3815 & 130 & Full replay \\
+1 & 0.02778 & 32768 & 1.511 & 131 & Full replay \\
+4 & 0.1111 & 131072 & 6.028 & 131 & Sample replay \\
+16 & 0.4444 & 524288 & 24.05 & 131 & Sample replay \\
+18 & 0.5 & 589824 & 26.05 & 131 & Sample replay \\
+36 & 1 & 1179648 & 44.05 & 131 & Sample replay \\
+64 & 1.778 & 2097152 & 72.05 & 131 & Sample replay \\
+72 & 2 & 2359296 & 80.05 & 131 & Sample replay \\
+128 & 3.556 & 4194304 & 136.1 & 131 & Sample replay \\
+256 & 7.111 & 8388608 & 264.1 & 131 & Sample replay \\
+512 & 14.22 & 16777216 & 520.1 & 131 & Sample replay \\
+1024 & 28.44 & 33554432 & 1032 & 132 & Sample replay \\
+2048 & 56.89 & 67108864 & 2056 & 136 & Sample replay \\
+4096 & 113.8 & 134217728 & 4104 & 144 & Sample replay \\
+8192 & 227.6 & 268435456 & 8200 & 160 & Sample replay \\
+9978 & 277.2 & 326959104 & 9986 & 169 & Sample replay \\
+\end{longtable}
+\endgroup
+
+All epochs compare complete aggregate digests across access modes, traversal patterns and trials. Full CPU replay is restricted to the small sets flagged above; larger sets use sampled independent word replay. Digest agreement can collide and is not a byte-for-byte readback proof of every large buffer. Exact seed/state byte counts, free-memory observations and source receipts are retained in the summary JSON.
+
+\subsection{Every word-cache timing trial}
+
+Each cell lists trials in increasing trial order. Times are milliseconds for 3 measured epochs per trial. GPU sums exclude reset/warmup, digest readback and sampled verification. Host wall includes measured epochs, digest aggregation/readback and per-epoch sampled verification; reset/warmup are outside the timer. Raw per-epoch values remain in the JSON.
+
+\Needspace{6\baselineskip}
+
+\paragraph{Streaming}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrp{2.85cm}p{2.85cm}p{2.85cm}p{2.85cm}}
+\toprule
+MiB & L2 ratio & Texture GPU & Global GPU & Texture wall & Global wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & Texture GPU & Global GPU & Texture wall & Global wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & \shortstack[r]{0.0943\\0.06342\\0.1115} & \shortstack[r]{0.09088\\0.08512\\0.08682} & \shortstack[r]{0.4775\\0.3175\\0.4189} & \shortstack[r]{0.4435\\0.3453\\0.4072} \\
+0.25 & 0.006944 & \shortstack[r]{0.103\\0.1041\\0.08954} & \shortstack[r]{0.08291\\0.09619\\0.06877} & \shortstack[r]{0.411\\0.4149\\0.4951} & \shortstack[r]{0.4639\\0.4567\\0.3928} \\
+1 & 0.02778 & \shortstack[r]{0.1001\\0.08781\\0.06947} & \shortstack[r]{0.08506\\0.1161\\0.0887} & \shortstack[r]{0.4529\\0.4355\\0.3398} & \shortstack[r]{0.4391\\0.3581\\0.4339} \\
+4 & 0.1111 & \shortstack[r]{0.1098\\0.1087\\0.0975} & \shortstack[r]{0.09859\\0.09677\\0.1707} & \shortstack[r]{0.4743\\0.4717\\0.3979} & \shortstack[r]{0.4767\\0.4536\\0.5152} \\
+16 & 0.4444 & \shortstack[r]{0.2865\\0.2964\\0.2933} & \shortstack[r]{0.2965\\0.2728\\0.2816} & \shortstack[r]{0.8373\\0.8681\\0.8343} & \shortstack[r]{0.8749\\0.8475\\0.821} \\
+18 & 0.5 & \shortstack[r]{0.4168\\0.3638\\0.3957} & \shortstack[r]{0.4044\\0.3873\\0.3713} & \shortstack[r]{1.133\\0.9255\\1.086} & \shortstack[r]{1.075\\1.069\\1.033} \\
+36 & 1 & \shortstack[r]{0.6731\\0.6868\\0.7426} & \shortstack[r]{0.6843\\0.758\\0.692} & \shortstack[r]{1.612\\1.793\\1.987} & \shortstack[r]{1.856\\2.011\\1.857} \\
+64 & 1.778 & \shortstack[r]{1.334\\1.242\\1.243} & \shortstack[r]{1.256\\1.149\\1.136} & \shortstack[r]{3.259\\2.858\\2.868} & \shortstack[r]{3.063\\2.814\\2.79} \\
+72 & 2 & \shortstack[r]{1.368\\1.428\\1.4} & \shortstack[r]{1.286\\1.362\\1.35} & \shortstack[r]{3.295\\3.367\\3.236} & \shortstack[r]{3.029\\3.215\\3.174} \\
+128 & 3.556 & \shortstack[r]{2.508\\2.599\\2.534} & \shortstack[r]{2.394\\2.435\\2.349} & \shortstack[r]{5.562\\5.689\\5.66} & \shortstack[r]{5.457\\5.465\\5.613} \\
+256 & 7.111 & \shortstack[r]{4.955\\5.044\\5.356} & \shortstack[r]{4.758\\4.807\\5.128} & \shortstack[r]{10.89\\10.91\\11.54} & \shortstack[r]{10.89\\10.73\\11.7} \\
+512 & 14.22 & \shortstack[r]{10.62\\9.883\\9.796} & \shortstack[r]{10.02\\9.388\\10.79} & \shortstack[r]{23.77\\21.51\\21.02} & \shortstack[r]{22.34\\21.1\\22.74} \\
+1024 & 28.44 & \shortstack[r]{19.93\\19.58\\20.1} & \shortstack[r]{18.97\\20.1\\20.27} & \shortstack[r]{43.12\\42.99\\43.45} & \shortstack[r]{42.31\\45.29\\45.11} \\
+2048 & 56.89 & \shortstack[r]{40.27\\39.72\\40.54} & \shortstack[r]{37.88\\39.69\\37.34} & \shortstack[r]{88.64\\86.52\\88.7} & \shortstack[r]{84.86\\88.85\\83.51} \\
+4096 & 113.8 & \shortstack[r]{78.44\\79.82\\80.53} & \shortstack[r]{75.78\\75.06\\74.62} & \shortstack[r]{170.9\\173.5\\173.7} & \shortstack[r]{167.6\\166.9\\167.5} \\
+8192 & 227.6 & \shortstack[r]{176.1\\176.6\\176.4} & \shortstack[r]{168.7\\168.5\\170.9} & \shortstack[r]{360.7\\361.6\\361} & \shortstack[r]{353.9\\354.6\\356.2} \\
+9978 & 277.2 & \shortstack[r]{215.2\\217.7\\217.2} & \shortstack[r]{205.6\\205.6\\203.9} & \shortstack[r]{441.7\\443.3\\445.3} & \shortstack[r]{432.3\\432.8\\428.2} \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{Seeded coprime affine permutation}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrp{2.85cm}p{2.85cm}p{2.85cm}p{2.85cm}}
+\toprule
+MiB & L2 ratio & Texture GPU & Global GPU & Texture wall & Global wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & Texture GPU & Global GPU & Texture wall & Global wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & \shortstack[r]{0.08128\\0.08371\\0.07434} & \shortstack[r]{0.08086\\0.09946\\0.06886} & \shortstack[r]{0.3697\\0.3995\\0.2667} & \shortstack[r]{0.4077\\0.4421\\0.3064} \\
+0.25 & 0.006944 & \shortstack[r]{0.08173\\0.05789\\0.06675} & \shortstack[r]{0.1023\\0.08483\\0.07347} & \shortstack[r]{0.4128\\0.3696\\0.2881} & \shortstack[r]{0.3091\\0.439\\0.2909} \\
+1 & 0.02778 & \shortstack[r]{0.08902\\0.08368\\0.08973} & \shortstack[r]{0.08717\\0.08528\\0.1067} & \shortstack[r]{0.3428\\0.3707\\0.4084} & \shortstack[r]{0.4495\\0.3998\\0.4131} \\
+4 & 0.1111 & \shortstack[r]{0.1156\\0.132\\0.1162} & \shortstack[r]{0.1452\\0.1134\\0.09738} & \shortstack[r]{0.4454\\0.4357\\0.4114} & \shortstack[r]{0.4714\\0.4211\\0.3176} \\
+16 & 0.4444 & \shortstack[r]{0.3593\\0.3602\\0.3588} & \shortstack[r]{0.3567\\0.3686\\0.3426} & \shortstack[r]{0.8998\\0.9185\\0.9292} & \shortstack[r]{0.908\\0.92\\0.9077} \\
+18 & 0.5 & \shortstack[r]{0.4314\\0.4907\\0.4392} & \shortstack[r]{0.4838\\0.4725\\0.426} & \shortstack[r]{1.153\\1.192\\1.15} & \shortstack[r]{1.149\\1.122\\1.072} \\
+36 & 1 & \shortstack[r]{1.045\\1.063\\1.027} & \shortstack[r]{1.054\\1.089\\1.092} & \shortstack[r]{2.173\\2.233\\2.189} & \shortstack[r]{2.079\\2.311\\2.311} \\
+64 & 1.778 & \shortstack[r]{5.074\\5.005\\5.017} & \shortstack[r]{4.98\\4.96\\4.928} & \shortstack[r]{6.78\\6.69\\6.639} & \shortstack[r]{6.718\\6.592\\6.621} \\
+72 & 2 & \shortstack[r]{5.314\\5.344\\5.374} & \shortstack[r]{5.328\\5.317\\5.306} & \shortstack[r]{7.23\\7.39\\7.244} & \shortstack[r]{7.21\\7.174\\7.139} \\
+128 & 3.556 & \shortstack[r]{11.15\\11.09\\11.13} & \shortstack[r]{11.04\\10.93\\11} & \shortstack[r]{14.32\\14.28\\14.52} & \shortstack[r]{14.22\\14.09\\14.09} \\
+256 & 7.111 & \shortstack[r]{23.14\\23.16\\23.06} & \shortstack[r]{22.84\\22.78\\23.13} & \shortstack[r]{29.41\\29.29\\28.97} & \shortstack[r]{28.76\\28.82\\29.33} \\
+512 & 14.22 & \shortstack[r]{47.34\\46.82\\46.84} & \shortstack[r]{46.38\\46.47\\46.74} & \shortstack[r]{59.75\\58.81\\58.99} & \shortstack[r]{58.67\\58.28\\59.4} \\
+1024 & 28.44 & \shortstack[r]{96.93\\97.79\\97.4} & \shortstack[r]{96.6\\96.18\\97.04} & \shortstack[r]{121.7\\122.6\\121.5} & \shortstack[r]{121.2\\120.4\\120.5} \\
+2048 & 56.89 & \shortstack[r]{195.9\\194.2\\196.1} & \shortstack[r]{192.7\\193.5\\193} & \shortstack[r]{244\\241.9\\243.1} & \shortstack[r]{240.4\\241.5\\240.3} \\
+4096 & 113.8 & \shortstack[r]{387.6\\388.3\\387.3} & \shortstack[r]{386.7\\386.5\\387.4} & \shortstack[r]{481.8\\481.8\\481.5} & \shortstack[r]{481\\480.7\\484.5} \\
+8192 & 227.6 & \shortstack[r]{798\\776.6\\797.9} & \shortstack[r]{774.2\\799\\774.3} & \shortstack[r]{985.8\\966.8\\988.9} & \shortstack[r]{962.9\\988\\965.8} \\
+9978 & 277.2 & \shortstack[r]{980.1\\965.2\\984} & \shortstack[r]{942.7\\959.1\\943.8} & \shortstack[r]{1211\\1198\\1219} & \shortstack[r]{1174\\1193\\1177} \\
+\end{longtable}
+\endgroup
+
+Texture beat global loads in 7 of 34 GPU-median comparisons and 9 of 34 wall-median comparisons. Cache hit rates were not measured and no persisting-L2 window was set. Logical GB/s is workload throughput, not measured physical DRAM bandwidth or a universal texture advantage.
+
+\paragraph{Reproducible source receipts.}
+
+Measured benchmark source commit: \path{4d8992292a7fa0fc43fc050ec090512552f7d067}. Subsequent source edits are not implied to have been measured by this record.
+
+All trials, setup timings and metadata are preserved in \path{review/resident_summary.json}. Its inputs are \path{review/resident_full.json} and \path{review/word_cache_full.json}.
+
+\begin{small}\noindent Resident SHA-256: \path{c8c25de5a13b9f559c65081ebd597547c1a5d41753edc09deff7db858fd4a94d}.\par
+
+\noindent Word-cache SHA-256: \path{adb44ca24fbab2e4534bae716ca94213bd28ba4cf1908ae4d62fc0b0fbf93946}.\end{small}

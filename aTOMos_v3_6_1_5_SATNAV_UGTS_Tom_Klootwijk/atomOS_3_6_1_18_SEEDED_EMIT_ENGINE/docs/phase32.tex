@@ -1,0 +1,76 @@
+\section{R18: exact phase and seam arithmetic in 32 bits}
+\label{sec:r18-phase}
+
+The original WQK GPU sources contain a useful way to avoid wide signed
+intermediates while preserving the finite machine. R18 implements the
+bounded identities below in the shared transition. The old wide expressions
+remain selectable through \code{ATOMOS\_WIDE\_PHASE\_REFERENCE} for matched
+comparison. The canonical C interpreter is unchanged. Full bounds and source
+relationships are given in \path{formal/EXACT_PHASE32.md} and the retained
+original-return audit.
+
+\subsection{PHI and TIME retain the complete quotient}
+For raw unsigned words $A,B$, let $a=\operatorname{s32}(A)$ and
+$b=\operatorname{s32}(B)$. Take $M=2^p$, with $p=12$ for PHI and $p=14$
+for TIME. The canonical Euclidean sum has $a+b=Mq+r$ and $0\le r<M$.
+For each input define
+\begin{equation}
+ q_a=(A\gg p)-(A\gg31)2^{32-p},\qquad
+ r_a=A\mathbin{\&}(M-1),
+\end{equation}
+and likewise for $B$. Quotient terms are converted to signed32 before
+subtraction. The sign correction follows from
+$\operatorname{s32}(A)=A-(A\gg31)2^{32}$, hence $a=Mq_a+r_a$.
+Now compute
+\begin{equation}
+ t=r_a+r_b,\qquad q=q_a+q_b+(t\gg p),\qquad
+ r=t\mathbin{\&}(M-1).
+ \label{eq:r18-divmod}
+\end{equation}
+Substitution proves the required quotient and remainder. Each input
+quotient lies in $[-2^{31-p},2^{31-p}-1]$, and $0\le t\le2M-2$.
+The complete output quotient fits signed32: its PHI range is
+$[-1048576,1048575]$ and its TIME range is $[-262144,262143]$.
+Thus no signed-overflow assumption or wide sum is required.
+
+The complete $q$ remains observable. PHI tests $q\ne0$ for wrap status and
+uses its parity for the selected branch/orientation behavior. TIME mixes
+the raw word of $q$ into lineage. Keeping only parity or remainder would
+change execution. The canonical old key, cell identity, lineage postlude
+and successor rule remain intact.
+
+\subsection{KLEIN and LSYS use exact modular phase updates}
+For raw rho word $R$, the finite KLEIN update uses
+\begin{equation}
+ \rho'=R\mathbin{\&}(2^{20}-1),\qquad
+ \epsilon=(R\gg20)\mathbin{\&}1.
+\end{equation}
+Signed interpretation changes the quotient by $2^{12}$ when the sign bit
+is set. That change is even, so remainder and seam parity are preserved.
+For an odd seam, set $\theta_0=\Theta\mathbin{\&}(2^{18}-1)$. The source
+half-turn or reflection respectively yields
+\begin{equation}
+ \theta'=(\theta_0+2^{17})\bmod2^{18},\qquad
+ \theta'=(2^{17}-\theta_0)\bmod2^{18},\qquad
+ \phi'=(-\Phi)\bmod2^{12}.
+\end{equation}
+Unsigned wrapping followed by masking is exact because these periods divide
+$2^{32}$. Preserve the source orientation, optional sheet, status, branch
+and normalization. This keeps the finite parity; it adds no winding history.
+
+For LSYS, let $o=\mathrm{orientation}\mathbin{\&}1$ and
+$b=\mathrm{branch}\mathbin{\&}1$. With raw turn argument $A$, the canonical
+chirality/branch product is positive exactly when $o\oplus b=1$. Thus
+\begin{equation}
+ D=\begin{cases}A&o\oplus b=1,\\-A\pmod{2^{32}}&o\oplus b=0,\end{cases}
+ \qquad\Phi'=(\Phi+D)\mathbin{\&}(2^{12}-1).
+\end{equation}
+This equals the signed-wide phase expression even for $-2^{31}$ arguments
+and raw, non-normalized phases. Rate division remains R17's separately
+proved truncation-toward-zero magnitude shift. PHI/TIME floor division
+and LSYS rate truncation are distinct contracts.
+
+Equal subexpressions preserve the canonical transition and its ordered
+fused composition. Boundary checks, compiled resources and matched timings
+provide separate evidence. Fewer source operations alone establish no
+speedup, cache-hit rate or physical accuracy.

@@ -1,0 +1,361 @@
+% Generated from complete reports by tools/summarize_word_optimization.py.
+
+\section{Measured exact word-kernel optimization}\label{sec:word-optimization}
+
+Across 17 equal working sizes, the optimized implementation beat baseline in 59 of 68 GPU-median comparisons and 54 of 68 host-wall-median comparisons. GPU baseline/optimized ratios range from 0.8048 to 1.254.
+
+This is the bounded integer phi-expression, ASA/NA+JK and digest workload, \emph{not an S2 comparison}. Both load paths receive direct streaming addresses, exact bank shift/mask indexing, integer reciprocal remainder with one correction, proved-safe 32-bit coefficient arithmetic and warp digest reductions. Seeds, recurrence, masks, reset/warm policy and independent 64-bit CPU oracle are unchanged.
+
+Pairs require equal working bytes, seed, epoch/trial/warm counts, chunk size and bank layout. Every corresponding trial's address parameters and every epoch's XOR, modular-sum and visit-count digest match, including the final epoch. Digest collisions remain possible; large sets retain sampled CPU replay. All raw trials and unmatched sizes are retained in \path{review/word_optimization_summary.json}.
+
+\subsection{Memory extent and matching}
+
+Baseline maximum: 10462691328 working bytes (9.744 GiB), 277.2 times the reported 36 MiB L2, 81.61\% of reported device memory. It covers 326959104 records over 20 banks per epoch; allocation requests total 10471136648 bytes and 1084227584 bytes were reported free after allocation.
+
+Optimized maximum: 10462691328 working bytes (9.744 GiB), 277.2 times the reported 36 MiB L2, 81.61\% of reported device memory. It covers 326959104 records over 20 banks per epoch; allocation requests total 10471136648 bytes and 1084227584 bytes were reported free after allocation.
+
+Working bytes include 16N immutable bytes and both 8N-byte state buffers. Every record is visited each epoch. The maxima are independent observations; they are paired only when their actual sizes match. This extent is not active-warp occupancy, measured cache residency or zero-headroom allocation. Shared-device free-memory changes are not exclusive process peak measurements.
+
+\subsection{All full-sweep comparisons}
+
+17 paired sizes and 612 equal trial/epoch digest pairs; 3 measured epochs, 3 trials per path and 1 warm epoch(s). Chunks contain 8388608 logical bytes. GPU/wall wins: 59/68 and 54/68.
+
+Table entries are median milliseconds for all measured epochs. B/O means baseline divided by optimized; ratios above one favor optimized. GPU time excludes reset/warm, digest readback and sampled checks. Wall time includes measured epochs and those checks, with reset/warm outside.
+
+\Needspace{6\baselineskip}
+
+\paragraph{streaming / integer texture}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.0943 & 0.08122 & 1.161 & 0.4189 & 0.3674 & 1.14 \\
+0.25 & 0.006944 & 0.103 & 0.1016 & 1.013 & 0.4149 & 0.2989 & 1.388 \\
+1 & 0.02778 & 0.08781 & 0.08858 & 0.9913 & 0.4355 & 0.4075 & 1.069 \\
+4 & 0.1111 & 0.1087 & 0.09421 & 1.154 & 0.4717 & 0.4312 & 1.094 \\
+16 & 0.4444 & 0.2933 & 0.2812 & 1.043 & 0.8373 & 0.8822 & 0.9491 \\
+18 & 0.5 & 0.3957 & 0.405 & 0.9771 & 1.086 & 1.214 & 0.8949 \\
+36 & 1 & 0.6868 & 0.693 & 0.9911 & 1.793 & 1.785 & 1.004 \\
+64 & 1.778 & 1.243 & 1.198 & 1.037 & 2.868 & 2.844 & 1.009 \\
+72 & 2 & 1.4 & 1.34 & 1.044 & 3.295 & 3.099 & 1.063 \\
+128 & 3.556 & 2.534 & 2.397 & 1.057 & 5.66 & 5.477 & 1.033 \\
+256 & 7.111 & 5.044 & 4.809 & 1.049 & 10.91 & 10.66 & 1.023 \\
+512 & 14.22 & 9.883 & 9.494 & 1.041 & 21.51 & 21.18 & 1.016 \\
+1024 & 28.44 & 19.93 & 19.11 & 1.043 & 43.12 & 42.81 & 1.007 \\
+2048 & 56.89 & 40.27 & 38.57 & 1.044 & 88.64 & 84.7 & 1.046 \\
+4096 & 113.8 & 79.82 & 77.15 & 1.035 & 173.5 & 169.5 & 1.023 \\
+8192 & 227.6 & 176.4 & 173.1 & 1.019 & 361 & 356.9 & 1.012 \\
+9978 & 277.2 & 217.2 & 210.6 & 1.031 & 443.3 & 436.9 & 1.015 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{streaming / global}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.08682 & 0.08317 & 1.044 & 0.4072 & 0.3513 & 1.159 \\
+0.25 & 0.006944 & 0.08291 & 0.08154 & 1.017 & 0.4567 & 0.3635 & 1.256 \\
+1 & 0.02778 & 0.0887 & 0.08218 & 1.079 & 0.4339 & 0.4136 & 1.049 \\
+4 & 0.1111 & 0.09859 & 0.08989 & 1.097 & 0.4767 & 0.4784 & 0.9964 \\
+16 & 0.4444 & 0.2816 & 0.2481 & 1.135 & 0.8475 & 0.8686 & 0.9757 \\
+18 & 0.5 & 0.3873 & 0.3692 & 1.049 & 1.069 & 1.215 & 0.8797 \\
+36 & 1 & 0.692 & 0.641 & 1.08 & 1.857 & 1.855 & 1.001 \\
+64 & 1.778 & 1.149 & 1.118 & 1.027 & 2.814 & 2.719 & 1.035 \\
+72 & 2 & 1.35 & 1.226 & 1.101 & 3.174 & 3.049 & 1.041 \\
+128 & 3.556 & 2.394 & 2.217 & 1.08 & 5.465 & 5.159 & 1.059 \\
+256 & 7.111 & 4.807 & 4.44 & 1.083 & 10.89 & 10.05 & 1.083 \\
+512 & 14.22 & 10.02 & 9.086 & 1.103 & 22.34 & 20.88 & 1.07 \\
+1024 & 28.44 & 20.1 & 17.98 & 1.118 & 45.11 & 41.48 & 1.087 \\
+2048 & 56.89 & 37.88 & 36.71 & 1.032 & 84.86 & 83.11 & 1.021 \\
+4096 & 113.8 & 75.06 & 72.75 & 1.032 & 167.5 & 166.6 & 1.005 \\
+8192 & 227.6 & 168.7 & 165.5 & 1.019 & 354.6 & 349.2 & 1.016 \\
+9978 & 277.2 & 205.6 & 199.4 & 1.031 & 432.3 & 426.8 & 1.013 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{seeded coprime affine permutation / integer texture}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.08128 & 0.08938 & 0.9094 & 0.3697 & 0.3586 & 1.031 \\
+0.25 & 0.006944 & 0.06675 & 0.08294 & 0.8048 & 0.3696 & 0.472 & 0.7831 \\
+1 & 0.02778 & 0.08902 & 0.08749 & 1.018 & 0.3707 & 0.4353 & 0.8516 \\
+4 & 0.1111 & 0.1162 & 0.1046 & 1.111 & 0.4357 & 0.3839 & 1.135 \\
+16 & 0.4444 & 0.3593 & 0.3366 & 1.067 & 0.9185 & 0.9739 & 0.9431 \\
+18 & 0.5 & 0.4392 & 0.461 & 0.9529 & 1.153 & 1.311 & 0.88 \\
+36 & 1 & 1.045 & 0.9039 & 1.156 & 2.189 & 1.928 & 1.136 \\
+64 & 1.778 & 5.017 & 4.851 & 1.034 & 6.69 & 6.479 & 1.033 \\
+72 & 2 & 5.344 & 5.161 & 1.035 & 7.244 & 6.934 & 1.045 \\
+128 & 3.556 & 11.13 & 10.94 & 1.017 & 14.32 & 14.18 & 1.01 \\
+256 & 7.111 & 23.14 & 22.61 & 1.023 & 29.29 & 28.67 & 1.022 \\
+512 & 14.22 & 46.84 & 46.31 & 1.011 & 58.99 & 58.79 & 1.003 \\
+1024 & 28.44 & 97.4 & 95.83 & 1.016 & 121.7 & 120.2 & 1.013 \\
+2048 & 56.89 & 195.9 & 193.2 & 1.014 & 243.1 & 240.9 & 1.009 \\
+4096 & 113.8 & 387.6 & 388.9 & 0.9969 & 481.8 & 484.8 & 0.9937 \\
+8192 & 227.6 & 797.9 & 809 & 0.9862 & 985.8 & 997.2 & 0.9885 \\
+9978 & 277.2 & 980.1 & 978.7 & 1.001 & 1211 & 1212 & 0.9988 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{seeded coprime affine permutation / global}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.08086 & 0.07987 & 1.012 & 0.4077 & 0.3357 & 1.214 \\
+0.25 & 0.006944 & 0.08483 & 0.06765 & 1.254 & 0.3091 & 0.3977 & 0.7772 \\
+1 & 0.02778 & 0.08717 & 0.08454 & 1.031 & 0.4131 & 0.382 & 1.081 \\
+4 & 0.1111 & 0.1134 & 0.1126 & 1.007 & 0.4211 & 0.3951 & 1.066 \\
+16 & 0.4444 & 0.3567 & 0.3196 & 1.116 & 0.908 & 0.8294 & 1.095 \\
+18 & 0.5 & 0.4725 & 0.4818 & 0.9808 & 1.122 & 1.274 & 0.8807 \\
+36 & 1 & 1.089 & 0.9243 & 1.178 & 2.311 & 2.039 & 1.133 \\
+64 & 1.778 & 4.96 & 4.907 & 1.011 & 6.621 & 6.544 & 1.012 \\
+72 & 2 & 5.317 & 5.224 & 1.018 & 7.174 & 6.992 & 1.026 \\
+128 & 3.556 & 11 & 10.83 & 1.015 & 14.09 & 13.93 & 1.012 \\
+256 & 7.111 & 22.84 & 22.61 & 1.01 & 28.82 & 28.55 & 1.009 \\
+512 & 14.22 & 46.47 & 45.92 & 1.012 & 58.67 & 58.1 & 1.01 \\
+1024 & 28.44 & 96.6 & 95.4 & 1.013 & 120.5 & 120.5 & 1 \\
+2048 & 56.89 & 193 & 191.8 & 1.006 & 240.4 & 239.3 & 1.004 \\
+4096 & 113.8 & 386.7 & 383 & 1.01 & 481 & 477.3 & 1.008 \\
+8192 & 227.6 & 774.3 & 770.4 & 1.005 & 965.8 & 963.1 & 1.003 \\
+9978 & 277.2 & 943.8 & 934 & 1.01 & 1177 & 1167 & 1.008 \\
+\end{longtable}
+\endgroup
+
+\subsection{Non-power-of-two check: 3 MiB}
+
+1 paired sizes and 80 equal trial/epoch digest pairs; 10 measured epochs, 2 trials per path and 1 warm epoch(s). Chunks contain 8388608 logical bytes. GPU/wall wins: 2/4 and 3/4.
+
+Table entries are median milliseconds for all measured epochs. B/O means baseline divided by optimized; ratios above one favor optimized. GPU time excludes reset/warm, digest readback and sampled checks. Wall time includes measured epochs and those checks, with reset/warm outside.
+
+\Needspace{6\baselineskip}
+
+\paragraph{streaming / integer texture}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+3 & 0.08333 & 0.3223 & 0.3277 & 0.9835 & 1.403 & 1.326 & 1.058 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{streaming / global}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+3 & 0.08333 & 0.2945 & 0.346 & 0.8512 & 1.381 & 1.426 & 0.9683 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{seeded coprime affine permutation / integer texture}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+3 & 0.08333 & 0.3877 & 0.3135 & 1.237 & 1.469 & 1.323 & 1.111 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{seeded coprime affine permutation / global}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+3 & 0.08333 & 0.3872 & 0.3396 & 1.14 & 1.476 & 1.441 & 1.024 \\
+\end{longtable}
+\endgroup
+
+Unpaired baseline bytes: [65536, 262144, 1048576]; unpaired optimized bytes: [].
+
+\subsection{Four-size quick check}
+
+4 paired sizes and 32 equal trial/epoch digest pairs; 2 measured epochs, 1 trials per path and 1 warm epoch(s). Chunks contain 8388608 logical bytes. GPU/wall wins: 6/16 and 8/16.
+
+Table entries are median milliseconds for all measured epochs. B/O means baseline divided by optimized; ratios above one favor optimized. GPU time excludes reset/warm, digest readback and sampled checks. Wall time includes measured epochs and those checks, with reset/warm outside.
+
+\Needspace{6\baselineskip}
+
+\paragraph{streaming / integer texture}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.0711 & 0.06093 & 1.167 & 0.4281 & 0.2789 & 1.535 \\
+0.25 & 0.006944 & 0.105 & 0.04128 & 2.544 & 0.3693 & 0.2294 & 1.61 \\
+1 & 0.02778 & 0.06138 & 0.0585 & 1.049 & 0.2487 & 0.2976 & 0.8357 \\
+4 & 0.1111 & 0.1419 & 0.0671 & 2.114 & 0.3451 & 0.3029 & 1.139 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{streaming / global}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.04486 & 0.04518 & 0.9929 & 0.2722 & 0.2404 & 1.132 \\
+0.25 & 0.006944 & 0.05638 & 0.04451 & 1.267 & 0.244 & 0.2731 & 0.8934 \\
+1 & 0.02778 & 0.03901 & 0.06202 & 0.629 & 0.1613 & 0.2714 & 0.5943 \\
+4 & 0.1111 & 0.04467 & 0.05101 & 0.8758 & 0.2835 & 0.2835 & 1 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{seeded coprime affine permutation / integer texture}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.04803 & 0.06118 & 0.785 & 0.2913 & 0.1514 & 1.924 \\
+0.25 & 0.006944 & 0.03629 & 0.0673 & 0.5392 & 0.2135 & 0.294 & 0.7262 \\
+1 & 0.02778 & 0.06259 & 0.06701 & 0.9341 & 0.2558 & 0.2683 & 0.9534 \\
+4 & 0.1111 & 0.05661 & 0.06006 & 0.9425 & 0.2948 & 0.2187 & 1.348 \\
+\end{longtable}
+\endgroup
+
+\Needspace{6\baselineskip}
+
+\paragraph{seeded coprime affine permutation / global}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.16}
+\begin{longtable}{rrrrrrrr}
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endfirsthead
+\toprule
+MiB & L2 ratio & B GPU & O GPU & B/O GPU & B wall & O wall & B/O wall \\
+\midrule\endhead
+\bottomrule\endfoot
+0.0625 & 0.001736 & 0.0639 & 0.05987 & 1.067 & 0.2568 & 0.2753 & 0.9328 \\
+0.25 & 0.006944 & 0.05638 & 0.06454 & 0.8736 & 0.2906 & 0.2573 & 1.129 \\
+1 & 0.02778 & 0.0432 & 0.04634 & 0.9323 & 0.2013 & 0.3116 & 0.646 \\
+4 & 0.1111 & 0.07523 & 0.07846 & 0.9588 & 0.2988 & 0.269 & 1.111 \\
+\end{longtable}
+\endgroup
+
+\subsection{Scope and reproducibility}
+
+Baseline and optimized runs were separate; scheduling, device clocks and desktop activity may differ. The few trials give no confidence interval. Quick checks have one trial per path; the 3 MiB reciprocal check has ten epochs and two trials. Cache-hit and traffic counters belong to separate profiling evidence. Logical bytes/time does not measure physical DRAM bandwidth or a universal texture advantage.
+
+Baseline source commit: \path{4d8992292a7fa0fc43fc050ec090512552f7d067}. Optimized source commit: \path{59a7e7d37be24d381cc4be4c7b2a793778995ecf}. Optimized CUDA source SHA-256: \path{742c25e582bd2d5c4d0868051b61a03d6d224d477029caaff949ba552b2890d2}.
+
+All six raw report receipts, every trial and per-epoch digest are preserved in \path{review/word_optimization_summary.json}; readable details are in \path{review/WORD_OPTIMIZATION.md}.

@@ -1,0 +1,134 @@
+{
+  "preserved_parent_pdfs": 2,
+  "preserved_source_files": 125,
+  "verified_wqk_imports": 42,
+  "wqk_import_manifest_sha256": "7aa38f11ced4f1f0fa8c701c1aedf221f7b521c0a0d6550ee04c069770c82554",
+  "purpose": "Read-only source and authored-document verification",
+  "rewritten_files": 0,
+  "tex_inputs": [
+    "docs/benchmark_table.tex",
+    "docs/clock_binding.tex",
+    "docs/completion.tex",
+    "docs/exact_core.tex",
+    "docs/exact_registry.tex",
+    "docs/field_step.tex",
+    "docs/gravity_time.tex",
+    "docs/hinge_core.tex",
+    "docs/kernel_bridge.tex",
+    "docs/overview.tex",
+    "docs/physics_core.tex",
+    "docs/physics_em.tex",
+    "docs/physics_energy.tex",
+    "docs/physics_measurement.tex",
+    "docs/preamble.tex",
+    "docs/resident_gpu.tex",
+    "docs/resident_results.tex",
+    "docs/runtime_evidence.tex",
+    "docs/spatial_calculus.tex",
+    "docs/unified.tex",
+    "docs/unified_coupling.tex",
+    "docs/word_optimization.tex",
+    "docs/word_profile.tex",
+    "docs/wqk_events.tex",
+    "docs/wqk_evidence.tex",
+    "docs/wqk_integration.tex"
+  ],
+  "required_section_headings": [
+    {
+      "chapter": "clock_binding.tex",
+      "heading": "An atomic-time observation, literal latch and domain bindings"
+    },
+    {
+      "chapter": "completion.tex",
+      "heading": "Specialization and remaining engine scope"
+    },
+    {
+      "chapter": "exact_core.tex",
+      "heading": "Exact operator seeds: a mathematical contract"
+    },
+    {
+      "chapter": "exact_registry.tex",
+      "heading": "Normative XOP-R1 grammar and operator registry"
+    },
+    {
+      "chapter": "field_step.tex",
+      "heading": "A finite exact field kernel with work and heat balance"
+    },
+    {
+      "chapter": "gravity_time.tex",
+      "heading": "Gravity, clocks and station observations from one state"
+    },
+    {
+      "chapter": "hinge_core.tex",
+      "heading": "An exact seed and event-driven hinge engine"
+    },
+    {
+      "chapter": "kernel_bridge.tex",
+      "heading": "The exact kernel, physical fields and acquired observations"
+    },
+    {
+      "chapter": "overview.tex",
+      "heading": "Executable words and exact events"
+    },
+    {
+      "chapter": "physics_core.tex",
+      "heading": "A minimal physical-law layer for application kernels"
+    },
+    {
+      "chapter": "physics_core.tex",
+      "heading": "An exact finite step with a derived mechanical energy balance"
+    },
+    {
+      "chapter": "physics_em.tex",
+      "heading": "Electromagnetic closure of the optical interface"
+    },
+    {
+      "chapter": "physics_energy.tex",
+      "heading": "Momentum, energy and admissible physical coupling"
+    },
+    {
+      "chapter": "physics_measurement.tex",
+      "heading": "Measurement, constants and output tolerances"
+    },
+    {
+      "chapter": "resident_gpu.tex",
+      "heading": "Resident count predicates and delayed device feedback"
+    },
+    {
+      "chapter": "resident_results.tex",
+      "heading": "Measured resident counts and word working sets"
+    },
+    {
+      "chapter": "runtime_evidence.tex",
+      "heading": "Implemented native profiles and measured scope"
+    },
+    {
+      "chapter": "spatial_calculus.tex",
+      "heading": "Exact spatial templates without a prescribed raster"
+    },
+    {
+      "chapter": "unified_coupling.tex",
+      "heading": "One coupled field state and one physical energy"
+    },
+    {
+      "chapter": "word_optimization.tex",
+      "heading": "Measured exact word-kernel optimization"
+    },
+    {
+      "chapter": "word_profile.tex",
+      "heading": "Native instructions and hardware-counter receipts"
+    },
+    {
+      "chapter": "wqk_events.tex",
+      "heading": "Exact affine event discovery and atomic hinges"
+    },
+    {
+      "chapter": "wqk_evidence.tex",
+      "heading": "R16 execution evidence"
+    },
+    {
+      "chapter": "wqk_integration.tex",
+      "heading": "R16: a source-pinned native word machine"
+    }
+  ]
+}

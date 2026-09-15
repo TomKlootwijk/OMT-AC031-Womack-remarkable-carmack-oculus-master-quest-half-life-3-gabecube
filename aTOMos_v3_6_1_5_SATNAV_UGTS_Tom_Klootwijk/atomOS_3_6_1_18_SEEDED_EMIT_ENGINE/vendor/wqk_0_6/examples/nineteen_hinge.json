@@ -1,0 +1,23 @@
+{
+  "tomagi_version": "1.0.0",
+  "title": "Source-derived deterministic 19 / Dutch pulse / triangle inference",
+  "facts": {
+    "value": 19,
+    "binary": "10011",
+    "profile_segments": ["ne", "gen", "tien"]
+  },
+  "operators": [
+    "TOM.ACTIVE",
+    "TOM.POPCOUNT",
+    "TOM.PULSE",
+    "TOM.EQ",
+    "TOM.PROJECT"
+  ],
+  "expected": {
+    "active_bit_positions": [0, 1, 4],
+    "active_bit_count": 3,
+    "pulse_count": 3,
+    "equal_feature_counts": true,
+    "projection_kind": "triangle"
+  }
+}

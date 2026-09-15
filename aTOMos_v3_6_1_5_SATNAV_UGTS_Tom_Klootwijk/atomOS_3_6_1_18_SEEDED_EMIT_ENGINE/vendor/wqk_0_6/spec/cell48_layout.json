@@ -1,0 +1,90 @@
+{
+  "schema": "TOMAGI-CELL48-1.0",
+  "size_bytes": 48,
+  "fields": [
+    {
+      "word": 0,
+      "byte_offset": 0,
+      "name": "key_hi",
+      "type": "u32",
+      "meaning": "canonical key bits 63..32"
+    },
+    {
+      "word": 1,
+      "byte_offset": 4,
+      "name": "key_lo",
+      "type": "u32",
+      "meaning": "canonical key bits 31..0"
+    },
+    {
+      "word": 2,
+      "byte_offset": 8,
+      "name": "opcode",
+      "type": "u32",
+      "meaning": "opcode 0..15"
+    },
+    {
+      "word": 3,
+      "byte_offset": 12,
+      "name": "flags",
+      "type": "u32",
+      "meaning": "generic and opcode-specific flags"
+    },
+    {
+      "word": 4,
+      "byte_offset": 16,
+      "name": "arg0",
+      "type": "i32",
+      "meaning": "operator argument 0"
+    },
+    {
+      "word": 5,
+      "byte_offset": 20,
+      "name": "arg1",
+      "type": "i32",
+      "meaning": "operator argument 1"
+    },
+    {
+      "word": 6,
+      "byte_offset": 24,
+      "name": "arg2",
+      "type": "i32",
+      "meaning": "operator argument 2"
+    },
+    {
+      "word": 7,
+      "byte_offset": 28,
+      "name": "arg3",
+      "type": "i32",
+      "meaning": "operator argument 3"
+    },
+    {
+      "word": 8,
+      "byte_offset": 32,
+      "name": "next0",
+      "type": "u32",
+      "meaning": "successor for branch 0"
+    },
+    {
+      "word": 9,
+      "byte_offset": 36,
+      "name": "next1",
+      "type": "u32",
+      "meaning": "successor for branch 1"
+    },
+    {
+      "word": 10,
+      "byte_offset": 40,
+      "name": "payload",
+      "type": "u32",
+      "meaning": "literal/output/provenance token"
+    },
+    {
+      "word": 11,
+      "byte_offset": 44,
+      "name": "aux",
+      "type": "u32",
+      "meaning": "literal/hash salt/operator auxiliary"
+    }
+  ]
+}

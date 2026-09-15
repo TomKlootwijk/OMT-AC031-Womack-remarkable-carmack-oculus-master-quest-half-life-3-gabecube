@@ -1,0 +1,45 @@
+{
+  "purpose": "Requested read-only NIST atomic-time acquisition",
+  "attempts": [
+    {
+      "source_host": "time.nist.gov",
+      "protocol": "NTP: version-4 client request, version-3 server response, UDP/123",
+      "purpose": "Actual NIST atomic-time service observation requested by user",
+      "local_capture_date_utc": "2026-09-15T08:38:20.062558+00:00",
+      "status": "observed",
+      "resolved_ipv4": "132.163.96.4",
+      "peer": [
+        "132.163.96.4",
+        123
+      ],
+      "request_hex": "23000000000000000000000000000000000000000000000000000000000000000000000000000000ee53827c1943236b",
+      "reply_hex": "1c010de300000010000000204e495354ee53820000000000ee53827c1943236bee53827edc0545edee53827edc055be3",
+      "reply_sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4",
+      "local_send_unix_ns": "1789461500098680700",
+      "local_receive_unix_ns": "1789461500226279700",
+      "elapsed_monotonic_ns": "127594000",
+      "leap_indicator": 0,
+      "version": 3,
+      "mode": 4,
+      "stratum": 1,
+      "precision_exponent": -29,
+      "root_delay_s16_16": 16,
+      "root_dispersion_u16_16": 32,
+      "reference_id_hex": "4e495354",
+      "reference_ntp_u64": "17173212740605444096",
+      "origin_ntp_u64": "17173213273605219179",
+      "receive_ntp_u64": "17173213285462656493",
+      "transmit_ntp_u64": "17173213285462662115",
+      "era": 0,
+      "era_evidence": "2026 acquisition date context; not encoded in wire timestamp",
+      "transmit_unix_rational": {
+        "numerator": "7685678632232377315",
+        "denominator": "4294967296"
+      },
+      "transmit_utc_display_microsecond_truncated": "2026-09-15T08:38:22.859456+00:00",
+      "authentication": "Unauthenticated NTP reply; matching originate field and endpoint are consistency checks only",
+      "meaning": "Server transmit event; exact payload value, not exact receiver UTC",
+      "system_clock_set": false
+    }
+  ]
+}

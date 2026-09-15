@@ -1,0 +1,121 @@
+\clearpage
+\section{R17: native evidence and return to the original}
+\label{sec:r17-evidence}
+
+The final R17 implementation was built with CUDA 12.8.61 and MSVC 19.44
+for \code{sm\_120}. Measurements use the RTX 5070 Ti Laptop GPU, with
+46 SMs, 36 MiB L2, and 12,820,480,000 reported VRAM bytes. The host is a
+Core Ultra 7 255HX. GPU jobs were serialized. All R17 trials use the
+same final executable; its SHA-256 is recorded in the measurement and
+compiled-code reports.
+
+\subsection{Independent correctness and compiled execution}
+
+All nine native test suites pass, including the inherited spatial and
+feedback suites. The new fused suite passes 1,513,078 checks against the
+unchanged canonical C machine and an independent per-bit ASA/NA/JK model.
+Its field comparisons include 722,912 State64 words, 451,820 receipt words,
+and 292,264 feedback words; other checks cover errors, epochs and API
+contracts. The inherited native VM suite adds 28,794 assertions, and its
+feedback suite adds 1,718 checks. All 49 inherited Python tests pass.
+
+The fused cases cover all 16 opcodes, alias-sensitive raw fields, multiple
+lanes, both fetch paths and feedback bindings, four word profiles, key
+hits and misses, forced two-cell banks, halted and faulted lanes, stale
+EMIT flags, nonzero starting epochs, an ordered nondefault stream, and
+chunks of 1, 7, 32 and 256 across 263 requested epochs. LSYS cases cover
+every shift from 0 through 30, clamped arguments, negative odd values and
+signed extrema, including $-2^{31}$. This is finite-machine evidence;
+the exact transition proof supplies the general composition argument.
+
+The compiled audit inspects actual SASS and resource declarations,
+binding their bytes to the executable and native source. Integer texture
+variants contain actual \code{TLD} sites. All six fused variants have
+zero declared stack and local-memory bytes, with no \code{LDL}/\code{STL}
+instructions in the inspected kernels. The final register counts and
+comparison with the preserved initial build are recorded in
+\path{review/R17_NATIVE_CODE.md}. These facts concern this compiler target;
+they do not establish occupancy, cache hits or performance on another GPU.
+
+The initial LSYS division was integer-valued but compiled through a
+reciprocal-and-correction sequence. The final unsigned magnitude shift
+and sign restoration removes that need while retaining signed truncation
+toward zero. Some floating-unit instructions can still materialize constant
+bit patterns in compiler output. Exact integer state semantics must not be
+confused with a claim that every generated opcode uses an integer unit.
+
+\subsection{Matched device and complete-host measurements}
+
+The tiny workload is the original three-cell source fixture, with 96
+requested epochs and identical initial lane words. The larger workload
+contains 1,048,576 synthetic Cell48 instructions: 48 MiB of operator cells,
+plus the 128-byte header. Its 15 non-HALT opcodes, arguments and successor
+links are generated from an explicit recipe; lane initialization spreads
+raw rho, lineage and starting cell. It runs 128 epochs on 65,536 lanes.
+The larger program is generated input, rather than precomputed VM output.
+
+Each case compares R17 reference/fused dispatch and texture/global reads.
+The tiny cases additionally run the unchanged R16 executable. Three fresh
+process trials per variant give 132 total runs, with rotated ordering and
+no warmup. Every case has matching full-array FNV-1a-64 and exact first-lane
+fields, with the expected accepted EMIT totals in the tiny coupled cases.
+FNV is noncryptographic; the independent tests separately compare complete
+individual fields. Chunk size is 32 throughout the measured fused runs.
+
+\input{fused_benchmark_table.tex}
+
+The table reports medians of device batch time in milliseconds. Across
+these 16 matched R17 comparisons, device ratios range from
+$3.347\times$ to $20.277\times$. The unchanged R16 tiny-fixture comparisons
+give $6.460\times$ to $19.710\times$. Setup, final readback and host work
+are outside device batch time. These are measurements of the stated word
+machine workloads, with three repeats, rather than a universal speed bound.
+
+Cold host-complete ratios range from $0.965\times$ to $1.098\times$:
+13 of 16 cases have a lower fused median, and three have a higher median.
+Initialization, allocation, upload, final readback and hashing remain
+substantial costs. For example, a large synthetic table has a different
+setup cost from the three-cell fixture. Device speed ratios must not be
+presented as complete application speedups.
+
+The texture path is not uniformly faster than global reads; the raw trials
+retain both results. A 48 MiB program exceeds the reported L2 capacity,
+but that alone does not establish that every cell is visited, that a cache
+is saturated, or that the device reaches a memory-bandwidth limit. No new
+S2 operation is measured here. Earlier S2 results retain their original
+inputs and correctness contracts.
+
+\subsection{What returning to the original source changes}
+
+The fresh audit returns to the user's TOM World Query Kernel 0.6.0
+directory, preserving its files. Two concrete mechanisms deserve further
+integration. First, the original GPU sources express several phase and
+seam operations with exact 32-bit modular arithmetic. Their input ranges,
+floor-division behavior and overflow treatment must be retained when
+replacing wider intermediate arithmetic. Second, the original seeded
+artifact workflow consumes a complete ordered stream of executed EMIT
+records. A final receipt is insufficient to reconstruct that stream.
+
+The seeded compiler validates dependencies and evaluates its formal tree
+on the host, then encodes the result and lowers literal bytes through
+\code{emit.graph}. R17's native transition port does not yet make that
+formal evaluator a GPU program. A useful next integration is an opt-in,
+lossless EMIT sink with explicit capacity and ordering, verified against
+the original seeded compiler and materializer. It must retain every fresh
+EMIT inside a fused chunk, including repeated payloads and EMIT-HALT.
+Its additional output work requires separate matched measurements.
+
+The original packed key and Morton notation are also distinct. RADIX
+reads the canonical packed key, while lineage incorporates canonical
+cell identity. A derived cache may rearrange physical storage only while
+preserving those logical keys, indices and successor semantics. Reordering
+the canonical program by opcode or Morton code would change execution.
+
+\path{review/R17_ORIGINAL_RETURN.md} and
+\path{review/R17_SEEDED_RUNTIME_AUDIT.md} identify the source locations and
+bounded next steps. The reports distinguish reused mechanisms, verified
+R17 behavior and capabilities still absent. The source recipe, trials,
+compiled audit, checks and mathematical proof remain independently
+inspectable in the release.
+
+\clearpage

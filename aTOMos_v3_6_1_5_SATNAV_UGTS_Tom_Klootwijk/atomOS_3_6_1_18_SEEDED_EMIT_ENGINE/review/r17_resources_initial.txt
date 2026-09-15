@@ -1,0 +1,66 @@
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__46490ab6_12_tomagi_vm_cu_1ac91ffc12batch_kernelILb0EEEvNS0_10DeviceViewEj:
+  REG:53 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:972 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__46490ab6_12_tomagi_vm_cu_1ac91ffc12batch_kernelILb1EEEvNS0_10DeviceViewEj:
+  REG:51 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:972 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__46490ab6_12_tomagi_vm_cu_1ac91ffc11step_kernelILb0EEEvNS0_10DeviceViewE:
+  REG:55 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:968 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__46490ab6_12_tomagi_vm_cu_1ac91ffc11step_kernelILb1EEEvNS0_10DeviceViewE:
+  REG:55 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:968 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__46490ab6_12_tomagi_vm_cu_1ac91ffc10read_cellsENS0_10DeviceViewEPj:
+  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:976 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__46490ab6_12_tomagi_vm_cu_1ac91ffc11read_headerEyPj:
+  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:912 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__46490ab6_12_tomagi_vm_cu_1ac91ffc6expandEyPjy:
+  REG:40 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:920 TEXTURE:0 SURFACE:0 SAMPLER:0
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__41c16a4e_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb0ELb0EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:77 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__41c16a4e_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb1ELb0EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:77 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__41c16a4e_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb0ELb1EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:79 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__41c16a4e_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb1ELb1EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:81 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__41c16a4e_18_tomagi_feedback_cu_4816ffdb12commit_wordsENS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileE:
+  REG:28 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1048 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__41c16a4e_18_tomagi_feedback_cu_4816ffdb12inject_wordsENS0_10DeviceViewEPKNS0_9WordStateE:
+  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:976 TEXTURE:0 SURFACE:0 SAMPLER:0

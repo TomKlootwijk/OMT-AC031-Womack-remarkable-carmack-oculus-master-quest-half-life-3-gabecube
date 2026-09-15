@@ -1,0 +1,137 @@
+\section{R18: complete native seeded EMIT streams}
+\label{sec:r18-journal}
+
+R18 closes a concrete gap found on returning to the original seeded
+workflow: a materialized artifact needs every fresh EMIT in order, including
+those inside a fused chunk. The optional journal records that stream while
+retaining the complete canonical transition, final receipts and ASA/NA/JK
+feedback. Final-only paths remain separate.
+\path{formal/SEEDED_EMIT_JOURNAL.md} specifies the complete contract;
+the native schema is \code{ATOMOS-EMIT-JOURNAL-R1}.
+
+\subsection{Transition and complete ordered stream}
+For lane $i$, let $z_i(k)$ contain complete VM state, error, receipt and
+optional feedback state at next dispatch epoch $k$. Preserve
+\begin{equation}
+ z_i(k+1)=C_k(z_i(k)),\qquad
+ C_k=\operatorname{commit}_k\circ\operatorname{VM}_k
+       \circ\operatorname{inject}_k.
+\end{equation}
+For pure execution, injection and word commit are identities. Append an
+event exactly when the actual receipt says both executed and emitted.
+A sticky state flag supplies no fresh event. EMIT-HALT supplies one;
+identical payloads at distinct epochs remain distinct. A VM emission and
+successful feedback commit are different observables, with final feedback
+status recording a refused commit.
+
+The native record is 40 bytes: a uint64 epoch and eight uint32 fields.
+It records lane, pre-instruction cell, flags, payload, post-transition
+lineage, cell, branch and status. Lineage, cell and status come from the
+actual post-transition State64. This compact EMIT schema is distinct from
+the vendor's full instruction trace.
+
+With $E_i(k)$ denoting the record when present, define
+\begin{equation}
+ J_i[k,k+n)=\mathop{\Vert}_{j=0}^{n-1}
+ \begin{cases}[E_i(k+j)]&\text{fresh VM emission},\\
+ []&\text{otherwise},\end{cases}
+ \label{eq:r18-stream}
+\end{equation}
+where $\Vert$ denotes ordered concatenation. At most one event per
+transition gives $|J_i|\le n$ and proven total capacity $Ln$ for $L$ lanes.
+Lane $i$ writes its disjoint interval $[in,(i+1)n)$ in increasing epoch
+order. No global atomic append or GPU scheduling order defines output.
+Host compaction publishes lane-major storage with offsets for each lane.
+
+For contiguous unchanged execution,
+\begin{equation}
+ J_i[k,k+a+b)=J_i[k,k+a)\Vert J_i[k+a,k+a+b).
+ \label{eq:r18-stream-composition}
+\end{equation}
+The R17 induction extends directly: equal pre-states give the same complete
+transition, emission predicate, record, appended prefix and post-state.
+Disjoint output intervals preserve this independently per lane. Across
+several lanes, concatenate corresponding lane subsequences; appending whole
+lane-major chunks gives a different global lane order.
+
+\subsection{Admission, ownership and terminal status}
+The VM and feedback journal APIs admit 0 through 256 requested epochs,
+at least one lane, and representable epoch/allocation bounds. Zero work
+observes an unchanged boundary without a new receipt or event.
+\code{max\_events=0} selects automatic $Ln$ capacity; a nonzero value
+below that bound refuses before transition or injection. A larger value
+does not enlarge the actual allocation beyond $Ln$.
+
+The event buffer initially uses $40Ln$ bytes on each of GPU and host,
+plus lane counters, overflow indicators and complete initial/final boundary
+arrays of size $O(L)$. Coupled execution captures both feedback states.
+These allocations finish before corresponding mutable execution. The
+immutable canonical source is retained separately. Runtime failure cannot
+produce a successful journal, and no rollback is promised after it.
+
+The synchronous drain checks capacity, lane, epoch bounds and ordering,
+then captures all final VM words, errors and receipts, with applicable
+feedback words. A nonzero VM error or feedback status gives
+\code{Faulted}; otherwise all lanes halted gives \code{Complete}; otherwise
+\code{Prefix}. A complete library journal may contain no emissions.
+Artifact materialization separately requires at least one EMIT.
+Every requested epoch runs even after early HALT/fault, preserving the
+canonical final held receipt. Dispatch, execution, VM emission and accepted
+feedback counts remain different.
+
+Each chunk retains a shared immutable source object: process-unique owner
+ID and every canonical \code{.tmg} byte read back from actual GPU-expanded
+program words. It survives VM destruction. Move preserves the source;
+reset changes generation. The owner ID is not a cryptographic identity.
+Continuation requires the same source object, owner, generation, lane count,
+execution mode, binding and complete word profile. It also requires
+contiguous epochs and exact previous-final/next-initial VM states, errors
+and applicable word states. Ordinary execution creates an explicit gap.
+The feedback borrower additionally rejects external advance/reset, even
+before a zero-work call.
+
+Exclusive VM/lane ownership is required throughout the synchronous call,
+with no concurrent same-lane work on another stream. Continuation checks
+do not authenticate edited event rows or reconstruct a live owner from
+serialized IDs. Pinned source and independent deterministic replay provide
+the persisted output evidence.
+
+\subsection{Literal byte materialization}
+For flags $F$ and payload $W$, admit count
+$c=(F\gg8)\mathbin{\&}7$ only for $1\le c\le4$. With endian bit
+$b=(F\gg11)\mathbin{\&}1$, byte ordinal $j$, $0\le j<c$, is
+\begin{equation}
+ d_j=\begin{cases}j&b=0,\\c-1-j&b=1,\end{cases}
+ \qquad B_j=(W\gg8d_j)\mathbin{\&}255.
+\end{equation}
+Big endian reverses the selected low $c$ bytes; it does not select the high
+$c$ bytes. Concatenating decoded events in one lane's epoch order gives
+the source-compatible artifact.
+
+\code{wqk\_materialize} requires one canonical initial lane and source
+bits 0 and 1, denoting seeded profile and emitted bytes. The horizon defaults
+to the source header. Before mutable execution, it reserves all requested
+events and up to four artifact bytes per epoch, and verifies GPU-expanded
+source equality with the complete input. It joins contiguous chunks and
+writes an artifact only after fault-free HALT with at least one EMIT.
+Prefix/fault reports do not write an artifact. Source, artifact and report
+paths must not alias.
+
+The JSON contains all nine native event fields plus sequence, count and
+byte order, with complete final State64 and run parameters. External replay
+checks all twelve fields, lane zero, complete state and output bytes, and
+requires literal true artifact-written/source-equality assertions. These
+assertions are not authenticated credentials; pinned bytes and exact replay
+supply the substantive output comparison.
+
+CLI timings describe host setup; journal allocation, execution, transfers,
+compaction and decoding; artifact write; and total through artifact
+persistence. JSON encoding/report output is excluded. They establish no
+device-only or matched external materializer speedup.
+
+The original compiler still validates dependencies, evaluates any formal
+tree on the host, and lowers the result into Cell48 EMIT cells. R18 executes
+and materializes those cells natively. GPU \code{formal.evaluate}, arbitrary
+JSON evaluation and native learner search remain separate work. This exact
+stream contract adds no physical law or continuous precision.
+\clearpage

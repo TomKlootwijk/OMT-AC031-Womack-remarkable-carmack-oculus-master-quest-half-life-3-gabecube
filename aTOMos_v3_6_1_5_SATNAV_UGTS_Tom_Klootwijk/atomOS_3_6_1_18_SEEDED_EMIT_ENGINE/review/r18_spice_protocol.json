@@ -1,0 +1,152 @@
+{
+  "profile": "ATOMOS-SPICE-EPHEMERIS-COMPARISON-R1",
+  "frozen_before_evaluation_utc": "2026-09-15T15:18:30.208512+00:00",
+  "purpose": "SPK representation and query of the same frozen forecast, not independent physical accuracy or forward propagation by SPICE",
+  "horizon_s": 604800,
+  "native_reference_grid_s": 150,
+  "node_spacing_s": [
+    300,
+    900,
+    1800
+  ],
+  "spk_degrees": [
+    7,
+    9,
+    15
+  ],
+  "query_design": "Every midpoint between adjacent input nodes, plus every node as a preservation check; no extrapolation",
+  "model_fit": "No fitting or model changes; both historical periods were inspected in earlier releases and are reused",
+  "observations": "None read. Every SPK input state is computed by the same frozen native model at its declared epoch",
+  "time": "GPST+51.184 s gives TT; CSPICE UNITIM with pinned NAIF LSK converts TT to TDB seconds past J2000. SPK velocity uses dTT/dTDB from that same LSK; outputs are converted back",
+  "frame": "Earth-centered model GCRS numerical axes transported under identity orientation to the SPICE J2000 label; no independent relativistic GCRS/ICRF coordinate transformation or physical frame validation is claimed",
+  "units": "Model m and m/s; SPK km and km/TDB-second; comparison m and m/GPST-second",
+  "aberration": "NONE; geometric state relative to Earth, no light-time or stellar aberration",
+  "timing": {
+    "repeats": 5,
+    "case": "300 s, degree 9",
+    "order": "Deterministic shuffled midpoint epochs, seed 1809; alternating native/SPICE order between repeats",
+    "scope": "Warm full Python APIs: native persistent-worker BATCH IPC/JSON plus remaining RK4 steps, versus SpiceyPy SPKEZR iterable API plus CSPICE SPK query. Epoch conversion and input precomputation excluded from warm query times and reported separately",
+    "limits": "Different algorithms/storage and interfaces; not matched arithmetic, native GPU throughput, or a superiority claim. Host load is uncontrolled"
+  },
+  "inputs": [
+    {
+      "period": "2025-01-02",
+      "satellite": "G05",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\precision_models\\G05.json",
+      "bytes": 35052,
+      "sha256": "29974b357a55a6d0459e5ebf92d4cf1a37aa90907f69a9896de8ea815be1a3a2"
+    },
+    {
+      "period": "2025-01-02",
+      "satellite": "C03",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\precision_models\\C03.json",
+      "bytes": 35048,
+      "sha256": "7fa68b5a83ce167517892923c943af7d2d2fc77060a95629d100057d24786d1c"
+    },
+    {
+      "period": "2025-01-02",
+      "satellite": "C06",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\precision_models\\C06.json",
+      "bytes": 35051,
+      "sha256": "775d4e2da694fbc3dfca11381523ea1bf08140a4515d33873bf688965ae8ad39"
+    },
+    {
+      "period": "2025-01-02",
+      "satellite": "CHANDRA",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\precision_models\\CHANDRA.json",
+      "bytes": 33900,
+      "sha256": "f4282006c3210438bbcdb0c0d97c764aaefd68711ca5ab153488eba57e618e4f"
+    },
+    {
+      "period": "2025-02-02",
+      "satellite": "G05",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\confirmation_models\\G05.json",
+      "bytes": 35383,
+      "sha256": "a52cc59a3f0ea3053a262a7c1216006b999b2067fba87834413ba55ec28d9a41"
+    },
+    {
+      "period": "2025-02-02",
+      "satellite": "C03",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\confirmation_models\\C03.json",
+      "bytes": 35380,
+      "sha256": "6dd3c4eff7452d698316c8b206fd7a39c188099efde1bb5dc8e9ff21feea67ed"
+    },
+    {
+      "period": "2025-02-02",
+      "satellite": "C06",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\confirmation_models\\C06.json",
+      "bytes": 35386,
+      "sha256": "9e382982dbe7acbe005320a174c66ac37c27c62df2a83e8797f9cada13fb3c91"
+    },
+    {
+      "period": "2025-02-02",
+      "satellite": "CHANDRA",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\confirmation_models\\CHANDRA.json",
+      "bytes": 33932,
+      "sha256": "96d57913e5bfa73455b74c3b742cf9d074c23c2042dedece1eb50abddc8c03d3"
+    }
+  ],
+  "native_worker": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\bin\\cpu\\orbit_worker.exe",
+    "bytes": 85504,
+    "sha256": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7"
+  },
+  "harness": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\tools\\compare_spice_ephemeris.py",
+    "bytes": 18405,
+    "sha256": "1a6a473088fc2843c5722ae705f58b24648285ce32969cf9c0b9042c3de161df"
+  },
+  "python_adapters": [
+    {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\python\\orbit_native.py",
+      "bytes": 9071,
+      "sha256": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092"
+    },
+    {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\python\\orbit_dynamics.py",
+      "bytes": 14787,
+      "sha256": "a106ef9c81197e9501d897fa01c926ab91eb0ba32f5a486e1c389d05c2eb69f8"
+    },
+    {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\python\\orbit_precision.py",
+      "bytes": 15620,
+      "sha256": "9efa1426d7c6947e487c0ce069e4f601de6945284069789ba7020675ab2be92f"
+    },
+    {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\python\\orbit_seed.py",
+      "bytes": 20584,
+      "sha256": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae"
+    }
+  ],
+  "dependencies": {
+    "SpiceyPy": "8.2.0",
+    "CSPICE": "CSPICE_N0067",
+    "cspice_library": {
+      "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\cspice.dll",
+      "bytes": 2717184,
+      "sha256": "36d165dd78817df3a94f7b088652f981ae75151ed3813e5203e8508ac6050894"
+    },
+    "spiceypy_interface": {
+      "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\spiceypy.py",
+      "bytes": 568265,
+      "sha256": "b3fb11eeb02e42da52653288c3d9fa0c63d45b1fc62f536b553a3185343b6158"
+    },
+    "lsk": {
+      "path": "C:\\aTOMosBuild\\orbitdeps\\naif0012.tls",
+      "bytes": 5257,
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+      "source": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls"
+    }
+  },
+  "environment": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.1.2",
+    "pyerfa": "2.0.1.5"
+  },
+  "references": [
+    "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/cspice/spkw09_c.html",
+    "https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/cspice/unitim_c.html",
+    "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls"
+  ]
+}

@@ -1,0 +1,166 @@
+\section{R18: journal correctness and phase measurements}
+\label{sec:r18-evidence}
+
+These results concern native finite-word execution and artifact streams.
+Orbital comparisons have a separate contract and evidence chapter. The
+retained R17, S2 and physical-profile results keep their original scopes;
+they are not new measurements of R18 journal output.
+
+\subsection{Independent native and Python checks}
+Both the bounded-phase build and retained signed-wide build pass all four
+standalone native suites. The canonical VM suite passes 28,794 assertions;
+feedback passes 1,718 checks. The expanded fused suite passes 8,073,110
+checks, including 4,306,912 State64 words, 2,691,820 receipt words and
+804,264 feedback words. It covers signed extrema, complete PHI/TIME
+quotients, raw seam inputs, every LSYS shift and chunks 1, 7, 32 and 256.
+
+The new journal suite passes 10,075,735 checks using the unchanged C
+transition and an independent scalar per-bit ASA/NA/JK reference. It
+compares 4,842,880 State64 words, 2,015,150 receipt words, 1,547,800
+feedback words, 1,030,950 event fields and 439,904 materialized bytes.
+Cases exercise texture/global reads and reference/fused dispatch, repeated
+payloads, early/final HALT and faults, zero work, refused capacity,
+continuation, source lifetime/move, reset/external-advance refusal and
+nonzero starting epochs.
+
+All 59 Python tests pass, including ten seeded verifier/admission tests.
+Altered-record cases cover every event field including lane, all sixteen
+final state words, interior/truncated bytes, journal truncation/duplication/
+reordering, incomplete status, epochs, strict completion booleans,
+malformed integer/duplicate JSON fields and changed pinned source evidence.
+The positive verifier unit test constructs a CPU reference-shaped report;
+actual native runs are separate evidence below. Logs are
+\path{review/r18_initial_checks.txt}, \path{review/r18_wide_checks.txt}
+and \path{review/r18_python_checks.txt}.
+
+The complete R18 spatial build also passes all ten native suites, including
+the inherited spatial/S2 and feedback checks. The standalone narrow/wide
+builds above isolate the four word-machine suites for arithmetic comparison.
+
+\subsection{Original seeded artifacts reproduced by the native GPU}
+The original compiler generated each selected program and complete sidecar
+twice, identically to the stored originals. No external source, compiler
+or formal evaluator was edited. The source manifest pins the selected
+dependency closure and original artifacts. The family-authority evaluation
+also reproduced its direct canonical JSON result through 352,593 host
+formal steps.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}Y r r r r@{}}
+\toprule Original fixture & Epochs & EMITs & Event fields & Bytes\\\midrule
+world03 release & 869 & 866 & 10,392 & 3,461\\
+learner06 family authority & 32,883 & 32,880 & 394,560 & 131,517\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Both runs use fused native texture execution, with respective chunk sizes
+32 and 256. Both reach HALT without fault. Every event's twelve fields
+agree in order, all sixteen final State64 words match, and every artifact
+byte equals fresh original Python replay/materialization. Before mutable
+execution, the CLI checks its complete input against the actual
+GPU-expanded program bytes. The verifier also requires literal true
+artifact-written and source-equality report fields.
+
+The world03 output SHA-256 is
+\begin{center}\small\ttfamily
+3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0
+\end{center}
+and the family-authority output SHA-256 is
+\begin{center}\small\ttfamily
+4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a
+\end{center}
+Exact program, source-manifest and report hashes accompany the complete
+comparisons in \path{review/r18_world03_verified.json} and
+\path{review/r18_family_authority_verified.json}. Digests identify bytes;
+they do not replace the individual comparisons or establish authorship.
+
+These graphs contain host-compiled EMIT cells. The evidence establishes
+native execution and complete original output equality. The formal
+expression tree was evaluated on the host before those cells were created.
+These verification runs alone establish no throughput advantage over
+another complete artifact materializer.
+
+A subsequent full-build CLI check runs both original fixtures through all
+four reference/fused and texture/global combinations: eight completed
+cases, each with every event field, final word and output byte checked.
+Seven additional publication checks preserve existing output on zero/short
+prefix runs and reject completed traces without EMIT or aliased source,
+artifact and report paths. \path{review/r18_materialize_cli_checks.json}
+binds the executable and these results.
+
+\subsection{Compiled resources and actual machine instructions}
+Static \code{cuobjdump} inspection covers the exact narrow/wide executables
+used in the phase experiment: 20 kernels each, plus ten kernels in each
+separately linked materializer. Every inspected kernel reports zero stack
+and local bytes, with no \code{LDL}/\code{STL}. Texture transition variants
+contain five actual \code{TLD} sites each. Register counts are 54 for both
+pure-journal fetch paths and 78 for all four coupled-journal variants.
+This supports register retention for the inspected per-lane loop state;
+program reads, event stores and boundary publication still access memory.
+
+The bounded forms reduce static instruction sites in all fourteen
+transition-containing bodies by 16 through 32, including padding and
+potentially unexecuted branches. Registers change little: pure fused
+texture rises from 49 to 50, injected final-only feedback falls from 75
+to 74, and journal counts are unchanged. All builds contain no
+\code{I2F}, \code{MUFU} or \code{F2I}; the floating-group mnemonic that
+remains is \code{HFMA2}, using zero-register/constant forms. Exact word
+semantics therefore do not mean exclusively integer-unit mnemonics.
+\path{review/R18_NATIVE_CODE.md}, its JSON, complete disassemblies and
+resource dumps bind these findings to actual executable/source bytes.
+Static instruction counts establish no runtime instruction count,
+occupancy, cache-hit rate or speedup.
+
+\subsection{Matched bounded-phase and signed-wide execution}
+The phase experiment compares two R18 builds differing in selected
+phase/seam expressions. It uses the RTX 5070 Ti Laptop GPU, CUDA 12.8.61,
+MSVC 19.44 and \code{sm\_120}, with 65,536 spread-initialized lanes.
+The 1,024-cell PHI/TIME and KIN2/KLEIN/LSYS/HINGE programs each run 256
+epochs. A 1,048,576-cell synthetic mixed program, 48 MiB plus its header,
+runs 128 epochs. These are generated input programs with no precomputed
+VM output. Coupled cases use the declared \code{copy32} profile.
+
+Twelve workload/profile/dispatch cases each compare texture and global
+reads in both builds, with five fresh-process repeats: 240 serialized
+trials. Variant order rotates and reverses; there is no warmup. Fused chunks
+contain 32 epochs. Every comparison agrees in full-array FNV-1a-64 and
+exact first-lane fields. This noncryptographic digest is separate from the
+independent individual-field correctness tests above.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}Y l l r r@{}}
+\toprule Program & Feedback & Dispatch & Texture & Global\\\midrule
+PHI/TIME & none & reference & 1.003 & 1.023\\
+PHI/TIME & none & fused & 0.979 & 1.021\\
+PHI/TIME & copy32 & reference & 1.002 & 1.007\\
+PHI/TIME & copy32 & fused & 0.880 & 1.084\\
+Seam/turn & none & reference & 0.991 & 1.004\\
+Seam/turn & none & fused & 0.976 & 0.994\\
+Seam/turn & copy32 & reference & 1.010 & 0.996\\
+Seam/turn & copy32 & fused & 1.099 & 1.058\\
+Mixed 48 MiB & none & reference & 0.997 & 0.999\\
+Mixed 48 MiB & none & fused & 0.996 & 1.008\\
+Mixed 48 MiB & copy32 & reference & 0.945 & 1.046\\
+Mixed 48 MiB & copy32 & fused & 1.009 & 0.994\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Entries are signed-wide median device time divided by bounded-phase
+median device time; values above one favor bounded-phase execution. The
+range is $0.880\times$ to $1.099\times$, with both regressions and gains.
+The fused PHI/TIME feedback texture case is slower under bounded
+expressions, while the fused seam/turn feedback case is faster. Mixed fused
+cases lie close to one. Five repeats without confidence intervals do not
+establish a statistically stable advantage near unity.
+
+Cold host-complete ratios range from $0.973\times$ to $1.044\times$.
+They include setup and readback outside the device batch interval. Trials,
+medians, binary hashes and program hashes are in
+\path{review/r18_phase_runs.json}; reproduce the experiment with
+\path{tools/measure_phase.py}. These are final-only timings, distinct from
+complete ordered-journal costs. The bounded expressions have exact finite
+arithmetic proofs; these measurements establish no universal phase speedup,
+texture advantage, VRAM saturation or satellite-position improvement.
+\clearpage

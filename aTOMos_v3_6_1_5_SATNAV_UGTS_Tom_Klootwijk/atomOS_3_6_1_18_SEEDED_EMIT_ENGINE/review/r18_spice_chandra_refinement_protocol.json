@@ -1,0 +1,73 @@
+{
+  "profile": "ATOMOS-SPICE-CHANDRA-REFINEMENT-R1",
+  "frozen_before_followup_evaluation_utc": "2026-09-15T15:22:02.910610+00:00",
+  "reason": "Adaptive investigation after reading the original 72-case results: coarse fixed sampling failed near the eccentric orbit's fast motion. This is not a blind or preregistered confirmation of that first experiment",
+  "previous_results": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\review\\r18_spice_comparison.json",
+    "bytes": 167585,
+    "sha256": "6a9acd7d08be99bfcf148d28964c51f012de52089912eac75e8884147498fee0"
+  },
+  "horizon_s": 604800,
+  "native_reference_grid_s": 15,
+  "node_spacing_s": [
+    30,
+    60,
+    120
+  ],
+  "spk_degrees": [
+    9,
+    15
+  ],
+  "target": "Document configurations whose sampled maximum position reconstruction error is <=0.001 m, <=0.01 m, <=0.1 m or <=1 m; no continuous guarantee",
+  "scope": "Same frozen native Chandra model states; no external observations, refitting, physical accuracy claim or extrapolation",
+  "time_frame_units": "Identical to r18_spice_protocol.json; native GPST/TT derivatives converted to ET derivatives and back, J2000 label is identity transport of model GCRS axes",
+  "harness": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\review\\r18_spice_refine_chandra.py",
+    "bytes": 8888,
+    "sha256": "b1eada04cb8a56cffc4490a057dfe9cb327d4d0d1f3c766422a0764792e03490"
+  },
+  "shared_harness": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\tools\\compare_spice_ephemeris.py",
+    "bytes": 18405,
+    "sha256": "1a6a473088fc2843c5722ae705f58b24648285ce32969cf9c0b9042c3de161df"
+  },
+  "inputs": [
+    {
+      "period": "2025-01-02",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\precision_models\\CHANDRA.json",
+      "bytes": 33900,
+      "sha256": "f4282006c3210438bbcdb0c0d97c764aaefd68711ca5ab153488eba57e618e4f"
+    },
+    {
+      "period": "2025-02-02",
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\examples\\orbit\\confirmation_models\\CHANDRA.json",
+      "bytes": 33932,
+      "sha256": "96d57913e5bfa73455b74c3b742cf9d074c23c2042dedece1eb50abddc8c03d3"
+    }
+  ],
+  "worker": {
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED\\bin\\cpu\\orbit_worker.exe",
+    "bytes": 85504,
+    "sha256": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7"
+  },
+  "dependencies": {
+    "SpiceyPy": "8.2.0",
+    "CSPICE": "CSPICE_N0067",
+    "cspice_library": {
+      "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\utils\\cspice.dll",
+      "bytes": 2717184,
+      "sha256": "36d165dd78817df3a94f7b088652f981ae75151ed3813e5203e8508ac6050894"
+    },
+    "spiceypy_interface": {
+      "path": "C:\\aTOMosBuild\\orbitdeps\\python\\spiceypy\\spiceypy.py",
+      "bytes": 568265,
+      "sha256": "b3fb11eeb02e42da52653288c3d9fa0c63d45b1fc62f536b553a3185343b6158"
+    },
+    "lsk": {
+      "path": "C:\\aTOMosBuild\\orbitdeps\\naif0012.tls",
+      "bytes": 5257,
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+      "source": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls"
+    }
+  }
+}

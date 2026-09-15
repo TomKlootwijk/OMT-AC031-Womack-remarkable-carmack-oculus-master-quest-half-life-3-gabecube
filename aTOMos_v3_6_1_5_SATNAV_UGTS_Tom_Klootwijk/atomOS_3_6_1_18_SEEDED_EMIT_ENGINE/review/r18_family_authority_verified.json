@@ -1,0 +1,18 @@
+{
+  "fixture": "family_authority",
+  "status": "verified_complete",
+  "program_sha256": "5feac19609ed9577688990e1e5adeb7caa81c05d9e26da559ec93be45899c3cf",
+  "requested_ticks": 32883,
+  "compared_events": 32880,
+  "compared_event_fields": 394560,
+  "compared_final_state_words": 16,
+  "compared_output_bytes": 131517,
+  "output_sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a",
+  "native_status": "complete",
+  "checks": "Every ordered event field, every final state word, and every artifact byte equal fresh original Python replay/materialization.",
+  "scope": "Native execution emits the host-compiled bytes. The source formal expression tree was evaluated on the host.",
+  "native_report": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\review\\r18_family_authority_journal.json",
+  "native_report_sha256": "dc37ddaa6d9ebde1fbf7d750c8d6fccbcbfab62f09aecc0768f4b5c9ab958578",
+  "native_artifact": "atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\\review\\r18_family_authority.bin",
+  "source_manifest_sha256": "bef6406e20a0324f6d5be51f7d89abaea36539fd71dfce17b5cc2ac1d64f1edd"
+}

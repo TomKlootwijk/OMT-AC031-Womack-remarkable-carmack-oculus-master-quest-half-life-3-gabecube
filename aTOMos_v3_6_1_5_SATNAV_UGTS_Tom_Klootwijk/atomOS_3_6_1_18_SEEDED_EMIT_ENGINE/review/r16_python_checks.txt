@@ -1,0 +1,54 @@
+test_duplicate_hold_and_stale_epoch_rejection (test_events.CertificateReplayTests.test_duplicate_hold_and_stale_epoch_rejection) ... ok
+test_exact_replay_resumes_and_preserves_every_byte (test_events.CertificateReplayTests.test_exact_replay_resumes_and_preserves_every_byte) ... ok
+test_incomplete_simultaneous_group_and_false_none (test_events.CertificateReplayTests.test_incomplete_simultaneous_group_and_false_none) ... ok
+test_omitted_earlier_event (test_events.CertificateReplayTests.test_omitted_earlier_event) ... ok
+test_rehashed_false_root_and_wrong_guard_binding (test_events.CertificateReplayTests.test_rehashed_false_root_and_wrong_guard_binding) ... ok
+test_rehashed_session_state_does_not_replace_replay (test_events.CertificateReplayTests.test_rehashed_session_state_does_not_replace_replay) ... ok
+test_returned_profiles_epochs_hinges_are_independent (test_events.CertificateReplayTests.test_returned_profiles_epochs_hinges_are_independent) ... ok
+test_actual_root_graph_is_checked_without_epsilon (test_events.CertifiedHingeTests.test_actual_root_graph_is_checked_without_epsilon) ... ok
+test_existing_packing_and_duplicate_identity (test_events.CertifiedHingeTests.test_existing_packing_and_duplicate_identity) ... ok
+test_orientation_is_applied_once_and_never_flipped (test_events.CertifiedHingeTests.test_orientation_is_applied_once_and_never_flipped) ... ok
+test_root_keeps_boundary_hold_semantics_separate (test_events.CertifiedHingeTests.test_root_keeps_boundary_hold_semantics_separate) ... ok
+test_same_masks_and_jk_with_common_old_word (test_events.CertifiedHingeTests.test_same_masks_and_jk_with_common_old_word) ... ok
+test_budget_holds_without_partial_commit (test_events.ExactContinuationTests.test_budget_holds_without_partial_commit) ... ok
+test_constructed_rational_roots_independent_of_search_grid (test_events.ExactContinuationTests.test_constructed_rational_roots_independent_of_search_grid) ... ok
+test_fractional_and_point_active_windows (test_events.ExactContinuationTests.test_fractional_and_point_active_windows) ... ok
+test_horizon_root_commits_terminal_poststate (test_events.ExactContinuationTests.test_horizon_root_commits_terminal_poststate) ... ok
+test_identically_zero_is_unresolved_unless_gate_excludes_it (test_events.ExactContinuationTests.test_identically_zero_is_unresolved_unless_gate_excludes_it) ... ok
+test_start_root_and_reset_created_root_are_excluded (test_events.ExactContinuationTests.test_start_root_and_reset_created_root_are_excluded) ... ok
+test_support_and_equality_at_actual_root (test_events.ExactContinuationTests.test_support_and_equality_at_actual_root) ... ok
+test_turnaround_against_independent_closed_form (test_events.ExactContinuationTests.test_turnaround_against_independent_closed_form) ... ok
+test_declared_frames_dimensions_and_unknown_fields (test_events.RationalAdmissionTests.test_declared_frames_dimensions_and_unknown_fields) ... ok
+test_profile_rejects_float_before_state_creation (test_events.RationalAdmissionTests.test_profile_rejects_float_before_state_creation) ... ok
+test_quadratic_sphere_graph_is_explicitly_unsupported (test_events.RationalAdmissionTests.test_quadratic_sphere_graph_is_explicitly_unsupported) ... ok
+test_strict_integer_limbs_and_reduction (test_events.RationalAdmissionTests.test_strict_integer_limbs_and_reduction) ... ok
+test_complete_group_add_xor_and_single_shared_hinge_pulse (test_events.SimultaneityTests.test_complete_group_add_xor_and_single_shared_hinge_pulse) ... ok
+test_different_paths_to_one_hinge_conflict (test_events.SimultaneityTests.test_different_paths_to_one_hinge_conflict) ... ok
+test_equal_sets_coalesce_and_conflicts_are_atomic (test_events.SimultaneityTests.test_equal_sets_coalesce_and_conflicts_are_atomic) ... ok
+test_affine_motion_and_units (test_hinge.GeometryAndGraphTests.test_affine_motion_and_units) ... ok
+test_defining_function_not_automatically_sdf (test_hinge.GeometryAndGraphTests.test_defining_function_not_automatically_sdf) ... ok
+test_forward_graph_and_future_word_reads_rejected (test_hinge.GeometryAndGraphTests.test_forward_graph_and_future_word_reads_rejected) ... ok
+test_lazy_branch_does_not_demand_unsupported_operator (test_hinge.GeometryAndGraphTests.test_lazy_branch_does_not_demand_unsupported_operator) ... ok
+test_missing_and_nonfinite_are_atomic (test_hinge.GeometryAndGraphTests.test_missing_and_nonfinite_are_atomic) ... ok
+test_plane_and_sphere_algebraic_boundary (test_hinge.GeometryAndGraphTests.test_plane_and_sphere_algebraic_boundary) ... ok
+test_psi_bound_includes_descendants_and_retains_equality (test_hinge.GeometryAndGraphTests.test_psi_bound_includes_descendants_and_retains_equality) ... ok
+test_zero_order_left_fold_and_no_transcendental_float (test_hinge.GeometryAndGraphTests.test_zero_order_left_fold_and_no_transcendental_float) ... ok
+test_boundary_ownership_and_order (test_hinge.HingeTests.test_boundary_ownership_and_order) ... ok
+test_chart_lift_both_profiles_negative_and_large_winding (test_hinge.HingeTests.test_chart_lift_both_profiles_negative_and_large_winding) ... ok
+test_full_geometry_masks_latch_and_duplicate (test_hinge.HingeTests.test_full_geometry_masks_latch_and_duplicate) ... ok
+test_seam_corrected_sign_and_single_orientation_flip (test_hinge.HingeTests.test_seam_corrected_sign_and_single_orientation_flip) ... ok
+test_whole_word_absorption_and_same_old_jk (test_hinge.HingeTests.test_whole_word_absorption_and_same_old_jk) ... ok
+test_canonical_schema_rejection (test_hinge.PackingTests.test_canonical_schema_rejection) ... ok
+test_malformed_length_digest_and_padding (test_hinge.PackingTests.test_malformed_length_digest_and_padding) ... ok
+test_operator_operand_state_roundtrip_and_resume (test_hinge.PackingTests.test_operator_operand_state_roundtrip_and_resume) ... ok
+test_seed_and_state_access_are_snapshots (test_hinge.PackingTests.test_seed_and_state_access_are_snapshots) ... ok
+test_upload_words_exact_bytes_without_projection (test_hinge.PackingTests.test_upload_words_exact_bytes_without_projection) ... ok
+test_algebraic_identity_inverse_and_negative (test_hinge.PhiTests.test_algebraic_identity_inverse_and_negative) ... ok
+test_exact_phase_and_expression_retention (test_hinge.PhiTests.test_exact_phase_and_expression_retention) ... ok
+test_exact_sign_and_floor_including_huge_integers (test_hinge.PhiTests.test_exact_sign_and_floor_including_huge_integers) ... ok
+test_no_implicit_float (test_hinge.PhiTests.test_no_implicit_float) ... ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 0.660s
+
+OK

@@ -1,0 +1,48 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\cuda\tomagi_vm.cu...
+  
+  C:\aTOMosBuild\r18wide>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_tomagi\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DATOMOS_WIDE_PHASE_REFERENCE=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/FdC:\aTOMosBuild\r18wide\Release\atomos_tomagi.pdb" -o atomos_tomagi.dir\Release\tomagi_vm.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\cuda\tomagi_vm.cu" 
+C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\cuda\tomagi_vm.cu(47): warning #177-D: function "atomos::tomagi::<unnamed>::Texture::operator=(atomos::tomagi::<unnamed>::Texture &&) noexcept" was declared but never referenced [C:\aTOMosBuild\r18wide\atomos_tomagi.vcxproj]
+        Texture& operator=(Texture&& o)noexcept{if(this!=&o){if(value)cudaDestroyTextureObject(value);value=o.value;o.value=0;}return *this;}
+                 ^
+  
+  Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+  
+  tomagi_vm.cu
+  tmpxft_00020be0_00000000-7_tomagi_vm.cudafe1.cpp
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\cuda\tomagi_feedback.cu...
+  
+  C:\aTOMosBuild\r18wide>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_tomagi\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DATOMOS_WIDE_PHASE_REFERENCE=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/FdC:\aTOMosBuild\r18wide\Release\atomos_tomagi.pdb" -o atomos_tomagi.dir\Release\tomagi_feedback.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\cuda\tomagi_feedback.cu" 
+  tomagi_feedback.cu
+  tmpxft_00021d90_00000000-7_tomagi_feedback.cudafe1.cpp
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\cuda\tomagi_journal.cu...
+  
+  C:\aTOMosBuild\r18wide>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_tomagi\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DATOMOS_WIDE_PHASE_REFERENCE=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/FdC:\aTOMosBuild\r18wide\Release\atomos_tomagi.pdb" -o atomos_tomagi.dir\Release\tomagi_journal.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_18_SEEDED_EMIT_ENGINE\cuda\tomagi_journal.cu" 
+  tomagi_journal.cu
+  tmpxft_00021e34_00000000-7_tomagi_journal.cudafe1.cpp
+  atomos_tomagi.vcxproj -> C:\aTOMosBuild\r18wide\Release\atomos_tomagi.lib
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  tomagi.c
+  tomagi_reference.vcxproj -> C:\aTOMosBuild\r18wide\Release\tomagi_reference.lib
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  tomagi_feedback_tests.cpp
+  tomagi_feedback_tests.vcxproj -> C:\aTOMosBuild\r18wide\Release\tomagi_feedback_tests.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  tomagi_fused_tests.cpp
+  tomagi_fused_tests.vcxproj -> C:\aTOMosBuild\r18wide\Release\tomagi_fused_tests.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  tomagi_journal_tests.cpp
+  tomagi_journal_tests.vcxproj -> C:\aTOMosBuild\r18wide\Release\tomagi_journal_tests.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  tomagi_vm_tests.cpp
+  tomagi_vm_tests.vcxproj -> C:\aTOMosBuild\r18wide\Release\tomagi_vm_tests.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  wqk_materialize.cpp
+  wqk_materialize.vcxproj -> C:\aTOMosBuild\r18wide\Release\wqk_materialize.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt
+  wqk_run.cpp
+  wqk_run.vcxproj -> C:\aTOMosBuild\r18wide\Release\wqk_run.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_18_SEEDED_EMIT_ENGINE/CMakeLists.txt

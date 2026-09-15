@@ -1,0 +1,149 @@
+{
+  "profile": "ATOMOS-ORBIT-COMPARISON-DEPENDENCIES-R1",
+  "retrieved_utc": "2026-09-15T15:08:05.710009+00:00",
+  "orekit_version": "13.1.8",
+  "hipparchus_version": "4.0.3",
+  "gson_version": "2.13.2",
+  "files": [
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/orekit/orekit/13.1.8/orekit-13.1.8.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\orekit-13.1.8.jar",
+      "bytes": 8535102,
+      "sha256": "5d035486d916a458d6a541866db99885a21d5bc0cbdb3785bb8f42ee8a70ddf4",
+      "maven_sha1": "d3d47a791deaa5b1862d8ff27a4f93a6d440a926"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/orekit/orekit/13.1.8/orekit-13.1.8.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\orekit-13.1.8.pom",
+      "bytes": 39898,
+      "sha256": "0b939aadb3ff6337727683ffd081253a6ad4479819cd2e10c50374e69a65007c",
+      "maven_sha1": "6d4fadd6491afaa0ba9e621c61f5b11c56166d73"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/orekit/orekit/13.1.8/orekit-13.1.8-sources.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\orekit-13.1.8-sources.jar",
+      "bytes": 7463734,
+      "sha256": "0c88292505f404f73e90dd7426cd27326e2d5c14e236e16c871cac77801e3946",
+      "maven_sha1": "be029158f231a35d2c8c20c8afb479e6e2bf9783"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-core/4.0.3/hipparchus-core-4.0.3.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-core-4.0.3.jar",
+      "bytes": 1959795,
+      "sha256": "5af54dc3c21b8d85e1264157ee91d93fa67e68c825cfb38834dc2bbb9b0f6583",
+      "maven_sha1": "a5fb9ddc2460b99d3e46204be3d546399abe98af"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-core/4.0.3/hipparchus-core-4.0.3.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-core-4.0.3.pom",
+      "bytes": 5605,
+      "sha256": "f22949c0f2d723ce61730728432369d92a19c0410889e65dfdb8a6c50f4736ce",
+      "maven_sha1": "8d092714d3f4a28deeced3f2637828aac5391539"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-geometry/4.0.3/hipparchus-geometry-4.0.3.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-geometry-4.0.3.jar",
+      "bytes": 276264,
+      "sha256": "19594d5106ec6a46951e859e2924bfcade02a834c06c56bd3d2130a74f0fbb7e",
+      "maven_sha1": "6f9df640ec65096989b088d3f859b9e91878b638"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-geometry/4.0.3/hipparchus-geometry-4.0.3.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-geometry-4.0.3.pom",
+      "bytes": 5379,
+      "sha256": "a6909e83f2359645a74b9a64b40f38383269bcf6a3d0dfa2f7c85264e87e7aa4",
+      "maven_sha1": "5a2b7e8aaa8e18672113cee2fec449e40051c963"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-geometry/4.0.3/hipparchus-geometry-4.0.3-sources.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-geometry-4.0.3-sources.jar",
+      "bytes": 263800,
+      "sha256": "5f2dbacfe89e128c05251d7fd04dcbbe28e00591010309f1c10693eeefc3448f",
+      "maven_sha1": "9a843dc8601564258e5bae0c1e9779a7a4f02c31"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-ode/4.0.3/hipparchus-ode-4.0.3.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-ode-4.0.3.jar",
+      "bytes": 282008,
+      "sha256": "75f0f0b3fdcd99d13e9c394b7ae809cce5a9c22f1c14b1b90a5109ed951467fe",
+      "maven_sha1": "30c1948599f4e0665cc3c625db82370d1429c3bf"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-ode/4.0.3/hipparchus-ode-4.0.3.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-ode-4.0.3.pom",
+      "bytes": 4360,
+      "sha256": "334955e75ff06ade16dbf028d6f60485f1cae0891b01d6a4974f65c38ae72077",
+      "maven_sha1": "a17cab00698d8da9574c9456cddd17764666d3c0"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-fitting/4.0.3/hipparchus-fitting-4.0.3.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-fitting-4.0.3.jar",
+      "bytes": 31076,
+      "sha256": "3712c3b4f43d9c12bf7b7aad187764f4b3c09cc962504899d8951eb310b1e4be",
+      "maven_sha1": "18f16368b9ea1985e754de939de05db7f4d1d092"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-fitting/4.0.3/hipparchus-fitting-4.0.3.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-fitting-4.0.3.pom",
+      "bytes": 4467,
+      "sha256": "60579ec5db78499ed76842c6345526917b2318ad2845c6c062e58e901006a880",
+      "maven_sha1": "5b9df5a9f8b16f9b74cc7d5e34deaa2deb7aa00f"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-optim/4.0.3/hipparchus-optim-4.0.3.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-optim-4.0.3.jar",
+      "bytes": 228802,
+      "sha256": "4bc0dbb5c6d5fefda5db9d92141c6cbb807174a1d491a85df46bcc57a67b8992",
+      "maven_sha1": "4f1fb698d40bb7e9f96b9edffc234c44a2378b82"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-optim/4.0.3/hipparchus-optim-4.0.3.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-optim-4.0.3.pom",
+      "bytes": 4351,
+      "sha256": "f65b120304ed6f76155d55a367248e55687313d8f131830a20db2e85aaf5e671",
+      "maven_sha1": "f21108e490981a3f00ac2e662cf6908123d22d36"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-filtering/4.0.3/hipparchus-filtering-4.0.3.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-filtering-4.0.3.jar",
+      "bytes": 31650,
+      "sha256": "279eece43411f372bd8340355cb89101def0bf9b1b6824231b76181d1ec63a81",
+      "maven_sha1": "15396cfc931d796c6f19bab3e57dbd351cdb359c"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-filtering/4.0.3/hipparchus-filtering-4.0.3.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-filtering-4.0.3.pom",
+      "bytes": 4209,
+      "sha256": "32222c1010e8aba0a2a5642366da590c9d19a79acebd0ad50d3991a004acdc0f",
+      "maven_sha1": "7c9ccddd8b2f7ae99f77de4195c603b75228485b"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-stat/4.0.3/hipparchus-stat-4.0.3.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-stat-4.0.3.jar",
+      "bytes": 222980,
+      "sha256": "8b066e3060dc119efcce241fb0720a3b9e59c026d0f5fe9e70abfd5e22d3817b",
+      "maven_sha1": "1fa7d5b5ebaea4cce139614ffaad139f6242a3de"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/hipparchus/hipparchus-stat/4.0.3/hipparchus-stat-4.0.3.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\hipparchus-stat-4.0.3.pom",
+      "bytes": 5557,
+      "sha256": "9ba6fd0184b3a66613588b3805f727ad5dc5715afd02ba7e5226707f43da809e",
+      "maven_sha1": "997e945da21d371ed0ea21cd69c6acec49802c0e"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\gson-2.13.2.jar",
+      "bytes": 289901,
+      "sha256": "dd0ce1b55a3ed2080cb70f9c655850cda86c206862310009dcb5e5c95265a5e0",
+      "maven_sha1": "48b8230771e573b54ce6e867a9001e75977fe78e"
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.13.2/gson-2.13.2.pom",
+      "path": "C:\\aTOMosBuild\\orbitdeps\\java\\gson-2.13.2.pom",
+      "bytes": 13490,
+      "sha256": "3aa06aa7c0f9af092961a42d09578e4324be146348a0ee6ed47857f7c2677b76",
+      "maven_sha1": "bf590b4d5dbf4eab3e0654e6db5de8e70947edb3"
+    }
+  ]
+}

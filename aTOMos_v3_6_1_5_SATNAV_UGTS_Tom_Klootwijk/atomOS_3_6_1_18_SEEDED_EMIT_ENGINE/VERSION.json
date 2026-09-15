@@ -1,0 +1,21 @@
+{
+  "version": "3.6.1.18",
+  "parent": "3.6.1.17",
+  "profile": "ATOMOS-SEEDED-EMIT-R1",
+  "foundation": "XOP-UNIFIED-FIELD-R1",
+  "status": "validated_implementation_document_review_pending",
+  "goal": "Continue the work of optimizing the kernel and enhancing the .pdf of aTOMos",
+  "realization_requested": "Lossless ordered native EMIT streams verified against original seeded artifacts, exact bounded 32-bit phase and seam arithmetic, matched execution measurements and full PDF formalization; matched Orekit propagation and SPICE ephemeris representation with explicit physical and numerical scopes",
+  "validation_authorization": "User explicitly allowed correctness checks and S2 benchmarks on 2026-09-15",
+  "superiority_status": "Matched phase timings are mixed. Same-model native/Orekit numerical differences remain below 0.027 m in the eight measured arcs; this does not establish superior physical prediction. SPICE query/storage results have a separate interpolation scope.",
+  "source_import": "TOM World & Query Kernel 0.6.0; 42 unmodified source files pinned by source/WQK_IMPORTS.json",
+  "native_vm_validation": "All ten full native suites, four standalone narrow/wide suites, 59 Python tests, eight complete materializer CLI paths and seven publication checks passed.",
+  "remaining_native_scope": [
+    "complete XOP lowering",
+    "certified transcendental resolution",
+    "dynamic geometry refit and cache rebinding",
+    "full log-spherical LUT lifecycle",
+    "broader S2 region and polygon operations"
+  ],
+  "orbital_validation": "Eight frozen Jan/Feb R2 cases, 15553 exact reference epochs, native CPU/CUDA and Orekit13.1.8 standard/refined runs; 84 separately scoped SPICE representation cases."
+}

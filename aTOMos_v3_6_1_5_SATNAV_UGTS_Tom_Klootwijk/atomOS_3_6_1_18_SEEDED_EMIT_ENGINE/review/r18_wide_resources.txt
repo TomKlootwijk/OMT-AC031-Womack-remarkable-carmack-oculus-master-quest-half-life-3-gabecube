@@ -1,0 +1,100 @@
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__b2ee3a0b_12_tomagi_vm_cu_1ac91ffc12batch_kernelILb0EEEvNS0_10DeviceViewEj:
+  REG:49 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:972 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__b2ee3a0b_12_tomagi_vm_cu_1ac91ffc12batch_kernelILb1EEEvNS0_10DeviceViewEj:
+  REG:49 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:972 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__b2ee3a0b_12_tomagi_vm_cu_1ac91ffc11step_kernelILb0EEEvNS0_10DeviceViewE:
+  REG:51 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:968 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__b2ee3a0b_12_tomagi_vm_cu_1ac91ffc11step_kernelILb1EEEvNS0_10DeviceViewE:
+  REG:53 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:968 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__b2ee3a0b_12_tomagi_vm_cu_1ac91ffc10read_cellsENS0_10DeviceViewEPj:
+  REG:22 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:976 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__b2ee3a0b_12_tomagi_vm_cu_1ac91ffc11read_headerEyPj:
+  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:912 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi45_GLOBAL__N__b2ee3a0b_12_tomagi_vm_cu_1ac91ffc6expandEyPjy:
+  REG:40 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:920 TEXTURE:0 SURFACE:0 SAMPLER:0
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb19journal_fused_wordsILb0ELb0EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEjNS0_6detail17JournalDeviceViewE:
+  REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1088 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb19journal_fused_wordsILb1ELb0EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEjNS0_6detail17JournalDeviceViewE:
+  REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1088 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb19journal_fused_wordsILb0ELb1EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEjNS0_6detail17JournalDeviceViewE:
+  REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1088 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb19journal_fused_wordsILb1ELb1EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEjNS0_6detail17JournalDeviceViewE:
+  REG:78 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1088 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb0ELb0EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:74 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb1ELb0EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:74 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb0ELb1EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:75 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb11fused_wordsILb1ELb1EEEvNS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileEj:
+  REG:75 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1052 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb12commit_wordsENS0_10DeviceViewEPNS0_9WordStateENS_11WordProfileE:
+  REG:28 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1048 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi51_GLOBAL__N__24c528d3_18_tomagi_feedback_cu_4816ffdb12inject_wordsENS0_10DeviceViewEPKNS0_9WordStateE:
+  REG:10 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:976 TEXTURE:0 SURFACE:0 SAMPLER:0
+
+Fatbin ptx code:
+================
+arch = sm_120
+code version = [8,7]
+host = windows
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_120
+code version = [1,8]
+host = windows
+compile_size = 64bit
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function _ZN6atomos6tomagi6detail50_GLOBAL__N__61b5ec70_17_tomagi_journal_cu_7dcc32c713journal_batchILb0EEEvNS0_10DeviceViewENS1_17JournalDeviceViewEj:
+  REG:54 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1004 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi6detail50_GLOBAL__N__61b5ec70_17_tomagi_journal_cu_7dcc32c713journal_batchILb1EEEvNS0_10DeviceViewENS1_17JournalDeviceViewEj:
+  REG:54 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1004 TEXTURE:0 SURFACE:0 SAMPLER:0
+ Function _ZN6atomos6tomagi6detail50_GLOBAL__N__61b5ec70_17_tomagi_journal_cu_7dcc32c715journal_receiptENS0_10DeviceViewENS1_17JournalDeviceViewE:
+  REG:28 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:1000 TEXTURE:0 SURFACE:0 SAMPLER:0

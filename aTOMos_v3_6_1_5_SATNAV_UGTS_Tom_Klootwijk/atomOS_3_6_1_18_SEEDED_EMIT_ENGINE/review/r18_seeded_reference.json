@@ -1,0 +1,76 @@
+{
+  "profile": "ATOMOS-R18-SEEDED-REFERENCE-R1",
+  "fixtures": [
+    {
+      "fixture": "world03",
+      "program": "examples/seeded18/world03/world03_release_artifact.tmg",
+      "expected_output": "examples/seeded18/world03/expected.bin",
+      "expected_journal": "examples/seeded18/world03/expected_journal.json",
+      "program_bytes": 41696,
+      "program_sha256": "8ccb42637c304c446949652dae58106e50ede227b92733e37b16fcac8c23f21b",
+      "cells": 866,
+      "events": 866,
+      "output_bytes": 3461,
+      "output_sha256": "3849188eddecbb9904a9059680bbf0752a0ee27805b551984cb8391e68e805a0",
+      "recommended_ticks": 869,
+      "definitions": 9,
+      "evaluated_definitions": 9,
+      "resolved_sources": 0,
+      "host_formal_steps": null,
+      "native_opcodes": {
+        "EMIT": 866
+      },
+      "formal_expression_lowered_to_native": false,
+      "two_compile_seconds": 0.05590500000107568,
+      "checks": {
+        "seeded_profile": true,
+        "two_full_programs_equal": true,
+        "two_full_sidecars_equal": true,
+        "original_program_equal": true,
+        "original_sidecar_equal": true,
+        "abi_roundtrip_equal": true,
+        "direct_bytes_equal_original": true,
+        "materializer_bytes_equal_direct": true,
+        "reference_terminal_halt": true
+      },
+      "native_execution": "Not run by this CPU fixture builder; separate per-record/per-byte verifier required."
+    },
+    {
+      "fixture": "family_authority",
+      "program": "examples/seeded18/family_authority/learner06_family_authority.tmg",
+      "expected_output": "examples/seeded18/family_authority/expected.bin",
+      "expected_journal": "examples/seeded18/family_authority/expected_journal.json",
+      "program_bytes": 1578368,
+      "program_sha256": "5feac19609ed9577688990e1e5adeb7caa81c05d9e26da559ec93be45899c3cf",
+      "cells": 32880,
+      "events": 32880,
+      "output_bytes": 131517,
+      "output_sha256": "4e59666a7ccdc2505d94fe760f5d317f5302f8766a6bd8f1b022912890e5844a",
+      "recommended_ticks": 32883,
+      "definitions": 32,
+      "evaluated_definitions": 32,
+      "resolved_sources": 21,
+      "host_formal_steps": 352593,
+      "native_opcodes": {
+        "EMIT": 32880
+      },
+      "formal_expression_lowered_to_native": false,
+      "two_compile_seconds": 5.217932999992627,
+      "checks": {
+        "seeded_profile": true,
+        "two_full_programs_equal": true,
+        "two_full_sidecars_equal": true,
+        "original_program_equal": true,
+        "original_sidecar_equal": true,
+        "abi_roundtrip_equal": true,
+        "direct_bytes_equal_original": true,
+        "materializer_bytes_equal_direct": true,
+        "reference_terminal_halt": true
+      },
+      "native_execution": "Not run by this CPU fixture builder; separate per-record/per-byte verifier required."
+    }
+  ],
+  "source_files": 33,
+  "source_manifest_sha256": "bef6406e20a0324f6d5be51f7d89abaea36539fd71dfce17b5cc2ac1d64f1edd",
+  "execution_scope": "Host Python formal computation and original seeded compilation, followed by original CPU VM/materializer. Native execution is separate."
+}

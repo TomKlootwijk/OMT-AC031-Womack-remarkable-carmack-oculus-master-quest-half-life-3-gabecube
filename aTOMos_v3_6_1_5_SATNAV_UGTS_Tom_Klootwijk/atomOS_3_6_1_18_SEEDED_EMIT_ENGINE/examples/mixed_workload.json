@@ -1,0 +1,13 @@
+{
+  "profile": "ATOMOS-TOMAGI-MIXED-WORKLOAD-R1",
+  "cells": 1048576,
+  "seed": 19900710,
+  "ticks": 96,
+  "key": "unsigned (0,cell_index)",
+  "opcode": "cell_index modulo15; all successful non-HALT opcodes",
+  "successors": [65537, 524287],
+  "successor_rule": "(cell_index+selected_stride) modulo cell_count",
+  "initial_state_words": [0, 0, 0, 0, 1, 3, 5, 7, 0, 0, 0, 0, 305419896, 0, 0, 0],
+  "purpose": "Synthetic 48MiB operator table with varied instruction bodies and branches; execution benchmark, not physical geometry",
+  "authority": "Literal generator tools/build_mixed_workload.py, pinned in the output receipt; no precomputed VM answers"
+}

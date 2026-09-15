@@ -1,0 +1,123 @@
+{
+  "$schema": "../spec/tomagi.schema.json",
+  "tomagi_version": "1.0.0",
+  "title": "TOMAGI compiled exact-19 relation",
+  "seed": 0,
+  "default_ticks": 2,
+  "entry": "cell:test-19",
+  "initial_state": {
+    "rho": 19,
+    "theta": 0,
+    "tick": 0,
+    "phi": 0,
+    "lineage": "0x19191919"
+  },
+  "definitions": [
+    {
+      "id": "rule:rho-equals-19-v1",
+      "kind": "compiled_relation_rule",
+      "domain": "rho20",
+      "codomain": "branch_bit",
+      "evaluation_phase": 0,
+      "dependencies": [],
+      "parameters": {
+        "relation": "rho in [19,19] and theta in full cyclic support"
+      },
+      "provenance": {
+        "source": "deterministic rule compilation example"
+      },
+      "content_hash": "sha256:cd554a2ca783ebb8a7ae0925003f3ba23918448bfc3a40ff8c024c799b50d1aa"
+    },
+    {
+      "id": "emit:exact-19-v1",
+      "kind": "symbol_emit",
+      "domain": "branch_bit",
+      "codomain": "u32_token",
+      "evaluation_phase": 1,
+      "dependencies": [
+        "rule:rho-equals-19-v1"
+      ],
+      "parameters": {
+        "true_token": 19,
+        "false_token": 0
+      },
+      "provenance": {
+        "source": "TOMAGI deterministic inference example"
+      },
+      "content_hash": "sha256:07045360e9d9d3d52c67f1d61961782130cac0903b07f5c58c80df87d42ffcc1"
+    }
+  ],
+  "cells": [
+    {
+      "id": "cell:test-19",
+      "key": {
+        "rho": 20,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "rule:rho-equals-19-v1",
+      "op": "CONE",
+      "args": [
+        19,
+        19,
+        0,
+        131072
+      ],
+      "next": [
+        "cell:emit-false",
+        "cell:emit-true"
+      ],
+      "payload": "0x52554c45",
+      "aux": 19
+    },
+    {
+      "id": "cell:emit-false",
+      "key": {
+        "rho": 21,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "emit:exact-19-v1",
+      "op": "EMIT",
+      "flags": 1,
+      "args": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:emit-false",
+        "cell:emit-false"
+      ],
+      "payload": 0,
+      "aux": 0
+    },
+    {
+      "id": "cell:emit-true",
+      "key": {
+        "rho": 22,
+        "theta": 0,
+        "tick": 0,
+        "phi": 0
+      },
+      "definition_ref": "emit:exact-19-v1",
+      "op": "EMIT",
+      "flags": 1,
+      "args": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "next": [
+        "cell:emit-true",
+        "cell:emit-true"
+      ],
+      "payload": 19,
+      "aux": 1
+    }
+  ]
+}
