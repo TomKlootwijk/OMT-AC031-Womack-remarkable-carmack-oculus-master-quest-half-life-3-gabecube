@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "run": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\lienss_live_cpu",
+  "trace_sha256": "53f89d1b0c71328a5f64e20ee798d30623b6861d7696389ae297ef7b7b2ed190",
+  "oracle_sha256": "1161e7dfc9aecd726dfa9b64f4590f61387ed369cefd19694cc38ab365a1fb75",
+  "reference_obs_sha256": "9988aa4a0ce3c91f87f0351c5bed8fb4fa0a3b53f5f7761cfd12f6f3fbd8e13a",
+  "native_epoch_statuses": {
+    "TOO_FEW": 7,
+    "CONVERGED": 173
+  },
+  "matched_position_epochs": 173,
+  "unavailable_epochs": 7,
+  "native_oracle_distance_m": {
+    "minimum": 0.21459676599939775,
+    "median": 0.5304137001600217,
+    "mean": 0.611263129516468,
+    "rms": 0.6714006056510688,
+    "maximum": 1.1832317610225809
+  },
+  "maximum_allowed_oracle_distance_m": 3.0,
+  "native_advertised_arp_distance_m": {
+    "minimum": 1.6641814204047187,
+    "median": 2.2490113965975236,
+    "mean": 2.2982030845951735,
+    "rms": 2.333982342327433,
+    "maximum": 3.4581612319506263
+  },
+  "advertised_arp_ecef_m": [
+    4426043.0455,
+    -89429.1998,
+    4576296.6447
+  ],
+  "reference_definition": "Stream-supplied RTCM1005/1006 antenna reference point through independent convbin header, not independent survey truth.",
+  "zero_initial_seed_verified_in_first_prepared_pass": true,
+  "live_publication_audit": {
+    "native_positions_emitted_before_capture_end": 173,
+    "complete_fragment_to_publication_seconds": {
+      "minimum": 0.0018699169158935547,
+      "median": 0.0025510787963867188,
+      "mean": 0.0028782828005752123,
+      "rms": 0.0030275250512607392,
+      "maximum": 0.006078481674194336
+    },
+    "capture_started_utc_unix_s": 1789422651.7397223,
+    "capture_ended_utc_unix_s": 1789422831.7404997,
+    "timing_sha256": "76e5b1e180a9cd41e31b5c4fd93d89690bf5137a2856d9a6f290dcd3fce174f7",
+    "capture_sha256": "ed0eda70e992ca231ad7955d30cfa76692d04e0f6b64ab0205a258065596c899",
+    "measurement": "Same-host receive/publication timing, including RTCM parsing and native execution; not satellite-to-host calibrated latency."
+  },
+  "warmup_note": "Native obtains ephemerides in receive order; offline RTKLIB sees all ephemerides. Unavailable native epochs are not position comparisons.",
+  "failures": []
+}

@@ -1,0 +1,172 @@
+{
+  "profile": "LIVE-GPS-L1-R1",
+  "source": "Centipede-RTK LIENSS physical receiver, La Rochelle, France",
+  "source_documentation": "https://docs.centipede.fr/docs/centipede/3_connect_caster.html",
+  "data_terms": "https://www.centipede-rtk.org/terms-conditions",
+  "independent_oracle": "Unmodified official Windows RTKLIB 2.4.2 p13 convbin + rnx2rtkp, pinned binary hashes",
+  "same_day_ionosphere": "Only GPSA/B header coefficients from BKG BRDC00WRD_R_20262570000_01D_MN.rnx; orbital data decoded solely from streamed RTCM 1019",
+  "advertised_arp_ecef_m": [
+    4426043.0455,
+    -89429.1998,
+    4576296.6447
+  ],
+  "reference_definition": "Advertised RTCM1005/1006 antenna reference point, not a separate survey or moving-receiver truth dataset. Native initialization is zero and never uses this point.",
+  "total_live_epochs": 360,
+  "total_live_positions": 347,
+  "records": [
+    {
+      "backend": "cpu",
+      "live_native_run": "results/lienss_live_cpu_final",
+      "status": "passed",
+      "epochs": 180,
+      "positions": 172,
+      "unavailable_statuses": {
+        "TOO_FEW": 8
+      },
+      "start_utc": "2026-09-14T21:55:20.761800+00:00",
+      "end_utc": "2026-09-14T21:58:20.764956+00:00",
+      "first_position_after_connection_start_s": 8.446970462799072,
+      "gps_satellites_used_min": 9,
+      "gps_satellites_used_max": 9,
+      "native_vs_rtklib_3d_m": {
+        "minimum": 0.3501860824907936,
+        "median": 0.6462431159544594,
+        "mean": 0.649082936641985,
+        "rms": 0.6639361578830061,
+        "maximum": 0.9685051289312027
+      },
+      "native_vs_advertised_arp_3d_m": {
+        "minimum": 0.8055279106256016,
+        "median": 1.6579640497854247,
+        "mean": 1.6442163071090754,
+        "rms": 1.6688060849314852,
+        "maximum": 2.232209775360967
+      },
+      "zero_initial_seed_verified": true,
+      "positions_published_during_capture": 172,
+      "complete_fragment_to_publication_ms": {
+        "minimum": 1.8796920776367188,
+        "median": 2.2052526473999023,
+        "mean": 2.599960149720658,
+        "rms": 2.814715043015852,
+        "maximum": 11.611223220825195
+      },
+      "native_processing_ms": {
+        "median": 1.3151499997547944,
+        "p95": 1.5925999996397877,
+        "maximum": 2.3966000007931143,
+        "scope": "completed-epoch correction preparation, native worker, and response parsing; excludes transport and RTCM parsing"
+      },
+      "host_receive_minus_GPS_epoch_s": {
+        "minimum": -1.807314395904541,
+        "median": -1.7478798627853394,
+        "maximum": 0.09129047393798828,
+        "interpretation": "GPS-UTC offset 18 s applied. Host clock is approximately 1.8 s behind GNSS epoch; not a calibrated network latency."
+      },
+      "raw_value_comparisons": {
+        "status": "passed",
+        "matched_ephemerides": 10,
+        "ephemeris_numeric_fields_compared": 280,
+        "matched_epochs": 180,
+        "code_ranges_compared": 1980,
+        "maximum_code_difference_m": 0.00027913227677345276
+      },
+      "capture_sha256": "4905384ec732e6ec49c5eb143893532b531d8e66f85db5146a189b9835b46d8b",
+      "native_worker_sha256": "c7d20fd219ff73b6e19bf40254d71f8436bb0be881f571b9feba495e9f56e7f6",
+      "trace_sha256": "3bef27af21317522f64832863d9797d4c664872f6cb030a41df076ce936efc47",
+      "comparison_report": "results/network_probes/lienss_live_cpu_final_comparison.json",
+      "decoder_report": "results/network_probes/lienss_live_cpu_final_rtcm_values.json",
+      "oracle_directory": "results/network_probes/lienss_live_cpu_final_oracle",
+      "successful_position_processing_ms": {
+        "median": 1.3208999998823856,
+        "maximum": 2.3966000007931143
+      },
+      "slowest_epoch": {
+        "epoch_id": 9,
+        "status": "CONVERGED",
+        "position_available": true,
+        "processing_ms": 2.3966000007931143
+      }
+    },
+    {
+      "backend": "cuda",
+      "live_native_run": "results/lienss_live_cuda_final",
+      "status": "passed",
+      "epochs": 180,
+      "positions": 175,
+      "unavailable_statuses": {
+        "TOO_FEW": 5
+      },
+      "start_utc": "2026-09-14T21:58:54.060847+00:00",
+      "end_utc": "2026-09-14T22:01:54.066012+00:00",
+      "first_position_after_connection_start_s": 5.19996452331543,
+      "gps_satellites_used_min": 9,
+      "gps_satellites_used_max": 9,
+      "native_vs_rtklib_3d_m": {
+        "minimum": 0.298397158246063,
+        "median": 0.6036926846122769,
+        "mean": 0.6221299521031318,
+        "rms": 0.635276093395977,
+        "maximum": 0.9309750226600516
+      },
+      "native_vs_advertised_arp_3d_m": {
+        "minimum": 1.3397589026336931,
+        "median": 1.8638838961185518,
+        "mean": 1.8538602711259007,
+        "rms": 1.8627123290070569,
+        "maximum": 2.2673710527795814
+      },
+      "zero_initial_seed_verified": true,
+      "positions_published_during_capture": 175,
+      "complete_fragment_to_publication_ms": {
+        "minimum": 3.8635730743408203,
+        "median": 5.946636199951172,
+        "mean": 6.396604265485491,
+        "rms": 6.604530444763463,
+        "maximum": 14.345645904541016
+      },
+      "native_processing_ms": {
+        "median": 4.559950000839308,
+        "p95": 9.171799998512142,
+        "maximum": 2588.485899999796,
+        "scope": "completed-epoch correction preparation, native worker, and response parsing; excludes transport and RTCM parsing"
+      },
+      "host_receive_minus_GPS_epoch_s": {
+        "minimum": -1.8202648162841797,
+        "median": -1.7545067071914673,
+        "maximum": 1.3842132091522217,
+        "interpretation": "GPS-UTC offset 18 s applied. Host clock is approximately 1.8 s behind GNSS epoch; not a calibrated network latency."
+      },
+      "raw_value_comparisons": {
+        "status": "passed",
+        "matched_ephemerides": 21,
+        "ephemeris_numeric_fields_compared": 588,
+        "matched_epochs": 180,
+        "code_ranges_compared": 2094,
+        "maximum_code_difference_m": 0.0002789534628391266
+      },
+      "capture_sha256": "b27f92f48d87464c00f3bf0710e05c3b12b50b068da7a622102e102a1b50bf91",
+      "native_worker_sha256": "04794e50e7961025459019e19def9f6b803b86603ab78a1dce2a5426ca670548",
+      "trace_sha256": "1def434961e72e3931d4c73483e8e81ea85df3e1022ec98738759f55ac4c5c42",
+      "comparison_report": "results/network_probes/lienss_live_cuda_final_comparison.json",
+      "decoder_report": "results/network_probes/lienss_live_cuda_final_rtcm_values.json",
+      "oracle_directory": "results/network_probes/lienss_live_cuda_final_oracle",
+      "successful_position_processing_ms": {
+        "median": 4.573700000037206,
+        "maximum": 9.796600001209299
+      },
+      "slowest_epoch": {
+        "epoch_id": 0,
+        "status": "TOO_FEW",
+        "position_available": false,
+        "processing_ms": 2588.485899999796
+      }
+    }
+  ],
+  "scope_notes": [
+    "Sequential CPU/CUDA sessions contain different physical measurement epochs. Backend numerical equality is tested separately on identical replay inputs.",
+    "All successful positions were published before the corresponding live network capture ended, with each input fragment bound to capture bytes and arrival timing.",
+    "This estimates the remote LIENSS receiver location, not the local laptop position.",
+    "Accuracy figures concern these stationary open-sky sessions only; no moving receiver, RTK ambiguity resolution, or certified integrity claim."
+  ]
+}

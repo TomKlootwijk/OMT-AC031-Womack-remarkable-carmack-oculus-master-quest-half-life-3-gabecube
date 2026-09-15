@@ -1,0 +1,58 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "status": "passed",
+  "input_sha256": "370e6d15e0cb8ed3cf0d2c394a871515b1272b684867bee0a285f52179429e32",
+  "compiled_sha256": {
+    "channels.csv": "eba3409977275d2ac1dcedce55302d5053cb11220802d36959eee237e4487868",
+    "equations.csv": "590169537ec7db06d5deee325faaeb87d17fb242da7a42801ca90f50d5440971",
+    "manifest.csv": "59179282bf2152792821689da06bcb62bf83428741b2cefb8f1931f90d24ccbe",
+    "samples.csv": "41dca4bca5151677ac7375b2cb5c3f67c9a78f0be3516d37d2b13e4660efec7e"
+  },
+  "native_execution": "passed",
+  "native_trace_verified": true,
+  "native_command": [
+    "C:\\tmp\\atomos3618_cpu\\Release\\coupled_kernel.exe",
+    "--input",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\live_coupled_bridge\\coupled_handoff\\coupled\\compiled",
+    "--out",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\live_coupled_bridge\\coupled_handoff\\coupled\\native",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "native_binary_sha256": "9cdabac4757f20db3d9dde922e8d9326579e78f1902b31c3bbe2130c901ad0cc",
+  "native_returncode": 0,
+  "transitions": 173,
+  "field_comparisons": 16781,
+  "trajectories": [
+    {
+      "trajectory_id": 0,
+      "steps": 173,
+      "statuses": {
+        "advanced": 173
+      },
+      "final_q": 0,
+      "final_p": [
+        -0.33903559026898117,
+        -0.05931124751200068,
+        -0.6266810049216763
+      ],
+      "final_v": [
+        0.005903394745955355,
+        0.015577958711041904,
+        -0.03301360710460973
+      ],
+      "specification_sha256": "f59f7f60315256f085daac70ee1c99e3753122e297a5a4b776cab15794e88716",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y & (limit | fringe)",
+        "k": "align & ~limit & ~fringe"
+      }
+    }
+  ],
+  "reference_trace_sha256": "b39ccbc7ba5dfc97645bdecb9b721c0b58cdb580f403f22738bf972bf0b20071",
+  "native_trace_sha256": "103974509875d5b63652c2a2cf98cfee5db6ef44a55760a5df62fde579494da1"
+}

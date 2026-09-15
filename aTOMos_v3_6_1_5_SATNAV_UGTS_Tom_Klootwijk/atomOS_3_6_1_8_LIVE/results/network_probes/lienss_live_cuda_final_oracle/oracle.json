@@ -1,0 +1,48 @@
+{
+  "kind": "independent_rtklib_single_point_oracle",
+  "executed_utc": "2026-09-14T22:02:47.145404+00:00",
+  "command": [
+    "C:\\tmp\\atomos_oracle_vj4o2lhr\\rnx2rtkp.exe",
+    "-k",
+    "gps_single.conf",
+    "-o",
+    "solution.pos",
+    "-y",
+    "2",
+    "receiver.obs",
+    "broadcast.nav"
+  ],
+  "working_directory": "C:\\tmp\\atomos_oracle_vj4o2lhr",
+  "return_code": 0,
+  "inputs": {
+    "receiver.obs": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\network_probes\\lienss_live_cuda_final_conversion\\receiver.obs",
+      "sha256": "2d95b94f49e0f2380001d803dd4a164554fd3199d344dd9241662190717276e6"
+    },
+    "broadcast.nav": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\network_probes\\lienss_live_cuda_final_conversion\\receiver_with_iono.nav",
+      "sha256": "db8134d05ec455ef8e0e1be07e4738e5b5c3ea9271f1b887cd3de83a4c08d195"
+    },
+    "gps_single.conf": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\rtklib\\gps_single.conf",
+      "sha256": "97afd631c02f121fc74eac2f8421c931a216c9acd968c9b8a0502d5b41d5acde"
+    },
+    "rnx2rtkp.exe": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\rtklib\\rnx2rtkp.exe",
+      "sha256": "759741a5593c918f91d53612b6d0137d6d497dbccdda81a55c2c032d3e260d47"
+    }
+  },
+  "epochs": 180,
+  "first_epoch": "2026/09/14 21:59:14.000",
+  "last_epoch": "2026/09/14 22:02:13.000",
+  "quality_codes": [
+    "5"
+  ],
+  "output_hashes": {
+    "solution.pos": "c303c576b355e353a63a325058675a094e11aa12cd52013d6f52724ad46d1024",
+    "solution.pos.stat": "52c8a4ee8b5199c3a7c65c6f66e969e02e5eb62da5ba01be3ae04d2dac66353d",
+    "stderr.txt": "5df5e0b21772c85164d2096028b7ee1746bd25c1852ae5e231495fc96fd461b4",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "executed"
+}

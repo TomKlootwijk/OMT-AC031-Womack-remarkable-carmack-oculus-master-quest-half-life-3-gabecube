@@ -1,0 +1,21 @@
+test_circular_orbit_closed_form (__main__.BroadcastMath.test_circular_orbit_closed_form) ... ok
+test_full_week_not_modular_stale (__main__.BroadcastMath.test_full_week_not_modular_stale) ... ok
+test_harmonics_and_inclination_at_perigee (__main__.BroadcastMath.test_harmonics_and_inclination_at_perigee) ... ok
+test_iono_daily_period_and_negative_amplitude (__main__.BroadcastMath.test_iono_daily_period_and_negative_amplitude) ... ok
+test_kepler_residual_clock_relativistic_tgd (__main__.BroadcastMath.test_kepler_residual_clock_relativistic_tgd) ... ok
+test_nominal_fit_interval_and_no_healthy_resurrection (__main__.BroadcastMath.test_nominal_fit_interval_and_no_healthy_resurrection) ... ok
+test_prep_coldstart_explicit_and_correction_sign (__main__.BroadcastMath.test_prep_coldstart_explicit_and_correction_sign) ... ok
+test_reception_rotation_sign_and_norm (__main__.BroadcastMath.test_reception_rotation_sign_and_norm) ... ok
+test_rejections_and_duplicate_instead_of_silent_overwrite (__main__.BroadcastMath.test_rejections_and_duplicate_instead_of_silent_overwrite) ... ok
+test_troposphere_height_elevation_and_domain (__main__.BroadcastMath.test_troposphere_height_elevation_and_domain) ... ok
+test_zero_iono_is_not_zero_delay (__main__.BroadcastMath.test_zero_iono_is_not_zero_delay) ... ok
+test_independent_rtklib_emission_vectors (__main__.RinexReaders.test_independent_rtklib_emission_vectors) ... ok
+test_recorded_gsi_fixture_when_present (__main__.RinexReaders.test_recorded_gsi_fixture_when_present) ... ok
+test_reject_other_timescale (__main__.RinexReaders.test_reject_other_timescale) ... ok
+test_rinex3_long_and_wrapped_and_missing_last_fields (__main__.RinexReaders.test_rinex3_long_and_wrapped_and_missing_last_fields) ... ok
+test_rinex3_nonseekable_incremental_input (__main__.RinexReaders.test_rinex3_nonseekable_incremental_input) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.016s
+
+OK

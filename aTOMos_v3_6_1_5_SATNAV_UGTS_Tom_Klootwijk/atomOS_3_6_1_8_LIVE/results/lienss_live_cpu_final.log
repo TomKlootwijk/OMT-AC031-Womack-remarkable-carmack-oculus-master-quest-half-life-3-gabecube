@@ -1,0 +1,184 @@
+{"epoch_id": 0, "time_gpst_s": 1473458141.0, "status": "TOO_FEW", "position_available": false, "fit": "NOT_EVALUATED", "used": 0, "state_ecef_clock_m": null, "estimated_reception_gpst_s": null, "rms_m": 0, "outer_passes": 1, "processing_ms": 0.31149999995250255, "reception_gpst_s": 1473458139.2603748, "solution_emitted_utc_unix_s": 1789422921.2616305, "observation_to_reception_s": -1.7396252155303955, "native_status": "TOO_FEW", "native_backend": "cpu"}
+{"epoch_id": 1, "time_gpst_s": 1473458142.0, "status": "TOO_FEW", "position_available": false, "fit": "NOT_EVALUATED", "used": 0, "state_ecef_clock_m": null, "estimated_reception_gpst_s": null, "rms_m": 0, "outer_passes": 1, "processing_ms": 0.1959000001079403, "reception_gpst_s": 1473458140.2676249, "solution_emitted_utc_unix_s": 1789422922.2686098, "observation_to_reception_s": -1.732375144958496, "native_status": "TOO_FEW", "native_backend": "cpu"}
+{"epoch_id": 2, "time_gpst_s": 1473458143.0, "status": "TOO_FEW", "position_available": false, "fit": "NOT_EVALUATED", "used": 0, "state_ecef_clock_m": null, "estimated_reception_gpst_s": null, "rms_m": 0, "outer_passes": 1, "processing_ms": 0.19069999871135224, "reception_gpst_s": 1473458141.2570915, "solution_emitted_utc_unix_s": 1789422923.2580116, "observation_to_reception_s": -1.7429084777832031, "native_status": "TOO_FEW", "native_backend": "cpu"}
+{"epoch_id": 29, "time_gpst_s": 1473458170.0, "status": "CONVERGED", "position_available": true, "fit": "WITHIN_RESIDUAL_BUDGET", "used": 9, "state_ecef_clock_m": [4426043.344933726, -89428.42414235568, 4576297.840382265, -11337.201087367235], "estimated_reception_gpst_s": 1473458170.000038, "rms_m": 0.5916461251220948, "outer_passes": 2, "processing_ms": 1.2403000000631437, "reception_gpst_s": 1473458168.2461693, "solution_emitted_utc_unix_s": 1789422950.248227, "observation_to_reception_s": -1.7538306713104248, "native_status": "CONVERGED", "native_backend": "cpu"}
+{"epoch_id": 59, "time_gpst_s": 1473458200.0, "status": "CONVERGED", "position_available": true, "fit": "WITHIN_RESIDUAL_BUDGET", "used": 9, "state_ecef_clock_m": [4426043.518181272, -89428.37404623536, 4576298.227457654, -6886.665911100733], "estimated_reception_gpst_s": 1473458200.000023, "rms_m": 0.5996703053145453, "outer_passes": 2, "processing_ms": 1.5553000012005214, "reception_gpst_s": 1473458198.2432494, "solution_emitted_utc_unix_s": 1789422980.2465444, "observation_to_reception_s": -1.7567505836486816, "native_status": "CONVERGED", "native_backend": "cpu"}
+{"epoch_id": 89, "time_gpst_s": 1473458230.0, "status": "CONVERGED", "position_available": true, "fit": "WITHIN_RESIDUAL_BUDGET", "used": 9, "state_ecef_clock_m": [4426043.481668934, -89428.45569670045, 4576297.924448377, -2439.9361706753834], "estimated_reception_gpst_s": 1473458230.000008, "rms_m": 0.6361530384062932, "outer_passes": 2, "processing_ms": 1.390900000842521, "reception_gpst_s": 1473458228.2062647, "solution_emitted_utc_unix_s": 1789423010.2085836, "observation_to_reception_s": -1.7937352657318115, "native_status": "CONVERGED", "native_backend": "cpu"}
+{"epoch_id": 119, "time_gpst_s": 1473458260.0, "status": "CONVERGED", "position_available": true, "fit": "WITHIN_RESIDUAL_BUDGET", "used": 9, "state_ecef_clock_m": [4426043.6463573305, -89428.47200707799, 4576298.52857802, 2008.2509357136744], "estimated_reception_gpst_s": 1473458259.9999933, "rms_m": 0.745356618032993, "outer_passes": 2, "processing_ms": 1.3010000002395827, "reception_gpst_s": 1473458258.2497852, "solution_emitted_utc_unix_s": 1789423040.2519467, "observation_to_reception_s": -1.7502148151397705, "native_status": "CONVERGED", "native_backend": "cpu"}
+{"epoch_id": 149, "time_gpst_s": 1473458290.0, "status": "CONVERGED", "position_available": true, "fit": "WITHIN_RESIDUAL_BUDGET", "used": 9, "state_ecef_clock_m": [4426042.617003416, -89428.34022156418, 4576297.914419744, 6452.574748827618], "estimated_reception_gpst_s": 1473458289.9999785, "rms_m": 0.610183381662528, "outer_passes": 2, "processing_ms": 1.3457999993988778, "reception_gpst_s": 1473458288.2462418, "solution_emitted_utc_unix_s": 1789423070.2486198, "observation_to_reception_s": -1.753758192062378, "native_status": "CONVERGED", "native_backend": "cpu"}
+{"epoch_id": 179, "time_gpst_s": 1473458320.0, "status": "CONVERGED", "position_available": true, "fit": "WITHIN_RESIDUAL_BUDGET", "used": 9, "state_ecef_clock_m": [4426043.0727748675, -89428.24004020808, 4576298.266902786, 10900.105847005283], "estimated_reception_gpst_s": 1473458319.9999635, "rms_m": 0.5571000487024284, "outer_passes": 2, "processing_ms": 1.4499000008072471, "reception_gpst_s": 1473458318.244436, "solution_emitted_utc_unix_s": 1789423100.2467065, "observation_to_reception_s": -1.7555639743804932, "native_status": "CONVERGED", "native_backend": "cpu"}
+{
+  "source_kind": "live_internet_rtcm",
+  "inputs": {
+    "iono_nav": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\BRDC00WRD_R_20262570000_01D_MN.rnx",
+      "sha256": "47eb2d9ce0170c136d412d3538c5a21d0b99907f2ee105005e1381c4db5b8739"
+    }
+  },
+  "source_url": "ntrip://caster.centipede.fr:2101/LIENSS",
+  "gps_utc_offset_s": 18,
+  "measurement_origin": "remote_GNSS_receiver",
+  "ephemeris_origin": "streamed_RTCM1019",
+  "iono_source_role": "GPSA/B_header_only",
+  "laptop_position_measured": false,
+  "version": "3.6.1.8",
+  "profile": "LIVE-GPS-L1-R1",
+  "initial_seed_ecef_clock_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "reference_coordinates_used": false,
+  "worker_command": [
+    "C:\\tmp\\atomos3618_cpu\\Release\\satnav_stream.exe",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "worker_pid": 44636,
+  "worker_sha256": "c7d20fd219ff73b6e19bf40254d71f8436bb0be881f571b9feba495e9f56e7f6",
+  "worker_greeting": {
+    "type": "ready",
+    "version": "3.6.1.8",
+    "protocol": "SATNAV-STREAM-1",
+    "backend": "cpu"
+  },
+  "correction_outer_limit": 8,
+  "correction_tolerance_m": 0.001,
+  "iono_alpha": [
+    1.2107e-08,
+    1.4901e-08,
+    -5.9605e-08,
+    -1.1921e-07
+  ],
+  "iono_beta": [
+    96256.0,
+    81920.0,
+    -196610.0,
+    -393220.0
+  ],
+  "min_elevation_deg": 10.0,
+  "epoch_status_counts": {
+    "TOO_FEW": 8,
+    "CONVERGED": 172
+  },
+  "epochs": 180,
+  "positions": 172,
+  "processing_ms": {
+    "median": 1.3151499997547944,
+    "p95": 1.5925999996397877,
+    "maximum": 2.3966000007931143,
+    "scope": "completed-epoch correction preparation, native worker, and response parsing; excludes transport and RTCM parsing"
+  },
+  "first_position": {
+    "epoch_id": 8,
+    "time_gpst_s": 1473458149.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 9,
+    "state_ecef_clock_m": [
+      4426043.265548802,
+      -89428.53596108218,
+      4576297.58342175,
+      -14453.240021321773
+    ],
+    "estimated_reception_gpst_s": 1473458149.0000482,
+    "rms_m": 0.8253301210691855,
+    "outer_passes": 4,
+    "processing_ms": 2.312599999640952,
+    "reception_gpst_s": 1473458147.2056723,
+    "solution_emitted_utc_unix_s": 1789422929.2087705,
+    "observation_to_reception_s": -1.794327735900879,
+    "native_status": "CONVERGED",
+    "native_backend": "cpu"
+  },
+  "last_position": {
+    "epoch_id": 179,
+    "time_gpst_s": 1473458320.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 9,
+    "state_ecef_clock_m": [
+      4426043.0727748675,
+      -89428.24004020808,
+      4576298.266902786,
+      10900.105847005283
+    ],
+    "estimated_reception_gpst_s": 1473458319.9999635,
+    "rms_m": 0.5571000487024284,
+    "outer_passes": 2,
+    "processing_ms": 1.4499000008072471,
+    "reception_gpst_s": 1473458318.244436,
+    "solution_emitted_utc_unix_s": 1789423100.2467065,
+    "observation_to_reception_s": -1.7555639743804932,
+    "native_status": "CONVERGED",
+    "native_backend": "cpu"
+  },
+  "capture": {
+    "source": "ntrip://caster.centipede.fr:2101/LIENSS",
+    "raw_path": "results\\lienss_live_cpu_final\\capture.rtcm3",
+    "bytes": 370483,
+    "sha256": "4905384ec732e6ec49c5eb143893532b531d8e66f85db5146a189b9835b46d8b",
+    "duration_s": 180.00342369999998,
+    "requested_duration_s": 180.0,
+    "started_utc_unix_s": 1789422920.7618,
+    "max_bytes": 8388608,
+    "gps_utc_offset_s": 18,
+    "connections": 1,
+    "stop_reason": "duration_limit",
+    "events": [
+      {
+        "type": "connecting",
+        "connection": 1,
+        "offset": 0,
+        "utc_unix_s": 1789422920.7622955
+      },
+      {
+        "type": "connected",
+        "connection": 1,
+        "offset": 0,
+        "utc_unix_s": 1789422920.8382535,
+        "protocol": "HTTP/1.1",
+        "chunked": false
+      },
+      {
+        "type": "transport_error",
+        "connection": 1,
+        "offset": 370483,
+        "utc_unix_s": 1789423100.7647922,
+        "reason": "TimeoutError"
+      },
+      {
+        "type": "capture_end",
+        "connection": 1,
+        "offset": 370483,
+        "utc_unix_s": 1789423100.7649565,
+        "reason": "duration_limit"
+      }
+    ],
+    "measurement_origin": "remote_receiver; no local receiver or RF observations",
+    "timing_sidecar": "results\\lienss_live_cpu_final\\capture.rtcm3.timing.jsonl"
+  },
+  "rtcm_message_counts": {
+    "1004": 180,
+    "1012": 180,
+    "1077": 180,
+    "1087": 180,
+    "1097": 180,
+    "1127": 180,
+    "1005": 18,
+    "1008": 18,
+    "1033": 18,
+    "1045": 210,
+    "1046": 210,
+    "1019": 60,
+    "1020": 58,
+    "1006": 6,
+    "1230": 6,
+    "1042": 126
+  }
+}

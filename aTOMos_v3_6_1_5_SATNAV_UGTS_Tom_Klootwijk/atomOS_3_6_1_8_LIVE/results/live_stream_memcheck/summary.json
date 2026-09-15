@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "epochs": 180,
+  "comparisons": 1048,
+  "max_state_component_difference_m": 1.1175870895385742e-08,
+  "command": [
+    "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\compute-sanitizer.BAT",
+    "--tool",
+    "memcheck",
+    "--error-exitcode",
+    "99",
+    "--log-file",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\live_stream_memcheck\\memcheck.log",
+    "C:\\tmp\\atomos3618_gpu128\\Release\\satnav_stream.exe",
+    "--backend",
+    "cuda"
+  ],
+  "return_code": 0,
+  "memcheck": "zero_errors",
+  "worker_sha256": "04794e50e7961025459019e19def9f6b803b86603ab78a1dce2a5426ca670548",
+  "scope": "One persistent CUDA worker; real final-pass GPS inputs; independent Householder position/clock comparison"
+}

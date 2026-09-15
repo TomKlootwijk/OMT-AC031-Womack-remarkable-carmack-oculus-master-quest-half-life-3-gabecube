@@ -1,0 +1,58 @@
+{
+  "source_kind": "recorded_rtcm",
+  "inputs": {
+    "iono_nav": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\BRDC00WRD_R_20262570000_01D_MN.rnx",
+      "sha256": "47eb2d9ce0170c136d412d3538c5a21d0b99907f2ee105005e1381c4db5b8739"
+    },
+    "rtcm": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\centipede_lienss_20260914\\capture.rtcm3",
+      "sha256": "069c427f012b91bfaa5c8ff24820193721300fcb55e6c8d9ae44a695caff9019"
+    }
+  },
+  "source_url": null,
+  "gps_utc_offset_s": 18,
+  "measurement_origin": "remote_GNSS_receiver",
+  "ephemeris_origin": "streamed_RTCM1019",
+  "iono_source_role": "GPSA/B_header_only",
+  "laptop_position_measured": false,
+  "version": "3.6.1.8",
+  "profile": "LIVE-GPS-L1-R1",
+  "initial_seed_ecef_clock_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "reference_coordinates_used": false,
+  "worker_command": [
+    "C:\\tmp\\atomos3618_cpu\\Release\\satnav_stream.exe",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "worker_pid": 36948,
+  "worker_sha256": "c7d20fd219ff73b6e19bf40254d71f8436bb0be881f571b9feba495e9f56e7f6",
+  "worker_greeting": {
+    "type": "ready",
+    "version": "3.6.1.8",
+    "protocol": "SATNAV-STREAM-1",
+    "backend": "cpu"
+  },
+  "correction_outer_limit": 8,
+  "correction_tolerance_m": 0.001,
+  "iono_alpha": [
+    1.2107e-08,
+    1.4901e-08,
+    -5.9605e-08,
+    -1.1921e-07
+  ],
+  "iono_beta": [
+    96256.0,
+    81920.0,
+    -196610.0,
+    -393220.0
+  ],
+  "min_elevation_deg": 10.0
+}

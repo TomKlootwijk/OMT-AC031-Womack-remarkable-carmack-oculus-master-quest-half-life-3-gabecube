@@ -1,0 +1,38 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "status": "passed",
+  "backend": "cpu",
+  "artifact": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\live_coupled_bridge_final_CPU\\coupled_handoff",
+  "audit_script_sha256": "31524a85b70f861920e030ba956a29c64bae6ff61fa57fd4a059774431ee9ae6",
+  "audit_method": "Independent standard-library publication audit: direct CSV/JSON equality, explicit ECEF/ENU equations, both key formulas, invalid-observation mechanics, q-dependent stiffness sums and standalone hashlib chain reconstruction. No publisher or coupled-reference functions imported; full native replay is separately bound by file hashes.",
+  "checks": {
+    "complete_native_trace_rows_equal": 172,
+    "original_solver_epoch_residual_records_equal": 172,
+    "ecef_enu_clock_variance_status_retained": 172,
+    "modeled_enu_ecef_velocity_jk_hoop_bound": 172,
+    "q_controls_full_stiffness_matrix": 172,
+    "independent_hash_chain_records": 172,
+    "persistent_state_links": 171,
+    "modeled_both_keys_full_time_winding_up_and_hoop": 153,
+    "unchanged_source_file_hashes": 7
+  },
+  "rows": 172,
+  "packed_rows": 153,
+  "native_replay_field_comparisons": 16684,
+  "q_transitions": 0,
+  "distinct_q_states": [
+    0
+  ],
+  "observed_and_modeled_positions_differ": 171,
+  "invalid_predictions": [],
+  "residual_alerts_still_drive_model": [],
+  "head_sha256": "6eb5c91a132571d9527f4c1f0b5f14adcae781541d9441fcda5fb0e28e5a5dc0",
+  "verified_binary_path": "C:\\tmp\\atomos3618_cpu\\Release\\coupled_kernel.exe",
+  "hashes": {
+    "events": "066c0df5230f670d60f224a837623d1a59f458a8f7d637c2c0ab57623e0a027a",
+    "model": "b74104d6adc901ba17649accc5fff739a1816054d6f92bb3a7a75bbe925a2813",
+    "native_trace": "5fb54d45ccb780d7bd1715e0559afeb128eb608b5c92fd2eafae00e979500f44",
+    "native_binary": "9cdabac4757f20db3d9dde922e8d9326579e78f1902b31c3bbe2130c901ad0cc"
+  }
+}

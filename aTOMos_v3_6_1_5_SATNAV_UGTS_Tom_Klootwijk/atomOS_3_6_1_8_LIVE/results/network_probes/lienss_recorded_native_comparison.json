@@ -1,0 +1,23 @@
+{
+  "matched_position_epochs": 274,
+  "statuses": {
+    "TOO_FEW": 26,
+    "CONVERGED": 274
+  },
+  "unavailable_epochs": 26,
+  "oracle_comparison_m": {
+    "mean": 1.055844721778674,
+    "rms": 1.0863112250092484,
+    "max": 1.6007323233403299
+  },
+  "advertised_arp_comparison_m": {
+    "mean": 2.4694394876857855,
+    "rms": 2.4893106923274964,
+    "max": 3.1881121113857884
+  },
+  "missing_epoch_span_gpst": [
+    1473457283.0,
+    1473457308.0
+  ],
+  "note": "Native receives broadcast ephemerides incrementally; offline RTKLIB has all13 records available to all epochs, so warmup unavailable nativeepochs are not position matches."
+}

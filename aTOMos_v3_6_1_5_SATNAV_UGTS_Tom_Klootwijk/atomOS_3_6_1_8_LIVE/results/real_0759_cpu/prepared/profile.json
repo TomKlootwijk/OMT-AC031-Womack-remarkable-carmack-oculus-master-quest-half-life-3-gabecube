@@ -1,0 +1,10 @@
+{
+  "version": "3.6.1.8",
+  "profile": "LIVE-GPS-L1-R1",
+  "observation_origin": "recorded_rinex",
+  "geometry": "emission_satellites_in_reception_ECEF",
+  "correction": "c*satellite_L1_clock-ionosphere-troposphere",
+  "time_scale": "GPST",
+  "provenance": "../run_metadata.json",
+  "scope": "real decoded GPS observations; per-epoch final outer-loop inputs"
+}

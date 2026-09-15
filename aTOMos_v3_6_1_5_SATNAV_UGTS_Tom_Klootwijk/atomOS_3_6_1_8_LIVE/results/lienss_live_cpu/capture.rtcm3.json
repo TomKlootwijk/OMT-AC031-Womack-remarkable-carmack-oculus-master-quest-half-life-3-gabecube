@@ -1,0 +1,45 @@
+{
+  "source": "ntrip://caster.centipede.fr:2101/LIENSS",
+  "raw_path": "results\\lienss_live_cpu\\capture.rtcm3",
+  "bytes": 379010,
+  "sha256": "ed0eda70e992ca231ad7955d30cfa76692d04e0f6b64ab0205a258065596c899",
+  "duration_s": 180.0010431999999,
+  "requested_duration_s": 180.0,
+  "started_utc_unix_s": 1789422651.7397223,
+  "max_bytes": 8388608,
+  "gps_utc_offset_s": 18,
+  "connections": 1,
+  "stop_reason": "duration_limit",
+  "events": [
+    {
+      "type": "connecting",
+      "connection": 1,
+      "offset": 0,
+      "utc_unix_s": 1789422651.740426
+    },
+    {
+      "type": "connected",
+      "connection": 1,
+      "offset": 0,
+      "utc_unix_s": 1789422651.8194017,
+      "protocol": "HTTP/1.1",
+      "chunked": false
+    },
+    {
+      "type": "transport_error",
+      "connection": 1,
+      "offset": 379010,
+      "utc_unix_s": 1789422831.7403252,
+      "reason": "TimeoutError"
+    },
+    {
+      "type": "capture_end",
+      "connection": 1,
+      "offset": 379010,
+      "utc_unix_s": 1789422831.7404997,
+      "reason": "duration_limit"
+    }
+  ],
+  "measurement_origin": "remote_receiver; no local receiver or RF observations",
+  "timing_sidecar": "results\\lienss_live_cpu\\capture.rtcm3.timing.jsonl"
+}

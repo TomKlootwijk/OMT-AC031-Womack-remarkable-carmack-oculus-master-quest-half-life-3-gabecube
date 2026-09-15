@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "inputs": {
+    "rtcm": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\lienss_live_cuda_final\\capture.rtcm3",
+      "sha256": "b27f92f48d87464c00f3bf0710e05c3b12b50b068da7a622102e102a1b50bf91"
+    },
+    "rtklib_rinex_obs": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\network_probes\\lienss_live_cuda_final_conversion\\receiver.obs",
+      "sha256": "2d95b94f49e0f2380001d803dd4a164554fd3199d344dd9241662190717276e6"
+    },
+    "rtklib_rinex_nav": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\network_probes\\lienss_live_cuda_final_conversion\\receiver.nav",
+      "sha256": "4140575f4d7948ed6de000be21a8d7312480248fcdab13e00c4c88cb102f15e3"
+    }
+  },
+  "event_counts": {
+    "observation_fragment": 900,
+    "unsupported": 851,
+    "epoch": 180,
+    "station": 24,
+    "ephemeris": 63
+  },
+  "matched_ephemerides": 21,
+  "ephemeris_numeric_fields_compared": 588,
+  "matched_epochs": 180,
+  "code_ranges_compared": 2094,
+  "maximum_code_difference_m": 0.0002789534628391266,
+  "code_tolerance_m": 0.00051,
+  "ephemeris_tolerance": "max(1e-11 absolute,5e-12 relative), matching printed RINEX decimal precision",
+  "failures": []
+}

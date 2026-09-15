@@ -1,0 +1,240 @@
+{
+  "version": "3.6.1.8",
+  "profile": "LIVE-GPS-L1-R1",
+  "status": "passed",
+  "measured_at_utc_date": "2026-09-14",
+  "scope": "Real Internet remote receiver GPS L1 single-point positioning; static LIENSS. Does not locate host laptop.",
+  "cpu_ctest": "3/3 passed",
+  "cuda_ctest": "3/3 passed",
+  "python_test_methods": 118,
+  "gpu_validation": "results/gpu_20260914_235124_303841/status.json",
+  "live_sessions": {
+    "cpu": {
+      "epochs": 180,
+      "positions": 172,
+      "status_counts": {
+        "TOO_FEW": 8,
+        "CONVERGED": 172
+      },
+      "source": "ntrip://caster.centipede.fr:2101/LIENSS",
+      "raw_sha256": "4905384ec732e6ec49c5eb143893532b531d8e66f85db5146a189b9835b46d8b",
+      "native_vs_rtklib_3d_m": {
+        "minimum": 0.3501860824907936,
+        "median": 0.6462431159544594,
+        "mean": 0.649082936641985,
+        "rms": 0.6639361578830061,
+        "maximum": 0.9685051289312027
+      },
+      "advertised_arp_separation_3d_m": {
+        "minimum": 0.8055279106256016,
+        "median": 1.6579640497854247,
+        "mean": 1.6442163071090754,
+        "rms": 1.6688060849314852,
+        "maximum": 2.232209775360967
+      },
+      "complete_fragment_to_publication_s": {
+        "minimum": 0.0018796920776367188,
+        "median": 0.0022052526473999023,
+        "mean": 0.002599960149720658,
+        "rms": 0.002814715043015852,
+        "maximum": 0.011611223220825195
+      },
+      "all_positions_emitted_during_capture": true,
+      "cold_start_seed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "cuda": {
+      "epochs": 180,
+      "positions": 175,
+      "status_counts": {
+        "TOO_FEW": 5,
+        "CONVERGED": 175
+      },
+      "source": "ntrip://caster.centipede.fr:2101/LIENSS",
+      "raw_sha256": "b27f92f48d87464c00f3bf0710e05c3b12b50b068da7a622102e102a1b50bf91",
+      "native_vs_rtklib_3d_m": {
+        "minimum": 0.298397158246063,
+        "median": 0.6036926846122769,
+        "mean": 0.6221299521031318,
+        "rms": 0.635276093395977,
+        "maximum": 0.9309750226600516
+      },
+      "advertised_arp_separation_3d_m": {
+        "minimum": 1.3397589026336931,
+        "median": 1.8638838961185518,
+        "mean": 1.8538602711259007,
+        "rms": 1.8627123290070569,
+        "maximum": 2.2673710527795814
+      },
+      "complete_fragment_to_publication_s": {
+        "minimum": 0.0038635730743408203,
+        "median": 0.005946636199951172,
+        "mean": 0.006396604265485491,
+        "rms": 0.006604530444763463,
+        "maximum": 0.014345645904541016
+      },
+      "all_positions_emitted_during_capture": true,
+      "cold_start_seed": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "cross_backend": [
+    {
+      "a": "cpu",
+      "b": "cuda",
+      "epochs": 180,
+      "positions": 175,
+      "max_state_component_difference_m": 1.210719347000122e-08,
+      "status": "passed"
+    },
+    {
+      "a": "cuda_replay",
+      "b": "cuda_live",
+      "epochs": 180,
+      "positions": 175,
+      "max_state_component_difference_m": 0.0,
+      "status": "passed"
+    }
+  ],
+  "evidence": {
+    "results/gnss_math_oracle.json": {
+      "sha256": "f0a419ea24e3399df67e324bd29614a87caa1fa56841fd7fcfcec0133fb27818",
+      "status": "passed"
+    },
+    "results/rtcm_independent_audit.json": {
+      "sha256": "248c0ef5829417fd7226b27bbcc03bd33f4e442589c89fe78575ff003c77d106",
+      "status": "passed"
+    },
+    "results/real_0759_cpu/independent_comparison.json": {
+      "sha256": "4083cd399c548d0bd946a98b7a1ffb568ed9c0a7a5804d4a7b6ccff7ef9678e1",
+      "status": "passed"
+    },
+    "results/live_stream_memcheck/summary.json": {
+      "sha256": "a90eaafb262a0be4a13b0fb150d4b1c60f8be5be0ca20252957ff04812f31a05",
+      "status": "passed"
+    },
+    "results/live_final_corrected_cpu/independent_verification.json": {
+      "sha256": "3292e30e17d7398a5d400477e7908de75ed124077f5d0b8d7c7628c38a4ecd74",
+      "status": "passed"
+    },
+    "results/live_native_cpu/summary.json": {
+      "sha256": "2d70f251a5b24dc4fd26163f786bf39cad56e2d747cfa0ae6eb9b1f04b16b02d",
+      "status": "passed"
+    },
+    "results/live_native_cuda/summary.json": {
+      "sha256": "a5894cd2d504996b9a8d4b1f728925dccc79a7ffc60d49e0254a1613d4bd5960",
+      "status": "passed"
+    },
+    "results/live_physical_audit.json": {
+      "sha256": "00bcf220e1db8a5bdc8f0a1f58894fd53e8456f2cd25040aea352275ee5582fe",
+      "status": "passed"
+    },
+    "results/network_probes/lienss_live_cpu_final_comparison.json": {
+      "sha256": "2ce89ef92c3661d08a2b8782f7918a57718848fea81224024a0326abfc8fd68b",
+      "status": "passed"
+    },
+    "results/network_probes/lienss_live_cpu_final_rtcm_values.json": {
+      "sha256": "031133bf82f226b5d7c33a4cb58d427209715c634cc37f14f8c26efe25f5b27b",
+      "status": "passed"
+    },
+    "results/network_probes/lienss_live_cuda_final_comparison.json": {
+      "sha256": "cd129d17f274bb045d5bfa5d4db9d62d11b161dcf1e969850c98810f77c130bd",
+      "status": "passed"
+    },
+    "results/network_probes/lienss_live_cuda_final_rtcm_values.json": {
+      "sha256": "9e92b7b9e5d823c274f5bc4d433e51216798091ba97f5dfd1626cc8d14fd5b4c",
+      "status": "passed"
+    },
+    "results/live_coupled_bridge_final_CPU/summary.json": {
+      "sha256": "3646123674ace6cba353e823d5c1223bd6022d2b795cd98dc9b9d89c78eac88d",
+      "status": "passed"
+    },
+    "results/live_coupled_bridge_final_CPU/bridge_binding_audit.json": {
+      "sha256": "ec8e4a2318200fbf04d8d27b0e72407e7ab1d83f01ee03e403ee1a2d30969450",
+      "status": "passed"
+    },
+    "results/network_probes/final_live_evidence.json": {
+      "sha256": "9b1e783559ff8c90d6c1f7e887bd846e550da55e35f3a654329124513ce0d19f",
+      "status": "passed"
+    }
+  },
+  "limitations": [
+    "remote receiver position only",
+    "static sessions, no moving-field validation",
+    "code SPP; no RTK/PPP or Doppler velocity",
+    "nominal weights and standard atmosphere",
+    "no independent surveyed ground truth",
+    "bounded synchronous transport, no hard-real-time guarantee"
+  ],
+  "preserved_parent_index": "source/baseline_3_6_1_7_validation.json",
+  "pdf_review": {
+    "path": "results/pdf_quality.json",
+    "sha256": "24c3aca15b37ac2c1c94ff6238b976b4cd2b9faa107401983e068cafbd6c7f90",
+    "pages": 57,
+    "status": "passed"
+  },
+  "delivered_binaries": {
+    "bin/windows/cpu/satnav.exe": {
+      "sha256": "0b1ca58f09461119adec8ba082b19e0666feeb8229f31e44f5093e82cc8ca55c",
+      "matches_executed_build": true
+    },
+    "bin/windows/cpu/satnav_stream.exe": {
+      "sha256": "c7d20fd219ff73b6e19bf40254d71f8436bb0be881f571b9feba495e9f56e7f6",
+      "matches_executed_build": true
+    },
+    "bin/windows/cpu/self_reference.exe": {
+      "sha256": "32ee4dd362774ace2612cc919de20e59aeff60b89bf8c446197b2800eacbbb68",
+      "matches_executed_build": true
+    },
+    "bin/windows/cpu/coupled_kernel.exe": {
+      "sha256": "9cdabac4757f20db3d9dde922e8d9326579e78f1902b31c3bbe2130c901ad0cc",
+      "matches_executed_build": true
+    },
+    "bin/windows/cuda/satnav.exe": {
+      "sha256": "96b07b3d3f9469b27994fa6ed04cd97221658ce1bfa883ced4676991550d9807",
+      "matches_executed_build": true
+    },
+    "bin/windows/cuda/satnav_stream.exe": {
+      "sha256": "04794e50e7961025459019e19def9f6b803b86603ab78a1dce2a5426ca670548",
+      "matches_executed_build": true
+    },
+    "bin/windows/cuda/self_reference.exe": {
+      "sha256": "e8a9180ca24f1ab4b1d3639b45f8a9e69eb6aa2678daf9bba5e4845d0e7ed57c",
+      "matches_executed_build": true
+    },
+    "bin/windows/cuda/coupled_kernel.exe": {
+      "sha256": "d2fc166509b7c6f7b5ef206c1dd7ffe34f1b0c57a76a6600bf57ff8d8ddc57a7",
+      "matches_executed_build": true
+    }
+  },
+  "preserved_parent_releases": {
+    "atomOS_3_6_1_5_SATNAV": {
+      "status": "unchanged",
+      "verified_file_hashes": 52
+    },
+    "atomOS_3_6_1_6_SELFREF": {
+      "status": "unchanged",
+      "verified_file_hashes": 175
+    },
+    "atomOS_3_6_1_7_COUPLED": {
+      "status": "unchanged",
+      "verified_file_hashes": 429
+    }
+  },
+  "native_schema_versions": {
+    "LIVE-GPS-L1-R1": "3.6.1.8",
+    "CGK-R1": "3.6.1.7",
+    "SRK-R1": "3.6.1.6"
+  },
+  "device_record": "results/hardware.csv",
+  "cuda_compiler_record": "results/cuda_compiler.txt",
+  "live_connections_closed": true
+}

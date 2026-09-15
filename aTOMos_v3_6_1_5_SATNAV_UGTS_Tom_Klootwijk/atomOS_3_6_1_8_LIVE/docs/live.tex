@@ -1,0 +1,181 @@
+\section{Live GPS receiver-to-position pipeline}
+\label{sec:live}
+\textbf{LIVE-GPS-L1-R1} supplies the actual GPS equations and transport inputs
+missing from the prepared-observation kernel. The implemented chain is
+\begin{equation}
+\text{RTCM bytes}\longrightarrow(P_i,e_i,t_r)
+\longrightarrow(x_{s,i}^{rx},\delta t_{s,i},I_i,T_i)
+\longrightarrow(x_r,y_r,z_r,b_r).
+\end{equation}
+The raw code $P_i$ and satellite ephemeris $e_i$ come from a real remote receiver;
+the physical corrections are calculated locally. The orbit and atmospheric model
+is Python; the position/clock solution is the existing FP64 native CPU/CUDA
+kernel, reached through a persistent process. This closes the reception-to-position
+chain without assuming an upstream program has already solved the geometry.
+
+\begin{panel}
+\textbf{Meaning of the live demonstration}\par
+The user has no local GNSS hardware. The Internet supplies observations from
+the LIENSS reference receiver in the public Centipede network. Every computed
+coordinate in this experiment locates that remote receiver. Its transmitted
+antenna reference point (ARP) is held out of the estimator and used only for
+subsequent comparison. No host-computer location is inferred from it.
+\end{panel}
+
+\subsection{What crosses the network boundary}
+The bounded client performs a read-only NTRIP/HTTP GET, or reads a TCP byte stream.
+It supports HTTP chunk framing, optional ICY headers, timeouts and bounded
+reconnection. Centipede permits one NTRIP client per public IP; the recorded
+CPU and GPU sessions run sequentially. The public service is documented at
+\href{https://docs.centipede.fr/docs/centipede/3_connect_caster.html}{Centipede: connecting to the caster}.
+The exact source URL, bytes, UTC reception records, connection boundaries and
+SHA-256 fingerprints accompany each capture. No local coordinate/GGA is sent.
+
+RTCM3 uses preamble \code{D3}, a ten-bit payload length and CRC24Q with
+polynomial \code{0x1864CFB}. CRC is transport-error detection, not authentication.
+The implemented receiver extracts GPS LNAV message 1019; station metadata
+1005/1006; legacy GPS code 1004; and GPS MSM4/5/6/7 (1074--1077). Other
+constellation MSM messages are consumed so their terminal flags correctly close
+the shared observation epoch. Their measurements do not enter the GPS-only solve.
+
+An epoch is keyed by station ID and full GPST time. The multiple-message flag
+keeps fragments together until a terminal fragment arrives. CRC loss, reconnect,
+changed epoch before termination and end-of-input produce explicit incomplete
+records. RTCM has no fragment count or sequence-start flag: a newly connected
+client cannot prove that it saw the first fragment. This limitation is retained
+in the event metadata; missing ranges are not reconstructed from station geometry.
+
+The one selected signal per satellite is C1C (L1 C/A), mapped to channel
+$i=\mathrm{PRN}-1$. MSM7's finer positive pseudorange takes precedence over
+legacy 1004 for the same signal. A valid legacy value may fill an unavailable
+MSM value. All original signal fields are retained; zero, absent or invalid code
+does not become a solver row. Carrier phase is decoded/preserved where present
+but no ambiguity state is estimated by this profile.
+
+\clearpage
+\subsection{Time, provenance and reproducible execution}
+Times are unwrapped GPS seconds from 1980-01-06. RTCM week ambiguity is resolved
+against the recorded reception date, with an explicit GPS-minus-UTC offset of
+18 seconds for these sessions. This value is stated by
+\href{https://maia.usno.navy.mil/information/eo-values}{USNO Earth-orientation values};
+it is a configurable input, not an automatically maintained leap-second service.
+RINEX epochs already tagged GPST receive no additional UTC offset.
+
+No RTCM 1019 message contains the Klobuchar coefficients. The demonstrated
+sessions use only the GPSA/GPSB header of the same-day BKG broadcast file
+\path{BRDC00WRD_R_20262570000_01D_MN.rnx}:
+\begin{align}
+\alpha&=(1.2107\!\times\!10^{-8},\ 1.4901\!\times\!10^{-8},\
+ -5.9605\!\times\!10^{-8},\ -1.1921\!\times\!10^{-7}),\\
+\beta&=(96256,\ 81920,\ -196610,\ -393220).
+\end{align}
+Its orbital records are \emph{not} loaded during RTCM operation. Every usable
+satellite orbit/clock arrives in message 1019 from the stream itself. Download
+URLs, UTC acquisition time and hashes are in the source-data manifests. With no
+ionosphere header, the model explicitly labels its 5 ns baseline approximation.
+
+Run the included Windows CPU worker from the release directory:
+\begin{lstlisting}
+python tools/live_satnav.py
+  --binary bin/windows/cpu/satnav_stream.exe
+  --url ntrip://caster.centipede.fr:2101/LIENSS
+  --iono-nav source/live_data/
+    BRDC00WRD_R_20262570000_01D_MN.rnx
+  --seconds 180 --out results/my_live_run
+\end{lstlisting}
+The display wraps one command for readability; join it onto one line and keep
+the navigation-file path continuous. Select the CUDA binary and add
+\code{--backend cuda} for the GPU path. Use a new output directory for each run.
+The dated ionosphere file reproduces this experiment; future-day operation
+should supply a current header or explicitly select the documented fallback.
+
+The same final received bytes can be replayed with an explicit full-time reference:
+\begin{lstlisting}
+python tools/live_satnav.py
+  --binary bin/windows/cpu/satnav_stream.exe
+  --rtcm source/live_data/
+    centipede_lienss_20260914/capture.rtcm3
+  --reference-gpst 1473457283
+  --iono-nav source/live_data/
+    BRDC00WRD_R_20262570000_01D_MN.rnx
+  --out results/my_recorded_run
+\end{lstlisting}
+RINEX input uses \code{--rinex-obs} and \code{--nav}; it is explicitly recorded
+as file replay. The input contract, all optional arguments, live-to-CGK bridge
+and independent oracle commands are supplied in \path{docs/LIVE_INPUT.md},
+\path{docs/LIVE_HANDOFF.md} and the source-data README.
+
+\input{live_equations.tex}
+
+\subsection{Persistent execution and exact records}
+\code{satnav\_stream} starts once and accepts successive complete requests. Each
+request contains the epoch ID/time, four-component seed, unchanged ASA/NA/boundary
+words and up to 32 observation rows. Replies contain status, fit classification,
+ECEF/clock, formal variance, residuals, iteration count and kernel timing. Both
+CPU and CUDA dispatch the same SATNAV equations. A rejected request produces an
+error record; a Python response timeout closes the worker so a late response
+cannot be assigned to the next epoch.
+
+Each completed decoded epoch triggers correction preparation and native solves
+while the socket session is still open. There is no whole-file staging step in
+the live path. Warm starts carry only the last complete position/clock estimate;
+they do not introduce velocity filtering or modify raw ranges. Native failure,
+missing ephemeris and exhausted outer correction iterations publish a null
+position with an explicit status. Diagnostics still retain the partial iterate.
+Fit classification remains separate from numerical convergence.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.35\textwidth}Y@{}}\toprule
+\textbf{Artifact} & \textbf{Recorded content}\\\midrule
+\code{capture.rtcm3} + sidecars & Raw received body, SHA-256, host times and connection boundaries.\\
+\code{events.jsonl} & Decoded original fields, orbital issues, station metadata and incomplete/error records.\\
+\code{trace.jsonl} & Raw epoch; every preparation and native pass; final position/clock/time and validity.\\
+\code{prepared/} & Exact final-pass CSV geometry/corrections for independent Householder and native batch replay.\\
+\code{summary.json} & Source identity, counts, worker binary identity, timing scope and capture outcome.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+Only one synchronous callback operates on received bytes. If decoding, disk I/O
+or positioning becomes slower than delivery, TCP backpressure accumulates upstream.
+The local demonstration measures a 1 Hz station and is bounded in duration/bytes;
+it establishes neither continuous service availability nor a hard real-time bound.
+Socket timeouts, CRC/epoch-loss tests and recorded continuity expose the tested
+failure semantics. Clock-tag freshness is reported separately from local compute
+time: this host's UTC clock was about two seconds behind the incoming GPST tags,
+so a negative tag-to-host interval is not interpreted as negative network latency.
+
+\input{live_validation.tex}
+
+\clearpage
+\subsection{Scope of the resulting navigation kernel}
+This release now contains real raw-data ingestion, satellite ephemeris propagation,
+explicit physical code corrections, continuous native position/clock computation,
+and independent real-observation evidence. It is a working single-point GPS L1
+receiver backend. The validation uses a static public base station and an older
+real receiver recording; it does not establish moving-receiver field performance.
+
+The retained CGK-R1 equations provide an explicit geometry/word/mechanics model
+downstream. Their modeled motion must remain distinguishable from receiver
+measurements; ASA/NA and JK feedback alone do not add independent observables or
+cancel unknown GNSS errors. Full ECEF, Up, receiver clock, linear time and both
+UGTS key layouts remain represented under their existing contracts.
+
+Additional applications can consume the position/time records: maps, logging,
+spatial queries, digital twins or a later motion estimator. A moving local satnav
+still needs its own receiver observation source; higher precision needs additional
+models such as differential corrections or carrier ambiguities. RTK/PPP, Doppler
+velocity, multi-constellation clock states, map routing and calibrated antenna/code
+bias estimation are separate implementations. The delivered static-session
+statistics and formal covariance do not stand in for those missing capabilities.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.28\textwidth}YY@{}}\toprule
+\textbf{Use case} & \textbf{Available output or mechanism} & \textbf{Additional work for deployment}\\\midrule
+Remote position logging & Live ECEF, clock, full time, raw observations and reproducible lineage. & Long-duration operation, service monitoring and application storage.\\
+Local moving satnav & Executable receiver-to-position backend. & Local receiver observations, motion validation and the desired map/routing interface.\\
+Spatial indexing & ENU/Up, chart state, full time and both exact UGTS key layouts. & Application database, spatial extent and query policy.\\
+Digital simulation & Editable literal equations and coupled geometry/mechanics. & Calibrated model parameters and validation against the intended system.\\
+Precise positioning & Raw code and available carrier metadata retained. & Differential/precise corrections, bias models and ambiguity estimation.\\\bottomrule
+\end{tabularx}
+\end{center}
+\clearpage

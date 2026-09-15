@@ -1,0 +1,2791 @@
+3 readobsnav: ts=1970/01/01 00:00:00 n=2
+3 readrnxt: file=07590920.05o rcv=1
+3 expath  : path=07590920.05o nmax=1024
+3 expath  : file=07590920.05o
+3 readrnxfile: file=07590920.05o flag=0 index=1
+3 uncompress: file=07590920.05o
+3 uncompress: stat=0
+3 readrnxfp: flag=0 index=1
+3 readrnxh:
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+3 convcode: ver=2.10 sys= 1 type= L1 -> L1C
+3 convcode: ver=2.10 sys= 4 type= L1 -> L1C
+3 convcode: ver=2.10 sys= 8 type= L1 -> L1X
+3 convcode: ver=2.10 sys=16 type= L1 -> L1C
+3 convcode: ver=2.10 sys= 2 type= L1 -> L1C
+3 convcode: ver=2.10 sys=32 type= L1 ->    
+3 convcode: ver=2.10 sys= 1 type= C1 -> C1C
+3 convcode: ver=2.10 sys= 4 type= C1 -> C1C
+3 convcode: ver=2.10 sys= 8 type= C1 -> C1X
+3 convcode: ver=2.10 sys=16 type= C1 -> C1C
+3 convcode: ver=2.10 sys= 2 type= C1 -> C1C
+3 convcode: ver=2.10 sys=32 type= C1 ->    
+3 convcode: ver=2.10 sys= 1 type= L2 -> L2W
+3 convcode: ver=2.10 sys= 4 type= L2 -> L2P
+3 convcode: ver=2.10 sys= 8 type= L2 ->    
+3 convcode: ver=2.10 sys=16 type= L2 -> L2X
+3 convcode: ver=2.10 sys= 2 type= L2 ->    
+3 convcode: ver=2.10 sys=32 type= L2 -> L1X
+3 convcode: ver=2.10 sys= 1 type= P2 -> C2W
+3 convcode: ver=2.10 sys= 4 type= P2 -> C2P
+3 convcode: ver=2.10 sys= 8 type= P2 ->    
+3 convcode: ver=2.10 sys=16 type= P2 ->    
+3 convcode: ver=2.10 sys= 2 type= P2 ->    
+3 convcode: ver=2.10 sys=32 type= P2 ->    
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 decode_obsh: ver=2.10
+4 readrnxobs: rcv=1 ver=2.10 tsys=0
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:00:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:00:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:00:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:01:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:01:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:01:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:02:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:02:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:02:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:03:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:03:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:03:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:04:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:04:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:04:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:05:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:05:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:05:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:06:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:06:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:06:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:07:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:07:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:07:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:08:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:08:30.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:08:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:09:00.000 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:09:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:09:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:10:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:10:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:10:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:11:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:11:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:11:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:12:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:12:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:12:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:13:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:13:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:13:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:14:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:14:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:14:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:15:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:15:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:15:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:16:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat= 3
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:16:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:16:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:17:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:17:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:17:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:18:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:18:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:18:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:19:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:19:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:19:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:20:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:20:30.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:20:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:21:00.001 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:21:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:21:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:22:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:22:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:22:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:23:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:23:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:23:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:24:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:24:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:24:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:25:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:25:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:25:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:26:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:26:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:26:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:27:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:27:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:27:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:28:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:28:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:28:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:29:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:29:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:29:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:30:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat= 8
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:30:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:30:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:31:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:31:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:31:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:32:00.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:32:30.002 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:32:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:33:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:33:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:33:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:34:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:34:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:34:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:35:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:35:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:35:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:36:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:36:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:36:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:37:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:37:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:37:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:38:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:38:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:38:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:39:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:39:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:39:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:40:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:40:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:40:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:41:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:41:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:41:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:42:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:42:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:42:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:43:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:43:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:43:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:44:00.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:44:30.003 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:44:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:45:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:45:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:45:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:46:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:46:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:46:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:47:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:47:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:47:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:48:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:48:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:48:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:49:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:49:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:49:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:50:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:50:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:50:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:51:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:51:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:51:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:52:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:52:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:52:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:53:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:53:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:53:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:54:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:54:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:54:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:55:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:55:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:55:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:56:00.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:56:30.004 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:56:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:57:00.005 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:57:30.005 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:57:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:58:00.005 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:58:30.005 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:58:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:59:00.005 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:00 sat=28
+4 decode_obsepoch: ver=2.10
+4 decode_obsepoch: time=2005/04/02 00:59:30.005 flag=0
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat= 1
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat= 4
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat= 7
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat=11
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat=19
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat=20
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat=23
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat=24
+4 decode_obsdata: ver=2.10
+4 decode_obsdata: time=2005/04/02 00:59:30 sat=28
+4 decode_obsepoch: ver=2.10
+4 readrnxobs: nobs=8 stat=1
+3 readrnxt: file=07590920.05n rcv=2
+3 expath  : path=07590920.05n nmax=1024
+3 expath  : file=07590920.05n
+3 readrnxfile: file=07590920.05n flag=0 index=2
+3 uncompress: file=07590920.05n
+3 uncompress: stat=0
+3 readrnxfp: flag=0 index=2
+3 readrnxh:
+4 decode_navh:
+4 decode_navh:
+4 decode_navh:
+4 decode_navh:
+4 decode_navh:
+3 readrnxnav: ver=2.10 sys=1
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 1
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 3
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 3
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 4
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 7
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 7
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 8
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 8
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=11
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=11
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=16
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=19
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=19
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=20
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=20
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=22
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=23
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=24
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=24
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=27
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=28
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=28
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=13
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 1
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 2
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 4
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 7
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=11
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=13
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=20
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=23
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=23
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=24
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=28
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 5
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=10
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 2
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 4
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 5
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 7
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 8
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=10
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=13
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=20
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=23
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=24
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=27
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 6
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=29
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 2
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 4
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 6
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 8
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=10
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=13
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=24
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=26
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=26
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=27
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=29
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=21
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 2
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 4
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 6
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 8
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 9
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=10
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=18
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=21
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=26
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=27
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=28
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=29
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=10
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 5
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 9
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=10
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=18
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=21
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=22
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=26
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=28
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=29
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=14
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=30
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 5
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 9
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=14
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=18
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=21
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=22
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=26
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=29
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=30
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 1
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 6
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=25
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 1
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 5
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 6
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 9
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=14
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=18
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=22
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=25
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=30
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=16
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=20
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 1
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 6
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=14
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=16
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=20
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=21
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=23
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=25
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=30
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 3
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=13
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 1
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 3
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 6
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=13
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=16
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=19
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=21
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=23
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=25
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=27
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 3
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 8
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=11
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=13
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=16
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=18
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=19
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=21
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=22
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=23
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=25
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=27
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 3
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 8
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=11
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=15
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=16
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=19
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=20
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=22
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=24
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=27
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat=28
+4 readrnxnavb: ver=2.10 sys=1
+4 decode_eph: ver=2.10 sat= 7
+4 readrnxnavb: ver=2.10 sys=1
+3 sortobs: nobs=8
+3 uniqnav: neph=162 ngeph=0 nseph=0
+3 uniqeph: n=162
+4 uniqeph: n=162
+3 uniqgeph: ng=0
+3 uniqseph: ns=0
+3 outhead: outfile=0759_first.pos n=2
+3     0.023: createdir: path=0759_first.pos
+3 outheader: n=2
+3 outprcopt:
+3 outprcopts:
+3 outsolhead:
+3 outsolheads:
+3 openfile: outfile=0759_first.pos
+3 procpos : mode=0
+3 rtkinit :
+3 infunc  : revs=0 iobsu=0 iobsr=0 isbs=0
+3 rtkpos  : time=2005/04/02 00:00:00.000 n=8
+4 obs=
+ ( 1) 2005/04/02 00:00:00.000 G03 rcv1  55923622.160  43647388.242  24767686.375  24767684.822 0 0 1 20 0.0 0.0
+ ( 2) 2005/04/02 00:00:00.000 G07 rcv1   -691177.898   -537007.140  24361933.475  24361930.599 0 0 1 20 0.0 0.0
+ ( 3) 2005/04/02 00:00:00.000 G08 rcv1  17984490.035  14018464.809  23407378.219  23407374.320 0 0 1 20 0.0 0.0
+ ( 4) 2005/04/02 00:00:00.000 G11 rcv1   7712103.227   6019854.642  20311445.258  20311439.442 0 0 1 20 0.0 0.0
+ ( 5) 2005/04/02 00:00:00.000 G19 rcv1  36724126.590  28621450.827  22613015.950  22613010.110 0 0 1 20 0.0 0.0
+ ( 6) 2005/04/02 00:00:00.000 G20 rcv1  -5764048.758  -4479034.461  21565852.190  21565847.229 0 0 1 20 0.0 0.0
+ ( 7) 2005/04/02 00:00:00.000 G24 rcv1  -2292750.457  -1749426.201  22276378.821  22276375.748 0 0 1 20 0.0 0.0
+ ( 8) 2005/04/02 00:00:00.000 G28 rcv1  -5448227.324  -4238014.209  21543408.487  21543403.046 0 0 1 20 0.0 0.0
+3 pntpos  : tobs=2005/04/02 00:00:00.000 n=8
+3 satposs : teph=2005/04/02 00:00:00.000 n=8 ephopt=0
+4 ephclk  : time=2005/04/01 23:59:59.917 sat= 3
+4 seleph  : time=2005/04/02 00:00:00.000 sat= 3 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.917 sat= 3
+4 satpos  : time=2005/04/01 23:59:59.917 sat= 3 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.917 sat= 3 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat= 3 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.917 sat= 3
+4 kepler: sat= 3 e= 0.00674 n= 3 del= 0.000e+00
+4 eph2pos : time=2005/04/01 23:59:59.918 sat= 3
+4 kepler: sat= 3 e= 0.00674 n= 3 del= 0.000e+00
+4 ephclk  : time=2005/04/01 23:59:59.919 sat= 7
+4 seleph  : time=2005/04/02 00:00:00.000 sat= 7 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.919 sat= 7
+4 satpos  : time=2005/04/01 23:59:59.919 sat= 7 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.919 sat= 7 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat= 7 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.919 sat= 7
+4 kepler: sat= 7 e= 0.01309 n= 3 del= 0.000e+00
+4 eph2pos : time=2005/04/01 23:59:59.920 sat= 7
+4 kepler: sat= 7 e= 0.01309 n= 3 del= 0.000e+00
+4 ephclk  : time=2005/04/01 23:59:59.922 sat= 8
+4 seleph  : time=2005/04/02 00:00:00.000 sat= 8 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.922 sat= 8
+4 satpos  : time=2005/04/01 23:59:59.922 sat= 8 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.922 sat= 8 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat= 8 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.922 sat= 8
+4 kepler: sat= 8 e= 0.00915 n= 3 del= 0.000e+00
+4 eph2pos : time=2005/04/01 23:59:59.923 sat= 8
+4 kepler: sat= 8 e= 0.00915 n= 3 del= 0.000e+00
+4 ephclk  : time=2005/04/01 23:59:59.932 sat=11
+4 seleph  : time=2005/04/02 00:00:00.000 sat=11 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.932 sat=11
+4 satpos  : time=2005/04/01 23:59:59.932 sat=11 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.932 sat=11 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat=11 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.932 sat=11
+4 kepler: sat=11 e= 0.00411 n= 3 del= 0.000e+00
+4 eph2pos : time=2005/04/01 23:59:59.933 sat=11
+4 kepler: sat=11 e= 0.00411 n= 3 del= 0.000e+00
+4 ephclk  : time=2005/04/01 23:59:59.925 sat=19
+4 seleph  : time=2005/04/02 00:00:00.000 sat=19 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.925 sat=19
+4 satpos  : time=2005/04/01 23:59:59.925 sat=19 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.925 sat=19 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat=19 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.925 sat=19
+4 kepler: sat=19 e= 0.00316 n= 3 del= 0.000e+00
+4 eph2pos : time=2005/04/01 23:59:59.926 sat=19
+4 kepler: sat=19 e= 0.00316 n= 3 del= 0.000e+00
+4 ephclk  : time=2005/04/01 23:59:59.928 sat=20
+4 seleph  : time=2005/04/02 00:00:00.000 sat=20 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.928 sat=20
+4 satpos  : time=2005/04/01 23:59:59.928 sat=20 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.928 sat=20 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat=20 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.928 sat=20
+4 kepler: sat=20 e= 0.00257 n= 3 del= 0.000e+00
+4 eph2pos : time=2005/04/01 23:59:59.929 sat=20
+4 kepler: sat=20 e= 0.00257 n= 3 del= 0.000e+00
+4 ephclk  : time=2005/04/01 23:59:59.926 sat=24
+4 seleph  : time=2005/04/02 00:00:00.000 sat=24 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.926 sat=24
+4 satpos  : time=2005/04/01 23:59:59.926 sat=24 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.926 sat=24 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat=24 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.926 sat=24
+4 kepler: sat=24 e= 0.00868 n= 3 del=-4.441e-16
+4 eph2pos : time=2005/04/01 23:59:59.927 sat=24
+4 kepler: sat=24 e= 0.00868 n= 3 del=-4.441e-16
+4 ephclk  : time=2005/04/01 23:59:59.928 sat=28
+4 seleph  : time=2005/04/02 00:00:00.000 sat=28 iode=-1
+4 eph2clk : time=2005/04/01 23:59:59.928 sat=28
+4 satpos  : time=2005/04/01 23:59:59.928 sat=28 ephopt=0
+4 ephpos  : time=2005/04/01 23:59:59.928 sat=28 iode=-1
+4 seleph  : time=2005/04/02 00:00:00.000 sat=28 iode=-1
+4 eph2pos : time=2005/04/01 23:59:59.928 sat=28
+4 kepler: sat=28 e= 0.00998 n= 3 del= 6.661e-16
+4 eph2pos : time=2005/04/01 23:59:59.929 sat=28
+4 kepler: sat=28 e= 0.00998 n= 3 del= 8.882e-16
+4 2005/04/01 23:59:59.917287 sat= 3 rs=-24595184.341 -10320589.582   1244218.674 dts=   96721.355 var=  5.760 svh=00
+4 2005/04/01 23:59:59.918873 sat= 7 rs= 10026487.690  18601864.069  16597421.854 dts= -136066.263 var=  5.760 svh=00
+4 2005/04/01 23:59:59.921947 sat= 8 rs=  -683949.793  26351230.765     79787.480 dts=  -25143.048 var=  5.760 svh=00
+4 2005/04/01 23:59:59.932038 sat=11 rs=-14822915.660   8930208.368  20079386.097 dts=  210127.473 var=  5.760 svh=00
+4 2005/04/01 23:59:59.924589 sat=19 rs=-23358517.500  -5407967.004  11505396.179 dts=  -17455.662 var=  5.760 svh=00
+4 2005/04/01 23:59:59.928139 sat=20 rs=-23036169.086  13172079.739    766984.165 dts=  -75357.307 var=  5.760 svh=00
+4 2005/04/01 23:59:59.925688 sat=24 rs= -4410870.939  25703724.499   4806330.195 dts=    5949.333 var=  5.760 svh=00
+4 2005/04/01 23:59:59.928092 sat=28 rs= -2383676.578  17483698.398  19982740.575 dts=   46887.234 var=  5.760 svh=00
+3 estpos  : n=8
+3 resprng : n=8
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 3 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat= 3 azel=  0.0 90.0 res=-1905108.901 sig=2.471
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 7 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat= 7 azel=  0.0 90.0 res=-2549551.809 sig=2.471
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 8 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat= 8 azel=  0.0 90.0 res=-2960384.387 sig=2.471
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=11 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat=11 azel=  0.0 90.0 res=-6133087.414 sig=2.471
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=19 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat=19 azel=  0.0 90.0 res=-3986208.138 sig=2.471
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=20 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat=20 azel=  0.0 90.0 res=-5003997.683 sig=2.471
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=24 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat=24 azel=  0.0 90.0 res=-4240473.010 sig=2.471
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=28 pos=-90.000 0.000 azel=0.000 90.000
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=-90.000 0.000 azel=0.000 90.000
+4 sat=28 azel=  0.0 90.0 res=-5100955.523 sig=2.471
+3 resprng : n=8
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 7 pos=35.486 139.847 azel=298.050 13.718
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.486 139.847 azel=298.050 13.718
+4 sat= 7 azel=298.0 13.7 res=-893530.780 sig=3.675
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 8 pos=35.486 139.847 azel=242.897 17.240
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.486 139.847 azel=242.897 17.240
+4 sat= 8 azel=242.9 17.2 res=-861643.243 sig=3.710
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=11 pos=35.486 139.847 azel=22.959 68.873
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.486 139.847 azel=22.959 68.873
+4 sat=11 azel= 23.0 68.9 res=-151893.127 sig=2.860
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=19 pos=35.486 139.847 azel=86.872 29.635
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.486 139.847 azel=86.872 29.635
+4 sat=19 azel= 86.9 29.6 res=-599864.160 sig=3.708
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=20 pos=35.486 139.847 azel=161.740 43.025
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.486 139.847 azel=161.740 43.025
+4 sat=20 azel=161.7 43.0 res=-442995.045 sig=3.175
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=24 pos=35.486 139.847 azel=245.535 32.125
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.486 139.847 azel=245.535 32.125
+4 sat=24 azel=245.5 32.1 res=-608695.948 sig=3.267
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=28 pos=35.486 139.847 azel=306.306 45.287
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.486 139.847 azel=306.306 45.287
+4 sat=28 azel=306.3 45.3 res=-391460.648 sig=3.014
+3 resprng : n=8
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 7 pos=35.190 139.617 azel=298.112 16.128
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.190 139.617 azel=298.112 16.128
+4 sat= 7 azel=298.1 16.1 res=-22259.076 sig=3.609
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 8 pos=35.190 139.617 azel=242.879 19.999
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.190 139.617 azel=242.879 19.999
+4 sat= 8 azel=242.9 20.0 res=-23367.983 sig=3.609
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=11 pos=35.190 139.617 azel=23.034 69.481
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.190 139.617 azel=23.034 69.481
+4 sat=11 azel= 23.0 69.5 res=-4833.392 sig=2.855
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=19 pos=35.190 139.617 azel=86.468 31.693
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.190 139.617 azel=86.468 31.693
+4 sat=19 azel= 86.5 31.7 res=-16483.693 sig=3.604
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=20 pos=35.190 139.617 azel=161.218 45.313
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.190 139.617 azel=161.218 45.313
+4 sat=20 azel=161.2 45.3 res=-13999.432 sig=3.124
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=24 pos=35.190 139.617 azel=245.600 34.729
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.190 139.617 azel=245.600 34.729
+4 sat=24 azel=245.6 34.7 res=-16982.768 sig=3.204
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=28 pos=35.190 139.617 azel=306.703 47.202
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.190 139.617 azel=306.703 47.202
+4 sat=28 azel=306.7 47.2 res=-10159.418 sig=2.988
+3 resprng : n=8
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 7 pos=35.161 139.614 azel=298.126 16.175
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=298.126 16.175
+4 sat= 7 azel=298.1 16.2 res=-21.529 sig=3.608
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 8 pos=35.161 139.614 azel=242.894 20.077
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=242.894 20.077
+4 sat= 8 azel=242.9 20.1 res=-21.445 sig=3.606
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=11 pos=35.161 139.614 azel=23.000 69.472
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=23.000 69.472
+4 sat=11 azel= 23.0 69.5 res= -3.700 sig=2.855
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=19 pos=35.161 139.614 azel=86.439 31.745
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=86.439 31.745
+4 sat=19 azel= 86.4 31.7 res=-16.081 sig=3.602
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=20 pos=35.161 139.614 azel=161.200 45.395
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=161.200 45.395
+4 sat=20 azel=161.2 45.4 res=-13.302 sig=3.122
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=24 pos=35.161 139.614 azel=245.624 34.801
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=245.624 34.801
+4 sat=24 azel=245.6 34.8 res=-15.843 sig=3.203
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=28 pos=35.161 139.614 azel=306.739 47.231
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=306.739 47.231
+4 sat=28 azel=306.7 47.2 res=-10.009 sig=2.988
+3 resprng : n=8
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 7 pos=35.161 139.614 azel=298.126 16.176
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=298.126 16.176
+4 sat= 7 azel=298.1 16.2 res= -0.094 sig=3.608
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 8 pos=35.161 139.614 azel=242.894 20.077
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=242.894 20.077
+4 sat= 8 azel=242.9 20.1 res=  0.622 sig=3.606
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=11 pos=35.161 139.614 azel=23.000 69.472
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=23.000 69.472
+4 sat=11 azel= 23.0 69.5 res=  0.566 sig=2.855
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=19 pos=35.161 139.614 azel=86.439 31.745
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=86.439 31.745
+4 sat=19 azel= 86.4 31.7 res= -0.080 sig=3.602
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=20 pos=35.161 139.614 azel=161.200 45.395
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=161.200 45.395
+4 sat=20 azel=161.2 45.4 res= -0.385 sig=3.122
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=24 pos=35.161 139.614 azel=245.624 34.802
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=245.624 34.802
+4 sat=24 azel=245.6 34.8 res= -0.082 sig=3.203
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=28 pos=35.161 139.614 azel=306.739 47.232
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=306.739 47.232
+4 sat=28 azel=306.7 47.2 res= -0.597 sig=2.988
+3 resprng : n=8
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 7 pos=35.161 139.614 azel=298.126 16.176
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=298.126 16.176
+4 sat= 7 azel=298.1 16.2 res= -0.066 sig=3.608
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat= 8 pos=35.161 139.614 azel=242.894 20.077
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=242.894 20.077
+4 sat= 8 azel=242.9 20.1 res=  0.646 sig=3.606
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=11 pos=35.161 139.614 azel=23.000 69.472
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=23.000 69.472
+4 sat=11 azel= 23.0 69.5 res=  0.573 sig=2.855
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=19 pos=35.161 139.614 azel=86.439 31.745
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=86.439 31.745
+4 sat=19 azel= 86.4 31.7 res= -0.062 sig=3.602
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=20 pos=35.161 139.614 azel=161.200 45.395
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=161.200 45.395
+4 sat=20 azel=161.2 45.4 res= -0.374 sig=3.122
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=24 pos=35.161 139.614 azel=245.624 34.802
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=245.624 34.802
+4 sat=24 azel=245.6 34.8 res= -0.066 sig=3.203
+4 ionocorr: time=2005/04/02 00:00:00.000 opt=1 sat=28 pos=35.161 139.614 azel=306.739 47.232
+4 tropcorr: time=2005/04/02 00:00:00.000 opt=1 pos=35.161 139.614 azel=306.739 47.232
+4 sat=28 azel=306.7 47.2 res= -0.583 sig=2.988
+3 valsol  : n=8 nv=10
+3 estvel  : n=8
+3 resdop  : n=8
+3 outsol  :
+3 outsols :
+3 outecef:
+3 infunc  : revs=0 iobsu=8 iobsr=8 isbs=0
+3 rtkfree :
+3 freeobsnav:
+3 freepreceph:
+3 free_rtcm:
+3 closeses:
+3 closegoid:
+3 rtkclosestat:

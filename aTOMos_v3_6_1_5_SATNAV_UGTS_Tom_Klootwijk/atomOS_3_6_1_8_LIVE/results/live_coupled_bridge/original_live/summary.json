@@ -1,0 +1,175 @@
+{
+  "source_kind": "live_internet_rtcm",
+  "inputs": {
+    "iono_nav": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\BRDC00WRD_R_20262570000_01D_MN.rnx",
+      "sha256": "47eb2d9ce0170c136d412d3538c5a21d0b99907f2ee105005e1381c4db5b8739"
+    }
+  },
+  "source_url": "ntrip://caster.centipede.fr:2101/LIENSS",
+  "gps_utc_offset_s": 18,
+  "measurement_origin": "remote_GNSS_receiver",
+  "ephemeris_origin": "streamed_RTCM1019",
+  "iono_source_role": "GPSA/B_header_only",
+  "laptop_position_measured": false,
+  "version": "3.6.1.8",
+  "profile": "LIVE-GPS-L1-R1",
+  "initial_seed_ecef_clock_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "reference_coordinates_used": false,
+  "worker_command": [
+    "C:\\tmp\\atomos3618_cpu\\Release\\satnav_stream.exe",
+    "--backend",
+    "cpu",
+    "--device",
+    "0"
+  ],
+  "worker_pid": 28032,
+  "worker_sha256": "c7d20fd219ff73b6e19bf40254d71f8436bb0be881f571b9feba495e9f56e7f6",
+  "worker_greeting": {
+    "type": "ready",
+    "version": "3.6.1.8",
+    "protocol": "SATNAV-STREAM-1",
+    "backend": "cpu"
+  },
+  "correction_outer_limit": 8,
+  "correction_tolerance_m": 0.001,
+  "iono_alpha": [
+    1.2107e-08,
+    1.4901e-08,
+    -5.9605e-08,
+    -1.1921e-07
+  ],
+  "iono_beta": [
+    96256.0,
+    81920.0,
+    -196610.0,
+    -393220.0
+  ],
+  "min_elevation_deg": 10.0,
+  "epoch_status_counts": {
+    "TOO_FEW": 7,
+    "CONVERGED": 173
+  },
+  "epochs": 180,
+  "positions": 173,
+  "processing_ms": {
+    "median": 1.362199999675795,
+    "p95": 1.6613999996479833,
+    "maximum": 2.3787000009178882,
+    "scope": "completed-epoch correction preparation, native worker, and response parsing; excludes transport and RTCM parsing"
+  },
+  "first_position": {
+    "epoch_id": 7,
+    "time_gpst_s": 1473457879.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 8,
+    "state_ecef_clock_m": [
+      4426044.11914194,
+      -89428.19148088245,
+      4576298.970581466,
+      -54453.75143153774
+    ],
+    "estimated_reception_gpst_s": 1473457879.0001817,
+    "rms_m": 0.4697638066713738,
+    "outer_passes": 4,
+    "processing_ms": 2.3787000009178882,
+    "reception_gpst_s": 1473457877.2435176,
+    "solution_emitted_utc_unix_s": 1789422659.2494204,
+    "observation_to_reception_s": -1.7564823627471924,
+    "native_status": "CONVERGED",
+    "native_backend": "cpu"
+  },
+  "last_position": {
+    "epoch_id": 179,
+    "time_gpst_s": 1473458051.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 9,
+    "state_ecef_clock_m": [
+      4426043.613090581,
+      -89428.56695855099,
+      4576298.313715001,
+      -28982.583160041846
+    ],
+    "estimated_reception_gpst_s": 1473458051.0000966,
+    "rms_m": 0.6870728912943106,
+    "outer_passes": 2,
+    "processing_ms": 1.4360000004671747,
+    "reception_gpst_s": 1473458049.189581,
+    "solution_emitted_utc_unix_s": 1789422831.2689302,
+    "observation_to_reception_s": -1.8104190826416016,
+    "native_status": "CONVERGED",
+    "native_backend": "cpu"
+  },
+  "capture": {
+    "source": "ntrip://caster.centipede.fr:2101/LIENSS",
+    "raw_path": "results\\lienss_live_cpu\\capture.rtcm3",
+    "bytes": 379010,
+    "sha256": "ed0eda70e992ca231ad7955d30cfa76692d04e0f6b64ab0205a258065596c899",
+    "duration_s": 180.0010431999999,
+    "requested_duration_s": 180.0,
+    "started_utc_unix_s": 1789422651.7397223,
+    "max_bytes": 8388608,
+    "gps_utc_offset_s": 18,
+    "connections": 1,
+    "stop_reason": "duration_limit",
+    "events": [
+      {
+        "type": "connecting",
+        "connection": 1,
+        "offset": 0,
+        "utc_unix_s": 1789422651.740426
+      },
+      {
+        "type": "connected",
+        "connection": 1,
+        "offset": 0,
+        "utc_unix_s": 1789422651.8194017,
+        "protocol": "HTTP/1.1",
+        "chunked": false
+      },
+      {
+        "type": "transport_error",
+        "connection": 1,
+        "offset": 379010,
+        "utc_unix_s": 1789422831.7403252,
+        "reason": "TimeoutError"
+      },
+      {
+        "type": "capture_end",
+        "connection": 1,
+        "offset": 379010,
+        "utc_unix_s": 1789422831.7404997,
+        "reason": "duration_limit"
+      }
+    ],
+    "measurement_origin": "remote_receiver; no local receiver or RF observations",
+    "timing_sidecar": "results\\lienss_live_cpu\\capture.rtcm3.timing.jsonl"
+  },
+  "rtcm_message_counts": {
+    "1004": 180,
+    "1012": 180,
+    "1077": 180,
+    "1087": 180,
+    "1097": 180,
+    "1127": 180,
+    "1045": 220,
+    "1046": 220,
+    "1019": 62,
+    "1005": 17,
+    "1008": 17,
+    "1033": 17,
+    "1020": 63,
+    "1006": 6,
+    "1230": 6,
+    "1042": 126
+  }
+}

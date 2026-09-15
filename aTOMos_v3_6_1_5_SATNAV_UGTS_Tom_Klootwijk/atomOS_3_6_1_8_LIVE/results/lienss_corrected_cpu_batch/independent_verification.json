@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "epochs": 300,
+  "counted_comparisons": 5388,
+  "statuses": {
+    "TOO_FEW": 26,
+    "CONVERGED": 274
+  },
+  "fit_counts": {
+    "WITHIN_RESIDUAL_BUDGET": 274
+  },
+  "max_absolute_state_difference_m": 1.3969838619232178e-08,
+  "max_covariance_diagonal_difference_m2": 3.410605131648481e-13,
+  "synthetic_truth_metrics": {},
+  "scope": "Independent Householder check of supplied corrected-code geometry and native position/clock. Raw-data and physical-model validation are recorded separately.",
+  "input_profile": {
+    "version": "3.6.1.8",
+    "profile": "LIVE-GPS-L1-R1",
+    "observation_origin": "recorded_rtcm",
+    "geometry": "emission_satellites_in_reception_ECEF",
+    "correction": "c*satellite_L1_clock-ionosphere-troposphere",
+    "time_scale": "GPST",
+    "provenance": "../run_metadata.json",
+    "scope": "real decoded GPS observations; per-epoch final outer-loop inputs"
+  }
+}

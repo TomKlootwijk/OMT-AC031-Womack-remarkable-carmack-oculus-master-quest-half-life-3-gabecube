@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "capture": "source/live_data/centipede_lienss_20260914/capture.rtcm3",
+  "capture_bytes": 664759,
+  "capture_sha256": "069c427f012b91bfaa5c8ff24820193721300fcb55e6c8d9ae44a695caff9019",
+  "reference_gpst_s": 1473457300.0,
+  "parser_sha256": "78ab371e4e1268297822aa0d2a0b290497c5ffac61986e667d133a1b13fded86",
+  "independent_library": "pyrtcm",
+  "independent_version": "1.2.0",
+  "comparisons": {
+    "message_type": 869,
+    "legacy_prn": 9858,
+    "legacy_pseudorange_m": 7564,
+    "legacy_cn0_dbhz": 9858,
+    "msm_prn": 16391,
+    "msm_code": 16391,
+    "msm_pseudorange_m": 16391,
+    "msm_cn0_dbhz": 16391,
+    "station_id": 40,
+    "station_ecef_m": 120,
+    "station_height_m": 10,
+    "ephemeris_scalar": 1840,
+    "ephemeris_radians": 805,
+    "ephemeris_week_mod": 115,
+    "ephemeris_toe_tow": 115,
+    "ephemeris_toc_tow": 115,
+    "legacy_nonpositive_rejection": 7
+  },
+  "total_comparisons": 96880,
+  "maximum_absolute_differences": {
+    "message_type": 0,
+    "legacy_prn": 0,
+    "legacy_pseudorange_m": 0,
+    "legacy_cn0_dbhz": 0,
+    "msm_prn": 0,
+    "msm_pseudorange_m": 3.725290298461914e-09,
+    "msm_cn0_dbhz": 0,
+    "station_id": 0,
+    "station_ecef_m": 0,
+    "station_height_m": 0,
+    "ephemeris_scalar": 0,
+    "ephemeris_radians": 0,
+    "ephemeris_week_mod": 0,
+    "ephemeris_toe_tow": 0,
+    "ephemeris_toc_tow": 0
+  },
+  "event_counts": {
+    "observation_fragment": 1614,
+    "unsupported": 1393,
+    "epoch": 300,
+    "station": 40,
+    "ephemeris": 115
+  },
+  "message_counts": {
+    "1004": 301,
+    "1012": 300,
+    "1077": 413,
+    "1087": 300,
+    "1097": 300,
+    "1127": 300,
+    "1006": 10,
+    "1230": 10,
+    "1020": 97,
+    "1005": 30,
+    "1008": 30,
+    "1033": 30,
+    "1045": 358,
+    "1046": 358,
+    "1042": 210,
+    "1019": 115
+  },
+  "final_statuses": [
+    {
+      "type": "incomplete_epoch",
+      "reason": "end_of_input"
+    }
+  ],
+  "provenance": "pyrtcm decodes identical independently CRC-validated rawframes; compares fields and range reconstruction, not position accuracy"
+}

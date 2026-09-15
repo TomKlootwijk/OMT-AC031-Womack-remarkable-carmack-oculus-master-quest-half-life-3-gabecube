@@ -1,0 +1,134 @@
+{
+  "source_kind": "recorded_rtcm",
+  "inputs": {
+    "iono_nav": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\BRDC00WRD_R_20262570000_01D_MN.rnx",
+      "sha256": "47eb2d9ce0170c136d412d3538c5a21d0b99907f2ee105005e1381c4db5b8739"
+    },
+    "rtcm": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\centipede_lienss_20260914\\capture.rtcm3",
+      "sha256": "069c427f012b91bfaa5c8ff24820193721300fcb55e6c8d9ae44a695caff9019"
+    }
+  },
+  "source_url": null,
+  "gps_utc_offset_s": 18,
+  "measurement_origin": "remote_GNSS_receiver",
+  "ephemeris_origin": "streamed_RTCM1019",
+  "iono_source_role": "GPSA/B_header_only",
+  "laptop_position_measured": false,
+  "version": "3.6.1.8",
+  "profile": "LIVE-GPS-L1-R1",
+  "initial_seed_ecef_clock_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "reference_coordinates_used": false,
+  "worker_command": [
+    "C:\\tmp\\atomos3618_gpu128\\Release\\satnav_stream.exe",
+    "--backend",
+    "cuda",
+    "--device",
+    "0"
+  ],
+  "worker_pid": 49828,
+  "worker_sha256": "04794e50e7961025459019e19def9f6b803b86603ab78a1dce2a5426ca670548",
+  "worker_greeting": {
+    "type": "ready",
+    "version": "3.6.1.8",
+    "protocol": "SATNAV-STREAM-1",
+    "backend": "cuda"
+  },
+  "correction_outer_limit": 8,
+  "correction_tolerance_m": 0.001,
+  "iono_alpha": [
+    1.2107e-08,
+    1.4901e-08,
+    -5.9605e-08,
+    -1.1921e-07
+  ],
+  "iono_beta": [
+    96256.0,
+    81920.0,
+    -196610.0,
+    -393220.0
+  ],
+  "min_elevation_deg": 10.0,
+  "epoch_status_counts": {
+    "TOO_FEW": 26,
+    "CONVERGED": 274
+  },
+  "epochs": 300,
+  "positions": 274,
+  "processing_ms": {
+    "median": 3.1109000001379172,
+    "p95": 3.5945999989053234,
+    "maximum": 155.94400000009045,
+    "scope": "completed-epoch correction preparation, native worker, and response parsing; excludes transport and RTCM parsing"
+  },
+  "first_position": {
+    "epoch_id": 26,
+    "time_gpst_s": 1473457309.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 7,
+    "state_ecef_clock_m": [
+      4426044.563691842,
+      -89428.8691831284,
+      4576298.5652003065,
+      -138612.36145216637
+    ],
+    "estimated_reception_gpst_s": 1473457309.0004623,
+    "rms_m": 0.5677570213555502,
+    "outer_passes": 4,
+    "processing_ms": 7.258699999511009,
+    "reception_gpst_s": null,
+    "solution_emitted_utc_unix_s": 1789422748.5777564,
+    "observation_to_reception_s": null,
+    "native_status": "CONVERGED",
+    "native_backend": "cuda_global"
+  },
+  "last_position": {
+    "epoch_id": 299,
+    "time_gpst_s": 1473457582.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 7,
+    "state_ecef_clock_m": [
+      4426044.5013037035,
+      -89428.71703973753,
+      4576298.9336076705,
+      -98367.703668201
+    ],
+    "estimated_reception_gpst_s": 1473457582.000328,
+    "rms_m": 0.24418579101591661,
+    "outer_passes": 2,
+    "processing_ms": 3.361199998835218,
+    "reception_gpst_s": null,
+    "solution_emitted_utc_unix_s": 1789422750.8487582,
+    "observation_to_reception_s": null,
+    "native_status": "CONVERGED",
+    "native_backend": "cuda_global"
+  },
+  "rtcm_message_counts": {
+    "1004": 301,
+    "1012": 300,
+    "1077": 413,
+    "1087": 300,
+    "1097": 300,
+    "1127": 300,
+    "1006": 10,
+    "1230": 10,
+    "1020": 97,
+    "1005": 30,
+    "1008": 30,
+    "1033": 30,
+    "1045": 358,
+    "1046": 358,
+    "1042": 210,
+    "1019": 115
+  }
+}

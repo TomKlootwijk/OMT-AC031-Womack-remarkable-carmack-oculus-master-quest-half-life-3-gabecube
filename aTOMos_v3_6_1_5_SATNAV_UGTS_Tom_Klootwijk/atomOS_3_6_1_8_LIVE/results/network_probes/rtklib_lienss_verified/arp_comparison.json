@@ -1,0 +1,20 @@
+{
+  "epochs": 300,
+  "reference": "stream RTCM1006 antenna reference point; not independently surveyed truth",
+  "arp_ecef_m": [
+    4426043.0455,
+    -89429.1998,
+    4576296.6447
+  ],
+  "mean_solution_ecef_m": [
+    4426045.10171,
+    -89428.41166533338,
+    4576299.346840665
+  ],
+  "mean_error_3d_m": 3.49830628743913,
+  "median_error_3d_m": 3.503912103000493,
+  "rms_error_3d_m": 3.5130560893160734,
+  "max_error_3d_m": 4.368261435529257,
+  "satellite_count_min": 7,
+  "satellite_count_max": 7
+}

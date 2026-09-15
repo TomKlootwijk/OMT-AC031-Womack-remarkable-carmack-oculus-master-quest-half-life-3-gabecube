@@ -1,0 +1,18 @@
+[
+  {
+    "a": "cpu",
+    "b": "cuda",
+    "epochs": 180,
+    "positions": 175,
+    "max_state_component_difference_m": 1.210719347000122e-08,
+    "status": "passed"
+  },
+  {
+    "a": "cuda_replay",
+    "b": "cuda_live",
+    "epochs": 180,
+    "positions": 175,
+    "max_state_component_difference_m": 0.0,
+    "status": "passed"
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "samples": 172,
+  "events": {
+    "COUPLED_OBSERVATION_ADVANCED": 172
+  },
+  "head_sha256": "6eb5c91a132571d9527f4c1f0b5f14adcae781541d9441fcda5fb0e28e5a5dc0",
+  "hash_domain": "atomOS:CGK-R1:3.6.1.7:handoff",
+  "backend": "cpu",
+  "native_execution": "passed",
+  "native_trace_verified": true,
+  "replay_summary": {
+    "version": "3.6.1.7",
+    "profile": "CGK-R1",
+    "status": "passed",
+    "input_sha256": "b74104d6adc901ba17649accc5fff739a1816054d6f92bb3a7a75bbe925a2813",
+    "compiled_sha256": {
+      "channels.csv": "eba3409977275d2ac1dcedce55302d5053cb11220802d36959eee237e4487868",
+      "equations.csv": "590169537ec7db06d5deee325faaeb87d17fb242da7a42801ca90f50d5440971",
+      "manifest.csv": "fa806386cc2cd32b4a32463351757067e8d76d081d799791df90e3b10ca2cb36",
+      "samples.csv": "7d3a0f847a235adbd21c114c7a579aa38c68423106a8443b6534bfa12b045fb3"
+    },
+    "native_execution": "passed",
+    "native_trace_verified": true,
+    "native_command": [
+      "C:\\tmp\\atomos3618_cpu\\Release\\coupled_kernel.exe",
+      "--input",
+      "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\live_coupled_bridge_final_CPU\\coupled_handoff\\coupled\\compiled",
+      "--out",
+      "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\live_coupled_bridge_final_CPU\\coupled_handoff\\coupled\\native",
+      "--backend",
+      "cpu",
+      "--device",
+      "0"
+    ],
+    "native_binary_sha256": "9cdabac4757f20db3d9dde922e8d9326579e78f1902b31c3bbe2130c901ad0cc",
+    "native_returncode": 0,
+    "transitions": 172,
+    "field_comparisons": 16684,
+    "trajectories": [
+      {
+        "trajectory_id": 0,
+        "steps": 172,
+        "statuses": {
+          "advanced": 172
+        },
+        "final_q": 0,
+        "final_p": [
+          0.20551373836114287,
+          0.5659940765059317,
+          0.1587782297155483
+        ],
+        "final_v": [
+          0.03454745741341731,
+          0.008141857613999383,
+          0.20511995935566465
+        ],
+        "specification_sha256": "1a9fb3a69c14011f18cfd272fb764fada0215fbfb2444ada2980fa80106e6d4e",
+        "equations": {
+          "d": "limit | fringe",
+          "x": "(q | d) & support",
+          "j": "y & (limit | fringe)",
+          "k": "align & ~limit & ~fringe"
+        }
+      }
+    ],
+    "reference_trace_sha256": "9764c480e2238a4501521acc0e28652b4b6bc05a26c859bd9fa3c7592a72925d",
+    "native_trace_sha256": "5fb54d45ccb780d7bd1715e0559afeb128eb608b5c92fd2eafae00e979500f44"
+  },
+  "model_sha256": "b74104d6adc901ba17649accc5fff739a1816054d6f92bb3a7a75bbe925a2813",
+  "source_records_retained": true,
+  "sample_order": "input_epoch_order",
+  "model_origin": "Explicit new mechanical observer realization of ASA/NA, synchronous JK and UGTS geometry; this is not a recovered original M2 physical matrix.",
+  "equations": {
+    "d": "limit | fringe",
+    "x": "(q | d) & support",
+    "j": "y & (limit | fringe)",
+    "k": "align & ~limit & ~fringe"
+  },
+  "initialization": {
+    "position_source": "first_valid_observation",
+    "epoch_id": 8,
+    "epoch_time": 1473458149.0,
+    "uses_future_observation": false,
+    "time_source": "first_sample_minus_dt",
+    "requested_initial_dt_s": 1.0
+  },
+  "scope": "Coupled mechanical observer driven by decoded SATNAV solutions; original solver state and modeled state remain distinct."
+}

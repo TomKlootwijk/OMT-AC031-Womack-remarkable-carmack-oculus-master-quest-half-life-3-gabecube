@@ -1,0 +1,75 @@
+{
+  "kind": "independent_rtklib_rtcm_to_rinex",
+  "executed_utc": "2026-09-14T21:59:42.107640+00:00",
+  "command": [
+    "C:\\tmp\\atomos_convbin_ksdcy58z\\convbin.exe",
+    "-r",
+    "rtcm3",
+    "-tr",
+    "2026/09/14",
+    "22:00:00",
+    "-v",
+    "3.03",
+    "-f",
+    "1",
+    "-y",
+    "R",
+    "-y",
+    "E",
+    "-y",
+    "J",
+    "-y",
+    "S",
+    "-y",
+    "C",
+    "-o",
+    "receiver.obs",
+    "-n",
+    "receiver.nav",
+    "-g",
+    "receiver.gnav",
+    "-h",
+    "receiver.hnav",
+    "-q",
+    "receiver.qnav",
+    "-l",
+    "receiver.lnav",
+    "-s",
+    "receiver.sbs",
+    "-trace",
+    "2",
+    "receiver.rtcm3"
+  ],
+  "working_directory": "C:\\tmp\\atomos_convbin_ksdcy58z",
+  "return_code": 0,
+  "reference_gpst": "2026/09/14 22:00:00",
+  "epochs": 180,
+  "gps_ephemerides": 10,
+  "iono_header_only_inserted_lines": [
+    "GPSA   1.2107e-08  1.4901e-08 -5.9605e-08 -1.1921E-07       IONOSPHERIC CORR    ",
+    "GPSB   9.6256e+04  8.1920e+04 -1.9661e+05 -3.9322E+05       IONOSPHERIC CORR    "
+  ],
+  "inputs": {
+    "rtcm": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\lienss_live_cpu_final\\capture.rtcm3",
+      "sha256": "4905384ec732e6ec49c5eb143893532b531d8e66f85db5146a189b9835b46d8b"
+    },
+    "convbin": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\rtklib\\convbin.exe",
+      "sha256": "2207b9460862fc1a2e9fd2f4874dfb622a5363babd7b5ec6331bf8de45cfc8ac"
+    },
+    "iono_only_source": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\BRDC00WRD_R_20262570000_01D_MN.rnx",
+      "sha256": "47eb2d9ce0170c136d412d3538c5a21d0b99907f2ee105005e1381c4db5b8739"
+    }
+  },
+  "output_hashes": {
+    "convbin.trace": "376cc991bd325b663cd883f8cf578f98f2cc08a40d1631028efa142431516f50",
+    "receiver.nav": "b550e457cbbb59dd7ab7bfe5dbe2208dc3f49ef2a03c748b6dfe6bb235fdc901",
+    "receiver.obs": "f7c09d6d065e8d2fc3bd657ff4bb0f49f5256a755029f88e39545664a32e8716",
+    "receiver_with_iono.nav": "c9420be90767288b3cbf2ceb18c7fc141540066a02f442309be0de4b0476a221",
+    "stderr.txt": "b1aa6c2bd0444d53ed73cf3d609c8b2e47d55ff549d94704f67402750672f5a1",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "converted"
+}

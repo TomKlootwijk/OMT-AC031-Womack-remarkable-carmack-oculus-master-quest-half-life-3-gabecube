@@ -1,0 +1,25 @@
+{
+  "version": "3.6.1.6",
+  "profile": "SRK-R1",
+  "description": "Literal ASA/NA whole-word absorption and synchronous JK state feedback with actual editable equations.",
+  "equations": {"x": "q | d", "j": "y", "k": "0"},
+  "trajectories": [
+    {"id": 0, "description": "Latch: drive sets selected bits, then the equation retains its own result.",
+     "q0": 0, "drive": 5, "present": 15, "asa_mask": 15, "na_mask": 15, "boundary_mask": 0, "steps": 6},
+    {"id": 1, "description": "Toggle: J=K=y and constant drive on every present bit produce an exact period-two orbit.",
+     "q0": 0, "drive": 15, "present": 15, "asa_mask": 15, "na_mask": 15, "boundary_mask": 0, "steps": 8,
+     "equations": {"j": "y", "k": "y"}},
+    {"id": 2, "description": "A boundary hit absorbs the entire ASA/NA output, preserving old q under the resulting JK hold.",
+     "q0": 2, "drive": 15, "present": 15, "asa_mask": 15, "na_mask": 15, "boundary_mask": 8, "steps": 4},
+    {"id": 3, "description": "High bit and all-ones literal: 1 means 0xffffffff in a word equation.",
+     "q0": 2147483648, "drive": 2147483648, "present": 2147483648, "asa_mask": 4294967295,
+     "na_mask": 4294967295, "boundary_mask": 0, "steps": 6,
+     "equations": {"x": "q ^ d", "j": "1", "k": "1"}},
+    {"id": 4, "description": "Both J and K read old q, with independent nontrivial Boolean expressions.",
+     "q0": 10, "drive": 12, "present": 15, "asa_mask": 15, "na_mask": 7, "boundary_mask": 0, "steps": 8,
+     "equations": {"x": "(~q & d) | (q & ~d)", "j": "(~q & y) | (q & d)", "k": "(q & ~y) | (~q & d)"}},
+    {"id": 5, "description": "Empty present domain has exactly one state.",
+     "q0": 0, "drive": 4294967295, "present": 0, "asa_mask": 4294967295,
+     "na_mask": 4294967295, "boundary_mask": 0, "steps": 2}
+  ]
+}

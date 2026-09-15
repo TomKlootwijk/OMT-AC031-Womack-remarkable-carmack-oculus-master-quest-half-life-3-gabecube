@@ -1,0 +1,156 @@
+{
+  "source_kind": "recorded_rtcm",
+  "implementation": {
+    "tools/live_satnav.py": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\tools\\live_satnav.py",
+      "sha256": "46574312d0f7c8a7ee81f0b416d30151304b7e4530bf7f413adf9b2a704793cb"
+    },
+    "python/live_pipeline.py": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\python\\live_pipeline.py",
+      "sha256": "d8382f89e312638410a1a955b29f5543f2e260a0d13ecc833766228772f2c0af"
+    },
+    "python/live_native.py": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\python\\live_native.py",
+      "sha256": "22ffe0e51ac899487a1ef1e2abf11e9885039b195b6b70f84e258f827853c67c"
+    },
+    "python/live_gnss.py": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\python\\live_gnss.py",
+      "sha256": "40434e11affffa333ad65f00894415ce0a994bcc627f22ce189ceee8e08a4640"
+    },
+    "python/live_rtcm.py": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\python\\live_rtcm.py",
+      "sha256": "78ab371e4e1268297822aa0d2a0b290497c5ffac61986e667d133a1b13fded86"
+    }
+  },
+  "inputs": {
+    "iono_nav": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\BRDC00WRD_R_20262570000_01D_MN.rnx",
+      "sha256": "47eb2d9ce0170c136d412d3538c5a21d0b99907f2ee105005e1381c4db5b8739"
+    },
+    "rtcm": {
+      "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\results\\lienss_live_cuda_final\\capture.rtcm3",
+      "sha256": "b27f92f48d87464c00f3bf0710e05c3b12b50b068da7a622102e102a1b50bf91"
+    }
+  },
+  "source_url": null,
+  "gps_utc_offset_s": 18,
+  "measurement_origin": "remote_GNSS_receiver",
+  "ephemeris_origin": "streamed_RTCM1019",
+  "iono_source_role": "GPSA/B_header_only",
+  "laptop_position_measured": false,
+  "version": "3.6.1.8",
+  "profile": "LIVE-GPS-L1-R1",
+  "initial_seed_ecef_clock_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "reference_coordinates_used": false,
+  "worker_command": [
+    "C:\\tmp\\atomos3618_gpu128\\Release\\satnav_stream.exe",
+    "--backend",
+    "cuda",
+    "--device",
+    "0"
+  ],
+  "worker_pid": 33344,
+  "worker_sha256": "04794e50e7961025459019e19def9f6b803b86603ab78a1dce2a5426ca670548",
+  "worker_greeting": {
+    "type": "ready",
+    "version": "3.6.1.8",
+    "protocol": "SATNAV-STREAM-1",
+    "backend": "cuda"
+  },
+  "correction_outer_limit": 8,
+  "correction_tolerance_m": 0.001,
+  "iono_alpha": [
+    1.2107e-08,
+    1.4901e-08,
+    -5.9605e-08,
+    -1.1921e-07
+  ],
+  "iono_beta": [
+    96256.0,
+    81920.0,
+    -196610.0,
+    -393220.0
+  ],
+  "min_elevation_deg": 10.0,
+  "epoch_status_counts": {
+    "TOO_FEW": 5,
+    "CONVERGED": 175
+  },
+  "epochs": 180,
+  "positions": 175,
+  "processing_ms": {
+    "median": 3.2160999999177875,
+    "p95": 3.9327999984379858,
+    "maximum": 2665.4934999987745,
+    "scope": "completed-epoch correction preparation, native worker, and response parsing; excludes transport and RTCM parsing"
+  },
+  "first_position": {
+    "epoch_id": 5,
+    "time_gpst_s": 1473458359.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 9,
+    "state_ecef_clock_m": [
+      4426043.052880623,
+      -89428.12556661302,
+      4576297.954707621,
+      16679.66041641431
+    ],
+    "estimated_reception_gpst_s": 1473458358.9999444,
+    "rms_m": 0.32427374107360485,
+    "outer_passes": 4,
+    "processing_ms": 6.9965999991836725,
+    "reception_gpst_s": null,
+    "solution_emitted_utc_unix_s": 1789423380.744646,
+    "observation_to_reception_s": null,
+    "native_status": "CONVERGED",
+    "native_backend": "cuda_global"
+  },
+  "last_position": {
+    "epoch_id": 179,
+    "time_gpst_s": 1473458533.0,
+    "status": "CONVERGED",
+    "position_available": true,
+    "fit": "WITHIN_RESIDUAL_BUDGET",
+    "used": 9,
+    "state_ecef_clock_m": [
+      4426043.660526574,
+      -89428.5908600747,
+      4576298.378128412,
+      42458.151209912314
+    ],
+    "estimated_reception_gpst_s": 1473458532.9998584,
+    "rms_m": 0.6426457355391709,
+    "outer_passes": 2,
+    "processing_ms": 2.9121999996277736,
+    "reception_gpst_s": null,
+    "solution_emitted_utc_unix_s": 1789423382.1627388,
+    "observation_to_reception_s": null,
+    "native_status": "CONVERGED",
+    "native_backend": "cuda_global"
+  },
+  "rtcm_message_counts": {
+    "1004": 180,
+    "1012": 180,
+    "1077": 180,
+    "1087": 180,
+    "1097": 180,
+    "1127": 180,
+    "1005": 18,
+    "1008": 18,
+    "1033": 18,
+    "1045": 222,
+    "1046": 222,
+    "1019": 63,
+    "1020": 63,
+    "1006": 6,
+    "1230": 6,
+    "1042": 122
+  }
+}

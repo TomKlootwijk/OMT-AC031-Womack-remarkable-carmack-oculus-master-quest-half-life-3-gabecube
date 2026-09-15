@@ -1,0 +1,154 @@
+{
+  "status": "passed",
+  "oracle": "independent RTKLIB 2.4.2 p13 native rnx2rtkp -x5",
+  "input_epoch_gpst_s": 796435200.0,
+  "satellites": 8,
+  "position_tolerance_m": 0.001,
+  "clock_tolerance_ns": 0.0005,
+  "interpretation": "RTKLIB trace coordinates rounded to 0.001 m and clocks to 0.001 ns; its satellite clock excludes TGD, so candidate L1 clock plus TGD is compared.",
+  "max_position_difference_m": 0.0005779747977852194,
+  "max_clock_difference_ns": 0.00043757485764217563,
+  "rows": [
+    {
+      "prn": 3,
+      "rtklib_position_ecef_m": [
+        -24595184.341,
+        -10320589.582,
+        1244218.674
+      ],
+      "candidate_position_ecef_m": [
+        -24595184.34088057,
+        -10320589.582472473,
+        1244218.6739710735
+      ],
+      "position_difference_m": 0.0004881913291255306,
+      "rtklib_clock_without_tgd_ns": 96721.355,
+      "candidate_clock_without_tgd_ns": 96721.35468866711,
+      "clock_difference_ns": 0.00031133288575802
+    },
+    {
+      "prn": 7,
+      "rtklib_position_ecef_m": [
+        10026487.69,
+        18601864.069,
+        16597421.854
+      ],
+      "candidate_position_ecef_m": [
+        10026487.690234128,
+        18601864.069031354,
+        16597421.853782233
+      ],
+      "position_difference_m": 0.000321282094184059,
+      "rtklib_clock_without_tgd_ns": -136066.263,
+      "candidate_clock_without_tgd_ns": -136066.26340185737,
+      "clock_difference_ns": 0.00040185736725106835
+    },
+    {
+      "prn": 8,
+      "rtklib_position_ecef_m": [
+        -683949.793,
+        26351230.765,
+        79787.48
+      ],
+      "candidate_position_ecef_m": [
+        -683949.7925627242,
+        26351230.765020702,
+        79787.48037738077
+      ],
+      "position_difference_m": 0.0005779747977852194,
+      "rtklib_clock_without_tgd_ns": -25143.048,
+      "candidate_clock_without_tgd_ns": -25143.047661648652,
+      "clock_difference_ns": 0.00033835134672699496
+    },
+    {
+      "prn": 11,
+      "rtklib_position_ecef_m": [
+        -14822915.66,
+        8930208.368,
+        20079386.097
+      ],
+      "candidate_position_ecef_m": [
+        -14822915.659523621,
+        8930208.367978737,
+        20079386.096716058
+      ],
+      "position_difference_m": 0.0005549882023730354,
+      "rtklib_clock_without_tgd_ns": 210127.473,
+      "candidate_clock_without_tgd_ns": 210127.47302697733,
+      "clock_difference_ns": 2.6977329980582e-05
+    },
+    {
+      "prn": 19,
+      "rtklib_position_ecef_m": [
+        -23358517.5,
+        -5407967.004,
+        11505396.179
+      ],
+      "candidate_position_ecef_m": [
+        -23358517.499844417,
+        -5407967.004475827,
+        11505396.179047579
+      ],
+      "position_difference_m": 0.0005028735294643785,
+      "rtklib_clock_without_tgd_ns": -17455.662,
+      "candidate_clock_without_tgd_ns": -17455.662437574858,
+      "clock_difference_ns": 0.00043757485764217563
+    },
+    {
+      "prn": 20,
+      "rtklib_position_ecef_m": [
+        -23036169.086,
+        13172079.739,
+        766984.165
+      ],
+      "candidate_position_ecef_m": [
+        -23036169.08587744,
+        13172079.738914292,
+        766984.1650844445
+      ],
+      "position_difference_m": 0.00017174755145132526,
+      "rtklib_clock_without_tgd_ns": -75357.307,
+      "candidate_clock_without_tgd_ns": -75357.30701309885,
+      "clock_difference_ns": 1.3098848285153508e-05
+    },
+    {
+      "prn": 24,
+      "rtklib_position_ecef_m": [
+        -4410870.939,
+        25703724.499,
+        4806330.195
+      ],
+      "candidate_position_ecef_m": [
+        -4410870.939367713,
+        25703724.499061413,
+        4806330.194830253
+      ],
+      "position_difference_m": 0.0004096322092024107,
+      "rtklib_clock_without_tgd_ns": 5949.333,
+      "candidate_clock_without_tgd_ns": 5949.332810595422,
+      "clock_difference_ns": 0.0001894045772132813
+    },
+    {
+      "prn": 28,
+      "rtklib_position_ecef_m": [
+        -2383676.578,
+        17483698.398,
+        19982740.575
+      ],
+      "candidate_position_ecef_m": [
+        -2383676.578090136,
+        17483698.398467112,
+        19982740.574755028
+      ],
+      "position_difference_m": 0.0005350991015285012,
+      "rtklib_clock_without_tgd_ns": 46887.234,
+      "candidate_clock_without_tgd_ns": 46887.23443502292,
+      "clock_difference_ns": 0.0004350229210103862
+    }
+  ],
+  "input_sha256": {
+    "source\\live_data\\07590920.05n": "eb26dce205b59269147035be49db481d38dc51bb8601dac6e84c0c868bb8094a",
+    "source\\live_data\\07590920.05o": "8474af556633e9c03293a8fb1e2c1f55180b42336b17574a84fda06eb6a02f9e",
+    "results\\network_probes\\0759_first.pos.trace": "930df8f639d47f98d7fe58a66aa677e4213f814f1d62ee9cef5c2d693d057a14"
+  }
+}

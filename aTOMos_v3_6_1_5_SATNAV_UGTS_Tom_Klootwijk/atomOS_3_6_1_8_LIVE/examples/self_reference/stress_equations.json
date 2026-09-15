@@ -1,0 +1,3862 @@
+{
+  "version": "3.6.1.6",
+  "profile": "SRK-R1",
+  "description": "Deterministic block/index stress: seed 3616; 257 independent trajectories; steps span 1..32; even-indexed boundary masks are zero.",
+  "trajectories": [
+    {
+      "id": 0,
+      "q0": 2232288289,
+      "drive": 3035744711,
+      "present": 2806932771,
+      "asa_mask": 901034405,
+      "na_mask": 1847249369,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "d",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 1,
+      "q0": 2500362258,
+      "drive": 1407823057,
+      "present": 2508773650,
+      "asa_mask": 97662330,
+      "na_mask": 1434076923,
+      "boundary_mask": 3944117451,
+      "steps": 14,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "q ^ y ^ d",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 2,
+      "q0": 1140985926,
+      "drive": 414762377,
+      "present": 3702682566,
+      "asa_mask": 2987310952,
+      "na_mask": 542715497,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "~d",
+        "j": "(~q & y) | (q & d)",
+        "k": "~q"
+      }
+    },
+    {
+      "id": 3,
+      "q0": 33558049,
+      "drive": 1889483295,
+      "present": 239513449,
+      "asa_mask": 3315250486,
+      "na_mask": 2072250909,
+      "boundary_mask": 2958144684,
+      "steps": 8,
+      "equations": {
+        "x": "q & d",
+        "j": "q ^ y",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 4,
+      "q0": 2684420492,
+      "drive": 4113928073,
+      "present": 3877208476,
+      "asa_mask": 848275260,
+      "na_mask": 2554771984,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "q & d",
+        "j": "~d",
+        "k": "0"
+      }
+    },
+    {
+      "id": 5,
+      "q0": 268963849,
+      "drive": 2308572058,
+      "present": 1584059339,
+      "asa_mask": 2632066719,
+      "na_mask": 2848623277,
+      "boundary_mask": 900043416,
+      "steps": 2,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 6,
+      "q0": 958465704,
+      "drive": 2977595820,
+      "present": 992577192,
+      "asa_mask": 3719850303,
+      "na_mask": 974041016,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "0",
+        "j": "y & ~y",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 7,
+      "q0": 4863140,
+      "drive": 1405558286,
+      "present": 550434725,
+      "asa_mask": 2902082206,
+      "na_mask": 2374900136,
+      "boundary_mask": 2057722690,
+      "steps": 28,
+      "equations": {
+        "x": "q | d",
+        "j": "q & y & d",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 8,
+      "q0": 67379969,
+      "drive": 2383064546,
+      "present": 2505352073,
+      "asa_mask": 2731509774,
+      "na_mask": 2658067597,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "~d",
+        "j": "~d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 9,
+      "q0": 614469888,
+      "drive": 140077518,
+      "present": 748788099,
+      "asa_mask": 3081114995,
+      "na_mask": 3277523667,
+      "boundary_mask": 2701453911,
+      "steps": 22,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q ^ y",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 10,
+      "q0": 1956728386,
+      "drive": 1266028996,
+      "present": 1956867806,
+      "asa_mask": 2281640720,
+      "na_mask": 2125875079,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q ^ y ^ d",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 11,
+      "q0": 3112181888,
+      "drive": 1399697382,
+      "present": 3215110282,
+      "asa_mask": 3956614515,
+      "na_mask": 1015264189,
+      "boundary_mask": 1164493226,
+      "steps": 16,
+      "equations": {
+        "x": "q",
+        "j": "q | y | d",
+        "k": "0"
+      }
+    },
+    {
+      "id": 12,
+      "q0": 264,
+      "drive": 4242746326,
+      "present": 1638353224,
+      "asa_mask": 1587324432,
+      "na_mask": 520846611,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "q",
+        "j": "q | y | d",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 13,
+      "q0": 1346388017,
+      "drive": 160918862,
+      "present": 1372112951,
+      "asa_mask": 3142444556,
+      "na_mask": 1461570367,
+      "boundary_mask": 3438741282,
+      "steps": 10,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "y ^ d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 14,
+      "q0": 285212676,
+      "drive": 2854363835,
+      "present": 3682796309,
+      "asa_mask": 2839408461,
+      "na_mask": 1780286784,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 15,
+      "q0": 681002072,
+      "drive": 1970412171,
+      "present": 3919006814,
+      "asa_mask": 1537143209,
+      "na_mask": 1408339411,
+      "boundary_mask": 908573026,
+      "steps": 4,
+      "equations": {
+        "x": "q ^ d",
+        "j": "d",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 16,
+      "q0": 237011088,
+      "drive": 757790622,
+      "present": 1847759092,
+      "asa_mask": 1355652045,
+      "na_mask": 1641474689,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "q ^ d",
+        "j": "q & y & d",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 17,
+      "q0": 2422479297,
+      "drive": 1478505606,
+      "present": 2640600521,
+      "asa_mask": 452144320,
+      "na_mask": 342637165,
+      "boundary_mask": 1037553150,
+      "steps": 30,
+      "equations": {
+        "x": "d",
+        "j": "y & ~y",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 18,
+      "q0": 67178496,
+      "drive": 2029717072,
+      "present": 344019479,
+      "asa_mask": 1810714590,
+      "na_mask": 379965740,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "q & ~d",
+        "j": "~(q ^ (y | d))",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 19,
+      "q0": 33722496,
+      "drive": 1231210998,
+      "present": 780843652,
+      "asa_mask": 1783424571,
+      "na_mask": 4062414533,
+      "boundary_mask": 276033789,
+      "steps": 24,
+      "equations": {
+        "x": "d",
+        "j": "q ^ d",
+        "k": "y"
+      }
+    },
+    {
+      "id": 20,
+      "q0": 131161,
+      "drive": 2670736186,
+      "present": 287730297,
+      "asa_mask": 1218984395,
+      "na_mask": 951284012,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "q | d",
+        "j": "~q",
+        "k": "~q"
+      }
+    },
+    {
+      "id": 21,
+      "q0": 604246562,
+      "drive": 3337700633,
+      "present": 1965330998,
+      "asa_mask": 461994039,
+      "na_mask": 3711606209,
+      "boundary_mask": 1268835560,
+      "steps": 18,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "q | ~q",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 22,
+      "q0": 1614438415,
+      "drive": 272805264,
+      "present": 2092592687,
+      "asa_mask": 3286262170,
+      "na_mask": 3012810487,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "q | d",
+        "j": "q",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 23,
+      "q0": 1583104,
+      "drive": 2678287952,
+      "present": 1620703810,
+      "asa_mask": 4215554192,
+      "na_mask": 3209554311,
+      "boundary_mask": 466457189,
+      "steps": 12,
+      "equations": {
+        "x": "q & d",
+        "j": "~q",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 24,
+      "q0": 542704656,
+      "drive": 1423055871,
+      "present": 544934992,
+      "asa_mask": 2546073755,
+      "na_mask": 3240355429,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "q ^ d",
+        "j": "(~q & y) | (q & d)",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 25,
+      "q0": 1427472440,
+      "drive": 949678227,
+      "present": 1561707706,
+      "asa_mask": 3855552357,
+      "na_mask": 1770564480,
+      "boundary_mask": 3760924968,
+      "steps": 6,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "y",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 26,
+      "q0": 53776656,
+      "drive": 1631021067,
+      "present": 1396095314,
+      "asa_mask": 691583183,
+      "na_mask": 1367400827,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 27,
+      "q0": 537011201,
+      "drive": 2757699042,
+      "present": 1748477409,
+      "asa_mask": 397294314,
+      "na_mask": 241486806,
+      "boundary_mask": 2789567164,
+      "steps": 32,
+      "equations": {
+        "x": "q ^ d",
+        "j": "0",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 28,
+      "q0": 3767010315,
+      "drive": 2264521620,
+      "present": 3841754139,
+      "asa_mask": 633497318,
+      "na_mask": 1777708596,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "1",
+        "j": "(y & d) | (q & ~d)",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 29,
+      "q0": 815823872,
+      "drive": 2812264683,
+      "present": 832896267,
+      "asa_mask": 3603820721,
+      "na_mask": 597039289,
+      "boundary_mask": 1221013795,
+      "steps": 26,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "~d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 30,
+      "q0": 1946423296,
+      "drive": 1132128245,
+      "present": 1995200753,
+      "asa_mask": 4110097233,
+      "na_mask": 441044356,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "q & y & d",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 31,
+      "q0": 252706825,
+      "drive": 30841925,
+      "present": 529550361,
+      "asa_mask": 1601849292,
+      "na_mask": 3478070517,
+      "boundary_mask": 992529569,
+      "steps": 20,
+      "equations": {
+        "x": "q | d",
+        "j": "q | ~q",
+        "k": "0"
+      }
+    },
+    {
+      "id": 32,
+      "q0": 63176720,
+      "drive": 1736301194,
+      "present": 2747744272,
+      "asa_mask": 601504884,
+      "na_mask": 2021826258,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "~y",
+        "k": "y"
+      }
+    },
+    {
+      "id": 33,
+      "q0": 69206278,
+      "drive": 1866421394,
+      "present": 112430502,
+      "asa_mask": 927459028,
+      "na_mask": 855278588,
+      "boundary_mask": 4057126315,
+      "steps": 14,
+      "equations": {
+        "x": "q & ~d",
+        "j": "y ^ d",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 34,
+      "q0": 654383216,
+      "drive": 1010398719,
+      "present": 3070695928,
+      "asa_mask": 3114831414,
+      "na_mask": 1896016988,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "q ^ d",
+        "j": "q",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 35,
+      "q0": 2571109889,
+      "drive": 359793689,
+      "present": 3175188113,
+      "asa_mask": 2086552411,
+      "na_mask": 2092722356,
+      "boundary_mask": 763400964,
+      "steps": 8,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "(~q & y) | (q & d)",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 36,
+      "q0": 10487929,
+      "drive": 1605838115,
+      "present": 1806043901,
+      "asa_mask": 3828889618,
+      "na_mask": 3954058368,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 37,
+      "q0": 1174409730,
+      "drive": 3016801196,
+      "present": 1453593142,
+      "asa_mask": 2126986402,
+      "na_mask": 2116691834,
+      "boundary_mask": 533769931,
+      "steps": 2,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "~q",
+        "k": "y"
+      }
+    },
+    {
+      "id": 38,
+      "q0": 2309243138,
+      "drive": 1385112645,
+      "present": 2880203099,
+      "asa_mask": 1254572550,
+      "na_mask": 4290518468,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 39,
+      "q0": 686034995,
+      "drive": 1102464151,
+      "present": 954610811,
+      "asa_mask": 3782787240,
+      "na_mask": 3913557525,
+      "boundary_mask": 2051309560,
+      "steps": 28,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "0",
+        "k": "1"
+      }
+    },
+    {
+      "id": 40,
+      "q0": 1526859017,
+      "drive": 188341899,
+      "present": 1594054511,
+      "asa_mask": 811329342,
+      "na_mask": 1700415137,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "0",
+        "j": "q ^ d",
+        "k": "(~q & y) | (q & d)"
+      }
+    },
+    {
+      "id": 41,
+      "q0": 2895938,
+      "drive": 3296395503,
+      "present": 472658370,
+      "asa_mask": 4049729211,
+      "na_mask": 3884401858,
+      "boundary_mask": 3426762841,
+      "steps": 22,
+      "equations": {
+        "x": "~d",
+        "j": "y",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 42,
+      "q0": 840340588,
+      "drive": 4284584950,
+      "present": 2125977197,
+      "asa_mask": 3752977468,
+      "na_mask": 1125648787,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 43,
+      "q0": 612378282,
+      "drive": 2931345765,
+      "present": 2780850158,
+      "asa_mask": 2835069456,
+      "na_mask": 3233962305,
+      "boundary_mask": 519042514,
+      "steps": 16,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q | ~q",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 44,
+      "q0": 635963418,
+      "drive": 44706639,
+      "present": 1039665498,
+      "asa_mask": 1048207209,
+      "na_mask": 4056878617,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q | y | d",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 45,
+      "q0": 1074823492,
+      "drive": 2859242534,
+      "present": 3253969254,
+      "asa_mask": 535963133,
+      "na_mask": 2379659822,
+      "boundary_mask": 2295417673,
+      "steps": 10,
+      "equations": {
+        "x": "d",
+        "j": "1",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 46,
+      "q0": 3227520367,
+      "drive": 1274002818,
+      "present": 3807518063,
+      "asa_mask": 3337724224,
+      "na_mask": 2807281955,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(q & y) | (~q & d)",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 47,
+      "q0": 538224808,
+      "drive": 2228233102,
+      "present": 1646049788,
+      "asa_mask": 4106593469,
+      "na_mask": 646833673,
+      "boundary_mask": 3023388226,
+      "steps": 4,
+      "equations": {
+        "x": "~d",
+        "j": "~q",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 48,
+      "q0": 2215777280,
+      "drive": 2390981909,
+      "present": 3860239495,
+      "asa_mask": 1674576452,
+      "na_mask": 3252083501,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "(q & y) | (~q & d)",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 49,
+      "q0": 1096896522,
+      "drive": 855049778,
+      "present": 2038005070,
+      "asa_mask": 1425966406,
+      "na_mask": 622274746,
+      "boundary_mask": 515046839,
+      "steps": 30,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "q ^ y",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 50,
+      "q0": 1402348570,
+      "drive": 436560986,
+      "present": 1474227419,
+      "asa_mask": 1639955676,
+      "na_mask": 439753222,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "d",
+        "k": "q"
+      }
+    },
+    {
+      "id": 51,
+      "q0": 2995017344,
+      "drive": 947146734,
+      "present": 2997288631,
+      "asa_mask": 85891978,
+      "na_mask": 4134236437,
+      "boundary_mask": 2178511980,
+      "steps": 24,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "d",
+        "k": "d"
+      }
+    },
+    {
+      "id": 52,
+      "q0": 3221299472,
+      "drive": 190306836,
+      "present": 3306240336,
+      "asa_mask": 2546232558,
+      "na_mask": 160590758,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "d",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 53,
+      "q0": 8398976,
+      "drive": 1403059418,
+      "present": 113490368,
+      "asa_mask": 2389322143,
+      "na_mask": 2870930161,
+      "boundary_mask": 3783743776,
+      "steps": 18,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "(q | y) & (~q | d)",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 54,
+      "q0": 270798352,
+      "drive": 699163773,
+      "present": 279367256,
+      "asa_mask": 1030254122,
+      "na_mask": 789474316,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "q ^ y",
+        "k": "y"
+      }
+    },
+    {
+      "id": 55,
+      "q0": 756036624,
+      "drive": 3347880742,
+      "present": 4017241182,
+      "asa_mask": 3655010814,
+      "na_mask": 2220830509,
+      "boundary_mask": 3875218320,
+      "steps": 12,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "y",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 56,
+      "q0": 1228940097,
+      "drive": 985399933,
+      "present": 1564518341,
+      "asa_mask": 3060569874,
+      "na_mask": 2913415143,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "d",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 57,
+      "q0": 554762517,
+      "drive": 1972800048,
+      "present": 588345813,
+      "asa_mask": 3631651924,
+      "na_mask": 37115129,
+      "boundary_mask": 1970735120,
+      "steps": 6,
+      "equations": {
+        "x": "~d",
+        "j": "q | y | d",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 58,
+      "q0": 69468809,
+      "drive": 82096491,
+      "present": 761742233,
+      "asa_mask": 1185112185,
+      "na_mask": 3480406556,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "0",
+        "k": "~q"
+      }
+    },
+    {
+      "id": 59,
+      "q0": 2431455392,
+      "drive": 1678670346,
+      "present": 2532145840,
+      "asa_mask": 3714873183,
+      "na_mask": 4102650686,
+      "boundary_mask": 2813433088,
+      "steps": 32,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "q ^ d",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 60,
+      "q0": 2147496162,
+      "drive": 195141020,
+      "present": 3238801634,
+      "asa_mask": 4206393390,
+      "na_mask": 4279228974,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "1",
+        "j": "q",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 61,
+      "q0": 73401505,
+      "drive": 4068487313,
+      "present": 1332393633,
+      "asa_mask": 3175497495,
+      "na_mask": 2976247042,
+      "boundary_mask": 2241813910,
+      "steps": 26,
+      "equations": {
+        "x": "~q",
+        "j": "d",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 62,
+      "q0": 753447456,
+      "drive": 1680015643,
+      "present": 1038660322,
+      "asa_mask": 1739073906,
+      "na_mask": 3499965614,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "q & ~d",
+        "j": "~y",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 63,
+      "q0": 205447208,
+      "drive": 3770039330,
+      "present": 1279195695,
+      "asa_mask": 4191546191,
+      "na_mask": 3271739829,
+      "boundary_mask": 4153798694,
+      "steps": 20,
+      "equations": {
+        "x": "~q",
+        "j": "(~q & y) | (q & d)",
+        "k": "1"
+      }
+    },
+    {
+      "id": 64,
+      "q0": 61179424,
+      "drive": 1254432662,
+      "present": 934129568,
+      "asa_mask": 2923295543,
+      "na_mask": 1087709136,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "~d",
+        "j": "q & y & d",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 65,
+      "q0": 671096336,
+      "drive": 1006140026,
+      "present": 2137275965,
+      "asa_mask": 1602925523,
+      "na_mask": 361949929,
+      "boundary_mask": 2278573833,
+      "steps": 14,
+      "equations": {
+        "x": "~q",
+        "j": "q",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 66,
+      "q0": 555031608,
+      "drive": 4144958192,
+      "present": 589127546,
+      "asa_mask": 1496137952,
+      "na_mask": 3864083008,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "~d",
+        "j": "d",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 67,
+      "q0": 83886086,
+      "drive": 373534358,
+      "present": 2408123758,
+      "asa_mask": 1142907587,
+      "na_mask": 997177009,
+      "boundary_mask": 3441003026,
+      "steps": 8,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 68,
+      "q0": 4206721,
+      "drive": 1900145951,
+      "present": 676918213,
+      "asa_mask": 2051332992,
+      "na_mask": 3147712849,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "d",
+        "j": "(y & d) | (q & ~d)",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 69,
+      "q0": 272696579,
+      "drive": 935685058,
+      "present": 2539226615,
+      "asa_mask": 3717201088,
+      "na_mask": 2757089407,
+      "boundary_mask": 247228845,
+      "steps": 2,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "y",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 70,
+      "q0": 3768604696,
+      "drive": 898478766,
+      "present": 3936376893,
+      "asa_mask": 2982325972,
+      "na_mask": 863003982,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "(y & d) | (q & ~d)",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 71,
+      "q0": 617169921,
+      "drive": 2944540346,
+      "present": 904906337,
+      "asa_mask": 412599539,
+      "na_mask": 3814295712,
+      "boundary_mask": 382364158,
+      "steps": 28,
+      "equations": {
+        "x": "0",
+        "j": "y ^ d",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 72,
+      "q0": 2191151200,
+      "drive": 3518832002,
+      "present": 2663314785,
+      "asa_mask": 1973788471,
+      "na_mask": 1922620889,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "d",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 73,
+      "q0": 1778405706,
+      "drive": 4261556198,
+      "present": 1782601038,
+      "asa_mask": 3206807439,
+      "na_mask": 2456420606,
+      "boundary_mask": 672705473,
+      "steps": 22,
+      "equations": {
+        "x": "0",
+        "j": "q | y | d",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 74,
+      "q0": 2165834342,
+      "drive": 2295371495,
+      "present": 2165917303,
+      "asa_mask": 38197553,
+      "na_mask": 1207073402,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "q & d",
+        "j": "q",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 75,
+      "q0": 3095697923,
+      "drive": 3216378286,
+      "present": 4174757683,
+      "asa_mask": 3997087534,
+      "na_mask": 1088623357,
+      "boundary_mask": 3393912453,
+      "steps": 16,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "~d",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 76,
+      "q0": 362807622,
+      "drive": 72418780,
+      "present": 367203782,
+      "asa_mask": 1884414426,
+      "na_mask": 4030994868,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 77,
+      "q0": 2224177416,
+      "drive": 29421403,
+      "present": 2243084585,
+      "asa_mask": 1548407592,
+      "na_mask": 241712810,
+      "boundary_mask": 3274449047,
+      "steps": 10,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(~q & y) | (q & d)",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 78,
+      "q0": 2334466793,
+      "drive": 3602904444,
+      "present": 3945080553,
+      "asa_mask": 801976846,
+      "na_mask": 2723269012,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 79,
+      "q0": 1616978307,
+      "drive": 3975443573,
+      "present": 2088086431,
+      "asa_mask": 3200258126,
+      "na_mask": 2428613526,
+      "boundary_mask": 4181508096,
+      "steps": 4,
+      "equations": {
+        "x": "0",
+        "j": "q",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 80,
+      "q0": 1099448404,
+      "drive": 2974459031,
+      "present": 3382235100,
+      "asa_mask": 1507328303,
+      "na_mask": 3536162839,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "1",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 81,
+      "q0": 2155877008,
+      "drive": 4113048882,
+      "present": 2290668537,
+      "asa_mask": 2209551911,
+      "na_mask": 1337550380,
+      "boundary_mask": 713832473,
+      "steps": 30,
+      "equations": {
+        "x": "~d",
+        "j": "~y",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 82,
+      "q0": 482358403,
+      "drive": 783389487,
+      "present": 2632660103,
+      "asa_mask": 3302119374,
+      "na_mask": 3363085188,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "q & d",
+        "j": "q & y & d",
+        "k": "y"
+      }
+    },
+    {
+      "id": 83,
+      "q0": 1663565856,
+      "drive": 3957998134,
+      "present": 1803502304,
+      "asa_mask": 2846148561,
+      "na_mask": 2323224480,
+      "boundary_mask": 4115277248,
+      "steps": 24,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "~(q | (y & d))",
+        "k": "1"
+      }
+    },
+    {
+      "id": 84,
+      "q0": 2694381572,
+      "drive": 2135371995,
+      "present": 2728378902,
+      "asa_mask": 787665076,
+      "na_mask": 1864759432,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 85,
+      "q0": 203476033,
+      "drive": 3132618601,
+      "present": 2360200513,
+      "asa_mask": 181646560,
+      "na_mask": 444257564,
+      "boundary_mask": 4134081737,
+      "steps": 18,
+      "equations": {
+        "x": "q & d",
+        "j": "q | y | d",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 86,
+      "q0": 817894530,
+      "drive": 3776358910,
+      "present": 2999375022,
+      "asa_mask": 677653517,
+      "na_mask": 414693561,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "d",
+        "j": "~q",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 87,
+      "q0": 33984592,
+      "drive": 472289102,
+      "present": 2383402586,
+      "asa_mask": 2752857525,
+      "na_mask": 1355525042,
+      "boundary_mask": 3650241340,
+      "steps": 12,
+      "equations": {
+        "x": "q & d",
+        "j": "y & ~y",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 88,
+      "q0": 1225446544,
+      "drive": 4180192212,
+      "present": 1273683093,
+      "asa_mask": 132708947,
+      "na_mask": 2040591675,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "q ^ y ^ d",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 89,
+      "q0": 262146,
+      "drive": 2673359853,
+      "present": 1678009666,
+      "asa_mask": 2707993947,
+      "na_mask": 3997124496,
+      "boundary_mask": 4151797808,
+      "steps": 6,
+      "equations": {
+        "x": "q ^ d",
+        "j": "~d",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 90,
+      "q0": 685379910,
+      "drive": 1832213514,
+      "present": 687748439,
+      "asa_mask": 2778233027,
+      "na_mask": 496898190,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "1",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 91,
+      "q0": 13111338,
+      "drive": 1205530859,
+      "present": 2295173226,
+      "asa_mask": 914332988,
+      "na_mask": 500213938,
+      "boundary_mask": 3576029937,
+      "steps": 32,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "1",
+        "k": "d"
+      }
+    },
+    {
+      "id": 92,
+      "q0": 1107312672,
+      "drive": 3534156531,
+      "present": 1110204770,
+      "asa_mask": 1871909385,
+      "na_mask": 4228536938,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "~q",
+        "j": "~y",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 93,
+      "q0": 540082688,
+      "drive": 3559422727,
+      "present": 741438343,
+      "asa_mask": 3044311675,
+      "na_mask": 2195755629,
+      "boundary_mask": 71627574,
+      "steps": 26,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q",
+        "k": "d"
+      }
+    },
+    {
+      "id": 94,
+      "q0": 2149741122,
+      "drive": 3975124358,
+      "present": 3294854082,
+      "asa_mask": 964491754,
+      "na_mask": 2314638983,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q & y & d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 95,
+      "q0": 403964168,
+      "drive": 241538672,
+      "present": 1505022219,
+      "asa_mask": 3942968423,
+      "na_mask": 126548849,
+      "boundary_mask": 2351210554,
+      "steps": 20,
+      "equations": {
+        "x": "~q",
+        "j": "q ^ y",
+        "k": "d"
+      }
+    },
+    {
+      "id": 96,
+      "q0": 35357184,
+      "drive": 713735399,
+      "present": 3533407917,
+      "asa_mask": 1713559246,
+      "na_mask": 1166500125,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "1",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 97,
+      "q0": 2281703629,
+      "drive": 397533146,
+      "present": 3464777709,
+      "asa_mask": 663873051,
+      "na_mask": 4126323033,
+      "boundary_mask": 2716752520,
+      "steps": 14,
+      "equations": {
+        "x": "q & d",
+        "j": "y & ~y",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 98,
+      "q0": 94437464,
+      "drive": 3026921842,
+      "present": 95621338,
+      "asa_mask": 1716386353,
+      "na_mask": 2015111974,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "~(q ^ (y | d))",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 99,
+      "q0": 1901136392,
+      "drive": 1141345263,
+      "present": 4183371662,
+      "asa_mask": 3460929169,
+      "na_mask": 4020146663,
+      "boundary_mask": 994564252,
+      "steps": 8,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "y ^ d",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 100,
+      "q0": 872486928,
+      "drive": 2131553835,
+      "present": 3162848023,
+      "asa_mask": 236499955,
+      "na_mask": 2702072161,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "0",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 101,
+      "q0": 3179024,
+      "drive": 61185069,
+      "present": 657623764,
+      "asa_mask": 172877172,
+      "na_mask": 2300719264,
+      "boundary_mask": 3072846704,
+      "steps": 2,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "y ^ d",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 102,
+      "q0": 427819012,
+      "drive": 2381180327,
+      "present": 432218453,
+      "asa_mask": 1166052494,
+      "na_mask": 839830002,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "~d",
+        "j": "~(q | (y & d))",
+        "k": "(~q & y) | (q & d)"
+      }
+    },
+    {
+      "id": 103,
+      "q0": 838897202,
+      "drive": 2877098099,
+      "present": 1981390774,
+      "asa_mask": 1723807544,
+      "na_mask": 3204467340,
+      "boundary_mask": 29430460,
+      "steps": 28,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "q",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 104,
+      "q0": 1229193249,
+      "drive": 2299602422,
+      "present": 1231441257,
+      "asa_mask": 4153690175,
+      "na_mask": 1020073557,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "0",
+        "j": "~y",
+        "k": "0"
+      }
+    },
+    {
+      "id": 105,
+      "q0": 2147483776,
+      "drive": 44482097,
+      "present": 2668707049,
+      "asa_mask": 1379988400,
+      "na_mask": 2720727384,
+      "boundary_mask": 2280790489,
+      "steps": 22,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "(y & d) | (q & ~d)",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 106,
+      "q0": 1134053926,
+      "drive": 395400283,
+      "present": 3483191862,
+      "asa_mask": 1184317395,
+      "na_mask": 215933060,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(q | y) & (~q | d)",
+        "k": "1"
+      }
+    },
+    {
+      "id": 107,
+      "q0": 134513928,
+      "drive": 408337737,
+      "present": 966042984,
+      "asa_mask": 41935009,
+      "na_mask": 3477989912,
+      "boundary_mask": 4245688175,
+      "steps": 16,
+      "equations": {
+        "x": "q",
+        "j": "y & ~y",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 108,
+      "q0": 4587912,
+      "drive": 2913911354,
+      "present": 351686584,
+      "asa_mask": 2184412790,
+      "na_mask": 2609574379,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "q | d",
+        "j": "y & ~y",
+        "k": "1"
+      }
+    },
+    {
+      "id": 109,
+      "q0": 16839053,
+      "drive": 2703275358,
+      "present": 2702570413,
+      "asa_mask": 2648893351,
+      "na_mask": 1223640595,
+      "boundary_mask": 262801714,
+      "steps": 10,
+      "equations": {
+        "x": "d",
+        "j": "y & ~y",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 110,
+      "q0": 1896875561,
+      "drive": 2961411757,
+      "present": 4254414441,
+      "asa_mask": 2419468465,
+      "na_mask": 1255897738,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "~q",
+        "j": "q ^ y",
+        "k": "~q"
+      }
+    },
+    {
+      "id": 111,
+      "q0": 2398560,
+      "drive": 987314132,
+      "present": 1478925689,
+      "asa_mask": 2815812539,
+      "na_mask": 2700282535,
+      "boundary_mask": 1753879836,
+      "steps": 4,
+      "equations": {
+        "x": "1",
+        "j": "q",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 112,
+      "q0": 1074792556,
+      "drive": 771433785,
+      "present": 1618352252,
+      "asa_mask": 2755426720,
+      "na_mask": 3552606484,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "0",
+        "j": "y ^ d",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 113,
+      "q0": 3024363523,
+      "drive": 2035982571,
+      "present": 4115965067,
+      "asa_mask": 2948025738,
+      "na_mask": 2607614849,
+      "boundary_mask": 1575707228,
+      "steps": 30,
+      "equations": {
+        "x": "d",
+        "j": "~(q | (y & d))",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 114,
+      "q0": 3825239120,
+      "drive": 1895689255,
+      "present": 4283881043,
+      "asa_mask": 1761551919,
+      "na_mask": 1359486419,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(q | y) & (~q | d)",
+        "k": "1"
+      }
+    },
+    {
+      "id": 115,
+      "q0": 25364704,
+      "drive": 3790985546,
+      "present": 2244160498,
+      "asa_mask": 2962920790,
+      "na_mask": 1369556476,
+      "boundary_mask": 1888814185,
+      "steps": 24,
+      "equations": {
+        "x": "~d",
+        "j": "y",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 116,
+      "q0": 2268891137,
+      "drive": 3829985955,
+      "present": 2269022615,
+      "asa_mask": 2611372147,
+      "na_mask": 3233974048,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "q",
+        "k": "q"
+      }
+    },
+    {
+      "id": 117,
+      "q0": 3492120092,
+      "drive": 3065335465,
+      "present": 3509452637,
+      "asa_mask": 3414730880,
+      "na_mask": 2766232317,
+      "boundary_mask": 185761579,
+      "steps": 18,
+      "equations": {
+        "x": "1",
+        "j": "~y",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 118,
+      "q0": 2769028648,
+      "drive": 3211949684,
+      "present": 2938963496,
+      "asa_mask": 1818297082,
+      "na_mask": 1879874940,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "q",
+        "j": "d",
+        "k": "d"
+      }
+    },
+    {
+      "id": 119,
+      "q0": 540154884,
+      "drive": 1731691218,
+      "present": 875715620,
+      "asa_mask": 575150421,
+      "na_mask": 410719195,
+      "boundary_mask": 3791890139,
+      "steps": 12,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "~(q ^ (y | d))",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 120,
+      "q0": 79696912,
+      "drive": 1242342191,
+      "present": 616568660,
+      "asa_mask": 3028701994,
+      "na_mask": 1481463314,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "1",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 121,
+      "q0": 4281875,
+      "drive": 735842989,
+      "present": 3552704223,
+      "asa_mask": 3660174458,
+      "na_mask": 779450260,
+      "boundary_mask": 1683055855,
+      "steps": 6,
+      "equations": {
+        "x": "q | d",
+        "j": "q ^ y ^ d",
+        "k": "1"
+      }
+    },
+    {
+      "id": 122,
+      "q0": 854729352,
+      "drive": 636084906,
+      "present": 4076272569,
+      "asa_mask": 1857003635,
+      "na_mask": 515418587,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "q & d",
+        "j": "0",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 123,
+      "q0": 1275348992,
+      "drive": 1077971837,
+      "present": 2123648914,
+      "asa_mask": 2467629989,
+      "na_mask": 3385063819,
+      "boundary_mask": 3376411561,
+      "steps": 32,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(q & y) | (~q & d)",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 124,
+      "q0": 7733778,
+      "drive": 319616217,
+      "present": 1098332691,
+      "asa_mask": 968889445,
+      "na_mask": 1601780772,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "~y",
+        "k": "d"
+      }
+    },
+    {
+      "id": 125,
+      "q0": 536912130,
+      "drive": 1333953430,
+      "present": 2689708958,
+      "asa_mask": 4000008980,
+      "na_mask": 3672912119,
+      "boundary_mask": 378073475,
+      "steps": 26,
+      "equations": {
+        "x": "d",
+        "j": "1",
+        "k": "q"
+      }
+    },
+    {
+      "id": 126,
+      "q0": 1082032,
+      "drive": 3130642124,
+      "present": 1496365746,
+      "asa_mask": 1519462935,
+      "na_mask": 1547272365,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "q",
+        "j": "d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 127,
+      "q0": 135356475,
+      "drive": 3147203907,
+      "present": 772923711,
+      "asa_mask": 437094624,
+      "na_mask": 2446728490,
+      "boundary_mask": 254012958,
+      "steps": 20,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "~y",
+        "k": "1"
+      }
+    },
+    {
+      "id": 128,
+      "q0": 3221372977,
+      "drive": 3174749492,
+      "present": 3758506293,
+      "asa_mask": 1190969260,
+      "na_mask": 3484547858,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "(q & y) | (~q & d)",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 129,
+      "q0": 406914317,
+      "drive": 631262780,
+      "present": 952477117,
+      "asa_mask": 3670220655,
+      "na_mask": 1825888305,
+      "boundary_mask": 3467814638,
+      "steps": 14,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "(~q & y) | (q & d)",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 130,
+      "q0": 2152403130,
+      "drive": 4031217131,
+      "present": 2555056314,
+      "asa_mask": 2596568558,
+      "na_mask": 2777352504,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "q | d",
+        "j": "y & ~y",
+        "k": "y"
+      }
+    },
+    {
+      "id": 131,
+      "q0": 635830273,
+      "drive": 2499559189,
+      "present": 803702027,
+      "asa_mask": 780569273,
+      "na_mask": 3930302019,
+      "boundary_mask": 3349009839,
+      "steps": 8,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q | ~q",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 132,
+      "q0": 1144540433,
+      "drive": 3047482628,
+      "present": 3602472725,
+      "asa_mask": 692093800,
+      "na_mask": 703989291,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "q | d",
+        "j": "~(q ^ (y | d))",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 133,
+      "q0": 778052520,
+      "drive": 496046888,
+      "present": 3220480937,
+      "asa_mask": 751869819,
+      "na_mask": 8628389,
+      "boundary_mask": 3498351765,
+      "steps": 2,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "y ^ d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 134,
+      "q0": 138553636,
+      "drive": 3606099698,
+      "present": 147062068,
+      "asa_mask": 3271468409,
+      "na_mask": 4067185599,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "1",
+        "j": "(~q & y) | (q & d)",
+        "k": "0"
+      }
+    },
+    {
+      "id": 135,
+      "q0": 2162174982,
+      "drive": 3368194044,
+      "present": 4041485662,
+      "asa_mask": 1622438603,
+      "na_mask": 1415648168,
+      "boundary_mask": 905292340,
+      "steps": 28,
+      "equations": {
+        "x": "q",
+        "j": "y ^ d",
+        "k": "y"
+      }
+    },
+    {
+      "id": 136,
+      "q0": 2156331372,
+      "drive": 786782442,
+      "present": 3368525164,
+      "asa_mask": 1080488775,
+      "na_mask": 3091034432,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "q ^ d",
+        "j": "(q | y) & (~q | d)",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 137,
+      "q0": 1654202368,
+      "drive": 228270276,
+      "present": 4139508064,
+      "asa_mask": 4032642490,
+      "na_mask": 1223225204,
+      "boundary_mask": 3203451444,
+      "steps": 22,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "d",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 138,
+      "q0": 1057410,
+      "drive": 4181812620,
+      "present": 1674669763,
+      "asa_mask": 3882758103,
+      "na_mask": 1936834730,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "~d",
+        "j": "(q | y) & (~q | d)",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 139,
+      "q0": 1174732801,
+      "drive": 1678915336,
+      "present": 1581760691,
+      "asa_mask": 803317036,
+      "na_mask": 1479882017,
+      "boundary_mask": 2348636344,
+      "steps": 16,
+      "equations": {
+        "x": "q | d",
+        "j": "y & ~y",
+        "k": "y"
+      }
+    },
+    {
+      "id": 140,
+      "q0": 3221307428,
+      "drive": 530863904,
+      "present": 3511280958,
+      "asa_mask": 1662786765,
+      "na_mask": 2097660933,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q ^ y",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 141,
+      "q0": 58828833,
+      "drive": 2722680868,
+      "present": 2275519013,
+      "asa_mask": 1287806815,
+      "na_mask": 3055277980,
+      "boundary_mask": 3656070966,
+      "steps": 10,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "0",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 142,
+      "q0": 5227169,
+      "drive": 2598637455,
+      "present": 2247090865,
+      "asa_mask": 2831711028,
+      "na_mask": 2840392116,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "q & y & d",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 143,
+      "q0": 139987169,
+      "drive": 1942310828,
+      "present": 259766757,
+      "asa_mask": 2789906935,
+      "na_mask": 1777349726,
+      "boundary_mask": 516620887,
+      "steps": 4,
+      "equations": {
+        "x": "0",
+        "j": "1",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 144,
+      "q0": 721453512,
+      "drive": 3942909709,
+      "present": 2870973400,
+      "asa_mask": 1787143112,
+      "na_mask": 2124672105,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "q & d",
+        "j": "q ^ d",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 145,
+      "q0": 12731467,
+      "drive": 1333020945,
+      "present": 418596427,
+      "asa_mask": 4049771484,
+      "na_mask": 1170964894,
+      "boundary_mask": 1984571788,
+      "steps": 30,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "y ^ d",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 146,
+      "q0": 2689171474,
+      "drive": 1297278810,
+      "present": 3016479859,
+      "asa_mask": 3146199273,
+      "na_mask": 3940143631,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "q & ~d",
+        "j": "~y",
+        "k": "0"
+      }
+    },
+    {
+      "id": 147,
+      "q0": 1231184321,
+      "drive": 810542789,
+      "present": 3455216067,
+      "asa_mask": 1636594854,
+      "na_mask": 1272809594,
+      "boundary_mask": 243450296,
+      "steps": 24,
+      "equations": {
+        "x": "q & ~d",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "0"
+      }
+    },
+    {
+      "id": 148,
+      "q0": 1074661424,
+      "drive": 2307163389,
+      "present": 3911142321,
+      "asa_mask": 4094587428,
+      "na_mask": 3316642165,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(y & d) | (q & ~d)",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 149,
+      "q0": 2167407904,
+      "drive": 2538244214,
+      "present": 2503136559,
+      "asa_mask": 3611690424,
+      "na_mask": 2811789690,
+      "boundary_mask": 1682440744,
+      "steps": 18,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "0",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 150,
+      "q0": 536876066,
+      "drive": 4200351085,
+      "present": 581655735,
+      "asa_mask": 3089599394,
+      "na_mask": 2673396126,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "~(q | (y & d))",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 151,
+      "q0": 3963617880,
+      "drive": 2304836579,
+      "present": 3991495644,
+      "asa_mask": 2144761818,
+      "na_mask": 1718443565,
+      "boundary_mask": 4285874705,
+      "steps": 12,
+      "equations": {
+        "x": "q | d",
+        "j": "(q & y) | (~q & d)",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 152,
+      "q0": 134546432,
+      "drive": 1611009082,
+      "present": 440751104,
+      "asa_mask": 3903895692,
+      "na_mask": 967049431,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "(~q & y) | (q & d)"
+      }
+    },
+    {
+      "id": 153,
+      "q0": 1581932897,
+      "drive": 3876078312,
+      "present": 2135844841,
+      "asa_mask": 3836012296,
+      "na_mask": 3029757666,
+      "boundary_mask": 1932053514,
+      "steps": 6,
+      "equations": {
+        "x": "d",
+        "j": "0",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 154,
+      "q0": 33620737,
+      "drive": 1982441558,
+      "present": 236788495,
+      "asa_mask": 3429056237,
+      "na_mask": 4142285804,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "q & ~d",
+        "j": "y & ~y",
+        "k": "d"
+      }
+    },
+    {
+      "id": 155,
+      "q0": 992089108,
+      "drive": 94856446,
+      "present": 1004713047,
+      "asa_mask": 3668554403,
+      "na_mask": 653272111,
+      "boundary_mask": 3168236280,
+      "steps": 32,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "(~q & y) | (q & d)",
+        "k": "d"
+      }
+    },
+    {
+      "id": 156,
+      "q0": 75650666,
+      "drive": 3097672547,
+      "present": 1170921066,
+      "asa_mask": 2286715103,
+      "na_mask": 3813050138,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "y ^ d",
+        "k": "~(q ^ (y | d))"
+      }
+    },
+    {
+      "id": 157,
+      "q0": 19669026,
+      "drive": 2489224899,
+      "present": 1093429303,
+      "asa_mask": 2597457942,
+      "na_mask": 4266263624,
+      "boundary_mask": 2053446942,
+      "steps": 26,
+      "equations": {
+        "x": "1",
+        "j": "q",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 158,
+      "q0": 321652800,
+      "drive": 575904021,
+      "present": 2469153216,
+      "asa_mask": 809711439,
+      "na_mask": 3426762379,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "~(q | (y & d))",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 159,
+      "q0": 479436076,
+      "drive": 2535567388,
+      "present": 2626936686,
+      "asa_mask": 2258490013,
+      "na_mask": 2378504507,
+      "boundary_mask": 1637908378,
+      "steps": 20,
+      "equations": {
+        "x": "q | d",
+        "j": "(y & d) | (q & ~d)",
+        "k": "d"
+      }
+    },
+    {
+      "id": 160,
+      "q0": 950031140,
+      "drive": 1955837931,
+      "present": 2091799477,
+      "asa_mask": 672943116,
+      "na_mask": 566109338,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "0",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 161,
+      "q0": 144851266,
+      "drive": 2906337954,
+      "present": 716435826,
+      "asa_mask": 2236094828,
+      "na_mask": 2337566531,
+      "boundary_mask": 3255786811,
+      "steps": 14,
+      "equations": {
+        "x": "q | d",
+        "j": "(~q & y) | (q & d)",
+        "k": "1"
+      }
+    },
+    {
+      "id": 162,
+      "q0": 335757312,
+      "drive": 3031988596,
+      "present": 2625856669,
+      "asa_mask": 1134070686,
+      "na_mask": 654325363,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q & y & d",
+        "k": "~q"
+      }
+    },
+    {
+      "id": 163,
+      "q0": 3391094784,
+      "drive": 148478246,
+      "present": 3660449040,
+      "asa_mask": 3273376975,
+      "na_mask": 133476168,
+      "boundary_mask": 3211309908,
+      "steps": 8,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "q"
+      }
+    },
+    {
+      "id": 164,
+      "q0": 1220903942,
+      "drive": 1569004394,
+      "present": 2144710119,
+      "asa_mask": 3093027751,
+      "na_mask": 2729091277,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "(q | y) & (~q | d)",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 165,
+      "q0": 1643121185,
+      "drive": 107203436,
+      "present": 3958385523,
+      "asa_mask": 1976002640,
+      "na_mask": 3787614094,
+      "boundary_mask": 902244496,
+      "steps": 2,
+      "equations": {
+        "x": "~q",
+        "j": "q | ~q",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 166,
+      "q0": 604340235,
+      "drive": 3196788763,
+      "present": 611305995,
+      "asa_mask": 600552892,
+      "na_mask": 3673507872,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "0",
+        "j": "(q | y) & (~q | d)",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 167,
+      "q0": 135184,
+      "drive": 1466735382,
+      "present": 1755452820,
+      "asa_mask": 3329358772,
+      "na_mask": 2986272039,
+      "boundary_mask": 1073169610,
+      "steps": 28,
+      "equations": {
+        "x": "q | d",
+        "j": "(y & d) | (q & ~d)",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 168,
+      "q0": 337777217,
+      "drive": 3577006773,
+      "present": 1567020633,
+      "asa_mask": 1199659822,
+      "na_mask": 759123947,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "~q",
+        "j": "q",
+        "k": "d"
+      }
+    },
+    {
+      "id": 169,
+      "q0": 44173344,
+      "drive": 2429309143,
+      "present": 49432676,
+      "asa_mask": 1883329850,
+      "na_mask": 1194916453,
+      "boundary_mask": 3673648861,
+      "steps": 22,
+      "equations": {
+        "x": "1",
+        "j": "q | y | d",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 170,
+      "q0": 16787458,
+      "drive": 3301211190,
+      "present": 2179087394,
+      "asa_mask": 3337619990,
+      "na_mask": 2681838148,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "d",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 171,
+      "q0": 2152112144,
+      "drive": 402910528,
+      "present": 2287464638,
+      "asa_mask": 3449055769,
+      "na_mask": 322132228,
+      "boundary_mask": 4140337158,
+      "steps": 16,
+      "equations": {
+        "x": "q & d",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "1"
+      }
+    },
+    {
+      "id": 172,
+      "q0": 210788352,
+      "drive": 3085256855,
+      "present": 230584258,
+      "asa_mask": 3371218905,
+      "na_mask": 2502352344,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "~(q | (y & d))",
+        "k": "d"
+      }
+    },
+    {
+      "id": 173,
+      "q0": 1078216992,
+      "drive": 708530403,
+      "present": 3695594465,
+      "asa_mask": 3564837390,
+      "na_mask": 1806741423,
+      "boundary_mask": 4276744778,
+      "steps": 10,
+      "equations": {
+        "x": "0",
+        "j": "1",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 174,
+      "q0": 2147517441,
+      "drive": 1550873678,
+      "present": 2452526121,
+      "asa_mask": 937718776,
+      "na_mask": 119974859,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "q",
+        "j": "(y & d) | (q & ~d)",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 175,
+      "q0": 151257218,
+      "drive": 2651283325,
+      "present": 1804898978,
+      "asa_mask": 1103279465,
+      "na_mask": 1258265740,
+      "boundary_mask": 193795458,
+      "steps": 4,
+      "equations": {
+        "x": "q & ~d",
+        "j": "y ^ d",
+        "k": "0"
+      }
+    },
+    {
+      "id": 176,
+      "q0": 85000960,
+      "drive": 3872513237,
+      "present": 95765366,
+      "asa_mask": 2645474395,
+      "na_mask": 3577878265,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "(y & d) | (q & ~d)",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 177,
+      "q0": 614635012,
+      "drive": 4012765870,
+      "present": 754104220,
+      "asa_mask": 471834651,
+      "na_mask": 2997240774,
+      "boundary_mask": 3816833440,
+      "steps": 30,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "1",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 178,
+      "q0": 32113422,
+      "drive": 356008776,
+      "present": 1374383886,
+      "asa_mask": 532513129,
+      "na_mask": 1174811883,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "~y",
+        "k": "(~q & y) | (q & d)"
+      }
+    },
+    {
+      "id": 179,
+      "q0": 135417985,
+      "drive": 914823131,
+      "present": 4172706201,
+      "asa_mask": 3761903436,
+      "na_mask": 825074220,
+      "boundary_mask": 2199096259,
+      "steps": 24,
+      "equations": {
+        "x": "q ^ d",
+        "j": "~(q | (y & d))",
+        "k": "(~q & y) | (q & d)"
+      }
+    },
+    {
+      "id": 180,
+      "q0": 683266048,
+      "drive": 3535310480,
+      "present": 2835075548,
+      "asa_mask": 1865136884,
+      "na_mask": 1900857468,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "~d",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 181,
+      "q0": 536977540,
+      "drive": 2142651482,
+      "present": 3021582998,
+      "asa_mask": 3430313614,
+      "na_mask": 2310102724,
+      "boundary_mask": 2890705258,
+      "steps": 18,
+      "equations": {
+        "x": "q & ~d",
+        "j": "y ^ d",
+        "k": "0"
+      }
+    },
+    {
+      "id": 182,
+      "q0": 13226882,
+      "drive": 3855294797,
+      "present": 1021180910,
+      "asa_mask": 1030324216,
+      "na_mask": 3103321739,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "~q",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 183,
+      "q0": 2182089386,
+      "drive": 341780432,
+      "present": 2987929514,
+      "asa_mask": 1466687857,
+      "na_mask": 902180083,
+      "boundary_mask": 2952292736,
+      "steps": 12,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "0",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 184,
+      "q0": 1075847302,
+      "drive": 3497372144,
+      "present": 1809917638,
+      "asa_mask": 1301685683,
+      "na_mask": 1383640970,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "q & ~d",
+        "j": "~(q ^ (y | d))",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 185,
+      "q0": 8605969,
+      "drive": 2488844564,
+      "present": 209934617,
+      "asa_mask": 267816952,
+      "na_mask": 3660877161,
+      "boundary_mask": 306498980,
+      "steps": 6,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "~d",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 186,
+      "q0": 3842115012,
+      "drive": 167227346,
+      "present": 3846410228,
+      "asa_mask": 574918680,
+      "na_mask": 4226794714,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "q & d",
+        "j": "~q",
+        "k": "q"
+      }
+    },
+    {
+      "id": 187,
+      "q0": 16787538,
+      "drive": 2007273335,
+      "present": 1431845074,
+      "asa_mask": 2451538782,
+      "na_mask": 2797841600,
+      "boundary_mask": 781989096,
+      "steps": 32,
+      "equations": {
+        "x": "q & d",
+        "j": "d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 188,
+      "q0": 20974249,
+      "drive": 1869574314,
+      "present": 3276938159,
+      "asa_mask": 20626343,
+      "na_mask": 1945705960,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "q | d",
+        "j": "q ^ d",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 189,
+      "q0": 3787595944,
+      "drive": 2708599983,
+      "present": 3924175278,
+      "asa_mask": 681333819,
+      "na_mask": 2480165254,
+      "boundary_mask": 1415810132,
+      "steps": 26,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "y",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 190,
+      "q0": 1209557600,
+      "drive": 581532215,
+      "present": 3392692833,
+      "asa_mask": 2473187450,
+      "na_mask": 2333060632,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q ^ y ^ d",
+        "k": "d"
+      }
+    },
+    {
+      "id": 191,
+      "q0": 22307464,
+      "drive": 1580241809,
+      "present": 870119049,
+      "asa_mask": 3630922219,
+      "na_mask": 2111662964,
+      "boundary_mask": 2680126688,
+      "steps": 20,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "1",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 192,
+      "q0": 2351043232,
+      "drive": 1302030397,
+      "present": 2922812083,
+      "asa_mask": 1074777452,
+      "na_mask": 3848220828,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "q & ~d",
+        "j": "q ^ d",
+        "k": "0"
+      }
+    },
+    {
+      "id": 193,
+      "q0": 354983937,
+      "drive": 1667000873,
+      "present": 523952411,
+      "asa_mask": 3871133161,
+      "na_mask": 3331000430,
+      "boundary_mask": 1691777427,
+      "steps": 14,
+      "equations": {
+        "x": "q & ~d",
+        "j": "d",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 194,
+      "q0": 2416541703,
+      "drive": 1649630988,
+      "present": 4103965223,
+      "asa_mask": 2438931264,
+      "na_mask": 2779308216,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "q | d",
+        "j": "q ^ d",
+        "k": "~y"
+      }
+    },
+    {
+      "id": 195,
+      "q0": 542397209,
+      "drive": 2057857894,
+      "present": 2692141849,
+      "asa_mask": 2838415133,
+      "na_mask": 2304589719,
+      "boundary_mask": 3142029167,
+      "steps": 8,
+      "equations": {
+        "x": "q ^ d",
+        "j": "(q | y) & (~q | d)",
+        "k": "d"
+      }
+    },
+    {
+      "id": 196,
+      "q0": 2419199072,
+      "drive": 3844662329,
+      "present": 3493727858,
+      "asa_mask": 1816030976,
+      "na_mask": 2948997552,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q",
+        "k": "(q & y) ^ (d | ~y)"
+      }
+    },
+    {
+      "id": 197,
+      "q0": 1090519104,
+      "drive": 1828597379,
+      "present": 1932042329,
+      "asa_mask": 4236250867,
+      "na_mask": 417807921,
+      "boundary_mask": 1711239977,
+      "steps": 2,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 198,
+      "q0": 2540212482,
+      "drive": 2618627538,
+      "present": 3085955978,
+      "asa_mask": 3366205114,
+      "na_mask": 3719985813,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q | y | d",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 199,
+      "q0": 1645642275,
+      "drive": 464636147,
+      "present": 1981191795,
+      "asa_mask": 234292781,
+      "na_mask": 420772433,
+      "boundary_mask": 607330943,
+      "steps": 28,
+      "equations": {
+        "x": "~d",
+        "j": "~y",
+        "k": "y & ~y"
+      }
+    },
+    {
+      "id": 200,
+      "q0": 10485832,
+      "drive": 2728976446,
+      "present": 834257096,
+      "asa_mask": 3591638005,
+      "na_mask": 732913839,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "q ^ d",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 201,
+      "q0": 671156292,
+      "drive": 2872796047,
+      "present": 2865301612,
+      "asa_mask": 1004343928,
+      "na_mask": 2130992724,
+      "boundary_mask": 3531938462,
+      "steps": 22,
+      "equations": {
+        "x": "q & d",
+        "j": "d",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 202,
+      "q0": 402997265,
+      "drive": 2810228364,
+      "present": 439706197,
+      "asa_mask": 1635153648,
+      "na_mask": 2289574809,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "q | y | d",
+        "k": "y"
+      }
+    },
+    {
+      "id": 203,
+      "q0": 1476732161,
+      "drive": 1448442552,
+      "present": 3639420769,
+      "asa_mask": 3857083394,
+      "na_mask": 3608937884,
+      "boundary_mask": 4237642003,
+      "steps": 16,
+      "equations": {
+        "x": "1",
+        "j": "q | ~q",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 204,
+      "q0": 1512671628,
+      "drive": 2641360010,
+      "present": 1579780604,
+      "asa_mask": 463966905,
+      "na_mask": 2217992461,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "1",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 205,
+      "q0": 545386052,
+      "drive": 328041203,
+      "present": 931262020,
+      "asa_mask": 2224217373,
+      "na_mask": 1899768381,
+      "boundary_mask": 2039566402,
+      "steps": 10,
+      "equations": {
+        "x": "q ^ d",
+        "j": "y & ~y",
+        "k": "~q"
+      }
+    },
+    {
+      "id": 206,
+      "q0": 184553480,
+      "drive": 4113897332,
+      "present": 4012126536,
+      "asa_mask": 3354715133,
+      "na_mask": 1595300711,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "d",
+        "j": "0",
+        "k": "y ^ d"
+      }
+    },
+    {
+      "id": 207,
+      "q0": 1096814630,
+      "drive": 660975875,
+      "present": 1465987623,
+      "asa_mask": 1150448545,
+      "na_mask": 3752328834,
+      "boundary_mask": 2595963609,
+      "steps": 4,
+      "equations": {
+        "x": "1",
+        "j": "(q & y) | (~q & d)",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 208,
+      "q0": 1107771910,
+      "drive": 1310680204,
+      "present": 1652018702,
+      "asa_mask": 3807544208,
+      "na_mask": 2796173373,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "d",
+        "j": "q ^ y",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 209,
+      "q0": 155781376,
+      "drive": 2855973365,
+      "present": 3687546642,
+      "asa_mask": 855582537,
+      "na_mask": 2354849570,
+      "boundary_mask": 4100051734,
+      "steps": 30,
+      "equations": {
+        "x": "d",
+        "j": "(y & d) | (q & ~d)",
+        "k": "q"
+      }
+    },
+    {
+      "id": 210,
+      "q0": 168374961,
+      "drive": 1944906582,
+      "present": 715748025,
+      "asa_mask": 2258018833,
+      "na_mask": 4038544172,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "q & ~d",
+        "j": "~(q | (y & d))",
+        "k": "1"
+      }
+    },
+    {
+      "id": 211,
+      "q0": 1212176904,
+      "drive": 4141767164,
+      "present": 3900308266,
+      "asa_mask": 4223180174,
+      "na_mask": 1462026845,
+      "boundary_mask": 1370638328,
+      "steps": 24,
+      "equations": {
+        "x": "1",
+        "j": "~y",
+        "k": "(~q & y) | (q & d)"
+      }
+    },
+    {
+      "id": 212,
+      "q0": 771752112,
+      "drive": 2988154063,
+      "present": 775956656,
+      "asa_mask": 2381039332,
+      "na_mask": 2426994553,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "q",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "~(q | (y & d))"
+      }
+    },
+    {
+      "id": 213,
+      "q0": 277481986,
+      "drive": 3157681485,
+      "present": 294271770,
+      "asa_mask": 746809026,
+      "na_mask": 998476394,
+      "boundary_mask": 2573339098,
+      "steps": 18,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "1",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 214,
+      "q0": 171966768,
+      "drive": 79731142,
+      "present": 792863028,
+      "asa_mask": 2457135908,
+      "na_mask": 4162317437,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "(~q & y) | (q & d)",
+        "k": "(q & ~y) | (~q & d)"
+      }
+    },
+    {
+      "id": 215,
+      "q0": 3360178176,
+      "drive": 3570370085,
+      "present": 4007555204,
+      "asa_mask": 783115382,
+      "na_mask": 4223807495,
+      "boundary_mask": 1433408250,
+      "steps": 12,
+      "equations": {
+        "x": "0",
+        "j": "(q | y) & (~q | d)",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 216,
+      "q0": 84942848,
+      "drive": 3153942046,
+      "present": 1697687560,
+      "asa_mask": 3614322257,
+      "na_mask": 855376374,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "q | d",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "d"
+      }
+    },
+    {
+      "id": 217,
+      "q0": 713052178,
+      "drive": 190015432,
+      "present": 2944455190,
+      "asa_mask": 2317310428,
+      "na_mask": 4066175819,
+      "boundary_mask": 4069140768,
+      "steps": 6,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "id": 218,
+      "q0": 810672640,
+      "drive": 3799533984,
+      "present": 2020732416,
+      "asa_mask": 3853481063,
+      "na_mask": 2842026854,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "q ^ d",
+        "j": "q ^ d",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 219,
+      "q0": 614484,
+      "drive": 963694468,
+      "present": 3063508317,
+      "asa_mask": 3738773140,
+      "na_mask": 2442588923,
+      "boundary_mask": 3528900703,
+      "steps": 32,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "q | ~q",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 220,
+      "q0": 672736002,
+      "drive": 125407277,
+      "present": 3088691114,
+      "asa_mask": 2945934970,
+      "na_mask": 3753033435,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "q ^ d",
+        "j": "q ^ d",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 221,
+      "q0": 672359616,
+      "drive": 275372124,
+      "present": 2903991752,
+      "asa_mask": 1025617743,
+      "na_mask": 3662942761,
+      "boundary_mask": 2520590608,
+      "steps": 26,
+      "equations": {
+        "x": "q",
+        "j": "(q & y) ^ (d | ~y)",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 222,
+      "q0": 11011600,
+      "drive": 3203539697,
+      "present": 2981639959,
+      "asa_mask": 3465163552,
+      "na_mask": 2636048824,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "(q & d) | (~q & ~d)",
+        "j": "~(q ^ (y | d))",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 223,
+      "q0": 2568421418,
+      "drive": 876593182,
+      "present": 2639759534,
+      "asa_mask": 3108014457,
+      "na_mask": 3291444674,
+      "boundary_mask": 4040931208,
+      "steps": 20,
+      "equations": {
+        "x": "q ^ d",
+        "j": "d",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 224,
+      "q0": 68716553,
+      "drive": 2994934619,
+      "present": 2367196169,
+      "asa_mask": 3610703401,
+      "na_mask": 634770387,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "q & d",
+        "j": "~(q | (y & d))",
+        "k": "q"
+      }
+    },
+    {
+      "id": 225,
+      "q0": 613695492,
+      "drive": 561299786,
+      "present": 613867782,
+      "asa_mask": 657052255,
+      "na_mask": 4072085337,
+      "boundary_mask": 1550007054,
+      "steps": 14,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "~(q ^ (y | d))",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 226,
+      "q0": 286524480,
+      "drive": 4187854259,
+      "present": 1540646377,
+      "asa_mask": 3905821083,
+      "na_mask": 3395219647,
+      "boundary_mask": 0,
+      "steps": 27,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "y",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 227,
+      "q0": 1073891462,
+      "drive": 668578645,
+      "present": 2014469015,
+      "asa_mask": 2445612461,
+      "na_mask": 1712884224,
+      "boundary_mask": 228969904,
+      "steps": 8,
+      "equations": {
+        "x": "(q ^ d) | ~q",
+        "j": "y",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 228,
+      "q0": 139340,
+      "drive": 3495013885,
+      "present": 1692543052,
+      "asa_mask": 2432662832,
+      "na_mask": 1657223333,
+      "boundary_mask": 0,
+      "steps": 21,
+      "equations": {
+        "x": "q & ~d",
+        "j": "~(q | (y & d))",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 229,
+      "q0": 2757235520,
+      "drive": 1791886303,
+      "present": 3858371417,
+      "asa_mask": 24154219,
+      "na_mask": 2799584885,
+      "boundary_mask": 4233530524,
+      "steps": 2,
+      "equations": {
+        "x": "~d",
+        "j": "q | ~q",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 230,
+      "q0": 1644726579,
+      "drive": 4036761467,
+      "present": 1657716091,
+      "asa_mask": 982513216,
+      "na_mask": 862231300,
+      "boundary_mask": 0,
+      "steps": 15,
+      "equations": {
+        "x": "~d",
+        "j": "y",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 231,
+      "q0": 547750244,
+      "drive": 1985851648,
+      "present": 2074478566,
+      "asa_mask": 1917246025,
+      "na_mask": 3107103523,
+      "boundary_mask": 3880035098,
+      "steps": 28,
+      "equations": {
+        "x": "q & ~d",
+        "j": "q ^ y ^ d",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 232,
+      "q0": 3310425088,
+      "drive": 3815992638,
+      "present": 3487243453,
+      "asa_mask": 3830040516,
+      "na_mask": 279664062,
+      "boundary_mask": 0,
+      "steps": 9,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q & y & d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 233,
+      "q0": 1207959557,
+      "drive": 2841420623,
+      "present": 1497399247,
+      "asa_mask": 2597545321,
+      "na_mask": 727358360,
+      "boundary_mask": 1513055602,
+      "steps": 22,
+      "equations": {
+        "x": "q | d",
+        "j": "1",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 234,
+      "q0": 305866257,
+      "drive": 405434946,
+      "present": 1463547793,
+      "asa_mask": 2319674287,
+      "na_mask": 3528675726,
+      "boundary_mask": 0,
+      "steps": 3,
+      "equations": {
+        "x": "q & d",
+        "j": "y",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 235,
+      "q0": 942703008,
+      "drive": 2276401131,
+      "present": 2096731120,
+      "asa_mask": 2137991428,
+      "na_mask": 501088893,
+      "boundary_mask": 4285332659,
+      "steps": 16,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "y ^ d",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 236,
+      "q0": 2181320352,
+      "drive": 1955864399,
+      "present": 2986790817,
+      "asa_mask": 3084520569,
+      "na_mask": 279884497,
+      "boundary_mask": 0,
+      "steps": 29,
+      "equations": {
+        "x": "q & ~d",
+        "j": "1",
+        "k": "q ^ y"
+      }
+    },
+    {
+      "id": 237,
+      "q0": 1296107548,
+      "drive": 104526055,
+      "present": 4251289790,
+      "asa_mask": 4059165968,
+      "na_mask": 623541422,
+      "boundary_mask": 1338071056,
+      "steps": 10,
+      "equations": {
+        "x": "q | d",
+        "j": "y & ~y",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 238,
+      "q0": 281412644,
+      "drive": 1728839391,
+      "present": 2462569717,
+      "asa_mask": 371099515,
+      "na_mask": 2787320175,
+      "boundary_mask": 0,
+      "steps": 23,
+      "equations": {
+        "x": "d",
+        "j": "0",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 239,
+      "q0": 134251082,
+      "drive": 3404511277,
+      "present": 1782678222,
+      "asa_mask": 4099574349,
+      "na_mask": 1012876127,
+      "boundary_mask": 3156247211,
+      "steps": 4,
+      "equations": {
+        "x": "q & ~d",
+        "j": "q | y | d",
+        "k": "q ^ d"
+      }
+    },
+    {
+      "id": 240,
+      "q0": 151294552,
+      "drive": 3930791961,
+      "present": 429241210,
+      "asa_mask": 2908932693,
+      "na_mask": 3913380803,
+      "boundary_mask": 0,
+      "steps": 17,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "1",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 241,
+      "q0": 135929893,
+      "drive": 2752446598,
+      "present": 706682981,
+      "asa_mask": 2053959084,
+      "na_mask": 2156874688,
+      "boundary_mask": 1819095416,
+      "steps": 30,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "1",
+        "k": "1"
+      }
+    },
+    {
+      "id": 242,
+      "q0": 1828749449,
+      "drive": 484770798,
+      "present": 1839847049,
+      "asa_mask": 613724557,
+      "na_mask": 1349198325,
+      "boundary_mask": 0,
+      "steps": 11,
+      "equations": {
+        "x": "d",
+        "j": "q & y & d",
+        "k": "q ^ y ^ d"
+      }
+    },
+    {
+      "id": 243,
+      "q0": 2417001036,
+      "drive": 3550878186,
+      "present": 3071927005,
+      "asa_mask": 8626451,
+      "na_mask": 2817543379,
+      "boundary_mask": 4123399011,
+      "steps": 24,
+      "equations": {
+        "x": "q & d",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 244,
+      "q0": 1486897154,
+      "drive": 3873351210,
+      "present": 3636096010,
+      "asa_mask": 3920134625,
+      "na_mask": 3648313323,
+      "boundary_mask": 0,
+      "steps": 5,
+      "equations": {
+        "x": "0",
+        "j": "y ^ d",
+        "k": "(y & d) | (q & ~d)"
+      }
+    },
+    {
+      "id": 245,
+      "q0": 29427794,
+      "drive": 43056692,
+      "present": 1104252019,
+      "asa_mask": 779829497,
+      "na_mask": 1110328749,
+      "boundary_mask": 2362892317,
+      "steps": 18,
+      "equations": {
+        "x": "~q",
+        "j": "(~q & y) | (q & d)",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 246,
+      "q0": 3255304704,
+      "drive": 3429657888,
+      "present": 4002951829,
+      "asa_mask": 2092486133,
+      "na_mask": 3147189611,
+      "boundary_mask": 0,
+      "steps": 31,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "q",
+        "k": "~q"
+      }
+    },
+    {
+      "id": 247,
+      "q0": 8736931,
+      "drive": 408746682,
+      "present": 3834597539,
+      "asa_mask": 3530595148,
+      "na_mask": 2577982024,
+      "boundary_mask": 2749843505,
+      "steps": 12,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "(q & ~y) | (~q & d)",
+        "k": "(q & y) | (~q & d)"
+      }
+    },
+    {
+      "id": 248,
+      "q0": 1091068712,
+      "drive": 1101783773,
+      "present": 1698625516,
+      "asa_mask": 1872032021,
+      "na_mask": 2355478391,
+      "boundary_mask": 0,
+      "steps": 25,
+      "equations": {
+        "x": "q & d",
+        "j": "q & y & d",
+        "k": "(q | y) & (~q | d)"
+      }
+    },
+    {
+      "id": 249,
+      "q0": 268501256,
+      "drive": 1900700587,
+      "present": 285321484,
+      "asa_mask": 2693762198,
+      "na_mask": 2686413854,
+      "boundary_mask": 1989002889,
+      "steps": 6,
+      "equations": {
+        "x": "(~q & d) | (q & ~d)",
+        "j": "(q & y) | (~q & d)",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 250,
+      "q0": 3306431521,
+      "drive": 3337892215,
+      "present": 3348898861,
+      "asa_mask": 1054672435,
+      "na_mask": 277652249,
+      "boundary_mask": 0,
+      "steps": 19,
+      "equations": {
+        "x": "q & ~d",
+        "j": "q ^ d",
+        "k": "q | ~q"
+      }
+    },
+    {
+      "id": 251,
+      "q0": 205785162,
+      "drive": 2091555945,
+      "present": 208071534,
+      "asa_mask": 4207985838,
+      "na_mask": 2451008476,
+      "boundary_mask": 367150833,
+      "steps": 32,
+      "equations": {
+        "x": "~(q & d)",
+        "j": "d",
+        "k": "q & y & d"
+      }
+    },
+    {
+      "id": 252,
+      "q0": 738197905,
+      "drive": 2658437139,
+      "present": 757697939,
+      "asa_mask": 345555994,
+      "na_mask": 4184833617,
+      "boundary_mask": 0,
+      "steps": 13,
+      "equations": {
+        "x": "~(q | d)",
+        "j": "q | y | d",
+        "k": "q | y | d"
+      }
+    },
+    {
+      "id": 253,
+      "q0": 268993024,
+      "drive": 2573843222,
+      "present": 2569593600,
+      "asa_mask": 3805989146,
+      "na_mask": 349555222,
+      "boundary_mask": 441791492,
+      "steps": 26,
+      "equations": {
+        "x": "(q | d) & ~q",
+        "j": "q ^ y ^ d",
+        "k": "q"
+      }
+    },
+    {
+      "id": 254,
+      "q0": 13459522,
+      "drive": 32402525,
+      "present": 214788307,
+      "asa_mask": 2587458680,
+      "na_mask": 1924137667,
+      "boundary_mask": 0,
+      "steps": 7,
+      "equations": {
+        "x": "q | d",
+        "j": "d",
+        "k": "~d"
+      }
+    },
+    {
+      "id": 255,
+      "q0": 1147273454,
+      "drive": 2942886819,
+      "present": 1718754302,
+      "asa_mask": 1138051385,
+      "na_mask": 3415069337,
+      "boundary_mask": 3753655254,
+      "steps": 20,
+      "equations": {
+        "x": "q & ~d",
+        "j": "y ^ d",
+        "k": "(~q & y) | (q & d)"
+      }
+    },
+    {
+      "id": 256,
+      "q0": 621330753,
+      "drive": 2878815659,
+      "present": 2816273731,
+      "asa_mask": 1954806948,
+      "na_mask": 86177924,
+      "boundary_mask": 0,
+      "steps": 1,
+      "equations": {
+        "x": "d",
+        "j": "(q & y) | (~q & d)",
+        "k": "q | ~q"
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "independent_rtklib_single_point_oracle",
+  "executed_utc": "2026-09-14T21:47:07.750935+00:00",
+  "command": [
+    "C:\\tmp\\atomos_oracle_rz16meiq\\rnx2rtkp.exe",
+    "-k",
+    "gps_single.conf",
+    "-o",
+    "solution.pos",
+    "-y",
+    "2",
+    "receiver.obs",
+    "broadcast.nav"
+  ],
+  "working_directory": "C:\\tmp\\atomos_oracle_rz16meiq",
+  "return_code": 0,
+  "inputs": {
+    "receiver.obs": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\centipede_lienss_20260914\\capture.obs",
+      "sha256": "0ebe1a053e901b418f93954180e8bfc3ac6b0edbdaa5d551c1601f206d3c2ede"
+    },
+    "broadcast.nav": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\centipede_lienss_20260914\\capture_with_bkg_iono.nav",
+      "sha256": "8622ea5275f78b22f00c77f1e6b96b35eedcbccd9b1b1adfc21ff82a2a478044"
+    },
+    "gps_single.conf": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\rtklib\\gps_single.conf",
+      "sha256": "97afd631c02f121fc74eac2f8421c931a216c9acd968c9b8a0502d5b41d5acde"
+    },
+    "rnx2rtkp.exe": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\rtklib\\rnx2rtkp.exe",
+      "sha256": "759741a5593c918f91d53612b6d0137d6d497dbccdda81a55c2c032d3e260d47"
+    }
+  },
+  "epochs": 300,
+  "first_epoch": "2026/09/14 21:41:23.000",
+  "last_epoch": "2026/09/14 21:46:22.000",
+  "quality_codes": [
+    "5"
+  ],
+  "output_hashes": {
+    "solution.pos": "0651495c95e8703115054c2fb1e2c1889dfdd88b6aa89e1f14f6a957fc0d1f65",
+    "solution.pos.stat": "dba66a3fc6dcffabe377f78f3e2ed5e0cf575a88e5d8c7f8fe52ddcd10758d20",
+    "stderr.txt": "612fa0a688bdc785bd16de021ac42c2b64413a17400bca39f07844798952e0a6",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "executed"
+}

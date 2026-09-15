@@ -1,0 +1,48 @@
+{
+  "kind": "independent_rtklib_single_point_oracle",
+  "executed_utc": "2026-09-14T21:44:38.566888+00:00",
+  "command": [
+    "C:\\tmp\\atomos_oracle_b61zz_wi\\rnx2rtkp.exe",
+    "-k",
+    "gps_single.conf",
+    "-o",
+    "solution.pos",
+    "-y",
+    "2",
+    "receiver.obs",
+    "broadcast.nav"
+  ],
+  "working_directory": "C:\\tmp\\atomos_oracle_b61zz_wi",
+  "return_code": 0,
+  "inputs": {
+    "receiver.obs": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\07590920.05o",
+      "sha256": "8474af556633e9c03293a8fb1e2c1f55180b42336b17574a84fda06eb6a02f9e"
+    },
+    "broadcast.nav": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\07590920.05n",
+      "sha256": "eb26dce205b59269147035be49db481d38dc51bb8601dac6e84c0c868bb8094a"
+    },
+    "gps_single.conf": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\rtklib\\gps_single.conf",
+      "sha256": "97afd631c02f121fc74eac2f8421c931a216c9acd968c9b8a0502d5b41d5acde"
+    },
+    "rnx2rtkp.exe": {
+      "source_path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_8_LIVE\\source\\live_data\\rtklib\\rnx2rtkp.exe",
+      "sha256": "759741a5593c918f91d53612b6d0137d6d497dbccdda81a55c2c032d3e260d47"
+    }
+  },
+  "epochs": 120,
+  "first_epoch": "2005/04/02 00:00:00.000",
+  "last_epoch": "2005/04/02 00:59:30.000",
+  "quality_codes": [
+    "5"
+  ],
+  "output_hashes": {
+    "solution.pos": "64708b60ec5d9e42e04e4ef6af150d231f9f8f5fc8b2f5f1e44a7748f4fc7d98",
+    "solution.pos.stat": "9f981c25fd96877be54da986261993f9722e2f3f7091370b5fb284e4f047698f",
+    "stderr.txt": "e9334b2253d3d30435b5f7e0ce0b3253dc06eae6f72e0c242bcf7088c23ea696",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "executed"
+}

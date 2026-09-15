@@ -1,0 +1,2944 @@
+{
+  "status": "passed",
+  "scope": "replay algebra/continuity plus independent RTKLIB position comparison; no certified accuracy claim",
+  "native_trace_epochs": 120,
+  "oracle_epochs": 120,
+  "matched_valid_positions": 120,
+  "cold_start_seed_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "raw_code_and_correction_comparisons": 1766,
+  "independent_numpy_converged_passes": 263,
+  "numpy_native_max_component_difference_m": 1.1641532182693481e-08,
+  "native_vs_rtklib_3d_m": {
+    "count": 120,
+    "mean": 0.5285291453253562,
+    "median": 0.5268387128587346,
+    "rms": 0.5840033720211207,
+    "max": 1.5884603875361005
+  },
+  "comparison_coordinate_ecef_m": [
+    -3976219.5082,
+    3382372.5671,
+    3652512.9849
+  ],
+  "comparison_coordinate_role": "metadata comparison, not assumed surveyed truth; never used as input",
+  "native_vs_comparison_coordinate_3d_m": {
+    "count": 120,
+    "mean": 0.8301247805044996,
+    "median": 0.6603503456701558,
+    "rms": 1.0105323566863416,
+    "max": 2.8122816272144826
+  },
+  "rtklib_vs_comparison_coordinate_3d_m": {
+    "count": 120,
+    "mean": 0.9621083458327401,
+    "median": 0.6957896616300965,
+    "rms": 1.20617803191742,
+    "max": 3.2203520942890207
+  },
+  "weight_experiment": {
+    "performed": true,
+    "same_model_with_rtklib_variance": "0.09*(1+1/sinE)+URA^2+0.09+(I/2)^2+(0.3/(sinE+0.1))^2",
+    "role": "diagnostic NumPy re-solve, not the executed native profile",
+    "vs_rtklib_3d_m": {
+      "count": 120,
+      "mean": 0.0001739512717789982,
+      "median": 0.00015840037354029017,
+      "rms": 0.00018413972344856415,
+      "max": 0.000345540694970751
+    }
+  },
+  "time_matching": "RTKLIB position tags corrected by its estimated receiver clock and rounded to 0.001 s; candidate raw tag minus b/c matched within 0.02 s",
+  "input_sha256": {
+    "results/real_0759_cpu/trace.jsonl": "1e5d1b04e569af48b4369adc8b3f784557dbac1259080cc0a2c6d1463f9d4c9c",
+    "results/network_probes/0759_rtklib.pos": "0e96691d06befdc706e9beca5d4185fe7c76cdbd9618d1621e9d906399cfb6f2",
+    "source/live_data/07590920.05n": "eb26dce205b59269147035be49db481d38dc51bb8601dac6e84c0c868bb8094a"
+  },
+  "failures": [],
+  "rows": [
+    {
+      "epoch_id": 0,
+      "raw_receiver_time_gpst_s": 796435200.0,
+      "estimated_reception_gpst_s": 796435200.0002576,
+      "oracle_time_gpst_s": 796435200.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0002576112747192383,
+      "native_position_ecef_m": [
+        -3976218.792606957,
+        3382373.2052244823,
+        3652512.6419750685
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2244,
+        3382373.392,
+        3652513.1662
+      ],
+      "native_vs_rtklib_3d_m": 0.7043735550030318,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.0182699873124876,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8909950278620039,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001660254268501948
+    },
+    {
+      "epoch_id": 1,
+      "raw_receiver_time_gpst_s": 796435230.0,
+      "estimated_reception_gpst_s": 796435230.0002158,
+      "oracle_time_gpst_s": 796435230.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00021576881408691406,
+      "native_position_ecef_m": [
+        -3976218.512923527,
+        3382372.60534092,
+        3652512.639325556
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1109,
+        3382373.0059,
+        3652512.9807
+      ],
+      "native_vs_rtklib_3d_m": 0.7965927130539505,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.0542577114284453,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5919547026372549,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012099634503852811
+    },
+    {
+      "epoch_id": 2,
+      "raw_receiver_time_gpst_s": 796435260.0,
+      "estimated_reception_gpst_s": 796435260.0001739,
+      "oracle_time_gpst_s": 796435260.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00017392635345458984,
+      "native_position_ecef_m": [
+        -3976218.6774879056,
+        3382372.611996294,
+        3652512.4218385015
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.091,
+        3382372.8407,
+        3652512.7625
+      ],
+      "native_vs_rtklib_3d_m": 0.5825357449111301,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.004557869026663,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5462367251771016,
+      "weight_experiment_vs_rtklib_3d_m": 0.000163672557093672
+    },
+    {
+      "epoch_id": 3,
+      "raw_receiver_time_gpst_s": 796435290.0,
+      "estimated_reception_gpst_s": 796435290.0001321,
+      "oracle_time_gpst_s": 796435290.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00013208389282226562,
+      "native_position_ecef_m": [
+        -3976219.135852303,
+        3382373.1906936467,
+        3652512.4891639594
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.6039,
+        3382373.4228,
+        3652512.9309
+      ],
+      "native_vs_rtklib_3d_m": 0.6841584140613407,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.8793554830681628,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8627264801298371,
+      "weight_experiment_vs_rtklib_3d_m": 0.00013006229328796828
+    },
+    {
+      "epoch_id": 4,
+      "raw_receiver_time_gpst_s": 796435320.0,
+      "estimated_reception_gpst_s": 796435320.0000902,
+      "oracle_time_gpst_s": 796435320.0,
+      "oracle_quality": 5,
+      "time_difference_s": 9.02414321899414e-05,
+      "native_position_ecef_m": [
+        -3976218.417010407,
+        3382372.4993510055,
+        3652511.845792003
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0607,
+        3382372.8739,
+        3652512.2827
+      ],
+      "native_vs_rtklib_3d_m": 0.863430274502834,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.5788767156677577,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8873935600411985,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014873769209560432
+    },
+    {
+      "epoch_id": 5,
+      "raw_receiver_time_gpst_s": 796435350.0,
+      "estimated_reception_gpst_s": 796435350.0000484,
+      "oracle_time_gpst_s": 796435350.0,
+      "oracle_quality": 5,
+      "time_difference_s": 4.839897155761719e-05,
+      "native_position_ecef_m": [
+        -3976218.7751241834,
+        3382373.217539326,
+        3652512.6755168457
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4345,
+        3382373.5939,
+        3652513.1417
+      ],
+      "native_vs_rtklib_3d_m": 0.8909267973001812,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.0277107597057367,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.0413146355603704,
+      "weight_experiment_vs_rtklib_3d_m": 0.00013647460474044992
+    },
+    {
+      "epoch_id": 6,
+      "raw_receiver_time_gpst_s": 796435380.0,
+      "estimated_reception_gpst_s": 796435380.0000066,
+      "oracle_time_gpst_s": 796435380.0,
+      "oracle_quality": 5,
+      "time_difference_s": 6.556510925292969e-06,
+      "native_position_ecef_m": [
+        -3976218.9030991374,
+        3382372.8265594593,
+        3652512.6978954067
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4857,
+        3382373.1542,
+        3652513.1023
+      ],
+      "native_vs_rtklib_3d_m": 0.7812267047756517,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7182185611431058,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5991455750566462,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012983450073879608
+    },
+    {
+      "epoch_id": 7,
+      "raw_receiver_time_gpst_s": 796435410.0,
+      "estimated_reception_gpst_s": 796435409.9999647,
+      "oracle_time_gpst_s": 796435410.0,
+      "oracle_quality": 5,
+      "time_difference_s": -3.528594970703125e-05,
+      "native_position_ecef_m": [
+        -3976218.8793801023,
+        3382372.5101753767,
+        3652512.302680449
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3713,
+        3382372.7507,
+        3652512.7595
+      ],
+      "native_vs_rtklib_3d_m": 0.7131068522862175,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.9295581704645842,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.32133429622748116,
+      "weight_experiment_vs_rtklib_3d_m": 0.00010796138191966787
+    },
+    {
+      "epoch_id": 8,
+      "raw_receiver_time_gpst_s": 796435440.0,
+      "estimated_reception_gpst_s": 796435439.9999229,
+      "oracle_time_gpst_s": 796435440.0,
+      "oracle_quality": 5,
+      "time_difference_s": -7.712841033935547e-05,
+      "native_position_ecef_m": [
+        -3976219.1706260485,
+        3382373.1980617912,
+        3652512.566181285
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.8019,
+        3382373.5127,
+        3652513.0925
+      ],
+      "native_vs_rtklib_3d_m": 0.8800655621675151,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.8290924659691322,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.9959903660929047,
+      "weight_experiment_vs_rtklib_3d_m": 0.00013641511492846754
+    },
+    {
+      "epoch_id": 9,
+      "raw_receiver_time_gpst_s": 796435470.0,
+      "estimated_reception_gpst_s": 796435469.999881,
+      "oracle_time_gpst_s": 796435470.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00011897087097167969,
+      "native_position_ecef_m": [
+        -3976218.727476483,
+        3382372.8598589823,
+        3652512.726431657
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2317,
+        3382373.0986,
+        3652513.1387
+      ],
+      "native_vs_rtklib_3d_m": 0.6936885576090922,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.8729506948689157,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6185458270161438,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018582164755036258
+    },
+    {
+      "epoch_id": 10,
+      "raw_receiver_time_gpst_s": 796435500.0,
+      "estimated_reception_gpst_s": 796435499.9998392,
+      "oracle_time_gpst_s": 796435500.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0001608133316040039,
+      "native_position_ecef_m": [
+        -3976218.815862219,
+        3382372.5994485547,
+        3652512.980263627
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2347,
+        3382372.7794,
+        3652513.3518
+      ],
+      "native_vs_rtklib_3d_m": 0.5880874813423979,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6931085976970148,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5044691762854293,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001505579280502976
+    },
+    {
+      "epoch_id": 11,
+      "raw_receiver_time_gpst_s": 796435530.0,
+      "estimated_reception_gpst_s": 796435529.9997973,
+      "oracle_time_gpst_s": 796435530.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00020265579223632812,
+      "native_position_ecef_m": [
+        -3976218.839600787,
+        3382372.817380077,
+        3652512.246211417
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1403,
+        3382372.9209,
+        3652512.569
+      ],
+      "native_vs_rtklib_3d_m": 0.4531322770374749,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.027290536953359,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6584053915856414,
+      "weight_experiment_vs_rtklib_3d_m": 9.072190899524558e-05
+    },
+    {
+      "epoch_id": 12,
+      "raw_receiver_time_gpst_s": 796435560.0,
+      "estimated_reception_gpst_s": 796435559.9997555,
+      "oracle_time_gpst_s": 796435560.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00024449825286865234,
+      "native_position_ecef_m": [
+        -3976218.811735013,
+        3382372.716510744,
+        3652512.8504771614
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.9568,
+        3382372.7935,
+        3652512.8636
+      ],
+      "native_vs_rtklib_3d_m": 0.16475255647480455,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7248838169174316,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6082866185679648,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001360512859478313
+    },
+    {
+      "epoch_id": 13,
+      "raw_receiver_time_gpst_s": 796435590.0,
+      "estimated_reception_gpst_s": 796435589.9997137,
+      "oracle_time_gpst_s": 796435590.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00028634071350097656,
+      "native_position_ecef_m": [
+        -3976219.207482767,
+        3382372.996143482,
+        3652512.619505774
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.7431,
+        3382373.2765,
+        3652512.8755
+      ],
+      "native_vs_rtklib_3d_m": 0.6565200997756734,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6387660793307096,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7552448146668347,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015487253287097447
+    },
+    {
+      "epoch_id": 14,
+      "raw_receiver_time_gpst_s": 796435620.0,
+      "estimated_reception_gpst_s": 796435619.9996718,
+      "oracle_time_gpst_s": 796435620.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0003281831741333008,
+      "native_position_ecef_m": [
+        -3976219.087862335,
+        3382372.752146078,
+        3652512.4603244523
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5524,
+        3382372.9536,
+        3652512.761
+      ],
+      "native_vs_rtklib_3d_m": 0.5888842923628939,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6972125276650546,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.44885086615902425,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014878846862091013
+    },
+    {
+      "epoch_id": 15,
+      "raw_receiver_time_gpst_s": 796435650.0,
+      "estimated_reception_gpst_s": 796435649.99963,
+      "oracle_time_gpst_s": 796435650.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.000370025634765625,
+      "native_position_ecef_m": [
+        -3976219.17068027,
+        3382372.9743383564,
+        3652512.2961806883
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.7356,
+        3382373.2057,
+        3652512.7674
+      ],
+      "native_vs_rtklib_3d_m": 0.7711745266580166,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.868387550184877,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7119178110086831,
+      "weight_experiment_vs_rtklib_3d_m": 0.00013841488874489862
+    },
+    {
+      "epoch_id": 16,
+      "raw_receiver_time_gpst_s": 796435680.0,
+      "estimated_reception_gpst_s": 796435679.9995881,
+      "oracle_time_gpst_s": 796435680.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0004118680953979492,
+      "native_position_ecef_m": [
+        -3976219.183596384,
+        3382373.0923824217,
+        3652512.949337051
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.447,
+        3382373.1364,
+        3652513.2832
+      ],
+      "native_vs_rtklib_3d_m": 0.4275318481241865,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6185093802898043,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6456243644975355,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015941700446183059
+    },
+    {
+      "epoch_id": 17,
+      "raw_receiver_time_gpst_s": 796435710.0,
+      "estimated_reception_gpst_s": 796435709.9995463,
+      "oracle_time_gpst_s": 796435710.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00045371055603027344,
+      "native_position_ecef_m": [
+        -3976219.257843694,
+        3382372.8064307547,
+        3652512.6768608605
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2797,
+        3382372.7162,
+        3652512.8572
+      ],
+      "native_vs_rtklib_3d_m": 0.20283365690953833,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.46351440262935356,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.3012479877465955,
+      "weight_experiment_vs_rtklib_3d_m": 9.064582598775607e-05
+    },
+    {
+      "epoch_id": 18,
+      "raw_receiver_time_gpst_s": 796435740.0,
+      "estimated_reception_gpst_s": 796435739.9995044,
+      "oracle_time_gpst_s": 796435740.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0004955530166625977,
+      "native_position_ecef_m": [
+        -3976219.034614387,
+        3382372.6979705654,
+        3652512.542428082
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5366,
+        3382372.912,
+        3652512.8204
+      ],
+      "native_vs_rtklib_3d_m": 0.6124267646967841,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6612048367593988,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.38317465982641247,
+      "weight_experiment_vs_rtklib_3d_m": 0.000110681646312762
+    },
+    {
+      "epoch_id": 19,
+      "raw_receiver_time_gpst_s": 796435770.001,
+      "estimated_reception_gpst_s": 796435770.0004627,
+      "oracle_time_gpst_s": 796435770.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00046265125274658203,
+      "native_position_ecef_m": [
+        -3976218.8799253325,
+        3382372.675731171,
+        3652512.546343568
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3367,
+        3382372.888,
+        3652512.6801
+      ],
+      "native_vs_rtklib_3d_m": 0.5211448317170274,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7738614432988187,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.47464944948033433,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015270004631280938
+    },
+    {
+      "epoch_id": 20,
+      "raw_receiver_time_gpst_s": 796435800.001,
+      "estimated_reception_gpst_s": 796435800.0004208,
+      "oracle_time_gpst_s": 796435800.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0004208087921142578,
+      "native_position_ecef_m": [
+        -3976218.945228663,
+        3382372.6767215026,
+        3652512.7663206607
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2372,
+        3382372.8207,
+        3652512.7476
+      ],
+      "native_vs_rtklib_3d_m": 0.3260790280544321,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.613783779460297,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.4405283760899105,
+      "weight_experiment_vs_rtklib_3d_m": 0.00011237781469729996
+    },
+    {
+      "epoch_id": 21,
+      "raw_receiver_time_gpst_s": 796435830.001,
+      "estimated_reception_gpst_s": 796435830.000379,
+      "oracle_time_gpst_s": 796435830.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003789663314819336,
+      "native_position_ecef_m": [
+        -3976218.9030621573,
+        3382372.7924692216,
+        3652512.7531241025
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1843,
+        3382372.8664,
+        3652512.8917
+      ],
+      "native_vs_rtklib_3d_m": 0.32212383249388227,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6860781015142244,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.45075263744973704,
+      "weight_experiment_vs_rtklib_3d_m": 9.429696707327741e-05
+    },
+    {
+      "epoch_id": 22,
+      "raw_receiver_time_gpst_s": 796435860.001,
+      "estimated_reception_gpst_s": 796435860.000337,
+      "oracle_time_gpst_s": 796435860.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003370046615600586,
+      "native_position_ecef_m": [
+        -3976219.0682595703,
+        3382372.620964384,
+        3652512.5606399425
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1834,
+        3382372.6811,
+        3652512.3954
+      ],
+      "native_vs_rtklib_3d_m": 0.2101852743021668,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6135515870769457,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.682642871734186,
+      "weight_experiment_vs_rtklib_3d_m": 0.00010870134656669582
+    },
+    {
+      "epoch_id": 23,
+      "raw_receiver_time_gpst_s": 796435890.001,
+      "estimated_reception_gpst_s": 796435890.0002952,
+      "oracle_time_gpst_s": 796435890.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0002951622009277344,
+      "native_position_ecef_m": [
+        -3976218.660625775,
+        3382372.3344532857,
+        3652512.4076903407
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.7906,
+        3382372.3254,
+        3652512.3474
+      ],
+      "native_vs_rtklib_3d_m": 0.14356248241914263,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.0515120312111788,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.989835794680416,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012499544763760624
+    },
+    {
+      "epoch_id": 24,
+      "raw_receiver_time_gpst_s": 796435920.001,
+      "estimated_reception_gpst_s": 796435920.0002533,
+      "oracle_time_gpst_s": 796435920.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00025331974029541016,
+      "native_position_ecef_m": [
+        -3976219.720716212,
+        3382373.48252386,
+        3652512.9035781
+      ],
+      "rtklib_position_ecef_m": [
+        -3976220.0313,
+        3382373.559,
+        3652513.0839
+      ],
+      "native_vs_rtklib_3d_m": 0.36718779529503304,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.9432800405764709,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.1257442957609085,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015304323697240495
+    },
+    {
+      "epoch_id": 25,
+      "raw_receiver_time_gpst_s": 796435950.001,
+      "estimated_reception_gpst_s": 796435950.0002115,
+      "oracle_time_gpst_s": 796435950.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00021147727966308594,
+      "native_position_ecef_m": [
+        -3976219.2511058357,
+        3382372.7455872893,
+        3652512.3336879835
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.6051,
+        3382372.885,
+        3652512.4211
+      ],
+      "native_vs_rtklib_3d_m": 0.3903698665473615,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7225179667808387,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6544619621367782,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014745818474051664
+    },
+    {
+      "epoch_id": 26,
+      "raw_receiver_time_gpst_s": 796435980.001,
+      "estimated_reception_gpst_s": 796435980.0001696,
+      "oracle_time_gpst_s": 796435980.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00016963481903076172,
+      "native_position_ecef_m": [
+        -3976218.8602753812,
+        3382373.0805166448,
+        3652512.763833919
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0863,
+        3382373.1122,
+        3652512.9438
+      ],
+      "native_vs_rtklib_3d_m": 0.29065228985539937,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.8557296154742613,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6905235909802905,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012037189182235149
+    },
+    {
+      "epoch_id": 27,
+      "raw_receiver_time_gpst_s": 796436010.001,
+      "estimated_reception_gpst_s": 796436010.0001277,
+      "oracle_time_gpst_s": 796436010.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00012767314910888672,
+      "native_position_ecef_m": [
+        -3976218.6607133825,
+        3382372.496525933,
+        3652512.382444131
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.9332,
+        3382372.5384,
+        3652512.4822
+      ],
+      "native_vs_rtklib_3d_m": 0.2931784907823712,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.0421935231583568,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7643009749389966,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001320358782396755
+    },
+    {
+      "epoch_id": 28,
+      "raw_receiver_time_gpst_s": 796436040.001,
+      "estimated_reception_gpst_s": 796436040.0000858,
+      "oracle_time_gpst_s": 796436040.0,
+      "oracle_quality": 5,
+      "time_difference_s": 8.58306884765625e-05,
+      "native_position_ecef_m": [
+        -3976218.820845619,
+        3382372.435458863,
+        3652512.140623704
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1046,
+        3382372.5385,
+        3652511.9859
+      ],
+      "native_vs_rtklib_3d_m": 0.33922477697249565,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.09662568738453,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.0778274071321345,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001537866532645436
+    },
+    {
+      "epoch_id": 29,
+      "raw_receiver_time_gpst_s": 796436070.001,
+      "estimated_reception_gpst_s": 796436070.000044,
+      "oracle_time_gpst_s": 796436070.0,
+      "oracle_quality": 5,
+      "time_difference_s": 4.398822784423828e-05,
+      "native_position_ecef_m": [
+        -3976218.99629118,
+        3382372.6615654863,
+        3652512.635966617
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1566,
+        3382372.6813,
+        3652512.4192
+      ],
+      "native_vs_rtklib_3d_m": 0.27032597926243684,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6266808387661783,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6757815403123336,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014732828508337708
+    },
+    {
+      "epoch_id": 30,
+      "raw_receiver_time_gpst_s": 796436100.001,
+      "estimated_reception_gpst_s": 796436100.0000021,
+      "oracle_time_gpst_s": 796436100.0,
+      "oracle_quality": 5,
+      "time_difference_s": 2.1457672119140625e-06,
+      "native_position_ecef_m": [
+        -3976219.1461590515,
+        3382373.1322884383,
+        3652512.671062321
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2979,
+        3382373.1483,
+        3652512.7729
+      ],
+      "native_vs_rtklib_3d_m": 0.1834464459536503,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7409491938830921,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6534244637093268,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012372043020509728
+    },
+    {
+      "epoch_id": 31,
+      "raw_receiver_time_gpst_s": 796436130.001,
+      "estimated_reception_gpst_s": 796436129.9999602,
+      "oracle_time_gpst_s": 796436130.0,
+      "oracle_quality": 5,
+      "time_difference_s": -3.981590270996094e-05,
+      "native_position_ecef_m": [
+        -3976219.202164661,
+        3382372.8594749174,
+        3652512.542775165
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3549,
+        3382372.8665,
+        3652512.4776
+      ],
+      "native_vs_rtklib_3d_m": 0.16620841644064013,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6120580779960955,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6086826267289824,
+      "weight_experiment_vs_rtklib_3d_m": 8.819776995233805e-05
+    },
+    {
+      "epoch_id": 32,
+      "raw_receiver_time_gpst_s": 796436160.001,
+      "estimated_reception_gpst_s": 796436159.9999183,
+      "oracle_time_gpst_s": 796436160.0,
+      "oracle_quality": 5,
+      "time_difference_s": -8.165836334228516e-05,
+      "native_position_ecef_m": [
+        -3976218.9480881295,
+        3382372.8568822467,
+        3652512.5609624833
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1521,
+        3382372.9186,
+        3652512.3635
+      ],
+      "native_vs_rtklib_3d_m": 0.29055353501792197,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7598829357484499,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7978078841239298,
+      "weight_experiment_vs_rtklib_3d_m": 0.00019924087676721745
+    },
+    {
+      "epoch_id": 33,
+      "raw_receiver_time_gpst_s": 796436190.001,
+      "estimated_reception_gpst_s": 796436189.9998765,
+      "oracle_time_gpst_s": 796436190.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00012350082397460938,
+      "native_position_ecef_m": [
+        -3976219.32957402,
+        3382373.0964173623,
+        3652512.6343993987
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5834,
+        3382373.1147,
+        3652512.5863
+      ],
+      "native_vs_rtklib_3d_m": 0.2589892565094824,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6594958545809128,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6814710262466216,
+      "weight_experiment_vs_rtklib_3d_m": 8.822276870320842e-05
+    },
+    {
+      "epoch_id": 34,
+      "raw_receiver_time_gpst_s": 796436220.001,
+      "estimated_reception_gpst_s": 796436219.9998347,
+      "oracle_time_gpst_s": 796436220.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0001653432846069336,
+      "native_position_ecef_m": [
+        -3976219.260851409,
+        3382373.307406207,
+        3652513.008530075
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4464,
+        3382373.3137,
+        3652512.8249
+      ],
+      "native_vs_rtklib_3d_m": 0.26112812179425937,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7808924292895093,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7660488232903804,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014893858816089996
+    },
+    {
+      "epoch_id": 35,
+      "raw_receiver_time_gpst_s": 796436250.001,
+      "estimated_reception_gpst_s": 796436249.9997927,
+      "oracle_time_gpst_s": 796436250.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002073049545288086,
+      "native_position_ecef_m": [
+        -3976218.995233646,
+        3382372.769243366,
+        3652512.445495814
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2061,
+        3382372.7278,
+        3652512.315
+      ],
+      "native_vs_rtklib_3d_m": 0.25141863360806177,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7713321570385853,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7522332816857452,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001508557383738927
+    },
+    {
+      "epoch_id": 36,
+      "raw_receiver_time_gpst_s": 796436280.001,
+      "estimated_reception_gpst_s": 796436279.9997509,
+      "oracle_time_gpst_s": 796436280.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002491474151611328,
+      "native_position_ecef_m": [
+        -3976219.1523130704,
+        3382372.9343069433,
+        3652512.979400751
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1381,
+        3382372.7916,
+        3652512.5772
+      ],
+      "native_vs_rtklib_3d_m": 0.4270043642836401,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.5113968005344456,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5946373263191946,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001561345117429885
+    },
+    {
+      "epoch_id": 37,
+      "raw_receiver_time_gpst_s": 796436310.001,
+      "estimated_reception_gpst_s": 796436309.9997089,
+      "oracle_time_gpst_s": 796436310.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002911090850830078,
+      "native_position_ecef_m": [
+        -3976219.353753544,
+        3382372.853173672,
+        3652512.652677341
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2343,
+        3382372.7138,
+        3652512.0141
+      ],
+      "native_vs_rtklib_3d_m": 0.6644359940549076,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.46482657941779626,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.0193109144916295,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001442352006817866
+    },
+    {
+      "epoch_id": 38,
+      "raw_receiver_time_gpst_s": 796436340.001,
+      "estimated_reception_gpst_s": 796436339.999667,
+      "oracle_time_gpst_s": 796436340.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00033295154571533203,
+      "native_position_ecef_m": [
+        -3976219.0916220886,
+        3382372.965016629,
+        3652512.970031689
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0686,
+        3382372.8024,
+        3652512.7974
+      ],
+      "native_vs_rtklib_3d_m": 0.23827690750664837,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.5762775951036251,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5327011357757984,
+      "weight_experiment_vs_rtklib_3d_m": 0.00020574391789610769
+    },
+    {
+      "epoch_id": 39,
+      "raw_receiver_time_gpst_s": 796436370.001,
+      "estimated_reception_gpst_s": 796436369.9996252,
+      "oracle_time_gpst_s": 796436370.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00037479400634765625,
+      "native_position_ecef_m": [
+        -3976219.2252868237,
+        3382372.780365764,
+        3652512.721526352
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1872,
+        3382372.6928,
+        3652512.3387
+      ],
+      "native_vs_rtklib_3d_m": 0.3945559339594066,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.4414610173426787,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7324042119824443,
+      "weight_experiment_vs_rtklib_3d_m": 0.00011824392708323982
+    },
+    {
+      "epoch_id": 40,
+      "raw_receiver_time_gpst_s": 796436400.001,
+      "estimated_reception_gpst_s": 796436399.9995832,
+      "oracle_time_gpst_s": 796436400.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00041675567626953125,
+      "native_position_ecef_m": [
+        -3976219.344939953,
+        3382373.1686981195,
+        3652512.9691067385
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3182,
+        3382373.0455,
+        3652512.3085
+      ],
+      "native_vs_rtklib_3d_m": 0.6725281145594769,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.623557188422177,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8499903059439378,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015670973927778753
+    },
+    {
+      "epoch_id": 41,
+      "raw_receiver_time_gpst_s": 796436430.001,
+      "estimated_reception_gpst_s": 796436429.9995414,
+      "oracle_time_gpst_s": 796436430.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00045859813690185547,
+      "native_position_ecef_m": [
+        -3976219.5898293993,
+        3382373.222341833,
+        3652512.8797360226
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.6092,
+        3382373.138,
+        3652512.6656
+      ],
+      "native_vs_rtklib_3d_m": 0.23096103827578043,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6686289559823229,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6618763477217223,
+      "weight_experiment_vs_rtklib_3d_m": 9.73158946751811e-05
+    },
+    {
+      "epoch_id": 42,
+      "raw_receiver_time_gpst_s": 796436460.001,
+      "estimated_reception_gpst_s": 796436459.9994994,
+      "oracle_time_gpst_s": 796436459.999,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0004994869232177734,
+      "native_position_ecef_m": [
+        -3976219.6143617453,
+        3382373.4714520895,
+        3652513.1883173804
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.6665,
+        3382373.3612,
+        3652512.9319
+      ],
+      "native_vs_rtklib_3d_m": 0.2839432930081221,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.9330067783069065,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8114571461288665,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001357177003176868
+    },
+    {
+      "epoch_id": 43,
+      "raw_receiver_time_gpst_s": 796436490.002,
+      "estimated_reception_gpst_s": 796436490.0004575,
+      "oracle_time_gpst_s": 796436490.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00045752525329589844,
+      "native_position_ecef_m": [
+        -3976219.8347941753,
+        3382373.265322341,
+        3652512.6500823223
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.8453,
+        3382373.1203,
+        3652512.4955
+      ],
+      "native_vs_rtklib_3d_m": 0.21222051283393564,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.8404053011266556,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.811898398749806,
+      "weight_experiment_vs_rtklib_3d_m": 9.186692221758648e-05
+    },
+    {
+      "epoch_id": 44,
+      "raw_receiver_time_gpst_s": 796436520.002,
+      "estimated_reception_gpst_s": 796436520.0004156,
+      "oracle_time_gpst_s": 796436520.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00041556358337402344,
+      "native_position_ecef_m": [
+        -3976219.492196204,
+        3382373.0160065913,
+        3652513.004594813
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.616,
+        3382372.9533,
+        3652512.6807
+      ],
+      "native_vs_rtklib_3d_m": 0.3523738730790921,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.44962332538857763,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5032980430168094,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014916564090389006
+    },
+    {
+      "epoch_id": 45,
+      "raw_receiver_time_gpst_s": 796436550.002,
+      "estimated_reception_gpst_s": 796436550.0003737,
+      "oracle_time_gpst_s": 796436550.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003737211227416992,
+      "native_position_ecef_m": [
+        -3976219.389095137,
+        3382373.223485035,
+        3652512.7328113415
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5264,
+        3382373.1357,
+        3652512.737
+      ],
+      "native_vs_rtklib_3d_m": 0.1630226444629868,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7131451283357592,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6205574991740455,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015842510473209318
+    },
+    {
+      "epoch_id": 46,
+      "raw_receiver_time_gpst_s": 796436580.002,
+      "estimated_reception_gpst_s": 796436580.0003318,
+      "oracle_time_gpst_s": 796436580.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003317594528198242,
+      "native_position_ecef_m": [
+        -3976218.6313294726,
+        3382372.1521022166,
+        3652512.1947505926
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.713,
+        3382372.1359,
+        3652511.9105
+      ],
+      "native_vs_rtklib_3d_m": 0.2961941696022809,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.2511839066386714,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.4044970059288986,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018989471922175748
+    },
+    {
+      "epoch_id": 47,
+      "raw_receiver_time_gpst_s": 796436610.002,
+      "estimated_reception_gpst_s": 796436610.0002899,
+      "oracle_time_gpst_s": 796436610.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0002899169921875,
+      "native_position_ecef_m": [
+        -3976219.3891990613,
+        3382372.8222870273,
+        3652513.229355071
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4959,
+        3382372.7615,
+        3652512.926
+      ],
+      "native_vs_rtklib_3d_m": 0.3272681656241664,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.37288057614231923,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.20349904171217545,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001561923683092118
+    },
+    {
+      "epoch_id": 48,
+      "raw_receiver_time_gpst_s": 796436640.002,
+      "estimated_reception_gpst_s": 796436640.000248,
+      "oracle_time_gpst_s": 796436640.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.000247955322265625,
+      "native_position_ecef_m": [
+        -3976219.3923065276,
+        3382373.1555862674,
+        3652512.6162207182
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4351,
+        3382373.0518,
+        3652512.4837
+      ],
+      "native_vs_rtklib_3d_m": 0.17367962248929927,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7040396270979541,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7010557322799024,
+      "weight_experiment_vs_rtklib_3d_m": 0.00011549444910695233
+    },
+    {
+      "epoch_id": 49,
+      "raw_receiver_time_gpst_s": 796436670.002,
+      "estimated_reception_gpst_s": 796436670.0002061,
+      "oracle_time_gpst_s": 796436670.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00020611286163330078,
+      "native_position_ecef_m": [
+        -3976219.117748343,
+        3382372.632418229,
+        3652512.507384939
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.9495,
+        3382372.4385,
+        3652511.6697
+      ],
+      "native_vs_rtklib_3d_m": 0.8761437333724508,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6202738112729245,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.434724604269655,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018179167166608868
+    },
+    {
+      "epoch_id": 50,
+      "raw_receiver_time_gpst_s": 796436700.002,
+      "estimated_reception_gpst_s": 796436700.0001642,
+      "oracle_time_gpst_s": 796436700.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00016415119171142578,
+      "native_position_ecef_m": [
+        -3976218.3304572348,
+        3382372.2415206577,
+        3652511.8124990747
+      ],
+      "rtklib_position_ecef_m": [
+        -3976217.8971,
+        3382372.03,
+        3652510.8629
+      ],
+      "native_vs_rtklib_3d_m": 1.0650248279147339,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.6934000883028628,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.717904269796811,
+      "weight_experiment_vs_rtklib_3d_m": 0.00010847452330073383
+    },
+    {
+      "epoch_id": 51,
+      "raw_receiver_time_gpst_s": 796436730.002,
+      "estimated_reception_gpst_s": 796436730.0001223,
+      "oracle_time_gpst_s": 796436730.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00012230873107910156,
+      "native_position_ecef_m": [
+        -3976219.3749985187,
+        3382373.0099318163,
+        3652512.851105873
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3655,
+        3382372.852,
+        3652512.5995
+      ],
+      "native_vs_rtklib_3d_m": 0.29721742174145505,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.4813974661829871,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5000644558408345,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001805123791119185
+    },
+    {
+      "epoch_id": 52,
+      "raw_receiver_time_gpst_s": 796436760.002,
+      "estimated_reception_gpst_s": 796436760.0000803,
+      "oracle_time_gpst_s": 796436760.0,
+      "oracle_quality": 5,
+      "time_difference_s": 8.034706115722656e-05,
+      "native_position_ecef_m": [
+        -3976218.561431263,
+        3382372.283340055,
+        3652512.171523172
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.5079,
+        3382372.1909,
+        3652511.5479
+      ],
+      "native_vs_rtklib_3d_m": 0.6327057928942289,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.280028363804819,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.7908365447171835,
+      "weight_experiment_vs_rtklib_3d_m": 0.00016118689442929204
+    },
+    {
+      "epoch_id": 53,
+      "raw_receiver_time_gpst_s": 796436790.002,
+      "estimated_reception_gpst_s": 796436790.0000385,
+      "oracle_time_gpst_s": 796436790.0,
+      "oracle_quality": 5,
+      "time_difference_s": 3.8504600524902344e-05,
+      "native_position_ecef_m": [
+        -3976219.4304745398,
+        3382372.9758340376,
+        3652512.7190295267
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3775,
+        3382372.7493,
+        3652512.4036
+      ],
+      "native_vs_rtklib_3d_m": 0.3919435655547691,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.493752842239294,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6230481683933109,
+      "weight_experiment_vs_rtklib_3d_m": 0.00017043375226377606
+    },
+    {
+      "epoch_id": 54,
+      "raw_receiver_time_gpst_s": 796436820.002,
+      "estimated_reception_gpst_s": 796436819.9999965,
+      "oracle_time_gpst_s": 796436820.0,
+      "oracle_quality": 5,
+      "time_difference_s": -3.4570693969726562e-06,
+      "native_position_ecef_m": [
+        -3976218.946260653,
+        3382372.479629669,
+        3652512.7515685684
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0858,
+        3382372.3619,
+        3652512.7568
+      ],
+      "native_vs_rtklib_3d_m": 0.18264411351904158,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.6147116768202802,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5220712691697363,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018645220265234544
+    },
+    {
+      "epoch_id": 55,
+      "raw_receiver_time_gpst_s": 796436850.002,
+      "estimated_reception_gpst_s": 796436849.9999547,
+      "oracle_time_gpst_s": 796436850.0,
+      "oracle_quality": 5,
+      "time_difference_s": -4.5299530029296875e-05,
+      "native_position_ecef_m": [
+        -3976218.919860942,
+        3382372.363136426,
+        3652512.448956531
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.6776,
+        3382372.1872,
+        3652511.5768
+      ],
+      "native_vs_rtklib_3d_m": 0.9221176739585053,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.8215712926763349,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.6783819530581527,
+      "weight_experiment_vs_rtklib_3d_m": 0.00011502746049512023
+    },
+    {
+      "epoch_id": 56,
+      "raw_receiver_time_gpst_s": 796436880.002,
+      "estimated_reception_gpst_s": 796436879.9999127,
+      "oracle_time_gpst_s": 796436880.0,
+      "oracle_quality": 5,
+      "time_difference_s": -8.726119995117188e-05,
+      "native_position_ecef_m": [
+        -3976219.002457979,
+        3382372.415750739,
+        3652512.3625932154
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.5822,
+        3382372.1608,
+        3652510.8521
+      ],
+      "native_vs_rtklib_3d_m": 1.5884603875361005,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.8160559568271999,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.36037953112912,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015604150206534792
+    },
+    {
+      "epoch_id": 57,
+      "raw_receiver_time_gpst_s": 796436910.002,
+      "estimated_reception_gpst_s": 796436909.9998709,
+      "oracle_time_gpst_s": 796436910.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0001291036605834961,
+      "native_position_ecef_m": [
+        -3976219.417184205,
+        3382373.100968356,
+        3652513.032953883
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5174,
+        3382372.9398,
+        3652513.1248
+      ],
+      "native_vs_rtklib_3d_m": 0.21084153694644375,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.5436988797578206,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.3981983673212559,
+      "weight_experiment_vs_rtklib_3d_m": 0.00016652836353797573
+    },
+    {
+      "epoch_id": 58,
+      "raw_receiver_time_gpst_s": 796436940.002,
+      "estimated_reception_gpst_s": 796436939.9998289,
+      "oracle_time_gpst_s": 796436940.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0001710653305053711,
+      "native_position_ecef_m": [
+        -3976219.311451678,
+        3382372.823531299,
+        3652512.937330766
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2956,
+        3382372.6365,
+        3652512.5546
+      ],
+      "native_vs_rtklib_3d_m": 0.4262802151878794,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.32669518695471067,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.4849466054954325,
+      "weight_experiment_vs_rtklib_3d_m": 0.00017601742206837438
+    },
+    {
+      "epoch_id": 59,
+      "raw_receiver_time_gpst_s": 796436970.002,
+      "estimated_reception_gpst_s": 796436969.9997871,
+      "oracle_time_gpst_s": 796436970.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002129077911376953,
+      "native_position_ecef_m": [
+        -3976218.259307924,
+        3382371.9313164717,
+        3652511.899757177
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.2958,
+        3382371.7492,
+        3652511.6732
+      ],
+      "native_vs_rtklib_3d_m": 0.2929611498462365,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.7724240627810774,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.964543473765731,
+      "weight_experiment_vs_rtklib_3d_m": 0.00016887345483671085
+    },
+    {
+      "epoch_id": 60,
+      "raw_receiver_time_gpst_s": 796437000.002,
+      "estimated_reception_gpst_s": 796436999.9997451,
+      "oracle_time_gpst_s": 796437000.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002548694610595703,
+      "native_position_ecef_m": [
+        -3976218.9084364907,
+        3382372.5169755304,
+        3652512.545868022
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.8869,
+        3382372.4162,
+        3652512.1022
+      ],
+      "native_vs_rtklib_3d_m": 0.45547869498532906,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 0.7449683264663718,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.089928341812845,
+      "weight_experiment_vs_rtklib_3d_m": 0.00020572552556433467
+    },
+    {
+      "epoch_id": 61,
+      "raw_receiver_time_gpst_s": 796437030.002,
+      "estimated_reception_gpst_s": 796437029.9997033,
+      "oracle_time_gpst_s": 796437030.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00029671192169189453,
+      "native_position_ecef_m": [
+        -3976219.7912675827,
+        3382372.8148954813,
+        3652513.3574324613
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.9147,
+        3382372.6572,
+        3652513.2041
+      ],
+      "native_vs_rtklib_3d_m": 0.2522186951955124,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.529443379019762,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.47054107158569924,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018727957633604719
+    },
+    {
+      "epoch_id": 62,
+      "raw_receiver_time_gpst_s": 796437060.002,
+      "estimated_reception_gpst_s": 796437059.9996613,
+      "oracle_time_gpst_s": 796437060.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00033867359161376953,
+      "native_position_ecef_m": [
+        -3976219.4112053555,
+        3382372.7595172753,
+        3652512.9568471923
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4255,
+        3382372.5781,
+        3652512.8295
+      ],
+      "native_vs_rtklib_3d_m": 0.22211229588276088,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.21730008942907791,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.17637871197280117,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018221179230096916
+    },
+    {
+      "epoch_id": 63,
+      "raw_receiver_time_gpst_s": 796437090.002,
+      "estimated_reception_gpst_s": 796437089.9996195,
+      "oracle_time_gpst_s": 796437090.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00038051605224609375,
+      "native_position_ecef_m": [
+        -3976219.568605734,
+        3382372.836205885,
+        3652513.0685440064
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.6218,
+        3382372.5922,
+        3652512.8654
+      ],
+      "native_vs_rtklib_3d_m": 0.3219254403844985,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.2882067828714004,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.16677895535782195,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012073074256326532
+    },
+    {
+      "epoch_id": 64,
+      "raw_receiver_time_gpst_s": 796437120.002,
+      "estimated_reception_gpst_s": 796437119.9995775,
+      "oracle_time_gpst_s": 796437120.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00042247772216796875,
+      "native_position_ecef_m": [
+        -3976219.7411054648,
+        3382373.0260945125,
+        3652513.2982569053
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.7673,
+        3382372.7969,
+        3652513.1071
+      ],
+      "native_vs_rtklib_3d_m": 0.29959512789805115,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.6025889710349723,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.36725153493277635,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001237833990525912
+    },
+    {
+      "epoch_id": 65,
+      "raw_receiver_time_gpst_s": 796437150.002,
+      "estimated_reception_gpst_s": 796437149.9995356,
+      "oracle_time_gpst_s": 796437150.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00046443939208984375,
+      "native_position_ecef_m": [
+        -3976219.2191887167,
+        3382372.9137869854,
+        3652512.7304074755
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3658,
+        3382372.7936,
+        3652512.5419
+      ],
+      "native_vs_rtklib_3d_m": 0.2673478036007095,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5181561856602286,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5175219898572595,
+      "weight_experiment_vs_rtklib_3d_m": 0.00016894324062641656
+    },
+    {
+      "epoch_id": 66,
+      "raw_receiver_time_gpst_s": 796437180.003,
+      "estimated_reception_gpst_s": 796437180.0004938,
+      "oracle_time_gpst_s": 796437180.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0004937648773193359,
+      "native_position_ecef_m": [
+        -3976219.4752989383,
+        3382372.761296467,
+        3652513.0120338546
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5126,
+        3382372.5364,
+        3652512.7909
+      ],
+      "native_vs_rtklib_3d_m": 0.31760033326427956,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.19882402684546105,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.19646335549411761,
+      "weight_experiment_vs_rtklib_3d_m": 9.477257957153986e-05
+    },
+    {
+      "epoch_id": 67,
+      "raw_receiver_time_gpst_s": 796437210.003,
+      "estimated_reception_gpst_s": 796437210.0004518,
+      "oracle_time_gpst_s": 796437210.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00045180320739746094,
+      "native_position_ecef_m": [
+        -3976219.145945846,
+        3382372.535378816,
+        3652512.7053111754
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1331,
+        3382372.3091,
+        3652512.5038
+      ],
+      "native_vs_rtklib_3d_m": 0.3032719440936203,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.45869839372319976,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6623603398488559,
+      "weight_experiment_vs_rtklib_3d_m": 0.00016593483009580434
+    },
+    {
+      "epoch_id": 68,
+      "raw_receiver_time_gpst_s": 796437240.003,
+      "estimated_reception_gpst_s": 796437240.0004098,
+      "oracle_time_gpst_s": 796437240.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00040984153747558594,
+      "native_position_ecef_m": [
+        -3976219.8981028018,
+        3382372.9874805743,
+        3652513.5752832764
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.9727,
+        3382372.7836,
+        3652513.3206
+      ],
+      "native_vs_rtklib_3d_m": 0.3346574391967535,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.8229802153918013,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.612639363689539,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001519998044863054
+    },
+    {
+      "epoch_id": 69,
+      "raw_receiver_time_gpst_s": 796437270.003,
+      "estimated_reception_gpst_s": 796437270.000368,
+      "oracle_time_gpst_s": 796437270.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003679990768432617,
+      "native_position_ecef_m": [
+        -3976219.037657761,
+        3382372.445706705,
+        3652512.89598288
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0751,
+        3382372.2681,
+        3652512.6829
+      ],
+      "native_vs_rtklib_3d_m": 0.27991137314545445,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.49401678614123945,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6067788807920181,
+      "weight_experiment_vs_rtklib_3d_m": 0.00017512215430835813
+    },
+    {
+      "epoch_id": 70,
+      "raw_receiver_time_gpst_s": 796437300.003,
+      "estimated_reception_gpst_s": 796437300.000326,
+      "oracle_time_gpst_s": 796437300.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003260374069213867,
+      "native_position_ecef_m": [
+        -3976219.6441007713,
+        3382372.9524746914,
+        3652513.453681101
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.7267,
+        3382372.7986,
+        3652513.2193
+      ],
+      "native_vs_rtklib_3d_m": 0.29229189835120634,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.6218829415988996,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.39531994618510663,
+      "weight_experiment_vs_rtklib_3d_m": 0.00017122042224913597
+    },
+    {
+      "epoch_id": 71,
+      "raw_receiver_time_gpst_s": 796437330.003,
+      "estimated_reception_gpst_s": 796437330.0002842,
+      "oracle_time_gpst_s": 796437330.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0002841949462890625,
+      "native_position_ecef_m": [
+        -3976219.5969267976,
+        3382372.779631405,
+        3652513.0755903693
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5403,
+        3382372.5831,
+        3652512.8969
+      ],
+      "native_vs_rtklib_3d_m": 0.2715905659343267,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.24752128355954836,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.09502846936332268,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001171059008638154
+    },
+    {
+      "epoch_id": 72,
+      "raw_receiver_time_gpst_s": 796437360.003,
+      "estimated_reception_gpst_s": 796437360.0002422,
+      "oracle_time_gpst_s": 796437360.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0002422332763671875,
+      "native_position_ecef_m": [
+        -3976219.800582083,
+        3382372.7197338226,
+        3652513.467280529
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.792,
+        3382372.3688,
+        3652513.0515
+      ],
+      "native_vs_rtklib_3d_m": 0.5441522290322602,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5843589144310077,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.35256331351100134,
+      "weight_experiment_vs_rtklib_3d_m": 0.00013444534209475367
+    },
+    {
+      "epoch_id": 73,
+      "raw_receiver_time_gpst_s": 796437390.003,
+      "estimated_reception_gpst_s": 796437390.0002003,
+      "oracle_time_gpst_s": 796437390.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0002002716064453125,
+      "native_position_ecef_m": [
+        -3976219.0912734475,
+        3382372.4454876315,
+        3652513.015090692
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0441,
+        3382372.1829,
+        3652512.7265
+      ],
+      "native_vs_rtklib_3d_m": 0.39301677560323905,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.43534905109267774,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.655567700719632,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014387565781660955
+    },
+    {
+      "epoch_id": 74,
+      "raw_receiver_time_gpst_s": 796437420.003,
+      "estimated_reception_gpst_s": 796437420.0001583,
+      "oracle_time_gpst_s": 796437420.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0001583099365234375,
+      "native_position_ecef_m": [
+        -3976219.272345145,
+        3382372.61250405,
+        3652512.795073053
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3278,
+        3382372.3927,
+        3652512.4525
+      ],
+      "native_vs_rtklib_3d_m": 0.41078626779447475,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.30614263079096127,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.588565442285089,
+      "weight_experiment_vs_rtklib_3d_m": 0.00010740253854871117
+    },
+    {
+      "epoch_id": 75,
+      "raw_receiver_time_gpst_s": 796437450.003,
+      "estimated_reception_gpst_s": 796437450.0001165,
+      "oracle_time_gpst_s": 796437450.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00011646747589111328,
+      "native_position_ecef_m": [
+        -3976219.9341477985,
+        3382372.7925150814,
+        3652513.5588920396
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.873,
+        3382372.5096,
+        3652513.2296
+      ],
+      "native_vs_rtklib_3d_m": 0.4384213084528645,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.7494733799738051,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.4430162301318893,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015374411526886312
+    },
+    {
+      "epoch_id": 76,
+      "raw_receiver_time_gpst_s": 796437480.003,
+      "estimated_reception_gpst_s": 796437480.0000745,
+      "oracle_time_gpst_s": 796437480.0,
+      "oracle_quality": 5,
+      "time_difference_s": 7.450580596923828e-05,
+      "native_position_ecef_m": [
+        -3976219.642884247,
+        3382373.023271314,
+        3652513.0510164225
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5424,
+        3382372.6937,
+        3652512.6809
+      ],
+      "native_vs_rtklib_3d_m": 0.5056683703943213,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.48021192737867974,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.33107884261773735,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002191327320437133
+    },
+    {
+      "epoch_id": 77,
+      "raw_receiver_time_gpst_s": 796437510.003,
+      "estimated_reception_gpst_s": 796437510.0000325,
+      "oracle_time_gpst_s": 796437510.0,
+      "oracle_quality": 5,
+      "time_difference_s": 3.254413604736328e-05,
+      "native_position_ecef_m": [
+        -3976219.7763763713,
+        3382372.756695644,
+        3652513.4446161995
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.7591,
+        3382372.4736,
+        3652513.0406
+      ],
+      "native_vs_rtklib_3d_m": 0.49363013082013174,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5649814672105314,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.273487750943473,
+      "weight_experiment_vs_rtklib_3d_m": 9.868778676049269e-05
+    },
+    {
+      "epoch_id": 78,
+      "raw_receiver_time_gpst_s": 796437540.003,
+      "estimated_reception_gpst_s": 796437539.9999907,
+      "oracle_time_gpst_s": 796437540.0,
+      "oracle_quality": 5,
+      "time_difference_s": -9.298324584960938e-06,
+      "native_position_ecef_m": [
+        -3976219.3645136524,
+        3382372.5042950497,
+        3652512.648562335
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2291,
+        3382372.2239,
+        3652512.3619
+      ],
+      "native_vs_rtklib_3d_m": 0.42324169855803234,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.37109736357928935,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7640759452652803,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015837564234848713
+    },
+    {
+      "epoch_id": 79,
+      "raw_receiver_time_gpst_s": 796437570.003,
+      "estimated_reception_gpst_s": 796437569.9999487,
+      "oracle_time_gpst_s": 796437570.0,
+      "oracle_quality": 5,
+      "time_difference_s": -5.125999450683594e-05,
+      "native_position_ecef_m": [
+        -3976219.731116415,
+        3382372.725733247,
+        3652513.477873287
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.7268,
+        3382372.461,
+        3652513.0573
+      ],
+      "native_vs_rtklib_3d_m": 0.49697506314814777,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5638074998939068,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.2535447295741537,
+      "weight_experiment_vs_rtklib_3d_m": 0.00014119652387817127
+    },
+    {
+      "epoch_id": 80,
+      "raw_receiver_time_gpst_s": 796437600.003,
+      "estimated_reception_gpst_s": 796437599.9999069,
+      "oracle_time_gpst_s": 796437600.0,
+      "oracle_quality": 5,
+      "time_difference_s": -9.310245513916016e-05,
+      "native_position_ecef_m": [
+        -3976219.5988426986,
+        3382372.6726490366,
+        3652513.550679651
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.54,
+        3382372.3684,
+        3652513.1123
+      ],
+      "native_vs_rtklib_3d_m": 0.5368488221064944,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5826348011044669,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.23816735724109583,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001640504626271654
+    },
+    {
+      "epoch_id": 81,
+      "raw_receiver_time_gpst_s": 796437630.003,
+      "estimated_reception_gpst_s": 796437629.9998649,
+      "oracle_time_gpst_s": 796437630.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00013506412506103516,
+      "native_position_ecef_m": [
+        -3976219.500470742,
+        3382372.4982480854,
+        3652513.448134089
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.467,
+        3382372.2989,
+        3652513.1447
+      ],
+      "native_vs_rtklib_3d_m": 0.364598678061381,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.46838675115870243,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.31490430315800655,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012214470304540832
+    },
+    {
+      "epoch_id": 82,
+      "raw_receiver_time_gpst_s": 796437660.003,
+      "estimated_reception_gpst_s": 796437659.999823,
+      "oracle_time_gpst_s": 796437660.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00017702579498291016,
+      "native_position_ecef_m": [
+        -3976219.380284082,
+        3382372.5949262166,
+        3652513.092943067
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3439,
+        3382372.2792,
+        3652512.5752
+      ],
+      "native_vs_rtklib_3d_m": 0.6075069785115722,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.16973533733035798,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5270056831121992,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018324450422772316
+    },
+    {
+      "epoch_id": 83,
+      "raw_receiver_time_gpst_s": 796437690.003,
+      "estimated_reception_gpst_s": 796437689.9997811,
+      "oracle_time_gpst_s": 796437690.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00021886825561523438,
+      "native_position_ecef_m": [
+        -3976219.327819114,
+        3382372.907589404,
+        3652512.840492384
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1676,
+        3382372.4702,
+        3652512.2388
+      ],
+      "native_vs_rtklib_3d_m": 0.7609292874151745,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.41148980264755974,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8258711645042474,
+      "weight_experiment_vs_rtklib_3d_m": 0.00018246165587565397
+    },
+    {
+      "epoch_id": 84,
+      "raw_receiver_time_gpst_s": 796437720.003,
+      "estimated_reception_gpst_s": 796437719.9997392,
+      "oracle_time_gpst_s": 796437720.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002608299255371094,
+      "native_position_ecef_m": [
+        -3976219.5662525534,
+        3382372.904988227,
+        3652513.0754856523
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4861,
+        3382372.5771,
+        3652512.5576
+      ],
+      "native_vs_rtklib_3d_m": 0.6181752746711603,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.3546044460886981,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.4279879672219134,
+      "weight_experiment_vs_rtklib_3d_m": 9.760265066736158e-05
+    },
+    {
+      "epoch_id": 85,
+      "raw_receiver_time_gpst_s": 796437750.003,
+      "estimated_reception_gpst_s": 796437749.9996972,
+      "oracle_time_gpst_s": 796437750.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0003027915954589844,
+      "native_position_ecef_m": [
+        -3976219.2992763687,
+        3382372.563657687,
+        3652512.7553854245
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0922,
+        3382372.1714,
+        3652512.2644
+      ],
+      "native_vs_rtklib_3d_m": 0.6616746953867587,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.31038343005181385,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.9212788611972758,
+      "weight_experiment_vs_rtklib_3d_m": 0.00012696385994873826
+    },
+    {
+      "epoch_id": 86,
+      "raw_receiver_time_gpst_s": 796437780.003,
+      "estimated_reception_gpst_s": 796437779.9996552,
+      "oracle_time_gpst_s": 796437780.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0003447532653808594,
+      "native_position_ecef_m": [
+        -3976219.336397993,
+        3382372.5569938505,
+        3652512.706619197
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.2509,
+        3382372.2776,
+        3652512.2614
+      ],
+      "native_vs_rtklib_3d_m": 0.5325325940004417,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.3271975996739082,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8206496145381861,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002095449126016169
+    },
+    {
+      "epoch_id": 87,
+      "raw_receiver_time_gpst_s": 796437810.003,
+      "estimated_reception_gpst_s": 796437809.9996134,
+      "oracle_time_gpst_s": 796437810.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0003865957260131836,
+      "native_position_ecef_m": [
+        -3976219.456312477,
+        3382372.1290140236,
+        3652512.8280767156
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.3296,
+        3382371.8124,
+        3652512.3503
+      ],
+      "native_vs_rtklib_3d_m": 0.5870017731044835,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.46819352879807774,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.002091417966984,
+      "weight_experiment_vs_rtklib_3d_m": 0.00015656895307853295
+    },
+    {
+      "epoch_id": 88,
+      "raw_receiver_time_gpst_s": 796437840.003,
+      "estimated_reception_gpst_s": 796437839.9995714,
+      "oracle_time_gpst_s": 796437840.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0004285573959350586,
+      "native_position_ecef_m": [
+        -3976219.9531249152,
+        3382372.6936389334,
+        3652512.990087169
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.7994,
+        3382372.2735,
+        3652512.3174
+      ],
+      "native_vs_rtklib_3d_m": 0.8078713389971146,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.4625983014749338,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.7852099400033005,
+      "weight_experiment_vs_rtklib_3d_m": 0.00020134559401380512
+    },
+    {
+      "epoch_id": 89,
+      "raw_receiver_time_gpst_s": 796437870.003,
+      "estimated_reception_gpst_s": 796437869.9995295,
+      "oracle_time_gpst_s": 796437870.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0004705190658569336,
+      "native_position_ecef_m": [
+        -3976219.8338966924,
+        3382372.8161876844,
+        3652513.0487375674
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.6527,
+        3382372.4351,
+        3652512.4822
+      ],
+      "native_vs_rtklib_3d_m": 0.7064169306684577,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.4149677636687564,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5394548545607435,
+      "weight_experiment_vs_rtklib_3d_m": 0.00016158288884915927
+    },
+    {
+      "epoch_id": 90,
+      "raw_receiver_time_gpst_s": 796437900.004,
+      "estimated_reception_gpst_s": 796437900.0004874,
+      "oracle_time_gpst_s": 796437900.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00048744678497314453,
+      "native_position_ecef_m": [
+        -3976219.5192292766,
+        3382372.301745308,
+        3652513.019791692
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.5044,
+        3382371.9699,
+        3652512.303
+      ],
+      "native_vs_rtklib_3d_m": 0.7900199655726302,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.26786598828445446,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.9064490556580044,
+      "weight_experiment_vs_rtklib_3d_m": 0.00025376218974542135
+    },
+    {
+      "epoch_id": 91,
+      "raw_receiver_time_gpst_s": 796437930.004,
+      "estimated_reception_gpst_s": 796437930.0004455,
+      "oracle_time_gpst_s": 796437930.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00044548511505126953,
+      "native_position_ecef_m": [
+        -3976219.2014502324,
+        3382372.2130593876,
+        3652512.983687079
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0832,
+        3382371.9638,
+        3652512.5931
+      ],
+      "native_vs_rtklib_3d_m": 0.4781962211337341,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.46844599090008915,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.8355256607836576,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002716067471560119
+    },
+    {
+      "epoch_id": 92,
+      "raw_receiver_time_gpst_s": 796437960.004,
+      "estimated_reception_gpst_s": 796437960.0004035,
+      "oracle_time_gpst_s": 796437960.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00040352344512939453,
+      "native_position_ecef_m": [
+        -3976219.5732518714,
+        3382372.45300027,
+        3652513.536369032
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4603,
+        3382372.0853,
+        3652512.8524
+      ],
+      "native_vs_rtklib_3d_m": 0.7847134830776124,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5668938065244448,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5019779877084483,
+      "weight_experiment_vs_rtklib_3d_m": 0.0001735086800703094
+    },
+    {
+      "epoch_id": 93,
+      "raw_receiver_time_gpst_s": 796437990.004,
+      "estimated_reception_gpst_s": 796437990.0003616,
+      "oracle_time_gpst_s": 796437990.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00036156177520751953,
+      "native_position_ecef_m": [
+        -3976219.080602418,
+        3382372.2382291825,
+        3652513.0170094385
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0466,
+        3382371.9795,
+        3652512.4549
+      ],
+      "native_vs_rtklib_3d_m": 0.6197289532318451,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5403949691662319,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.9161049724514899,
+      "weight_experiment_vs_rtklib_3d_m": 0.00026544903605495846
+    },
+    {
+      "epoch_id": 94,
+      "raw_receiver_time_gpst_s": 796438020.004,
+      "estimated_reception_gpst_s": 796438020.0003196,
+      "oracle_time_gpst_s": 796438020.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00031960010528564453,
+      "native_position_ecef_m": [
+        -3976219.0875116456,
+        3382372.076254569,
+        3652512.603304511
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.9551,
+        3382371.7295,
+        3652511.9706
+      ],
+      "native_vs_rtklib_3d_m": 0.7335438453989123,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.7506817208911087,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.4269890890726187,
+      "weight_experiment_vs_rtklib_3d_m": 0.00017494329831530634
+    },
+    {
+      "epoch_id": 95,
+      "raw_receiver_time_gpst_s": 796438050.004,
+      "estimated_reception_gpst_s": 796438050.0002776,
+      "oracle_time_gpst_s": 796438050.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00027763843536376953,
+      "native_position_ecef_m": [
+        -3976219.592566759,
+        3382372.843821198,
+        3652513.115508653
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4808,
+        3382372.4751,
+        3652512.3833
+      ],
+      "native_vs_rtklib_3d_m": 0.827391468711035,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.3174129672283356,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.6092104071973328,
+      "weight_experiment_vs_rtklib_3d_m": 0.00019632964604720737
+    },
+    {
+      "epoch_id": 96,
+      "raw_receiver_time_gpst_s": 796438080.004,
+      "estimated_reception_gpst_s": 796438080.0002357,
+      "oracle_time_gpst_s": 796438080.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00023567676544189453,
+      "native_position_ecef_m": [
+        -3976219.164193325,
+        3382372.1617780374,
+        3652512.7262540343
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0331,
+        3382371.8023,
+        3652512.0345
+      ],
+      "native_vs_rtklib_3d_m": 0.7905273955534875,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5912057351961261,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.309159734288188,
+      "weight_experiment_vs_rtklib_3d_m": 0.00020644800693467956
+    },
+    {
+      "epoch_id": 97,
+      "raw_receiver_time_gpst_s": 796438110.004,
+      "estimated_reception_gpst_s": 796438110.0001937,
+      "oracle_time_gpst_s": 796438110.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00019371509552001953,
+      "native_position_ecef_m": [
+        -3976219.5598576255,
+        3382372.49067203,
+        3652513.693481325
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4056,
+        3382372.1195,
+        3652512.9973
+      ],
+      "native_vs_rtklib_3d_m": 0.803885892673203,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.7145608715895325,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.45937596806403225,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002538167314968496
+    },
+    {
+      "epoch_id": 98,
+      "raw_receiver_time_gpst_s": 796438140.004,
+      "estimated_reception_gpst_s": 796438140.0001518,
+      "oracle_time_gpst_s": 796438140.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00015175342559814453,
+      "native_position_ecef_m": [
+        -3976219.2635788317,
+        3382372.398081389,
+        3652512.918231579
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0805,
+        3382372.0648,
+        3652512.3559
+      ],
+      "native_vs_rtklib_3d_m": 0.6788307209525984,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.3047154169721174,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.9115226713717864,
+      "weight_experiment_vs_rtklib_3d_m": 0.00028813790562865415
+    },
+    {
+      "epoch_id": 99,
+      "raw_receiver_time_gpst_s": 796438170.004,
+      "estimated_reception_gpst_s": 796438170.0001098,
+      "oracle_time_gpst_s": 796438170.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00010979175567626953,
+      "native_position_ecef_m": [
+        -3976219.484979742,
+        3382372.494050017,
+        3652513.3057440454
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4048,
+        3382372.182,
+        3652512.621
+      ],
+      "native_vs_rtklib_3d_m": 0.7567551864226704,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.3298732814943902,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.5398303253829938,
+      "weight_experiment_vs_rtklib_3d_m": 0.00017106678738292074
+    },
+    {
+      "epoch_id": 100,
+      "raw_receiver_time_gpst_s": 796438200.004,
+      "estimated_reception_gpst_s": 796438200.0000678,
+      "oracle_time_gpst_s": 796438200.0,
+      "oracle_quality": 5,
+      "time_difference_s": 6.783008575439453e-05,
+      "native_position_ecef_m": [
+        -3976219.3266235953,
+        3382372.603306872,
+        3652512.8005628698
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1831,
+        3382372.2323,
+        3652512.0561
+      ],
+      "native_vs_rtklib_3d_m": 0.844079430926818,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.2612682642665086,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.039447204039834,
+      "weight_experiment_vs_rtklib_3d_m": 0.00033309464816157116
+    },
+    {
+      "epoch_id": 101,
+      "raw_receiver_time_gpst_s": 796438230.004,
+      "estimated_reception_gpst_s": 796438230.0000257,
+      "oracle_time_gpst_s": 796438230.0,
+      "oracle_quality": 5,
+      "time_difference_s": 2.574920654296875e-05,
+      "native_position_ecef_m": [
+        -3976219.527959873,
+        3382372.583360789,
+        3652512.6659299186
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.4518,
+        3382372.3263,
+        3652512.1057
+      ],
+      "native_vs_rtklib_3d_m": 0.621078205263845,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.3199949666100777,
+      "rtklib_vs_comparison_coordinate_3d_m": 0.9133226373390142,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002689780124105888
+    },
+    {
+      "epoch_id": 102,
+      "raw_receiver_time_gpst_s": 796438260.004,
+      "estimated_reception_gpst_s": 796438259.9999838,
+      "oracle_time_gpst_s": 796438260.0,
+      "oracle_quality": 5,
+      "time_difference_s": -1.621246337890625e-05,
+      "native_position_ecef_m": [
+        -3976219.2507847557,
+        3382372.5625696387,
+        3652512.5153287756
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.1384,
+        3382372.2761,
+        3652511.9313
+      ],
+      "native_vs_rtklib_3d_m": 0.6601399838115103,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.5355186896818322,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.1539090087892738,
+      "weight_experiment_vs_rtklib_3d_m": 0.00026369848003144513
+    },
+    {
+      "epoch_id": 103,
+      "raw_receiver_time_gpst_s": 796438290.004,
+      "estimated_reception_gpst_s": 796438289.9999418,
+      "oracle_time_gpst_s": 796438290.0,
+      "oracle_quality": 5,
+      "time_difference_s": -5.817413330078125e-05,
+      "native_position_ecef_m": [
+        -3976219.161119906,
+        3382372.102667214,
+        3652512.8265008735
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0254,
+        3382371.8408,
+        3652512.3438
+      ],
+      "native_vs_rtklib_3d_m": 0.5656805318151578,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.601042999881576,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.0824124631371712,
+      "weight_experiment_vs_rtklib_3d_m": 0.00023145437925564018
+    },
+    {
+      "epoch_id": 104,
+      "raw_receiver_time_gpst_s": 796438320.004,
+      "estimated_reception_gpst_s": 796438319.9998997,
+      "oracle_time_gpst_s": 796438320.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00010025501251220703,
+      "native_position_ecef_m": [
+        -3976218.905277931,
+        3382372.2713349024,
+        3652512.672733891
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.7788,
+        3382371.9759,
+        3652512.0806
+      ],
+      "native_vs_rtklib_3d_m": 0.6737217476956516,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.7405671434438258,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.3035721270275975,
+      "weight_experiment_vs_rtklib_3d_m": 0.000345540694970751
+    },
+    {
+      "epoch_id": 105,
+      "raw_receiver_time_gpst_s": 796438350.004,
+      "estimated_reception_gpst_s": 796438349.9998578,
+      "oracle_time_gpst_s": 796438350.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00014221668243408203,
+      "native_position_ecef_m": [
+        -3976219.1965679857,
+        3382371.9030125835,
+        3652513.011264633
+      ],
+      "rtklib_position_ecef_m": [
+        -3976219.0589,
+        3382371.5609,
+        3652512.3091
+      ],
+      "native_vs_rtklib_3d_m": 0.7931132741104606,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 0.7340447555319488,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.2926772877012007,
+      "weight_experiment_vs_rtklib_3d_m": 0.0003050717007069589
+    },
+    {
+      "epoch_id": 106,
+      "raw_receiver_time_gpst_s": 796438380.004,
+      "estimated_reception_gpst_s": 796438379.9998158,
+      "oracle_time_gpst_s": 796438380.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00018417835235595703,
+      "native_position_ecef_m": [
+        -3976218.6796661825,
+        3382372.0045621353,
+        3652512.364305615
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.6289,
+        3382371.7666,
+        3652511.8015
+      ],
+      "native_vs_rtklib_3d_m": 0.6131503430694988,
+      "native_used": 6,
+      "rtklib_used": 6,
+      "native_vs_comparison_coordinate_3d_m": 1.1781572589970482,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.6776186396324408,
+      "weight_experiment_vs_rtklib_3d_m": 0.0003381786217243137
+    },
+    {
+      "epoch_id": 107,
+      "raw_receiver_time_gpst_s": 796438410.004,
+      "estimated_reception_gpst_s": 796438409.9997737,
+      "oracle_time_gpst_s": 796438410.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002262592315673828,
+      "native_position_ecef_m": [
+        -3976218.789777955,
+        3382371.70152682,
+        3652512.1684458572
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.7484,
+        3382371.5119,
+        3652511.8086
+      ],
+      "native_vs_rtklib_3d_m": 0.40885144866689027,
+      "native_used": 7,
+      "rtklib_used": 7,
+      "native_vs_comparison_coordinate_3d_m": 1.3899440750654821,
+      "rtklib_vs_comparison_coordinate_3d_m": 1.7534037671455296,
+      "weight_experiment_vs_rtklib_3d_m": 0.00030095197372293305
+    },
+    {
+      "epoch_id": 108,
+      "raw_receiver_time_gpst_s": 796438440.004,
+      "estimated_reception_gpst_s": 796438439.9997318,
+      "oracle_time_gpst_s": 796438440.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0002682209014892578,
+      "native_position_ecef_m": [
+        -3976218.627733954,
+        3382371.5177521156,
+        3652511.863634563
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.4173,
+        3382370.6881,
+        3652511.7918
+      ],
+      "native_vs_rtklib_3d_m": 0.8589326438808806,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 1.7701942324756723,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.4787479544624578,
+      "weight_experiment_vs_rtklib_3d_m": 0.0003331344266631756
+    },
+    {
+      "epoch_id": 109,
+      "raw_receiver_time_gpst_s": 796438470.004,
+      "estimated_reception_gpst_s": 796438469.9996897,
+      "oracle_time_gpst_s": 796438470.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0003103017807006836,
+      "native_position_ecef_m": [
+        -3976218.2536980845,
+        3382371.4921731795,
+        3652511.537226315
+      ],
+      "rtklib_position_ecef_m": [
+        -3976217.976,
+        3382370.8112,
+        3652511.2985
+      ],
+      "native_vs_rtklib_3d_m": 0.7731952865578717,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.1965886787694013,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.8765894061479114,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002683393513254155
+    },
+    {
+      "epoch_id": 110,
+      "raw_receiver_time_gpst_s": 796438500.004,
+      "estimated_reception_gpst_s": 796438499.9996477,
+      "oracle_time_gpst_s": 796438500.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0003522634506225586,
+      "native_position_ecef_m": [
+        -3976218.788728668,
+        3382371.4795538164,
+        3652511.665256147
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.4518,
+        3382370.6164,
+        3652511.4968
+      ],
+      "native_vs_rtklib_3d_m": 0.9417711564747915,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 1.8552238675971464,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.6712643187336496,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002921394829051352
+    },
+    {
+      "epoch_id": 111,
+      "raw_receiver_time_gpst_s": 796438530.004,
+      "estimated_reception_gpst_s": 796438529.9996057,
+      "oracle_time_gpst_s": 796438530.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.0003943443298339844,
+      "native_position_ecef_m": [
+        -3976218.498791458,
+        3382371.568047646,
+        3652511.435060453
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.2877,
+        3382370.8099,
+        3652511.4865
+      ],
+      "native_vs_rtklib_3d_m": 0.788665634677483,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.102145054942986,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.612005866934665,
+      "weight_experiment_vs_rtklib_3d_m": 0.00024521450486628653
+    },
+    {
+      "epoch_id": 112,
+      "raw_receiver_time_gpst_s": 796438560.004,
+      "estimated_reception_gpst_s": 796438559.9995636,
+      "oracle_time_gpst_s": 796438560.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00043642520904541016,
+      "native_position_ecef_m": [
+        -3976218.362470755,
+        3382371.3934991853,
+        3652511.442420143
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.4006,
+        3382370.6875,
+        3652511.6823
+      ],
+      "native_vs_rtklib_3d_m": 0.7466130421537178,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.2515058259931826,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.5409527112903243,
+      "weight_experiment_vs_rtklib_3d_m": 0.00026096505550111997
+    },
+    {
+      "epoch_id": 113,
+      "raw_receiver_time_gpst_s": 796438590.004,
+      "estimated_reception_gpst_s": 796438589.9995216,
+      "oracle_time_gpst_s": 796438590.0,
+      "oracle_quality": 5,
+      "time_difference_s": -0.00047838687896728516,
+      "native_position_ecef_m": [
+        -3976218.337884068,
+        3382371.5614096173,
+        3652510.633756571
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.1106,
+        3382370.7914,
+        3652510.6905
+      ],
+      "native_vs_rtklib_3d_m": 0.8048556859357614,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.8122816272144826,
+      "rtklib_vs_comparison_coordinate_3d_m": 3.2203520942890207,
+      "weight_experiment_vs_rtklib_3d_m": 0.00024186261531289192
+    },
+    {
+      "epoch_id": 114,
+      "raw_receiver_time_gpst_s": 796438620.005,
+      "estimated_reception_gpst_s": 796438620.0004796,
+      "oracle_time_gpst_s": 796438620.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00047957897186279297,
+      "native_position_ecef_m": [
+        -3976218.3530263226,
+        3382371.4743501283,
+        3652510.9578599418
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.1692,
+        3382370.8203,
+        3652511.0273
+      ],
+      "native_vs_rtklib_3d_m": 0.6829316285371522,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.576319061239446,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.9455778721522035,
+      "weight_experiment_vs_rtklib_3d_m": 0.00027096713863616445
+    },
+    {
+      "epoch_id": 115,
+      "raw_receiver_time_gpst_s": 796438650.005,
+      "estimated_reception_gpst_s": 796438650.0004375,
+      "oracle_time_gpst_s": 796438650.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0004374980926513672,
+      "native_position_ecef_m": [
+        -3976218.4662404372,
+        3382371.2469792683,
+        3652511.414547911
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.3393,
+        3382370.6811,
+        3652511.4153
+      ],
+      "native_vs_rtklib_3d_m": 0.5799429164048977,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.300957227103531,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.717897601043854,
+      "weight_experiment_vs_rtklib_3d_m": 0.00024775442224835633
+    },
+    {
+      "epoch_id": 116,
+      "raw_receiver_time_gpst_s": 796438680.005,
+      "estimated_reception_gpst_s": 796438680.0003954,
+      "oracle_time_gpst_s": 796438680.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003954172134399414,
+      "native_position_ecef_m": [
+        -3976218.7568938793,
+        3382371.603591281,
+        3652511.4659588644
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.6967,
+        3382370.9653,
+        3652511.6854
+      ],
+      "native_vs_rtklib_3d_m": 0.6776381590656768,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 1.94935684582582,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.2165278570756373,
+      "weight_experiment_vs_rtklib_3d_m": 0.0002602673484235569
+    },
+    {
+      "epoch_id": 117,
+      "raw_receiver_time_gpst_s": 796438710.005,
+      "estimated_reception_gpst_s": 796438710.0003535,
+      "oracle_time_gpst_s": 796438710.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003534555435180664,
+      "native_position_ecef_m": [
+        -3976218.2293882356,
+        3382371.176881927,
+        3652511.7211494045
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.1289,
+        3382370.488,
+        3652511.9033
+      ],
+      "native_vs_rtklib_3d_m": 0.7196075558841057,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.272692541261166,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.7193719608737936,
+      "weight_experiment_vs_rtklib_3d_m": 0.00021709633162724588
+    },
+    {
+      "epoch_id": 118,
+      "raw_receiver_time_gpst_s": 796438740.005,
+      "estimated_reception_gpst_s": 796438740.0003114,
+      "oracle_time_gpst_s": 796438740.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.0003113746643066406,
+      "native_position_ecef_m": [
+        -3976218.164073522,
+        3382371.3712274055,
+        3652510.8931072573
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.0887,
+        3382370.6141,
+        3652511.4212
+      ],
+      "native_vs_rtklib_3d_m": 0.9261776402215162,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.7590549341121187,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.8765164591629415,
+      "weight_experiment_vs_rtklib_3d_m": 0.00024732318294332794
+    },
+    {
+      "epoch_id": 119,
+      "raw_receiver_time_gpst_s": 796438770.005,
+      "estimated_reception_gpst_s": 796438770.0002693,
+      "oracle_time_gpst_s": 796438770.0,
+      "oracle_quality": 5,
+      "time_difference_s": 0.00026929378509521484,
+      "native_position_ecef_m": [
+        -3976218.433344011,
+        3382371.220208258,
+        3652510.886506186
+      ],
+      "rtklib_position_ecef_m": [
+        -3976218.217,
+        3382370.6213,
+        3652511.1966
+      ],
+      "native_vs_rtklib_3d_m": 0.7082753742122555,
+      "native_used": 8,
+      "rtklib_used": 8,
+      "native_vs_comparison_coordinate_3d_m": 2.715269666408827,
+      "rtklib_vs_comparison_coordinate_3d_m": 2.9413180667188343,
+      "weight_experiment_vs_rtklib_3d_m": 0.00022094602009365395
+    }
+  ]
+}

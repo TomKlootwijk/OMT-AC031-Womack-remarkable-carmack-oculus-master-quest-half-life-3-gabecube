@@ -1,0 +1,8 @@
+{
+"version":"3.6.1.7","profile":"SATNAV-R1-corrected-code",
+"backend":"cuda_texture","epochs":256,"compute_ms":1.1128640174865723,
+"same_code_cpu_comparison":true,
+"max_iterations":12,"position_tolerance_m":0.0001,"clock_tolerance_m":0.0001,"max_normalized_residual":6,
+"device":{"name":"NVIDIA GeForce RTX 5070 Ti Laptop GPU","capability_major":12,"capability_minor":0,"free_bytes":11561598976,"total_bytes":12820480000,"driver_version":13010,"runtime_version":12080,"linear_texture_texels":268435456},
+"epoch_bytes":72,"result_bytes":376,"input_double_bytes_per_epoch":1536
+}
