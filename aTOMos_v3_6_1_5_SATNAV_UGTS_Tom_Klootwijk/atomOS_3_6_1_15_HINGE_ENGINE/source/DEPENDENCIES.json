@@ -1,0 +1,23 @@
+{
+  "s2": {
+    "repository": "https://github.com/google/s2geometry.git",
+    "commit": "079611b654ad89afd9c3c3a1796d64bdd6a6b340",
+    "upstream_project_version": "0.12.0",
+    "license": "Apache-2.0",
+    "role": "reference baseline and robust final geometric predicates",
+    "modifications": "none"
+  },
+  "abseil": {
+    "repository": "https://github.com/abseil/abseil-cpp",
+    "tag_from_pinned_s2_cmake": "20260526.0"
+  },
+  "cuda": {
+    "toolkit": "12.8",
+    "requested_architecture": "sm_120",
+    "device_observed": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "vram_observed_mib": 12227,
+    "driver_observed": "591.59"
+  },
+  "cpu_observed": "Intel Core Ultra 7 255HX, 20 logical processors",
+  "parent_commit": "01a7f7d5af43ae32cf6df9adcb0d4acd8f0f38ec"
+}
