@@ -1,0 +1,123 @@
+{
+  "version": "3.6.1.14",
+  "baseline_commit": "151edc6f1756a9f425baeb3b8f3d9b4d66f34235",
+  "purpose": "Source provenance for consolidated manuscript; no imported source programs executed",
+  "parents": [
+    {
+      "directory": "atomOS_3_6_1_11_EXACT_OPERATORS",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_11_Exact_Operator_Seed_Formalization_Tom_Klootwijk.pdf",
+          "bytes": 958662,
+          "sha256": "2cfc3235c4ad018b9deb5795032b04e1fd8337b0fe1d6d99f4767d7aab424658"
+        }
+      ]
+    },
+    {
+      "directory": "atomOS_3_6_1_12_PHOTONIC_INTERFACE",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_12_Photonic_Interface_Formalization_Tom_Klootwijk.pdf",
+          "bytes": 1098014,
+          "sha256": "482c941b6f17b7ceffebf3a01d0e7abe6311074e672d8f546989fab2e83d93a7"
+        }
+      ]
+    },
+    {
+      "directory": "atomOS_3_6_1_13_PHYSICS_FOUNDATION",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_13_Physics_Foundation_Tom_Klootwijk.pdf",
+          "bytes": 165157,
+          "sha256": "c02537b4fbcbe5abb7d6045a70b7ddc4236998f5ce5c99a2a8d8a96e8a19b752"
+        }
+      ]
+    }
+  ],
+  "inspected_or_adapted_sources": [
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/exact_core.tex",
+      "bytes": 27742,
+      "sha256": "df7ff42719008603927ee2b884052e2c052f4c1ae3b8ff312d63205ad82ebf9c"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/exact_registry.tex",
+      "bytes": 34402,
+      "sha256": "c4f8bc070baf0a8bf23abefbf9dda355da6d1fdc489c76432bae26d9fff690a8"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/want_integration.tex",
+      "bytes": 13821,
+      "sha256": "169f435133f25bb734c1c920c176ad2711f4474922b4afdcc469f56cf72329c9"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/want_interface.tex",
+      "bytes": 24702,
+      "sha256": "8756f25b230d084bd4a819e9120a388bfefad9e305d44f7d09a34dd8cd1631fb"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/want_optics.tex",
+      "bytes": 22343,
+      "sha256": "5accc4ed4f70b96f22ee944b270e237c530065c730efbcde94d2e8132c99f215"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/want_physical.tex",
+      "bytes": 25846,
+      "sha256": "379791fc84c437bf6016323e0feab68da82969ab5b0e06ee445234b77575520d"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/docs/preamble.tex",
+      "bytes": 3204,
+      "sha256": "0d3da73aa3d0813b0e5536877a704876a3f17a00b2f9d946800a8da1e136d9da"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/docs/physics_core.tex",
+      "bytes": 13228,
+      "sha256": "779c8d41c271cc1a999131cb0f65fd5473916eb21b9f498ac6e4876fd104eead"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/docs/physics_energy.tex",
+      "bytes": 17592,
+      "sha256": "44701e998fe3b351fafaf083bb6381c20159b7eab295c1e68b0d59854fd208ff"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/docs/physics_measurement.tex",
+      "bytes": 14877,
+      "sha256": "f785320985419883a260346ae2ef070fa6248b8210466d6bfee17b620a536390"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/formal/PHYSICS_PROFILE.md",
+      "bytes": 5062,
+      "sha256": "8f410f6a2a2e06ab19d8cd3191c93822b10a38330cd5ecdb5f25617cf5f2e6f2"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/formal/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/formal/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "atomOS_3_6_1_13_PHYSICS_FOUNDATION/formal/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    }
+  ],
+  "inherited_catalog": "formal/OPERATOR_CATALOG.md retained byte-for-byte",
+  "adaptations": "Document introduction, references and current integration wording adapted; common coupling, field step, gravity/time, clock binding and bridge newly composed from declared sources",
+  "clock_acquisition": "Explicitly requested by user; raw NIST packet and IANA leap table in source/clock_capture",
+  "older_releases_modified": false
+}

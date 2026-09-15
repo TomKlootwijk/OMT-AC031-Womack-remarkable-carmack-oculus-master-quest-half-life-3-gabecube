@@ -1,0 +1,13 @@
+{
+  "version": "3.6.1.14",
+  "parent": "3.6.1.13",
+  "profile": "XOP-UNIFIED-FIELD-R1",
+  "wire_profile": "XOP-R1",
+  "clock_profile": "ATOMOS-ATOMIC-TIME-ANCHOR-R1",
+  "status": "integrated_draft_under_review",
+  "runtime_status": "mathematical_specification_no_new_executor",
+  "clock_status": "real_NIST_NTP_reply_materialized_as_immutable_source_anchor",
+  "method": "Logical derivation, primary-source review, requested internet clock acquisition and document inspection",
+  "algorithm_tests": "not_run_by_user_instruction",
+  "scope": "Consolidated exact field/state/physics/measurement core; full XOP grammar; named historical application profiles remain separate"
+}

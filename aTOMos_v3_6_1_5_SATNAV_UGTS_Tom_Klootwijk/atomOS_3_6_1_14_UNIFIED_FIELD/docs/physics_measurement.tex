@@ -1,0 +1,284 @@
+\section{Measurement, constants and output tolerances}
+\label{r13-measurement-core}
+
+The existing XOP dimension, frame, sample and dependency types already carry
+the information needed here. This chapter adds a physical interpretation and
+conditional output certificates, without adding a measurement oracle or a new
+packet format. An exactly stored indication, an exact nominal model and the
+physical quantity being inferred remain distinct. The purpose is operational:
+preserve what is known, keep shared uncertainties coupled, and determine what
+an output can claim within a selected application tolerance.
+
+\subsection{Exact defining constants and measured coefficients}
+\label{r13-measurement-constants}
+
+Five SI defining constants connect the present time, optical, electrical
+and thermal profiles. Their numerical values are fixed by the SI; unit
+realizations and measurements made with them still have uncertainty.
+The following dimension vectors use the inherited order
+$(L,M,T,I,\Theta,N,J_{\rm lum})$.
+\href{https://www.bipm.org/en/measurement-units/si-defining-constants}{[ME1: BIPM defining constants]}
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{P{.11\linewidth}P{.45\linewidth}Y}
+\toprule
+Constant & Exact SI quantity & XOP dimension vector\\
+\midrule
+$\Delta\nu_{\rm Cs}$ & $9\,192\,631\,770\;\mathrm{Hz}$ & $(0,0,-1,0,0,0,0)$\\
+$c$ & $299\,792\,458\;\mathrm{m\,s^{-1}}$ & $(1,0,-1,0,0,0,0)$\\
+$h$ & $6.626\,070\,15\times10^{-34}\;\mathrm{J\,s}$ & $(2,1,-1,0,0,0,0)$\\
+$e$ & $1.602\,176\,634\times10^{-19}\;\mathrm{C}$ & $(0,0,1,1,0,0,0)$\\
+$k_{\rm B}$ & $1.380\,649\times10^{-23}\;\mathrm{J\,K^{-1}}$ & $(2,1,-2,0,-1,0,0)$\\
+\bottomrule
+\end{tabularx}\end{center}
+
+The decimal coefficients are finite rational literals, reduced canonically by
+the XOP grammar. For example, the numerical coefficient of $h$ is
+$662607015/10^{42}$ before reduction. A binary floating-point approximation is
+unnecessary. The elementary charge $e$ is positive; the charge of an electron
+is $-e$. The namespace distinguishes it from the Boolean accepted-event bit.
+
+The gravitational constant $G$ and fine-structure constant $\alpha_{\rm fs}$
+are measured quantities, with dimensions $L^3M^{-1}T^{-2}$ and $1$,
+respectively. A specialization that needs them binds a dated value, uncertainty
+and provenance; this core does not hard-code a new estimate.
+\href{https://physics.nist.gov/cuu/Constants/Table/allascii.txt}{[ME2: NIST CODATA table]}
+In present SI, vacuum permeability and permittivity are also not independent
+exact decimal constants. For positive $\alpha_{\rm fs}$, retain their common
+dependency:
+\begin{equation}
+ \mu_0=\frac{2\alpha_{\rm fs}h}{e^2c},\qquad
+ \epsilon_0=\frac{e^2}{2\alpha_{\rm fs}hc},\qquad
+ \mu_0\epsilon_0=\frac1{c^2}.
+ \label{r13-measurement-vacuum}
+\end{equation}
+Here $[\mu_0]=MLT^{-2}I^{-2}$ and
+$[\epsilon_0]=M^{-1}L^{-3}T^4I^2$. Multiplication cancels the shared
+$\alpha_{\rm fs}$ exactly. Replacing the two occurrences by unrelated uncertain
+inputs would lose that constraint. The former exact assignment
+$\mu_0=4\pi\times10^{-7}\,\mathrm{H\,m^{-1}}$ is not the present SI definition.
+\href{https://doi.org/10.59161/AUEZ1291}{[ME3: SI Brochure, 9th edition, 2026, section 2.3.2]}
+
+\subsection{An observation is a modeled acquisition}
+\label{r13-measurement-equation}
+
+Let $x(t)$ be the selected physical state, $\theta$ its sensor/calibration
+parameters, and $m$ the transduction law into an analogue indication. An
+averaging acquisition over $[t_-,t_+]$ has the model
+\begin{align}
+ M[x,\theta,w]&=\int_{t_-}^{t_+}w(t)\,m(x(t),\theta,t)\,dt,
+ &w(t)&\geq0,\quad\int_{t_-}^{t_+}w(t)\,dt=1,\label{r13-measurement-acquisition}\\
+ y&=Q_{\Delta}\!\left(M[x,\theta,w]+d_M+\eta\right).
+ \label{r13-measurement-observation}
+\end{align}
+The weighting $w$ has dimension $T^{-1}$; $y$, $M$, the model discrepancy
+$d_M$ and analogue noise $\eta$ have the same indication dimension. For a
+counter or accumulated dose, use its declared accumulation law instead of a
+normalized average. An instantaneous sample is a separately defined profile,
+not an implicit substitution of the interval endpoint for the integral.
+Each integral requires finite bounds and its stated integrability conditions.
+The profile supplies finite function templates or explicit external bindings
+for the trajectory and weighting; it cannot encode an arbitrary unknown
+continuous signal as a fully known finite literal.
+
+$Q_{\Delta}$ includes its step, offset, ties rule, range and saturation
+behavior. For an unsaturated uniform nearest quantizer with step $\Delta>0$,
+put $v=M+d_M+\eta$. Then
+\begin{equation}
+ y=M+d_M+\eta+q,\qquad q=Q_{\Delta}(v)-v,
+ \qquad |q|\leq\Delta/2.
+ \label{r13-measurement-quantizer}
+\end{equation}
+This is a deterministic bound, not an assumption that $q$ is uniform,
+independent or newly random at every sample. Saturated codes require the
+actual preimage of the saturation law; the half-step bound no longer follows.
+The stored integer and its rational unit conversion can be exact while
+the corresponding physical indication occupies a range.
+
+The measurement model also declares its valid specimen, operating conditions
+and reference conditions. A discrepancy bound is supplied evidence or a
+stated hypothesis, never a number generated merely by writing $d_M$.
+Unrecognized effects are not covered automatically. This makes explicit the
+model scope emphasized by JCGM GUM-6, sections 6--7.
+\href{https://doi.org/10.59161/JCGMGUM-6-2020}{[ME4: Developing and using measurement models]}
+
+\subsection{Calibration and joint uncertainty}
+\label{r13-measurement-calibration}
+
+Let $p$ collect the finite parameters of the chosen profile: initial state,
+calibration, clock and frame realization, input history parameters and relevant
+residuals. A joint admissible set $\mathcal U$ retains their actual shared
+dependencies. With observation map $F$ built from
+\eqref{r13-measurement-observation}, the data-compatible set is
+\begin{equation}
+ \mathcal U_y=\{p\in\mathcal U:F(p)=y\},\qquad
+ \mathcal Z_y=\{g(p):p\in\mathcal U_y\}.
+ \label{r13-measurement-feasible}
+\end{equation}
+For multiple records, impose all their observation equations on the same
+shared calibration parameters. A repeated common offset does not become a
+new independent offset. If the set is proved empty, the declared model,
+admissible bounds and observations are inconsistent; empty-set containment
+must never be used to certify an output. If solving it is unresolved, retain
+the unresolved status. Neither conclusion identifies which physical
+assumption failed.
+
+A simple calibration model $y^{\rm cal}=A\theta+\varepsilon$ illustrates what
+equations alone can establish. With known design matrix $A\in\R^{m\times r}$,
+for consistent noiseless data the parameters are unique exactly when
+\begin{equation}
+ \operatorname{rank}A=r.
+ \label{r13-measurement-rank}
+\end{equation}
+For a chosen positive-definite covariance $\Sigma$ and full column rank,
+the generalized least-squares expression is
+\begin{equation}
+ \widehat\theta=(A^T\Sigma^{-1}A)^{-1}A^T\Sigma^{-1}y^{\rm cal}.
+ \label{r13-measurement-gls}
+\end{equation}
+The inverse exists since
+$z^TA^T\Sigma^{-1}Az=(Az)^T\Sigma^{-1}(Az)>0$ for $z\ne0$.
+This proves the algebraic expression's domain, not a calibration accuracy.
+Uncertain reference settings make $A$ uncertain and must enter the joint
+model. For a differentiable nonlinear calibration, a full-column-rank
+Jacobian permits a local regular inverse by selecting independent observation
+components. It does not give global uniqueness. Rank deficiency alone does
+not decide nonlinear identifiability.
+
+An alternative statistical profile supplies a joint distribution or covariance
+with its basis. For a differentiable output map and its linearization
+$J=Dg(\widehat p)$,
+\begin{equation}
+ \Sigma_z\simeq J\Sigma_pJ^T,\qquad
+ u^2(z_i)\simeq\sum_{j,k}J_{ij}(\Sigma_p)_{jk}J_{ik}.
+ \label{r13-measurement-covariance}
+\end{equation}
+Cross terms retain correlations. This is exact for an affine map with the
+stated covariance; in general it is a first-order approximation and a
+standard uncertainty is not a worst-case bound.
+\href{https://doi.org/10.59161/JCGM100-2008E}{[ME5: JCGM 100, sections 5.1--5.2]}
+Significant nonlinearity can also affect the output estimate itself;
+exact evaluation of $g(\widehat p)$ does not make it the distributional mean.
+\href{https://doi.org/10.59161/PPDI3267}{[ME6: JCGM 100, Amendment 1:2026]}
+
+\subsection{Acquisition time and realized coordinates}
+\label{r13-measurement-time}
+
+R12's WI record, immutable registry and session consumption rules remain
+unchanged. The calibration identifier resolves complete calibration content;
+its presence is not proof of freshness or traceability. Add the chosen
+measurement model, acquisition weighting, quantizer and joint-uncertainty
+definition to that existing dependency closure.
+
+For recorded source times $\tau_\pm$, a declared affine clock model is
+\begin{equation}
+ t_\pm=a\tau_\pm+b+\delta t_\pm,\qquad a>0.
+ \label{r13-measurement-clock}
+\end{equation}
+The same $a,b$ appear at both endpoints and in every record covered by that
+calibration. The physical acquisition interval, conversion validity interval
+and availability time remain distinct. Subtracting endpoints cancels the
+shared offset $b$; treating it as two independent offsets would miss this
+exact dependency. The uncertainty of $a$ and endpoint residuals remains.
+
+The analogous physical frame map is
+\begin{equation}
+ x_B(t)=R_{BA}(t)x_A(t)+o_{BA}(t),\qquad
+ R_{BA}^TR_{BA}=I,\quad\det R_{BA}=1.
+ \label{r13-measurement-frame}
+\end{equation}
+The XOP frame identity specifies the convention; $R_{BA}$ and $o_{BA}$
+specify its realization. A shared uncertain mounting is retained once in
+$p$, and an interval enclosure of its entries must retain, or conservatively
+enclose, the rotation constraints. A nominal matrix is not made physically
+aligned merely by encoding it exactly. Coordinate values from different
+acquisition times require the selected dynamical/time-transfer model before
+they can represent simultaneous geometry.
+
+\subsection{A bounded output certificate}
+\label{r13-measurement-certificate}
+
+The core needs a reusable rule for deciding a functional tolerance without
+inventing a universal numerical tolerance. Let $K$ be a nonempty compact
+convex set in the finite parameter coordinates; require
+$\widehat p\in K$ and a nonempty $\mathcal U_y\subseteq K$. The output
+$g_i$ is continuously differentiable on an open neighborhood of $K$. Suppose
+the following finite bounds have been established for all $p\in K$:
+\begin{equation}
+ |p_j-\widehat p_j|\leq r_j,\qquad
+ \left|\frac{\partial g_i}{\partial p_j}(p)\right|\leq L_{ij}.
+ \label{r13-measurement-lipschitz-data}
+\end{equation}
+$L_{ij}$ has output-unit per parameter-unit dimensions. No covariance or
+independence assumption is used. By integrating the derivative along the
+segment from $\widehat p$ to $p$,
+\begin{align}
+ g_i(p)-g_i(\widehat p)
+ &=\int_0^1\sum_j
+   \frac{\partial g_i}{\partial p_j}
+   (\widehat p+s(p-\widehat p))(p_j-\widehat p_j)\,ds,\\
+ |g_i(p)-g_i(\widehat p)|&\leq\sum_jL_{ij}r_j.
+ \label{r13-measurement-meanvalue}
+\end{align}
+The compact domain stays clear of undefined divisions, branch changes or
+other points where the derivative hypotheses fail. A box can conservatively
+enclose a correlated set; using the original joint constraints can tighten
+the result. Piecewise or discrete outputs use direct image/branch enclosure
+instead of differentiating through a switch.
+
+To apply the certificate to a physical result, assume its actual parameter
+vector lies in $\mathcal U_y$. Nonemptiness alone does not establish that
+physical inclusion. Suppose the intended physical output is
+$z_i^{\rm phys}=g_i(p)+d_i^{\rm out}$ with
+$|d_i^{\rm out}|\leq b_i$, and the delivered numerical output obeys
+$|z_i^{\rm del}-g_i(\widehat p)|\leq\rho_i$. Then
+\begin{equation}
+ |z_i^{\rm phys}-z_i^{\rm del}|\leq
+ B_i:=\sum_jL_{ij}r_j+b_i+\rho_i.
+ \label{r13-measurement-total-bound}
+\end{equation}
+This triangle-inequality certificate separates input/calibration uncertainty,
+output-model discrepancy and representation/evaluation error. Effects already
+included in $p$ are not counted again in $b_i$. The XOP exact expression can
+be retained with no numerical rendering error in its denotation; a finite
+rendering needs its own $\rho_i$ certificate. Existing binary64 execution is
+not assigned $\rho_i=0$ by this new formalization.
+
+For a requested absolute error tolerance $\tau_i\geq0$, the condition
+$B_i\leq\tau_i$ is sufficient on the stated domain and acquisition interval.
+For an allowed physical operating band $[\ell_i,u_i]$, sufficient containment is
+\begin{equation}
+ z_i^{\rm del}-B_i\geq\ell_i,\qquad
+ z_i^{\rm del}+B_i\leq u_i.
+ \label{r13-measurement-tolerance}
+\end{equation}
+Failure to prove this containment does not prove violation: a conservative
+enclosure may overlap both regions. A wholly disjoint enclosing interval
+proves exclusion; overlap remains unresolved. This is the general form of
+R12's bounded bridge and timing decisions. It certifies the declared quantity
+and interval, not every later state or a different physical application.
+
+\subsection{Minimal specialization record}
+\label{r13-measurement-record}
+
+Each specialization binds only: the measurand and conditions; the complete
+measurement/calibration expressions and actual source records; the unit,
+frame and acquisition-time realizations; the joint uncertainty or statistical
+model; and the requested output tolerance with its scoped evidence. The
+certificate binds those same dependency versions. Changing a calibration,
+clock, model basis, duration or tolerance requires reevaluating the affected
+claim, not changing the one-bit packing format.
+
+These are metadata and template/dependency obligations under XOP-R1. Set
+images, universal bounds and physical evidence are not secretly new executable
+opcodes. A backend may return \code{UNKNOWN}, \code{MISSING\_INPUT} or
+\code{RESOURCE\_LIMIT} when it cannot establish an obligation. The bridge,
+thermal and optical expressions remain useful before that backend exists.
+
+Metrological traceability is a property of a measurement result supported by
+its calibration chain and uncertainty; source hashing and exact arithmetic
+preserve provenance but do not supply that chain. Fitness for a particular
+use additionally depends on the required uncertainty or tolerance.
+\href{https://www.nist.gov/calibrations/traceability}{[ME7: NIST traceability policy]}
+The additions here make that distinction actionable through
+\eqref{r13-measurement-total-bound}, rather than adding unrelated domain rules.
