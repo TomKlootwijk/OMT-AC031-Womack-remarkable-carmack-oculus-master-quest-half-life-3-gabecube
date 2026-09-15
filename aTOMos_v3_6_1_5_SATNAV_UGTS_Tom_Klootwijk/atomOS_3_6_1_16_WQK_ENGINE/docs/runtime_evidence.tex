@@ -1,0 +1,162 @@
+\section{Implemented native profiles and measured scope}
+\label{sec:r15-runtime}
+The new implementation has three separately declared numeric domains. The
+Python reference uses arbitrary-precision rational coefficients in
+$\Q(\phi)$. The native exact program uses bounded integer coefficients in
+$\Z[\phi]$. The spatial index preserves supplied binary64 words, uses
+conservative geometric filters and exact normalized-direction membership.
+The hybrid ID-list path uses official S2 robust predicates for final decisions;
+the resident count path certifies definite decisions on the GPU and exposes
+unresolved queries for selected complete S2 host resolution.
+None of these statements equates a finite input word
+with an unknown physical measurement.
+
+\subsection{Exact operator words on the GPU}
+The native profile \code{ATOMOS-EXACT-GPU-ZPHI31-R1} admits
+\[
+ z=a+b\phi,\qquad a,b\in\Z,\qquad |a|,|b|\le B=2^{30}-1.
+\]
+It carries at most 128 expression nodes and 128 input slots, a frame identity,
+and seven signed SI dimension exponents. The supported bodies are literal,
+input, addition, subtraction, multiplication, multiplication by $\phi$, and
+the plane defining function $n\cdot p-c$. The root dependency closure is
+evaluated in dependency order. This is a bounded native subset, not a complete
+XOP parser or arbitrary rational/transcendental evaluator.
+
+For multiplication, the largest temporary coefficient sum is at most $3B^2$,
+which is below $2^{63}-1$. Every retained coefficient is checked against $B$.
+Exact sign is obtained from $2z=A+b\sqrt5$, $A=2a+b$. When $A$ and $b$ have
+opposite signs, unsigned comparison of $A^2$ with $5b^2$ determines the sign;
+$|A|\le3B$ makes both squares fit in 64 unsigned bits. Thus no floating
+projection enters these arithmetic decisions. A result outside the declared
+coefficient domain returns unresolved instead of wrapping or rounding.
+
+Canonical 32-bit operator words are transposed in complete $32\times32$
+bit-plane blocks. An integer texture supplies the packed words to a native
+inverse-transpose kernel. After expansion completes, a separate immutable
+texture exposes decoded operator words to the evaluator. A readback through
+that texture is compared with the original canonical payload. Packing preserves
+every bit; a transpose by itself is not a compression-ratio guarantee.
+
+The native integration example uses $g(x)=\phi x$ as a defining function in
+one declared frame. Sampled endpoint nonzero sign changes produce explicitly
+numbered events; this policy does not claim to recover every continuous
+crossing between observations. There is no chart reversal in this fixed-frame
+example. Its explicitly selected positive-side drive is $d=\boldsymbol1\{g>0\}$,
+distinct from an inside bit defined with $g<0$. The adapter uses $x=d$,
+ordered mask sets and $J=y$,
+$K=\neg y$. Boundary and unresolved outputs hold state. Repeating an event
+does not toggle either parity again. This connects evaluated operator words
+to persistent native hinge state across an explicit host synchronization
+boundary. This example retains that host adapter; the separate resident
+count-to-word and bounded integer recurrence profiles below execute delayed
+feedback on the device. None evaluates the complete arbitrary-expression XOP
+catalog on the GPU.
+
+\subsection{Conservative spherical texture filtering}
+Each GPU hierarchy node contains outward-rounded bounds and an escape link;
+traversal is stackless. Raw integer texture loads reconstruct point words.
+Binary32 projections are used only for the broad-phase squared chord-distance
+test. Let $u=2^{-24}$ and $R^2\in[0,4]$. For accepted unit-direction seeds,
+outward bounds, round-to-nearest and the declared non-fused arithmetic, the
+documented leaf and node overestimate bounds are respectively below $185u$
+and $161u$. Both fit within a conservative $256u$ envelope.
+
+The implemented candidate threshold rounds the radius upward and adds
+$2^{-14}=1024u$. Even the addition's rounding leaves more than $1019u$
+above the authoritative radius. A true member therefore survives this filter
+under the stated premises. The CPU then applies the shared exact normalized-
+direction predicate. A candidate-buffer overflow invokes a complete host
+query; it never truncates the answer. The detailed inequalities and resource
+limits are in \code{formal/NATIVE\_GPU.md}.
+
+The preserved original point bytes and outward node cache are distinct. No
+rounded filtered point becomes an updated source root. The present spatial
+object is immutable; a source change requires a new build. The timed native
+radius path includes query uploads, launches, synchronization, candidate readback,
+exact refinement and sorted host-visible output.
+The hybrid pipeline uses up to 20 persistent CPU participants for refinement.
+An overflow query is rerun completely on the host index. That work and its
+thread participation are recorded with the pipeline timing.
+
+\subsection{Resident query epochs and device feedback}
+The count profile uploads immutable source words, outward hierarchy bounds
+and a query table once per object. Repeated kernels return the two integers
+$(I,U)$: definite inside and unresolved counts. The binary64 distance body has
+a proved absolute error below $256\cdot2^{-52}$; the wider $2^{-40}$ threshold
+margin supplies definite inside/outside certificates. Complete traversal gives
+$I\le\operatorname{Count}\le I+U$. Only unresolved queries need the selected
+complete host resolver. A count-only result does not materialize identities
+and must be compared with the same cardinality output.
+
+The selected feedback binding reads the old word's low bit to choose one of
+two immutable queries. A following kernel consumes a resolved summary and
+executes the configured two ASA/NA stages and synchronous JK update. Its
+declared initialization pulse and subsequent drive-change pulses have been
+checked over ten device epochs; unresolved inputs hold state, replay holds,
+and stale epochs reject. The chart is fixed. This path performs the query
+selection and state commit without per-epoch host data readback.
+
+A separate working-set executable uses exact bounded integer $\phi$ operators,
+old-word operands and ordered masks with persistent global ping-pong state.
+It reconstructs immutable records from bit planes, compares integer texture
+fetches with ordinary global loads, and visits every record in streaming and
+coprime affine-permuted epochs. The quick check passed four working-set sizes.
+Completed sweep sizes, full-run validation and timings belong to the following
+resident chapter's generated results; no larger completed size follows from
+allocation alone. This is an operator/memory workload, not an S2 query test.
+
+\subsection{Hardware texture execution}
+The measured machine uses an RTX 5070 Ti Laptop GPU, 12,227 MiB reported VRAM,
+CUDA 12.8, driver 591.59 and an Intel Core Ultra 7 255HX with 20 logical
+processors. The Release build targets compute capability 12.0. Host predicates
+use strict floating-point compilation; CUDA filters disable fused multiply-add.
+
+The initial validated native build (CUDA source at commit \code{9cfe094})
+contains \code{TLD.LZ} in the texture
+specialization and \code{LDG.E} in the matching global-memory specialization.
+Nsight Compute recorded 169,426 texture-load sectors for a correctness-workload
+launch. These are direct compiled and executed texture-path observations.
+They do not measure a cache hit ratio or establish persistent cache residency.
+The profiler's duration is kept separate from unprofiled benchmark timing.
+
+\subsection{Correctness and S2 comparison}
+The exact Python suite contains 22 passing checks. The native spatial suite
+reports 37,837 passing checks against independent exhaustive robust-predicate
+queries, including exact nearest ordering and radius membership. The native
+texture suite compares 512 radius queries across texture, ordinary GPU reads
+and exact host results, and exercises overflow, immutable event payload,
+duplicate/stale events, Boolean seam flags and rounding-mode rejection.
+The native exact-program, operator-to-hinge, resident count and selected
+feedback checks are recorded in the release's validation report. All six
+native test targets passed in the extended build. The exact Python suite is
+reported separately from those native targets.
+
+Official S2 is pinned to commit
+\code{079611b654ad89afd9c3c3a1796d64bdd6a6b340}. Both implementations use
+the same fixed point words, identities and inclusive radius inputs. S2's
+conservative distance query is refined with its exact predicate. A persistent
+worker pool and reusable S2 query objects remove timed thread creation.
+All CPU configurations (1, 4 and 20 configured threads), every sample and the
+matching global-memory GPU path are retained in the JSON report.
+
+\input{benchmark_table.tex}
+
+Construction and the first device initialization are reported separately.
+Per-query allocations may be retained for reuse. The reported static resident
+byte count excludes later query and hinge scratch allocations; it is not peak
+VRAM. Workloads with duplicate points explicitly cap total potential output
+at one million identities; requested and actual query counts are both recorded.
+No timing from a capped workload is presented as if all requested queries ran.
+
+The ID-returning comparison above covers spherical point radius queries.
+Dynamic refits, query-coherence studies for that spatial workload, nearest
+and region throughput, full
+log-spherical expression lowering and the complete S2 feature set remain
+outside this measurement. The separate resident count and word-permutation
+experiments use their own contracts and do not fill those missing comparisons.
+Broader engine superiority therefore remains unestablished.
+The experiment measures hierarchy traversal, batching, memory access and
+refinement. It does not isolate a performance benefit from $\phi$ arithmetic,
+Klein topology or log encoding; those retained formal mechanisms require
+their own matched application measurements.

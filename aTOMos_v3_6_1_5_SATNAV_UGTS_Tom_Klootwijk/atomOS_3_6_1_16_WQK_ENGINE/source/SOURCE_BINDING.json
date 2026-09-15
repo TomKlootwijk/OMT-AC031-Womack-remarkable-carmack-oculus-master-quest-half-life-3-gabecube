@@ -1,0 +1,675 @@
+{
+  "version": "3.6.1.16",
+  "parent_commit": "e1505bf2cb053996aa52a96ee3e97daeb63de95e",
+  "parents": [
+    {
+      "directory": "atomOS_3_6_1_14_UNIFIED_FIELD",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_14_Unified_Field_Formalization_Tom_Klootwijk.pdf",
+          "bytes": 346338,
+          "sha256": "2f1fe051b588402fdaf9a9828bb004bccd49b0e2feea9b28d0e4757a8be80ccd"
+        }
+      ]
+    },
+    {
+      "directory": "atomOS_3_6_1_15_HINGE_ENGINE",
+      "pdfs": [
+        {
+          "path": "output/pdf/aTOMos_v3_6_1_15_Native_Hinge_Engine_Tom_Klootwijk.pdf",
+          "bytes": 441970,
+          "sha256": "ee29c15fc790ad4cd3907e0ddea2131dad2de26f41a674a52645853085b5be2b"
+        }
+      ]
+    }
+  ],
+  "inspected_or_adapted_sources": [
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/CLOCK_BINDING.md",
+      "bytes": 7241,
+      "sha256": "265786cf69e68440c8fa6d269385e58dc1e2c93ea1dc7e4834bba97e0a42b5ea"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/GRAVITY_TIME.md",
+      "bytes": 5494,
+      "sha256": "b34e4c0da78fbeee0fe35c6cf42a0712c961643ee296587ff01010e41c1aeaa9"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/KERNEL_INTEGRATION.md",
+      "bytes": 7173,
+      "sha256": "acb059f04de40711403b7128aec150d2d2a6a3a5c984cffd010d3fae46c52f95"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/PHYSICS_PROFILE.md",
+      "bytes": 5489,
+      "sha256": "31ebfc85942759f9254d780735bf1367dbb256600d13db97fb50654f2e9a2470"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/formal/UNIFIED_COUPLING.md",
+      "bytes": 10243,
+      "sha256": "c9f601c3ca31d7d81e715c2fec70dba7f4d1ba3799b13ce94b0c63a608e3e372"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/exact_core.tex",
+      "bytes": 27790,
+      "sha256": "97eacdf254c841ba2b9a1bb0a19f3f10483c85440439c7e6e1c05373edfb6b22"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/anchor_state.json",
+      "bytes": 3696,
+      "sha256": "8e57befdf4e50cf595d7b6a1bb3fe7a2312d168b6207c00bff0ef87d8c42d82f"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/capture.json",
+      "bytes": 2163,
+      "sha256": "e9108f4b87ebdc331fe717c0afcd590820c66b6fc3ca23cb088fd15f4bfc9fa3"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/leap-seconds.list",
+      "bytes": 5065,
+      "sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/leap_source.json",
+      "bytes": 233,
+      "sha256": "296b0dc2b0f6528f775dea564de52c227f11b988db986959e70d57fe5ddfbcc6"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_capture.json",
+      "bytes": 1999,
+      "sha256": "6d29fc205767c080c2cbb703f8904412a678cc3398ae332362d42afee05944ca"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_reply.bin",
+      "bytes": 48,
+      "sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/nist_request.bin",
+      "bytes": 48,
+      "sha256": "f8d1399b333b6e11e1ee9be5a1ce5dd239daed728e534de73e53e7e0ae87a866"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/time_cloudflare_com_reply.bin",
+      "bytes": 48,
+      "sha256": "7bf8a777db65b4b0f8174aa4fd28878dcda028c436790b351fd77f7174e8d878"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/clock_capture/time_cloudflare_com_request.bin",
+      "bytes": 48,
+      "sha256": "8959f1070061ac99faaaad9f12fbb62531ec3638a88d578d92c06e89dff1ec5b"
+    },
+    {
+      "path": "atomOS_3_6_1_14_UNIFIED_FIELD/source/SOURCE_BINDING.json",
+      "bytes": 4889,
+      "sha256": "da378c22289a734f6aaec37e42ca907e1df941157f7a805e04aac0bed93166e5"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/source/embedded/Pasted markdown.md",
+      "bytes": 61608,
+      "sha256": "1869efeab782774dd7af09cc2ca9e4dfd7f0317acf1549a375bbb4f8cb53d136"
+    },
+    {
+      "path": "atomOS_3_6_1_12_PHOTONIC_INTERFACE/docs/phi_source_audit.tex",
+      "bytes": 7055,
+      "sha256": "963737829e4073aba200a9f08d7a778e366060f8fd0d4f2b1e421482da74b307"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/AGENTS.md",
+      "bytes": 857,
+      "sha256": "31631f320a181136565a5c858375993772e477561cfdd48a58fafe9417bde9c5"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/CMakeLists.txt",
+      "bytes": 5382,
+      "sha256": "24de7d88758ec676c0eca0a88c66e5ec52d68b688989fffb442f442f00485c96"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/exact_program.cu",
+      "bytes": 17502,
+      "sha256": "2db48f15a2baa7b1383a5d87b699b48f3bb491d1255ae1b6182c208e8c00aaf4"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/resident_feedback.cu",
+      "bytes": 4684,
+      "sha256": "fc2aa21208f9eb19cd16463198927cc9e2441dc54fd280d0bdb0dcd24d312ebf"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/resident_index.cu",
+      "bytes": 4898,
+      "sha256": "0d95da060d1d9a3bce8bc90ecd5fc296901cb46cade1b3053412dbe5e5c663cc"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/texture_index.cu",
+      "bytes": 6295,
+      "sha256": "b27bd9b7259615492f36805f3f294b71b9626b7cca08b1b9b6a7c16bb29ff258"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/cuda/word_cache_benchmark.cu",
+      "bytes": 27781,
+      "sha256": "742c25e582bd2d5c4d0868051b61a03d6d224d477029caaff949ba552b2890d2"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/benchmark_table.tex",
+      "bytes": 3515,
+      "sha256": "302e8e57596c0a8ff033da8a425c8f584042e7398b4bda52c6b7e670add982a8"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/clock_binding.tex",
+      "bytes": 12133,
+      "sha256": "e082138c69336ac778e84619791481cd27af669e30fdd60a6217223ac83efe72"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/completion.tex",
+      "bytes": 2281,
+      "sha256": "a3726afc73d5cd545a4e3b9690f2f274d8fb43b807d9b0ed567879728a77b91e"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/exact_core.tex",
+      "bytes": 28497,
+      "sha256": "02c03b50260c8e7788f1c3fb9ed620297587f5993a8fb89eef728c01c23727bb"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/exact_registry.tex",
+      "bytes": 34407,
+      "sha256": "f1c27419221b0bbb0fc144760d0ac01383e14caa94a41ca4e9a3291ab2ac8c99"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/field_step.tex",
+      "bytes": 6097,
+      "sha256": "005e521a63449e4f87083ac868815d3fbb4edbdfc2c41b37a572424a3c816c8f"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/gravity_time.tex",
+      "bytes": 9915,
+      "sha256": "57682110fbb5815f8f1f5c09ae9d649142eef3b47bea5ebc95bce58dcb15a2ca"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/hinge_core.tex",
+      "bytes": 14498,
+      "sha256": "c501c198bcc34509f170fb41768d9d8fe7f7d3f230b40775b76d8a4ba5c6ece3"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/kernel_bridge.tex",
+      "bytes": 16444,
+      "sha256": "071a43e121c848274e344f2f99c6ffe577cf7e3f8e696cc3de2480490cac8c89"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/overview.tex",
+      "bytes": 4517,
+      "sha256": "102b0fb9a7885792b452a7c109e2ab5e65adc699c3cd9ca6b7ed4afb8632bd22"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_core.tex",
+      "bytes": 13002,
+      "sha256": "7acddc61e2d2153324b42bd859c55bf416b942f24066c002bbf41abb1bf62840"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_energy.tex",
+      "bytes": 17654,
+      "sha256": "15325c1eb0921196205467b44099a203f20344225c1613ad8d116a530e4142a6"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/physics_measurement.tex",
+      "bytes": 14667,
+      "sha256": "e8178011b2d846cb495c09dab7a44f938d2f790631b7cd7e616e894c1db871ea"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/preamble.tex",
+      "bytes": 3182,
+      "sha256": "c26dc98ddc4122bb3df4c88443a201e468fb1cffeacb3121cf575d134263794a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/resident_gpu.tex",
+      "bytes": 14745,
+      "sha256": "19aacc02d3cea158927d5bbf2cae3b7ff490fbcadc6c744bb705caf13b0e5092"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/resident_results.tex",
+      "bytes": 15568,
+      "sha256": "8ef0e481a57813a1c8dac988773e28aff8fd6bad10d64d721229fcec981d3845"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/runtime_evidence.tex",
+      "bytes": 10026,
+      "sha256": "27969e123e64f5a11bc3c23ce0e5b0f6f8f186b798628870e101735af0788f4d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/spatial_calculus.tex",
+      "bytes": 11642,
+      "sha256": "921eeef6e2d431d45644752fc5a26d78eb8a3d4be36a4a9ac1de87c024ac2baa"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/unified.tex",
+      "bytes": 2100,
+      "sha256": "1da9a1265d6dc6f0426afd40c7fd1bf4fd3c810a0e97a1a4ec9734f7af998f4e"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/unified_coupling.tex",
+      "bytes": 16419,
+      "sha256": "499e5f7902106b98fd1ab6152188382e965846dddca1408285854f412d30ea77"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/word_optimization.tex",
+      "bytes": 15731,
+      "sha256": "64b8be3d023506bd713aa71fd19cfb76a85f1ad9fc5522f64197b5de9c70b29c"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/docs/word_profile.tex",
+      "bytes": 1900,
+      "sha256": "53a3b4d9ab5514fada0b0e05678be5301635a78e1ef2c9252343ef52fef9b78b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/CLOCK_BINDING.md",
+      "bytes": 7241,
+      "sha256": "265786cf69e68440c8fa6d269385e58dc1e2c93ea1dc7e4834bba97e0a42b5ea"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/COMPARISON_CONTRACT.md",
+      "bytes": 3999,
+      "sha256": "acb4bd961ffaa97509320a4c7bf1cc707404cd84862d649db5558c765ddc88f0"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/CORE_RUNTIME.md",
+      "bytes": 11571,
+      "sha256": "25a76bd636adb8e47aaecda1a34610c67a342bb3faef052dfd5414c2ef1757d6"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/EXACT_GPU_PROFILE.md",
+      "bytes": 9287,
+      "sha256": "e748168865f8d2f0d8d518d6a014e627a33a4ee210a504d3708e90f2c1b378a4"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/GRAVITY_TIME.md",
+      "bytes": 5494,
+      "sha256": "b34e4c0da78fbeee0fe35c6cf42a0712c961643ee296587ff01010e41c1aeaa9"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/KERNEL_INTEGRATION.md",
+      "bytes": 7173,
+      "sha256": "acb059f04de40711403b7128aec150d2d2a6a3a5c984cffd010d3fae46c52f95"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/NATIVE_GPU.md",
+      "bytes": 23620,
+      "sha256": "e1d50a7a5faa1092a2f7deceb6de2ce90fcfc5043b632047a84a88e292e0fb24"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/OPERATOR_CATALOG.md",
+      "bytes": 39760,
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/PHYSICS_PROFILE.md",
+      "bytes": 5489,
+      "sha256": "31ebfc85942759f9254d780735bf1367dbb256600d13db97fb50654f2e9a2470"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/RESIDENT_INDEX.md",
+      "bytes": 9587,
+      "sha256": "789a2bde9203243e51a31112cb6ac98490ce1b3a2f175ea23b5911abde7d6163"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/RESIDENT_PREDICATE_PROOF.md",
+      "bytes": 13374,
+      "sha256": "ee43a71be8ebb789e2eaf342117143c7708864ca83b599aa23d8f1bfc383843d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/SPATIAL_INDEX.md",
+      "bytes": 10714,
+      "sha256": "52ade39dc74ded95eb3ffaed04f75dab79ee48e9e33609c62aa162a17d5349ef"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/UNIFIED_COUPLING.md",
+      "bytes": 10243,
+      "sha256": "c9f601c3ca31d7d81e715c2fec70dba7f4d1ba3799b13ce94b0c63a608e3e372"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/formal/WORD_CACHE_BENCHMARK.md",
+      "bytes": 17244,
+      "sha256": "6b2e60ac8f1050d566e712ab8feb8a290b2bc0870d09e2e77bb996565d8cb6a0"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/exact_program.hpp",
+      "bytes": 2874,
+      "sha256": "aedd1300d465bbf9413940755f526162685e223330be9a79d248e583dde05768"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/gpu_kernels.cuh",
+      "bytes": 842,
+      "sha256": "b52b2ebdcf9f224ac606fc41475f0d0dc3e87398a2c55d9fd1f66387f7f9c817"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/point.hpp",
+      "bytes": 272,
+      "sha256": "6daaa5854bfaa5681f4f04a148e5bb955da51f71d787ce1467e5b1cd08266c43"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/resident_feedback.hpp",
+      "bytes": 1152,
+      "sha256": "882f3a5b2898bdcaf56d0f565b1ea386403485723d542535c610f4bb5e5fb838"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/resident_index.hpp",
+      "bytes": 2188,
+      "sha256": "3c07e31c8b93089dcf5b2ed108168876cce623d35823f557f3bec3a795f47441"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/resident_kernels.cuh",
+      "bytes": 1400,
+      "sha256": "14de510d35b32fa64669a5664ab9a77aaca54372bcb2cab0348f1e3bc29af813"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/spatial_index.hpp",
+      "bytes": 13941,
+      "sha256": "148384aad568a6a0716a058d089cca2f990921b205eac26a2c78ef2b582caf12"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/texture_index.hpp",
+      "bytes": 2127,
+      "sha256": "ce21b462bdf7fe95d390fb6a9b39862db9578c00ad5364a9fa25d0491c5da5fe"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/include/atomos/worker_pool.hpp",
+      "bytes": 4101,
+      "sha256": "d26ab0ee3be857211ee89a6f62e14ff4619cd39356c5d439859d2e8216ec129a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/python/atomos_hinge.py",
+      "bytes": 37771,
+      "sha256": "6aee773ea5e703b1112432dafdf483e04b9f632646ec6d6791b224ab8cf5e522"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/README.md",
+      "bytes": 6439,
+      "sha256": "c5033afeec48af9a6ef84d77d39e453ec2f327477312b18813b030448189caf9"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/anchor_state.json",
+      "bytes": 3696,
+      "sha256": "8e57befdf4e50cf595d7b6a1bb3fe7a2312d168b6207c00bff0ef87d8c42d82f"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/capture.json",
+      "bytes": 2163,
+      "sha256": "e9108f4b87ebdc331fe717c0afcd590820c66b6fc3ca23cb088fd15f4bfc9fa3"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/leap-seconds.list",
+      "bytes": 5065,
+      "sha256": "db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/leap_source.json",
+      "bytes": 233,
+      "sha256": "296b0dc2b0f6528f775dea564de52c227f11b988db986959e70d57fe5ddfbcc6"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/nist_capture.json",
+      "bytes": 1999,
+      "sha256": "6d29fc205767c080c2cbb703f8904412a678cc3398ae332362d42afee05944ca"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/nist_reply.bin",
+      "bytes": 48,
+      "sha256": "26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/nist_request.bin",
+      "bytes": 48,
+      "sha256": "f8d1399b333b6e11e1ee9be5a1ce5dd239daed728e534de73e53e7e0ae87a866"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/time_cloudflare_com_reply.bin",
+      "bytes": 48,
+      "sha256": "7bf8a777db65b4b0f8174aa4fd28878dcda028c436790b351fd77f7174e8d878"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/clock_capture/time_cloudflare_com_request.bin",
+      "bytes": 48,
+      "sha256": "8959f1070061ac99faaaad9f12fbb62531ec3638a88d578d92c06e89dff1ec5b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/DEPENDENCIES.json",
+      "bytes": 771,
+      "sha256": "d7c328e7d42dfe69522dd757ac44067da417600226857de6748e134dce9f4e5d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/MAIN_REPOSITORY_PDF.json",
+      "bytes": 305,
+      "sha256": "92102c72556865593b8069be7bf059a1e2380f62daebad889b1b94953be55e99"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/SOURCE_BINDING.json",
+      "bytes": 7280,
+      "sha256": "b3ab287a3a7fc446c094bcc905f41ca606b258df990bcd8a2b926084fe5e9e4a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/THIRD_PARTY.md",
+      "bytes": 1074,
+      "sha256": "a068b1e60a3348311521864e017379a8c7085a726b41853d2392e0557a42848d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/compare_resident.cpp",
+      "bytes": 9291,
+      "sha256": "4d0709ec853521fb80733af302db73654cb128d3f265d39360593f6cf3a85b79"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/compare_s2.cpp",
+      "bytes": 18658,
+      "sha256": "40fc0f1d53b24e9854434485f4eedac56f384d26319f91adb6d0a583bcd6e4b1"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/engine_demo.cpp",
+      "bytes": 3802,
+      "sha256": "2e1624c572b5ce299465aa32498e38c1fa2bf7fac49db8ff4271a70bb2a250f8"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/resident_index.cpp",
+      "bytes": 9376,
+      "sha256": "40c048984c65e874dc7540e01ee0410a27d43d89899436d193052e5c0d2e6edb"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/src/texture_index.cpp",
+      "bytes": 16471,
+      "sha256": "197a3b0bc8c9b46a1a446dfe5c4d69574b7cec31976d7a1c0a7933e4b8069e06"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/exact_program_tests.cpp",
+      "bytes": 8427,
+      "sha256": "c4cde2f6383caa02a2b8f041e508922bec8f2d96963675b62e2609258cabb085"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/resident_feedback_tests.cpp",
+      "bytes": 2427,
+      "sha256": "6a3396a1bc4846d7a0b0b2d21d3a52822dabf63458ae41fa7d0a9a6bdb23ce04"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/resident_index_tests.cpp",
+      "bytes": 7269,
+      "sha256": "9790f46a9c9f26bfc28a912f9a66ce8842392aa2371f02a5bf87b4f3cc4545f8"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/spatial_index_tests.cpp",
+      "bytes": 9475,
+      "sha256": "d1f1cf4ccfc1286608edbc21197de62c2821062c3dec48282dc165e02f83e188"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/test_hinge.py",
+      "bytes": 14710,
+      "sha256": "0a8375eee47031de0be8d0363496794987ac68527fe94f07b2b2ff43ba0de486"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tests/texture_tests.cpp",
+      "bytes": 5101,
+      "sha256": "b008dd9e79fdaff239c9c5fd54942b09ada8c7406e80f912f80e489e458e2478"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/build_native.ps1",
+      "bytes": 1370,
+      "sha256": "feee8f7d53bcb2c77e0fb8b4573f75a692397848703c0469912c35eac1ec9d37"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/build_pdf.py",
+      "bytes": 910,
+      "sha256": "98d7c5db99af51538317e7b12afc076a724c0072719e83525457d849c2069552"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/package_release.py",
+      "bytes": 4517,
+      "sha256": "29c3061f3f39c610229efb37a74d26c1503f625c1bb52ebbeaa1f1c358e38a9a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/prepare_document.py",
+      "bytes": 5251,
+      "sha256": "9ca45c00635890b44713640cfd194088b757079a23cd5448bec1677c1443179b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/review_pdf.py",
+      "bytes": 3216,
+      "sha256": "9969e369df442d135f6ec0b5bab0c4433b0d26326b0b7b74cd50ac35b96e938a"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_comparison.py",
+      "bytes": 5865,
+      "sha256": "5095a6734163ff7fbd8bc210a9187c3195edc09076a43a1238a108c51b53f75b"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_resident.py",
+      "bytes": 36205,
+      "sha256": "fc6f4bd81ef67142a9c29c1f1a3017563a04379b8a8f066df908d5906ef5348c"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_word_optimization.py",
+      "bytes": 25063,
+      "sha256": "7402280f1dbcc002dfa2a3cba094aaef7a417090cbce8c8ba62c4d3e9f902335"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/tools/summarize_word_profile.py",
+      "bytes": 8149,
+      "sha256": "64364c3b845f40c3cc615983f1fc4bd3dabf2a14931c6612a8841bf446418519"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/VERSION.json",
+      "bytes": 1053,
+      "sha256": "c840f2650c27a6e7e1cc96087cf20607a75862eb99abca7fb930661c1aa3b59d"
+    },
+    {
+      "path": "atomOS_3_6_1_15_HINGE_ENGINE/source/release_manifest.json",
+      "bytes": 25133,
+      "sha256": "9d3d939861a967b99df1ad32367f12ea18cf383253afce37c093ec36e9c7f9bc"
+    }
+  ],
+  "source_clock": "Immutable inherited NIST observation; no new live synchronization claim.",
+  "execution": "R16 native CUDA and exact affine event checks are authorized by the user; R15 S2 measurements remain inherited evidence, not new R16 benchmarks.",
+  "runtime_profiles": [
+    "ATOMOS-WQK-ENGINE-R1",
+    "TOMAGI-1.0-Cell48-State64",
+    "ATOMOS-TOMAGI-EMIT-FEEDBACK-R1",
+    "R16 exact affine event adapter",
+    "ATOMOS-HINGE-R1",
+    "Inherited R15 native spatial/word profiles"
+  ],
+  "catalog_scope": "Inherited XOP catalog remains a specification; the new executors implement explicitly bounded subsets.",
+  "foundational_parent_commit": "01a7f7d5af43ae32cf6df9adcb0d4acd8f0f38ec",
+  "external_imports": {
+    "manifest": {
+      "path": "source/WQK_IMPORTS.json",
+      "bytes": 7480,
+      "sha256": "7aa38f11ced4f1f0fa8c701c1aedf221f7b521c0a0d6550ee04c069770c82554"
+    },
+    "vendor_directory": "vendor/wqk_0_6",
+    "expected_files": 42,
+    "verification": "Verify the pinned import manifest, exact file inventory, byte count and SHA-256 of every local unmodified vendor file before packaging."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": "3.6.1.16",
+  "parent": "3.6.1.15",
+  "profile": "ATOMOS-WQK-ENGINE-R1",
+  "foundation": "XOP-UNIFIED-FIELD-R1",
+  "status": "implemented_and_validated_specialized_profiles",
+  "goal": "integrate useful WQK 0.6 source semantics into the inherited aTOMos engine and formalization",
+  "realization_requested": "source-compatible Cell48/State64 native CUDA texture execution, lossless bit-plane expansion, fresh-EMIT ASA/NA+JK feedback and exact affine event discovery",
+  "validation_authorization": "User explicitly allowed correctness checks and S2 benchmarks on 2026-09-15",
+  "superiority_status": "R15 measurements remain inherited evidence for their recorded workloads; R16 adds no new S2 benchmark or broader superiority claim",
+  "source_import": "TOM World & Query Kernel 0.6.0; 42 unmodified source files pinned by source/WQK_IMPORTS.json",
+  "native_vm_validation": "28794 native VM assertions against the unmodified C oracle; 1718 word-feedback checks; all 8 native suites and 49 Python tests pass",
+  "remaining_native_scope": [
+    "complete XOP lowering",
+    "certified transcendental resolution",
+    "dynamic geometry refit and cache rebinding",
+    "full log-spherical LUT lifecycle",
+    "broader S2 region and polygon operations"
+  ]
+}

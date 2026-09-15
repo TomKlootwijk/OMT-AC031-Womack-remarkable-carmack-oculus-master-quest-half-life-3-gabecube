@@ -1,0 +1,212 @@
+\section{An atomic-time observation, literal latch and domain bindings}
+\label{sec:r14-clock-binding}
+An actual NIST internet-time observation is included as a fixed input to this
+formalization. Its literal words provide a reproducible event anchor for the
+physical models. They do not cause a running clock, calibrate an oscillator,
+or supply the initial state of every physical system at that event.
+
+The SI atomic reference is the unperturbed ground-state hyperfine transition
+frequency of cesium-133:
+\begin{equation}
+ \Delta\nu_{\rm Cs}=9192631770\,\mathrm{Hz},\qquad
+ 1\,\mathrm{s}=9192631770/(\Delta\nu_{\rm Cs}) .
+ \label{eq:r14-atomic-reference}
+\end{equation}
+The defining value is exact; a realization has measurement uncertainty.
+\href{https://www.bipm.org/en/measurement-units/si-defining-constants}{[CL4: BIPM, SI defining constants]}
+UTC(NIST) uses an ensemble of cesium-beam and hydrogen-maser clocks calibrated
+against NIST's primary frequency standard. Its internet service distributes
+that atomic reference; this capture does not install an atomic oscillator
+in aTOMos.
+\href{https://www.nist.gov/pml/time-and-frequency-division/how-utcnist-related-coordinated-universal-time-utc-international}{[CL5: NIST, UTC(NIST) realization]}
+
+\subsection{The observed words and their exact rational coordinate}
+The recorded exchange with \code{time.nist.gov}, endpoint
+\code{132.163.96.4:123}, used a version-4 request and returned a version-3
+response, mode 4, stratum 1, leap indicator 0 and reference ID \code{NIST}.
+The complete request, reply and local acquisition stamps are preserved in
+\path{source/clock_capture/nist_capture.json}. The server transmit field is
+\begin{equation}
+ w_{\rm tx}=17173213285462662115
+ \quad\text{as an unsigned 64-bit word},\qquad e=0.
+ \label{eq:r14-observed-ntp}
+\end{equation}
+The era $e$ is bound by the recorded contemporary-date context; the packet
+does not carry it. The reply's SHA-256 is
+\begin{center}\small
+\path{26a429327733f35d8b67abfb9bbb33f54fae9fa590c4ba0e5a7947fe6946c3e4}.
+\end{center}
+
+For the 32-bit seconds and fraction fields $s,f\in\{0,\ldots,2^{32}-1\}$,
+the mathematical decoder is
+\begin{equation}
+ w=2^{32}s+f,\qquad
+ q_N=e\,2^{32}+s+\frac{f}{2^{32}},\qquad
+ q_U=q_N-2208988800 .
+ \label{eq:r14-ntp-rational}
+\end{equation}
+Here $q_N$ uses the 1900 NTP epoch and $q_U$ the corresponding 1970 civil
+coordinate. Every operation is integer/rational; no floating conversion is
+needed. The observed word gives the reduced rational
+\begin{equation}
+ q_U=\frac{7685678632232377315}{4294967296},
+ \label{eq:r14-observed-rational}
+\end{equation}
+whose UTC display, truncated to microseconds, is
+\code{2026-09-15T08:38:22.859456Z}. The display is not the authoritative value.
+The NTP fixed-point format and era distinction follow
+\href{https://www.rfc-editor.org/rfc/rfc5905.html#section-6}{[CL1: RFC 5905, section 6]}.
+
+NTP's coordinate is affected by leap seconds; differences across leap events
+are not automatically elapsed SI durations. A complete mapping binds the
+era evidence, leap table, applicable interval and any ambiguity/smear policy.
+\href{https://www.rfc-editor.org/rfc/rfc8877.html#section-4.2.1}{[CL2: RFC 8877, NTP timestamps]}
+NIST documents its positive-leap convention as repetition of the final
+second's binary timestamp.
+\href{https://www.nist.gov/pml/time-and-frequency-division/time-distribution/internet-time-service-its}{[CL3: NIST Internet Time Service]}
+This convention is part of the source identity; replacing the provider does
+not silently inherit it. The earlier Cloudflare capture is retained separately
+as acquisition provenance; the NIST record is the selected latch.
+
+\Needspace{11\baselineskip}
+\subsection{Complete nominal mapping at the captured epoch}
+The retained \path{source/clock_capture/leap-seconds.list} has last transition
+$q_N=3692217600$ with TAI--UTC offset $37$ seconds and declared expiry
+$q_N=4023129600$. Its SHA-256 is
+\begin{center}\small
+\path{db5a895f16853b03bfc865e8d68f9fc8710ef1740e3400c701cd46a5bbbc3433}.
+\end{center}
+For the captured non-leap instant in this bound interval, the nominal
+conversion body is explicitly
+\begin{align}
+ Q_{\rm TAI}&=q_U+37,\nonumber\\
+ t_{\rm GPST}&=q_U-315964800+(37-19),\nonumber\\
+ Q_{\rm TT}&=q_U+37+\frac{4023}{125},\nonumber\\
+ Q_0&=220924800+\frac{4023}{125},\qquad
+ t_{\rm TCG}=\frac{Q_{\rm TT}-Q_0}{1-L_G}.
+ \label{eq:r14-captured-time-conversion}
+\end{align}
+GPST is elapsed seconds from 1980-01-06 00:00:00 GPST. $Q_{\rm TAI}$ and
+$Q_{\rm TT}$ use 1970-01-01 00:00:00 calendar-coordinate origins on their
+respective scales. $t_{\rm TCG}$ is elapsed TCG seconds from
+1977-01-01 00:00:32.184, when TT and TCG are defined equal; $Q_0$ is that
+event's TT coordinate and $L_G=6.969290134\times10^{-10}$ is exact.
+These are finite rational expressions for the nominal scales. The leap file
+is a dated dependency, not authority for an unannounced future leap or an
+ambiguous repeated second. UTC(NIST)--UTC and GNSS realization differences
+remain physical uncertainty.
+\href{https://data.iana.org/time-zones/data/leap-seconds.list}{[CL6: IANA, retained leap table]}
+\href{https://iers-conventions.obspm.fr/content/chapter10/tn36_c10.pdf}{[GT3: IERS, time coordinates]}
+
+\subsection{What the clock observation establishes}
+The timestamp denotes the server's transmit event. Its observed local
+monotonic round-trip interval is the exact recorded count
+$127594000/10^9$ seconds under the local timer convention. Neither that count
+nor stratum, precision or dispersion metadata certifies a UTC error bound.
+The UDP reply was not cryptographically authenticated. The host clock was
+not changed and no oscillator calibration was performed.
+
+Let $q_*$ be the nominal converted source-event coordinate and write
+\begin{equation}
+ t_{\rm tx}=q_*+\epsilon_s,\qquad
+ t_{\rm rx}=t_{\rm tx}+d_{\leftarrow},\qquad d_{\leftarrow}\geq0 .
+ \label{eq:r14-clock-event-error}
+\end{equation}
+Source clock error $\epsilon_s$, inbound delay $d_{\leftarrow}$, local readout
+error and conversion/realization error enter one joint uncertainty set.
+An interval for any of them needs supporting assumptions or calibration.
+One exchange does not determine asymmetric one-way delays or prove source
+authenticity. Literal retention preserves the observation actually received.
+
+For a complete four-stamp exchange on compatible, unfolded coordinates,
+the conventional offset and round-trip expressions are
+\begin{equation}
+ \widehat\theta=\frac{(T_2-T_1)+(T_3-T_4)}2,\qquad
+ \widehat d=(T_4-T_1)-(T_3-T_2).
+ \label{eq:r14-ntp-offset}
+\end{equation}
+These expressions can remain exact rationals. Interpreting
+$\widehat\theta$ as the physical offset requires a clock/path model;
+unequal inbound and outbound delays contribute an offset error.
+\href{https://www.rfc-editor.org/rfc/rfc5905.html#section-8}{[CL1: RFC 5905, section 8]}
+
+\subsection{Immutable XOP snapshot and a one-time latch}
+Define a finite typed tuple $\mathcal C$ containing both raw packet words,
+source identity, era and its evidence, acquisition stamps, protocol fields,
+the rational coordinate and the complete time-mapping dependency identities.
+The packet words use \code{Bits(384)} for this 48-octet capture. Other fields
+use existing integer, rational, Boolean and fixed structural types; the
+binding fixes their widths and ordering. No new timestamp opcode is needed.
+
+The completed capture may be a closed dependency value. A newly acquired
+capture instead enters through a sample port. Every consumer at a logical
+step reads the same immutable old-state/input snapshot. The physical mapping
+is an imported complete pure template, with its declared domain, rather than
+an instruction to consult the network again.
+The materialized \path{source/clock_capture/anchor_state.json} records the
+selected NIST observation and nominal rational mappings. The equations here
+specify its XOP binding; no running XOP clock executor is claimed.
+
+Let $a_n$ be an accepted-record pulse, $v_n$ the admission predicate for its
+typed record, $\ell_n$ the old latched Boolean, and $H_n$ the stored tuple.
+The explicit one-time latch is
+\begin{align}
+ e_n&=\operatorname{IF}(\ell_n,\mathrm{false},
+       \operatorname{IF}(a_n,v_n,\mathrm{false})),\nonumber\\
+ \ell_{n+1}&=\ell_n\vee e_n,\qquad
+ H_{n+1}=\operatorname{IF}(e_n,\mathcal C_n,H_n).
+ \label{eq:r14-clock-latch}
+\end{align}
+Initially $\ell_0=\mathrm{false}$ and $H_0$ is a fixed closed placeholder of
+the declared type, which has no observed-clock meaning while unlatched.
+For defined inputs the pulse equals $a_n\wedge v_n\wedge\neg\ell_n$.
+The displayed lazy form demands no new record, admission check or pulse once
+latched, and demands no record when an unlatched acceptance pulse is false.
+Both next roots commit together. Once $\ell_n$ is true, $e_n$ is false at
+every later step and induction proves $H_{n+k}=H_n$ for all $k\geq0$.
+Thus future internet replies cannot alter this seed's latched anchor.
+If an electrical rising edge supplies acceptance, a declared old Boolean
+$b_n$ gives $a_n=c_n\wedge\neg b_n$ and
+$b_{n+1}=\operatorname{IF}(\ell_n,b_n,c_n)$ in the same commit.
+Thus the optional edge memory also demands no new level once latched.
+A later anchor is a separately versioned capture, not an implicit rewrite.
+
+The raw sample time and canonical-time value remain distinct: R11 tag 5
+exposes the source rational and tag 6 applies the complete \code{TimeConvention}
+mapping to GPST-SI. An unresolved era or leap branch produces an explicit
+non-value, not a guessed instant. Closing the captured record as a seed
+dependency also closes its mapping table and source interval. No live lookup
+is hidden in a pure expression.
+
+\subsection{One anchor, explicit time maps for each physical domain}
+Let $t_0$ denote the nominal latched event on the selected canonical scale.
+Each domain uses a declared map $t_d=\chi_d(t)$ and its own state, frame,
+boundary conditions and observation history. For a differentiable increasing
+map, the equation transforms by the chain rule:
+\begin{equation}
+ \frac{dx_d}{dt}=\frac{d\chi_d}{dt}
+ F_d\bigl(\chi_d(t),x_d,u_d\bigr),\qquad x_d(t_0)=x_{d,0}.
+ \label{eq:r14-domain-time-map}
+\end{equation}
+The supplied state $x_{d,0}$ must refer to that event. An old observation
+cannot become a current state merely by changing its timestamp.
+
+\begin{longtable}{P{.24\textwidth}P{.68\textwidth}}
+\toprule
+Domain & Explicit binding to the latched event\\\midrule
+\endhead
+Electromagnetism and photonics & $E(x,t),B(x,t),P_j(x,t)$ and their source/boundary histories use the mapped field time. A carrier phase $\varphi(t)=\varphi_0+\int_{t_0}^{t}\omega(s)\,ds$ also needs its phase/frequency reference; NTP does not measure optical phase.\\
+Mechanics and control & $q(t_0),p(t_0)$, attitude, loads and actuator events retain their initial-event identity. ASA/NA and JK transitions act through their explicit physical ports.\\
+Thermal and material history & $T(t_0)$, internal variables and accumulated work/heat require the actual state/history binding. A clock latch does not reset energy or entropy.\\
+Gravity and orbit & The GPST/TT/TCG mapping, compatible frame/force parameters and station/satellite events remain those of Section~\ref{r14-gravity-time}. A coordinate-time conversion does not measure proper clock time.\\
+Sensors and calibration & Acquisition endpoints, integration windows, latency and calibration age use mapped recorded events, with the shared clock error in the observation uncertainty.\\
+Digital state and replay & The integer transition index $n$ is causal order. A time $t_n=t_0+\sum_{j<n}h_j$ requires explicit durations $h_j$; $n$ alone is not seconds.\\
+\bottomrule
+\end{longtable}
+
+A common event does not require equal sample rates or spatial rasterization.
+Field expressions may retain their continuous variables and exact implicit
+denotation. A selected finite mode basis or finite step remains a separately
+specified approximation with its own discrepancy. Clock anchoring supplies
+the temporal relationship; it does not turn a finite model into every
+physical domain or remove source, state or model uncertainty.

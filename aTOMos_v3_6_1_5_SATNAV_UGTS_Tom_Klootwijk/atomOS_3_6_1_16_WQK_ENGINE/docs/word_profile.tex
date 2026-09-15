@@ -1,0 +1,29 @@
+\section{Native instructions and hardware-counter receipts}
+
+The preserved optimized \code{sm\_120} disassembly contains \code{TLD.LZ} in the texture epoch variants and ordinary loads in the global variants. Compiler resources report 28 registers per texture thread and 26 per global thread, with a 40-byte stack. Local stack loads/stores remain visible; no zero-stack claim is made.
+
+Nsight Compute 2025.1.0 sampled the first 8 MiB logical chunk of a 512 MiB working set in each mode, with 2,048 blocks of 128 threads. Kernel replay was enabled; caches were not flushed and clocks were not locked. Each mode used a separate process.
+
+\begin{center}\small
+
+\begin{tabular}{lrrrrr}
+
+\toprule
+
+Mode & DRAM \% & SM \% & L1/TEX hit \% & L2 hit \% & Warps \%\\\midrule
+
+stream texture & 58.55 & 37.67 & 43.15 & 43.56 & 84.89\\
+
+stream global & 66.48 & 48.80 & 43.24 & 43.19 & 83.05\\
+
+affine texture & 32.20 & 3.27 & 3.39 & 23.63 & 90.25\\
+
+affine global & 32.49 & 3.02 & 8.17 & 20.52 & 90.60\\
+
+\bottomrule\end{tabular}\end{center}
+
+DRAM and SM are percentages of reported peak sustained elapsed throughput. Warps denotes peak sustained active warps. The L1/TEX ratio aggregates the shared unit; it does not isolate immutable seed traffic. These are selected-chunk observations, not full-working-set averages or cache-residency guarantees.
+
+The earlier streaming-texture baseline sample reported 37.06\% DRAM throughput, compared with 58.55\% in the optimized sample. This does not establish bandwidth saturation. Profiler replay changes execution; the separate unprofiled sweeps supply performance timings.
+
+Commands, source hashes, selected launches and raw receipts are retained in \path{review/word_profile_summary.json}. Replay behavior follows the \href{https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#replay}{official Nsight Compute profiling guide}.

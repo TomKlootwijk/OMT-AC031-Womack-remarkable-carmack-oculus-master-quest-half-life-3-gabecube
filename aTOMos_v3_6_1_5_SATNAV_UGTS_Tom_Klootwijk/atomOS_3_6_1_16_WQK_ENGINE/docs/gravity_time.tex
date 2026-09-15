@@ -1,0 +1,184 @@
+\section{Gravity, clocks and station observations from one state}
+\label{r14-gravity-time}
+
+The satellite specialization shares the orbit, gravitational coefficients,
+station motion, frame realization and clock parameters with its observation
+map. This closes a specific gap in R11: its orbital station query is
+simultaneous geometry, whereas its live GPS query uses emission and reception
+events. The following equations define their common physical interface.
+
+\subsection{A source potential with explicit finite exterior models}
+For an isolated Newtonian mass density $\rho_m\geq0$, fix the potential zero
+at infinity. In SI units the source law and its boundary realization are
+\begin{equation}
+ \nabla^2\Phi=4\pi G\rho_m,\qquad
+ \Phi(x)=-G\int\frac{\rho_m(x')}{\|x-x'\|}\,d^3x',\qquad
+ g=-\nabla\Phi .
+ \label{r14-poisson}
+\end{equation}
+Outside the source $\nabla^2\Phi=0$. Boundary conditions or measured exterior
+coefficients are required; the Poisson equation alone does not identify them.
+\href{https://ocw.mit.edu/courses/8-902-astrophysics-ii-fall-2004/a640fdbf6840889b97a7c3680cb2e4f1_lec4.pdf}{[GT1: MIT, potential theory]}
+
+Let $R(t)\in SO(3)$ map Earth-fixed components to a common geocentric,
+nonrotating spatial chart. For $p=R^Tr$, $s=\|p\|>a_E>0$ and $\mu_E>0$,
+one closed exterior choice is
+\begin{equation}
+ \Phi_E(t,r)=-\frac{\mu_E}{s}
+ \left[1-J_2\left(\frac{a_E}{s}\right)^2P_2(p_z/s)\right],
+ \qquad P_2(u)=\frac{3u^2-1}{2} .
+ \label{r14-exterior-potential}
+\end{equation}
+$J_2=0$ selects the monopole. Alternatively select the finite R11 solid-harmonic
+body with $\Phi_E=-U_{\rm R2}$, retaining its normalization, degree, coefficient
+epoch and exterior domain. These are alternative Earth fields; adding them
+would count the monopole twice. $\mu_E=GM_E$ is a gravitational parameter with
+a declared realization, not an exact SI defining constant. Arbitrary fitted
+coefficients need not correspond to a nonnegative physical density; consistency
+with the selected source and coefficient uncertainty is a separate obligation.
+
+For a point body at geocentric $r_b(t)\ne0$, the appropriate geocentric
+\emph{tidal} potential and its force are
+\begin{align}
+ \Phi_b^{\rm tid}(t,r)
+ &=-\frac{\mu_b}{\|r_b-r\|}+\frac{\mu_b}{\|r_b\|}
+       +\frac{\mu_b\,r_b\cdot r}{\|r_b\|^3},\\
+ -\nabla_r\Phi_b^{\rm tid}
+ &=\mu_b\left(\frac{r_b-r}{\|r_b-r\|^3}
+                   -\frac{r_b}{\|r_b\|^3}\right),\qquad r\ne r_b .
+ \label{r14-tidal-potential}
+\end{align}
+The constant and linear terms remove the external potential and acceleration
+at the geocenter. Set $\Phi_{\rm geo}=\Phi_E+\sum_b\Phi_b^{\rm tid}$ and
+\begin{equation}
+ \dot r=v,\qquad \dot v=-\nabla_r\Phi_{\rm geo}+a_{\rm ng}+a_{\rm 1PN} .
+ \label{r14-orbit-closure}
+\end{equation}
+$a_{\rm ng}$ binds the selected radiation-pressure, thrust or other physical
+force body and its parameters. Set absent terms to zero explicitly. The
+existing R11 spherical-Earth $a_{\rm GR}$ may bind $a_{\rm 1PN}$; it is a
+specified post-Newtonian correction, not the whole relativistic force model.
+All retained force choices remain subject to their source/model error.
+
+\subsection{Frame acceleration and gravitational energy}
+For a general Newtonian inertial chart $x=o(t)+R(t)p$, define
+$\Omega=R^T\dot R$ and $\Omega z=\omega\times z$. Differentiating twice gives
+\begin{align}
+ \dot x&=\dot o+R(\dot p+\omega\times p),\\
+ \ddot p&=R^T(\ddot x-\ddot o)-2\omega\times\dot p
+           -\dot\omega\times p-\omega\times(\omega\times p).
+ \label{r14-frame-acceleration}
+\end{align}
+Thus a rotating-frame propagation includes translation, Coriolis, Euler and
+centrifugal terms. In \eqref{r14-orbit-closure} the geocenter acceleration has
+already been removed by the tidal potential; it is not subtracted a second
+time. The identity follows from $R^TR=I$, which also makes $\Omega$ skew.
+Independently fitted matrix entries in R11 do not establish this identity;
+an R14 frame realization must prove it or retain a bounded frame discrepancy.
+\href{https://ocw.mit.edu/courses/16-07-dynamics-fall-2009/resources/mit16_07f09_lec08/}{[GT2: MIT, rotating axes]}
+
+For the Newtonian part and constant satellite mass $m$, differentiation yields
+\begin{equation}
+ \frac{d}{dt}\left(\frac{m\|v\|^2}{2}+m\Phi_{\rm geo}(t,r)\right)
+ =m\,v\cdot a_{\rm ng}+m\,\partial_t\Phi_{\rm geo} .
+ \label{r14-orbital-energy}
+\end{equation}
+This equation assumes $a_{\rm 1PN}=0$; otherwise its work must be retained and
+a relativistic energy model selected for a relativistic conservation claim.
+Moving external sources exchange energy through $\partial_t\Phi_{\rm geo}$.
+It is not heat or arithmetic drift. An Earth-fixed constant field can still
+be time dependent in the nonrotating chart. A finite integration operator
+needs its own energy identity; the continuous balance does not certify RK4.
+
+\subsection{Proper time and the same gravitational state}
+Take $t$ as TCG and the spatial/force data as compatible geocentric coordinates.
+In the weak-field, slow-motion regime the leading proper-time rate of an
+ideal clock on trajectory $r_A(t)$ is
+\begin{equation}
+ \frac{d\tau_A}{dt}=1+
+ \frac{\Phi_{\rm geo}(t,r_A)-\|v_A\|^2/2}{c^2}
+ +\epsilon_{\rm clk,A}(t) .
+ \label{r14-proper-clock}
+\end{equation}
+$\epsilon_{\rm clk,A}$ accounts for omitted higher-order/model terms; it is
+not an arbitrary control input. The negative-potential convention fixes the
+sign: a stationary clock deeper in a monopole field has a smaller rate.
+The tidal potential above, rather than the full absolute Sun/Moon potential,
+is appropriate to this geocentric convention. A barycentric clock model uses
+its own coordinate transformation and potential.
+\href{https://iers-conventions.obspm.fr/content/chapter10/tn36_c10.pdf}{[GT3: IERS, chapter 10, equations 10.6--10.9]}
+
+For a scaled coordinate $T=\alpha t+\beta$, $\alpha>0$, the chain rule gives
+$d\tau_A/dT=(d\tau_A/dt)/\alpha$. TT uses $\alpha=1-L_G$, with exact
+$L_G=6.969290134\times10^{-10}$; station, orbit and
+gravitational parameter values must be compatible with the chosen coordinate
+scale. GPST tags require their declared realization and mapping. A stored
+rational timestamp does not prove a physical clock exact or turn
+\eqref{r14-proper-clock} into R11's rational time-conversion template.
+
+The readout is modeled by $C_A(t)=t+\delta_A(t)$, where a declared oscillator
+and steering model connects $C_A$ to $\tau_A$. Clock initial offset, intrinsic
+frequency error and steering belong to the shared uncertainty state. A
+broadcast clock product may already contain physical corrections: apply its
+documented convention once, rather than adding \eqref{r14-proper-clock} again.
+\href{https://gssc.esa.int/navipedia/index.php/Relativistic_Clock_Correction}{[GT4: ESA, relativistic clock correction]}
+
+\subsection{Causal reception, range and pointing}
+For satellite emission at $t_e$ and station reception at $t_r>t_e$, define
+\begin{equation}
+ d=r_s(t_e)-r_g(t_r),\quad \rho=\|d\|>0,\qquad
+ t_r-t_e=\frac{\rho}{c}+\Delta_{\rm grav}+\Delta_{\rm med} .
+ \label{r14-light-time}
+\end{equation}
+This is a two-event equation in one coordinate chart. For the leading static
+Earth monopole propagation correction, let $s_e=\|r_s(t_e)\|$,
+$s_r=\|r_g(t_r)\|$ and use
+\begin{equation}
+ \Delta_{\rm grav}=\frac{2\mu_E}{c^3}
+ \log\frac{s_e+s_r+\rho}{s_e+s_r-\rho} .
+ \label{r14-shapiro}
+\end{equation}
+It requires $s_e+s_r>\rho$ and a nonocculted exterior ray in the weak-field
+domain. $\Delta_{\rm med}$ binds a frequency-dependent propagation model
+appropriate to the measured signal, or is zero in the declared vacuum model.
+Higher gravity terms, bending, atmospheric error and multipath remain in the
+observation discrepancy where omitted.
+\href{https://iers-conventions.obspm.fr/content/chapter11/tn36_c11.pdf}{[GT5: IERS, chapter 11, ranging equation 11.17]}
+
+For the flat vacuum choice $\Delta_{\rm grav}=\Delta_{\rm med}=0$ and fixed
+$t_r$, put $F(u)=u+\|r_s(u)-r_g(t_r)\|/c-t_r$. On a collision-free interval
+with $\|\dot r_s\|<c$, $F'(u)=1+\hat d\cdot\dot r_s/c>0$.
+A bracket $F(a)\leq0\leq F(b)$ therefore specifies a unique emission time.
+Additional delays require a corresponding monotonicity bound; a fixed number
+of correction iterations is not identical by definition to this root.
+
+When positions are supplied in Earth-fixed components and both charts share
+the geocenter, the retarded geometric vector in reception axes is
+\begin{equation}
+ d_E=R(t_r)^TR(t_e)r_{s,E}(t_e)-r_{g,E}(t_r),\qquad
+ z=L_g(t_r)d_E=(E,N,U)^T .
+ \label{r14-retarded-station}
+\end{equation}
+$L_g\in SO(3)$ is the declared local ENU rotation. Then
+$\mathrm{az}=\operatorname{atan2}(E,N)$ and
+$\mathrm{el}=\operatorname{atan2}(U,\sqrt{E^2+N^2})$ on their nonsingular
+domains. This product includes Earth rotation during flight; adding a second
+Sagnac correction would duplicate it. These are retarded geometric angles.
+Physical detector pointing additionally binds aberration, ray bending,
+refraction and mounting terms when required.
+\href{https://gssc.esa.int/navipedia/index.php/Satellite_Coordinates_Computation}{[GT6: ESA, reception-frame coordinates]}
+
+For code readouts $C_r,C_s$, a corresponding pseudorange observation is
+\begin{equation}
+ P=\rho+c(\Delta_{\rm grav}+\Delta_{\rm med})
+       +c[\delta_r(t_r)-\delta_s(t_e)]+d_P+\eta_P .
+ \label{r14-pseudorange}
+\end{equation}
+Here $d_P$ is the remaining modeled discrepancy/bias and $\eta_P$ the declared
+measurement error. Orbit coefficients, both clock states, station motion,
+Earth orientation and propagation parameters enter the joint uncertainty
+set of Section~\ref{r13-measurement-core}. Their correlations are preserved.
+Changing gravity, time or frame in one branch changes every dependent branch.
+Literal one-bit encoding preserves these equations and their operands; a
+physical tolerance still requires the bound in
+Equation~\eqref{r13-measurement-total-bound} for the chosen output and interval.

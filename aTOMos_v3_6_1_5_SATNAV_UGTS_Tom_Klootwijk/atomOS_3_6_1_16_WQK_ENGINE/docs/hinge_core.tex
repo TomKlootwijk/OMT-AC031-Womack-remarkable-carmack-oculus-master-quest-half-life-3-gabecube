@@ -1,0 +1,261 @@
+\section{An exact seed and event-driven hinge engine}
+\label{sec:r15-hinge-core}
+R15 selects an engine core with exact algebraic operands, finite expression
+graphs, binary guard results and delayed state feedback. Geometry, branch
+history and chart orientation are separately typed parts of its state. The
+R14 electromagnetic, mechanical, thermal, clock and observation equations remain
+the physical models reached through this interface. A geometric branch does
+not itself supply force, energy, elapsed proper time or a detector reading.
+
+\subsection{The golden-ratio pair is an exact arithmetic domain}
+Let $\phi=(1+\sqrt5)/2$ and represent $a+b\phi$ by
+$\operatorname{Phi}(a,b)$ with $a,b\in\Q$. Its representation is unique because
+$\phi$ is irrational. The defining identity $\phi^2=\phi+1$ gives
+\begin{align}
+ (a,b)+(c,d)&=(a+c,b+d),\nonumber\\
+ (a,b)(c,d)&=(ac+bd,ad+bc+bd),\nonumber\\
+ \phi(a,b)&=(b,a+b),&
+ \phi^{-1}(a,b)&=(b-a,a).
+ \label{eq:r15-phi-pair}
+\end{align}
+The last two maps are exact inverses. For a nonzero pair its field inverse is
+\begin{equation}
+ (a+b\phi)^{-1}=\frac{(a+b)-b\phi}{a^2+ab-b^2}.
+ \label{eq:r15-phi-inverse}
+\end{equation}
+The denominator is the product with the conjugate $a+b(1-\phi)$ and cannot
+vanish for a nonzero rational pair. These are algebraic identities; a rational
+approximation such as $1.618\ldots$ is not substituted for $\phi$.
+
+For exact sign selection put $A=a+b/2$, $B=b/2$, so the value is
+$A+B\sqrt5$. If $B=0$, use the sign of $A$. If $A=0$, use the sign of $B$.
+If $A,B$ have the same sign, that is the answer. Otherwise
+\begin{equation}
+ \operatorname{sgn}(A+B\sqrt5)
+ =\operatorname{sgn}(A)\operatorname{sgn}(A^2-5B^2).
+ \label{eq:r15-phi-sign}
+\end{equation}
+The last comparison is rational and is justified by comparing two positive
+magnitudes before squaring. Thus this domain admits exact comparisons without
+evaluating a rounded square root. Transcendental expressions outside the
+selected domain retain the inherited unresolved-result convention.
+
+\subsection{One-bit planes retain arithmetic carries and the whole expression}
+Each rational coefficient has an integer numerator and a positive denominator;
+canonical reduction uses their greatest common divisor. Integer magnitudes,
+signs, lengths, denominators, operator tags and references all belong to the
+source. For a group of $w$ serialized operands, their bit plane $k$ can be
+packed as
+\begin{equation}
+ B_k=\sum_{j=0}^{w-1}b_{j,k}2^j,\qquad
+ b_{j,k}=(B_k\mathbin{\gg}j)\mathbin{\&}1.
+ \label{eq:r15-bitplanes}
+\end{equation}
+Declared lengths and padding make this a bijection on the finite payload.
+One-bit encoding changes the layout, not the number of mathematical degrees
+of freedom. A variable-length exact coefficient is not reduced to one scalar
+bit or one fixed-width word.
+
+For nonnegative binary integers the full adder is explicitly
+\begin{align}
+ c_0&=0,&s_i&=a_i\oplus b_i\oplus c_i,\nonumber\\
+ c_{i+1}&=(a_i\land b_i)\lor[c_i\land(a_i\oplus b_i)].
+ \label{eq:r15-carry}
+\end{align}
+The final carry is retained. Subtraction uses an explicit signed-integer
+operation or sufficient sign extension and two's-complement addition, with
+the complete signed result retained. Fixed logical words still use their
+declared modulo-$2^w$ arithmetic, a different type. The pair update
+$(a,b)\mapsto(b,a+b)$ therefore needs addition with carry; a shift or XOR alone
+does not implement multiplication by $\phi$. Numerator/denominator arithmetic
+likewise retains all carries and any required additional limbs.
+
+The seed's finite directed acyclic graph stores literal and input nodes,
+selected arithmetic, affine points and guard bodies. A literal is an exact
+operand; an input node binds one immutable sample. Operand order and grouping
+are part of the graph, including sequential arithmetic folds. Lazy branches
+evaluate only their demanded operands. Shared subexpressions may be cached
+under the same operand identities without changing the denotation.
+
+The source's literal ``zero-order'' convention is left-to-right sequencing
+with uniform operator precedence. For the explicit sequence
+$(v_0,(\circ_1,v_1),\ldots,(\circ_m,v_m))$, its body is
+\begin{equation}
+ a_0=v_0,\qquad a_i=a_{i-1}\circ_i v_i\quad(1\le i\le m),
+ \qquad \operatorname{Fold}=a_m.
+ \label{eq:r15-sequential-fold}
+\end{equation}
+Every intermediate value is type checked. Explicitly grouped subexpressions
+are operand nodes with their own bodies. Thus an ungrouped addition followed
+by multiplication is folded in that order; a compiler must not impose the
+usual multiplication-before-addition parse on this source convention. The
+stored AST records the selected grouping unambiguously.
+
+``Zero-order'' here says nothing about derivative order, absence of dynamics
+or $O(1)$ computational complexity. Work depends on visited graph nodes,
+operand bit lengths, comparisons and generated descendants. An exact
+expression may still be expensive to evaluate. Independently selected physical
+evolution retains its actual body; the fold does not replace the inherited
+\code{ROOT}, \code{ODE} or \code{DIFF} domains when those are requested.
+
+\subsection{Guard values, boundary ownership and an accepted event}
+A geometric guard is a signed defining function $g$ whose selected inside is
+$g<0$. A plane may use $g(x)=n\cdot x-c$, with $n\ne0$; a sphere may use
+\begin{equation}
+ g_{\rm sphere}(x)=\|x-a\|^2-R^2,\qquad R>0.
+ \label{eq:r15-sphere-guard}
+\end{equation}
+The latter is a squared polynomial guard, not a distance in metres.
+It has the sphere's exact sign while avoiding a square root in that predicate.
+The sign theorem for rational $\phi$ pairs applies when all active operands
+belong to that domain.
+
+Let $\kappa\in\B$ record the current local coorientation and set
+$g_c=(-1)^\kappa g$. The guard bit is $b_g=[g_c<0]$. Equality is a separate
+\code{BOUNDARY} result by default, with no transition commit. An application
+may explicitly assign boundary ownership to inside or outside. An unavailable
+demanded sample is \code{MISSING\_INPUT}; an unsupported demanded operator is
+\code{UNKNOWN}. Neither status is a false guard.
+
+The event record binds an immutable identity and content to the selected
+sample, seam and event-order inputs. Physical acquisition additionally
+supplies its declared timestamp and availability binding; a logical sequence
+counter alone is not elapsed physical time. A new accepted event supplies a hinge pulse $h\in\B$:
+it can be a side change after a defined nonboundary baseline, an explicitly
+declared crossing, or a declared nontrivial seam transition. An initial sample
+can establish the baseline without a pulse. A repeated identical identity is
+not a new pulse; reusing an identity with changed content is invalid. Continuous
+trajectory crossings not represented by this acquisition/event policy are not
+proved detected merely because sampled endpoints have the same sign.
+
+\subsection{Every hinge crossing and a reversing seam are different bits}
+Let $p$ be hinge parity, $\kappa$ coorientation parity, and
+$\epsilon\in\B$ identify whether the admitted seam reverses the selected
+local sign. The next parities are
+\begin{equation}
+ p^+=p\oplus h,\qquad
+ \kappa^+=\kappa\oplus(h\land\epsilon).
+ \label{eq:r15-two-parities}
+\end{equation}
+Thus every accepted hinge pulse changes $p$, whereas an orientation-preserving
+hinge leaves $\kappa$ unchanged. The determinant $-1$ of the coefficient-pair
+map in equation~\eqref{eq:r15-phi-pair} concerns an algebraic basis; it is not
+by itself a physical chart-orientation theorem.
+
+The inherited two independently stored ASA/NA mask sets act in their declared
+order and produce the word $y$ from the common old snapshot. Define
+$b_{\rm lat}=\operatorname{bit}(y,d)$ at a reserved drive lane $d$.
+It is this post-mask bit, rather than an unconditionally substituted raw
+guard, that the selected latch records. The selected default drive adapter
+sets
+\begin{equation}
+ J_d=h\land b_{\rm lat},\qquad K_d=h\land\neg b_{\rm lat}.
+ \label{eq:r15-drive-lane}
+\end{equation}
+On a distinct optional seam lane $s$ set $J_s=K_s=h\land\epsilon$.
+Every other lane retains its base $J,K$ body. Assemble the word masks and use
+the same synchronous JK identity on all lanes:
+\begin{equation}
+ q^+=(J^*\land\neg_w q)\lor(\neg_w K^*\land q).
+ \label{eq:r15-jk}
+\end{equation}
+Equation~\eqref{eq:r15-drive-lane} holds when $h=0$ and sets the drive lane to
+$b_{\rm lat}$ when $h=1$; the seam lane toggles exactly on a reversing pulse.
+Custom word equations must retain this body to claim this particular drive
+adapter; an arbitrary user-supplied $J,K$ expression need not implement it.
+Disjoint allocation prevents either adapter from overwriting the other's
+semantics. This is local lane preservation for one step: later base expressions
+may read those changed bits, so it is not a global noninterference claim.
+
+Guard, mask, parity, chart-lift, consumed-event and word outputs are computed
+from one old state and accepted record, then committed together. A seam's new
+raw guard must be paired with the matching new coorientation before comparing
+physical sides; applying old $\kappa$ to a new reversed guard would invent a
+crossing. No partial state is committed for an unresolved demanded result.
+Physical time and an external plant can continue while a digital event waits.
+
+\subsection{Seam compatibility, winding and a graph beyond the branch tree}
+For overlapping charts $U_i,U_j$, declare an invertible transition $T_{ij}$
+and a sign $\sigma_{ij}=(-1)^{\epsilon_{ij}}$. The selected exact local guard
+compatibility is
+\begin{equation}
+ g_j(T_{ij}x)=\sigma_{ij}g_i(x).
+ \label{eq:r15-sign-compatibility}
+\end{equation}
+For general defining functions a positive factor could preserve sign, but it
+must then be an explicit different contract; exact SDF transport has its
+stronger metric conditions in Section~\ref{sec:r15-spatial-calculus}.
+An input record asserting this scalar equality does not by itself prove that
+both arguments denote the same physical point. That premise is supplied by
+the actual chart map and coordinate binding.
+
+On a triple overlap the maps and signs obey
+\begin{equation}
+ T_{ik}=T_{jk}\circ T_{ij},\qquad
+ \sigma_{ik}=\sigma_{jk}\sigma_{ij}.
+ \label{eq:r15-cocycle}
+\end{equation}
+When using lifted periodic coordinates these equalities are interpreted with
+the explicitly retained deck/winding action, not by dropping a full turn.
+For example, $\vartheta=\bar\vartheta+2\pi w$ with $w\in\Z$ and
+$\bar\vartheta\in[0,2\pi)$ retains the complete angle. Normalizing its address
+updates $w$; the residue alone is insufficient to invert the lift. The inherited
+half-turn and reflective-Klein chart actions remain separately named maps.
+
+For a closed seam walk $C$, the product $\prod_{(i,j)\in C}\sigma_{ij}$ is
+its sign holonomy. If it is $-1$, a globally single-valued choice of local
+signs cannot trivialize that loop. This is a statement about the specified
+chart/sign bundle, not a proof that an arbitrary embedded solid has a globally
+defined signed distance or a particular physical Klein-bottle geometry.
+A branch tree alone has no cycle; repeated bit flips along a tree cannot
+establish such holonomy. The engine therefore distinguishes its expansion
+tree from an additional seam graph containing declared return and cross edges.
+Every return is an explicit state transition at a later accepted event. It
+does not impose a self-consistent eigenvector or an instantaneous circular AST.
+
+\subsection{CUDA realization: immutable source and derived VRAM epochs}
+The native realization has two kinds of device data. The authoritative source
+is the immutable packed operator/operand payload and its version identity.
+Expansion products, bounds, classifications and work queues are derived VRAM
+data. Their key includes source identity, state/event epoch, parameters and
+the represented interval. Rebuilding a cache is permitted only if the same
+declared semantic result or a certified enclosure is preserved.
+
+For the raw-word path, a linear texture object exposes unsigned integer
+elements and uses \code{tex1Dfetch} with integer indices and
+\code{cudaReadModeElementType}. No filtered interpolation, normalization,
+color conversion or texture-coordinate wrapping is a semantic operation on
+the source bits. Bounds, alignment and resource size are checked explicitly.
+The relevant descriptor semantics are documented in
+\href{https://docs.nvidia.com/cuda/cuda-runtime-api/cuda_runtime_api/group__CUDART__TEXTURE__OBJECT.html}
+{HC1: NVIDIA CUDA Runtime API, Texture Object Management}.
+
+A producer may expand the read-only seed into a separate output allocation.
+A completed kernel and explicit stream/event dependency precede a consumer
+reading that output as a texture in the next epoch. No kernel reads through
+the texture path from storage that it concurrently modifies through global
+writes. The reason is concrete: NVIDIA specifies that the texture cache is
+not coherent with same-launch global writes; see
+\href{https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/#texture-memory}
+{HC2: CUDA C++ Best Practices Guide, Texture Memory}.
+Double buffering or another explicit ownership schedule can satisfy this
+contract. A device pointer or a launch-order assumption across unsynchronized
+streams is not a completed dependency.
+
+The device lowering declares its supported subset. A kernel performing native
+bounded-width integer word operations is not thereby a complete arbitrary-
+precision rational-$\phi$ evaluator. A kernel consuming projected IEEE
+coordinates is not thereby the exact AST evaluator. Each supported predicate
+either executes its exact body, or returns a proved enclosure/decision with a
+defined exact fallback for unresolved cases. Unsupported bodies preserve the
+source and route to a supported evaluator; they are not silently rounded into
+different semantics. Correctness checks establish the tested subset, and
+benchmarks separately report its time, transfers and resource use.
+
+Hardware chooses texture-cache residency, replacement and scheduling. The
+formal contract guarantees neither a cache hit nor a speed advantage over
+ordinary global loads. Seed expansion in VRAM is a realizable dataflow and
+implementation choice whose capacity and throughput are measured for the
+actual GPU. It does not mean an infinite tree resides in finite memory or that
+one-bit storage alone computes its operators. Self-reference remains the
+explicit delayed event/state recurrence above.

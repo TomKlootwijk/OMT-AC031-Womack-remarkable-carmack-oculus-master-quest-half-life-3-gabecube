@@ -1,0 +1,118 @@
+{
+  "schema": "TOMAGI-STATE64-1.0",
+  "size_bytes": 64,
+  "fields": [
+    {
+      "word": 0,
+      "byte_offset": 0,
+      "name": "rho",
+      "type": "i32",
+      "meaning": "log-radius coordinate; canonical key uses modulo 2^20"
+    },
+    {
+      "word": 1,
+      "byte_offset": 4,
+      "name": "theta",
+      "type": "i32",
+      "meaning": "polar angle; modulo 2^18"
+    },
+    {
+      "word": 2,
+      "byte_offset": 8,
+      "name": "tick",
+      "type": "i32",
+      "meaning": "zero-based timeline tick; modulo 2^14"
+    },
+    {
+      "word": 3,
+      "byte_offset": 12,
+      "name": "phi",
+      "type": "i32",
+      "meaning": "lower-case phase/hinge angle; modulo 2^12"
+    },
+    {
+      "word": 4,
+      "byte_offset": 16,
+      "name": "vrho",
+      "type": "i32",
+      "meaning": "first difference of rho"
+    },
+    {
+      "word": 5,
+      "byte_offset": 20,
+      "name": "vtheta",
+      "type": "i32",
+      "meaning": "first difference of theta"
+    },
+    {
+      "word": 6,
+      "byte_offset": 24,
+      "name": "vtick",
+      "type": "i32",
+      "meaning": "first difference of tick"
+    },
+    {
+      "word": 7,
+      "byte_offset": 28,
+      "name": "vphi",
+      "type": "i32",
+      "meaning": "first difference of phi"
+    },
+    {
+      "word": 8,
+      "byte_offset": 32,
+      "name": "orientation",
+      "type": "u32",
+      "meaning": "orientation/chirality bit"
+    },
+    {
+      "word": 9,
+      "byte_offset": 36,
+      "name": "sheet",
+      "type": "u32",
+      "meaning": "sheet index"
+    },
+    {
+      "word": 10,
+      "byte_offset": 40,
+      "name": "branch",
+      "type": "u32",
+      "meaning": "current branch bit"
+    },
+    {
+      "word": 11,
+      "byte_offset": 44,
+      "name": "cell",
+      "type": "u32",
+      "meaning": "current cell index"
+    },
+    {
+      "word": 12,
+      "byte_offset": 48,
+      "name": "lineage",
+      "type": "u32",
+      "meaning": "deterministic replay checksum"
+    },
+    {
+      "word": 13,
+      "byte_offset": 52,
+      "name": "output",
+      "type": "u32",
+      "meaning": "symbolic output token"
+    },
+    {
+      "word": 14,
+      "byte_offset": 56,
+      "name": "residual",
+      "type": "i32",
+      "meaning": "last signed relation residual"
+    },
+    {
+      "word": 15,
+      "byte_offset": 60,
+      "name": "status",
+      "type": "u32",
+      "meaning": "status bit field"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+\section{Exact affine event discovery and atomic hinges}
+\label{sec:r16-events}
+
+The R16 profile \code{ATOMOS-EXACT-AFFINE-EVENTS-R1} specializes the
+source world-query continuation idea to rational affine trajectories
+and the existing editable aTOMos plane guards. The implementation is
+\path{python/atomos_events.py}, using
+\code{Engine.step\_certified\_crossing} in
+\path{python/atomos_hinge.py}. It is an exact host event adapter, distinct
+from the native finite-word VM in Section~\ref{sec:r16-wqk}. It does
+not claim GPU analytic root discovery or dynamic GPU spatial refitting.
+
+The reviewed source basis is the WQK package's
+\path{spec/TOM_WORLD_QUERY_KERNEL_0_4_REBUILT.md}, continuation schema,
+and \path{src/python/tom_world04r/} implementation. R16 retains the
+useful event/continuation structure while specifying strict rational
+admission, complete semantic replay, simultaneous conflict handling,
+and terminal-horizon behavior.
+
+\subsection{One plane definition and one immutable epoch}
+
+An epoch $E$ contains rational start $t_0$, finite rational horizon
+$H>t_0$, state $x_0$, rates $v$, a finite set of unconsumed relations,
+and fixed nominal frame and time convention. Each scalar field declares
+seven integer SI dimension exponents; a rate has that field's dimension
+divided by time. Between events,
+\begin{equation}
+ x(t)=x_0+v(t-t_0),\qquad t\in[t_0,H].
+ \label{eq:r16-affine-epoch}
+\end{equation}
+This equation is the current epoch's conditional local prediction;
+an earlier accepted event replaces its remaining continuation. It does
+not assert that an arbitrary accelerating physical body is exactly affine.
+
+A relation selects three length fields and binds them to the existing
+literal plane expression in a hinge seed. With rational normal $n$
+and offset $d$, the guard and its pullback are
+\begin{align}
+ g(x)&=n\cdot x-d,\nonumber\\
+ g(x(t))&=a(t-t_0)+c,
+ &a&=n\cdot v,&c&=n\cdot x_0-d.
+ \label{eq:r16-affine-guard}
+\end{align}
+The adapter derives $n,d$ from the actual plane graph; the relation
+does not carry an independent second guard equation. The field names,
+seed identity, and nominal frame are part of the binding. A nonunit
+normal is valid for its zero set and crossing signs, but $g$ is then
+a defining function rather than a Euclidean signed distance. Unsupported
+nonlinear, spherical, or otherwise unrecognized guard graphs reject
+this profile rather than falling back to approximate root sampling.
+
+Exact input means integers or reduced rational values. Serialized
+\code{num}/\code{den} limbs must be actual integers with positive
+denominator. Floating values, Boolean integer aliases, and lossy
+integer coercion are excluded. Rational reduction changes representation,
+not the represented value.
+
+\subsection{Complete earliest roots and exact exclusions}
+
+Each remaining relation $r$ declares a closed active interval,
+inclusive scalar support intervals, and scalar equalities. Its root
+search window is
+\begin{equation}
+ W_r=(t_0,H]\cap[\alpha_r,\beta_r].
+ \label{eq:r16-event-window}
+\end{equation}
+Thus a root at the current start is excluded, including a zero created
+by an atomic reset at that timestamp. There is no implicit zero-time
+event cascade.
+
+When $a_r\ne0$, the sole root is
+\begin{equation}
+ \tau_r=t_0-\frac{c_r}{a_r}.
+ \label{eq:r16-affine-root}
+\end{equation}
+It is admitted only if $\tau_r\in W_r$ and every support/equality gate
+holds exactly at $x(\tau_r)$. When $a_r=0,c_r\ne0$, there is no root.
+When $a_r=c_r=0$, the guard is identically zero and has no isolated
+crossing; the result remains unresolved unless a time or gate exclusion
+already proves the relation irrelevant over the whole forward window.
+
+For an affine scalar field $x_j$, its exact range on a closed enclosing
+interval $[l,u]$ is
+\begin{equation}
+ I_j=[\min(x_j(l),x_j(u)),\max(x_j(l),x_j(u))].
+ \label{eq:r16-affine-enclosure}
+\end{equation}
+If $I_j$ is disjoint from a required support interval, or does not contain
+a required equality value, that gate excludes the entire window. Including
+the open window's lower endpoint in this enclosure is conservative.
+Failure of this exclusion test does not assert that all gates can hold
+simultaneously; it preserves a possible relation. For a nonconstant
+guard, the subsequent exact gate test at its unique root resolves it.
+
+Let $\mathcal C(E)$ index the relations with admitted roots, after
+checking every unconsumed relation. If nonempty, select
+\begin{equation}
+ \tau_* = \min_{r\in\mathcal C(E)}\tau_r,\qquad
+ \mathcal E_* =\{r\in\mathcal C(E):\tau_r=\tau_*\}.
+ \label{eq:r16-earliest-set}
+\end{equation}
+Priority and relation identity order the certificate within these exact
+ties. They neither move the root nor authorize partial chronological
+execution inside a simultaneous set. A certificate records all candidate
+roots as well as the complete selected earliest set. An unresolved
+eligible relation prevents a false completeness claim.
+
+\begin{proposition}[Earliest-event completeness in the affine profile]
+If every eligible relation is either exactly resolved or excluded by
+the stated interval proof, Equation~\eqref{eq:r16-earliest-set} contains
+every admissible event at the least admissible time in $(t_0,H]$.
+\end{proposition}
+\begin{proof}
+A nonconstant affine guard has exactly the root in
+Equation~\eqref{eq:r16-affine-root}. A constant nonzero guard has none.
+An excluded relation cannot satisfy a required gate in its window.
+Every remaining isolated root is checked for window membership and
+all gates. Enumeration therefore neither omits an admissible root nor
+adds an inadmissible one. Exact rational minimum and equality then
+select precisely all least-time roots. The assertion covers the
+declared finite relation set and affine algebra only.
+\end{proof}
+
+\subsection{A crossing certificate without an epsilon step}
+
+At an admitted nonzero-slope root,
+\begin{equation}
+ g(x(\tau_*+s))=a s,\qquad
+ \sigma_-=-\operatorname{sgn}(a),\quad
+ \sigma_+=\operatorname{sgn}(a).
+ \label{eq:r16-crossing-sides}
+\end{equation}
+These signs follow algebraically for $s<0$ and $s>0$; the runtime does
+not choose a numerical epsilon. The hinge adapter re-derives slope,
+root, point, and source seed binding before using the certified sides.
+Its existing chart orientation, if present in the guard convention,
+corrects both signs consistently; this fixed-frame crossing itself
+declares no reversing seam.
+
+The post-side inside bit drives the selected lane through the actual
+two stored mask stages and the existing word $J,K$ bodies. The update
+reads an old hinge snapshot and commits once, with event parity toggled
+once. Other lanes retain their declared bodies; the optional seam lane
+does not receive a toggle from this fixed-frame event.
+
+If several simultaneous relations name the same hinge, they generate
+one pulse only when their complete origin, velocity, root, and plane-seed
+bindings agree. Different bindings to that hinge are a conflict. Merely
+sharing a timestamp is insufficient to identify two physical crossings.
+
+At $\tau_*=H$, $\sigma_+$ is the sign of the algebraic affine extension.
+It does not claim an observed or evolved future interval. The horizon
+event yields a \code{terminal\_state} point snapshot; it does not construct
+a zero-width successor affine segment. With no admitted events, the
+adapter advances the affine state to $H$ and finalizes without a hinge
+pulse.
+
+\subsection{Atomic simultaneous state and rate updates}
+
+Let $x^-=x(\tau_*)$ and $v^-$ denote the common pre-event snapshot.
+For a field with simultaneous updates, the supported rules are
+\begin{equation}
+ z^+=\begin{cases}
+ c,&\text{all updates are set to the same value }c,\\
+ z^-+\sum_j\delta_j,&\text{all updates are add},\\
+ z^-\oplus\delta_1\oplus\cdots\oplus\delta_m,
+      &\text{all updates are admissible xor}.
+ \end{cases}
+ \label{eq:r16-simultaneous-updates}
+\end{equation}
+XOR is limited to nonnegative dimensionless integer state and is not
+defined for rates. Mixed modes or unequal simultaneous set values
+reject. Unmentioned fields retain their pre-event values. State and
+rate maps are handled separately, so a new rate does not retroactively
+change the interval just realized.
+
+World edits and all hinge edits are computed on clones. Only after
+every check succeeds are the successor epoch, fired relation IDs,
+hinge states, transition record, and accepted certificate published
+together. No failed candidate partially mutates the world. The successor
+at $\tau_*<H$ starts a new affine interval using $x^+,v^+$; the successor
+at $H$ is terminal.
+
+\subsection{Semantic replay, finite progress, and source corrections}
+
+A hash certifies bytes, not that an asserted event follows from an epoch.
+The adapter regenerates the expected certificate $C(E)$ from the current
+immutable epoch and admits a submitted certificate $\widehat C$ only when
+\begin{equation}
+ \operatorname{canonical}(\widehat C)
+       =\operatorname{canonical}(C(E)).
+ \label{eq:r16-semantic-admission}
+\end{equation}
+This checks the root, source epoch, all candidates, complete simultaneous
+membership, and all gate-derived claims. Altering a root or omitting an
+earlier/tied relation and calculating a fresh hash does not satisfy this
+equality. The source profile supplies the update bodies, so a certificate
+cannot substitute different state edits.
+
+An identical already accepted certificate returns a duplicate result
+without a second transition. The same identity with changed bytes rejects.
+Packed session loading reconstructs the initial profile, replays each
+accepted certificate semantically, and compares the derived final epoch
+and transitions; unpacking bytes alone is not accepted replay evidence.
+
+Each successful event time is strictly later than the current start,
+and at least one previously unconsumed relation is marked fired. For $m$
+initial once-only relations there are at most $m$ event sets, followed
+if necessary by a single event-free horizon finalization. A configured
+event-set budget may stop earlier with an explicit resource result;
+unresolved relations and conflicting edits stop without commit. This
+argument does not extend to arbitrary rearming, newly created relations,
+or zero-time cascades.
+
+Three source implementation issues are corrected at this boundary.
+The reviewed path accepts $\tau=H$ but then tries to create a forbidden
+zero-length OpenSegment; R16 uses a terminal snapshot. The reviewed
+rational dictionary parser can truncate floating limbs when its schema
+has not been run; R16 requires actual integer limbs. The reviewed event
+application can accept a rehashed claim without replaying its full
+semantics; R16 recomputes the complete expected event set. These concrete
+corrections strengthen the finite event contract. They do not add a
+claim of arbitrary world prediction, a GPU analytic solver, or a new
+physical conservation law.

@@ -1,0 +1,11 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_16_WQK_ENGINE\cuda\tomagi_feedback.cu...
+  
+  C:\aTOMosBuild\r16cuda>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_16_WQK_ENGINE\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir atomos_tomagi\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W1 /nologo /O2 /FS   /MD " -Xcompiler "/FdC:\aTOMosBuild\r16cuda\Release\atomos_tomagi.pdb" -o atomos_tomagi.dir\Release\tomagi_feedback.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_16_WQK_ENGINE\cuda\tomagi_feedback.cu" 
+  tomagi_feedback.cu
+  tmpxft_0001f0e8_00000000-7_tomagi_feedback.cudafe1.cpp
+  tomagi_reference.vcxproj -> C:\aTOMosBuild\r16cuda\Release\tomagi_reference.lib
+  atomos_tomagi.vcxproj -> C:\aTOMosBuild\r16cuda\Release\atomos_tomagi.lib
+  tomagi_feedback_tests.cpp
+  tomagi_feedback_tests.vcxproj -> C:\aTOMosBuild\r16cuda\Release\tomagi_feedback_tests.exe

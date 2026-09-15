@@ -1,0 +1,85 @@
+{
+  "schema": "TOMAGI-OPCODES-1.0",
+  "opcodes": [
+    {
+      "code": 0,
+      "name": "NOP",
+      "effect": "No state mutation beyond lineage and successor selection."
+    },
+    {
+      "code": 1,
+      "name": "SET",
+      "effect": "Set one State64 field selected by flags[3:0] to arg0."
+    },
+    {
+      "code": 2,
+      "name": "JIT1",
+      "effect": "Derive a deterministic parity bit and add +/-arg0 to the selected field."
+    },
+    {
+      "code": 3,
+      "name": "KIN2",
+      "effect": "Apply integer second-order update v'=v+args; q'=q+v'."
+    },
+    {
+      "code": 4,
+      "name": "PHI",
+      "effect": "Advance lower-case phi modulo 2^12 and expose wrap/half-circle branch."
+    },
+    {
+      "code": 5,
+      "name": "TIME",
+      "effect": "Advance zero-based modular tick modulo 2^14 and fold winding into lineage."
+    },
+    {
+      "code": 6,
+      "name": "SDF0",
+      "effect": "Return literal zero relation for the current defined LUT cell."
+    },
+    {
+      "code": 7,
+      "name": "CONE",
+      "effect": "Evaluate a quantized log-polar cone/support relation."
+    },
+    {
+      "code": 8,
+      "name": "SPHERE",
+      "effect": "Evaluate a quantized radial/phi shell relation."
+    },
+    {
+      "code": 9,
+      "name": "KLEIN",
+      "effect": "Apply reflective Klein or source half-turn radial wrap."
+    },
+    {
+      "code": 10,
+      "name": "RADIX",
+      "effect": "Select one bit of the canonical 64-bit key."
+    },
+    {
+      "code": 11,
+      "name": "HINGE",
+      "effect": "Apply map1 deltas and optional orientation/sheet flips when branch=1."
+    },
+    {
+      "code": 12,
+      "name": "LSYS",
+      "effect": "Apply chirality-signed lower-case-phi turn and dyadic velocity scaling."
+    },
+    {
+      "code": 13,
+      "name": "PROJECT",
+      "effect": "Set a symbolic downstream output token without halting."
+    },
+    {
+      "code": 14,
+      "name": "EMIT",
+      "effect": "Set output token and emitted status; flag bit 0 may terminate the program."
+    },
+    {
+      "code": 15,
+      "name": "HALT",
+      "effect": "Terminate the current state execution."
+    }
+  ]
+}

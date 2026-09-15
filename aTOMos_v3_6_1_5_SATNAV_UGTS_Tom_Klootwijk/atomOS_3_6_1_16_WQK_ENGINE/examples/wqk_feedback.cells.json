@@ -1,0 +1,14 @@
+{
+  "tomagi_version": "1.0.0",
+  "title": "aTOMos R16 literal word-feedback branch program",
+  "seed": 19900710,
+  "default_ticks": 24,
+  "entry": "select",
+  "initial_state": {"rho": 0, "lineage": 305419896},
+  "definitions": [],
+  "cells": [
+    {"id": "select", "key": 0, "op": "RADIX", "args": [44, 0, 0, 0], "next": ["emit_one", "emit_zero"]},
+    {"id": "emit_one", "key": 1, "op": "EMIT", "payload": 1, "next": ["select", "select"]},
+    {"id": "emit_zero", "key": 2, "op": "EMIT", "payload": 0, "next": ["select", "select"]}
+  ]
+}

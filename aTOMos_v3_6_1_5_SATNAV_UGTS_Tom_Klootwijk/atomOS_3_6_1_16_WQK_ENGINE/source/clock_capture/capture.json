@@ -1,0 +1,49 @@
+{
+  "purpose": "Read-only real internet clock acquisition",
+  "attempts": [
+    {
+      "source_host": "time.cloudflare.com",
+      "protocol": "NTPv4 UDP/123",
+      "purpose": "Actual clock observation requested by user; not a kernel test",
+      "capture_date_utc": "2026-09-15T08:37:01.772250+00:00",
+      "status": "observed",
+      "resolved_ipv4": "162.159.200.1",
+      "peer": [
+        "162.159.200.1",
+        123
+      ],
+      "request_hex": "23000000000000000000000000000000000000000000000000000000000000000000000000000000ee53822dcdc07174",
+      "reply_hex": "240300e6000000dd0000000b0a14081aee53821923f1943dee53822dcdc07174ee53823088e1b475ee53823088ef3eae",
+      "reply_sha256": "7bf8a777db65b4b0f8174aa4fd28878dcda028c436790b351fd77f7174e8d878",
+      "local_send_unix_ns": "1789461421803717700",
+      "local_receive_unix_ns": "1789461421845862700",
+      "elapsed_monotonic_ns": "42127800",
+      "leap_indicator": 0,
+      "version": 4,
+      "mode": 4,
+      "stratum": 3,
+      "precision_exponent": -26,
+      "root_delay_s16_16": 221,
+      "root_dispersion_u16_16": 11,
+      "reference_id_hex": "0a14081a",
+      "reference_ntp_u64": "17173212848582661181",
+      "origin_ntp_u64": "17173212937330913652",
+      "receive_ntp_u64": "17173212949060367477",
+      "transmit_ntp_u64": "17173212949061254830",
+      "era": 0,
+      "era_evidence": "Contemporary 2026 observation and local civil-date context; era is not present in NTP timestamp field",
+      "transmit_unix_rational": {
+        "numerator": "7685678295830970030",
+        "denominator": "4294967296"
+      },
+      "transmit_utc_display_microsecond_truncated": "2026-09-15T08:37:04.534900+00:00",
+      "limitations": [
+        "NTP UDP response is not cryptographically authenticated",
+        "No clock was set and no oscillator was calibrated",
+        "Local wall-clock timestamps and source metadata are observations, not certified UTC error bounds",
+        "Timestamp denotes the server transmit event, not local reception",
+        "UTC-to-GPST/TCG conversion requires an explicit dated mapping"
+      ]
+    }
+  ]
+}

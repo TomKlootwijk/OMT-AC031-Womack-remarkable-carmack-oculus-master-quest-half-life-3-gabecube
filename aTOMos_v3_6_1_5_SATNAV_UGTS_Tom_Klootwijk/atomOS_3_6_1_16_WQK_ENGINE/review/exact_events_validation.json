@@ -1,0 +1,5641 @@
+{
+  "profile": "ATOMOS-EXACT-EVENTS-VALIDATION-R1",
+  "all_passed": true,
+  "method": "standalone public API; independently constructed inputs and Fraction closed-form oracle",
+  "source_sha256": {
+    "tools/check_exact_events.py": "0f31ca93685527ecce31dd1c8359c2bb64390ca6584446567546953313230387",
+    "python/atomos_events.py": "227d05fa668366581f08f9420c520481e6d7bb15792a304a854eec0eff808b3d",
+    "python/atomos_hinge.py": "3d12050261eb1f00cdc90bb54690b347f174ca43926aed1185b4f7147bbf71c9"
+  },
+  "scope": [
+    "finite rational affine epochs and recognized literal plane guards",
+    "no sampled root approximation, GPU root discovery, dynamic GPU BVH refit, or physical-accuracy measurement",
+    "once-only relation identities; a terminal point has no successor open interval",
+    "fraction records preserve exact values; digests are receipts and semantic checks execute separately"
+  ],
+  "checks": [
+    {
+      "name": "turnaround statuses",
+      "passed": true,
+      "actual": [
+        "APPLIED",
+        "APPLIED",
+        "APPLIED",
+        "FINALIZED"
+      ],
+      "expected": [
+        "APPLIED",
+        "APPLIED",
+        "APPLIED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "name": "all three exact event times",
+      "passed": true,
+      "actual": [
+        {
+          "num": 1,
+          "den": 4
+        },
+        {
+          "num": 1,
+          "den": 2
+        },
+        {
+          "num": 3,
+          "den": 4
+        }
+      ],
+      "expected": [
+        {
+          "num": 1,
+          "den": 4
+        },
+        {
+          "num": 1,
+          "den": 2
+        },
+        {
+          "num": 3,
+          "den": 4
+        }
+      ]
+    },
+    {
+      "name": "complete selected relation sequence",
+      "passed": true,
+      "actual": [
+        [
+          "enter"
+        ],
+        [
+          "turn"
+        ],
+        [
+          "exit"
+        ]
+      ],
+      "expected": [
+        [
+          "enter"
+        ],
+        [
+          "turn"
+        ],
+        [
+          "exit"
+        ]
+      ]
+    },
+    {
+      "name": "closed-form position at 1/4",
+      "passed": true,
+      "actual": {
+        "num": 0,
+        "den": 1
+      },
+      "expected": {
+        "num": 0,
+        "den": 1
+      }
+    },
+    {
+      "name": "continuous position at 1/4",
+      "passed": true,
+      "actual": {
+        "num": 0,
+        "den": 1
+      },
+      "expected": {
+        "num": 0,
+        "den": 1
+      }
+    },
+    {
+      "name": "closed-form position at 1/2",
+      "passed": true,
+      "actual": {
+        "num": 1,
+        "den": 1
+      },
+      "expected": {
+        "num": 1,
+        "den": 1
+      }
+    },
+    {
+      "name": "continuous position at 1/2",
+      "passed": true,
+      "actual": {
+        "num": 1,
+        "den": 1
+      },
+      "expected": {
+        "num": 1,
+        "den": 1
+      }
+    },
+    {
+      "name": "closed-form position at 3/4",
+      "passed": true,
+      "actual": {
+        "num": 0,
+        "den": 1
+      },
+      "expected": {
+        "num": 0,
+        "den": 1
+      }
+    },
+    {
+      "name": "continuous position at 3/4",
+      "passed": true,
+      "actual": {
+        "num": 0,
+        "den": 1
+      },
+      "expected": {
+        "num": 0,
+        "den": 1
+      }
+    },
+    {
+      "name": "closed-form position at 1",
+      "passed": true,
+      "actual": {
+        "num": -1,
+        "den": 1
+      },
+      "expected": {
+        "num": -1,
+        "den": 1
+      }
+    },
+    {
+      "name": "continuous position at 1",
+      "passed": true,
+      "actual": {
+        "num": -1,
+        "den": 1
+      },
+      "expected": {
+        "num": -1,
+        "den": 1
+      }
+    },
+    {
+      "name": "equal initial and final endpoint position",
+      "passed": true,
+      "actual": [
+        -1,
+        {
+          "num": -1,
+          "den": 1
+        }
+      ],
+      "expected": [
+        {
+          "num": -1,
+          "den": 1
+        },
+        {
+          "num": -1,
+          "den": 1
+        }
+      ]
+    },
+    {
+      "name": "two zero-plane crossings retained",
+      "passed": true,
+      "actual": [
+        {
+          "num": 1,
+          "den": 4
+        },
+        {
+          "num": 3,
+          "den": 4
+        }
+      ],
+      "expected": [
+        {
+          "num": 1,
+          "den": 4
+        },
+        {
+          "num": 3,
+          "den": 4
+        }
+      ]
+    },
+    {
+      "name": "one-sided signs without epsilon",
+      "passed": true,
+      "actual": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "expected": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          -1
+        ]
+      ]
+    },
+    {
+      "name": "actual JK word transitions",
+      "passed": true,
+      "actual": [
+        1,
+        0,
+        1
+      ],
+      "expected": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "final world state",
+      "passed": true,
+      "actual": {
+        "x": {
+          "num": -1,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 3,
+          "den": 1
+        },
+        "counter": {
+          "num": 12,
+          "den": 1
+        }
+      },
+      "expected": {
+        "x": {
+          "num": -1,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 3,
+          "den": 1
+        },
+        "counter": {
+          "num": 12,
+          "den": 1
+        }
+      }
+    },
+    {
+      "name": "event-free terminal kind",
+      "passed": true,
+      "actual": "terminal_state",
+      "expected": "terminal_state"
+    },
+    {
+      "name": "event-free terminal time",
+      "passed": true,
+      "actual": {
+        "num": 1,
+        "den": 1
+      },
+      "expected": {
+        "num": 1,
+        "den": 1
+      }
+    },
+    {
+      "name": "finalized engine has no additional run",
+      "passed": true,
+      "actual": [],
+      "expected": []
+    },
+    {
+      "name": "semantic packed roundtrip byte equality",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "accepted duplicate status",
+      "passed": true,
+      "actual": "DUPLICATE",
+      "expected": "DUPLICATE"
+    },
+    {
+      "name": "accepted duplicate state hold",
+      "passed": true,
+      "actual": "73bc9efdf8ab2531abbf43e20bea4b81b83525d2ca196ee256ffd44e9e7cce0f",
+      "expected": "73bc9efdf8ab2531abbf43e20bea4b81b83525d2ca196ee256ffd44e9e7cce0f"
+    },
+    {
+      "name": "horizon event applies",
+      "passed": true,
+      "actual": "APPLIED",
+      "expected": "APPLIED"
+    },
+    {
+      "name": "horizon exact root",
+      "passed": true,
+      "actual": {
+        "num": 1,
+        "den": 1
+      },
+      "expected": {
+        "num": 1,
+        "den": 1
+      }
+    },
+    {
+      "name": "horizon is terminal point",
+      "passed": true,
+      "actual": [
+        true,
+        "terminal_state"
+      ],
+      "expected": [
+        true,
+        "terminal_state"
+      ]
+    },
+    {
+      "name": "horizon post-state update",
+      "passed": true,
+      "actual": {
+        "num": 3,
+        "den": 1
+      },
+      "expected": {
+        "num": 3,
+        "den": 1
+      }
+    },
+    {
+      "name": "no next open interval after horizon event",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "rehashed false root rejected semantically",
+      "passed": true,
+      "actual": "INVALID",
+      "expected": "INVALID"
+    },
+    {
+      "name": "rehashed false root leaves state unchanged",
+      "passed": true,
+      "actual": "ebc1d20c9176e5dd208ab2c176cedf58955800c8b65295d7e8e2875ba3832e13",
+      "expected": "ebc1d20c9176e5dd208ab2c176cedf58955800c8b65295d7e8e2875ba3832e13"
+    },
+    {
+      "name": "omitted earlier root rejected semantically",
+      "passed": true,
+      "actual": "INVALID",
+      "expected": "INVALID"
+    },
+    {
+      "name": "omitted earlier root leaves state unchanged",
+      "passed": true,
+      "actual": "ccb9f0c489b3b4e51c001ae8f015cbdb4c24c832265d877608ce1b725d596737",
+      "expected": "ccb9f0c489b3b4e51c001ae8f015cbdb4c24c832265d877608ce1b725d596737"
+    },
+    {
+      "name": "incomplete simultaneous set rejected semantically",
+      "passed": true,
+      "actual": "INVALID",
+      "expected": "INVALID"
+    },
+    {
+      "name": "incomplete simultaneous set leaves state unchanged",
+      "passed": true,
+      "actual": "6ea16d3fbf20e8228d2e42aeffe92d420fb2565af75faec21934e0bb73281bb8",
+      "expected": "6ea16d3fbf20e8228d2e42aeffe92d420fb2565af75faec21934e0bb73281bb8"
+    },
+    {
+      "name": "false event-free horizon rejected semantically",
+      "passed": true,
+      "actual": "INVALID",
+      "expected": "INVALID"
+    },
+    {
+      "name": "false event-free horizon leaves state unchanged",
+      "passed": true,
+      "actual": "ebc1d20c9176e5dd208ab2c176cedf58955800c8b65295d7e8e2875ba3832e13",
+      "expected": "ebc1d20c9176e5dd208ab2c176cedf58955800c8b65295d7e8e2875ba3832e13"
+    },
+    {
+      "name": "packed session with missing first certificate",
+      "passed": true,
+      "actual": "REJECTED",
+      "expected": "REJECTED"
+    }
+  ],
+  "turnaround": {
+    "input": {
+      "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+      "frame": "world",
+      "time_convention": "local elapsed SI seconds",
+      "horizon": [
+        0,
+        1
+      ],
+      "max_event_sets": 16,
+      "fields": {
+        "x": {
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": -1,
+          "rate": 4
+        },
+        "y": {
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        },
+        "z": {
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        },
+        "mode": {
+          "dimension": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        },
+        "counter": {
+          "dimension": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        }
+      },
+      "hinges": {
+        "zero": {
+          "profile": "ATOMOS-HINGE-R1",
+          "width": 8,
+          "present": 255,
+          "q0": 1,
+          "nodes": [
+            {
+              "id": "point",
+              "op": "input",
+              "key": "point",
+              "type": {
+                "kind": "vec3",
+                "dim": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "frame": "world"
+              }
+            },
+            {
+              "id": "normal",
+              "op": "literal",
+              "value": [
+                1,
+                0,
+                0
+              ],
+              "type": {
+                "kind": "vec3",
+                "dim": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "frame": "world"
+              }
+            },
+            {
+              "id": "offset",
+              "op": "literal",
+              "value": 0,
+              "type": {
+                "kind": "scalar",
+                "dim": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "id": "guard",
+              "op": "plane_guard",
+              "args": [
+                "point",
+                "normal",
+                "offset"
+              ]
+            }
+          ],
+          "guard": "guard",
+          "drive_lane": 0,
+          "seam_lane": null,
+          "masks": [
+            {
+              "asa": 255,
+              "na": 255,
+              "boundary": 0
+            },
+            {
+              "asa": 255,
+              "na": 255,
+              "boundary": 0
+            }
+          ],
+          "equations": {
+            "x": "d",
+            "j": [
+              "and",
+              "e",
+              "y"
+            ],
+            "k": [
+              "and",
+              "e",
+              [
+                "not",
+                "y"
+              ]
+            ]
+          },
+          "boundary": "hold",
+          "pulse_on_first": false,
+          "provenance": {
+            "meaning": "exact nominal coordinates; no physical calibration inferred"
+          }
+        },
+        "turn": {
+          "profile": "ATOMOS-HINGE-R1",
+          "width": 8,
+          "present": 255,
+          "q0": 0,
+          "nodes": [
+            {
+              "id": "point",
+              "op": "input",
+              "key": "point",
+              "type": {
+                "kind": "vec3",
+                "dim": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "frame": "world"
+              }
+            },
+            {
+              "id": "normal",
+              "op": "literal",
+              "value": [
+                1,
+                0,
+                0
+              ],
+              "type": {
+                "kind": "vec3",
+                "dim": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "frame": "world"
+              }
+            },
+            {
+              "id": "offset",
+              "op": "literal",
+              "value": 1,
+              "type": {
+                "kind": "scalar",
+                "dim": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "id": "guard",
+              "op": "plane_guard",
+              "args": [
+                "point",
+                "normal",
+                "offset"
+              ]
+            }
+          ],
+          "guard": "guard",
+          "drive_lane": 0,
+          "seam_lane": null,
+          "masks": [
+            {
+              "asa": 255,
+              "na": 255,
+              "boundary": 0
+            },
+            {
+              "asa": 255,
+              "na": 255,
+              "boundary": 0
+            }
+          ],
+          "equations": {
+            "x": "d",
+            "j": [
+              "and",
+              "e",
+              "y"
+            ],
+            "k": [
+              "and",
+              "e",
+              [
+                "not",
+                "y"
+              ]
+            ]
+          },
+          "boundary": "hold",
+          "pulse_on_first": false,
+          "provenance": {
+            "meaning": "exact nominal coordinates; no physical calibration inferred"
+          }
+        }
+      },
+      "relations": [
+        {
+          "id": "enter",
+          "hinge": "zero",
+          "point_fields": [
+            "x",
+            "y",
+            "z"
+          ],
+          "active": [
+            0,
+            1
+          ],
+          "priority": 0,
+          "equals": {
+            "mode": 0
+          },
+          "support": {},
+          "state_updates": [
+            {
+              "field": "mode",
+              "op": "set",
+              "value": 1
+            },
+            {
+              "field": "counter",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "rate_updates": []
+        },
+        {
+          "id": "turn",
+          "hinge": "turn",
+          "point_fields": [
+            "x",
+            "y",
+            "z"
+          ],
+          "active": [
+            0,
+            1
+          ],
+          "priority": 0,
+          "equals": {
+            "mode": 1
+          },
+          "support": {},
+          "state_updates": [
+            {
+              "field": "mode",
+              "op": "set",
+              "value": 2
+            },
+            {
+              "field": "counter",
+              "op": "add",
+              "value": 10
+            }
+          ],
+          "rate_updates": [
+            {
+              "field": "x",
+              "op": "set",
+              "value": -4
+            }
+          ]
+        },
+        {
+          "id": "exit",
+          "hinge": "zero",
+          "point_fields": [
+            "x",
+            "y",
+            "z"
+          ],
+          "active": [
+            0,
+            1
+          ],
+          "priority": 0,
+          "equals": {
+            "mode": 2
+          },
+          "support": {},
+          "state_updates": [
+            {
+              "field": "mode",
+              "op": "set",
+              "value": 3
+            },
+            {
+              "field": "counter",
+              "op": "add",
+              "value": 1
+            }
+          ],
+          "rate_updates": []
+        }
+      ]
+    },
+    "oracle": {
+      "equations": [
+        "x(t)=-1+4*t for 0<=t<=1/2",
+        "x(t)=3-4*t for 1/2<=t<=1"
+      ],
+      "samples": [
+        {
+          "time": {
+            "num": 1,
+            "den": 4
+          },
+          "expected_x": {
+            "num": 0,
+            "den": 1
+          },
+          "actual_x": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        {
+          "time": {
+            "num": 1,
+            "den": 2
+          },
+          "expected_x": {
+            "num": 1,
+            "den": 1
+          },
+          "actual_x": {
+            "num": 1,
+            "den": 1
+          }
+        },
+        {
+          "time": {
+            "num": 3,
+            "den": 4
+          },
+          "expected_x": {
+            "num": 0,
+            "den": 1
+          },
+          "actual_x": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        {
+          "time": {
+            "num": 1,
+            "den": 1
+          },
+          "expected_x": {
+            "num": -1,
+            "den": 1
+          },
+          "actual_x": {
+            "num": -1,
+            "den": 1
+          }
+        }
+      ]
+    },
+    "certificates": [
+      {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:8d8dccc35927b36ff7fae13f86f2943eae513cef28ea05c920f00ec8d7249d38",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 4
+        },
+        "events": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:9e1dded88d1914783365cd2887ee486b5cca74f91788423d81a40084d318da72"
+      },
+      {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:6c93dc2135ac992640c5b294a441d5a2777ab9877b6efa7d4c385a6828ddb7cd",
+        "epoch_sequence": 1,
+        "after_exclusive": {
+          "num": 1,
+          "den": 4
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 2
+        },
+        "events": [
+          {
+            "relation": "turn",
+            "hinge": "turn",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 2
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:1630f8d6aaf08ae92e1f8c3935eba3955d138b48891c33f62887506a75cf7bb1",
+            "origin": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "turn",
+            "hinge": "turn",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 2
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:1630f8d6aaf08ae92e1f8c3935eba3955d138b48891c33f62887506a75cf7bb1",
+            "origin": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:9475d27541717f5a937ec1bf653fec9d6053098b4ee9f7193d874642ef0e0ebf"
+      },
+      {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:66d56c23e11638269c1f54b833165befed65a34088bbef9df4212446fb393911",
+        "epoch_sequence": 2,
+        "after_exclusive": {
+          "num": 1,
+          "den": 2
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 3,
+          "den": 4
+        },
+        "events": [
+          {
+            "relation": "exit",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 3,
+              "den": 4
+            },
+            "slope": {
+              "num": -4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": 1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": 1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": -4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": 1,
+            "post_side_raw": -1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "exit",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 3,
+              "den": 4
+            },
+            "slope": {
+              "num": -4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": 1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": 1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": -4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": 1,
+            "post_side_raw": -1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:e7c59028772ee2099a8e2233dd3b4a1798111d47675b87c0a5da92c62c867bb2"
+      },
+      {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:1dd54241f9efa1230abf7d4baa5fb43f7abb83a32f436e0635254eb7b7517469",
+        "epoch_sequence": 3,
+        "after_exclusive": {
+          "num": 3,
+          "den": 4
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "NONE",
+        "event_time": null,
+        "events": [],
+        "all_candidates": [],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:4d00151a7ffd232f8849e840698f09d73dbb8cb909d273e1bd33c2a5b173da50"
+      }
+    ],
+    "transitions": [
+      {
+        "profile": "ATOMOS-AFFINE-TRANSITION-R1",
+        "certificate_hash": "sha256:9e1dded88d1914783365cd2887ee486b5cca74f91788423d81a40084d318da72",
+        "from_epoch": "sha256:8d8dccc35927b36ff7fae13f86f2943eae513cef28ea05c920f00ec8d7249d38",
+        "to_epoch": "sha256:6c93dc2135ac992640c5b294a441d5a2777ab9877b6efa7d4c385a6828ddb7cd",
+        "time": {
+          "num": 1,
+          "den": 4
+        },
+        "realized_interval": [
+          {
+            "num": 0,
+            "den": 1
+          },
+          {
+            "num": 1,
+            "den": 4
+          }
+        ],
+        "relations": [
+          "enter"
+        ],
+        "pre_state": {
+          "x": {
+            "num": 0,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "post_state": {
+          "x": {
+            "num": 0,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 1,
+            "den": 1
+          },
+          "counter": {
+            "num": 1,
+            "den": 1
+          }
+        },
+        "pre_rates": {
+          "x": {
+            "num": 4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "post_rates": {
+          "x": {
+            "num": 4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "hinge_traces": {
+          "zero": {
+            "contributors": [
+              "enter"
+            ],
+            "profile": "ATOMOS-CERTIFIED-PLANE-CROSSING-R1",
+            "time": {
+              "num": 1,
+              "den": 4
+            },
+            "source_epoch": "sha256:8d8dccc35927b36ff7fae13f86f2943eae513cef28ea05c920f00ec8d7249d38",
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "guard": {
+              "a": {
+                "num": 0,
+                "den": 1
+              },
+              "b": {
+                "num": 0,
+                "den": 1
+              },
+              "meaning": "a+b*phi, phi=(1+sqrt(5))/2"
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "pre_side": -1,
+            "post_side": 1,
+            "accepted_event": true,
+            "before": 1,
+            "drive": 0,
+            "x": 0,
+            "stages": [
+              {
+                "asa": 0,
+                "na": 0,
+                "hits": 0,
+                "output": 0
+              },
+              {
+                "asa": 0,
+                "na": 0,
+                "hits": 0,
+                "output": 0
+              }
+            ],
+            "output": 0,
+            "j": 0,
+            "k": 1,
+            "after": 0,
+            "orientation_before": 0,
+            "orientation_after": 0,
+            "seam_parity": 0,
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "is_sdf": true
+          }
+        },
+        "terminal": false,
+        "event": true,
+        "content_hash": "sha256:bbd7e0bbe2fc499277fecad8b2bc8f475f4582cf10c5d1d3a978b3e6c9c4ce77"
+      },
+      {
+        "profile": "ATOMOS-AFFINE-TRANSITION-R1",
+        "certificate_hash": "sha256:9475d27541717f5a937ec1bf653fec9d6053098b4ee9f7193d874642ef0e0ebf",
+        "from_epoch": "sha256:6c93dc2135ac992640c5b294a441d5a2777ab9877b6efa7d4c385a6828ddb7cd",
+        "to_epoch": "sha256:66d56c23e11638269c1f54b833165befed65a34088bbef9df4212446fb393911",
+        "time": {
+          "num": 1,
+          "den": 2
+        },
+        "realized_interval": [
+          {
+            "num": 1,
+            "den": 4
+          },
+          {
+            "num": 1,
+            "den": 2
+          }
+        ],
+        "relations": [
+          "turn"
+        ],
+        "pre_state": {
+          "x": {
+            "num": 1,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 1,
+            "den": 1
+          },
+          "counter": {
+            "num": 1,
+            "den": 1
+          }
+        },
+        "post_state": {
+          "x": {
+            "num": 1,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 2,
+            "den": 1
+          },
+          "counter": {
+            "num": 11,
+            "den": 1
+          }
+        },
+        "pre_rates": {
+          "x": {
+            "num": 4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "post_rates": {
+          "x": {
+            "num": -4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "hinge_traces": {
+          "turn": {
+            "contributors": [
+              "turn"
+            ],
+            "profile": "ATOMOS-CERTIFIED-PLANE-CROSSING-R1",
+            "time": {
+              "num": 1,
+              "den": 2
+            },
+            "source_epoch": "sha256:6c93dc2135ac992640c5b294a441d5a2777ab9877b6efa7d4c385a6828ddb7cd",
+            "plane_seed_hash": "sha256:1630f8d6aaf08ae92e1f8c3935eba3955d138b48891c33f62887506a75cf7bb1",
+            "guard": {
+              "a": {
+                "num": 0,
+                "den": 1
+              },
+              "b": {
+                "num": 0,
+                "den": 1
+              },
+              "meaning": "a+b*phi, phi=(1+sqrt(5))/2"
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "pre_side": -1,
+            "post_side": 1,
+            "accepted_event": true,
+            "before": 0,
+            "drive": 0,
+            "x": 0,
+            "stages": [
+              {
+                "asa": 0,
+                "na": 0,
+                "hits": 0,
+                "output": 0
+              },
+              {
+                "asa": 0,
+                "na": 0,
+                "hits": 0,
+                "output": 0
+              }
+            ],
+            "output": 0,
+            "j": 0,
+            "k": 1,
+            "after": 0,
+            "orientation_before": 0,
+            "orientation_after": 0,
+            "seam_parity": 0,
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "is_sdf": true
+          }
+        },
+        "terminal": false,
+        "event": true,
+        "content_hash": "sha256:cf48c1be8864a9b9b0caf694d1f3618f72783a822daa97832f89ed22022ed7ce"
+      },
+      {
+        "profile": "ATOMOS-AFFINE-TRANSITION-R1",
+        "certificate_hash": "sha256:e7c59028772ee2099a8e2233dd3b4a1798111d47675b87c0a5da92c62c867bb2",
+        "from_epoch": "sha256:66d56c23e11638269c1f54b833165befed65a34088bbef9df4212446fb393911",
+        "to_epoch": "sha256:1dd54241f9efa1230abf7d4baa5fb43f7abb83a32f436e0635254eb7b7517469",
+        "time": {
+          "num": 3,
+          "den": 4
+        },
+        "realized_interval": [
+          {
+            "num": 1,
+            "den": 2
+          },
+          {
+            "num": 3,
+            "den": 4
+          }
+        ],
+        "relations": [
+          "exit"
+        ],
+        "pre_state": {
+          "x": {
+            "num": 0,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 2,
+            "den": 1
+          },
+          "counter": {
+            "num": 11,
+            "den": 1
+          }
+        },
+        "post_state": {
+          "x": {
+            "num": 0,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 3,
+            "den": 1
+          },
+          "counter": {
+            "num": 12,
+            "den": 1
+          }
+        },
+        "pre_rates": {
+          "x": {
+            "num": -4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "post_rates": {
+          "x": {
+            "num": -4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "hinge_traces": {
+          "zero": {
+            "contributors": [
+              "exit"
+            ],
+            "profile": "ATOMOS-CERTIFIED-PLANE-CROSSING-R1",
+            "time": {
+              "num": 3,
+              "den": 4
+            },
+            "source_epoch": "sha256:66d56c23e11638269c1f54b833165befed65a34088bbef9df4212446fb393911",
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "guard": {
+              "a": {
+                "num": 0,
+                "den": 1
+              },
+              "b": {
+                "num": 0,
+                "den": 1
+              },
+              "meaning": "a+b*phi, phi=(1+sqrt(5))/2"
+            },
+            "slope": {
+              "num": -4,
+              "den": 1
+            },
+            "pre_side": 1,
+            "post_side": -1,
+            "accepted_event": true,
+            "before": 0,
+            "drive": 1,
+            "x": 1,
+            "stages": [
+              {
+                "asa": 1,
+                "na": 1,
+                "hits": 0,
+                "output": 1
+              },
+              {
+                "asa": 1,
+                "na": 1,
+                "hits": 0,
+                "output": 1
+              }
+            ],
+            "output": 1,
+            "j": 1,
+            "k": 0,
+            "after": 1,
+            "orientation_before": 0,
+            "orientation_after": 0,
+            "seam_parity": 0,
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "is_sdf": true
+          }
+        },
+        "terminal": false,
+        "event": true,
+        "content_hash": "sha256:08962d055bdc54a5f90a27cd6adc6438825fe1ec78133b6ec18a62c2fcc6054e"
+      },
+      {
+        "profile": "ATOMOS-AFFINE-TRANSITION-R1",
+        "certificate_hash": "sha256:4d00151a7ffd232f8849e840698f09d73dbb8cb909d273e1bd33c2a5b173da50",
+        "from_epoch": "sha256:1dd54241f9efa1230abf7d4baa5fb43f7abb83a32f436e0635254eb7b7517469",
+        "to_epoch": "sha256:9a268c0410226a19d155f7bc1952ce753fd592a02515de122ab0e21099977053",
+        "time": {
+          "num": 1,
+          "den": 1
+        },
+        "realized_interval": [
+          {
+            "num": 3,
+            "den": 4
+          },
+          {
+            "num": 1,
+            "den": 1
+          }
+        ],
+        "relations": [],
+        "pre_state": {
+          "x": {
+            "num": -1,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 3,
+            "den": 1
+          },
+          "counter": {
+            "num": 12,
+            "den": 1
+          }
+        },
+        "post_state": {
+          "x": {
+            "num": -1,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 3,
+            "den": 1
+          },
+          "counter": {
+            "num": 12,
+            "den": 1
+          }
+        },
+        "pre_rates": {
+          "x": {
+            "num": -4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "post_rates": {
+          "x": {
+            "num": -4,
+            "den": 1
+          },
+          "y": {
+            "num": 0,
+            "den": 1
+          },
+          "z": {
+            "num": 0,
+            "den": 1
+          },
+          "mode": {
+            "num": 0,
+            "den": 1
+          },
+          "counter": {
+            "num": 0,
+            "den": 1
+          }
+        },
+        "hinge_traces": {},
+        "terminal": true,
+        "event": false,
+        "content_hash": "sha256:5f70d485db898150254db4bfccaeb41f390267361765e4c1da8b582e0d4f3bf5"
+      }
+    ],
+    "final_epoch": {
+      "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+      "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+      "kind": "terminal_state",
+      "sequence": 4,
+      "start": {
+        "num": 1,
+        "den": 1
+      },
+      "horizon": {
+        "num": 1,
+        "den": 1
+      },
+      "state": {
+        "x": {
+          "num": -1,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 3,
+          "den": 1
+        },
+        "counter": {
+          "num": 12,
+          "den": 1
+        }
+      },
+      "rates": {
+        "x": {
+          "num": -4,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 0,
+          "den": 1
+        },
+        "counter": {
+          "num": 0,
+          "den": 1
+        }
+      },
+      "fired_relations": [
+        "enter",
+        "exit",
+        "turn"
+      ],
+      "parent_epoch": "sha256:1dd54241f9efa1230abf7d4baa5fb43f7abb83a32f436e0635254eb7b7517469",
+      "source_certificate": "sha256:4d00151a7ffd232f8849e840698f09d73dbb8cb909d273e1bd33c2a5b173da50",
+      "hinge_states": {
+        "turn": {
+          "q": 0,
+          "orientation": 0,
+          "winding": 0,
+          "branch_parity": 1,
+          "last_side": 1,
+          "last_value": {
+            "a": {
+              "num": 0,
+              "den": 1
+            },
+            "b": {
+              "num": 0,
+              "den": 1
+            },
+            "meaning": "a+b*phi, phi=(1+sqrt(5))/2"
+          },
+          "step": 1,
+          "last_sequence": 1,
+          "events": [
+            {
+              "id": "sha256:9475d27541717f5a937ec1bf653fec9d6053098b4ee9f7193d874642ef0e0ebf:turn",
+              "request": "7b2263726f7373696e67223a747275652c2273616d706c65223a7b225f5f6365727469666965645f616666696e655f63726f7373696e675f5f223a7b2265706f6368223a7b2224726174223a5b2231222c2234225d7d2c226672616d65223a22776f726c64222c226f726967696e223a5b7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d2c22706c616e655f736565645f68617368223a227368613235363a31363330663864366161663038616539326531663863333933356562613339353564313338623438383931633333663632383837353036613735636637626231222c2270726f66696c65223a2241544f4d4f532d4345525449464945442d504c414e452d43524f5353494e472d5231222c22736f757263655f65706f6368223a227368613235363a36633933646332313335616339393236343063356232393461343431643561323737376162393837376236656661376434633338356136383238646462376364222c2274696d65223a7b2224726174223a5b2231222c2232225d7d2c2276656c6f63697479223a5b7b2224726174223a5b2234222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c22706f696e74223a5b7b2224726174223a5b2231222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c227365616d223a6e756c6c2c2273657175656e6365223a7b2224696e74223a2231227d7d"
+            }
+          ]
+        },
+        "zero": {
+          "q": 1,
+          "orientation": 0,
+          "winding": 0,
+          "branch_parity": 0,
+          "last_side": -1,
+          "last_value": {
+            "a": {
+              "num": 0,
+              "den": 1
+            },
+            "b": {
+              "num": 0,
+              "den": 1
+            },
+            "meaning": "a+b*phi, phi=(1+sqrt(5))/2"
+          },
+          "step": 2,
+          "last_sequence": 2,
+          "events": [
+            {
+              "id": "sha256:9e1dded88d1914783365cd2887ee486b5cca74f91788423d81a40084d318da72:zero",
+              "request": "7b2263726f7373696e67223a747275652c2273616d706c65223a7b225f5f6365727469666965645f616666696e655f63726f7373696e675f5f223a7b2265706f6368223a7b2224726174223a5b2230222c2231225d7d2c226672616d65223a22776f726c64222c226f726967696e223a5b7b2224726174223a5b222d31222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d2c22706c616e655f736565645f68617368223a227368613235363a34306537616239363564613465626233333062396331393932616166643566306531323538386632623666396666663932373461323131613535393032333766222c2270726f66696c65223a2241544f4d4f532d4345525449464945442d504c414e452d43524f5353494e472d5231222c22736f757263655f65706f6368223a227368613235363a38643864636363333539323762333666663766616531336638366632393433656165353133636566323865613035633932306630306563386437323439643338222c2274696d65223a7b2224726174223a5b2231222c2234225d7d2c2276656c6f63697479223a5b7b2224726174223a5b2234222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c22706f696e74223a5b7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c227365616d223a6e756c6c2c2273657175656e6365223a7b2224696e74223a2230227d7d"
+            },
+            {
+              "id": "sha256:e7c59028772ee2099a8e2233dd3b4a1798111d47675b87c0a5da92c62c867bb2:zero",
+              "request": "7b2263726f7373696e67223a747275652c2273616d706c65223a7b225f5f6365727469666965645f616666696e655f63726f7373696e675f5f223a7b2265706f6368223a7b2224726174223a5b2231222c2232225d7d2c226672616d65223a22776f726c64222c226f726967696e223a5b7b2224726174223a5b2231222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d2c22706c616e655f736565645f68617368223a227368613235363a34306537616239363564613465626233333062396331393932616166643566306531323538386632623666396666663932373461323131613535393032333766222c2270726f66696c65223a2241544f4d4f532d4345525449464945442d504c414e452d43524f5353494e472d5231222c22736f757263655f65706f6368223a227368613235363a36366435366332336531313633383236396331663534623833333136356265666564363561333430383862626566396466343231323434366662333933393131222c2274696d65223a7b2224726174223a5b2233222c2234225d7d2c2276656c6f63697479223a5b7b2224726174223a5b222d34222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c22706f696e74223a5b7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c227365616d223a6e756c6c2c2273657175656e6365223a7b2224696e74223a2232227d7d"
+            }
+          ]
+        }
+      },
+      "content_hash": "sha256:9a268c0410226a19d155f7bc1952ce753fd592a02515de122ab0e21099977053"
+    },
+    "packed_bytes": 23088,
+    "packed_sha256": "73bc9efdf8ab2531abbf43e20bea4b81b83525d2ca196ee256ffd44e9e7cce0f"
+  },
+  "horizon_event": {
+    "input": {
+      "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+      "frame": "world",
+      "time_convention": "local elapsed SI seconds",
+      "horizon": [
+        0,
+        1
+      ],
+      "max_event_sets": 16,
+      "fields": {
+        "x": {
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": -1,
+          "rate": 1
+        },
+        "y": {
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        },
+        "z": {
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        },
+        "mode": {
+          "dimension": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        },
+        "counter": {
+          "dimension": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "initial": 0,
+          "rate": 0
+        }
+      },
+      "hinges": {
+        "zero": {
+          "profile": "ATOMOS-HINGE-R1",
+          "width": 8,
+          "present": 255,
+          "q0": 0,
+          "nodes": [
+            {
+              "id": "point",
+              "op": "input",
+              "key": "point",
+              "type": {
+                "kind": "vec3",
+                "dim": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "frame": "world"
+              }
+            },
+            {
+              "id": "normal",
+              "op": "literal",
+              "value": [
+                1,
+                0,
+                0
+              ],
+              "type": {
+                "kind": "vec3",
+                "dim": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "frame": "world"
+              }
+            },
+            {
+              "id": "offset",
+              "op": "literal",
+              "value": 0,
+              "type": {
+                "kind": "scalar",
+                "dim": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "id": "guard",
+              "op": "plane_guard",
+              "args": [
+                "point",
+                "normal",
+                "offset"
+              ]
+            }
+          ],
+          "guard": "guard",
+          "drive_lane": 0,
+          "seam_lane": null,
+          "masks": [
+            {
+              "asa": 255,
+              "na": 255,
+              "boundary": 0
+            },
+            {
+              "asa": 255,
+              "na": 255,
+              "boundary": 0
+            }
+          ],
+          "equations": {
+            "x": "d",
+            "j": [
+              "and",
+              "e",
+              "y"
+            ],
+            "k": [
+              "and",
+              "e",
+              [
+                "not",
+                "y"
+              ]
+            ]
+          },
+          "boundary": "hold",
+          "pulse_on_first": false,
+          "provenance": {
+            "meaning": "exact nominal coordinates; no physical calibration inferred"
+          }
+        }
+      },
+      "relations": [
+        {
+          "id": "at_horizon",
+          "hinge": "zero",
+          "point_fields": [
+            "x",
+            "y",
+            "z"
+          ],
+          "active": [
+            0,
+            1
+          ],
+          "priority": 0,
+          "equals": {},
+          "support": {},
+          "state_updates": [
+            {
+              "field": "counter",
+              "op": "set",
+              "value": 3
+            }
+          ],
+          "rate_updates": []
+        }
+      ]
+    },
+    "certificate": {
+      "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+      "profile_hash": "sha256:6dbb0571d384baf212a6b796c0b70268c8cb21edf2049f82ece279f0985d9591",
+      "epoch_hash": "sha256:c1fbab7ef8d7c36d8f46146b498b5f110d925f9e1b8c988356e11bbb77cb9018",
+      "epoch_sequence": 0,
+      "after_exclusive": {
+        "num": 0,
+        "den": 1
+      },
+      "before_inclusive": {
+        "num": 1,
+        "den": 1
+      },
+      "status": "EVENT",
+      "event_time": {
+        "num": 1,
+        "den": 1
+      },
+      "events": [
+        {
+          "relation": "at_horizon",
+          "hinge": "zero",
+          "priority": 0,
+          "point_fields": [
+            "x",
+            "y",
+            "z"
+          ],
+          "root": {
+            "num": 1,
+            "den": 1
+          },
+          "slope": {
+            "num": 1,
+            "den": 1
+          },
+          "value_at_epoch_start": {
+            "num": -1,
+            "den": 1
+          },
+          "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+          "origin": [
+            {
+              "num": -1,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            }
+          ],
+          "velocity": [
+            {
+              "num": 1,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            }
+          ],
+          "point_at_root": [
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            }
+          ],
+          "pre_side_raw": -1,
+          "post_side_raw": 1
+        }
+      ],
+      "all_candidates": [
+        {
+          "relation": "at_horizon",
+          "hinge": "zero",
+          "priority": 0,
+          "point_fields": [
+            "x",
+            "y",
+            "z"
+          ],
+          "root": {
+            "num": 1,
+            "den": 1
+          },
+          "slope": {
+            "num": 1,
+            "den": 1
+          },
+          "value_at_epoch_start": {
+            "num": -1,
+            "den": 1
+          },
+          "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+          "origin": [
+            {
+              "num": -1,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            }
+          ],
+          "velocity": [
+            {
+              "num": 1,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            }
+          ],
+          "point_at_root": [
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            },
+            {
+              "num": 0,
+              "den": 1
+            }
+          ],
+          "pre_side_raw": -1,
+          "post_side_raw": 1
+        }
+      ],
+      "ordering": [
+        "exact_root",
+        "priority",
+        "relation_identity"
+      ],
+      "content_hash": "sha256:0559b78243c7a86afa1453972b1d9dcd561a0d4eab874e3dd13337a1e47246c2"
+    },
+    "transition": {
+      "profile": "ATOMOS-AFFINE-TRANSITION-R1",
+      "certificate_hash": "sha256:0559b78243c7a86afa1453972b1d9dcd561a0d4eab874e3dd13337a1e47246c2",
+      "from_epoch": "sha256:c1fbab7ef8d7c36d8f46146b498b5f110d925f9e1b8c988356e11bbb77cb9018",
+      "to_epoch": "sha256:02bce5d9f61e15a80865e29b19313defea224b60910e8405e3dcc890ccfdefc6",
+      "time": {
+        "num": 1,
+        "den": 1
+      },
+      "realized_interval": [
+        {
+          "num": 0,
+          "den": 1
+        },
+        {
+          "num": 1,
+          "den": 1
+        }
+      ],
+      "relations": [
+        "at_horizon"
+      ],
+      "pre_state": {
+        "x": {
+          "num": 0,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 0,
+          "den": 1
+        },
+        "counter": {
+          "num": 0,
+          "den": 1
+        }
+      },
+      "post_state": {
+        "x": {
+          "num": 0,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 0,
+          "den": 1
+        },
+        "counter": {
+          "num": 3,
+          "den": 1
+        }
+      },
+      "pre_rates": {
+        "x": {
+          "num": 1,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 0,
+          "den": 1
+        },
+        "counter": {
+          "num": 0,
+          "den": 1
+        }
+      },
+      "post_rates": {
+        "x": {
+          "num": 1,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 0,
+          "den": 1
+        },
+        "counter": {
+          "num": 0,
+          "den": 1
+        }
+      },
+      "hinge_traces": {
+        "zero": {
+          "contributors": [
+            "at_horizon"
+          ],
+          "profile": "ATOMOS-CERTIFIED-PLANE-CROSSING-R1",
+          "time": {
+            "num": 1,
+            "den": 1
+          },
+          "source_epoch": "sha256:c1fbab7ef8d7c36d8f46146b498b5f110d925f9e1b8c988356e11bbb77cb9018",
+          "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+          "guard": {
+            "a": {
+              "num": 0,
+              "den": 1
+            },
+            "b": {
+              "num": 0,
+              "den": 1
+            },
+            "meaning": "a+b*phi, phi=(1+sqrt(5))/2"
+          },
+          "slope": {
+            "num": 1,
+            "den": 1
+          },
+          "pre_side": -1,
+          "post_side": 1,
+          "accepted_event": true,
+          "before": 0,
+          "drive": 0,
+          "x": 0,
+          "stages": [
+            {
+              "asa": 0,
+              "na": 0,
+              "hits": 0,
+              "output": 0
+            },
+            {
+              "asa": 0,
+              "na": 0,
+              "hits": 0,
+              "output": 0
+            }
+          ],
+          "output": 0,
+          "j": 0,
+          "k": 1,
+          "after": 0,
+          "orientation_before": 0,
+          "orientation_after": 0,
+          "seam_parity": 0,
+          "dimension": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "is_sdf": true
+        }
+      },
+      "terminal": true,
+      "event": true,
+      "content_hash": "sha256:aaf9762799ebb4a18259f7ef34b86e575da77788630dcd65fbe68eb40fad0581"
+    },
+    "final_epoch": {
+      "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+      "profile_hash": "sha256:6dbb0571d384baf212a6b796c0b70268c8cb21edf2049f82ece279f0985d9591",
+      "kind": "terminal_state",
+      "sequence": 1,
+      "start": {
+        "num": 1,
+        "den": 1
+      },
+      "horizon": {
+        "num": 1,
+        "den": 1
+      },
+      "state": {
+        "x": {
+          "num": 0,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 0,
+          "den": 1
+        },
+        "counter": {
+          "num": 3,
+          "den": 1
+        }
+      },
+      "rates": {
+        "x": {
+          "num": 1,
+          "den": 1
+        },
+        "y": {
+          "num": 0,
+          "den": 1
+        },
+        "z": {
+          "num": 0,
+          "den": 1
+        },
+        "mode": {
+          "num": 0,
+          "den": 1
+        },
+        "counter": {
+          "num": 0,
+          "den": 1
+        }
+      },
+      "fired_relations": [
+        "at_horizon"
+      ],
+      "parent_epoch": "sha256:c1fbab7ef8d7c36d8f46146b498b5f110d925f9e1b8c988356e11bbb77cb9018",
+      "source_certificate": "sha256:0559b78243c7a86afa1453972b1d9dcd561a0d4eab874e3dd13337a1e47246c2",
+      "hinge_states": {
+        "zero": {
+          "q": 0,
+          "orientation": 0,
+          "winding": 0,
+          "branch_parity": 1,
+          "last_side": 1,
+          "last_value": {
+            "a": {
+              "num": 0,
+              "den": 1
+            },
+            "b": {
+              "num": 0,
+              "den": 1
+            },
+            "meaning": "a+b*phi, phi=(1+sqrt(5))/2"
+          },
+          "step": 1,
+          "last_sequence": 0,
+          "events": [
+            {
+              "id": "sha256:0559b78243c7a86afa1453972b1d9dcd561a0d4eab874e3dd13337a1e47246c2:zero",
+              "request": "7b2263726f7373696e67223a747275652c2273616d706c65223a7b225f5f6365727469666965645f616666696e655f63726f7373696e675f5f223a7b2265706f6368223a7b2224726174223a5b2230222c2231225d7d2c226672616d65223a22776f726c64222c226f726967696e223a5b7b2224726174223a5b222d31222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d2c22706c616e655f736565645f68617368223a227368613235363a65613033353461653761376235663235363433353635666236643666636164353539313637396263346263623766646534613032313565623264386261303031222c2270726f66696c65223a2241544f4d4f532d4345525449464945442d504c414e452d43524f5353494e472d5231222c22736f757263655f65706f6368223a227368613235363a63316662616237656638643763333664386634363134366234393862356631313064393235663965316238633938383335366531316262623737636239303138222c2274696d65223a7b2224726174223a5b2231222c2231225d7d2c2276656c6f63697479223a5b7b2224726174223a5b2231222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c22706f696e74223a5b7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d2c7b2224726174223a5b2230222c2231225d7d5d7d2c227365616d223a6e756c6c2c2273657175656e6365223a7b2224696e74223a2230227d7d"
+            }
+          ]
+        }
+      },
+      "content_hash": "sha256:02bce5d9f61e15a80865e29b19313defea224b60910e8405e3dcc890ccfdefc6"
+    }
+  },
+  "adversarial_rejections": [
+    {
+      "name": "rehashed false root",
+      "input": {
+        "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+        "frame": "world",
+        "time_convention": "local elapsed SI seconds",
+        "horizon": [
+          0,
+          1
+        ],
+        "max_event_sets": 16,
+        "fields": {
+          "x": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": -1,
+            "rate": 4
+          },
+          "y": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "z": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "mode": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "counter": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          }
+        },
+        "hinges": {
+          "zero": {
+            "profile": "ATOMOS-HINGE-R1",
+            "width": 8,
+            "present": 255,
+            "q0": 1,
+            "nodes": [
+              {
+                "id": "point",
+                "op": "input",
+                "key": "point",
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "normal",
+                "op": "literal",
+                "value": [
+                  1,
+                  0,
+                  0
+                ],
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "offset",
+                "op": "literal",
+                "value": 0,
+                "type": {
+                  "kind": "scalar",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "id": "guard",
+                "op": "plane_guard",
+                "args": [
+                  "point",
+                  "normal",
+                  "offset"
+                ]
+              }
+            ],
+            "guard": "guard",
+            "drive_lane": 0,
+            "seam_lane": null,
+            "masks": [
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              },
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              }
+            ],
+            "equations": {
+              "x": "d",
+              "j": [
+                "and",
+                "e",
+                "y"
+              ],
+              "k": [
+                "and",
+                "e",
+                [
+                  "not",
+                  "y"
+                ]
+              ]
+            },
+            "boundary": "hold",
+            "pulse_on_first": false,
+            "provenance": {
+              "meaning": "exact nominal coordinates; no physical calibration inferred"
+            }
+          },
+          "turn": {
+            "profile": "ATOMOS-HINGE-R1",
+            "width": 8,
+            "present": 255,
+            "q0": 0,
+            "nodes": [
+              {
+                "id": "point",
+                "op": "input",
+                "key": "point",
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "normal",
+                "op": "literal",
+                "value": [
+                  1,
+                  0,
+                  0
+                ],
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "offset",
+                "op": "literal",
+                "value": 1,
+                "type": {
+                  "kind": "scalar",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "id": "guard",
+                "op": "plane_guard",
+                "args": [
+                  "point",
+                  "normal",
+                  "offset"
+                ]
+              }
+            ],
+            "guard": "guard",
+            "drive_lane": 0,
+            "seam_lane": null,
+            "masks": [
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              },
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              }
+            ],
+            "equations": {
+              "x": "d",
+              "j": [
+                "and",
+                "e",
+                "y"
+              ],
+              "k": [
+                "and",
+                "e",
+                [
+                  "not",
+                  "y"
+                ]
+              ]
+            },
+            "boundary": "hold",
+            "pulse_on_first": false,
+            "provenance": {
+              "meaning": "exact nominal coordinates; no physical calibration inferred"
+            }
+          }
+        },
+        "relations": [
+          {
+            "id": "enter",
+            "hinge": "zero",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {
+              "mode": 0
+            },
+            "support": {},
+            "state_updates": [
+              {
+                "field": "mode",
+                "op": "set",
+                "value": 1
+              },
+              {
+                "field": "counter",
+                "op": "add",
+                "value": 1
+              }
+            ],
+            "rate_updates": []
+          },
+          {
+            "id": "turn",
+            "hinge": "turn",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {
+              "mode": 1
+            },
+            "support": {},
+            "state_updates": [
+              {
+                "field": "mode",
+                "op": "set",
+                "value": 2
+              },
+              {
+                "field": "counter",
+                "op": "add",
+                "value": 10
+              }
+            ],
+            "rate_updates": [
+              {
+                "field": "x",
+                "op": "set",
+                "value": -4
+              }
+            ]
+          },
+          {
+            "id": "exit",
+            "hinge": "zero",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {
+              "mode": 2
+            },
+            "support": {},
+            "state_updates": [
+              {
+                "field": "mode",
+                "op": "set",
+                "value": 3
+              },
+              {
+                "field": "counter",
+                "op": "add",
+                "value": 1
+              }
+            ],
+            "rate_updates": []
+          }
+        ]
+      },
+      "original": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:8d8dccc35927b36ff7fae13f86f2943eae513cef28ea05c920f00ec8d7249d38",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 4
+        },
+        "events": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:9e1dded88d1914783365cd2887ee486b5cca74f91788423d81a40084d318da72"
+      },
+      "submitted_with_valid_new_receipt": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:8d8dccc35927b36ff7fae13f86f2943eae513cef28ea05c920f00ec8d7249d38",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 3
+        },
+        "events": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 3
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 3
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:e14e52a8792ce41f2734549cda248a79b712f56b410a35d330bf4927693c5285"
+      },
+      "status": "INVALID",
+      "reason": "certificate is not the complete earliest event set of the current epoch",
+      "unchanged_packed_sha256": "ebc1d20c9176e5dd208ab2c176cedf58955800c8b65295d7e8e2875ba3832e13"
+    },
+    {
+      "name": "omitted earlier root",
+      "input": {
+        "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+        "frame": "world",
+        "time_convention": "local elapsed SI seconds",
+        "horizon": [
+          0,
+          1
+        ],
+        "max_event_sets": 16,
+        "fields": {
+          "x": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": -1,
+            "rate": 4
+          },
+          "y": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "z": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "mode": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "counter": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          }
+        },
+        "hinges": {
+          "zero": {
+            "profile": "ATOMOS-HINGE-R1",
+            "width": 8,
+            "present": 255,
+            "q0": 0,
+            "nodes": [
+              {
+                "id": "point",
+                "op": "input",
+                "key": "point",
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "normal",
+                "op": "literal",
+                "value": [
+                  1,
+                  0,
+                  0
+                ],
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "offset",
+                "op": "literal",
+                "value": 0,
+                "type": {
+                  "kind": "scalar",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "id": "guard",
+                "op": "plane_guard",
+                "args": [
+                  "point",
+                  "normal",
+                  "offset"
+                ]
+              }
+            ],
+            "guard": "guard",
+            "drive_lane": 0,
+            "seam_lane": null,
+            "masks": [
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              },
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              }
+            ],
+            "equations": {
+              "x": "d",
+              "j": [
+                "and",
+                "e",
+                "y"
+              ],
+              "k": [
+                "and",
+                "e",
+                [
+                  "not",
+                  "y"
+                ]
+              ]
+            },
+            "boundary": "hold",
+            "pulse_on_first": false,
+            "provenance": {
+              "meaning": "exact nominal coordinates; no physical calibration inferred"
+            }
+          },
+          "later": {
+            "profile": "ATOMOS-HINGE-R1",
+            "width": 8,
+            "present": 255,
+            "q0": 0,
+            "nodes": [
+              {
+                "id": "point",
+                "op": "input",
+                "key": "point",
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "normal",
+                "op": "literal",
+                "value": [
+                  1,
+                  0,
+                  0
+                ],
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "offset",
+                "op": "literal",
+                "value": 1,
+                "type": {
+                  "kind": "scalar",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "id": "guard",
+                "op": "plane_guard",
+                "args": [
+                  "point",
+                  "normal",
+                  "offset"
+                ]
+              }
+            ],
+            "guard": "guard",
+            "drive_lane": 0,
+            "seam_lane": null,
+            "masks": [
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              },
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              }
+            ],
+            "equations": {
+              "x": "d",
+              "j": [
+                "and",
+                "e",
+                "y"
+              ],
+              "k": [
+                "and",
+                "e",
+                [
+                  "not",
+                  "y"
+                ]
+              ]
+            },
+            "boundary": "hold",
+            "pulse_on_first": false,
+            "provenance": {
+              "meaning": "exact nominal coordinates; no physical calibration inferred"
+            }
+          }
+        },
+        "relations": [
+          {
+            "id": "earlier",
+            "hinge": "zero",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {},
+            "support": {},
+            "state_updates": [],
+            "rate_updates": []
+          },
+          {
+            "id": "later",
+            "hinge": "later",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {},
+            "support": {},
+            "state_updates": [],
+            "rate_updates": []
+          }
+        ]
+      },
+      "original": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:ef513a96c570aa282565ef6fb2fc8525d7f354ef71569ae683adad172079228a",
+        "epoch_hash": "sha256:d36a0599a18bba1682b200038742ab2b2188304f7e755dc786e2e84b545d9da5",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 4
+        },
+        "events": [
+          {
+            "relation": "earlier",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "earlier",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          },
+          {
+            "relation": "later",
+            "hinge": "later",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 2
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -2,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:1630f8d6aaf08ae92e1f8c3935eba3955d138b48891c33f62887506a75cf7bb1",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:16a8243c6f1da2c649d0636ccff6a1ab20b76c89fc9d8b73ee158e26a040be07"
+      },
+      "submitted_with_valid_new_receipt": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:ef513a96c570aa282565ef6fb2fc8525d7f354ef71569ae683adad172079228a",
+        "epoch_hash": "sha256:d36a0599a18bba1682b200038742ab2b2188304f7e755dc786e2e84b545d9da5",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 2
+        },
+        "events": [
+          {
+            "relation": "later",
+            "hinge": "later",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 2
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -2,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:1630f8d6aaf08ae92e1f8c3935eba3955d138b48891c33f62887506a75cf7bb1",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "later",
+            "hinge": "later",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 2
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -2,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:1630f8d6aaf08ae92e1f8c3935eba3955d138b48891c33f62887506a75cf7bb1",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:5b075bd5608014a91b54ab20af29399ad0cf3c2363edbe333f89ca9177f92c26"
+      },
+      "status": "INVALID",
+      "reason": "certificate is not the complete earliest event set of the current epoch",
+      "unchanged_packed_sha256": "ccb9f0c489b3b4e51c001ae8f015cbdb4c24c832265d877608ce1b725d596737"
+    },
+    {
+      "name": "incomplete simultaneous set",
+      "input": {
+        "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+        "frame": "world",
+        "time_convention": "local elapsed SI seconds",
+        "horizon": [
+          0,
+          1
+        ],
+        "max_event_sets": 16,
+        "fields": {
+          "x": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": -1,
+            "rate": 4
+          },
+          "y": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "z": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "mode": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "counter": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          }
+        },
+        "hinges": {
+          "zero": {
+            "profile": "ATOMOS-HINGE-R1",
+            "width": 8,
+            "present": 255,
+            "q0": 0,
+            "nodes": [
+              {
+                "id": "point",
+                "op": "input",
+                "key": "point",
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "normal",
+                "op": "literal",
+                "value": [
+                  1,
+                  0,
+                  0
+                ],
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "offset",
+                "op": "literal",
+                "value": 0,
+                "type": {
+                  "kind": "scalar",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "id": "guard",
+                "op": "plane_guard",
+                "args": [
+                  "point",
+                  "normal",
+                  "offset"
+                ]
+              }
+            ],
+            "guard": "guard",
+            "drive_lane": 0,
+            "seam_lane": null,
+            "masks": [
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              },
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              }
+            ],
+            "equations": {
+              "x": "d",
+              "j": [
+                "and",
+                "e",
+                "y"
+              ],
+              "k": [
+                "and",
+                "e",
+                [
+                  "not",
+                  "y"
+                ]
+              ]
+            },
+            "boundary": "hold",
+            "pulse_on_first": false,
+            "provenance": {
+              "meaning": "exact nominal coordinates; no physical calibration inferred"
+            }
+          }
+        },
+        "relations": [
+          {
+            "id": "left",
+            "hinge": "zero",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {},
+            "support": {},
+            "state_updates": [],
+            "rate_updates": []
+          },
+          {
+            "id": "right",
+            "hinge": "zero",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {},
+            "support": {},
+            "state_updates": [],
+            "rate_updates": []
+          }
+        ]
+      },
+      "original": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:eca1c410aecdfe010c558cf73d77ed390cf81fbbb9d418bc32c6d9ed0930ce41",
+        "epoch_hash": "sha256:dfcb287e04bd286302c533e26f2acbd6d1553526c8b3594fd44796897ae1b939",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 4
+        },
+        "events": [
+          {
+            "relation": "left",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          },
+          {
+            "relation": "right",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "left",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          },
+          {
+            "relation": "right",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:e26176ade3231f32c8d409aa7adad3821e76dea447f9a5e3cc0aad8dc1039579"
+      },
+      "submitted_with_valid_new_receipt": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:eca1c410aecdfe010c558cf73d77ed390cf81fbbb9d418bc32c6d9ed0930ce41",
+        "epoch_hash": "sha256:dfcb287e04bd286302c533e26f2acbd6d1553526c8b3594fd44796897ae1b939",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 4
+        },
+        "events": [
+          {
+            "relation": "left",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "left",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:ea0354ae7a7b5f25643565fb6d6fcad5591679bc4bcb7fde4a0215eb2d8ba001",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:b0a2c0c2d710f8be5b6e9ebba6968f364ffe54224c09a325e85a69f3fa641265"
+      },
+      "status": "INVALID",
+      "reason": "certificate is not the complete earliest event set of the current epoch",
+      "unchanged_packed_sha256": "6ea16d3fbf20e8228d2e42aeffe92d420fb2565af75faec21934e0bb73281bb8"
+    },
+    {
+      "name": "false event-free horizon",
+      "input": {
+        "profile": "ATOMOS-EXACT-AFFINE-EVENTS-R1",
+        "frame": "world",
+        "time_convention": "local elapsed SI seconds",
+        "horizon": [
+          0,
+          1
+        ],
+        "max_event_sets": 16,
+        "fields": {
+          "x": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": -1,
+            "rate": 4
+          },
+          "y": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "z": {
+            "dimension": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "mode": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          },
+          "counter": {
+            "dimension": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "initial": 0,
+            "rate": 0
+          }
+        },
+        "hinges": {
+          "zero": {
+            "profile": "ATOMOS-HINGE-R1",
+            "width": 8,
+            "present": 255,
+            "q0": 1,
+            "nodes": [
+              {
+                "id": "point",
+                "op": "input",
+                "key": "point",
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "normal",
+                "op": "literal",
+                "value": [
+                  1,
+                  0,
+                  0
+                ],
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "offset",
+                "op": "literal",
+                "value": 0,
+                "type": {
+                  "kind": "scalar",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "id": "guard",
+                "op": "plane_guard",
+                "args": [
+                  "point",
+                  "normal",
+                  "offset"
+                ]
+              }
+            ],
+            "guard": "guard",
+            "drive_lane": 0,
+            "seam_lane": null,
+            "masks": [
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              },
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              }
+            ],
+            "equations": {
+              "x": "d",
+              "j": [
+                "and",
+                "e",
+                "y"
+              ],
+              "k": [
+                "and",
+                "e",
+                [
+                  "not",
+                  "y"
+                ]
+              ]
+            },
+            "boundary": "hold",
+            "pulse_on_first": false,
+            "provenance": {
+              "meaning": "exact nominal coordinates; no physical calibration inferred"
+            }
+          },
+          "turn": {
+            "profile": "ATOMOS-HINGE-R1",
+            "width": 8,
+            "present": 255,
+            "q0": 0,
+            "nodes": [
+              {
+                "id": "point",
+                "op": "input",
+                "key": "point",
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "normal",
+                "op": "literal",
+                "value": [
+                  1,
+                  0,
+                  0
+                ],
+                "type": {
+                  "kind": "vec3",
+                  "dim": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "frame": "world"
+                }
+              },
+              {
+                "id": "offset",
+                "op": "literal",
+                "value": 1,
+                "type": {
+                  "kind": "scalar",
+                  "dim": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              },
+              {
+                "id": "guard",
+                "op": "plane_guard",
+                "args": [
+                  "point",
+                  "normal",
+                  "offset"
+                ]
+              }
+            ],
+            "guard": "guard",
+            "drive_lane": 0,
+            "seam_lane": null,
+            "masks": [
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              },
+              {
+                "asa": 255,
+                "na": 255,
+                "boundary": 0
+              }
+            ],
+            "equations": {
+              "x": "d",
+              "j": [
+                "and",
+                "e",
+                "y"
+              ],
+              "k": [
+                "and",
+                "e",
+                [
+                  "not",
+                  "y"
+                ]
+              ]
+            },
+            "boundary": "hold",
+            "pulse_on_first": false,
+            "provenance": {
+              "meaning": "exact nominal coordinates; no physical calibration inferred"
+            }
+          }
+        },
+        "relations": [
+          {
+            "id": "enter",
+            "hinge": "zero",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {
+              "mode": 0
+            },
+            "support": {},
+            "state_updates": [
+              {
+                "field": "mode",
+                "op": "set",
+                "value": 1
+              },
+              {
+                "field": "counter",
+                "op": "add",
+                "value": 1
+              }
+            ],
+            "rate_updates": []
+          },
+          {
+            "id": "turn",
+            "hinge": "turn",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {
+              "mode": 1
+            },
+            "support": {},
+            "state_updates": [
+              {
+                "field": "mode",
+                "op": "set",
+                "value": 2
+              },
+              {
+                "field": "counter",
+                "op": "add",
+                "value": 10
+              }
+            ],
+            "rate_updates": [
+              {
+                "field": "x",
+                "op": "set",
+                "value": -4
+              }
+            ]
+          },
+          {
+            "id": "exit",
+            "hinge": "zero",
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "active": [
+              0,
+              1
+            ],
+            "priority": 0,
+            "equals": {
+              "mode": 2
+            },
+            "support": {},
+            "state_updates": [
+              {
+                "field": "mode",
+                "op": "set",
+                "value": 3
+              },
+              {
+                "field": "counter",
+                "op": "add",
+                "value": 1
+              }
+            ],
+            "rate_updates": []
+          }
+        ]
+      },
+      "original": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:8d8dccc35927b36ff7fae13f86f2943eae513cef28ea05c920f00ec8d7249d38",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "EVENT",
+        "event_time": {
+          "num": 1,
+          "den": 4
+        },
+        "events": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "all_candidates": [
+          {
+            "relation": "enter",
+            "hinge": "zero",
+            "priority": 0,
+            "point_fields": [
+              "x",
+              "y",
+              "z"
+            ],
+            "root": {
+              "num": 1,
+              "den": 4
+            },
+            "slope": {
+              "num": 4,
+              "den": 1
+            },
+            "value_at_epoch_start": {
+              "num": -1,
+              "den": 1
+            },
+            "plane_seed_hash": "sha256:40e7ab965da4ebb330b9c1992aafd5f0e12588f2b6f9fff9274a211a5590237f",
+            "origin": [
+              {
+                "num": -1,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "velocity": [
+              {
+                "num": 4,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "point_at_root": [
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              },
+              {
+                "num": 0,
+                "den": 1
+              }
+            ],
+            "pre_side_raw": -1,
+            "post_side_raw": 1
+          }
+        ],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:9e1dded88d1914783365cd2887ee486b5cca74f91788423d81a40084d318da72"
+      },
+      "submitted_with_valid_new_receipt": {
+        "profile": "ATOMOS-AFFINE-EVENT-CERTIFICATE-R1",
+        "profile_hash": "sha256:f132bc4ce98d00d370f708afd220b26da4e9882839a42f9d5f30766ce8761edf",
+        "epoch_hash": "sha256:8d8dccc35927b36ff7fae13f86f2943eae513cef28ea05c920f00ec8d7249d38",
+        "epoch_sequence": 0,
+        "after_exclusive": {
+          "num": 0,
+          "den": 1
+        },
+        "before_inclusive": {
+          "num": 1,
+          "den": 1
+        },
+        "status": "NONE",
+        "event_time": null,
+        "events": [],
+        "all_candidates": [],
+        "ordering": [
+          "exact_root",
+          "priority",
+          "relation_identity"
+        ],
+        "content_hash": "sha256:71253e84eb0d4b26d478d8a257df253d7ebca0a5d554308fedffd82556643b92"
+      },
+      "status": "INVALID",
+      "reason": "certificate is not the complete earliest event set of the current epoch",
+      "unchanged_packed_sha256": "ebc1d20c9176e5dd208ab2c176cedf58955800c8b65295d7e8e2875ba3832e13"
+    }
+  ],
+  "missing_session_certificate": {
+    "removed_receipt": "sha256:9e1dded88d1914783365cd2887ee486b5cca74f91788423d81a40084d318da72",
+    "submitted_packed_bytes": 21040,
+    "submitted_packed_sha256": "a2356ea17a4251c074cc0a60a203798403f0589c04ac12e67e2c4382fd2a85a9",
+    "status": "REJECTED",
+    "reason": "session semantic replay failed: INVALID: certificate is not the complete earliest event set of the current epoch"
+  },
+  "check_count": 36
+}

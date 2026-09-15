@@ -1,0 +1,99 @@
+Start testing: Sep 15 12:54 W. Europe Daylight Time
+----------------------------------------------------------
+1/6 Testing: spatial_exact_queries
+1/6 Test: spatial_exact_queries
+Command: "C:/aTOMosBuild/r15cuda/Release/spatial_index_tests.exe"
+Directory: C:/aTOMosBuild/r15cuda
+"spatial_exact_queries" start time: Sep 15 12:54 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+spatial_index_tests: PASS (37837 checks)
+<end of output>
+Test time =   1.26 sec
+----------------------------------------------------------
+Test Passed.
+"spatial_exact_queries" end time: Sep 15 12:54 W. Europe Daylight Time
+"spatial_exact_queries" time elapsed: 00:00:01
+----------------------------------------------------------
+
+2/6 Testing: native_texture_hinges
+2/6 Test: native_texture_hinges
+Command: "C:/aTOMosBuild/r15cuda/Release/texture_tests.exe"
+Directory: C:/aTOMosBuild/r15cuda
+"native_texture_hinges" start time: Sep 15 12:54 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+PASS: texture bit-plane expansion, 512 exact radius queries, global parity, overflow, hinge events and profile identity
+<end of output>
+Test time =   2.65 sec
+----------------------------------------------------------
+Test Passed.
+"native_texture_hinges" end time: Sep 15 12:54 W. Europe Daylight Time
+"native_texture_hinges" time elapsed: 00:00:02
+----------------------------------------------------------
+
+3/6 Testing: native_exact_phi_program
+3/6 Test: native_exact_phi_program
+Command: "C:/aTOMosBuild/r15cuda/Release/exact_program_tests.exe"
+Directory: C:/aTOMosBuild/r15cuda
+"native_exact_phi_program" start time: Sep 15 12:54 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+exact_program_tests: 135 assertions passed on CUDA
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"native_exact_phi_program" end time: Sep 15 12:54 W. Europe Daylight Time
+"native_exact_phi_program" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: packed_operator_hinge_integration
+4/6 Test: packed_operator_hinge_integration
+Command: "C:/aTOMosBuild/r15cuda/Release/engine_demo.exe"
+Directory: C:/aTOMosBuild/r15cuda
+"packed_operator_hinge_integration" start time: Sep 15 12:54 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+{"profile":"R15-PACKED-OPERATOR-HINGE","seed_words":104,"word_roundtrip_equal":true,"events":[{"sample":0,"guard_status":0,"sign":-1,"accepted_crossing":false,"q":0,"parity":0,"orientation":0},{"sample":1,"guard_status":0,"sign":1,"accepted_crossing":true,"q":1,"parity":1,"orientation":0},{"sample":2,"guard_status":1,"sign":0,"accepted_crossing":false,"q":1,"parity":1,"orientation":0},{"sample":3,"guard_status":2,"sign":0,"accepted_crossing":false,"q":1,"parity":1,"orientation":0},{"sample":4,"guard_status":0,"sign":-1,"accepted_crossing":true,"q":0,"parity":0,"orientation":0}],"accepted_events":2,"passed":true}
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"packed_operator_hinge_integration" end time: Sep 15 12:54 W. Europe Daylight Time
+"packed_operator_hinge_integration" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: native_resident_feedback
+5/6 Test: native_resident_feedback
+Command: "C:/aTOMosBuild/r15cuda/Release/resident_feedback_tests.exe"
+Directory: C:/aTOMosBuild/r15cuda
+"native_resident_feedback" start time: Sep 15 12:54 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+PASS: resident GPU query -> complete count -> ASA/NA+JK -> next query, 10 epochs; texture/global equality; unresolved/duplicate/stale holds
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"native_resident_feedback" end time: Sep 15 12:54 W. Europe Daylight Time
+"native_resident_feedback" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: native_resident_counts
+6/6 Test: native_resident_counts
+Command: "C:/aTOMosBuild/r15cuda/Release/resident_index_tests.exe"
+Directory: C:/aTOMosBuild/r15cuda
+"native_resident_counts" start time: Sep 15 12:54 W. Europe Daylight Time
+Output:
+----------------------------------------------------------
+resident_index_tests: PASS (4365 checks)
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"native_resident_counts" end time: Sep 15 12:54 W. Europe Daylight Time
+"native_resident_counts" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 15 12:54 W. Europe Daylight Time
