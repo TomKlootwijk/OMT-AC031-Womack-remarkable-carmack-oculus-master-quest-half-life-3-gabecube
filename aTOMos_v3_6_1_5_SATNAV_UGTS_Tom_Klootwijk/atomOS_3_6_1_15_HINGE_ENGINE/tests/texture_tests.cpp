@@ -21,6 +21,9 @@ int main(){try{
   require(tex==global,"texture/global results differ");
   for(size_t i=0;i<requests.size();++i){auto expected=cpu.radius(requests[i].point,requests[i].chord_radius2);std::sort(expected.begin(),expected.end());require(expected==tex[i],"GPU candidate filter missed exact radius member");}
   require(gpu.stats().overflow_queries>0,"overflow fallback not exercised");
+  require(gpu.stats().refinement_threads>1,"parallel refinement not exercised");
+  require(gpu.stats().candidate_count_is_lower_bound,"overflow count missing saturation tag");
+  require(gpu.stats().candidate_count<=requests.size()*33,"overflow traversal did not stop at capacity plus one");
   bool rejected=false;try{gpu.radius_batch({{{1+1e-13,0,0,0},1}});}catch(const std::invalid_argument&){rejected=true;}require(rejected,"GPU accepted nonunit point rejected by shared predicate contract");
   auto state=gpu.step_hinges({{1,0,1,1},{0,10,0,1}});
   require(state[0].q==1&&state[0].parity==1&&state[0].orientation==1,"first hinge did not commit");
@@ -39,6 +42,18 @@ int main(){try{
   std::fesetround(FE_TONEAREST);require(rejected,"changed host rounding mode accepted");
   atomos::SpatialIndex empty;atomos::TextureIndex empty_gpu(empty);
   require(empty_gpu.radius_batch({{{1,0,0,0},4}})[0].empty(),"empty texture index");
+  std::vector<atomos::Point> grouped;
+  for(uint64_t i=0;i<4;++i)grouped.push_back({1,0,0,i});
+  for(uint64_t i=4;i<9;++i)grouped.push_back({0,1,0,i});
+  for(uint64_t i=9;i<12;++i)grouped.push_back({-1,0,0,i});
+  atomos::SpatialIndex grouped_host(grouped);atomos::TextureIndex grouped_gpu(grouped_host,4);
+  auto compacted=grouped_gpu.radius_batch({{{1,0,0,0},0},{{0,-1,0,0},0},{{0,1,0,0},0},{{-1,0,0,0},0}});
+  require(compacted[0].size()==4&&compacted[1].empty()&&compacted[2].size()==5&&compacted[3].size()==3,"compacted offset boundary results");
+  require(grouped_gpu.stats().candidate_readback_bytes==28,"compaction copied unused or overflow slots");
+  require(grouped_gpu.radius_batch({{{0,1,0,0},0}})[0].size()==5,"all-overflow fallback result");
+  require(grouped_gpu.stats().candidate_readback_bytes==0&&grouped_gpu.stats().compaction_ms==0,"all-overflow batch transferred candidates");
+  require(grouped_gpu.radius_batch({{{0,-1,0,0},0}})[0].empty(),"empty retained batch result");
+  require(grouped_gpu.stats().candidate_readback_bytes==0&&grouped_gpu.stats().compaction_ms==0,"zero retained batch transferred candidates");
   std::cout<<"PASS: texture bit-plane expansion, "<<requests.size()<<" exact radius queries, global parity, overflow, hinge events and profile identity\n";
   return 0;
 }catch(const std::exception& e){std::cerr<<"FAIL: "<<e.what()<<'\n';return 1;}}

@@ -9,7 +9,12 @@ class SpatialIndex;
 struct RadiusRequest { Point point; double chord_radius2; };
 struct TextureStats {
   double upload_ms = 0, expansion_ms = 0, kernel_ms = 0, query_wall_ms = 0;
+  double refinement_ms = 0;
+  double compaction_ms = 0;
+  uint32_t refinement_threads = 1;
   uint64_t candidate_count = 0, exact_refinements = 0, overflow_queries = 0;
+  bool candidate_count_is_lower_bound = false;
+  uint64_t candidate_readback_bytes = 0, candidate_offset_upload_bytes = 0;
   uint64_t resident_bytes = 0;
 };
 struct HingeState {

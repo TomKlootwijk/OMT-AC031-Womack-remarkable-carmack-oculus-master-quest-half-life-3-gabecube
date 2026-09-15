@@ -1,0 +1,5 @@
+==PROF== Connected to process 116504 (C:\aTOMosBuild\r15cuda\Release\texture_tests.exe)
+==PROF== Disconnected from process 116504
+"ID","Process ID","Process Name","Host Name","Kernel Name","Context","Stream","Block Size","Grid Size","Device","CC","Section Name","Metric Name","Metric Unit","Metric Value"
+"0","116504","texture_tests.exe","127.0.0.1","void unnamed>::radius_kernel<1>(unsigned long long, unsigned long long, const GpuNode *, const Point *, unsigned int, const GpuQuery *, unsigned int, unsigned int, unsigned int *, unsigned int *)","1","7","(128, 1, 1)","(4, 1, 1)","0","12.0","Command line profiler metrics","gpu__time_duration.sum","ns","1.255.392"
+"0","116504","texture_tests.exe","127.0.0.1","void unnamed>::radius_kernel<1>(unsigned long long, unsigned long long, const GpuNode *, const Point *, unsigned int, const GpuQuery *, unsigned int, unsigned int, unsigned int *, unsigned int *)","1","7","(128, 1, 1)","(4, 1, 1)","0","12.0","Command line profiler metrics","l1tex__t_sectors_pipe_tex_mem_texture_op_ld.sum","sector","169.426"

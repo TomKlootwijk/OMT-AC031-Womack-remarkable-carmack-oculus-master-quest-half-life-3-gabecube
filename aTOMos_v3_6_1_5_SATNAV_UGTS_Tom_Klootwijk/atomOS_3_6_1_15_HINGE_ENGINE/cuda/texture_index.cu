@@ -60,6 +60,9 @@ __global__ void radius_kernel(cudaTextureObject_t nt,cudaTextureObject_t pt,
       if(dx*dx+dy*dy+dz*dz<=q.radius+kFilterPad){
         if(count<capacity)candidates[size_t(qi)*capacity+count]=j;
         ++count;
+        // Overflow requests use a complete exact host query. No further
+        // candidate can alter that decision; cap+1 is a saturated lower bound.
+        if(count>capacity){counts[qi]=count;return;}
       }
     }
     n=box.escape;
@@ -71,6 +74,17 @@ __device__ uint64_t table(uint32_t lut,uint64_t q,uint64_t a,uint64_t mask){
   if(lut&1)out|=~q&~a;if(lut&2)out|=q&~a;
   if(lut&4)out|=~q&a;if(lut&8)out|=q&a;
   return out&mask;
+}
+// Four warps per block, one query per warp. Host offsets contain zero length
+// for overflow requests, which are answered by a complete exact host query.
+// Retained intervals preserve their original per-query candidate order.
+__global__ void compact_candidates_kernel(const uint32_t* candidates,
+ const uint64_t* offsets,uint32_t query_count,uint32_t capacity,uint32_t* compacted){
+  const uint32_t qi=blockIdx.x*4+threadIdx.x/32;
+  if(qi>=query_count)return;
+  const uint64_t first=offsets[qi],count=offsets[qi+1]-first;
+  for(uint64_t k=threadIdx.x%32;k<count;k+=32)
+    compacted[first+k]=candidates[uint64_t(qi)*capacity+k];
 }
 __global__ void hinge_kernel(HingeState* states,const HingeInput* inputs,uint32_t count,WordProfile p){
   const uint32_t i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=count)return;
@@ -103,5 +117,10 @@ void launch_radius(bool texture_fetch,cudaTextureObject_t nt,cudaTextureObject_t
 }
 void launch_hinges(HingeState* states,const HingeInput* inputs,uint32_t count,WordProfile profile){
   hinge_kernel<<<unsigned((count+127)/128),128>>>(states,inputs,count,profile);
+}
+void launch_compact_candidates(const uint32_t* candidates,const uint64_t* offsets,
+ uint32_t query_count,uint32_t capacity,uint32_t* compacted){
+  compact_candidates_kernel<<<unsigned((uint64_t(query_count)+3)/4),128>>>(
+    candidates,offsets,query_count,capacity,compacted);
 }
 }
