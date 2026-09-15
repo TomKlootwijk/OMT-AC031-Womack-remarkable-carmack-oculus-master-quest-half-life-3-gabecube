@@ -136,6 +136,26 @@ class SpatialIndex {
     return make_neighbor(query, best);
   }
 
+  // Allocation-free exact count using the same conservative traversal and
+  // inclusive normalized-direction predicate as radius().
+  std::uint64_t radius_count(const Point& query, double chord_radius2,
+                             QueryStats* stats = nullptr) const {
+    prepare_query(query, stats);
+    if (!std::isfinite(chord_radius2) || chord_radius2 < 0 || chord_radius2 > 4)
+      throw std::invalid_argument("squared chord radius must be finite in [0,4]");
+    // The same exact whole-sphere certificate used by the resident GPU count
+    // profile; counting all records needs neither traversal nor ID materialization.
+    if (chord_radius2 == 4) return points_.size();
+    std::uint64_t count = 0;
+    const S2Point q = s2_point(query);
+    const S1ChordAngle limit = S1ChordAngle::FromLength2(chord_radius2);
+    traverse(query, [&] { return chord_radius2; }, [&](std::uint32_t i) {
+      if (stats) ++stats->predicate_calls;
+      if (s2pred::CompareDistance(q, s2_point(points_[i]), limit) <= 0) ++count;
+    }, stats);
+    return count;
+  }
+
   // Sorted nearest-first using S2's exact order; duplicate-coordinate records
   // are ordered by increasing ID. k==0 yields empty; k>size yields all points.
   std::vector<Neighbor> k_nearest(const Point& query, std::size_t k,

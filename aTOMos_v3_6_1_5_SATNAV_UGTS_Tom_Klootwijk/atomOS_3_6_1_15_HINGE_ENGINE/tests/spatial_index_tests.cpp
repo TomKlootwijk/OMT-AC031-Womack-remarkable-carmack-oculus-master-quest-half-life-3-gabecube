@@ -59,6 +59,7 @@ void compare(const SpatialIndex& index, const std::vector<Point>& original,
     auto actual = index.radius(q, radius);
     std::sort(actual.begin(), actual.end());
     require(actual == brute_radius(original, q, radius), "radius differs from exact S2 scan");
+    require(index.radius_count(q, radius) == actual.size(), "allocation-free count differs from exact radius set");
   }
   const auto order = brute_order(original, q);
   const auto nearest = index.nearest(q);
