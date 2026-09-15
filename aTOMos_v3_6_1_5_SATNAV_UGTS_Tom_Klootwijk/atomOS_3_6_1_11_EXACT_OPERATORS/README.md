@@ -18,9 +18,15 @@ denote an exact irrational result without storing its infinite digit expansion.
 That does not imply constant storage, constant execution cost or complete decision
 procedures for arbitrary transcendental expressions and differential equations.
 
-Files are developed and committed in stages:
+The release profile is `EXACT-OPERATOR-SEED-R1`; its byte and operator contract
+is `XOP-R1` (`XOPSEED1` and `XOPPLAN1`). The selected attitude profile is
+`MDG2010-EQ-SIMPLIFIED-R1`. These names distinguish the semantic and storage
+contracts from R10's implemented `ORBIT-SEED-R1` codec.
+
+Files:
 
 - `docs/`: editable LaTeX chapters and complete PDF master.
+- `docs/exact_registry.tex`: the self-contained wire/operator catalog in the PDF.
 - `formal/SCOPE_AND_CLAIMS.md`: requirements and evidence meanings.
 - `formal/OPERATOR_CATALOG.md`: exact operator vocabulary and representation.
 - `formal/MADGWICK_DERIVATION.md`: attitude recurrence and its assumptions.
@@ -28,6 +34,10 @@ Files are developed and committed in stages:
 - `formal/STRATEGY_REVISIONS.md`: deductions that change the design strategy.
 - `formal/COVERAGE_AND_PROOFS.md`: final scope-to-derivation audit.
 - `review/`: logical and document review records, with no experimental pass claims.
+- `source/`: parent binding and primary reference register.
 
 Build the document using `python tools/build_pdf.py --engine PATH_TO_TECTONIC`.
 Rendering is document preparation, not an experiment on the proposed algorithms.
+The document toolchain used Tectonic 0.17.0, its TeX/font bundle and Poppler.
+`tools/review_pdf.py --render` also needs Pillow, pypdf and pdfplumber. These
+document dependencies and the TeX engine are not a new kernel runtime.

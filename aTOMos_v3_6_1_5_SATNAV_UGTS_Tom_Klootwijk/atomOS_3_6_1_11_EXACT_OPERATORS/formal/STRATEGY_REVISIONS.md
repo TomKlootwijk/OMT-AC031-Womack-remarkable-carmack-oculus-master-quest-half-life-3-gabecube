@@ -27,8 +27,14 @@ does and does not establish.
 | S18 | Merge Python and native SATNAV rejection domains | The native range floor is one metre and the Python reference only requires positive range | Retain named solver policies as well as the shared mathematical least-squares domain |
 | S19 | Treat exact RK4 as an invertible physical flow | A finite RK4 map is a polynomial-stage recurrence; negative steps do not generally invert positive steps | Define canonical lattice query paths separately from the continuous flow group where that group exists |
 | S20 | Infer a full exact history from a bounded seed or modular address | A finite container cannot encode arbitrary longer input streams injectively; phase quotients discard winding | Retain exact sufficient state/dependencies and absolute time, and identify external sample requirements |
+| S21 | Import dynamic dependency exports as an unspecified snapshot | Without a selected event binding, the imported value is not defined | Limit value imports to closed stateless expressions; live values enter declared sample ports |
+| S22 | Treat physical frame and clock names as display metadata | Erasing those identities permits invalid sharing and unspecified conversions; inaccessible timestamps cannot define the integration step | Encode versioned identities, explicit raw/mapped timestamp references, typed transforms and time mappings |
+| S23 | Reuse a homogeneous scalar type for every dimensional operation | Powers, roots, tensor products and position/velocity ODE tuples have different dimension relations | Specify literal wrappers, component projections, heterogeneous state and dimension-changing typing rules |
+| S24 | Use a differentiable-everywhere ODE definition with piecewise forcing | A coefficient jump can break differentiability while preserving the integral solution | Define the selected solution by its continuous integral equation, with integrability and uniqueness obligations |
+| S25 | Encode CGK solve failure as an undefined partial update | The inherited state machine intentionally keeps the new word and old mechanics | Define an atomic branch tuple with explicit failure flag and old history; the inverse is not demanded on that branch |
+| S26 | Treat a stopped finite Jacobi diagonal as the ideal exact spectrum | A thresholded finite rotation recurrence need not fully diagonalize its matrix | Keep the finite diagnostic and ideal eigenvalue problem separately named; complex damping roots require an extension |
 
-Revisions S16-S20 arose from a second source-and-equation reasoning pass across
-the attitude, orbital and receiver profiles. The release review records any
-additional corrections, their adopted assumptions and remaining implementation
-obligations. None of these conclusions was selected through a numerical trial.
+Revisions S16-S26 arose from additional source-and-equation reasoning passes
+across the format, attitude, orbital, receiver and mechanics profiles. The
+release review records the corrections, adopted assumptions and remaining
+implementation obligations. None was selected through a numerical trial.

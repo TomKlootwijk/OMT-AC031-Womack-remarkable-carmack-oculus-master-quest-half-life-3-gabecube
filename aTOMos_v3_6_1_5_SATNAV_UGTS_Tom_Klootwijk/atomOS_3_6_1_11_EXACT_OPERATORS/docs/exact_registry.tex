@@ -1,0 +1,551 @@
+\clearpage
+\section{Normative XOP-R1 grammar and operator registry}
+\label{sec:exact-registry}
+This chapter embeds the literal, type, wire and operator contract from
+\path{formal/OPERATOR_CATALOG.md}. It supplies the actual fields and numbered
+operators needed to read the proposed profile without another file. The
+mathematical denotations and conditional proofs are in
+Section~\ref{sec:exact-core}; the attitude application is in
+Section~\ref{sec:exact-madgwick}. This is a specification, not an implemented
+parser, exact evaluator or proof checker. Unassigned tags and opcodes are
+rejected; the new grammar does not reinterpret the preserved R10 format.
+
+\begingroup
+\newcommand{\xo}[1]{\texttt{\detokenize{#1}}}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.11}
+
+\subsection{Sorts, outcomes and canonical byte primitives}
+The scalar embeddings are explicit and value preserving:
+$\xo{Int}\hookrightarrow\xo{Rat}\hookrightarrow\xo{Alg}
+\hookrightarrow\xo{RealTerm}$. Booleans and finite words are separate types.
+\xo{RealTerm} carries finite syntax with a possibly partial real denotation;
+it is not a literal for an unspecified arbitrary real number. Structural types
+carry their shapes. A \xo{Dim} scalar additionally carries seven rational SI
+exponents. A \xo{Frame} annotation encodes nominal coordinate identity; prose
+alone cannot supply it. Angle conventions remain declared interface metadata.
+
+\begin{longtable}{@{}P{.24\linewidth}P{.71\linewidth}@{}}
+\toprule Outcome & Meaning\\\midrule\endfirsthead
+\toprule Outcome & Meaning (continued)\\\midrule\endhead
+\bottomrule\endfoot
+\xo{VALUE} & An exact literal with evidence of its construction.\\
+\xo{TERM} & Retained typed syntax, assumptions and outstanding obligations.\\
+\xo{UNDEFINED} & A violated domain condition has been established.\\
+\xo{UNKNOWN} & A required comparison, domain or existence claim is undecided.\\
+\xo{MISSING_INPUT} & A required dependency or sample is unavailable.\\
+\xo{RESOURCE_LIMIT} & The declared memory, time or proof-search limit is reached.\\
+\end{longtable}
+These outcomes are separate from scalar values. Unknown or exhausted resources
+mean neither false nor zero. A retained term is not a proved real value.
+\xo{COMPARE} is a decision-service interface returning justified
+\xo{LT}, \xo{EQ}, \xo{GT}, or \xo{UNKNOWN}; it is not an arithmetic oracle.
+
+Concatenation in the grammar has no implicit alignment. The byte primitives are:
+\begin{longtable}{@{}P{.22\linewidth}P{.73\linewidth}@{}}
+\toprule Primitive & Encoding\\\midrule\endfirsthead
+\toprule Primitive & Encoding (continued)\\\midrule\endhead
+\bottomrule\endfoot
+\xo{U(n)} & Minimal unsigned base-128 integer: seven payload bits per octet,
+least significant digit first; high bit one on every nonterminal octet and zero
+on the last. Zero is one zero octet. A multi-octet encoding cannot end in a zero
+payload. Counts have no format-level 64-bit ceiling.\\
+\xo{O(b)} & One octet, $0\le b\le255$.\\
+\xo{B(bytes)} & \xo{U(length)} followed by exactly those octets.\\
+\xo{Seq_T(items)} & \xo{U(count)} followed by the items in order, each using
+schema $T$.\\
+\xo{Z(z)} & \xo{O(sign) U(limb_count)}, then that many eight-octet,
+little-endian limbs; canonical sign and leading-limb rules below.\\
+\xo{Q(q)} & \xo{Z(numerator) Z(denominator)}, with positive denominator and
+reduced fraction.\\
+\xo{Name} & A \xo{B} byte string containing only printable ASCII octets
+\xo{0x21..0x7e}; nonempty and case sensitive. Free-form provenance is opaque
+\xo{B} data and has no name-binding semantics.\\
+\xo{ProfileId} & \xo{Name(namespace) U(major_version) U(minor_version) Name(label)}.
+Complete fields form the nominal type/binding identity; they are not executable prose.\\
+\end{longtable}
+An implementation may announce finite count, width, depth and memory limits.
+A larger valid mathematical record is then unsupported, not truncated or partly
+accepted. Check lengths before allocation and retain exact count arithmetic.
+
+\subsection{Literal payloads and type tags}
+For integer limbs $a_i$ in base $\beta=2^{64}$,
+$z=(-1)^s\sum_{i=0}^{k-1}a_i\beta^i$, with $0\le a_i<\beta$.
+Zero is $s=0,k=0$; otherwise $a_{k-1}\ne0$. A rational $p/q$ requires
+$q>0$ and $\gcd(|p|,q)=1$; rational zero is $0/1$.
+
+\begin{longtable}{@{}P{.23\linewidth}P{.72\linewidth}@{}}
+\toprule Literal type & Exact payload and admission rules\\\midrule\endfirsthead
+\toprule Literal type & Exact payload and admission rules (continued)\\\midrule\endhead
+\bottomrule\endfoot
+\xo{Bool} & \xo{O(value)}, with value zero or one.\\
+\xo{Int} & \xo{Z(value)}, with the canonical integer form above.\\
+\xo{Rat} & \xo{Q(value)}, with the canonical rational form above.\\
+\xo{Alg} & \xo{Seq_Z(coefficients) U(root_index)}. Coefficients run from
+constant to highest degree. The polynomial has degree at least one, is primitive
+and irreducible over $\mathbb Q$, and has positive leading coefficient. The
+zero-based index selects a distinct real root in increasing order.\\
+\xo{Bits(w)} & Exactly $\lceil w/8\rceil$ octets; bit zero is the low bit of
+the first octet. Unused high bits in the final octet are zero. Width is in the
+type, not repeated in this payload.\\
+\xo{Dim(T,d)} & Exactly the scalar payload of $T$; the seven exponents already
+occur in its type. No extra numeric field or raw \xo{RealTerm} literal is
+authorized by the wrapper.\\
+Tuple, vector, matrix & Ordered \xo{Seq_Literal} components with type/shape
+agreement; each component retains its own type.\\
+\xo{Frame} & The underlying Vec/Mat literal payload, with the complete frame
+annotation retained in \xo{Type}; encoding and sharing cannot erase it.\\
+\end{longtable}
+An algebraic isolating interval is a witness, not an alternative value spelling.
+Exact factorization, minimal-polynomial selection, root isolation and selected
+root identification remain implementation obligations. A resultant alone does
+not select the intended root. Raw finite IEEE bits can be converted to their
+exact dyadic value; this does not recover a pre-rounding physical quantity.
+Signed-zero payloads remain distinct as bits but both denote rational zero.
+NaN and infinity have no real conversion.
+
+Each type is \xo{U(tag)} followed by the fields in this table:
+\begin{longtable}{@{}P{.08\linewidth}P{.22\linewidth}P{.65\linewidth}@{}}
+\toprule Tag & Type & Remaining fields\\\midrule\endfirsthead
+\toprule Tag & Type & Remaining fields (continued)\\\midrule\endhead
+\bottomrule\endfoot
+0 & \xo{Bool} & None.\\
+1 & \xo{Int} & None.\\
+2 & \xo{Rat} & None.\\
+3 & \xo{Alg} & None.\\
+4 & \xo{RealTerm} & None.\\
+5 & \xo{Bits} & \xo{U(w)}, $w>0$.\\
+6 & \xo{Tuple} & \xo{Seq_Type(component_types)}.\\
+7 & \xo{Vec} & \xo{U(n) Type(T)}, $n>0$.\\
+8 & \xo{Mat} & \xo{U(rows) U(cols) Type(T)}; both sizes positive.\\
+9 & \xo{Fn} & \xo{Seq_Type(parameter_types) Type(result)}.\\
+10 & \xo{Dim} & \xo{Type(scalar)}, followed by exactly seven \xo{Q} exponents.\\
+11 & \xo{Stream} & \xo{Type(element)}.\\
+12 & \xo{Frame} & \xo{Type(base) ProfileId(source)}, plus \xo{ProfileId(target)}
+when base is Mat. Base is an unannotated Vec or Mat.\\
+\end{longtable}
+\xo{Dim} accepts only an unwrapped numeric scalar; nested dimension wrappers
+are rejected. A function's domain obligations remain part of its interface/body.
+Function, stream and ungrounded real-term literals are rejected.
+
+A framed vector's identity denotes its coordinate basis; a framed matrix's
+source/target denote the input/output bases of its linear map. Matching nominal
+identity does not prove physical alignment, origin or calibration. Axis/origin
+realization and uncertainty are explicit template/dependency inputs. Qualified
+namespaces must agree across the dependency closure.
+
+Bare vectors/matrices are frame-free objects. Once an interface declares a
+frame, its annotation is mandatory. \xo{COERCE} cannot add, change or remove it.
+Literal input may declare a frame; a computed frame change requires an explicitly
+typed \xo{TEMPLATE}, its full body and coordinate/domain obligations. Extracting
+coordinates and relabelling the reassembled result is not an implicit conversion.
+This also governs removal of an annotation for use in geometry.
+
+Frame-aware addition/subtraction and dot/cross require identical vector frame
+identities. Norm returns a scalar. A matrix $A\to B$ maps a vector in $A$ to $B$
+through an explicit contraction template; composing $A\to B$ then $B\to C$
+produces $A\to C$ in the corresponding product order. Transpose and inverse
+swap source/target annotations under their algebraic domains; interpreting
+transpose as inverse also requires orthonormality. Determinant refers to the
+declared coordinate matrix, without a basis-independence assertion. Projection
+retains its annotated source in node identity even when its result is scalar.
+Sharing/memoization include complete annotated types and immutable bindings.
+
+\subsection{Scopes, references and complete record order}
+The following fields are concatenated in the displayed order:
+\begin{lstlisting}
+Scope = Seq_Node(nodes) Seq_Ref(exports)
+Node = U(opcode) Type(result) Seq_Ref(operands) B(opcode_payload)
+Literal(T) = Type(T) B(payload)
+
+ASCII("XOPSEED1") U(1) U(0)
+Seq_Dependency(dependencies)
+Seq_Template(templates)
+Seq_State(states)
+Seq_Sample(samples)
+Scope(main)
+Seq_Export(exports)
+Strategy(strategy)
+B(provenance)
+\end{lstlisting}
+The magic is exactly eight ASCII octets; the two naturals specify major/minor
+profile $(1,0)$. No trailing octets are allowed. Every opcode payload must decode
+exactly under its selected schema, with no extra fields. Empty payload means
+a zero-length \xo{B}; the stated result type must satisfy the operator rule.
+
+A reference is \xo{U(tag)} followed by:
+\begin{longtable}{@{}P{.08\linewidth}P{.24\linewidth}P{.63\linewidth}@{}}
+\toprule Tag & Reference kind & Fields and scope rule\\\midrule\endfirsthead
+\toprule Tag & Reference kind & Fields and scope rule (continued)\\\midrule\endhead
+\bottomrule\endfoot
+0 & Local node & \xo{U(index)}. A node operand refers only to an earlier node
+in its own scope.\\
+1 & Bound variable & \xo{U(de_bruijn_index)}. Zero is the nearest lexical binder.\\
+2 & Old state & \xo{U(slot)}; main dynamic scope only.\\
+3 & Current sample & \xo{U(slot)}; main dynamic scope only.\\
+4 & Dependency export & \xo{U(dependency) U(export)}; complete bytes and export
+interface must resolve.\\
+5 & Current sample raw timestamp & \xo{U(slot)}; main dynamic scope only.
+Returns the binding's exact \xo{Q(absolute_time)} as Rat in the slot's source
+\xo{TimeConvention} coordinate.\\
+6 & Current sample GPST timestamp & \xo{U(slot)}; main dynamic scope only.
+Explicitly applies the declared time mapping and returns
+$\mathrm{Dim}(\xo{Rat},(0,0,1,0,0,0,0))$ in GPST SI seconds.\\
+\end{longtable}
+A scope export or state root may use any already declared node in its complete
+scope, but this does not authorize forward operands inside a node. Nested
+scopes cannot reach an outer local node through an accidental numeric index:
+captures enter as explicit binders. Binder order follows the payload; the last
+parameter has de Bruijn index zero. Substitution is capture avoiding and shifts
+indices beneath binders. Templates receive state/sample values as arguments.
+
+Tags 3, 5 and 6 read the same immutable sample snapshot. Tag 5 exposes recorded
+source time, without asserting that a custom coordinate is SI seconds. Tag 6
+preserves the registered GPST-SI rational with its time units, or invokes the
+complete custom mapping. Missing input and unmet/unresolved conversion domains
+remain explicit non-value outcomes; no offset is guessed. The SI exponent order
+is length, mass, time, electric current, thermodynamic temperature, amount of
+substance, luminous intensity.
+
+An SI-second integrator's time arguments are declared expressions, for example
+\[
+ t=\operatorname{SAMPLE\_GPST}(j)-t_{\rm epoch},\qquad
+ h=\operatorname{SAMPLE\_GPST}(j)-t_{\rm previous},
+\]
+with matching time dimensions and GPST epoch conventions on every term.
+Here \xo{SAMPLE_GPST} names reference tag 6, not an additional opcode.
+Other integration coordinates require explicit typed mappings and domain/unit
+hypotheses. Chronology and $h>0$ remain recurrence obligations. Initial roots and
+pure template bodies exclude tags 5 and 6 as they exclude tag 3; a template
+receives needed timestamps as arguments. Raw ticks, phase wraps and civil-clock
+strings cannot silently supply these integration arguments.
+
+\begin{lstlisting}
+Dependency = Name(label) O(kind) B(canonical_seed_bytes)
+Template = Name(label) Seq_Type(parameters) Type(result) Scope(body)
+State = Name(label) Type(T) Ref(init) Ref(next)
+Sample = Name(label) Type(T) TimeConvention
+         O(mode) B(binding) B(provenance)
+Row = Z(logical_step) Q(absolute_time) Literal(T)
+Export = Name(label) U(main_export_index) O(observation)
+TimeConvention = ProfileId(identity) O(kind) B(definition)
+\end{lstlisting}
+\textbf{Dependencies.} Kind zero imports a seed value export; kind one imports
+a template-library seed. Content is a complete \xo{XOPSEED1} record, labels are
+unique, and imports are finite and acyclic. Imported values must be closed and
+stateless in their demanded graph. A snapshot may be closed literal/expression
+data; a live stream must enter through an explicit sample. Importing a seed
+neither executes its state machine nor silently selects a clock tick.
+
+\textbf{Templates.} A body has exactly one export of its declared result type.
+It contains no main-state/sample references and calls only earlier local or
+explicitly imported templates. The encoded body fixes its meaning; a label alone
+does not provide an equation or authorize recursion.
+
+\textbf{State.} Initial and next roots refer to the main scope. Initial roots
+are closed with respect to state and samples and must have proved values of
+the declared type. Next roots read the same old-state/input snapshot. The state
+table is the sole causal \xo{DELAY}; all successful next values commit together.
+No instantaneous cycle or partial commit is defined. A required input/domain
+failure remains an explicit outcome.
+
+\textbf{Samples.} Mode zero binding is \xo{Seq_Row(rows)} with nonnegative,
+strictly increasing logical-step indices. Mode one binding is
+\xo{Name(external_port)}; every demanded step supplies a typed literal and
+absolute timestamp under the named convention. Missing rows or ports yield
+\xo{MISSING_INPUT}. No implicit interpolation, nearest-row choice, leap-second
+conversion or future extrapolation is supplied. Repeated reads in one step bind
+the same sample. The timestamp and sample identity are retained.
+
+\textbf{Time convention.} Kind zero has empty definition and exactly the
+registered identity \xo{("XOP-TIME",1,0,"GPST-SI")}. Its rational coordinate is
+elapsed SI seconds on continuous GPS time from 1980-01-06 00:00:00 GPST; no UTC
+conversion occurs. Kind one is custom, with definition
+\xo{U(dependency) U(template) ProfileId(target)}. The dependency is a complete
+template-library seed and the target is the registered GPST-SI identity.
+The selected pure template maps unambiguous rational source time to rational
+target time. Its mapping, interval, epoch and any leap/disambiguation tables
+must be in its body or complete dependencies. Ambiguous civil readings need
+additional binding. Repeated custom identities in the dependency closure must
+resolve to identical canonical definition/template bytes. Ordering and elapsed
+time claims require the mapping's monotonicity/domain proof, not version
+matching alone.
+
+\textbf{Exports.} Labels are unique and observation is zero or one. Stateful
+equivalence preserves observation-one exports, sample identities and declared
+output timestamps. Even unobserved exports remain part of the ordinary value
+interface unless an explicit interface change is adopted.
+
+Canonical encoding means one spelling for the same ordered scoped record, not
+for every mathematically equivalent expression or sharing pattern. Dependency
+hashes are lookup aids; complete canonical bytes establish required identity.
+A digest-only open manifest is not this self-contained encoding.
+
+\subsection{The one-bit plane envelope}
+Let $C$ be a canonical semantic stream of positive length $L$. Pad it with zero
+octets to $512\lceil L/512\rceil$ octets. Each block holds 64 little-endian
+uint64 patterns $w_r$. Its plane words are
+\[
+ p_c=\sum_{r=0}^{63}\left((w_r\mathbin{\gg}c)\mathbin{\&}1\right)2^r,
+ \qquad 0\le c<64.
+\]
+\begin{lstlisting}
+ASCII("XOPPLAN1") U(L)
+plane words: eight octets each, little endian,
+             block-major then plane-major order
+\end{lstlisting}
+Exactly $512\lceil L/512\rceil$ payload octets are required. Apply the same
+transpose to invert; reject nonzero decoded padding, take exactly $L$ octets,
+then parse \xo{XOPSEED1}. Nonminimal lengths, redundant integer forms, invalid
+references, nonzero padding and trailing bytes have no canonical decoding.
+The transpose proof is in Section~\ref{sec:exact-core}. Compression is a separate
+transport that must reconstruct this envelope exactly. A bit permutation does
+not reduce its uncompressed information content or erase high limbs.
+
+\subsection{Structural, numeric and Boolean opcodes}
+In the tables, $S$ is a common underlying scalar sort reached by explicit
+coercions. Dimension transformations below refine the scalar signatures;
+matching $S$ does not require multiplication operands to have equal units.
+$T$ is a complete type. Unless stated otherwise, payload is empty. Ordinary
+numeric operands are strict in demanded subexpressions; \xo{IF} is lazy and a
+lambda body is demanded only through application. A node table is a dependency
+order, not a command to evaluate unused branches.
+
+{\footnotesize
+\begin{longtable}{@{}P{.23\linewidth}P{.24\linewidth}P{.48\linewidth}@{}}
+\toprule ID / operator & Operands $\to$ result & Domain and payload\\\midrule\endfirsthead
+\toprule ID / operator & Operands $\to$ result & Domain and payload (continued)\\\midrule\endhead
+\bottomrule\endfoot
+0 \xo{LITERAL} & None $\to$ literal type & Payload is that type's canonical literal payload.\\
+1 \xo{COERCE} & Scalar $\to$ higher scalar & Only the stated injective scalar embeddings.\\
+2 \xo{TUPLE} & Ordered values $\to$ tuple & Result component types match.\\
+3 \xo{PROJECT} & Tuple/Vec/Mat $\to$ component & Payload \xo{U(index)}, in bounds. Matrix index is row-major $r\cdot\mathrm{cols}+c$ and returns one scalar.\\
+4 \xo{VECTOR} & $n$ scalars $\to\mathrm{Vec}(n,S)$ & Positive size; common scalar sort and dimension.\\
+5 \xo{MATRIX} & $rc$ scalars $\to\mathrm{Mat}(r,c,S)$ & Row-major order; result fixes shape.\\
+6 \xo{LAMBDA} & Captures $\to$ Fn & Payload \xo{Seq_Type(parameters) Scope(body)}; one body export; capture binders precede parameter binders.\\
+7 \xo{APPLY} & Function, arguments $\to$ result & Exact arity/types; substitute into the body and its domain.\\
+8 \xo{TEMPLATE} & Arguments $\to$ template result & Payload \xo{O(location) U(index)}. Location 0 selects local template. Location 1 makes index a dependency and adds \xo{U(imported_template_index)}.\\
+16 \xo{ADD} & $S,S\to S$ & Equal dimensions.\\
+17 \xo{SUB} & $S,S\to S$ & Equal dimensions.\\
+18 \xo{NEG} & $S\to S$ & Numeric scalar.\\
+19 \xo{MUL} & $S,S\to S$ & Add dimension vectors.\\
+20 \xo{DIV} & $S,S\to S$ & Denominator nonzero; Int result forbidden, requiring explicit Rat promotion; subtract dimensions.\\
+21 \xo{IDIV} & Int, Int $\to$ Int & Nonzero divisor; Euclidean quotient.\\
+22 \xo{MOD} & Int, Int $\to$ Int & Nonzero divisor $d$; $0\le r<|d|$.\\
+23 \xo{POW_INT} & $S$, Int $\to S$ & Nonnegative exponent, or nonzero base and rational/higher result; $x^0=1$ by finite-product convention.\\
+24 \xo{ABS} & $S\to S$ & Ordered real scalar.\\
+25 \xo{SIGN} & $S\to$ Int & $-1,0,1$ according to exact sign; decision can remain unresolved.\\
+26 \xo{MIN} & $S,S\to S$ & Matching dimensions; order evidence required for selection.\\
+27 \xo{MAX} & $S,S\to S$ & Matching dimensions; order evidence required for selection.\\
+28 \xo{FLOOR} & Dimensionless scalar $\to$ Int & Unique $n$ with $n\le x<n+1$; decision can remain unresolved.\\
+29 \xo{CEIL} & Dimensionless scalar $\to$ Int & $-\lfloor-x\rfloor$.\\
+30 \xo{ROOT} & Int $n$, scalar $x$ $\to$ Alg/RealTerm & $n\ge1$. Even $n$: $x\ge0$, nonnegative root. Odd $n$: unique real root. Divide dimensions by $n$.\\
+31 \xo{SQRT} & Scalar $\to$ Alg/RealTerm & $x\ge0$, nonnegative root; explicit scalar promotion and halved dimensions.\\
+32 \xo{EQ} & Compatible equal types $\to$ Bool & Exact value equality; no terminating general RealTerm decision is promised.\\
+33 \xo{LT} & $S,S\to$ Bool & Ordered scalar; matching dimensions.\\
+34 \xo{LE} & $S,S\to$ Bool & Ordered scalar; matching dimensions.\\
+35 \xo{AND_BOOL} & Bool, Bool $\to$ Bool & Logical conjunction, not a word operation.\\
+36 \xo{OR_BOOL} & Bool, Bool $\to$ Bool & Logical disjunction.\\
+37 \xo{NOT_BOOL} & Bool $\to$ Bool & Logical negation.\\
+38 \xo{IF} & Bool, $T,T\to T$ & Lazy: only the selected branch must be defined. An unknown predicate retains the conditional term.\\
+40 \xo{FULL_ADDER} & Bool $a,b,c\to$ Bool pair & Sum bit and carry bit, equations below.\\
+41 \xo{FULL_SUBTRACTOR} & Bool $a,b,k\to$ Bool pair & Difference bit and borrow bit, equations below.\\
+48 \xo{BIT_AND} & Bits$(w)$ pair $\to$ Bits$(w)$ & Equal explicit widths.\\
+49 \xo{BIT_OR} & Bits$(w)$ pair $\to$ Bits$(w)$ & Equal explicit widths.\\
+50 \xo{BIT_XOR} & Bits$(w)$ pair $\to$ Bits$(w)$ & Equal explicit widths.\\
+51 \xo{BIT_NOT} & Bits$(w)\to$ Bits$(w)$ & Complement inside the declared width only.\\
+52 \xo{BIT_SHIFT} & Bits$(w)$, Int $k\to$ Bits$(w)$ & $k\ge0$; payload \xo{O(direction)}: 0 left, 1 logical right. Shifted-out bits are deliberately discarded.\\
+53 \xo{POPCOUNT} & Bits$(w)\to$ Int & Sum of the $w$ Boolean bits.\\
+54 \xo{BITS_TO_UINT} & Bits$(w)\to$ Int & $\sum_i b_i2^i$.\\
+55 \xo{UINT_TO_BITS} & Int $\to$ Bits$(w)$ & $0\le x<2^w$; no implicit modular truncation.\\
+56 \xo{INT_SHIFT} & Int, Int $k\to$ Int & $k\ge0$; payload direction 0 multiplies by $2^k$, 1 takes floor division by $2^k$.\\
+57 \xo{IEEE64_TO_RAT} & Bits$(64)\to$ Rat & Finite IEEE binary64 pattern only; exact dyadic conversion below.\\
+58 \xo{DECIMAL_TO_RAT} & Int mantissa, Int scale $\to$ Rat & Exact $\mathrm{mantissa}\cdot10^{-\mathrm{scale}}$, reduced.\\
+\end{longtable}}
+For IEEE conversion let $s$ be the sign bit, $e$ the unsigned 11-bit exponent
+and $f$ the unsigned 52-bit fraction. The exact value is
+\[
+ \begin{cases}
+ (-1)^s f\,2^{-1074},&e=0,\\
+ (-1)^s(2^{52}+f)\,2^{e-1075},&1\le e\le2046.
+ \end{cases}
+\]
+Exponent 2047 is outside the real conversion domain. Keep the raw operand if
+signed-zero or other bit provenance must remain observable. Rational operations
+reduce by gcd and normalize sign; algebraic operations preserve selected-root
+identity. The source equation-language token \xo{1} means an all-ones word only
+under its separately declared language adapter.
+
+For Boolean carry $c$ and borrow $k$, the one-bit arithmetic operators are
+\begin{align*}
+ s&=a\oplus b\oplus c,&c'&=(a\land b)\lor(c\land(a\oplus b)),\\
+ d&=a\oplus b\oplus k,&k'&=(\neg a\land b)\lor(k\land\neg(a\oplus b)),\\
+ a+b+c&=s+2c',&a-b-k&=d-2k'.
+\end{align*}
+Complements here act on one Boolean bit. Chain carry/borrow toward more
+significant bits, starting at zero. Multiply by placing $a_i\land b_j$ at
+position $i+j$ and adding every shifted row with retained carries. To compare
+padded magnitudes from high to low bits, start $(E,G)=(1,0)$ and update
+simultaneously
+$G'=G\lor(E\land a\land\neg b)$ and $E'=E\land\neg(a\oplus b)$.
+Long division uses this exact comparison and subtraction. These are finite
+definitions for every finite input; no executed bit test is asserted.
+
+\subsection{Elementary, tensor, calculus and kernel opcodes}
+Elementary functions have the real denotations and branch conventions in
+Section~\ref{sec:exact-core}. They require explicit promotion to
+\xo{RealTerm}; angle results are dimensionless with declared angle convention.
+
+{\footnotesize
+\begin{longtable}{@{}P{.23\linewidth}P{.24\linewidth}P{.48\linewidth}@{}}
+\toprule ID / operator & Operands $\to$ result & Domain and payload\\\midrule\endfirsthead
+\toprule ID / operator & Operands $\to$ result & Domain and payload (continued)\\\midrule\endhead
+\bottomrule\endfoot
+64 \xo{SIN} & RealTerm $\to$ RealTerm & Entire sine series; dimensionless argument.\\
+65 \xo{COS} & RealTerm $\to$ RealTerm & Entire cosine series; dimensionless argument.\\
+66 \xo{TAN} & $x\to\sin x/\cos x$ & $\cos x\ne0$.\\
+67 \xo{EXP} & RealTerm $\to$ RealTerm & Entire exponential series.\\
+68 \xo{LOG} & $x\to\int_1^x du/u$ & $x>0$.\\
+69 \xo{ATAN} & $x\to\int_0^x du/(1+u^2)$ & Every real $x$.\\
+70 \xo{ATAN2} & $y,x\to$ angle & $(x,y)\ne(0,0)$; range $(-\pi,\pi]$ with the declared quadrant cases.\\
+71 \xo{ASIN} & $x\to$ angle & $-1\le x\le1$; inverse sine on $[-\pi/2,\pi/2]$.\\
+72 \xo{ACOS} & $x\to$ angle & $-1\le x\le1$; inverse cosine on $[0,\pi]$.\\
+73 \xo{PI} & None $\to$ RealTerm & $4\operatorname{atan}(1)$.\\
+74 \xo{POW_REAL} & $x,y\to\exp(y\log x)$ & $x>0$; both arguments dimensionless. Distinct from integer powers and root branches.\\
+80 \xo{DOT} & Vec$(n,S)$ pair $\to S$ & Finite sum of pairwise products.\\
+81 \xo{CROSS} & Vec$(3,S)$ pair $\to$ Vec$(3,S)$ & Right-handed determinant in the declared frame.\\
+82 \xo{NORM} & Vec$(n,S)\to$ Alg/RealTerm & Nonnegative square root of dot product; retains the vector dimension.\\
+83 \xo{TRANSPOSE} & Mat$(r,c,S)\to$ Mat$(c,r,S)$ & Swap indices.\\
+84 \xo{MATMUL} & Mat$(r,k,S)$, Mat$(k,c,S)\to$ Mat$(r,c,S)$ & Finite contraction over $k$.\\
+85 \xo{DET} & Square matrix $\to S$ & Finite signed permutation sum.\\
+86 \xo{INVERSE} & Mat$(n,n,S)\to$ Mat$(n,n,S)$ & Nonzero determinant; scalar sort closed under division.\\
+87 \xo{SOLVE_LINEAR} & $A,b\to x$, $Ax=b$ & Square $A$, nonzero determinant, compatible vector and division-capable scalar sort.\\
+96 \xo{FIN_SUM} & Int $a,b$, captures $\to S$ & Inclusive bounds. Payload \xo{Type(S) Scope(body)}; index binder last. Empty interval gives additive identity.\\
+97 \xo{FIN_PRODUCT} & Int $a,b$, captures $\to S$ & Same payload/binding; empty interval gives multiplicative identity. Terms dimensionless in this base rule.\\
+98 \xo{DIFF} & Point, captures $\to$ RealTerm & Payload \xo{Type(variable) Scope(body)}; variable binder last. Derivative must exist at the point.\\
+99 \xo{INTEGRAL} & $a,b$, captures $\to$ RealTerm & Same payload/binder; oriented finite Riemann integral. Integrability is required.\\
+100 \xo{LIMIT} & Point, captures $\to$ RealTerm & Payload \xo{Type(variable) O(side) Scope(body)}. Side 0 two-sided, 1 from below, 2 from above. Unique finite limit required.\\
+101 \xo{ODE} & $t_0,s_0,t$, captures $\to$ state & Payload \xo{Q(interval_left) Q(interval_right) Scope(F)}. Closed interval includes $t_0,t$; time binder then state last. Unique continuous integral-equation solution required.\\
+102 \xo{SOLVE_ROOT} & Captures $\to$ RealTerm & Payload \xo{Q(left) Q(right) Scope(f)}; binder $x$ last. Exactly one real root in the open rational interval; existence and uniqueness required.\\
+112 \xo{ASA_NA} & $x,V,A,N,B\to(a,n,h,y)$ & Five Bits$(w)$ operands; result has word components $a,n,y$ and Int $h$. Whole-word absorption below.\\
+113 \xo{JK} & $q,J,K,V\to$ Bits$(w)$ & Four same-width words, reading the same old $q$; complement restricted to width.\\
+\end{longtable}}
+
+\textbf{Calculus binders and solution domain.} Captures bind in operand order,
+followed by the displayed integration/differentiation variables. Each body has
+one export. Body and variable dimensions determine derivative/integral units.
+\xo{ODE} supports a scalar, uniform vector, framed vector, or finite nested tuple
+of those dimensioned components; every scalar result leaf has sort
+\xo{RealTerm}. Initial algebraic values are coerced componentwise while
+preserving all frame annotations. $F$ has the same structure and identical
+nominal frame on each framed vector, with each scalar leaf dimension equal to
+its state dimension minus the time dimension. Rotating-frame derivatives still
+require the appropriate terms in $F$; the type supplies none. Interval rationals
+use the same declared time unit as $t_0$ and $t$.
+
+Specifically, \xo{ODE} denotes the unique continuous $s$ on the declared closed
+interval $I$ such that, componentwise,
+\[
+ s(u)=s_0+\int_{t_0}^{u}F(v,s(v))\,dv\qquad(u\in I),
+\]
+with a Riemann-integrable integrand along $s$. It is differentiable where the
+composite right-hand side is continuous; a derivative at a coefficient jump
+is not required. The derived name \xo{FLOW} uses this same declaration.
+State-dependent discontinuities still require existence/uniqueness under the
+event policy. A local theorem does not certify the whole interval. General root
+and ODE declarations are not guaranteed solution algorithms. Unbounded sums,
+improper integrals, complex roots and distributional derivatives are outside
+these opcodes.
+
+\textbf{Dimensions.} If operands have dimension vectors $d_A,d_B$, then
+\xo{MUL}, \xo{DOT}, \xo{CROSS} and \xo{MATMUL} return $d_A+d_B$;
+\xo{DIV} returns $d_A-d_B$. \xo{NORM} retains dimension. For a uniformly
+dimensioned $n\times n$ matrix, determinant has dimension $nd_A$, inverse
+$-d_A$, and \xo{SOLVE_LINEAR} has dimension $d_b-d_A$. Addition, subtraction
+and order require equal dimensions. Heterogeneous Jacobians use dimensioned
+tuples/blocks and explicit contraction templates, not one falsely uniform
+matrix type. Dimensioned powers/roots must establish the annotated output
+dimensions from their degree at admission; a variable degree cannot contradict
+a fixed annotation. Dimensionless inputs avoid that degree/unit issue.
+
+The retained kernel operators have literal equations
+\[
+ a=x\land A\land V,\qquad n=a\land N,\qquad h=\pop(n\land B),
+\]
+\[
+ y=\begin{cases}0,&h>0,\\n,&h=0,\end{cases}
+ \qquad\operatorname{ASA\_NA}(x,V,A,N,B)=(a,n,h,y),
+\]
+\[
+ \operatorname{JK}(q,J,K,V)=
+ ((J\land\neg_w q)\lor(\neg_w K\land q))\land V.
+\]
+Here $\neg_wq=(2^w-1)\oplus q$. The second mask set receives the first stage's
+$y$; both traces remain exported when required. $J,K$ use the same old state
+and final $y$. Absorption zeroes the whole stage output and does not silently
+substitute a hold rule. The state table supplies the delay.
+
+\subsection{Named templates and the proof-record interface}
+Named templates require explicit typed parameters and bodies. Labels alone
+provide no operator implementation. \xo{WRAP} is
+$x-P\lfloor x/P\rfloor$ for $P>0$, paired with integer winding;
+\xo{PHI} is $(1+\sqrt5)/2$; \xo{FIBONACCI} has initial $(0,1)$ and delayed
+pair update $(a,b)\mapsto(b,a+b)$. \xo{NORMALIZE} requires nonzero norm.
+\xo{GRADIENT}/\xo{JACOBIAN} assemble coordinate \xo{DIFF} terms.
+Polynomial/Horner and Chebyshev templates preserve their finite coefficients
+and degrees, with $T_0=1,T_1=x,T_{n+1}=2xT_n-T_{n-1}$.
+Legendre, gravity, frame, third-body, pressure/shadow and station templates retain
+their source equations and singular/branch domains. \xo{RK4} is the finite rule
+in Section~\ref{sec:exact-core}, not the continuous \xo{ODE} declaration.
+\xo{OTAN2}, both UGTS key layouts and the source geometry remain separate
+templates with their literal source identities. \xo{OTAN2} is not \xo{ATAN2}.
+Modular keys do not replace absolute coordinates, time or sample bytes.
+
+The strategy and proof records have this exact outer order:
+\begin{lstlisting}
+Strategy = U(version) Name(proof_system) Seq_Rule(rules)
+           B(priority_policy) B(cost_model) B(resource_policy)
+           Seq_Proposal(history)
+Rule = Name(label) B(typed_statement) B(proof_object)
+Proposal = U(parent_version) U(new_version)
+           B(old_canonical_graph) B(new_canonical_graph)
+           B(statement) B(proof_object) B(cost_argument)
+\end{lstlisting}
+The named proof-system/policy profile resolves the \xo{B} contents; they are
+not executable arbitrary source. The baseline with empty rules, policy and
+history admits identity-only execution strategy. XOP-R1 defines the interface,
+not a completed proof language or checker. Uninterpreted policy bytes confer
+no authority to admit a nonidentity rewrite.
+
+For $\Gamma\vdash e\simeq e':T$, domains under $\Gamma$ and denotations on
+those domains must be identical. The proof interface has these rule families:
+{\small
+\begin{longtable}{@{}P{.31\linewidth}P{.64\linewidth}@{}}
+\toprule Rule family & Required premise\\\midrule\endfirsthead
+\toprule Rule family & Required premise (continued)\\\midrule\endhead
+\bottomrule\endfoot
+\xo{ASSUMPTION} & The exact proposition occurs in the typed environment.\\
+\xo{REFL}, \xo{SYM}, \xo{TRANS} & Typed equality and compatible domain judgements.\\
+\xo{CONGRUENCE} & Equal corresponding operands, same operator/bindings and preserved definedness.\\
+\xo{SUBSTITUTION}, \xo{BETA} & Capture-avoiding typed substitution; function/body domain preserved.\\
+\xo{EXPAND} & Exact catalog/template definition, including its branches and domains.\\
+\xo{INTEGER_RING}, \xo{RATIONAL_FIELD} & Exact laws with every nonzero-denominator obligation retained.\\
+\xo{ORDER}, \xo{ROOT_BRANCH} & Required sign, range and unique-root facts.\\
+\xo{ANALYTIC_LEMMA} & Explicit derivative/integral/limit hypotheses and proof in the accepted calculus.\\
+\xo{STATE_SIMULATION} & Initial relation, step-domain equivalence and equal declared observations for every admitted input.\\
+\end{longtable}}
+A theorem identifier must resolve to an accepted theorem with discharged
+substitutions and premises. A named or absent checker cannot admit nonidentity
+proofs. Strategy versions are immutable; the previously accepted checker reviews
+a proposal. Replacing that checker creates a new trust boundary and cannot be
+certified merely by the proposal's own changed rules. Hashes identify bytes,
+not soundness or termination.
+
+Memoization binds complete operator/dependency identity, arguments, sample
+snapshot and state step. Resource outcomes and traces also count when promised
+by the interface. A decreasing natural-valued measure proves termination of
+that rewrite phase; a finite search budget proves only bounded search. Neither
+establishes global optimality, speed, bounded limb growth or physical accuracy.
+The causal and conditional replacement proofs remain those of
+Section~\ref{sec:exact-core}; no new algorithm validation is asserted here.
+\endgroup

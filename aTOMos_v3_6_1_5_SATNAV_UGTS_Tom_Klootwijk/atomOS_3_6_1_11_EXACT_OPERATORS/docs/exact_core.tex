@@ -35,7 +35,13 @@ vectors, matrices, functions and streams have separate type constructors.
 Dimensioned scalars also carry a seven-component rational SI exponent vector;
 addition requires equal dimensions, multiplication adds dimensions, and
 transcendental functions require dimensionless arguments. Angle conventions and
-coordinate frames are declared metadata, not inferred from an untyped number.
+coordinate frames are explicit semantic annotations, not inferred from an
+untyped number. A framed vector's type carries its fully qualified nominal frame
+identity; a framed matrix carries source and target identities. Each identity
+contains namespace, major/minor version and label. The full annotation is
+serialized and participates in sharing. A frame change requires an explicit
+typed template and its coordinate-realization obligations, not a relabelled
+vector. Bare mathematical vectors carry no implied physical frame.
 
 An integer is $(s,a_0,\ldots,a_{k-1})$ with $s\in\B$ and
 \[
@@ -225,7 +231,8 @@ captured values enter through explicit binders. Names are display metadata;
 renaming them does not change variable binding.
 
 References have distinct tags for a local node, bound variable, old state slot,
-current sample slot, or dependency export. A template application additionally
+current sample value, dependency export, raw sample timestamp, or converted GPST
+timestamp. A template application additionally
 identifies its template and supplies all parameters in declared order. Dependency
 records carry the complete canonical seed/template bytes in the self-contained
 form. A digest is a lookup aid; acceptance requires the expected complete bytes
@@ -235,10 +242,22 @@ and acyclic in this profile. Finite summation and delayed state do not imply
 unrestricted recursive template calls.
 
 Sample declarations identify their type, absolute time convention, provenance
-and binding mode. An inline sample is an indexed literal accompanied by its
+and binding mode. A time convention has a versioned semantic profile identity;
+the registered GPST convention supplies its stated scale and epoch, while a
+custom convention includes a complete dependency/template mapping and its domain.
+A name alone does not define a clock, resolve a leap second or prove monotonicity.
+An inline sample is an indexed literal accompanied by its
 absolute timestamp; an external sample is a declared input requirement.
 \code{SAMPLE} selects the value bound to the current logical step, with its
 timestamp retained. Missing data is unresolved input, not a guessed next sample.
+Raw-time reference tag 5 returns the sample's exact rational in its declared
+source-clock coordinate. Converted-time tag 6 explicitly applies the versioned
+mapping and returns GPST SI seconds; the value and both timestamp references
+read one immutable sample snapshot. Integration arguments are explicit
+expressions such as $t=\tau_{\rm GPST}-\tau_{\rm epoch}$ and
+$h=\tau_{\rm GPST}-\tau_{\rm previous}$, with matching time units and epoch
+convention. A custom raw clock tick is not implicitly a second, and a missing
+mapping cannot be replaced by an assumed offset.
 A modular phase, spatial key, hash or template identifier does not supply the
 state, timestamp or sample bytes it refers to.
 
@@ -357,8 +376,9 @@ state stream. A fixed autonomous transition on $m$ active Boolean state bits is
 eventually periodic, with preperiod plus period at most $2^m$.
 \end{proposition}
 \begin{proof}
-Topological induction determines every instantaneous node from old-state and
-input values; simultaneous commitment then determines the next tuple. Induction
+Topological induction determines every demanded instantaneous node on the
+admitted branches from old-state and input values; simultaneous commitment
+then determines the next tuple. Induction
 on steps gives the stream. For the finite autonomous case, among $2^m+1$ states
 two coincide; determinism makes their subsequent tails coincide. Changing the
 input, strategy, timestamp, unbounded integer state or physical continuous state
@@ -378,9 +398,20 @@ binding, definite integration and an initial-value solution declaration.
 \code{DIFF}$(f,x)$ denotes a derivative only where the stated limit exists.
 \code{INTEGRAL}$(f,a,b)$ denotes an oriented Riemann integral when the finite
 interval integrand is integrable; an improper integral has a separate limit
-declaration. \code{ODE}$(F,t_0,s_0,t,I)$ denotes the value at $t\in I$ of a unique
-differentiable solution on the declared interval. A local existence theorem or
-local regularity condition alone is not a certificate of a global interval.
+declaration. \code{ODE}$(F,t_0,s_0,t,I)$ denotes the value at $t\in I$ of the
+unique continuous state satisfying
+\[
+ s(u)=s_0+\int_{t_0}^{u}F(v,s(v))\,dv\qquad(u\in I),
+\]
+with a Riemann-integrable right-hand side along that state. On continuous
+pieces the solution is differentiable; a coefficient jump need not admit a
+derivative at the junction. The named continuous \code{FLOW} uses this
+integral-equation meaning. State may be a tuple of position, velocity and other
+components with different dimensions, including explicitly framed vectors.
+Each derivative component retains its state's nominal frame and has its state
+dimension divided by time. Rotating-frame terms must occur in $F$; the type
+annotation does not invent them. A local existence theorem or local regularity
+condition alone is not a certificate of a global interval.
 If existence, uniqueness or continuation is unresolved, the node remains a
 declaration with obligations, rather than an evaluated exact orbit.
 

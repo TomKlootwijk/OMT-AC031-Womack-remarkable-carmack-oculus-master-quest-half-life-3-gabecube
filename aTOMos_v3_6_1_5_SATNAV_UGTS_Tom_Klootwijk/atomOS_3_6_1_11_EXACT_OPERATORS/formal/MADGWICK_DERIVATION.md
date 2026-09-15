@@ -186,7 +186,7 @@ These are specification choices resolving otherwise partial equations:
 | Initial quaternion zero | No initialized state; request an explicit nonzero initialization. |
 | Nonfinite/untyped input, invalid timestamp mapping, or missing gyro | No transition; record an input-domain failure. |
 | Duplicate or decreasing event time | No transition; ordering/duplicate resolution belongs to a separately declared input policy. |
-| Zero or explicitly missing acceleration | Gyro-only update; ignore magnetic correction and hold drift. |
+| Zero or explicitly missing acceleration | Set e=0; gyro-only update without demanding a residual, magnetic correction or drift adaptation. |
 | Nonzero acceleration, zero/missing magnetometer | IMU objective; hold all-axis drift estimate. |
 | Both vectors admitted, b_x=0 | MARG residual may be evaluated, but mark heading-degenerate and hold all-axis drift adaptation. |
 | Gradient exactly zero | Set e=0; no gradient-driven bias increment. |
@@ -278,6 +278,9 @@ not silently become sensor-integration scheduling.
 
 Let L be the station ENU frame and A the antenna/camera frame. Let `C_(L<-E)`
 be the declared filter-to-ENU alignment and `C_(A<-B)` the calibrated mounting.
+Both are declared proper orthogonal rotations (`C^T*C=I`, `det(C)=1`), so
+transpose equals inverse. An arbitrary scale/shear calibration matrix requires
+a separate coordinate model and is not silently treated as such a rotation.
 For a simultaneous station-relative line-of-sight vector `ell_L(t)`, the body
 instrument vector is
 `ell_A(t)=C_(A<-B)*R(q(t))^T*C_(L<-E)^T*ell_L(t)`.
@@ -290,7 +293,13 @@ are separate declared operators, not implicit extrapolation.
 
 The orbit's discrete RK4 approximation, approximated forcing/frame coefficients,
 source physical uncertainty, sensor calibration/noise and the attitude sampling
-model remain even if graph evaluation is exact. If the ideal continuous
+model remain even if graph evaluation is exact. For unit q and a fixed candidate
+derivative G, the derivative of normalization gives
+`N(q+h*G)=q+h*(I-q*q^T)*G+O(h^2)`. Thus the first-order unit-sphere field of this
+normalized step is the projected candidate derivative. The gyro term is tangent,
+but the ambient correction generally is not; the unprojected candidate derivative
+is not automatically the corresponding continuous unit-sphere field.
+If the ideal continuous
 derivative F is smooth on a branch, Taylor expansion gives
 `q(t+h)=q(t)+h*F(q(t),t)+O(h^2)`; an exact Euler-like discrete update still has
 that discretization distinction. Normalization is a smooth map away from zero;

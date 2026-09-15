@@ -8,7 +8,7 @@ delivery check. No numerical tests or simulations are part of this release.
 | Requirement | Delivered definition / derivation | Principal condition or boundary |
 |---|---|---|
 | F01 | `docs/exact_core.tex`, bits/value hierarchy, literal imports and dimension typing; attitude/domain input maps | Exactness is relative to declared input values; uncertainty is independent |
-| F02 | Core canonical stream, scoped records and one-bit-plane envelope; `formal/OPERATOR_CATALOG.md` | Inverse proof is for the grammar; a future parser must implement it faithfully |
+| F02 | Core canonical stream, scoped records and one-bit-plane envelope; `docs/exact_registry.tex` and `formal/OPERATOR_CATALOG.md` | Inverse proof is for the grammar; a future parser must implement it faithfully |
 | F03 | Core limb and bit arithmetic, rationals, selected algebraic roots, elementary and calculus denotations; catalog | Arbitrary-size resources; algebraic decisions in principle; no general transcendental oracle |
 | F04 | Core DELAY/state recurrence and finite-prefix uniqueness; strategy authoritative-root induction | Synchronous old-state reads; defined domains; chronological input bindings |
 | F05 | `docs/exact_madgwick.tex`, `formal/MADGWICK_DERIVATION.md` | Selected original report equation profile; explicit unit/frame, bias/reference order and zero branches |

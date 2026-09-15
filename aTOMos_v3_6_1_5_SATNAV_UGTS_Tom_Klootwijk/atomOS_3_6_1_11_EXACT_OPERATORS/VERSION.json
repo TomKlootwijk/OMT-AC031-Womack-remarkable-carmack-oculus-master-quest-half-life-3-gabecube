@@ -2,7 +2,11 @@
   "version": "3.6.1.11",
   "parent": "3.6.1.10",
   "profile": "EXACT-OPERATOR-SEED-R1",
-  "status": "formalization_in_progress",
+  "wire_profile": "XOP-R1",
+  "attitude_profile": "MDG2010-EQ-SIMPLIFIED-R1",
+  "status": "formalized_and_logically_reviewed",
   "runtime_status": "not_implemented",
+  "algorithm_tests": "not_run_by_user_instruction",
+  "machine_checked_proof": false,
   "method": "Logical derivations and document review; no tests or simulations"
 }

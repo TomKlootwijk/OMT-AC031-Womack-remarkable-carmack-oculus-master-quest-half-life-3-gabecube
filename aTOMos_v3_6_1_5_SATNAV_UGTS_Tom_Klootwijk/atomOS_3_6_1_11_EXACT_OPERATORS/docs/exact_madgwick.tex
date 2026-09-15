@@ -250,12 +250,12 @@ preserves the chosen recurrence; it does not remove this model choice.
 \subsection{Domain branches are part of the formal input}
 The following are explicit definitions resolving partial equations; they are
 not presented as pre-existing empirical rejection heuristics.
-\begin{center}\begin{tabularx}{\linewidth}{@{}p{.34\linewidth}X@{}}\toprule
+\begin{center}\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.34\linewidth}>{\raggedright\arraybackslash}X@{}}\toprule
 Condition & Declared action\\\midrule
 Zero initial quaternion & No initialized state; require a declared nonzero initialization.\\
 Untyped/nonfinite input, missing gyro or invalid clock mapping & No transition; record the input-domain failure.\\
 Duplicate or decreasing event time & No transition; a separate input policy must resolve ordering or duplicates.\\
-Zero or missing acceleration & Gyro-only update; no magnetic correction or drift adaptation.\\
+Zero or missing acceleration & Set $e=0$ and use a gyro-only update; no residual, magnetic correction or drift adaptation is demanded.\\
 Acceleration admitted; magnetic sample zero or missing & IMU objective; hold all-axis drift estimate.\\
 Both vectors admitted and $b_x=0$ & MARG residual remains defined; mark heading degeneracy and hold all-axis drift adaptation.\\
 Exactly zero gradient & Set $e=0$; no gradient-driven bias increment.\\
@@ -381,6 +381,10 @@ step. Observation cadence and sensor-integration cadence are separate contracts.
 \subsection{Station composition, observability and error meaning}
 Let $L$ be station ENU, $A$ the antenna/camera frame, $C_{L\leftarrow E}$ the
 declared filter-to-ENU alignment, and $C_{A\leftarrow B}$ the mounting rotation.
+Both matrices are declared proper orthogonal rotations: $C^TC=I$ and
+$\det C=1$. Thus their transposes are their inverses. An arbitrary calibration
+matrix with scale or shear does not satisfy this convention without a separate
+coordinate model.
 For the simultaneous station-relative line of sight $\ell_L(t)$,
 \[
 \ell_A(t)=C_{A\leftarrow B}\,R(q(t))^T\,
@@ -402,6 +406,16 @@ with position/velocity/bias state. This attitude formalization establishes no
 millimetre positioning or arcsecond pointing result.
 
 Exact arithmetic of a discrete rule remains distinct from time discretization.
+For unit $q$ and a fixed candidate derivative $G$, differentiating normalization
+at $q$ gives
+\[
+ \mathcal N(q+hG)=q+h(I-qq^T)G+O(h^2).
+\]
+Thus the first-order vector field corresponding to this normalized step is
+the projected candidate derivative. The gyro derivative is tangent, but the
+source's ambient correction generally is not; identifying the continuous
+unit-sphere evolution with the unprojected candidate would require a different
+argument.
 For a sufficiently smooth ideal derivative $F$ on a fixed branch,
 \[
 q(t+h)=q(t)+hF(q(t),t)+O(h^2).
