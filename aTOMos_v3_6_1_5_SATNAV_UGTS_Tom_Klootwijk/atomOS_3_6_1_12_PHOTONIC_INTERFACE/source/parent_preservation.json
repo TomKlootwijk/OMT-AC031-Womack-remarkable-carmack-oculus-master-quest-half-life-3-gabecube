@@ -1,0 +1,146 @@
+{
+  "purpose": "Document source provenance, not algorithm verification",
+  "parent_commit": "f5c2c9e4ab10d7c2aae08e2128eaf82b1d786d13",
+  "inherited_tex_files_byte_identical": [
+    {
+      "path": "docs/calendar_phase.tex",
+      "sha256": "4bcdb0e26b1dfc2d1d9bd9961dc47b75ad5a0f328fde097741f68cceb686923b"
+    },
+    {
+      "path": "docs/coupled.tex",
+      "sha256": "65e1fd9c262788fc5c8c099b54cfede8d4c8814abe78c3059d7b225598c65a23"
+    },
+    {
+      "path": "docs/coupled_validation.tex",
+      "sha256": "4682f1304f6dc8c04236c9a60d584937bee4134f8ce09853e95323c8e87111b7"
+    },
+    {
+      "path": "docs/exact_completion.tex",
+      "sha256": "48c794a9bf5075497d5924f346f349f9be7e9191246e3d7aee5a1e4d652abac3"
+    },
+    {
+      "path": "docs/exact_core.tex",
+      "sha256": "df7ff42719008603927ee2b884052e2c052f4c1ae3b8ff312d63205ad82ebf9c"
+    },
+    {
+      "path": "docs/exact_domains.tex",
+      "sha256": "5b60d81e09b10634e4d26c55faf905d636ca7b55cd15c7898a20b78f7368bab0"
+    },
+    {
+      "path": "docs/exact_madgwick.tex",
+      "sha256": "64708267e53c135f7be9ca1ac882c78117ded0688c525c55813c7adf569c291c"
+    },
+    {
+      "path": "docs/exact_registry.tex",
+      "sha256": "c4f8bc070baf0a8bf23abefbf9dda355da6d1fdc489c76432bae26d9fff690a8"
+    },
+    {
+      "path": "docs/exact_strategy.tex",
+      "sha256": "ccc0d5f957942ea6e869a65375ecf49b67317437649f8a61733f94d67a6af69c"
+    },
+    {
+      "path": "docs/live.tex",
+      "sha256": "77c764de2c2f29cab1e497aae4c3ee570902bbbe7f7d289a5be0b5a307805fff"
+    },
+    {
+      "path": "docs/live_equations.tex",
+      "sha256": "3140b3778ff4742165b6d1707e0e824be089c93a4d8e80234afefc02b73ed1c6"
+    },
+    {
+      "path": "docs/live_validation.tex",
+      "sha256": "3483208205dcef0ceaef761508475f5292c6c21fa95f42bbfa2a19a4a31d22ca"
+    },
+    {
+      "path": "docs/orbit.tex",
+      "sha256": "99f51079efb50c2f01820e9fe12098ff208711615087101cbfa6488bf6a01454"
+    },
+    {
+      "path": "docs/orbit_runtime_validation.tex",
+      "sha256": "0a4d4250b0899964a53c73107dab700bcad11f1d40b32e37107b72272f334b96"
+    },
+    {
+      "path": "docs/orbit_validation.tex",
+      "sha256": "a77490d641d89f46d41a7789cb5603997d26d8c39f520d4d94840edd8ea7ff0e"
+    },
+    {
+      "path": "docs/phi_source_audit.tex",
+      "sha256": "963737829e4073aba200a9f08d7a778e366060f8fd0d4f2b1e421482da74b307"
+    },
+    {
+      "path": "docs/retained_satnav_body.tex",
+      "sha256": "295262d0a9eaa85a68af66b70ec934faecedf8a0f25c600a4db61ef2eae8b9b9"
+    },
+    {
+      "path": "docs/seed_optimization.tex",
+      "sha256": "ba7e609b636a8334736505c646f282703bd6bc6d87acfbe9946904a24f9b24e5"
+    },
+    {
+      "path": "docs/self_reference.tex",
+      "sha256": "77ca8915b7b08abbe921361e299e2f223a3c0870ab4cb88df4645e50475458d9"
+    },
+    {
+      "path": "docs/validation_current.tex",
+      "sha256": "8d27b17af9a5bd2ad67ad405adea3a2e8303348184326c1000256ed0def7f0d4"
+    }
+  ],
+  "other_inherited_files_byte_identical": [
+    {
+      "path": "formal/COVERAGE_AND_PROOFS.md",
+      "sha256": "04c8c1527b6504324c57b65a41c211a50c18fbdf1d81cd991ffb3a7fbe00be3d"
+    },
+    {
+      "path": "formal/DOMAIN_LIFT.md",
+      "sha256": "0d3e40cdc532701463a37b734ab22e2150442709b6335b2402e7a648cb5ac533"
+    },
+    {
+      "path": "formal/MADGWICK_DERIVATION.md",
+      "sha256": "c699291e09651ceea3215b9dd9a094384aea38cf1a7964267955c1a131365e65"
+    },
+    {
+      "path": "formal/OPERATOR_CATALOG.md",
+      "sha256": "2cff363da0b2fc33b60ea0b512f7ff676d0c76e5f8e5be1d78f720d661a593ad"
+    },
+    {
+      "path": "formal/SCOPE_AND_CLAIMS.md",
+      "sha256": "5ade9d7844aa41f61f673dd90a2988909af9c3967a286f111cddecaf17ac8642"
+    },
+    {
+      "path": "formal/STRATEGY_REVISIONS.md",
+      "sha256": "d065cdaca9ac538f871649abd7a7efb123cfc1a8aeb88f2d5e166aaa0be396f6"
+    },
+    {
+      "path": "results/orbit_accuracy_confirmation_cpu_verified/forecast_error_curves.pdf",
+      "sha256": "ebe0f49b5eaae192b6001c51a8a8c3058531ce0a9f3fc041c9c56fb504d5f492"
+    },
+    {
+      "path": "results/orbit_accuracy_confirmation_cpu_verified/forecast_error_curves.png",
+      "sha256": "7e191bce21eea7214ce4f3187b6d9921d65114fc14bac9b4238f71b99936ad8e"
+    },
+    {
+      "path": "results/orbit_accuracy_confirmation_cpu_verified/forecast_error_first_day.png",
+      "sha256": "dafcb2981ade69cab98a33d87c88a8b9bc23172fcf5db4c195c1d93769f65cd2"
+    },
+    {
+      "path": "results/orbit_accuracy_r2_cpu_verified/forecast_error_curves.pdf",
+      "sha256": "6967e18194dc0a150a74fade7abe8239faef034b5de64f9f2118eb70363a115f"
+    },
+    {
+      "path": "results/orbit_accuracy_r2_cpu_verified/forecast_error_curves.png",
+      "sha256": "7129df9cb7ff00feb1362aabe928336ea8765925dfa69221fa7c709c5f69d70b"
+    },
+    {
+      "path": "results/orbit_accuracy_r2_cpu_verified/forecast_error_first_day.png",
+      "sha256": "e32db041d153f326ad596b59ba2d9f4c7a79e1359f27bb057fb2d1f5749b87cd"
+    },
+    {
+      "path": "docs/figures/live_position_evidence.png",
+      "sha256": "dc58b74b7fc9af152674a4c5c67f125719cfb7fd010347cefac831dc939d6636"
+    }
+  ],
+  "original_pdf_and_ten_embedded_attachments_match_source_binding": true,
+  "grouped_r11_markdown_matches_parent": true,
+  "intentional_new_master_and_preamble": [
+    "docs/satnav.tex",
+    "docs/preamble.tex"
+  ]
+}
