@@ -1,0 +1,420 @@
+{
+  "schema": "R10-GIT-DELIVERY-AUDIT-1",
+  "audited_utc": "2026-09-15T05:34:44.050782+00:00",
+  "scope": "Read-only raw Git blob versus current filesystem byte comparison for unchanged tracked R10 paths. Modified tracked paths and later additions are excluded per commit. This file is not self-hashed.",
+  "method": "git ls-tree/cat-file --batch raw blobs, direct byte equality, SHA256 evidence bindings, current indexed attributes; committed release .gitattributes also read and included.",
+  "release_path": "aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_10_ORBIT_SEED",
+  "core_autocrlf": "true",
+  "newline_conclusion": "Explicit -text disables EOL normalization on covered paths even when core.autocrlf=true. No filter or eol attribute overrides were found.",
+  "audits": [
+    {
+      "commit": "6bc83380ebab13340e036a023a143db4999f10da",
+      "tree": "0bf9d889dad1a8300c541d0473e6159153226fb7",
+      "tracked_release_blobs": 937,
+      "excluded_modified_tracked_paths": [
+        "CHANGELOG.md",
+        "README.md",
+        "docs/ORBIT_REQUIREMENTS.md",
+        "docs/satnav.tex",
+        "output/pdf/aTOMos_v3_6_1_10_Orbital_Seed_Kernel_UGTS_Tom_Klootwijk.pdf",
+        "results/orbit_pdf_36110_qa/contact_01_12.png",
+        "results/orbit_pdf_36110_qa/contact_13_24.png",
+        "results/orbit_pdf_36110_qa/contact_25_36.png",
+        "results/orbit_pdf_36110_qa/contact_37_48.png",
+        "results/orbit_pdf_36110_qa/contact_49_60.png",
+        "results/orbit_pdf_36110_qa/contact_61_72.png",
+        "results/orbit_pdf_36110_qa/contact_73_73.png",
+        "results/orbit_pdf_36110_qa/extracted.txt",
+        "results/orbit_pdf_36110_qa/qa.json",
+        "tools/prepare_orbit_document.py"
+      ],
+      "verified_unchanged_blobs": 922,
+      "verified_bytes": 199198461,
+      "categories": {
+        ".gitattributes": {
+          "files": 1,
+          "bytes": 149
+        },
+        ".gitignore": {
+          "files": 1,
+          "bytes": 166
+        },
+        "AGENTS.md": {
+          "files": 1,
+          "bytes": 1010
+        },
+        "AUTHORSHIP.json": {
+          "files": 1,
+          "bytes": 245
+        },
+        "CITATION.cff": {
+          "files": 1,
+          "bytes": 563
+        },
+        "CMakeLists.txt": {
+          "files": 1,
+          "bytes": 4510
+        },
+        "SHA256SUMS.txt": {
+          "files": 1,
+          "bytes": 91118
+        },
+        "VERSION.json": {
+          "files": 1,
+          "bytes": 485
+        },
+        "bin": {
+          "files": 10,
+          "bytes": 3648000
+        },
+        "cuda": {
+          "files": 3,
+          "bytes": 14645
+        },
+        "docs": {
+          "files": 34,
+          "bytes": 689322
+        },
+        "examples": {
+          "files": 62,
+          "bytes": 1478015
+        },
+        "include": {
+          "files": 8,
+          "bytes": 35917
+        },
+        "output": {
+          "files": 1,
+          "bytes": 720932
+        },
+        "profiles": {
+          "files": 2,
+          "bytes": 5666
+        },
+        "python": {
+          "files": 15,
+          "bytes": 211236
+        },
+        "requirements-orbit-construction.txt": {
+          "files": 1,
+          "bytes": 154
+        },
+        "requirements-review.txt": {
+          "files": 1,
+          "bytes": 150
+        },
+        "requirements.txt": {
+          "files": 1,
+          "bytes": 24
+        },
+        "results": {
+          "files": 551,
+          "bytes": 113618336
+        },
+        "source": {
+          "files": 151,
+          "bytes": 78124677
+        },
+        "src": {
+          "files": 7,
+          "bytes": 58730
+        },
+        "tests": {
+          "files": 16,
+          "bytes": 147820
+        },
+        "tools": {
+          "files": 49,
+          "bytes": 331131
+        },
+        "validation_results.json": {
+          "files": 1,
+          "bytes": 142
+        },
+        "web": {
+          "files": 1,
+          "bytes": 15318
+        }
+      },
+      "blob_sha256_manifest_digest": "5e6b2fb79ca7fb2ba47d81a115b668e64139a06cc4860dfe8b06d22e354370a1",
+      "manifest_digest_definition": "SHA256 of sorted UTF-8 relative-path + one space + raw-blob-SHA256 + newline entries",
+      "byte_mismatches": [],
+      "absent_files": [],
+      "checkout_attributes": {
+        "text:unset": 922,
+        "filter:unspecified": 922,
+        "eol:unspecified": 922
+      },
+      "attribute_discrepancies": [],
+      "committed_gitattributes": "# Preserve delivered source, observations and evidence bytes used by SHA-256 checks.\n* -text\n*.pdf binary\n*.png binary\n*.exe binary\n*.orbseed binary\n",
+      "tracked_cache_paths": [],
+      "missing_source_build_paths": [],
+      "evidence_hash_comparisons": 114,
+      "source_download_hash_comparisons": 82,
+      "evidence_hash_discrepancies": [],
+      "evidence_files_sha256": {
+        "results/optimization_replay_cpu_final/summary.json": "0946a4ffd5558a3157b5ed0d163305fbeaaf85ae708815fca05d6f39bd6a602f",
+        "results/seed_word_optimization/benchmark_final.json": "781f76dce4f1bdf4ce9809d8c6a5003988cd5f4943759fc3a7a78635bd927a51",
+        "results/query_overhead_comparison_final.json": "d69347ec0f5921ef352c26fac66b622ca49880c56ffa079a1563cd54bf8607b0",
+        "results/query_snapshot_independent_check.json": "c992d92040a6276afb80f332c21c36cd9a043687744a911048c4bf37db2f9e5c",
+        "results/orbit_native_36110_build/binaries.json": "e6725e0af6cd98b7a7618b191a53b2e5ef0d2b35694974db04f9bf1283c8bab7",
+        "source/orbit_data/download_manifest.json": "4c578c3aa3f68b7a8d1508700fa333c6ea1d1ffe1094411e6bd0b67d0765643a",
+        "source/orbit_data/earlier_training/download_manifest.json": "904d2728b45d2d715a3f6048e7d16cede203226ced15b2e0a4aa1b172f5c65b0",
+        "source/orbit_data/gravity_reference/download_manifest.json": "5d82f4c5dea58b6f609b1622c95903a71b62bf67b6eedcf1b14c0fbfbcb33621",
+        "source/orbit_data/confirmation_20250202/download_manifest.json": "637c55dc5fdc1d1a40128a72969cd8983fff5c394b4b4da36375e96f79a019a4"
+      },
+      "critical_blobs_sha256": {
+        "bin/cpu/coupled_kernel.exe": "2a0524ccdd47c4d93f68c866829d75ac7dfd059ec9c7ad62ea6cb299ad0a9405",
+        "bin/cpu/orbit_worker.exe": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7",
+        "bin/cpu/satnav.exe": "9f93d6ee4861aff73818119875c5c10b7aa223d3971d5d0f565cf4274ec91bfc",
+        "bin/cpu/satnav_stream.exe": "889ef8b66b82026b691f2d1312400b16941daf0da9c6da38a60c92a788d5d699",
+        "bin/cpu/self_reference.exe": "aded3292b1e48b805eeb6b36653cd3352a7a6aef345dd14f40c471c9fb0ce649",
+        "bin/cuda/coupled_kernel.exe": "060dfd2de13d8f85141cf1c53695291c9d7bdc1c332a1acce29d975846bd7a43",
+        "bin/cuda/orbit_worker.exe": "f6b640d5f984c5e2226794649fd22391c1819ad1e7ee2df5db3a81e527262ef3",
+        "bin/cuda/satnav.exe": "c3cbf7543f27ce174000fb1cff3de0206e32b46da72787072d9a1432d52b785b",
+        "bin/cuda/satnav_stream.exe": "db9067ae03991a3e392f4defce21bf8da68e228ad50bfaf6cb6a29953d5f31d9",
+        "bin/cuda/self_reference.exe": "3efb0d35985e849eab7a276c4dffd1ad79dbb9bb950b51baf662d5dc97854ec0",
+        "examples/orbit/baseline_seeds/C03.orbseed": "062d2a6fac66ae835660c2e8f8383105d6fd70a6e01e86035a31bb976d223cab",
+        "examples/orbit/baseline_seeds/C06.orbseed": "1a0ed701de7e29e8287ea77d5775225141f4ffa2f534b264d80f44d5407b4d2f",
+        "examples/orbit/baseline_seeds/CHANDRA.orbseed": "a9c6b7a3cb47e3cc0cc3a18e1024e8b5bc918c7a523c7318c65749982662abd1",
+        "examples/orbit/baseline_seeds/G05.orbseed": "84b0be080d113695ec6381465db57613408dbb2d512cb934efac33fe6fce2de5",
+        "examples/orbit/confirmation_seeds/C03.orbseed": "1b0cf39ad71a1ec1739354dccd8c211497c531b147fc3ac70cf55f61b1ba840c",
+        "examples/orbit/confirmation_seeds/C06.orbseed": "4c963e6fdd40d6edb3d136517953bbe39e00240480498113cc22c6cfcc5c02ff",
+        "examples/orbit/confirmation_seeds/CHANDRA.orbseed": "61b4124629bee9c558eeabdd6bbbc9e0bb45d5b3020d76526e5c091dd3d5e2f0",
+        "examples/orbit/confirmation_seeds/G05.orbseed": "900bf67616fbbcf9892a105f98be385fe9ec1931e181ea42620161bcb1c573a5",
+        "examples/orbit/seeds/C03.orbseed": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+        "examples/orbit/seeds/C06.orbseed": "6ef34a15c13013354a909b12d2f7f0e8badf9c78fc17959be10f835b6c437d64",
+        "examples/orbit/seeds/CHANDRA.orbseed": "9beca3919475dfe9dc7e793c8da83dda3b7fdf70e676003ed51940f42239c568",
+        "examples/orbit/seeds/G05.orbseed": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+        "python/coupled.py": "23278317e4a92fd54b854cc1d74cffebb52d787f53da5281d364d24fcccad6f4",
+        "python/geodesy.py": "c7050adc44894d96285b7f40b6f93dece990578cbb136e8b9b665190e3016acf",
+        "python/live_gnss.py": "40434e11affffa333ad65f00894415ce0a994bcc627f22ce189ceee8e08a4640",
+        "python/live_native.py": "22ffe0e51ac899487a1ef1e2abf11e9885039b195b6b70f84e258f827853c67c",
+        "python/live_pipeline.py": "d8382f89e312638410a1a955b29f5543f2e260a0d13ecc833766228772f2c0af",
+        "python/live_rtcm.py": "78ab371e4e1268297822aa0d2a0b290497c5ffac61986e667d133a1b13fded86",
+        "python/orbit_dynamics.py": "a106ef9c81197e9501d897fa01c926ab91eb0ba32f5a486e1c389d05c2eb69f8",
+        "python/orbit_fitting.py": "c907048159a8fd354a8233655d535db44d2387b07edc10140828ec76ef2e43e6",
+        "python/orbit_native.py": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092",
+        "python/orbit_precision.py": "9efa1426d7c6947e487c0ce069e4f601de6945284069789ba7020675ab2be92f",
+        "python/orbit_query.py": "8e1340922335ce16265cb22b62896bca2430a849f4541659280a515b002c9471",
+        "python/orbit_seed.py": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae",
+        "python/reference.py": "8aaeb6c5d310747cc4c8ef6a3917bc1708917f2fef46cf375560e5d0a3c2710b",
+        "python/self_reference.py": "607371faba493ce9d532691abfeea55982c0681dec62210922efdf5710ba6fbc",
+        "python/ugts.py": "ddccfb284c48c028a788b7597cdd27d8caa7e5819456993c1b42292ff9901fec"
+      },
+      "status": "passed"
+    },
+    {
+      "commit": "3725d2836931e6812a4937d75c781e9a04733c0e",
+      "tree": "0254b036fb19587e0a743ed2a5e78468ae9f4d36",
+      "tracked_release_blobs": 945,
+      "excluded_modified_tracked_paths": [
+        "docs/satnav.tex",
+        "output/pdf/aTOMos_v3_6_1_10_Orbital_Seed_Kernel_UGTS_Tom_Klootwijk.pdf",
+        "results/orbit_pdf_36110_qa/contact_01_12.png",
+        "results/orbit_pdf_36110_qa/contact_13_24.png",
+        "results/orbit_pdf_36110_qa/contact_25_36.png",
+        "results/orbit_pdf_36110_qa/contact_37_48.png",
+        "results/orbit_pdf_36110_qa/contact_49_60.png",
+        "results/orbit_pdf_36110_qa/contact_61_72.png",
+        "results/orbit_pdf_36110_qa/contact_73_73.png",
+        "results/orbit_pdf_36110_qa/extracted.txt",
+        "results/orbit_pdf_36110_qa/qa.json",
+        "tools/prepare_orbit_document.py"
+      ],
+      "verified_unchanged_blobs": 933,
+      "verified_bytes": 199280298,
+      "categories": {
+        ".gitattributes": {
+          "files": 1,
+          "bytes": 149
+        },
+        ".gitignore": {
+          "files": 1,
+          "bytes": 166
+        },
+        "AGENTS.md": {
+          "files": 1,
+          "bytes": 1010
+        },
+        "AUTHORSHIP.json": {
+          "files": 1,
+          "bytes": 245
+        },
+        "CHANGELOG.md": {
+          "files": 1,
+          "bytes": 3067
+        },
+        "CITATION.cff": {
+          "files": 1,
+          "bytes": 563
+        },
+        "CMakeLists.txt": {
+          "files": 1,
+          "bytes": 4510
+        },
+        "README.md": {
+          "files": 1,
+          "bytes": 17630
+        },
+        "SHA256SUMS.txt": {
+          "files": 1,
+          "bytes": 91118
+        },
+        "VERSION.json": {
+          "files": 1,
+          "bytes": 485
+        },
+        "bin": {
+          "files": 10,
+          "bytes": 3648000
+        },
+        "cuda": {
+          "files": 3,
+          "bytes": 14645
+        },
+        "docs": {
+          "files": 37,
+          "bytes": 703734
+        },
+        "examples": {
+          "files": 62,
+          "bytes": 1478015
+        },
+        "include": {
+          "files": 8,
+          "bytes": 35917
+        },
+        "output": {
+          "files": 1,
+          "bytes": 720932
+        },
+        "profiles": {
+          "files": 2,
+          "bytes": 5666
+        },
+        "python": {
+          "files": 15,
+          "bytes": 211236
+        },
+        "requirements-orbit-construction.txt": {
+          "files": 1,
+          "bytes": 154
+        },
+        "requirements-review.txt": {
+          "files": 1,
+          "bytes": 150
+        },
+        "requirements.txt": {
+          "files": 1,
+          "bytes": 24
+        },
+        "results": {
+          "files": 555,
+          "bytes": 113649710
+        },
+        "source": {
+          "files": 151,
+          "bytes": 78124677
+        },
+        "src": {
+          "files": 7,
+          "bytes": 58730
+        },
+        "tests": {
+          "files": 17,
+          "bytes": 150908
+        },
+        "tools": {
+          "files": 50,
+          "bytes": 343397
+        },
+        "validation_results.json": {
+          "files": 1,
+          "bytes": 142
+        },
+        "web": {
+          "files": 1,
+          "bytes": 15318
+        }
+      },
+      "blob_sha256_manifest_digest": "7ccf96631879fc6867dbedb2d35b68d7a8089b30b0cf861754eb4efb1fff434e",
+      "manifest_digest_definition": "SHA256 of sorted UTF-8 relative-path + one space + raw-blob-SHA256 + newline entries",
+      "byte_mismatches": [],
+      "absent_files": [],
+      "checkout_attributes": {
+        "text:unset": 933,
+        "filter:unspecified": 933,
+        "eol:unspecified": 933
+      },
+      "attribute_discrepancies": [],
+      "committed_gitattributes": "# Preserve delivered source, observations and evidence bytes used by SHA-256 checks.\n* -text\n*.pdf binary\n*.png binary\n*.exe binary\n*.orbseed binary\n",
+      "tracked_cache_paths": [],
+      "missing_source_build_paths": [],
+      "evidence_hash_comparisons": 126,
+      "source_download_hash_comparisons": 82,
+      "evidence_hash_discrepancies": [],
+      "evidence_files_sha256": {
+        "results/optimization_replay_cpu_final/summary.json": "0946a4ffd5558a3157b5ed0d163305fbeaaf85ae708815fca05d6f39bd6a602f",
+        "results/seed_word_optimization/benchmark_final.json": "781f76dce4f1bdf4ce9809d8c6a5003988cd5f4943759fc3a7a78635bd927a51",
+        "results/query_overhead_comparison_final.json": "d69347ec0f5921ef352c26fac66b622ca49880c56ffa079a1563cd54bf8607b0",
+        "results/query_snapshot_independent_check.json": "c992d92040a6276afb80f332c21c36cd9a043687744a911048c4bf37db2f9e5c",
+        "results/calendar_phase_36110/summary.json": "3d1ec0c762d16508b48634dbaaf03331dffa36bfba70cb16218866ec72203f3d",
+        "results/orbit_native_36110_build/binaries.json": "e6725e0af6cd98b7a7618b191a53b2e5ef0d2b35694974db04f9bf1283c8bab7",
+        "source/orbit_data/download_manifest.json": "4c578c3aa3f68b7a8d1508700fa333c6ea1d1ffe1094411e6bd0b67d0765643a",
+        "source/orbit_data/earlier_training/download_manifest.json": "904d2728b45d2d715a3f6048e7d16cede203226ced15b2e0a4aa1b172f5c65b0",
+        "source/orbit_data/gravity_reference/download_manifest.json": "5d82f4c5dea58b6f609b1622c95903a71b62bf67b6eedcf1b14c0fbfbcb33621",
+        "source/orbit_data/confirmation_20250202/download_manifest.json": "637c55dc5fdc1d1a40128a72969cd8983fff5c394b4b4da36375e96f79a019a4"
+      },
+      "critical_blobs_sha256": {
+        "bin/cpu/coupled_kernel.exe": "2a0524ccdd47c4d93f68c866829d75ac7dfd059ec9c7ad62ea6cb299ad0a9405",
+        "bin/cpu/orbit_worker.exe": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7",
+        "bin/cpu/satnav.exe": "9f93d6ee4861aff73818119875c5c10b7aa223d3971d5d0f565cf4274ec91bfc",
+        "bin/cpu/satnav_stream.exe": "889ef8b66b82026b691f2d1312400b16941daf0da9c6da38a60c92a788d5d699",
+        "bin/cpu/self_reference.exe": "aded3292b1e48b805eeb6b36653cd3352a7a6aef345dd14f40c471c9fb0ce649",
+        "bin/cuda/coupled_kernel.exe": "060dfd2de13d8f85141cf1c53695291c9d7bdc1c332a1acce29d975846bd7a43",
+        "bin/cuda/orbit_worker.exe": "f6b640d5f984c5e2226794649fd22391c1819ad1e7ee2df5db3a81e527262ef3",
+        "bin/cuda/satnav.exe": "c3cbf7543f27ce174000fb1cff3de0206e32b46da72787072d9a1432d52b785b",
+        "bin/cuda/satnav_stream.exe": "db9067ae03991a3e392f4defce21bf8da68e228ad50bfaf6cb6a29953d5f31d9",
+        "bin/cuda/self_reference.exe": "3efb0d35985e849eab7a276c4dffd1ad79dbb9bb950b51baf662d5dc97854ec0",
+        "examples/orbit/baseline_seeds/C03.orbseed": "062d2a6fac66ae835660c2e8f8383105d6fd70a6e01e86035a31bb976d223cab",
+        "examples/orbit/baseline_seeds/C06.orbseed": "1a0ed701de7e29e8287ea77d5775225141f4ffa2f534b264d80f44d5407b4d2f",
+        "examples/orbit/baseline_seeds/CHANDRA.orbseed": "a9c6b7a3cb47e3cc0cc3a18e1024e8b5bc918c7a523c7318c65749982662abd1",
+        "examples/orbit/baseline_seeds/G05.orbseed": "84b0be080d113695ec6381465db57613408dbb2d512cb934efac33fe6fce2de5",
+        "examples/orbit/confirmation_seeds/C03.orbseed": "1b0cf39ad71a1ec1739354dccd8c211497c531b147fc3ac70cf55f61b1ba840c",
+        "examples/orbit/confirmation_seeds/C06.orbseed": "4c963e6fdd40d6edb3d136517953bbe39e00240480498113cc22c6cfcc5c02ff",
+        "examples/orbit/confirmation_seeds/CHANDRA.orbseed": "61b4124629bee9c558eeabdd6bbbc9e0bb45d5b3020d76526e5c091dd3d5e2f0",
+        "examples/orbit/confirmation_seeds/G05.orbseed": "900bf67616fbbcf9892a105f98be385fe9ec1931e181ea42620161bcb1c573a5",
+        "examples/orbit/seeds/C03.orbseed": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+        "examples/orbit/seeds/C06.orbseed": "6ef34a15c13013354a909b12d2f7f0e8badf9c78fc17959be10f835b6c437d64",
+        "examples/orbit/seeds/CHANDRA.orbseed": "9beca3919475dfe9dc7e793c8da83dda3b7fdf70e676003ed51940f42239c568",
+        "examples/orbit/seeds/G05.orbseed": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+        "python/coupled.py": "23278317e4a92fd54b854cc1d74cffebb52d787f53da5281d364d24fcccad6f4",
+        "python/geodesy.py": "c7050adc44894d96285b7f40b6f93dece990578cbb136e8b9b665190e3016acf",
+        "python/live_gnss.py": "40434e11affffa333ad65f00894415ce0a994bcc627f22ce189ceee8e08a4640",
+        "python/live_native.py": "22ffe0e51ac899487a1ef1e2abf11e9885039b195b6b70f84e258f827853c67c",
+        "python/live_pipeline.py": "d8382f89e312638410a1a955b29f5543f2e260a0d13ecc833766228772f2c0af",
+        "python/live_rtcm.py": "78ab371e4e1268297822aa0d2a0b290497c5ffac61986e667d133a1b13fded86",
+        "python/orbit_dynamics.py": "a106ef9c81197e9501d897fa01c926ab91eb0ba32f5a486e1c389d05c2eb69f8",
+        "python/orbit_fitting.py": "c907048159a8fd354a8233655d535db44d2387b07edc10140828ec76ef2e43e6",
+        "python/orbit_native.py": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092",
+        "python/orbit_precision.py": "9efa1426d7c6947e487c0ce069e4f601de6945284069789ba7020675ab2be92f",
+        "python/orbit_query.py": "8e1340922335ce16265cb22b62896bca2430a849f4541659280a515b002c9471",
+        "python/orbit_seed.py": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae",
+        "python/reference.py": "8aaeb6c5d310747cc4c8ef6a3917bc1708917f2fef46cf375560e5d0a3c2710b",
+        "python/self_reference.py": "607371faba493ce9d532691abfeea55982c0681dec62210922efdf5710ba6fbc",
+        "python/ugts.py": "ddccfb284c48c028a788b7597cdd27d8caa7e5819456993c1b42292ff9901fec"
+      },
+      "status": "passed"
+    }
+  ],
+  "external_runtime_archive": {
+    "commit": "6bc8338",
+    "path": "aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/output/aTOMos_v3_6_1_10_Orbit_Runtime.zip",
+    "bytes": 645430,
+    "sha256": "b09c0f203d764bdf28b1d963b2fbac330d69a8113b2b3e68228bc42546a5f085",
+    "raw_matches_current": true,
+    "checkout_filters_preserve_bytes": true
+  },
+  "status": "passed"
+}

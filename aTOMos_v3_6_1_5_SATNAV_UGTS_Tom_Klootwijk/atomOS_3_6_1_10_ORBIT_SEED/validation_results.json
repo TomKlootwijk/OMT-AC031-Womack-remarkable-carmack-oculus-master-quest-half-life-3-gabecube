@@ -1,5 +1,121 @@
 {
   "release": "3.6.1.10",
-  "status": "development_not_yet_validated",
-  "parent_evidence": "source/baseline_3_6_1_9_validation.json"
+  "seed_schema_version": "3.6.1.9",
+  "status": "implementation_passed_accuracy_preserved",
+  "evidence": {
+    "packing": {
+      "path": "results/seed_word_optimization/benchmark_final.json",
+      "sha256": "781f76dce4f1bdf4ce9809d8c6a5003988cd5f4943759fc3a7a78635bd927a51"
+    },
+    "packing_review": {
+      "path": "results/seed_word_optimization/independent_review.json",
+      "sha256": "a5ad22e576c4bd918c77543aeb7720875ad922c164e6430dc86cb0a05dd28da3"
+    },
+    "query_preparation": {
+      "path": "results/query_overhead_comparison_final.json",
+      "sha256": "d69347ec0f5921ef352c26fac66b622ca49880c56ffa079a1563cd54bf8607b0"
+    },
+    "session_identity": {
+      "path": "results/query_snapshot_independent_check.json",
+      "sha256": "c992d92040a6276afb80f332c21c36cd9a043687744a911048c4bf37db2f9e5c"
+    },
+    "native_build": {
+      "path": "results/orbit_native_36110_build/summary.json",
+      "sha256": "b2f0bd00205bc84cfe5d0537b5b57e41ec75deba8cf892d2aa9bf2f32d903e92"
+    },
+    "native_validation": {
+      "path": "results/orbit_native_36110_validation/summary.json",
+      "sha256": "a0d5376160591407c47f1d9328f6b25b1ab33039395e685193a3397d25b9e5a1"
+    },
+    "cpu_replay": {
+      "path": "results/optimization_replay_cpu_final/summary.json",
+      "sha256": "0946a4ffd5558a3157b5ed0d163305fbeaaf85ae708815fca05d6f39bd6a602f"
+    },
+    "cuda_replay": {
+      "path": "results/optimization_replay_cuda/summary.json",
+      "sha256": "5a85aa2311fb240f2ac641cd98af4d115875da434899984b5b68da5b59ff0ab9"
+    },
+    "wrapper_compatibility": {
+      "path": "results/wrapper_compatibility/summary.json",
+      "sha256": "4284d1748a4f104c24ec07dc53b601278b492179687eb18184af73082d4b6103"
+    },
+    "seed_execution": {
+      "path": "results/seed_36110_final_validation/summary.json",
+      "sha256": "fa4c32fbc094fe8673c7705f4518b59b27944e701c67df869248217ad2f420e3"
+    },
+    "calendar": {
+      "path": "results/calendar_phase_36110/summary.json",
+      "sha256": "3d1ec0c762d16508b48634dbaaf03331dffa36bfba70cb16218866ec72203f3d"
+    },
+    "retained_cpu": {
+      "path": "results/retained_36110_cpu/satnav/independent_verification.json",
+      "sha256": "6b7a020fa26727f23e80443ffbbafc14ebffac320517428921f78db3f163a3d6"
+    },
+    "retained_gpu": {
+      "path": "results/gpu_20260915_070915_949456/status.json",
+      "sha256": "e5d0c5a63b632b091ffcf502088ea0985736241beea0153224fb85282a14981d"
+    },
+    "runtime_archive": {
+      "path": "results/runtime_36110_archive_validation.json",
+      "sha256": "bdf19fcc8dab94592a5cdbcf636e5e9037c47ad76dacd515c190696b7ec080fc"
+    },
+    "ui": {
+      "path": "results/orbit_ui_36110_qa.json",
+      "sha256": "de0f3811ef5331866937d243c4e5bf79ab01399ff37e80ea2f2e49432b20d9e5"
+    },
+    "pdf": {
+      "path": "results/orbit_pdf_36110_qa/qa.json",
+      "sha256": "36b3ccc84b6eb31119f5935659d53abf3e28ef67a2b7bd9e5f7a50de03d07f2a"
+    },
+    "git": {
+      "path": "results/git_delivery_36110.json",
+      "sha256": "f39294e58902fd6ac23d82c6ee410cbe51ef36ffa39dd368a00ae4b0cdc71f00"
+    },
+    "python_tests": {
+      "path": "results/python_tests_36110_calendar_final.log",
+      "sha256": "4664175139eb9354e662e1b1354b1156e01f894d3fee943afe7a5833b0175309",
+      "passed": 164
+    }
+  },
+  "parent_evidence": "source/baseline_3_6_1_9_validation.json",
+  "parent_files_verified": 775,
+  "seed_files_byte_identical": 8,
+  "packing_speedup": {
+    "words_to_planes": 25.716305224895258,
+    "planes_to_words": 42.546081456152,
+    "complete_pack": 2.7779555955012434,
+    "complete_unpack": 3.0936526602614114
+  },
+  "execution": {
+    "cpu_exact_samples": 15553,
+    "cuda_january_exact_samples": 8064,
+    "cuda_february_vs_cpu_samples": 7489,
+    "cuda_february_max_difference_m": 0.0002200149622629772,
+    "cuda_wrapper_binding": "Historical full replay composed with byte-identical transport and final-wrapper CUDA checks; not a final-wrapper all-epoch rerun.",
+    "isolation_binding": "Original final isolation report records source byte counts and denied original-release reads; it does not contain a source hash map.",
+    "ui_binding": "Recorded UI check plus current byte-identical runtime ZIP members; original UI report does not contain source hashes."
+  },
+  "calendar": {
+    "days": 146097,
+    "checks": 9519315,
+    "failures": 0,
+    "scope": "Calendar/address verification; absolute date and winding continue. No 400-year orbit or UTC leap-second claim."
+  },
+  "physical_accuracy": {
+    "status": "inherited_frozen_measurements_preserved",
+    "sampled_first_day_engineering_target_m": 10,
+    "scope": "January reused development benchmark and independent February confirmation pass sampled first-day target. Longer horizons, gaps and reference discontinuities remain explicit. No universal physical accuracy bound; no refitting in R10.",
+    "reports": [
+      "results/orbit_accuracy_r2_cpu_verified/accuracy_summary.json",
+      "results/orbit_accuracy_confirmation_cpu_verified/accuracy_summary.json"
+    ]
+  },
+  "pdf": {
+    "path": "output/pdf/aTOMos_v3_6_1_10_Orbital_Seed_Kernel_UGTS_Tom_Klootwijk.pdf",
+    "sha256": "d69e333e7c1e10b19a73a3dd61ce0ad7c214b408cf93c92a3a240fe04f159a64",
+    "pages": 74
+  },
+  "runtime_zip_sha256": "b09c0f203d764bdf28b1d963b2fbac330d69a8113b2b3e68228bc42546a5f085",
+  "archive_note": "Run build_package.py after this index. Final ZIP hash is recorded outside its own archive to avoid a circular hash.",
+  "finalizer_sha256": "489559fddb04fa6cb4d9475b35bc6656a4a84dda7323f20e9c2f1fb7e23cf561"
 }
