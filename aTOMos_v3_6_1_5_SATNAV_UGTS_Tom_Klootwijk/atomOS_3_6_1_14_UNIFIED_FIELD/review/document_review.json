@@ -6,5 +6,38 @@
   "extractable_text_all_pages": true,
   "tex_layout_glyph_reference_warnings": [],
   "page_boundary_violations": [],
-  "visual_review": "Pending visual inspection of this exact PDF revision"
+  "visual_review": {
+    "status": "complete",
+    "full_resolution_pages_covered": "1-56",
+    "initial_reviewed_sha256": "302b314cb7c920d82701f1b9a8306cea858115e9e40c44dca8d5ac4893d3fe33",
+    "initial_full_resolution_coverage": {
+      "root": "1-14 (plus 20-21, 44-45)",
+      "physics_reviewer": "15-28",
+      "gravity_time_reviewer": "29-42",
+      "kernel_reviewer": "43-56"
+    },
+    "final_revision": {
+      "sha256": "2f1fe051b588402fdaf9a9828bb004bccd49b0e2feea9b28d0e4757a8be80ccd",
+      "changes": [
+        "Clarify word-valued expression type",
+        "Keep momentum introduction with its equations",
+        "Keep leap-map heading, introduction and digest together",
+        "Freeze optional edge memory after clock latch"
+      ],
+      "byte_identical_reviewed_page_pngs": "1-9, 11-19, 47-56",
+      "changed_pages": "10, 20-46",
+      "final_full_resolution_coverage": {
+        "root": "10",
+        "physics_reviewer": "20-28",
+        "kernel_reviewer": "29-37",
+        "gravity_time_reviewer": "38-46"
+      }
+    },
+    "findings": "No clipping, overlap, missing glyphs, unreadable equations or broken table continuations",
+    "resolved_layout_items": [
+      "Wide causal schedule alignment",
+      "Momentum introduction page break",
+      "Clock leap-map digest page break"
+    ]
+  }
 }
