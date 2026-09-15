@@ -1,0 +1,322 @@
+\section{Electromagnetic closure of the optical interface}
+\label{sec:r13-em-laws}
+
+\begin{panel}
+R12 defines $U_{\mathrm{det},\lambda}=H_{z,\lambda}[A\,t_\lambda
+e^{i\phi_{\mathrm{lens},\lambda}}U_{\mathrm{in},\lambda}]$.
+This chapter supplies a physical route to its transfer, loss and material-state
+arguments. Maxwell's equations are the adopted classical field laws; a material
+law, geometry and boundary data select a particular device. The added
+templates fit the existing exact expression and finite-state interfaces.
+\end{panel}
+
+\subsection{Fields, charge and the data that close their evolution}
+\label{sec:r13-em-maxwell}
+
+Use SI quantities in one declared spatial frame and time coordinate. For a
+stationary macroscopic medium, with free charge $\rho_f$ and free current
+$\mathbf J_f$, adopt
+\begin{align}
+ \nabla\cdot\mathbf D&=\rho_f,& \nabla\cdot\mathbf B&=0,\nonumber\\
+ \nabla\times\mathbf E&=-\partial_t\mathbf B,&
+ \nabla\times\mathbf H&=\mathbf J_f+\partial_t\mathbf D.
+ \label{eq:r13-em-maxwell}
+\end{align}
+The dimensions are $[\mathbf E]=\mathrm{V/m}$,
+$[\mathbf H]=\mathrm{A/m}$, $[\mathbf D]=\mathrm{C/m^2}$,
+$[\mathbf B]=\mathrm{T}$, $[\rho_f]=\mathrm{C/m^3}$ and
+$[\mathbf J_f]=\mathrm{A/m^2}$. The divergence of the last equation gives
+\begin{equation}
+ \partial_t\rho_f+\nabla\cdot\mathbf J_f=0.
+ \label{eq:r13-em-charge}
+\end{equation}
+Thus supplied charge and current histories cannot be chosen independently.
+The electric divergence constraint propagates when it holds initially and
+the supplied charge obeys continuity; the magnetic constraint propagates
+because the divergence of a curl vanishes. These statements require the
+corresponding classical derivatives or an explicitly declared weak solution.
+The laws and charge-conservation argument are documented in the
+\href{https://www.feynmanlectures.caltech.edu/II_18.html}{Caltech Feynman Lectures, II.18 [EM1]}.
+
+For a stationary interface, let $\mathbf n$ point from medium 1 to medium 2.
+With surface free charge $\rho_s$, surface free current $\mathbf K_s$, and
+no magnetic surface sources, the interface conditions are
+\begin{align}
+ \mathbf n\cdot(\mathbf D_2-\mathbf D_1)&=\rho_s,&
+ \mathbf n\cdot(\mathbf B_2-\mathbf B_1)&=0,\nonumber\\
+ \mathbf n\times(\mathbf E_2-\mathbf E_1)&=0,&
+ \mathbf n\times(\mathbf H_2-\mathbf H_1)&=\mathbf K_s.
+ \label{eq:r13-em-boundary}
+\end{align}
+They follow by shrinking Maxwell's integral pillboxes and loops across the
+interface. A moving boundary needs the corresponding moving-medium model;
+these stationary formulas cannot silently serve as that model.
+\href{https://live.ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/d3be4ea78b036a6362230fb41780cf54_MIT6_013S09_notes.pdf}{MIT Electromagnetics and Applications, Section 2.6 [EM2]}.
+
+A device profile binds its material regions, interface geometry, constitutive
+relations, sources, compatible initial fields and initial material memory.
+It selects the needed independent boundary or incoming-wave data, including
+an outgoing-wave condition for an open problem. It does not prescribe every
+field component independently on every boundary. Existence and uniqueness
+belong to this completed problem; the four field equations alone do not
+resolve a resonant, contradictory or underspecified setup.
+
+\subsection{Power balance before optical loss is called heat}
+\label{sec:r13-em-energy}
+
+The vector identity for $\nabla\cdot(\mathbf E\times\mathbf H)$ and
+equation~\eqref{eq:r13-em-maxwell} give the constitutive-independent identity
+\begin{equation}
+ \nabla\cdot\mathbf S+\mathbf E\cdot\partial_t\mathbf D
+ +\mathbf H\cdot\partial_t\mathbf B=-\mathbf E\cdot\mathbf J_f,
+ \qquad \mathbf S=\mathbf E\times\mathbf H.
+ \label{eq:r13-em-poynting-general}
+\end{equation}
+For instantaneous, time-independent real symmetric positive-definite tensors
+$\epsilon,\mu$, with $\mathbf D=\epsilon\mathbf E$ and
+$\mathbf B=\mu\mathbf H$, set
+\begin{align}
+ u_{\rm em}&=\tfrac12\mathbf E\cdot\epsilon\mathbf E+
+             \tfrac12\mathbf H\cdot\mu\mathbf H,\nonumber\\
+ \partial_tu_{\rm em}+\nabla\cdot\mathbf S
+             &=-\mathbf E\cdot\mathbf J_f.
+ \label{eq:r13-em-poynting-simple}
+\end{align}
+The quadratic energy follows by differentiating each form; time independence
+and symmetry are used at that exact step. This is Poynting's energy balance,
+with fields doing work on matter through $\mathbf E\cdot\mathbf J_f$.
+\href{https://www.feynmanlectures.caltech.edu/II_27.html}{Caltech Feynman Lectures, II.27 [EM3]}.
+
+Writing $\mathbf J_f=\sigma\mathbf E+\mathbf J_{\rm src}$, where the symmetric
+part of $\sigma$ is positive semidefinite, identifies a nonnegative Ohmic sink
+$q_{\rm Ohm}=\mathbf E\cdot\sigma\mathbf E$. The impressed source term
+$-\mathbf E\cdot\mathbf J_{\rm src}$ may supply field energy. In contrast,
+arbitrary $\mathbf E\cdot\mathbf J_f$ need not be positive or entirely heat:
+work can enter mechanical or other material stores. A dispersive dielectric
+also cannot use $\tfrac12\mathbf E\cdot\mathbf D$ as its complete instantaneous
+energy without a justified material-state model.
+
+\subsection{A finite dispersive material law with an energy proof}
+\label{sec:r13-em-lorentz}
+
+An optional, explicit local linear closure uses finitely many polarization
+oscillators. In a fixed material region let $\epsilon_b,\mu>0$ be scalar,
+time-independent background coefficients and set
+\begin{align}
+ \mathbf D&=\epsilon_b\mathbf E+\sum_{j=1}^{m}\mathbf P_j,
+ &\mathbf B&=\mu\mathbf H,\nonumber\\
+ \dot{\mathbf P}_j&=\mathbf V_j,
+ &\dot{\mathbf V}_j&=f_j\mathbf E-\gamma_j\mathbf V_j-
+                              \omega_j^2\mathbf P_j,
+ \label{eq:r13-em-lorentz}
+\end{align}
+where $m$ is finite, $f_j>0$, $\gamma_j\ge0$ and $\omega_j>0$.
+Here $[f_j]=[\epsilon_b]/\mathrm{s^2}$, $[\gamma_j]=\mathrm{s^{-1}}$ and
+$[\omega_j]=\mathrm{s^{-1}}$. Each oscillator has supplied
+$\mathbf P_j(t_0),\mathbf V_j(t_0)$. This is a selected Lorentz material model,
+not a universal constitutive law. Its optical origin is described in
+\href{https://www.ocw.mit.edu/courses/6-974-fundamentals-of-photonics-quantum-electronics-spring-2006/8e54d1625e9e71eb5b4e4998e6967e4e_chapter2.pdf}{MIT Fundamentals of Photonics, Section 2.1.4 [EM4]}.
+
+\begin{proposition}[Explicit storage and dissipation]
+For the held coefficients in equation~\eqref{eq:r13-em-lorentz}, define
+\begin{align}
+ u_j&=\frac{|\mathbf V_j|^2+\omega_j^2|\mathbf P_j|^2}{2f_j},\nonumber\\
+ u_*&=\tfrac12\epsilon_b|\mathbf E|^2+
+       \tfrac12\mu|\mathbf H|^2+\sum_j u_j,\nonumber\\
+ q_{\rm diss}&=\mathbf E\cdot\sigma\mathbf E+
+                    \sum_j\frac{\gamma_j}{f_j}|\mathbf V_j|^2\ge0.
+ \label{eq:r13-em-storage}
+\end{align}
+Then $\partial_tu_*+\nabla\cdot\mathbf S
+=-\mathbf E\cdot\mathbf J_{\rm src}-q_{\rm diss}$.
+\end{proposition}
+\begin{proof}
+Multiplying the oscillator equation by $\mathbf V_j/f_j$ gives
+$\dot u_j=\mathbf E\cdot\mathbf V_j-
+\gamma_j|\mathbf V_j|^2/f_j$.
+In equation~\eqref{eq:r13-em-poynting-general}, the polarization part of
+$\mathbf E\cdot\dot{\mathbf D}$ is $\sum_j\mathbf E\cdot\mathbf V_j$.
+Adding the oscillator balances cancels these exchanges exactly. Positivity
+follows from the coefficient and conductivity hypotheses.
+\end{proof}
+
+This supplies a consistent source for R12's thermal ledger. Assign
+$P_{\rm heat,opt}=\int_\Omega q_{\rm diss}\,dV$ only when these dissipative
+channels thermalize in the modeled thermal store on the declared interval.
+If excitation, emission or another store participates, partition the sink and
+retain that store's evolution. Counting the same absorbed power independently
+as full heat and full chemical excitation would break the balance.
+
+With the phasor convention $\mathbf E(t)=\operatorname{Re}
+(\widehat{\mathbf E}e^{-i\omega t})$, $\omega>0$, the scalar isotropic,
+steady harmonic closure is
+\begin{align}
+ \epsilon_{\rm eff}(\omega)&=\epsilon_b+
+ \sum_j\frac{f_j}{\omega_j^2-\omega^2-i\gamma_j\omega}
+ +\frac{i\sigma}{\omega},\nonumber\\
+ \langle q_{\rm diss}\rangle&=
+ \frac{\omega}{2}\operatorname{Im}(\epsilon_{\rm eff})
+                  |\widehat{\mathbf E}|^2.
+ \label{eq:r13-em-epsilon}
+\end{align}
+All denominators must be nonzero, and the selected steady response must exist;
+an undamped resonance does not satisfy these assumptions. Conductivity is
+included once, inside $\epsilon_{\rm eff}$ in this frequency convention.
+The time-domain state in equation~\eqref{eq:r13-em-lorentz} remains the
+definition when a steady response is inappropriate.
+
+Temperature, hysteresis and reporter state may parameterize a family of these
+material profiles. Holding them fixed during an optical subproblem is an
+explicit time-scale approximation. If coefficients change during propagation,
+their derivatives change stored energy: for example,
+$\partial_t(\epsilon_b|\mathbf E|^2/2)$ includes
+$\dot\epsilon_b|\mathbf E|^2/2$. The corresponding modulation work and
+material exchange must be included. Replacing a coefficient at each tick
+without that accounting is not the proved coupled energy law.
+
+\subsection{How Maxwell closes the existing propagation operator}
+\label{sec:r13-em-propagation}
+
+In a homogeneous, source-free, lossless region with constant scalar
+$\epsilon,\mu>0$, the divergence constraint gives $\nabla\cdot\mathbf E=0$.
+Taking a curl and using $\nabla\times\nabla\times\mathbf E
+=\nabla(\nabla\cdot\mathbf E)-\nabla^2\mathbf E$ yields
+\begin{align}
+ \nabla^2\mathbf E-\mu\epsilon\partial_t^2\mathbf E&=0,\nonumber\\
+ (\nabla^2+k^2)\widehat{\mathbf E}&=0,
+ \quad k=\omega\sqrt{\mu\epsilon}.
+ \label{eq:r13-em-wave}
+\end{align}
+For a linear dispersive homogeneous medium, use the corresponding frequency
+equation with its declared complex constitutive coefficients and radiation
+branch. A scalar component can stand for the optical field only within an
+appropriate polarization/geometry reduction. Spatially varying tensors,
+strong polarization conversion or near-field boundary interactions do not
+automatically reduce to the same scalar equation.
+\href{https://ocw.mit.edu/courses/2-71-optics-spring-2014/e6cfb73b15ef5b0610fe662794eb3205_MIT2_71S14_lec9_notes.pdf}{MIT Optics, Lecture 9 [EM5]}.
+
+For the scalar, forward, homogeneous lossless case write $U=e^{ikz}\psi$.
+Substitution gives
+\begin{equation}
+ \partial_z^2\psi+2ik\partial_z\psi+\nabla_\perp^2\psi=0.
+ \label{eq:r13-em-paraxial-exact}
+\end{equation}
+The paraxial approximation drops $\partial_z^2\psi$ when it is negligible
+relative to the retained terms on the admitted field class. For $z>0$, one
+resulting Fresnel transfer, with $\lambda_m=2\pi/k$, is
+\begin{equation}
+ (H_zU_0)(x,y)=\frac{e^{ikz}}{i\lambda_m z}
+ \iint U_0(x',y')
+ \exp\!\left(\frac{ik[(x-x')^2+(y-y')^2]}{2z}\right)dx'\,dy'.
+ \label{eq:r13-em-fresnel}
+\end{equation}
+This states the normalization missing from a mere angular-shape transform.
+For R12's finite aperture, the integral is over its bounded support; its exact
+real-pair lift needs the section integrability conditions already specified
+there. A full-plane operator has its separately declared function-space
+domain. Fraunhofer additionally neglects the aperture-plane quadratic phase
+on the stated field/support scale. These approximations need application
+error allowances, not an assertion that exact encoding makes them exact
+Maxwell solutions.
+\href{https://ocw.mit.edu/courses/2-71-optics-spring-2014/4b53a5747f9b58b9b73b2bbcc39945f0_MIT2_71S14_lec16_notes.pdf}{MIT Optics, Lecture 16 [EM6]}.
+
+The same boundary-value problem fixes $t_\lambda$ and reflected/outgoing
+channels from material parameters and geometry. A thin local multiplier is
+an adopted reduction; a general scattering device may require a matrix or
+integral transfer. The aperture $A$ remains a geometric predicate. It does
+not specify the polarization currents or electromagnetic boundary response
+of the physical opaque material by itself.
+
+\subsection{Passivity at the same physical interface}
+\label{sec:r13-em-passivity}
+
+For a fixed volume, let $\mathcal U=\int_\Omega u_*dV$. Separate its boundary
+flux into admitted incoming and outgoing power. With no impressed source,
+integration of the derived energy identity gives
+\begin{equation}
+ E_{\rm out}[t_0,t_1]\le E_{\rm in}[t_0,t_1]
+                   +\mathcal U(t_0)-\mathcal U(t_1).
+ \label{eq:r13-em-transient-passive}
+\end{equation}
+Stored energy can temporarily power an output. In steady harmonic operation,
+the average storage change vanishes; for independent positive-flux modal
+coordinates this gives precisely R12's condition
+\begin{equation}
+ S^\dagger W_{\rm out}S\preceq W_{\rm in}.
+ \label{eq:r13-em-passive-matrix}
+\end{equation}
+Both metrics refer to the same physical normalization and selected ports.
+Unobserved reflected, radiated or coupled-away power is not automatically
+absorption. Only with all outgoing channels accounted for, no supplied gain
+and no net storage accumulation does $\mathcal R+\mathcal T+\mathcal A=1$
+identify the remaining fraction as material absorption. This derivation
+supplies the physical premise for the R12 scaled passive pinion construction;
+it does not change its algebra or demonstrate a manufactured device.
+
+One optional mechanical coupling is already useful without a general
+electromagnetic stress model. For a stationary planar target in vacuum,
+normal incidence, forward transmission and specular backward reflection,
+the steady force along the incident beam is
+\begin{equation}
+ F_\parallel=\frac{P_{\rm in}}{c}(1+\mathcal R-\mathcal T)
+            =\frac{P_{\rm in}}{c}(\mathcal A+2\mathcal R).
+ \label{eq:r13-em-pressure}
+\end{equation}
+It follows by subtracting outgoing from incoming momentum flux. It can enter
+the declared mechanical load. Oblique/diffuse scattering, moving media,
+directional re-emission or additional forces require their corresponding
+momentum balance; the scalar formula does not cover them.
+\href{https://www.feynmanlectures.caltech.edu/I_34.html}{Caltech Feynman Lectures, I.34.9 [EM7]}.
+
+\subsection{Finite exact seed representation}
+\label{sec:r13-em-finite}
+
+Complex coefficients, amplitudes and matrices use R12's ordered real-pair
+templates. For a declared finite modal problem $Az=b$, with $A=X+iY$,
+$z=p+iq$ and $b=r+is$, the literal real system is
+\begin{equation}
+ \begin{pmatrix}X&-Y\\Y&X\end{pmatrix}
+ \begin{pmatrix}p\\q\end{pmatrix}=
+ \begin{pmatrix}r\\s\end{pmatrix}.
+ \label{eq:r13-em-real-system}
+\end{equation}
+An inverse requires a proved nonzero determinant; an unresolved singularity
+or branch remains an explicit non-value outcome. The coefficients bind the
+chosen basis, geometry, boundary projection, material law and frequency.
+They may be retained exact expressions or supplied calibrated literals with
+uncertainty. For instance, select a bounded fixed cavity with a perfect electric
+conductor boundary and real admissible basis functions $\boldsymbol\psi_j$
+whose tangential traces vanish. The expansion
+$\widehat{\mathbf E}_N=\sum_{j=1}^{N}z_j\boldsymbol\psi_j$ and weak projection
+of the frequency curl--curl equation give
+\begin{align}
+ A_{ab}&=\int_\Omega\!\left[
+ (\nabla\times\boldsymbol\psi_a)\cdot\mu^{-1}
+ (\nabla\times\boldsymbol\psi_b)
+ -\omega^2\boldsymbol\psi_a\cdot\epsilon_{\rm eff}
+             \boldsymbol\psi_b\right]dV,\nonumber\\
+ b_a&=i\omega\int_\Omega\boldsymbol\psi_a\cdot
+                    \widehat{\mathbf J}_{\rm src}\,dV.
+ \label{eq:r13-em-modal}
+\end{align}
+The boundary term vanishes under this particular trace condition. The finite
+space, source projection, divergence constraints and coefficient integral
+domains must be specified. Other boundaries require their own terms. These
+volume-integral definitions fit existing exact operators only when their
+actual integrands and bounded coordinate domains meet that operator contract;
+the weak notation alone is not an executable integral encoding.
+
+The finite polarization coordinates use the first-order equations in
+\eqref{eq:r13-em-lorentz}. Together with a declared finite field reduction,
+they form an ordinary finite state evolution only after building algebraic
+constraints into the basis or explicitly eliminating them to obtain a
+nonsingular finite evolution. The fixed representation, selected elimination
+branch and regular domain remain explicit. XOP can denote the resulting ODE
+under its existence/domain contract or an explicitly selected finite update.
+Remaining algebraic constraints need their own defined constrained formulation.
+It does not acquire an arbitrary continuum PDE solver. Basis truncation,
+omitted modes and an approximate constitutive fit remain model errors even
+when every retained operation and packed bit is exact. The physical profile
+therefore exports the field transfer, dissipative/other energy channels and
+optional force from one common model, rather than fitting unrelated outputs
+that happen to share a seed identifier.

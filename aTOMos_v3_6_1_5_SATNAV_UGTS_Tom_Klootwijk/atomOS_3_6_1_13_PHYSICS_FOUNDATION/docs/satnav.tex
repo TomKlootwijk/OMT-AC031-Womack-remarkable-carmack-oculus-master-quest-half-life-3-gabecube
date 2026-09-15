@@ -1,0 +1,70 @@
+\input{preamble.tex}
+\begin{document}
+\begin{titlepage}\thispagestyle{empty}
+{\sffamily\color{accent}\large AC031 / AC130 ATOMOS \hfill XOP-PHYSICS-R1}\par
+\vspace{18mm}
+{\sffamily\bfseries\fontsize{43}{51}\selectfont\color{ink}aTOMos v3.6.1.13}\par
+\vspace{10mm}
+{\sffamily\fontsize{30}{37}\selectfont Physics foundation\par for application kernels}\par
+\vspace{9mm}
+{\sffamily\fontsize{19}{25}\selectfont\color{gold}Conservation, constitutive closure and measurement\par Exact operators with explicit physical meaning}\par
+\vspace{11mm}
+{\large Mechanics and thermodynamics \;\textperiodcentered\; electromagnetism\par
+Calibration and uncertainty \;\textperiodcentered\; exact discrete energy balance}\par
+\vspace{13mm}
+{\sffamily\bfseries\Large Tom Klootwijk}\par
+\begin{tabular}{@{}ll@{}}
+Author-supplied identifier & \textbf{NL200678942}\\
+Author-supplied date & \textbf{10-07-1990}\\
+Preserved parent & 3.6.1.12 / XOP-R1\\
+Release & 3.6.1.13 / 15 September 2026\\
+Method & Logical derivation and primary-source review\\
+\end{tabular}
+\vfill
+\begin{panel}
+A focused addition of physical laws and model closures that directly strengthen
+the existing aTOMos interfaces. The new finite mechanical profile has a derived
+discrete energy balance. Optical loss, material storage, thermal coupling and
+measurement uncertainty retain explicit equations and domains.
+\end{panel}
+{\small\color{muted}The parent corpus is preserved and referenced without repetition.
+Mathematical formalization; no new runtime or physical performance claim.
+Prepared with AI assistance.}
+\end{titlepage}
+\setcounter{page}{2}
+\section*{Scope, lineage and method}
+\addcontentsline{toc}{section}{Scope, lineage and method}
+This supplement addresses a specific requirement: strengthen the foundation
+with actual physics and only the additions that help its formalization.
+It adds a minimal law-profile contract, finite mechanical power balance,
+thermodynamic and electromagnetic closure, and measurement/output conditions.
+It does not repeat the complete 145-page R12 corpus or introduce unrelated
+application families.
+
+The parent is \code{atomOS\_3\_6\_1\_12\_PHOTONIC\_INTERFACE}, committed at
+\code{96a2192}. Its complete PDF and source identities are bound in
+\code{source/PARENT\_BINDING.json}. Its XOP word/operator contracts, WANTWOMBAN
+equations, ASA/NA and JK transitions, orbital models and receiver profiles
+remain the authority for those definitions. R13 uses named templates over
+that vocabulary; no existing profile is silently replaced.
+
+Established physical laws retain their external scientific provenance.
+Constitutive examples state the selected material assumptions. The new
+integration decisions and finite-step proofs are derived in this document.
+Mathematical consistency, faithful implementation and physical adequacy are
+different claims with different evidence.
+
+Following the continuing work method, no reference programs, numerical
+examples, algorithm tests, simulations, benchmarks or physical experiments
+were executed. The work consists of equation derivation, primary-source
+inspection, critical review and document preparation. The proofs are readable
+conditional arguments, not proof-assistant certificates. Rendering and file
+hashes verify delivery and provenance, not the proposed system's performance.
+
+\tableofcontents\clearpage
+\input{physics_core.tex}
+\input{physics_energy.tex}
+\input{physics_em.tex}
+\input{physics_measurement.tex}
+\input{physics_completion.tex}
+\end{document}

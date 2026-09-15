@@ -1,0 +1,238 @@
+\section{A minimal physical-law layer for application kernels}
+\label{sec:r13-core}
+R13 strengthens aTOMos where a physical law supplies a missing relationship,
+constrains a proposed coupling or justifies a useful implementation choice.
+It is a focused supplement to R12. The existing XOP representation, literal
+ASA/NA and JK rules, WANTWOMBAN packet, orbital and receiver equations remain
+in their bound parent. Repeating that corpus would not strengthen these laws.
+
+The new profile is \code{XOP-PHYSICS-R1}. Its mathematical bodies use the
+existing \code{XOP-R1} operators; it does not allocate new opcodes or claim a
+new executable backend. A physical specialization imports only the laws and
+closures needed by its declared interface. A purely digital permutation does
+not need a continuum electromagnetic model merely because real hardware will
+eventually execute it.
+
+\subsection{Five distinct parts of a physical specialization}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{30mm}Y Y@{}}
+\toprule Part & What it supplies & Example in the existing model\\\midrule
+Balance law & Conserved quantity, flux or production relation & Charge continuity; energy and momentum balance\\
+Constitutive model & Material or component response under stated conditions & Polarization dynamics; thermoelastic free energy\\
+Reduction & A finite or simplified model with its scope & Fixed modal basis; scalar optical field; lumped temperature\\
+Discrete evolution & A selected finite state transition & Existing backward Euler; new energy-balanced midpoint\\
+Observation & How physical state produces recorded evidence & Acquisition window, calibration, quantization and uncertainty\\
+\bottomrule
+\end{tabularx}\end{center}
+Conservation equations alone do not specify a material. A constitutive law alone
+does not provide boundary data. Exact arithmetic alone does not select a
+conservative time update. A recorded count alone does not fix a physical
+measurand. Keeping these parts explicit allows specialization without hidden
+changes of meaning.
+
+\subsection{Normative profile contract}
+A selected physical profile declares the finite record
+\begin{equation}
+ \Pi=(\mathcal T,\mathcal X,\mathcal U,\mathcal Y,\Theta,
+       \mathcal B,\mathcal C,\mathcal A,\mathcal N,\mathcal O,\mathcal E).
+\end{equation}
+$\mathcal T$ contains units, frames and time conventions. $\mathcal X$ declares
+state and initial conditions; $\mathcal U,\mathcal Y$ declare inputs and outputs.
+$\Theta$ contains parameters with source identities and joint uncertainty.
+$\mathcal B$ lists applicable balance laws. $\mathcal C$ supplies constitutive
+closures. $\mathcal A$ lists approximation and admissibility hypotheses.
+$\mathcal N$ identifies a finite representation and the chosen update.
+$\mathcal O$ defines acquisition and calibrated observations.
+$\mathcal E$ records the claimed output bounds and evidence status.
+
+Each law entry has a qualified name/version, argument types, equation body,
+domain, boundary terms, source and a status. Status distinguishes a definition,
+a derived identity, an adopted physical law, a constitutive assumption and a
+measured parameter. The same source tag cannot turn one status into another.
+The editable normative field contract is \code{formal/PHYSICS\_PROFILE.md}.
+This is a record definition, not a claim that a new parser implements it.
+
+For a finite state model, the mathematical content can be written
+\begin{equation}
+ \dot x=f_\Pi(t,x,u;\Theta),\quad y=g_\Pi(t,x,u;\Theta),\quad
+ B_j(t,x,\dot x,u;\Theta)=0,
+ \label{eq:r13-profile}
+\end{equation}
+with declared inequalities and initial/boundary conditions. The $B_j$ are
+relations to derive or impose consistently, not extra independent equations
+to append blindly to a fully determined system. Redundant balances are
+identified; inconsistent initial data or incompatible closures do not define
+an admitted solution. A finite ODE must meet the existing existence and
+uniqueness domain. Algebraic constraints need elimination or a separately
+defined constrained formulation; they are not silently handled by \code{ODE}.
+
+\subsection{Required connections to the existing seed}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{36mm}Y@{}}
+\toprule Existing quantity & Connection required by R13\\\midrule
+$t_\lambda,H_{z,\lambda}$ & Chosen electromagnetic transfer, material response, boundary data and power normalization\\
+$P_{\rm abs},P_{\rm heat}$ & A shared energy ledger distinguishes absorption, stored excitation and dissipated heat\\
+$M,C,K$ and strain & Fixed geometry/basis or declared motion, force/work convention and constitutive response\\
+$T,\zeta,a$ & Thermal/material energy stores and rates with the relevant temperature and coupling domains\\
+ASA/NA, JK and actuator command & The word selects an action; a separate actuator equation supplies force, voltage, light or heat\\
+WI measurement and calibration & Acquisition history, physical units, clock/frame binding, uncertainty and measurand equation\\
+Exact operator graph & Captured physical inputs and hypotheses, complete finite operands, explicit unresolved outcomes\\
+\bottomrule
+\end{tabularx}\end{center}
+For example, a selector $b\in\B$ may choose
+$K(b)=K_0+b(K_1-K_0)$. It does not by itself specify the work required to
+switch stiffness. For an unchanged coordinate $q$, that storage change is
+$q^T(K_1-K_0)q/2$ and must be attributed to the switching interaction.
+Signed damping or stiffness remains mathematically expressible; a passive
+energy theorem applies only when its sign hypotheses hold. An active element
+needs its actual supply and constitutive model.
+
+\subsection{Representation preserves laws only through an explicit map}
+Let $x=\mathcal R(z)$ reconstruct a finite physical model from encoded state
+$z$, and let $F_h$ be a chosen digital transition. A continuous-law identity
+does not automatically give
+\begin{equation}
+ \mathcal B_{j,h}\bigl(\mathcal R(z),\mathcal R(F_h(z,u)),u\bigr)=0.
+\end{equation}
+Here $\mathcal B_{j,h}$ is a separately defined discrete balance, rather than
+the continuous residual $B_j$ with its arguments silently changed. The
+discrete relation has to be derived for the selected step.
+The law may instead provide an error bound or a nonzero residual ledger.
+Likewise, a finite basis is a declared approximation to a continuum field:
+exact evaluation of its coefficients and trajectory does not erase omitted
+modes. The electromagnetic and mechanical chapters state the necessary
+finite-representation and integral domains.
+
+One-bit word packing preserves the encoded operators, parameters and inputs.
+It does not turn a finite word mask into an electromagnetic absorber, identify
+a code bit with a photon, or establish that a material follows a named law.
+Those are explicit realization mappings. The R12 photonic refinement contract
+continues to govern any proposed hardware executor.
+
+\section{An exact finite step with a derived mechanical energy balance}
+\label{sec:r13-step}
+This addition supplies a specific useful kernel specialization. It removes
+algorithmic energy loss from the fixed linear model's discrete balance while
+retaining physical damping. It does not replace the existing CGK or orbital
+profiles silently and does not assert exact continuous-time trajectories.
+
+\subsection{Selected model and units}
+Choose a finite number of length-valued coordinates $q$ in a fixed declared
+modal basis, velocity $v$, and a fixed reference configuration. Let
+\begin{equation}
+ \dot q=v,\qquad M\dot v=\bar f-Kq-Cv,
+ \quad M=M^T\succ0,\quad K=K^T\succeq0,\quad C=C^T\succeq0.
+ \label{eq:r13-linear-model}
+\end{equation}
+Here the displayed $\bar f$ denotes the force selected for the interval's
+discrete supply; a held-force physical model may use the same constant value.
+The quantities $M,C,K$ have units $\mathrm{kg}$, $\mathrm{kg/s}$ and
+$\mathrm{kg/s^2}$ when all $q$ coordinates have length units. Generalized
+coordinates of mixed dimensions require the inherited tuple/block rules,
+not a false uniformly dimensioned matrix. The storage is
+\begin{equation}
+ E(q,v)=\tfrac12v^TMv+\tfrac12q^TKq,
+ \qquad \dot E=v^T\bar f-v^TCv.
+ \label{eq:r13-mech-storage}
+\end{equation}
+The continuous identity follows by differentiating the two quadratic terms
+and substituting the model. Its damping term becomes heat or another named
+output store in a coupled physical model, as derived in the energy chapter.
+
+The parent already defines backward Euler for a more general signed CGK
+profile. Under fixed passive coefficients its storage change includes
+\begin{equation}
+ -h(v^+)^TCv^+
+ -\tfrac12(v^+-v)^TM(v^+-v)
+ -\tfrac12(q^+-q)^TK(q^+-q)
+\end{equation}
+in the unforced case. The last two terms are numerical dissipation from the
+selected update. Exact arithmetic preserves those terms exactly; it does not
+remove them. They cannot be reassigned to measured physical heat without a
+separate modeling decision. R13 therefore names an alternative finite profile.
+
+\subsection{PHYS-MIDPOINT-LINEAR-R1}
+For $h\ge0$, write $\bar q=(q^++q)/2$ and $\bar v=(v^++v)/2$. Define
+\begin{equation}
+ q^+-q=h\bar v,\qquad
+ M(v^+-v)=h(\bar f-K\bar q-C\bar v).
+ \label{eq:r13-midpoint}
+\end{equation}
+These undivided equations also define the $h=0$ identity step. Eliminate
+$q^+$ to obtain the explicit finite solve
+\begin{align}
+ A_h&=M+\tfrac h2C+\tfrac{h^2}{4}K,\\
+ b_h&=(M-\tfrac h2C-\tfrac{h^2}{4}K)v-hKq+h\bar f,\\
+ v^+&=A_h^{-1}b_h,\qquad q^+=q+\tfrac h2(v^++v).
+ \label{eq:r13-midpoint-solve}
+\end{align}
+\begin{proposition}[Existence and exact field closure]
+For the stated symmetric sign conditions and $h\ge0$, $A_h$ is positive
+definite. Consequently the step is uniquely defined. If all supplied entries
+are rational, both output vectors have exact rational entries.
+\end{proposition}
+\begin{proof}
+For $w\ne0$, $w^TA_hw=w^TMw+(h/2)w^TCw+(h^2/4)w^TKw>0$.
+Thus $A_h$ is invertible. A finite nonsingular linear solve over the rationals
+uses rational field operations and has rational output. No real root or
+transcendental decision is required for this selected rational profile.
+\end{proof}
+
+\begin{proposition}[Discrete power balance]
+For the same fixed model,
+\begin{equation}
+ E(q^+,v^+)-E(q,v)
+       =h\bar v^T\bar f-h\bar v^TC\bar v.
+ \label{eq:r13-midpoint-energy}
+\end{equation}
+In particular, unforced undamped storage is preserved exactly, while the
+unforced damped step cannot increase it.
+\end{proposition}
+\begin{proof}
+Symmetry gives
+$\Delta E=\bar v^TM(v^+-v)+\bar q^TK(q^+-q)$.
+Substitute \eqref{eq:r13-midpoint}; the stiffness terms cancel, leaving
+\eqref{eq:r13-midpoint-energy}. Nonnegativity follows from $C\succeq0$.
+\end{proof}
+The supplied work $h\bar v^T\bar f$ and dissipated energy $h\bar v^TC\bar v$
+are the discrete profile's quantities. They are not automatically the exact
+work and heat integrals of the continuous trajectory. The theorem is a
+storage identity, not a proof of arbitrary-step trajectory accuracy or a
+guarantee about every other invariant.
+
+\subsection{Exact seed body and causal integration}
+The template arguments are
+\begin{equation}
+ (q,v,M,C,K,h,\bar f)\longmapsto(q^+,v^+,W_{\rm in},Q_d),
+ \quad W_{\rm in}=h\bar v^T\bar f,\quad Q_d=h\bar v^TC\bar v.
+\end{equation}
+Use existing scalar arithmetic and matrix/vector construction/contraction,
+then \code{SOLVE\_LINEAR} (opcode 87), to realize
+\eqref{eq:r13-midpoint-solve}. The field operations, constants $1/2,1/4$,
+and input lineage remain exact expressions. The output ledger is part of the
+template contract. No proof engine or compiled implementation is supplied here.
+
+All operands read the same old snapshot. A completed event may select the
+interval's parameters according to the existing causal word policy. If that
+selection changes stiffness or other storage parameters, first account for
+the switch at the old state, then apply the fixed-parameter step. The force
+input and its actuator energy source stay explicit. Both output state roots
+commit together, and any rounded display remains an export.
+
+This narrow profile makes no claim about time-varying mass, moving bases,
+nonlinear elasticity, contact, nonlinear reporter kinetics, orbital RK4 or
+arbitrary signed damping. Those applications retain their own definitions.
+Nonzero algorithmic residuals in another profile are reported as such; the
+word ``exact'' cannot turn them into a conservation proof.
+
+\subsection{Law residual as an output certificate}
+For the selected step, define the exact expression
+\begin{equation}
+ r_E=E(q^+,v^+)-E(q,v)-W_{\rm in}+Q_d.
+\end{equation}
+The preceding algebra proves $r_E=0$ on the template domain. A future compiler
+can use that identity as a rewrite or verification obligation without
+numerically comparing two nearly equal energies. If an implementation returns
+rounded state, its measured residual concerns that projection and cannot
+replace the expression-level proof. A residual of zero also does not establish
+that the physical parameters or observed device trajectory are correct.

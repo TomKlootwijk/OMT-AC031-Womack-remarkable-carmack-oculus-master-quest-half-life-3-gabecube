@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[type1]{newpxtext}
+\usepackage[scaled=.93]{helvet}
+\usepackage[margin=23mm,top=22mm,bottom=23mm,headheight=15pt]{geometry}
+\usepackage{microtype,amsmath,amssymb,amsthm,mathtools,newpxmath}
+\usepackage{xcolor,graphicx,booktabs,tabularx,longtable,array,enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,titlesec,listings,xurl,needspace,etoolbox,hyperref}
+\definecolor{ink}{HTML}{173244}
+\definecolor{accent}{HTML}{1A777F}
+\definecolor{gold}{HTML}{B28448}
+\definecolor{muted}{HTML}{586C79}
+\definecolor{wash}{HTML}{EFF5F6}
+\definecolor{linegray}{HTML}{CCDADF}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=accent,citecolor=accent,
+ pdftitle={aTOMos v3.6.1.13 - Physics Foundation for Exact Application Kernels},pdfauthor={Tom Klootwijk},
+ pdfsubject={Conservation laws; electromagnetism; thermodynamics; measurement; exact discrete energy balance; physical profile contracts},
+ pdfkeywords={aTOMos,atomOS,3.6.1.13,UGTS,SCLP,RTCM,NTRIP,GNSS,CUDA,Tom Klootwijk}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\small\textcolor{ink}{aTOMos / v3.6.1.13}}
+\fancyhead[R]{\sffamily\small\textcolor{muted}{PHYSICS FOUNDATION / R13}}
+\fancyfoot[L]{\sffamily\footnotesize\textcolor{muted}{Tom Klootwijk \;|\; 15 September 2026}}
+\fancyfoot[R]{\sffamily\footnotesize\thepage}
+\renewcommand{\headrulewidth}{.35pt}
+\titleformat{\section}{\Large\sffamily\bfseries\color{ink}}{\thesection}{.65em}{}
+\titleformat{\subsection}{\large\sffamily\bfseries\color{ink}}{\thesubsection}{.6em}{}
+\titlespacing*{\section}{0pt}{15pt}{8pt}
+\titlespacing*{\subsection}{0pt}{10pt}{5pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2.5em}
+\setlist{nosep,leftmargin=1.4em,topsep=3pt}
+\renewcommand{\arraystretch}{1.16}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\src}[1]{\textcolor{muted}{[U, #1]}}
+\newcommand{\base}{\textcolor{muted}{[A, retained M2 project contract]}}
+\newcommand{\ext}[1]{\textcolor{muted}{[#1]}}
+\newcommand{\dec}[1]{\textcolor{accent}{[N#1]}}
+\newcommand{\ot}{\operatorname{otan2}}
+\newcommand{\wrap}{\operatorname{wrap}}
+\newcommand{\pop}{\operatorname{popcount}}
+\newcommand{\SHA}{\operatorname{SHA256}}
+\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}\newcommand{\Z}{\mathbb Z}\newcommand{\B}{\{0,1\}}
+\newtcolorbox{panel}[1][]{enhanced,breakable,colback=wash,colframe=accent,
+ boxrule=0pt,leftrule=2pt,arc=0pt,left=10pt,right=10pt,top=8pt,bottom=8pt,#1}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{theorem}[proposition]{Theorem}
+\lstset{basicstyle=\ttfamily\small,backgroundcolor=\color{wash},frame=single,
+ rulecolor=\color{linegray},breaklines=true,columns=fullflexible,keepspaces=true,
+ showstringspaces=false,xleftmargin=4pt,xrightmargin=4pt,aboveskip=7pt,belowskip=7pt}
+\setcounter{tocdepth}{1}
+\preto\section{\Needspace{7\baselineskip}}
+\preto\subsection{\Needspace{4\baselineskip}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\den}[1]{\llbracket #1\rrbracket}

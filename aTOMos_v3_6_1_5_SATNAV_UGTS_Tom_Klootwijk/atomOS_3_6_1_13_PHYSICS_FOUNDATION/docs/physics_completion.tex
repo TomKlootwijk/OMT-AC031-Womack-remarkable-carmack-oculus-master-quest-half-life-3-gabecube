@@ -1,0 +1,66 @@
+\section{What this addition changes in the formalization}
+\label{sec:r13-completion}
+The additions supply missing physical connections and one explicit finite
+update. They are applied where their hypotheses hold; adding a law name to
+an unrelated kernel supplies no additional guarantee.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{37mm}Y Y@{}}
+\toprule Interface & Strengthened definition & Consequence\\\midrule
+Physical specialization & Named balances, closure, reduction, evolution and observation & An application exposes exactly which physics its claims use\\
+Linear mechanical step & Midpoint solve and exact work/dissipation identity & Fixed passive model has no extra numerical loss in that storage balance\\
+Coupled energy & Signed power ports and nonduplicating stores & Dissipation or absorbed energy is transferred once\\
+Thermoelastic material & Free-energy stress/entropy and reciprocal heat coupling & Deformation and temperature no longer use unrelated balances\\
+Optical material & Maxwell and polarization dynamics with energy accounting & Transfer, stored excitation and loss share a declared model\\
+Measurement and calibration & SI constants, acquisition and joint uncertainty & Exact nominal computation is tied to the actual measured quantity\\
+Output tolerance & Bounded-domain propagation plus model and output budgets & A claim is tied to a specific output and admitted conditions\\
+\bottomrule
+\end{tabularx}\end{center}
+
+\subsection{A specialization now has an explicit completion criterion}
+For a chosen application, completion of the mathematical profile means that
+the state and inputs are declared, equations and domains close, relevant
+boundary exchanges are accounted for, the finite evolution is named, and the
+requested output has a defined meaning. A derived invariant must cite the
+particular model and update for which it holds. A physical tolerance additionally
+needs justified input and model bounds for that application.
+
+This is a useful architecture for specialization because a new kernel can
+reuse exact arithmetic, words, delayed state, units and source bindings while
+importing only the required physical equations. The worked finite mechanical
+profile demonstrates that separation: its rational solve and energy identity
+need no general electromagnetic solver. An optical-material specialization,
+in contrast, needs the selected electromagnetic and thermal closure.
+
+\subsection{Implementation obligations remain narrow and visible}
+No new XOP runtime, automatic compiler, proof checker, material calibration or
+physical executor is claimed. The discrete midpoint equations provide a
+complete mathematical step on their domain, but a program must still implement
+the exact field solve, state commit and output contract. The new material models
+remain conditional on their parameters, initial/boundary data and chosen finite
+representation. Their physical applicability needs corresponding evidence.
+
+The profile does not replace arbitrary continuum fields by a finite state
+without a declared reduction. It does not equate energy balance with correct
+trajectory, make a physical clock exact by encoding its ticks, or restore
+information lost before acquisition. It also changes no earlier satellite
+accuracy result and adds no general quantum or gravitational theory.
+
+\subsection{Traceable source and derivation records}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{37mm}Y@{}}
+\toprule Record & Relative release path\\\midrule
+Law-profile and finite step & \code{formal/PHYSICS\_PROFILE.md}\\
+Mechanical/thermal sources & \code{formal/ENERGY\_AND\_MECHANICS.md}\\
+Electromagnetic sources & \code{formal/ELECTROMAGNETIC\_LAWS.md}\\
+Measurement/constant sources & \code{formal/MEASUREMENT\_AND\_CONSTANTS.md}\\
+Decisions and proof coverage & \code{formal/DECISIONS\_AND\_PROOFS.md}\\
+Preserved parent identity & \code{source/PARENT\_BINDING.json}\\
+Document and logical review & \code{review/}\\
+Distribution integrity & \code{source/release\_manifest.json}\\
+\bottomrule
+\end{tabularx}\end{center}
+The three domain records link to the inspected primary and official sources
+used for their laws and conventions. The document's equations and proofs state
+the adopted scope explicitly. Parent files remain unchanged; the distribution
+contains this focused supplement and its editable sources.
