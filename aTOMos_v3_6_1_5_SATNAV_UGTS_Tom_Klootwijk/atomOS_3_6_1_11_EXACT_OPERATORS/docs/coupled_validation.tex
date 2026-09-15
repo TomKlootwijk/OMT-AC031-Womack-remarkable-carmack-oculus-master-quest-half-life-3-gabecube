@@ -1,0 +1,97 @@
+\section{Preserved 3.6.1.7 coupled implementation validation}
+These results were executed for parent version 3.6.1.7 on the local Windows machine.
+
+\code{source/baseline\_3\_6\_1\_7\_validation.json} preserves its index.
+The unchanged sibling 3.6.1.7 release contains its full run files. These totals
+are historical evidence, not new 3.6.1.8 live-receiver tests.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.54\textwidth}Y@{}}\toprule
+\textbf{Executed check} & \textbf{Result}\\\midrule
+CPU and CUDA builds / CTest & Passed; three suites per build\\
+Coupled C++ assertions & 202 passed\\
+Retained Boolean / SATNAV assertions & 5,060,172 / 105,559 passed\\
+Python test methods & 70 passed\\
+Retained command-line scenarios & 25 Boolean + 11 SATNAV passed\\
+Editable coupled example, each backend & 72 steps; 6,984 comparisons\\
+Full coupled suite, each backend & 272 trajectories; 3,308 steps\\
+Independent full-suite comparisons & 320,876 per backend\\
+Native analytic / causal invariants & 20 passed per backend\\
+Deliberate trace corruptions rejected & Eight per backend\\
+Coupled CUDA Compute Sanitizer & Zero errors; full replay passed\\
+Actual SATNAV-to-coupled handoff & 256 steps per backend\\
+Independent actual handoff comparisons & 24,832 per backend\\
+Separate publication/key/lineage audit & Passed on CPU and CUDA\\
+Retained SATNAV texture/global CUDA & Independent replay and memcheck passed\\\bottomrule
+\end{tabularx}
+\end{center}
+
+The comprehensive suite includes 257 trajectories with varying sample counts, so
+the CUDA run uses three 128-thread blocks with a partial final block. It produces
+3,301 advanced states, three deliberately induced singular/overflow failures and
+four correctly frozen subsequent records. Expected failure records are checked
+against the independent reference; they are not counted as successful advances.
+
+\subsection{Evidence that both directions actually execute}
+Counterfactual native trajectories share observations while changing the initial
+word: position and velocity change, and later geometric drive changes. A second
+pair shares its initial state while changing target geometry: drive and J/K state
+change, then the physical trajectory changes. Edited Boolean equations also change
+both state and later predicates. These are executed causal comparisons, beyond
+agreement between two implementations.
+
+Known free-motion, constant-force and diagonal-spring updates are checked against
+closed forms of the stated discrete method. Off-diagonal generalized eigenmodes,
+signed coefficients, missing observations, whole-word absorption, chart-domain
+cases and numerical failure semantics are exercised. CPU regression checks also
+retain small independent eigenmodes beside a stiffness of $10^{308}$.
+\clearpage
+
+\section{Coupled handoff evidence and reproducibility}
+The actual 256-row SATNAV stream produces 253 observation-driven advances and three
+prediction advances. There are 51 J/K changes across nine distinct word states.
+At unavailable-observation epochs 250, 251 and 252, modeled motion continues by
+approximately 2.10713 m, 1.61596 m and 1.24055 m respectively. Residual-alert epoch
+253 remains an input observation with its diagnostic intact.
+
+A separate publication audit checks every complete native trace binding, original
+solver/epoch/residual/clock/variance record, both key encodings, full time, winding,
+Up and hoop, all 255 state-carry links, all 256 state-dependent stiffness sums and
+every hash-chain record. Its implementation reads the output independently from
+the publisher. Original solver records remain distinct from modeled positions.
+
+\subsection{Reproduce the full native fixture suite}
+\begin{lstlisting}
+python tools/validate_coupled.py \
+  --binary bin/cpu/coupled_kernel.exe \
+  --backend cpu --out results/my_cpu_validation
+python tools/validate_coupled.py \
+  --binary bin/cuda/coupled_kernel.exe \
+  --backend cuda --out results/my_cuda_validation
+compute-sanitizer --tool memcheck --error-exitcode 99 \
+  bin/cuda/coupled_kernel.exe \
+  --input results/my_cuda_validation/compiled \
+  --out results/my_memcheck --backend cuda
+python tools/coupled.py \
+  --input results/my_cuda_validation/model.json \
+  --out results/my_memcheck_replay --verify results/my_memcheck
+\end{lstlisting}
+The replay-only command labels execution as not run because it reads an existing
+trace; the preceding native command and sanitizer log establish that execution.
+The native report retains actual backend/device identity and binary/model hashes.
+
+\subsection{Toolchain and limits of these results}
+The builds use MSVC 19.44.35221.0 and NVIDIA CUDA compiler 12.8.61. CUDA executes
+on an NVIDIA GeForce RTX 5070 Ti Laptop GPU, compute capability 12.0, with driver
+591.59. Short build directories avoid this workspace's long Windows scratch paths.
+Python replay uses NumPy 2.1.2. CPU Address/UndefinedBehavior Sanitizer was not run
+in this Windows release; its earlier Linux record remains archived.
+
+These checks establish the declared coupled implementation on the supplied finite
+fixtures. Physical coefficients are editable model inputs; this release has not
+calibrated them against a measured mechanical system or validated live GNSS data.
+No general switched-system convergence or measured speedup is inferred. The new
+blend, encoders and mechanical matrix are fully specified CGK-R1 definitions.
+They do not purport to recover unavailable original M2 equations.
+\clearpage
+\clearpage

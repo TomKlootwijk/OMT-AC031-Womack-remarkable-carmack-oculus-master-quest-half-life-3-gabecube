@@ -1,0 +1,85 @@
+\input{preamble.tex}
+\begin{document}
+\begin{titlepage}\thispagestyle{empty}
+{\sffamily\color{accent}\large AC031 / AC130 ATOMOS \hfill EXACT-OPERATOR-SEED-R1}\par
+\vspace{18mm}
+{\sffamily\bfseries\fontsize{45}{53}\selectfont\color{ink}aTOMos v3.6.1.11}\par
+\vspace{10mm}
+{\sffamily\fontsize{29}{35}\selectfont Exact operator seeds\par and literal state evolution}\par
+\vspace{8mm}
+{\sffamily\fontsize{20}{26}\selectfont\color{gold}One-bit words\par Exact expressions before numerical output}\par
+\vspace{11mm}
+{\large Madgwick IMU / MARG \;\textperiodcentered\; orbital dynamics\par
+ASA/NA and JK \;\textperiodcentered\; UGTS \;\textperiodcentered\; receiver equations}\par
+\vspace{13mm}
+{\sffamily\bfseries\Large Tom Klootwijk}\par
+\begin{tabular}{@{}ll@{}}
+Author-supplied identifier & \textbf{NL200678942}\\
+Author-supplied date & \textbf{10-07-1990}\\
+Preserved parent & 3.6.1.10 ORBIT-SEED-R1\\
+Method & Logical derivation and critical review\\
+Release & 3.6.1.11 / 15 September 2026\\
+\end{tabular}
+\vfill
+\begin{panel}
+The authoritative state consists of exact operator expressions and their input
+lineage. A finite-precision output does not replace that state. This subversion
+specifies the mathematics and records strategy improvements; it does not claim
+a newly implemented engine or new experimental accuracy.
+\end{panel}
+{\small\color{muted}Editable formalization with the complete inherited equation corpus.
+No new algorithm tests, simulations or benchmarks. Prepared with AI assistance.}
+\end{titlepage}
+\setcounter{page}{2}
+\section*{Release method and status}
+\addcontentsline{toc}{section}{Release method and status}
+The user requests full formalization and improvement of the strategy through
+logical reasoning, without testing the proposed system. Accordingly, new claims
+in this volume are definitions and conditional mathematical deductions. Document
+rendering and source inspection establish readable delivery, not empirical
+algorithm performance. No new numerical experiment is reported.
+
+The scope includes the exact operator representation; original Madgwick attitude
+recurrences; orbital forces, frames and time evolution; station and body geometry;
+literal ASA/NA and synchronous JK; coupled mechanics; both original UGTS layouts;
+full calendar/winding; and the retained satellite-navigation receiver equations.
+The exact arithmetic definition is relative to its supplied inputs and constants.
+It cannot restore information absent from those inputs.
+
+The complete 3.6.1.10 equation corpus follows the new formalization as dated
+reference material. Its existing measured results are inherited. They do not
+test or validate EXACT-OPERATOR-SEED-R1. The existing CPU/CUDA runtime remains
+available in its preserved parent release; no R11 executable is claimed here.
+
+\begin{panel}
+\textbf{Evidence vocabulary.} A definition fixes the profile. A proposition gives
+a conclusion under stated hypotheses. A logical review is a readable argument,
+not a proof-assistant certificate. An implementation obligation remains a future
+engineering requirement. A physical assumption does not become measured truth
+because the arithmetic is exact.
+\end{panel}
+\tableofcontents\clearpage
+\IfFileExists{exact_strategy.tex}{\input{exact_strategy.tex}}{}
+\IfFileExists{exact_core.tex}{\input{exact_core.tex}}{}
+\IfFileExists{exact_madgwick.tex}{\input{exact_madgwick.tex}}{}
+\IfFileExists{exact_domains.tex}{\input{exact_domains.tex}}{}
+\IfFileExists{exact_completion.tex}{\input{exact_completion.tex}}{}
+\clearpage
+\section*{Inherited 3.6.1.10 formalization and dated evidence}
+\addcontentsline{toc}{section}{Inherited 3.6.1.10 formalization and dated evidence}
+\fancyhead[R]{\sffamily\small\textcolor{muted}{INHERITED R10 / DATED EVIDENCE}}
+The following source chapters are preserved from the delivered R10 corpus.
+Their release-specific statements, timings, tests and measured errors refer to
+those earlier implementations. They are included for the actual equations and
+source lineage; they are not new evidence for the exact operator profile.
+\input{seed_optimization.tex}
+\input{phi_source_audit.tex}
+\input{calendar_phase.tex}
+\input{orbit.tex}
+\section*{Inherited receiver, geometry and source contracts}
+\addcontentsline{toc}{section}{Inherited receiver, geometry and source contracts}
+The component versions and measurements below keep their original historical
+scope. The R11 domain-lift chapter states what exact expression semantics would
+change and what source equations remain unchanged.
+\input{retained_satnav_body.tex}
+\end{document}

@@ -1,0 +1,468 @@
+\section{Exact operator seeds: a mathematical contract}
+\label{sec:exact-core}
+This chapter defines the proposed \code{XOP-R1} operator-seed profile for
+release 3.6.1.11. Definitions specify a representation and its meaning;
+propositions establish conditional mathematical consequences. An implementation
+must still discharge the stated parsing, arithmetic and proof-checking
+obligations. No new runtime, machine-checked proof, test, simulation or measured
+improvement is asserted. The implemented R10 orbital seed and its binary64
+arithmetic keep their existing format and interpretation.
+
+\subsection{Bits, values and exact expressions are distinct types}
+Write $\mathsf{Bits}(w)=\B^w$ for a finite raw bit string. Its unsigned
+interpretation is an explicitly requested map
+\[
+ \operatorname{uint}(b)=\sum_{i=0}^{w-1}b_i2^i.
+\]
+A binary64 payload belongs to $\mathsf{Bits}(64)$ until an explicit conversion
+is applied. It does not become an arbitrary-precision real by being packed in
+one-bit planes. A finite binary64 value can be converted to the exact dyadic
+rational denoted by that value; this preserves its rounded input value, not an
+unknown physical quantity. Signed zeros are distinct raw payloads but the same
+rational zero. Infinity and NaN have no value in the exact real scalar types.
+
+The scalar hierarchy is
+\[
+ \Z\ \lhook\joinrel\longrightarrow\ \mathbb Q
+ \ \lhook\joinrel\longrightarrow\ \mathbb A
+ \ \lhook\joinrel\longrightarrow\ \mathsf{RealTerm},
+ \qquad \mathbb A=\overline{\mathbb Q}\cap\R.
+\]
+Here $\mathsf{RealTerm}$ is finite syntax for a possibly partial real expression,
+not a claim that every real number has a finite description. Coercions preserve
+denotation and are explicit in the typed graph. Booleans, finite words, tuples,
+vectors, matrices, functions and streams have separate type constructors.
+Dimensioned scalars also carry a seven-component rational SI exponent vector;
+addition requires equal dimensions, multiplication adds dimensions, and
+transcendental functions require dimensionless arguments. Angle conventions and
+coordinate frames are declared metadata, not inferred from an untyped number.
+
+An integer is $(s,a_0,\ldots,a_{k-1})$ with $s\in\B$ and
+\[
+ z=(-1)^s\sum_{i=0}^{k-1}a_i\beta^i,
+ \qquad \beta=2^{64},\qquad 0\le a_i<\beta.
+\]
+Zero has $s=0,k=0$; otherwise $a_{k-1}\ne0$. There is no format-level bound on
+$k$. A resource-limited implementation must return an explicit resource result,
+never silently discard high limbs. A rational is $(p,q)$ with $q>0$,
+$\gcd(|p|,q)=1$; its zero is $(0,1)$.
+
+An algebraic real has a primitive irreducible polynomial $P\in\Z[X]$ with
+positive leading coefficient and an index selecting one of its distinct real
+roots in increasing order. This fixes its value and canonical mathematical
+identity. A rational isolating interval is a separate witness, not part of that
+identity. Checking irreducibility, isolating roots and obtaining a canonical
+minimal polynomial are explicit exact-algebra obligations. A general operator
+term has canonical \emph{syntax}; different syntax may denote the same real.
+
+\subsection{Exact arithmetic on finite machine words}
+The literal full adder takes three bits $a,b,c\in\B$ and returns
+\[
+ s=a\oplus b\oplus c,\qquad
+ c'= (a\land b)\lor\bigl(c\land(a\oplus b)\bigr),
+ \qquad a+b+c=s+2c'.
+\]
+For subtraction with incoming borrow $d$, its bit and outgoing borrow are
+\[
+ r=a\oplus b\oplus d,\qquad
+ d'=(\neg a\land b)\lor\bigl(d\land\neg(a\oplus b)\bigr),
+ \qquad a-b-d=r-2d'.
+\]
+Feed the outgoing carry or borrow of position $i$ to position $i+1$, starting
+with zero. Signed values are handled by separate sign and magnitude, not by
+discarding an infinite sign extension. A product begins with partial bits
+$p_{i,j}=a_i\land b_j$ in position $i+j$; finitely many full-adder chains sum
+these shifted rows, retaining the final carry. Exact magnitude comparison scans
+from the most significant padded bit, with equality flag $e=1$ and greater flag
+$g=0$, updating simultaneously
+\[
+ g'=g\lor(e\land a\land\neg b),\qquad
+ e'=e\land\neg(a\oplus b).
+\]
+This comparison supplies the branch in division; no approximate sign oracle is
+needed for integers. The bit equations also establish the limb implementation:
+$a+b=(a\oplus b)+2(a\land b)$ and the two carry terms are disjoint, giving
+the full-adder identity by substitution. Summing the bit identities with powers
+of two telescopes all internal carries and borrows.
+
+Limb storage does not force modular arithmetic. For nonnegative addition, pad
+the shorter operand with zero limbs, set $c_0=0$, and define
+\begin{align*}
+ u_i&=a_i+b_i+c_i,&
+ r_i&=u_i-\beta\left\lfloor u_i/\beta\right\rfloor,&
+ c_{i+1}&=\left\lfloor u_i/\beta\right\rfloor.
+\end{align*}
+Append the final nonzero carry. A native implementation may realize $u_i$ with
+two-word operations or bitwise carry logic; it cannot assume that $u_i$ fits one
+limb. Subtraction with $A\ge B$ uses $c_0=0$ and
+\[
+ u_i=a_i-b_i-c_i,\qquad
+ c_{i+1}=[u_i<0],\qquad r_i=u_i+\beta c_{i+1}.
+\]
+Signed addition selects addition or magnitude subtraction according to signs
+and exact magnitude order, then normalizes zero.
+
+Multiplication is finite convolution followed by carrying, starting with $c_0=0$:
+\[
+ v_j=c_j+\sum_{i+\ell=j}a_i b_\ell,
+ \qquad r_j=v_j\bmod\beta,
+ \qquad c_{j+1}=\lfloor v_j/\beta\rfloor.
+\]
+Continue carrying until it vanishes. The accumulator $v_j$ is itself an exact
+multiword quantity; using one overflowing hardware word would violate the rule.
+For division by $D>0$, process dividend bits from most to least significant:
+\[
+ Q_0=R_0=0,\quad u_i=2R_i+b_i,\quad e_i=[u_i\ge D],\quad
+ R_{i+1}=u_i-e_iD,\quad Q_{i+1}=2Q_i+e_i.
+\]
+The dividend prefix processed after step $i$ is $DQ_i+R_i$, with
+$0\le R_i<D$. Signed Euclidean division is the unique
+$z=dq+r$ with $d\ne0$ and $0\le r<|d|$; sign conversion must preserve this
+convention, including negative dividends. Integer powers with nonnegative
+exponent use finite repeated multiplication; negative powers produce a rational
+only when the base is nonzero.
+
+\begin{proposition}[No mathematical fixed-width overflow]
+For finite integer operands, the preceding finite procedures return their exact
+sum, difference, product, or Euclidean quotient and remainder, provided every
+intermediate carry is retained and sufficient storage is available.
+\end{proposition}
+\begin{proof}
+For addition and subtraction, multiply each defining equation by $\beta^i$
+and sum: the carry terms telescope, leaving the represented operand relation.
+Convolution represents the product by distributivity, and carrying preserves
+each coefficient's value. For division, the prefix invariant follows by
+substitution, while $0\le R_i<D$ implies $0\le2R_i+b_i<2D$ and hence preserves
+the remainder bound. These arguments are conditional on retaining every term;
+they establish no bound on time or allocated memory.
+\end{proof}
+
+\subsection{Positive roots and elementary functions}
+\code{SQRT}$(x)$ denotes the unique $y\ge0$ satisfying $y^2=x$, with domain
+$x\ge0$. \code{ROOT}$(n,x)$ requires integer $n\ge1$: for even $n$, it is the
+nonnegative root and requires $x\ge0$; for odd $n$, it is the unique real root.
+An arbitrary polynomial root uses the algebraic root index above, or an explicit
+existence-and-uniqueness predicate for a real-term root. No unnamed branch is
+selected. Thus $\sqrt{x^2}=|x|$ for real $x$, and cancellation to $x$ requires
+$x\ge0$. Complex branches are outside this real profile.
+
+The real elementary declarations have ordinary mathematical denotations:
+\begin{align*}
+ \exp x&=\sum_{n=0}^{\infty}\frac{x^n}{n!},&
+ \sin x&=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{(2n+1)!},\\
+ \cos x&=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n}}{(2n)!},&
+ \log x&=\int_1^x\frac{du}{u}\quad(x>0),\\
+ \operatorname{atan}x&=\int_0^x\frac{du}{1+u^2},&
+ \pi&=4\operatorname{atan}(1).
+\end{align*}
+These definitions permit finite operator terms for infinite-process values.
+They are not a request to store an infinite series or an assertion that a finite
+limb evaluator can return all digits. A certified finite approximation needs
+separate truncation and rounding bounds. A raw approximate evaluation cannot
+serve as an exact equality proof.
+
+\code{ATAN2}$(y,x)$ is undefined at $(0,0)$ and uses range $(-\pi,\pi]$:
+\[
+ \operatorname{atan2}(y,x)=
+ \begin{cases}
+ \operatorname{atan}(y/x),&x>0,\\
+ \operatorname{atan}(y/x)+\pi,&x<0,\ y\ge0,\\
+ \operatorname{atan}(y/x)-\pi,&x<0,\ y<0,\\
+ \pi/2,&x=0,\ y>0,\\
+ -\pi/2,&x=0,\ y<0.
+ \end{cases}
+\]
+The literal source \code{OTAN2} remains a distinct named template with its own
+equation and domain; it is never an alias silently replaced by this operator.
+$\tan x$ requires $\cos x\ne0$; inverse sine and cosine use ranges
+$[-\pi/2,\pi/2]$ and $[0,\pi]$ and domain $[-1,1]$. Floor is the unique
+integer $n$ with $n\le x<n+1$; wrapping is
+$x-P\lfloor x/P\rfloor$ for $P>0$, with the integer winding retained separately.
+
+\subsection{Decisions, partiality and honest result states}
+Exact rational order is decided by integer cross multiplication with positive
+denominators. Algebraic order and equality can be decided by exact polynomial
+arithmetic, common-root analysis and real-root isolation. For unequal algebraic
+roots, sufficiently refined disjoint rational isolating intervals determine the
+order; common roots are handled algebraically instead of waiting forever for
+interval separation. Supplying those algorithms is an implementation obligation.
+
+There is no general equality or sign oracle for unrestricted transcendental
+terms. \code{COMPARE} returns one of \code{LT}, \code{EQ}, \code{GT}, or
+\code{UNKNOWN}, each decided result carrying a valid justification.
+\code{FLOOR}, branch selection and nonzero checks may likewise remain unresolved.
+Outcomes distinguish a value or a retained term, an unmet domain obligation,
+an unknown decision, and exhausted resources. These are not numeric zero.
+\code{IF} is lazy: only the selected branch must be defined once its predicate
+is proved; an undecided predicate preserves the conditional term.
+
+An exact finite decimal input denotes a rational with its declared decimal
+scale. A measurement with error is a value plus an explicit uncertainty model;
+giving its central value an exact rational spelling removes no measurement
+error. This distinction applies equally to station coordinates, timing and force
+coefficients in an orbital seed.
+
+\subsection{Scoped operator graphs and named dependencies}
+An operator seed contains finite typed records. A node is
+\[
+ (\text{opcode},\ \text{result type},\ \text{ordered operand references},
+ \ \text{opcode payload}).
+\]
+The fixed \code{XOP-R1} catalog in \path{formal/OPERATOR_CATALOG.md} supplies
+each opcode's arity, type relation, denotation, domain and payload fields.
+An unknown opcode is rejected; a user-defined formula is a named template built
+from catalog operators, with an explicit interface and body. There is no implicit
+``evaluate arbitrary text'' opcode or undeclared exact solver.
+
+Each scope has an ordered node table and ordered exported references. Local
+node operands refer only to earlier nodes. Lambda, finite sum/product, integral,
+derivative and solution declarations carry nested scopes. Bound variables use
+de Bruijn indices: zero denotes the nearest binder, and larger indices count
+outward through lexical binders. The type environment fixes every index.
+Substitution shifts indices when passing a binder and is capture-avoiding.
+Nested scopes cannot reference an outer local node by an accidental numeric ID;
+captured values enter through explicit binders. Names are display metadata;
+renaming them does not change variable binding.
+
+References have distinct tags for a local node, bound variable, old state slot,
+current sample slot, or dependency export. A template application additionally
+identifies its template and supplies all parameters in declared order. Dependency
+records carry the complete canonical seed/template bytes in the self-contained
+form. A digest is a lookup aid; acceptance requires the expected complete bytes
+and interface. A dependency-only manifest is explicitly an open package until
+all required bytes are supplied. Dependency and template-call graphs are finite
+and acyclic in this profile. Finite summation and delayed state do not imply
+unrestricted recursive template calls.
+
+Sample declarations identify their type, absolute time convention, provenance
+and binding mode. An inline sample is an indexed literal accompanied by its
+absolute timestamp; an external sample is a declared input requirement.
+\code{SAMPLE} selects the value bound to the current logical step, with its
+timestamp retained. Missing data is unresolved input, not a guessed next sample.
+A modular phase, spatial key, hash or template identifier does not supply the
+state, timestamp or sample bytes it refers to.
+
+\subsection{Canonical variable-length wire contract}
+The canonical semantic stream begins with the eight ASCII octets
+\code{XOPSEED1}, followed by profile numbers $(1,0)$ and the ordered tables
+specified in the catalog. Every natural number uses minimal unsigned base-128
+encoding: digit payloads occupy seven low bits, the high bit marks continuation,
+the least significant digit comes first, and the final high bit is zero.
+Zero is one zero octet; a multi-octet number cannot have a zero final payload.
+Thus counts and references are not limited to a fixed machine word.
+
+A byte string has a natural-number length followed by exactly that many octets;
+a sequence has an element count followed by exactly that many schema-defined
+elements. An integer has a sign octet, a limb count and that many little-endian
+64-bit limbs. Rational and algebraic literals use the canonical value forms
+already defined. Strings used as identifiers are restricted ASCII byte strings;
+free-form provenance is opaque bytes and does not participate in name lookup.
+Types, references and opcode payloads are encoded by their declared tagged
+schemas. Nonminimal counts, redundant leading limbs, trailing bytes, nonzero
+padding, invalid references and payload fields outside the selected schema have
+no canonical decoding.
+
+Canonical here means one encoding for the same ordered, scoped syntactic
+record. It does not mean that all mathematically equal expressions, all sharing
+patterns, or all valid topological node orders receive one universal byte string.
+Structural sharing is permitted only for identical typed syntax under the same
+bindings and immutable dependency identities. The strategy history records any
+rewrite that changes the syntax while preserving its meaning.
+
+\begin{proposition}[Unique literal and record decoding]
+Given the catalog, a finite well-formed canonical stream has one decoded record
+and its canonical re-encoding returns the original stream.
+\end{proposition}
+\begin{proof}
+The continuation terminator uniquely delimits each minimal natural-number
+encoding. Lengths and fixed-width limbs uniquely delimit strings and literals.
+The record schema fixes field order and the selected tag fixes each variant.
+Induction over finite sequences and nested scopes therefore determines every
+field and its boundary. Rejecting alternative zero forms, redundant lengths and
+trailing bytes makes re-encoding identical. This is a structural proof of the
+specified grammar, not evidence about a parser implementation.
+\end{proof}
+
+To pack literal one-bit planes, let $C$ be the canonical octet stream, of length
+$L$. Pad its last block with zero octets to a multiple of 512 octets. Interpret
+each block as 64 little-endian words $w_0,\ldots,w_{63}$ and set
+\[
+ a_{r,c}=\bigl((w_r\gg c)\mathbin{\&}1\bigr),\qquad
+ p_c=\sum_{r=0}^{63}a_{r,c}2^r.
+\]
+The envelope is eight ASCII octets \code{XOPPLAN1}, then the minimal encoding of
+$L$, then the plane words in increasing block and plane order. Its size fixes
+the required block count; after inverse transpose, padding must be zero and the
+first $L$ octets must decode as \code{XOPSEED1}. Empty input has no seed grammar,
+although the underlying byte permutation can act on an empty byte string.
+
+\begin{proposition}[Bit-plane involution and information accounting]
+The padded block transform $T$ satisfies $T(T(W))=W$. Including $L$ makes packing
+injective on canonical seeds. The transform changes organization, not information
+content or the number of bits required by its uncompressed padded blocks.
+\end{proposition}
+\begin{proof}
+The output bit at $(c,r)$ is the input bit at $(r,c)$. Transposing again restores
+every coordinate. The explicit length removes padding ambiguity. Consequently
+distinct canonical inputs cannot share an envelope. A bijective permutation
+cannot itself identify multiple arbitrary inputs with a smaller code space.
+\end{proof}
+This envelope is newly named. It neither changes nor retroactively reinterprets
+R10's uint64/binary64 codec. A conversion from R10 must declare whether it
+preserves raw bits, converts finite values to dyadic rationals, or replaces an
+approximation by a separately justified symbolic model.
+
+\subsection{Causal recurrence and the literal two-mask kernel}
+The state table declares each slot's type, initial expression and next-state
+expression. Reading slot $j$ at logical step $t$ is precisely
+\[
+ s_j(0)=\operatorname{init}_j,\qquad
+ s_j(t+1)=E_j(s(t),d(t));
+ \qquad s_j=\operatorname{DELAY}(\operatorname{init}_j,E_j).
+\]
+All right-hand sides read the same old state and the same input snapshot. The
+new tuple commits simultaneously after all required domains and decisions are
+resolved. A self-loop in an instantaneous operator DAG is inadmissible: every
+recurrence cycle must cross a declared \code{DELAY}. An algebraic fixed-point
+equation is a separate solution declaration needing existence, uniqueness
+and branch obligations; it is not an execution order.
+
+For $w$-bit masks, define the retained whole-word operation
+\begin{align*}
+ a&=x\land A\land V,& n&=a\land N,& h&=\pop(n\land B),\\
+ \operatorname{ASA}(x;V,A,N,B)&=
+ \begin{cases}0,&h>0,\\n,&h=0.\end{cases}
+\end{align*}
+The two ordered sets and literal J--K update are
+\begin{align*}
+ x_t&=E_X(q_t,d_t),&
+ y_t^{A}&=\operatorname{ASA}(x_t;V_A,A_A,N_A,B_A),\\
+ y_t&=\operatorname{ASA}(y_t^{A};V_B,A_B,N_B,B_B),\\
+ J_t&=E_J(q_t,y_t,d_t),& K_t&=E_K(q_t,y_t,d_t),\\
+ q_{t+1}&=\bigl[(J_t\land\neg_w q_t)
+       \lor(\neg_w K_t\land q_t)\bigr]\land V_q.
+\end{align*}
+Here $\neg_w q=(2^w-1)\mathbin{\oplus}q$ and every expression has
+$\mathsf{Bits}(w)$ type. Both intermediate $(a,n,h,y)$ tuples are observables.
+Absorption zeroes the whole output of its stage; it neither clears selected bits
+individually nor silently substitutes a hold transition. The mathematical width
+$w$ is explicit; the retained executable orbital kernel still uses its specified
+32-bit word profile.
+
+\begin{proposition}[Causal uniqueness and conditional finite periodicity]
+For fixed initial states and an input stream, a typed finite instantaneous DAG
+whose required operations are defined determines at most one next state at each
+step. If all operations are total on the reachable states, it determines a unique
+state stream. A fixed autonomous transition on $m$ active Boolean state bits is
+eventually periodic, with preperiod plus period at most $2^m$.
+\end{proposition}
+\begin{proof}
+Topological induction determines every instantaneous node from old-state and
+input values; simultaneous commitment then determines the next tuple. Induction
+on steps gives the stream. For the finite autonomous case, among $2^m+1$ states
+two coincide; determinism makes their subsequent tails coincide. Changing the
+input, strategy, timestamp, unbounded integer state or physical continuous state
+does not meet that finite-autonomous hypothesis.
+\end{proof}
+
+\subsection{Vectors, calculus and orbital expressions}
+Vector and matrix operators are typed compositions of scalar arithmetic:
+$u\cdot v=\sum_i u_i v_i$, $\|u\|=\sqrt{u\cdot u}$, and
+$(AB)_{ij}=\sum_k A_{ik}B_{kj}$. Cross product is restricted to three
+components. A normalized vector requires nonzero norm; a matrix inverse requires
+a square matrix and nonzero determinant. Polynomial, Chebyshev, Legendre,
+finite Fourier and rational expressions expand to declared finite templates.
+The catalog includes finite sum/product, differentiation, gradient and Jacobian
+binding, definite integration and an initial-value solution declaration.
+
+\code{DIFF}$(f,x)$ denotes a derivative only where the stated limit exists.
+\code{INTEGRAL}$(f,a,b)$ denotes an oriented Riemann integral when the finite
+interval integrand is integrable; an improper integral has a separate limit
+declaration. \code{ODE}$(F,t_0,s_0,t,I)$ denotes the value at $t\in I$ of a unique
+differentiable solution on the declared interval. A local existence theorem or
+local regularity condition alone is not a certificate of a global interval.
+If existence, uniqueness or continuation is unresolved, the node remains a
+declaration with obligations, rather than an evaluated exact orbit.
+
+A finite RK4 template can be represented exactly as expressions, for example
+\begin{align*}
+ k_1&=F(t,s),&k_2&=F(t+h/2,s+hk_1/2),\\
+ k_3&=F(t+h/2,s+hk_2/2),&k_4&=F(t+h,s+hk_3),\\
+ \operatorname{RK4}_h(t,s)&=s+\frac{h}{6}(k_1+2k_2+2k_3+k_4).
+\end{align*}
+Exact evaluation of this finite expression does not make it equal to the
+continuous ODE solution. Discretization, uncertain initial conditions, unmodelled
+forces and discontinuous external events remain separate mathematical or
+physical questions. All force and station expressions must retain their units,
+frames, absolute time and explicit singular domains. A finite symbolic term is
+not an error bound on its physical denotation.
+
+\subsection{Proof rules and strategy self-improvement}
+Let $\Gamma$ contain typed assumptions and proven domain predicates. A permitted
+rewrite carries the judgement
+\[
+ \Gamma\vdash e\simeq e':\tau,
+ \qquad
+ \operatorname{Dom}_{\Gamma}(e)=\operatorname{Dom}_{\Gamma}(e'),
+ \quad \llbracket e\rrbracket=\llbracket e'\rrbracket
+ \text{ on that domain}.
+\]
+Domain equality is essential: simplifying $x/x$ to $1$ without $x\ne0$ changes
+the defined inputs. The proof vocabulary contains assumption, reflexivity,
+symmetry, transitivity, typed congruence, capture-avoiding substitution,
+definition expansion and explicit ordered-field/domain lemmas. Branch rules
+require their predicates; differentiation and integration rewrites additionally
+require their analytic hypotheses. A rule name or a source digest alone is not
+a proof of its side conditions.
+
+Structural common-subexpression sharing, exact constant folding and eliminating
+a pure unused node preserve the denotation of the demanded exports when the
+typing, scope and domain obligations are satisfied. Reassociation is justified
+in exact integer/rational arithmetic but is not silently applied to R10 binary64
+execution. Eliminating an observed ASA trace, changing a sample read, or changing
+query cadence is not observationally neutral merely because a final word matches.
+
+For stateful replacement use a relation $\mathcal R$ between old and new states.
+Its proof must relate the initial states and, for every admitted input, preserve
+definedness, all declared observations and the relation after one synchronous
+step. Induction then gives equal observable streams. Absolute timestamps and
+selected sample identities belong to the observations whenever a query schedule
+is exported; a change in those requires a separately named strategy contract.
+
+A strategy version is an immutable tuple
+\[
+ S_v=(\text{rule catalog},\ \text{priority policy},\ \text{cost model},
+       \ \text{proof system ID},\ \text{resource policy}).
+\]
+It may propose a new expression graph or a new strategy $S_{v+1}$. Acceptance
+requires a finite proof object under the already accepted proof system, a
+preserved input/output contract, and the stated termination/resource argument.
+The proposal cannot justify itself by replacing its own checker or dropping an
+unmet premise. A proof-system change creates a new explicit trust boundary.
+Strategies and proposal histories may be unbounded, so finite Boolean
+periodicity does not apply to the combined evolving system.
+
+\begin{proposition}[Conditional preservation under strategy replacement]
+Suppose the accepted proof rules are sound for the declared denotation, each
+accepted replacement carries a valid domain-preserving proof or stream
+simulation relation, and proof checking admits only valid derivations. Then any
+finite chain of accepted replacements preserves its declared observations.
+\end{proposition}
+\begin{proof}
+A sound proof preserves one replacement's domain and observations. Compose
+these equalities, or the stepwise stream relations, along the finite chain.
+Induction gives preservation after every accepted replacement. This establishes
+a conditional theorem; it supplies neither a proof-checker implementation nor
+an unconditional claim that proposed derivations are valid.
+\end{proof}
+
+Logical strategy improvement can now be stated precisely. Sharing an identical
+pure subgraph reduces duplicated graph storage; memoizing it avoids a repeated
+evaluation only when the complete binding, state step and dependency identity
+are the same. A strictly decreasing natural-valued rewrite measure proves
+termination of that rewrite phase; a finite proposal budget also terminates a
+search without proving it finds a better expression. A predicted reduction in
+operator count is a claim under the declared cost model, not a measured speedup
+or a guarantee of lower big-integer time, memory use, physical error or global
+optimality. These are the available reasoning-based improvements in this
+subversion; execution and machine proof remain future obligations.

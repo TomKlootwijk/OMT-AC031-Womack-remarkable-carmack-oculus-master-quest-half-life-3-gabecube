@@ -1,0 +1,69 @@
+\section{Logical coverage and implementation boundary}
+\label{sec:exact-completion}
+The new chapters supply the expression types and bit-word representation, causal
+state semantics, exact arithmetic constructions, original attitude recurrences,
+and explicit lifts of the retained physical and spatial equations. The companion
+\path{formal/COVERAGE_AND_PROOFS.md} maps requirements F01--F14 to their
+definitions and conditional arguments. \path{formal/STRATEGY_REVISIONS.md}
+records the proposed changes, deductions and resulting strategy choices.
+
+\subsection{What the deductions establish}
+For a finite, well-formed seed, the declared grammar and inverse bit transpose
+preserve its exact record. Given defined operators, admitted inputs and valid
+rewrites, each retained state root denotes the exact selected recurrence.
+Positive-root normalization gives its stated invariant; homogeneous quaternion
+readout removes roots only where the identity applies. A shared graph can avoid
+duplicating a construction while retaining all its mathematical dependencies.
+
+These conclusions have visible premises. The review compares definitions,
+source equations, signs, domains, timing and proof steps. It is human-readable
+mathematical reasoning, not execution evidence or a proof-assistant certificate.
+The release contains no new algorithm test, numerical simulation, benchmark or
+physical-accuracy experiment.
+
+\subsection{Corrections made by reasoning}
+The accepted strategy preserves source variants that initially appear similar:
+the original Madgwick report's magnetic-reference timing and its appendix code
+are distinct; finite-gain mixing and the simplified correction have different
+increments; an ambient quaternion gradient and the gradient through normalization
+are different derivatives. These differences determine the recurrence itself.
+
+Likewise, nine fitted orbital-frame entries need not form an exact orthogonal
+matrix. Exact RK4 does not acquire the inverse/group property of a continuous
+flow. The native and Python receiver implementations have different range-domain
+policies. The formalization names these choices instead of merging them in an
+equivalence claim. Exact literal imports, lazy branch demand, root signs, input
+chronology and the winding discarded by modular keys remain explicit.
+
+The adopted improvements are therefore structural: retain exact operators,
+reuse identical bound expressions, cancel roots under proved premises, separate
+readout from state, and record semantic changes as new profiles. There is no
+claim of a measured execution-speed gain from this reasoning alone.
+
+\subsection{What is still implementation work}
+A future executable engine needs a conforming parser, exact integer/rational
+arithmetic, algebraic representations and decision procedures, scoped graph
+storage, a sound proof checker, and certified output evaluation. CPU and GPU
+execution must implement the same semantics and report resource exhaustion
+explicitly. Neither a finite graph nor one-bit word storage proves that a live
+workload fits a device's memory or timing budget.
+
+Unrestricted transcendental and implicit-solution decisions do not have a
+promised general terminating oracle. Retaining a term, an unresolved decision
+or an unmet domain obligation is a specified outcome. Such an outcome is not a
+finite numerical prediction. A continuous ODE declaration needs justified
+existence and continuation, and is not an implemented exact orbit solver.
+
+Physical conclusions additionally require supplied measurements, calibrated
+frames and clocks, an applicable force/sensor model, and a stated application
+tolerance. Exact internal arithmetic does not turn uncertain coefficients into
+physical truth or remove time discretization. The dated R10 measurements that
+follow remain evidence for their original numerical implementation and sample
+scope. They do not validate the newly specified exact expression engine.
+
+\begin{panel}
+\textbf{Delivered status.} Release 3.6.1.11 is a mathematical specification with
+logical strategy revisions and editable PDF sources. It is not a newly deployed
+CPU/CUDA kernel. The preserved 3.6.1.10 runtime remains the executable baseline;
+the new profile supplies the precise contract for subsequent implementation.
+\end{panel}

@@ -1,0 +1,131 @@
+% Source audit fragment for the R10 chapter. Uses existing amsmath,
+% booktabs, tabularx/Y, hyperref and xurl packages only.
+\subsection{Supplied phi source: exact transfers and corrections}
+\label{sec:phi-source-audit}
+
+The useful transfer is an explicit finite-state, bitfield architecture.
+R10 applies an exact bit permutation to its existing lossless bitplane format.
+The supplied text does not establish replacement orbital dynamics or a more
+accurate geometric bearing. Its claimed properties must follow from its
+equations, separately from the names given to them.
+
+\textbf{Provenance.} The supplied 21-page PDF is an exported Google Search AI
+conversation, with pseudocode and mathematical claims. References here use its
+visible physical page numbers, checked against rendered pages. The source is
+\nolinkurl{C:/TOMONETMALFORMED/3.6-phi-2pi-fibonacci-36-10---07---1990-gregorian-calander-Tom-Klootwijk.pdf}.
+Its SHA-256 is
+\nolinkurl{0fddbd55ba01bad0c94b435ddf89c4b778e8a94776946f6cc60cfbed860c5116}.
+The full decision record is \code{docs/PHI\_SOURCE\_AUDIT.md}.
+No future target observations or changed force parameters enter this transfer.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Source-to-kernel decisions. Page numbers refer to the supplied PDF.}
+\label{tab:phi-transfer}
+\begin{tabularx}{\linewidth}{@{}p{0.09\linewidth}p{0.26\linewidth}Y@{}}
+\toprule
+Pages & Construction & Decision and usable scope\\
+\midrule
+7--12 & Word fields and Boolean pipeline & Accept explicit widths, masks,
+signedness and update order; retain all physical numeric bits.\\
+4, 8 & Phase sweep & Correct to a declared periodic phase plus cycle count.
+A sawtooth is not itself a Fourier transform.\\
+5, 9 & Hadamard and pinion scaling & The normalized Hadamard is orthogonal.
+The complete scaled map is not; masked integer code loses information.\\
+5, 11 & Golden-ratio rotation & A declared sampling sequence is valid;
+dyadic shifts are not exact multiplication by $\phi$.\\
+3--5, 15 & One-bit shape and LUT & Occupancy predicates, not signed distances.
+Require a domain, geometry and complete LUT.\\
+6--7, 10 & Branch culling & Valid only if the bound contains all transformed
+descendants; the printed proof does not establish this.\\
+6, 12--14 & Loop and Klein claim & Finite-state feedback is usable. A parity
+flip does not prove a Klein-bottle surface or non-orientability.\\
+13--14 & Log radius, binary angle & Valid chart and modular arithmetic after
+domain and mask corrections; quantization is explicit.\\
+16--17 & Source OTAN2 & Radius and occupancy cannot recover geometric
+direction. Preserve the actual station-relative vector.\\
+17, 20 & Infinite nesting in a word & A 64-bit state has at most $2^{64}$
+distinct values. External state must be accounted for.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{Metric and information counterexamples.}
+For source page 5, let
+$\phi=(1+\sqrt5)/2$, $H_4=H_2\otimes H_2$ and
+$A=\operatorname{diag}(\phi,\phi^{-1},1,-1)H_4$. Then
+\[
+H_4^T H_4=I,\qquad |\det A|=1,\qquad
+\|A(1,0,0,0)^T\|_2^2
+=\frac{\phi^2+\phi^{-2}+2}{4}=\frac54.
+\]
+Thus $A$ preserves four-dimensional volume magnitude, not Euclidean lengths
+or all areas. Page 9's integer implementation also maps both
+$(0,0,0,0)$ and $(-1024,-1024,0,0)$ to zero after its masks: the second input
+has sums $(-2048,0,-2048,0)$. Both inputs fit the declared fields. This
+arithmetic cannot serve as a lossless physical-state encoding.
+
+\begin{samepage}
+\paragraph{Executable corrections.}
+Page 8's conditional mask is always zero because a right shift by 63 yields
+only 0 or 1, while its mask has bit zero clear. Page 9's bit complement
+represents $-x-1$, not $-x$. Page 12's addition of 4 is not a bit-2 toggle:
+$4+4=8$, whereas XOR toggles exactly the desired bit. On page 14, a half-turn
+in the 11-bit angle field $[51:41]$ requires XOR of word bit 51; the printed
+mask flips ten bits. Finally, declaring left-to-right notation does not alter
+C/C++ precedence. For page 16's expression, log-radius 2 and occupancy 0
+produce 2 under C rules but 0 under strict left-to-right evaluation. Explicit
+parentheses or a specified parser are necessary.
+\par\end{samepage}
+
+\paragraph{Ground-station direction and chart limits.}
+The points $(1,0)$ and $(0,1)$ have equal radius and can have equal occupancy,
+yet their bearings differ by $\pi/2$. The source's radius/occupancy OTAN2
+therefore cannot replace geometric azimuth; it is also distinct from the
+existing UGTS OTAN2 profile. Keep the physical relative position, ENU axes,
+range, and defined cases for azimuth/elevation.
+An 11-bit full-turn angle has a half-bin rounding error of
+$0.087890625^\circ$. At an illustrative $R=42{,}164{,}000$ m,
+\[
+e_{\rm chord}=2R\sin(\pi/4096)=64{,}678.76\ \mathrm m.
+\]
+Even a single-angle 10 m quantization budget at this radius requires at least
+24 angular bits; this allocates nothing to other error sources. A station
+calculation uses actual slant range. Log radius requires
+$\rho=\log_2(r/r_\star)$ with $r,r_\star>0$; the origin has no finite value.
+The page-4 log of a trigonometric product is undefined at zeros and unbounded
+below, so it cannot establish page 7's assumed nonnegative monotonic motion.
+A parent-local interval $[1,2]$ misses the slit $x=0$, while its child translated
+by $-1$ intersects it. Culling needs an envelope of every descendant.
+Similarly, $\det\operatorname{diag}(-1,1,-1)=+1$: two axis flips do not
+establish non-orientability.
+
+\paragraph{Exact time and derived keys.}
+For integer ticks $n$, reference tick $n_0$ and positive integer period $P$,
+\[
+n-n_0=qP+r,\qquad q=\left\lfloor\frac{n-n_0}{P}\right\rfloor,
+\qquad 0\le r<P.
+\]
+Keeping both $q$ and $r$ preserves time exactly, including negative elapsed
+ticks; phase alone aliases times separated by a period. Orbital GPST/UTC/TT/TDB
+conversion and the full epoch remain authoritative. The calendar and constants
+in the filename derive no orbital initial condition or force constant.
+Log-polar values, occupancy and phase can supply derived display addresses or
+keys with declared origin, domain, quantization and winding. They do not replace
+metre-valued geometry or establish cryptographic unpredictability.
+
+\paragraph{The accepted R10 packing construction.}
+For a $64\times64$ bit array, the transpose is
+\[
+B'_{c,r}=B_{r,c},\qquad T^2=I.
+\]
+Six stages exchange corresponding row-index and column-index bits. Each stage
+is a permutation, so no numeric information is lost. R10 uses this exact
+transpose for its existing bitplane format, retaining binary64 bit patterns,
+types, ordering, padding and canonical digest. This is an engineering
+construction inspired by the source's binary-word organization; the source
+does not itself specify or prove this algorithm. It imposes no Hadamard
+arithmetic or golden-ratio quantization on physical coordinates. Release
+round-trip checks and measured benchmarks establish correctness and speed;
+this source audit makes no timing claim. Representational exactness does not
+remove the independently measured physical-model discrepancy.
