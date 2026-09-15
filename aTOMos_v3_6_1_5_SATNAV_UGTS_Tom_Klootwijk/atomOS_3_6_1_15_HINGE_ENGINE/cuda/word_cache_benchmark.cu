@@ -23,6 +23,10 @@ constexpr unsigned A1=0xfffffff7u,N1=0xfeffffffu,B1=0x20000000u;
 struct Bank { uint4* records; uint2* state[2]; cudaTextureObject_t texture; U64 count; };
 struct Digest { U64 x=0,sum=0,count=0; };
 struct Sample { uint4 record; uint2 state; };
+struct AddressMap {
+  U64 records,reciprocal;
+  unsigned bank_shift,bank_mask,power_of_two;
+};
 void require(bool ok,const std::string& why){if(!ok)throw std::runtime_error(why);}
 void cu(cudaError_t code){if(code!=cudaSuccess)throw std::runtime_error(cudaGetErrorString(code));}
 double wall_ms(std::chrono::steady_clock::time_point start){
@@ -67,13 +71,15 @@ __device__ unsigned seed_word(U64 word,U64 seed){
   switch(unsigned(word%4)){case 0:return r.x;case 1:return r.y;case 2:return r.z;default:return r.w;}
 }
 __device__ int signed32(unsigned w){return w<=0x7fffffffu?int(w):-1-int(~w);}
-__device__ int sign_phi(long long a,long long b){
-  long long A=2*a+b;int sa=(A>0)-(A<0),sb=(b>0)-(b<0);
+__device__ int sign_phi(int a,int b){
+  // This procedural profile only: |a|<=4092, |b|<=6138. Hence
+  // A*A<=205119684 and 5*b*b<=188375220, both exact signed32.
+  int A=2*a+b;int sa=(A>0)-(A<0),sb=(b>0)-(b<0);
   if(!sb)return sa;if(!sa||sa==sb)return sb;
-  long long lhs=A*A,rhs=5*b*b;return lhs>rhs?sa:lhs<rhs?sb:0;
+  int lhs=A*A,rhs=5*b*b;return lhs>rhs?sa:lhs<rhs?sb:0;
 }
 __device__ uint2 advance(uint4 r,uint2 old){
-  long long a=signed32(r.x),b=signed32(r.y),aa=a,bb=b;
+  int a=signed32(r.x),b=signed32(r.y),aa=a,bb=b;
   int s=int(old.x&31u)-16,c=int(old.x&3u)-1,d=int((old.x>>2)&3u)-1;
   switch(r.z&3u){
     case 0:aa=a+s;break;
@@ -104,31 +110,57 @@ __global__ void expand_planes(cudaTextureObject_t packed,unsigned* output,U64 co
   for(unsigned bit=0;bit<32;++bit){unsigned p=__shfl_sync(0xffffffffu,plane,int(bit));word|=((p>>lane)&1u)<<bit;}
   output[i]=word;
 }
-__global__ void reset_states(Bank* banks,U64 bank_records,U64 start,U64 count,U64 seed){
+__device__ __forceinline__ U64 exact_remainder(U64 x,AddressMap map){
+  if(map.power_of_two)return x&(map.records-1);
+  // m=floor(2^64/N). For x<2^64, floor(x*m/2^64) is floor(x/N)
+  // or one less. Thus r is in [0,2N), corrected by at most one subtract.
+  U64 q=__umul64hi(x,map.reciprocal),r=x-q*map.records;
+  return r>=map.records?r-map.records:r;
+}
+__global__ void reset_states(Bank* banks,AddressMap map,U64 start,U64 count,U64 seed){
   U64 local=U64(blockIdx.x)*blockDim.x+threadIdx.x;if(local>=count)return;U64 i=start+local;
-  Bank bank=banks[i/bank_records];U64 j=i%bank_records;
+  Bank bank=banks[i>>map.bank_shift];unsigned j=unsigned(i)&map.bank_mask;
   uint2 initial=make_uint2(mix32(unsigned(i)^unsigned(i>>32)^unsigned(seed>>32)^0xf00dfaceu),0);
   bank.state[0][j]=initial;bank.state[1][j]=initial;
 }
-template<bool Texture> __global__ void epoch_kernel(const Bank* banks,U64 bank_records,U64 records,
+template<bool Texture,bool Permuted> __global__ void epoch_kernel(const Bank* banks,AddressMap map,
     U64 start,U64 count,U64 multiplier,U64 offset,unsigned epoch,U64 seed,Digest* partial){
-  __shared__ U64 sx[Threads],ss[Threads],sc[Threads];
-  U64 local=U64(blockIdx.x)*blockDim.x+threadIdx.x,h=0,valid=0;
+  __shared__ U64 wx[Threads/32],ws[Threads/32];
+  __shared__ unsigned wc[Threads/32];
+  U64 local=U64(blockIdx.x)*blockDim.x+threadIdx.x,h=0;unsigned valid=0;
   if(local<count){
-    U64 ordinal=start+local,i=(ordinal*multiplier+offset)%records;
-    Bank bank=banks[i/bank_records];U64 j=i%bank_records;
+    U64 ordinal=start+local,i=ordinal;
+    if constexpr(Permuted)i=exact_remainder(ordinal*multiplier+offset,map);
+    Bank bank=banks[i>>map.bank_shift];unsigned j=unsigned(i)&map.bank_mask;
     uint4 r=Texture?tex1Dfetch<uint4>(bank.texture,int(j)):bank.records[j];
     uint2 next=advance(r,bank.state[epoch&1u][j]);bank.state[(epoch+1)&1u][j]=next;
     h=record_digest(i,seed,r,next);valid=1;
   }
-  unsigned t=threadIdx.x;sx[t]=h;ss[t]=h;sc[t]=valid;__syncthreads();
-  for(unsigned step=Threads/2;step;step/=2){if(t<step){sx[t]^=sx[t+step];ss[t]+=ss[t+step];sc[t]+=sc[t+step];}__syncthreads();}
-  if(!t)partial[blockIdx.x]={sx[0],ss[0],sc[0]};
+  unsigned lane=threadIdx.x&31u,warp=threadIdx.x>>5;U64 hx=h,hs=h;unsigned hc=valid;
+  // All128threads participate, including neutral lanes beyond count.
+  // XOR and unsigned modular sums are associative; grouping changes no bits.
+  #pragma unroll
+  for(unsigned step=16;step;step/=2){
+    hx^=__shfl_down_sync(0xffffffffu,hx,step);
+    hs+=__shfl_down_sync(0xffffffffu,hs,step);
+    hc+=__shfl_down_sync(0xffffffffu,hc,step);
+  }
+  if(!lane){wx[warp]=hx;ws[warp]=hs;wc[warp]=hc;}__syncthreads();
+  if(!warp){
+    hx=lane<Threads/32?wx[lane]:0;hs=lane<Threads/32?ws[lane]:0;hc=lane<Threads/32?wc[lane]:0;
+    #pragma unroll
+    for(unsigned step=16;step;step/=2){
+      hx^=__shfl_down_sync(0xffffffffu,hx,step);
+      hs+=__shfl_down_sync(0xffffffffu,hs,step);
+      hc+=__shfl_down_sync(0xffffffffu,hc,step);
+    }
+    if(!lane)partial[blockIdx.x]={hx,hs,U64(hc)};
+  }
 }
-__global__ void gather(const Bank* banks,U64 bank_records,const U64* indices,U64 count,
+__global__ void gather(const Bank* banks,AddressMap map,const U64* indices,U64 count,
     unsigned state_slot,Sample* samples){
   U64 k=U64(blockIdx.x)*blockDim.x+threadIdx.x;if(k>=count)return;U64 i=indices[k];
-  Bank b=banks[i/bank_records];U64 j=i%bank_records;
+  Bank b=banks[i>>map.bank_shift];unsigned j=unsigned(i)&map.bank_mask;
   samples[k]={tex1Dfetch<uint4>(b.texture,int(j)),b.state[state_slot][j]};
 }
 
@@ -184,12 +216,13 @@ cudaTextureObject_t texture(void* pointer,U64 bytes,cudaChannelFormatDesc channe
 }
 struct Options {
   U64 max_bytes=9*GiB,reserve=GiB,chunk_bytes=8*MiB,seed=0x41544f4d4f533135ULL;
-  unsigned trials=3,epochs=3,warm=1;bool quick=false;std::string output;
+  unsigned trials=3,epochs=3,warm=1;bool quick=false,only_max=false;std::string output;
 };
 Options options(int argc,char** argv){
   Options o;
   for(int i=1;i<argc;++i){std::string arg=argv[i];
     if(arg=="--quick"){o.quick=true;o.max_bytes=4*MiB;o.trials=1;o.epochs=2;o.warm=1;continue;}
+    if(arg=="--only-max"){o.only_max=true;continue;}
     require(i+1<argc,"missing value for "+arg);std::string value=argv[++i];
     if(arg=="--out")o.output=value;
     else{U64 n=std::stoull(value,nullptr,0);
@@ -206,6 +239,7 @@ Options options(int argc,char** argv){
 }
 struct Dataset {
   U64 records,bank_records,chunk_records,working_bytes,requested_bytes=0;
+  AddressMap address{};
   size_t free_before=0,free_after=0,total=0;
   std::vector<Bank> banks;
   Buffer<Bank> device_banks;Buffer<unsigned> packed;Buffer<Digest> partial;
@@ -215,10 +249,16 @@ struct Dataset {
   double allocate_ms=0,generate_ms=0,expand_ms=0,ready_ms=0;
   Events events;
   Dataset(U64 bytes,const Options& o,const cudaDeviceProp& prop):records(bytes/32),working_bytes(records*32){
-    bank_records=std::min<U64>(U64(prop.maxTexture1DLinear),16*MiB);
-    require(bank_records>=2048,"texture bank limit unexpectedly small");
-    // Banks and chunks contain complete 32-word bit-plane groups.
-    bank_records=(bank_records/2048)*2048;chunk_records=o.chunk_bytes/32;
+    U64 bank_limit=std::min<U64>(U64(prop.maxTexture1DLinear),16*MiB);
+    require(bank_limit>=2048,"texture bank limit unexpectedly small");
+    bank_records=1;while(bank_records<=bank_limit/2){bank_records*=2;++address.bank_shift;}
+    // A proved power-of-two bank capacity makes division/remainder shift/mask.
+    require((bank_records&(bank_records-1))==0&&bank_records<=bank_limit,"invalid power-of-two bank capacity");
+    address.records=records;address.bank_mask=unsigned(bank_records-1);
+    address.power_of_two=(records&(records-1))==0;
+    const U64 maximum=std::numeric_limits<U64>::max();
+    address.reciprocal=maximum/records+((maximum%records)==records-1?1ULL:0ULL);
+    chunk_records=o.chunk_bytes/32;
     cu(cudaMemGetInfo(&free_before,&total));
     U64 scratch_bound=o.chunk_bytes+16*MiB;
     require(working_bytes+scratch_bound+o.reserve<=free_before,"insufficient currently free VRAM with reserve");
@@ -271,15 +311,20 @@ struct Dataset {
   }
   ~Dataset(){release();}
   double reset(U64 seed){double ms=0;for(U64 start=0;start<records;start+=chunk_records){
-    U64 count=std::min(chunk_records,records-start);ms+=events.measure([&]{reset_states<<<unsigned((count+Threads-1)/Threads),Threads>>>(device_banks.p,bank_records,start,count,seed);});}
+    U64 count=std::min(chunk_records,records-start);ms+=events.measure([&]{reset_states<<<unsigned((count+Threads-1)/Threads),Threads>>>(device_banks.p,address,start,count,seed);});}
     return ms;
   }
   Digest epoch(bool use_texture,U64 multiplier,U64 offset,unsigned number,U64 seed,double& gpu_ms,double& readback_ms){
     Digest total_digest{};
     for(U64 start=0;start<records;start+=chunk_records){U64 count=std::min(chunk_records,records-start);unsigned blocks=unsigned((count+Threads-1)/Threads);
       gpu_ms+=events.measure([&]{
-        if(use_texture)epoch_kernel<true><<<blocks,Threads>>>(device_banks.p,bank_records,records,start,count,multiplier,offset,number,seed,partial.p);
-        else epoch_kernel<false><<<blocks,Threads>>>(device_banks.p,bank_records,records,start,count,multiplier,offset,number,seed,partial.p);
+        if(multiplier==1&&offset==0){
+          if(use_texture)epoch_kernel<true,false><<<blocks,Threads>>>(device_banks.p,address,start,count,multiplier,offset,number,seed,partial.p);
+          else epoch_kernel<false,false><<<blocks,Threads>>>(device_banks.p,address,start,count,multiplier,offset,number,seed,partial.p);
+        }else{
+          if(use_texture)epoch_kernel<true,true><<<blocks,Threads>>>(device_banks.p,address,start,count,multiplier,offset,number,seed,partial.p);
+          else epoch_kernel<false,true><<<blocks,Threads>>>(device_banks.p,address,start,count,multiplier,offset,number,seed,partial.p);
+        }
       });
       auto copy_begin=std::chrono::steady_clock::now();
       cu(cudaMemcpy(host_partial.data(),partial.p,blocks*sizeof(Digest),cudaMemcpyDeviceToHost));
@@ -288,7 +333,7 @@ struct Dataset {
     }require(total_digest.count==records,"coverage count differs from record count");return total_digest;
   }
   void verify_samples(unsigned completed,std::vector<uint2>& expected,U64 seed){
-    gather<<<unsigned((indices.count+Threads-1)/Threads),Threads>>>(device_banks.p,bank_records,indices.p,indices.count,completed&1u,device_samples.p);
+    gather<<<unsigned((indices.count+Threads-1)/Threads),Threads>>>(device_banks.p,address,indices.p,indices.count,completed&1u,device_samples.p);
     cu(cudaGetLastError());cu(cudaMemcpy(host_samples.data(),device_samples.p,size_t(device_samples.bytes()),cudaMemcpyDeviceToHost));
     for(size_t k=0;k<sample_indices.size();++k){uint4 r=oracle_record(sample_indices[k],seed);
       if(completed)expected[k]=oracle_advance(r,expected[k]);
@@ -349,6 +394,7 @@ std::string run_dataset(U64 bytes,const Options& o,const cudaDeviceProp& prop){
   out<<"{\"requested_working_bytes\":"<<bytes<<",\"working_bytes\":"<<data.working_bytes
     <<",\"immutable_seed_bytes\":"<<data.records*sizeof(uint4)<<",\"persistent_state_bytes_two_buffers\":"<<data.records*2*sizeof(uint2)
     <<",\"record_count\":"<<data.records<<",\"bank_count\":"<<data.banks.size()<<",\"records_per_full_bank\":"<<data.bank_records
+    <<",\"bank_address_shift\":"<<data.address.bank_shift<<",\"affine_modulus\":"<<quoted(data.address.power_of_two?"power_of_two_mask":"exact_reciprocal_one_correction")
     <<",\"device_requested_allocation_bytes\":"<<data.requested_bytes<<",\"free_before_bytes\":"<<data.free_before
     <<",\"free_after_bytes\":"<<data.free_after<<",\"observed_free_memory_delta_bytes\":"<<(data.free_before>=data.free_after?data.free_before-data.free_after:0)
     <<",\"total_memory_fraction_for_working_set\":"<<double(data.working_bytes)/double(data.total)
@@ -372,8 +418,10 @@ int main(int argc,char** argv){
     for(U64 scale:{1ULL,2ULL,4ULL})add_size(U64(prop.l2CacheSize)*scale/2);
     for(U64 bytes:{128*MiB,256*MiB,512*MiB,GiB,2*GiB,4*GiB,8*GiB})add_size(bytes);
     add_size(cap);std::sort(sizes.begin(),sizes.end());sizes.erase(std::unique(sizes.begin(),sizes.end()),sizes.end());
+    if(o.only_max)sizes={cap};
     std::ostringstream report;report<<std::setprecision(12);
     report<<"{\"profile\":\"ATOMOS-WORD-CACHE-PHI-JK-R1\",\"device\":"<<quoted(prop.name)
+      <<",\"implementation\":\"exact-address-and-warp-reduction-v2\",\"only_max\":"<<(o.only_max?"true":"false")
       <<",\"compute_capability\":"<<quoted(std::to_string(prop.major)+"."+std::to_string(prop.minor))
       <<",\"total_memory_bytes\":"<<total<<",\"initial_free_memory_bytes\":"<<free<<",\"l2_bytes\":"<<prop.l2CacheSize
       <<",\"max_texture_1d_linear_elements\":"<<prop.maxTexture1DLinear<<",\"multiprocessors\":"<<prop.multiProcessorCount

@@ -23,7 +23,7 @@ The casts precede subtraction, so an unsigned underflow is not part of these def
 | 2 | `(ac+bd)+(ad+bc+bd) phi = (a+b phi)(c+d phi)` |
 | 3 | `(a-s)+b phi` |
 
-Here `phi=(1+sqrt(5))/2`. These are dimensionless controller guards, not asserted signed physical distances. Their coefficients and sign are evaluated with integers. For all opcodes, `|A|<=4092`, `|B|<=6138`, and `|2A+B|<=14322`. The sign of `A+B phi` follows from `2A+B+B sqrt(5)`: equal-sign terms are immediate; opposing signs are resolved by comparing `(2A+B)^2` and `5B^2`. These bounds make signed 64-bit squares and their differences safe. There is no floating operator arithmetic, transcendental approximation, narrowing overflow or cumulative floating drift in this recurrence.
+Here `phi=(1+sqrt(5))/2`. These are dimensionless controller guards, not asserted signed physical distances. Their coefficients and sign are evaluated with integers. For all opcodes, `|A|<=4092`, `|B|<=6138`, and `|2A+B|<=14322`. The sign of `A+B phi` follows from `2A+B+B sqrt(5)`: equal-sign terms are immediate; opposing signs are resolved by comparing `(2A+B)^2` and `5B^2`. The squares are at most 205,119,684 and 188,375,220 respectively, so signed 32-bit coefficients, products, squares and their differences are sufficient in this procedural profile. The independent CPU oracle retains signed 64-bit arithmetic. These bounds do not apply to the separate ZPHI31 arbitrary-graph evaluator. There is no floating operator arithmetic, transcendental approximation, narrowing overflow or cumulative floating drift in this recurrence.
 
 Each completed epoch is a fresh **internal event opportunity** for every record. Define `h=[guard sign is nonzero]`. A zero guard holds the old state. A nonzero guard selects `drive=salt` for a negative sign and `drive=~salt` for a positive sign. With bitwise operations confined to 32 bits,
 
@@ -80,7 +80,7 @@ There are `N` records. The active feedback working set is exactly
 +8N\text{ bytes of new state}=32N\text{ bytes}.
 \]
 
-The two state allocations exchange roles across epochs. All records and both state buffers participate in the recurrence; the probe does not allocate a large unused region and call it saturation. Record-bank capacity respects both the device's `maxTexture1DLinear` element limit and a 256 MiB record-bank cap. Each bank has its own integer texture and two state allocations. A final smaller bank has its exact valid count. This makes multi-GiB working sets possible without exceeding one linear texture's addressing limit.
+The two state allocations exchange roles across epochs. All records and both state buffers participate in the recurrence; the probe does not allocate a large unused region and call it saturation. Record-bank capacity is the largest power of two respecting both the device's `maxTexture1DLinear` element limit and a 256 MiB record-bank cap. Each bank has its own integer texture and two state allocations. A final smaller bank has its exact valid count. This makes multi-GiB working sets possible without exceeding one linear texture's addressing limit.
 
 The program reports the working bytes, immutable/state split, requested device allocation bytes including scratch and descriptors, queried free memory before and after construction, and the observed free-memory delta. The latter can also reflect driver activity and other applications; it is not a claim to know CUDA's internal physical page allocation. The reported working-set fraction of total device memory distinguishes a large resident set from literally filling the whole device.
 
@@ -107,13 +107,39 @@ The JSON retains every trial and epoch's GPU event duration and digest, reset/wa
 
 The GPU's name, compute capability, L2 size, total/free memory and linear-texture limit are queried, not guessed. The sweep includes 64 KiB, points below/around/above L2, MiB/GiB scales, and the admitted cap. No L2 persisting-access window is configured; the report says `unset`. This executable does not measure cache-hit ratios. Texture-load instructions and hardware traffic counters require separate compiled-code inspection and profiling. A texture read is not a guarantee of a hit, residency, or higher speed than the global path.
 
+## Exact implementation optimizations
+
+The `exact-address-and-warp-reduction-v2` implementation field identifies the optimized execution of the same `ATOMOS-WORD-CACHE-PHI-JK-R1` recurrence. Seed generation, operator meanings, guard ownership, masks, JK equations, hash functions, digest meaning, reset/warm policy and independent CPU oracle are unchanged. Both texture and global variants receive the same arithmetic and reduction changes. These source changes make no performance claim until the corresponding executable is checked and measured.
+
+**Streaming and bank addresses.** The streaming specialization uses its ordinal directly: the prior expression `(ordinal*1+0) mod N` equals the ordinal for `0<=ordinal<N`. For bank capacity `2^k`, `i/2^k=i>>k` and `i mod 2^k=i & (2^k-1)`. The capacity is explicitly chosen and checked as a power of two below the texture limit; the mask remains below the signed integer texture-index limit. This changes neither record identity nor the final partial bank's range. On the measured RTX 5070 Ti Laptop GPU, the bank capacity remains 16,777,216 records, matching the baseline allocation layout. On a device with a different non-power-of-two texture limit, reports must be compared with their actual bank layout rather than assuming the baseline used the same capacity.
+
+**General affine remainder.** Non-power-of-two sizes are retained, including working sets around L2 and the admitted VRAM cap. For divisor `N>=2048`, precompute
+
+\[
+m=\left\lfloor\frac{2^{64}}{N}\right\rfloor,
+\qquad q_0=\operatorname{umul64hi}(x,m),\qquad r=x-q_0N.
+\]
+
+The host computes `m` without representing `2^64`: `UINT64_MAX/N + [UINT64_MAX mod N = N-1]`. The affine numerator `x=ordinal*a+b` retains its checked unsigned 64-bit bound. Since
+
+\[
+0\le\frac{x}{N}-\frac{xm}{2^{64}}<1\quad(0\le x<2^{64}),
+\]
+
+`q_0` is the true quotient or one less. Consequently `0<=r<2N`, and one conditional subtraction of `N` produces exactly `x mod N`. Also `q_0 N<=x`, so the subtraction does not rely on a wrapped product. `umul64hi` is an integer high-half multiply. When `N` itself is a power of two, a direct mask is exact. No approximate reciprocal, floating conversion or probabilistic address correction is used.
+
+**Coefficient arithmetic and digest reduction.** The explicit coefficient bounds above permit signed 32-bit arithmetic in the device transition; the CPU oracle intentionally remains signed 64-bit. Every block still computes the same record digests and valid-thread count. Warp shuffles first reduce XOR, modulo-`2^64` sums and counts, four warp summaries cross one block barrier, and the first full warp reduces those summaries. Every one of the 128 launched threads participates; ordinals beyond the chunk contribute zeros. XOR and unsigned modular addition are associative, so regrouping preserves every digest bit. The maximum block count is 128, making the temporary unsigned 32-bit count exact. This does not remove checksum or coverage computation from the workload.
+
+The optional `--only-max` runs only the admitted maximum size, with the same epochs, warm/reset policy, both access patterns, both fetch variants and checks. It is useful for a fixed-size profiling run. A requested cap can still be clipped by current free memory: before comparing reports, match actual working bytes, seed, epochs, trials, chunk size and bank layout. A 3 MiB `--only-max` check exercises the general reciprocal path; a quick sweep containing only powers of two does not.
+
 ## Build and invocation
 
-The requested standalone target consists only of `cuda/word_cache_benchmark.cu`, with C++17/CUDA17, CUDA Runtime, and the selected device's architecture. The current coordinated target is CUDA 12.8 with `sm_120`. It has no S2, NumPy, PyTorch or other tensor-framework dependency. The source was prepared without building or running it; actual execution evidence belongs in the resulting report and release checks.
+The requested standalone target consists only of `cuda/word_cache_benchmark.cu`, with C++17/CUDA17, CUDA Runtime, and the selected device's architecture. The current coordinated target is CUDA 12.8 with `sm_120`. It has no S2, NumPy, PyTorch or other tensor-framework dependency. Build, correctness and profiling evidence belongs in the resulting reports and release checks; changing the source does not establish a measured gain.
 
 ```
 word_cache_benchmark --quick --out quick-word-cache.json
+word_cache_benchmark --only-max --max-mib 3 --out nonpower-word-cache.json
 word_cache_benchmark --max-gib 9 --trials 3 --epochs 3 --out word-cache.json
 ```
 
-`--quick` selects a 4 MiB cap, one trial, two measured epochs and one warm epoch. Options are applied from left to right, so later options override that preset. Other options are `--max-mib`, `--reserve-mib` (minimum 1024), `--chunk-mib` (1..64), `--trials` (1..20), `--epochs` (1..100), `--warm-epochs` (0..10), and `--seed` (decimal or `0x` notation). Without `--out`, JSON goes to standard output; progress goes to standard error. The caller supplies an existing output directory. A failed verification/allocation produces a failed working-set entry and a nonzero exit code. No unrun or failed sweep establishes a performance result.
+`--quick` selects a 4 MiB cap, one trial, two measured epochs and one warm epoch. Options are applied from left to right, so later options override that preset. Other options are `--only-max`, `--max-mib`, `--reserve-mib` (minimum 1024), `--chunk-mib` (1..64), `--trials` (1..20), `--epochs` (1..100), `--warm-epochs` (0..10), and `--seed` (decimal or `0x` notation). Without `--out`, JSON goes to standard output; progress goes to standard error. The caller supplies an existing output directory. A failed verification/allocation produces a failed working-set entry and a nonzero exit code. No unrun or failed sweep establishes a performance result.
