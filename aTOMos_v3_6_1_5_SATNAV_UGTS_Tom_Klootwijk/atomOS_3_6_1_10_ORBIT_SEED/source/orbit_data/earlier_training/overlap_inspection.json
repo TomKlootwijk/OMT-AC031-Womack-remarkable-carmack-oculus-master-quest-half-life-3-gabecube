@@ -1,0 +1,183 @@
+{
+  "CHANDRA": {
+    "duplicate_epoch_tdb": "A.D. 2025-Jan-01 00:00:00.0000",
+    "position_difference_m": 0.0,
+    "velocity_difference_m_s": 0.0,
+    "source_descriptions": [
+      "API SOURCE: NASA/JPL Horizons API",
+      "  Trajectory after 2026-Sep-01 is a prediction",
+      "Target body name: Chandra Observatory (spacecraft) (-151) {source: chandra_merged}",
+      "Center body name: Earth (399)                     {source: chandra_merged}"
+    ]
+  },
+  "SUN": {
+    "duplicate_epoch_tdb": "A.D. 2025-Jan-01 00:00:00.0000",
+    "position_difference_m": 0.0,
+    "velocity_difference_m_s": 0.0,
+    "source_descriptions": [
+      "API SOURCE: NASA/JPL Horizons API",
+      "Target body name: Sun (10)                        {source: DE441}",
+      "Center body name: Earth (399)                     {source: DE441}"
+    ]
+  },
+  "MOON": {
+    "duplicate_epoch_tdb": "A.D. 2025-Jan-01 00:00:00.0000",
+    "position_difference_m": 0.0,
+    "velocity_difference_m_s": 0.0,
+    "source_descriptions": [
+      "API SOURCE: NASA/JPL Horizons API",
+      "Target body name: Moon (301)                      {source: DE441}",
+      "Center body name: Earth (399)                     {source: DE441}"
+    ]
+  },
+  "sp3_duplicate_midnights": [
+    {
+      "epoch_gpst": "2024 12 26  0  0  0.00000000",
+      "satellite": "C03",
+      "first_file": "GBM0MGXRAP_20243600000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.5110391355657344
+    },
+    {
+      "epoch_gpst": "2024 12 26  0  0  0.00000000",
+      "satellite": "C06",
+      "first_file": "GBM0MGXRAP_20243600000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.46191773980591133
+    },
+    {
+      "epoch_gpst": "2024 12 26  0  0  0.00000000",
+      "satellite": "G05",
+      "first_file": "GBM0MGXRAP_20243600000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.030675724290585935
+    },
+    {
+      "epoch_gpst": "2024 12 27  0  0  0.00000000",
+      "satellite": "C03",
+      "first_file": "GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.25944171153583123
+    },
+    {
+      "epoch_gpst": "2024 12 27  0  0  0.00000000",
+      "satellite": "C06",
+      "first_file": "GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.40679355762026315
+    },
+    {
+      "epoch_gpst": "2024 12 27  0  0  0.00000000",
+      "satellite": "G05",
+      "first_file": "GBM0MGXRAP_20243610000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.026419689780517508
+    },
+    {
+      "epoch_gpst": "2024 12 28  0  0  0.00000000",
+      "satellite": "C03",
+      "first_file": "GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.5023594319451298
+    },
+    {
+      "epoch_gpst": "2024 12 28  0  0  0.00000000",
+      "satellite": "C06",
+      "first_file": "GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.41179849802543034
+    },
+    {
+      "epoch_gpst": "2024 12 28  0  0  0.00000000",
+      "satellite": "G05",
+      "first_file": "GBM0MGXRAP_20243620000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.022825424082207005
+    },
+    {
+      "epoch_gpst": "2024 12 29  0  0  0.00000000",
+      "satellite": "C03",
+      "first_file": "GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.6456949730473777
+    },
+    {
+      "epoch_gpst": "2024 12 29  0  0  0.00000000",
+      "satellite": "C06",
+      "first_file": "GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.5836214555832759
+    },
+    {
+      "epoch_gpst": "2024 12 29  0  0  0.00000000",
+      "satellite": "G05",
+      "first_file": "GBM0MGXRAP_20243630000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.0037416589957058864
+    },
+    {
+      "epoch_gpst": "2024 12 30  0  0  0.00000000",
+      "satellite": "C03",
+      "first_file": "GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.9345175212379625
+    },
+    {
+      "epoch_gpst": "2024 12 30  0  0  0.00000000",
+      "satellite": "C06",
+      "first_file": "GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.29944449397842127
+    },
+    {
+      "epoch_gpst": "2024 12 30  0  0  0.00000000",
+      "satellite": "G05",
+      "first_file": "GBM0MGXRAP_20243640000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.034263683632432956
+    },
+    {
+      "epoch_gpst": "2024 12 31  0  0  0.00000000",
+      "satellite": "C03",
+      "first_file": "GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 1.058026936825728
+    },
+    {
+      "epoch_gpst": "2024 12 31  0  0  0.00000000",
+      "satellite": "C06",
+      "first_file": "GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.35097863180097133
+    },
+    {
+      "epoch_gpst": "2024 12 31  0  0  0.00000000",
+      "satellite": "G05",
+      "first_file": "GBM0MGXRAP_20243650000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.03989987389739091
+    },
+    {
+      "epoch_gpst": "2025  1  1  0  0  0.00000000",
+      "satellite": "C03",
+      "first_file": "GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 1.5189111234166792
+    },
+    {
+      "epoch_gpst": "2025  1  1  0  0  0.00000000",
+      "satellite": "C06",
+      "first_file": "GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.39789571515272315
+    },
+    {
+      "epoch_gpst": "2025  1  1  0  0  0.00000000",
+      "satellite": "G05",
+      "first_file": "GBM0MGXRAP_20243660000_01D_05M_ORB.SP3.gz",
+      "second_file": "GBM0MGXRAP_20250010000_01D_05M_ORB.SP3.gz",
+      "position_difference_m": 0.026172505459380036
+    }
+  ],
+  "sp3_recommended_policy": "Keep earlier source file when duplicate timestamps occur; record differences and exclude t>forecast cutoff from all optimization/selection."
+}

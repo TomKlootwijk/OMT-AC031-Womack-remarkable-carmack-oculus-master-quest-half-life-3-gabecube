@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-09-15T05:12:08.391763+00:00",
+  "scope": "Native admission, deterministic query reconstruction, exact duplicate reuse and retained native regressions; physical accuracy measured separately.",
+  "modified_files": [
+    "include/orbit_core.hpp",
+    "src/orbit_worker.cpp",
+    "python/orbit_native.py",
+    "tests/orbit_native_tests.cpp",
+    "tests/test_orbit_native_contract.py",
+    "CMakeLists.txt",
+    "docs/ORBIT_NATIVE.md"
+  ],
+  "source_sha256": {
+    "include/orbit_core.hpp": "e2b6c51a86af803e1dac73effd1b7c00a4d8d1a3d0509214b5c4bc068705d0af",
+    "src/orbit_worker.cpp": "23cf561ea09b53072bc80b388c466d7776b5f7abe2aec9dcbfeddac31ff88231",
+    "python/orbit_native.py": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092",
+    "tests/orbit_native_tests.cpp": "b4929022f124e108c085c6806011a178746aaa160fabe09df82e116fc719f69b",
+    "tests/test_orbit_native_contract.py": "f73e88092367521848a57d1be95434e50caff79f1b27eb3a34344f1d1b7516c6",
+    "CMakeLists.txt": "0716c0f52c64477917b448a60ed3734f9c9a890341d149d03df9e58b0cce6ae8",
+    "docs/ORBIT_NATIVE.md": "899a3a6b78952391bdea460773fd58a7083b88bb63a8a883e57c5d431d295594"
+  },
+  "compiler": {
+    "cxx": "MSVC 19.44.35221.0",
+    "cuda": "NVIDIA 12.8.61",
+    "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "capability": "12.0",
+    "logs": [
+      "cpu_configure.log",
+      "cpu_build.log",
+      "cuda_configure.log",
+      "cuda_build.log"
+    ]
+  },
+  "cpu_ctest": {
+    "passed": 4,
+    "total": 4,
+    "log": "cpu_ctest.log"
+  },
+  "cuda_ctest": {
+    "passed": 4,
+    "total": 4,
+    "log": "cuda_ctest.log"
+  },
+  "new_contract_tests": {
+    "passed": 9,
+    "log": "contract_tests.log"
+  },
+  "admission_cpu_cuda": "admission_cpu_cuda.json",
+  "orbit_native_validation": "results/orbit_native_36110_validation/summary.json",
+  "retained_gpu_validation": "results/gpu_20260915_070915_949456/status.json",
+  "retained_gpu_sanitizer_errors": {
+    "texture": 0,
+    "global": 0
+  },
+  "binaries": {
+    "cpu": {
+      "orbit_worker.exe": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7",
+      "satnav.exe": "9f93d6ee4861aff73818119875c5c10b7aa223d3971d5d0f565cf4274ec91bfc",
+      "satnav_stream.exe": "889ef8b66b82026b691f2d1312400b16941daf0da9c6da38a60c92a788d5d699",
+      "self_reference.exe": "aded3292b1e48b805eeb6b36653cd3352a7a6aef345dd14f40c471c9fb0ce649",
+      "coupled_kernel.exe": "2a0524ccdd47c4d93f68c866829d75ac7dfd059ec9c7ad62ea6cb299ad0a9405"
+    },
+    "cuda": {
+      "orbit_worker.exe": "f6b640d5f984c5e2226794649fd22391c1819ad1e7ee2df5db3a81e527262ef3",
+      "satnav.exe": "c3cbf7543f27ce174000fb1cff3de0206e32b46da72787072d9a1432d52b785b",
+      "satnav_stream.exe": "db9067ae03991a3e392f4defce21bf8da68e228ad50bfaf6cb6a29953d5f31d9",
+      "self_reference.exe": "3efb0d35985e849eab7a276c4dffd1ad79dbb9bb950b51baf662d5dc97854ec0",
+      "coupled_kernel.exe": "060dfd2de13d8f85141cf1c53695291c9d7bdc1c332a1acce29d975846bd7a43"
+    }
+  },
+  "packaged_build_hash_equality": true,
+  "retained_resolved_failures": {
+    "cpu_ctest_initial_endpoint_failure.log": "Decimal-step final stage rounded above a valid closed domain endpoint; fixed explicit RK4 endpoint labels and retained regression.",
+    "contract_tests_initial_signed_zero_failure.log": "JSON integer token -0 lost binary64 negative-zero sign in readers; output now uses -0.0 and exact-bit duplicate regression remains."
+  },
+  "deferred_performance": [
+    "Persistent CUDA forcing allocations/uploads (current implementation uploads each query operation).",
+    "Sharing repeated midpoint Q/EOP/body forcing evaluation, subject to exact replay and CUDA resource measurement."
+  ],
+  "source_application": "Finite modular phase and bounded recurrence inform addressing and admission; source 11-bit angle/claimed infinite packing does not replace binary64 orbital geometry or complete seed state."
+}

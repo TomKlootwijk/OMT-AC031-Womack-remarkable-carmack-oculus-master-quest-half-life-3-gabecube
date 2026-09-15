@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "scope": "Exact mathematical query output excludes runtime timing/cache metadata",
+  "checks": {
+    "caller_edits_leave_active_query_bit_exact": true,
+    "model_view_readonly": true,
+    "hash_property_readonly": true,
+    "export_edits_cannot_expand_native_domain": true,
+    "worker_identity_unchanged": true,
+    "mismatching_session_model_rejected": true,
+    "edited_new_session_gets_new_seed_identity": true,
+    "same_physical_model_reuses_worker": true,
+    "new_station_geometry_takes_effect": true
+  },
+  "native_binary_sha256": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7",
+  "source_sha256": {
+    "orbit_query.py": "8e1340922335ce16265cb22b62896bca2430a849f4541659280a515b002c9471",
+    "orbit_native.py": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092"
+  }
+}

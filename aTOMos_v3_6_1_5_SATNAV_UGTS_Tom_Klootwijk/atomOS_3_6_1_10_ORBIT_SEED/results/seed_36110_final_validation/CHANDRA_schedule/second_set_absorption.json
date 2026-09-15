@@ -1,0 +1,323 @@
+{
+  "mask_set_b": {
+    "asa_mask": 31,
+    "boundary_mask": 8,
+    "na_mask": 31
+  },
+  "queries": 13,
+  "hits": 10,
+  "trace": [
+    {
+      "time_s": 0.0,
+      "feedback": {
+        "type": "transition",
+        "before": 0,
+        "drive": 16,
+        "x": 16,
+        "stage_a": {
+          "asa": 16,
+          "na": 16,
+          "hits": 0,
+          "output": 16
+        },
+        "stage_b": {
+          "asa": 16,
+          "na": 16,
+          "hits": 0,
+          "output": 16
+        },
+        "j": 16,
+        "k": 4294967279,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 300.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 16,
+        "x": 16,
+        "stage_a": {
+          "asa": 16,
+          "na": 16,
+          "hits": 0,
+          "output": 16
+        },
+        "stage_b": {
+          "asa": 16,
+          "na": 16,
+          "hits": 0,
+          "output": 16
+        },
+        "j": 16,
+        "k": 4294967279,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 600.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 16,
+        "x": 16,
+        "stage_a": {
+          "asa": 16,
+          "na": 16,
+          "hits": 0,
+          "output": 16
+        },
+        "stage_b": {
+          "asa": 16,
+          "na": 16,
+          "hits": 0,
+          "output": 16
+        },
+        "j": 16,
+        "k": 4294967279,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 900.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 1200.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 1500.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 1800.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 2100.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 2400.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 2700.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 3000.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 3300.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    },
+    {
+      "time_s": 3600.0,
+      "feedback": {
+        "type": "transition",
+        "before": 16,
+        "drive": 24,
+        "x": 24,
+        "stage_a": {
+          "asa": 24,
+          "na": 24,
+          "hits": 0,
+          "output": 24
+        },
+        "stage_b": {
+          "asa": 24,
+          "na": 24,
+          "hits": 1,
+          "output": 0
+        },
+        "j": 0,
+        "k": 4294967271,
+        "after": 16
+      }
+    }
+  ]
+}

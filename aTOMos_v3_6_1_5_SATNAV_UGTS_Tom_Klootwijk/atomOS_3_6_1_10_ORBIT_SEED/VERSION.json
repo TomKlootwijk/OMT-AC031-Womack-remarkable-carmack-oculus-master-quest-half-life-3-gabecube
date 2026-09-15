@@ -1,0 +1,20 @@
+{
+  "display_name": "aTOMos",
+  "version": "3.6.1.10",
+  "base_engine": "3.6.1",
+  "profile": "ORBIT-SEED-R1",
+  "dynamics_profile": "ORBIT-DYNAMICS-R2",
+  "seed_codec": "bitplanes64-zlib",
+  "UGTS_source": "UGTS-KC 3.6.2 SCLP",
+  "date": "2026-09-15",
+  "parent_version": "3.6.1.9",
+  "included_profiles": [
+    "ORBIT-SEED-R1",
+    "LIVE-GPS-L1-R1",
+    "CGK-R1",
+    "SRK-R1",
+    "SATNAV-R1"
+  ],
+  "seed_schema_version": "3.6.1.9",
+  "status": "development"
+}

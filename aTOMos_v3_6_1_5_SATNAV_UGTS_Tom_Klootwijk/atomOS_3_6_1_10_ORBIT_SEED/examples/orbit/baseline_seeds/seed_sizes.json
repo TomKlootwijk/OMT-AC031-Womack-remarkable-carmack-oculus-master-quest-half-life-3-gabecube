@@ -1,0 +1,118 @@
+[
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "G05",
+      "orbit_class": "MEO"
+    },
+    "file_bytes": 4371,
+    "file_sha256": "84b0be080d113695ec6381465db57613408dbb2d512cb934efac33fe6fce2de5",
+    "seed_sha256": "84a0c5da23195b9a0ac0e2144dcb5def8846ad694eccc43c6cce31cf18d28577",
+    "model_sha256": "5deb26d1f0cb9efbf8457bf5d375ea78f1e8e90ce47551009168e379a3b11680",
+    "payload_uncompressed_bytes": 6552,
+    "payload_compressed_bytes": 4319,
+    "header_bytes": 52,
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    }
+  },
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "C03",
+      "orbit_class": "GEO"
+    },
+    "file_bytes": 4377,
+    "file_sha256": "062d2a6fac66ae835660c2e8f8383105d6fd70a6e01e86035a31bb976d223cab",
+    "seed_sha256": "ca6e1d7cc09e9c1956182e1d4be8a223d939a589a242f1eea574bfd169090842",
+    "model_sha256": "f082874c18f713acbe1b893ddfbcdc3424123c4d338765325f400cdeffe5f296",
+    "payload_uncompressed_bytes": 6552,
+    "payload_compressed_bytes": 4325,
+    "header_bytes": 52,
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    }
+  },
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "C06",
+      "orbit_class": "IGSO"
+    },
+    "file_bytes": 4374,
+    "file_sha256": "1a0ed701de7e29e8287ea77d5775225141f4ffa2f534b264d80f44d5407b4d2f",
+    "seed_sha256": "38213ce908ceaa201933266f0140f85886a337f26a20cf85b08e755c1a4c7f20",
+    "model_sha256": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d",
+    "payload_uncompressed_bytes": 6554,
+    "payload_compressed_bytes": 4322,
+    "header_bytes": 52,
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    }
+  },
+  {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "CHANDRA",
+      "orbit_class": "HEO"
+    },
+    "file_bytes": 4391,
+    "file_sha256": "a9c6b7a3cb47e3cc0cc3a18e1024e8b5bc918c7a523c7318c65749982662abd1",
+    "seed_sha256": "ce61491ca38a3577e146691fe44abb4ba45a54f9ac0b6fce437704a2a8b0051e",
+    "model_sha256": "5430cd9547413239892c19e14499b8012dfae618110193af2677f7e1c467a327",
+    "payload_uncompressed_bytes": 6570,
+    "payload_compressed_bytes": 4339,
+    "header_bytes": 52,
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    }
+  }
+]

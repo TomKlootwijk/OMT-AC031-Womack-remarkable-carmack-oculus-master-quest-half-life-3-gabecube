@@ -1,0 +1,44 @@
+{
+  "seed": {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "C06",
+      "orbit_class": "IGSO"
+    },
+    "file_bytes": 4386,
+    "file_sha256": "0d0a7ba6a09dc2cd4f813e38f15f8f50c8fb2b9a57c864767b0ef2742836ed29",
+    "seed_sha256": "9e7a34e569b52044a9fcf20822af5ddc04b16075030be00741499a56f17f62fa",
+    "model_sha256": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d",
+    "payload_uncompressed_bytes": 6585,
+    "payload_compressed_bytes": 4334,
+    "header_bytes": 52,
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless IEEE754 binary64; no orbital coordinate quantization",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "cache_checkpoints": 2048,
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    }
+  },
+  "station": {
+    "description": "Demonstration station; not a surveyed receiver location",
+    "elevation_mask_deg": 10.0,
+    "height_m": 0.0,
+    "id": "delft_demo",
+    "lat_deg": 51.986,
+    "lon_deg": 4.387
+  },
+  "queries": 417,
+  "start_s": 0.0,
+  "end_s": 86400.0,
+  "final_record_sha256": "3355f0638cdfb819ad3338a1e231f39c13b74f999d33c78478808baef3979dbd"
+}

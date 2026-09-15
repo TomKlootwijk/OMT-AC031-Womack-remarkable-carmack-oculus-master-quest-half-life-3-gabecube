@@ -1,0 +1,336 @@
+{
+  "baseline": {
+    "release": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED",
+    "scope": "Compare query preparation against unchanged R9 using one fixed native adapter.\n\nThis isolates Python query/frame/feedback work from separate native-kernel changes.\nBoth child processes receive exactly the same R9 numerical seed and native binary.\n",
+    "workloads": {
+      "frame_state_272_times": {
+        "seconds": [
+          0.28601890000572894,
+          0.051095400005578995,
+          0.05454190000455128,
+          0.05228950000309851,
+          0.053283499997633044
+        ],
+        "median_seconds": 0.053283499997633044,
+        "output_sha256": "6e409122b55887e0cc9009ffc196caa744508aeca4b4b002a582102b57b68327"
+      },
+      "station_geometry_512_calls": {
+        "seconds": [
+          0.11444810000102734,
+          0.11440820000279928,
+          0.11343089999718359,
+          0.11702629999490455,
+          0.1037817999967956
+        ],
+        "median_seconds": 0.11440820000279928,
+        "output_sha256": "3f5b8d1d67b8e1fccbf5bd60ff92efdf97216cc43b6595dadbd9aaf8b090fd5f"
+      },
+      "feedback_2000_transitions": {
+        "seconds": [
+          0.23678170000493992,
+          0.2307165000020177,
+          0.27444800000375835,
+          0.2304770999980974,
+          0.2195261999950162
+        ],
+        "median_seconds": 0.2307165000020177,
+        "output_sha256": "6211985b3e887e0b6d3d12d2b6831cdaa5a2547535aa241d12643824d004b146"
+      }
+    },
+    "objects": {
+      "G05": {
+        "query_256": {
+          "seconds": [
+            0.129812099999981,
+            0.12439350000204286,
+            0.14013469999918016,
+            0.1341173000037088,
+            0.12396289999742294
+          ],
+          "median_seconds": 0.129812099999981,
+          "output_sha256": "cd83ad3def46ff4387d04f6e2d7c1b08e41cd9a9702b9aaa99b813d4f19d58c9"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.4486027999955695,
+            0.44596429999364773,
+            0.4407636999967508,
+            0.43767530000332044,
+            0.4245781999998144
+          ],
+          "median_seconds": 0.4407636999967508,
+          "output_sha256": "e426cd4aee52c836f24d26a7a4ccdf3b8f267db4cbca2d8ee83a5b7e5535ad6f"
+        }
+      },
+      "C03": {
+        "query_256": {
+          "seconds": [
+            0.11999169999762671,
+            0.11820339999394491,
+            0.12315639999724226,
+            0.12196149999363115,
+            0.11866370000643656
+          ],
+          "median_seconds": 0.11999169999762671,
+          "output_sha256": "07fff2bc335b9de5135dc6404f17f57754e46c736f5ffe386dce1906f8fbdce5"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.30303019999701064,
+            0.3072990000000573,
+            0.2964307000002009,
+            0.3026956000030623,
+            0.2968892999997479
+          ],
+          "median_seconds": 0.3026956000030623,
+          "output_sha256": "5d0977a0387ec0a9ea46be4779f7ab9d6c1865773e7a235de9883ac08e04b146"
+        }
+      },
+      "C06": {
+        "query_256": {
+          "seconds": [
+            0.11899170000106096,
+            0.11983329999929992,
+            0.1213045999975293,
+            0.12024800000654068,
+            0.12690229999861913
+          ],
+          "median_seconds": 0.12024800000654068,
+          "output_sha256": "fdbf0235f88e69d2952bef29a5ea08107774d1420c8c6e606f46e01cc16fd983"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.4503167000002577,
+            0.4477349000007962,
+            0.46351100000174483,
+            0.4346198999992339,
+            0.43929819999902975
+          ],
+          "median_seconds": 0.4477349000007962,
+          "output_sha256": "7581087817cf4bc2c55dfd2645233736f5f1364f738887fee0fad34c09387fd1"
+        }
+      },
+      "CHANDRA": {
+        "query_256": {
+          "seconds": [
+            0.18158150000090245,
+            0.188925599999493,
+            0.1842562000019825,
+            0.1773721000063233,
+            0.1778000999984215
+          ],
+          "median_seconds": 0.18158150000090245,
+          "output_sha256": "fde433ca18c502e9f9e768714a645e116026d2d69cc4c5e192d5e4a2ef88614a"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.9574259000000893,
+            0.959876399996574,
+            1.0348369999992428,
+            1.045895000002929,
+            1.0519726000056835
+          ],
+          "median_seconds": 1.0348369999992428,
+          "output_sha256": "864c0f6364e065b9967c3a8ba3599c9a2ea48a14a8673283e0584b708a1fa05f"
+        }
+      }
+    },
+    "source_sha256": {
+      "orbit_query.py": "2b616c1f6f59328d168aef72f3b05567e433868febc55aef3f45442babd1d3f2",
+      "orbit_seed.py": "bb9ce92465e1863fcee1cbfa055dfab03f5ee491f35f6813efba501db6edc3bf",
+      "orbit_dynamics.py": "609caec198965726dd3341735034ad65000c79391ca131e28ac77526ce53857c",
+      "orbit_precision.py": "1d23f874e5ae12d683bfc3867ed0f1f66b88357f9ab2cca994621a80a81068f4"
+    }
+  },
+  "current": {
+    "release": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_10_ORBIT_SEED",
+    "scope": "Compare query preparation against unchanged R9 using one fixed native adapter.\n\nThis isolates Python query/frame/feedback work from separate native-kernel changes.\nBoth child processes receive exactly the same R9 numerical seed and native binary.\n",
+    "workloads": {
+      "frame_state_272_times": {
+        "seconds": [
+          0.262495899994974,
+          0.05190089999814518,
+          0.0423607999982778,
+          0.03977820000000065,
+          0.043228099995758384
+        ],
+        "median_seconds": 0.043228099995758384,
+        "output_sha256": "6e409122b55887e0cc9009ffc196caa744508aeca4b4b002a582102b57b68327"
+      },
+      "station_geometry_512_calls": {
+        "seconds": [
+          0.08942630000092322,
+          0.08849480000208132,
+          0.08740910000051372,
+          0.08762600000045495,
+          0.08631569999852218
+        ],
+        "median_seconds": 0.08762600000045495,
+        "output_sha256": "3f5b8d1d67b8e1fccbf5bd60ff92efdf97216cc43b6595dadbd9aaf8b090fd5f"
+      },
+      "feedback_2000_transitions": {
+        "seconds": [
+          0.0931300999945961,
+          0.10265939999953844,
+          0.09752029999799561,
+          0.12003939999704016,
+          0.09672710000450024
+        ],
+        "median_seconds": 0.09752029999799561,
+        "output_sha256": "6211985b3e887e0b6d3d12d2b6831cdaa5a2547535aa241d12643824d004b146"
+      }
+    },
+    "objects": {
+      "G05": {
+        "query_256": {
+          "seconds": [
+            0.0981443999990006,
+            0.09727489999932004,
+            0.09263110000028973,
+            0.09634270000242395,
+            0.09597159999975702
+          ],
+          "median_seconds": 0.09634270000242395,
+          "output_sha256": "cd83ad3def46ff4387d04f6e2d7c1b08e41cd9a9702b9aaa99b813d4f19d58c9"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.32665100000303937,
+            0.33982909999758704,
+            0.3525266999931773,
+            0.338701000000583,
+            0.34746910000103526
+          ],
+          "median_seconds": 0.33982909999758704,
+          "output_sha256": "e426cd4aee52c836f24d26a7a4ccdf3b8f267db4cbca2d8ee83a5b7e5535ad6f"
+        }
+      },
+      "C03": {
+        "query_256": {
+          "seconds": [
+            0.10218259999965085,
+            0.10048090000054799,
+            0.10334010000224225,
+            0.10377970000263304,
+            0.10422959999414161
+          ],
+          "median_seconds": 0.10334010000224225,
+          "output_sha256": "07fff2bc335b9de5135dc6404f17f57754e46c736f5ffe386dce1906f8fbdce5"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.24311789999774192,
+            0.23884089999774005,
+            0.2385257999994792,
+            0.2419644999972661,
+            0.24059159999887925
+          ],
+          "median_seconds": 0.24059159999887925,
+          "output_sha256": "5d0977a0387ec0a9ea46be4779f7ab9d6c1865773e7a235de9883ac08e04b146"
+        }
+      },
+      "C06": {
+        "query_256": {
+          "seconds": [
+            0.10325159999774769,
+            0.10360450000007404,
+            0.10419930000352906,
+            0.10264669999742182,
+            0.10300039999856381
+          ],
+          "median_seconds": 0.10325159999774769,
+          "output_sha256": "fdbf0235f88e69d2952bef29a5ea08107774d1420c8c6e606f46e01cc16fd983"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.35037020000163466,
+            0.34842859999480424,
+            0.3444856999994954,
+            0.34352039999794215,
+            0.3475985999975819
+          ],
+          "median_seconds": 0.3475985999975819,
+          "output_sha256": "7581087817cf4bc2c55dfd2645233736f5f1364f738887fee0fad34c09387fd1"
+        }
+      },
+      "CHANDRA": {
+        "query_256": {
+          "seconds": [
+            0.16125620000093477,
+            0.16651090000232216,
+            0.1670553000003565,
+            0.1701824999981909,
+            0.17011330000241287
+          ],
+          "median_seconds": 0.1670553000003565,
+          "output_sha256": "fde433ca18c502e9f9e768714a645e116026d2d69cc4c5e192d5e4a2ef88614a"
+        },
+        "schedule_24h": {
+          "seconds": [
+            0.8407401999938884,
+            0.8393007000049693,
+            0.8926332999981241,
+            0.9564406999998027,
+            0.9362598000006983
+          ],
+          "median_seconds": 0.8926332999981241,
+          "output_sha256": "864c0f6364e065b9967c3a8ba3599c9a2ea48a14a8673283e0584b708a1fa05f"
+        }
+      }
+    },
+    "source_sha256": {
+      "orbit_query.py": "87d92d13518d60640072f71326280fa5d8838db6f4f78c9ecaa3fe91d48a6379",
+      "orbit_seed.py": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae",
+      "orbit_dynamics.py": "18c11e943c57918dbd31ed4e7624f79dfc0d597376c99bc2439c8b7ead467d5b",
+      "orbit_precision.py": "04e3587034ab121337af1363bcc66704bf9cfb51ffaf17cdac17b1d0ddf80660"
+    }
+  },
+  "comparisons": {
+    "frame_state_272_times": {
+      "speedup": 1.232612583085107,
+      "output_exact": true
+    },
+    "station_geometry_512_calls": {
+      "speedup": 1.305642161027609,
+      "output_exact": true
+    },
+    "feedback_2000_transitions": {
+      "speedup": 2.3658304989500625,
+      "output_exact": true
+    },
+    "G05_query_256": {
+      "speedup": 1.34739943967436,
+      "output_exact": true
+    },
+    "G05_schedule_24h": {
+      "speedup": 1.2970157646884286,
+      "output_exact": true
+    },
+    "C03_query_256": {
+      "speedup": 1.1611339644051357,
+      "output_exact": true
+    },
+    "C03_schedule_24h": {
+      "speedup": 1.2581303753101618,
+      "output_exact": true
+    },
+    "C06_query_256": {
+      "speedup": 1.1646114927920124,
+      "output_exact": true
+    },
+    "C06_schedule_24h": {
+      "speedup": 1.2880802742125856,
+      "output_exact": true
+    },
+    "CHANDRA_query_256": {
+      "speedup": 1.0869544396407353,
+      "output_exact": true
+    },
+    "CHANDRA_schedule_24h": {
+      "speedup": 1.159308083175272,
+      "output_exact": true
+    }
+  },
+  "native_binary_sha256": "f69f1bd95c4a5f3e8bf95500ff4fe744ded8671dbf98ff56d1b87871236f1501",
+  "status": "passed"
+}

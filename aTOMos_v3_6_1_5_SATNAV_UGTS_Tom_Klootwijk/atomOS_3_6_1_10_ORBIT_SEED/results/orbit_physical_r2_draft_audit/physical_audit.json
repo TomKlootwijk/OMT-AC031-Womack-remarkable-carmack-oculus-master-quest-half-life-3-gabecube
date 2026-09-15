@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "scope": "Known gravity coefficients, independent spherical force, ERFA frame, derivatives and domain-wide numerical integration without target labels. No held-out target positions read.",
+  "numeric_claim": "Measured sampled integration/reference differences; not a mathematical roundoff or global trajectory bound.",
+  "cpu_binary_sha256": "f69f1bd95c4a5f3e8bf95500ff4fe744ded8671dbf98ff56d1b87871236f1501",
+  "gravity_source_sha256": "d997e36a074a468a9a85997bdda615267bcbc1274e9107895b33320798d1787e",
+  "published_eop_bulletin_sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+  "models": {
+    "G05": {
+      "model_sha256": "e752529087a925366d0c9490f2f6ecd4cb310e4a96e97cfbb7cb1438cd3a3c77",
+      "gravity_degree": 12,
+      "coefficient_normalization_max_abs": 0.0,
+      "complex_step_vs_scipy_legendre_force_max_m_s2": 5.694967977388552e-16,
+      "native_vs_complex_step_force_max_m_s2": 2.830524433501838e-16,
+      "numba_vs_complex_step_force_max_m_s2": 2.897767167584095e-16,
+      "published_eop_direct_erfa_frame_max_abs": 4.7792325652551426e-11,
+      "analytic_frame_derivative_max_abs_s_inv": 9.730646735421622e-15,
+      "times_s": [
+        -691200.0,
+        -86400.0,
+        -21600.0,
+        0.0,
+        900.0,
+        3600.0,
+        21600.0,
+        86400.0,
+        259200.0,
+        432000.0,
+        604800.0
+      ],
+      "native_rk4_step_s": 30.0,
+      "native_vs_dop853_position_m": [
+        0.03166790216193974,
+        0.002980324589587415,
+        0.0007470181783872516,
+        0.0,
+        1.0130495285432904e-05,
+        3.9164889375408565e-05,
+        0.0007527850124314472,
+        0.002980547818153303,
+        0.009779859993356935,
+        0.0177004436353414,
+        0.0267367690874016
+      ],
+      "half_step_vs_dop853_position_m": [
+        0.0016771825365849546,
+        0.00018059758122361194,
+        4.608085567678885e-05,
+        0.0,
+        6.264804202788788e-07,
+        2.4356849866236985e-06,
+        4.651889569944801e-05,
+        0.00017983183215159306,
+        0.0005555063342606304,
+        0.0009678846417977646,
+        0.0014162749898464697
+      ],
+      "tighter_vs_default_dop853_position_m": [
+        1.8402934074401855e-06,
+        1.0327225180493465e-06,
+        2.275326073710136e-07,
+        0.0,
+        5.268356063861754e-09,
+        4.16500117164066e-09,
+        1.9653333792540029e-07,
+        1.2583667247246317e-06,
+        8.002385090095768e-06,
+        8.679270447736237e-06,
+        2.7598293737524803e-06
+      ],
+      "elapsed_s": 78.27526999999827,
+      "pass": true
+    }
+  },
+  "pass_thresholds": {
+    "coefficient_max_abs": 1e-20,
+    "force_max_m_s2": 2e-12,
+    "frame_max_abs": 1e-10,
+    "frame_derivative_max_abs_s_inv": 2e-12,
+    "sampled_native_vs_dop853_position_max_m": 1.0
+  },
+  "metadata_note": "Scope wording corrected from training-time to domain-wide; existing exact pass thresholds made explicit after execution. Measurements and pass outcomes unchanged."
+}

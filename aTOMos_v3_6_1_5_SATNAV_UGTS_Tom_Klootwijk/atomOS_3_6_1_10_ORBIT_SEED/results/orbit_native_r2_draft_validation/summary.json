@@ -1,0 +1,67 @@
+{
+  "profile": "ORBIT-WORKER-1",
+  "status": "passed",
+  "cpu_binary_sha256": "f69f1bd95c4a5f3e8bf95500ff4fe744ded8671dbf98ff56d1b87871236f1501",
+  "models": {
+    "G05": {
+      "model_sha256": "e752529087a925366d0c9490f2f6ecd4cb310e4a96e97cfbb7cb1438cd3a3c77",
+      "dynamics_profile": "ORBIT-DYNAMICS-R2",
+      "query_count": 27,
+      "cache_order_bit_exact": true,
+      "cache_stats": {
+        "type": "stats",
+        "cache_count": 4,
+        "cache_capacity": 4,
+        "cache_hits": 1,
+        "cpu_rk_steps": 75654,
+        "cpu_queries": 18,
+        "evictions": 3777,
+        "checkpoint_stride_steps": 20
+      },
+      "force_vs_python_max_m_s2": 4.742874840267547e-16,
+      "frame_vs_python_max_abs": 1.1102230246251565e-16,
+      "cuda": {
+        "queries": 260,
+        "cpu_position_max_m": 1.8352190386967415e-05,
+        "cpu_velocity_max_m_s": 2.6476323781921667e-09,
+        "word_transitions_exact": 64,
+        "device": {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+          "capability_major": 12,
+          "capability_minor": 0,
+          "runtime_version": 12080,
+          "driver_version": 13010,
+          "query_mode": "independent_from_epoch",
+          "kernel_registers_per_thread": 208,
+          "kernel_local_bytes_per_thread": 216,
+          "kernel_static_shared_bytes": 0,
+          "device_stack_limit_bytes": 1024,
+          "model_parameter_bytes": 3040
+        }
+      }
+    }
+  },
+  "scope": "numerical implementation, random-access cache and memory execution; not physical forecast truth",
+  "cuda_binary_sha256": "897cf3028c2c221f283b3cc36f7853f800e6abc9f0ec2d34d0822eedaf466eaf",
+  "compute_sanitizer": {
+    "status": "passed",
+    "queries": 129,
+    "word_transitions": 1,
+    "command": [
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8\\bin\\compute-sanitizer.BAT",
+      "--tool",
+      "memcheck",
+      "--error-exitcode",
+      "99",
+      "--log-file",
+      "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\results\\orbit_native_r2_draft_validation\\memcheck.log",
+      "C:\\tmp\\atomos3619_r2_gpu128\\Release\\orbit_worker.exe",
+      "--model",
+      "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\results\\orbit_native_r2_draft_validation\\sanitizer_model.txt",
+      "--backend",
+      "cuda"
+    ],
+    "error_count": 0
+  }
+}

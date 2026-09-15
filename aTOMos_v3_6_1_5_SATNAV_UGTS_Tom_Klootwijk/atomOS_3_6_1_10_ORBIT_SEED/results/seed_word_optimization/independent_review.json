@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "scope": "Independent source proof and maximum-count/padding check; not a new timing run or physical-accuracy result",
+  "reviewed_utc": "2026-09-15T04:57:25.225204+00:00",
+  "source_path": "python/orbit_seed.py",
+  "source_file_sha256_at_review": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae",
+  "source_function_sha256": {
+    "_TRANSPOSE_STAGES": "c02fea3448c5e7b91ef1732365e8d58793083cbf0be7e4f9d04e3e5876c499af",
+    "_BLOCK": "299749bad2eb4657558ad25716faf0e82fdf16450a8d272ae976ed3a411d9731",
+    "_transpose64": "7cf97947ac69721925c87fe3e2f809d629e3bd1a39b5a38f9853e316893786cd",
+    "words_to_bitplanes": "108470c5d513cb13725c2248e87d0407c5f0d89192ad6598646e97ce6a466185",
+    "bitplanes_to_words": "7f0538479902591b2755169c7ecb2354378e3cb4e994055b7715e64228432fb3"
+  },
+  "source_functions_unchanged_during_check": true,
+  "proof": {
+    "index": "k=64*r+c",
+    "stage_partner": "k+63*s=64*(r+s)+(c-s), for row bit s=0 and column bit s=1",
+    "exchange": "(value XOR (value >> distance)) AND mask, then XOR at both paired positions",
+    "conclusion": "Each of six stages swaps one distinct row/column index bit; composition maps (r,c) to (c,r), is GF(2)-linear, and its square is identity. Plane-major placement uses b*groups+g.",
+    "zero_padding": "Encoding adds zero input rows after count; transpose places these in high lanes of every final-group plane. Decoding rejects any such nonzero lane before truncation."
+  },
+  "stage_checks": [
+    {
+      "shift": 32,
+      "distance": 2016,
+      "disjoint_pairs": 1024,
+      "within_bits": 4096
+    },
+    {
+      "shift": 16,
+      "distance": 1008,
+      "disjoint_pairs": 1024,
+      "within_bits": 4096
+    },
+    {
+      "shift": 8,
+      "distance": 504,
+      "disjoint_pairs": 1024,
+      "within_bits": 4096
+    },
+    {
+      "shift": 4,
+      "distance": 252,
+      "disjoint_pairs": 1024,
+      "within_bits": 4096
+    },
+    {
+      "shift": 2,
+      "distance": 126,
+      "disjoint_pairs": 1024,
+      "within_bits": 4096
+    },
+    {
+      "shift": 1,
+      "distance": 63,
+      "disjoint_pairs": 1024,
+      "within_bits": 4096
+    }
+  ],
+  "boundary_check": {
+    "numeric_words": 300000,
+    "groups": 4688,
+    "encoded_bytes": 2400256,
+    "exact_round_trip": true,
+    "padding_bits_per_last_plane": 32,
+    "injected_bad_plane": 63,
+    "injected_bad_lane": 32,
+    "padding_rejection": "Nonzero bit-plane padding"
+  },
+  "existing_benchmark_review": {
+    "path": "results/seed_word_optimization/benchmark.json",
+    "sha256_at_review": "6d5bab1c4b0329641f63bf05b7ac3d5d336d023a27284c3a0638da34890d1dc8",
+    "reported_basis_vectors": 4096,
+    "reported_lengths": 137,
+    "reported_seed_byte_identity_cases": 8,
+    "method_reviewed": true,
+    "final_timing_file_hash_pending_feedback_edits": false,
+    "note": "Root will regenerate the timing report after final source freeze; this independent check is bound to the unchanged transpose function hashes above."
+  },
+  "final_reconciliation": {
+    "checked_utc": "2026-09-15T05:17:13.235364+00:00",
+    "transpose_function_hashes_still_match": true,
+    "final_benchmark_path": "results/seed_word_optimization/benchmark_final.json",
+    "final_benchmark_sha256": "781f76dce4f1bdf4ce9809d8c6a5003988cd5f4943759fc3a7a78635bd927a51",
+    "final_source_sha256": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae",
+    "final_benchmark_source_hash_matches": true
+  }
+}

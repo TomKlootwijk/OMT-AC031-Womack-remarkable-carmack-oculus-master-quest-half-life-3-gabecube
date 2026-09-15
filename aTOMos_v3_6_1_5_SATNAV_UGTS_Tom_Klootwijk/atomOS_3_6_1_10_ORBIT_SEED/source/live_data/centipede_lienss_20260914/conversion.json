@@ -1,0 +1,21 @@
+{
+  "kind": "independent_RT\u041aLIB_RTCM_to_RINEX_conversion",
+  "executed_utc": "2026-09-14T21:47:07.464735+00:00",
+  "binary_sha256": "2207b9460862fc1a2e9fd2f4874dfb622a5363babd7b5ec6331bf8de45cfc8ac",
+  "rtcm_sha256": "069c427f012b91bfaa5c8ff24820193721300fcb55e6c8d9ae44a695caff9019",
+  "command": "convbin.exe -r rtcm3 -tr 2026/09/14 21:40:00 -v 3.03 -f 1 -y R -y E -y J -y S -y C -o capture.obs -n capture.nav -g capture.gnav -h capture.hnav -q capture.qnav -l capture.lnav -s capture.sbs -trace 2 capture.rtcm3",
+  "iono_derivative": {
+    "file": "capture_with_bkg_iono.nav",
+    "definition": "Only GPSA and GPSB header lines inserted from same-day BKG broadcast; all orbital records remain from captured RTCM1019.",
+    "inserted_lines": [
+      "GPSA   1.2107e-08  1.4901e-08 -5.9605e-08 -1.1921E-07       IONOSPHERIC CORR    ",
+      "GPSB   9.6256e+04  8.1920e+04 -1.9661e+05 -3.9322E+05       IONOSPHERIC CORR    "
+    ]
+  },
+  "outputs": {
+    "capture.obs": "0ebe1a053e901b418f93954180e8bfc3ac6b0edbdaa5d551c1601f206d3c2ede",
+    "capture.nav": "bfa5a077fa2de5e1f4981b1382c6e6732ce7159a296cfefbfcfa8987736f3224",
+    "capture_with_bkg_iono.nav": "8622ea5275f78b22f00c77f1e6b96b35eedcbccd9b1b1adfc21ff82a2a478044",
+    "capture_convert.log": "aec796d6cd6f5caf938f3aae7ea7c43c7ec4c61b2cdf68ffde151d7b62cc2367"
+  }
+}

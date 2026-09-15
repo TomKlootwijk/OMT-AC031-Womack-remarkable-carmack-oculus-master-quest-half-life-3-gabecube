@@ -1,0 +1,2398 @@
+{
+  "status": "passed",
+  "started_utc": "2026-09-15T05:18:54.143941+00:00",
+  "previous_wrapper_sha256": "8b0e06ebb599b0dabe5720557418ea3953ec38c54d2d7174f6a458424b4d1c67",
+  "current_wrapper_sha256": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092",
+  "cuda_worker_sha256": "f6b640d5f984c5e2226794649fd22391c1819ad1e7ee2df5db3a81e527262ef3",
+  "query_functions_ast_identical": [
+    "numeric_model",
+    "NativeOrbit._read",
+    "NativeOrbit.command",
+    "NativeOrbit._time",
+    "NativeOrbit.query",
+    "NativeOrbit.batch",
+    "NativeOrbit.transition",
+    "NativeOrbit.stats",
+    "NativeOrbit.reset",
+    "NativeOrbit.close"
+  ],
+  "scope": "Bind the historical imported wrapper to final immutable-wrapper CUDA replay.\n\nThis reruns only short wrapper cases. The complete preserved GPU replay is composed\nwith byte-identical per-seed native transport and unchanged query-path functions.\n",
+  "objects": {
+    "january:C03": {
+      "seed_file": "examples/orbit/seeds/C03.orbseed",
+      "seed_file_sha256": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+      "model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14244,
+      "numeric_model_lf_sha256": "05fb7d989fab7ec9f7b01a9aacb56a437d41c0b34077c1638fd786cbb5ce8301",
+      "actual_worker_input_bytes": 14431,
+      "actual_worker_input_sha256": "b6234c62d51e623df3f6003a4c4b92714818838f3084d5b62ebcaaef0f3d8da9",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 23040,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -38476600.76720938,
+            -17284422.542377748,
+            1012069.048382505,
+            1256.0477341886735,
+            -2803.1546650559044,
+            -75.78042358989336
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 20160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -32843278.56810039,
+            -26485576.65882174,
+            738443.4932075747,
+            1926.182438486198,
+            -2391.6534489637897,
+            -93.77887665319423
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740669.166843876,
+            -22416978.071349327,
+            876825.2804788734,
+            1629.560227346997,
+            -2602.9907684166596,
+            -86.31435161074255
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740261.77086199,
+            -22417628.81532509,
+            876803.7017456092,
+            1629.6076276819279,
+            -2602.9610375644465,
+            -86.31551449842974
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35243097.517555624,
+            -23192782.770779707,
+            850712.7598311676,
+            1686.070350339681,
+            -2566.6806897452534,
+            -87.6896871475193
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -35243097.517555624,
+            -23192782.770779707,
+            850712.7598311676,
+            1686.070350339681,
+            -2566.6806897452534,
+            -87.6896871475193
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740465.470334195,
+            -22417303.444266297,
+            876814.4911485815,
+            1629.5839275820813,
+            -2602.975903098375,
+            -86.31493305816278
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740465.470334195,
+            -22417303.444266297,
+            876814.4911485815,
+            1629.5839275820813,
+            -2602.975903098375,
+            -86.31493305816278
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -35740669.166843876,
+            -22416978.071349327,
+            876825.2804788734,
+            1629.560227346997,
+            -2602.9907684166596,
+            -86.31435161074255
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740669.166843876,
+            -22416978.071349327,
+            876825.2804788734,
+            1629.560227346997,
+            -2602.9907684166596,
+            -86.31435161074255
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740261.77086199,
+            -22417628.81532509,
+            876803.7017456092,
+            1629.6076276819279,
+            -2602.9610375644465,
+            -86.31551449842974
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35243097.517555624,
+            -23192782.770779707,
+            850712.7598311676,
+            1686.070350339681,
+            -2566.6806897452534,
+            -87.6896871475193
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -35243097.517555624,
+            -23192782.770779707,
+            850712.7598311676,
+            1686.070350339681,
+            -2566.6806897452534,
+            -87.6896871475193
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740465.470334195,
+            -22417303.444266297,
+            876814.4911485815,
+            1629.5839275820813,
+            -2602.975903098375,
+            -86.31493305816278
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740465.470334195,
+            -22417303.444266297,
+            876814.4911485815,
+            1629.5839275820813,
+            -2602.975903098375,
+            -86.31493305816278
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740465.470334195,
+            -22417303.444266297,
+            876814.4911485815,
+            1629.5839275820813,
+            -2602.975903098375,
+            -86.31493305816278
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -35740465.470334195,
+            -22417303.444266297,
+            876814.4911485815,
+            1629.5839275820813,
+            -2602.975903098375,
+            -86.31493305816278
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    },
+    "january:C06": {
+      "seed_file": "examples/orbit/seeds/C06.orbseed",
+      "seed_file_sha256": "6ef34a15c13013354a909b12d2f7f0e8badf9c78fc17959be10f835b6c437d64",
+      "model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14244,
+      "numeric_model_lf_sha256": "19c958f300c3ea29c949e1d4f5349c18bc69abe07e1a844979a045dfa91664da",
+      "actual_worker_input_bytes": 14431,
+      "actual_worker_input_sha256": "127940b50aa0617c84c8b40a775e8f8ee08466700dd146414b7e81263b8fc7e2",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 23040,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -37365300.563611634,
+            -5724301.939359861,
+            19072221.3566029,
+            1336.0742424389698,
+            -1822.5539824731438,
+            2065.9748415995996
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 20160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -31422122.30125534,
+            -11895347.511162467,
+            25749164.45999334,
+            1981.5782905389556,
+            -1659.5707174128781,
+            1642.7464466488059
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454472.31173878,
+            -9113193.64898714,
+            22852893.84593992,
+            1697.0406721431154,
+            -1749.125153151629,
+            1853.9348967279532
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454048.0459153,
+            -9113630.928779347,
+            22853357.325912658,
+            1697.0859156189933,
+            -1749.1131843929154,
+            1853.9048850793706
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -33937037.581916004,
+            -9635952.34704474,
+            23403855.69902345,
+            1750.9522542503962,
+            -1734.3437757243557,
+            1817.4690304345747
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -33937037.581916004,
+            -9635952.34704474,
+            23403855.69902345,
+            1750.9522542503962,
+            -1734.3437757243557,
+            1817.4690304345747
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454260.1802409,
+            -9113412.289257267,
+            22853125.58686415,
+            1697.0632939503216,
+            -1749.1191688441463,
+            1853.919890979995
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454260.1802409,
+            -9113412.289257267,
+            22853125.58686415,
+            1697.0632939503216,
+            -1749.1191688441463,
+            1853.919890979995
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -34454472.31173878,
+            -9113193.64898714,
+            22852893.84593992,
+            1697.0406721431154,
+            -1749.125153151629,
+            1853.9348967279532
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454472.31173878,
+            -9113193.64898714,
+            22852893.84593992,
+            1697.0406721431154,
+            -1749.125153151629,
+            1853.9348967279532
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454048.0459153,
+            -9113630.928779347,
+            22853357.325912658,
+            1697.0859156189933,
+            -1749.1131843929154,
+            1853.9048850793706
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -33937037.581916004,
+            -9635952.34704474,
+            23403855.69902345,
+            1750.9522542503962,
+            -1734.3437757243557,
+            1817.4690304345747
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -33937037.581916004,
+            -9635952.34704474,
+            23403855.69902345,
+            1750.9522542503962,
+            -1734.3437757243557,
+            1817.4690304345747
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454260.1802409,
+            -9113412.289257267,
+            22853125.58686415,
+            1697.0632939503216,
+            -1749.1191688441463,
+            1853.919890979995
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454260.1802409,
+            -9113412.289257267,
+            22853125.58686415,
+            1697.0632939503216,
+            -1749.1191688441463,
+            1853.919890979995
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454260.1802409,
+            -9113412.289257267,
+            22853125.58686415,
+            1697.0632939503216,
+            -1749.1191688441463,
+            1853.919890979995
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -34454260.1802409,
+            -9113412.289257267,
+            22853125.58686415,
+            1697.0632939503216,
+            -1749.1191688441463,
+            1853.919890979995
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    },
+    "january:CHANDRA": {
+      "seed_file": "examples/orbit/seeds/CHANDRA.orbseed",
+      "seed_file_sha256": "9beca3919475dfe9dc7e793c8da83dda3b7fdf70e676003ed51940f42239c568",
+      "model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14245,
+      "numeric_model_lf_sha256": "660f8c6a5492696c05a2ec46bf796df8bdce55f5b9e7eb80d9476bb44f11d598",
+      "actual_worker_input_bytes": 14432,
+      "actual_worker_input_sha256": "29a80dd0d1e3f0958ca922b8cb39d88b63d06497c8200926dc48c2bbb4a8c68b",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 92160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            27202460.257750154,
+            -117901409.65414537,
+            72066523.98333643,
+            429.0438989658003,
+            413.7732224616501,
+            -609.8343991602809
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 80640,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -10808797.83732907,
+            -106366447.76050337,
+            89308239.62583347,
+            509.1561408533788,
+            -705.1811680365977,
+            180.98786954053622
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469899.93868561,
+            -115293020.14750303,
+            68064776.36590873,
+            405.4077463208338,
+            511.2711284747035,
+            -675.6997119995149
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29470001.290479966,
+            -115292892.32916357,
+            68064607.44065091,
+            405.40660850612113,
+            511.27558731276025,
+            -675.7023504801259
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 40,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29591367.373253286,
+            -115138770.80287102,
+            67861506.43378885,
+            404.03591547107663,
+            516.6323455506642,
+            -678.869547747117
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            29591367.373253286,
+            -115138770.80287102,
+            67861506.43378885,
+            404.03591547107663,
+            516.6323455506642,
+            -678.869547747117
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469950.614618346,
+            -115292956.23847264,
+            68064691.90336227,
+            405.40717741449566,
+            511.2733578922823,
+            -675.7010312394161
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469950.614618346,
+            -115292956.23847264,
+            68064691.90336227,
+            405.40717741449566,
+            511.2733578922823,
+            -675.7010312394161
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            29469899.93868561,
+            -115293020.14750303,
+            68064776.36590873,
+            405.4077463208338,
+            511.2711284747035,
+            -675.6997119995149
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469899.93868561,
+            -115293020.14750303,
+            68064776.36590873,
+            405.4077463208338,
+            511.2711284747035,
+            -675.6997119995149
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29470001.290479966,
+            -115292892.32916357,
+            68064607.44065091,
+            405.40660850612113,
+            511.27558731276025,
+            -675.7023504801259
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 40,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29591367.373253286,
+            -115138770.80287102,
+            67861506.43378885,
+            404.03591547107663,
+            516.6323455506642,
+            -678.869547747117
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            29591367.373253286,
+            -115138770.80287102,
+            67861506.43378885,
+            404.03591547107663,
+            516.6323455506642,
+            -678.869547747117
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469950.614618346,
+            -115292956.23847264,
+            68064691.90336227,
+            405.40717741449566,
+            511.2733578922823,
+            -675.7010312394161
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469950.614618346,
+            -115292956.23847264,
+            68064691.90336227,
+            405.40717741449566,
+            511.2733578922823,
+            -675.7010312394161
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469950.614618346,
+            -115292956.23847264,
+            68064691.90336227,
+            405.40717741449566,
+            511.2733578922823,
+            -675.7010312394161
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            29469950.614618346,
+            -115292956.23847264,
+            68064691.90336227,
+            405.40717741449566,
+            511.2733578922823,
+            -675.7010312394161
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    },
+    "january:G05": {
+      "seed_file": "examples/orbit/seeds/G05.orbseed",
+      "seed_file_sha256": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+      "model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14243,
+      "numeric_model_lf_sha256": "c75baa3e737cdd5282ab0fdd2b26ba4fa762bcad62b13380a6b3bc47ae929850",
+      "actual_worker_input_bytes": 14430,
+      "actual_worker_input_sha256": "a9db0efa0a44a91bee76a7596fd2c61c415d5e3ff0589028a81a66aedb5b7093",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 23040,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            3472704.2625851207,
+            -16883011.66910269,
+            -20401062.498008512,
+            2980.6546087158713,
+            2103.56283559508,
+            -1237.7654448547073
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 20160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            13275347.983213121,
+            -7433042.100137261,
+            -21939858.17210299,
+            2356.608763088125,
+            3021.143211730698,
+            411.9779461390036
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977158.483324895,
+            -12246104.725434098,
+            -21971927.393049367,
+            2739.8198559794564,
+            2682.441082982436,
+            -372.34385688452056
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977843.432420677,
+            -12245434.10715866,
+            -21972020.46464836,
+            2739.7729096887538,
+            2682.5051199289114,
+            -372.22893497947524
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            9790732.709910944,
+            -11429754.764561314,
+            -22062941.440846317,
+            2680.896972478537,
+            2756.772354388206,
+            -234.06608521684336
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            9790732.709910944,
+            -11429754.764561314,
+            -22062941.440846317,
+            2680.896972478537,
+            2756.772354388206,
+            -234.06608521684336
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977500.959339857,
+            -12245769.418297535,
+            -21971973.932440173,
+            2739.7963832822766,
+            2682.4731018934535,
+            -372.2863959939067
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977500.959339857,
+            -12245769.418297535,
+            -21971973.932440173,
+            2739.7963832822766,
+            2682.4731018934535,
+            -372.2863959939067
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            8977158.483324895,
+            -12246104.725434098,
+            -21971927.393049367,
+            2739.8198559794564,
+            2682.441082982436,
+            -372.34385688452056
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977158.483324895,
+            -12246104.725434098,
+            -21971927.393049367,
+            2739.8198559794564,
+            2682.441082982436,
+            -372.34385688452056
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977843.432420677,
+            -12245434.10715866,
+            -21972020.46464836,
+            2739.7729096887538,
+            2682.5051199289114,
+            -372.22893497947524
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            9790732.709910944,
+            -11429754.764561314,
+            -22062941.440846317,
+            2680.896972478537,
+            2756.772354388206,
+            -234.06608521684336
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            9790732.709910944,
+            -11429754.764561314,
+            -22062941.440846317,
+            2680.896972478537,
+            2756.772354388206,
+            -234.06608521684336
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977500.959339857,
+            -12245769.418297535,
+            -21971973.932440173,
+            2739.7963832822766,
+            2682.4731018934535,
+            -372.2863959939067
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977500.959339857,
+            -12245769.418297535,
+            -21971973.932440173,
+            2739.7963832822766,
+            2682.4731018934535,
+            -372.2863959939067
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977500.959339857,
+            -12245769.418297535,
+            -21971973.932440173,
+            2739.7963832822766,
+            2682.4731018934535,
+            -372.2863959939067
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            8977500.959339857,
+            -12245769.418297535,
+            -21971973.932440173,
+            2739.7963832822766,
+            2682.4731018934535,
+            -372.2863959939067
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    },
+    "february:C03": {
+      "seed_file": "examples/orbit/confirmation_seeds/C03.orbseed",
+      "seed_file_sha256": "1b0cf39ad71a1ec1739354dccd8c211497c531b147fc3ac70cf55f61b1ba840c",
+      "model_sha256": "b253c8a13b6ae3264988788ba9bba9b000798fdd220217d1d91293d6814c3668",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14291,
+      "numeric_model_lf_sha256": "7ef888554a07555506f873c356a7d720de13cd4d3c68da02b7033eaac634c36a",
+      "actual_worker_input_bytes": 14478,
+      "actual_worker_input_sha256": "60df9c5596df364cf0dc8362e34f886a617ba77810e4c62cf03cc5ce297afb57",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 23040,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -24372900.19386541,
+            -34448005.25840532,
+            377351.61081485427,
+            2505.887237621129,
+            -1773.9743138019817,
+            -106.94089905772726
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 20160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -14955454.232898585,
+            -39462480.24770028,
+            8946.864007011747,
+            2871.1257686025456,
+            -1087.0823269773841,
+            -112.4663167316329
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470674.98859386,
+            -37441515.53536388,
+            188794.90309589778,
+            2723.66709452518,
+            -1416.4736987268352,
+            -110.52391988052402
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19469994.06859343,
+            -37441869.6475832,
+            188767.27208462596,
+            2723.6929087447256,
+            -1416.4240557008259,
+            -110.52417028794989
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18648649.137699086,
+            -37857658.03627535,
+            155581.4397641535,
+            2754.004776727535,
+            -1356.543679907378,
+            -110.79813811862954
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -18648649.137699086,
+            -37857658.03627535,
+            155581.4397641535,
+            2754.004776727535,
+            -1356.543679907378,
+            -110.79813811862954
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470334.52940034,
+            -37441692.59302489,
+            188781.0875980871,
+            2723.6800017477744,
+            -1416.4488772725638,
+            -110.52404508881558
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470334.52940034,
+            -37441692.59302489,
+            188781.0875980871,
+            2723.6800017477744,
+            -1416.4488772725638,
+            -110.52404508881558
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -19470674.98859386,
+            -37441515.53536388,
+            188794.90309589778,
+            2723.66709452518,
+            -1416.4736987268352,
+            -110.52391988052402
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470674.98859386,
+            -37441515.53536388,
+            188794.90309589778,
+            2723.66709452518,
+            -1416.4736987268352,
+            -110.52391988052402
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19469994.06859343,
+            -37441869.6475832,
+            188767.27208462596,
+            2723.6929087447256,
+            -1416.4240557008259,
+            -110.52417028794989
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18648649.137699086,
+            -37857658.03627535,
+            155581.4397641535,
+            2754.004776727535,
+            -1356.543679907378,
+            -110.79813811862954
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -18648649.137699086,
+            -37857658.03627535,
+            155581.4397641535,
+            2754.004776727535,
+            -1356.543679907378,
+            -110.79813811862954
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470334.52940034,
+            -37441692.59302489,
+            188781.0875980871,
+            2723.6800017477744,
+            -1416.4488772725638,
+            -110.52404508881558
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470334.52940034,
+            -37441692.59302489,
+            188781.0875980871,
+            2723.6800017477744,
+            -1416.4488772725638,
+            -110.52404508881558
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470334.52940034,
+            -37441692.59302489,
+            188781.0875980871,
+            2723.6800017477744,
+            -1416.4488772725638,
+            -110.52404508881558
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -19470334.52940034,
+            -37441692.59302489,
+            188781.0875980871,
+            2723.6800017477744,
+            -1416.4488772725638,
+            -110.52404508881558
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    },
+    "february:C06": {
+      "seed_file": "examples/orbit/confirmation_seeds/C06.orbseed",
+      "seed_file_sha256": "4c963e6fdd40d6edb3d136517953bbe39e00240480498113cc22c6cfcc5c02ff",
+      "model_sha256": "0dd9833368ac7472a79cda65fb22c145f490b24ab567a910cb422c82c6e44937",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14290,
+      "numeric_model_lf_sha256": "f18abb461fceb2ae1ff4a5078d5d8aaa3b7b43f823fa3341a29d5cd3205743c7",
+      "actual_worker_input_bytes": 14477,
+      "actual_worker_input_sha256": "da7758d62ab5c80b7d661d85054effbf04b4846306c7e76294257a1fe82344bd",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 23040,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -22975145.59476491,
+            -17530767.970281772,
+            30898640.99664673,
+            2517.122091241925,
+            -1372.8082421913484,
+            1081.3528971274347
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 20160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -13714997.632539487,
+            -21624620.317391455,
+            33645263.60772932,
+            2849.0868452024542,
+            -1020.8387825258152,
+            492.0027374811499
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161783.125025723,
+            -19860201.821259245,
+            32629100.205725823,
+            2715.450720875774,
+            -1193.3835135532042,
+            772.7025030240104
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161104.259355996,
+            -19860500.163868263,
+            32629293.375979885,
+            2715.474636783592,
+            -1193.3573585409406,
+            772.6595294253402
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -17342564.27566017,
+            -20213625.799813263,
+            32853247.312325995,
+            2743.5186968142125,
+            -1161.7008085943366,
+            720.9283339911872
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -17342564.27566017,
+            -20213625.799813263,
+            32853247.312325995,
+            2743.5186968142125,
+            -1161.7008085943366,
+            720.9283339911872
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161443.69293823,
+            -19860350.993381098,
+            32629196.79219578,
+            2715.4626789409267,
+            -1193.3704360967326,
+            772.6810162573807
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161443.69293823,
+            -19860350.993381098,
+            32629196.79219578,
+            2715.4626789409267,
+            -1193.3704360967326,
+            772.6810162573807
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -18161783.125025723,
+            -19860201.821259245,
+            32629100.205725823,
+            2715.450720875774,
+            -1193.3835135532042,
+            772.7025030240104
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161783.125025723,
+            -19860201.821259245,
+            32629100.205725823,
+            2715.450720875774,
+            -1193.3835135532042,
+            772.7025030240104
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161104.259355996,
+            -19860500.163868263,
+            32629293.375979885,
+            2715.474636783592,
+            -1193.3573585409406,
+            772.6595294253402
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -17342564.27566017,
+            -20213625.799813263,
+            32853247.312325995,
+            2743.5186968142125,
+            -1161.7008085943366,
+            720.9283339911872
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -17342564.27566017,
+            -20213625.799813263,
+            32853247.312325995,
+            2743.5186968142125,
+            -1161.7008085943366,
+            720.9283339911872
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161443.69293823,
+            -19860350.993381098,
+            32629196.79219578,
+            2715.4626789409267,
+            -1193.3704360967326,
+            772.6810162573807
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161443.69293823,
+            -19860350.993381098,
+            32629196.79219578,
+            2715.4626789409267,
+            -1193.3704360967326,
+            772.6810162573807
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161443.69293823,
+            -19860350.993381098,
+            32629196.79219578,
+            2715.4626789409267,
+            -1193.3704360967326,
+            772.6810162573807
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -18161443.69293823,
+            -19860350.993381098,
+            32629196.79219578,
+            2715.4626789409267,
+            -1193.3704360967326,
+            772.6810162573807
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    },
+    "february:CHANDRA": {
+      "seed_file": "examples/orbit/confirmation_seeds/CHANDRA.orbseed",
+      "seed_file_sha256": "61b4124629bee9c558eeabdd6bbbc9e0bb45d5b3020d76526e5c091dd3d5e2f0",
+      "model_sha256": "5194e34a3b088c6b7f486b72c0df458330ac023fadb58bb4458486f946a13af1",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14291,
+      "numeric_model_lf_sha256": "f0f04411977129d7611e3225b41feb9a42148d2b51b99f631b8b9bf0dd2136dc",
+      "actual_worker_input_bytes": 14478,
+      "actual_worker_input_sha256": "524ff4d491a9f77a0689b80b965ca2fb42a8bce5ddb43854cb12b0b6f60e759e",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 92160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -5449503.83509143,
+            -112888036.65227613,
+            90554914.51564352,
+            524.5332334828579,
+            -542.8232191573677,
+            32.25983962876158
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 80640,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -29642070.728041753,
+            -17059825.469949663,
+            35478231.4627987,
+            -543.4189342733147,
+            -2415.1201062367386,
+            2261.9335689306427
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846766.7711790837,
+            -115453790.89469464,
+            90674161.6579742,
+            529.0591107746185,
+            -462.4459181886843,
+            -38.18708624286618
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846634.5063902824,
+            -115453906.50571959,
+            90674152.11084545,
+            529.0591996353968,
+            -462.4422813666973,
+            -38.18994372632214
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 40,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2687967.207406085,
+            -115591927.48006594,
+            90662186.34959556,
+            529.1626880411358,
+            -458.08168774595674,
+            -41.61383237459845
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -2687967.207406085,
+            -115591927.48006594,
+            90662186.34959556,
+            529.1626880411358,
+            -458.08168774595674,
+            -41.61383237459845
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846700.63878746,
+            -115453848.70032077,
+            90674156.88449912,
+            529.0591552055466,
+            -462.4440997773804,
+            -38.18851498523241
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846700.63878746,
+            -115453848.70032077,
+            90674156.88449912,
+            529.0591552055466,
+            -462.4440997773804,
+            -38.18851498523241
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -2846766.7711790837,
+            -115453790.89469464,
+            90674161.6579742,
+            529.0591107746185,
+            -462.4459181886843,
+            -38.18708624286618
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846766.7711790837,
+            -115453790.89469464,
+            90674161.6579742,
+            529.0591107746185,
+            -462.4459181886843,
+            -38.18708624286618
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846634.5063902824,
+            -115453906.50571959,
+            90674152.11084545,
+            529.0591996353968,
+            -462.4422813666973,
+            -38.18994372632214
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 40,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2687967.207406085,
+            -115591927.48006594,
+            90662186.34959556,
+            529.1626880411358,
+            -458.08168774595674,
+            -41.61383237459845
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            -2687967.207406085,
+            -115591927.48006594,
+            90662186.34959556,
+            529.1626880411358,
+            -458.08168774595674,
+            -41.61383237459845
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846700.63878746,
+            -115453848.70032077,
+            90674156.88449912,
+            529.0591552055466,
+            -462.4440997773804,
+            -38.18851498523241
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846700.63878746,
+            -115453848.70032077,
+            90674156.88449912,
+            529.0591552055466,
+            -462.4440997773804,
+            -38.18851498523241
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846700.63878746,
+            -115453848.70032077,
+            90674156.88449912,
+            529.0591552055466,
+            -462.4440997773804,
+            -38.18851498523241
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            -2846700.63878746,
+            -115453848.70032077,
+            90674156.88449912,
+            529.0591552055466,
+            -462.4440997773804,
+            -38.18851498523241
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    },
+    "february:G05": {
+      "seed_file": "examples/orbit/confirmation_seeds/G05.orbseed",
+      "seed_file_sha256": "900bf67616fbbcf9892a105f98be385fe9ec1931e181ea42620161bcb1c573a5",
+      "model_sha256": "1e3b444f2a5c3820053b1e1f825126c43ac9f62266be0810ce4842489c6b2ccb",
+      "numeric_model_payloads_byte_identical": true,
+      "numeric_model_lf_bytes": 14289,
+      "numeric_model_lf_sha256": "70192d0782265db70dc534b2e39ad2b2388bc14f9096ce68515e01d71f026227",
+      "actual_worker_input_bytes": 14476,
+      "actual_worker_input_sha256": "283d736c864302e463d7dfc0521984879e2e2012cac7e52bd2de8c2a560215b6",
+      "actual_worker_inputs_byte_identical": true,
+      "current_cuda_times_s": [
+        -691200.0,
+        604800.0,
+        -0.125,
+        0.125,
+        300.0,
+        300.0,
+        -0.0,
+        0.0,
+        -0.125
+      ],
+      "current_cuda_results": [
+        {
+          "time_s": -691200,
+          "status": "ok",
+          "rk_steps": 23040,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            19950159.82826382,
+            4586693.309679322,
+            -17061283.84764195,
+            1005.4291212428392,
+            3119.3612425058177,
+            2041.3225053843557
+          ]
+        },
+        {
+          "time_s": 604800,
+          "status": "ok",
+          "rk_steps": 20160,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            20875901.924661472,
+            14542293.176721543,
+            -7680864.279823548,
+            -566.4365712874506,
+            2365.1284027971983,
+            3012.6630844050596
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146428.344956335,
+            10245199.255076215,
+            -12491423.118928438,
+            177.5682763920441,
+            2810.8912282652154,
+            2649.110518610292
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146472.723048575,
+            10245901.971111357,
+            -12490760.833040994,
+            177.4564614835338,
+            2810.837052243233,
+            2649.1765803670896
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21179559.16499012,
+            11078789.843721077,
+            -11684709.165745988,
+            43.16106536163095,
+            2743.174609723464,
+            2725.8975743261817
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            21179559.16499012,
+            11078789.843721077,
+            -11684709.165745988,
+            43.16106536163095,
+            2743.174609723464,
+            2725.8975743261817
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146450.53749667,
+            10245550.614786787,
+            -12491091.978049146,
+            177.51236897523899,
+            2810.864140722627,
+            2649.1435499217255
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146450.53749667,
+            10245550.614786787,
+            -12491091.978049146,
+            177.51236897523899,
+            2810.864140722627,
+            2649.1435499217255
+          ]
+        },
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            21146428.344956335,
+            10245199.255076215,
+            -12491423.118928438,
+            177.5682763920441,
+            2810.8912282652154,
+            2649.110518610292
+          ]
+        }
+      ],
+      "previous_wrapper_short_results": [
+        {
+          "time_s": -0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146428.344956335,
+            10245199.255076215,
+            -12491423.118928438,
+            177.5682763920441,
+            2810.8912282652154,
+            2649.110518610292
+          ]
+        },
+        {
+          "time_s": 0.125,
+          "status": "ok",
+          "rk_steps": 1,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146472.723048575,
+            10245901.971111357,
+            -12490760.833040994,
+            177.4564614835338,
+            2810.837052243233,
+            2649.1765803670896
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 10,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21179559.16499012,
+            11078789.843721077,
+            -11684709.165745988,
+            43.16106536163095,
+            2743.174609723464,
+            2725.8975743261817
+          ]
+        },
+        {
+          "time_s": 300,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": true,
+          "state_gcrs": [
+            21179559.16499012,
+            11078789.843721077,
+            -11684709.165745988,
+            43.16106536163095,
+            2743.174609723464,
+            2725.8975743261817
+          ]
+        },
+        {
+          "time_s": -0.0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146450.53749667,
+            10245550.614786787,
+            -12491091.978049146,
+            177.51236897523899,
+            2810.864140722627,
+            2649.1435499217255
+          ]
+        },
+        {
+          "time_s": 0,
+          "status": "ok",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146450.53749667,
+            10245550.614786787,
+            -12491091.978049146,
+            177.51236897523899,
+            2810.864140722627,
+            2649.1435499217255
+          ]
+        }
+      ],
+      "short_states_same_cuda_binary_exact": true,
+      "immutability_api_passed": true,
+      "outside_domain_results": [
+        {
+          "time_s": -691200.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146450.53749667,
+            10245550.614786787,
+            -12491091.978049146,
+            177.51236897523899,
+            2810.864140722627,
+            2649.1435499217255
+          ]
+        },
+        {
+          "time_s": 604800.0000000001,
+          "status": "outside_model_domain",
+          "rk_steps": 0,
+          "reused_in_batch": false,
+          "state_gcrs": [
+            21146450.53749667,
+            10245550.614786787,
+            -12491091.978049146,
+            177.51236897523899,
+            2810.864140722627,
+            2649.1435499217255
+          ]
+        }
+      ],
+      "device": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+        "capability_major": 12,
+        "capability_minor": 0,
+        "runtime_version": 12080,
+        "driver_version": 13010,
+        "query_mode": "independent_from_epoch",
+        "kernel_registers_per_thread": 210,
+        "kernel_local_bytes_per_thread": 216,
+        "kernel_static_shared_bytes": 0,
+        "device_stack_limit_bytes": 1024,
+        "model_parameter_bytes": 3064
+      }
+    }
+  },
+  "complete_replay": {
+    "report": "results/optimization_replay_cuda/summary.json",
+    "wrapper_imported_at_start_sha256": "8b0e06ebb599b0dabe5720557418ea3953ec38c54d2d7174f6a458424b4d1c67",
+    "hash_at_completion_is_not_import_identity": true,
+    "january": {
+      "samples": 8064,
+      "comparison": "same CUDA backend",
+      "exact_prediction_rows": 8064,
+      "maximum_prediction_difference_m": 0.0,
+      "objects": {
+        "january:C03": {
+          "samples": 2016,
+          "model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+          "seed_sha256": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+          "baseline_csv_sha256": "6c1781ec5a8c1038ff3bc070c108f3bc04903ab99f9a9396e0d0314aa46320c9",
+          "baseline_csv": "results/orbit_accuracy_r2_cuda_verified/C03_holdout.csv",
+          "changed_prediction_rows": 0,
+          "max_prediction_difference_m": 0.0,
+          "first_day_max_reference_discrepancy_m": 5.304255269103576,
+          "elapsed_s": 43.84330580000096
+        },
+        "january:C06": {
+          "samples": 2016,
+          "model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421",
+          "seed_sha256": "6ef34a15c13013354a909b12d2f7f0e8badf9c78fc17959be10f835b6c437d64",
+          "baseline_csv_sha256": "f16bbbc7566b69ba745ad99581a3f29a60c888809e2f050f47dc7bc01c869fce",
+          "baseline_csv": "results/orbit_accuracy_r2_cuda_verified/C06_holdout.csv",
+          "changed_prediction_rows": 0,
+          "max_prediction_difference_m": 0.0,
+          "first_day_max_reference_discrepancy_m": 1.1723338290572496,
+          "elapsed_s": 41.1887038000059
+        },
+        "january:CHANDRA": {
+          "samples": 2016,
+          "model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453",
+          "seed_sha256": "9beca3919475dfe9dc7e793c8da83dda3b7fdf70e676003ed51940f42239c568",
+          "baseline_csv_sha256": "f71ae62608c3aacb9abbcac224e53dca76f7d6971c6a0d1a89d8e1d561f9c976",
+          "baseline_csv": "results/orbit_accuracy_r2_cuda_verified/CHANDRA_holdout.csv",
+          "changed_prediction_rows": 0,
+          "max_prediction_difference_m": 0.0,
+          "first_day_max_reference_discrepancy_m": 8.092835635505262,
+          "elapsed_s": 174.5660981999972
+        },
+        "january:G05": {
+          "samples": 2016,
+          "model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+          "seed_sha256": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+          "baseline_csv_sha256": "8a3d720b0dd3e7a19bf583f4eb8dcbf5bf2334f90bbc3361983509e3b5c46ae4",
+          "baseline_csv": "results/orbit_accuracy_r2_cuda_verified/G05_holdout.csv",
+          "changed_prediction_rows": 0,
+          "max_prediction_difference_m": 0.0,
+          "first_day_max_reference_discrepancy_m": 1.0566454164096823,
+          "elapsed_s": 22.523832700004277
+        }
+      }
+    },
+    "february": {
+      "samples": 7489,
+      "comparison": "current CUDA versus preserved CPU",
+      "acceptance_m": 0.01,
+      "maximum_prediction_difference_m": 0.0002200149622629772,
+      "objects": {
+        "february:C03": {
+          "samples": 1441,
+          "model_sha256": "b253c8a13b6ae3264988788ba9bba9b000798fdd220217d1d91293d6814c3668",
+          "seed_sha256": "1b0cf39ad71a1ec1739354dccd8c211497c531b147fc3ac70cf55f61b1ba840c",
+          "baseline_csv_sha256": "115302e4afa538269bb0830d63b643c2d1f2f9c5e6db69519bb75b76a6a00442",
+          "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/C03_holdout.csv",
+          "changed_prediction_rows": 1290,
+          "max_prediction_difference_m": 2.4485285672867184e-05,
+          "first_day_max_reference_discrepancy_m": 4.65414809159419,
+          "elapsed_s": 22.290851400000975
+        },
+        "february:C06": {
+          "samples": 2016,
+          "model_sha256": "0dd9833368ac7472a79cda65fb22c145f490b24ab567a910cb422c82c6e44937",
+          "seed_sha256": "4c963e6fdd40d6edb3d136517953bbe39e00240480498113cc22c6cfcc5c02ff",
+          "baseline_csv_sha256": "daa245686b5758a110e40c86babc1b37f6c30f200a4e480be7bed52a7ba68bbf",
+          "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/C06_holdout.csv",
+          "changed_prediction_rows": 1833,
+          "max_prediction_difference_m": 5.662807050189472e-06,
+          "first_day_max_reference_discrepancy_m": 2.107834940970595,
+          "elapsed_s": 21.786127799998212
+        },
+        "february:CHANDRA": {
+          "samples": 2016,
+          "model_sha256": "5194e34a3b088c6b7f486b72c0df458330ac023fadb58bb4458486f946a13af1",
+          "seed_sha256": "61b4124629bee9c558eeabdd6bbbc9e0bb45d5b3020d76526e5c091dd3d5e2f0",
+          "baseline_csv_sha256": "689e41106485e02c8c061f5811041975cf66561ee93e2f6fab39168280edaac1",
+          "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/CHANDRA_holdout.csv",
+          "changed_prediction_rows": 1595,
+          "max_prediction_difference_m": 0.0002200149622629772,
+          "first_day_max_reference_discrepancy_m": 0.289813080890197,
+          "elapsed_s": 84.77496350000001
+        },
+        "february:G05": {
+          "samples": 2016,
+          "model_sha256": "1e3b444f2a5c3820053b1e1f825126c43ac9f62266be0810ce4842489c6b2ccb",
+          "seed_sha256": "900bf67616fbbcf9892a105f98be385fe9ec1931e181ea42620161bcb1c573a5",
+          "baseline_csv_sha256": "c098515bb06f0755d1c7fd9c15622634786132318db20655427f6e3aad2adaba",
+          "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/G05_holdout.csv",
+          "changed_prediction_rows": 1868,
+          "max_prediction_difference_m": 2.775435842175003e-05,
+          "first_day_max_reference_discrepancy_m": 3.071808561941479,
+          "elapsed_s": 21.704409599995415
+        }
+      }
+    }
+  },
+  "composition": "The full historical GPU execution used the same native binary and exactly the same eight model payloads. Final wrapper query/response methods are AST-identical; only model-view/hash immutability and editable-copy access changed. Short final-wrapper CUDA queries verify those APIs and transport in execution. This is a composed equivalence check, not a repeated all-epoch final-wrapper GPU run.",
+  "completed_utc": "2026-09-15T05:24:14.442963+00:00",
+  "objects_checked": 8,
+  "queried_records_including_rejected": 152,
+  "source_hashes": {
+    "orbit_native.py": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092",
+    "orbit_seed.py": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae",
+    "orbit_dynamics.py": "a106ef9c81197e9501d897fa01c926ab91eb0ba32f5a486e1c389d05c2eb69f8",
+    "orbit_precision.py": "9efa1426d7c6947e487c0ce069e4f601de6945284069789ba7020675ab2be92f"
+  },
+  "verification_script_sha256": "26df492025f11b13269b6c84344eb493d834789f3d6ec47f26e6a71cc687f0e9"
+}

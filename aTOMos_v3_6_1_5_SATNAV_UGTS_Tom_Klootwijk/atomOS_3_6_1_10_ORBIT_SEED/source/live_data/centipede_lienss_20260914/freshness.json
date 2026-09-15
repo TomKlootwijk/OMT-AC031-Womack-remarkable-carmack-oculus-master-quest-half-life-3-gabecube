@@ -1,0 +1,8 @@
+{
+  "definition": "Host UTC receive time +18s GPS-UTC minus message1004 GPS epoch; host clock not independently calibrated. Negative values indicate receiver/GNSS epoch ahead of host clock.",
+  "epochs": 301,
+  "min_seconds": -1.804893,
+  "median_seconds": -1.790656,
+  "max_seconds": 0.521762,
+  "caveat": "UTC computer timestamp has a roughly2s relative skew to GNSS tags; these values establish freshness at seconds scale, not calibrated network latency."
+}

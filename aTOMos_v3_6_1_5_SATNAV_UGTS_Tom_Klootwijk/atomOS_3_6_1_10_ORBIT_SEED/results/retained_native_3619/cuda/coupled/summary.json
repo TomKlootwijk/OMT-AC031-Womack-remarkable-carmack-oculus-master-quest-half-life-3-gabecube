@@ -1,0 +1,6863 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "status": "passed",
+  "backend": "cuda",
+  "input_sha256": "65922b9b8cd844bd31358afe17b58daec22b45bdfe8e06f6c621021f71c1ee05",
+  "native_binary_sha256": "2c40ef9c4fcbbca56aa8b7157bfe907626131814e52b4b4199dfaf6bfd03a367",
+  "trajectory_count": 272,
+  "native_trace_verified": true,
+  "native_command": [
+    "C:\\tmp\\atomos3619_gpu128\\Release\\coupled_kernel.exe",
+    "--input",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\results\\retained_native_3619\\cuda\\coupled\\compiled",
+    "--out",
+    "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\results\\retained_native_3619\\cuda\\coupled\\native",
+    "--backend",
+    "cuda",
+    "--device",
+    "0"
+  ],
+  "native_returncode": 0,
+  "transitions": 3308,
+  "field_comparisons": 320876,
+  "trajectories": [
+    {
+      "trajectory_id": 0,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 5,
+      "final_p": [
+        10.348554704925444,
+        0.8379216790409596,
+        -0.3347902744158491
+      ],
+      "final_v": [
+        1.0773230913065341,
+        -0.6098667709081527,
+        -0.37038822549560335
+      ],
+      "specification_sha256": "fc67b764da515179d0ed28419570db5664f202e5b5b707a8ce62f987461c5131",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 5,
+      "final_p": [
+        10.208112654259576,
+        0.6840082003389908,
+        -0.1358600817400446
+      ],
+      "final_v": [
+        1.0055832184148437,
+        -0.5912942723618845,
+        -0.3528713194994212
+      ],
+      "specification_sha256": "a0cf6ecd3ed353e777ceecbe532cf617cb62afa4d091026a13e05e630b4f4f04",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 2,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 6,
+      "final_p": [
+        9.459335699524487,
+        0.7626291261295265,
+        -0.2225981987362948
+      ],
+      "final_v": [
+        0.8849415007244241,
+        -0.35237297143344903,
+        -0.2705497388605863
+      ],
+      "specification_sha256": "62df1d38084ccaa43a0043201868cdb3a96dc966cbc9f6a7260bee6e0e8e2d35",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 3,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 5,
+      "final_p": [
+        10.0908338198348,
+        0.8398231681424113,
+        -0.24145204611181528
+      ],
+      "final_v": [
+        0.9827404641262132,
+        -0.5882630003895661,
+        -0.3536613001517991
+      ],
+      "specification_sha256": "8b34581d6469f18265673ec81b4f222fea49fdf2d153c7c88d6222b50be10d02",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 4,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 0,
+      "final_p": [
+        13.699454884747496,
+        2.377954479383415,
+        0.1830731647815218
+      ],
+      "final_v": [
+        -0.09248621468489165,
+        -0.13578377715668855,
+        -0.036841328543074765
+      ],
+      "specification_sha256": "c40d638331d0f0d04185d425e7557cb01da82dab4082dfc7ce456ded0434cd74",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "0",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 10,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 0,
+      "final_p": [
+        11.25,
+        -0.5,
+        3.625
+      ],
+      "final_v": [
+        1.0,
+        -2.0,
+        0.5
+      ],
+      "specification_sha256": "b405481c1c6afbd90a01f348cd7eecbfccfcf12579ee2781cf7f4af3257c258d",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 11,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        14.25,
+        -6.5,
+        4.5625
+      ],
+      "final_v": [
+        3.0,
+        -6.0,
+        1.0
+      ],
+      "specification_sha256": "793f877a6d754a01e7d1096636cf511265d144ffec9966f04363e0bdf2724b88",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 12,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 0,
+      "final_p": [
+        8.0,
+        1.28,
+        1.5
+      ],
+      "final_v": [
+        -8.0,
+        -2.88,
+        -6.0
+      ],
+      "specification_sha256": "6f257b7b9f6147228f228495889e6bb429509f391888e6af677500aa8a5f9385",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 13,
+      "steps": 3,
+      "statuses": {
+        "numeric_failure": 1,
+        "previous_failure": 2
+      },
+      "final_q": 2147483648,
+      "final_p": [
+        10.0,
+        2.0,
+        3.0
+      ],
+      "final_v": [
+        1.0,
+        -2.0,
+        0.5
+      ],
+      "specification_sha256": "43cd664915c76d8ca63df490261ab73796dc773f7638d92c3f246ede5a655a1b",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "1",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 14,
+      "steps": 2,
+      "statuses": {
+        "numeric_failure": 1,
+        "previous_failure": 1
+      },
+      "final_q": 0,
+      "final_p": [
+        10.0,
+        2.0,
+        3.0
+      ],
+      "final_v": [
+        1.0,
+        -2.0,
+        0.5
+      ],
+      "specification_sha256": "5f0bb55d2d1ebb7302cd80b00e531592310a36189a3811bb6fd2530db48144f3",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 15,
+      "steps": 2,
+      "statuses": {
+        "numeric_failure": 1,
+        "previous_failure": 1
+      },
+      "final_q": 0,
+      "final_p": [
+        1e+308,
+        1e+308,
+        0.0
+      ],
+      "final_v": [
+        1.0,
+        -2.0,
+        0.5
+      ],
+      "specification_sha256": "b819c433c8da4e4dbcff0987a30b64b8fe8bb16252c38398c6c3579f6290ba7b",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 16,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 7,
+      "final_p": [
+        10.430810472261543,
+        1.2702699879406876,
+        0.1053125390260623
+      ],
+      "final_v": [
+        0.44869564807048273,
+        0.31106102410990744,
+        0.10839641562705749
+      ],
+      "specification_sha256": "77d88a7895374f1e1ce48a055b633bb333d18b4bb7af8e301aa12bb3d964ab17",
+      "equations": {
+        "d": "~valid",
+        "x": "d",
+        "j": "y",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 17,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 7,
+      "final_p": [
+        10.430810472261543,
+        1.2702699879406876,
+        0.1053125390260623
+      ],
+      "final_v": [
+        0.44869564807048273,
+        0.31106102410990744,
+        0.10839641562705749
+      ],
+      "specification_sha256": "1e7efe1274ddc4adf5c59bf060940cc9e63bad4501d3d97cd84e7f3cc93b32ea",
+      "equations": {
+        "d": "~valid",
+        "x": "d",
+        "j": "~valid",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 18,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 0,
+      "final_p": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "final_v": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "specification_sha256": "e0040b3ec628857e591c8a48d1089f2474608fbc889f245729af1aa8f6d91bcb",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 19,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 0,
+      "final_p": [
+        10.303025188821305,
+        1.3919102138515436,
+        3.1522784447620618
+      ],
+      "final_v": [
+        1.0151512594410652,
+        -2.040539319076564,
+        0.5114208833571545
+      ],
+      "specification_sha256": "520fde921361fcb0c9de6be7606b6e2566099446c63cfcdf1f03b6ae0e0e9987",
+      "equations": {
+        "d": "0",
+        "x": "0",
+        "j": "0",
+        "k": "0"
+      }
+    },
+    {
+      "trajectory_id": 1000,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 0,
+      "final_p": [
+        10.122649273094666,
+        1.0596656701691176,
+        0.023648290185382868
+      ],
+      "final_v": [
+        0.4905970923786621,
+        0.2386626806764704,
+        0.09459316074153147
+      ],
+      "specification_sha256": "a7b86b22b2cf8d3cc900d8c3dfa998a511d38a8a3476e083ab37b39d5893850a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1001,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.77074877016103,
+        1.2998444923785082,
+        0.10522115367341817
+      ],
+      "final_v": [
+        1.849288556301159,
+        0.8028374303999025,
+        0.20635629916101222
+      ],
+      "specification_sha256": "946caf88d996c59e93f89068a4ffa6f68350213e9f617b842605eebb790d45b2",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1002,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.468721197569437,
+        1.639122671690069,
+        0.12006701073946899
+      ],
+      "final_v": [
+        2.432405608701871,
+        1.0849502372415258,
+        0.18909144863806548
+      ],
+      "specification_sha256": "7891109e72217e8149bb337de047e160576e55dafb88a2e0f2d4012ea69aae4f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1003,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.939509974926503,
+        1.7377318788788219,
+        0.1901135665631229
+      ],
+      "final_v": [
+        2.490977474885258,
+        1.114358267169207,
+        0.2687927085044159
+      ],
+      "specification_sha256": "8e0357ba64f54e9630f9cd2774b383492b5150e4ec461e51959a62702d572c7a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1004,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.366245936756208,
+        2.3351371200282687,
+        0.307137229520266
+      ],
+      "final_v": [
+        2.243941981746352,
+        1.3049606778655667,
+        0.2901684358704858
+      ],
+      "specification_sha256": "6abd58c72f2c4d42b71177eba13ed86ade82d50fd6d094210b2e0571d34ddb55",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1005,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 0,
+      "final_p": [
+        12.65753900911817,
+        2.4366291188239853,
+        0.3982057899185821
+      ],
+      "final_v": [
+        2.346275413968369,
+        1.1941113548148499,
+        0.302480097197803
+      ],
+      "specification_sha256": "779dd279f408775345742e9689c532adeb556c6ecd9f5e16923357f86f88a0cc",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1006,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.429911997090285,
+        2.8565117011020917,
+        0.3617000531937282
+      ],
+      "final_v": [
+        2.0983562277972685,
+        1.1963428539317091,
+        0.23849885387978353
+      ],
+      "specification_sha256": "ad8cf9c69fc37e12136309e4581a84be1659eb3960bfb8974c682474ff44637f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1007,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        13.868550815327646,
+        2.8562965570504435,
+        0.4492230197844035
+      ],
+      "final_v": [
+        2.1166921126710205,
+        1.0630608674211934,
+        0.25424182242755305
+      ],
+      "specification_sha256": "8c4ea39cc4b01b1513544f76c0aa3dfaac3a0baffcc3260bcc93adddc0639e4b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1008,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.620375125821509,
+        3.2865057481213524,
+        0.566937291943471
+      ],
+      "final_v": [
+        1.4741516253913767,
+        0.8486224783905599,
+        0.24719845020545175
+      ],
+      "specification_sha256": "806423d01f3724b3f026bdd0bb07007412e7d4e85f9d04ed1507edb358acaae7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1009,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.577292675118127,
+        3.128379704795742,
+        0.6483951064940027
+      ],
+      "final_v": [
+        0.31931647721418405,
+        0.3877476794847582,
+        0.18126845623251805
+      ],
+      "specification_sha256": "04b9df4158163fb43b7eb8b336fa713cfe207a336741fbd95de65ac5ff276108",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1010,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.243471628454529,
+        3.386417656297352,
+        0.541932086206577
+      ],
+      "final_v": [
+        -0.26039146359227655,
+        0.3801019337784645,
+        0.12661793342387104
+      ],
+      "specification_sha256": "3e8705d0cfaab54c2aa74a00083e6fb5de01bd7ee9c55b2b19d4cb1709ac506b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1011,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.308864001921386,
+        3.127814197621731,
+        0.6109762076462278
+      ],
+      "final_v": [
+        -1.2378759605711465,
+        -0.21481956200729152,
+        0.030824314833274483
+      ],
+      "specification_sha256": "b6550a0b839d914cc02de5f670560c684e85e9c9f154770ccaaad7027b66cc0b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1012,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.686288745480574,
+        3.4336148067491017,
+        0.5591947149346662
+      ],
+      "final_v": [
+        -1.3373149500771024,
+        -0.3124231667547179,
+        -0.06846167708873464
+      ],
+      "specification_sha256": "0c5929cb59bd9d2d1b57d12bb5d1612cb96868b9f5dff1e03422a719089ec98f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1013,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.331167710270437,
+        3.091638969808685,
+        0.6696732946498557
+      ],
+      "final_v": [
+        -2.125214919287159,
+        -0.6906986824366353,
+        -0.13248260544026416
+      ],
+      "specification_sha256": "db89c8ca2b8af5f8b39940359c45ea699fa2022967d17580efe114f0daaf09e0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1014,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.304779079577225,
+        2.974259255309978,
+        0.39771738735017764
+      ],
+      "final_v": [
+        -2.0277643478617775,
+        -0.8469402290723698,
+        -0.17844594837202019
+      ],
+      "specification_sha256": "09e1c11f9b605f9925a64a2ce7fb233fc7f413728aa3710a8a820a2ac884a379",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1015,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.363322229883329,
+        2.8038002617384534,
+        0.4559110427313889
+      ],
+      "final_v": [
+        -2.427053797328972,
+        -0.9669650188872773,
+        -0.2623616404707018
+      ],
+      "specification_sha256": "6ec2614589a00cd4c11ca3f914a9af866b9c7372bcd25fa653a50774921557d3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1016,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.255666810893924,
+        2.5994867761473937,
+        0.4239401500206208
+      ],
+      "final_v": [
+        -2.1298910533393243,
+        -0.9258455509608405,
+        -0.28067302279150114
+      ],
+      "specification_sha256": "547193a4b8a9c0f9f06e3cc7d6b26418b30056642496ea31d4b2b905df7bbad0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1017,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 3,
+      "final_p": [
+        11.431380837603935,
+        2.0492418399994214,
+        0.46818646585242923
+      ],
+      "final_v": [
+        -2.2232489011973984,
+        -1.1079687601259147,
+        -0.30646047801511694
+      ],
+      "specification_sha256": "3b0cf939689b4465fb7e3d999311747c1690478eafc6fc6b73f7eba22ad37465",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1018,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.332914833424974,
+        2.124420069449392,
+        0.17497118866377964
+      ],
+      "final_v": [
+        -1.9530993137397488,
+        -0.9655682740422109,
+        -0.3381721876208903
+      ],
+      "specification_sha256": "dac40e793ec9d5152aed4d29a85ec776e1a2927c3affc4438045018a2c4a8e4f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1019,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 3,
+      "final_p": [
+        11.11606898061495,
+        0.2844222971498391,
+        -0.4656560633497181
+      ],
+      "final_v": [
+        -1.0222456719706494,
+        -1.319105560444455,
+        -0.38815500954416615
+      ],
+      "specification_sha256": "a6d35a7ba35f6c09fd8ec239304295b7fde195ccace9807fdd323ec376d07d82",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1020,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.72091623392946,
+        1.1180402533940037,
+        0.011960306491626951
+      ],
+      "final_v": [
+        -1.7056896777726178,
+        -1.0155462647639202,
+        -0.337640910333539
+      ],
+      "specification_sha256": "7ed3bea11fe4f2fbb6c5532f695e3d29ca095104bb640dd164a8041d5085122f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1021,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.77430751198131,
+        1.2635026646115994,
+        0.03374246747736365
+      ],
+      "final_v": [
+        -0.9099719965986244,
+        -0.9342530171185499,
+        -0.37681316771306295
+      ],
+      "specification_sha256": "6cdf7dec3bbb80948d3c2a07fc1fb984f87314ae1c158a31d14029dbffec51db",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1022,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 0,
+      "final_p": [
+        9.878987451958874,
+        0.9701453691882278,
+        -0.31878347183317374
+      ],
+      "final_v": [
+        0.1482399753802966,
+        -0.8389857736437198,
+        -0.36403594851885657
+      ],
+      "specification_sha256": "0d4d8e137b10fc06e452432083f6b5b160fc86a37e3c91c424d13d19cac1cbc9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1023,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 2,
+      "final_p": [
+        8.986848910621049,
+        0.6640714831530444,
+        -0.19524097805022889
+      ],
+      "final_v": [
+        -0.2740092868516419,
+        -0.4522231726991611,
+        -0.26277053063078637
+      ],
+      "specification_sha256": "fd1a7ed06ca539d1c82460898c98176da6cb6653af8633a4bb7fe83416559b98",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1024,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.445274661533736,
+        1.2000201344185941,
+        0.05186364139976281
+      ],
+      "final_v": [
+        1.7810986461349398,
+        0.8000805376743768,
+        0.20745456559905123
+      ],
+      "specification_sha256": "6d171472d0290e5b907d0ee2a94032b48b922f55accf84fde5f0d385687cb33f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1025,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.761521376433928,
+        1.2965399035562606,
+        0.1042323289311251
+      ],
+      "final_v": [
+        1.8264470851596728,
+        0.7931956719038967,
+        0.20448470583335698
+      ],
+      "specification_sha256": "2e38231e4d6a4409010b810d07a0a6b4ff01e3c2997cd9a54aa0df98a47eccac",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1026,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.451655356018103,
+        1.6317776016123966,
+        0.11937328783173107
+      ],
+      "final_v": [
+        2.4081111925079597,
+        1.0731788006531822,
+        0.18774524848082244
+      ],
+      "specification_sha256": "e707103035f6291504d632e4d54a3dc6d4374221cb3034f5c80f3f0e95b15f59",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1027,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.919759943042035,
+        1.7302261652425313,
+        0.18873089348206967
+      ],
+      "final_v": [
+        2.4698786834496778,
+        1.1036153126560835,
+        0.2664367892936321
+      ],
+      "specification_sha256": "341f19dc3fc4fc6023bc5b676094a9f6011c4d3be04ec63e4e1131a84940fac9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1028,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.343534980655212,
+        2.321270132750424,
+        0.3048027060386326
+      ],
+      "final_v": [
+        2.2289789030440432,
+        1.2962461815467294,
+        0.2885846789734845
+      ],
+      "specification_sha256": "3e6a37db3ac4d1200367b536562cc76349d7d14c228936456ec99e2c94d2b799",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1029,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 1,
+      "final_p": [
+        12.645141601914759,
+        2.4312795054444845,
+        0.39490195715288506
+      ],
+      "final_v": [
+        2.380955069816065,
+        1.2215080116471455,
+        0.3005032137492813
+      ],
+      "specification_sha256": "8f25043c796e53163d7d862bb3fc8002a8bdddc7e2f4426baf568ca06977c483",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1030,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.401641677577944,
+        2.8405614531631267,
+        0.35999832692740663
+      ],
+      "final_v": [
+        2.0886575587632237,
+        1.1906786312046465,
+        0.2380441670151358
+      ],
+      "specification_sha256": "9ff98b6b3d2dcd338e1912f36f598918503e896301527191cc15767fe1e4a6fa",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1031,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        13.839729438345763,
+        2.839694526168572,
+        0.44657761948472025
+      ],
+      "final_v": [
+        2.1080555176119575,
+        1.0563468767772544,
+        0.25330754901616004
+      ],
+      "specification_sha256": "754079ae810b139626656d9dca607d4256e182fa7313df21a998b82d8b8a2bc7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1032,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.59193089608236,
+        3.274908332804717,
+        0.5635475316561711
+      ],
+      "final_v": [
+        1.4917761418629383,
+        0.8548802250744701,
+        0.24643810211596348
+      ],
+      "specification_sha256": "507d05b58596228c1e3e2cf56ac7d21179185e77857afba86455d1c56e2cfa51",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1033,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.216755620332107,
+        3.197847821614894,
+        0.667480981649803
+      ],
+      "final_v": [
+        -0.2587937285968619,
+        0.3824304913981018,
+        0.17379294456306618
+      ],
+      "specification_sha256": "91b9dd041eb53686da2522cad99d5b3c997e7e60f37c5cefcfc9b68fff7d2a10",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1034,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.172653986228598,
+        3.4067937223327425,
+        0.54642522600216
+      ],
+      "final_v": [
+        -0.5074939176168285,
+        0.31109300991599986,
+        0.11668727528908929
+      ],
+      "specification_sha256": "6769cc7931ae3e34f1ea5ed04fca6e33c8e3cb3005866d4ce89f86f47f4ecb7a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1035,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.321280354848655,
+        3.1316054497644976,
+        0.6095352380165638
+      ],
+      "final_v": [
+        -1.1610332253261344,
+        -0.18869542945780546,
+        0.03465742069117752
+      ],
+      "specification_sha256": "d167ea55cb6ca6b9846e3f24abf361686f2f17c1c87f914ef974f43fa62eebc0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1036,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.715691098191812,
+        3.4450239911405034,
+        0.5621039824446283
+      ],
+      "final_v": [
+        -1.2779008193211745,
+        -0.2836981814167938,
+        -0.06212358854564451
+      ],
+      "specification_sha256": "c304e68d9b556c8e9f375204ee27ccff811a09de77e22d6aebd87cfda9bf8185",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1037,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.371246733375045,
+        3.102255137066741,
+        0.6701782475517793
+      ],
+      "final_v": [
+        -2.0772531343073593,
+        -0.6646543618243705,
+        -0.12573425095475668
+      ],
+      "specification_sha256": "188eee409c1c0ba78da6eed8d5e9ed7632eb57edac60ca237a31d668c89f5c76",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1038,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 6,
+      "final_p": [
+        12.576436725709192,
+        2.8806386410467453,
+        0.9479165843716474
+      ],
+      "final_v": [
+        -1.8963029137477612,
+        -0.4195991397260226,
+        -0.3706041399402521
+      ],
+      "specification_sha256": "213d11b7538133a95da1f07552bc06fe23a68bb72722eb0c924d5034956d7ac1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1039,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.42348312299481,
+        2.818618655122204,
+        0.46231844608298855
+      ],
+      "final_v": [
+        -2.384623906552684,
+        -0.9471016551739939,
+        -0.2544115505216582
+      ],
+      "specification_sha256": "b6e7bb22669f186e257b6eb14d37cae53ac00150695c9f14379ac9c9d11b7d8d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1040,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.31561031551079,
+        2.621185062272305,
+        0.43040081140211034
+      ],
+      "final_v": [
+        -2.123500778179656,
+        -0.9136261594541255,
+        -0.27379799874447314
+      ],
+      "specification_sha256": "13b1383b54142928d93927d827f723c3db940c9a7cfaa3d26527b1e0faf442ee",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1041,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 3,
+      "final_p": [
+        11.524757520725817,
+        2.076517760967098,
+        0.47316044769921906
+      ],
+      "final_v": [
+        -2.184772483182599,
+        -1.1082484054302095,
+        -0.301275433007961
+      ],
+      "specification_sha256": "0cfb5ce1481b9b369caf250727e179bc577b951abda5df82fc034d18065c40a3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1042,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.395165784084725,
+        2.149111498758927,
+        0.18482769485418604
+      ],
+      "final_v": [
+        -1.95249312549888,
+        -0.9567450915651179,
+        -0.33269057063597396
+      ],
+      "specification_sha256": "39a2dab609235358539398c490cf7f0d24571caf04bbf5ceb7b40e86b42fd793",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1043,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 2,
+      "final_p": [
+        10.253119165204453,
+        1.8488323476179898,
+        0.2347616338272058
+      ],
+      "final_v": [
+        -1.773923984514559,
+        -0.9458001348048747,
+        -0.34029914859828436
+      ],
+      "specification_sha256": "d8cef3a04f5e92ee8681bf327c2e4907bde1986715c4765eed3e7414596e3f30",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1044,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 1,
+      "final_p": [
+        9.663898162026952,
+        1.099338269600912,
+        -0.08515407151940335
+      ],
+      "final_v": [
+        -1.6439909211458732,
+        -0.9714991305757416,
+        -0.3674504683680093
+      ],
+      "specification_sha256": "f18d80212214c22ffd4a051f2e24e1e5dd42c23bf13ae0ce757d25009da1efbd",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1045,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.73262464631364,
+        1.0669558728979158,
+        0.04833630168653828
+      ],
+      "final_v": [
+        -0.5635528994097706,
+        -0.8418075130683772,
+        -0.36589556765448067
+      ],
+      "specification_sha256": "c0bb6231fc0007d277611db05f6dca801561f6a12af2a925463594a1557402fd",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1046,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 0,
+      "final_p": [
+        9.885729745908579,
+        1.0046507948727041,
+        -0.308284074633654
+      ],
+      "final_v": [
+        0.059881385145674926,
+        -0.8483044570337743,
+        -0.36319662323472873
+      ],
+      "specification_sha256": "05bc944ad4aee5b69f1d07a70d150639ec14cae71f4642bfb2ec73f47aa91c7f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1047,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 2,
+      "final_p": [
+        8.95150445516624,
+        0.6723464055939592,
+        -0.20471390302960896
+      ],
+      "final_v": [
+        -0.3713582343085031,
+        -0.492975793593127,
+        -0.2677854078602617
+      ],
+      "specification_sha256": "98b935acb05a5ac2fc14802db40b0a88086da474519240f489a066e82d65d25b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1048,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.439801970064513,
+        1.1975073805483014,
+        0.05140381495473392
+      ],
+      "final_v": [
+        1.7592078802580502,
+        0.790029522193206,
+        0.2056152598189357
+      ],
+      "specification_sha256": "95578c600ea252fddb32b2abf83238c3cd1b555416fe87fd3062d9d615e37a5f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1049,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.752586277952856,
+        1.2933427805299706,
+        0.10327826454506386
+      ],
+      "final_v": [
+        1.8043079150989978,
+        0.7838558830354616,
+        0.20267768878112302
+      ],
+      "specification_sha256": "3fdcb257d5a9fb9fd838c885429b8e2536941cdac6211a805b2d9262f247c331",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1050,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.435072387686441,
+        1.6246474306077223,
+        0.11870034341825236
+      ],
+      "final_v": [
+        2.384307721541082,
+        1.0616982495532323,
+        0.18643843110774203
+      ],
+      "specification_sha256": "6e12026f3eaf1e324e3fd90643d8a82184b1f5afb3a4e14eac151d7b0c5ec25f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1051,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.900479312148846,
+        1.7229239014397701,
+        0.18739008562141823
+      ],
+      "final_v": [
+        2.449068948885948,
+        1.093096468737031,
+        0.2641445636205075
+      ],
+      "specification_sha256": "b5d6fa2b47d7c316c28f68db597738d45e504bf12a37d41fa0518c9ff21371a7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1052,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.32132006635969,
+        2.3077343813835776,
+        0.30252348562967896
+      ],
+      "final_v": [
+        2.214064319951062,
+        1.2875479859014245,
+        0.28700745230538693
+      ],
+      "specification_sha256": "cb49210579837e0097ef3bda425cd3a60907e4eff241b0a2e9d87816f0a5b751",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1053,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 1,
+      "final_p": [
+        12.620082427219652,
+        2.4177410155468984,
+        0.39168185704275393
+      ],
+      "final_v": [
+        2.362842459480057,
+        1.214868922027722,
+        0.29855397415520096
+      ],
+      "specification_sha256": "10b956b5c20c0aa3da56e115cf72caec7140f9d9abae6607affb605509a02df2",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1054,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.373822242250153,
+        2.824885837283221,
+        0.3583141809170029
+      ],
+      "final_v": [
+        2.078795632754205,
+        1.1849199558491235,
+        0.23755780858376002
+      ],
+      "specification_sha256": "bebedee3df884b607d0922b5a129023ae9140810753a83336bfc09b0b0345c52",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1055,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 1,
+      "final_p": [
+        13.906556098009668,
+        2.8731983632337,
+        0.4588491721586754
+      ],
+      "final_v": [
+        1.8823066610309478,
+        0.9107125527323259,
+        0.25739930111621123
+      ],
+      "specification_sha256": "a40dd5c14c2eee6fb6d0d33d9001efd1ab5e2eea2a66488d63ab7f13709c4213",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1056,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.721572368954632,
+        3.2987229727319827,
+        0.5579386031440985
+      ],
+      "final_v": [
+        1.4029681229220727,
+        0.7674655440294132,
+        0.20767487496305928
+      ],
+      "specification_sha256": "ce2799105cf137e26fac292aff1a3f36d5670de8039b807c0cf96dead408b8d2",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1057,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 1,
+      "final_p": [
+        14.45395375473012,
+        3.7217198594575214,
+        0.1816503653106816
+      ],
+      "final_v": [
+        0.816386817457746,
+        0.4679763546380187,
+        0.04809199206755255
+      ],
+      "specification_sha256": "ce6286eebfa07f44b03065a75faef5df90f4cddff61d1c4242fa47528fddcb22",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1058,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.191018094112955,
+        3.4028461358912288,
+        0.5455121755956069
+      ],
+      "final_v": [
+        -0.4496281912472293,
+        0.3275717784308994,
+        0.11909823434282346
+      ],
+      "specification_sha256": "d0679a6ddc1d87ca9e0dc32eeff78e661dcff0b787e50b24da8d162a248cc96b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1059,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.332043557556922,
+        3.134703221668518,
+        0.6080684413750856
+      ],
+      "final_v": [
+        -1.0867215308435587,
+        -0.1634214876843863,
+        0.03835770642984556
+      ],
+      "specification_sha256": "a104bb0ed89ec9c570c59f9dcfc04fb7c788adc07df07d6f3c14e792cf770f48",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1060,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.743469454143415,
+        3.455448741143544,
+        0.5648088945504004
+      ],
+      "final_v": [
+        -1.219648359494821,
+        -0.2558308659316546,
+        -0.05598927640385587
+      ],
+      "specification_sha256": "a5603a3de64772a36b8d846294601f99400a29248f064f06ee7fe30f7118cf17",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1061,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.409724890104817,
+        3.112126258751776,
+        0.6705543339217277
+      ],
+      "final_v": [
+        -2.0289888939315928,
+        -0.6391051197827802,
+        -0.1191992149459887
+      ],
+      "specification_sha256": "51e4f6b434d3447e02fd3f155ae41613cee2d7c3b8cc5f5979c6dab8f4f2f9ee",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1062,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.542098336335647,
+        2.8936496630612383,
+        0.4155667226224344
+      ],
+      "final_v": [
+        -2.0974212163014854,
+        -0.8542235085146026,
+        -0.1554722812743685
+      ],
+      "specification_sha256": "4cf049af80d2fc32f52974d4c29516cc04db7a9ea876de4230b971ff689236bd",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1063,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.482077822749849,
+        2.8327728355231954,
+        0.46841218549422686
+      ],
+      "final_v": [
+        -2.341494448365936,
+        -0.927255078538648,
+        -0.2466643272008381
+      ],
+      "specification_sha256": "487cf8f2ea36058e358e72684fb9921b5b0db016420502073f7960f517608d96",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1064,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.375761841305813,
+        2.642353707232043,
+        0.43660980072466626
+      ],
+      "final_v": [
+        -2.1148247262844855,
+        -0.9011122649417941,
+        -0.2670625318550032
+      ],
+      "specification_sha256": "540e51d840944838d3e2dee1a1074dc5ac1b490d568b5ab5bc935e9dc81ae515",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1065,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 3,
+      "final_p": [
+        11.69439369216455,
+        1.851695547479922,
+        0.5053195393765256
+      ],
+      "final_v": [
+        -2.703711564489045,
+        -1.1964430232585215,
+        -0.2634391201994585
+      ],
+      "specification_sha256": "3a39ea3b60d8f727a39ba29c1571d412d6c130d0e4f368f93d8a2262c1545aa3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1066,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.421468144418652,
+        2.0066910869337966,
+        0.13960218044980052
+      ],
+      "final_v": [
+        -1.785259872883472,
+        -1.0181044763329634,
+        -0.35567325048694254
+      ],
+      "specification_sha256": "19c75d40c9127390687ffc93f157db6e1fd3488ce3031dd2ac4b1ed0d0f6baa9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1067,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 6,
+      "final_p": [
+        10.13795104056816,
+        1.748189129928761,
+        0.18955093847097948
+      ],
+      "final_v": [
+        -1.075943210935288,
+        -0.9654192678790473,
+        -0.3618438286514885
+      ],
+      "specification_sha256": "7499e8e0e8b4c4aae6f5d78e011b96256404985ba382b22bf22a20f15def41a1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1068,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.608273633885283,
+        1.1422070028502835,
+        -0.07581334367952525
+      ],
+      "final_v": [
+        -1.460319347608789,
+        -0.9817045187730289,
+        -0.368669422414091
+      ],
+      "specification_sha256": "8335c79ba6890c14312de4e5ced29d49a501be8352a25adb034ed42d8872903e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1069,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.78454312887504,
+        1.1043475519993142,
+        0.059779635769811254
+      ],
+      "final_v": [
+        -0.6290687959599164,
+        -0.8494556916820669,
+        -0.36287949839415584
+      ],
+      "specification_sha256": "653b12e6895ea94e42c888f0b1bd6112ec9b1630b8f7bbda3ed1dca6aa8bf94a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1070,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 0,
+      "final_p": [
+        9.896538962564286,
+        1.0399332992941794,
+        -0.29775860941604737
+      ],
+      "final_v": [
+        -0.025804370303362873,
+        -0.8564749250271655,
+        -0.36216503220240426
+      ],
+      "specification_sha256": "5ca402a725217f941beca2c8bb464b30815ca66d47f2abeaa798e46887f44fd9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1071,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 2,
+      "final_p": [
+        8.985384093707204,
+        0.6797919657708038,
+        -0.1946123426988755
+      ],
+      "final_v": [
+        -0.47372102705736363,
+        -0.5330190095602075,
+        -0.26903333626510056
+      ],
+      "specification_sha256": "ac58ed761868a4d7d99b023aba2dca0769a74884fdb1306c3f22ea7dd813dc6a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1072,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.434499883955388,
+        1.1950776773105414,
+        0.05095948715671972
+      ],
+      "final_v": [
+        1.737999535821553,
+        0.7803107092421651,
+        0.20383794862687887
+      ],
+      "specification_sha256": "750ecd88c0dcca93584325e0ae00e2a918dc210bdda7de83d03ad6a11934fe61",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1073,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.743929872019176,
+        1.2902479668168296,
+        0.10235716088366612
+      ],
+      "final_v": [
+        1.7828394967048624,
+        0.7748041795910036,
+        0.20093197104349358
+      ],
+      "specification_sha256": "f936efed1465cf26569cdec95d738a0dd2ce32e4487b0bcf227ca912e870753c",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1074,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.418952523032507,
+        1.6177229906007464,
+        0.1180472714293063
+      ],
+      "final_v": [
+        2.3609858408215625,
+        1.0504989893033339,
+        0.1851693313644707
+      ],
+      "specification_sha256": "23de7d4bfa66feff0ce94cbe0e8287f934a59554b6855cf8348f0ceebfeaf6a4",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1075,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.881653265369476,
+        1.7158170741238252,
+        0.18608926640680024
+      ],
+      "final_v": [
+        2.428551540130955,
+        1.0827962187084688,
+        0.26191354538994194
+      ],
+      "specification_sha256": "02b538cdf3546ef45db8bbaacf33b5734905ff8abb83eb6c8bb0e32e0d12b8df",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1076,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 4,
+      "final_p": [
+        12.403590125364117,
+        1.3563553361941953,
+        0.108585878048762
+      ],
+      "final_v": [
+        2.2185655960380344,
+        0.32516133018025817,
+        0.07919269144863433
+      ],
+      "specification_sha256": "c94cdd6e8526dd095114e5a2260e1b0c5e0a156fad376cf3990cfdf7bf59b098",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1077,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 0,
+      "final_p": [
+        12.72831222163284,
+        2.475193130176462,
+        0.4068424007574821
+      ],
+      "final_v": [
+        2.408778288185511,
+        1.2204463590559003,
+        0.3075015216940136
+      ],
+      "specification_sha256": "637bbad0701c8d3fb910694d6eabcfd15e2f37d4f5e139d394ce38d16535f7fc",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1078,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.502617197279132,
+        2.8860230594507135,
+        0.35727612157310024
+      ],
+      "final_v": [
+        2.121839352826426,
+        1.1872120491145568,
+        0.22221827169957262
+      ],
+      "specification_sha256": "44aa4afcc165f0affbbe17939adc319eca81138207f88167b24c45ade9eab8de",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1079,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 1,
+      "final_p": [
+        13.879587868090088,
+        2.857415951840775,
+        0.4560427047202661
+      ],
+      "final_v": [
+        1.886918673650624,
+        0.9122383169290403,
+        0.2565296312698758
+      ],
+      "specification_sha256": "9325b6e4c01378d0d9eea150a48b4ddf6f4ba91d996435a6397a3c5f9561d5f7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1080,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.69288615174622,
+        3.288644450824362,
+        0.555225529237372
+      ],
+      "final_v": [
+        1.4258472493608365,
+        0.7781270548943205,
+        0.2086765268671466
+      ],
+      "specification_sha256": "588247fb874ea16772b06836f59d39d82acf05a71e14f65da473859a3ce32064",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1081,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.211793870860737,
+        3.176653389422863,
+        0.6586817788175123
+      ],
+      "final_v": [
+        -0.14514123258022485,
+        0.41044871471079813,
+        0.17684602025163854
+      ],
+      "specification_sha256": "08c9313c56d7ed9f4f8b209cb0c0071163d9d53182b15d141ed6f23db2938914",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1082,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.207816889342899,
+        3.3985454360577756,
+        0.5445460415004862
+      ],
+      "final_v": [
+        -0.39347518194576353,
+        0.3433767227602083,
+        0.12138727434754332
+      ],
+      "specification_sha256": "b126b416d03fcc5e95e4a6f0a2c7643cb2101ace86237eafb34494f22396988f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1083,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.341259704869884,
+        3.1371528847875303,
+        0.6065786643752664
+      ],
+      "final_v": [
+        -1.014874562625769,
+        -0.1389790489375843,
+        0.04192925685307664
+      ],
+      "specification_sha256": "26c7816133b20a2469eef915bb5d4efa6c44e8556ccfddb6dd5322f52f7e3308",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1084,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.769684579061455,
+        3.4649406705525108,
+        0.5673205939532691
+      ],
+      "final_v": [
+        -1.162582691935981,
+        -0.22880519962134543,
+        -0.05005274074147579
+      ],
+      "specification_sha256": "55d24d7b05d16876b55a8303076d01b4d9c6e8a1fbc69ccfe69f091931e906a4",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1085,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.564214750422492,
+        3.2767815225414094,
+        0.6561359352916017
+      ],
+      "final_v": [
+        -2.1141165255960153,
+        -0.6099276871147498,
+        -0.1336065564686742
+      ],
+      "specification_sha256": "d80a068de9b9c9450c6cc5a6d5761c9a8fe99f9d8d0feb27fb6d166586134dd8",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1086,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.57798892413052,
+        2.95047654510238,
+        0.45248411673224975
+      ],
+      "final_v": [
+        -2.0372067612007454,
+        -0.8284696339848,
+        -0.14515666451214765
+      ],
+      "specification_sha256": "18b440ff623add0fed4b8882d6fdb95dafd3e3dcd2d1d840e84df55e4b65adc0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1087,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.53910341098208,
+        2.8462839040471644,
+        0.47420827602173304
+      ],
+      "final_v": [
+        -2.2978093477810355,
+        -0.9074572274407459,
+        -0.23911539746735916
+      ],
+      "specification_sha256": "b3a5bb74ee929db6f946b04068bde6cf762a7fdba9b743d89a47aed78c56b90d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1088,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.343509191920754,
+        2.468873046709359,
+        0.3392041074282189
+      ],
+      "final_v": [
+        -1.9402815179088289,
+        -0.9682070471100496,
+        -0.3066760098737528
+      ],
+      "specification_sha256": "6fd1f7a06c977f352d6b3ab79ebc3761e28d9954664bd547804ab2a78ce3bdc1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1089,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 2,
+      "final_p": [
+        11.180131334891845,
+        1.9742546144753303,
+        0.45518260629974183
+      ],
+      "final_v": [
+        -2.3493019004501345,
+        -1.1223769725065986,
+        -0.31924357197503245
+      ],
+      "specification_sha256": "736626b2dfc12ae9c9e3fc1dc216794b30cfe449c4dd6faafece947497540626",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1090,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 4,
+      "final_p": [
+        10.339608814654506,
+        2.0614629002039724,
+        0.14906223757566317
+      ],
+      "final_v": [
+        -1.3200426189040797,
+        -0.9864186899341968,
+        -0.35206841163772207
+      ],
+      "specification_sha256": "cdaa4f0250d4312129fc10a7f58732c310fed9439eb7acbb3ea1d18e3f33e318",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1091,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 6,
+      "final_p": [
+        10.192377090775501,
+        1.77251236378819,
+        0.2000915505048293
+      ],
+      "final_v": [
+        -1.1169149409624013,
+        -0.9598544601693089,
+        -0.35716142997983225
+      ],
+      "specification_sha256": "9f70492c08de0ffe49fa003a2964855cd539b911b32b8f3a642556c25644cebe",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1092,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.527464919495982,
+        1.0331475721083285,
+        -0.01219998649330667
+      ],
+      "final_v": [
+        -1.5932909513806774,
+        -0.9585922081159005,
+        -0.337692206951378
+      ],
+      "specification_sha256": "e0cb639a6eba4051e75b940f2f7eedfb62fae4c3acaa45f2c92a8f397eb1e821",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1093,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.821856408722455,
+        1.1283631559771692,
+        0.07161876598071533
+      ],
+      "final_v": [
+        -0.6941189855645551,
+        -0.8626655324349581,
+        -0.3590788860859537
+      ],
+      "specification_sha256": "ee8315cecc709e1ee3dbbfb2f1417862eec627ba8b9a2605ec7aefc799696fb0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1094,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 4,
+      "final_p": [
+        9.73371080699505,
+        1.076189447114602,
+        -0.25898260210588847
+      ],
+      "final_v": [
+        0.19756341021318655,
+        -0.8586445328496601,
+        -0.36562147929732136
+      ],
+      "specification_sha256": "72c12dda04600f7689ec109e97b8a782cf27c075e1bbb98e20e8c58b2f972268",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1095,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 7,
+      "final_p": [
+        11.946906508034393,
+        0.7248972372572654,
+        -0.7764779661406412
+      ],
+      "final_v": [
+        0.7010812963253036,
+        -0.4063115068587683,
+        -0.2758977398726267
+      ],
+      "specification_sha256": "6ef05615577200c02f9eebbf9213e7ebc83a9deee1d175848e72bdcf6f303d28",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1096,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.429360556861168,
+        1.1927269615525433,
+        0.0505298864794011
+      ],
+      "final_v": [
+        1.7174422274446688,
+        0.7709078462101728,
+        0.2021195459176044
+      ],
+      "specification_sha256": "becab641666fd9f641579d74847892623a404bb62c9cefe3448c5f94b58a497d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1097,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.735539382301502,
+        1.2872506305387377,
+        0.10146734032155685
+      ],
+      "final_v": [
+        1.7620121174774654,
+        0.7660275099810241,
+        0.1992444930806111
+      ],
+      "specification_sha256": "25dcdc5b74739b35829a709e3162f751db133c9a0b4d95cee1fd7c80696c315b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1098,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.403277026452518,
+        1.6109956189201455,
+        0.1174132167456102
+      ],
+      "final_v": [
+        2.338135898078335,
+        1.03957175727282,
+        0.18393637387687842
+      ],
+      "specification_sha256": "7415f52fee62a929781bc74951e635a4bb0c05d8d3fcdad8a14e72fd8a257f3c",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1099,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.97004875772368,
+        1.7493905194762762,
+        0.19227047498549166
+      ],
+      "final_v": [
+        2.5231571308842975,
+        1.130905084283185,
+        0.27245177485771815
+      ],
+      "specification_sha256": "b53fc19f283610ec860bd979f76b8cb1a73f00b9a15070769cdcaaf3122506ab",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1100,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.40127179917205,
+        2.3565831105864112,
+        0.31074661567990053
+      ],
+      "final_v": [
+        2.2664379405952064,
+        1.318037646324134,
+        0.29255227411708573
+      ],
+      "specification_sha256": "d02dff968a0e22ebde0c6f2ab2aefdfb6377d8ac7f829a783badaf7b79d5c44c",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1101,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 0,
+      "final_p": [
+        12.699458473822737,
+        2.4594774821229066,
+        0.4033206280673324
+      ],
+      "final_v": [
+        2.3833518653729975,
+        1.2098022654987226,
+        0.3054778063275776
+      ],
+      "specification_sha256": "25f317170bc39d5b90c784c316a182673adf6dbed6096e0f1b71d6f06a1e19db",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1102,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.473215570392082,
+        2.868932568034638,
+        0.35520269310287605
+      ],
+      "final_v": [
+        2.1126820718256885,
+        1.180985341422968,
+        0.22120008311022574
+      ],
+      "specification_sha256": "d273213f018a54a92002e9247ac440d538e41dfa63076ce9a810e5b95d5b1e96",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1103,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        13.912454129841969,
+        2.881849047187674,
+        0.45327660593040314
+      ],
+      "final_v": [
+        2.129204389155575,
+        1.0731561579715085,
+        0.2556137966712679
+      ],
+      "specification_sha256": "32511bf3d0392446017e13aedab88d7efb062b3d52a76c49928bfabca94ba762",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1104,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.6642136125237,
+        3.2783724101410368,
+        0.5525310540117391
+      ],
+      "final_v": [
+        1.4470657772405358,
+        0.7880099876951148,
+        0.20958840590821365
+      ],
+      "specification_sha256": "56da4799893a2e2fde935885f87f523574e19d6aad1234ba8ff86e9220a723f0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1105,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.207967554554006,
+        3.1659922029535292,
+        0.6543919520411509
+      ],
+      "final_v": [
+        -0.09141836071277457,
+        0.42345322001942487,
+        0.1782074971214587
+      ],
+      "specification_sha256": "26d1816b49827452f618ef513e2be5e422057deac24444a704a336cee069040e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1106,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.22312872783122,
+        3.393917962629012,
+        0.5435321131956081
+      ],
+      "final_v": [
+        -0.33900638127302607,
+        0.35853256422978064,
+        0.12356085492150692
+      ],
+      "specification_sha256": "b344c3ac4a72fa94e734718c66c186161dc552c1e3d095889a5b3eb0eba00e7c",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1107,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.349028242489512,
+        3.1389969932937385,
+        0.6050685670115288
+      ],
+      "final_v": [
+        -0.9454242410995053,
+        -0.11534826848663698,
+        0.045376147513235356
+      ],
+      "specification_sha256": "22551b43108a54657385b0e89750d50769aae4eaa17f2b0faa94d9a53458e0c1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1108,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.794396284031277,
+        3.473548957129765,
+        0.5696496106698393
+      ],
+      "final_v": [
+        -1.1067214484986752,
+        -0.20260392454460102,
+        -0.04430799347889976
+      ],
+      "specification_sha256": "6deafa4467daf2086c090bdc9e50fbdcc8ba5babbf1d03588eef6a70b3d5b33f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1109,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.597015566820307,
+        3.2793528951585222,
+        0.6571381211810956
+      ],
+      "final_v": [
+        -2.0570236210495088,
+        -0.5841950697165662,
+        -0.1263114564229356
+      ],
+      "specification_sha256": "b5640c6db88353eca10fbcf6d1a81a9a247fb0e89ff7418e03df9cb587c6704d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1110,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.231956879793136,
+        2.9264383251504404,
+        0.39270626149413757
+      ],
+      "final_v": [
+        -2.140187192588535,
+        -0.8964638690016555,
+        -0.18600651341042482
+      ],
+      "specification_sha256": "22567066b135fb922da4085f46cfca6095463585fc8dcc5d3d2ebabd89dac7f8",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1111,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.238787236841251,
+        2.6226625716087906,
+        0.4764493499024045
+      ],
+      "final_v": [
+        -2.2963496713959346,
+        -0.9561886211778363,
+        -0.24413547733737045
+      ],
+      "specification_sha256": "90a63f2fe32877928e70488eb42e9fd5e8aefdf2a42b56cd946f4a00db88053b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1112,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.417452738106736,
+        2.49230409934305,
+        0.348641690793889
+      ],
+      "final_v": [
+        -1.926612346189115,
+        -0.9595894952379934,
+        -0.29946006107564704
+      ],
+      "specification_sha256": "dbe14f143d2c47cd17426cde847ceaa4d698b3251a829bea122e0addd50fd3e3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1113,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 3,
+      "final_p": [
+        11.287359481880664,
+        2.0077169055299366,
+        0.46044856887770164
+      ],
+      "final_v": [
+        -2.279043810991917,
+        -1.1047861302553301,
+        -0.3143023727282895
+      ],
+      "specification_sha256": "3ea08441865bb2ba1d6c6f66cf4830f95afcba8da15d2a783c84a5765d8a082a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1114,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 2,
+      "final_p": [
+        13.391183219052339,
+        2.2815528148625095,
+        0.3346261143699802
+      ],
+      "final_v": [
+        0.40548971336352513,
+        -1.0687706725978368,
+        -0.8132773279593513
+      ],
+      "specification_sha256": "e56e0e2ea2604a2e65c5a41dba301fcc50540e9c318d98f3ee90d818e55ef477",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1115,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 6,
+      "final_p": [
+        10.248683400743307,
+        1.7967810841556884,
+        0.2103106669397612
+      ],
+      "final_v": [
+        -1.1548502651237889,
+        -0.9537252150274451,
+        -0.3524927328752457
+      ],
+      "specification_sha256": "db5a89f1ca4c7480012c799cdcc172494efa66931c0baf1f46dc81e6bd94a878",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1116,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.604025772629146,
+        1.066715907438195,
+        -0.0025420366543778272
+      ],
+      "final_v": [
+        -1.641289834897795,
+        -0.9829239401349408,
+        -0.33787157814179086
+      ],
+      "specification_sha256": "196b9f66a132d21d9cd11d368953a30681124dfcfa7d2a1a5b837f1378b8ec9a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1117,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.695220083251183,
+        1.2282692609744728,
+        0.011507834020102956
+      ],
+      "final_v": [
+        -0.8209951786140371,
+        -0.9198946491321924,
+        -0.3845185287391353
+      ],
+      "specification_sha256": "7ebdbd0e2556d0b243a9a4dcdb7d5feb3f3b5a942dcd415b63bc00d70a87a288",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1118,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 4,
+      "final_p": [
+        9.749175747409192,
+        1.0998746497487024,
+        -0.2464383864692231
+      ],
+      "final_v": [
+        0.11397276179930282,
+        -0.8723617012696098,
+        -0.3637077351427077
+      ],
+      "specification_sha256": "1c538391aab233312cd6227ad79598746441ee518f0ae6e447e6b6462190736a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1119,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 3,
+      "final_p": [
+        9.03002944572029,
+        0.6557511017193183,
+        -0.1735624894898657
+      ],
+      "final_v": [
+        -0.41464458912947594,
+        -0.47274020978462616,
+        -0.26848135943624685
+      ],
+      "specification_sha256": "2497957c69be97856d994076593e7e3b9b649b95240be0c2b2126a7e190272af",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1120,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.424376615730559,
+        1.1904514317118629,
+        0.05011429182065218
+      ],
+      "final_v": [
+        1.697506462922235,
+        0.7618057268474511,
+        0.20045716728260873
+      ],
+      "specification_sha256": "8310bef80653d647705d5064466c4b1b97504b6d5b4163bc6124d8ee3fa68d37",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1121,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.775476570988607,
+        1.3015387933862552,
+        0.105729199675278
+      ],
+      "final_v": [
+        1.8609830507466982,
+        0.8077761310540197,
+        0.20731740020697834
+      ],
+      "specification_sha256": "519b8130a965bb740d9565d64ab0c5ec0bb783125d4c253f7eaf9dcfa72c1407",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1122,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.477441673320705,
+        1.6428788059970272,
+        0.12042196212038757
+      ],
+      "final_v": [
+        2.444739737149482,
+        1.0909481274749255,
+        0.18977986367420735
+      ],
+      "specification_sha256": "222e97b2d3d04ac70d3e04f73f053b4feaa0c8e88a11a0d1cc1c8ae152b41c61",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1123,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.949565779438798,
+        1.7415636511757957,
+        0.19082122141464763
+      ],
+      "final_v": [
+        2.501633882744638,
+        1.1198155231951676,
+        0.26999536563426657
+      ],
+      "specification_sha256": "eaa9d6bb6f78c68d5b1d38f8b741c811fec0046dade8d84077cb8df16661ad1b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1124,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.377791610416995,
+        2.3421982876433622,
+        0.3083257840052687
+      ],
+      "final_v": [
+        2.2514362369388317,
+        1.3093205335764302,
+        0.2909622055752142
+      ],
+      "specification_sha256": "1414fec0888748cc213a0276ca7a77f6eacec280ddb4198909f63fb3e61ab813",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1125,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 0,
+      "final_p": [
+        12.671334852827625,
+        2.444150690728101,
+        0.39988887904455395
+      ],
+      "final_v": [
+        2.35849493663027,
+        1.1993045485452456,
+        0.30347407541342447
+      ],
+      "specification_sha256": "bc530909d18eba8e30ba559fe3ffa9118ccb4a037208e358ede94327d4a044b9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1126,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.444266798159447,
+        2.852152942880389,
+        0.3531665300312485
+      ],
+      "final_v": [
+        2.103284573339893,
+        1.1746768876759741,
+        0.22018400284342987
+      ],
+      "specification_sha256": "1a9e3b606bd6474a959f281d12985f98231b9eabbc89aa91a864953fae2fa7bd",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1127,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        13.88309662195606,
+        2.8647264402937678,
+        0.4505627717238017
+      ],
+      "final_v": [
+        2.120925774296567,
+        1.0664237183207994,
+        0.254703414815421
+      ],
+      "specification_sha256": "133bfa9511f1e68ee167c28893cba2d1206a711e96a255258555127bb0cbf20b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1128,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.634632531744751,
+        3.2922713081356667,
+        0.5686514797799869
+      ],
+      "final_v": [
+        1.4648156315444814,
+        0.8452741479735361,
+        0.24757164525056158
+      ],
+      "specification_sha256": "9a2106e5dacaa821a63bc19c6cabf25056d76035f4d5da0f2d36f612564fd3c5",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1129,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.203330690036841,
+        3.1553066070778804,
+        0.6501744976117215
+      ],
+      "final_v": [
+        -0.0396738103819473,
+        0.43582905875633277,
+        0.1794684382625775
+      ],
+      "specification_sha256": "ea104e994fbe3f94cf07e64f67de0ff98e45b92cbceb0546f1d40208ff7fb4d9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1130,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.237028621312506,
+        3.3889884148337757,
+        0.5424752327283994
+      ],
+      "final_v": [
+        -0.2861902727984399,
+        0.37306345925826406,
+        0.12562505269845295
+      ],
+      "specification_sha256": "c7a26e92baa5779ded9fdde1d4fb8fdb29604ad2a4782f0b1fab0f15e023804c",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1131,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.9194895431984,
+        3.0737370151204324,
+        0.6054220677052712
+      ],
+      "final_v": [
+        -0.7589346783933903,
+        -0.20246491700288463,
+        0.053598658968895915
+      ],
+      "specification_sha256": "0d78dee17a5d82f022957986262537407fa765634e52448d671e45a069ef9128",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1132,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.670959383076564,
+        3.4275242403786885,
+        0.5576597901626527
+      ],
+      "final_v": [
+        -1.3674474702548542,
+        -0.32711187446625,
+        -0.0717090066566926
+      ],
+      "specification_sha256": "bc1abc9c7c51b6f23aa91f038910d5a49c39570ed657f6da85fccc16757cd756",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1133,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 0,
+      "final_p": [
+        14.172944752944474,
+        3.9432062517441686,
+        0.2102763164985776
+      ],
+      "final_v": [
+        -0.16783418223476557,
+        0.4145693588169269,
+        0.015426292044106974
+      ],
+      "specification_sha256": "8dea2c1f4240b4eee2900fe3dd1387ab36f3ba367e51696f297d64c2b23a00f5",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1134,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.281093142574274,
+        2.9587433574063415,
+        0.39606717694566645
+      ],
+      "final_v": [
+        -2.0648395646170172,
+        -0.8633123882239935,
+        -0.18095988311835626
+      ],
+      "specification_sha256": "2df33dd16bd342c565fb8c3072c7a833ba7c599a757b23fffbc4df751ba0999f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1135,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.332657201115993,
+        2.7961353402354048,
+        0.45258444920990143
+      ],
+      "final_v": [
+        -2.4479573495388083,
+        -0.9768920395531157,
+        -0.2664141595673904
+      ],
+      "specification_sha256": "235fc3f88a608703e3a5a4c68bb8209322f24bf2eb9cdaf5b426bbffe135e07d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1136,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.225819922231354,
+        2.58843857698054,
+        0.42061192189195956
+      ],
+      "final_v": [
+        -2.132170465258389,
+        -0.9318338993155834,
+        -0.284163438661816
+      ],
+      "specification_sha256": "a6852f2b7ee0979bb674b5f4990b9a0d7444f34fce3cdf680c6447c66aeb9f1e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1137,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 3,
+      "final_p": [
+        11.383895512645974,
+        2.035476764460313,
+        0.4656444567308889
+      ],
+      "final_v": [
+        -2.242125707676309,
+        -1.107291119422467,
+        -0.30906617640035905
+      ],
+      "specification_sha256": "0c527ec13f6b0364b6d45a67ea37c6d944c8a999c1b01b53a74ef616789251d4",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1138,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.302278445566127,
+        2.11198213202604,
+        0.1699365928745573
+      ],
+      "final_v": [
+        -1.9525129444504172,
+        -0.9698116237096751,
+        -0.34093029191594354
+      ],
+      "specification_sha256": "121a1d3264613834c5391711f985cccb5fa1bf21cc74228145e77f8121fa8d32",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1139,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 2,
+      "final_p": [
+        10.163294513133108,
+        1.8211494351731554,
+        0.2202177502652221
+      ],
+      "final_v": [
+        -1.763146789714737,
+        -0.9463256519694134,
+        -0.3478516051329857
+      ],
+      "specification_sha256": "7bc66ae56fdb644ae036a2da6c35ad1239d1325b00f56dbd7e733bc9f32952a1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1140,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.68172215630562,
+        1.1008199174688973,
+        0.0071267920182628425
+      ],
+      "final_v": [
+        -1.6852060685982975,
+        -1.0051738591816917,
+        -0.3377817328966342
+      ],
+      "specification_sha256": "d05bb84e53c7aa46ade9fda37e54a192533edcd3c6ddf8baace5e5521b60d449",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1141,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.74750375518385,
+        1.2516937480079062,
+        0.02643213335593285
+      ],
+      "final_v": [
+        -0.8811975266106981,
+        -0.9297235505646455,
+        -0.37938242508637343
+      ],
+      "specification_sha256": "ddaff274eaba46ec5849ad235de1b974f3931b8ff3c15121d2b2087502d06098",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1142,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 4,
+      "final_p": [
+        9.767685936010361,
+        1.1241801643090787,
+        -0.23396674070647638
+      ],
+      "final_v": [
+        0.03265579180674453,
+        -0.885004048384151,
+        -0.36164030536077346
+      ],
+      "specification_sha256": "5a2fd78e6552af8db651d92cad9f096d6c399cebbbcf8bd7721b1231574e8ef1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1143,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 2,
+      "final_p": [
+        9.214870406934137,
+        0.6237262264272438,
+        -0.10893901489248611
+      ],
+      "final_v": [
+        -0.19786933972909837,
+        -0.4053297928656364,
+        -0.2381084598462868
+      ],
+      "specification_sha256": "658e29dd22d8c6f2bc8d0b16a2e6f1fa432df2a129f98aa17f1740c5035da8dc",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1144,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.448077575083525,
+        1.2013090022099835,
+        0.05209962260003821
+      ],
+      "final_v": [
+        1.7923103003341014,
+        0.8052360088399337,
+        0.20839849040015285
+      ],
+      "specification_sha256": "419ebcc2bc0646f55d05e0a309404237247701ded9ddeb703e027e5268406d41",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1145,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.76609765214482,
+        1.2981784290438905,
+        0.10472227871470888
+      ],
+      "final_v": [
+        1.837777985725619,
+        0.7979779028771382,
+        0.20541221663813505
+      ],
+      "specification_sha256": "da2adc4babca45558a3f9cf36a5e2681984995339b3a71478bb36812a81950ea",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1146,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.460126639810476,
+        1.6354226805450636,
+        0.11971749325414294
+      ],
+      "final_v": [
+        2.4201964622094962,
+        1.0790275455316092,
+        0.18841331796724248
+      ],
+      "specification_sha256": "20da8d059220f17fac4be5891ecc1a81245cf5380cd377f3f793de0c3c85601a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1147,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.929575338824222,
+        1.7339530734100126,
+        0.18941687502431348
+      ],
+      "final_v": [
+        2.4803922016847744,
+        1.1089584292459562,
+        0.2676066268094136
+      ],
+      "specification_sha256": "81376ecf06dc3ededf59f5335a2751e963d0e68199d458a9f0b3c82b7c3a3640",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1148,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.354827620333083,
+        2.3281615360032735,
+        0.30596294491193465
+      ],
+      "final_v": [
+        2.236455439059216,
+        1.3006020712517625,
+        0.2893758488980711
+      ],
+      "specification_sha256": "cc17811a839576161390ea34ccede10a5b9eebf1547685c08ceb12d7153283b7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1149,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 0,
+      "final_p": [
+        12.643916416991146,
+        2.429200017554268,
+        0.3965440530942264
+      ],
+      "final_v": [
+        2.334192735917878,
+        1.188955588633801,
+        0.3014915590087062
+      ],
+      "specification_sha256": "8889e7745051f2189b0021572420bebdbde408240f4601424dfcad7d44f46642",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1150,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.415720344993979,
+        2.8485020401168795,
+        0.360847038503916
+      ],
+      "final_v": [
+        2.093529004334025,
+        1.1935235311964945,
+        0.2382756801068791
+      ],
+      "specification_sha256": "b024e5b41511b64a1d5dc0999ce5736dc32db18a8de3ba10bccca9e2fb2bdfb3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1151,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        13.854094834094852,
+        2.8479529253306524,
+        0.4478946525952423
+      ],
+      "final_v": [
+        2.112400791691042,
+        1.0597016087615423,
+        0.2537764254605237
+      ],
+      "specification_sha256": "83990c30fb1b4a2da9af35d04766d15d81e901b3721be21f7601989780fe9bac",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1152,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        10.471438339602548,
+        1.7606027289190784,
+        0.1771012195712161
+      ],
+      "final_v": [
+        0.07676745256724439,
+        0.38788263311550897,
+        0.06153005430056991
+      ],
+      "specification_sha256": "285497d812b3b593f5925329f6ddf59891afd7fe6be2eb8809c53f3f98283036",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1153,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.568806264280207,
+        3.1235466818693363,
+        0.6463212575595297
+      ],
+      "final_v": [
+        0.34041057983595635,
+        0.39482698861578785,
+        0.18180137015320896
+      ],
+      "specification_sha256": "bd34512ccacadc08097c1e24e3b8673c97a6421d2cc14c9d27788989c320e554",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1154,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.162859530869797,
+        3.4086263941549535,
+        0.5468600586239827
+      ],
+      "final_v": [
+        -0.5370769578911889,
+        0.3025930773740492,
+        0.11543394623267542
+      ],
+      "specification_sha256": "5ee477042b1bb0ee991ac802ba24a78cc25f86d0e9f31ae43f64cc830ffefc44",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1155,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.315285724327172,
+        3.1297994591224785,
+        0.6102591366781922
+      ],
+      "final_v": [
+        -1.1991341594558815,
+        -0.20165010877447462,
+        0.032757725245561704
+      ],
+      "specification_sha256": "aa94db786a802bd0cf2aa09c9c2377f713909f5b7f793e6fd550fbfa46a77610",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1156,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.701196749838052,
+        3.439445776075129,
+        0.5606756143645654
+      ],
+      "final_v": [
+        -1.3074645682158546,
+        -0.2979525209729046,
+        -0.0652667862842392
+      ],
+      "specification_sha256": "41f4610f5e29399a8adce5d54ffdd6bf6b31b98f6f4dda6f023b4e481aa01e9b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1157,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.351409585873707,
+        3.0970423785110137,
+        0.6699424796828132
+      ],
+      "final_v": [
+        -2.1012803598539866,
+        -0.6776151472143772,
+        -0.12908129277855415
+      ],
+      "specification_sha256": "2b19a339926fc07d742f6c001c1c1aa8490c5ad144bbd76c384ba4229e5073d7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1158,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.327891536776924,
+        2.9893631299390737,
+        0.3993469797443502
+      ],
+      "final_v": [
+        -1.9910920714935612,
+        -0.8307089906696618,
+        -0.17593990685166752
+      ],
+      "specification_sha256": "d717bc0511f4f2db939b66f114a8d7d8142deabb3691570fc6787bc9947933f9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1159,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.393598014652964,
+        2.811293811727306,
+        0.459154990460915
+      ],
+      "final_v": [
+        -2.4059358656815273,
+        -0.9570333718313774,
+        -0.2583609553071917
+      ],
+      "specification_sha256": "a3eaaf9ce7c10875ca046c3a7f6d1a0797042a82ec18a2b7cf87f09e7de48585",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1160,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.285603421883398,
+        2.6104022279656665,
+        0.42720263461940466
+      ],
+      "final_v": [
+        -2.1269931866671423,
+        -0.9197748218005464,
+        -0.27721794971907926
+      ],
+      "specification_sha256": "ba47dd24d418de0a41df7d3a9c373842ae86ccb22219232f151f6ecbddcd1137",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1161,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 3,
+      "final_p": [
+        11.478336447351214,
+        2.0629236905452126,
+        0.47069167293277925
+      ],
+      "final_v": [
+        -2.204124009762272,
+        -1.1082830634207568,
+        -0.303863461529796
+      ],
+      "specification_sha256": "afec9f9e51b3185e29a4ac2fed9886f3a88b149eedd6fd5295625efc310b0578",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1162,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.363886553553884,
+        2.136797374732314,
+        0.17993451229680624
+      ],
+      "final_v": [
+        -1.9530858729769536,
+        -0.9612112259420569,
+        -0.33542549117124
+      ],
+      "specification_sha256": "3cd3601933e58ba4f433c0fb37d974c522103db18c4703ebcabed0a7b1108548",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1163,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 2,
+      "final_p": [
+        10.223137157535131,
+        1.8397835785443615,
+        0.22998314125735794
+      ],
+      "final_v": [
+        -1.7705576156849814,
+        -0.9459073787462932,
+        -0.34281815544082017
+      ],
+      "specification_sha256": "0f8618b3a970ddce1779f0dc5ecca3fde4ed5e6051a0bc89a7df1b7adca7a822",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1164,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.760301244539813,
+        1.1353564979988136,
+        0.016790744816803593
+      ],
+      "final_v": [
+        -1.7252203610595809,
+        -1.0254319843190918,
+        -0.33743879147362826
+      ],
+      "specification_sha256": "1ce7419ba3899a5b3dd300adb2bb8ec1d149b19a9cf6c656a04449d521fc100a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1165,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 5,
+      "final_p": [
+        9.946906585585374,
+        1.0416930788063499,
+        0.04247811996349163
+      ],
+      "final_v": [
+        -0.033576738793784415,
+        -0.8666092259374119,
+        -0.36741603346426654
+      ],
+      "specification_sha256": "cdddbd7bc33b3528232dd101b012bc6d9a30d06dd463df73a684a3421bbb024c",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1166,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 0,
+      "final_p": [
+        9.88188885073944,
+        0.9873509726556863,
+        -0.3135409989649385
+      ],
+      "final_v": [
+        0.10372591271490986,
+        -0.8437676007965246,
+        -0.3636437041738355
+      ],
+      "specification_sha256": "8889dacd586dff014b6f14091cb5acb611f5ffbe01429c0cd1a8a5c100f03e16",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1167,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 2,
+      "final_p": [
+        9.178174765615713,
+        0.6304528313614347,
+        -0.11844592660595314
+      ],
+      "final_v": [
+        -0.28921032365877986,
+        -0.444416817493383,
+        -0.24283034929376257
+      ],
+      "specification_sha256": "6b1a3264439ef2cf92b48edd3a35b83dded1605d8f7d3fde9cc4160ea34a81e6",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1168,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.442516480215966,
+        1.198753111376858,
+        0.051631740536695274
+      ],
+      "final_v": [
+        1.770065920863867,
+        0.7950124455074313,
+        0.2065269621467811
+      ],
+      "specification_sha256": "2fa9e82e4e490029202f7e08926d485fa34b659dcf2c0b86cf43adc685d7e76b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1169,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.757018160583007,
+        1.294928239018227,
+        0.10375106715644156
+      ],
+      "final_v": [
+        1.8152917289805837,
+        0.7884889192965034,
+        0.2035733353983557
+      ],
+      "specification_sha256": "dbbb79974a275224e7b124f4e1f0e66d1fb491de8a9a5d5558e4ba6db35494a6",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1170,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.443304773310912,
+        1.6281862389882924,
+        0.11903427617902017
+      ],
+      "final_v": [
+        2.3961486654111104,
+        1.067402771908439,
+        0.18708702319248194
+      ],
+      "specification_sha256": "7f2a63d1c6aca0984479155cd875d140233101f9c406a476441566a47e6042da",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1171,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.777848817140518,
+        2.364149859396911,
+        0.30096377632261206
+      ],
+      "final_v": [
+        2.2627914034548553,
+        1.7717786757288716,
+        0.36904408230299024
+      ],
+      "specification_sha256": "00f9856cc46fefe0713547b7930e8538ce9b429c15c7f6a7c9e83ccb4943bf6a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1172,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.3323663483582,
+        2.314461532320403,
+        0.30365629209487555
+      ],
+      "final_v": [
+        2.2215145247104116,
+        1.2918943879387152,
+        0.2877951451909495
+      ],
+      "specification_sha256": "48744aea8475b2ebc61fbbf5520ad5d3a2ac8ea8d005f54b8d8e216e990ac305",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1173,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 1,
+      "final_p": [
+        12.632540638122926,
+        2.4244731346464623,
+        0.39328177320236346
+      ],
+      "final_v": [
+        2.371876562571417,
+        1.21819697514961,
+        0.2995257044698483
+      ],
+      "specification_sha256": "5f2de48666e641f00ccbc284d1969e529fbba784eb250e2e648399e1554442e0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1174,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.387675746235198,
+        2.83268952932561,
+        0.35915401249919887
+      ],
+      "final_v": [
+        2.083745341047292,
+        1.1878101421929255,
+        0.237804740747591
+      ],
+      "specification_sha256": "60aeaccba38c40ac780526cf792a81306a85f0d314a9adf3fcc8867e0aa9c312",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1175,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        13.825455288083225,
+        2.8315203437628074,
+        0.4452718650010485
+      ],
+      "final_v": [
+        2.103659825913104,
+        1.052997549602926,
+        0.2528355015495978
+      ],
+      "specification_sha256": "28ae960d88a8e3ee8f391024bb075b8763bbdc2b2856a7ee42271cad19eec8f4",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1176,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.735908684810932,
+        3.3036802306205884,
+        0.5593015766652465
+      ],
+      "final_v": [
+        1.390870020043711,
+        0.7618267316607468,
+        0.20713851233941036
+      ],
+      "specification_sha256": "5814587a7c40ec962662c38572a245838955f66b5effa6836c1df3a2f28c5187",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1177,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.215873027832581,
+        3.192569850424702,
+        0.665253586192567
+      ],
+      "final_v": [
+        -0.22958343714160154,
+        0.389696206933589,
+        0.17459985900724562
+      ],
+      "specification_sha256": "7a02c361408c71c358124659c4674b603d786b6124ec82b5dce4a69bbe14b4a4",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1178,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.182036733191316,
+        3.4048657812693337,
+        0.5459756855186314
+      ],
+      "final_v": [
+        -0.4783453198060539,
+        0.3194181876832492,
+        0.11790841410085187
+      ],
+      "specification_sha256": "a4e290f4425e4bbafb525d8d960499f10a1a1769de777d264654b99588bc0f29",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1179,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.326861808319865,
+        3.1332381170256602,
+        0.6088048856687772
+      ],
+      "final_v": [
+        -1.12356509200908,
+        -0.17595332156308047,
+        0.03652391084585281
+      ],
+      "specification_sha256": "ee00abc71bbfd09ebd0ba41b2a223d6ab18f972fc95cef7c3dbe8d0fef7b723f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1180,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.729779458311318,
+        3.4503561366879953,
+        0.5634812717616086
+      ],
+      "final_v": [
+        -1.2486276224439314,
+        -0.26965828365407934,
+        -0.05903133529278572
+      ],
+      "specification_sha256": "30d3f620a66a6f1441ab3259e4dc65dc3747166a71a994a2c435ada8618590b4",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1181,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.390683632282734,
+        3.107281655344251,
+        0.6703818101474898
+      ],
+      "final_v": [
+        -2.053150529390297,
+        -0.6518173871637873,
+        -0.12244053533428793
+      ],
+      "specification_sha256": "94087a5dfa58ca4088737ac488c5868c81520da75e87084be6fc03a7e1e4e4ec",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1182,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.51663248178883,
+        2.8805978391474536,
+        0.41405624233979765
+      ],
+      "final_v": [
+        -2.1323409706698855,
+        -0.8691002079678607,
+        -0.15789744609117806
+      ],
+      "specification_sha256": "98292c7ffa6c17defc369f9ad76a9c3cfc9560991a01b5e7aec0f822fc16c952",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1183,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.452976577175761,
+        2.825777448078768,
+        0.465403500847164
+      ],
+      "final_v": [
+        -2.363137290533439,
+        -0.9371741914708855,
+        -0.25051286415795315
+      ],
+      "specification_sha256": "5776187bf2262786bbcabff8f1e792422bc0fbb009a7efe878cc7a8c43d7a1f3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1184,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.345668989000696,
+        2.631835471324336,
+        0.43353607912812125
+      ],
+      "final_v": [
+        -2.119437087256787,
+        -0.9074038994772818,
+        -0.2704129393046293
+      ],
+      "specification_sha256": "3f1b8c43a89f4ff594ec4ad033097634cbb2a4a27e8c3c2a3410d202b8d3c0d7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1185,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 3,
+      "final_p": [
+        11.65597882060801,
+        1.8323949063207248,
+        0.5038488929031792
+      ],
+      "final_v": [
+        -2.722023993896943,
+        -1.1989894049734506,
+        -0.26494791374089205
+      ],
+      "specification_sha256": "c427ea2849b0024baf1ff65d473656c04fa6baf3ea4e937780d21baef502fdf8",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1186,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.426725818607206,
+        2.1613600141479883,
+        0.18965184881186647
+      ],
+      "final_v": [
+        -1.9513411148558044,
+        -0.9521743886905202,
+        -0.32996777083026346
+      ],
+      "specification_sha256": "aeeaf24a6e25447ad463c136564741460e1e828001d9155ef2e1c9ac9a917b2c",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1187,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 6,
+      "final_p": [
+        10.111526177156646,
+        1.7360178703867244,
+        0.18415612697495182
+      ],
+      "final_v": [
+        -1.0542920476114268,
+        -0.9679770816874733,
+        -0.3641890442171838
+      ],
+      "specification_sha256": "872dbe1f1f1197e20dba2943fa7c56f7fb416c9f41b95d02f4e9a6d42a6b4bca",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1188,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.571169777131676,
+        1.1228897546049414,
+        -0.08051294745548912
+      ],
+      "final_v": [
+        -1.4358282373878428,
+        -0.9687048520209307,
+        -0.3681194577014307
+      ],
+      "specification_sha256": "9cb2a0dac1ad1accdd70fac9a0dba1da895eefcf26d0a27bf3019c83597e7403",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1189,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.75646695655426,
+        1.0842285360213157,
+        0.054150695016282946
+      ],
+      "final_v": [
+        -0.5970483926237707,
+        -0.8464430836684166,
+        -0.3643285965068267
+      ],
+      "specification_sha256": "aa1714a2a330bedfbf8b54525d2ed09b3998687cece6e5221dd6f85ee834cf9b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1190,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 6,
+      "final_p": [
+        11.10808098274556,
+        1.0379290098803167,
+        -0.47174047025219257
+      ],
+      "final_v": [
+        0.3001204349750969,
+        -0.9135989724267888,
+        -0.6778783849988747
+      ],
+      "specification_sha256": "873b55f4c97d37ab127a9ed83e741e341720b5c1167ba0bdad81f7769b731527",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1191,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 2,
+      "final_p": [
+        8.967980193016405,
+        0.6758197454987132,
+        -0.19967194036777622
+      ],
+      "final_v": [
+        -0.4232038635178034,
+        -0.5132520680029843,
+        -0.26842980587967646
+      ],
+      "specification_sha256": "8bb4a032a69e4d3374c330bd4d3a31bb3fcdfeec9c8b6c34636ca440e84793ab",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1192,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.437130103263252,
+        1.1962824079363275,
+        0.051179763177438706
+      ],
+      "final_v": [
+        1.7485204130530057,
+        0.7851296317453094,
+        0.20471905270975482
+      ],
+      "specification_sha256": "2c769844e68a34eb92cd2330cd9b51bea55cd9651dc56b21df8b0be69c4767d3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1193,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.748224055559168,
+        1.2917828943030716,
+        0.10281370021069819
+      ],
+      "final_v": [
+        1.793491760454985,
+        0.779294855132149,
+        0.20179736359904898
+      ],
+      "specification_sha256": "226d167b8f92ff619dbbccd318023251bec2ac9976cbeffe354562173a914b3d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1194,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.426955761835377,
+        1.621160047085108,
+        0.1183713779680855
+      ],
+      "final_v": [
+        2.3725871798447824,
+        1.056064044719272,
+        0.18579926702848362
+      ],
+      "specification_sha256": "8b9e579b0608dad5fb64909aae90fb75e6ee31027123f852ef114d768206b56a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1195,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.89101037286017,
+        1.7193465428834849,
+        0.18673479029716544
+      ],
+      "final_v": [
+        2.438773547009712,
+        1.0879193619703482,
+        0.2630215540578594
+      ],
+      "specification_sha256": "1d7a6ab0a0b4a663af6535c983251af9b9690b554f54978724c7b573ecd116ab",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1196,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.31039449088857,
+        2.3010873509607657,
+        0.3014040725569843
+      ],
+      "final_v": [
+        2.2066301771112737,
+        1.283208191818075,
+        0.2862217915610036
+      ],
+      "specification_sha256": "cf8b991f3e2030c2a262b02a868fb71d678b5ad934d5c10f5975dcfb1113f457",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1197,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 1,
+      "final_p": [
+        12.607764890154531,
+        2.4110821468149037,
+        0.39010186000003955
+      ],
+      "final_v": [
+        2.353853876511232,
+        1.2115257103980024,
+        0.29758811015235354
+      ],
+      "specification_sha256": "9a840802c05ad1756269d7f32938ce1a9a0a41d7c1cd15a1af4ceafef94d54b7",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1198,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.517487428866557,
+        2.894686153884818,
+        0.358326903915411
+      ],
+      "final_v": [
+        2.12631666495882,
+        1.190289456230155,
+        0.22272770001069137
+      ],
+      "specification_sha256": "0756efb3351d152a32729114bca3adb3d85db26ff64c973997c5554fe93a3c4b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1199,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 1,
+      "final_p": [
+        13.893047819796518,
+        2.8652725698264048,
+        0.4574401541204872
+      ],
+      "final_v": [
+        1.8847235194394267,
+        0.9115235221665141,
+        0.25696753080524715
+      ],
+      "specification_sha256": "76fefc00bf279272fc21318e671db521f92811904822d7e247453431e9e21b42",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1200,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.707229865105372,
+        3.2937097432258375,
+        0.5565798453773982
+      ],
+      "final_v": [
+        1.414622291505321,
+        0.7728967843420772,
+        0.20818729064242486
+      ],
+      "specification_sha256": "000a17a0602a8bace6c5919509e2a7b5ab2e7d79f9efc27cda1e98bd4fdf5a4b",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1201,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.213383341250603,
+        3.181970710372593,
+        0.6608540379469194
+      ],
+      "final_v": [
+        -0.17276572440428806,
+        0.40370124910813443,
+        0.17612541743428095
+      ],
+      "specification_sha256": "5cf3dd9abdf1b66f262156ce40e213ebf17f8e5edcc4bf220a61c29afc7cb5a0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1202,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.19960817968486,
+        3.400738239326926,
+        0.5450354024296694
+      ],
+      "final_v": [
+        -0.4213393001870598,
+        0.33555692097688977,
+        0.12025758122017723
+      ],
+      "specification_sha256": "8a0ccac83080956c20e0fab22ec6be375434076779257a11659168f6aeaf58fa",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1203,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.336838646800476,
+        3.136006343123579,
+        0.6073262549083775
+      ],
+      "final_v": [
+        -1.0504941785432567,
+        -0.1510975475261311,
+        0.04015931833868792
+      ],
+      "specification_sha256": "3afd0b5d1759e5f480867b974029ad7284ff2d3c5cc6f1ba8499d009104c10d8",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1204,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.75676865723657,
+        3.460308178531199,
+        0.5660882237347085
+      ],
+      "final_v": [
+        -1.1909659113780806,
+        -0.24221387974417755,
+        -0.052996661436985816
+      ],
+      "specification_sha256": "53fdae8fcfeca51780b5ec799780f5e9d7aebafa980763d7e5bc9a134bbc6fab",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1205,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.547207120674829,
+        3.2753015417739966,
+        0.6555741994283664
+      ],
+      "final_v": [
+        -2.142836754207255,
+        -0.6230406692979037,
+        -0.13735286172171174
+      ],
+      "specification_sha256": "8e76cbd3c94163cb9a5c0245ccc999a43c0fcb68254459ca665ff3374d30c1c0",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1206,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.553811200366287,
+        2.937377511927104,
+        0.4504374023968422
+      ],
+      "final_v": [
+        -2.0713873023505647,
+        -0.8432196760303136,
+        -0.1477149771224127
+      ],
+      "specification_sha256": "62cd42c94828aefe1c7ca654619699c8570d0ec90dd735eb8c50ae1a656726ee",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1207,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.510786698978603,
+        2.8396074488896,
+        0.471346472126306
+      ],
+      "final_v": [
+        -2.3197129109371657,
+        -0.9173481986513163,
+        -0.24286536481190485
+      ],
+      "specification_sha256": "41c6b11568681d23b80329818b7433d5a7d053aa3e8bc8d4791f6cad88a5a6de",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1208,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.405872138829372,
+        2.652740079407149,
+        0.4396233043698916
+      ],
+      "final_v": [
+        -2.1096856682832192,
+        -0.8947553663476366,
+        -0.26374652869151427
+      ],
+      "specification_sha256": "831b0da5e360317d83a06aa9c34ee92157b1d5b4bd116bb57f8729161d73e053",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1209,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 0,
+      "final_p": [
+        20.53457150669764,
+        4.857929237607849,
+        0.18560864886139256
+      ],
+      "final_v": [
+        3.421400319969055,
+        0.0005154388352732812,
+        -0.034971807130930725
+      ],
+      "specification_sha256": "6f3d44fc127aa5d0ddf1ae8d8f7d1966e1263e986295778cc3c72904246ff58e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1210,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.461177188379022,
+        2.018547202920395,
+        0.1451177135710717
+      ],
+      "final_v": [
+        -1.7834445575611575,
+        -1.0154400692594303,
+        -0.35281494743875086
+      ],
+      "specification_sha256": "737a201cf9cbe111249fbd65ea9f3f626f5ce246c552a61a59ca8570935b0456",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1211,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 6,
+      "final_p": [
+        10.164912727771021,
+        1.7603554407379443,
+        0.19486221095967848
+      ],
+      "final_v": [
+        -1.0968140883221769,
+        -0.9627099824499571,
+        -0.35950113515384063
+      ],
+      "specification_sha256": "b6ce9afe02246d1ca71f753b3ab2a0950d0c2da0b96bd1221a00ab113a00912a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1212,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.645647336016712,
+        1.1616401986283775,
+        -0.07106838919921275
+      ],
+      "final_v": [
+        -1.483736080226646,
+        -0.9940921071562528,
+        -0.3691215775484944
+      ],
+      "specification_sha256": "055961cd934079ccee7b778f5fd27197ad598ae22f85b3c65179f673092e0444",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1213,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.80285740775365,
+        1.1163027311498035,
+        0.06573107719519512
+      ],
+      "final_v": [
+        -0.6619885406496832,
+        -0.8561922060067394,
+        -0.3609862392237217
+      ],
+      "specification_sha256": "322d2a212a28c414b809b6e13990aad64a0617c2e3bfc05bde92d358646a494a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1214,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 0,
+      "final_p": [
+        9.897252476402741,
+        1.051478005592671,
+        -0.29216368288041816
+      ],
+      "final_v": [
+        -0.06675442065191704,
+        -0.862797555733458,
+        -0.3613006327854609
+      ],
+      "specification_sha256": "ee8f95b98c8e93cb300a90a12d32c3e479620cb0e717d4eac1c991a29ee7374f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1215,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 3,
+      "final_p": [
+        8.960286414901821,
+        0.6297387420382501,
+        -0.1886894833716685
+      ],
+      "final_v": [
+        -0.2647052083283697,
+        -0.41534764226543364,
+        -0.2663827060734795
+      ],
+      "specification_sha256": "8061c5135e76867cf7000ef19ab0dcd298885190bafee009f8049b27f920e3d1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1216,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.431910347012707,
+        1.1938926894716282,
+        0.05074289212914177
+      ],
+      "final_v": [
+        1.727641388050827,
+        0.7755707578865131,
+        0.20297156851656709
+      ],
+      "specification_sha256": "41d1991fd69fd8ce81ec27e05787e32191cd366877e563ef2a989e64c290c3cf",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1217,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.739702155591086,
+        1.2887374040147141,
+        0.10190844058575357
+      ],
+      "final_v": [
+        1.772347466089779,
+        0.770382250462317,
+        0.2000811353140235
+      ],
+      "specification_sha256": "c0f5f447461ca015788b4a3d672569dc33999b0e06981a8db425b6b119e2d43a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1218,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.41106036110174,
+        1.6143351938309691,
+        0.11772791847509037
+      ],
+      "final_v": [
+        2.3495024894848164,
+        1.045001935827341,
+        0.18454842995163492
+      ],
+      "specification_sha256": "6afbc27fb5f8a54643e171b6d1762ce8f70b2d1097bf2309caf454b53c465a30",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1219,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.87240621309986,
+        1.7123345567760957,
+        0.18545329660630067
+      ],
+      "final_v": [
+        2.4184031558301844,
+        1.0777263594310456,
+        0.2608202460450532
+      ],
+      "specification_sha256": "3a0653a6bfb79b03845e77853016060fa2043d97c14916f7b349bfae87dc0413",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1220,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.41320971852457,
+        2.363909697788247,
+        0.3119793575391002
+      ],
+      "final_v": [
+        2.2739400053369287,
+        1.3223914760617783,
+        0.29334801945421735
+      ],
+      "specification_sha256": "8bb3a46f96160bb107626c23e2c50c069fd07837a2160adde67fd0ce104ebb7a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1221,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 0,
+      "final_p": [
+        12.71379248623792,
+        2.4672858862081775,
+        0.4050700630788426
+      ],
+      "final_v": [
+        2.395992964003329,
+        1.2151061953964428,
+        0.30648725199180066
+      ],
+      "specification_sha256": "7c3d7a73356193d603590adb11ea924bee56471126b14c4ff96cdb2090fb3e65",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1222,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.487859833867105,
+        2.8774386942888084,
+        0.3562347291384665
+      ],
+      "final_v": [
+        2.117292932138204,
+        1.1841099436405165,
+        0.22170900215091804
+      ],
+      "specification_sha256": "6d092e56f45ae100a7c4be795f9718562d3598ae7ee6c5f82e6e2eb65052d2fc",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1223,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 0,
+      "final_p": [
+        13.927263747781025,
+        2.890543815478845,
+        0.4546507614575187
+      ],
+      "final_v": [
+        2.1332409972321273,
+        1.0765235662132266,
+        0.25606184419406197
+      ],
+      "specification_sha256": "1bee8892c5644c3b295dd1e37391d057f2135c169ffdc4a01f03b929637ed05f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1224,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.67854592480976,
+        3.283530822135667,
+        0.5538758661870906
+      ],
+      "final_v": [
+        1.436657185844607,
+        0.7831627347736188,
+        0.20914332596102037
+      ],
+      "specification_sha256": "2259c2081e0e66e05a73ebbe04e05bb2ed1a0759e6797a1befcd42fe398b2d32",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1225,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.209985910502493,
+        3.171326651281834,
+        0.6565277757057747
+      ],
+      "final_v": [
+        -0.11802827876224982,
+        0.41703142180585206,
+        0.17753975015669704
+      ],
+      "specification_sha256": "7d6a18ef3a6d17b28a296d658e9d8cbaf7bd683964effa720a3a189dc93d4ce2",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1226,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.215653912111057,
+        3.3962709650163547,
+        0.5440447390012866
+      ],
+      "final_v": [
+        -0.3660321626585104,
+        0.35103425768540303,
+        0.122488108597802
+      ],
+      "specification_sha256": "0b44e2da82dbf1936fa20ddf083d50adfbf41f1b8250bf67c302091d2f6cd83e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1227,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.34531895801946,
+        3.138148079228757,
+        0.6058259965173294
+      ],
+      "final_v": [
+        -0.9798541246013216,
+        -0.1270634780357612,
+        0.04366803092195041
+      ],
+      "specification_sha256": "0a94e1dc3d2061839b1cd6b2caf5e5e7fe3ddc519b90f1ada5a78b0a6ea23c62",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1228,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        15.66850685308239,
+        2.1194275115636767,
+        0.3456543823616532
+      ],
+      "final_v": [
+        1.1848668365343449,
+        0.304857970761658,
+        0.09917718459766493
+      ],
+      "specification_sha256": "51e5c1adcace2de0ab672445d2377e19ddf899e553bf231d3fcd4310f3aea776",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1229,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.580815265088063,
+        3.2781307168216034,
+        0.6566567656742529
+      ],
+      "final_v": [
+        -2.0855088897533425,
+        -0.5969795364291577,
+        -0.1299265439159391
+      ],
+      "specification_sha256": "124b0ecc6b0036d377e29f1ea36db19c284c64c55268e11f0c6e65ab591fbcda",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1230,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.601626362454294,
+        2.963266278799216,
+        0.4544906880590415
+      ],
+      "final_v": [
+        -2.003322061882024,
+        -0.8138339180259632,
+        -0.14261752191937144
+      ],
+      "specification_sha256": "be62524fa13643ea823b2469583a69e62c0c23b79f4383f0d2429d96b8e67bd9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1231,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.208613903110631,
+        2.611897327265188,
+        0.4737792425007788
+      ],
+      "final_v": [
+        -2.310984658605142,
+        -0.9644698341442596,
+        -0.24750851526258513
+      ],
+      "specification_sha256": "227e71a6fbb1c805b962656f714c07a454dc59583d4d147b332b671326b8f489",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1232,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.380510008631795,
+        2.4806389605202965,
+        0.3439662183248755
+      ],
+      "final_v": [
+        -1.9337136775340371,
+        -0.9639819283262984,
+        -0.30305299645846057
+      ],
+      "specification_sha256": "f43b29c1bca8f039ef6c3a7cba71291382fb4ca631bc2c3d8dc836b3e2bb0988",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1233,
+      "steps": 18,
+      "statuses": {
+        "advanced": 18
+      },
+      "final_q": 2,
+      "final_p": [
+        11.23260383892633,
+        1.9901404609763214,
+        0.4578473428149107
+      ],
+      "final_v": [
+        -2.319913618432841,
+        -1.1172981107219966,
+        -0.31671873618105584
+      ],
+      "specification_sha256": "325094803959daeaa929c31f0bcf000cc237a257e3a102f589952806f083cd9e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1234,
+      "steps": 19,
+      "statuses": {
+        "advanced": 19
+      },
+      "final_q": 0,
+      "final_p": [
+        10.21267694211389,
+        2.074331888354027,
+        0.15439357883449972
+      ],
+      "final_v": [
+        -1.9469431329738007,
+        -0.9818119878899672,
+        -0.34926899590699295
+      ],
+      "specification_sha256": "fa788c99ed5a76eca2fa3d89708b7d00865a9e217efcb9b61405e57760c20ae2",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1235,
+      "steps": 20,
+      "statuses": {
+        "advanced": 20
+      },
+      "final_q": 6,
+      "final_p": [
+        10.220311217079285,
+        1.7846556189944809,
+        0.2052405253740876
+      ],
+      "final_v": [
+        -1.1362565732395846,
+        -0.9568578506822598,
+        -0.35482515574379087
+      ],
+      "specification_sha256": "53c6824fa8b49f00689b13961f9b165841c90079d2eee919198ce9ae053a8c8e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1236,
+      "steps": 21,
+      "statuses": {
+        "advanced": 21
+      },
+      "final_q": 5,
+      "final_p": [
+        9.565586643757483,
+        1.0498580021397619,
+        -0.0073734135574544946
+      ],
+      "final_v": [
+        -1.6178120085950478,
+        -0.9710239088239344,
+        -0.33781656980918984
+      ],
+      "specification_sha256": "c3982d28e6e6d8e00646dd6c8dc8ca6eb3c304a4c4036e3e14529622fc19ceec",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1237,
+      "steps": 22,
+      "statuses": {
+        "advanced": 22
+      },
+      "final_q": 1,
+      "final_p": [
+        9.841508078703683,
+        1.1405216302609427,
+        0.07744322675842803
+      ],
+      "final_v": [
+        -0.7254626558347415,
+        -0.8688786109933485,
+        -0.3571584686431805
+      ],
+      "specification_sha256": "41d56a5d1c10563bfa15518daed752e9ab22cf34846b7bc118375d59ed035ee1",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1238,
+      "steps": 23,
+      "statuses": {
+        "advanced": 23
+      },
+      "final_q": 4,
+      "final_p": [
+        9.741049596266796,
+        1.0879501634315687,
+        -0.2527021512995487
+      ],
+      "final_v": [
+        0.15549104409772121,
+        -0.8656391094849126,
+        -0.3646846031519671
+      ],
+      "specification_sha256": "1ff2855377ab988b94365701cbc481e7cc4d5be97d7d2aa727b55511951f8c63",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1239,
+      "steps": 24,
+      "statuses": {
+        "advanced": 24
+      },
+      "final_q": 3,
+      "final_p": [
+        9.00604869716205,
+        0.646711841445478,
+        -0.17861673361125996
+      ],
+      "final_v": [
+        -0.36593636632919696,
+        -0.454068124285234,
+        -0.26782930983473974
+      ],
+      "specification_sha256": "d0e3bf42a7b64eaa1488bd8f39e28de49eaed589cd4c23a6a6213fc906ca6f7d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1240,
+      "steps": 1,
+      "statuses": {
+        "advanced": 1
+      },
+      "final_q": 7,
+      "final_p": [
+        10.426849606359866,
+        1.1915800263539358,
+        0.050320381610560044
+      ],
+      "final_v": [
+        1.7073984254394665,
+        0.7663201054157428,
+        0.20128152644224018
+      ],
+      "specification_sha256": "cb0785fccf1a1953e8a05d72c79f1b02c66c5e9e6e6d67f2086fbe9c100de900",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1241,
+      "steps": 2,
+      "statuses": {
+        "advanced": 2
+      },
+      "final_q": 1,
+      "final_p": [
+        10.731440074156296,
+        1.2857870889996812,
+        0.10103366778535913
+      ],
+      "final_v": [
+        1.7518300025690143,
+        0.7617384467871455,
+        0.19842169297220358
+      ],
+      "specification_sha256": "bec1adcd835633c1e9b832f1e3422e0cbbaa461e278cc2dd73f0bf327c30650d",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1242,
+      "steps": 3,
+      "statuses": {
+        "advanced": 3
+      },
+      "final_q": 5,
+      "final_p": [
+        11.486290784582078,
+        1.6466923507184563,
+        0.12078247289824814
+      ],
+      "final_v": [
+        2.4571999195244127,
+        1.0970224889165177,
+        0.19047879266144555
+      ],
+      "specification_sha256": "5beb279dff088d8b7c02510a7471718dfb66cd53d42eeb810adffb95d208d6e3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1243,
+      "steps": 4,
+      "statuses": {
+        "advanced": 4
+      },
+      "final_q": 3,
+      "final_p": [
+        11.95974471080995,
+        1.7454494886616267,
+        0.1915401009631895
+      ],
+      "final_v": [
+        2.512360708299659,
+        1.125330895770517,
+        0.2712149381290926
+      ],
+      "specification_sha256": "f41f277a6a387730382216134af7756b7a737e74ff45b38030e63b06b20742c3",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1244,
+      "steps": 5,
+      "statuses": {
+        "advanced": 5
+      },
+      "final_q": 3,
+      "final_p": [
+        12.389466331645737,
+        2.3493464667608306,
+        0.3095288358175853
+      ],
+      "final_v": [
+        2.258935758770262,
+        1.3136800767363863,
+        0.2917569075363136
+      ],
+      "specification_sha256": "4e38f495f05a9b47aee934c5ce33677cc530e06fe968eca8f313ea087c718930",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1245,
+      "steps": 6,
+      "statuses": {
+        "advanced": 6
+      },
+      "final_q": 0,
+      "final_p": [
+        12.685306978315367,
+        2.451766285517729,
+        0.40159369712769993
+      ],
+      "final_v": [
+        2.370853139327133,
+        1.204534942866572,
+        0.30447336058727065
+      ],
+      "specification_sha256": "a70aa32943bc6bcf72aac73c6d6fcc16245f969663ac81adb912ae96afacd1c6",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1246,
+      "steps": 7,
+      "statuses": {
+        "advanced": 7
+      },
+      "final_q": 0,
+      "final_p": [
+        13.458684542787562,
+        2.8605041642356595,
+        0.3541799746307779
+      ],
+      "final_v": [
+        2.108011211568558,
+        1.1778403297804827,
+        0.2206916940400743
+      ],
+      "specification_sha256": "9410e113e3e922a6cade6c24970d389a5384036113a2577dde3258149b267d95",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1247,
+      "steps": 8,
+      "statuses": {
+        "advanced": 8
+      },
+      "final_q": 7,
+      "final_p": [
+        13.637105721429794,
+        3.412119668708596,
+        0.6151190905685421
+      ],
+      "final_v": [
+        -0.2721496826462115,
+        0.6892326585565256,
+        0.21399048503561435
+      ],
+      "specification_sha256": "5efac9fdf3af54aba5f1ea1c4c92dd8423a36d2d2bf5419b578b259763e8488a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1248,
+      "steps": 9,
+      "statuses": {
+        "advanced": 9
+      },
+      "final_q": 0,
+      "final_p": [
+        14.648908843453844,
+        3.2980111475047225,
+        0.5703785499821836
+      ],
+      "final_v": [
+        1.4551147902615942,
+        0.8417728729849404,
+        0.24793975032597682
+      ],
+      "specification_sha256": "4348408ee6691afa6113e3c52152d00ac3d752d85451b99e8a940b5e14d3ef23",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1249,
+      "steps": 10,
+      "statuses": {
+        "advanced": 10
+      },
+      "final_q": 7,
+      "final_p": [
+        14.205746626958137,
+        3.160651671408933,
+        0.65227422328353
+      ],
+      "final_v": [
+        -0.0653030115932814,
+        0.4297178728392214,
+        0.1788501180665472
+      ],
+      "specification_sha256": "8559687219b0625c96c4bae0c4a8f17bf3d6b3de1b9fd523f16922e6b6cda45a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1250,
+      "steps": 11,
+      "statuses": {
+        "advanced": 11
+      },
+      "final_q": 0,
+      "final_p": [
+        14.23025060873436,
+        3.3914894657998267,
+        0.5430087557045385
+      ],
+      "final_v": [
+        -0.31239380992421384,
+        0.36587464379147777,
+        0.12460626113789917
+      ],
+      "specification_sha256": "9b4a4e1405edd5bce6d364a8e25c891947b4c00c227f23ecd701767fa36de465",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1251,
+      "steps": 12,
+      "statuses": {
+        "advanced": 12
+      },
+      "final_q": 7,
+      "final_p": [
+        14.3523990167472,
+        3.1397045331091795,
+        0.6043066807689645
+      ],
+      "final_v": [
+        -0.9115762430984474,
+        -0.10383081000936442,
+        0.047054111027119414
+      ],
+      "specification_sha256": "ec93204a350378ae4e1ace01026bd58d85aae236b0fc5a7cadceb3b4e3fb02ed",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1252,
+      "steps": 13,
+      "statuses": {
+        "advanced": 13
+      },
+      "final_q": 0,
+      "final_p": [
+        13.806206731769576,
+        3.477536454034253,
+        0.5707487440310299
+      ],
+      "final_v": [
+        -1.0792461942504654,
+        -0.1898067720225313,
+        -0.041505680185682264
+      ],
+      "specification_sha256": "b516f3735ddb3f9f18a922302b342d883e1b539c0cd0533a7ad3fa7050340c3a",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1253,
+      "steps": 14,
+      "statuses": {
+        "advanced": 14
+      },
+      "final_q": 7,
+      "final_p": [
+        13.289452602635373,
+        3.080242140161942,
+        0.6690295861421833
+      ],
+      "final_v": [
+        -2.172731927287822,
+        -0.7172288712683408,
+        -0.13945188903530448
+      ],
+      "specification_sha256": "6ae29057e854f9b66f7878809aa447adf52542ae5f42f10e3453eed6689bb1a9",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1254,
+      "steps": 15,
+      "statuses": {
+        "advanced": 15
+      },
+      "final_q": 0,
+      "final_p": [
+        13.25682275658015,
+        2.9428061814349165,
+        0.394396674843164
+      ],
+      "final_v": [
+        -2.102314976338132,
+        -0.8798216779367041,
+        -0.18348050492983353
+      ],
+      "specification_sha256": "68b1077dcf26be00cbc37afb5d934f5b0b9374fa81e7d06e24ef2ca14917844f",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1255,
+      "steps": 16,
+      "statuses": {
+        "advanced": 16
+      },
+      "final_q": 3,
+      "final_p": [
+        12.268684685109573,
+        2.6332336015724302,
+        0.4790559776043674
+      ],
+      "final_v": [
+        -2.2813107680975393,
+        -0.9478397247454146,
+        -0.24079536983204072
+      ],
+      "specification_sha256": "190a904ae4c88f03d637ef36da68c11c21ee38ba7d91a5e9d4c3b95aca21ae7e",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    },
+    {
+      "trajectory_id": 1256,
+      "steps": 17,
+      "statuses": {
+        "advanced": 17
+      },
+      "final_q": 0,
+      "final_p": [
+        11.22106489704017,
+        2.5216983298724385,
+        0.35280768529910783
+      ],
+      "final_v": [
+        -2.1167537568949855,
+        -0.9270852070776812,
+        -0.296629736745385
+      ],
+      "specification_sha256": "4349698b8d2b5b7365db100867962cdca830c589eca91677f593d59369c85571",
+      "equations": {
+        "d": "limit | fringe",
+        "x": "(q | d) & support",
+        "j": "y",
+        "k": "y"
+      }
+    }
+  ],
+  "invariants": [
+    "q0_changes_native_position_and_velocity",
+    "q0_changes_later_geometry_drive",
+    "observation_geometry_changes_drive_and_q",
+    "changed_geometry_q_changes_next_physical_state",
+    "edited_equation_changes_native_q_and_physics",
+    "edited_equation_changes_later_predicates",
+    "free_motion_closed_form",
+    "constant_force_backward_euler_closed_form",
+    "diagonal_spring_known_discrete_step",
+    "singular_numeric_failure_then_frozen",
+    "singular_failure_commits_bit31",
+    "failed_time_and_physics_remain_last_valid",
+    "overflow_is_failure_with_null_diagnostic",
+    "geometry_overflow_is_explicit_failure",
+    "unavailable_observation_still_updates_q_and_physics",
+    "whole_word_absorption_preserves_supplied_j_equation",
+    "origin_chart_domain_status",
+    "negative_eigenvalue_is_retained",
+    "257_variable_length_trajectories_present",
+    "native_offdiagonal_generalized_modes"
+  ],
+  "trace_mutations_rejected": [
+    "q_after",
+    "drive",
+    "time_after",
+    "p_after",
+    "stiffness",
+    "mechanical_rhs",
+    "eigenvalues",
+    "eigenvectors"
+  ],
+  "native_trace_sha256": "5bac1a06e2a1e79ce6226b1869ceda0ac926259d50527468db15daa0f6d2e229",
+  "reference_trace_sha256": "04edb9f4c9b28a1e78afda3a4ac4e8dc0ee471d039b88dee1f9ba2c507bb6d3c"
+}

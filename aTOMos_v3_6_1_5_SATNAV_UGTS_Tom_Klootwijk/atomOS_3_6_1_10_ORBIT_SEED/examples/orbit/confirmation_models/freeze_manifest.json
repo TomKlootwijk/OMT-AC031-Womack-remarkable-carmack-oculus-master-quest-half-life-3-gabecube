@@ -1,0 +1,32 @@
+{
+  "profile": "R2-CONFIRMATION-MODEL-FREEZE-1",
+  "epoch_gpst_s": 1422489600.0,
+  "selection_policy_sha256": "102d9a5cf41e8ed01666416d235ab3223115b448e75d538ebcb5024907a57068",
+  "target_data_after_epoch_used": 0,
+  "models": {
+    "G05": {
+      "model_file_sha256": "a52cc59a3f0ea3053a262a7c1216006b999b2067fba87834413ba55ec28d9a41",
+      "selected_window_days": 1.0,
+      "final_fit_rms_m": 0.14829502032885244,
+      "final_fit_max_m": 0.3081037623827951
+    },
+    "C03": {
+      "model_file_sha256": "6dd3c4eff7452d698316c8b206fd7a39c188099efde1bb5dc8e9ff21feea67ed",
+      "selected_window_days": 7.0,
+      "final_fit_rms_m": 2.0233483029179005,
+      "final_fit_max_m": 5.040516228434887
+    },
+    "C06": {
+      "model_file_sha256": "9e382982dbe7acbe005320a174c66ac37c27c62df2a83e8797f9cada13fb3c91",
+      "selected_window_days": 3.0,
+      "final_fit_rms_m": 0.5087088162493403,
+      "final_fit_max_m": 1.0880996161412213
+    },
+    "CHANDRA": {
+      "model_file_sha256": "96d57913e5bfa73455b74c3b742cf9d074c23c2042dedece1eb50abddc8c03d3",
+      "selected_window_days": 3.0,
+      "final_fit_rms_m": 0.35962367401860434,
+      "final_fit_max_m": 4.679695461688709
+    }
+  }
+}

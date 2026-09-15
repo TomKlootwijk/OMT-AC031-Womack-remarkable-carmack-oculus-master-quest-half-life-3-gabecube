@@ -1,0 +1,104 @@
+{
+  "status": "passed",
+  "backend": "cpu",
+  "worker_sha256": "8fc1177f5ae9aca62ef5b44248b5af8c9cb58c635b812d535944e22310545ac7",
+  "scope": "Same frozen models and all archived reference epochs; no fitting or new reference claims",
+  "objects": {
+    "january:C03": {
+      "samples": 2016,
+      "model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+      "seed_sha256": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+      "baseline_csv_sha256": "4dba16246cbca5f10a090a29f644cf44e9989a155b67260c0d43b47e85d50e04",
+      "baseline_csv": "results/orbit_accuracy_r2_cpu_verified/C03_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 5.304255269103576,
+      "elapsed_s": 0.9116929999945569
+    },
+    "january:C06": {
+      "samples": 2016,
+      "model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421",
+      "seed_sha256": "6ef34a15c13013354a909b12d2f7f0e8badf9c78fc17959be10f835b6c437d64",
+      "baseline_csv_sha256": "c80b3d200ee814ec22ee4fd1a3145dfae7392b01123c941e457b3f129dbb4d68",
+      "baseline_csv": "results/orbit_accuracy_r2_cpu_verified/C06_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 1.1723338290572496,
+      "elapsed_s": 0.9018733999982942
+    },
+    "january:CHANDRA": {
+      "samples": 2016,
+      "model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453",
+      "seed_sha256": "9beca3919475dfe9dc7e793c8da83dda3b7fdf70e676003ed51940f42239c568",
+      "baseline_csv_sha256": "283ce567294bc64c09d05388be693cdc8399601d7f8c02a7f8a87bdd8994968b",
+      "baseline_csv": "results/orbit_accuracy_r2_cpu_verified/CHANDRA_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 8.092835636702235,
+      "elapsed_s": 2.299069900000177
+    },
+    "january:G05": {
+      "samples": 2016,
+      "model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1",
+      "seed_sha256": "51165c26359d135f60c2484a3b94ffa68ae9a94d3cf5f93dd48cc8af2654e3a6",
+      "baseline_csv_sha256": "cd3abb12889a35a994096bcc5fe1bdd5cdd621760afc881a89a1e917541c4828",
+      "baseline_csv": "results/orbit_accuracy_r2_cpu_verified/G05_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 1.0566454205381106,
+      "elapsed_s": 0.9525071000025491
+    },
+    "february:C03": {
+      "samples": 1441,
+      "model_sha256": "b253c8a13b6ae3264988788ba9bba9b000798fdd220217d1d91293d6814c3668",
+      "seed_sha256": "1b0cf39ad71a1ec1739354dccd8c211497c531b147fc3ac70cf55f61b1ba840c",
+      "baseline_csv_sha256": "115302e4afa538269bb0830d63b643c2d1f2f9c5e6db69519bb75b76a6a00442",
+      "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/C03_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 4.654148101348493,
+      "elapsed_s": 0.7156582000025082
+    },
+    "february:C06": {
+      "samples": 2016,
+      "model_sha256": "0dd9833368ac7472a79cda65fb22c145f490b24ab567a910cb422c82c6e44937",
+      "seed_sha256": "4c963e6fdd40d6edb3d136517953bbe39e00240480498113cc22c6cfcc5c02ff",
+      "baseline_csv_sha256": "daa245686b5758a110e40c86babc1b37f6c30f200a4e480be7bed52a7ba68bbf",
+      "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/C06_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 2.107834964016492,
+      "elapsed_s": 0.962642099999357
+    },
+    "february:CHANDRA": {
+      "samples": 2016,
+      "model_sha256": "5194e34a3b088c6b7f486b72c0df458330ac023fadb58bb4458486f946a13af1",
+      "seed_sha256": "61b4124629bee9c558eeabdd6bbbc9e0bb45d5b3020d76526e5c091dd3d5e2f0",
+      "baseline_csv_sha256": "689e41106485e02c8c061f5811041975cf66561ee93e2f6fab39168280edaac1",
+      "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/CHANDRA_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 0.289813080890197,
+      "elapsed_s": 2.2912738999948488
+    },
+    "february:G05": {
+      "samples": 2016,
+      "model_sha256": "1e3b444f2a5c3820053b1e1f825126c43ac9f62266be0810ce4842489c6b2ccb",
+      "seed_sha256": "900bf67616fbbcf9892a105f98be385fe9ec1931e181ea42620161bcb1c573a5",
+      "baseline_csv_sha256": "c098515bb06f0755d1c7fd9c15622634786132318db20655427f6e3aad2adaba",
+      "baseline_csv": "results/orbit_accuracy_confirmation_cpu_verified/G05_holdout.csv",
+      "changed_prediction_rows": 0,
+      "max_prediction_difference_m": 0.0,
+      "first_day_max_reference_discrepancy_m": 3.0718084989178207,
+      "elapsed_s": 0.948452399999951
+    }
+  },
+  "total_samples": 15553,
+  "source_sha256": {
+    "python/orbit_seed.py": "758891fe3b7c23f14737d82d117dbd8476b934042c7ef7783a77760198ef25ae",
+    "python/orbit_native.py": "a5e58821b8960e3d60c38a0402659441de995302957334b6c356900b8a6cf092",
+    "python/orbit_dynamics.py": "a106ef9c81197e9501d897fa01c926ab91eb0ba32f5a486e1c389d05c2eb69f8",
+    "python/orbit_precision.py": "9efa1426d7c6947e487c0ce069e4f601de6945284069789ba7020675ab2be92f",
+    "python/orbit_query.py": "8e1340922335ce16265cb22b62896bca2430a849f4541659280a515b002c9471"
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "release": "3.6.1.9",
+  "status": "passed",
+  "scope": "Fresh retained-component regression; fixture and component schema versions remain distinct",
+  "commands": [
+    {
+      "name": "cpu_ctest",
+      "command": [
+        "ctest",
+        "--test-dir",
+        "C:\\tmp\\atomos3619_cpu",
+        "-C",
+        "Release",
+        "--output-on-failure"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cpu_ctest.log"
+    },
+    {
+      "name": "cpu_satnav",
+      "command": [
+        "C:\\tmp\\atomos3619_cpu\\Release\\satnav.exe",
+        "--input",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\examples\\demo",
+        "--out",
+        "results\\retained_native_3619\\cpu\\satnav",
+        "--backend",
+        "cpu",
+        "--verify"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cpu_satnav.log"
+    },
+    {
+      "name": "cpu_satnav_independent",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\verify_run.py",
+        "--input",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\examples\\demo",
+        "--run",
+        "results\\retained_native_3619\\cpu\\satnav"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cpu_satnav_independent.log"
+    },
+    {
+      "name": "cpu_self_reference",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\self_reference.py",
+        "--input",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\examples\\self_reference\\stress_equations.json",
+        "--out",
+        "results\\retained_native_3619\\cpu\\self_reference",
+        "--binary",
+        "C:\\tmp\\atomos3619_cpu\\Release\\self_reference.exe",
+        "--backend",
+        "cpu"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cpu_self_reference.log"
+    },
+    {
+      "name": "cpu_coupled",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\validate_coupled.py",
+        "--out",
+        "results\\retained_native_3619\\cpu\\coupled",
+        "--binary",
+        "C:\\tmp\\atomos3619_cpu\\Release\\coupled_kernel.exe",
+        "--backend",
+        "cpu"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cpu_coupled.log"
+    },
+    {
+      "name": "cpu_live_worker",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\validate_live_native.py",
+        "--out",
+        "results\\retained_native_3619\\cpu\\live_worker",
+        "--binary",
+        "C:\\tmp\\atomos3619_cpu\\Release\\satnav_stream.exe",
+        "--backend",
+        "cpu"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cpu_live_worker.log"
+    },
+    {
+      "name": "cuda_ctest",
+      "command": [
+        "ctest",
+        "--test-dir",
+        "C:\\tmp\\atomos3619_gpu128",
+        "-C",
+        "Release",
+        "--output-on-failure"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cuda_ctest.log"
+    },
+    {
+      "name": "cuda_satnav",
+      "command": [
+        "C:\\tmp\\atomos3619_gpu128\\Release\\satnav.exe",
+        "--input",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\examples\\demo",
+        "--out",
+        "results\\retained_native_3619\\cuda\\satnav",
+        "--backend",
+        "cuda",
+        "--verify"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cuda_satnav.log"
+    },
+    {
+      "name": "cuda_satnav_independent",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\verify_run.py",
+        "--input",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\examples\\demo",
+        "--run",
+        "results\\retained_native_3619\\cuda\\satnav"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cuda_satnav_independent.log"
+    },
+    {
+      "name": "cuda_self_reference",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\self_reference.py",
+        "--input",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\examples\\self_reference\\stress_equations.json",
+        "--out",
+        "results\\retained_native_3619\\cuda\\self_reference",
+        "--binary",
+        "C:\\tmp\\atomos3619_gpu128\\Release\\self_reference.exe",
+        "--backend",
+        "cuda"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cuda_self_reference.log"
+    },
+    {
+      "name": "cuda_coupled",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\validate_coupled.py",
+        "--out",
+        "results\\retained_native_3619\\cuda\\coupled",
+        "--binary",
+        "C:\\tmp\\atomos3619_gpu128\\Release\\coupled_kernel.exe",
+        "--backend",
+        "cuda"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cuda_coupled.log"
+    },
+    {
+      "name": "cuda_live_worker",
+      "command": [
+        "C:\\Users\\Tom\\miniconda3\\python.exe",
+        "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_9_ORBIT_SEED\\tools\\validate_live_native.py",
+        "--out",
+        "results\\retained_native_3619\\cuda\\live_worker",
+        "--binary",
+        "C:\\tmp\\atomos3619_gpu128\\Release\\satnav_stream.exe",
+        "--backend",
+        "cuda"
+      ],
+      "returncode": 0,
+      "log": "results\\retained_native_3619\\cuda_live_worker.log"
+    }
+  ],
+  "binaries": {
+    "cpu": {
+      "satnav.exe": {
+        "source": "C:\\tmp\\atomos3619_cpu\\Release\\satnav.exe",
+        "sha256": "4dcdaee70ef9e15ea283984ee753e61cfbda174428af35243d67a6b0c7d024b2",
+        "bytes": 97280,
+        "delivered": "bin\\cpu\\satnav.exe"
+      },
+      "satnav_stream.exe": {
+        "source": "C:\\tmp\\atomos3619_cpu\\Release\\satnav_stream.exe",
+        "sha256": "5a0f85273662f905c84cff37a2602a4df9a86d9ef03f7dc16dfcb85193733d86",
+        "bytes": 55296,
+        "delivered": "bin\\cpu\\satnav_stream.exe"
+      },
+      "self_reference.exe": {
+        "source": "C:\\tmp\\atomos3619_cpu\\Release\\self_reference.exe",
+        "sha256": "b85119e9f743af09febc3f5c6c534e2c1327ba83f705a50b9e8eb37892a5c79a",
+        "bytes": 96256,
+        "delivered": "bin\\cpu\\self_reference.exe"
+      },
+      "coupled_kernel.exe": {
+        "source": "C:\\tmp\\atomos3619_cpu\\Release\\coupled_kernel.exe",
+        "sha256": "5a82b18b394418fad2b49b019fe351c2acb8963ab45545644b13f59f53140492",
+        "bytes": 146944,
+        "delivered": "bin\\cpu\\coupled_kernel.exe"
+      },
+      "orbit_worker.exe": {
+        "source": "C:\\tmp\\atomos3619_cpu\\Release\\orbit_worker.exe",
+        "sha256": "467613b0c0331da688a6ec50c8845fe50629fe464ce77a9b20fe6d99119cbe5f",
+        "bytes": 71680,
+        "delivered": "bin\\cpu\\orbit_worker.exe"
+      }
+    },
+    "cuda": {
+      "satnav.exe": {
+        "source": "C:\\tmp\\atomos3619_gpu128\\Release\\satnav.exe",
+        "sha256": "dadd80758003cab048ab55dad90a3dd322676def45b643940e41f6e7b75118f3",
+        "bytes": 368640,
+        "delivered": "bin\\cuda\\satnav.exe"
+      },
+      "satnav_stream.exe": {
+        "source": "C:\\tmp\\atomos3619_gpu128\\Release\\satnav_stream.exe",
+        "sha256": "dd9fb85ef7ac67c7dedc0c69de1390ce6644de88c57bbabb4e780be73e7b9c9e",
+        "bytes": 322048,
+        "delivered": "bin\\cuda\\satnav_stream.exe"
+      },
+      "self_reference.exe": {
+        "source": "C:\\tmp\\atomos3619_gpu128\\Release\\self_reference.exe",
+        "sha256": "cc7a1aa647717089ee176bd80a1c5fb2182c3278040effd4ed369701bfa039aa",
+        "bytes": 114176,
+        "delivered": "bin\\cuda\\self_reference.exe"
+      },
+      "coupled_kernel.exe": {
+        "source": "C:\\tmp\\atomos3619_gpu128\\Release\\coupled_kernel.exe",
+        "sha256": "2c40ef9c4fcbbca56aa8b7157bfe907626131814e52b4b4199dfaf6bfd03a367",
+        "bytes": 386560,
+        "delivered": "bin\\cuda\\coupled_kernel.exe"
+      },
+      "orbit_worker.exe": {
+        "source": "C:\\tmp\\atomos3619_gpu128\\Release\\orbit_worker.exe",
+        "sha256": "f009464be2f64ebae827b95430bd8bffb7c6ffc2bb9b4dbf341e948663adb96b",
+        "bytes": 1298944,
+        "delivered": "bin\\cuda\\orbit_worker.exe"
+      }
+    }
+  }
+}

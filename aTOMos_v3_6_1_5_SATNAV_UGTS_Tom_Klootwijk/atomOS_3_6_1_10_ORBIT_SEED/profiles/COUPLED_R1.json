@@ -1,0 +1,72 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1-SATNAV",
+  "model_origin": "Explicit new mechanical observer realization of ASA/NA, synchronous JK and UGTS geometry; this is not a recovered original M2 physical matrix.",
+  "initial_dt_s": 1.0,
+  "initial_time_source": "first_sample_minus_dt",
+  "initial_position_source": "first_valid_observation",
+  "chart_source": "satnav_profile",
+  "hoop_initial_source": "satnav_profile",
+  "external_force": [0.0, 0.0, 0.0],
+  "equations": {
+    "d": "limit | fringe",
+    "x": "(q | d) & support",
+    "j": "y & (limit | fringe)",
+    "k": "align & ~limit & ~fringe"
+  },
+  "trajectory": {
+    "id": 0,
+    "description": "Six non-axis directional springs in a 3D ENU mechanical observer. Mass is kg, stiffness N/m, damping N s/m, forces N, lengths m and angles rad. Initial p/time/phi are replaced only by the explicitly selected source policies above; choose profile to use these literal values.",
+    "initial": {"time": 0.0, "p": [0.0, 0.0, 0.0], "v": [0.0, 0.0, 0.0], "q": 0, "phi": 0.0},
+    "mass": [10.0, 12.0, 8.0],
+    "damping": [3.0, 3.5, 2.5],
+    "stiffness_base": [[2.0, 0.2, 0.1], [0.2, 2.5, -0.15], [0.1, -0.15, 3.0]],
+    "chart": {"r0": 100000.0, "core": 0.1, "blend_weight": 0.35, "axis": 0.0},
+    "hoop": {"rate": 0.05},
+    "masks": {"present": 63, "asa": 4294967295, "na": 4294967295, "boundary": 0},
+    "channels": [
+      {
+        "index": 0, "direction": [0.7071067811865475, 0.7071067811865475, 0.0],
+        "stiffness": {"off": 0.5, "on": 6.0}, "force": {"off": 0.0, "on": 0.1},
+        "angle_center": 0.7853981633974483, "angle_tolerance": 0.45,
+        "error_limit": 0.5, "fringe_width": 0.5,
+        "support": {"kind": "sphere", "center": [0.0, 0.0, 0.0], "radius": 10000.0}
+      },
+      {
+        "index": 1, "direction": [0.7071067811865475, -0.7071067811865475, 0.0],
+        "stiffness": {"off": 0.5, "on": 7.0}, "force": {"off": 0.0, "on": -0.05},
+        "angle_center": -0.7853981633974483, "angle_tolerance": 0.45,
+        "error_limit": 0.65, "fringe_width": 0.5,
+        "support": {"kind": "sphere", "center": [0.0, 0.0, 0.0], "radius": 10000.0}
+      },
+      {
+        "index": 2, "direction": [0.7071067811865475, 0.0, 0.7071067811865475],
+        "stiffness": {"off": 0.6, "on": 8.0}, "force": {"off": 0.0, "on": 0.08},
+        "angle_center": 0.0, "angle_tolerance": 0.45,
+        "error_limit": 0.5, "fringe_width": 0.5,
+        "support": {"kind": "sphere", "center": [0.0, 0.0, 0.0], "radius": 10000.0}
+      },
+      {
+        "index": 3, "direction": [0.7071067811865475, 0.0, -0.7071067811865475],
+        "stiffness": {"off": 0.6, "on": 9.0}, "force": {"off": 0.0, "on": 0.04},
+        "angle_center": 3.141592653589793, "angle_tolerance": 0.45,
+        "error_limit": 0.65, "fringe_width": 0.5,
+        "support": {"kind": "sphere", "center": [0.0, 0.0, 0.0], "radius": 10000.0}
+      },
+      {
+        "index": 4, "direction": [0.0, 0.7071067811865475, 0.7071067811865475],
+        "stiffness": {"off": 0.7, "on": 10.0}, "force": {"off": 0.0, "on": -0.03},
+        "angle_center": 1.5707963267948966, "angle_tolerance": 0.45,
+        "error_limit": 0.5, "fringe_width": 0.5,
+        "support": {"kind": "sphere", "center": [0.0, 0.0, 0.0], "radius": 10000.0}
+      },
+      {
+        "index": 5, "direction": [0.0, 0.7071067811865475, -0.7071067811865475],
+        "stiffness": {"off": 0.7, "on": 11.0}, "force": {"off": 0.0, "on": 0.06},
+        "angle_center": -1.5707963267948966, "angle_tolerance": 0.45,
+        "error_limit": 0.65, "fringe_width": 0.5,
+        "support": {"kind": "sphere", "center": [0.0, 0.0, 0.0], "radius": 10000.0}
+      }
+    ]
+  }
+}

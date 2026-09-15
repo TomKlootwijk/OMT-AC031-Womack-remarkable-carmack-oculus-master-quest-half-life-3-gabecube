@@ -1,0 +1,295 @@
+\clearpage
+\subsection{LIVE-R1 time contract and broadcast orbit}
+\label{sec:live-orbit}
+
+A raw observation is $(t_r^{\rm tag},P_i,\mathrm{PRN}_i,\sigma_{0i})$.
+Time is full, unwrapped GPS seconds from 1980-01-06; $P_i$ is the original
+GPS L1 C/A pseudorange in metres. Receiver time tags and code share one clock
+convention. GPS-labelled RINEX calendar fields receive no UTC conversion.
+The final physical reception-time estimate is
+\begin{equation}
+ \widehat t_r=t_r^{\rm tag}-\widehat b_r/c,
+ \qquad c=299\,792\,458\ \mathrm{m\,s^{-1}}.
+ \label{eq:live-reception-time}
+\end{equation}
+Here $b_r$ is the estimated receiver clock bias in metres. The raw tag remains
+in the trace. RTCM week rollover is resolved against an explicit reception-date
+reference; age tests use full time, never a modulo-week age.
+
+Each GPS ephemeris provides $\sqrt A,e,i_0,\Omega_0,\omega,M_0,\Delta n,
+\dot i,\dot\Omega$, six harmonic coefficients, $t_{oe},t_{oc}$, three clock
+coefficients, $T_{GD}$, health and issue identifiers. The selected record has
+matching PRN, healthy status and $\mathrm{IODC}\bmod256=\mathrm{IODE}$.
+Both clock and orbit age are bounded by $7200$ s; a shorter declared half-fit
+interval further limits orbit age. A nearer unhealthy issue is not replaced
+by an older healthy issue.
+
+For signal emission time $t_s$, define
+\begin{align}
+ A&=(\sqrt A)^2,&t_k&=t_s-t_{oe},\\
+ n&=\sqrt{\mu/A^3}+\Delta n,&M&=M_0+n t_k,
+ \qquad \mu=3.986005\times10^{14}\ \mathrm{m^3\,s^{-2}}.
+\end{align}
+Newton's method solves $E-e\sin E=M$:
+\begin{equation}
+ E_{j+1}=E_j-\frac{E_j-e\sin E_j-M}{1-e\cos E_j}.
+\end{equation}
+The implementation reduces $M$ modulo $2\pi$, starts at $E_0=M$, and requires
+an increment below $10^{-14}$ rad within 30 iterations. For $0\leq e<1$,
+\begin{align}
+ \nu&=\operatorname{atan2}\!\left(\sqrt{1-e^2}\sin E,\cos E-e\right),
+ &\phi&=\nu+\omega,\\
+ u&=\phi+C_{us}\sin2\phi+C_{uc}\cos2\phi,\\
+ r&=A(1-e\cos E)+C_{rs}\sin2\phi+C_{rc}\cos2\phi,\\
+ i&=i_0+\dot i\,t_k+C_{is}\sin2\phi+C_{ic}\cos2\phi,\\
+ \Omega&=\Omega_0+(\dot\Omega-\omega_e)t_k
+                  -\omega_e(t_{oe}\bmod604800),\\
+ \omega_e&=7.2921151467\times10^{-5}\ \mathrm{rad\,s^{-1}}.
+\end{align}
+All angles are radians. Radius harmonics are metres; the other harmonics are
+angular corrections. These definitions implement the GPS LNAV user algorithm
+in \href{https://www.gps.gov/sites/default/files/2025-07/IS-GPS-200N.pdf}{IS-GPS-200N,
+section 20.3.3.4.3}; they are new GPS-specific additions to this kernel package.
+
+\clearpage
+\subsection{Satellite clock, emission time and reception axes}
+\label{sec:live-clock}
+
+Let $x'=r\cos u$ and $y'=r\sin u$. The satellite position in the Earth-fixed
+axes at emission is
+\begin{equation}
+ \widetilde{\boldsymbol x}_s=
+ \begin{pmatrix}
+ x'\cos\Omega-y'\cos i\sin\Omega\\
+ x'\sin\Omega+y'\cos i\cos\Omega\\
+ y'\sin i
+ \end{pmatrix}.
+\end{equation}
+With $\Delta t_c=t_s-t_{oc}$, the broadcast clock polynomial, eccentric-orbit
+relativity correction, and L1 code clock are
+\begin{align}
+ \delta t_{\rm poly}&=a_{f0}+a_{f1}\Delta t_c+a_{f2}\Delta t_c^2,\\
+ \delta t_{\rm rel}&=F e\sqrt A\sin E,
+ &F&=-4.442807633\times10^{-10}\ \mathrm{s\,m^{-1/2}},\\
+ \delta t_{s,L1}&=\delta t_{\rm poly}+\delta t_{\rm rel}-T_{GD}.
+ \label{eq:live-l1-clock}
+\end{align}
+The trace stores all three contributions separately. The $-T_{GD}$ sign is
+specific to this L1 profile. An external differential C1--P1 bias is not
+invented. Alternate code types are rejected until their signal-bias model is
+explicit. See \href{https://www.gps.gov/sites/default/files/2025-07/IS-GPS-200N.pdf}{IS-GPS-200N,
+sections 20.3.3.3.3.1--20.3.3.3.3.2}.
+
+The measured code connects the receiver and satellite clock tags:
+\begin{equation}
+ t_s^{\rm tag}=t_r^{\rm tag}-P/c,
+ \qquad
+ t_s^{(j+1)}=t_s^{\rm tag}-\delta t_{s,L1}(t_s^{(j)}).
+ \label{eq:live-transmit-time}
+\end{equation}
+The adapter uses three clock iterations starting at $t_s^{\rm tag}$. The
+receiver clock cancels in $t_r^{\rm tag}-P/c$, because it occurs in both raw
+quantities. Subtracting the receiver clock again here would double-correct the
+emission time. This construction follows ESA's
+\href{https://gssc.esa.int/navipedia/index.php/Emission_Time_Computation}{pseudorange-based
+emission-time algorithm}.
+
+Earth rotation over the travel time is applied once, before the native solve:
+\begin{align}
+ R_3(a)&=\begin{pmatrix}\cos a&\sin a&0\\-\sin a&\cos a&0\\0&0&1\end{pmatrix},\\
+ \boldsymbol x_s^{rx}&=R_3(\omega_e\tau)\widetilde{\boldsymbol x}_s,
+ &\tau&=\|\boldsymbol x_s^{rx}-\boldsymbol x_r\|/c.
+ \label{eq:live-earth-rotation}
+\end{align}
+Four range iterations, initially $\tau_0=P/c$, determine the reception-frame
+satellite position for the current receiver estimate. The native model never
+rotates it a second time. The rotation sign and frame convention follow
+\href{https://gssc.esa.int/navipedia/index.php/Satellite_Coordinates_Computation}{ESA's
+reception-frame coordinate construction}.
+
+The first GSI epoch supplies an independent component check: all eight
+emission positions match the native RTKLIB trace within $0.000578$ m and its
+clock values within $0.000438$ ns. The RTKLIB trace rounds coordinates to
+millimetres and clocks to $0.001$ ns, and excludes $T_{GD}$ from its reported
+satellite clock. The comparison therefore adds $T_{GD}$ back to
+Equation~\eqref{eq:live-l1-clock} for that check only.
+
+\clearpage
+\subsection{Complete Klobuchar L1 ionosphere}
+\label{sec:live-ionosphere}
+
+WGS84 ECEF-to-geodetic conversion supplies receiver latitude $\varphi_r$,
+longitude $\lambda_r$ and ellipsoidal height $h$. Rotating the line of sight
+into local ENU gives azimuth $A_z$ clockwise from north and elevation
+$\mathcal E$. A default $10^\circ$ elevation mask is applied after the receiver
+geometry has been initialized.
+
+Klobuchar latitude, longitude and elevation arguments are in semicircles:
+$\varphi_u=\varphi_r/\pi$, $\lambda_u=\lambda_r/\pi$ and
+$\epsilon=\mathcal E/\pi$. Azimuth remains in radians. The complete pierce-point
+and geomagnetic construction is
+\begin{align}
+ \psi&=\frac{0.0137}{\epsilon+0.11}-0.022,\\
+ \varphi_I&=\min\!\left(0.416,
+       \max\!\left(-0.416,\varphi_u+\psi\cos A_z\right)\right),\\
+ \lambda_I&=\lambda_u+\frac{\psi\sin A_z}{\cos(\pi\varphi_I)},\\
+ \varphi_m&=\varphi_I+0.064\cos\!\left(\pi(\lambda_I-1.617)\right),\\
+ t_{\rm local}&=(43200\lambda_I+t_r^{\rm tag})\bmod86400.
+\end{align}
+With the four broadcast alpha and four beta coefficients,
+\begin{align}
+ A_I&=\max\!\left(0,\sum_{j=0}^{3}\alpha_j\varphi_m^j\right),\\
+ P_I&=\max\!\left(72000,\sum_{j=0}^{3}\beta_j\varphi_m^j\right),\\
+ X&=\frac{2\pi(t_{\rm local}-50400)}{P_I},\\
+ F_I&=1+16(0.53-\epsilon)^3.
+\end{align}
+Amplitude $A_I$ is seconds and period $P_I$ is seconds. The slant L1 delay,
+converted to metres, is
+\begin{equation}
+ I=cF_I
+ \begin{cases}
+ 5\times10^{-9}+A_I\left(1-X^2/2+X^4/24\right),&|X|<1.57,\\
+ 5\times10^{-9},&\text{otherwise}.
+ \end{cases}
+ \label{eq:live-klobuchar}
+\end{equation}
+Every trigonometric operation on a semicircle value explicitly multiplies by
+$\pi$. The limits on pierce latitude, amplitude and period are part of the
+published model. See
+\href{https://gssc.esa.int/navipedia/index.php/Klobuchar_Ionospheric_Model}{ESA's
+Klobuchar equations}, and GPS LNAV ionosphere parameters in
+\href{https://www.gps.gov/sites/default/files/2025-07/IS-GPS-200N.pdf}{IS-GPS-200N,
+section 20.3.3.5.2.5}.
+
+When broadcast coefficients are unavailable, the adapter explicitly selects
+$\alpha_j=\beta_j=0$ and records
+\code{klobuchar\_zero\_coefficients\_5ns\_baseline}. This still produces
+$cF_I\,5\times10^{-9}$ metres of delay; it is not zero ionosphere. For the
+internet capture, an independently downloaded BKG broadcast navigation header
+provides the coefficients, with its source hash retained. Receiver ephemerides
+can still come from the actual RTCM 1019 stream.
+
+\clearpage
+\subsection{Troposphere, observation variance and native solve}
+\label{sec:live-observation-equation}
+
+LIVE-R1 uses a specified standard atmosphere with relative humidity $H=0.7$.
+For $-100\leq h\leq10000$ m and $\mathcal E>0$, define
+\begin{align}
+ h_0&=\max(h,0),\\
+ p&=1013.25(1-2.2557\times10^{-5}h_0)^{5.2568}\quad[\mathrm{hPa}],\\
+ T&=288.16-0.0065h_0\quad[\mathrm K],\\
+ e_w&=6.108H\exp\!\left(\frac{17.15T-4684}{T-38.45}\right)
+       \quad[\mathrm{hPa}].
+\end{align}
+The hydrostatic and wet Saastamoinen delays are
+\begin{align}
+ T_h&=\frac{0.0022768p}
+ {(1-0.00266\cos2\varphi_r-0.00028h_0/1000)\sin\mathcal E},\\
+ T_w&=\frac{0.002277(1255/T+0.05)e_w}{\sin\mathcal E},
+ &T_d&=T_h+T_w.
+ \label{eq:live-saastamoinen}
+\end{align}
+Negative terrestrial heights use sea-level weather and carry a specific status.
+Outside the height domain, atmosphere is omitted with an explicit diagnostic;
+no calibrated weather is inferred. These constants and equations match the
+independent \href{https://github.com/tomojitakasu/RTKLIB/blob/71db0ffa/src/rtkcmn.c}{RTKLIB
+\code{tropmodel} source}.
+
+The default nominal code uncertainty is $\sigma_{0i}=3$ m. The executed native
+profile weights observations by
+\begin{equation}
+ \sigma_i=\frac{\sigma_{0i}}{\max(\sin\mathcal E_i,0.1)},
+ \qquad W_{ii}=\sigma_i^{-2}.
+ \label{eq:live-weight}
+\end{equation}
+CN0 is retained when supplied, without an invented CN0-to-variance calibration.
+These are nominal independent variances, not measured position errors or
+protection levels.
+
+The full measurement equation and its single additive correction are
+\begin{align}
+ P_i&=\|\boldsymbol x_r-\boldsymbol x_{s,i}^{rx}\|+b_r
+       -c\delta t_{s,i,L1}+I_i+T_{d,i}+\epsilon_i,\\
+ a_i&=c\delta t_{s,i,L1}-I_i-T_{d,i},
+ &P_{i,\mathrm{corr}}&=P_i+a_i.
+ \label{eq:live-corrected-code}
+\end{align}
+The native CPU/CUDA solver estimates
+$\boldsymbol s=(x_r,y_r,z_r,b_r)^\mathsf T$ by weighted least squares. For
+$\rho_i=\|\boldsymbol x_r-\boldsymbol x_{s,i}^{rx}\|$,
+\begin{equation}
+ r_i=P_{i,\mathrm{corr}}-\rho_i-b_r,
+ \qquad
+ H_i=\begin{pmatrix}
+ (\boldsymbol x_r-\boldsymbol x_{s,i}^{rx})^\mathsf T/\rho_i&1
+ \end{pmatrix}.
+\end{equation}
+An online Givens QR solve of the whitened system gives $\Delta\boldsymbol s$;
+$\boldsymbol s\leftarrow\boldsymbol s+\Delta\boldsymbol s$. Rank, iteration,
+finite-value and residual-fit results remain explicit. Literal ASA/NA selection
+is unchanged, including whole-word absorption on a selected boundary hit.
+
+\clearpage
+\subsection{Persistent receiver execution and correction feedback}
+\label{sec:live-outer-loop}
+
+The persistent native worker receives complete epochs. The preparation layer
+and native solve form the outer state-feedback map
+\begin{align}
+ \mathcal O_n^{(k)}&=\operatorname{Prepare}
+       (P_n,t_n^{\rm tag},\mathcal E_n,\boldsymbol s_n^{(k)}),\\
+ \boldsymbol s_n^{(k+1)}&=\operatorname{NativeSolve}
+       (\mathcal O_n^{(k)},\boldsymbol s_n^{(k)}),
+ \label{eq:live-outer-feedback}
+\end{align}
+where $\mathcal E_n$ denotes the available ephemeris set. Preparation recomputes
+reception-frame geometry, elevation selection, ionosphere, troposphere and
+weights from the new position. The default outer limit is eight passes.
+A valid position requires initialized terrestrial geometry, a converged native
+solve, and
+\begin{equation}
+ \max\!\left(
+ \|\boldsymbol x_n^{(k+1)}-\boldsymbol x_n^{(k)}\|,
+ |b_n^{(k+1)}-b_n^{(k)}|
+ \right)<10^{-3}\ \mathrm m.
+\end{equation}
+
+At the first receiver epoch, the complete state is zero. Geometry initialization
+uses all available healthy GPS codes with orbit and clock corrections; the
+trace explicitly marks atmosphere and elevation as uninitialized. After the
+first coarse Earth position is solved, the next pass activates the physical
+models. Reference-station coordinates are never read as seeds. Subsequent
+epochs start from this worker's preceding valid solution:
+\begin{equation}
+ \boldsymbol s_{n+1}^{(0)}=\widehat{\boldsymbol s}_n.
+\end{equation}
+A failed epoch does not overwrite that state. A detected receiver/station change
+resets the seed. Duplicate or out-of-order epochs do not produce a new fix.
+This is per-epoch code positioning with a warm start; it does not silently add
+a motion prior or carrier-phase ambiguities.
+
+The geometric mechanics profile remains a downstream consumer of position
+results. Its JK state is not injected into satellite orbit/clock corrections
+or used as a fictitious GNSS observation. The live feedback in
+Equation~\eqref{eq:live-outer-feedback} closes the formerly missing receiver
+preparation loop around the existing position kernel.
+
+\begin{panel}
+\textbf{Separate observable evidence.}
+The journal stores raw measurements, every preparation pass, every native
+solution and final availability. Correction components retain signs and units.
+A recorded-file replay, a local timed replay, and a current internet receiver
+stream are distinct source modes. A remote reference receiver's position is
+its antenna position; it does not measure the position of the user's computer.
+\end{panel}
+
+The GSI 120-epoch run starts at ECEF zero, converges on all epochs, and agrees
+with independent NumPy solves of all 263 converged passes within
+$1.17\times10^{-8}$ m per state component. The executed weighting differs from
+RTKLIB's broadcast-variance weighting: their final positions differ by a mean
+$0.529$ m and a maximum $1.589$ m. A controlled NumPy re-solve with the same
+physical corrections and RTKLIB weights reduces those differences to a mean
+$0.000174$ m and a maximum $0.000346$ m. This experiment isolates the weighting
+choice; it is recorded separately from the executed native profile. The full
+report is \path{results/real_0759_cpu/independent_comparison.json}.

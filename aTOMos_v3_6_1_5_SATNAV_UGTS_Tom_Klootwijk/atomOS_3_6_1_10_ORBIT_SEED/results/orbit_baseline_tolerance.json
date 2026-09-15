@@ -1,0 +1,263 @@
+{
+  "profile": "ORBIT-PHYSICAL-ACCEPTANCE-R1",
+  "budget_m": 10.0,
+  "budget_origin": "Explicit engineering acceptance budget; separate from native functional tolerances",
+  "reference_sampling": "Discrete external product epochs; no continuous-time or true-orbit guarantee",
+  "source_report_sha256": "dfb2db89094411048e7e15c82dc8864df7b0799b82341d2cdbe1daf24c045ab1",
+  "objects": [
+    {
+      "object_id": "G05",
+      "physical_model_sha256": "5deb26d1f0cb9efbf8457bf5d375ea78f1e8e90ce47551009168e379a3b11680",
+      "first_sample_exceedance_seconds": 300.0,
+      "previous_sample_seconds": null,
+      "maximum_over_full_test_window_m": 7402.959661484532,
+      "durations": [
+        {
+          "requested_hours": 0.25,
+          "samples": 3,
+          "last_tested_seconds": 900.0,
+          "max_error_m": 21.742452669430822,
+          "worst_sample_seconds": 900.0,
+          "status": "failed",
+          "margin_m": -11.742452669430822
+        },
+        {
+          "requested_hours": 1.0,
+          "samples": 12,
+          "last_tested_seconds": 3600.0,
+          "max_error_m": 32.98045648195486,
+          "worst_sample_seconds": 3600.0,
+          "status": "failed",
+          "margin_m": -22.98045648195486
+        },
+        {
+          "requested_hours": 6.0,
+          "samples": 72,
+          "last_tested_seconds": 21600.0,
+          "max_error_m": 114.99216052104093,
+          "worst_sample_seconds": 21600.0,
+          "status": "failed",
+          "margin_m": -104.99216052104093
+        },
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86400.0,
+          "max_error_m": 285.3302893234722,
+          "worst_sample_seconds": 86400.0,
+          "status": "failed",
+          "margin_m": -275.3302893234722
+        },
+        {
+          "requested_hours": 72.0,
+          "samples": 864,
+          "last_tested_seconds": 259200.0,
+          "max_error_m": 1614.4130473119915,
+          "worst_sample_seconds": 259200.0,
+          "status": "failed",
+          "margin_m": -1604.4130473119915
+        },
+        {
+          "requested_hours": 168.0,
+          "samples": 2016,
+          "last_tested_seconds": 604800.0,
+          "max_error_m": 7402.959661484532,
+          "worst_sample_seconds": 604800.0,
+          "status": "failed",
+          "margin_m": -7392.959661484532
+        }
+      ]
+    },
+    {
+      "object_id": "C03",
+      "physical_model_sha256": "f082874c18f713acbe1b893ddfbcdc3424123c4d338765325f400cdeffe5f296",
+      "first_sample_exceedance_seconds": 31200.0,
+      "previous_sample_seconds": 30900.0,
+      "maximum_over_full_test_window_m": 532.5819298168335,
+      "durations": [
+        {
+          "requested_hours": 0.25,
+          "samples": 3,
+          "last_tested_seconds": 900.0,
+          "max_error_m": 0.5076106824387339,
+          "worst_sample_seconds": 900.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 9.492389317561265
+        },
+        {
+          "requested_hours": 1.0,
+          "samples": 12,
+          "last_tested_seconds": 3600.0,
+          "max_error_m": 0.8785695728763521,
+          "worst_sample_seconds": 3600.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 9.121430427123649
+        },
+        {
+          "requested_hours": 6.0,
+          "samples": 72,
+          "last_tested_seconds": 21600.0,
+          "max_error_m": 5.900783892315065,
+          "worst_sample_seconds": 21600.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 4.099216107684935
+        },
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86400.0,
+          "max_error_m": 20.599831398227774,
+          "worst_sample_seconds": 62700.0,
+          "status": "failed",
+          "margin_m": -10.599831398227774
+        },
+        {
+          "requested_hours": 72.0,
+          "samples": 864,
+          "last_tested_seconds": 259200.0,
+          "max_error_m": 116.32412929306494,
+          "worst_sample_seconds": 236400.0,
+          "status": "failed",
+          "margin_m": -106.32412929306494
+        },
+        {
+          "requested_hours": 168.0,
+          "samples": 2016,
+          "last_tested_seconds": 604800.0,
+          "max_error_m": 532.5819298168335,
+          "worst_sample_seconds": 583200.0,
+          "status": "failed",
+          "margin_m": -522.5819298168335
+        }
+      ]
+    },
+    {
+      "object_id": "C06",
+      "physical_model_sha256": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d",
+      "first_sample_exceedance_seconds": 31200.0,
+      "previous_sample_seconds": 30900.0,
+      "maximum_over_full_test_window_m": 1237.241656286258,
+      "durations": [
+        {
+          "requested_hours": 0.25,
+          "samples": 3,
+          "last_tested_seconds": 900.0,
+          "max_error_m": 1.260443134175529,
+          "worst_sample_seconds": 900.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 8.739556865824472
+        },
+        {
+          "requested_hours": 1.0,
+          "samples": 12,
+          "last_tested_seconds": 3600.0,
+          "max_error_m": 1.5380839486595008,
+          "worst_sample_seconds": 3600.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 8.461916051340499
+        },
+        {
+          "requested_hours": 6.0,
+          "samples": 72,
+          "last_tested_seconds": 21600.0,
+          "max_error_m": 4.8766839052359625,
+          "worst_sample_seconds": 21600.0,
+          "status": "passed_at_tested_samples",
+          "margin_m": 5.1233160947640375
+        },
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86400.0,
+          "max_error_m": 44.684370187353956,
+          "worst_sample_seconds": 86400.0,
+          "status": "failed",
+          "margin_m": -34.684370187353956
+        },
+        {
+          "requested_hours": 72.0,
+          "samples": 864,
+          "last_tested_seconds": 259200.0,
+          "max_error_m": 267.21116642857066,
+          "worst_sample_seconds": 255900.0,
+          "status": "failed",
+          "margin_m": -257.21116642857066
+        },
+        {
+          "requested_hours": 168.0,
+          "samples": 2016,
+          "last_tested_seconds": 604800.0,
+          "max_error_m": 1237.241656286258,
+          "worst_sample_seconds": 598500.0,
+          "status": "failed",
+          "margin_m": -1227.241656286258
+        }
+      ]
+    },
+    {
+      "object_id": "CHANDRA",
+      "physical_model_sha256": "5430cd9547413239892c19e14499b8012dfae618110193af2677f7e1c467a327",
+      "first_sample_exceedance_seconds": 72248.81603312492,
+      "previous_sample_seconds": 71948.81603336334,
+      "maximum_over_full_test_window_m": 19399.30731946993,
+      "durations": [
+        {
+          "requested_hours": 0.25,
+          "samples": 3,
+          "last_tested_seconds": 848.8160572052002,
+          "max_error_m": 0.002047615135334206,
+          "worst_sample_seconds": 848.8160572052002,
+          "status": "passed_at_tested_samples",
+          "margin_m": 9.997952384864666
+        },
+        {
+          "requested_hours": 1.0,
+          "samples": 12,
+          "last_tested_seconds": 3548.816056251526,
+          "max_error_m": 0.008470509549273716,
+          "worst_sample_seconds": 3548.816056251526,
+          "status": "passed_at_tested_samples",
+          "margin_m": 9.991529490450727
+        },
+        {
+          "requested_hours": 6.0,
+          "samples": 72,
+          "last_tested_seconds": 21548.81605029106,
+          "max_error_m": 0.07694858368688462,
+          "worst_sample_seconds": 21548.81605029106,
+          "status": "passed_at_tested_samples",
+          "margin_m": 9.923051416313115
+        },
+        {
+          "requested_hours": 24.0,
+          "samples": 288,
+          "last_tested_seconds": 86348.81602859497,
+          "max_error_m": 76.50633887318128,
+          "worst_sample_seconds": 86348.81602859497,
+          "status": "failed",
+          "margin_m": -66.50633887318128
+        },
+        {
+          "requested_hours": 72.0,
+          "samples": 864,
+          "last_tested_seconds": 259148.81597065926,
+          "max_error_m": 987.1289017903346,
+          "worst_sample_seconds": 259148.81597065926,
+          "status": "failed",
+          "margin_m": -977.1289017903346
+        },
+        {
+          "requested_hours": 168.0,
+          "samples": 2016,
+          "last_tested_seconds": 604748.8158562183,
+          "max_error_m": 19399.30731946993,
+          "worst_sample_seconds": 302648.8159561157,
+          "status": "failed",
+          "margin_m": -19389.30731946993
+        }
+      ]
+    }
+  ],
+  "all_requested_durations_within_budget_at_samples": false,
+  "status": "not_met_for_all_requested_durations"
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "ORBIT-HELDOUT-BACKEND-COMPARISON-1",
+  "status": "pass",
+  "comparison_scope": "Full2016withheldsamples perobject; identicalmodelbytes; independentexternalreferenceerrors ineachbackend report",
+  "paired_positions": 8064,
+  "objects": [
+    {
+      "object": "G05",
+      "paired_samples": 2016,
+      "native_cpu_cuda_position_max_m": 4.551643065107933e-05,
+      "model_sha256": "a3fd9302ad6bf27c949b7951693df0d11de2359bb9ca777b1aeabd5e9d6b3153",
+      "model_file_sha256": "a3fd9302ad6bf27c949b7951693df0d11de2359bb9ca777b1aeabd5e9d6b3153",
+      "physical_model_sha256": "5deb26d1f0cb9efbf8457bf5d375ea78f1e8e90ce47551009168e379a3b11680",
+      "model_sha256_semantics": "Legacy alias for model_file_sha256"
+    },
+    {
+      "object": "C03",
+      "paired_samples": 2016,
+      "native_cpu_cuda_position_max_m": 9.126840776216077e-06,
+      "model_sha256": "17bcf4e3c2dce5334c737a58c3318982282aa3ccd2651454360df25fefe55eb5",
+      "model_file_sha256": "17bcf4e3c2dce5334c737a58c3318982282aa3ccd2651454360df25fefe55eb5",
+      "physical_model_sha256": "f082874c18f713acbe1b893ddfbcdc3424123c4d338765325f400cdeffe5f296",
+      "model_sha256_semantics": "Legacy alias for model_file_sha256"
+    },
+    {
+      "object": "C06",
+      "paired_samples": 2016,
+      "native_cpu_cuda_position_max_m": 4.527882129033067e-05,
+      "model_sha256": "c66117181899257ebc21cd080fd6b20b63e590ffce006a7901109b600be21319",
+      "model_file_sha256": "c66117181899257ebc21cd080fd6b20b63e590ffce006a7901109b600be21319",
+      "physical_model_sha256": "d22ce4ac139555f0200688be58fcfc4a4d154cecc45636fb5eb9ca3c07a5a84d",
+      "model_sha256_semantics": "Legacy alias for model_file_sha256"
+    },
+    {
+      "object": "CHANDRA",
+      "paired_samples": 2016,
+      "native_cpu_cuda_position_max_m": 2.306290089886974e-05,
+      "model_sha256": "778a5454129c64ce41580dd52298e583cbc5ab54446264d9a1c8e160d2ab95be",
+      "model_file_sha256": "778a5454129c64ce41580dd52298e583cbc5ab54446264d9a1c8e160d2ab95be",
+      "physical_model_sha256": "5430cd9547413239892c19e14499b8012dfae618110193af2677f7e1c467a327",
+      "model_sha256_semantics": "Legacy alias for model_file_sha256"
+    }
+  ],
+  "overall_max_m": 4.551643065107933e-05,
+  "threshold_m": 0.001
+}

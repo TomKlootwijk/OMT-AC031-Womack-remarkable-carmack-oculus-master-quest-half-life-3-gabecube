@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "trajectory_count": 272,
+  "transitions": 3308,
+  "field_comparisons": 320876,
+  "native_trace_verified": true,
+  "invariants": [
+    "q0_changes_native_position_and_velocity",
+    "q0_changes_later_geometry_drive",
+    "observation_geometry_changes_drive_and_q",
+    "changed_geometry_q_changes_next_physical_state",
+    "edited_equation_changes_native_q_and_physics",
+    "edited_equation_changes_later_predicates",
+    "free_motion_closed_form",
+    "constant_force_backward_euler_closed_form",
+    "diagonal_spring_known_discrete_step",
+    "singular_numeric_failure_then_frozen",
+    "singular_failure_commits_bit31",
+    "failed_time_and_physics_remain_last_valid",
+    "overflow_is_failure_with_null_diagnostic",
+    "geometry_overflow_is_explicit_failure",
+    "unavailable_observation_still_updates_q_and_physics",
+    "whole_word_absorption_preserves_supplied_j_equation",
+    "origin_chart_domain_status",
+    "negative_eigenvalue_is_retained",
+    "257_variable_length_trajectories_present",
+    "native_offdiagonal_generalized_modes"
+  ],
+  "trace_mutations_rejected": [
+    "q_after",
+    "drive",
+    "time_after",
+    "p_after",
+    "stiffness",
+    "mechanical_rhs",
+    "eigenvalues",
+    "eigenvectors"
+  ]
+}

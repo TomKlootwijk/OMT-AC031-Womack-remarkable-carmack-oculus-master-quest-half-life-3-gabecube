@@ -1,0 +1,35 @@
+{
+  "schema": "ORBIT-GRAVITY-REFERENCE-1",
+  "files": [
+    {
+      "file": "EGM96.gfc",
+      "url": "https://icgem.gfz.de/getmodel/gfc/971b0a3b49a497910aad23cd85e066d4cd9af0aeafe7ce6301a696bed8570be3/EGM96.gfc",
+      "resolved_url": "https://icgem.gfz.de/getmodel/gfc/971b0a3b49a497910aad23cd85e066d4cd9af0aeafe7ce6301a696bed8570be3/EGM96.gfc",
+      "bytes": 5620000,
+      "sha256": "5247a9e9c316dd2c8f8fd491d53be0e163cb5cb3676b021754240cc9e44cb43b",
+      "retrieved_utc": "2026-09-15T03:40:31.607780+00:00"
+    },
+    {
+      "file": "ICGEM-Format-2023.pdf",
+      "url": "https://icgem.gfz-potsdam.de/docs/ICGEM-Format-2023.pdf",
+      "resolved_url": "https://icgem.gfz.de/docs/ICGEM-Format-2023.pdf",
+      "bytes": 525208,
+      "sha256": "6defd9f87a64b16ec96bd657a74d0292ae3447cc7418da5104441102d8cb2b58",
+      "retrieved_utc": "2026-09-15T03:42:34.509045+00:00"
+    }
+  ],
+  "derived_files": [
+    {
+      "file": "EGM96_degree12.gfc",
+      "bytes": 8147,
+      "sha256": "dd7c5f4d863f89a56df5f39aad62b1da8edf261b9aa62906b93c065ad6444576",
+      "source_file": "EGM96.gfc"
+    },
+    {
+      "file": "EGM96_degree12.json",
+      "bytes": 34971,
+      "sha256": "d997e36a074a468a9a85997bdda615267bcbc1274e9107895b33320798d1787e",
+      "source_file": "EGM96.gfc"
+    }
+  ]
+}

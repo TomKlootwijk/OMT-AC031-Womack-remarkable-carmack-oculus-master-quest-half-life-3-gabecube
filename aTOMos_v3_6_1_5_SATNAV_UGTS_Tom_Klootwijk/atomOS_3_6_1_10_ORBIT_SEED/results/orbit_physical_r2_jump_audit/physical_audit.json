@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "scope": "Known gravity coefficients, independent spherical force, ERFA frame, derivatives and domain-wide numerical integration without target labels. No held-out target positions read.",
+  "numeric_claim": "Measured sampled integration/reference differences; not a mathematical roundoff or global trajectory bound.",
+  "pass_thresholds": {
+    "coefficient_max_abs": 1e-20,
+    "force_max_m_s2": 2e-12,
+    "frame_max_abs": 1e-10,
+    "frame_derivative_max_abs_s_inv": 2e-12,
+    "sampled_native_vs_dop853_position_max_m": 1.0
+  },
+  "cpu_binary_sha256": "f69f1bd95c4a5f3e8bf95500ff4fe744ded8671dbf98ff56d1b87871236f1501",
+  "gravity_source_sha256": "d997e36a074a468a9a85997bdda615267bcbc1274e9107895b33320798d1787e",
+  "published_eop_bulletin_sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+  "models": {
+    "CHANDRA": {
+      "model_sha256": "f4282006c3210438bbcdb0c0d97c764aaefd68711ca5ab153488eba57e618e4f",
+      "gravity_degree": 12,
+      "coefficient_normalization_max_abs": 0.0,
+      "complex_step_vs_scipy_legendre_force_max_m_s2": 1.2539303185025442e-17,
+      "native_vs_complex_step_force_max_m_s2": 1.6203654470509613e-17,
+      "numba_vs_complex_step_force_max_m_s2": 9.501471788262684e-18,
+      "published_eop_direct_erfa_frame_max_abs": 4.7792325652551426e-11,
+      "analytic_frame_derivative_max_abs_s_inv": 9.730646735421622e-15,
+      "times_s": [
+        302348.816,
+        302648.816
+      ],
+      "native_rk4_step_s": 7.5,
+      "native_vs_dop853_position_m": [
+        0.10835136300165821,
+        0.10412042810328392
+      ],
+      "half_step_vs_dop853_position_m": [
+        0.11138029037912038,
+        0.10706778999751883
+      ],
+      "tighter_vs_default_dop853_position_m": [
+        0.10982695656197879,
+        0.1055764479101411
+      ],
+      "native_vs_tighter_dop853_position_m": [
+        0.0014979559295324836,
+        0.0014876545922551548
+      ],
+      "half_step_vs_tighter_dop853_position_m": [
+        0.0015533865053386129,
+        0.0014914189401778672
+      ],
+      "states_gcrs": {
+        "native_rk4": [
+          [
+            -11478370.609206818,
+            8388642.673672838,
+            1607554.1264465963,
+            -4918.299009502933,
+            -1799.0789187179846,
+            4833.896743995052
+          ],
+          [
+            -12885688.36998187,
+            7802066.050784274,
+            3045887.0359075665,
+            -4471.207816011352,
+            -2097.185723615011,
+            4749.222870843786
+          ]
+        ],
+        "half_step_rk4": [
+          [
+            -11478370.607247364,
+            8388642.674634181,
+            1607554.1243319423,
+            -4918.299010206235,
+            -1799.0789180986997,
+            4833.896744012281
+          ],
+          [
+            -12885688.368226528,
+            7802066.051914174,
+            3045887.0338065024,
+            -4471.207816667387,
+            -2097.185723110975,
+            4749.222870916485
+          ]
+        ],
+        "dop853_default": [
+          [
+            -11478370.684107877,
+            8388642.646510374,
+            1607554.1998771739,
+            -4918.298985734736,
+            -1799.078935986975,
+            4833.896740584526
+          ],
+          [
+            -12885688.43808253,
+            7802066.019120847,
+            3045887.1080240775,
+            -4471.207794496923,
+            -2097.185736543304,
+            4749.222865678226
+          ]
+        ],
+        "dop853_tighter": [
+          [
+            -11478370.608325869,
+            8388642.674252454,
+            1607554.125382714,
+            -4918.299009866859,
+            -1799.0789183411532,
+            4833.896743960648
+          ],
+          [
+            -12885688.369208047,
+            7802066.051469515,
+            3045887.0348376324,
+            -4471.207816360913,
+            -2097.1857232910015,
+            4749.222870839924
+          ]
+        ]
+      },
+      "elapsed_s": 25.97410690000106,
+      "pass": true
+    }
+  }
+}

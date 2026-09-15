@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "method": "Browser UI inspection through Codex in-app browser",
+  "url": "http://127.0.0.1:3620/",
+  "version": "3.6.1.10",
+  "object": "C03",
+  "station": "singapore_demo",
+  "exact_offset_dom": "12345.678",
+  "displayed_gpst": "2025-01-02T03:25:45.678 GPST",
+  "events": {
+    "classification": "visible over searched interval",
+    "evaluations": 733
+  },
+  "schedule": {
+    "queries": 658,
+    "cadences_s": [
+      300,
+      30
+    ],
+    "final_record_sha256": "9af16af08491161600dd25525ec4f39f07fe781042ba749b95606816667982aa"
+  },
+  "console_errors_warnings": [],
+  "visual_review": "Header, geometry, input, events and feedback panels readable without overlap",
+  "scope": "Current local CPU interface; broad numerical validation indexed separately",
+  "delivery_url": "http://127.0.0.1:3619/",
+  "delivery_version_observed": "3.6.1.10",
+  "local_service_upgrade": "Previous task-owned 3.6.1.9 server replaced by 3.6.1.10 after identity check; temporary3620 server stopped"
+}

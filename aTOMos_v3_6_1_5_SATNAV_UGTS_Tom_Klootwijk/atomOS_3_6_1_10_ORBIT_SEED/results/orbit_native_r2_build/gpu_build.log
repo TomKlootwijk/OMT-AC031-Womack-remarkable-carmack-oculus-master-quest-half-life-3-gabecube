@@ -1,0 +1,54 @@
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\cuda\backend.cu...
+  
+  C:\tmp\atomos3619_r2_gpu128>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir satnav_core\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -DWIN32 -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W4 /nologo /O2 /FS   /MD " -Xcompiler "/FdC:\tmp\atomos3619_r2_gpu128\Release\satnav_core.pdb" -o satnav_core.dir\Release\backend.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\cuda\backend.cu" 
+  backend.cu
+  tmpxft_00012044_00000000-7_backend.cudafe1.cpp
+  cpu.cpp
+  satnav_core.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\satnav_core.lib
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  core_tests.cpp
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\cuda\coupled_kernel.cu...
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  coupled_tests.cpp
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  
+  C:\tmp\atomos3619_r2_gpu128>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir coupled_kernel\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -DWIN32 -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W4 /nologo /O2 /FS   /MD " -Xcompiler "/Fdcoupled_kernel.dir\Release\vc143.pdb" -o coupled_kernel.dir\Release\cuda/coupled_kernel.cu.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\cuda\coupled_kernel.cu" 
+  orbit_native_tests.cpp
+  coupled_tests.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\coupled_tests.exe
+  orbit_native_tests.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\orbit_native_tests.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  main.cpp
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  satnav_stream.cpp
+  coupled_kernel.cu
+  satnav_stream.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\satnav_stream.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  tmpxft_0000cf0c_00000000-7_coupled_kernel.cudafe1.cpp
+  satnav.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\satnav.exe
+  coupled_kernel.cpp
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt
+  core_tests.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\core_tests.exe
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\cuda\self_reference.cu...
+  self_reference_tests.cpp
+  
+  C:\tmp\atomos3619_r2_gpu128>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir self_reference\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -DWIN32 -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W4 /nologo /O2 /FS   /MD " -Xcompiler "/Fdself_reference.dir\Release\vc143.pdb" -o self_reference.dir\Release\cuda/self_reference.cu.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\cuda\self_reference.cu" 
+  self_reference_tests.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\self_reference_tests.exe
+  Compiling CUDA source file ..\..\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\src\orbit_cuda.cu...
+  
+  C:\tmp\atomos3619_r2_gpu128>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe"  --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include"     --keep-dir orbit_worker\x64\Release  -maxrregcount=0    --machine 64 --compile -cudart static -forward-unknown-to-host-compiler -std=c++17 --generate-code=arch=compute_120,code=[sm_120] --generate-code=arch=compute_120,code=[compute_120] --fmad=false -Xcompiler="/EHsc -Ob2"   -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -D_MBCS -DWIN32 -D_WINDOWS -DNDEBUG -DSATNAV_HAS_CUDA=1 -D"CMAKE_INTDIR=\"Release\"" -Xcompiler "/EHsc /W4 /nologo /O2 /FS   /MD " -Xcompiler "/Fdorbit_worker.dir\Release\vc143.pdb" -o orbit_worker.dir\Release\orbit_cuda.obj "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_9_ORBIT_SEED\src\orbit_cuda.cu" 
+  self_reference.cu
+  tmpxft_00010bcc_00000000-7_self_reference.cudafe1.cpp
+  orbit_cuda.cu
+  tmpxft_00011c20_00000000-7_orbit_cuda.cudafe1.cpp
+  coupled_kernel.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\coupled_kernel.exe
+  self_reference.cpp
+  orbit_worker.cpp
+  orbit_worker.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\orbit_worker.exe
+  self_reference.vcxproj -> C:\tmp\atomos3619_r2_gpu128\Release\self_reference.exe
+  Building Custom Rule C:/OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube/aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk/atomOS_3_6_1_9_ORBIT_SEED/CMakeLists.txt

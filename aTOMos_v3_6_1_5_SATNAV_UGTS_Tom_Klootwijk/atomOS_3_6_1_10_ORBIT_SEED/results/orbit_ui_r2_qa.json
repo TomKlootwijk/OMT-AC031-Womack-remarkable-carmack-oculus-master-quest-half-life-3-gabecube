@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "method": "Cua browser UI and read-only rendered DOM inspection",
+  "url": "http://127.0.0.1:3619",
+  "checks": {
+    "displayed_codec": "Lossless 1-bit planes in machine words. Propagation uses binary64 arithmetic.",
+    "seed_size_kib": 8.86,
+    "object": "C03",
+    "station": "singapore_demo",
+    "exact_input_text": "12345.678",
+    "computed_gpst_label": "2025-01-02T03:25:45.678 GPST",
+    "accuracy_status": "matched_physical_model",
+    "physical_model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+    "visibility_result": "visible_over_searched_interval",
+    "event_evaluations": 733,
+    "ordered_feedback_queries": 658,
+    "observed_cadences_seconds": [
+      300,
+      30
+    ],
+    "browser_errors_or_warnings": [],
+    "visual_review": "No clipping or overlap in inspected viewport; panels scroll lengthy records"
+  }
+}

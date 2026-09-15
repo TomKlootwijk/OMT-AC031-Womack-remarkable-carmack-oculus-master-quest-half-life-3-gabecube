@@ -1,0 +1,105 @@
+{
+  "version": "3.6.1.9",
+  "profile": "ORBIT-SEED-R1",
+  "dynamics_profile": "ORBIT-DYNAMICS-R2",
+  "codec": "bitplanes64-zlib",
+  "status": "implementation_passed_accuracy_measured",
+  "implementation_status": "passed",
+  "scope": "Implementation checks plus sampled physical acceptance against a stated 10 m engineering target; no intrinsic universal physical error bound",
+  "physical_24h_acceptance": "passed_at_tested_samples",
+  "physical_all_requested_durations_acceptance": "not_met_for_all_requested_durations",
+  "independent_confirmation_24h_acceptance": "passed_at_tested_samples",
+  "independent_confirmation_all_requested_durations_acceptance": "not_met_for_all_requested_durations",
+  "python_tests": 139,
+  "evidence": {
+    "native": {
+      "path": "results/orbit_native_r2_validation_final/summary.json",
+      "sha256": "6df1288c010f58e50360393c93bba6f48abc9e7f0c0e0318de7d56a0882b6819"
+    },
+    "seeds": {
+      "path": "results/orbit_seed_r2_release_validation/summary.json",
+      "sha256": "a894bf9b0a189dbdb0b2b72318674edca38b0e39441034a3ad99e061eb7ed5e7"
+    },
+    "accuracy_cpu": {
+      "path": "results/orbit_accuracy_r2_cpu_verified/accuracy_summary.json",
+      "sha256": "82d94ddb50286af98424dc692d0b1eb04d3c2f2c21b542697f33de58831204e6"
+    },
+    "accuracy_cuda": {
+      "path": "results/orbit_accuracy_r2_cuda_verified/accuracy_summary.json",
+      "sha256": "a835b9a81923ed0c99f9e1d92ac820faa07534b1aa3545f70a2b2e10443c6bb7"
+    },
+    "retained": {
+      "path": "results/retained_native_3619/summary.json",
+      "sha256": "ff1a5275c1757a338b3470f557a27e1d9ab1372b184372d861a3a46aa5b40ec3"
+    },
+    "physical": {
+      "path": "results/orbit_physical_r2_audit_final/physical_audit.json",
+      "sha256": "7a80cbdbf334e69c4eb728ab06a25d4dfd28175365b3bf496eb7d6c0301b8ecd"
+    },
+    "physical_jump": {
+      "path": "results/orbit_physical_r2_jump_audit/physical_audit.json",
+      "sha256": "a710619882cda8d2b49fdb769adf67d26b77da36f05f1ea8f10dbd9a83739f3a"
+    },
+    "bitplane_replay": {
+      "path": "results/orbit_bitplane_final_replay.json",
+      "sha256": "5e27b8f5374f6b30ae0dee52b02cc34447a20050cdf0a54287507f9b0919e25f"
+    },
+    "ui": {
+      "path": "results/orbit_ui_r2_qa.json",
+      "sha256": "62ed9115e10dd9ab836075f105d48918f026a8bd27b2305a193fa429d32dd8b2"
+    },
+    "runtime_archive": {
+      "path": "results/orbit_runtime_archive_validation.json",
+      "sha256": "d4e46f94b9c9f7e44b289c642c8a5aeb0f53cad78906aed5f2ede7744b6e29a7"
+    },
+    "preserved_parents": {
+      "path": "results/parent_release_verification.json",
+      "sha256": "906d9017e575456cef101b06c094c23afeed113c3acd2a2e453a76f388e2248f"
+    },
+    "confirmation": {
+      "path": "results/orbit_accuracy_confirmation_cpu_verified/accuracy_summary.json",
+      "sha256": "ca9134e853f3a2469db88bd8fdbe8c253a9dcbda95cb651b5bd56dbff6d4b1e9"
+    },
+    "pdf_qa": {
+      "path": "results/orbit_pdf_r2_qa/qa.json",
+      "sha256": "ce00165e2e47af70ed448abec6437327c1bede91949de647b7f99f9d8d9ef23d"
+    }
+  },
+  "objects": [
+    {
+      "id": "C03",
+      "seed_bytes": 9074,
+      "seed_sha256": "ae1fe95b21c6621a60aae7140b43b14b0d990ca0fed730ee093b7afad7a2ac4d",
+      "physical_model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4"
+    },
+    {
+      "id": "C06",
+      "seed_bytes": 9073,
+      "seed_sha256": "1b32e0329827db71f074ea0a78486ab24f91ee10d7acbb2d276adbd7e90da72f",
+      "physical_model_sha256": "3e9da596cc269c927c52fbe4a88c306f54b274c695a0b044b209a5276aef0421"
+    },
+    {
+      "id": "CHANDRA",
+      "seed_bytes": 8716,
+      "seed_sha256": "7186cf16ddecc78f9aa7359a59572c5d923c07ed6dad6e59bd05c62995cfdf6f",
+      "physical_model_sha256": "e82ce76606c6a4006a63696f07394fe8bc2e9c68922f307f220c218e90cf8453"
+    },
+    {
+      "id": "G05",
+      "seed_bytes": 9066,
+      "seed_sha256": "814fb8ae189811c6e8443608e2bdf44794d7232a9dae24a7b688e3177a2816b2",
+      "physical_model_sha256": "2b2a5053575673edb2922a0636277a51526fb6efc528dd303e50bb9bc8bd55b1"
+    }
+  ],
+  "event_count": 83,
+  "max_event_refinement_delta_s": 0.002507949131540954,
+  "max_native_cpu_cuda_position_m": 4.3196113484843136e-05,
+  "cpu_binary_sha256": "f69f1bd95c4a5f3e8bf95500ff4fe744ded8671dbf98ff56d1b87871236f1501",
+  "cuda_binary_sha256": "897cf3028c2c221f283b3cc36f7853f800e6abc9f0ec2d34d0822eedaf466eaf",
+  "pdf_status": "passed",
+  "pdf": {
+    "path": "output/pdf/aTOMos_v3_6_1_9_Orbital_Seed_Kernel_UGTS_Tom_Klootwijk.pdf",
+    "sha256": "94c722966e3dc9a91aee7a852539f386fcdc85e60b31a3c75de923b91ec73541",
+    "pages": 69
+  }
+}

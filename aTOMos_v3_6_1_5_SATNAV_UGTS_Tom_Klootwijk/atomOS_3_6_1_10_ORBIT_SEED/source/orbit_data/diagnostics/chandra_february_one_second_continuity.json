@@ -1,0 +1,85 @@
+{
+  "status": "reference_diagnostic_only_after_frozen_confirmation",
+  "source": {
+    "file": "HORIZONS_CHANDRA_20250205_1155_1210_UNITLESS900_ICRF_TDB.txt",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-02-05+11%3A55%3A00%27&STOP_TIME=%272025-02-05+12%3A10%3A00%27&STEP_SIZE=%27900%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27&TIME_DIGITS=%27FRACSEC%27",
+    "resolved_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-02-05+11%3A55%3A00%27&STOP_TIME=%272025-02-05+12%3A10%3A00%27&STEP_SIZE=%27900%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27&TIME_DIGITS=%27FRACSEC%27",
+    "parameters": {
+      "format": "text",
+      "COMMAND": "'-151'",
+      "OBJ_DATA": "'YES'",
+      "MAKE_EPHEM": "'YES'",
+      "EPHEM_TYPE": "'VECTORS'",
+      "CENTER": "'500@399'",
+      "START_TIME": "'2025-02-05 11:55:00'",
+      "STOP_TIME": "'2025-02-05 12:10:00'",
+      "STEP_SIZE": "'900'",
+      "VEC_TABLE": "'2'",
+      "REF_PLANE": "'FRAME'",
+      "REF_SYSTEM": "'ICRF'",
+      "VEC_CORR": "'NONE'",
+      "OUT_UNITS": "'KM-S'",
+      "CSV_FORMAT": "'YES'",
+      "TIME_TYPE": "'TDB'",
+      "TIME_DIGITS": "'FRACSEC'"
+    },
+    "bytes": 181960,
+    "sha256": "4f2d9b79d0c2ecb910d981128e7defb0cc5694d5912747eed3a33cddd82d1ddc",
+    "retrieved_utc": "2026-09-15T04:09:35.468761+00:00"
+  },
+  "calculation": "Cubic velocity quadrature at one-second intervals using four source velocity nodes and weights[-1,13,13,-1]/24; compare to source position difference. No orbit-model states or fitted parameters used.",
+  "maximum": {
+    "from_tdb": "A.D. 2025-Feb-05 12:01:09.0000",
+    "to_tdb": "A.D. 2025-Feb-05 12:01:10.0000",
+    "displacement_m": 1686.8054736280867,
+    "mean_reported_speed_m_s": 1130.1764756847583,
+    "cubic_velocity_quadrature_residual_m": 2487.123032675905,
+    "velocity_change_m_s": 0.035171698546672986
+  },
+  "ordinary_max_residual_m": 2.2555984239065903e-06,
+  "ordinary_median_residual_m": 3.358088248317966e-07,
+  "neighbor_rows": [
+    {
+      "from_tdb": "A.D. 2025-Feb-05 12:01:07.0000",
+      "to_tdb": "A.D. 2025-Feb-05 12:01:08.0000",
+      "displacement_m": 1130.146159502024,
+      "mean_reported_speed_m_s": 1130.1461596126255,
+      "cubic_velocity_quadrature_residual_m": 7.192044659093112e-08,
+      "velocity_change_m_s": 0.02419536556315223
+    },
+    {
+      "from_tdb": "A.D. 2025-Feb-05 12:01:08.0000",
+      "to_tdb": "A.D. 2025-Feb-05 12:01:09.0000",
+      "displacement_m": 1130.164958635255,
+      "mean_reported_speed_m_s": 1130.164958775652,
+      "cubic_velocity_quadrature_residual_m": 0.0010263860898015568,
+      "velocity_change_m_s": 0.024195696365386217
+    },
+    {
+      "from_tdb": "A.D. 2025-Feb-05 12:01:09.0000",
+      "to_tdb": "A.D. 2025-Feb-05 12:01:10.0000",
+      "displacement_m": 1686.8054736280867,
+      "mean_reported_speed_m_s": 1130.1764756847583,
+      "cubic_velocity_quadrature_residual_m": 2487.123032675905,
+      "velocity_change_m_s": 0.035171698546672986
+    },
+    {
+      "from_tdb": "A.D. 2025-Feb-05 12:01:10.0000",
+      "to_tdb": "A.D. 2025-Feb-05 12:01:11.0000",
+      "displacement_m": 1130.1879953862824,
+      "mean_reported_speed_m_s": 1130.1879931405456,
+      "cubic_velocity_quadrature_residual_m": 0.001027701654360696,
+      "velocity_change_m_s": 0.024196092507731887
+    },
+    {
+      "from_tdb": "A.D. 2025-Feb-05 12:01:11.0000",
+      "to_tdb": "A.D. 2025-Feb-05 12:01:12.0000",
+      "displacement_m": 1130.2067960276006,
+      "mean_reported_speed_m_s": 1130.2067937747902,
+      "cubic_velocity_quadrature_residual_m": 2.29289912764034e-06,
+      "velocity_change_m_s": 0.024196423352026784
+    }
+  ],
+  "interpretation": "A large kinematic discontinuity exists in the supplied reference position series near this interval; the provider header does not identify its cause. Retain all benchmark residuals, but do not attribute the full jump solely to smooth-model force error or native numerical integration.",
+  "model_parameters_modified": false
+}

@@ -1,0 +1,169 @@
+{
+  "version": "3.6.1.7",
+  "profile": "CGK-R1",
+  "status": "passed",
+  "scope": "Complete declared CGK-R1 geometry/ASA/NA/JK/mechanics/eigenmatrix/SATNAV/UGTS implementation; explicit new model definitions.",
+  "checks": {
+    "native_cpu_build_ctest": {
+      "status": "passed",
+      "suites": 3,
+      "evidence": "results/cpu_final_ctest.log"
+    },
+    "native_cuda_build_ctest": {
+      "status": "passed",
+      "suites": 3,
+      "evidence": [
+        "results/coupled_cuda_final_build.log",
+        "results/coupled_cuda_final_ctest.log"
+      ]
+    },
+    "cpp_assertions": {
+      "status": "passed",
+      "coupled": 202,
+      "self_reference": 5060172,
+      "satnav": 105559
+    },
+    "python_tests": {
+      "status": "passed",
+      "methods": 70,
+      "evidence": "results/python_final_tests.log"
+    },
+    "cli_regression": {
+      "status": "passed",
+      "satnav": 11,
+      "self_reference": 25,
+      "evidence": [
+        "results/cli_tests.json",
+        "results/selfref_cli_checks.json"
+      ]
+    },
+    "coupled_example": {
+      "status": "passed",
+      "transitions_per_backend": 72,
+      "field_comparisons_per_backend": 6984,
+      "evidence": [
+        "results/coupled_native_cpu_verified_v3/summary.json",
+        "results/coupled_cuda_final/summary.json"
+      ]
+    },
+    "coupled_native_suite": {
+      "status": "passed",
+      "backends": [
+        "cpu",
+        "cuda"
+      ],
+      "trajectories_per_backend": 272,
+      "transitions_per_backend": 3308,
+      "field_comparisons_per_backend": 320876,
+      "analytic_causal_invariants_per_backend": 20,
+      "mutation_types_rejected_per_backend": 8,
+      "expected_states_per_backend": {
+        "advanced": 3301,
+        "numeric_failure": 3,
+        "previous_failure": 4
+      },
+      "cuda_blocks": 3,
+      "evidence": [
+        "results/coupled_validation_cpu_final/summary.json",
+        "results/coupled_validation_cuda_final/summary.json"
+      ]
+    },
+    "coupled_compute_sanitizer": {
+      "status": "passed",
+      "memory_errors": 0,
+      "independent_replay": "passed",
+      "transitions": 3308,
+      "field_comparisons": 320876,
+      "evidence": [
+        "results/coupled_cuda_memcheck.log",
+        "results/coupled_cuda_memcheck/run.json",
+        "results/coupled_cuda_memcheck_replay/summary.json"
+      ],
+      "replay_only_execution_label": "The replay command reads an existing sanitized native run, so its own native_execution is not_run; execution is established by the memcheck log and native run.json."
+    },
+    "actual_satnav_coupled_handoff": {
+      "status": "passed",
+      "backends": [
+        "cpu",
+        "cuda"
+      ],
+      "steps_per_backend": 256,
+      "field_comparisons_per_backend": 24832,
+      "observation_advances": 253,
+      "prediction_advances": 3,
+      "q_transitions": 51,
+      "publication_audit": "passed",
+      "evidence": [
+        "results/handoff_cpu_final/ugts_summary.json",
+        "results/handoff_cpu_final/publication_audit.json",
+        "results/handoff_cuda_final/ugts_summary.json",
+        "results/handoff_cuda_final/publication_audit.json"
+      ]
+    },
+    "satnav_independent_cpu": {
+      "status": "passed",
+      "epochs": 256,
+      "comparisons": 4828,
+      "evidence": "results/satnav_cpu_independent.log"
+    },
+    "satnav_cuda_texture_global": {
+      "status": "passed",
+      "independent_reference": "passed",
+      "compute_sanitizer": "passed",
+      "evidence": "results/gpu_20260914_224614_762335/status.json"
+    },
+    "packaged_binaries": {
+      "status": "passed",
+      "wrapper_smoke": [
+        "results/packaged_cpu_smoke/summary.json",
+        "results/packaged_cuda_smoke/summary.json"
+      ],
+      "sha256": {
+        "bin/windows/cpu/coupled_kernel.exe": "95a40ed14bfa3b8b7bd15ec1c5362f644a568b0614b9ebc71800fda525797fe6",
+        "bin/windows/cpu/satnav.exe": "6e79fda584618dcb2f44ef1480bef2efe7ccaaf66981097284d1a3d9fae286b0",
+        "bin/windows/cpu/self_reference.exe": "fe76b80d0962b23ce653664709651bec268661526b31f0b24d3363d757da7ffa",
+        "bin/windows/cuda/coupled_kernel.exe": "3117d3486ae13c3f35a150e3078844e7e20a47f17c144870db4c347749c7001c",
+        "bin/windows/cuda/satnav.exe": "0c78e83fe9992302d01509370d59ff73eecc575abe6b91d75137c806710568a8",
+        "bin/windows/cuda/self_reference.exe": "8fe60cbad90cfe6ad6e656b0c1817d369191b7f209ab23052e5b55cdfff184b3"
+      }
+    },
+    "pdf": {
+      "status": "passed",
+      "pdf": "output/pdf/aTOMos_v3_6_1_7_Coupled_Geometry_Physical_Kernel_UGTS_Tom_Klootwijk.pdf",
+      "sha256": "749d1eac263a74282301e6b75b9c3a2ed0fcd822f15a2f162b618e82c8d86cbc",
+      "pages": 45,
+      "rendered_pages": 45,
+      "extractable_text_all_pages": true,
+      "page_boundary_violations": [],
+      "tex_layout_or_glyph_warnings": [],
+      "engine": "Tectonic 0.17.0; newpxtext type1; Poppler render",
+      "visual_review": "All 45 pages reviewed in rendered page sheets. Final equations, validation tables, amended source/legacy labels and footer reviewed individually. No clipped text, overlaps or missing glyphs observed."
+    },
+    "original_releases": [
+      {
+        "release": "atomOS_3_6_1_5_SATNAV",
+        "status": "unchanged",
+        "verified_files": 52
+      },
+      {
+        "release": "atomOS_3_6_1_6_SELFREF",
+        "status": "unchanged",
+        "verified_files": 175
+      }
+    ]
+  },
+  "toolchain": {
+    "cpp": "MSVC 19.44.35221.0",
+    "cuda_compiler": "12.8.61",
+    "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "compute_capability": "12.0",
+    "driver": "591.59",
+    "python_reference": "NumPy 2.1.2"
+  },
+  "not_performed": [
+    "Live GNSS observation validation",
+    "Calibration against a measured mechanical system",
+    "CPU Address/UndefinedBehavior Sanitizer in this Windows release"
+  ],
+  "mathematical_scope": "Finite model verification plus the stated fixed-operator energy inequality; no general switched-system convergence claim and no recovery claim for unavailable M2 equations."
+}

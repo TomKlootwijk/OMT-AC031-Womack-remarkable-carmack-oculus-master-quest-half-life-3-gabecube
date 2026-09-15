@@ -1,0 +1,162 @@
+{
+  "seed": {
+    "profile": "ORBIT-SEED-R1",
+    "object": {
+      "id": "C03",
+      "orbit_class": "GEO"
+    },
+    "file_bytes": 9074,
+    "file_sha256": "e30e7799931535cd5a0de589a159c0552407447373fcebb42954619402c1ece7",
+    "seed_sha256": "ae1fe95b21c6621a60aae7140b43b14b0d990ca0fed730ee093b7afad7a2ac4d",
+    "model_sha256": "5cb8a9762d8398e289c7ab51134926cf38abdd5e9afbf02a6422cbe42a2635b4",
+    "payload_uncompressed_bytes": 14629,
+    "payload_compressed_bytes": 9022,
+    "header_bytes": 52,
+    "codec": "bitplanes64-zlib",
+    "dependencies": "Declared model runtime; no original observations or future target trajectory needed",
+    "numeric_encoding": "Lossless 64 bit planes in uint64 words; original binary64/int64/uint64 bits restored",
+    "arithmetic_scope": "Packing is exact; native orbit propagation still uses binary64 floating point",
+    "stations": [
+      "delft_demo",
+      "singapore_demo"
+    ],
+    "query": {
+      "chart_r0_m": 1000000000.0,
+      "end_s": 604800.0,
+      "event_step_s": 120.0,
+      "event_tolerance_s": 0.01,
+      "phi_rad": 0.0,
+      "start_s": 0.0,
+      "tick_s": 1.0
+    }
+  },
+  "isolation": {
+    "seed_sha256": "ae1fe95b21c6621a60aae7140b43b14b0d990ca0fed730ee093b7afad7a2ac4d",
+    "rows": [
+      {
+        "time_s": 0.0,
+        "state": [
+          -35740465.470334195,
+          -22417303.444266297,
+          876814.4911485815,
+          1629.5839275820813,
+          -2602.975903098375,
+          -86.31493305816278
+        ]
+      },
+      {
+        "time_s": 12345.678,
+        "state": [
+          -4724915.316191349,
+          -41926364.87993463,
+          -382222.57198862947,
+          3051.8023886115375,
+          -341.49057058572276,
+          -103.72634351499306
+        ]
+      },
+      {
+        "time_s": 604800.0,
+        "state": [
+          -32843278.568074573,
+          -26485576.65885252,
+          738443.4932063448,
+          1926.18243848854,
+          -2391.6534489619153,
+          -93.77887665324606
+        ]
+      },
+      {
+        "time_s": -123.45,
+        "state": [
+          -35940190.14900222,
+          -22095064.212056566,
+          887434.4817315063,
+          1606.1120046246567,
+          -2617.5516363391293,
+          -85.73721835114016
+        ]
+      }
+    ],
+    "original_release_reads": "denied_by_audit_hook",
+    "shared_runtime_source_bytes": 94867,
+    "shared_native_worker_bytes": 85504,
+    "shared_dependency_scope": "Python, NumPy/SciPy and OS/C++ runtime are installed shared dependencies, not charged as per-seed bytes"
+  },
+  "scrubbing": {
+    "queries": 24,
+    "unique_fractional_times": 8,
+    "bit_exact_on_repeated_timestamp": true,
+    "cold_max_end_to_end_ms": 75.70129999658093,
+    "warm_max_end_to_end_ms": 0.7955000037327409,
+    "rk_steps_per_query": [
+      0,
+      20160,
+      1,
+      1,
+      11,
+      52,
+      10,
+      1,
+      0,
+      120,
+      1,
+      1,
+      11,
+      52,
+      10,
+      1,
+      0,
+      120,
+      1,
+      1,
+      11,
+      52,
+      10,
+      1
+    ],
+    "cache": {
+      "type": "stats",
+      "cache_count": 168,
+      "cache_capacity": 256,
+      "cache_hits": 8,
+      "cpu_rk_steps": 20628,
+      "cpu_queries": 24,
+      "evictions": 0,
+      "checkpoint_stride_steps": 120
+    }
+  },
+  "feedback": {
+    "original_queries": 289,
+    "counterfactual_queries": 2881,
+    "common_time_states_equal": 289
+  },
+  "independent_run": {
+    "status": "passed",
+    "queries": 289,
+    "max_fresh_position_difference_m": 0.0,
+    "seed_sha256": "ae1fe95b21c6621a60aae7140b43b14b0d990ca0fed730ee093b7afad7a2ac4d",
+    "final_record_sha256": "f369222ee45fe8511b3879c7d7f3375f5f1c0e40eb34d2218e6a7d46042c9baa",
+    "scope": "Independent AST schedule, full mask stages, keys/time/geometry and fresh native state; physical accuracy validated separately"
+  },
+  "event_searches": [
+    {
+      "station": "delft_demo",
+      "classification": "hidden_over_searched_interval",
+      "events": 0,
+      "max_refinement_time_delta_s": 0.0
+    },
+    {
+      "station": "singapore_demo",
+      "classification": "visible_over_searched_interval",
+      "events": 0,
+      "max_refinement_time_delta_s": 0.0
+    }
+  ],
+  "storage_comparison": {
+    "seven_day_300s_fp64_time_state_bytes": 112952,
+    "seed_bytes": 9074,
+    "state_table_to_seed_ratio": 12.447873043861582,
+    "scope": "Time+6state table vs complete seed; no claim of compressing arbitrary trajectories into initial conditions"
+  }
+}

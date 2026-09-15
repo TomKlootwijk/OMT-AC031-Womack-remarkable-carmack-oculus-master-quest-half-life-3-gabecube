@@ -1,0 +1,382 @@
+{
+  "schema": "ORBIT-INDEPENDENT-CONFIRMATION-SOURCES-1",
+  "cutoff_gpst_label": "2025-02-02 00:00:00",
+  "cutoff_gpst_seconds": 1422489600.0,
+  "training_gpst_range_s": [
+    1421798400.0,
+    1422489600.0
+  ],
+  "holdout_gpst_range_s": [
+    1422489600.0,
+    1423094400.0
+  ],
+  "holdout_lower_bound_exclusive": true,
+  "prediction_errors_computed": false,
+  "model_fitting_performed": false,
+  "files": [
+    {
+      "file": "eop/IGSMAIL-8543_IGb20_transition.html",
+      "role": "published_frame_realization_notice",
+      "url": "https://lists.igs.org/pipermail/igsmail/2024/008539.html",
+      "resolved_url": "https://lists.igs.org/pipermail/igsmail/2024/008539.html",
+      "bytes": 5015,
+      "sha256": "8cb7ba6610b38cdec8d189d293a94fd1696633c77fced185cbae8ccd1d5bb10e",
+      "retrieved_utc": "2026-09-15T04:02:59.704882+00:00"
+    },
+    {
+      "file": "eop/bulletina-xxxviii-005.txt",
+      "role": "external_published_eop",
+      "url": "https://datacenter.iers.org/data/6/bulletina-xxxviii-005.txt",
+      "resolved_url": "https://datacenter.iers.org/data/6/bulletina-xxxviii-005.txt",
+      "bytes": 37099,
+      "sha256": "1f8143aae17b77da49b1fe0313d549e84fb286c0e2ff0682756b6bcc7cdfa378",
+      "retrieved_utc": "2026-09-15T03:52:09.700990+00:00"
+    },
+    {
+      "file": "forcing/HORIZONS_MOON_20250124_20250210_ICRF_TDB.txt",
+      "role": "forcing",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27301%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-24+00%3A00%27&STOP_TIME=%272025-02-10+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "resolved_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27301%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-24+00%3A00%27&STOP_TIME=%272025-02-10+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "bytes": 961364,
+      "sha256": "cb8345a11a7751fd846b7b2d53b5bcd5e246d4880f232ca3cdf23f8e57b9f557",
+      "retrieved_utc": "2026-09-15T03:52:09.455494+00:00",
+      "parameters": {
+        "format": "text",
+        "COMMAND": "'301'",
+        "OBJ_DATA": "'YES'",
+        "MAKE_EPHEM": "'YES'",
+        "EPHEM_TYPE": "'VECTORS'",
+        "CENTER": "'500@399'",
+        "START_TIME": "'2025-01-24 00:00'",
+        "STOP_TIME": "'2025-02-10 00:00'",
+        "STEP_SIZE": "'5 m'",
+        "VEC_TABLE": "'2'",
+        "REF_PLANE": "'FRAME'",
+        "REF_SYSTEM": "'ICRF'",
+        "VEC_CORR": "'NONE'",
+        "OUT_UNITS": "'KM-S'",
+        "CSV_FORMAT": "'YES'",
+        "TIME_TYPE": "'TDB'"
+      }
+    },
+    {
+      "file": "forcing/HORIZONS_SUN_20250124_20250210_ICRF_TDB.txt",
+      "role": "forcing",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%2710%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-24+00%3A00%27&STOP_TIME=%272025-02-10+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "resolved_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%2710%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-24+00%3A00%27&STOP_TIME=%272025-02-10+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "bytes": 961248,
+      "sha256": "1b37c5488c294943b3fbfd948ad8213f3583b85d92e0eb55b46c1b76c591a8ef",
+      "retrieved_utc": "2026-09-15T03:52:07.617188+00:00",
+      "parameters": {
+        "format": "text",
+        "COMMAND": "'10'",
+        "OBJ_DATA": "'YES'",
+        "MAKE_EPHEM": "'YES'",
+        "EPHEM_TYPE": "'VECTORS'",
+        "CENTER": "'500@399'",
+        "START_TIME": "'2025-01-24 00:00'",
+        "STOP_TIME": "'2025-02-10 00:00'",
+        "STEP_SIZE": "'5 m'",
+        "VEC_TABLE": "'2'",
+        "REF_PLANE": "'FRAME'",
+        "REF_SYSTEM": "'ICRF'",
+        "VEC_CORR": "'NONE'",
+        "OUT_UNITS": "'KM-S'",
+        "CSV_FORMAT": "'YES'",
+        "TIME_TYPE": "'TDB'"
+      }
+    },
+    {
+      "file": "holdout/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+      "role": "holdout",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250330000_01D_05M_ORB.SP3.gz",
+      "bytes": 1056286,
+      "sha256": "c8f01d8ef4774928d999f743e1e1e6f59447d0ad029854a2d93ba846de10b155",
+      "retrieved_utc": "2026-09-15T03:52:02.049866+00:00",
+      "uncompressed_sha256": "381d8805ca5b415be78ab6eb66d4abe10cef36e9fce37b345cc349e027e7a278"
+    },
+    {
+      "file": "holdout/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+      "role": "holdout",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250340000_01D_05M_ORB.SP3.gz",
+      "bytes": 1047880,
+      "sha256": "5b7f1587c109f5ecf2fe6737fc5d2ef6e9c90692e2a4bd9261a3ccd1bd3ddd4c",
+      "retrieved_utc": "2026-09-15T03:52:02.076714+00:00",
+      "uncompressed_sha256": "4b9a6cba5e96d3567feff5932083477171a2945eb481c606589e762384c347a2"
+    },
+    {
+      "file": "holdout/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+      "role": "holdout",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250350000_01D_05M_ORB.SP3.gz",
+      "bytes": 1055826,
+      "sha256": "5eebda195a85f27dd44b4d4be927d5523647063e75a26a42052e203a9fe0d971",
+      "retrieved_utc": "2026-09-15T03:52:02.068116+00:00",
+      "uncompressed_sha256": "a8ef3ef66fb59f939b7c14b791fe8aeb9093cc997935a9c9ff33c4d181c561d7"
+    },
+    {
+      "file": "holdout/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+      "role": "holdout",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250360000_01D_05M_ORB.SP3.gz",
+      "bytes": 1063926,
+      "sha256": "085eee3638039769ebf2db88814000d49b35ed56abbb843c09fc560c4a41ab7d",
+      "retrieved_utc": "2026-09-15T03:52:01.683982+00:00",
+      "uncompressed_sha256": "6cc06b563c6ad18d1bdfeb1194a2411f2d0e67d532ff68906c35f9dbece0a84c"
+    },
+    {
+      "file": "holdout/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+      "role": "holdout",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250370000_01D_05M_ORB.SP3.gz",
+      "bytes": 1079525,
+      "sha256": "f30e50ce954b611237daba68893f523e6593ceead279b9cd841f5597939c8073",
+      "retrieved_utc": "2026-09-15T03:52:13.326117+00:00",
+      "uncompressed_sha256": "212dec76b51b28b2c1a50240fc42040605b84c0f91d4a6ebe38a3ee688286aa6"
+    },
+    {
+      "file": "holdout/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+      "role": "holdout",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250380000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087957,
+      "sha256": "70da188f1f0b9be21de858c4a7c5c3697c2e03d8f2d3aade3df1c8bf4caad240",
+      "retrieved_utc": "2026-09-15T03:52:13.900017+00:00",
+      "uncompressed_sha256": "c08699589a466f0bf3dcb31c72be4ccd1f62d9254ca91fd3e54c3eefa190fce3"
+    },
+    {
+      "file": "holdout/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+      "role": "holdout",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2352_IGS20/GBM0MGXRAP_20250390000_01D_05M_ORB.SP3.gz",
+      "bytes": 1096058,
+      "sha256": "52b551dff15441a54ca7c25418e3daca5ceb0262ccf88bacf6ccc069217ad79e",
+      "retrieved_utc": "2026-09-15T03:52:13.933849+00:00",
+      "uncompressed_sha256": "74b03662c5fe518ff98005d22412b6fa7698d92e1e4012108046005fe2f75979"
+    },
+    {
+      "file": "holdout/HORIZONS_CHANDRA_20250202_20250209_ICRF_TDB.txt",
+      "role": "holdout",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-02-02+00%3A05%27&STOP_TIME=%272025-02-09+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "resolved_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-02-02+00%3A05%27&STOP_TIME=%272025-02-09+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "bytes": 399385,
+      "sha256": "fcf4e2ce2f01e045681deb6a54a92317c5a66a1c3b9d5f2804c00a5af4c6955b",
+      "retrieved_utc": "2026-09-15T03:52:05.651673+00:00",
+      "parameters": {
+        "format": "text",
+        "COMMAND": "'-151'",
+        "OBJ_DATA": "'YES'",
+        "MAKE_EPHEM": "'YES'",
+        "EPHEM_TYPE": "'VECTORS'",
+        "CENTER": "'500@399'",
+        "START_TIME": "'2025-02-02 00:05'",
+        "STOP_TIME": "'2025-02-09 00:00'",
+        "STEP_SIZE": "'5 m'",
+        "VEC_TABLE": "'2'",
+        "REF_PLANE": "'FRAME'",
+        "REF_SYSTEM": "'ICRF'",
+        "VEC_CORR": "'NONE'",
+        "OUT_UNITS": "'KM-S'",
+        "CSV_FORMAT": "'YES'",
+        "TIME_TYPE": "'TDB'"
+      }
+    },
+    {
+      "file": "holdout_wum/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz",
+      "role": "holdout_alternate_C03_chosen_for_complete_coverage_before_any_prediction_errors",
+      "url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250330000_01D_05M_ORB.SP3.gz",
+      "bytes": 971242,
+      "sha256": "bee117675d029804ff4cbc27f88d704cbb715311a531957f1438892f94a1a154",
+      "uncompressed_sha256": "5562f4cb045eea666f41afbcab5d43301086925457e1288a87ff12c623f3d167",
+      "retrieved_utc": "2026-09-15T03:56:50.851219+00:00"
+    },
+    {
+      "file": "holdout_wum/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz",
+      "role": "holdout_alternate_C03_chosen_for_complete_coverage_before_any_prediction_errors",
+      "url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250340000_01D_05M_ORB.SP3.gz",
+      "bytes": 970942,
+      "sha256": "b7e51e478f1c02db7de305022952eb2ff59afe972271024856b853ff97302175",
+      "uncompressed_sha256": "2cd260e60be919de75bf3d2b985864a81227fbb87943e9a3543719a9cc9d0a89",
+      "retrieved_utc": "2026-09-15T03:57:03.342634+00:00"
+    },
+    {
+      "file": "holdout_wum/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz",
+      "role": "holdout_alternate_C03_chosen_for_complete_coverage_before_any_prediction_errors",
+      "url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250350000_01D_05M_ORB.SP3.gz",
+      "bytes": 970999,
+      "sha256": "88a187d2c1aef4734fa8aff30dc4597dffe634d1c41f647072c6c305db12199d",
+      "uncompressed_sha256": "1c8d7cf0feeff052e62ca50a7111b7c30b60f72f8fe7a1dea945557b4a369930",
+      "retrieved_utc": "2026-09-15T03:56:55.003040+00:00"
+    },
+    {
+      "file": "holdout_wum/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz",
+      "role": "holdout_alternate_C03_chosen_for_complete_coverage_before_any_prediction_errors",
+      "url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250360000_01D_05M_ORB.SP3.gz",
+      "bytes": 978998,
+      "sha256": "8ab90982bef6a21506f0173e8fd7739ba7c16b704f9c61e15b9f2a36635ad1b4",
+      "uncompressed_sha256": "2a8cb6569a7ff11db222c02e11d012d5210414b3c5037666038fd1bba27165c2",
+      "retrieved_utc": "2026-09-15T03:57:06.335612+00:00"
+    },
+    {
+      "file": "holdout_wum/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz",
+      "role": "holdout_alternate_C03_chosen_for_complete_coverage_before_any_prediction_errors",
+      "url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250370000_01D_05M_ORB.SP3.gz",
+      "bytes": 963230,
+      "sha256": "4fdbf7b8e483f3c05b98d71b7c3099651e0058f945f72b3508b2fd9b1f3ddc34",
+      "uncompressed_sha256": "0e01d444f237cce0a31faf7bc5ab16333ba12cbcdf5b0675aaf7619cdf396544",
+      "retrieved_utc": "2026-09-15T03:57:14.895045+00:00"
+    },
+    {
+      "file": "holdout_wum/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz",
+      "role": "holdout_alternate_C03_chosen_for_complete_coverage_before_any_prediction_errors",
+      "url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250380000_01D_05M_ORB.SP3.gz",
+      "bytes": 978762,
+      "sha256": "6cde3475ed79d7a302b38855f95ad8344e5562ed35ab23bdb95ef69be0000c5b",
+      "uncompressed_sha256": "fb398d6d22ab158b6b666c14ffae671b2fa547906318c5251780034996469415",
+      "retrieved_utc": "2026-09-15T03:57:21.490365+00:00"
+    },
+    {
+      "file": "holdout_wum/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz",
+      "role": "holdout_alternate_C03_chosen_for_complete_coverage_before_any_prediction_errors",
+      "url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://igs.gnsswhu.cn/pub/gnss/products/mgex/2352/WUM0MGXFIN_20250390000_01D_05M_ORB.SP3.gz",
+      "bytes": 978570,
+      "sha256": "18314e89df3dea0bf685114977a4bc1f942acb31887a4ba0b73fb817c76ffde3",
+      "uncompressed_sha256": "3a1223304035e2f9d80844fd8156a64412ec905a2dc4c2b58f4d495b209d2860",
+      "retrieved_utc": "2026-09-15T03:57:23.002091+00:00"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2350_IGS20/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2350_IGS20/GBM0MGXRAP_20250250000_01D_05M_ORB.SP3.gz",
+      "bytes": 1087486,
+      "sha256": "a42ecab89ee1b174e1b7aa2d9db582bcdb97904a000ae59c4aae21c89258feb2",
+      "retrieved_utc": "2026-09-15T03:51:38.447014+00:00",
+      "uncompressed_sha256": "b56671c4b88179a8d45b466e7ff5a9a98dd2ea6d6b239d0c1364b9cd5e443378"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250260000_01D_05M_ORB.SP3.gz",
+      "bytes": 1071090,
+      "sha256": "e31fa69dab78f5adad2d5d5ce41165388570505ca1d7b9eafd4d008ff8275f78",
+      "retrieved_utc": "2026-09-15T03:51:38.402101+00:00",
+      "uncompressed_sha256": "dfaa26c3c244fecebb88eb77c1d63fdf8a71ca8c8e2dd1554d1a4a91b3c73b5a"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250270000_01D_05M_ORB.SP3.gz",
+      "bytes": 1062936,
+      "sha256": "ece0bc6e69b7f66a19da34efd55e7ecf28edcb84f9f9149ed716c6fb2c2c5132",
+      "retrieved_utc": "2026-09-15T03:51:38.300154+00:00",
+      "uncompressed_sha256": "61e3ac49635d70a5347827f3da876f456a5ffb52be3a4b823ebb186de64d3102"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250280000_01D_05M_ORB.SP3.gz",
+      "bytes": 1071173,
+      "sha256": "3f07a0b41defba75c4b848db9ef89dfb862a9800ad8954bfe9e7a4b3c76f9b4a",
+      "retrieved_utc": "2026-09-15T03:51:38.410101+00:00",
+      "uncompressed_sha256": "6dee471dea70d10bb52ea230e3a2b0bb535949c7756a61ea9b42bd151428578b"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250290000_01D_05M_ORB.SP3.gz",
+      "bytes": 1079592,
+      "sha256": "549093cf235f5f4f09648b8191890617cc0a0b421528491e3416b71768ec984f",
+      "retrieved_utc": "2026-09-15T03:51:49.831057+00:00",
+      "uncompressed_sha256": "a5ce129fc29a0acfdeacb8d74651a46e2f2ad30d58314c849e33752bd344d77f"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250300000_01D_05M_ORB.SP3.gz",
+      "bytes": 1047594,
+      "sha256": "0d1d6a535432710e2ea57e8f2e72d8ef1af3dec0023b58bfdca960e95eb34fa7",
+      "retrieved_utc": "2026-09-15T03:51:49.764811+00:00",
+      "uncompressed_sha256": "43ab9dfab0fabb7e29caaf7eb502eeb374d043a2c693dd8ccdd1925b658b6e5d"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250310000_01D_05M_ORB.SP3.gz",
+      "bytes": 1078651,
+      "sha256": "b9475a2664a5532a454ba10436196a7f562d6bc247e8b56b1fa350076be384d0",
+      "retrieved_utc": "2026-09-15T03:51:49.812303+00:00",
+      "uncompressed_sha256": "e3fd363f3a33e78591523e391548baafda97c1897624f533b4689b0f130da1ac"
+    },
+    {
+      "file": "training/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+      "role": "training",
+      "url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+      "resolved_url": "ftp://ftp.gfz-potsdam.de/GNSS/products/mgex/2351_IGS20/GBM0MGXRAP_20250320000_01D_05M_ORB.SP3.gz",
+      "bytes": 1078720,
+      "sha256": "f193147446a98666d8cd72f08779b130ca1af6ef829e9a73a4dc19c77968febb",
+      "retrieved_utc": "2026-09-15T03:51:49.803143+00:00",
+      "uncompressed_sha256": "f3c8f864631bb76e0a58f37873b7b4699e120c6d85a56fe7e784834cf5a37315"
+    },
+    {
+      "file": "training/HORIZONS_CHANDRA_20250125_20250202_ICRF_TDB.txt",
+      "role": "training",
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-25+00%3A00%27&STOP_TIME=%272025-02-02+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "resolved_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-25+00%3A00%27&STOP_TIME=%272025-02-02+00%3A00%27&STEP_SIZE=%275+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+      "bytes": 455740,
+      "sha256": "4d7fdbbbdb7288b799562d7da07ce40dc3a08e0a61db8b775b3c27ab509badc7",
+      "retrieved_utc": "2026-09-15T03:52:03.973717+00:00",
+      "parameters": {
+        "format": "text",
+        "COMMAND": "'-151'",
+        "OBJ_DATA": "'YES'",
+        "MAKE_EPHEM": "'YES'",
+        "EPHEM_TYPE": "'VECTORS'",
+        "CENTER": "'500@399'",
+        "START_TIME": "'2025-01-25 00:00'",
+        "STOP_TIME": "'2025-02-02 00:00'",
+        "STEP_SIZE": "'5 m'",
+        "VEC_TABLE": "'2'",
+        "REF_PLANE": "'FRAME'",
+        "REF_SYSTEM": "'ICRF'",
+        "VEC_CORR": "'NONE'",
+        "OUT_UNITS": "'KM-S'",
+        "CSV_FORMAT": "'YES'",
+        "TIME_TYPE": "'TDB'"
+      }
+    }
+  ],
+  "errors": [],
+  "derived_files": [
+    {
+      "file": "coverage.json",
+      "bytes": 18076,
+      "sha256": "6b7e1f297e3f1a203db2a4dbcc9319da1014a9bb8801a27f4a6757f6db55a77a"
+    },
+    {
+      "file": "eop/published_eop_20250124_20250210.json",
+      "bytes": 6148,
+      "sha256": "8b89383ce926f1a191e99fbe37d9aeb5342e7a39dd560f6c45450204bd7eda45"
+    },
+    {
+      "file": "protocol.json",
+      "bytes": 1817,
+      "sha256": "602bac4b6af47ee0e0e3f182b79df862d5368919490087de0354201b0f5dd817"
+    }
+  ]
+}

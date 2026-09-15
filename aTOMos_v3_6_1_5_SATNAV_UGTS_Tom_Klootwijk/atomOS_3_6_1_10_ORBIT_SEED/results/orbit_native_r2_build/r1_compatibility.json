@@ -1,0 +1,26 @@
+{
+  "scope": "R1 numerical compatibility of the R2 binary against retained baseline executable",
+  "models": {
+    "G05": {
+      "queries": 9,
+      "state_binary64_exact": true,
+      "model_sha256": "a3fd9302ad6bf27c949b7951693df0d11de2359bb9ca777b1aeabd5e9d6b3153"
+    },
+    "C03": {
+      "queries": 9,
+      "state_binary64_exact": true,
+      "model_sha256": "17bcf4e3c2dce5334c737a58c3318982282aa3ccd2651454360df25fefe55eb5"
+    },
+    "C06": {
+      "queries": 9,
+      "state_binary64_exact": true,
+      "model_sha256": "c66117181899257ebc21cd080fd6b20b63e590ffce006a7901109b600be21319"
+    },
+    "CHANDRA": {
+      "queries": 9,
+      "state_binary64_exact": true,
+      "model_sha256": "778a5454129c64ce41580dd52298e583cbc5ab54446264d9a1c8e160d2ab95be"
+    }
+  },
+  "status": "passed"
+}

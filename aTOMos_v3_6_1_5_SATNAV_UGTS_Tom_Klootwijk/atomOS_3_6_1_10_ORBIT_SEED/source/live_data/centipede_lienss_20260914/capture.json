@@ -1,0 +1,43 @@
+{
+  "kind": "live_public_internet_receiver_capture",
+  "started_utc": "2026-09-14T21:41:02.573368+00:00",
+  "endpoint": "ntrip://caster.centipede.fr:2101/LIENSS",
+  "authentication": "none",
+  "requested_seconds": 300.0,
+  "status": "captured",
+  "source_attribution": "Centipede-RTK",
+  "finished_utc": "2026-09-14T21:46:03.202562+00:00",
+  "elapsed_seconds": 300.6287912000007,
+  "wire_bytes": 664811,
+  "payload_bytes": 664759,
+  "response_header": "ICY 200 OK\r\nContent-Length: 0\r\nConnection: close",
+  "error": null,
+  "wire_sha256": "e8c3e0a270fab6b37d2450a6b30826112ccec73e08bfd488a5febbbbc3b755ed",
+  "rtcm_sha256": "069c427f012b91bfaa5c8ff24820193721300fcb55e6c8d9ae44a695caff9019",
+  "frame_inspection": {
+    "valid_frames": 3162,
+    "message_counts": {
+      "1004": 301,
+      "1005": 30,
+      "1006": 10,
+      "1008": 30,
+      "1012": 300,
+      "1019": 115,
+      "1020": 97,
+      "1033": 30,
+      "1042": 210,
+      "1045": 358,
+      "1046": 358,
+      "1077": 413,
+      "1087": 300,
+      "1097": 300,
+      "1127": 300,
+      "1230": 10
+    },
+    "crc_errors": 0,
+    "gps_tow_first": 164483.0,
+    "gps_tow_last": 164783.0,
+    "distinct_gps_epochs": 301,
+    "trailing_bytes": 0
+  }
+}

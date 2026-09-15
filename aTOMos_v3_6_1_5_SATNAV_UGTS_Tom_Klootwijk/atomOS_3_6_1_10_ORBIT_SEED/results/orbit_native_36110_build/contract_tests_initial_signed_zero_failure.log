@@ -1,0 +1,22 @@
+test_domain_endpoints_cache_and_one_ulp_exclusion (test_orbit_native_contract.NativeContractTests.test_domain_endpoints_cache_and_one_ulp_exclusion) ... ok
+test_duplicate_batch_preserves_order_bits_and_actual_work (test_orbit_native_contract.NativeContractTests.test_duplicate_batch_preserves_order_bits_and_actual_work) ... FAIL
+test_feedback_preparation_reacts_to_typed_content_edits (test_orbit_native_contract.NativeContractTests.test_feedback_preparation_reacts_to_typed_content_edits) ... ok
+test_legacy_transport_and_subnormal_coefficients_remain_supported (test_orbit_native_contract.NativeContractTests.test_legacy_transport_and_subnormal_coefficients_remain_supported) ... ok
+test_malformed_command_does_not_desynchronize_worker (test_orbit_native_contract.NativeContractTests.test_malformed_command_does_not_desynchronize_worker) ... ok
+test_raw_transport_rejects_invalid_epoch_frame_state_and_work (test_orbit_native_contract.NativeContractTests.test_raw_transport_rejects_invalid_epoch_frame_state_and_work) ... ok
+test_reference_surface_crossing_is_transactional_failure (test_orbit_native_contract.NativeContractTests.test_reference_surface_crossing_is_transactional_failure) ... ok
+test_wrapper_snapshot_cannot_drift_after_caller_model_edit (test_orbit_native_contract.NativeContractTests.test_wrapper_snapshot_cannot_drift_after_caller_model_edit) ... ok
+
+======================================================================
+FAIL: test_duplicate_batch_preserves_order_bits_and_actual_work (test_orbit_native_contract.NativeContractTests.test_duplicate_batch_preserves_order_bits_and_actual_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\atomOS_3_6_1_10_ORBIT_SEED\tests\test_orbit_native_contract.py", line 109, in test_duplicate_batch_preserves_order_bits_and_actual_work
+    self.assertEqual(struct.pack("d", row["time_s"]), struct.pack("d", t))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'\x00\x00\x00\x00\x00\x00\x00\x00' != b'\x00\x00\x00\x00\x00\x00\x00\x80'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.801s
+
+FAILED (failures=1)

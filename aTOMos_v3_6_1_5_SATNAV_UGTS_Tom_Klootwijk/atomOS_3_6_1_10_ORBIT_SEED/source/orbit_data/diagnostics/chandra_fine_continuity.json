@@ -1,0 +1,201 @@
+{
+  "status": "reference_diagnostic_only",
+  "source": {
+    "file": "HORIZONS_CHANDRA_20250105_1155_1210_STEP1M_ICRF_TDB.txt",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-05+11%3A55%3A00%27&STOP_TIME=%272025-01-05+12%3A10%3A00%27&STEP_SIZE=%271+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+    "resolved_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27-151%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%40399%27&START_TIME=%272025-01-05+11%3A55%3A00%27&STOP_TIME=%272025-01-05+12%3A10%3A00%27&STEP_SIZE=%271+m%27&VEC_TABLE=%272%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_CORR=%27NONE%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TIME_TYPE=%27TDB%27",
+    "parameters": {
+      "format": "text",
+      "COMMAND": "'-151'",
+      "OBJ_DATA": "'YES'",
+      "MAKE_EPHEM": "'YES'",
+      "EPHEM_TYPE": "'VECTORS'",
+      "CENTER": "'500@399'",
+      "START_TIME": "'2025-01-05 11:55:00'",
+      "STOP_TIME": "'2025-01-05 12:10:00'",
+      "STEP_SIZE": "'1 m'",
+      "VEC_TABLE": "'2'",
+      "REF_PLANE": "'FRAME'",
+      "REF_SYSTEM": "'ICRF'",
+      "VEC_CORR": "'NONE'",
+      "OUT_UNITS": "'KM-S'",
+      "CSV_FORMAT": "'YES'",
+      "TIME_TYPE": "'TDB'"
+    },
+    "bytes": 9385,
+    "sha256": "83ab639640046cc55cde1d47fb4531eb3584df5d19f6b5d72a108873d7fbbc5e",
+    "retrieved_utc": "2026-09-15T04:07:37.031212+00:00"
+  },
+  "calculation": "Integrate a cubic interpolant through source velocities at four neighboring one-minute nodes, weights[-1,13,13,-1]/24 times60s; compare to actual source position difference. No physical orbit model or fitted parameter used.",
+  "rows": [
+    {
+      "from_tdb": "A.D. 2025-Jan-05 11:56:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 11:57:00.0000",
+      "displacement_m": 439555.75183710625,
+      "trapezoid_velocity_residual_m": 26.694375949313837,
+      "cubic_velocity_quadrature_residual_m": 0.6292294292474763,
+      "velocity_change_m_s": 129.24961052833268,
+      "position_minus_integrated_velocity_vector_m": [
+        -0.3331255136872642,
+        -0.2832668503251625,
+        0.45245658163912594
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 11:57:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 11:58:00.0000",
+      "displacement_m": 436124.0621657728,
+      "trapezoid_velocity_residual_m": 25.438951322298195,
+      "cubic_velocity_quadrature_residual_m": 0.7084155239488954,
+      "velocity_change_m_s": 125.59331267025024,
+      "position_minus_integrated_velocity_vector_m": [
+        -0.5261733462102711,
+        -0.11634882951329928,
+        0.45984466309892014
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 11:58:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 11:59:00.0000",
+      "displacement_m": 432704.59854228556,
+      "trapezoid_velocity_residual_m": 24.156085052704242,
+      "cubic_velocity_quadrature_residual_m": 0.27830308679106,
+      "velocity_change_m_s": 122.02894457390126,
+      "position_minus_integrated_velocity_vector_m": [
+        -0.24271220283117145,
+        0.07093153618916404,
+        0.11624160996871069
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 11:59:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:00:00.0000",
+      "displacement_m": 429303.09473193856,
+      "trapezoid_velocity_residual_m": 22.979106581587775,
+      "cubic_velocity_quadrature_residual_m": 0.3707497962336672,
+      "velocity_change_m_s": 118.56137233974655,
+      "position_minus_integrated_velocity_vector_m": [
+        0.11629109020577744,
+        0.23467476804216858,
+        -0.2624110268079676
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:00:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:01:00.0000",
+      "displacement_m": 425924.28266606136,
+      "trapezoid_velocity_residual_m": 21.96131617782121,
+      "cubic_velocity_quadrature_residual_m": 15.950723055566412,
+      "velocity_change_m_s": 115.19315698074153,
+      "position_minus_integrated_velocity_vector_m": [
+        12.935790388321038,
+        -8.971276687865611,
+        -2.570425570709631
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:01:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:02:00.0000",
+      "displacement_m": 446718.4760269487,
+      "trapezoid_velocity_residual_m": 24269.951068754097,
+      "cubic_velocity_quadrature_residual_m": 24264.502217180096,
+      "velocity_change_m_s": 118.20296332583605,
+      "position_minus_integrated_velocity_vector_m": [
+        -15876.686051967146,
+        -7668.026312870919,
+        16670.281350952922
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:02:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:03:00.0000",
+      "displacement_m": 419078.4601606871,
+      "trapezoid_velocity_residual_m": 19.826627882557098,
+      "cubic_velocity_quadrature_residual_m": 16.729380661737228,
+      "velocity_change_m_s": 108.59979715910033,
+      "position_minus_integrated_velocity_vector_m": [
+        -13.097320835047867,
+        10.269888087626896,
+        1.691674595407676
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:03:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:04:00.0000",
+      "displacement_m": 415790.51443890843,
+      "trapezoid_velocity_residual_m": 19.882728367867568,
+      "cubic_velocity_quadrature_residual_m": 0.49874010266681246,
+      "velocity_change_m_s": 105.53661105712311,
+      "position_minus_integrated_velocity_vector_m": [
+        0.4328020463581197,
+        -0.19215662697388325,
+        -0.15652446897001937
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:04:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:05:00.0000",
+      "displacement_m": 412538.61223138357,
+      "trapezoid_velocity_residual_m": 19.371016641372986,
+      "cubic_velocity_quadrature_residual_m": 0.7974987383825827,
+      "velocity_change_m_s": 102.57445371313821,
+      "position_minus_integrated_velocity_vector_m": [
+        0.6643508050474338,
+        -0.4158747611072613,
+        -0.1472767076920718
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:05:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:06:00.0000",
+      "displacement_m": 409324.71080333675,
+      "trapezoid_velocity_residual_m": 18.546392565168166,
+      "cubic_velocity_quadrature_residual_m": 0.7075589495145762,
+      "velocity_change_m_s": 99.71126607090328,
+      "position_minus_integrated_velocity_vector_m": [
+        0.5780399304348975,
+        -0.3949183870572597,
+        -0.10270819551078603
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:06:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:07:00.0000",
+      "displacement_m": 406150.4716668796,
+      "trapezoid_velocity_residual_m": 17.59940639222326,
+      "cubic_velocity_quadrature_residual_m": 0.4568172359193435,
+      "velocity_change_m_s": 96.94491760285575,
+      "position_minus_integrated_velocity_vector_m": [
+        0.36637455175514333,
+        -0.26794785482343286,
+        -0.05153272702591494
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:07:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:08:00.0000",
+      "displacement_m": 403017.2800563274,
+      "trapezoid_velocity_residual_m": 16.654502427651604,
+      "cubic_velocity_quadrature_residual_m": 0.18941740235213755,
+      "velocity_change_m_s": 94.27318999486324,
+      "position_minus_integrated_velocity_vector_m": [
+        0.14559922958142124,
+        -0.12078903539804742,
+        -0.009477636136580259
+      ]
+    },
+    {
+      "from_tdb": "A.D. 2025-Jan-05 12:08:00.0000",
+      "to_tdb": "A.D. 2025-Jan-05 12:09:00.0000",
+      "displacement_m": 399926.2649326287,
+      "trapezoid_velocity_residual_m": 15.781845169222658,
+      "cubic_velocity_quadrature_residual_m": 0.02924532055035031,
+      "velocity_change_m_s": 91.69377071139887,
+      "position_minus_integrated_velocity_vector_m": [
+        -0.023846991563914344,
+        -0.0002087639586534351,
+        0.016928265860769898
+      ]
+    }
+  ]
+}

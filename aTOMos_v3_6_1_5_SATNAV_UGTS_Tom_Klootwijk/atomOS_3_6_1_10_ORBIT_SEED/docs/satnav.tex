@@ -1,0 +1,145 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[type1]{newpxtext}
+\usepackage[scaled=.93]{helvet}
+\usepackage[margin=23mm,top=22mm,bottom=23mm,headheight=15pt]{geometry}
+\usepackage{microtype,amsmath,amssymb,amsthm,mathtools,newpxmath}
+\usepackage{xcolor,graphicx,booktabs,tabularx,longtable,array,enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,titlesec,listings,xurl,needspace,etoolbox,hyperref}
+\definecolor{ink}{HTML}{173244}
+\definecolor{accent}{HTML}{1A777F}
+\definecolor{gold}{HTML}{B28448}
+\definecolor{muted}{HTML}{586C79}
+\definecolor{wash}{HTML}{EFF5F6}
+\definecolor{linegray}{HTML}{CCDADF}
+\hypersetup{colorlinks=true,linkcolor=ink,urlcolor=accent,citecolor=accent,
+ pdftitle={aTOMos v3.6.1.10 - Orbital Seeds, Timestamp Queries and Literal Kernel},pdfauthor={Tom Klootwijk},
+ pdfsubject={Compact orbital seeds; two ASA/NA sets; synchronous JK; ground-station horizons and held-out forecast accuracy},
+ pdfkeywords={aTOMos,atomOS,3.6.1.10,UGTS,SCLP,RTCM,NTRIP,GNSS,CUDA,Tom Klootwijk}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\small\textcolor{ink}{aTOMos / v3.6.1.10}}
+\fancyhead[R]{\sffamily\small\textcolor{muted}{ORBIT SEEDS / LITERAL STATE}}
+\fancyfoot[L]{\sffamily\footnotesize\textcolor{muted}{Tom Klootwijk \;|\; 15 September 2026}}
+\fancyfoot[R]{\sffamily\footnotesize\thepage}
+\renewcommand{\headrulewidth}{.35pt}
+\titleformat{\section}{\Large\sffamily\bfseries\color{ink}}{\thesection}{.65em}{}
+\titleformat{\subsection}{\large\sffamily\bfseries\color{ink}}{\thesubsection}{.6em}{}
+\titlespacing*{\section}{0pt}{15pt}{8pt}
+\titlespacing*{\subsection}{0pt}{10pt}{5pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2.5em}
+\setlist{nosep,leftmargin=1.4em,topsep=3pt}
+\renewcommand{\arraystretch}{1.16}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\src}[1]{\textcolor{muted}{[U, #1]}}
+\newcommand{\base}{\textcolor{muted}{[A, retained M2 project contract]}}
+\newcommand{\ext}[1]{\textcolor{muted}{[#1]}}
+\newcommand{\dec}[1]{\textcolor{accent}{[N#1]}}
+\newcommand{\ot}{\operatorname{otan2}}
+\newcommand{\wrap}{\operatorname{wrap}}
+\newcommand{\pop}{\operatorname{popcount}}
+\newcommand{\SHA}{\operatorname{SHA256}}
+\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}\newcommand{\Z}{\mathbb Z}\newcommand{\B}{\{0,1\}}
+\newtcolorbox{panel}[1][]{enhanced,breakable,colback=wash,colframe=accent,
+ boxrule=0pt,leftrule=2pt,arc=0pt,left=10pt,right=10pt,top=8pt,bottom=8pt,#1}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{theorem}[proposition]{Theorem}
+\lstset{basicstyle=\ttfamily\small,backgroundcolor=\color{wash},frame=single,
+ rulecolor=\color{linegray},breaklines=true,columns=fullflexible,keepspaces=true,
+ showstringspaces=false,xleftmargin=4pt,xrightmargin=4pt,aboveskip=7pt,belowskip=7pt}
+\setcounter{tocdepth}{1}
+\preto\section{\Needspace{7\baselineskip}}
+\preto\subsection{\Needspace{4\baselineskip}}
+\begin{document}
+\begin{titlepage}\thispagestyle{empty}
+{\sffamily\color{accent}\large AC031 / AC130 ATOMOS \hfill ORBIT-SEED-R1}\par
+\vspace{18mm}
+{\sffamily\bfseries\fontsize{47}{55}\selectfont\color{ink}aTOMos v3.6.1.10}\par
+\vspace{10mm}
+{\sffamily\fontsize{28}{34}\selectfont Orbital seeds and\par timestamp queries}\par
+\vspace{7mm}
+{\sffamily\fontsize{21}{27}\selectfont\color{gold}Ground-station horizons\par with the literal self-referential kernel}\par
+\vspace{12mm}
+{\large MEO / GEO / inclined geosynchronous / high elliptical\par
+Two ASA/NA sets \;\textperiodcentered\; synchronous JK \;\textperiodcentered\; CPU / CUDA}\par
+\vspace{16mm}
+{\sffamily\bfseries\Large Tom Klootwijk}\par
+\begin{tabular}{@{}ll@{}}
+Author-supplied identifier & \textbf{NL200678942}\\
+Author-supplied date & \textbf{10-07-1990}\\
+Source lineage & aTOMos 3.6.1 / UGTS-KC 3.6.2 SCLP\\
+Preserved parent & 3.6.1.9 ORBIT-SEED-R1\\
+Target & RTX 5070 Ti Laptop / SM120 / FP64\\
+Release & 3.6.1.10 / 15 September 2026\\
+\end{tabular}
+\vfill
+\begin{panel}
+\textbf{8.51--8.86 KiB per complete demonstration seed}\par
+Reconstruct physical satellite states at requested timestamps. Keep full state,
+time, Up and model dependencies. Measure forecast error against later reference
+orbit data and report when each accuracy budget is exceeded.
+\end{panel}
+{\small\color{muted}Editable equations, native binaries, packed examples, a local
+timeline interface and verified evidence. Prepared with AI assistance.}
+\end{titlepage}
+\setcounter{page}{2}
+\section*{Release and implementation record}
+\addcontentsline{toc}{section}{Release and implementation record}
+This subversion implements \textbf{ORBIT-SEED-R1}. It packs a complete physical
+model and reconstructs a satellite's ground-station-relative position at an
+arbitrary supported timestamp. The examples cover real MEO, GEO, IGSO and high
+elliptical targets. Two explicit ASA/NA mask sets feed the existing synchronous
+JK operation; the resulting state changes the ordered query schedule.
+
+\begin{tabularx}{\textwidth}{@{}P{.28\textwidth}Y@{}}\toprule
+\textbf{Delivered capability} & \textbf{Concrete implementation}\\\midrule
+Compact seeds & 8,716--9,074 bytes, including all per-seed physical, frame, forcing, station, query and word parameters.\\
+Timestamp scrubbing & Native CPU canonical checkpoints, bounded memory, exact fractional query time and query-order-independent states.\\
+Physical prediction & Full degree/order-12 Earth gravity, Sun/Moon forcing, radiation pressure, fitted RTN acceleration, varying EOP and Schwarzschild correction.\\
+Literal state & Two ordered whole-word ASA/NA stages, editable X/J/K equations, synchronous JK and a trace of the selected next timestamp.\\
+Station geometry & Full ECEF/ENU position and velocity, Up, range/range rate, azimuth/elevation, original UGTS keys and complete time/winding.\\
+Both horizons & Refined visibility events and sampled prediction-error horizons against withheld later orbit data.\\
+Execution evidence & Native CPU/CUDA, independent equations and propagation, isolated packed-only replay, physical reference comparisons and actual-device sanitizer.\\
+User interface & Local timeline, exact timestamp input, satellite/station selection, pass search and ordered feedback replay.\\\bottomrule
+\end{tabularx}
+
+The seed epoch is 2 January 2025. A fixed rule chooses among one-, three- and
+seven-day earlier training windows using an earlier validation day. R2 keeps all
+four January examples below 10 metres at every tested first-day reference sample.
+Longer intervals still have failures. January is a reused development benchmark;
+a separate February confirmation follows in the evidence. The default codec
+uses lossless one-bit planes in machine words. Propagation still uses binary64
+arithmetic, with measured CPU/GPU and independent integration differences.
+
+The prior LIVE-GPS-L1-R1, CGK-R1, SRK-R1 and SATNAV-R1 equations remain in the
+second part of this volume. Their previous receiver-position measurements are
+historical component evidence, not satellite forecast accuracy. The inherited 3.6.1.9 measurements are distinguished from the new
+3.6.1.10 checks in the optimization chapter. The parent release and
+its delivered files are preserved separately.
+\clearpage
+\tableofcontents\clearpage
+\input{seed_optimization.tex}
+\input{phi_source_audit.tex}
+\input{orbit.tex}
+\section*{Retained receiver, geometry and source contracts}
+\addcontentsline{toc}{section}{Retained receiver, geometry and source contracts}
+The following sections retain the earlier executable mathematical profiles and
+their dated measurements. References to the 3.6.1.8 live receiver are historical.
+The current orbital seed profile, timestamp queries and satellite forecast
+evidence are in Section~\ref{sec:orbit}. The baseline regression results bind the preserved component binaries; the
+optimization chapter reports fresh checks of this release without relabelling the earlier
+receiver measurements as orbital accuracy.
+\input{retained_satnav_body.tex}
+\vfill\begin{panel}
+\textbf{aTOMos v3.6.1.10 --- Orbital seeds and literal state}\par
+Tom Klootwijk \quad NL200678942 \quad 10-07-1990\par
+\textbf{Profiles:} ORBIT-SEED-R1, LIVE-GPS-L1-R1, CGK-R1, SRK-R1 and SATNAV-R1.\par
+\textbf{Release date:} 15 September 2026.\par
+Compact explicit state, timestamp reconstruction, two ASA/NA sets, synchronous
+JK, ground-station horizons and measured forecast limits.
+\end{panel}
+\end{document}

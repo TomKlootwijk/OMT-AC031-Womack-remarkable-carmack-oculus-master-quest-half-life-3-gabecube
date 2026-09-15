@@ -1,0 +1,356 @@
+\section{ORBIT-SEED-R1: compact physical seeds and timestamp queries}
+\label{sec:orbit}
+This profile predicts the position of a satellite relative to a specified ground
+station. It includes real MEO, GEO, inclined geosynchronous and high elliptical
+examples. A small, complete model seed is the input; a requested timestamp is the
+query. The model regenerates position and velocity with explicit dynamics. The
+two ordered ASA/NA sets and the synchronous JK recurrence select subsequent
+query times in ordered replay. Direct scrubbing obtains the same physical state
+without replaying the preceding display interactions.
+
+\begin{panel}
+\textbf{Complete binary seeds; sizes are measured in the execution table.}\par
+Each seed includes the initial state, force constants, compact Sun/Moon and frame
+coefficients, provenance, both demonstration stations, time/query settings,
+two ASA/NA mask sets and editable Boolean equations. No future target trajectory
+table is stored. The native executable and its declared runtime are shared
+dependencies, accounted for separately from per-seed bytes.
+\end{panel}
+
+The four fitted states use data at or before 2 January 2025 00:00 GPST. The
+following seven days are excluded from fitting. Their earlier R1 results were
+inspected before R2 development, so this interval is a reused benchmark.
+These are archived examples,
+not a statement of current satellite positions. An arbitrary future manoeuvre
+cannot be recovered from a prior seed that does not contain that manoeuvre.
+Compactness is a consequence of a specified dynamical model and initial
+conditions; it does not provide lossless compression of every possible orbit.
+
+\subsection{The complete state seed}
+Let the decoded seed be
+\begin{equation}
+\mathcal S=(\mathcal I,t_0,\mathbf r_0,\mathbf v_0,\mathcal F,
+\mathcal C,\mathcal M,\mathcal N,\mathcal G,\mathcal Q,\mathcal W,\mathcal P),
+\end{equation}
+where $\mathcal I$ identifies the object and model version, $\mathcal F$ contains
+all force constants and fitted accelerations, $\mathcal C$ contains compact
+planetary forcing, $\mathcal M$ defines the frame/time conversion,
+$\mathcal N$ defines numerical integration, $\mathcal G$ defines the stations,
+$\mathcal Q$ defines query/chart parameters, $\mathcal W$ defines the literal word
+equations and masks, and $\mathcal P$ records construction provenance. Position
+and velocity are six IEEE 754 binary64 SI numbers, not quantized UGTS addresses.
+
+The upgraded physical model is \code{ORBIT-DYNAMICS-R2}; the decoder also retains
+R1 support. Its state is geocentric and aligned
+with GCRS/ICRF axes. Full GPST seconds since 6 January 1980 are retained. For an
+elapsed query $\tau$, $t=t_0+\tau$ and
+\begin{equation}
+\mathrm{TT}=\mathrm{GPST}+51.184\ \mathrm{s},\qquad
+\mathrm{JD}_{TT}=2444244.5+(t+51.184)/86400.
+\end{equation}
+The Chandra input is labelled TDB and is explicitly converted during construction
+and review. GPST, UTC, TT and TDB calendar labels are not interchanged. At this
+example epoch GPST is 18 seconds ahead of UTC.
+
+\subsection{Explicit Earth frame and compact forcing}
+Define the passive Earth rotation matrix and polar-motion matrix as
+\begin{align}
+R_z(a)&=\begin{pmatrix}\cos a&\sin a&0\\-\sin a&\cos a&0\\0&0&1\end{pmatrix},\\
+P&=\begin{pmatrix}c_x&0&s_x\\s_y s_x&c_y&-s_y c_x\\-c_y s_x&s_y&c_y c_x\end{pmatrix},
+\quad c_x=\cos x_p,\ s_x=\sin x_p,\ c_y=\cos y_p,\ s_y=\sin y_p.
+\end{align}
+With the embedded slowly varying celestial matrix $Q(\tau)$,
+\begin{align}
+a(\tau)&=a_0+\dot a\tau+\delta a(\tau),& M(\tau)&=P(\tau)R_z(a(\tau))Q(\tau),\\
+\mathbf r_E&=M\mathbf r,& \mathbf v_E&=M\mathbf v+\dot M\mathbf r.
+\end{align}
+Thus Earth-fixed velocity includes the time derivative of the frame.
+The construction uses IAU 2006/2000A and the IERS Bulletin A published on
+26 December 2024, before the forecast epoch. Published daily $x_p,y_p$ and
+DUT1 values are linearly interpolated. The ERA correction is
+$\delta a(\tau)=\dot a[\mathrm{DUT1}(\tau)-\mathrm{DUT1}(0)]$, with
+$\dot a=2\pi(1.00273781191135448)/86400$.
+The velocity derivative includes $\dot P$, $\dot {\delta a}$ and $\dot Q$.
+TIO locator $s'$ is zero. Published EOP predictions carry their own uncertainty;
+their interpolation is not a future observed-EOP measurement.
+
+Each slowly varying scalar coefficient block uses a finite Chebyshev expansion:
+\begin{equation}
+u(\tau)=\frac{2\tau-\tau_a-\tau_b}{\tau_b-\tau_a},\quad
+f(\tau)=\sum_{k=0}^{d}c_k T_k(u),\quad
+T_0=1,\ T_1=u,\ T_{k+1}=2uT_k-T_{k-1}.
+\end{equation}
+The seed stores the interval, degree and every coefficient. $Q$ has nine
+degree-eighteen rows; Sun and Moon forcing have three rows of degree sixteen and
+thirty respectively over the fifteen-day construction domain. Daily EOP blocks
+have three degree-one rows: $\delta a,x_p,y_p$.
+Rapid Earth rotation remains a direct trigonometric
+rotation. At shared segment boundaries the later segment applies. Queries
+outside the embedded domain return an error rather than silently extrapolating
+the coefficient blocks.
+
+The Sun/Moon coefficients approximate the DE440s planetary model published in
+2020. They describe known forcing from other bodies, not withheld positions of
+the target satellite. The measured off-node forcing discrepancies are about
+1.99 m for the Sun and 0.060 m for the Moon. These quantities are not satellite
+orbit accuracy. Original DE440 files are unnecessary during packed replay.
+
+\subsection{Actual orbital differential equations}
+The physical state evolves as
+\begin{equation}
+\frac{d\mathbf r}{d\tau}=\mathbf v,\qquad
+\frac{d\mathbf v}{d\tau}=M^T\nabla_{\mathbf p}U(\mathbf p)
++\mathbf a_\odot+\mathbf a_{Moon}+\mathbf a_{SRP}+\mathbf a_{RTN}+\mathbf a_{GR},
+\qquad \mathbf p=M\mathbf r.
+\end{equation}
+Here the Moon acceleration symbol denotes the declared lunar third-body term.
+For $R=\|\mathbf p\|$, latitude sine $s=p_z/R$, longitude $\lambda$,
+Earth radius $a_E$ and parameter $\mu$, the full degree/order twelve field is
+\begin{equation}
+U(\mathbf p)=\frac{\mu}{R}\sum_{n=0}^{12}\left(\frac{a_E}{R}\right)^n
+\sum_{m=0}^{n}P_{nm}(s)[C_{nm}\cos(m\lambda)+S_{nm}\sin(m\lambda)].
+\end{equation}
+$P_{nm}$ has no Condon--Shortley phase. The seed stores unnormalized
+$C_{nm},S_{nm}$, converted from the EGM96 fully normalized coefficients by
+\begin{equation}
+C_{nm}=\sqrt{(2-\delta_{m0})(2n+1)\frac{(n-m)!}{(n+m)!}}\,\overline C_{nm},
+\end{equation}
+and the same factor for $S$. It includes $C_{00}=1$ and $S_{00}=0$.
+The positive-potential convention uses $+\nabla U$.
+
+Native evaluation avoids longitude and polar division. Define
+$X=a_Ep_x/R^2$, $Y=a_Ep_y/R^2$, $Z=a_Ep_z/R^2$, $D=a_E^2/R^2$,
+$V_{00}=a_E/R$ and $W_{00}=0$. The Cartesian Cunningham recurrence is
+\begin{align}
+V_{mm}&=(2m-1)(XV_{m-1,m-1}-YW_{m-1,m-1}),\\
+W_{mm}&=(2m-1)(XW_{m-1,m-1}+YV_{m-1,m-1}),\\
+V_{nm}&=\frac{2n-1}{n-m}ZV_{n-1,m}
+-\frac{n+m-1}{n-m}DV_{n-2,m},\\
+W_{nm}&=\frac{2n-1}{n-m}ZW_{n-1,m}
+-\frac{n+m-1}{n-m}DW_{n-2,m},\\
+U&=\frac{\mu}{a_E}\sum_{n=0}^{12}\sum_{m=0}^{n}(C_{nm}V_{nm}+S_{nm}W_{nm}).
+\end{align}
+The diagonal recurrence uses $m=1,\ldots,12$; the off-diagonal recurrence uses
+$m=0,\ldots,12$ and $n=m+1,\ldots,12$.
+For $n=m+1$ the second term is absent. Each native recurrence value carries
+three analytic Cartesian derivatives; the product rule produces $\nabla U$.
+Independent Python validation differentiates the scalar potential with complex
+steps, and native tests compare a separately coded spherical-gradient oracle.
+The constants are $\mu=3.986004415\times10^{14}$ SI and $a_E=6378136.3$ m.
+This is the tide-free EGM96 field truncated at degree/order twelve.
+
+For each third body $b$ with Earth-centred position $\mathbf r_b$,
+\begin{equation}
+\mathbf a_b=\mu_b\left[
+\frac{\mathbf r_b-\mathbf r}{\|\mathbf r_b-\mathbf r\|^3}
+-\frac{\mathbf r_b}{\|\mathbf r_b\|^3}\right].
+\end{equation}
+The indirect term removes the acceleration of the Earth. With $\mathbf d=\mathbf
+r-\mathbf r_\odot$, the fitted radiation-pressure term is
+\begin{equation}
+\mathbf a_{SRP}=\chi A\left(\frac{\mathrm{AU}}{\|\mathbf d\|}\right)^2
+\frac{\mathbf d}{\|\mathbf d\|}.
+\end{equation}
+$\chi=0$ in the declared cylindrical Earth shadow when the seed's shadow flag is
+enabled, and $1$ otherwise. With shadow disabled, $\chi=1$ everywhere. Explicitly,
+if $\hat{\mathbf s}=\mathbf r_\odot/\|\mathbf r_\odot\|$, shadow requires
+$\mathbf r\cdot\hat{\mathbf s}<0$ and
+$\|\mathbf r-(\mathbf r\cdot\hat{\mathbf s})\hat{\mathbf s}\|<a_E$.
+There is no hidden penumbra, attitude or manoeuvre model.
+Finally,
+\begin{align}
+\hat{\mathbf R}&=\mathbf r/\|\mathbf r\|,&
+\hat{\mathbf N}&=(\mathbf r\times\mathbf v)/\|\mathbf r\times\mathbf v\|,&
+\hat{\mathbf T}&=\hat{\mathbf N}\times\hat{\mathbf R},\\
+\mathbf a_{RTN}&=a_R\hat{\mathbf R}+a_T\hat{\mathbf T}+a_N\hat{\mathbf N}.
+\end{align}
+The Schwarzschild correction is explicit, with $r=\|\mathbf r\|$:
+\begin{equation}
+\mathbf a_{GR}=\frac{\mu}{c^2r^3}
+\left[\left(\frac{4\mu}{r}-\mathbf v\cdot\mathbf v\right)\mathbf r
++4(\mathbf r\cdot\mathbf v)\mathbf v\right],\qquad c=299792458\ \mathrm{m/s}.
+\end{equation}
+The three signed empirical accelerations and $A$ are fitted only on the declared
+training arc. Their continuation is a physical approximation, not knowledge of
+future spacecraft operations. The same ten-parameter fit is fixed for all four
+objects: state six, SRP one and RTN three. Earlier training-window candidates
+of one, three and seven days are compared against the earlier January 1
+interval; the lowest maximum error selects the window. The final fit uses
+only data at or before the January 2 cutoff. This past-only selection is
+distinct from the already inspected January 2--9 comparison benchmark.
+Harmonics above degree twelve, tides, detailed radiation pressure, attitude
+changes and manoeuvres remain possible sources of forecast disagreement.
+
+\subsection{Bottom-up timestamp reconstruction and scrubbing}
+Native CPU/CUDA integrate these equations with classical RK4. For a six-vector
+$\mathbf y=(\mathbf r,\mathbf v)$ and derivative $F$,
+\begin{align}
+\mathbf k_1&=F(t,\mathbf y),&
+\mathbf k_2&=F(t+h/2,\mathbf y+h\mathbf k_1/2),\\
+\mathbf k_3&=F(t+h/2,\mathbf y+h\mathbf k_2/2),&
+\mathbf k_4&=F(t+h,\mathbf y+h\mathbf k_3),\\
+\mathbf y^+&=\mathbf y+\tfrac h6(\mathbf k_1+2\mathbf k_2+2\mathbf k_3+\mathbf k_4).
+\end{align}
+MEO/GEO/IGSO use $h=30$ seconds; Chandra uses $7.5$ seconds, selected through an
+independent numerical-convergence check. Its fitted initial state and forces
+were not refitted against future positions. Independent Python propagation uses
+DOP853 rather than the native RK4 implementation.
+
+For any elapsed time $\tau$, define $n=\operatorname{trunc}(\tau/h)$ and
+$\epsilon=\tau-nh$. Canonical lattice states are obtained by repeated signed
+steps from the packed epoch. The exact requested state is one final fractional
+step of length $\epsilon$ from the canonical state at $nh$. Fractional results
+never become canonical checkpoints. This makes the physical query independent
+of the order in which the timeline was scrubbed.
+
+The CPU worker retains at most the declared number of sparse checkpoints
+(256 in the examples, at one-hour spacing). Missing checkpoints regenerate
+from an available earlier canonical state or the epoch. Eviction changes work,
+not the mathematical trajectory. Cold-query work is proportional to elapsed
+integration steps; compact storage does not imply constant-time propagation.
+CUDA batches assign independent timestamp queries to device work and integrate
+from the epoch. They currently do not share the CPU checkpoint cache. CPU
+scrubbing and parallel CUDA batch execution are distinct measured paths.
+
+\subsection{Two vacuum/set stages and synchronous JK}
+The user's ``double vacuum, double set'' is concretely defined here as exactly
+two independently stored ASA/NA/boundary mask triples,
+$(A_1,N_1,B_1)$ and $(A_2,N_2,B_2)$, applied in order. No unspecified operation is
+inferred from the phrase. All operators below are 32-bit word operators, and
+$P$ is the present mask. For stage $i$ and input $w$,
+\begin{align}
+a_i(w)&=w\mathbin\& A_i\mathbin\& P,\qquad
+n_i(w)=a_i(w)\mathbin\&N_i,\\
+h_i(w)&=\pop(n_i(w)\mathbin\&B_i),\qquad
+V_i(w)=\begin{cases}0,&h_i(w)>0,\\n_i(w),&h_i(w)=0.\end{cases}
+\end{align}
+One selected boundary hit therefore absorbs the entire output word. It does
+not merely clear the intersecting bit. At ordered query $j$,
+\begin{align}
+\mathbf s_j&=\Phi(\mathcal S,\tau_j),&
+g_j&=G(\mathbf s_j,\mathcal G,\tau_j),\\
+d_j&=E_D(g_j,\tau_j),&x_j&=E_X(q_j,d_j),\\
+y_j&=V_2(V_1(x_j)),&J_j&=E_J(q_j,y_j,d_j),\\
+K_j&=E_K(q_j,y_j,d_j),&
+q_{j+1}&=[(J_j\mathbin\&\neg q_j)\mathbin| (\neg K_j\mathbin\&q_j)]\mathbin\&P,\\
+\tau_{j+1}&=\min(\tau_{end},\tau_j+\Delta(q_{j+1})).
+\end{align}
+Both JK right-hand sides read the same old $q_j$. Boundary absorption does not
+implicitly freeze JK. The editable X expression accepts $q,d$; J and K accept
+$q,y,d$. They support word constants zero/ones and bitwise AND, OR, XOR and
+complement with parentheses. They compile to literal
+Boolean truth tables; an independent AST interpreter checks the complete trace.
+
+Default predicate bits are, in ascending order: above the station elevation
+mask, within three degrees of that mask, absolute seed age $|\tau|$ at least 24 hours, positive
+elevation rate, and approaching range. The actual default expressions are
+\begin{equation}
+x=q\mathbin|d,\qquad J=y\mathbin\&d,\qquad K=\neg d.
+\end{equation}
+With both unabsorbed identity mask sets these reduce to $q^+=d$. The state still
+selects the next physical query timestamp: $\Delta=30$ seconds when
+$(q^+\mathbin\&6)\ne0$, and $300$ seconds otherwise. Different mask/equation
+inputs change that recurrence, as the counterfactual and absorption tests
+demonstrate. Physical acceleration never reads $q$; the CGK spring equations
+are retained separately rather than renamed orbital gravity.
+
+\subsection{Station-relative geometry and both horizons}
+For WGS84 station position $\mathbf r_g$ and its standard East/North/Up rotation
+$L(\varphi,\lambda)$,
+\begin{equation}
+\mathbf z=(E,N,U)^T=L(\mathbf r_E-\mathbf r_g),\qquad
+\dot{\mathbf z}=L\mathbf v_E.
+\end{equation}
+Set $H=\sqrt{E^2+N^2}$ and $D=\|\mathbf z\|$. The returned quantities are
+\begin{align}
+\mathrm{az}&=\operatorname{atan2}(E,N)\bmod2\pi,&
+\mathrm{el}&=\operatorname{atan2}(U,H),\\
+\dot D&=\mathbf z\cdot\dot{\mathbf z}/D,&
+\frac{d\sin\mathrm{el}}{dt}&=\dot U/D-U\dot D/D^2.
+\end{align}
+Azimuth is clockwise from North. At the horizontal origin azimuth and its
+derivative are explicitly undefined. Angles are simultaneous geometric values:
+there is no atmospheric refraction or retarded light-time correction here.
+
+Visibility events solve
+\begin{equation}
+f(t)=\sin\mathrm{el}(t)-\sin\mathrm{el}_{mask}=0.
+\end{equation}
+The search refines sign brackets and derivative-bracketed extrema, so it can
+recover a short pass whose sampled endpoints are both below the mask. It reports
+grazing candidates and numerical root tolerances. The validation compares
+120-second and 30-second searches over seven days for both stations and every
+object. Without a global interval bound this is not a proof that arbitrarily
+many roots cannot occur between samples. Always-visible/hidden labels mean
+visible/hidden over the searched interval under the stated search policy.
+
+The second horizon is an error-budget horizon. Given withheld reference samples
+$\mathbf r^*_k$, $e_k=\|\mathbf r(t_k)-\mathbf r^*_k\|$. For budget $b$ the report
+records the first sample with $e_k>b$ and its predecessor. The interval brackets
+a sampled exceedance; it does not certify continuous error below $b$ before it.
+An epoch can be inside the model's coefficient domain while outside a useful
+accuracy horizon. Maximum error across the whole interval is reported alongside
+endpoint error because an orbit can diverge and later approach the reference.
+
+\subsection{Original UGTS keys and complete time}
+The orbital chart uses $\rho=\log(H/r_0)$, $\theta=\operatorname{atan2}(N,E)$ and
+the explicit separate hoop angle $\phi$. The source chart is used only when
+$-20\le\rho\le0$; out-of-range coordinates are not wrapped into a valid key.
+The full tick is $k=\lfloor t/\delta t\rfloor$, with integer winding and remainder
+from $k=16384w+k_{phase}$. The normalized fraction is separately labelled
+$k_{phase}/16384$. Source quantization produces the original
+$(20,18,14,12)$-bit tuple. Both the contiguous and original Morton layouts are
+retained. Full position, velocity, Up, absolute time and provenance remain in
+the result. Source OTAN2 uses $\Delta\theta=\wrap(\theta_j-\theta_{j-1})$ and is
+still $\arctan(\Delta\theta/\Delta\rho)$, with its
+explicit undefined-ratio cases, and is not replaced by azimuth.
+
+\subsection{Binary packing, integrity and executable entry points}
+The 52-byte little-endian header contains magic \code{ATOMORB1}, format/codec
+versions, compressed and raw lengths, and the SHA-256 of the domain-prefixed
+canonical payload. The payload uses tagged null/Boolean/signed and unsigned
+64-bit integer/binary64/string/list/map values. Map keys are sorted, unique UTF-8
+strings. Codec 1 compresses those canonical bytes directly. The default codec 2
+packs the numeric bit patterns into one-bit planes before Zlib compression.
+It preserves all 64 bits per numeric value. For numeric word $w_j$, define
+\begin{equation}
+P_{b,g}=\sum_{\ell=0}^{63}
+\left[\left(w_{64g+\ell}\mathbin{\mathrm{shr}}b\right)\mathbin\&1\right]2^\ell,
+\quad b=0,\ldots,63.
+\end{equation}
+Absent final lanes are zero. The inverse restores bit $b$ of word $j$ from
+lane $j\bmod64$ of $P_{b,\lfloor j/64\rfloor}$.
+The plane-major uint64 words follow a structural template with original numeric
+type tags, and a 16-byte \code{BITPLN64} header with template length and word count.
+Signed integers, unsigned integers and binary64 preserve their original bits;
+the structural template retains Boolean tokens. Both codecs share the same
+canonical content digest. Plane packing adds zero numerical error, but does not
+change floating-point arithmetic in propagation. The measured example packs are
+slightly larger with this representation than with codec 1.
+The decoder checks exact lengths,
+bounded expansion and nesting, complete stream termination, canonical re-encoding,
+digest, model schema and time domains. There is no executable payload or pickle.
+
+The digest domain is \code{atomOS:ORBIT-SEED-R1:canonical-binary} followed by a
+zero byte. Physical-model and complete-seed hashes differ by scope. Runtime
+timings and cache occupancy are excluded from the deterministic trace digest;
+all mathematical query fields and both mask/JK stages remain covered. Independent
+verification reconstructs the native orbit, checks the full station geometry,
+keys/time, OTAN2, the AST recurrence, next query time and final chain.
+
+\begin{lstlisting}
+python tools/orbital_seed.py inspect --seed examples/orbit/seeds/C03.orbseed
+python tools/orbital_seed.py query --seed examples/orbit/seeds/C03.orbseed --worker bin/cpu/orbit_worker.exe --station singapore_demo --time-s 12345.678 --out NEW_QUERY.json
+python tools/orbital_seed.py predict --seed examples/orbit/seeds/G05.orbseed --worker bin/cpu/orbit_worker.exe --end-s 86400 --out NEW_RUN
+python tools/verify_orbit_run.py --seed examples/orbit/seeds/G05.orbseed --worker bin/cpu/orbit_worker.exe --run NEW_RUN --out NEW_VERIFY.json
+python tools/orbit_scrub.py --worker bin/cpu/orbit_worker.exe
+\end{lstlisting}
+The local timeline is served at \url{http://127.0.0.1:3619}. It accepts exact
+fractional-second queries, a slider, object/station selection, ordered feedback
+playback and visibility events. The JSON companions are editable; packing them
+rebuilds the binary \code{.orbseed} files with a new content identity. Accuracy reports are associated only when
+their canonical physical-model hash matches the loaded seed.
+
+\input{orbit_runtime_validation.tex}
+\input{orbit_validation.tex}
+\clearpage

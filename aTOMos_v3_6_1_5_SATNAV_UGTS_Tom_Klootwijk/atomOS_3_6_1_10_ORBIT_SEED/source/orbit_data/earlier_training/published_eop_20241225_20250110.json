@@ -1,0 +1,204 @@
+{
+  "schema": "IERS-BULLETINA-20241226-EOP-TABLE-1",
+  "published_date": "2024-12-26",
+  "source": "../bulletina-xxxvii-052.txt",
+  "source_sha256": "24386b542b404c4b7fd386ae14e5347c32c4b674075dc1636b5209333228630e",
+  "source_url": "https://datacenter.iers.org/data/6/bulletina-xxxvii-052.txt",
+  "time_scale": "UTC MJD",
+  "units": {
+    "xp": "arcsec",
+    "yp": "arcsec",
+    "dut1": "seconds UT1-UTC"
+  },
+  "accuracy_note": "Forecast uncertainties use the published Sxy and St expressions, not a strict bound; measured rows use tabulated error values.",
+  "lod_note": "No LOD column in this source. Derive slopes explicitly from neighboring DUT1 rows if required; do not mislabel a derived value as observed LOD.",
+  "rows": [
+    {
+      "utc_date": "2024-12-25",
+      "mjd_utc": 60669,
+      "xp_arcsec": 0.15701,
+      "yp_arcsec": 0.30974,
+      "dut1_s": 0.045771,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 6.5e-05
+    },
+    {
+      "utc_date": "2024-12-26",
+      "mjd_utc": 60670,
+      "xp_arcsec": 0.15404,
+      "yp_arcsec": 0.30897,
+      "dut1_s": 0.045404,
+      "kind": "rapid_combination",
+      "xp_error_arcsec": 9e-05,
+      "yp_error_arcsec": 9e-05,
+      "dut1_error_s": 5.5e-05
+    },
+    {
+      "utc_date": "2024-12-27",
+      "mjd_utc": 60671,
+      "xp_arcsec": 0.1517,
+      "yp_arcsec": 0.3081,
+      "dut1_s": 0.04519,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.00068,
+      "yp_error_arcsec": 0.00068,
+      "dut1_error_s": 0.00025
+    },
+    {
+      "utc_date": "2024-12-28",
+      "mjd_utc": 60672,
+      "xp_arcsec": 0.1494,
+      "yp_arcsec": 0.3072,
+      "dut1_s": 0.0452,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.001183948766082729,
+      "yp_error_arcsec": 0.001183948766082729,
+      "dut1_error_s": 0.00042044820762685725
+    },
+    {
+      "utc_date": "2024-12-29",
+      "mjd_utc": 60673,
+      "xp_arcsec": 0.1475,
+      "yp_arcsec": 0.3064,
+      "dut1_s": 0.04539,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.001637592785990871,
+      "yp_error_arcsec": 0.001637592785990871,
+      "dut1_error_s": 0.0005698767642386944
+    },
+    {
+      "utc_date": "2024-12-30",
+      "mjd_utc": 60674,
+      "xp_arcsec": 0.1459,
+      "yp_arcsec": 0.3059,
+      "dut1_s": 0.04571,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.002061374530454142,
+      "yp_error_arcsec": 0.002061374530454142,
+      "dut1_error_s": 0.0007071067811865476
+    },
+    {
+      "utc_date": "2024-12-31",
+      "mjd_utc": 60675,
+      "xp_arcsec": 0.1445,
+      "yp_arcsec": 0.3055,
+      "dut1_s": 0.04608,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.002464250856504165,
+      "yp_error_arcsec": 0.002464250856504165,
+      "dut1_error_s": 0.0008359253812205275
+    },
+    {
+      "utc_date": "2025-01-01",
+      "mjd_utc": 60676,
+      "xp_arcsec": 0.1431,
+      "yp_arcsec": 0.3053,
+      "dut1_s": 0.04641,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.002851214644588044,
+      "yp_error_arcsec": 0.002851214644588044,
+      "dut1_error_s": 0.0009584146563694087
+    },
+    {
+      "utc_date": "2025-01-02",
+      "mjd_utc": 60677,
+      "xp_arcsec": 0.1418,
+      "yp_arcsec": 0.3053,
+      "dut1_s": 0.04656,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.0032254279477862895,
+      "yp_error_arcsec": 0.0032254279477862895,
+      "dut1_error_s": 0.0010758792676647127
+    },
+    {
+      "utc_date": "2025-01-03",
+      "mjd_utc": 60678,
+      "xp_arcsec": 0.1404,
+      "yp_arcsec": 0.3053,
+      "dut1_s": 0.04644,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.0035890615173022732,
+      "yp_error_arcsec": 0.0035890615173022732,
+      "dut1_error_s": 0.001189207115002721
+    },
+    {
+      "utc_date": "2025-01-04",
+      "mjd_utc": 60679,
+      "xp_arcsec": 0.1391,
+      "yp_arcsec": 0.3054,
+      "dut1_s": 0.04604,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.003943691371660797,
+      "yp_error_arcsec": 0.003943691371660797,
+      "dut1_error_s": 0.001299038105676658
+    },
+    {
+      "utc_date": "2025-01-05",
+      "mjd_utc": 60680,
+      "xp_arcsec": 0.1378,
+      "yp_arcsec": 0.3054,
+      "dut1_s": 0.04539,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.004290509942465315,
+      "yp_error_arcsec": 0.004290509942465315,
+      "dut1_error_s": 0.0014058533129758727
+    },
+    {
+      "utc_date": "2025-01-06",
+      "mjd_utc": 60681,
+      "xp_arcsec": 0.1365,
+      "yp_arcsec": 0.3055,
+      "dut1_s": 0.04457,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.004630448526715166,
+      "yp_error_arcsec": 0.004630448526715166,
+      "dut1_error_s": 0.0015100263386343092
+    },
+    {
+      "utc_date": "2025-01-07",
+      "mjd_utc": 60682,
+      "xp_arcsec": 0.1353,
+      "yp_arcsec": 0.3056,
+      "dut1_s": 0.04371,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.0049642530298485595,
+      "yp_error_arcsec": 0.0049642530298485595,
+      "dut1_error_s": 0.001611854897735313
+    },
+    {
+      "utc_date": "2025-01-08",
+      "mjd_utc": 60683,
+      "xp_arcsec": 0.134,
+      "yp_arcsec": 0.3058,
+      "dut1_s": 0.04297,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.005292533242986841,
+      "yp_error_arcsec": 0.005292533242986841,
+      "dut1_error_s": 0.0017115812605057615
+    },
+    {
+      "utc_date": "2025-01-09",
+      "mjd_utc": 60684,
+      "xp_arcsec": 0.1328,
+      "yp_arcsec": 0.3059,
+      "dut1_s": 0.04246,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.005615796233632832,
+      "yp_error_arcsec": 0.005615796233632832,
+      "dut1_error_s": 0.0018094060388500971
+    },
+    {
+      "utc_date": "2025-01-10",
+      "mjd_utc": 60685,
+      "xp_arcsec": 0.1316,
+      "yp_arcsec": 0.3061,
+      "dut1_s": 0.04222,
+      "kind": "prediction",
+      "xp_error_arcsec": 0.0059344697433574185,
+      "yp_error_arcsec": 0.0059344697433574185,
+      "dut1_error_s": 0.0019054978055798053
+    }
+  ]
+}

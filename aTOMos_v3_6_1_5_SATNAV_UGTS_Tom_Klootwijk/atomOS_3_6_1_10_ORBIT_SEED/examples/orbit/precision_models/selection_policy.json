@@ -1,0 +1,27 @@
+{
+  "policy": {
+    "profile": "R2-PAST-WINDOW-SELECTION-1",
+    "windows_days": [
+      1.0,
+      3.0,
+      7.0
+    ],
+    "internal_holdout_s": [
+      -86400.0,
+      0.0
+    ],
+    "candidate_cutoff_s": -86400.0,
+    "score": "maximum 3D position error; ties choose the shorter window",
+    "final_refit": "selected window ending at epoch; target rows strictly after epoch excluded",
+    "parameters": "Cartesian state6 + SRP1 + constant RTN3; fixed degree/order12 EGM96, Schwarzschild, published EOP",
+    "max_nfev": 35,
+    "fitting_step_s": 30.0,
+    "replay_step_s": {
+      "G05": 30.0,
+      "C03": 30.0,
+      "C06": 30.0,
+      "CHANDRA": 7.5
+    }
+  },
+  "policy_sha256": "102d9a5cf41e8ed01666416d235ab3223115b448e75d538ebcb5024907a57068"
+}
