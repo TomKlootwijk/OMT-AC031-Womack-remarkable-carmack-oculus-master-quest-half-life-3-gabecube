@@ -1,0 +1,436 @@
+\section{Original Madgwick recurrence as an exact operator graph}
+\label{sec:exact-madgwick}
+
+\begin{panel}
+\textbf{Status.} This chapter defines a mathematical profile and gives conditional
+proofs. It does not supply a new runtime, machine-checked proof, simulation,
+benchmark or physical accuracy result. Its purpose is to retain the chosen
+operators and their dependencies before a rounded numerical state is materialized.
+The verified R10 runtime remains a separate preserved implementation.
+\end{panel}
+
+\subsection{Source identity and discrete profile}
+The source is Sebastian O. H. Madgwick's 2010 report,
+\href{https://x-io.co.uk/downloads/madgwick_internal_report.pdf}{\emph{An efficient
+orientation filter for inertial and inertial/magnetic sensor arrays}}.
+We select its simplified recurrence, equations (25)--(34), (42)--(51), under the
+name \texttt{MDG2010-EQ-SIMPLIFIED-R1}. Normalization, sample ordering and
+otherwise undefined branches are specified below. The finite-mixture family
+from equations (35)--(38) is retained as a distinct alternative, not an identity
+used to rewrite the simplified recurrence.
+
+The current \href{https://github.com/xioTechnologies/Fusion}{x-io Fusion library}
+describes a revised thesis algorithm. It is not silently substituted for the
+selected 2010 profile. Here ``fusion'' in the finite-mixture equations names the
+source's combination of estimates, not that later software package.
+
+Equation (45) forms the magnetic reference from the previous attitude and the
+current normalized magnetic sample. The report's appendix C code instead stores
+a magnetic reference after its new attitude update for use at the next sample.
+It also prepares \texttt{twom\_x/y/z} before normalizing the magnetic input and
+later uses those aliases for the flux calculation. These orders have distinct
+literal meanings. This chapter pins the equation profile; it asserts neither
+bit identity with that C code nor equivalence to its unnormalized aliases.
+
+\subsection{Typed state, units and frame convention}
+Let $B$ be the calibrated right-handed sensor/body frame and $E$ the right-handed
+filter reference frame. The positive $E$-$z$ axis is the declared accelerometer
+reference direction after sensor-sign calibration; its horizontal $x$ axis is
+the chosen magnetic or heading reference. The alignment of $E$ with station ENU
+is an explicit transform, not an assumed identity.
+
+The scalar-first Hamilton quaternion
+\[
+q_{\rm att}=q=(w,x,y,z)=(w,\boldsymbol v),\qquad q^Tq=1
+\]
+maps body vectors to $E$ vectors. The separate ASA/JK word is denoted
+$q_{\rm word}\in\{0,\ldots,2^{32}-1\}$. The quaternion and Boolean word have
+different types and no shared state fields. For quaternions $a=(a_0,\boldsymbol a)$
+and $b=(b_0,\boldsymbol b)$, define
+\[
+a\otimes b=(a_0b_0-\boldsymbol a\cdot\boldsymbol b,
+ a_0\boldsymbol b+b_0\boldsymbol a+\boldsymbol a\times\boldsymbol b),
+\]
+\[
+q^*=(w,-\boldsymbol v),\qquad
+[0,\boldsymbol p_E]=q\otimes[0,\boldsymbol p_B]\otimes q^*.
+\]
+All subsequent frame equations follow this convention directly.
+
+The ordered event is
+\[
+I_n=(\mathrm{id}_n,t_n,\boldsymbol\omega_n,\boldsymbol a_n,
+ \boldsymbol m_n,\mathrm{validity}_n,\mathrm{calibrationId}),
+\qquad h_n=t_n-t_{n-1}>0.
+\]
+Time is in seconds on a declared monotonic scale. Gyro samples are calibrated
+rad/s; accelerometer values are m/s$^2$ before direction normalization; magnetic
+components have one declared consistent unit. Accelerometer specific force must
+receive the declared sign convention before it is interpreted as the reference
+direction. A clock mapping to GPST is required for station/orbit composition.
+
+Persistent data comprise the quaternion, previous event time/index, and optional
+gyro bias $\boldsymbol b_\omega$ in rad/s. Parameters include $\beta\ge0$ in
+s$^{-1}$, $\zeta\ge0$ in s$^{-2}$, fixed calibration, initialization, reference
+policy, clock/frame/mounting transforms and domain branches. A lagged magnetic
+variant additionally stores $(b_x,b_z)$ and its initialization; the selected
+current-reference variant recomputes it and needs no independent persistent
+magnetic state. Fixed calibration bias and estimated drift are distinct terms.
+
+Raw integer ADC values with exact scale ratios are rational literals. A finite
+IEEE value has an exact dyadic-rational meaning; an intended decimal ratio has
+a different literal type. Raw bit provenance can remain distinct from either
+mathematical value. Exact degree-to-radian conversion introduces symbolic $\pi$.
+Thus the purely algebraic profile assumes rational/algebraic radian inputs;
+symbolic $\pi$ conversion belongs to an explicitly broader operator domain.
+An exact recorded value does not certify the corresponding physical measurement.
+
+\subsection{Normalization, rotation and residual operators}
+For a real vector $v\ne0$, define the partial operator
+\[
+\mathcal N(v)=\frac{v}{\sqrt{v^Tv}},
+\]
+where the square root is the positive root. Admitted observations give
+$\widehat{\boldsymbol a}=\mathcal N(\boldsymbol a)$ and
+$\widehat{\boldsymbol m}=\mathcal N(\boldsymbol m)$.
+For unit $q$, the body-to-reference rotation is
+\[
+R(q)=\begin{bmatrix}
+1-2(y^2+z^2)&2(xy-wz)&2(xz+wy)\\
+2(xy+wz)&1-2(x^2+z^2)&2(yz-wx)\\
+2(xz-wy)&2(yz+wx)&1-2(x^2+y^2)
+\end{bmatrix}.
+\]
+Substitution into $R(q)^T(0,0,1)^T-\widehat{\boldsymbol a}$ yields the
+accelerometer objective and its ambient Jacobian:
+\begin{align}
+f_g(q)&=\begin{bmatrix}
+2(xz-wy)-\widehat a_x\\2(wx+yz)-\widehat a_y\\
+1-2(x^2+y^2)-\widehat a_z
+\end{bmatrix},\label{eq:mad-fg}\\
+J_g(q)&=\begin{bmatrix}
+-2y&2z&-2w&2x\\2x&2w&2z&2y\\0&-4x&-4y&0
+\end{bmatrix}.\label{eq:mad-jg}
+\end{align}
+For a fixed reference $\boldsymbol b_E=(b_x,0,b_z)^T$, the magnetic residual is
+\begin{equation}
+f_b(q)=\begin{bmatrix}
+b_x(1-2(y^2+z^2))+2b_z(xz-wy)-\widehat m_x\\
+2b_x(xy-wz)+2b_z(wx+yz)-\widehat m_y\\
+2b_x(wy+xz)+b_z(1-2(x^2+y^2))-\widehat m_z
+\end{bmatrix}.
+\label{eq:mad-fb}
+\end{equation}
+Its Jacobian, with columns ordered $(w,x,y,z)$, is
+\begin{equation}
+\begin{split}
+J_b(q)=\bigl[\;&c_w\quad c_x\quad c_y\quad c_z\;\bigr],\\
+c_w&=\begin{bmatrix}-2b_zy\\-2b_xz+2b_zx\\2b_xy\end{bmatrix},\qquad
+c_x=\begin{bmatrix}2b_zz\\2b_xy+2b_zw\\2b_xz-4b_zx\end{bmatrix},\\
+c_y&=\begin{bmatrix}-4b_xy-2b_zw\\2b_xx+2b_zz\\2b_xw-4b_zy\end{bmatrix},\qquad
+c_z=\begin{bmatrix}-4b_xz+2b_zx\\-2b_xw+2b_zy\\2b_xx\end{bmatrix}.
+\end{split}
+\label{eq:mad-jb}
+\end{equation}
+Products such as $b_xx$ mean $b_x\,x$, not an extra subscript. These expressions
+follow by direct polynomial differentiation: for example,
+$\partial f_{b,1}/\partial y=-4b_xy-2b_zw$ and
+$\partial f_{g,3}/\partial w=0$.
+
+For IMU, set $f=f_g$, $J=J_g$. For MARG, stack residuals and Jacobians vertically:
+\[
+f=\begin{bmatrix}f_g\\f_b\end{bmatrix},\quad
+J=\begin{bmatrix}J_g\\J_b\end{bmatrix},\quad
+F(q)=\tfrac12 f(q)^Tf(q),\quad
+s=\nabla F=J^Tf.
+\]
+The chain rule gives $s=J_g^Tf_g+J_b^Tf_b$ in MARG mode. These are the source's
+unweighted residuals. Changing sensor weights defines a different recurrence.
+The derivatives refer to the displayed ambient polynomial extension evaluated
+at a unit quaternion. Agreement of two residual formulas on the unit sphere
+does not imply equality of their ambient gradients.
+
+\subsection{Magnetic reference and optional drift state}
+Before the current MARG residual is formed, compute
+\begin{align}
+\boldsymbol h_n&=R(q_{n-1})\widehat{\boldsymbol m}_n,\\
+b_{x,n}&=\sqrt{h_{x,n}^2+h_{y,n}^2},&b_{z,n}&=h_{z,n}.
+\label{eq:mad-reference}
+\end{align}
+Hold these values fixed while evaluating $J_b$. Differentiating through the
+reference update would add chain-rule terms absent from the chosen source
+gradient. A dependency in the event graph therefore need not be a differentiation
+variable of every local objective.
+
+\begin{proposition}[Reference norm]
+If $q_{n-1}$ and $\widehat{\boldsymbol m}_n$ have unit norm, then
+$b_{x,n}\ge0$ and $b_{x,n}^2+b_{z,n}^2=1$.
+\end{proposition}
+\begin{proof}
+Quaternion conjugation by a unit quaternion preserves vector norm. The square
+of $b_x$ is $h_x^2+h_y^2$, so adding $b_z^2$ gives $\boldsymbol h^T\boldsymbol h=1$.
+This proves a representation identity, not an undisturbed magnetic measurement.
+\end{proof}
+
+Define the correction direction by an explicit zero branch:
+\[
+e=\begin{cases}s/\sqrt{s^Ts},&s^Ts>0,\\0,&s^Ts=0.\end{cases}
+\]
+Zero gradient means no gradient correction, not proof that the attitude is true.
+For enabled MARG drift with both observations admitted and $b_x>0$, use
+\begin{align}
+\boldsymbol d_\omega&=2\operatorname{vec}(q_{n-1}^*\otimes e),\\
+\boldsymbol b_{\omega,n}&=\boldsymbol b_{\omega,n-1}
+ +\zeta h_n\boldsymbol d_\omega,&
+\boldsymbol\omega_c&=\boldsymbol\omega_n-\boldsymbol b_{\omega,n}.
+\label{eq:mad-bias}
+\end{align}
+The updated bias is used in this sample. Otherwise the bias is held. For
+$e=(e_w,e_x,e_y,e_z)$, the drift direction is explicitly
+\[
+\boldsymbol d_\omega=2\begin{bmatrix}
+we_x-xe_w-ye_z+ze_y\\
+we_y+xe_z-ye_w-ze_x\\
+we_z-xe_y+ye_x-ze_w
+\end{bmatrix}.
+\]
+The vector projection discards the scalar quaternion component. The ambient
+gradient need not be tangent to the unit sphere, so that scalar component must
+not silently be interpreted as a gyro axis. The selected IMU mode does not
+adapt all-axis gyro bias from an unobservable heading.
+
+The source's gain parameterization can remain symbolic:
+\[
+\beta=\frac{\sqrt3}{2}\,\widetilde\omega_\beta,\qquad
+\zeta=\frac{\sqrt3}{2}\,\widetilde{\dot\omega}_\zeta.
+\]
+The error and drift-rate quantities are declared parameters; these identities
+do not establish their physical values or prove filter convergence.
+
+\subsection{The selected update and its unit-norm invariant}
+With corrected body rate $\boldsymbol\omega_c$, define
+\begin{align}
+\dot q_\omega&=\tfrac12q_{n-1}\otimes[0,\boldsymbol\omega_c],\\
+u_n&=q_{n-1}+h_n(\dot q_\omega-\beta e),\\
+q_n&=\mathcal N(u_n),\qquad u_n^Tu_n>0.
+\label{eq:mad-step}
+\end{align}
+All candidate state fields, including bias, are committed together only after
+the candidate quaternion satisfies the normalization domain.
+
+\begin{proposition}[Unit norm after every successful update]
+Starting with a unit quaternion, any finite sequence of successful updates
+\eqref{eq:mad-step} produces unit quaternions.
+\end{proposition}
+\begin{proof}
+For $S=u_n^Tu_n>0$, the positive-root semantics give
+$\mathcal N(u_n)^T\mathcal N(u_n)=S/(\sqrt S)^2=1$.
+Induction over the accepted events proves the statement. Existence of a valid
+candidate and correct evaluation of the declared branches remain premises.
+\end{proof}
+
+To preserve the source's other derivation without conflating algorithms, let
+\[
+\mu=\alpha\|\dot q_\omega\|h,\quad \alpha>1,\qquad
+\gamma=\frac{\beta}{\mu/h+\beta}
+\]
+when the denominator is positive. The finite-mixture candidate is
+\begin{align*}
+u_{\rm mix}&=q+(1-\gamma)h\dot q_\omega-\gamma\mu e\\
+ &=q+(1-\gamma)h(\dot q_\omega-\beta e),
+\end{align*}
+because $\gamma\mu=(1-\gamma)\beta h$. If both denominator terms vanish, the
+declared extension chooses $\gamma=0$.
+At finite $\gamma$, this is generally a different effective step from
+\eqref{eq:mad-step}. In particular, $\dot q_\omega=0$ and $\beta>0$ give
+$\mu=0$, $\gamma=1$, and $u_{\rm mix}=q$, even if $e\ne0$. The large-$\alpha$
+simplification is not an identity at every stationary input. An exact graph
+preserves the chosen recurrence; it does not remove this model choice.
+
+\subsection{Domain branches are part of the formal input}
+The following are explicit definitions resolving partial equations; they are
+not presented as pre-existing empirical rejection heuristics.
+\begin{center}\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.34\linewidth}>{\raggedright\arraybackslash}X@{}}\toprule
+Condition & Declared action\\\midrule
+Zero initial quaternion & No initialized state; require a declared nonzero initialization.\\
+Untyped/nonfinite input, missing gyro or invalid clock mapping & No transition; record the input-domain failure.\\
+Duplicate or decreasing event time & No transition; a separate input policy must resolve ordering or duplicates.\\
+Zero or missing acceleration & Set $e=0$ and use a gyro-only update; no residual, magnetic correction or drift adaptation is demanded.\\
+Acceleration admitted; magnetic sample zero or missing & IMU objective; hold all-axis drift estimate.\\
+Both vectors admitted and $b_x=0$ & MARG residual remains defined; mark heading degeneracy and hold all-axis drift adaptation.\\
+Exactly zero gradient & Set $e=0$; no gradient-driven bias increment.\\
+$\beta=0$ & No attitude-gradient correction; independently enabled $\zeta$ remains a separate operation.\\
+Exactly zero candidate $u_n$ & Hold the last complete state and report undefined normalization.\\
+Observation-quality flag & Use the declared input flag; do not invent an undeclared small-norm epsilon or outlier rule.\\\bottomrule
+\end{tabularx}\end{center}
+An algebraic domain supports exact sign/equality decisions in principle; the cost
+is not bounded here. A broader transcendental domain must retain unresolved
+comparisons rather than silently treating a finite-precision threshold as exact.
+
+\subsection{Exact graph representation and conditional rewrites}
+The graph consists of typed literals, addition, subtraction, multiplication,
+division, positive square root, tuples/projections, dot/cross/Hamilton products
+and explicit branches. Roots bind the state to its operator profile, samples,
+clock and calibration. Division nodes carry nonzero-denominator obligations;
+square-root nodes carry nonnegative-operand obligations. With algebraic inputs,
+closure under these operators gives algebraic outputs for every defined finite
+event prefix. It does not give a finite machine-word bound on their representation.
+
+\begin{proposition}[Positive-scale cancellation]
+For $c>0$ and $v\ne0$, $\mathcal N(cv)=\mathcal N(v)$.
+\end{proposition}
+\begin{proof}
+$\sqrt{c^2v^Tv}=c\sqrt{v^Tv}$ by the positive-root convention; the factors cancel.
+For $c<0$ the normalized representative changes sign, and for $c=0$ it is undefined.
+\end{proof}
+
+\begin{proposition}[Rotation consumer without a normalization square root]
+For quaternion $v\ne0$, $S=v^Tv$ and pure vector quaternion $[0,p]$,
+\[
+R(\mathcal N(v))p=\frac{\operatorname{vec}(v\otimes[0,p]\otimes v^*)}{S}.
+\]
+\end{proposition}
+\begin{proof}
+Each quaternion factor contributes $1/\sqrt S$. Their product contributes
+$1/S$. This removes the square root for this rotation consumer only.
+\end{proof}
+
+\begin{proposition}[Pure-gyro projective step]
+If the corrected rate is fixed for a step and there is no attitude-gradient
+correction, then, wherever defined,
+\[
+\mathcal N\!\left(\mathcal N(v)+\tfrac h2\mathcal N(v)
+ \otimes[0,\boldsymbol\omega_c]\right)
+=\mathcal N\!\left(v+\tfrac h2v\otimes[0,\boldsymbol\omega_c]\right).
+\]
+\end{proposition}
+\begin{proof}
+Factor the positive common factor $1/\sqrt{v^Tv}$ from the candidate and apply
+positive-scale cancellation. The rate must still be obtained under its declared
+attitude/bias convention, not recomputed using an unnormalized substitution.
+For real $h$ and corrected rate, the candidate is automatically nonzero:
+Hamilton norm multiplicativity gives
+\[
+ \left\|v+\tfrac h2v\otimes[0,\boldsymbol\omega_c]\right\|^2
+ =(v^Tv)\left(1+\tfrac{h^2}{4}\|\boldsymbol\omega_c\|^2\right)>0.
+\]
+This establishes the normalization domain for this subcase only.
+\end{proof}
+
+The corrected homogeneous numerator is instead
+\[
+v+\tfrac h2v\otimes[0,\boldsymbol\omega_c]
+ -h\beta\sqrt{v^Tv}\,e(\mathcal N(v)).
+\]
+Deleting its square root or substituting $v$ into the unit-quaternion source
+polynomials changes the recurrence in general. Moreover, differentiation of the
+composed normalized objective gives
+\[
+\nabla_v F(\mathcal N(v))
+=\frac{(I-qq^T)s}{\|v\|},\qquad q=\mathcal N(v).
+\]
+This is a projected gradient, not the source's ambient $s$. Therefore a
+projective optimization may apply the proved local identities above, but may
+not silently replace the descent direction or its effective magnitude.
+
+\begin{proposition}[Quaternion sign cover]
+The selected recurrence is sign-equivariant wherever defined: replacing its
+initial quaternion by $-q$ changes every quaternion representative's sign while
+leaving its represented rotation and gyro-bias increments unchanged.
+\end{proposition}
+\begin{proof}
+$R(-q)=R(q)$ because rotation is quadratic. The residuals are even in $q$,
+their displayed Jacobians are odd, and thus $e(-q)=-e(q)$, including the zero
+branch. The magnetic reference is unchanged. In
+$q^*\otimes e$ the two signs cancel, so bias increments agree. The gyro derivative
+and candidate both change sign; normalization preserves that sign relation.
+Induction gives the result.
+\end{proof}
+This is equivalence of rotations under $q\sim-q$, not equality of stored tuples,
+raw IEEE bit patterns or hashes. No automatic sign canonicalization is assumed.
+Euler-angle display and shortest-arc comparison need their own explicit branch
+conventions and potentially transcendental operators.
+
+\subsection{Causal sample processing and graph cardinality}
+An event reads only the preceding state, its current sample and fixed parameters.
+Induction therefore proves that the state after event $n$ depends on the seed
+and events $1,\ldots,n$, never on an unobserved future sample. Checkpoint restart
+requires the complete selected state: attitude, optional bias, event time/index,
+and any lagged reference, calibration or scheduler state that the profile retains.
+Four or nine state roots do not imply four or nine fixed-size machine words.
+
+For an input alphabet of $K$ possible records there are $K^n$ streams of length
+$n$. An injective $B$-bit representation of every such stream is impossible when
+$K^n>2^B$. This concerns complete stream reconstruction; it does not claim that
+every distinct stream yields a distinct final quaternion. Graph sharing reduces
+duplicate expression trees but cannot repeal the counting bound or guarantee
+bounded algebraic degree, exact-predicate cost or evaluation memory.
+
+A rounded checkpoint replaces exact lineage by a different numeric state. An
+exact checkpoint must retain a sufficient exact representation and every
+dependency not removed by a proved identity. Numerical evaluation may be deferred
+to an output request; a rounded display is not fed back as the next exact state.
+
+JK/ASA may schedule observations or exports of an attitude already updated from
+all accepted sensor samples. Skipping samples, changing $h$, changing gains or
+reordering measurements changes the recurrence and must be a named profile or
+recorded control event. Two noncommuting angular increments already show why
+two ordered quaternion steps cannot generally be replaced by one summed-rate
+step. Observation cadence and sensor-integration cadence are separate contracts.
+
+\subsection{Station composition, observability and error meaning}
+Let $L$ be station ENU, $A$ the antenna/camera frame, $C_{L\leftarrow E}$ the
+declared filter-to-ENU alignment, and $C_{A\leftarrow B}$ the mounting rotation.
+Both matrices are declared proper orthogonal rotations: $C^TC=I$ and
+$\det C=1$. Thus their transposes are their inverses. An arbitrary calibration
+matrix with scale or shear does not satisfy this convention without a separate
+coordinate model.
+For the simultaneous station-relative line of sight $\ell_L(t)$,
+\[
+\ell_A(t)=C_{A\leftarrow B}\,R(q(t))^T\,
+ C_{L\leftarrow E}^T\ell_L(t).
+\]
+The orbital kernel supplies satellite/station geometry; attitude changes its
+coordinates, not the satellite ephemeris. A moving station additionally requires
+its position and velocity at the same time. An attitude quaternion supplies
+neither. Between-sample interpolation, sensor latency, magnetic declination,
+reference-frame alignment and mounting updates are additional declared operators.
+
+One measured reference direction leaves rotation about that direction
+unobservable. Two consistent nonparallel directions determine a rotation,
+with its two quaternion representatives; $b_x=0$ makes the reference directions
+collinear. Linear acceleration can violate the accelerometer reference model,
+and disturbed magnetism does not become true heading through exact arithmetic.
+A GNSS/INS position solution requires additional measurements and an estimator
+with position/velocity/bias state. This attitude formalization establishes no
+millimetre positioning or arcsecond pointing result.
+
+Exact arithmetic of a discrete rule remains distinct from time discretization.
+For unit $q$ and a fixed candidate derivative $G$, differentiating normalization
+at $q$ gives
+\[
+ \mathcal N(q+hG)=q+h(I-qq^T)G+O(h^2).
+\]
+Thus the first-order vector field corresponding to this normalized step is
+the projected candidate derivative. The gyro derivative is tangent, but the
+source's ambient correction generally is not; identifying the continuous
+unit-sphere evolution with the unprojected candidate would require a different
+argument.
+For a sufficiently smooth ideal derivative $F$ on a fixed branch,
+\[
+q(t+h)=q(t)+hF(q(t),t)+O(h^2).
+\]
+Evaluating the first two terms exactly does not remove the remaining terms.
+Normalization is smooth away from zero, but near zero candidates, zero gradients
+or mode switches, this local smoothness argument needs additional premises.
+The same separation applies to R10's RK4 rule, approximated forcing/frame
+coefficients, initial-state knowledge and physical force models. Sensor
+calibration, quantization and noise are further independent limitations.
+
+\begin{panel}
+\textbf{Logical strategy.} Retain exact typed literals, the chosen recurrence,
+sample provenance and state roots. Simplify only under proved domain and sign
+conditions. Defer finite-precision materialization to a declared output boundary.
+This supplies a formal route to removing intermediate arithmetic roundoff; it
+does not by itself bound expression growth, discretization error or physical error.
+\end{panel}

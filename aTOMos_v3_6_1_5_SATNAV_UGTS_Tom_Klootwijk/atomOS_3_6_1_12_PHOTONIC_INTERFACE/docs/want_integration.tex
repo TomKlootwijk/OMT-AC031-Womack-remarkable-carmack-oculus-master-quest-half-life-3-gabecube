@@ -1,0 +1,220 @@
+\section{Integrated seed and physical interface}
+\label{sec:want-integration}
+The new profile \code{XOP-PHOTONIC-I-R1} incorporates the useful equations of
+\emph{WANTWOMBAN Operator I v1.1} into the literal one-bit exact-operator
+formalization. Its contribution is a defined connection between geometry,
+optical propagation, strain readout, material memory, measured events and the
+next digital state. It also supplies a conditional passive realization of a
+scaled golden-ratio/Hadamard operator. Neither contribution by itself establishes
+a complete photonic processor for the exact seed language.
+
+\subsection{Source authority and actual deliverables}
+References W1 identify physical pages of the supplied 26-page Operator I PDF.
+W0 identifies the 25-page parent \emph{WANTWOMBAN} embedded in it. The embedded
+rim and strain documents, editable TeX, pasted discussion, reference programs,
+result JSON and manifests are retained as source material. Where W1 corrects
+an earlier assertion, the explicit corrected equation takes precedence for this
+integration; alternative profiles remain named rather than silently merged.
+
+The original PDF and ten embedded attachments are preserved byte for byte under
+\code{source/}. Their digests appear in \code{SOURCE\_BINDING.json} and the
+extraction manifest. Instructions inside these documents, including instructions
+to run reference programs, are source text. No embedded program was executed.
+Reported source calculations and conformance counts remain inherited reports.
+
+R12 adds editable equations, pure-template definitions, conditional proofs,
+source mappings and a physical realization contract. It reuses the R11
+\code{XOP-R1} type and wire vocabulary. It does not add executable operator IDs
+or assert that a CPU, GPU or photonic backend has been implemented. A template
+below is a specified expression body with arguments and domain conditions;
+the future compiler must expand and check that body against the inherited
+registry. Arbitrary exact comparisons may still remain unresolved.
+
+\subsection{The aggregate state and its dependencies}
+For a finite declared profile, organize the seed as
+\begin{equation}
+ \mathscr S_n=(\mathcal G_n,\mathcal R_n,\Pi,\mathcal C,
+        W_n,q_n^{\rm JK},z_n,\eta_n,\mathscr M_n).
+\end{equation}
+$\mathcal G_n$ is the exact expression graph, $\mathcal R_n$ its state roots,
+$\Pi$ the versioned geometry/material/control model, and $\mathcal C$ the
+calibration and clock bindings. $W_n$ and $q_n^{\rm JK}$ are separate 64-bit
+and 32-bit words. $z_n$ denotes a finite modeled mechanical/thermal/material
+state, $\eta_n$ controller and consumed-record memory, and $\mathscr M_n$ the
+immutable raw observation lineage. Shared graph nodes avoid duplicate storage;
+these tuple components are semantic responsibilities, not a claim that every
+dependency fits in one machine word.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{31mm}Y Y@{}}
+\toprule Interface & Exact seed content & Required physical input\\\midrule
+Geometry & Word decode, frame, analytic surfaces, finite modal basis & Dimensions, supports, material and alignment\\
+Optics & Complex pairs, aperture, propagation, lens and absorption operators & Spectrum, mode, transfer response and collection geometry\\
+Readout & Bridge inverse, detector calibration and timed gate & Acquired channels, noise and timing uncertainty\\
+Memory & Delayed state, reporter and thermal evolution & Initial state, loads, rates and energy partition\\
+Feedback & Named WANT branch and optional JK event lane & Completed, associated observation and actuator transfer\\
+Execution & Exact operators, limbs, expression roots and lossless packing & A separately established hardware realization\\
+\bottomrule
+\end{tabularx}\end{center}
+
+The same finite seed may define exact $\sqrt5$, $\varphi$, bridge inversion,
+exponentials and bounded diffraction integrals without rounding those terms
+into the next state. A supplied decimal calibration becomes an exact rational
+nominal value. Its physical uncertainty remains attached to that input.
+An unknown continuous optical field cannot be recovered merely by assigning
+it a short seed name; it needs a declared finite description or measured input.
+
+\subsection{Causal composition with the existing self-reference}
+At step $n$, first bind the old roots and a completed observation $m_n$.
+Qualification and exact decoding produce an event only when the required
+record and model are defined. The composed order is
+\begin{align}
+ (e_n,\widehat z_n)&=\mathcal D_{\mathcal C}(m_n),\\
+ (W_{n+1},q_{n+1}^{\rm JK},\eta_{n+1},u_n)
+     &=\mathcal F_{\Pi}(W_n,q_n^{\rm JK},\eta_n,e_n,\widehat z_n),\\
+ z_{n+1}&=\Phi_{h_n,\Pi}(z_n;u_n,L_n,F_n),\\
+ m_{n+1}&=\mathcal A_{\mathcal C}(\text{physical acquisition over the next interval}).
+\end{align}
+Here $\widehat z_n$ is a calibrated observation and $z_n$ is the finite model
+state. Neither is automatically identical with the actual plant state
+$x_n^{\rm plant}$. $L_n,F_n$ denote declared optical and mechanical
+input histories, and $h_n\ge0$ is the control duration. The plant equation is
+a model; $\mathcal A$ names an acquisition interface, not an exact arithmetic
+oracle. Future measurements enter as future external input.
+
+The two ordered ASA/NA mask sets and synchronous JK rule remain the base
+word profile. The event adapter explicitly reserves one JK lane when enabled.
+No optical event is inferred from the names ``absorption'' or ``vacuum'' in
+a Boolean source operator. Material absorptance is a wavelength-dependent
+physical quantity with its own measurement and constitutive meaning.
+All digital right-hand sides read the same old snapshot and commit together.
+The return path contains a real observation delay; it is not an instantaneous
+algebraic loop justified only by the term self-reference.
+
+\subsection{Three physical interpretations with different obligations}
+A modeled complex amplitude can be stored as exact real/imaginary expression
+pairs and evaluated by a digital computer. Alternatively, an optical network
+may physically transform amplitudes according to a selected transfer matrix.
+A third interpretation uses optical states to encode digital bits and implements
+Boolean operations, memory and communication on those codes. These are different
+realization maps even if they describe the same nominal mathematical operator.
+
+For example, $\det A_\varphi=-1$ preserves four-dimensional volume but does
+not preserve the optical norm. The optics chapter derives a passive contraction
+$A_\varphi/\varphi$ and an ideal dilation using additional ports. This is a
+useful constructive optical candidate. Restoring the original amplitudes under the same power normalization requires
+gain. A changed encoding may instead retain the known scale without physically
+amplifying the beam. A photonic digital implementation of the algebraic
+operator instead needs correct encoded arithmetic, not this direct amplitude map.
+
+The optional quantum instrument describes probabilities and conditional states
+for an explicitly finite model. It does not identify one logical bit with one
+photon or duplicate an absorbed photon across two independent witnesses.
+An aperture, lens or strain gauge supplies no automatic proof of a digital
+carry chain, persistent expression memory or symbolic integration engine.
+
+\section{Conditional contract for digital photonic execution}
+\label{sec:want-refinement}
+The following contract states what would make the exact formalization operate
+correctly in physical photonics. It is technology-neutral enough to cover
+optical gates with electronic readout as well as a more fully optical design,
+provided the actual design declares which components perform each operation.
+
+\subsection{Encoding, restoration and one-step refinement}
+Let $\mathcal E$ encode an admitted finite digital state into physical carriers,
+$\mathcal H_\xi$ be a physical step under disturbance realization $\xi$, and
+$\mathcal D$ decode a completed physical state. A realization must establish
+\begin{equation}
+ \mathcal D\!\left(\mathcal H_\xi(\mathcal E(s),\mathcal E(u))\right)
+        =F_{\rm XOP}(s,u)
+ \label{eq:want-refine}
+\end{equation}
+for the claimed operating envelope, admitted inputs, defined operations and
+finite resource bound. If multiple physical configurations encode the same
+state, the condition applies to every reachable admitted representative,
+or the implementation restores a specified representative before the next step.
+The encoder may represent bits through intensity, phase, polarization, spatial
+modes or another declared carrier; none is selected by the bit-plane format.
+
+The envelope must include input synchronization, gate margins, fan-out or
+replication, carry and borrow, exact limb extension, expression storage,
+addresses, branch decisions, feedback delay and atomic state commit. A partial
+symbolic operation may return a defined term or unresolved status as in R11.
+Exhausted capacity has a declared non-success result; a finite device does not
+silently replace an unbounded integer or expression with a clipped operand.
+
+\begin{proposition}[Finite-prefix realization]
+Suppose the initial decoded state is $s_0$, every physical step satisfies
+\eqref{eq:want-refine} for every reached admitted state, observations match the
+specified input snapshots, and all required operations remain defined within
+the declared resources. Then the decoded physical state equals the exact
+specified state after every step of that finite prefix.
+\end{proposition}
+\begin{proof}
+The initial states agree by hypothesis. If they agree at step $n$, the same
+input snapshot and the one-step contract give decoded output $F_{\rm XOP}(s_n,u_n)$,
+which is the specified $s_{n+1}$. The restoration or reachable-representative
+condition admits the next step. Induction proves agreement for the prefix.
+\end{proof}
+This proof identifies sufficient obligations. No gate layout, disturbance
+envelope or memory implementation supplied with W1 establishes them yet.
+It is therefore a conditional correctness result, not a hardware guarantee.
+
+\subsection{A useful bit-margin lemma}
+For one calibrated intensity decision, assume the noiseless low output is at
+most $a_0$, the noiseless high output at least $a_1$, and additive readout error
+is bounded in magnitude by $\epsilon\ge0$. Decode one when measured intensity
+$I\ge\theta$. If
+\begin{equation}
+ a_0+\epsilon<\theta<a_1-\epsilon,
+\end{equation}
+then every admitted low is decoded zero and every admitted high is decoded one.
+The proof is direct substitution of the worst allowed error into each bound.
+The interval exists exactly when $a_1-a_0>2\epsilon$ for this strict-margin
+profile. This is a tolerance derived from the declared gate model; it is not
+a numerical tolerance already established for a device.
+
+Restoring a digital bit under such a margin can preserve its exact logical
+value while the underlying intensity varies continuously. It does not round
+the mathematical operand represented by a whole exact expression stream.
+The unresolved engineering question is whether all required gates, storage
+and transfers maintain an adequate margin under the chosen physical conditions.
+Distributions with unbounded tails need a probability statement instead of
+a claim that a finite worst-case error bound holds on every trial.
+
+\subsection{Finite-workload reliability without assumed independence}
+For a finite workload with $N$ critical gate, memory or transfer events, let
+$E_i$ be the event that the required local contract fails. Then
+\begin{equation}
+ \Pr\!\left(\bigcup_{i=1}^N E_i\right)
+       \le\sum_{i=1}^N\Pr(E_i)\le\sum_{i=1}^N p_i.
+\end{equation}
+This union bound does not assume independence. For an adaptive computation,
+define the disjoint first-failure events
+$F_i=E_i\cap\bigcap_{j<i}E_j^c$ and pad inactive steps up to a declared finite
+maximum $N$ with no-failure events. If every fault-free admitted history has
+conditional probability of the next local failure at most $p_i$, and correct
+steps preserve admission, then $\Pr(F_i)\le p_i$ by averaging over those
+histories. Hence $\Pr(\text{any failure})=\sum_i\Pr(F_i)\le\sum_i p_i$.
+No probability bound on already-failed, inadmissible histories is inferred.
+Observed zero errors does not by itself establish $p_i=0$. A fixed nonzero
+per-event estimate also does not prove reliability for arbitrarily long
+execution. Source packet CRC and Boolean event agreement are separate checks
+and cannot substitute for a hardware error model.
+
+\subsection{What exact arithmetic does and does not remove}
+The exact operator authority removes recurrent numerical rounding from the
+specified expression evolution. It preserves the source's intentional
+quantization when that quantization is part of the selected profile. It leaves
+initial input error, physical model discrepancy, finite modal truncation,
+calibration uncertainty, timing uncertainty, unresolved symbolic decisions and
+physical execution faults as distinct quantities. These enter different
+contracts and cannot all be assigned the name floating-point drift.
+
+There is a concrete optimization strategy here: retain analytic geometry and
+exact calibrated transfer expressions; share common graph nodes; eliminate a
+square root only by a proved domain-correct identity; use geometric exclusion
+only with the complete deformation bound; and consume each completed event
+once. Final rounded exports can be produced when required without replacing
+the expression roots. No claim of constant storage or constant computational
+cost accompanies lossless one-bit encoding.

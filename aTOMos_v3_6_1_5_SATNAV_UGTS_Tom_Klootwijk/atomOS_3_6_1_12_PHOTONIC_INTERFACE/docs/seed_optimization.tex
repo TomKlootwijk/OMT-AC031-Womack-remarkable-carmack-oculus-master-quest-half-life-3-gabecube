@@ -1,0 +1,147 @@
+\section{Seed execution optimization in 3.6.1.10}
+\label{sec:seed-optimization}
+This release applies the usable word-organization ideas from the newly supplied
+21-page design document to the complete orbital seed. The source audit in the
+next section distinguishes the source's equations from the corrected executable
+adaptations. The preserved parent is 3.6.1.9. The seed schema remains
+\code{ORBIT-SEED-R1}, schema version 3.6.1.9; release and schema versions are
+deliberately separate so existing seed bytes and content identities remain valid.
+
+\subsection{Exact six-stage word transpose}
+Let $w_r$ be one of 64 numeric bit patterns and let
+$a_{r,c}=((w_r\gg c)\mathbin{\&}1)$ for $0\le r,c<64$. The storage operation is
+the bit-matrix transpose
+\[
+ p_c=\sum_{r=0}^{63}a_{r,c}2^r.
+\]
+Both the old and optimized implementations produce exactly these words.
+The new implementation places the block in an exact multiword temporary,
+$V=\sum_r w_r2^{64r}$. For each $s=32,16,8,4,2,1$, define
+\[
+ M_s=\sum_{\substack{r\mathbin{\&}s=0\\c\mathbin{\&}s\ne0}}2^{64r+c},
+ \qquad d_s=63s,
+\]
+and perform the simultaneous exchange
+\[
+ T=(V\oplus(V\gg d_s))\mathbin{\&}M_s,
+ \qquad V\leftarrow V\oplus T\oplus(T\ll d_s).
+\]
+Each stage exchanges one row-index bit with its corresponding column-index bit.
+The six exchanges transpose the complete block. Applying the transpose twice is
+the identity. This is a binary permutation, not a Hadamard transform of the
+satellite coordinates. Python's integer is an exact multiword temporary; the
+serialized representation still uses little-endian uint64 words.
+
+The codec retains plane-major order, numeric type tags, zero tail padding,
+canonical byte encoding and SHA-256 content identity. Negative zero, subnormal
+binary64 values and signed/unsigned integer limits retain every bit. Both legacy
+canonical and bit-plane codecs remain readable. The public encoder and decoder
+now share the 300,000-word count limit.
+
+\subsection{Measured packing improvement}
+An independent mapping check covers all 4,096 basis bits. Because every operation
+is linear over $\mathrm{GF}(2)$, the basis check establishes the specified mapping
+for every block. Random tests also cover 137 lengths, including partial blocks
+and transitions between groups. All eight January/February example seeds repack
+to exactly their original bytes and retain their physical-model hashes.
+
+\begin{center}
+\begin{tabular}{lrrr}\toprule
+Operation & Parent median & New median & Ratio\\\midrule
+Words to planes & 5.858 ms & 0.228 ms & 25.72\\
+Planes to words & 6.167 ms & 0.145 ms & 42.55\\
+Complete seed pack & 8.783 ms & 3.162 ms & 2.78\\
+Complete seed unpack & 17.103 ms & 5.528 ms & 3.09\\\bottomrule
+\end{tabular}
+\end{center}
+These are local host measurements for the C03 seed, with nine measurements of
+five calls after warmup. Full ranges, Python version, source hashes and seed
+identities are recorded in
+\path{results/seed_word_optimization/benchmark_final.json}. The ratios describe
+packing and loading; they are not claims about orbital integration throughput.
+Seed sizes and physical prediction errors do not change as a result of this
+permutation.
+
+\subsection{Prepared queries with consistent state identity}
+The GCRS-to-ECEF query evaluates the frame and derivative together,
+$\mathcal F(t)=(M(t),\dot M(t))$, sharing the same precession, Earth rotation,
+polar motion and polynomial evaluations. The resulting operations retain the
+parent's arithmetic ordering. Station ECEF origins and ENU matrices use a bounded
+cache keyed by the exact binary64 latitude, longitude and height bits. Parsed
+Boolean inputs use a bounded cache keyed by canonical feedback content. Signed
+zero and edited values cannot alias a different cached input.
+
+A worker holds the physical model snapshot used to create its numeric transport.
+A session holds one complete seed snapshot and checks its physical-model identity
+against the worker. Public seed/model views are read-only. To edit, use
+\code{session.copy\_seed()} or \code{worker.copy\_model()} and construct a new
+session or worker. A station or feedback edit can reuse the same worker when the
+physical model is unchanged. This repairs the prior possibility of using an
+edited Python frame with an older native model or a stale trace identity.
+
+With one fixed parent binary/adapter to isolate Python preparation, five-repeat
+median measurements give 1.15--1.29 times faster 256-query workloads and
+1.20--1.38 times faster first-day schedules across the four objects. Complete
+mathematical outputs match the parent exactly. This comparison does not claim a
+whole-release cold integration speedup. See
+\path{results/query_overhead_comparison_final.json} and
+\path{results/query_snapshot_independent_check.json}.
+
+\subsection{Native domain, surface and repeated-query behavior}
+\code{ORBIT-SEED-NATIVE-3} carries the dynamics kind and exact declared time
+interval before the existing numeric model fields. Versions 1 and 2 remain
+readable; their domain is the intersection of the required forcing/frame series.
+The new worker rejects queries outside the declared model interval, inconsistent
+epochs and physically undefined propagation at or below the reference Earth
+surface. Python already rejected Earth-penetrating acceleration; the old native
+path could return it as a valid state. These checks now agree.
+
+For the canonical integration lattice $t_n=nh$, each RK4 call receives its exact
+indexed endpoint $t_{n+1}$, or the exact requested fractional endpoint. This avoids
+rejecting a valid closed boundary when floating-point evaluation of $nh+h$ differs
+from $(n+1)h$. Midpoint labels stay inside that endpoint interval. The existing
+30 s and 7.5 s frozen model grids retain their numerical states.
+
+Within a batch, timestamps are keyed by their exact binary64 representation,
+including the distinction between positive and negative zero. First occurrences
+are propagated; later identical entries reuse the result and preserve input
+order. For 64 copies of the 300 s test timestamp, actual RK4 work decreases from
+640 steps to 10. Reused rows report zero additional steps and an explicit reuse
+flag. CUDA still pays launch/upload overhead; this work reduction is not a claim
+of a 64-fold wall-clock improvement.
+
+\subsection{Fresh execution and compatibility evidence}
+The CPU replay reconstructs all 15,553 archived January/February forecast
+positions exactly, at the original reference timestamps. All eight first-day
+reference comparisons remain below the adopted 10 m engineering budget.
+Packing itself adds zero numerical error. The eight complete seed files remain
+8,716--9,147 bytes across both dates and retain their original hashes.
+
+The native audit compares 1,040 actual CUDA trajectories and 256 complete word
+transitions, plus 108 cache replay queries. The largest sampled CPU/CUDA position
+difference remains $4.31961135\times10^{-5}$ m, and velocity difference remains
+$8.07049\times10^{-9}$ m/s. Compute Sanitizer reports zero errors for its 129-query
+trajectory/word workload. Both CPU and CUDA builds pass all four CTests. The broader archived CUDA replay
+checks 15,553 epochs: all 8,064 January predictions match the parent CUDA
+positions exactly. February's 7,489 comparisons use the CPU baseline and reach
+0.220015 mm maximum difference, within the 10 mm CPU/CUDA contract. This broader
+sample set is distinct from the 1,040-query audit above.
+The fresh packed-only replay denies reads of the original release, exercises
+both ASA/NA sets and a counterfactual JK equation, and refines seven-day events
+for all four satellites at both stations. Independent retained SATNAV verification
+checks 256 epochs and 4,828 fields.
+
+The final machine-readable index \path{validation_results.json} binds the new
+runtime files, binaries and individual reports. It distinguishes inherited
+physical-reference evidence from these new execution checks. Detailed old
+investigation folders retain their original status and version; they do not
+supersede the final index.
+
+\subsection{Validation scope}
+The following physical equations and January/February accuracy measurements were
+established in 3.6.1.9. They remain baseline evidence for the same frozen models.
+The new release checks serialization, native execution, replay and query results
+separately. An exact pack does not remove floating-point integration error or
+unknown future manoeuvres. The previously reported longer-horizon failures and
+missing reference intervals remain part of the measured system limits.
+

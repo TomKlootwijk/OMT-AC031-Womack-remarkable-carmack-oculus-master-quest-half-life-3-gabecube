@@ -1,0 +1,701 @@
+\section{Exact domains for the retained numerical profiles}
+\label{sec:exact-domains}
+This section lifts the actual retained operators into mathematical domains. It
+defines their values, singularities and conditional invariants; it does not
+install an exact runtime or claim a new physical accuracy result. The retained
+orbital, navigation and coupled chapters remain dated implementation evidence.
+Their reported measurements were not repeated for this subversion.
+
+\subsection{Values, comparison and the meaning of a lift}
+\label{sec:lift-values}
+An imported finite binary64 value denotes its exact dyadic rational. Its original
+bits are a separate serialization value: positive and negative zero are the same
+real number, but have different bit patterns. Exact decimal constants, an exact
+$\pi$, and the stored approximations to those constants are distinct atoms. A
+specification must choose which atoms it uses. In the ideal geometric formulas
+below, $\pi$ and the elementary functions have their mathematical meanings;
+substituting them for rounded runtime constants is an explicit semantic change.
+
+Integers, rationals and real algebraic numbers close the finite word, rational
+matrix and square-root constructions. Trigonometric and logarithmic coordinates
+require explicit real transcendental expressions. A finite recurrence is another
+finite expression, even when expensive to expand. An implicit operator
+$\operatorname{ROOT}$ or $\operatorname{FLOW}$ instead denotes a solution of stated
+equations, subject to existence and selection conditions. Naming an implicit
+operator supplies neither a closed-form solver nor a terminating evaluator.
+
+Comparisons of exact rational or algebraic values are decidable. A general
+transcendental expression has a mathematical order, but this specification does
+not supply a universal decision procedure for it. An evaluator must retain an
+unresolved comparison obligation when its method cannot establish the answer.
+In particular,
+\begin{equation}
+ n=\lfloor x\rfloor\quad\Longleftrightarrow\quad n\in\mathbb Z,
+ \qquad n\le x<n+1 .
+\end{equation}
+No epsilon replaces equality at a cycle, quantization or event boundary.
+The real $\operatorname{atan2}(y,x)$ convention is $(-\pi,\pi]$, with $+\pi$
+on the negative $x$ axis and no value at $(0,0)$; real zero has no signed-zero
+side information. Other source wrap and IEEE-remainder conventions are named
+separately below.
+Piecewise expressions are lazy: an inactive force term does not require its
+unused denominator. These lifts remove floating-point rounding, overflow and
+underflow; consequently, they do not preserve every numerical branch or establish
+bit-equivalence to R10. Bit preservation belongs to the unchanged serialized
+payload and word codec, not to recomputation of its real-valued consequences.
+
+\subsection{Coefficient blocks, Earth frames and force evaluation}
+\label{sec:lift-orbit}
+The source map is \code{orbit\_dynamics.py}, \code{orbit\_precision.py} and
+\code{include/orbit\_core.hpp} in the preserved R10 tree. The complete seed fields and
+physical scope are retained in Section~\ref{sec:orbit}. Let a coefficient block
+cover $[a,b]$, with $b>a$, and put $u=(2t-a-b)/(b-a)$. If several blocks contain
+$t$, the block with greatest stored index wins, including a shared endpoint.
+For each scalar row,
+\begin{align}
+ p(t)&=\sum_{k=0}^{d}c_kT_k(u), &
+ T_0&=1,\quad T_1=u,\quad T_{k+1}=2uT_k-T_{k-1},\\
+ b_{d+1}&=b_{d+2}=0, &
+ b_k&=c_k+2u b_{k+1}-b_{k+2}\quad(k=d,\ldots,1),\\
+ p(t)&=c_0+u b_1-b_2, &
+ \dot p(t)&=\frac{2}{b-a}\sum_{k=1}^{d}k c_kU_{k-1}(u).
+\end{align}
+For degree zero the value is $c_0$ and the derivative is zero. The finite
+Clenshaw recurrence equals the Chebyshev sum by backward substitution; formal
+differentiation gives the derivative. No continuity between separately fitted
+blocks follows from this identity. A timestamp outside all blocks is undefined.
+
+Write $c_x=\cos x_p$, $s_x=\sin x_p$, and similarly for $y_p$. The actual passive
+frame convention is
+\begin{equation}
+ P=\begin{pmatrix}c_x&0&s_x\\s_y s_x&c_y&-s_y c_x\\-c_y s_x&s_y&c_y c_x\end{pmatrix},
+ \quad R(a)=\begin{pmatrix}\cos a&\sin a&0\\-\sin a&\cos a&0\\0&0&1\end{pmatrix},
+ \quad M(t)=P(t)R(a(t))Q(t).
+\end{equation}
+R1 uses constant polar motion and $a=a_0+\omega t$. R2 uses stored EOP rows
+$e_0,x_p,y_p$, with $a=a_0+\omega t+e_0(t)$. The nine entries of $Q$ are stored
+polynomial rows, rather than a symbolic rotation parameterization. Position and
+velocity transform as
+\begin{equation}
+ r_E=Mr,\qquad v_E=Mv+\dot Mr,\qquad
+ \dot M=\dot PRQ+P\dot RQ+PR\dot Q.
+\end{equation}
+\textbf{Conditional invariant.} Exact trigonometry gives $P^TP=R^TR=I$ and
+determinant $+1$. Thus $M^TM=Q^TQ$: length preservation and the identification of
+$M^T$ with $M^{-1}$ require a separate proof that $Q^TQ=I$. Independent polynomial
+fits do not supply that proof. Applying $M^T$ to a force remains the specified
+algebraic operation even when this ideal rotation condition is absent; silently
+orthogonalizing $Q$ would define a different model.
+
+For the R2 external gravity field let $p=Mr$, $R=\|p\|$, and let $a_E>0$ denote
+the reference radius. The declared profile requires $R>a_E$, in addition to
+nonzero denominators. Its finite Cartesian solid-harmonic construction is
+\begin{equation}
+ X=a_Ep_x/R^2,\quad Y=a_Ep_y/R^2,\quad Z=a_Ep_z/R^2,\quad D=a_E^2/R^2,
+ \quad V_{00}=a_E/R,\quad W_{00}=0.
+\end{equation}
+\begin{align}
+ V_{mm}&=(2m-1)(XV_{m-1,m-1}-YW_{m-1,m-1}),\\
+ W_{mm}&=(2m-1)(XW_{m-1,m-1}+YV_{m-1,m-1}),\\
+ V_{nm}&=\frac{2n-1}{n-m}ZV_{n-1,m}
+       -\frac{n+m-1}{n-m}DV_{n-2,m}\quad(n>m),\\
+ U(p)&=\frac{\mu}{a_E}\sum_{n=0}^{d}\sum_{m=0}^{n}
+       (C_{nm}V_{nm}+S_{nm}W_{nm}),\qquad a_g=M^T\nabla_pU.
+\end{align}
+The $W_{nm}$ off-diagonal recurrence is identical with $V$ replaced by $W$; omit
+the second term when $n=m+1$. The retained R2 degree is at most 12, $C_{00}=1$,
+$S_{00}=S_{n0}=0$, and the convention has no Condon--Shortley phase. Conversion
+from the documented fully normalized source is
+\begin{equation}
+ C_{nm}=\sqrt{(2-\delta_{m0})(2n+1)\frac{(n-m)!}{(n+m)!}}\,\bar C_{nm},
+ \qquad S_{nm}\text{ uses the same factor}.
+\end{equation}
+The native forward derivative differentiates this finite recurrence by the sum,
+product and chain rules. In contrast, the Python construction/reference path
+uses $\operatorname{Im}U(p+i\epsilon e_j)/\epsilon$ with fixed
+$\epsilon=10^{-6}$ in its coordinate units. Exact arithmetic at a nonzero
+$\epsilon$ does not turn that expression into $\partial_jU$. Its analytic
+limit, where the complex extension is regular, defines the derivative; the
+finite complex-step operator and the exact derivative must retain different names.
+
+The older R1 gravity formula is also explicit. For $s=p_z/R$ and unnormalized
+Legendre polynomials
+$P_2=(3s^2-1)/2$, $P_3=(5s^3-3s)/2$ and
+$P_4=(35s^4-30s^2+3)/8$, put
+\begin{align}
+ a_{E,1}&=-\mu p/R^3+
+ \sum_{n=2}^{4}\frac{\mu J_na_E^n}{R^{n+3}}
+ \bigl(((n+1)P_n+sP_n')p-RP_n'e_z\bigr)\\
+ &\quad+\frac{\mu a_E^2}{R^5}
+       \left(\nabla T-\frac{5T}{R^2}p\right),\qquad
+ T=3C_{22}(p_x^2-p_y^2)+6S_{22}p_xp_y.
+\end{align}
+Its inertial gravity is $M^Ta_{E,1}$. This is a separate finite field, not a
+claim that the R1 and R2 coefficient conventions are interchangeable.
+
+Both orbital profiles add the declared active terms below; the relativistic
+term is an R2 option. Sun and Moon vectors $r_b(t)$ come from their seed
+coefficient blocks. With $r_*=\|r\|$, $d=r-r_\odot$, and $\hat s=r_\odot/\|r_\odot\|$,
+\begin{align}
+ a_b&=\mu_b\left(\frac{r_b-r}{\|r_b-r\|^3}-\frac{r_b}{\|r_b\|^3}\right),\\
+ a_{\rm SRP}&=\chi A\frac{\mathrm{AU}^2}{\|d\|^3}d,\\
+ a_{\rm RTN}&=a_R\hat R+a_T(\hat N\times\hat R)+a_N\hat N,
+ \qquad \hat R=r/r_*,\quad \hat N=(r\times v)/\|r\times v\|,\\
+ a_{\rm GR}&=\frac{\mu}{c^2r_*^3}
+ \left[\left(\frac{4\mu}{r_*}-v\cdot v\right)r+4(r\cdot v)v\right].
+\end{align}
+Here $\chi=0$ exactly when shadow is enabled, $r\cdot\hat s<0$, and
+$\|r-(r\cdot\hat s)\hat s\|<a_E$; otherwise $\chi=1$.
+Active body terms require $r_b\ne0$ and $r\ne r_b$; SRP requires its Sun and
+displacement denominators, RTN requires $r_*\ne0$ and $r\times v\ne0$, and GR
+requires $r_*\ne0$ and $c>0$. An identically inactive RTN term does not impose
+its normal-vector requirement. Equality on either shadow boundary is lit under
+the retained strict inequalities. These formulas contain no unlisted maneuver,
+penumbra, drag or higher-degree force. Exact evaluation cannot supply one.
+
+\subsection{Exact discrete integration and a distinct continuous flow}
+\label{sec:lift-flow}
+Let $y=(r,v)$ and $F(t,y)=(v,a(t,r,v))$. The exact lift of the implemented step
+is the finite operator $\Psi_h$:
+\begin{align}
+ k_1&=F(t,y),& k_2&=F(t+h/2,y+hk_1/2),\\
+ k_3&=F(t+h/2,y+hk_2/2),& k_4&=F(t+h,y+hk_3),\\
+ \Psi_h(t,y)&=y+\tfrac h6(k_1+2k_2+2k_3+k_4).
+\end{align}
+All four stage arguments must belong to the active domain, including the
+declared time interval and external-radius guard. For a positive lattice spacing
+$h_0$ and elapsed time $\tau$, set $n=\operatorname{trunc}(\tau/h_0)$ toward zero,
+and $\epsilon=\tau-nh_0$. Compose signed steps from epoch to $nh_0$, then apply
+one step of size $\epsilon$ if nonzero. Fractional query results are never used
+as canonical lattice states.
+
+\textbf{Preservation proposition.} A cache returning only the states defined by
+this same canonical recurrence, under the same seed and branch choices, leaves
+every query unchanged. Proof is induction on the signed step index; the last
+fractional step is a pure function of the canonical state. This does not imply
+that arbitrary reblocking of RK4 steps, reversing a step, or changing the order
+of force additions preserves the floating-point result. Even over exact reals,
+RK4 generally has neither the continuous-flow semigroup law nor exact energy
+conservation or time reversibility.
+
+Define the separate implicit operator by
+\begin{equation}
+ \operatorname{FLOW}_F(t,t_0,y_0)=y(t),\qquad
+ y(t)=y_0+\int_{t_0}^{t}F(s,y(s))\,ds .
+\end{equation}
+On an open collision-free region with all active denominators bounded away
+from zero, fixed force branches and coefficient blocks, $F$ is locally Lipschitz
+in $y$ and continuous in $t$. The usual initial-value theorem then gives a
+unique maximal local solution. Piecewise continuous time coefficients can be
+concatenated across declared time boundaries under corresponding local
+existence conditions. No continuity of separately fitted coefficients is
+assumed. State-triggered shadow switches require a specified event solution
+concept and additional uniqueness conditions; isolated transversal crossings
+with a prescribed continuation and no accumulation of events are sufficient
+local hypotheses. The literal boundary convention alone does not prove these
+hypotheses for grazing, sliding or infinitely accumulating events.
+
+When the unique flow exists on all intervening times, its composition law
+$\operatorname{FLOW}(t_2,t_0,y)=\operatorname{FLOW}(t_2,t_1,
+\operatorname{FLOW}(t_1,t_0,y))$ follows from uniqueness. It does not transfer to
+$\Psi_h$. A seed specifying $F$ and $y_0$ defines an initial-value problem; it
+is not a closed-form solution. Neither operator certifies agreement with a
+physical satellite or extends the seed's declared domain.
+
+\subsection{Ground stations, angles, visibility and light time}
+\label{sec:lift-station}
+The preserved \code{geodesy.py} and \code{orbit\_query.py} specify a fixed
+ellipsoidal station. With semimajor axis $a>0$, flattening $0<f<1$,
+$e^2=f(2-f)$, latitude $\varphi\in[-\pi/2,\pi/2]$, longitude $\lambda$, and height $h$,
+\begin{align}
+ N&=a/\sqrt{1-e^2\sin^2\varphi},\\
+ r_g&=((N+h)\cos\varphi\cos\lambda,
+ (N+h)\cos\varphi\sin\lambda,(N(1-e^2)+h)\sin\varphi),\\
+ L&=\begin{pmatrix}-\sin\lambda&\cos\lambda&0\\
+ -\sin\varphi\cos\lambda&-\sin\varphi\sin\lambda&\cos\varphi\\
+ \cos\varphi\cos\lambda&\cos\varphi\sin\lambda&\sin\varphi\end{pmatrix},
+ \qquad z=L(r_E-r_g),\quad \dot z=Lv_E .
+\end{align}
+Exact trigonometry proves $LL^T=I$ and determinant $+1$; hence the station
+translation and ENU rotation preserve pairwise Euclidean distances and have
+inverse $r_E=r_g+L^Tz$. The retained inverse geodesy implementation is a separate
+finite operator: outside its pole branch it starts with
+$\varphi_0=\operatorname{atan2}(z,p(1-e^2))$, $p=\sqrt{x^2+y^2}$, and repeats
+$\varphi_{j+1}=\operatorname{atan2}(z+e^2N(\varphi_j)\sin\varphi_j,p)$ at most
+20 times, stopping at change below $10^{-14}$. Its pole threshold is
+$p<10^{-10}$, with longitude zero; its height formula switches between
+$p/\cos\varphi-N$ and $z/\sin\varphi-N(1-e^2)$ at $|\cos\varphi|>0.01$.
+An implicit inverse of the forward ellipsoid chart needs its own uniqueness
+domain and longitude convention; it is not identical by definition to these
+20 iterations.
+
+For $z=(E,N,U)$, set $H=\sqrt{E^2+N^2}$ and $D=\|z\|>0$. The simultaneous
+geometric observables are
+\begin{align}
+ \alpha&=\operatorname{atan2}(E,N)\bmod2\pi,&
+ \varepsilon&=\operatorname{atan2}(U,H),&
+ \dot D&=z\cdot\dot z/D,\\
+ \dot\alpha&=(N\dot E-E\dot N)/H^2,&
+ \dot s&=\dot U/D-U\dot D/D^2,&s&=U/D .
+\end{align}
+Azimuth and its rate are intrinsically undefined at $H=0$. The retained query
+policy publishes them only for $H>10^{-6}$ metres; otherwise they are absent.
+Under that same policy, elevation rate is
+$\dot s/\max(10^{-15},\cos\varepsilon)$, otherwise absent. The max and threshold
+are named implementation choices, distinct from the ideal derivative
+$\dot s/\cos\varepsilon$ on its nonsingular domain. Visibility uses
+$\varepsilon\ge\varepsilon_{\min}$, so equality is visible. On a physical mask
+in $[-\pi/2,\pi/2]$, the event equation is $s-\sin\varepsilon_{\min}=0$.
+An isolated bracket plus uniqueness or monotonicity conditions can specify one
+root; a sampled sign-change search is not a proof that every event or tangent
+contact was found.
+
+This orbital station profile is geometric at one timestamp. It has no
+light-time or atmospheric-refraction correction. The separate live GPS profile
+below uses emission time and Earth rotation during flight. Their equations
+cannot be merged merely by calling both results a ground-station position.
+
+\subsection{UGTS charts, OTAN2, addresses and calendar winding}
+\label{sec:lift-ugts}
+The source \code{ugts.py} has distinct continuous charts and finite addresses.
+For horizontal distance $H>0$ and scale $r_0>0$, the station chart is
+$\rho=\log(H/r_0)$ and $\theta=\operatorname{atan2}(N,E)$; note that this angle
+is measured from east, while station azimuth above is measured from north.
+Chart inversion gives $E=r_0e^\rho\cos\theta$, $N=r_0e^\rho\sin\theta$.
+The polar origin requires an explicit absent-chart status.
+Define the half-open wrap, including its exact endpoint rule, by
+\begin{equation}
+ W_P(x)=x-P\left\lfloor\frac{x+P/2}{P}\right\rfloor\in[-P/2,P/2),
+ \qquad P>0 .
+\end{equation}
+Thus $+P/2$ maps to $-P/2$ and $W_P(x+kP)=W_P(x)$ for every integer $k$.
+The source OTAN2 is the literal ratio-angle operator
+\begin{equation}
+ \mathcal O(\Delta\rho,\Delta\vartheta;a_0)
+   =\arctan(\Delta\vartheta/\Delta\rho)-a_0,
+ \qquad \Delta\rho\ne0 .
+\end{equation}
+Both increments zero give \code{zero\_increment}; a zero radial increment with
+nonzero angle increment gives \code{ratio\_undefined}. Missing chart history
+is another status. It is not a quadrant-aware bearing and must not be silently
+replaced by $\operatorname{atan2}$. The runtime's quotient-overflow/underflow
+\code{numerical\_range} status has no analogue for an exact nonzero real
+denominator; lifting this quotient consequently changes that numerical status.
+
+For $\rho\in[-20,0]$, widths $(20,18,14,12)$ and integer tick $k$, the retained
+quantizer is
+\begin{align}
+ q_\rho&=\left\lfloor\frac{\rho+20}{20}(2^{20}-1)+\frac12\right\rfloor,
+ &Q_w(a)&=\left\lfloor\frac{(a\bmod2\pi)2^w}{2\pi}+\frac12\right\rfloor\bmod2^w,\\
+ q_\theta&=Q_{18}(\theta),&q_t&=k\bmod2^{14},\qquad q_\phi=Q_{12}(\phi).
+\end{align}
+Ties round upward before angular reduction. The two codecs are exact
+permutations of these 64 input bits. The contiguous codec is
+\begin{equation}
+ K_C=2^{44}q_\rho+2^{26}q_\theta+2^{12}q_t+q_\phi.
+\end{equation}
+The Morton codec enumerates depths $d=0,\ldots,19$; at each depth it enumerates
+fields $i=0,\ldots,3$ with $d<w_i$, copying input bit $w_i-1-d$ into the next
+output position, starting at bit 63. Every input bit occurs once, proving that
+inverse extraction recovers the tuple exactly. A prefix fixes a leading bit
+string in each field; appending all-zero or all-one suffixes gives the exact
+Cartesian bounds on its possible tuples. This is a finite address statement,
+not an isometric embedding of continuous space. Quantization is many-to-one;
+nearest reconstruction has radial error at most $10/(2^{20}-1)$ and circular
+angular error at most $\pi/2^w$, under exact comparisons and these domains.
+
+Full time is retained separately from the periodic address. For integer ticks,
+reference $k_0$ and positive integer period $P$, Euclidean division gives
+\begin{equation}
+ k-k_0=Pw+r,\qquad 0\le r<P,\qquad \text{phase}=r/P,
+ \qquad k=k_0+Pw+r .
+\end{equation}
+The identity holds for negative ticks and exact boundaries: the next cycle has
+remainder zero and winding increased by one. A phase without its winding does
+not recover full time. Station queries use $k=\lfloor t_{\rm GPST}/\delta\rfloor$,
+$\delta>0$, and the time address has period $2^{14}$. Gregorian leap rules use
+integer divisibility by 4, excluding centuries except those divisible by 400;
+the retained Gregorian formulas and 400-year evidence concern uniform civil-day
+formatting. They do not supply a UTC leap-second table, turn February into a
+fixed-length month, or extend orbital validity. The runtime formats finite
+timestamps at millisecond precision; exact fractional seconds and exact calendar
+integers require a separately specified formatter.
+
+The two topological chart profiles must remain distinct. With $L=\rho_h-\rho_l>0$,
+$j=\lfloor(\rho-\rho_l)/L\rfloor$ and $\rho'=\rho-jL$, odd $j$ applies either
+$(\theta,\phi)\mapsto(\theta+\pi,-\phi)$ in \code{source\_half\_turn}, or
+$(\theta,\phi)\mapsto(\pi-\theta,-\phi)$ in \code{reflective\_klein}; both flip
+the stored orientation sign and wrap the angles. Even $j$ leaves them unchanged.
+The floor proves $\rho'\in[\rho_l,\rho_h)$; the angular transformations are
+involutions modulo full turns. Their different coordinate actions are not
+interchangeable physical reflections.
+
+For completeness, geometric predicate construction is also explicit. A segment
+distance uses $d=b-a$ and
+$u=\operatorname{clamp}((p-a)\cdot d/(d\cdot d),0,1)$, or $u=0$ when $d=0$,
+then $\|p-a-ud\|$. A sphere uses $\|p-c\|-R$. The finite cone has unit axis $n$,
+slant length $\ell>0$ and $0<\alpha<\pi/2$. Put
+$z=(p-a)\cdot n$, $q=\|p-a-zn\|$, $h=\ell\cos\alpha$, $R=\ell\sin\alpha$.
+Its signed distance is the minimum distance from $(q,z)$ to the three edges of
+the meridian triangle $(-R,h),(R,h),(0,0)$, with negative sign exactly when
+$0\le z\le h$ and $q\le z\tan\alpha$. These are algebraic/transcendental
+piecewise constructions, with explicit unit-axis and cone-angle conditions.
+For a 1-Lipschitz signed distance $f$ swept along a segment from $a$ to $b$,
+$N\ge2$ uniform samples yield
+\begin{equation}
+ m-\frac{\|b-a\|}{2(N-1)}\ \le\
+ \min_{s\in[a,b]}f(p-s)\ \le m,
+ \qquad m=\min_{0\le j<N}f\left(p-a-\frac{j(b-a)}{N-1}\right).
+\end{equation}
+The proof chooses the nearest sample, at distance at most half a sample gap,
+and applies Lipschitz continuity. Ordinary non-directed floating-point
+evaluation of the displayed endpoints is not thereby a certified enclosure.
+A Boolean perturbation $f+\eta(2b-1)$, $b\in\{0,1\}$ and $\eta\ge0$, lies in
+$[f-\eta,f+\eta]$; an interval centered on the perturbed measurement is a
+different construction and must not replace this family envelope.
+
+\subsection{SATNAV selection, QR and finite nonlinear iteration}
+\label{sec:lift-satnav}
+The numerical source is \code{include/satnav\_core.hpp}; the independent
+\code{python/reference.py} uses Householder QR. Word operations below are on
+fixed-width unsigned words. With present, ready, ASA, NA and boundary words,
+\begin{equation}
+ A=\text{present}\mathbin{\&}\text{ready}\mathbin{\&}\text{ASA},\quad
+ B=A\mathbin{\&}\text{NA},\quad h=\operatorname{popcount}(B\mathbin{\&}\text{boundary}),
+ \quad S=\begin{cases}0,&h>0,\\B,&h=0.\end{cases}
+\end{equation}
+Any boundary hit absorbs the whole selected word. A hit gives
+\code{MASK\_ABSORBED}; fewer than four selected channels gives
+\code{TOO\_FEW}. Otherwise rows are consumed in increasing channel order.
+For receiver state $x\in\mathbb R^3$, clock range $b$, satellite $s_i$,
+corrected code $P_i$, and positive uncertainty weight $\sigma_i$,
+\begin{equation}
+ d_i=\|x-s_i\|,\quad r_i=P_i-d_i-b,\quad
+ A_i=\frac1{\sigma_i}\left((x-s_i)^T/d_i,1\right),\quad
+ z_i=r_i/\sigma_i .
+\end{equation}
+The native profile requires $d_i>1$ metre. The Python reference requires
+$d_i>0$. Their mathematical least-squares equations coincide on the common
+domain, while their accepted-input policies differ. This is retained explicitly.
+
+The native online Givens update starts with zero triangular $R$ and transformed
+right-hand side $z$. For an incoming row $a$ and right-hand side $b_r$, at
+column $j$ let $\gamma=\sqrt{R_{jj}^2+a_j^2}$. If $\gamma=0$, skip that rotation;
+otherwise put $c=R_{jj}/\gamma$, $s=a_j/\gamma$, and apply
+\begin{equation}
+ \binom{R'_{jk}}{a'_k}=\begin{pmatrix}c&s\\-s&c\end{pmatrix}
+ \binom{R_{jk}}{a_k}\quad(k>j),\qquad
+ \binom{z'_j}{b'_r}=\begin{pmatrix}c&s\\-s&c\end{pmatrix}
+ \binom{z_j}{b_r},\qquad R'_{jj}=\gamma .
+\end{equation}
+Since $c^2+s^2=1$, each rotation preserves Euclidean residual norm. Sequential
+elimination therefore gives the same linear least-squares minimizer as the
+original whitened system whenever its four columns have full rank. Back
+substitution is $\Delta_j=(z_j-\sum_{k>j}R_{jk}\Delta_k)/R_{jj}$.
+The reference Householder construction instead uses
+$H=I-2vv^T/(v^Tv)$ with $v=a-\alpha e_1$,
+$\alpha=-\operatorname{copysign}(\|a\|,a_1)$ and a declared zero sign convention.
+$H^TH=I$ proves the same minimizer on the common full-rank domain; QR factors
+and floating-point results need not be identical.
+
+The retained rejection policy is stronger than algebraic rank: it rejects if
+any $|R_{jj}|\le\tau\max_k|R_{kk}|$, with configured positive relative threshold
+$\tau$, or all diagonals vanish. A nonsingular system may therefore be rejected
+by policy. At each accepted nonlinear pass $(x,b)\leftarrow(x,b)+\Delta$.
+The configured finite loop, normally at most 12 passes, reports convergence
+when $\|\Delta_{1:3}\|\le\epsilon_p$ and $|\Delta_4|\le\epsilon_b$.
+An exact lift preserves this finite stopping rule as a predicate, not as proof
+of an exact nonlinear root, global least-squares minimum or accurate position.
+
+For full-rank final Jacobian, the nominal covariance is
+$(A^TA)^{-1}=R^{-1}R^{-T}$; its diagonal entries are the squared row norms of
+$R^{-1}$. This identity is algebraic, while interpreting it as an uncertainty
+statement requires a correct statistical observation model. Final RMS,
+$\sqrt{\sum r_i^2/m}$, weighted sum $\sum(r_i/\sigma_i)^2$, and maximum normalized
+residual $\max|r_i/\sigma_i|$ are separate diagnostics. Four observations have no
+redundancy; a residual threshold for more rows does not certify external
+position error. Finite-limit, rank, missing-input and invalid-geometry statuses
+remain part of the operator's tagged result.
+
+\subsection{Live GPS: Kepler, clocks, flight time and atmosphere}
+\label{sec:lift-live}
+The sources \code{live\_gnss.py} and \code{live\_pipeline.py} implement the
+retained GPS L1 code profile. Ephemeris coefficients are data, not exact physical
+truth. Their full GPST epochs remain distinct from modulo-week fields.
+Week resolution uses the integer nearest-week rule
+$w=w_m+W\lfloor(w_{\rm current}-w_m)/W+1/2\rfloor$, with ties upward. Time of
+week is similarly placed nearest the reference full timestamp. Age checks use
+the resulting full timestamps and never erase whole weeks by modular reduction.
+
+For $A=(\sqrt A_{\rm broadcast})^2>0$ and $0\le e<1$, define
+\begin{equation}
+ t_k=t-t_{oe},\quad n=\sqrt{\mu/A^3}+\Delta n,\quad
+ M=\operatorname{RemEven}(M_0+nt_k,2\pi),\quad
+ E-e\sin E=M.
+\end{equation}
+$\operatorname{RemEven}(x,P)=x-P\operatorname{nint}_{\rm even}(x/P)$ uses the
+nearest integer with ties to even, reflecting the source's IEEE remainder
+convention. It differs at ties from the half-open wrap $W_P$. An ideal Kepler
+root is unique for every real $M$: the derivative $1-e\cos E\ge1-e>0$ and the
+left-hand side tends to both infinities. Uniqueness also proves
+$E(M+2\pi)=E(M)+2\pi$. The actual finite operator starts at $E_0=M$ and makes
+at most 30 Newton updates
+$E_{j+1}=E_j-(E_j-e\sin E_j-M)/(1-e\cos E_j)$, stopping when the update
+magnitude is below $10^{-14}$. Its denominator is positive under $e<1$;
+the 30-pass success condition is nevertheless distinct from the unique
+implicit root and has a retained failure outcome.
+
+With true anomaly $\nu=\operatorname{atan2}(\sqrt{1-e^2}\sin E,\cos E-e)$,
+put $\psi=\nu+\omega$ and apply the broadcast corrections:
+\begin{align}
+ u&=\psi+C_{us}\sin2\psi+C_{uc}\cos2\psi,\\
+ r&=A(1-e\cos E)+C_{rs}\sin2\psi+C_{rc}\cos2\psi,\\
+ i&=i_0+\dot i\,t_k+C_{is}\sin2\psi+C_{ic}\cos2\psi,\\
+ \Omega&=\Omega_0+(\dot\Omega-\omega_E)t_k-\omega_E(t_{oe}\bmod604800),\\
+ x'&=r\cos u,\qquad y'=r\sin u,\\
+ r_s&=(x'\cos\Omega-y'\cos i\sin\Omega,
+       x'\sin\Omega+y'\cos i\cos\Omega,y'\sin i),\\
+ \delta_{L1}(t)&=a_{f0}+a_{f1}(t-t_{oc})+a_{f2}(t-t_{oc})^2
+       +F_{\rm rel}e\sqrt A_{\rm broadcast}\sin E-T_{GD}.
+\end{align}
+Kepler's $\operatorname{atan2}$ arguments cannot both vanish under $e<1$.
+The remaining formulas are finite algebraic and trigonometric expressions.
+The eligible ephemeris minimizes $(|t-t_{oe}|,-t_{oc})$ in source order after
+orbit/clock age bounds. The orbit bound is the smaller of the configured maximum
+age and positive half-fit-interval duration. The chosen record must have zero
+health flag and $(IODC\mathbin{\&}255)=IODE$; the profile does not silently
+fall back from an unhealthy nearest record to an older healthy one.
+
+Given a positive raw code $P$ and receiver-tagged time $t_r$, define
+$t_*=t_r-P/c$. The retained clock and rotation corrections are finite iterations:
+\begin{align}
+ s_0&=t_*,&s_{j+1}&=t_*-\delta_{L1}(s_j)\quad(j=0,1,2),\\
+ \tau_0&=P/c,&\tau_{j+1}&=\|R(\omega_E\tau_j)r_s(s_3)-x\|/c
+                      \quad(j=0,1,2,3).
+\end{align}
+The final satellite coordinate is $R(\omega_E\tau_4)r_s(s_3)$ in reception
+ECEF. These three and four updates are not defined as converged fixed points.
+A distinct implicit clock root is uniquely obtained by contraction on an
+invariant closed interval if $\sup|\delta_{L1}'|<1$. For a fixed emission
+position, the flight-time map has Lipschitz bound
+$|\omega_E|\|(r_{s,x},r_{s,y})\|/c$; a bound below one and an invariant closed
+interval give the analogous existence and uniqueness. The bound follows from
+the speed of a rotated point and the reverse triangle inequality. A different
+coupled emission-time/flight-time equation requires its own conditions.
+
+The receiver geometry is initialized only for $6\times10^6<\|x\|<7\times10^6$
+metres. Otherwise atmospheric terms and elevation selection are omitted for
+that pass. On initialized geometry, elevation below the mask is rejected and
+equality accepted. The atmosphere profile applies only at height
+$-100\le h\le10000$ metres, using its declared finite geodetic inverse.
+The Klobuchar model uses latitude $\varphi_u$, longitude $\lambda_u$, and
+elevation $\epsilon_u$ in semicircles, but azimuth $\alpha$ in radians:
+\begin{align}
+ \psi_I&=0.0137/(\epsilon_u+0.11)-0.022,\\
+ \varphi_I&=\operatorname{clamp}(\varphi_u+\psi_I\cos\alpha,-0.416,0.416),\\
+ \lambda_I&=\lambda_u+\psi_I\sin\alpha/\cos(\pi\varphi_I),\qquad
+ \varphi_m=\varphi_I+0.064\cos(\pi(\lambda_I-1.617)),\\
+ t_l&=(43200\lambda_I+t_r)\bmod86400,\qquad
+ A_I=\max(0,\sum_{j=0}^3\alpha_j\varphi_m^j),\\
+ P_I&=\max(72000,\sum_{j=0}^3\beta_j\varphi_m^j),\quad
+ X_I=2\pi(t_l-50400)/P_I,\quad F_I=1+16(0.53-\epsilon_u)^3,\\
+ I&=cF_I\begin{cases}
+ 5\times10^{-9}+A_I(1-X_I^2/2+X_I^4/24),&|X_I|<1.57,\\
+ 5\times10^{-9},&\text{otherwise}.
+ \end{cases}
+\end{align}
+Nonpositive elevation returns zero before these expressions. On positive
+elevation the displayed denominators are nonzero: the latitude clamp excludes
+the cosine poles and $P_I\ge72000$. Missing broadcast ionospheric coefficients
+are zeros, which retains the baseline five-nanosecond term rather than implying
+zero modeled ionosphere.
+
+For the retained Saastamoinen expression let $h_0=\max(h,0)$, humidity
+$H_r\in[0,1]$, latitude $\varphi$ and positive elevation $\varepsilon$ in radians:
+\begin{align}
+ p_a&=1013.25(1-2.2557\times10^{-5}h_0)^{5.2568},\quad
+ T=288.16-0.0065h_0,\\
+ e_w&=6.108H_r\exp\left(\frac{17.15T-4684}{T-38.45}\right),\\
+ D_h&=\frac{0.0022768p_a}
+ {(1-0.00266\cos2\varphi-0.00028h_0/1000)\sin\varepsilon},\\
+ D_w&=\frac{0.002277(1255/T+0.05)e_w}{\sin\varepsilon},\qquad D_T=D_h+D_w.
+\end{align}
+The real power means $x^a=\exp(a\log x)$ for positive $x$. The stated height
+range makes that base positive and excludes $T=0$ and $T=38.45$; the remaining
+denominators are positive for physical elevation in $(0,\pi/2]$. These formulas
+are exact definitions of an approximate atmospheric model, not exact atmosphere.
+The prepared code and weight are
+$P_c=P+c\delta_{L1}-I-D_T$ and
+$\sigma=\sigma_0/\max(\sin\varepsilon,0.1)$ when geometry is initialized,
+otherwise $\sigma=\sigma_0>0$. Omitted-height and uninitialized-geometry statuses
+remain observable.
+
+The outer correction operator recomputes these prepared observations and calls
+the explicit SATNAV iteration from the preceding subsection. It permits at most
+eight passes by default. A position is published only with initialized geometry,
+a converged native solve, and
+$\max(\|x_{k+1}-x_k\|,|b_{k+1}-b_k|)<10^{-3}$ metres. The first seed is zero;
+only a complete successful fix replaces the persistent warm seed. A failed epoch
+still advances the last-seen timestamp, so older or duplicate timestamps are
+rejected; a receiver-station change resets seed and time state. These are exact
+state-machine rules. Finite-loop success does not prove fixed-point convergence,
+and no clock, atmosphere or geometry model is made physically exact by the lift.
+
+\subsection{Coupled geometry and mechanics: exact implicit step}
+\label{sec:lift-cgk}
+The source \code{coupled\_kernel.hpp}, \code{coupled.tex} and
+\code{COUPLED\_CONTRACT.md} define CGK as a word/geometry/mechanics state machine.
+State contains ENU position $p$, velocity $v$, word $q$, hoop phase $\phi$,
+full time and the preceding valid chart. An input timestamp must increase
+strictly; $\Delta t>0$. The endpoint observation has target $z$, validity
+$o\in\{0,1\}$ and force $f$. Predicates use the old physical state and the new
+observation. Chart history is the preceding step's before-state, not its
+after-state. The blend and diagnostic angle are explicitly
+\begin{equation}
+ a\mathbin{\circ_w}b=W_{2\pi}(a+wW_{2\pi}(b-a)),\quad 0\le w\le1,
+ \qquad \psi=W_{2\pi}(\beta\mathbin{\circ_w}\mathcal O+\phi).
+\end{equation}
+Here $\beta=\operatorname{atan2}((z-p)_N,(z-p)_E)$ and the ratio OTAN2 uses
+the valid successive chart increments. Insufficient horizontal magnitude or
+missing history makes the affected angle absent. The blend has the stated
+wrapped endpoints at $w=0,1$ and is invariant under adding full turns to either
+input; it is not asserted associative, and the antipodal tie follows $W_{2\pi}$.
+
+For a declared unit channel direction $u_i$, center angle $\beta_i$, tolerance
+$\epsilon_i$, positive limit $L_i$, fringe width $\eta_i\ge0$ and signed
+distance $s_i$, define Boolean predicates
+\begin{align}
+ \mathrm{align}_i&=\text{angle defined}\ \land\
+                  |W_{2\pi}(\psi-\beta_i)|\le\epsilon_i,\\
+ \mathrm{limit}_i&=o\land |u_i\cdot(z-p)|>L_i,\qquad
+ \mathrm{fringe}_i=(|s_i|\le\eta_i),\qquad
+ \mathrm{support}_i=(s_i\le0).
+\end{align}
+Thus the weak and strict boundaries are explicit. The default word equations
+are $d=\mathrm{limit}\lor\mathrm{fringe}$,
+$x=(q\lor d)\land\mathrm{support}$,
+$j=y\land(\mathrm{limit}\lor\mathrm{fringe})$, and
+$k=\mathrm{align}\land\neg\mathrm{limit}\land\neg\mathrm{fringe}$, with the
+declared ASA/NA-selected word $y$ and synchronous JK update. Absent diagnostic
+angles make alignment false; they do not suppress every other predicate or
+mechanical term. The committed new word selects coefficients before the solve:
+\begin{align}
+ \kappa_i(q)&=\kappa_{i,\rm off}
+          +(\kappa_{i,\rm on}-\kappa_{i,\rm off})q_i,\\
+ K(q)&=K_0+\sum_{i\,\mathrm{present}}\kappa_i(q)u_iu_i^T,
+ \qquad F(q)=f+\sum_{i\,\mathrm{present}}g_i(q)u_i .
+\end{align}
+$g_i$ has the same two-value selector form. The model is
+$M\ddot p+C\dot p+oK(p-z)=F$, with positive diagonal mass $M$; signed damping
+and stiffness coefficients are permitted by the broader profile. The exact
+backward-Euler step is the finite linear solve
+\begin{equation}
+ G=M+\Delta t C+\Delta t^2oK,\quad
+ b=Mv+\Delta t\bigl(F+oK(z-p)\bigr),\quad
+ v^+=G^{-1}b,\qquad p^+=p+\Delta t v^+ .
+\end{equation}
+For entries in any exact field, $\det G\ne0$ is the necessary and sufficient
+condition for this unique step. If all entries are rational, Cramer's rule or
+Gaussian elimination shows the solution is rational; square-root-normalized
+directions or transcendental directions enlarge the coefficient field without
+changing this finite inverse construction. Partial pivoting with the retained
+first-maximum absolute-value tie rule is a particular elimination order. Its
+zero-pivot decision is exact zero, not a relative rank cutoff.
+
+\textbf{Conditional mechanical invariants.} Symmetry of $K_0$ and the outer
+products implies symmetry of $K$. If $M$ is positive definite, $C$ and $K$ are
+positive semidefinite and $o\ge0$, then $w^TGw>0$ for every $w\ne0$, so the step
+exists uniquely. This sufficient condition cannot be asserted for arbitrary
+signed stiffness or damping. For fixed $q,z$, $o=1$, $F=0$, and passive $C,K$,
+write $\Delta v=v^+-v$, $\Delta p=p^+-p$, and
+$E(p,v)=\tfrac12v^TMv+\tfrac12(p-z)^TK(p-z)$. The update implies
+\begin{equation}
+ E(p^+,v^+)-E(p,v)
+ =-\Delta t\,(v^+)^TCv^+
+  -\tfrac12\Delta v^TM\Delta v
+  -\tfrac12\Delta p^TK\Delta p\ \le0 .
+\end{equation}
+This follows by expanding the two quadratic differences and substituting
+$M\Delta v=-\Delta t(Cv^++K(p^+-z))$ and $\Delta p=\Delta t v^+$.
+Switching stiffness adds the work term
+$\tfrac12(p-z)^T(K_{\rm new}-K_{\rm old})(p-z)$ with unrestricted sign;
+moving targets, external force and signed coefficients lie outside this passive
+energy proposition. The stiffness spectrum of $M^{-1/2}KM^{-1/2}$ is real
+under symmetry, with exact algebraic eigenvalues for algebraic entries.
+Positive eigenvalues give undamped frequency $\sqrt\lambda$, negative ones
+give undamped growth scale $\sqrt{-\lambda}$, and zero is a stiffness-neutral
+mode. General damping rates instead require the quadratic eigenvalue equation
+$\det(\lambda^2M+\lambda C+K)=0$; a stiffness-only spectrum does not establish them.
+Nonreal roots require an explicit complex-root extension outside the real XOP
+base profile. The real symmetric stiffness eigenanalysis does not require that
+extension.
+
+The retained native diagnostic is a separate finite Jacobi recurrence. Scale
+$D=M^{-1/2}KM^{-1/2}$ by $\sigma=\max|D_{ij}|$, taking a zero matrix and identity
+vectors when $\sigma=0$. Otherwise start $A=D/\sigma$, $V=I$. Among ordered
+pairs $p<q$, select the first largest $|A_{pq}|$ exceeding its local threshold
+$2\times10^{-15}\sqrt{|A_{pp}|}\sqrt{|A_{qq}|}$. If none exceeds it, stop.
+Writing $a=A_{pp}$, $b=A_{qq}$, $u=A_{pq}\ne0$, the selected rotation uses
+\begin{equation}
+ \delta=(b-a)/2,\quad
+ t=\begin{cases}\operatorname{sgn}(u),&\delta=0,\\
+ u/(\delta+\operatorname{sgn}(\delta)\sqrt{\delta^2+u^2}),&\delta\ne0,
+ \end{cases}\qquad c=1/\sqrt{1+t^2},\quad s=tc .
+\end{equation}
+Set $A'_{pp}=a-tu$, $A'_{qq}=b+tu$, $A'_{pq}=A'_{qp}=0$; rotate the other
+paired entries and the corresponding columns of $V$ by
+$(v_p,v_q)\mapsto(cv_p-sv_q,sv_p+cv_q)$. This is an exact orthogonal similarity
+on the selected pair. The source permits at most 64 passes, requires the stop
+condition to have been encountered within that loop, then sorts diagonal
+values $\sigma A_{jj}$ increasingly together with their vectors. It reports
+$\max_{ij}|(DV-V\operatorname{diag}(\lambda))_{ij}|$.
+Its positive threshold may stop with nonzero off-diagonals even over exact
+reals, so these diagonal outputs are not an exact spectral decomposition by
+definition. Failure to stop is a diagnostic failure in the retained transition;
+invertibility of $G$ alone does not guarantee success of that entire transition.
+
+On a successful step the hoop phase advances to
+$W_{2\pi}(\phi+\Delta t\,\omega_h)$. The retained native word-first failure
+behavior has an atomic exact-state encoding: the solve/diagnostic-failure branch returns
+$(q_{\rm next},p_{\rm old},v_{\rm old},\phi_{\rm old},t_{\rm old},\mathrm{failed})$,
+with all chart-history fields retained from the old state. That branch does not
+demand $G^{-1}$. Thus the mathematical state tuple is committed atomically,
+including its modeled failure flag; it is not a partially committed undefined
+operator. Subsequent steps of that failed trajectory freeze under its failure
+policy, while independent trajectories continue. Exact arithmetic can change
+a floating-point failure outcome, so this transition relation does not claim
+that all old byte-level traces are reproduced.
+On success, history is replaced by the current before-state's chart values
+and chart-validity flag, and the has-previous flag becomes true. No after-state
+chart is substituted in the next OTAN2 increment.
+
+\subsection{Closure, preservation and remaining implementation obligations}
+\label{sec:lift-closure}
+The following matrix specifies the required domains rather than concealing a
+module behind an instruction to call a runtime. The detailed source crosswalk
+is preserved in \code{formal/DOMAIN\_LIFT.md}.
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{0.22\linewidth}X X@{}}
+\toprule
+Module & Exact construction & Required guard or distinct implicit object\\
+\midrule
+Words, codecs, calendar & Integer Boolean algebra, permutations, Euclidean division & Widths, calendar range and floor/tie convention\\
+Charts and geometry & Roots, $\log$, $\exp$, trigonometry, piecewise minima & Positive radii, chart validity, unit axes, exact comparisons\\
+Frame and forcing & Finite polynomial recurrence, derivatives, real expressions & Covered blocks, nonzero active denominators; orthogonality conditional\\
+Orbital propagation & Finite RK4 composition & Every stage valid; continuous FLOW is separately implicit\\
+Station observables & Affine map, norms, $\operatorname{atan2}$ and derivatives & Range positive, azimuth chart valid; event ROOT needs selection\\
+SATNAV & Orthogonal QR, triangular solve, finite outer iteration & Geometry, weights, rank and policy thresholds\\
+Live GPS & Finite Kepler/clock/light-time recurrences and atmosphere expressions & Ephemeris validity, physical chart domain; implicit roots separate\\
+CGK & Predicate words, selected matrices, finite inverse & $\det G\ne0$; passive energy proof needs stronger signs and fixed inputs\\
+\bottomrule
+\end{tabularx}
+\end{center}
+An executable exact evaluator still needs a representation of these values,
+domain evidence, guarded expression evaluation, a comparison strategy, resource
+limits and explicit unresolved-result tags. Implicit root/flow evaluation needs
+additional constructive methods and error or enclosure contracts. A formal
+derivation can prove identities and conditional properties without running
+tests; it cannot transform inherited numerical measurements into new proofs of
+physical accuracy. The exact lifts are specifications and deductions, while
+R10 remains the separate floating-point implementation and dated evidence.

@@ -1,0 +1,47 @@
+\section{SRK-R1 baseline validation, version 3.6.1.6}
+All entries here concern the executable 3.6.1.6 source on the current Windows
+machine. The 3.6.1.5 preparation record is preserved separately under
+\code{results\_3\_6\_1\_5/}. Finite comparisons check the requested trajectories;
+the closure and eventual-periodicity argument is given separately above.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}P{.53\textwidth}Y@{}}\toprule
+\textbf{Executed check} & \textbf{Result}\\\midrule
+CPU CMake build and CTest & Passed, 2 test programs\\
+Retained SATNAV C++ checks & 105,559 passed\\
+New literal feedback C++ checks & 5,060,172 passed\\
+Python test methods & 31 passed\\
+Native command-line scenarios & 25 feedback + 11 SATNAV passed\\
+Editable six-trajectory example & 34 transitions, 408 exact field comparisons per backend\\
+257-trajectory stress input & 4,225 transitions, 50,700 exact field comparisons per backend\\
+CPU and CUDA equation replay & Both passed sample and stress inputs\\
+Feedback GPU Compute Sanitizer & Zero memory errors; sanitized trace replay passed\\
+Retained SATNAV independent reference & 256 epochs, 4,828 comparisons passed\\
+SATNAV CUDA texture/global paths & Both passed independent comparisons and memcheck\\
+CPU sanitizers in this Windows run & Not run; earlier Linux evidence archived\\\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Recorded toolchain and device}
+MSVC 19.44.35221.0, Visual Studio 2022 BuildTools; NVIDIA CUDA compiler 12.8.61;
+NVIDIA GeForce RTX 5070 Ti Laptop GPU, compute capability 12.0, driver 591.59.
+The source targets \code{sm\_120} and \code{compute\_120}. Device, runtime,
+allocation sizes and kernel-only times are retained in each native run record.
+The short external build directories used on this machine avoid Windows compiler
+scratch-path limits caused by the long workspace path.
+
+The stress input uses seed 3616, varying 1--32 steps per trajectory, full 32-bit
+operands and 257 trajectories so that the 128-thread CUDA blocks include a partial
+final block. Direct AST replay checks all 12 trace columns. The Python suite also
+rejects deliberate mutations of every trace column, missing/extra rows and reordered
+rows. The C++ checks include independent bit oracles and exhaustive small domains.
+
+\subsection{Evidence and delivered implementation}
+\code{source/baseline\_3\_6\_1\_6\_validation.json} indexes the archived baseline evidence. The exact equation
+JSON, compiled CSV, complete native/reference traces and their hashes are retained.
+The baseline delivered Windows CPU and CUDA executables under \code{bin/windows/}; CUDA
+execution uses the installed NVIDIA runtime and driver. No measured speedup is
+inferred from these small fixtures. The PDF is built with Tectonic 0.17.0 and
+visually checked in that release. Source and delivered artifacts were listed in
+the regenerated SHA-256 manifest.
+\clearpage

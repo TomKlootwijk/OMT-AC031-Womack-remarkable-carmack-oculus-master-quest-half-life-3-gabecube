@@ -1,0 +1,223 @@
+\section{Authoritative operators and the revised strategy}
+\label{sec:exact-strategy}
+
+The requirement is to preserve the mathematical construction before repeatedly
+projecting it to finite-precision numerical states. The representation contains
+the operators, exact input literals, binding of their arguments and roots naming
+the current state. The bits in a packed word are literal Boolean storage lanes.
+Word width limits a storage unit, not the mathematical precision of a value
+represented by several units or by an expression.
+
+Write a seed as
+\[
+ \mathcal S=(\mathcal V,\mathcal T,\mathcal C,\mathcal G_0,
+             \mathcal R_0,\mathcal I,\mathcal P),
+\]
+where $\mathcal V$ fixes the version and operator meanings, $\mathcal T$ fixes
+types, units and frames, $\mathcal C$ contains exact constants, $\mathcal G_0$
+is an operator graph, $\mathcal R_0$ names its state roots, $\mathcal I$ fixes
+the input schema, and $\mathcal P$ records assumptions and source provenance.
+For the measured input event $u_n$ and exact elapsed time $h_n$, the new root is
+\[
+ \mathcal R_{n+1}=\operatorname{Build}
+       (\mathcal V,\mathcal G_n,\mathcal R_n,u_n,h_n).
+\]
+Its denotation is the selected recurrence $F$:
+$\den{\mathcal R_{n+1}}=F(\den{\mathcal R_n},u_n,h_n)$ on the declared domain.
+\texttt{Build} creates references and applies justified exact transformations;
+it does not define the next state as the rounded display of the previous state.
+
+The word state $q_{\rm JK}\in\{0,1\}^{32}$, attitude quaternion $Q_{\rm att}$,
+orbital state $(r,v)$ and absolute time have distinct types. Equal spelling of a
+letter in earlier sources does not merge their meanings. A state feedback edge
+crosses an explicit time delay; an instantaneous circular definition is a separate
+fixed-point problem and requires its own existence/selection rule.
+
+\subsection{Exact relative to which input?}
+A recorded integer sensor count is exact as a count. A stated decimal calibration
+ratio $a/10^k$ has that rational denotation. An imported finite IEEE value has its
+exact dyadic denotation and retains a raw-bit identity if requested. These are
+different imports. Converting a previously rounded input to an arbitrary-precision
+number does not recover the original physical quantity. A symbol such as $\pi$
+has a declared mathematical meaning, while a fitted physical coefficient retains
+its measurement/model provenance.
+
+Units and frames participate in typing. An angle supplied in degrees requires
+the exact factor $\pi/180$ when mapped to radians; calling a finite binary
+approximation to that factor exact would change the source contract. Noise,
+calibration uncertainty and missing inputs are physical information, not lost
+bits that can be restored by serialization.
+
+\subsection{The output projection never becomes an implicit checkpoint}
+For a defined real-valued expression $E$, an output request can seek a rational
+enclosure $[a,b]$ with $\den E\in[a,b]$ and $b-a\le\epsilon$. A finite decimal
+or IEEE display can be derived from it with a stated rounding rule. Exact
+midpoint decisions may need additional reasoning; general transcendental
+comparisons are not promised to terminate. The retained root remains $E$.
+
+\begin{proposition}[No recurrent arithmetic roundoff in the denotational state]
+Suppose every imported literal has its declared exact denotation, every demanded
+operator is defined, and every rewrite preserves denotation and definedness.
+Then after any finite number $n$ of input events, the retained state root denotes
+exactly the $n$-fold selected recurrence on those inputs, independent of the
+precision of any separately requested displays.
+\end{proposition}
+\begin{proof}
+The initial root has the specified denotation. If the claim holds for event $n$,
+the construction rule applies $F$ to that denotation and the exact next input.
+Denotation-preserving rewrites leave this result unchanged. Display projections
+are not arguments of the recurrence. Induction proves the finite-prefix claim.
+The proposition is about the specification; implementing its premises is a
+separate obligation.
+\end{proof}
+
+A controller may deliberately consume a rounded actuator command or a measured
+response. Such a value then enters through a declared input port. It cannot be
+silently treated as an exact internal state checkpoint. Checkpoints must preserve
+the reachable expression graph, equivalent exact sufficient state, or enough
+original inputs and operator definitions to reconstruct it.
+
+\subsection{Useful simplifications justified before execution}
+For $s=\sum_i v_i^2>0$ and the positive square root, let $q_i=v_i/\sqrt{s}$.
+Then
+\[
+ \sum_iq_i^2=\frac{\sum_i v_i^2}{(\sqrt{s})^2}=\frac{s}{s}=1.
+\]
+This identity permits an exact unit-norm certificate without numerically summing
+rounded quaternion components. It does not permit normalization of the zero
+vector. Likewise $x/x=1$ requires $x\ne0$, and $\sqrt{x^2}=|x|$; replacing the
+last expression by $x$ requires an additional nonnegative-sign premise.
+
+For a nonzero quaternion $p=(w,u)$, define $s=w^2+u\cdot u$. Its rotation of a
+vector $v$ can be written without first computing a normalization square root:
+\[
+ \mathcal R_p(v)=v+\frac{2}{s}
+        \bigl[w(u\times v)+u\times(u\times v)\bigr].
+\]
+\begin{proposition}[Homogeneous rotation readout]
+For $p\ne0$, this expression equals the vector part of
+$p(0,v)p^*/s$, and $\mathcal R_{\lambda p}(v)=\mathcal R_p(v)$ for every real
+$\lambda\ne0$.
+\end{proposition}
+\begin{proof}
+Expanding the Hamilton product gives
+$((w^2-u\cdot u)v+2u(u\cdot v)+2w(u\times v))/s$.
+The vector triple-product identity converts this to the displayed form.
+Multiplying $p$ by $\lambda$ multiplies both the numerator correction and $s$
+by $\lambda^2$, which cancels because $\lambda\ne0$.
+\end{proof}
+
+The adopted improvement removes a redundant root from a rotation \emph{readout}.
+It does not delete normalization from the Madgwick recurrence: its source
+objective and Jacobian assume the declared unit-quaternion state, and its gain
+sets a correction magnitude. A projective recurrence would need a separate
+derivation proving the same dynamics.
+
+Shared operators retain their types, scopes, assumptions and registry version.
+Two nodes with identical complete records can share one stored record. A digest
+is an index for finding a candidate record; equality of the records, rather than
+an assumption that hashes never collide, establishes exact identity.
+
+\subsection{Definedness and exact branch decisions}
+Algebraic expressions admit exact sign/equality procedures in principle, although
+their cost can grow sharply. General expressions involving transcendental
+functions, floor boundaries and implicit differential-equation solutions do not
+inherit that decision guarantee. A comparison can remain a symbolic predicate
+with both alternatives retained, or produce a declared unresolved result. It
+must not silently select a branch from an insufficient finite approximation.
+
+Rewriting must also preserve which expressions are demanded. In
+$\operatorname{if}(P,1/x,0)$, the inverse need only be defined when $P$ is true.
+An eager transformation that evaluates $1/x$ before deciding $P$ changes the
+domain at $x=0$ when $P$ is false. Sharing a lazy node is valid; forcing its
+evaluation outside its original demand condition is not justified by algebraic
+textual similarity alone.
+
+\subsection{Exact recurrence and exact physical flow are separate specifications}
+The current orbit implementation defines finite RK4 updates. Its exact lift
+retains the same stage formula with exact operators. The continuous model instead
+defines an initial-value problem $\dot x=f(t,x)$ and, under appropriate local
+existence and uniqueness assumptions, a flow $\Phi(t,t_0,x_0)$. A seed can name
+that exact problem compactly. Naming $\Phi$ does not supply a closed-form solver
+or a constant-cost evaluation algorithm.
+
+For an exact model trajectory $x_M$, exact discrete trajectory $x_D$, displayed
+trajectory $\widetilde x_D$ and physical state $x_*$, the identity
+\[
+ x_*-\widetilde x_D=(x_*-x_M)+(x_M-x_D)+(x_D-\widetilde x_D)
+\]
+separates physical/model discrepancy, discretization discrepancy and output
+evaluation discrepancy. Exact internal arithmetic addresses the intermediate
+roundoff term that an inexact computation of $x_D$ would additionally introduce.
+No independence or statistical variance assumption is used in this identity.
+None of the other terms becomes zero by changing the packing representation.
+
+For sufficiently smooth dynamics, fixed-step forward Euler and RK4 have their
+usual first- and fourth-order global truncation behavior under the regularity and
+stability hypotheses of the corresponding convergence theorems. Discontinuous
+shadow switches, impulses and unmodelled input changes require an explicit
+piecewise/event treatment. Exact arithmetic cannot supply absent event data.
+
+\subsection{Finite representation, growing work and causal information}
+\begin{proposition}[A finite-prefix graph bound]
+If each input event adds at most $K$ fixed-template nodes and existing nodes are
+shared by reference, a prefix of $n$ events has at most $N_0+nK$ nodes before
+deleting unreachable nodes. This does not bound the total number of literal bits
+or the cost of evaluating the denoted expression.
+\end{proposition}
+\begin{proof}
+Each event increases the count by at most $K$; induction gives the bound.
+Arbitrary-size numerators, denominators, references, retained input records and
+algebraic degrees are not bounded by the count of nodes. Their sizes and exact
+evaluation cost require separate accounting.
+\end{proof}
+
+Algebraic extensions formed by $r$ successive square-root adjunctions have
+degree at most $2^r$ over the initial rational field, with reductions possible
+when roots are dependent. This explains why a small expression graph does not
+imply a small expanded algebraic representation. Keep shared operator structure
+and delay expansion until a demanded conclusion needs it.
+
+There are $2^n$ possible unrestricted $n$-bit input histories and only $2^B$
+fixed $B$-bit containers. For $n>B$, no injective encoding can retain all such
+histories in those containers. A model may instead retain an exact sufficient
+state or an explicitly supplied deterministic input generator. Neither permits
+reconstruction of an arbitrary unknown future measurement stream from a fixed
+initial seed.
+
+\subsection{A strategy that improves through deductions}
+The strategy revision record contains the proposed change, its hypotheses, a
+proof or counterexample argument, and the resulting decision. Accepted changes
+must preserve denotation, definedness, units, frames, input chronology and source
+variant. A profile that intentionally changes $F$ receives a new semantic version
+and is described as a changed model rather than an equivalent optimization.
+
+The reasoned improvements adopted here are:
+\begin{enumerate}
+\item Keep operator expressions authoritative; do not emulate IEEE rounding and
+      relabel that arithmetic exact.
+\item Extend rational arithmetic with named roots and transcendental terms where
+      the source equations require them; do not replace roots by rational literals.
+\item Share typed subexpressions and prove local identities before requesting
+      numerical projections. Preserve lazy branch demand.
+\item Use homogeneous rotation readout to remove a provably redundant root, while
+      retaining the source attitude recurrence's normalization semantics.
+\item Pin the original Madgwick equation variant and magnetic-reference update
+      timing; appendix code order is a distinct source choice.
+\item Treat a fitted nine-entry frame polynomial as a matrix approximation unless
+      orthogonality is independently a mathematical consequence of its definition.
+\item Keep discrete recurrence, continuous flow, measured inputs and output
+      projections as explicit, different objects.
+\end{enumerate}
+These are changes to the formal strategy justified by deductions in this volume.
+They are not measured speedups, generated empirical results or claims that a
+particular implementation already satisfies every premise.
+
+\begin{panel}
+Exact arithmetic and lazy expression representation are established mathematical
+approaches; see \href{https://www.cgal.org/exact.html}{CGAL's exact computation
+paradigm} and its \href{https://doc.cgal.org/latest/Number_types/group__nt__core.html}
+{exact expression number types}. R11 specifies the required denotations and
+proof obligations for this kernel. It does not infer a universal physical
+accuracy bound or a complete transcendental decision procedure from those sources.
+\end{panel}

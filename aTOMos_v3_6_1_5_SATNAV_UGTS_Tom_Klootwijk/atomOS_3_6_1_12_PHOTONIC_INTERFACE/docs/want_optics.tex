@@ -1,0 +1,436 @@
+\section{Optical operators and their physical realization}
+\label{sec:want-optics}
+
+\begin{panel}
+\textbf{What the additional source supplies.}
+W1, physical pages 11--16, supplies a mathematical optical interaction chain:
+aperture, propagation, spectral acquisition, material response, an event
+instrument and an energy ledger. These are usable additions to the exact seed
+as typed models and observations. They specify how a photonic instrument could
+interact with the kernel. A photonic implementation of the kernel's arithmetic,
+memory and delayed feedback remains a separate realization problem.
+\end{panel}
+
+This chapter preserves the source equations and states the conditions under
+which they can be lifted into XOP-R1. Newly derived consequences are identified
+as propositions. A mathematical identity within a chosen optical model is not
+an experimental certificate for an unspecified material or assembled device.
+No embedded program, numerical experiment or physical test was run for R12.
+
+\subsection{A slit is an exact spatial restriction}
+
+In the aperture plane, let $\mathbf a,\mathbf b$ be orthogonal unit directions,
+$\mathbf r_c$ its centre, and $w_s,h_s>0$ its width and height. The W1 aperture is
+\begin{equation}
+ A(\mathbf r)=
+ \mathbf1_{\{|\mathbf a\cdot(\mathbf r-\mathbf r_c)|\le w_s/2\}}
+ \mathbf1_{\{|\mathbf b\cdot(\mathbf r-\mathbf r_c)|\le h_s/2\}}.
+ \label{eq:want-aperture}
+\end{equation}
+The complete geometric expression can remain in a seed. A pixel grid is not
+needed to \emph{define} its edges, centre, deformation or membership predicate.
+At an exact boundary the declared $\le$ convention includes the point; uncertain
+physical edge locations remain uncertain parameters. A shift changes the
+centre, a tilt changes the plane frame, and strain changes the edge model.
+Those are distinct state changes, even when driven by one actuator.
+
+For a square-integrable scalar field, $(P_AU)(\mathbf r)=A(\mathbf r)U(\mathbf r)$
+satisfies
+\begin{equation}
+ P_A^2=P_A,\qquad
+ \|P_AU\|_2^2=\int A|U|^2\,dA\le\int |U|^2\,dA.
+ \label{eq:want-slit-contraction}
+\end{equation}
+The proof uses $A^2=A$ and $0\le A\le1$ pointwise. This is the exact Boolean
+projection supplied by the ideal aperture. Multiplication by a general complex
+transmission $t_\lambda$ instead gives $(M_t)^2U=t_\lambda^2U$; it is idempotent
+only when the relevant transmission values satisfy $t_\lambda^2=t_\lambda$.
+Consequently a real absorber or phase coating is not automatically the same
+operator as an ideal ASA/NA word mask.
+
+\subsection{A declared field transfer, including diffraction}
+
+The source interaction chain is
+\begin{equation}
+ U_{\mathrm{det},\lambda}
+ =H_{z,\lambda}\!\left[
+ A\,t_\lambda(T,a,\zeta)
+ e^{i\phi_{\mathrm{lens},\lambda}}U_{\mathrm{in},\lambda}\right].
+ \label{eq:want-field-transfer}
+\end{equation}
+Here $T$ is temperature, $a$ a material hysteresis state, and $\zeta$ a reporter
+fraction. The propagation medium, polarization approximation, input/output
+planes, field normalization and boundary conditions belong to $H$. One may
+choose an analytically specified propagator or a calibrated finite-mode
+transfer. A name, lookup-table address or trained transfer without its
+coefficients and domain does not complete the physical definition.
+
+For example, set $\lambda_m=\lambda/n_m$, $k_m=2\pi/\lambda_m$, and use local
+coordinates $(x,y)$ in a centred rectangular aperture. For a bounded aperture
+field $U_A$, a Fraunhofer angular shape transform is
+\begin{equation}
+ \mathcal F(s_x,s_y)=
+ \int_{-w_s/2}^{w_s/2}\!\int_{-h_s/2}^{h_s/2}
+ U_A(x,y)e^{-ik_m(s_xx+s_yy)}\,dy\,dx.
+ \label{eq:want-fraunhofer}
+\end{equation}
+For this nested Riemann expression, each inner $y$ section of the full
+integrand must be Riemann-integrable at every admitted $x$, and the resulting
+inner integral must be Riemann-integrable as a function of $x$. Joint
+two-dimensional integrability alone does not establish all section domains.
+A continuous aperture field on the closed rectangle is one sufficient
+condition; other fields need their stated section and outer-integral
+conditions. The variables $s_x,s_y$ are direction cosines in the relevant far-field
+directions. This expression specifies the angular shape; the physical
+propagation prefactor and flux measure must still match the selected $H$.
+For uniform complex $U_A=U_0$,
+\begin{equation}
+ \mathcal F=U_0w_sh_s\,\operatorname{sinc}(k_mw_ss_x/2)
+                  \operatorname{sinc}(k_mh_ss_y/2),\qquad
+ \operatorname{sinc}u=
+ \begin{cases}\sin u/u,&u\ne0,\\1,&u=0.\end{cases}
+ \label{eq:want-sinc}
+\end{equation}
+The value at zero is a declared continuous extension, not an eager division by
+zero. The first-zero relations are
+\begin{equation}
+ \sin\alpha_x=\frac{\lambda}{n_mw_s},\qquad
+ \sin\alpha_y=\frac{\lambda}{n_mh_s},
+ \label{eq:want-first-zero}
+\end{equation}
+when the corresponding ratios are at most one and the adopted scalar
+Fraunhofer assumptions apply. Narrowing a dimension broadens its diffraction
+pattern. The MIT rectangular-aperture optics demonstration provides a direct
+reference for this Fourier-optics dependence.
+\href{https://ocw.mit.edu/courses/res-6-006-video-demonstrations-in-lasers-and-optics-spring-2008/e06ca88aa4b673d48884b8705496a1b7_4YPxRTFxy2A.pdf}{[P1]}
+
+The integral and its factorized form can both be stored as exact terms. That
+removes compulsory spatial rasterization from the definition; it does not
+remove diffraction, the far-field approximation, or uncertainty in a measured
+incident field. A finite modal expansion or sampled transfer is a declared
+model reduction with its own omitted-field error. Physical light outside a
+geometric occupancy set may still affect the detector through diffraction and
+scattering.
+
+\subsection{Passive transfer is a power condition}
+
+With power-normalized input and output modes, a passive linear transfer $S$
+must obey
+\begin{equation}
+ \|S\mathbf u\|_2^2\le\|\mathbf u\|_2^2
+ \quad\hbox{for every }\mathbf u,
+ \qquad S^\dagger S\preceq I.
+ \label{eq:want-passive}
+\end{equation}
+More generally, positive flux metrics give
+$S^\dagger W_{\mathrm{out}}S\preceq W_{\mathrm{in}}$.
+An electric-field transmission coefficient across different refractive media
+cannot be judged by its magnitude alone; its flux normalization matters.
+For equal power conventions, the composition of the aperture, a multiplier
+with $|t_\lambda|\le1$, a real phase factor, and a nonexpansive $H$ is itself
+nonexpansive. Each factor bounds the next norm, which proves the claim.
+Passive concentration can increase local irradiance while preserving the total
+energy budget; it does not increase a fixed-frequency photon's energy.
+
+An active stage may supply gain. Its pump, electrical power, added fluctuations,
+bandwidth and saturation then belong to the physical profile. Passivity is not
+an extra restriction on exact mathematical arithmetic; it is a necessary
+condition only for the particular proposed passive field implementation.
+
+\subsection{Liquid lensing and a shared spectral budget}
+
+The W1 lens proposal becomes physical only after its interface and actuator are
+specified. For a static fluid interface and a thin paraxial lens,
+\begin{align}
+ n_1\sin\theta_1&=n_2\sin\theta_2,\\
+ \Delta p&=\gamma(1/R_1+1/R_2),\\
+ \frac1{f_\lambda}
+ &=\left(\frac{n_\ell(\lambda)}{n_m(\lambda)}-1\right)
+   \left(\frac1{R_{\mathrm{front}}}-\frac1{R_{\mathrm{back}}}\right).
+ \label{eq:want-lens}
+\end{align}
+The radii have one declared optical sign convention and nonzero finite values
+where reciprocals are used. A plane face is represented by zero curvature,
+not by a finite real literal called infinity. The refractive indices are
+positive, and propagating Snell branches require their stated domains.
+Contact-angle and support
+conditions close the shape problem; pressure, voltage or another declared
+actuator supplies its control. Berge and Peseux reported a liquid lens whose
+contact angle was controlled by electrocapillarity. That is a physical
+precedent for variable liquid lensing, not a calibration of the proposed rim
+or matrix. The publisher abstract was inspected.
+\href{https://link.springer.com/article/10.1007/s101890070029}{[P2]}
+
+Let $P_\lambda(t)\ge0$ denote incident spectral power per positive vacuum
+wavelength at a specified plane, over $t_{n+1}\ge t_n$. For nonoverlapping
+passive output branches,
+\begin{equation}
+ 0\le\tau_k(\lambda),\quad
+ \tau_1(\lambda)+\tau_2(\lambda)\le1,\quad
+ 0\le\eta_k(\lambda)\le1,
+ \label{eq:want-spectral-budget}
+\end{equation}
+under a photon-detection efficiency convention with at most one primary count
+per delivered photon. Internal gain and acquisition codes require their own
+response definition. Before dead time and saturation, the ideal mean primary
+detections under that efficiency model are
+\begin{equation}
+ \mu_k=\int_{t_n}^{t_{n+1}}\!\int
+ \eta_k(\lambda)\tau_k(\lambda)P_\lambda(t)
+ \frac{\lambda}{hc}\,d\lambda\,dt,
+ \quad k=1,2.
+ \label{eq:want-photon-mean}
+\end{equation}
+Background, dead time, saturation and readout noise complete the observation
+model and may change its mean as well as its distribution; $\mu_k$ is not the
+particular count that will be observed. Both ideal means derive
+from one incident budget. An ideally routed single photon cannot be counted
+in both destructive, nonoverlapping branches. A one-bit event may use a
+specified primary band or a suitable joint score without requiring both
+branches to fire.
+
+With all outgoing reflected and transmitted channels included,
+\begin{equation}
+ \mathcal R_\lambda+\mathcal T_\lambda+\mathcal A_\lambda=1,
+ \qquad P_{\mathrm{abs}}=\int\mathcal A_\lambda P_\lambda\,d\lambda.
+ \label{eq:want-absorption}
+\end{equation}
+These fractions describe the selected passive interaction. After absorption,
+energy may reside in chemical excitation, heat or another store and may later
+leave as radiation or electrical work. Multiple readouts of that event share
+its energy and any supplied amplification energy.
+
+\subsection{The material state closes the optical feedback}
+
+The reporter and thermal derivations in Section~\ref{sec:want-energy} close
+several otherwise missing arguments of $t_\lambda(T,a,\zeta)$ in
+equation~\eqref{eq:want-field-transfer}. The activation/recovery update
+\eqref{eq:want-reporter} supplies $\zeta$; the thermal step
+\eqref{eq:want-thermal-step} supplies a declared temperature evolution; and
+hysteresis supplies persistent $a$. Their kinetic, thermal and optical
+parameters must describe the same specimen and acquisition interval.
+
+For constant nonnegative reporter rates, its exact exponential update is a
+convex combination in $[0,1]$. The scalar constant-coefficient thermal model
+also has a closed exponential step. Storing these exact terms avoids repeated
+Euler updates for those particular models. This improvement does not assume
+rates remain constant under changing illumination or temperature. A
+piecewise-constant profile must declare its interval partition, and an
+unspecified nonlinear feedback network needs its own evolution definition.
+
+The energy ledger~\eqref{eq:want-ledger} accounts for supplied lens actuation,
+bridge excitation and detector amplification as well as absorbed light.
+Delayed relaxation transfers energy out of an already counted store; it is
+not a second optical absorption. Reporter recovery and thermochromic state
+are physical memory. A logical seam involution does not reset them. A
+fluorescence, resistance or thermal readout can be an auxiliary witness;
+copying the primary software bit supplies no additional physical observation.
+
+\subsection{Complex optics fits exact real-pair arithmetic}
+\label{sec:want-complex}
+
+XOP-R1 does not need a new primitive complex-number representation for the
+finite calculations above. Let $S$ be a declared common real scalar sort and
+represent $z=a+ib$ by $\code{Tuple}(S,S)$. Define the templates
+\begin{align}
+ (a,b)+(c,d)&=(a+c,b+d),\\
+ (a,b)(c,d)&=(ac-bd,ad+bc),\\
+ \overline{(a,b)}&=(a,-b),\qquad |(a,b)|^2=a^2+b^2,\\
+ (a,b)/(c,d)&=\left(\frac{ac+bd}{c^2+d^2},
+                           \frac{bc-ad}{c^2+d^2}\right),
+                  \quad c^2+d^2>0,\\
+ e^{i\phi}&=(\cos\phi,\sin\phi),\qquad
+ e^{a+ib}=e^a(\cos b,\sin b).
+ \label{eq:want-complex-pairs}
+\end{align}
+Each component uses existing arithmetic, sine, cosine, exponential and lazy
+conditional operators with their ordinary real domains. Phase arguments are
+dimensionless. A dimensioned complex amplitude is a pair of equally
+dimensioned real components, not a dimension wrapper around a nonnumeric
+tuple. Exact algebraic $\phi=(1+\sqrt5)/2$ must not be confused with an arbitrary
+phase angle $\phi_{\mathrm{lens},\lambda}$.
+
+A finite complex matrix $M=X+iY$ is stored as a pair of equally shaped real
+matrices. Then
+\begin{equation}
+ M\leftrightarrow
+ \begin{pmatrix}X&-Y\\Y&X\end{pmatrix},\qquad
+ M^\dagger\leftrightarrow(X^{\mathsf T},-Y^{\mathsf T}).
+ \label{eq:want-realification}
+\end{equation}
+Multiplication, conjugate transpose, trace and quadratic forms therefore
+reduce to the existing finite real operators. This is an algebraic embedding;
+induction on expression construction proves that it preserves the represented
+complex value whenever every division and other partial operation is defined.
+The frame and mode-basis annotations of each component are retained.
+
+The real and imaginary parts of equation~\eqref{eq:want-fraunhofer} are nested
+bounded real integrals of sine/cosine products. XOP's oriented finite
+Riemann-integral operator can denote them when every demanded inner section
+and each resulting outer integrand is Riemann-integrable on its declared
+bounds. This applies separately to real and imaginary components and to each
+level of a nested integral. The spectral integrals similarly
+require finite wavelength bounds with zero response outside them, a proved
+analytic reduction, or an explicitly declared omitted-tail approximation.
+An unspecified integral over all wavelengths is not silently accepted as a
+finite-integral opcode. A continuous field can be stored through a finite
+function definition and parameters; arbitrary independent unknown field
+values cannot be recovered from a finite expression without such structure.
+
+Unbounded mode sums, distributional fields and a full infinite Fock-space
+matrix need a separate functional representation and convergence contract.
+Choosing a finite basis is legitimate when declared, but it is not an identity
+between every physical field and a finite array. Algebraic expressions may
+remain exact values; general transcendental terms, integrals and equality
+predicates retain R11's partial-evaluation and unresolved-domain outcomes.
+
+\subsection{The event as a quantum instrument}
+
+For a declared finite-dimensional optical/auxiliary space, take a density
+matrix $\varrho_Q\succeq0$ with $\operatorname{tr}\varrho_Q=1$ and finite
+outcome operators $K_{j\ell}$ satisfying
+\begin{equation}
+ \sum_{j,\ell}K_{j\ell}^\dagger K_{j\ell}=I.
+ \label{eq:want-kraus}
+\end{equation}
+The associated outcome map and probability are
+\begin{equation}
+ \mathcal J_j(\varrho_Q)=\sum_\ell
+ K_{j\ell}\varrho_QK_{j\ell}^\dagger,
+ \qquad p_j=\operatorname{tr}\mathcal J_j(\varrho_Q).
+ \label{eq:want-instrument}
+\end{equation}
+For $p_j>0$ the conditional state is $\mathcal J_j(\varrho_Q)/p_j$; for a
+zero-probability outcome it is not defined by division. The finite model must
+include no-click, rejection and other possible outcomes to claim completeness.
+An infinite/countable extension needs its own operator convergence conditions;
+R12 does not silently serialize an infinite matrix as a finite one.
+
+Let the recorded $j$ include the primary and secondary observations, timing
+and acquisition flags. Apply the W1 classical gate
+\begin{equation}
+ g(j)=X\land Y\land C_t\land V\land\neg S_{\mathrm{sat}}\land\neg F,
+ \qquad
+ \mathcal J_e=\sum_{j:g(j)=e}\mathcal J_j.
+ \label{eq:want-quantum-event}
+\end{equation}
+The record keeps the reason for rejection; $e=0$ is not a replacement for the
+metadata that distinguishes a valid negative event from invalid acquisition.
+An absent transport record is likewise not automatically an observed no-click.
+
+\begin{proposition}[Normalized coarse-grained event instrument]
+Under equation~\eqref{eq:want-kraus}, both maps $\mathcal J_e$ are completely
+positive and trace non-increasing, and
+$\operatorname{tr}\mathcal J_0(\varrho_Q)+
+ \operatorname{tr}\mathcal J_1(\varrho_Q)=1$.
+\end{proposition}
+\begin{proof}
+Every operator sandwich is completely positive, and finite sums preserve that
+property. Cyclicity of trace and completeness give total probability one.
+The two disjoint outcome groups partition this nonnegative total, so each has
+trace between zero and one. The argument also holds for any positive input
+with its own total trace.
+\end{proof}
+This is a conditional model theorem. The $K_{j\ell}$, state preparation,
+dimension cutoff and detector readout are inputs to characterize. The
+instrument formalism comes from measurement theory; it is not a claim that
+one-bit classical output creates a qubit or quantum advantage.
+\href{https://link.springer.com/article/10.1007/BF01647093}{[P3]}
+
+NIST describes transition-edge sensors that detect photon absorption through
+a resistance change near a superconducting transition. Their operating
+conditions and recovery behavior belong to a specified cryogenic detector.
+This supports a thermal photon witness as a real device class; it does not
+establish such sensitivity for the source's unspecified ambient material.
+\href{https://www.nist.gov/pml/productsservices/quantum-networks-nist/technologies-quantum-networks/single-photon-detectors}{[P4]}
+
+\subsection{A constructive optical consequence of the pinion map}
+\label{sec:want-pinion-passivity}
+
+W1, page 18, retains the real reference map
+\begin{equation}
+ A_\phi=D_\phi H_4,\qquad
+ D_\phi=\operatorname{diag}(\phi,\phi^{-1},1,-1),\qquad
+ H_4=\frac12\begin{pmatrix}
+ 1&1&1&1\\1&-1&1&-1\\1&1&-1&-1\\1&-1&-1&1
+ \end{pmatrix},\quad \phi=\frac{1+\sqrt5}{2}.
+ \label{eq:want-pinion}
+\end{equation}
+This real reference map is distinct from W0's rounded and clipped integer
+implementation. It is also distinct from interpreting four coordinates as
+four physical field amplitudes. The following result applies only to that
+last, direct power-normalized amplitude interpretation.
+
+\begin{proposition}[Passive direct-map obstruction and scaled construction]
+The unscaled $A_\phi$ cannot be the deterministic transfer of a passive
+four-mode device on all power-normalized inputs. The scaled map
+$B=A_\phi/\phi$ is contractive and admits an ideal real orthogonal dilation
+using additional output modes.
+\end{proposition}
+\begin{proof}
+$H_4H_4^{\mathsf T}=I$, so the singular values of $A_\phi$ are
+$\phi,\phi^{-1},1,1$. In particular, the unit input
+$\mathbf u=H_4^{\mathsf T}\mathbf e_1$ has
+$\|A_\phi\mathbf u\|_2=\phi>1$, contradicting
+equation~\eqref{eq:want-passive}. For the scaled map,
+\begin{equation}
+ B=\operatorname{diag}(1,\phi^{-2},\phi^{-1},-\phi^{-1})H_4.
+ \label{eq:want-pinion-scaled}
+\end{equation}
+Every diagonal entry $d_j$ lies in $[-1,1]$. Introduce an auxiliary mode and
+apply, separately for each entry,
+\begin{equation}
+ O_j=\begin{pmatrix}
+ d_j&\sqrt{1-d_j^2}\\-\sqrt{1-d_j^2}&d_j
+ \end{pmatrix},\qquad O_j^{\mathsf T}O_j=I.
+ \label{eq:want-pinion-dilation}
+\end{equation}
+With zero classical auxiliary input amplitude, the selected output amplitude
+is $d_j$ times its main input; the auxiliary output carries the remaining
+power. Compose these pairs after $H_4$. Selecting the four main outputs gives
+$B$, while the full enlarged transformation preserves the norm.
+\end{proof}
+
+The construction gives exact algebraic target parameters for an ideal
+interferometric network. Negative amplitudes require a declared relative phase;
+side-port energy must be retained in the ledger. In a quantum use, an
+unexcited auxiliary port has a vacuum state and is not a deletion of its
+quantum degrees of freedom. A classical zero-amplitude assignment alone is
+not a complete quantum noise model.
+
+There are now three explicit alternatives. An active amplitude device may
+target $A_\phi$ with a gain and noise contract. A passive device may target
+$B$, while an exact symbolic scale records that $A_\phi\mathbf u=\phi B\mathbf u$.
+That identity does not recover power or remove uncertainty from measured
+amplitudes; the scaled device is a distinct analog profile. Finally, a digital
+photonic machine may compute the bits of coordinates and operators. Its
+optical power is not the squared coordinate norm, so the direct-amplitude
+obstruction does not apply to that digital encoding.
+
+\subsection{What primary photonic-computing evidence establishes}
+
+Bhatt, Fuller and L\'eonard reported Boolean optical logic and full adders
+using coherent inputs, a spatial light modulator and intensity thresholding.
+Their eight-bit addition sequence re-enters the next column's inputs through
+a digital micromirror device using the previous column's result. The
+demonstration uses camera/computer readout and reports power-dependent bit
+errors. It establishes useful optical logic primitives, not the complete
+stored, self-referential exact seed engine.
+\href{https://www.nature.com/articles/s41467-026-74970-5}{[P5]}
+
+Zhou and colleagues reported reconfigurable microring logic and two-bit
+arithmetic units. Their experiment uses electrical modulation inputs, optical
+outputs, electrical OR aggregation for the reported arithmetic acquisition,
+and digital processing for timing and threshold recovery. This is relevant
+precedent for a hybrid optical arithmetic route. Its component results are
+not a system-wide latency, energy or error bound for this formalization.
+\href{https://www.nature.com/articles/s41467-026-75750-x}{[P6]}
+
+The useful contribution of W1 is therefore a substantially more explicit
+\emph{photonic interface}: optical transfer, material memory, acquisition
+meaning and causal feedback can be bound to exact terms. Physical execution
+of every XOP operator additionally needs a device-to-bit refinement,
+persistent storage, signal restoration, fan-out, clocks and a resource bound.
+Those implementation obligations are addressed separately in this release's
+realization contract. The optical equations above do not supply their missing
+device parameters or establish a universal physical guarantee.

@@ -1,0 +1,447 @@
+\section{Literal word, operator and event integration}
+\label{sec:want-interface}
+The supplied \emph{WANTWOMBAN Operator I v1.1} gives the exact interface
+structure needed to attach a measured optical/material event to a causal seed
+kernel. This chapter integrates its node word, pinion operators, packet and
+feedback order with R11 \code{XOP-R1}. It defines an adapter, not a running
+photonic computer. Source references below use PDF page numbers: Operator I
+pp.~5, 18--19 and 23, its embedded parent \emph{WANTWOMBAN} pp.~5--12 and
+17--18, and the two embedded Python reference files. Those files were read;
+their tests and calculations were not executed for R12.
+
+\subsection{Keep the mathematical identities separate}
+The joined state has explicit components rather than overloading one word:
+\begin{equation}
+ S_n=(\mathcal G_n,\mathcal R_n,q_n^{\rm JK},W_n,
+       \mathcal Q_n,\mathcal L,\mathcal P_n,z_n^{\rm phys},m_n,\eta_n).
+\end{equation}
+Here $\mathcal G_n,\mathcal R_n$ are the exact expression graph and state
+roots; $q_n^{\rm JK}\in\mathsf{Bits}(32)$ is the retained orbital control word;
+$W_n\in\mathsf{Bits}(64)$ is the WANT node; $\mathcal Q_n$ is its tree/queue;
+$\mathcal L$ its LUT; and $\mathcal P_n$ its physical site/chart data.
+$z_n^{\rm phys}$ contains mechanical coordinates, temperature and material
+memory. The completed record $m_n$ and calibration/controller memory $\eta_n$
+are further state. Optical input and mechanical loading are external inputs.
+An exact symbolic model of $z^{\rm phys}$ is distinct from the physical state
+and from a quantized measurement of that state.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{32mm}Y Y@{}}
+\toprule
+Object & Source meaning & R12 binding\\\midrule
+\code{WANT.W64} & Ten packed control/geometry fields & Separate \code{Bits(64)} state\\
+\code{ATOM.JK32} & ASA/NA-controlled synchronous word & Separate \code{Bits(32)} state\\
+\code{WANT.OTAN2.G0} & Occupancy-conditioned integer phase permutation & Explicit finite-word template\\
+\code{ATOM.OTAN2.RATIO} & Ratio of log-polar increments, followed by arctangent & Separate partial real template\\
+\code{WANT.PINION.Q16} & Rounded rational-coefficient integer map & Exact execution of the stated discrete map\\
+\code{WANT.PINION.ALG} & Golden-ratio real matrix & Exact algebraic expression template\\
+\code{WANT.WI.1.1} & 64-byte measurement record & Raw \code{Bits(512)} sample plus typed decoding\\
+\bottomrule
+\end{tabularx}\end{center}
+These labels are semantic identities with versioned definitions, not new
+unimplemented magic opcodes. Their bodies use R11 integer, bit, rational,
+algebraic, comparison, branch and delayed-state operators. A local Greek symbol
+does not identify a global quantity: material fraction $\zeta_{\rm mat}$,
+Madgwick drift parameter $\zeta_{\rm att}$, Boolean feedback enable
+$\beta_{\rm W}$ and dimensional Madgwick gain $\beta_{\rm att}$ remain separate.
+
+\subsection{Complete W64 field contract}
+For field shift $s$ and width $w$, define
+\begin{align}
+ U_{s,w}(W)&=\left\lfloor\frac{\operatorname{uint}(W)}{2^s}\right\rfloor
+                         \bmod 2^w,\\
+ \operatorname{signed}_w(u)&=
+ \begin{cases}u,&0\le u<2^{w-1},\\u-2^w,&2^{w-1}\le u<2^w.\end{cases}
+\end{align}
+Replacing a field with $v\in[0,2^w)$ means clearing its mask and OR-ing
+$v2^s$. No other bit is changed. The disjoint widths below sum to 64, so field
+extraction followed by replacement into an initially zero word recovers every
+input bit. This is an exact encoding statement, not an exact geometry claim.
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{21mm}P{20mm}P{14mm}Y@{}}
+\toprule Bits & Field & Width & Preserved meaning\\\midrule
+63 & $\chi$ & 1 & Symbolic channel/control label\\
+62:52 & $\rho_c$ & 11 & Signed log-radius code\\
+51:41 & $\theta_c$ & 11 & Phase modulo 2048; signed representative only in the pinion input\\
+40:30 & $z_c$ & 11 & Signed axial code\\
+29:20 & $\Phi_c$ & 10 & Unsigned register; shifted, then decoded signed for the pinion\\
+19:15 & $d$ & 5 & Node depth 0--31\\
+14:10 & $f$ & 5 & Discrete phase 0--31, the parent's FT label\\
+9:3 & $\ell$ & 7 & Stored LUT index 0--127\\
+2 & $\kappa$ & 1 & Seam parity\\
+1:0 & $\Xi$ & 2 & Symbolic cycle selector\\\bottomrule
+\end{tabularx}\end{center}
+The temperature, event and calibration fields cannot be added to these occupied
+positions. In particular $\Phi_c$, $f$, $\Xi$ and the timestamp are different
+objects. The parity used by the reference is
+\[
+ p_3(W)=W_0\oplus W_1\oplus W_2=\Xi_0\oplus\Xi_1\oplus\kappa.
+\]
+It does not inspect three coordinate signs. At branch $b\in\B$, set
+$p=p_3(W)\oplus b$ and transform the raw ten-bit register by
+\[
+ \Phi_s=\begin{cases}(2\Phi_c)\bmod1024,&p=0,\\
+                         \lfloor\Phi_c/2\rfloor,&p=1.
+          \end{cases}
+\]
+The shifted-out bit is discarded in this legacy transition. Retaining the
+original seed/input history can preserve its provenance; the projection alone
+does not contain that lost bit.
+
+\subsection{Pinion arithmetic and the full inherited transition}
+Let $\varphi=(1+\sqrt5)/2$ and put
+\begin{equation}
+ B=\begin{pmatrix}1&1&1&1\\1&-1&1&-1\\1&1&-1&-1\\1&-1&-1&1\end{pmatrix},
+ \quad H_4=B/2,\quad
+ A_\varphi=\operatorname{diag}(\varphi,\varphi^{-1},1,-1)H_4.
+\end{equation}
+The pure algebraic template uses the positive root $\sqrt5$ and exact
+rational factor $1/2$. Its input is a dimensionless coordinate tuple; metres
+and radians are not directly added. Since $B^2=4I$, $H_4$ is its own inverse.
+The source's determinant statement $\det A_\varphi=-1$ concerns four-dimensional
+volume. Its physical optical realization has the additional conditions discussed
+in the photonic mapping chapter; this determinant does not assert power balance.
+
+The implemented parent template uses $s=Bv$ and the different definition
+\begin{equation}
+ \widehat A(v)=\left(
+ R\left(\frac{106039s_0}{131072}\right),
+ R\left(\frac{40503s_1}{131072}\right),
+ R\left(\frac{s_2}{2}\right),
+ R\left(\frac{-s_3}{2}\right)\right),
+\end{equation}
+where $R(x)=\operatorname{sgn}(x)\lfloor|x|+1/2\rfloor$, with $R(0)=0$.
+All products and divisions before $R$ can be exact integer/rational operators.
+For a nonnegative integer coefficient $a=\sum_i a_i2^i$, the identity
+$ax=\sum_i a_i(x2^i)$ gives the literal shift/add body without truncation.
+The fixed coefficients approximate $\varphi$ and its inverse; the resulting
+round, clip and modulo are intentional parts of this discrete profile.
+
+The exact occupancy and grouped phase templates are
+\begin{align}
+ j&=((\theta_c\gg4)+f+13\Xi)\bmod128,
+ &\eta&=(\Phi_c\mathbin{\&}1)\oplus\kappa,\\
+ G&=\boldsymbol1\{\operatorname{signed}_{11}(\rho_c)\le L_j+2\eta-1\},
+ &\mathcal O_{G0}(r,G)&=((r\mathbin{\&}2047)\oplus(G\ll10))\mathbin{\&}2047.
+\end{align}
+The inherited illustrative LUT has $L_j=128$ for all 128 entries. Its values
+are not calibrated optical material data. For fixed $G$, applying the same
+XOR twice recovers $r\bmod2048$, which proves $\mathcal O_{G0}$ is a permutation.
+The separately retained literal left-fold source profile is
+\[
+ \mathcal O_{Z0}(r,G)=(((r\mathbin{\&}2047)\oplus G)\ll10)\mathbin{\&}2047
+                   =1024((r\bmod2)\oplus G).
+\]
+Its two-element image cannot replace the permutation silently.
+
+Use the old word and completed darkness bit $D_n$ to compute
+\begin{equation}
+ v_c=\begin{pmatrix}
+ \operatorname{signed}_{11}(\rho_c)\\
+ \operatorname{signed}_{11}(\theta_c)\\
+ \operatorname{signed}_{11}(z_c)\\
+ \operatorname{signed}_{10}(\Phi_s)
+ \end{pmatrix},\qquad
+ \begin{pmatrix}r_H\\a_H\\z_H\\F_H\end{pmatrix}=\widehat A(v_c).
+\end{equation}
+\begin{align}
+ c_n&=1-(G_n\oplus\chi_n\oplus\kappa_n),\\
+ r'&=\operatorname{clip}(r_H+2b_n-1,-1023,1023),\\
+ \theta'&=(a_H+\mathcal O_{G0}(r'\bmod2048,G_n)+(1-2p)1266)\bmod2048,\\
+ z'&=\operatorname{clip}(z_H,-1024,1023),\\
+ \Phi'&=F_H\bmod1024,\\
+ f'&=(f_n+1+D_n)\bmod32.
+\end{align}
+Store $j_n$ in $\ell'$, keep $\chi,\Xi$, and advance depth. At old depth 31,
+replace $(r',\theta',\kappa)$ by
+$(-r',(1024-\theta')\bmod2048,\kappa\oplus1)$ and set depth to zero;
+otherwise increment depth and keep $\kappa$. All signed field outputs are
+encoded by their stated unsigned modular representation.
+The standalone seam is undefined at signed radius $-1024$; the full step's
+radial clip ensures that its subsequent seam uses the symmetric valid range.
+
+An exact XOP graph can reproduce this entire finite-word map. That statement
+does not remove its intentional rounding. Replacing $\widehat A$ by $A_\varphi$,
+removing clipping, or retaining an unbounded coordinate as the next operand is
+a new semantic profile. R12 makes $A_\varphi$ available as a pure exact operator
+and preserves the compatibility map separately; it does not claim the two full
+trajectories agree. The exact graph or retained input is the authority when an
+application needs a lossless representation beyond these finite projections.
+
+\subsection{Exact spatial and time adapters to UGTS}
+The WANT chart realizes a code using a chosen centre $P$, orthonormal local
+frame $(e_1,e_2,e_3)$, $r_W>0$, $\Delta\rho>0$ and $\Delta z>0$:
+\begin{align}
+ r&=r_W\,2^{\Delta\rho\operatorname{signed}_{11}(\rho_c)},
+ &\vartheta&=2\pi\theta_c/2048,
+ &z&=\Delta z\operatorname{signed}_{11}(z_c),\\
+ x&=P+r\cos\vartheta\,e_1+r\sin\vartheta\,e_2+z e_3.
+\end{align}
+For the matching UGTS centre and $e_1=E,e_2=N$, with scale $r_U>0$, the
+conversion is exactly
+\begin{equation}
+ \rho_U=\ln(r_W/r_U)+(\ln2)\Delta\rho\operatorname{signed}_{11}(\rho_c),
+ \qquad \theta_U=\operatorname{wrap}_{2\pi}(2\pi\theta_c/2048).
+\end{equation}
+A changed centre, mounting or frame requires the full coordinate transformation
+before taking the logarithm and angle. The finite code has no radius-zero
+representation for $r_W>0$; an actual polar origin has the inherited absent-chart
+status. The 11-bit unsigned phase is decoded as unsigned in this physical map,
+although the integer butterfly uses its signed representative.
+
+The aTOMos ratio observable remains
+\[
+ \mathcal O_{\rm ratio}(\Delta\rho_U,\Delta\theta_U;a_0)
+ =\arctan(\Delta\theta_U/\Delta\rho_U)-a_0,
+ \qquad\Delta\rho_U\ne0,
+\]
+with its zero-increment and undefined-ratio statuses. No identity relates this
+real operator to $\mathcal O_{G0}$ merely because both sources call them OTAN2.
+Likewise the retained UGTS key has widths $(20,18,14,12)$, while W64 has the ten
+fields listed above. Their shared total width permits byte storage, not a
+meaning-preserving reinterpretation.
+
+The shifted WANT seam reflects phase and inverts log-radius. UGTS additionally
+has distinct \code{source\_half\_turn} and \code{reflective\_klein} chart
+profiles. Only a declared map with matching centre, chart domain and edge
+identification can relate them. A double logical seam restores its specified
+fields; it does not reverse dissipative thermal/material evolution.
+
+\subsection{Every WI1.1 byte and flag has a declared type}
+Operator I defines the following 64-byte record. All multi-byte integers are
+little-endian, and the complete record is 512 bits. The embedded reference's
+60-byte body format is \code{<2sBBIQQiiIIiHBBIII}; four CRC bytes follow.
+
+\small
+\begin{longtable}{@{}P{14mm}P{32mm}P{17mm}P{86mm}@{}}
+\toprule Bytes & Field & Type & Meaning and constraint\\\midrule\endhead
+0--1 & magic & 2 bytes & ASCII \code{WI}\\
+2, 3 & version & 2 uint8 & Major 1, minor 1\\
+4--7 & sequence & uint32 & Session sequence modulo $2^{32}$\\
+8--15 & tick\_ns & uint64 & End of acquisition interval, on declared session clock\\
+16--23 & word & uint64 & Associated unchanged WANT W64\\
+24--27 & temperature\_mK & int32 & Nonnegative absolute-temperature code; zero cannot be marked temperature-valid\\
+28--31 & strain\_nano & int32 & Signed dimensionless strain multiplied by $10^9$\\
+32--35 & band1\_counts & uint32 & First optical acquisition code\\
+36--39 & band2\_counts & uint32 & Second optical acquisition code\\
+40--43 & secondary\_counts & int32 & Physical-witness summary; calibration supplies units\\
+44--45 & flags & uint16 & Bit table below; reserved bits zero\\
+46 & mode & uint8 & Event profile 0--3\\
+47 & reserved & uint8 & Zero\\
+48--51 & calibration\_id & uint32 & Nonzero if record-valid; external registry key\\
+52--55 & window\_ns & uint32 & Integration duration, 1 through $2^{32}-1$ ns\\
+56--59 & site\_id & uint32 & Physical site identifier\\
+60--63 & checksum & uint32 & \code{zlib.crc32} over bytes 0--59\\\bottomrule
+\end{longtable}
+\normalsize
+
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}P{18mm}P{27mm}Y@{}}
+\toprule Flag bit & Name & Meaning\\\midrule
+0 & $X$ & Primary threshold evidence\\
+1 & $Y$ & Secondary threshold evidence\\
+2 & $C_t$ & Coincidence/lag criterion satisfied\\
+3 & $V$ & Source record-valid assertion\\
+4 & $e$ & Accepted event, recomputed from the gate\\
+5 & $S$ & Saturation\\
+6 & $F$ & Fault\\
+7 & $D$ & Measured optical darkness\\
+8 & $V_T$ & Temperature channel valid\\
+9 & $V_\epsilon$ & Strain channel valid\\
+10 & $V_{12}$ & Paired optical-band acquisition valid\\
+11--15 & reserved & All zero\\\bottomrule
+\end{tabularx}\end{center}
+The receiver requires
+\begin{equation}
+ e=X\land Y\land C_t\land V\land\neg S\land\neg F.
+\end{equation}
+The source's modes mean: 0 geometry-qualified optical evidence; 1 an
+absorber-coupled pulse; 2 a material-state reporter; and 3 a separately
+characterized single-photon instrument. These are four event definitions,
+not four measured performance certifications. A paired-band acquisition does
+not require a photon count in both mutually exclusive spectral routes.
+
+CRC checks and flag consistency establish properties of encoded bytes. They
+do not prove the source's physical validity assertions, correct calibration,
+authenticity, freshness, independent evidence, or absence of every transmission
+error. The reference decoder's field slicing is consistent with this body
+layout by source inspection; no decoding test was run. Record validation alone
+does not look up the calibration registry or establish session chronology.
+
+\subsection{Exact import, chronology and raw-packet preservation}
+For an accepted record, create explicit exact-value terms
+\begin{equation}
+ T_{\rm code}=\frac{\texttt{temperature\_mK}}{1000}\ \mathrm K,
+ \quad\epsilon_{\rm code}=\frac{\texttt{strain\_nano}}{10^9},
+ \quad\delta_{\rm acq}=\frac{\texttt{window\_ns}}{10^9}\ \mathrm s.
+\end{equation}
+These preserve the numerical codes exactly. They do not recover sub-code
+information or erase sensor uncertainty. Counts remain integers until a
+version-bound calibration map supplies their physical interpretation. An
+affine calibration $gN+b$ is exact as an expression when $g,b$ are exact
+literals; the measured uncertainty of those coefficients remains separate.
+In particular counts are not photon numbers merely because the sensor is optical.
+
+The raw timestamp is $\tau_n=\texttt{tick\_ns}/10^9$ in the declared session's
+SI-second coordinate. A selected clock model may define
+\begin{equation}
+ t_n^{\rm GPST}=a_{\rm clk}\tau_n+b_{\rm clk},\qquad a_{\rm clk}>0,
+\end{equation}
+with units, epoch, interval of applicability and uncertainty explicitly bound.
+Other clocks may need a different piecewise mapping. R11's raw-time and
+converted-time references must read the same immutable sample. A monotonic
+counter, a civil-calendar date, and GPS time are not interchangeable without
+this mapping. A wrapped sequence requires an external session identity and
+unambiguous wrap history, for example $N_n=2^{32}w_n+\texttt{sequence}_n$.
+A receiver cannot infer arbitrary missing wraps from the 32-bit field alone.
+
+The acquisition interval ends at $\tau_n$ and has length $\delta_{\rm acq}$.
+This duration is not necessarily the control interval $h_n=t_{n+1}-t_n$,
+and it is not the coincidence window $\Delta_c$ used in
+\[
+ C_t=\boldsymbol1\{|(t_Y-t_X)-\tau_{\rm lag}|\le\Delta_c/2\}.
+\]
+The calibration/session record must bind the band responses, gains, secondary
+units, lag, coincidence window, timing uncertainty, physical site, controller
+state association and acquisition policy. A valid WI interval is at most
+$(2^{32}-1)/10^9$ seconds; longer integration requires another declared profile
+or an explicitly combined record sequence. Integer wrap is not an extension.
+
+Use an R11 sample slot of type \code{Bits(512)} to retain the complete raw WI
+record. Decode its fields through a versioned pure template and preserve its
+timestamp, input identity and calibration dependencies. Typed values can be
+exports or further exact expressions. To use \code{XOPPLAN1}, first place the
+sample and template data in a canonical \code{XOPSEED1} record; transpose its
+bits using the R11 envelope. Raw WI packets are not independently valid
+\code{XOPSEED1} streams. One-bit packing preserves the operators and records
+that were actually supplied; it does not turn the packet into a 64-bit object.
+
+The older parent \code{WMB1} transport remains separate: it has big-endian
+integers, a 26-byte header, $L$ slit-payload bytes and a two-byte CRC-16, for
+total length $28+L$. Its word is at bytes 8--15, sequence at 16--19, valid bit
+count at 20--21, centikelvin code at 22--23 and payload length at 24--25.
+Header bytes 0--3 are \code{WMB1}; byte 4 holds channel, seam, darkness,
+heater, temperature-overrange and cutout flags; bytes 5--7 hold depth, phase
+and cycle. The payload starts at byte 26, most significant bit first, with
+unused low bits zero; $L=\lceil N/8\rceil$. Its CRC uses polynomial
+\code{0x1021}, initial \code{0xFFFF}, no reflection and no final XOR.
+Redundant word fields must agree. WMB1 has neither the WI timestamp nor all its
+sensor channels: conversion cannot fabricate those missing observations.
+
+\subsection{Causal optical-event feedback into WANT and JK32}
+Let $m_n$ be a completed, associated observation available before step $n$.
+The source interaction uses the separate Boolean enable $\beta_{\rm W}$:
+\begin{align}
+ \widetilde b_n&=b_n\oplus(\beta_{\rm W}e_n),\\
+ (W_{n+1},c_n)&=\operatorname{step}_{\rm WANT}(W_n,\widetilde b_n,D_n),\\
+ z_{n+1}^{\rm phys}&=\Phi_{h_n}(z_n^{\rm phys};u_n,L_n,F_n),
+ &m_{n+1}&=\mathcal M(z_{n+1}^{\rm phys},\text{acquisition history}).
+\end{align}
+The source command decoder uses $c_n$ together with specimen-specific control
+validity and declared temperature/strain limits. It is a separate physical
+interface from the word transition. Holding $u_n$ over the next interval and
+then acquiring $m_{n+1}$ places a real delay in the return path. Setting
+$\beta_{\rm W}=0$ recovers the parent's branch-input policy. No future event
+computes its own preceding actuator command.
+
+R12 additionally defines an optional \code{WANT-JK32-EVENT-LANE-R1} adapter.
+Choose an event lane $j_e\in\{0,\ldots,31\}$ with mask $M_e=2^{j_e}$ and
+$M_e\mathbin{\&}V_q=M_e$. Give it its own enable $\beta_{\rm JK}$.
+Each adapter instance binds one ordered session/site stream. Multiple sites
+require separate consumption trackers and an explicit lane arbitration policy
+if their masks overlap. The enable is fixed for a declared adapter epoch.
+Starting a new enabled epoch records the current valid baseline observation
+without emitting a pulse; only later observations can toggle its lane. Thus
+reenabling cannot silently replay an accepted flag from a disabled epoch.
+The source packet's accepted flag may remain set when one observation is read
+more than once. Therefore store the last consumed observation identity in
+explicit delayed state. For a fully valid, ordered input record, define
+\begin{equation}
+ p_n=e_n\land\boldsymbol1\{\operatorname{id}(m_n)\ne\operatorname{id}_{\rm last}\},
+ \qquad E_n=\begin{cases}M_e,&p_n=1,\\0,&p_n=0.\end{cases}
+\end{equation}
+The identity binds session, site and unwrapped sequence. A duplicate is accepted
+as the same observation only when its complete bytes and bindings agree; an
+out-of-order or conflicting record is an explicit input error. On consumption,
+record its identity atomically with the digital transition.
+
+Let $J_n,K_n$ be the unchanged base expressions after the two ordered ASA/NA
+stages. If $\beta_{\rm JK}=0$, use these expressions unchanged. If enabled, use
+\begin{align}
+ J_n^*&=(J_n\mathbin{\&}\neg_{32}M_e)\mathbin{|}E_n,\\
+ K_n^*&=(K_n\mathbin{\&}\neg_{32}M_e)\mathbin{|}E_n,\\
+ q_{n+1}^{\rm JK}&=((J_n^*\mathbin{\&}\neg_{32}q_n^{\rm JK})
+             \mathbin{|}(\neg_{32}K_n^*\mathbin{\&}q_n^{\rm JK}))\mathbin{\&}V_q.
+\end{align}
+At the reserved lane, $p_n=0$ gives $J^*=K^*=0$ and holds the bit;
+$p_n=1$ gives $J^*=K^*=1$ and toggles it. Every other lane uses exactly the
+base $J,K$ and old $q$. Thus enabling the adapter changes only the declared
+lane's transition; disabling it restores the entire base rule. This lane
+override is a new declared policy, not an algebraic optimization of arbitrary
+existing $J,K$. The WANT branch enable and JK enable can be selected separately.
+The outside-lane equality compares one step from the same old state and inputs.
+At later steps, base expressions that read the changed event lane can propagate
+its effect to other bits; no global noninterference theorem is asserted.
+
+\begin{proposition}[Defined-input event composition]
+For fixed initial roots, valid immutable observations in a declared order,
+defined base expressions and a uniquely solvable selected plant model, the
+composed delayed transition determines at most one next state. Outside the
+reserved JK lane it has the same one-step word output as the base transition
+from the identical old state and inputs.
+\end{proposition}
+\begin{proof}
+Every instantaneous expression reads the same old roots and completed sample.
+The event pulse and lane masks are uniquely defined finite Boolean functions.
+For every bit outside $M_e$, masking retains the original $J,K$, so substitution
+in the same JK equation gives the original next bit. The simultaneous commit
+stores both the new roots and observation identity. The held command and
+specified inputs then determine the assumed unique plant update; the next
+measurement is an input for a later step. Induction supplies the stated causal
+sequence whenever all required updates remain defined.
+\end{proof}
+
+A required missing record, failed CRC, stale calibration, unresolved time map,
+invalid required channel or conflicting identity is an explicit unavailable or
+invalid input, not $e=0$. A valid, newly acquired observation whose gate returns
+zero is a different case. An unused event port need not be demanded when its
+adapter is disabled. Failure to commit a digital exact state does not stop
+physical time; the physical command interface must retain its separately
+declared timeout/hold/inhibit behavior. The source physical limits are not
+proof obligations that can be removed to establish better mathematics.
+
+\subsection{Geometric exclusion and material state remain explicit}
+The geometric optimization transferred from Operator I is the deformed-slit
+certificate. For every relevant descendant, over a declared interval, assume
+projected radius, displacement and encoding/alignment bounds $R_N,d_N,\delta_N$.
+For unit slit normal $n$, width $w_s\ge0$ and centre coordinate $c$, then
+\begin{equation}
+ |n\cdot P-c|>w_s/2+R_N+d_N+\delta_N
+ \quad\Longrightarrow\quad\text{no enclosed descendant intersects the slit}.
+\end{equation}
+Exact evaluation can eliminate an extra rounding uncertainty in this predicate;
+it cannot remove an actual geometric encoding or mounting uncertainty. Equality
+is not excluded. A logical rewrite may skip pure geometry under this certificate,
+while retaining state changes and the separately bounded optical/thermal coupling.
+Section~\ref{sec:want-pruning} develops these distinct physical bounds.
+
+The one-node constant-input thermal expression is
+\begin{equation}
+ T_{n+1}=T_a+P/G+(T_n-T_a-P/G)\exp(-Gh_n/C),\qquad C,G>0.
+\end{equation}
+The source material-reporter expression, for nonnegative constant rates
+$k_a,k_r$ and $k=k_a+k_r>0$, is
+\begin{equation}
+ \zeta_{n+1}=\frac{k_a}{k}
+      +\left(\zeta_n-\frac{k_a}{k}\right)\exp(-kh_n).
+\end{equation}
+At $k=0$ it is the identity. With $h_n\ge0$ and $0\le\zeta_n\le1$, the
+nonzero-rate expression is a convex combination of $\zeta_n$ and $k_a/k$,
+so it stays in $[0,1]$. These expressions fit exact rational/exponential DAGs
+without repeated float rounding. Their Python references use \code{float} and
+\code{math.exp}; ``exact step'' there describes the analytic held-input model,
+not the arithmetic execution. Changed rates or inputs within an interval require
+the appropriate segmented or continuous model. Section~\ref{sec:want-energy}
+keeps the coupled energy ledger explicit. Neither a seam nor an ASA
+whole-word zero rewrites these physical states into a reversible heat cycle.
