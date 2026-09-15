@@ -1,10 +1,35 @@
 {
   "purpose": "Document rendering and structural inspection, not algorithm validation",
   "pdf": "output/pdf/aTOMos_v3_6_1_13_Physics_Foundation_Tom_Klootwijk.pdf",
-  "sha256": "619148ef111b74fca2742fc9d43299f20135dd415bb26a38ba6656b1e64af653",
+  "sha256": "c02537b4fbcbe5abb7d6045a70b7ddc4236998f5ce5c99a2a8d8a96e8a19b752",
   "pages": 20,
   "extractable_text_all_pages": true,
   "tex_layout_glyph_reference_warnings": [],
   "page_boundary_violations": [],
-  "visual_review": "Pending visual inspection of this exact PDF revision"
+  "visual_review": {
+    "status": "complete",
+    "full_resolution_pages_covered": "1-20",
+    "draft_sha256": "619148ef111b74fca2742fc9d43299f20135dd415bb26a38ba6656b1e64af653",
+    "draft_full_resolution_coverage": {
+      "root": "1-6, 12-13, 19-20",
+      "energy_mechanics_reviewer": "7-11",
+      "electromagnetism_reviewer": "11-15",
+      "measurement_reviewer": "15-19"
+    },
+    "final_revision": {
+      "change": "Keep Proposition 4.1 and its proof together; no mathematical text changed",
+      "pages_byte_identical_to_reviewed_draft_pngs": "1-11",
+      "changed_pages": "12-20",
+      "final_full_resolution_coverage": {
+        "root": "12-13, 20",
+        "electromagnetism_reviewer": "12-15",
+        "measurement_reviewer": "16-19"
+      }
+    },
+    "findings": "No clipping, overlap, missing glyphs or mathematical layout defects",
+    "resolved_layout_items": [
+      "Source-table label layout",
+      "Proposition 4.1 statement and proof kept together"
+    ]
+  }
 }

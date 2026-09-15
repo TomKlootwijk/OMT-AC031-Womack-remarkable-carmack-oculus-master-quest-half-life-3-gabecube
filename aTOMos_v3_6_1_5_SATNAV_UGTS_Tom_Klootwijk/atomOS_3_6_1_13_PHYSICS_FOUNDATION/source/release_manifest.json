@@ -1,0 +1,137 @@
+{
+  "version": "3.6.1.13",
+  "purpose": "Distribution integrity; no formalized kernel is executed",
+  "dependency": "Preserved R12 corpus identified by source/PARENT_BINDING.json",
+  "excludes": [
+    "this manifest",
+    "distribution directory",
+    "temporary build and render files"
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 37,
+      "sha256": "01190cd5db8d66316c14414592c19944af778e3206a0aa6f304e3153d4948a64"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 90,
+      "sha256": "01a66acb78582568e23a06c8e8515c3ee507fb3b61f66b12e2afbe654a0ce683"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 561,
+      "sha256": "951dd4699d98e67902984d0069c6ad287b011a63f2c6cfc1f8af34dd591d6bbc"
+    },
+    {
+      "path": "docs/physics_completion.tex",
+      "bytes": 4428,
+      "sha256": "51f4e440b89e9226bb53c9dbb87639031744584a547dffce857e21c47bfbcd14"
+    },
+    {
+      "path": "docs/physics_core.tex",
+      "bytes": 13228,
+      "sha256": "779c8d41c271cc1a999131cb0f65fd5473916eb21b9f498ac6e4876fd104eead"
+    },
+    {
+      "path": "docs/physics_em.tex",
+      "bytes": 16879,
+      "sha256": "7cf7bb43ae308e282c70f8dd0a363b9038f701678ef5478acfea52141c6daf0d"
+    },
+    {
+      "path": "docs/physics_energy.tex",
+      "bytes": 17592,
+      "sha256": "44701e998fe3b351fafaf083bb6381c20159b7eab295c1e68b0d59854fd208ff"
+    },
+    {
+      "path": "docs/physics_measurement.tex",
+      "bytes": 14877,
+      "sha256": "f785320985419883a260346ae2ef070fa6248b8210466d6bfee17b620a536390"
+    },
+    {
+      "path": "docs/preamble.tex",
+      "bytes": 3204,
+      "sha256": "0d3da73aa3d0813b0e5536877a704876a3f17a00b2f9d946800a8da1e136d9da"
+    },
+    {
+      "path": "docs/satnav.tex",
+      "bytes": 3493,
+      "sha256": "11f14784693c3a54f4f4bbddb97c662817152df0f7e5331746863aee50d586a2"
+    },
+    {
+      "path": "formal/DECISIONS_AND_PROOFS.md",
+      "bytes": 6976,
+      "sha256": "a4d0a619fef18df0dedab7f1e9c0e1e3c94d2298a95b1ed61649d3587e7399d6"
+    },
+    {
+      "path": "formal/ELECTROMAGNETIC_LAWS.md",
+      "bytes": 8298,
+      "sha256": "b771b3576b377beb3447d5a3506784cd4a177f494e71310626e9d5549043b468"
+    },
+    {
+      "path": "formal/ENERGY_AND_MECHANICS.md",
+      "bytes": 8048,
+      "sha256": "d5d809ea619bbad045aacc04af17ee247f4b0db39ecf22e21d2b079c05558cdc"
+    },
+    {
+      "path": "formal/MEASUREMENT_AND_CONSTANTS.md",
+      "bytes": 9949,
+      "sha256": "6cd9b9396e660a5e947f11589841b2007a20ba232bc56b72799165d2c9ae2edf"
+    },
+    {
+      "path": "formal/PHYSICS_PROFILE.md",
+      "bytes": 5062,
+      "sha256": "8f410f6a2a2e06ab19d8cd3191c93822b10a38330cd5ecdb5f25617cf5f2e6f2"
+    },
+    {
+      "path": "output/pdf/aTOMos_v3_6_1_13_Physics_Foundation_Tom_Klootwijk.pdf",
+      "bytes": 165157,
+      "sha256": "c02537b4fbcbe5abb7d6045a70b7ddc4236998f5ce5c99a2a8d8a96e8a19b752"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2517,
+      "sha256": "eefa8c2ef564c89549ea86e085a62cc76ad885038f2219c98e88e9734565c240"
+    },
+    {
+      "path": "review/document_review.json",
+      "bytes": 1405,
+      "sha256": "95721ef939d0716ba6cf88c34b368f15e9ac7568dca5fbcc5fbf8f204e1ee93c"
+    },
+    {
+      "path": "review/LOGICAL_REVIEW.md",
+      "bytes": 3369,
+      "sha256": "def501cd8fb5dc9b9206a98074043faf11a5b161871888213e583a1bab4e18fe"
+    },
+    {
+      "path": "source/PARENT_BINDING.json",
+      "bytes": 691,
+      "sha256": "33e582bd56c846e3a24c56e44192c026b72ab8c34622f5f73c1f6d18e4e8e93b"
+    },
+    {
+      "path": "source/parent_preservation.json",
+      "bytes": 439,
+      "sha256": "fc9d70d6f8be1ca3adc7665d07e6528a473d31d48800daead7f0996bfebd9c6f"
+    },
+    {
+      "path": "tools/build_pdf.py",
+      "bytes": 908,
+      "sha256": "ea5c67d705b922c3d01c58b02395e32723099b7ffc3eb0691b9e6c6b1609f384"
+    },
+    {
+      "path": "tools/package_release.py",
+      "bytes": 3745,
+      "sha256": "61a3ba4036d31fbd96f4f05ddbdaef0c35d90dc8595c4300d4fbbddaf8bd0bd3"
+    },
+    {
+      "path": "tools/review_pdf.py",
+      "bytes": 3214,
+      "sha256": "62f0b965fb5e04a64212a9d9f6d6a570a3c38c1838b912cda0ddbe336e34dd7e"
+    },
+    {
+      "path": "VERSION.json",
+      "bytes": 460,
+      "sha256": "e88643ebf028b930a0cbd93ede9c12937614d4d5fbeaab2c83edb88be8bec2b8"
+    }
+  ]
+}
