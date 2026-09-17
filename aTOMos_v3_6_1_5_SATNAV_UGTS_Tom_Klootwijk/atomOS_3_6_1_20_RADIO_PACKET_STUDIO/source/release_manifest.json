@@ -1,0 +1,513 @@
+{
+  "version": "3.6.1.20",
+  "profile": "ATOMOS-RADIO-PACKET-R1",
+  "parent_commit": "fc4027c574082711b78c1ef1d43d6c50adcf8c96",
+  "scope": "R20 phone acquisition and study extension; unchanged R19 manuscript included. No physical POCO capture bundled.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 409,
+      "sha256": "8a16be28ff755a03328e7563f2479d18ac919c46a68b89561748bd6d24d9cd67"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 126,
+      "sha256": "e3460830d25ddc198feaae5cdc32b0465c94284af77f3f18465c5943cd2f8afb"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1180,
+      "sha256": "84e4d0daff189e60ab309830aa7056199aea85efce9a84fd5e1f20ec89d35ee6"
+    },
+    {
+      "path": "android/.gitignore",
+      "bytes": 49,
+      "sha256": "5e44ab09c435ec8444b44c6303a0fc2cfd883bc51bde853e6f34d42cf775eb4e"
+    },
+    {
+      "path": "android/app/build.gradle",
+      "bytes": 599,
+      "sha256": "bc70a9c6228a69a4c092fcb0537bafc41d5856cbd8d0356032038d515cf2b68a"
+    },
+    {
+      "path": "android/app/src/androidTest/AndroidManifest.xml",
+      "bytes": 165,
+      "sha256": "8fbbadb1fc7735b24b68479cd116cfcd2ed1ac055b6ae9534252f58186629e86"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/ContractTest.java",
+      "bytes": 2958,
+      "sha256": "c4c3a0bca51355feec72143db42f0eb1eca3eb930b46e2fb18d4bc41a895352f"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/DecoderTest.java",
+      "bytes": 16741,
+      "sha256": "ebcfbed01d233b4904b27edfd3138cad84d1aef601feae07320de36c9f8a2a25"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/PacketPresentationTest.java",
+      "bytes": 2007,
+      "sha256": "aacb3de26d653b176de8e2839807968bad01f44dcccb7d20f802e81f459bc675"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/ReviewTest.java",
+      "bytes": 2741,
+      "sha256": "3217584dc954c5de87ff5c37a1ada6538b81d2c1a17f7725b9ba42aacf4adc55"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "bytes": 2007,
+      "sha256": "68ab56316122f65150d0460db651ce88d491d77ae5ae71fa01017df03ad3ada0"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/CellEncoder.java",
+      "bytes": 5251,
+      "sha256": "d6354dd5cd022719aa3a7748d6a5714e4a705c0afc2462593f4404c7e4976f64"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/Json.java",
+      "bytes": 987,
+      "sha256": "c532e799d4cbbfc5452198f8f7238cb77fe13b8e5fc2c9f0541abb2589edac7f"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/MainActivity.java",
+      "bytes": 13778,
+      "sha256": "373e091daa9ed80087c26be0741e5673a7e36b11455b90ef22d31bcb94e3851f"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/NetworkSnapshot.java",
+      "bytes": 2983,
+      "sha256": "93c119a95cba1a49225ad1f2655bae0d19debae93a52fc6c2f69d7538c4c5266"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketActivity.java",
+      "bytes": 12541,
+      "sha256": "f50b36495a5476ba43187c6a756f17e5fc95125f45b63a115a9338606a55f963"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketBrowserActivity.java",
+      "bytes": 5167,
+      "sha256": "6a7501610da4b796ba1bc7676ccd70682e9b5f46228cd62562c979f8fbb61548"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketDecoder.java",
+      "bytes": 29714,
+      "sha256": "472f88bdb6ef85b0d681ba7a7a738884164c089787b8c557223973ff74131403"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketPresentation.java",
+      "bytes": 7591,
+      "sha256": "7531c2754395cf8b557bef94048fe3292108e3a33b4eda579fde0840df5c347d"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/RadioService.java",
+      "bytes": 16844,
+      "sha256": "4bf98b6ebc4c4e0e2e4c9416d67ff67924390880ccc9a2be5bf8fb37ec2862a6"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/SessionLog.java",
+      "bytes": 2957,
+      "sha256": "814f39f92baf36a162dbb5a26764401d9732836b2ff785b2c91870f3df0cd030"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/SessionReview.java",
+      "bytes": 5988,
+      "sha256": "fd338c9658bfd6546fe9497f7e34312548300970fb78933fd6c243eff1bfb869"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/StudyActivity.java",
+      "bytes": 3524,
+      "sha256": "6ca67e2b0ee1bf645c58d6677c604287d4cbba9fa9e7d06c5cb55497339f9f03"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/TrendView.java",
+      "bytes": 2040,
+      "sha256": "0c186fc04234e17e7f0974f24cfbee558646e852103f94e90f4bfce003bae24f"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/Ui.java",
+      "bytes": 2377,
+      "sha256": "60704cfb5f52903ed9522b0e4631c305c8b36d716b226f871a9b8406c0ddaedb"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/WifiIeDecoder.java",
+      "bytes": 6785,
+      "sha256": "853f1674f388575c10198450a36d1eb21754b47f8e326fced255a28378483e56"
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "bytes": 484,
+      "sha256": "bed70e25b2988b2f6cd091b5bfb8ea0176b20f1ba34f5cd29702fb4eaab69f0a"
+    },
+    {
+      "path": "android/app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 191,
+      "sha256": "ec0f1c6431c2434ac85c7933dd0fe21c430e9601ec4db70d0112557cbebf9993"
+    },
+    {
+      "path": "android/build.gradle",
+      "bytes": 70,
+      "sha256": "6890efa07ab0063bcbdf50cc89686d90bddd1d02af5e5ada6d499d8c3e9b6aa8"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43705,
+      "sha256": "81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 251,
+      "sha256": "cdab1ffb439219b1db125e3c99a86cf2424f8762b9b3faa404ed061e3635ecde"
+    },
+    {
+      "path": "android/gradle.properties",
+      "bytes": 118,
+      "sha256": "abde21914a00c7fe0e958edb52fd34718dd12aeb2e8a6cfef1524117ea365a9a"
+    },
+    {
+      "path": "android/gradlew",
+      "bytes": 8752,
+      "sha256": "734b3879d3501dce471cf0522d3bcbafe76873d9fc5129345b67fb43bd15e933"
+    },
+    {
+      "path": "android/gradlew.bat",
+      "bytes": 2966,
+      "sha256": "57931b17dd228e5c24dac90e815d0bf82477e831a4618dfab4136f5446b42a9f"
+    },
+    {
+      "path": "android/README.md",
+      "bytes": 8052,
+      "sha256": "987f5bc604133e95fbfe8eeaf8486431ca1fd4640e2507ad00d4ce761f46a67f"
+    },
+    {
+      "path": "android/settings.gradle",
+      "bytes": 272,
+      "sha256": "d44fe03912f3e27ddc42e278a406e7673e0627a582c0c05dfc36e9265635849a"
+    },
+    {
+      "path": "examples/packets/fixture_manifest.json",
+      "bytes": 3902,
+      "sha256": "2fd0e19ef3c5d00c93ae0e9947408a03db3c37b13887b008c3f8d253fbc55ccd"
+    },
+    {
+      "path": "examples/packets/invalid_not_capture.pcap",
+      "bytes": 31,
+      "sha256": "cacc64e121ec9519a91c55f6ca1da7dbc1c57d1ea6779eff2f4d7fbd5a71cdc2"
+    },
+    {
+      "path": "examples/packets/invalid_truncated_file.pcap",
+      "bytes": 1492,
+      "sha256": "d4660a206ba84c5c116e4e07a1850d8f1021b682e315764dbd9d8458d1a08331"
+    },
+    {
+      "path": "examples/packets/invalid_unknown_interface.pcapng",
+      "bytes": 176,
+      "sha256": "8eb5f5bc46990290b29cd19e1c10c7b77b4ea32690b864841062bc053669fe94"
+    },
+    {
+      "path": "examples/packets/make_fixtures.py",
+      "bytes": 9498,
+      "sha256": "f910395cbf404dadfbe6ec7caede03628f14bf03fc66982bf0699d49eaea2654"
+    },
+    {
+      "path": "examples/packets/README.md",
+      "bytes": 2995,
+      "sha256": "68c68cc7e4ea20c880c6625953e8bae1badad8b70b97c7c1501e87df7d79a1dc"
+    },
+    {
+      "path": "examples/packets/synthetic_dns_pointer_loop.pcap",
+      "bytes": 100,
+      "sha256": "2e87f303f4e92d5b74d43c50ae4e26bbb9f5fb63ed5c1645bd846b301c01fddd"
+    },
+    {
+      "path": "examples/packets/synthetic_ethernet.pcap",
+      "bytes": 1497,
+      "sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754"
+    },
+    {
+      "path": "examples/packets/synthetic_ethernet.pcapng",
+      "bytes": 1840,
+      "sha256": "c296622ddd6b1ef933f2f70c4c5bbd20f401f60dd0e3b64b017ffc92b6c6382e"
+    },
+    {
+      "path": "examples/packets/synthetic_mixed_sections.pcapng",
+      "bytes": 496,
+      "sha256": "b4858de510f91187907177d5c8f8e977eab5d9f3e7846aa34254031eb06e125a"
+    },
+    {
+      "path": "examples/packets/synthetic_raw_be_ns.pcap",
+      "bytes": 98,
+      "sha256": "e7db4734702877cb8eddc11c6785da04ebd8d75be4a523b496145c03c32c09c9"
+    },
+    {
+      "path": "examples/packets/synthetic_sll.pcap",
+      "bytes": 114,
+      "sha256": "7e3e4f9793d6162351fe840b564d18b165957bcb519915d66ab6a7c193f879a1"
+    },
+    {
+      "path": "examples/packets/synthetic_udp_truncated.pcap",
+      "bytes": 86,
+      "sha256": "9ad5a130704282eb9b8a88c5dafcfff7996096fa12a514a92157839c51d8f569"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/packet_fields.csv",
+      "bytes": 5216,
+      "sha256": "59182d3111c88e5870d9e5616c5b1ad124a4c0e66e7eac84ae6a02a5eca4bd47"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/protocols_conversations.txt",
+      "bytes": 4209,
+      "sha256": "300621aa0639758b6be60e9e693325024c08e18c6844821490b3af1a25aa1d0b"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/source_original.pcap",
+      "bytes": 1497,
+      "sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/summary.json",
+      "bytes": 6873,
+      "sha256": "34e08ae4538e597cd89a7920ed2cb5700b2bfbfec6d17bb663caaacd296146e1"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/summary.md",
+      "bytes": 2319,
+      "sha256": "197f1840a489639d41927440a680e55f80ba881b3c4a04da05b872b0c5e4c1fa"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_fields.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_fields.stdout.txt",
+      "bytes": 5216,
+      "sha256": "59182d3111c88e5870d9e5616c5b1ad124a4c0e66e7eac84ae6a02a5eca4bd47"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_statistics.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_statistics.stdout.txt",
+      "bytes": 4209,
+      "sha256": "300621aa0639758b6be60e9e693325024c08e18c6844821490b3af1a25aa1d0b"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_udp_payloads.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_version.stdout.txt",
+      "bytes": 1463,
+      "sha256": "bc5372d586a5a79ebd09891e495bb53e061083e0e453c566ae7d126f2700f9c0"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/udp_previews.json",
+      "bytes": 4457,
+      "sha256": "71c7e93c3b3094c5b1914e34f18f20ef644bb89d2dff5658f4b9811ae54a284c"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/udp_readable.md",
+      "bytes": 3344,
+      "sha256": "e5107d43a52b8b37d0e9c7aadac47fb724bb313b06b89814e3117552680150d9"
+    },
+    {
+      "path": "examples/synthetic_radio.jsonl",
+      "bytes": 9688,
+      "sha256": "a856b26dc46fa5a3c93d8de38c087f602df342284d6b162c512281d6338c26cd"
+    },
+    {
+      "path": "formal/RADIO_PACKET_PROFILE.md",
+      "bytes": 13507,
+      "sha256": "9af7d42e4b01d079ac0ebd852585f6ba5f28f4b2ae628ba7ef7e79735383a80b"
+    },
+    {
+      "path": "output/android/aTOMos-Radio-3.6.1.20-debug.apk",
+      "bytes": 290404,
+      "sha256": "b683df8e4a42ffed00302f46ca0caa4d6a85fa4502ab3f936196c3258fa90c26"
+    },
+    {
+      "path": "output/pdf/aTOMos_v3_6_1_20_Radio_Packet_Studio_Tom_Klootwijk.pdf",
+      "bytes": 902711,
+      "sha256": "afebe08e91feb4d309f2c68268b435e0ca13a02c803264e96c2782972239a7ec"
+    },
+    {
+      "path": "python/atomos_packets.py",
+      "bytes": 22122,
+      "sha256": "97f26c7d02d33518ae15e43bc3edee1c869976f1f9ea23d6b439883a99f2d155"
+    },
+    {
+      "path": "python/atomos_radio.py",
+      "bytes": 41478,
+      "sha256": "e8f65e7b168bca86118e8fa0a9ff523390710828aca0dc570c6256e9801af2ee"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7371,
+      "sha256": "9bc929e617af98a325d442776415d69e1149505fb44f36a9029058b1e4bf5430"
+    },
+    {
+      "path": "requirements-document.txt",
+      "bytes": 46,
+      "sha256": "b044f72918b65be3505c8810fd822b1925176e66d862a08a18a3c8a8bd086f91"
+    },
+    {
+      "path": "requirements-study.txt",
+      "bytes": 103,
+      "sha256": "2db98ed3ffb80a02f2cffc3433670c32fcc345ef068b6cab03f3d11e3d85ad6d"
+    },
+    {
+      "path": "review/android/emulator-packet-report.json",
+      "bytes": 20137,
+      "sha256": "323f839c05d8e9487638e9472e26c002b4a059c4407e48c7ff9e6fe6503dbd1a"
+    },
+    {
+      "path": "review/android/emulator-packets.png",
+      "bytes": 161936,
+      "sha256": "ab0d7ee792e5fd5eb670dbb8e03dc41e914734b3ae383cf34dc8b17819403994"
+    },
+    {
+      "path": "review/android/emulator-radio-session.jsonl",
+      "bytes": 16972,
+      "sha256": "ae076e6c421bfa6b77b793d1d96283583066bf30c8211be1dd29355e96c35055"
+    },
+    {
+      "path": "review/android/emulator-study.png",
+      "bytes": 225370,
+      "sha256": "d760c4c799f2276608a56d51395d038c70054e4db7748b46e1ee0e01f86f75a3"
+    },
+    {
+      "path": "review/android/emulator-udp-browser.png",
+      "bytes": 170450,
+      "sha256": "2b802f4a36ebef9013c39686e33706f3f27e4971ea391d9c3d01d5004b444907"
+    },
+    {
+      "path": "review/android/emulator-udp-detail.png",
+      "bytes": 243158,
+      "sha256": "b4058548a60c703da714b1328e1fc9a91bf39acb531fa7fc7d72d5a9d764ca8f"
+    },
+    {
+      "path": "review/android/instrumentation-final.txt",
+      "bytes": 202,
+      "sha256": "2b26016caecb75285523965073a684ddc13b5e4662f639cfbd27aa8133a730a9"
+    },
+    {
+      "path": "review/android/instrumentation-udp-final.txt",
+      "bytes": 254,
+      "sha256": "122e5f0b6b0bac0e7c940e308dcb8a8fc9fcab553c38775295770e19b327980d"
+    },
+    {
+      "path": "review/android/UDP_VALIDATION.md",
+      "bytes": 2890,
+      "sha256": "a1e8455c984c926ec7c89cb020f1759ec9cef50301bc2b43c09fb4344eecb8df"
+    },
+    {
+      "path": "review/android/validation.json",
+      "bytes": 1195,
+      "sha256": "452901bc42ff7ac1fd25144952f1a755a297189152a4b5039c42a68defa02689"
+    },
+    {
+      "path": "review/android/VALIDATION.md",
+      "bytes": 4515,
+      "sha256": "5309a81fc9bbfe2a8b95cd3da85be2b2d82edcd0ee8f6c593e0de77a95bdb4c5"
+    },
+    {
+      "path": "review/decoder_validation.json",
+      "bytes": 16761,
+      "sha256": "e24d0811bbb6afd6f5af184b9a8d1d19d762452bce9b5c10f321aa495f1a10a6"
+    },
+    {
+      "path": "review/host_tests.txt",
+      "bytes": 7077,
+      "sha256": "fbed1f6fad8634cd4da6676902c6f72bf248863b4526b1b07b49abc9caa0c2cc"
+    },
+    {
+      "path": "review/host_validation.json",
+      "bytes": 4900,
+      "sha256": "79014ba8bc18b167fc4cbc536c08782d387fc9fe8057090326e7b97a325fba94"
+    },
+    {
+      "path": "review/pdf_build.json",
+      "bytes": 512,
+      "sha256": "f17d5d7438976270db541a472aea2bbe9c96189cb83e2c821e5de36c46bc97f2"
+    },
+    {
+      "path": "review/pdf_visual_review.json",
+      "bytes": 74678,
+      "sha256": "b5b6a1327d3cdc8840d417199a3ff247263f15a635c522faa5e941b5e8c660ff"
+    },
+    {
+      "path": "review/physical_validation.json",
+      "bytes": 2972,
+      "sha256": "0271ffdac26e3b6f8675c989ef42031edb21a9742041dbc98624d9e46cdd43eb"
+    },
+    {
+      "path": "schema/radio-event-v1.schema.json",
+      "bytes": 985,
+      "sha256": "4a94a68126ad161becee6ebb6b43256b4bf44434e21df2e453152262a84b0df2"
+    },
+    {
+      "path": "source/parent_R19.pdf",
+      "bytes": 805097,
+      "sha256": "0f95ef9fd27e4804a106d67e8a4d1b84325d25afd5e9be41b3e7e5d1701fa4ad"
+    },
+    {
+      "path": "source/pcapdroid_binding.json",
+      "bytes": 650,
+      "sha256": "1726bea673a44610a4e067d66a82b7c0b741b40f4e0f6cf61974039eb665f7de"
+    },
+    {
+      "path": "tests/test_packets.py",
+      "bytes": 13546,
+      "sha256": "6ecbb5fa5c48375d121cfc6b0efe00c05e53773d9efa7bac0f03e12c653f9aff"
+    },
+    {
+      "path": "tests/test_radio.py",
+      "bytes": 17047,
+      "sha256": "083e69529ccdf264f08caab6edf648948cd905b61d8247e6293cb778a92345c7"
+    },
+    {
+      "path": "tools/build_android.ps1",
+      "bytes": 1507,
+      "sha256": "16635700109fcea4ceb5ed44450312c475b55d2f4d02e07ac257deb3b6c041b6"
+    },
+    {
+      "path": "tools/build_pdf.py",
+      "bytes": 8172,
+      "sha256": "57a4b12cf1e8dc188cd50fe5187be1b0373230987bbd4b321013e35edb1a99e5"
+    },
+    {
+      "path": "tools/package_release.py",
+      "bytes": 6688,
+      "sha256": "9114666dd82a7b0f24474390ac60c8dac411f9a38c3025148d79896eda0789c4"
+    },
+    {
+      "path": "tools/review_pdf.py",
+      "bytes": 9276,
+      "sha256": "dd6065fc6b36ed3ac49510e531d2bcdebd5ae4b0ee87b60ceaede972256e400c"
+    },
+    {
+      "path": "tools/study_packets.py",
+      "bytes": 1439,
+      "sha256": "18d774595f8212ecd8716e7544fba89c5af5e2d539ddcf02727cba19b6fa289b"
+    },
+    {
+      "path": "tools/study_radio.py",
+      "bytes": 2662,
+      "sha256": "f439e64ee9f1b56ef71354ab0e4ffeea9cdd8aae3857de23508f8520c381b806"
+    },
+    {
+      "path": "VERSION.json",
+      "bytes": 3251,
+      "sha256": "80239b4ebda2625498587cbeb7c04d87fe1fb2e4662c4fb0f1fae6b1bac6b944"
+    }
+  ]
+}

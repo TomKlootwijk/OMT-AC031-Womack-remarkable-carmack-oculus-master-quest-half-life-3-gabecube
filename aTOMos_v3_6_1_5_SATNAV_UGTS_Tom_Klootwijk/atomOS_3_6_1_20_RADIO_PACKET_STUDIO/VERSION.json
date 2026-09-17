@@ -1,0 +1,64 @@
+{
+  "version": "3.6.1.20",
+  "parent": "3.6.1.19",
+  "parent_commit": "fc4027c574082711b78c1ef1d43d6c50adcf8c96",
+  "profile": "ATOMOS-RADIO-PACKET-R1",
+  "status": "validated_development_release",
+  "acquisition_schema": "atomos.radio.v1",
+  "archive_profile": "ARADBP1",
+  "realization": "Android session review, beacon information elements, own-link network context and PCAPdroid launch/import; offline packet metadata and TShark desktop study. Exact native core unchanged.",
+  "android": {
+    "package": "org.atomos.radio",
+    "min_sdk": 29,
+    "target_sdk": 36,
+    "version_code": 20,
+    "build_type": "debug",
+    "apk": "output/android/aTOMos-Radio-3.6.1.20-debug.apk",
+    "sha256": "b683df8e4a42ffed00302f46ca0caa4d6a85fa4502ab3f936196c3258fa90c26",
+    "instrumentation_tests_passed": 19,
+    "lint_errors": 0,
+    "physical_poco_validation": "In-place upgrade preserves 3 journals and an imported capture byte-for-byte; real UDP browser and rawSSID/IE/network-context acquisition verified.",
+    "emulator_scope": "API36.1 lifecycle, synthetic import/export, readable UDP UI and contract tests; synthetic radio source.",
+    "physical_evidence": "review/physical_validation.json",
+    "lint_warnings": 22,
+    "apk_bytes": 290404
+  },
+  "document": {
+    "pages": 117,
+    "new_pages": 7,
+    "retained_r19_pages": 110,
+    "sha256": "afebe08e91feb4d309f2c68268b435e0ca13a02c803264e96c2782972239a7ec",
+    "complete_visual_review": true,
+    "all_parent_pages_pixel_identical": true
+  },
+  "implemented": [
+    "Native per-session and per-entity radio review with a 30 second freshness policy",
+    "Raw SSID and Wi-Fi information elements with bounded field decoding",
+    "Read-only own-phone visible IP/DNS/routes/transports",
+    "Explicit separate PCAPdroid launch and SAF capture import",
+    "Bounded PCAP/PCAPNG metadata inspection and original/report export",
+    "Offline TShark packet/conversation/protocol study",
+    "Unchanged byte-exact ARADBP1 archival",
+    "Human-readable UDP packet filtering, protocol fields and bounded payload text/hex previews",
+    "Background radio and independent PCAPdroid workflow with visible recording notifications",
+    "Capture-file import through Android document providers, including mounted USB storage"
+  ],
+  "remaining_scope": [
+    "Phone browser retains the first 200 packet details; desktop UDP report shows up to 200 UDP previews",
+    "TCP/IP reassembly and broad protocol dissection delegated to desktop TShark",
+    "No TLS decryption service or raw RF/IQ/complex CSI acquisition",
+    "No automatic radio-to-packet causal or ranging model",
+    "No observation-to-ASA/NA/JK feedback adapter or Android Mali GPU backend",
+    "Physical USB storage hardware not tested; Downloads SAF import verified"
+  ],
+  "evidence": "Physical captures and identifying derivatives stay private; public examples and screenshots are synthetic/emulator only.",
+  "host_validation": {
+    "python_tests_passed": 47,
+    "radio_tests": 29,
+    "packet_tests": 18,
+    "tshark_version": "4.6.2",
+    "synthetic_packet_containers": 10,
+    "real_capture_studied_privately": true,
+    "review": "review/host_validation.json"
+  }
+}

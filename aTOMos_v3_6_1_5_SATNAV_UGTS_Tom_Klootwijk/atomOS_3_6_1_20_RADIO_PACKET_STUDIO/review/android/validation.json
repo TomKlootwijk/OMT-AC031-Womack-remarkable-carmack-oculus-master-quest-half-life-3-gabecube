@@ -1,0 +1,23 @@
+{
+  "apk_sha256": "b683df8e4a42ffed00302f46ca0caa4d6a85fa4502ab3f936196c3258fa90c26",
+  "apk_bytes": 290404,
+  "instrumentation_passed": 19,
+  "instrumentation_evidence": "instrumentation-udp-final.txt",
+  "lint_errors": 0,
+  "lint_warnings": 22,
+  "platform": "Android emulator API 36.1",
+  "packet_fixture": "examples/packets/synthetic_ethernet.pcap",
+  "imported_bytes_sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754",
+  "initial_r20_packet_report_sha256": "323f839c05d8e9487638e9472e26c002b4a059c4407e48c7ff9e6fe6503dbd1a",
+  "initial_r20_packet_report_stage": "Earlier R20 build, retained as labeled synthetic provenance; current UDP UI validated against regenerated report",
+  "udp_browser_verified": true,
+  "readable_dns_over_udp_verified": true,
+  "radio_foreground_while_reviewing": true,
+  "imported_original_preserved": true,
+  "usb_storage_import_path": "Android Storage Access Framework document provider",
+  "usb_storage_hardware_tested": false,
+  "direct_usb_radio_adapter_capture": false,
+  "physical_handset_operated_by_this_agent": false,
+  "emulator_stopped_after_verification": true,
+  "final_review": "UDP_VALIDATION.md"
+}

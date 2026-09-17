@@ -1,0 +1,73 @@
+{
+  "schema": "atomos.r20.physical-validation.v1",
+  "device": "POCO X7 Pro",
+  "android_api": 36,
+  "version_name": "3.6.1.20",
+  "version_code": 20,
+  "validated_apk_sha256": "b683df8e4a42ffed00302f46ca0caa4d6a85fa4502ab3f936196c3258fa90c26",
+  "scope": "In-place installation, original journal preservation, SAF import, native real packet parsing, and new radio field acquisition. This report contains aggregates only; identifiers and source traces remain private.",
+  "installation": "adb install -r succeeded; package org.atomos.radio; original R19 session byte hash unchanged",
+  "original_session": {
+    "events": 172,
+    "wifi_records": 76,
+    "cell_records": 76,
+    "fresh_ap_identities": 25,
+    "all_cached_or_fresh_ap_identities": 51,
+    "format_sequence_clock_issues": 0
+  },
+  "packet_import": {
+    "bytes": 73852,
+    "raw_bytes_identical": true,
+    "container_packets": 209,
+    "ipv4": 209,
+    "tcp": 94,
+    "udp": 115,
+    "dns": 10,
+    "malformed": 0,
+    "captured_frame_truncation": 0,
+    "transport_counts_match_tshark": true,
+    "native_tls_record_headers": 19,
+    "tshark_tls_frames": 38,
+    "note": "Native record-header inspection has no TCP reassembly. TShark labels additional TLS continuation frames and QUIC. Protocol-layer counts overlap."
+  },
+  "new_acquisition": {
+    "duration_seconds": 28.608448387,
+    "events": 101,
+    "wifi_records": 45,
+    "cell_records": 38,
+    "wifi_information_elements": 880,
+    "raw_ssid_base64_valid": true,
+    "raw_information_element_base64_valid": true,
+    "network_context_records": 1,
+    "visible_phone_links": 2,
+    "closed_session": true,
+    "desktop_validation_issues": 0
+  },
+  "background_services_after_smoke": "Radio and PCAPdroid test recordings stopped explicitly.",
+  "usb_storage_hardware_tested": false,
+  "private_artifacts_excluded": true,
+  "initial_acquisition_apk_sha256": "193913324330442eedf2fec5c180ed74ba59f5353a521fa7f225b221a0b1eeff",
+  "final_upgrade_retained_byte_identical_sessions": 3,
+  "final_upgrade_retained_packet_import": true,
+  "udp_browser": {
+    "container_packets": 209,
+    "all_udp_transport_packets": 115,
+    "retained_packet_details": 200,
+    "udp_matches_in_retained_details": 108,
+    "explicit_display_limit": true,
+    "raw_payload_previews_verified": true,
+    "readable_physical_ui_verified": true
+  },
+  "background_smoke": {
+    "background_duration_seconds": 27.62000000011176,
+    "radio_events_during_background": {
+      "status": 10,
+      "cell": 38
+    },
+    "pcap_packets_during_background_same_phone_wall_mapping": 69,
+    "pcap_packets_total": 126,
+    "radio_closed": true,
+    "scope": "Short HOME-background smoke check, not a screen-off or long-duration guarantee; packet window uses radio receipt wall/elapsed anchors from same handset.",
+    "tested_apk_sha256": "193913324330442eedf2fec5c180ed74ba59f5353a521fa7f225b221a0b1eeff"
+  }
+}

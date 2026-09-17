@@ -1,0 +1,450 @@
+{
+  "schema": "atomos.r20.decoder_validation.v1",
+  "complete": true,
+  "synthetic_only": true,
+  "created_at_utc": "2026-09-17T05:40:29.748494+00:00",
+  "source_sha256": {
+    "android/app/src/main/java/org/atomos/radio/PacketDecoder.java": "472f88bdb6ef85b0d681ba7a7a738884164c089787b8c557223973ff74131403",
+    "android/app/src/main/java/org/atomos/radio/WifiIeDecoder.java": "853f1674f388575c10198450a36d1eb21754b47f8e326fced255a28378483e56",
+    "android/app/src/androidTest/java/org/atomos/radio/DecoderTest.java": "ebcfbed01d233b4904b27edfd3138cad84d1aef601feae07320de36c9f8a2a25"
+  },
+  "fixture_manifest_sha256": "2fd0e19ef3c5d00c93ae0e9947408a03db3c37b13887b008c3f8d253fbc55ccd",
+  "host_java": "java version \"21.0.9\" 2025-10-21 LTS",
+  "host_json_dependency": {
+    "artifact": "org.json:json:20250517",
+    "source": "https://repo.maven.apache.org/maven2/org/json/json/20250517/json-20250517.jar",
+    "sha256": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796",
+    "scope": "temporary host crosscheck only; APK uses Android framework org.json"
+  },
+  "tshark": {
+    "path": "C:\\Program Files\\Wireshark\\tshark.exe",
+    "version": "TShark (Wireshark) 4.6.2 (v4.6.2-0-g24d5e2b5a3dc).",
+    "executable_sha256": "924cd67ef2a1bb3a46f728e8a0916ebcd727d94867125e633cece944e68e8d00",
+    "name_resolution": false,
+    "tls_keylog_file": ""
+  },
+  "fixture_results": [
+    {
+      "fixture": "examples/packets/synthetic_ethernet.pcap",
+      "sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754",
+      "bytes": 1497,
+      "expected_container_error": false,
+      "status": "partial",
+      "container_scan_complete": true,
+      "packets_seen": 17,
+      "protocol_counts": {
+        "TCP": 6,
+        "UDP": 1,
+        "Unsupported EtherType 34997": 1,
+        "IPv4": 1,
+        "DNS": 3,
+        "HTTP": 2,
+        "TLS": 2,
+        "IPv4 fragment": 1
+      },
+      "capture_truncated_packets": 1,
+      "malformed_packets": 1,
+      "unsupported_packets": 1,
+      "issues": [
+        "packet 16: Unsupported EtherType 34997",
+        "packet 17: IPv4 header truncated"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/synthetic_ethernet.pcapng",
+      "sha256": "c296622ddd6b1ef933f2f70c4c5bbd20f401f60dd0e3b64b017ffc92b6c6382e",
+      "bytes": 1840,
+      "expected_container_error": false,
+      "status": "partial",
+      "container_scan_complete": true,
+      "packets_seen": 17,
+      "protocol_counts": {
+        "TCP": 6,
+        "UDP": 1,
+        "Unsupported EtherType 34997": 1,
+        "IPv4": 1,
+        "DNS": 3,
+        "HTTP": 2,
+        "TLS": 2,
+        "IPv4 fragment": 1
+      },
+      "capture_truncated_packets": 1,
+      "malformed_packets": 1,
+      "unsupported_packets": 1,
+      "issues": [
+        "packet 16: Unsupported EtherType 34997",
+        "packet 17: IPv4 header truncated"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/synthetic_raw_be_ns.pcap",
+      "sha256": "e7db4734702877cb8eddc11c6785da04ebd8d75be4a523b496145c03c32c09c9",
+      "bytes": 98,
+      "expected_container_error": false,
+      "status": "ok",
+      "container_scan_complete": true,
+      "packets_seen": 1,
+      "protocol_counts": {
+        "DNS": 1
+      },
+      "capture_truncated_packets": 0,
+      "malformed_packets": 0,
+      "unsupported_packets": 0,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/synthetic_sll.pcap",
+      "sha256": "7e3e4f9793d6162351fe840b564d18b165957bcb519915d66ab6a7c193f879a1",
+      "bytes": 114,
+      "expected_container_error": false,
+      "status": "ok",
+      "container_scan_complete": true,
+      "packets_seen": 1,
+      "protocol_counts": {
+        "DNS": 1
+      },
+      "capture_truncated_packets": 0,
+      "malformed_packets": 0,
+      "unsupported_packets": 0,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/synthetic_mixed_sections.pcapng",
+      "sha256": "b4858de510f91187907177d5c8f8e977eab5d9f3e7846aa34254031eb06e125a",
+      "bytes": 496,
+      "expected_container_error": false,
+      "status": "ok",
+      "container_scan_complete": true,
+      "packets_seen": 3,
+      "protocol_counts": {
+        "DNS": 3
+      },
+      "capture_truncated_packets": 0,
+      "malformed_packets": 0,
+      "unsupported_packets": 0,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/synthetic_dns_pointer_loop.pcap",
+      "sha256": "2e87f303f4e92d5b74d43c50ae4e26bbb9f5fb63ed5c1645bd846b301c01fddd",
+      "bytes": 100,
+      "expected_container_error": false,
+      "status": "partial",
+      "container_scan_complete": true,
+      "packets_seen": 1,
+      "protocol_counts": {
+        "DNS": 1
+      },
+      "capture_truncated_packets": 0,
+      "malformed_packets": 1,
+      "unsupported_packets": 0,
+      "issues": [
+        "packet 1: DNS compression pointer loop"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/synthetic_udp_truncated.pcap",
+      "sha256": "9ad5a130704282eb9b8a88c5dafcfff7996096fa12a514a92157839c51d8f569",
+      "bytes": 86,
+      "expected_container_error": false,
+      "status": "partial",
+      "container_scan_complete": true,
+      "packets_seen": 1,
+      "protocol_counts": {
+        "UDP": 1
+      },
+      "capture_truncated_packets": 1,
+      "malformed_packets": 0,
+      "unsupported_packets": 0,
+      "issues": [],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/invalid_unknown_interface.pcapng",
+      "sha256": "8eb5f5bc46990290b29cd19e1c10c7b77b4ea32690b864841062bc053669fe94",
+      "bytes": 176,
+      "expected_container_error": true,
+      "status": "malformed",
+      "container_scan_complete": false,
+      "packets_seen": 0,
+      "protocol_counts": {},
+      "capture_truncated_packets": 0,
+      "malformed_packets": 0,
+      "unsupported_packets": 0,
+      "issues": [
+        "PCAPNG packet references unknown interface 5"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/invalid_truncated_file.pcap",
+      "sha256": "d4660a206ba84c5c116e4e07a1850d8f1021b682e315764dbd9d8458d1a08331",
+      "bytes": 1492,
+      "expected_container_error": true,
+      "status": "malformed",
+      "container_scan_complete": false,
+      "packets_seen": 16,
+      "protocol_counts": {
+        "TCP": 6,
+        "UDP": 1,
+        "Unsupported EtherType 34997": 1,
+        "DNS": 3,
+        "HTTP": 2,
+        "TLS": 2,
+        "IPv4 fragment": 1
+      },
+      "capture_truncated_packets": 0,
+      "malformed_packets": 0,
+      "unsupported_packets": 1,
+      "issues": [
+        "packet 16: Unsupported EtherType 34997",
+        "truncated capture at offset 1492; needed 5 bytes"
+      ],
+      "passed": true
+    },
+    {
+      "fixture": "examples/packets/invalid_not_capture.pcap",
+      "sha256": "cacc64e121ec9519a91c55f6ca1da7dbc1c57d1ea6779eff2f4d7fbd5a71cdc2",
+      "bytes": 31,
+      "expected_container_error": true,
+      "status": "unsupported",
+      "container_scan_complete": false,
+      "packets_seen": 0,
+      "protocol_counts": {},
+      "capture_truncated_packets": 0,
+      "malformed_packets": 0,
+      "unsupported_packets": 0,
+      "issues": [
+        "unrecognized capture magic"
+      ],
+      "passed": true
+    }
+  ],
+  "cross_decoder": {
+    "all_compared_fields_equal": true,
+    "field_comparisons_passed": 305,
+    "fields": [
+      "frame.number",
+      "frame.time_epoch",
+      "frame.len",
+      "frame.cap_len",
+      "ip.src",
+      "ip.dst",
+      "ipv6.src",
+      "ipv6.dst",
+      "tcp.srcport",
+      "tcp.dstport",
+      "udp.srcport",
+      "udp.dstport",
+      "dns.qry.name",
+      "http.request.method",
+      "http.response.code",
+      "tls.handshake.type"
+    ],
+    "cases": [
+      {
+        "fixture": "synthetic_ethernet.pcap",
+        "tshark_tsv_sha256": "43e3d89fdd35b95acb851959a43165158a0bad3e024d3126f95956ab2bda4f0f",
+        "stderr": "",
+        "frames_compared": 17,
+        "field_comparisons_passed": 130,
+        "all_compared_fields_equal": true
+      },
+      {
+        "fixture": "synthetic_ethernet.pcapng",
+        "tshark_tsv_sha256": "43e3d89fdd35b95acb851959a43165158a0bad3e024d3126f95956ab2bda4f0f",
+        "stderr": "",
+        "frames_compared": 17,
+        "field_comparisons_passed": 130,
+        "all_compared_fields_equal": true
+      },
+      {
+        "fixture": "synthetic_raw_be_ns.pcap",
+        "tshark_tsv_sha256": "ff656b5c06eda2132c61cd21f89087890f4a2db3f2dcf32eeb8826405afa18ec",
+        "stderr": "",
+        "frames_compared": 1,
+        "field_comparisons_passed": 9,
+        "all_compared_fields_equal": true
+      },
+      {
+        "fixture": "synthetic_sll.pcap",
+        "tshark_tsv_sha256": "29f954ddb823db239a0a8c4a7961495b817528afd10499547a7ad4d50cde287a",
+        "stderr": "",
+        "frames_compared": 1,
+        "field_comparisons_passed": 9,
+        "all_compared_fields_equal": true
+      },
+      {
+        "fixture": "synthetic_mixed_sections.pcapng",
+        "tshark_tsv_sha256": "059930542545f7705813d8076a971140f3c153dcf81acdd162a2fe7405942411",
+        "stderr": "",
+        "frames_compared": 3,
+        "field_comparisons_passed": 27,
+        "all_compared_fields_equal": true
+      }
+    ],
+    "expected_semantic_differences": [
+      {
+        "fixture": "synthetic_ethernet.pcap",
+        "frame": 14,
+        "field": "src_port",
+        "tshark": null,
+        "native": 49000,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      },
+      {
+        "fixture": "synthetic_ethernet.pcap",
+        "frame": 14,
+        "field": "dst_port",
+        "tshark": null,
+        "native": 49001,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      },
+      {
+        "fixture": "synthetic_ethernet.pcap",
+        "frame": 15,
+        "field": "src_port",
+        "tshark": 49000,
+        "native": null,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      },
+      {
+        "fixture": "synthetic_ethernet.pcap",
+        "frame": 15,
+        "field": "dst_port",
+        "tshark": 49001,
+        "native": null,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      },
+      {
+        "fixture": "synthetic_ethernet.pcapng",
+        "frame": 14,
+        "field": "src_port",
+        "tshark": null,
+        "native": 49000,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      },
+      {
+        "fixture": "synthetic_ethernet.pcapng",
+        "frame": 14,
+        "field": "dst_port",
+        "tshark": null,
+        "native": 49001,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      },
+      {
+        "fixture": "synthetic_ethernet.pcapng",
+        "frame": 15,
+        "field": "src_port",
+        "tshark": 49000,
+        "native": null,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      },
+      {
+        "fixture": "synthetic_ethernet.pcapng",
+        "frame": 15,
+        "field": "dst_port",
+        "tshark": 49001,
+        "native": null,
+        "reason": "Fragment interpretation differs: native reads available first-fragment header without reassembly; TShark may defer transport decoding or attach reassembled fields to later fragment."
+      }
+    ],
+    "scope": "Packet index, capture/original lengths, exact timestamps, available IP endpoints and nonfragmented port endpoints, first decoded DNS question, HTTP method/status and candidate Hello type. Classification and malformed/reassembly policies differ; this is not whole-decoder equivalence."
+  },
+  "timestamp_cases": {
+    "mixed_sections": {
+      "byte_orders": [
+        "little",
+        "big"
+      ],
+      "timestamp_denominators": [
+        "1000000",
+        "1024",
+        "1000000000"
+      ],
+      "second_section_interface0_offset_seconds": "7",
+      "expected_nanoseconds": [
+        "1700000000250000000",
+        "1700000000500000000",
+        "1700000000750000000"
+      ],
+      "all_equal": true
+    },
+    "fractional_nanosecond": {
+      "derived_from": "synthetic_mixed_sections.pcapng",
+      "mutation": "Increment byte 311 by 1: second section first EPB timestamp advances one 1/1024-second tick",
+      "mutated_sha256": "fd8d8b17a7046c1d36f56ff4f5c91e4a60a209a1d78063da4e5f199ddf773537",
+      "exact_result": {
+        "seconds_denominator": "1024",
+        "nanoseconds_exact": null,
+        "seconds_numerator": "1740800000513"
+      },
+      "passed": true
+    }
+  },
+  "udp_extension_host_checks": {
+    "focused_cases_passed": 8,
+    "captured_prefix_fixture": {
+      "fixture": "synthetic_udp_truncated.pcap",
+      "declared_payload_bytes": 14,
+      "captured_payload_bytes": 4,
+      "preview_text": "TRUN",
+      "payload_complete": false,
+      "preview_truncated": false
+    },
+    "primary_wire_references": [
+      "https://www.rfc-editor.org/rfc/rfc768",
+      "https://www.rfc-editor.org/rfc/rfc5905",
+      "https://www.rfc-editor.org/rfc/rfc2131",
+      "https://www.rfc-editor.org/rfc/rfc2132"
+    ]
+  },
+  "android_instrumentation": {
+    "decoder_test_methods": 12,
+    "owner": "android_radio_logger",
+    "reported_result": "19 total instrumentation tests passed including all 12 decoder methods; final instrumented run recorded by Android build/runtime report",
+    "apk_sha256_reported": "b683df8e4a42ffed00302f46ca0caa4d6a85fa4502ab3f936196c3258fa90c26"
+  },
+  "limits": {
+    "pcapng_block_bytes": 16777216,
+    "udp_application_inspection_bytes": 4096,
+    "interface_details": 1024,
+    "endpoints": 512,
+    "udp_preview_bytes": 128,
+    "pcapng_blocks": 200000,
+    "file_bytes": 67108864,
+    "issues": 100,
+    "packets": 100000,
+    "packet_details": 200,
+    "interfaces_per_section": 1024,
+    "dns_questions": 32,
+    "dns_records": 64,
+    "captured_packet_bytes": 1048576
+  },
+  "established_subset": [
+    "PCAP classic big/little byte order, microsecond/nanosecond clock fields",
+    "PCAPNG mixed-endian sections, multiple interfaces, decimal/binary resolution and signed offset",
+    "Ethernet/VLAN, RAW101, Linux SLL113/SLL2-276, IPv4/IPv6 UDP/TCP and bounded DNS compression",
+    "HTTP request method/status and opaque TLS record/header candidates without decryption",
+    "Malformed container, unknown interface, DNS pointer loop and captured truncation remain explicit",
+    "First 200 packet examples bounded; complete means container traversal finished",
+    "UDP raw ASCII escapes and hex preview bounded to128 bytes with separate capture and display truncation",
+    "NTP standard-header candidate fields preserve signed fixed-point words and unsigned fractional time fields; era unresolved",
+    "DHCP cookie, fixed header and bounded option metadata with explicit malformed or limited options status"
+  ],
+  "not_established": [
+    "Live phone packet capture or RF accuracy",
+    "General application protocol equivalence with TShark",
+    "TCP/IP reassembly, TLS authentication/decryption or SNI extraction",
+    "Checksum validation or complete PCAPNG option decoding",
+    "Authentication of NTP/DHCP application candidates, inferred NTP era or clock synchronization",
+    "SSDP or QUIC application classification; raw previews only",
+    "Unknown Wi-Fi vendor identity or fully parsed HE/EHT capabilities"
+  ]
+}

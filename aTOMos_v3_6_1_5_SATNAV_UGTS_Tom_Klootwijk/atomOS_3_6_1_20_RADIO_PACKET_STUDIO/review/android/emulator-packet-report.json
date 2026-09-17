@@ -1,0 +1,756 @@
+{
+  "schema": "atomos.packet_inspection.v1",
+  "format": "pcap",
+  "status": "partial",
+  "complete": true,
+  "file_bytes": 1497,
+  "file_sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754",
+  "packets_seen": 17,
+  "packets_decoded": 15,
+  "unsupported_packets": 1,
+  "malformed_packets": 1,
+  "capture_truncated_packets": 1,
+  "protocol_counts": {
+    "DNS": 3,
+    "HTTP": 2,
+    "IPv4": 1,
+    "IPv4 fragment": 1,
+    "TCP": 6,
+    "TLS": 2,
+    "UDP": 1,
+    "Unsupported EtherType 34997": 1
+  },
+  "layer_counts": {
+    "DNS": 3,
+    "Ethernet": 17,
+    "HTTP": 2,
+    "IPv4": 15,
+    "IPv6": 1,
+    "TCP": 10,
+    "TLS": 2,
+    "UDP": 4
+  },
+  "endpoints": {
+    "192.0.2.10": 1,
+    "192.0.2.10:40000": 5,
+    "192.0.2.10:40001": 5,
+    "192.0.2.10:49000": 1,
+    "192.0.2.10:53000": 2,
+    "192.0.2.53:53": 2,
+    "198.51.100.20": 1,
+    "198.51.100.20:443": 5,
+    "198.51.100.20:49001": 1,
+    "198.51.100.20:80": 5,
+    "[2001:db8:a::10]:53001": 1,
+    "[2001:db8:b::53]:53": 1
+  },
+  "endpoint_occurrences_omitted": 0,
+  "packets": [
+    {
+      "index": 1,
+      "linktype": 1,
+      "captured_length": 72,
+      "original_length": 72,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000000100000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000000100000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "192.0.2.53",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 17,
+      "source_port": 53000,
+      "destination_port": 53,
+      "udp_length": 38,
+      "transport_payload_incomplete": false,
+      "dns": {
+        "id": 6425,
+        "response": false,
+        "opcode": 0,
+        "rcode": 0,
+        "truncated_flag": false,
+        "question_count": 1,
+        "answer_count": 0,
+        "authority_count": 0,
+        "additional_count": 0,
+        "questions": [
+          {
+            "name": "example.test",
+            "type": 1,
+            "class": 1
+          }
+        ],
+        "records": [],
+        "detail_limited": false
+      },
+      "status": "decoded",
+      "protocol": "DNS",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "UDP",
+        "DNS"
+      ]
+    },
+    {
+      "index": 2,
+      "linktype": 1,
+      "captured_length": 88,
+      "original_length": 88,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000001101000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000001101000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.53",
+      "destination_ip": "192.0.2.10",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 17,
+      "source_port": 53,
+      "destination_port": 53000,
+      "udp_length": 54,
+      "transport_payload_incomplete": false,
+      "dns": {
+        "id": 6425,
+        "response": true,
+        "opcode": 0,
+        "rcode": 0,
+        "truncated_flag": false,
+        "question_count": 1,
+        "answer_count": 1,
+        "authority_count": 0,
+        "additional_count": 0,
+        "questions": [
+          {
+            "name": "example.test",
+            "type": 1,
+            "class": 1
+          }
+        ],
+        "records": [
+          {
+            "section": "answer",
+            "name": "example.test",
+            "type": 1,
+            "class": 1,
+            "ttl_seconds": 60,
+            "data_length": 4,
+            "address": "203.0.113.7"
+          }
+        ],
+        "detail_limited": false
+      },
+      "status": "decoded",
+      "protocol": "DNS",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "UDP",
+        "DNS"
+      ]
+    },
+    {
+      "index": 3,
+      "linktype": 1,
+      "captured_length": 54,
+      "original_length": 54,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000002102000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000002102000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 40000,
+      "destination_port": 80,
+      "tcp_flags": 2,
+      "tcp_sequence": 1000,
+      "status": "decoded",
+      "protocol": "TCP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP"
+      ]
+    },
+    {
+      "index": 4,
+      "linktype": 1,
+      "captured_length": 54,
+      "original_length": 54,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000003103000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000003103000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "198.51.100.20",
+      "destination_ip": "192.0.2.10",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 80,
+      "destination_port": 40000,
+      "tcp_flags": 18,
+      "tcp_sequence": 2000,
+      "status": "decoded",
+      "protocol": "TCP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP"
+      ]
+    },
+    {
+      "index": 5,
+      "linktype": 1,
+      "captured_length": 54,
+      "original_length": 54,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000004104000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000004104000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 40000,
+      "destination_port": 80,
+      "tcp_flags": 16,
+      "tcp_sequence": 1001,
+      "status": "decoded",
+      "protocol": "TCP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP"
+      ]
+    },
+    {
+      "index": 6,
+      "linktype": 1,
+      "captured_length": 120,
+      "original_length": 120,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000005105000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000005105000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 40000,
+      "destination_port": 80,
+      "tcp_flags": 24,
+      "tcp_sequence": 1001,
+      "http": {
+        "kind": "request",
+        "method": "GET",
+        "version": "HTTP\/1.1",
+        "request_target_omitted": true
+      },
+      "status": "decoded",
+      "protocol": "HTTP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP",
+        "HTTP"
+      ]
+    },
+    {
+      "index": 7,
+      "linktype": 1,
+      "captured_length": 129,
+      "original_length": 129,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000006106000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000006106000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "198.51.100.20",
+      "destination_ip": "192.0.2.10",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 80,
+      "destination_port": 40000,
+      "tcp_flags": 24,
+      "tcp_sequence": 2001,
+      "http": {
+        "kind": "response",
+        "version": "HTTP\/1.1",
+        "status_code": 200
+      },
+      "status": "decoded",
+      "protocol": "HTTP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP",
+        "HTTP"
+      ]
+    },
+    {
+      "index": 8,
+      "linktype": 1,
+      "captured_length": 54,
+      "original_length": 54,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000007107000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000007107000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 40001,
+      "destination_port": 443,
+      "tcp_flags": 2,
+      "tcp_sequence": 1000,
+      "status": "decoded",
+      "protocol": "TCP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP"
+      ]
+    },
+    {
+      "index": 9,
+      "linktype": 1,
+      "captured_length": 54,
+      "original_length": 54,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000008108000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000008108000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "198.51.100.20",
+      "destination_ip": "192.0.2.10",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 443,
+      "destination_port": 40001,
+      "tcp_flags": 18,
+      "tcp_sequence": 2000,
+      "status": "decoded",
+      "protocol": "TCP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP"
+      ]
+    },
+    {
+      "index": 10,
+      "linktype": 1,
+      "captured_length": 54,
+      "original_length": 54,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000009109000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000009109000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 40001,
+      "destination_port": 443,
+      "tcp_flags": 16,
+      "tcp_sequence": 1001,
+      "status": "decoded",
+      "protocol": "TCP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP"
+      ]
+    },
+    {
+      "index": 11,
+      "linktype": 1,
+      "captured_length": 127,
+      "original_length": 127,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000010110000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000010110000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 40001,
+      "destination_port": 443,
+      "tcp_flags": 24,
+      "tcp_sequence": 1001,
+      "tls": {
+        "record_type": 22,
+        "record_version_major": 3,
+        "record_version_minor": 1,
+        "declared_record_length": 68,
+        "record_complete": true,
+        "identification": "record-header heuristic; no reassembly\/decryption",
+        "encryption_state": "not established from record header",
+        "handshake_type": 1,
+        "handshake_type_scope": "candidate unprotected Hello header; unauthenticated"
+      },
+      "encrypted": null,
+      "payload_opaque": true,
+      "stream_reassembly_required": false,
+      "status": "decoded",
+      "protocol": "TLS",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP",
+        "TLS"
+      ]
+    },
+    {
+      "index": 12,
+      "linktype": 1,
+      "captured_length": 75,
+      "original_length": 75,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000011111000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000011111000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "198.51.100.20",
+      "destination_ip": "192.0.2.10",
+      "fragment_offset_bytes": 0,
+      "more_fragments": false,
+      "ip_protocol": 6,
+      "source_port": 443,
+      "destination_port": 40001,
+      "tcp_flags": 24,
+      "tcp_sequence": 2001,
+      "tls": {
+        "record_type": 23,
+        "record_version_major": 3,
+        "record_version_minor": 3,
+        "declared_record_length": 16,
+        "record_complete": true,
+        "identification": "record-header heuristic; no reassembly\/decryption",
+        "encryption_state": "not established from record header"
+      },
+      "encrypted": null,
+      "payload_opaque": true,
+      "stream_reassembly_required": false,
+      "status": "decoded",
+      "protocol": "TLS",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "TCP",
+        "TLS"
+      ]
+    },
+    {
+      "index": 13,
+      "linktype": 1,
+      "captured_length": 92,
+      "original_length": 92,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000012112000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000012112000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 34525,
+      "network_truncated": false,
+      "source_ip": "2001:db8:a::10",
+      "destination_ip": "2001:db8:b::53",
+      "ip_protocol": 17,
+      "source_port": 53001,
+      "destination_port": 53,
+      "udp_length": 38,
+      "transport_payload_incomplete": false,
+      "dns": {
+        "id": 6425,
+        "response": false,
+        "opcode": 0,
+        "rcode": 0,
+        "truncated_flag": false,
+        "question_count": 1,
+        "answer_count": 0,
+        "authority_count": 0,
+        "additional_count": 0,
+        "questions": [
+          {
+            "name": "example.test",
+            "type": 28,
+            "class": 1
+          }
+        ],
+        "records": [],
+        "detail_limited": false
+      },
+      "status": "decoded",
+      "protocol": "DNS",
+      "protocols": [
+        "Ethernet",
+        "IPv6",
+        "UDP",
+        "DNS"
+      ]
+    },
+    {
+      "index": 14,
+      "linktype": 1,
+      "captured_length": 50,
+      "original_length": 50,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000013113000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000013113000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 0,
+      "more_fragments": true,
+      "ip_protocol": 17,
+      "source_port": 49000,
+      "destination_port": 49001,
+      "udp_length": 51,
+      "transport_payload_incomplete": true,
+      "status": "decoded",
+      "protocol": "UDP",
+      "protocols": [
+        "Ethernet",
+        "IPv4",
+        "UDP"
+      ]
+    },
+    {
+      "index": 15,
+      "linktype": 1,
+      "captured_length": 69,
+      "original_length": 69,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000014114000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000014114000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "network_truncated": false,
+      "source_ip": "192.0.2.10",
+      "destination_ip": "198.51.100.20",
+      "fragment_offset_bytes": 16,
+      "more_fragments": false,
+      "fragment_reassembly_required": true,
+      "status": "decoded",
+      "protocol": "IPv4 fragment",
+      "protocols": [
+        "Ethernet",
+        "IPv4"
+      ]
+    },
+    {
+      "index": 16,
+      "linktype": 1,
+      "captured_length": 31,
+      "original_length": 31,
+      "capture_truncated": false,
+      "timestamp": {
+        "seconds_numerator": "1700000015115000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000015115000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 34997,
+      "status": "unsupported",
+      "protocol": "Unsupported EtherType 34997",
+      "protocols": [
+        "Ethernet"
+      ]
+    },
+    {
+      "index": 17,
+      "linktype": 1,
+      "captured_length": 24,
+      "original_length": 56,
+      "capture_truncated": true,
+      "timestamp": {
+        "seconds_numerator": "1700000016116000",
+        "seconds_denominator": "1000000",
+        "nanoseconds_exact": "1700000016116000000"
+      },
+      "section": 0,
+      "interface_id": 0,
+      "source_mac": "02:19:00:00:00:01",
+      "destination_mac": "02:19:00:00:00:02",
+      "ether_type": 2048,
+      "error": "IPv4 header truncated",
+      "status": "malformed_or_truncated",
+      "protocol": "IPv4",
+      "protocols": [
+        "Ethernet",
+        "IPv4"
+      ]
+    }
+  ],
+  "packet_details_omitted": 0,
+  "interfaces": [
+    {
+      "section": 0,
+      "interface_id": 0,
+      "linktype_unsigned": 1,
+      "snaplen": 262144,
+      "timestamp_denominator": "1000000"
+    }
+  ],
+  "interface_details_omitted": 0,
+  "sections": 1,
+  "blocks_seen": 0,
+  "issues": [
+    "packet 16: Unsupported EtherType 34997",
+    "packet 17: IPv4 header truncated"
+  ],
+  "issue_count": 2,
+  "limits": {
+    "file_bytes": 67108864,
+    "packets": 100000,
+    "captured_packet_bytes": 1048576,
+    "pcapng_block_bytes": 16777216,
+    "pcapng_blocks": 200000,
+    "packet_details": 200,
+    "endpoints": 512,
+    "issues": 100,
+    "interfaces_per_section": 1024,
+    "interface_details": 1024,
+    "dns_questions": 32,
+    "dns_records": 64
+  },
+  "semantics": {
+    "protocol_counts": "one deepest recognized protocol per packet",
+    "endpoints": "packet endpoint occurrences; not unique physical devices",
+    "timestamps": "capture clock, not synchronized by this decoder",
+    "payload_content": "DNS names and HTTP\/TLS header metadata only",
+    "tcp_reassembly": false,
+    "ip_fragment_reassembly": false,
+    "checksums_verified": false,
+    "decryption": false
+  },
+  "import_original_name": "synthetic_ethernet.pcap"
+}
