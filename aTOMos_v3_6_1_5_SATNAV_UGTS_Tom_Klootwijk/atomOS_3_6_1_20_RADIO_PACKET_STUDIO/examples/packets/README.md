@@ -6,6 +6,8 @@ The main classic PCAP and PCAPNG contain the same 17 Ethernet frames: DNS query 
 
 Additional files exercise RAW IP, big-endian nanosecond PCAP, Linux cooked v1/v2, mixed-endian PCAPNG sections, per-interface decimal/binary timestamp resolution and timestamp offsets. Separate malformed examples contain a DNS compression-pointer loop, an unknown PCAPNG interface, a truncated container and non-capture text.
 
+`synthetic_udp_truncated.pcap` keeps a complete UDP header but captures only four payload bytes. It checks that the report distinguishes the declared UDP length, original frame length and bytes actually available for preview.
+
 From the release directory:
 
 ```powershell
@@ -14,6 +16,8 @@ python -m unittest discover -s tests -v
 ```
 
 TShark defaults to `C:/Program Files/Wireshark/tshark.exe`; use `--tshark PATH` for another official installation. The output directory must be new or empty. The tool copies original bytes, writes their hash, selected packet metadata, a protocol hierarchy, TCP/UDP/IP conversation summaries and decoder errors. It runs offline with name resolution disabled and no live capture interface. Packet or time limits remain explicit.
+
+`udp_readable.md` and `udp_previews.json` add readable packet times, IP:ports, UDP length fields, decoded protocol summaries and a maximum 64-byte ASCII/hex preview for the first 200 decoded UDP records. Hex preserves the preview bytes exactly; ASCII uses a dot for nonprintable bytes. QUIC/DTLS and unknown binary payloads receive explicit labels. The complete packet capture remains the source; a bounded preview is not a decrypted payload or a replacement for original bytes.
 
 `tshark_oracle/` is the successful independent TShark 4.6.2 decoding of the main synthetic fixture. TLS outer record type 23 is counted using both classic `tls.record.content_type` and TLS 1.3 `tls.record.opaque_type`. An opaque TLS 1.3 outer record does not identify the encrypted inner content type. DNS decoder placeholders remain diagnostics instead of invented host names. Unknown protocols, packet truncation and container errors remain visible.
 

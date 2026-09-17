@@ -118,10 +118,12 @@ def build():
             sp, dp = (dport, port) if reverse else (port, dport)
             add(label + " TCP " + description, ether(ip4(tcp(b"", sp, dp, seq, ack, flags, src, dst), 6, src, dst)))
         data = b"GET /synthetic HTTP/1.1\r\nHost: example.test\r\nConnection: close\r\n\r\n" if label == "HTTP" else tls_hello()
-        add(label + " application request", ether(ip4(tcp(data, port, dport, 1001, 2001, 24, "192.0.2.10", "198.51.100.20"), 6)))
+        request_description = "HTTP GET /synthetic" if label == "HTTP" else "TLS ClientHello with SNI example.test"
+        add(request_description, ether(ip4(tcp(data, port, dport, 1001, 2001, 24, "192.0.2.10", "198.51.100.20"), 6)))
         response = (b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 10\r\n\r\nsynthetic\n" if label == "HTTP"
                     else b"\x17\x03\x03\0\x10" + bytes(range(16)))
-        add(label + " response / opaque TLS application-data record", ether(ip4(tcp(response, dport, port, 2001, 1001 + len(data), 24,
+        response_description = "HTTP 200 response" if label == "HTTP" else "TLS opaque application-data record (outer type 23)"
+        add(response_description, ether(ip4(tcp(response, dport, port, 2001, 1001 + len(data), 24,
             "198.51.100.20", "192.0.2.10"), 6, "198.51.100.20", "192.0.2.10")))
     v6 = ip6(udp(query(28), 53001, 53, "2001:db8:a::10", "2001:db8:b::53"), 17)
     add("IPv6 UDP DNS AAAA question", ether(v6, 0x86DD))
@@ -149,6 +151,7 @@ def build():
     loop = struct.pack("!6H", 0x2020, 0x8180, 1, 0, 0, 0) + b"\xc0\x0c\0\x01\0\x01"
     bad_dns = ether(ip4(udp(loop, 53, 53000, "192.0.2.53", "192.0.2.10"), 17, "192.0.2.53", "192.0.2.10"))
     files["synthetic_dns_pointer_loop.pcap"] = classic([(bad_dns, len(bad_dns))])
+    files["synthetic_udp_truncated.pcap"] = classic([(whole[:14 + 20 + 8 + 4], len(whole))])
     files["invalid_unknown_interface.pcapng"] = section() + interface(1) + enhanced(packets[0][0], EPOCH * 1_000_000, 5)
     files["invalid_truncated_file.pcap"] = files["synthetic_ethernet.pcap"][:-5]
     files["invalid_not_capture.pcap"] = b"SYNTHETIC NOT A PACKET CAPTURE\n"

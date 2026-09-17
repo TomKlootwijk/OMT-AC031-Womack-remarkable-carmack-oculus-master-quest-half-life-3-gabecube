@@ -25,11 +25,11 @@
     },
     {
       "frame": 6,
-      "description": "HTTP application request"
+      "description": "HTTP GET /synthetic"
     },
     {
       "frame": 7,
-      "description": "HTTP response / opaque TLS application-data record"
+      "description": "HTTP 200 response"
     },
     {
       "frame": 8,
@@ -45,11 +45,11 @@
     },
     {
       "frame": 11,
-      "description": "TLS application request"
+      "description": "TLS ClientHello with SNI example.test"
     },
     {
       "frame": 12,
-      "description": "TLS response / opaque TLS application-data record"
+      "description": "TLS opaque application-data record (outer type 23)"
     },
     {
       "frame": 13,
@@ -112,6 +112,12 @@
       "file": "synthetic_dns_pointer_loop.pcap",
       "bytes": 100,
       "sha256": "2e87f303f4e92d5b74d43c50ae4e26bbb9f5fb63ed5c1645bd846b301c01fddd",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_udp_truncated.pcap",
+      "bytes": 86,
+      "sha256": "9ad5a130704282eb9b8a88c5dafcfff7996096fa12a514a92157839c51d8f569",
       "expected_container_error": false
     },
     {

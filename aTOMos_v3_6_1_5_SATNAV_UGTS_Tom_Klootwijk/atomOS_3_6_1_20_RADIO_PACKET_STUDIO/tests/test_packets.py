@@ -11,7 +11,8 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "python"))
-from atomos_packets import DEFAULT_TSHARK, FIELDS, capture_format, study_capture, summarize_rows
+from atomos_packets import (DEFAULT_TSHARK, FIELDS, UDP_REPORT_RECORDS, capture_format, study_capture,
+                            summarize_rows, udp_payload_previews, write_udp_report)
 
 FIXTURES = Path(__file__).resolve().parents[1] / "examples/packets"
 
@@ -99,6 +100,44 @@ class PacketPolicyTests(unittest.TestCase):
             "tls.record.content_type": "", "tls.record.opaque_type": "23"}])
         self.assertEqual(result["tls_application_data_record_frame_numbers"], ["1"])
 
+    def test_udp_binary_preview_is_exact_bounded_and_not_assumed_plaintext(self):
+        body = bytes(range(256))
+        raw = ("frame.number,udp.payload\n1," + body.hex(":") + "\n").encode()
+        previews = udp_payload_previews(raw, allowed_frames={"1"})
+        p = previews["1"]
+        self.assertEqual(p["reported_payload_bytes"], 256)
+        self.assertEqual(p["preview_bytes"], 64)
+        self.assertEqual(bytes.fromhex(p["hex_preview"]), body[:64])
+        self.assertTrue(p["preview_truncated"])
+        row = {"frame.number": "1", "frame.protocols": "ip:udp:data", "ip.src": "192.0.2.10",
+               "ip.dst": "192.0.2.20", "udp.srcport": "5000", "udp.dstport": "5001",
+               "udp.length": "264", "frame.cap_len": "284", "frame.len": "284"}
+        with tempfile.TemporaryDirectory() as d:
+            write_udp_report([row], previews, Path(d), label="SYNTHETIC")
+            report = (Path(d) / "udp_readable.md").read_text()
+            self.assertIn("192.0.2.10:5000", report)
+            self.assertIn("Unknown or undissected UDP", report)
+            self.assertIn("64 of 256", report)
+            self.assertIn("Binary bytes are not assumed to be plaintext", report)
+
+    def test_udp_report_record_bound_and_ipv6_addresses(self):
+        rows = [{"frame.number": str(i), "frame.protocols": "ipv6:udp:quic",
+                 "ipv6.src": "2001:db8::1", "ipv6.dst": "2001:db8::2",
+                 "udp.srcport": "55000", "udp.dstport": "443"} for i in range(UDP_REPORT_RECORDS + 1)]
+        with tempfile.TemporaryDirectory() as d:
+            meta = write_udp_report(rows, {}, Path(d))
+            self.assertEqual(meta["displayed_records"], 200)
+            self.assertEqual(meta["omitted_records"], 1)
+            report = (Path(d) / "udp_readable.md").read_text()
+            self.assertIn("[2001:db8::1]:55000", report)
+            self.assertIn("QUIC transport", report)
+            self.assertIn("not decrypted application content", report)
+
+    def test_udp_payload_parser_rejects_bad_hex_and_does_not_invent_bytes(self):
+        for invalid in (b"frame.number,udp.payload\n1,abc\n", b"frame.number,udp.payload\n1,zz\n"):
+            with self.assertRaises(ValueError):
+                udp_payload_previews(invalid, allowed_frames={"1"})
+
 
 @unittest.skipUnless(DEFAULT_TSHARK.is_file(), "Local official TShark is unavailable")
 class TsharkIntegrationTests(unittest.TestCase):
@@ -129,6 +168,11 @@ class TsharkIntegrationTests(unittest.TestCase):
         statistics = (output / "protocols_conversations.txt").read_text()
         self.assertIn("Protocol Hierarchy Statistics", statistics)
         self.assertIn("TCP Conversations", statistics)
+        readable = (output / "udp_readable.md").read_text()
+        self.assertIn("DNS question: example.test", readable)
+        self.assertIn("DNS A answers: 203.0.113.7", readable)
+        self.assertIn("Source: 192.0.2.10:53000", readable)
+        self.assertEqual(first["udp_readable"]["decoded_udp_records"], 4)
 
     def test_mixed_endian_sections_interfaces_resolution_and_offset(self):
         summary, rows, _ = self.study("synthetic_mixed_sections.pcapng")
@@ -167,6 +211,17 @@ class TsharkIntegrationTests(unittest.TestCase):
         self.assertEqual(len(rows), 3)
         self.assertTrue(summary["packet_limit_reached"])
         self.assertEqual(summary["status"], "packet_limit_reached")
+
+    def test_truncated_udp_reports_actual_preview_and_declared_length(self):
+        summary, rows, output = self.study("synthetic_udp_truncated.pcap")
+        self.assertEqual(summary["status"], "decoded")
+        self.assertEqual(summary["truncated_captured_frame_numbers"], ["1"])
+        preview = json.loads((output / "udp_previews.json").read_text())["packets"][0]
+        self.assertTrue(preview["captured_frame_truncated"])
+        self.assertEqual(preview["reported_payload_bytes"], 4)
+        self.assertEqual(preview["hex_preview"], "54 52 55 4e")
+        self.assertGreater(int(preview["udp_length_field"]) - 8, preview["reported_payload_bytes"])
+        self.assertIn("[CAPTURE TRUNCATED]", (output / "udp_readable.md").read_text())
 
 
 if __name__ == "__main__":

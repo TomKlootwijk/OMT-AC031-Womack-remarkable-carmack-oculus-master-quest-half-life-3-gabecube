@@ -1,6 +1,6 @@
 {
   "schema": "atomos.packet.study.v1",
-  "study_label": "SYNTHETIC protocol fixture",
+  "study_label": "SYNTHETIC documentation-address protocol fixture",
   "input_sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754",
   "input_bytes": 1497,
   "capture_format": "pcap",
@@ -91,6 +91,8 @@
         "-e",
         "udp.dstport",
         "-e",
+        "udp.length",
+        "-e",
         "dns.id",
         "-e",
         "dns.flags.response",
@@ -153,6 +155,37 @@
         "-z",
         "conv,ipv6"
       ]
+    },
+    {
+      "name": "tshark_udp_payloads",
+      "argv": [
+        "C:\\Program Files\\Wireshark\\tshark.exe",
+        "-n",
+        "-o",
+        "tls.keylog_file:",
+        "-r",
+        "C:\\Users\\Tom\\.codex\\worktrees\\e0ee\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\aTOMos_v3_6_1_5_SATNAV_UGTS_Tom_Klootwijk\\atomOS_3_6_1_20_RADIO_PACKET_STUDIO\\examples\\packets\\tshark_oracle\\source_original.pcap",
+        "-c",
+        "100000",
+        "-Y",
+        "udp && frame.number <= 15",
+        "-T",
+        "fields",
+        "-E",
+        "header=y",
+        "-E",
+        "separator=,",
+        "-E",
+        "quote=d",
+        "-E",
+        "occurrence=a",
+        "-E",
+        "aggregator=;",
+        "-e",
+        "frame.number",
+        "-e",
+        "udp.payload"
+      ]
     }
   ],
   "network_lookups": false,
@@ -208,5 +241,15 @@
     "2001:db8:b::53"
   ],
   "visibility": "Fields decoded from captured bytes by TShark. TLS application-data records and QUIC may carry encrypted payloads; metadata is not plaintext content. No keys or decryption service are supplied. A PCAPNG file can itself contain embedded decryption secrets; any resulting dissection is attributed to the input and TShark, not invented by this tool.",
-  "scope": "Offline capture only. Protocol counts may overlap because one frame contains multiple protocol layers. Captured IP traffic is not a radio-power observation or arbitrary neighboring subscriber traffic."
+  "scope": "Offline capture only. Protocol counts may overlap because one frame contains multiple protocol layers. Captured IP traffic is not a radio-power observation or arbitrary neighboring subscriber traffic.",
+  "udp_readable": {
+    "profile": "atomos.udp-readable.v1",
+    "decoded_udp_records": 4,
+    "displayed_records": 4,
+    "omitted_records": 0,
+    "preview_byte_limit": 64,
+    "record_limit": 200,
+    "file": "udp_readable.md",
+    "preview_json": "udp_previews.json"
+  }
 }

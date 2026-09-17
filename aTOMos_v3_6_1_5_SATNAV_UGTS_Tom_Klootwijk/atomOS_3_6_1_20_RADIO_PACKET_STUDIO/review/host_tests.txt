@@ -6,12 +6,16 @@ test_partial_csv_rows_do_not_silently_become_full_observations (test_packets.Pac
 test_path_metacharacters_stay_one_literal_argument (test_packets.PacketPolicyTests.test_path_metacharacters_stay_one_literal_argument) ... ok
 test_timeout_is_recorded_and_no_success_fabricated (test_packets.PacketPolicyTests.test_timeout_is_recorded_and_no_success_fabricated) ... ok
 test_tls13_outer_application_data_is_counted_without_claiming_inner_plaintext (test_packets.PacketPolicyTests.test_tls13_outer_application_data_is_counted_without_claiming_inner_plaintext) ... ok
+test_udp_binary_preview_is_exact_bounded_and_not_assumed_plaintext (test_packets.PacketPolicyTests.test_udp_binary_preview_is_exact_bounded_and_not_assumed_plaintext) ... ok
+test_udp_payload_parser_rejects_bad_hex_and_does_not_invent_bytes (test_packets.PacketPolicyTests.test_udp_payload_parser_rejects_bad_hex_and_does_not_invent_bytes) ... ok
+test_udp_report_record_bound_and_ipv6_addresses (test_packets.PacketPolicyTests.test_udp_report_record_bound_and_ipv6_addresses) ... ok
 test_invalid_containers_report_decoder_error_and_keep_partial_rows (test_packets.TsharkIntegrationTests.test_invalid_containers_report_decoder_error_and_keep_partial_rows) ... ok
 test_malformed_dns_is_exposed_not_repaired (test_packets.TsharkIntegrationTests.test_malformed_dns_is_exposed_not_repaired) ... ok
 test_mixed_endian_sections_interfaces_resolution_and_offset (test_packets.TsharkIntegrationTests.test_mixed_endian_sections_interfaces_resolution_and_offset) ... ok
 test_packet_limit_does_not_claim_complete_file_analysis (test_packets.TsharkIntegrationTests.test_packet_limit_does_not_claim_complete_file_analysis) ... ok
 test_protocol_fixture_and_pcapng_have_matching_decoded_fields (test_packets.TsharkIntegrationTests.test_protocol_fixture_and_pcapng_have_matching_decoded_fields) ... ok
 test_raw_big_endian_nanoseconds_and_linux_cooked (test_packets.TsharkIntegrationTests.test_raw_big_endian_nanoseconds_and_linux_cooked) ... ok
+test_truncated_udp_reports_actual_preview_and_declared_length (test_packets.TsharkIntegrationTests.test_truncated_udp_reports_actual_preview_and_declared_length) ... ok
 test_corruption_and_truncation_rejected (test_radio.ArchiveTests.test_corruption_and_truncation_rejected) ... ok
 test_nonzero_padding_rejected_even_with_matching_trimmed_hash (test_radio.ArchiveTests.test_nonzero_padding_rejected_even_with_matching_trimmed_hash) ... ok
 test_partial_word_and_block_roundtrip (test_radio.ArchiveTests.test_partial_word_and_block_roundtrip) ... ok
@@ -43,6 +47,6 @@ test_unknown_payload_fields_participate_in_exact_cache_comparison (test_radio.St
 test_valid_final_record_without_newline_is_not_declared_truncated (test_radio.StudyTests.test_valid_final_record_without_newline_is_not_declared_truncated) ... ok
 
 ----------------------------------------------------------------------
-Ran 43 tests in 6.239s
+Ran 47 tests in 8.832s
 
 OK

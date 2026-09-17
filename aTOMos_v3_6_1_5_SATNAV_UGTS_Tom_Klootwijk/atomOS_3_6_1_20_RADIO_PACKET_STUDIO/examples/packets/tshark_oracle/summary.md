@@ -1,6 +1,6 @@
 # aTOMos R20 packet study
 
-Study label: SYNTHETIC protocol fixture
+Study label: SYNTHETIC documentation-address protocol fixture
 
 Status: **decoded**. Capture: pcap, 1497 bytes.
 
@@ -11,6 +11,8 @@ Decoder: `TShark (Wireshark) 4.6.2 (v4.6.2-0-g24d5e2b5a3dc).`.
 Decoded 17 packet rows; packet limit 100000; limit reached: False.
 
 All original bytes remain in `source_original.pcap`. `packet_fields.csv` contains decoded metadata; `protocols_conversations.txt` contains TShark's protocol hierarchy and endpoint conversations.
+
+`udp_readable.md` shows decoded UDP summaries, endpoints and capped ASCII/hex payload previews. `udp_previews.json` keeps the same bounded structured view.
 
 ## Protocols
 
