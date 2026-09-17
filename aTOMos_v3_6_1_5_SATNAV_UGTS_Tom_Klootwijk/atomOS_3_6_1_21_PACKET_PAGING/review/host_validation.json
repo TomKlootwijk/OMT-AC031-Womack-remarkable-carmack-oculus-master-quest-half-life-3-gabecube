@@ -1,0 +1,163 @@
+{
+  "schema": "atomos.r21.host-validation.v1",
+  "validated_utc": "2026-09-17T05:57:50.085228+00:00",
+  "status": "passed",
+  "python_version": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+  "tests": {
+    "total": 53,
+    "passed": 53,
+    "skipped": 0,
+    "radio": 29,
+    "packet": 24,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "tshark_version": "TShark (Wireshark) 4.6.2 (v4.6.2-0-g24d5e2b5a3dc).",
+  "synthetic_fixtures": [
+    {
+      "file": "synthetic_ethernet.pcap",
+      "bytes": 1497,
+      "sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_ethernet.pcapng",
+      "bytes": 1840,
+      "sha256": "c296622ddd6b1ef933f2f70c4c5bbd20f401f60dd0e3b64b017ffc92b6c6382e",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_raw_be_ns.pcap",
+      "bytes": 98,
+      "sha256": "e7db4734702877cb8eddc11c6785da04ebd8d75be4a523b496145c03c32c09c9",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_sll.pcap",
+      "bytes": 114,
+      "sha256": "7e3e4f9793d6162351fe840b564d18b165957bcb519915d66ab6a7c193f879a1",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_mixed_sections.pcapng",
+      "bytes": 496,
+      "sha256": "b4858de510f91187907177d5c8f8e977eab5d9f3e7846aa34254031eb06e125a",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_dns_pointer_loop.pcap",
+      "bytes": 100,
+      "sha256": "2e87f303f4e92d5b74d43c50ae4e26bbb9f5fb63ed5c1645bd846b301c01fddd",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_udp_truncated.pcap",
+      "bytes": 86,
+      "sha256": "9ad5a130704282eb9b8a88c5dafcfff7996096fa12a514a92157839c51d8f569",
+      "expected_container_error": false
+    },
+    {
+      "file": "invalid_unknown_interface.pcapng",
+      "bytes": 176,
+      "sha256": "8eb5f5bc46990290b29cd19e1c10c7b77b4ea32690b864841062bc053669fe94",
+      "expected_container_error": true
+    },
+    {
+      "file": "invalid_truncated_file.pcap",
+      "bytes": 1492,
+      "sha256": "d4660a206ba84c5c116e4e07a1850d8f1021b682e315764dbd9d8458d1a08331",
+      "expected_container_error": true
+    },
+    {
+      "file": "invalid_not_capture.pcap",
+      "bytes": 31,
+      "sha256": "cacc64e121ec9519a91c55f6ca1da7dbc1c57d1ea6779eff2f4d7fbd5a71cdc2",
+      "expected_container_error": true
+    },
+    {
+      "file": "synthetic_paging_750.pcap",
+      "bytes": 56064,
+      "sha256": "7ebe2e1962ea5e5d6e2fe93ba37234bd9ecc1456853c4be131e8d58cc5ab1325",
+      "expected_container_error": false
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "python/atomos_radio.py",
+      "sha256": "89516fe27e9d7c86f50cf19e974fcba47709a24f9b3ab283fdd885b5198d664b"
+    },
+    {
+      "path": "python/atomos_packets.py",
+      "sha256": "a4798aef3df2aa5e42dbf8a746c16d0e7f0459a4ff3865b4b7cd4a4f1d532048"
+    },
+    {
+      "path": "tools/study_radio.py",
+      "sha256": "f439e64ee9f1b56ef71354ab0e4ffeea9cdd8aae3857de23508f8520c381b806"
+    },
+    {
+      "path": "tools/study_packets.py",
+      "sha256": "23f342d46434ab38ee8d68684a57e56788fe574ca3523c30db40bdb9780fc9ef"
+    },
+    {
+      "path": "tests/test_radio.py",
+      "sha256": "083e69529ccdf264f08caab6edf648948cd905b61d8247e6293cb778a92345c7"
+    },
+    {
+      "path": "tests/test_packets.py",
+      "sha256": "ed918d7add6d1d6bc20d0dcb98116a0e3e7ea01de2538054f1d05c8cfcc13d2e"
+    },
+    {
+      "path": "examples/packets/make_fixtures.py",
+      "sha256": "fd1e7aa62333572136028f111861a19dd0107b1e2ed790fe6d025c787ae9f9d2"
+    },
+    {
+      "path": "examples/packets/fixture_manifest.json",
+      "sha256": "8ac2d7afa10eb752b4cd1814b0f5e4e3282e0adfa8f5d7d653313b3e80b0d6e7"
+    },
+    {
+      "path": "examples/synthetic_radio.jsonl",
+      "sha256": "a856b26dc46fa5a3c93d8de38c087f602df342284d6b162c512281d6338c26cd"
+    },
+    {
+      "path": "review/host_tests.txt",
+      "sha256": "c19730cc748db54903009e76736920d507296e89ab9ead30b54696a93e93b513"
+    }
+  ],
+  "coverage": [
+    "lossless bit-plane bytes and corruption rejection",
+    "source timestamps/cache conflicts/sequence and clock discontinuities",
+    "per-link metric grouping and LTE RSSNR unit profiles",
+    "many-link plot pagination and fresh/cache channel inventory",
+    "PCAP/PCAPNG decoder integration across DNS/TCP/UDP/TLS/HTTP/IPv6",
+    "mixed-endian sections, interface resolution/offsets and cooked links",
+    "malformed/truncated capture handling",
+    "literal argv invocation with network name resolution disabled",
+    "nonempty output protection and subprocess failure/timeout handling",
+    "TLS 1.3 opaque outer record detection",
+    "bounded readable UDP summaries, exact hex/ASCII previews, unknown/encrypted labels and separate capture/preview truncation",
+    "UDP offset/limit validation; all 500 UDP matches across three pages; late DNS at frames 452/749; empty pages and inspected-prefix limits",
+    "bounded actual source read rejects growth beyond the byte limit after a stale stat result"
+  ],
+  "private_capture_data_included": false,
+  "paging_evidence": {
+    "path": "examples/packets/paging_oracle/summary.json",
+    "input_sha256": "7ebe2e1962ea5e5d6e2fe93ba37234bd9ecc1456853c4be131e8d58cc5ab1325",
+    "status": "decoded",
+    "decoded_packet_rows": 750,
+    "udp_page": {
+      "profile": "atomos.udp-readable.v2",
+      "decoded_udp_records": 500,
+      "total_matches": 500,
+      "offset": 400,
+      "limit": 200,
+      "has_next": false,
+      "next_offset": null,
+      "match_scope": "Decoded packet prefix only; see packet_limit_reached and decoder_errors in summary.json.",
+      "displayed_records": 100,
+      "omitted_records": 400,
+      "preview_byte_limit": 64,
+      "record_limit": 200,
+      "file": "udp_readable.md",
+      "preview_json": "udp_previews.json"
+    }
+  }
+}

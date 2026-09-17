@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:atomos:radio-event:v1",
+  "title": "aTOMos reported radio observation event",
+  "description": "One JSONL event. Integers returned by APIs are retained; unavailable measurements are null. Payload extensions remain allowed.",
+  "type": "object",
+  "required": ["schema", "session_id", "seq", "kind", "received_elapsed_ns", "received_unix_ms", "source_elapsed_ns", "payload"],
+  "properties": {
+    "schema": {"const": "atomos.radio.v1"},
+    "session_id": {"type": "string", "format": "uuid"},
+    "seq": {"type": "integer", "minimum": 0},
+    "kind": {"enum": ["session", "wifi", "cell", "status", "marker", "session_end"]},
+    "received_elapsed_ns": {"type": "string", "pattern": "^(0|[1-9][0-9]*)$"},
+    "received_unix_ms": {"type": "integer"},
+    "source_elapsed_ns": {"type": ["string", "null"], "pattern": "^(0|[1-9][0-9]*)$"},
+    "payload": {"type": "object"}
+  },
+  "additionalProperties": true
+}

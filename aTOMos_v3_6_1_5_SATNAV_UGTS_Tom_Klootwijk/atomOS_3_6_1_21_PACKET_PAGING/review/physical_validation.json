@@ -1,0 +1,33 @@
+{
+  "schema": "atomos.r21.physical-validation.v1",
+  "validated_utc": "2026-09-17T06:09:01.768466+00:00",
+  "status": "installed_and_smoke_checked",
+  "device": "POCO X7 Pro, model 2412DPC0AG, Android 16/API 36",
+  "package": "org.atomos.radio",
+  "version_code": 21,
+  "version_name": "3.6.1.21",
+  "install_mode": "adb install -r, same signing key, no uninstall",
+  "apk_sha256": "8527bbcf4aba99e493988eaf50152fed8e3503199b949d740f0dd48a1f3b46d4",
+  "installed_apk_bytes_equal_release": true,
+  "private_backup_before_upgrade": true,
+  "existing_files_preserved_byte_for_byte": 5,
+  "preserved_session_journals": 3,
+  "preserved_raw_packet_captures": 1,
+  "preserved_decoded_reports": 1,
+  "radio_service_running_at_upgrade": false,
+  "legacy_capture_review_opened": true,
+  "browser_observed": {
+    "filter": "UDP",
+    "matches_displayed": 115,
+    "total_matches": 115,
+    "packets_inspected": 209,
+    "scan_complete": true,
+    "unsupported": 0,
+    "malformed": 0,
+    "truncated": 0
+  },
+  "multi_page_navigation_evidence": "Synthetic emulator; three pages of 200/200/100 and Previous/Next tested. This handset capture fits one UDP page.",
+  "new_radio_recording_started": false,
+  "usb_storage_hardware_tested": false,
+  "identifying_captures_or_screenshots_published": false
+}

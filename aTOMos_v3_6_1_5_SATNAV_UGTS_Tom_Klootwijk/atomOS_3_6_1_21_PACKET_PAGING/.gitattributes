@@ -1,0 +1,7 @@
+# Keep evidence, source bindings and lossless fixtures byte-identical across OSes.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Exact decoder transcripts include intentional trailing spaces from TShark.
+examples/packets/tshark_oracle/*.txt -whitespace
+examples/packets/paging_oracle/*.txt -whitespace
+# Android's instrumentation runner terminates its exact transcript with blanks.
+review/android/instrumentation*.txt -whitespace

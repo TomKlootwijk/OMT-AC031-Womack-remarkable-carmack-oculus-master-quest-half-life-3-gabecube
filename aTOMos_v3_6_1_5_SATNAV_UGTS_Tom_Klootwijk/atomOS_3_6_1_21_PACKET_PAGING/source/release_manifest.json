@@ -1,0 +1,594 @@
+{
+  "version": "3.6.1.21",
+  "profile": "ATOMOS-PACKET-PAGING-R1",
+  "parent_commit": "87743d502ca7b590ec8b1ec7eafc45f957cdfd8e",
+  "git_repair_base_commit": "7481591f594be1ead3d6d00bc3f37fca2c978f35",
+  "scope": "R21 filtered packet paging; unchanged R20 manuscript included. Public synthetic captures only. Device deployment status is recorded separately in VERSION.json.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 458,
+      "sha256": "8e5713e8f6c531a8cfc27f945121972a746a8cf1f2d675d063aa3a8ef8f15252"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 126,
+      "sha256": "e3460830d25ddc198feaae5cdc32b0465c94284af77f3f18465c5943cd2f8afb"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 709,
+      "sha256": "68ed9730c277fcdc700a3995f16ae2a942270471aada91dee916b83913cf05e9"
+    },
+    {
+      "path": "android/.gitignore",
+      "bytes": 49,
+      "sha256": "5e44ab09c435ec8444b44c6303a0fc2cfd883bc51bde853e6f34d42cf775eb4e"
+    },
+    {
+      "path": "android/app/build.gradle",
+      "bytes": 599,
+      "sha256": "30e3187a7b87bb3d2ae0986b692da4d51c20fdd8a8cd3e7201ef09039c889eaa"
+    },
+    {
+      "path": "android/app/src/androidTest/AndroidManifest.xml",
+      "bytes": 165,
+      "sha256": "8fbbadb1fc7735b24b68479cd116cfcd2ed1ac055b6ae9534252f58186629e86"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/ContractTest.java",
+      "bytes": 2958,
+      "sha256": "c4c3a0bca51355feec72143db42f0eb1eca3eb930b46e2fb18d4bc41a895352f"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/DecoderTest.java",
+      "bytes": 16741,
+      "sha256": "ebcfbed01d233b4904b27edfd3138cad84d1aef601feae07320de36c9f8a2a25"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/PacketPresentationTest.java",
+      "bytes": 2007,
+      "sha256": "aacb3de26d653b176de8e2839807968bad01f44dcccb7d20f802e81f459bc675"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/PageRequestGateTest.java",
+      "bytes": 856,
+      "sha256": "5cabc64a19ad8d824cfc177754e010779847323d91602f702d316ade710413c5"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/PagingTest.java",
+      "bytes": 26095,
+      "sha256": "300dbdde890461e50e0ebdfff7b05f96a5c32765cc580a28d62c1fd61156d40a"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/ReviewTest.java",
+      "bytes": 2741,
+      "sha256": "3217584dc954c5de87ff5c37a1ada6538b81d2c1a17f7725b9ba42aacf4adc55"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "bytes": 2007,
+      "sha256": "68ab56316122f65150d0460db651ce88d491d77ae5ae71fa01017df03ad3ada0"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/CellEncoder.java",
+      "bytes": 5251,
+      "sha256": "d6354dd5cd022719aa3a7748d6a5714e4a705c0afc2462593f4404c7e4976f64"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/Json.java",
+      "bytes": 987,
+      "sha256": "c532e799d4cbbfc5452198f8f7238cb77fe13b8e5fc2c9f0541abb2589edac7f"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/MainActivity.java",
+      "bytes": 13778,
+      "sha256": "126e0e2b42ced258135c1eebc9b6bb179d15e4ea9aebf0c5d580da4b93f5afc2"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/NetworkSnapshot.java",
+      "bytes": 2983,
+      "sha256": "93c119a95cba1a49225ad1f2655bae0d19debae93a52fc6c2f69d7538c4c5266"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketActivity.java",
+      "bytes": 12676,
+      "sha256": "de3d3ffe4ffc7136cfa2bf7d5c6ccff4b2cf322bd12bf244d06bac6d40096554"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketBrowserActivity.java",
+      "bytes": 10243,
+      "sha256": "fa1e20d7fcf30ce6e525542ad8fae8c09b30d1598979d034f2668f2a80040f04"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketDecoder.java",
+      "bytes": 32531,
+      "sha256": "54e8830f8628be295087a089497af0f970af12032ae288087e984614e58d6212"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PacketPresentation.java",
+      "bytes": 7591,
+      "sha256": "7531c2754395cf8b557bef94048fe3292108e3a33b4eda579fde0840df5c347d"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/PageRequestGate.java",
+      "bytes": 413,
+      "sha256": "56ccd6fdb16a80986ce3c060c5c77b4ba9a055783c94d2aac283cd6724598b1d"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/RadioService.java",
+      "bytes": 16844,
+      "sha256": "2bd2af9fad0b108241d6f815223b768684f9d0be7ffe8947b47b0d721ce1355d"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/SessionLog.java",
+      "bytes": 2957,
+      "sha256": "814f39f92baf36a162dbb5a26764401d9732836b2ff785b2c91870f3df0cd030"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/SessionReview.java",
+      "bytes": 5988,
+      "sha256": "fd338c9658bfd6546fe9497f7e34312548300970fb78933fd6c243eff1bfb869"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/StudyActivity.java",
+      "bytes": 3524,
+      "sha256": "6ca67e2b0ee1bf645c58d6677c604287d4cbba9fa9e7d06c5cb55497339f9f03"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/TrendView.java",
+      "bytes": 2040,
+      "sha256": "0c186fc04234e17e7f0974f24cfbee558646e852103f94e90f4bfce003bae24f"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/Ui.java",
+      "bytes": 2377,
+      "sha256": "60704cfb5f52903ed9522b0e4631c305c8b36d716b226f871a9b8406c0ddaedb"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/WifiIeDecoder.java",
+      "bytes": 6785,
+      "sha256": "853f1674f388575c10198450a36d1eb21754b47f8e326fced255a28378483e56"
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "bytes": 484,
+      "sha256": "bed70e25b2988b2f6cd091b5bfb8ea0176b20f1ba34f5cd29702fb4eaab69f0a"
+    },
+    {
+      "path": "android/app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 191,
+      "sha256": "ec0f1c6431c2434ac85c7933dd0fe21c430e9601ec4db70d0112557cbebf9993"
+    },
+    {
+      "path": "android/build.gradle",
+      "bytes": 70,
+      "sha256": "6890efa07ab0063bcbdf50cc89686d90bddd1d02af5e5ada6d499d8c3e9b6aa8"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43705,
+      "sha256": "81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 251,
+      "sha256": "cdab1ffb439219b1db125e3c99a86cf2424f8762b9b3faa404ed061e3635ecde"
+    },
+    {
+      "path": "android/gradle.properties",
+      "bytes": 118,
+      "sha256": "abde21914a00c7fe0e958edb52fd34718dd12aeb2e8a6cfef1524117ea365a9a"
+    },
+    {
+      "path": "android/gradlew",
+      "bytes": 8752,
+      "sha256": "734b3879d3501dce471cf0522d3bcbafe76873d9fc5129345b67fb43bd15e933"
+    },
+    {
+      "path": "android/gradlew.bat",
+      "bytes": 2966,
+      "sha256": "57931b17dd228e5c24dac90e815d0bf82477e831a4618dfab4136f5446b42a9f"
+    },
+    {
+      "path": "android/README.md",
+      "bytes": 8672,
+      "sha256": "7cdcc9fc554799e88d7b078150871cd2291c524bedb336bddfd045ec4fb3f3bb"
+    },
+    {
+      "path": "android/settings.gradle",
+      "bytes": 272,
+      "sha256": "d44fe03912f3e27ddc42e278a406e7673e0627a582c0c05dfc36e9265635849a"
+    },
+    {
+      "path": "examples/packets/fixture_manifest.json",
+      "bytes": 5098,
+      "sha256": "8ac2d7afa10eb752b4cd1814b0f5e4e3282e0adfa8f5d7d653313b3e80b0d6e7"
+    },
+    {
+      "path": "examples/packets/invalid_not_capture.pcap",
+      "bytes": 31,
+      "sha256": "cacc64e121ec9519a91c55f6ca1da7dbc1c57d1ea6779eff2f4d7fbd5a71cdc2"
+    },
+    {
+      "path": "examples/packets/invalid_truncated_file.pcap",
+      "bytes": 1492,
+      "sha256": "d4660a206ba84c5c116e4e07a1850d8f1021b682e315764dbd9d8458d1a08331"
+    },
+    {
+      "path": "examples/packets/invalid_unknown_interface.pcapng",
+      "bytes": 176,
+      "sha256": "8eb5f5bc46990290b29cd19e1c10c7b77b4ea32690b864841062bc053669fe94"
+    },
+    {
+      "path": "examples/packets/make_fixtures.py",
+      "bytes": 10911,
+      "sha256": "fd1e7aa62333572136028f111861a19dd0107b1e2ed790fe6d025c787ae9f9d2"
+    },
+    {
+      "path": "examples/packets/paging_oracle/packet_fields.csv",
+      "bytes": 197283,
+      "sha256": "80810222d4ecee7d5a9c3aa79de9d6ad75cb9b68b62b9829d5224504aaf74b9a"
+    },
+    {
+      "path": "examples/packets/paging_oracle/protocols_conversations.txt",
+      "bytes": 38988,
+      "sha256": "7c670e1b822cb8fcb088c0ab856bcb85fbdc386662a852fecccab49da8fdc925"
+    },
+    {
+      "path": "examples/packets/paging_oracle/source_original.pcap",
+      "bytes": 56064,
+      "sha256": "7ebe2e1962ea5e5d6e2fe93ba37234bd9ecc1456853c4be131e8d58cc5ab1325"
+    },
+    {
+      "path": "examples/packets/paging_oracle/summary.json",
+      "bytes": 6938,
+      "sha256": "ecb4dead23f7c5a53f77471d67aa051cebd9881bfd101223ec0c9dbb1d5df989"
+    },
+    {
+      "path": "examples/packets/paging_oracle/summary.md",
+      "bytes": 2373,
+      "sha256": "8bf76a07d4949f783b9844966af17aa86c3d48277cd651fbd46d478ebc831a91"
+    },
+    {
+      "path": "examples/packets/paging_oracle/tshark_fields.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/paging_oracle/tshark_fields.stdout.txt",
+      "bytes": 197283,
+      "sha256": "80810222d4ecee7d5a9c3aa79de9d6ad75cb9b68b62b9829d5224504aaf74b9a"
+    },
+    {
+      "path": "examples/packets/paging_oracle/tshark_statistics.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/paging_oracle/tshark_statistics.stdout.txt",
+      "bytes": 38988,
+      "sha256": "7c670e1b822cb8fcb088c0ab856bcb85fbdc386662a852fecccab49da8fdc925"
+    },
+    {
+      "path": "examples/packets/paging_oracle/tshark_udp_payloads.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/paging_oracle/tshark_version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/paging_oracle/tshark_version.stdout.txt",
+      "bytes": 1463,
+      "sha256": "bc5372d586a5a79ebd09891e495bb53e061083e0e453c566ae7d126f2700f9c0"
+    },
+    {
+      "path": "examples/packets/paging_oracle/udp_previews.json",
+      "bytes": 96695,
+      "sha256": "b0bed93d6a6d9af5119028968cb1bf715fa6b7354191ad60aef656b166d87415"
+    },
+    {
+      "path": "examples/packets/paging_oracle/udp_readable.md",
+      "bytes": 58412,
+      "sha256": "95b6e871ce2896b83218b2dd9a4716e0fe9e6bc216ca559018fac392ec2ce2b4"
+    },
+    {
+      "path": "examples/packets/README.md",
+      "bytes": 3977,
+      "sha256": "d8260a0443905949797aecfa266020d51aad463dd80239f08e6eaf0a379bcff7"
+    },
+    {
+      "path": "examples/packets/synthetic_dns_pointer_loop.pcap",
+      "bytes": 100,
+      "sha256": "2e87f303f4e92d5b74d43c50ae4e26bbb9f5fb63ed5c1645bd846b301c01fddd"
+    },
+    {
+      "path": "examples/packets/synthetic_ethernet.pcap",
+      "bytes": 1497,
+      "sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754"
+    },
+    {
+      "path": "examples/packets/synthetic_ethernet.pcapng",
+      "bytes": 1840,
+      "sha256": "c296622ddd6b1ef933f2f70c4c5bbd20f401f60dd0e3b64b017ffc92b6c6382e"
+    },
+    {
+      "path": "examples/packets/synthetic_mixed_sections.pcapng",
+      "bytes": 496,
+      "sha256": "b4858de510f91187907177d5c8f8e977eab5d9f3e7846aa34254031eb06e125a"
+    },
+    {
+      "path": "examples/packets/synthetic_paging_750.pcap",
+      "bytes": 56064,
+      "sha256": "7ebe2e1962ea5e5d6e2fe93ba37234bd9ecc1456853c4be131e8d58cc5ab1325"
+    },
+    {
+      "path": "examples/packets/synthetic_raw_be_ns.pcap",
+      "bytes": 98,
+      "sha256": "e7db4734702877cb8eddc11c6785da04ebd8d75be4a523b496145c03c32c09c9"
+    },
+    {
+      "path": "examples/packets/synthetic_sll.pcap",
+      "bytes": 114,
+      "sha256": "7e3e4f9793d6162351fe840b564d18b165957bcb519915d66ab6a7c193f879a1"
+    },
+    {
+      "path": "examples/packets/synthetic_udp_truncated.pcap",
+      "bytes": 86,
+      "sha256": "9ad5a130704282eb9b8a88c5dafcfff7996096fa12a514a92157839c51d8f569"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/packet_fields.csv",
+      "bytes": 5216,
+      "sha256": "59182d3111c88e5870d9e5616c5b1ad124a4c0e66e7eac84ae6a02a5eca4bd47"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/protocols_conversations.txt",
+      "bytes": 4209,
+      "sha256": "300621aa0639758b6be60e9e693325024c08e18c6844821490b3af1a25aa1d0b"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/source_original.pcap",
+      "bytes": 1497,
+      "sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/summary.json",
+      "bytes": 7100,
+      "sha256": "83710a18f3c24ee8bd0744a50069d28e2736d79d06d0058674c4872bf78c43ee"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/summary.md",
+      "bytes": 2396,
+      "sha256": "a126ae11cdc07214ceeda5ad3e2e39bb0a76c45fc11eecaf5a8884ab5a76a77b"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_fields.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_fields.stdout.txt",
+      "bytes": 5216,
+      "sha256": "59182d3111c88e5870d9e5616c5b1ad124a4c0e66e7eac84ae6a02a5eca4bd47"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_statistics.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_statistics.stdout.txt",
+      "bytes": 4209,
+      "sha256": "300621aa0639758b6be60e9e693325024c08e18c6844821490b3af1a25aa1d0b"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_udp_payloads.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/tshark_version.stdout.txt",
+      "bytes": 1463,
+      "sha256": "bc5372d586a5a79ebd09891e495bb53e061083e0e453c566ae7d126f2700f9c0"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/udp_previews.json",
+      "bytes": 4669,
+      "sha256": "0e7d9d5f591e114bf072fb675a32ec1eaabf91f64979aa47c1b4945cdbc46cea"
+    },
+    {
+      "path": "examples/packets/tshark_oracle/udp_readable.md",
+      "bytes": 3587,
+      "sha256": "2dfec0d84dedcb311920051758be99801154f49a40de08415541b154fb18e6e6"
+    },
+    {
+      "path": "examples/synthetic_radio.jsonl",
+      "bytes": 9688,
+      "sha256": "a856b26dc46fa5a3c93d8de38c087f602df342284d6b162c512281d6338c26cd"
+    },
+    {
+      "path": "formal/PACKET_PAGING_PROFILE.md",
+      "bytes": 6329,
+      "sha256": "2e1d386f3a59d3ad313d6506250386a9ed016baf3d6e3115baa3dcabdf1d9b41"
+    },
+    {
+      "path": "output/android/aTOMos-Radio-3.6.1.21-debug.apk",
+      "bytes": 332900,
+      "sha256": "8527bbcf4aba99e493988eaf50152fed8e3503199b949d740f0dd48a1f3b46d4"
+    },
+    {
+      "path": "output/pdf/aTOMos_v3_6_1_21_Packet_Paging_Tom_Klootwijk.pdf",
+      "bytes": 989566,
+      "sha256": "8375b5c4fb056b6536e1a598ecef92333b6792df34fd55307d11716ed29c4610"
+    },
+    {
+      "path": "python/atomos_packets.py",
+      "bytes": 23984,
+      "sha256": "a4798aef3df2aa5e42dbf8a746c16d0e7f0459a4ff3865b4b7cd4a4f1d532048"
+    },
+    {
+      "path": "python/atomos_radio.py",
+      "bytes": 41478,
+      "sha256": "89516fe27e9d7c86f50cf19e974fcba47709a24f9b3ab283fdd885b5198d664b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5476,
+      "sha256": "a36465f34b0dee43689174c571f0d3badd88ef8992763869aa98e3b8041ee32c"
+    },
+    {
+      "path": "requirements-document.txt",
+      "bytes": 46,
+      "sha256": "b044f72918b65be3505c8810fd822b1925176e66d862a08a18a3c8a8bd086f91"
+    },
+    {
+      "path": "requirements-study.txt",
+      "bytes": 103,
+      "sha256": "2db98ed3ffb80a02f2cffc3433670c32fcc345ef068b6cab03f3d11e3d85ad6d"
+    },
+    {
+      "path": "review/android/emulator-global-dns.png",
+      "bytes": 152771,
+      "sha256": "0406f116c2a2e891e646da944e091d52c7eb97ad5948de2e6021356f3d17d9a2"
+    },
+    {
+      "path": "review/android/emulator-late-dns-detail.png",
+      "bytes": 258216,
+      "sha256": "7b8da3fff9831d3147d1a61c3280d787e195cc7c01fa5942783d2e372e99d6c7"
+    },
+    {
+      "path": "review/android/emulator-page3-landscape.png",
+      "bytes": 130327,
+      "sha256": "8577a976aa0fc339e4e30d2cc65ce9adcd441c36c81b18695379140d92d535f6"
+    },
+    {
+      "path": "review/android/emulator-page3.png",
+      "bytes": 246406,
+      "sha256": "7334d84b3e11c8e924c9025fed2a2ecd5fda6c1b2ede76708703198f73cfedcf"
+    },
+    {
+      "path": "review/android/instrumentation-final.txt",
+      "bytes": 343,
+      "sha256": "2f59d7c4dfead180b00ce94c6588b366719cc1d1669fde8437e6c4430468a503"
+    },
+    {
+      "path": "review/android/validation.json",
+      "bytes": 5825,
+      "sha256": "2ba1b1ea7c41b3fd1b7bc8781d0524bf23659f146207913e6ceac91ab28b1f4b"
+    },
+    {
+      "path": "review/android/VALIDATION.md",
+      "bytes": 4128,
+      "sha256": "fb26c9292d41e9859720551ae0af59284fa488f6ac4d5e0124687772af7effc8"
+    },
+    {
+      "path": "review/git_repair.json",
+      "bytes": 648,
+      "sha256": "abafaac5a1a0465884e39f1c00c28fd69c4e5a26c6bcfa77671d64aa088d5d30"
+    },
+    {
+      "path": "review/host_tests.txt",
+      "bytes": 8045,
+      "sha256": "c19730cc748db54903009e76736920d507296e89ab9ead30b54696a93e93b513"
+    },
+    {
+      "path": "review/host_validation.json",
+      "bytes": 6136,
+      "sha256": "3bc6c404b8b9d4d209f94ffc4a1e669f800a399ebc4d73db2196ae626b4fd1ea"
+    },
+    {
+      "path": "review/paging_validation.json",
+      "bytes": 18310,
+      "sha256": "41848264009d4eb2d56be51a0bd00f5172e54ed1bbcc1dc368271e6c45a91ca0"
+    },
+    {
+      "path": "review/pdf_build.json",
+      "bytes": 506,
+      "sha256": "bea0579607f7b8a700463b1475bf8f212995871fe8071025b2be4b9ad9c1fc8a"
+    },
+    {
+      "path": "review/pdf_visual_review.json",
+      "bytes": 77243,
+      "sha256": "9125b7ef2995093080ff47adac869fa8c0fa287be1458aa63796fe721d8ba76e"
+    },
+    {
+      "path": "review/physical_validation.json",
+      "bytes": 1323,
+      "sha256": "d2e7623d51a46db8b3cdecc5109f2b45be9d66975c00e45e1b792b2673dfe056"
+    },
+    {
+      "path": "review/saved_capture_validation.json",
+      "bytes": 711,
+      "sha256": "18a4ee140065d9768f032fbf8bc93bbdaa2e19f90c964548a0f45a194cacd6fe"
+    },
+    {
+      "path": "schema/radio-event-v1.schema.json",
+      "bytes": 985,
+      "sha256": "4a94a68126ad161becee6ebb6b43256b4bf44434e21df2e453152262a84b0df2"
+    },
+    {
+      "path": "source/parent_binding.json",
+      "bytes": 481,
+      "sha256": "fb17ce2c85e94b711b9881cc2ce258f0271382008155aa1cac379bc21a1b3ffe"
+    },
+    {
+      "path": "source/parent_R20.pdf",
+      "bytes": 902711,
+      "sha256": "afebe08e91feb4d309f2c68268b435e0ca13a02c803264e96c2782972239a7ec"
+    },
+    {
+      "path": "tests/test_packets.py",
+      "bytes": 19168,
+      "sha256": "ed918d7add6d1d6bc20d0dcb98116a0e3e7ea01de2538054f1d05c8cfcc13d2e"
+    },
+    {
+      "path": "tests/test_radio.py",
+      "bytes": 17047,
+      "sha256": "083e69529ccdf264f08caab6edf648948cd905b61d8247e6293cb778a92345c7"
+    },
+    {
+      "path": "tools/build_android.ps1",
+      "bytes": 1507,
+      "sha256": "58677df9e4766b3e4195bb2508906972889b77a3c79f97477d2802fea4b8d4af"
+    },
+    {
+      "path": "tools/build_pdf.py",
+      "bytes": 7971,
+      "sha256": "ef8e5f32ada86dcd75e030d58b26c81e4981a99d8b2cc82435a3415be5d97e84"
+    },
+    {
+      "path": "tools/package_release.py",
+      "bytes": 8324,
+      "sha256": "68699f7869beac3f8f9135b95eb777699dd1ea77158164fc73c1e80c3b420a4f"
+    },
+    {
+      "path": "tools/review_pdf.py",
+      "bytes": 9106,
+      "sha256": "3a733ea0cef369fa09f62d074fdf15102d321ac2a532f0017194375ed8fbb9d9"
+    },
+    {
+      "path": "tools/study_packets.py",
+      "bytes": 1784,
+      "sha256": "23f342d46434ab38ee8d68684a57e56788fe574ca3523c30db40bdb9780fc9ef"
+    },
+    {
+      "path": "tools/study_radio.py",
+      "bytes": 2662,
+      "sha256": "f439e64ee9f1b56ef71354ab0e4ffeea9cdd8aae3857de23508f8520c381b806"
+    },
+    {
+      "path": "VERSION.json",
+      "bytes": 2950,
+      "sha256": "8d8f1e73e3cf8f98296d8d5f004fa9344341027f617b275b980d94d1ec50d2a9"
+    }
+  ]
+}

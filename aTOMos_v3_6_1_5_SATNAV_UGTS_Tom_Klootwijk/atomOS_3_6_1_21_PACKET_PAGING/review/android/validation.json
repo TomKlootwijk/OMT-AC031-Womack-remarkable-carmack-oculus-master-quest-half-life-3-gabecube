@@ -1,0 +1,92 @@
+{
+  "schema": "atomos.android_validation.v1",
+  "release": "3.6.1.21",
+  "apk": "output/android/aTOMos-Radio-3.6.1.21-debug.apk",
+  "apk_sha256": "8527bbcf4aba99e493988eaf50152fed8e3503199b949d740f0dd48a1f3b46d4",
+  "apk_bytes": 332900,
+  "instrumentation_passed": 29,
+  "instrumentation_seconds": 6.777,
+  "instrumentation_evidence": "instrumentation-final.txt",
+  "lint_errors": 0,
+  "lint_warnings": 27,
+  "platform": "Android emulator API 36.1",
+  "package": "org.atomos.radio",
+  "version_code": 21,
+  "test_counts": {
+    "ContractTest": 3,
+    "DecoderTest": 12,
+    "PacketPresentationTest": 2,
+    "PageRequestGateTest": 2,
+    "PagingTest": 8,
+    "ReviewTest": 2
+  },
+  "paging_fixture": "examples/packets/synthetic_paging_750.pcap",
+  "paging_fixture_sha256": "7ebe2e1962ea5e5d6e2fe93ba37234bd9ecc1456853c4be131e8d58cc5ab1325",
+  "fixture_packets": 750,
+  "fixture_udp_packets": 500,
+  "udp_page_lengths": [
+    200,
+    200,
+    100
+  ],
+  "udp_page_first_indices": [
+    1,
+    301,
+    601
+  ],
+  "late_dns_indices": [
+    452,
+    749
+  ],
+  "global_query": "page0749.example.test",
+  "global_query_match_indices": [
+    749
+  ],
+  "next_disabled_on_last_page": true,
+  "previous_page_verified": true,
+  "rotation_page_filter_query_preserved": true,
+  "landscape_layout_visually_checked": true,
+  "legacy_capture_review_verified": true,
+  "prior_imported_raw_capture_sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754",
+  "prior_imported_raw_files_preserved": 2,
+  "prior_session_files_remain_present": 5,
+  "source_changed_and_cancellation": "instrumented boundary tests plus request generation tests",
+  "android_crash_buffer_empty": true,
+  "physical_handset_operated_by_this_agent": false,
+  "usb_storage_hardware_tested": false,
+  "emulator_stopped_after_verification": true,
+  "source_pins": {
+    "android/app/build.gradle": "30e3187a7b87bb3d2ae0986b692da4d51c20fdd8a8cd3e7201ef09039c889eaa",
+    "android/app/src/androidTest/java/org/atomos/radio/ContractTest.java": "c4c3a0bca51355feec72143db42f0eb1eca3eb930b46e2fb18d4bc41a895352f",
+    "android/app/src/androidTest/java/org/atomos/radio/DecoderTest.java": "ebcfbed01d233b4904b27edfd3138cad84d1aef601feae07320de36c9f8a2a25",
+    "android/app/src/androidTest/java/org/atomos/radio/PacketPresentationTest.java": "aacb3de26d653b176de8e2839807968bad01f44dcccb7d20f802e81f459bc675",
+    "android/app/src/androidTest/java/org/atomos/radio/PageRequestGateTest.java": "5cabc64a19ad8d824cfc177754e010779847323d91602f702d316ade710413c5",
+    "android/app/src/androidTest/java/org/atomos/radio/PagingTest.java": "300dbdde890461e50e0ebdfff7b05f96a5c32765cc580a28d62c1fd61156d40a",
+    "android/app/src/androidTest/java/org/atomos/radio/ReviewTest.java": "3217584dc954c5de87ff5c37a1ada6538b81d2c1a17f7725b9ba42aacf4adc55",
+    "android/app/src/main/AndroidManifest.xml": "68ab56316122f65150d0460db651ce88d491d77ae5ae71fa01017df03ad3ada0",
+    "android/app/src/main/java/org/atomos/radio/CellEncoder.java": "d6354dd5cd022719aa3a7748d6a5714e4a705c0afc2462593f4404c7e4976f64",
+    "android/app/src/main/java/org/atomos/radio/Json.java": "c532e799d4cbbfc5452198f8f7238cb77fe13b8e5fc2c9f0541abb2589edac7f",
+    "android/app/src/main/java/org/atomos/radio/MainActivity.java": "126e0e2b42ced258135c1eebc9b6bb179d15e4ea9aebf0c5d580da4b93f5afc2",
+    "android/app/src/main/java/org/atomos/radio/NetworkSnapshot.java": "93c119a95cba1a49225ad1f2655bae0d19debae93a52fc6c2f69d7538c4c5266",
+    "android/app/src/main/java/org/atomos/radio/PacketActivity.java": "de3d3ffe4ffc7136cfa2bf7d5c6ccff4b2cf322bd12bf244d06bac6d40096554",
+    "android/app/src/main/java/org/atomos/radio/PacketBrowserActivity.java": "fa1e20d7fcf30ce6e525542ad8fae8c09b30d1598979d034f2668f2a80040f04",
+    "android/app/src/main/java/org/atomos/radio/PacketDecoder.java": "54e8830f8628be295087a089497af0f970af12032ae288087e984614e58d6212",
+    "android/app/src/main/java/org/atomos/radio/PacketPresentation.java": "7531c2754395cf8b557bef94048fe3292108e3a33b4eda579fde0840df5c347d",
+    "android/app/src/main/java/org/atomos/radio/PageRequestGate.java": "56ccd6fdb16a80986ce3c060c5c77b4ba9a055783c94d2aac283cd6724598b1d",
+    "android/app/src/main/java/org/atomos/radio/RadioService.java": "2bd2af9fad0b108241d6f815223b768684f9d0be7ffe8947b47b0d721ce1355d",
+    "android/app/src/main/java/org/atomos/radio/SessionLog.java": "814f39f92baf36a162dbb5a26764401d9732836b2ff785b2c91870f3df0cd030",
+    "android/app/src/main/java/org/atomos/radio/SessionReview.java": "fd338c9658bfd6546fe9497f7e34312548300970fb78933fd6c243eff1bfb869",
+    "android/app/src/main/java/org/atomos/radio/StudyActivity.java": "6ca67e2b0ee1bf645c58d6677c604287d4cbba9fa9e7d06c5cb55497339f9f03",
+    "android/app/src/main/java/org/atomos/radio/TrendView.java": "0c186fc04234e17e7f0974f24cfbee558646e852103f94e90f4bfce003bae24f",
+    "android/app/src/main/java/org/atomos/radio/Ui.java": "60704cfb5f52903ed9522b0e4631c305c8b36d716b226f871a9b8406c0ddaedb",
+    "android/app/src/main/java/org/atomos/radio/WifiIeDecoder.java": "853f1674f388575c10198450a36d1eb21754b47f8e326fced255a28378483e56",
+    "android/build.gradle": "6890efa07ab0063bcbdf50cc89686d90bddd1d02af5e5ada6d499d8c3e9b6aa8",
+    "tools/build_android.ps1": "58677df9e4766b3e4195bb2508906972889b77a3c79f97477d2802fea4b8d4af"
+  },
+  "screenshot_pins": {
+    "emulator-global-dns.png": "0406f116c2a2e891e646da944e091d52c7eb97ad5948de2e6021356f3d17d9a2",
+    "emulator-late-dns-detail.png": "7b8da3fff9831d3147d1a61c3280d787e195cc7c01fa5942783d2e372e99d6c7",
+    "emulator-page3-landscape.png": "8577a976aa0fc339e4e30d2cc65ce9adcd441c36c81b18695379140d92d535f6",
+    "emulator-page3.png": "7334d84b3e11c8e924c9025fed2a2ecd5fda6c1b2ede76708703198f73cfedcf"
+  }
+}

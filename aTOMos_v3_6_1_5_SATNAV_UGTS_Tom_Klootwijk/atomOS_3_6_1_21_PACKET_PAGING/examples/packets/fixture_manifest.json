@@ -1,0 +1,190 @@
+{
+  "synthetic": true,
+  "network_calls": false,
+  "note": "Documentation addresses and invented payloads. TLS bytes exercise record/ClientHello parsing, not an authenticated connection.",
+  "ethernet_packet_descriptions": [
+    {
+      "frame": 1,
+      "description": "IPv4 UDP DNS question example.test A"
+    },
+    {
+      "frame": 2,
+      "description": "IPv4 UDP compressed DNS answer 203.0.113.7"
+    },
+    {
+      "frame": 3,
+      "description": "HTTP TCP SYN"
+    },
+    {
+      "frame": 4,
+      "description": "HTTP TCP SYN ACK"
+    },
+    {
+      "frame": 5,
+      "description": "HTTP TCP ACK"
+    },
+    {
+      "frame": 6,
+      "description": "HTTP GET /synthetic"
+    },
+    {
+      "frame": 7,
+      "description": "HTTP 200 response"
+    },
+    {
+      "frame": 8,
+      "description": "TLS TCP SYN"
+    },
+    {
+      "frame": 9,
+      "description": "TLS TCP SYN ACK"
+    },
+    {
+      "frame": 10,
+      "description": "TLS TCP ACK"
+    },
+    {
+      "frame": 11,
+      "description": "TLS ClientHello with SNI example.test"
+    },
+    {
+      "frame": 12,
+      "description": "TLS opaque application-data record (outer type 23)"
+    },
+    {
+      "frame": 13,
+      "description": "IPv6 UDP DNS AAAA question"
+    },
+    {
+      "frame": 14,
+      "description": "IPv4 first fragment"
+    },
+    {
+      "frame": 15,
+      "description": "IPv4 second fragment"
+    },
+    {
+      "frame": 16,
+      "description": "Unsupported experimental Ethernet protocol"
+    },
+    {
+      "frame": 17,
+      "description": "Captured frame truncated inside IPv4 header"
+    }
+  ],
+  "mixed_section_expected_epoch_seconds": [
+    "1700000000.250000000",
+    "1700000000.500000000",
+    "1700000000.750000000"
+  ],
+  "paging_fixture": {
+    "file": "synthetic_paging_750.pcap",
+    "frames": 750,
+    "tcp_frames": 250,
+    "udp_frames_including_dns": 500,
+    "rule": "One-based frames divisible by three are TCP SYN; every other frame is UDP. Only frames 452 and 749 use UDP port 53 with DNS questions.",
+    "dns_frames": [
+      452,
+      749
+    ],
+    "dns_names": [
+      "page0452.example.test",
+      "page0749.example.test"
+    ],
+    "dns_zero_based_udp_offsets": [
+      301,
+      499
+    ],
+    "udp_page_200": [
+      {
+        "offset": 0,
+        "count": 200,
+        "first_frame": 1,
+        "last_frame": 299,
+        "has_next": true
+      },
+      {
+        "offset": 200,
+        "count": 200,
+        "first_frame": 301,
+        "last_frame": 599,
+        "has_next": true
+      },
+      {
+        "offset": 400,
+        "count": 100,
+        "first_frame": 601,
+        "last_frame": 749,
+        "has_next": false
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "synthetic_ethernet.pcap",
+      "bytes": 1497,
+      "sha256": "a5fa3a30136a0404da19c047a2e40bef823719a3def7bad77357c3733ba56754",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_ethernet.pcapng",
+      "bytes": 1840,
+      "sha256": "c296622ddd6b1ef933f2f70c4c5bbd20f401f60dd0e3b64b017ffc92b6c6382e",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_raw_be_ns.pcap",
+      "bytes": 98,
+      "sha256": "e7db4734702877cb8eddc11c6785da04ebd8d75be4a523b496145c03c32c09c9",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_sll.pcap",
+      "bytes": 114,
+      "sha256": "7e3e4f9793d6162351fe840b564d18b165957bcb519915d66ab6a7c193f879a1",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_mixed_sections.pcapng",
+      "bytes": 496,
+      "sha256": "b4858de510f91187907177d5c8f8e977eab5d9f3e7846aa34254031eb06e125a",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_dns_pointer_loop.pcap",
+      "bytes": 100,
+      "sha256": "2e87f303f4e92d5b74d43c50ae4e26bbb9f5fb63ed5c1645bd846b301c01fddd",
+      "expected_container_error": false
+    },
+    {
+      "file": "synthetic_udp_truncated.pcap",
+      "bytes": 86,
+      "sha256": "9ad5a130704282eb9b8a88c5dafcfff7996096fa12a514a92157839c51d8f569",
+      "expected_container_error": false
+    },
+    {
+      "file": "invalid_unknown_interface.pcapng",
+      "bytes": 176,
+      "sha256": "8eb5f5bc46990290b29cd19e1c10c7b77b4ea32690b864841062bc053669fe94",
+      "expected_container_error": true
+    },
+    {
+      "file": "invalid_truncated_file.pcap",
+      "bytes": 1492,
+      "sha256": "d4660a206ba84c5c116e4e07a1850d8f1021b682e315764dbd9d8458d1a08331",
+      "expected_container_error": true
+    },
+    {
+      "file": "invalid_not_capture.pcap",
+      "bytes": 31,
+      "sha256": "cacc64e121ec9519a91c55f6ca1da7dbc1c57d1ea6779eff2f4d7fbd5a71cdc2",
+      "expected_container_error": true
+    },
+    {
+      "file": "synthetic_paging_750.pcap",
+      "bytes": 56064,
+      "sha256": "7ebe2e1962ea5e5d6e2fe93ba37234bd9ecc1456853c4be131e8d58cc5ab1325",
+      "expected_container_error": false
+    }
+  ]
+}
