@@ -1,0 +1,54 @@
+{
+  "version": "3.6.1.19",
+  "parent": "3.6.1.18",
+  "parent_commit": "4bfccc9df3b083122199cf9ea5182d546bfd7bb3",
+  "profile": "ATOMOS-RADIO-OBSERVATION-R1",
+  "status": "validated_development_release",
+  "acquisition_schema": "atomos.radio.v1",
+  "archive_profile": "ARADBP1",
+  "realization": "Installable Android Wi-Fi/cellular scalar-observation logger, local JSONL export, desktop study and byte-exact bit-plane archival. Existing R18 native engine unchanged.",
+  "android": {
+    "package": "org.atomos.radio",
+    "min_sdk": 29,
+    "target_sdk": 36,
+    "build_type": "debug",
+    "apk": "output/android/aTOMos-Radio-3.6.1.19-debug.apk",
+    "sha256": "ce7fa8e104250d30dc926be7df3d115968f294890408caf528a570f68cc3916b",
+    "physical_poco_validation": "pending first on-device session",
+    "emulator_scope": "API36.1 software radio and lifecycle validation; not physical RF evidence",
+    "instrumentation_tests_passed": 3,
+    "lint_errors": 0,
+    "lint_warnings": 7,
+    "signature_verified": "APK v2",
+    "final_export_sha256": "01cab1d5b6de8967171f6899f2e6b80537ada2d841a9794cd02aaf7af4725f38"
+  },
+  "host_validation": {
+    "python_tests_passed": 27,
+    "synthetic_fixture": "examples/synthetic_radio.jsonl",
+    "source_byte_archival_roundtrip": true
+  },
+  "document": {
+    "pages": 110,
+    "new_pages": 7,
+    "retained_r18_pages": 103,
+    "sha256": "0f95ef9fd27e4804a106d67e8a4d1b84325d25afd5e9be41b3e7e5d1701fa4ad",
+    "complete_visual_review": true,
+    "all_parent_pages_pixel_identical": true
+  },
+  "implemented": [
+    "Wi-Fi AP RSSI/identity/channel logging",
+    "reported cellular identity and power/quality logging",
+    "two-clock timestamp provenance",
+    "session notes and lifecycle/error records",
+    "local export and desktop per-link study",
+    "lossless 64x64 word bit-plane archive"
+  ],
+  "remaining_scope": [
+    "physical POCO field/cadence validation",
+    "raw IQ or complex CSI acquisition requires a separate supported source",
+    "LAN endpoint and IP/MAC inventory not implemented in this radio logger",
+    "observation-to-ASA/NA/JK native feedback adapter",
+    "Mali GPU port not implemented"
+  ],
+  "evidence": "review/android and examples contain emulator or synthetic records only; no physical handset capture is published"
+}

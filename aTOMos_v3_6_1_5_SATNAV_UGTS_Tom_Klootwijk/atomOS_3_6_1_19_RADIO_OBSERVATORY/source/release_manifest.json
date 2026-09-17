@@ -1,0 +1,448 @@
+{
+  "version": "3.6.1.19",
+  "profile": "ATOMOS-RADIO-OBSERVATION-R1",
+  "parent_commit": "4bfccc9df3b083122199cf9ea5182d546bfd7bb3",
+  "scope": "R19 phone acquisition and study extension; unchanged R18 manuscript included. No physical POCO capture bundled.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 155,
+      "sha256": "95a6fd0b51fa499209340b12ab1b03a28ccc77d49823233d0d5f4cad3d37a457"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 126,
+      "sha256": "e3460830d25ddc198feaae5cdc32b0465c94284af77f3f18465c5943cd2f8afb"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 731,
+      "sha256": "a8ff5df14cff456b27ba3d040476d2ca2c15929734b4a6ca5086004155922945"
+    },
+    {
+      "path": "android/.gitignore",
+      "bytes": 49,
+      "sha256": "5e44ab09c435ec8444b44c6303a0fc2cfd883bc51bde853e6f34d42cf775eb4e"
+    },
+    {
+      "path": "android/app/build.gradle",
+      "bytes": 599,
+      "sha256": "fd5a1b50f3ad77dbf1a156ed27dd2ebb0ece97d0a3f21196acdcee2986d26e77"
+    },
+    {
+      "path": "android/app/src/androidTest/AndroidManifest.xml",
+      "bytes": 165,
+      "sha256": "8fbbadb1fc7735b24b68479cd116cfcd2ed1ac055b6ae9534252f58186629e86"
+    },
+    {
+      "path": "android/app/src/androidTest/java/org/atomos/radio/ContractTest.java",
+      "bytes": 2958,
+      "sha256": "c4c3a0bca51355feec72143db42f0eb1eca3eb930b46e2fb18d4bc41a895352f"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "bytes": 1612,
+      "sha256": "3a5fd95024faa018483864552bac96d92f7b3b0a745418c0a9afc806321c171c"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/CellEncoder.java",
+      "bytes": 5251,
+      "sha256": "d6354dd5cd022719aa3a7748d6a5714e4a705c0afc2462593f4404c7e4976f64"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/Json.java",
+      "bytes": 987,
+      "sha256": "c532e799d4cbbfc5452198f8f7238cb77fe13b8e5fc2c9f0541abb2589edac7f"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/MainActivity.java",
+      "bytes": 12678,
+      "sha256": "fd7af705386281325ec248a3c9bbb1cbb15ee194a57d59024e5017afe039b233"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/RadioService.java",
+      "bytes": 15146,
+      "sha256": "3781cf06336058a9e7f0c3ed371aa9640304c0abc690dfbe92b7e4e2f025c335"
+    },
+    {
+      "path": "android/app/src/main/java/org/atomos/radio/SessionLog.java",
+      "bytes": 2957,
+      "sha256": "814f39f92baf36a162dbb5a26764401d9732836b2ff785b2c91870f3df0cd030"
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "bytes": 484,
+      "sha256": "bed70e25b2988b2f6cd091b5bfb8ea0176b20f1ba34f5cd29702fb4eaab69f0a"
+    },
+    {
+      "path": "android/app/src/main/res/xml/data_extraction_rules.xml",
+      "bytes": 191,
+      "sha256": "ec0f1c6431c2434ac85c7933dd0fe21c430e9601ec4db70d0112557cbebf9993"
+    },
+    {
+      "path": "android/build.gradle",
+      "bytes": 70,
+      "sha256": "6890efa07ab0063bcbdf50cc89686d90bddd1d02af5e5ada6d499d8c3e9b6aa8"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "bytes": 43705,
+      "sha256": "81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "bytes": 251,
+      "sha256": "cdab1ffb439219b1db125e3c99a86cf2424f8762b9b3faa404ed061e3635ecde"
+    },
+    {
+      "path": "android/gradle.properties",
+      "bytes": 118,
+      "sha256": "abde21914a00c7fe0e958edb52fd34718dd12aeb2e8a6cfef1524117ea365a9a"
+    },
+    {
+      "path": "android/gradlew",
+      "bytes": 8752,
+      "sha256": "734b3879d3501dce471cf0522d3bcbafe76873d9fc5129345b67fb43bd15e933"
+    },
+    {
+      "path": "android/gradlew.bat",
+      "bytes": 2966,
+      "sha256": "57931b17dd228e5c24dac90e815d0bf82477e831a4618dfab4136f5446b42a9f"
+    },
+    {
+      "path": "android/README.md",
+      "bytes": 4103,
+      "sha256": "13ac79e4009c7f7532439b82cbaaa0ec0a659f3c9a757494b972ffabeb3ad6cd"
+    },
+    {
+      "path": "android/settings.gradle",
+      "bytes": 272,
+      "sha256": "d44fe03912f3e27ddc42e278a406e7673e0627a582c0c05dfc36e9265635849a"
+    },
+    {
+      "path": "examples/emulator_analysis/normalized.csv",
+      "bytes": 75954,
+      "sha256": "58523c404a9c40ad8b9e91a11a1780e641668442d5a6f6e20fc1d8d6c0f00e4f"
+    },
+    {
+      "path": "examples/emulator_analysis/signal_01.png",
+      "bytes": 44057,
+      "sha256": "d1bdfd3f9f409e8a42a1d0bd194b7ada2bee9ba5e0ca3a597746a029d6ac23e9"
+    },
+    {
+      "path": "examples/emulator_analysis/signal_02.png",
+      "bytes": 45100,
+      "sha256": "17aee6070eafc0655e7552674e3ec5b36c72240437f6374c9e499155ed2ed2bd"
+    },
+    {
+      "path": "examples/emulator_analysis/signal_03.png",
+      "bytes": 41604,
+      "sha256": "83389f06e17cbe02717c740ef232b4b30dab1e1b7b3fd89c4023ccc00c7bfedf"
+    },
+    {
+      "path": "examples/emulator_analysis/source_original.aradbp",
+      "bytes": 20016,
+      "sha256": "4431e83d8a42c0c11bab323fcb919968e22fff47dee2bbc37783982c62a1d5e2"
+    },
+    {
+      "path": "examples/emulator_analysis/source_original.jsonl",
+      "bytes": 19538,
+      "sha256": "eb1575e1261f8eb5a06215726c4e23b80c300c7241992f01a59039baee40ed45"
+    },
+    {
+      "path": "examples/emulator_analysis/summary.json",
+      "bytes": 17509,
+      "sha256": "2ec06d9a72efe3b4d81baf7ff763e11db7eae8754c242ad6e4ad42ab937b9397"
+    },
+    {
+      "path": "examples/emulator_analysis/summary.md",
+      "bytes": 9029,
+      "sha256": "8903afa772d3edb2eb0a1989098e87ff103665345f35380f816a49daedbc6c2a"
+    },
+    {
+      "path": "examples/emulator_final_analysis/normalized.csv",
+      "bytes": 129854,
+      "sha256": "2c58c63bd7c6213beca5a760fc32f05b1a10746a00e33952a338a185fcbba095"
+    },
+    {
+      "path": "examples/emulator_final_analysis/signal_01.png",
+      "bytes": 50393,
+      "sha256": "be74df1d8e7f8c6afbcf6aaa101f6f66e64091a35a44fc5a1162fbf9ecd1cc26"
+    },
+    {
+      "path": "examples/emulator_final_analysis/signal_02.png",
+      "bytes": 51562,
+      "sha256": "3e375e5982f6faa242fd89ec198caddf29cb3c7adb338c52180791ab3ad0f115"
+    },
+    {
+      "path": "examples/emulator_final_analysis/signal_03.png",
+      "bytes": 43519,
+      "sha256": "e4c2e596634cdead3600ce5ffa38548a7f422b072069eb018fb12f358973cfa7"
+    },
+    {
+      "path": "examples/emulator_final_analysis/source_original.aradbp",
+      "bytes": 23088,
+      "sha256": "668aa1a2f448b3201af8c9a97b136b59a545d68b1d871df254b9fd04de645749"
+    },
+    {
+      "path": "examples/emulator_final_analysis/source_original.jsonl",
+      "bytes": 22871,
+      "sha256": "01cab1d5b6de8967171f6899f2e6b80537ada2d841a9794cd02aaf7af4725f38"
+    },
+    {
+      "path": "examples/emulator_final_analysis/summary.json",
+      "bytes": 18138,
+      "sha256": "4e744a861358e8562fb048c5d9ae745768ee74fc4c582ef8406538c0dde49345"
+    },
+    {
+      "path": "examples/emulator_final_analysis/summary.md",
+      "bytes": 8727,
+      "sha256": "bdb1abe16b0149f479a0b6a0a03fce4cb1ab7998270b42520200f40caffc3c78"
+    },
+    {
+      "path": "examples/make_synthetic.py",
+      "bytes": 4339,
+      "sha256": "8e32d7f4128335bab8e53f1466c24e4dbfe26cf0b5274b547bcfbfc5a7844939"
+    },
+    {
+      "path": "examples/README.md",
+      "bytes": 4378,
+      "sha256": "7ea9734c4d114b4c9160bdd8ff5ec77881af3da6b98540a4cc0744f5ea7c10dd"
+    },
+    {
+      "path": "examples/synthetic_analysis/normalized.csv",
+      "bytes": 56521,
+      "sha256": "fb28e5d528f0b48472999b80d7648e25b859a6f4f775f75cfcdda4d47c865ad0"
+    },
+    {
+      "path": "examples/synthetic_analysis/python_tests.txt",
+      "bytes": 3874,
+      "sha256": "f4c51c206fcf76232dd354b5ad0c7efcce787002571a0cdffd45605a49c87a17"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_01.png",
+      "bytes": 43005,
+      "sha256": "74b57c1d9d6e5a3f36a3b4b730c78bbd97085aea4f46632f5e788f9363934058"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_02.png",
+      "bytes": 43768,
+      "sha256": "83fa9e96d76854b677190597396e4e8d0d5cf10d97d651ad072ed6930b68f271"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_03.png",
+      "bytes": 37882,
+      "sha256": "6ef216515923acb0323008b930cbec41365185a34b6f9663a3fd302b6a5ebdda"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_04.png",
+      "bytes": 39092,
+      "sha256": "939a4bc93d1a6d21a3077d3d6e11daca722e0af915b8e6e10b801887160f597c"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_05.png",
+      "bytes": 35515,
+      "sha256": "6e9b02bc0352de9cd21c16cd194afb17c9c68073bb39c27471918470d3ff4ec1"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_06.png",
+      "bytes": 38251,
+      "sha256": "428f29da9176ddeaa863c8ce785e2b6ca1d3884c436d13657ec633e84699a7de"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_07.png",
+      "bytes": 50775,
+      "sha256": "0db691bd66d437c84c3cff2c6283bcf146a42a8a91ff284c6072d2ab5999cf08"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_08.png",
+      "bytes": 51995,
+      "sha256": "3c7dfa883f3c5117a372f860f85c53f6846c89fd1a67a654fddefefbb27471da"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_09.png",
+      "bytes": 45703,
+      "sha256": "e82302fc27588c84d7eeaa70b8ade975ce8e8ae6e5be156b55ee75fe23ba687a"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_10.png",
+      "bytes": 45930,
+      "sha256": "457460d22c73deb006d859fb9fe70fff5bc06003cf84ed9def2ec7b23eb4a1c9"
+    },
+    {
+      "path": "examples/synthetic_analysis/signal_11.png",
+      "bytes": 38840,
+      "sha256": "d428212b8c4c29842c7d3948ee1d117e556615ae5f4e669df479ee8c3d290394"
+    },
+    {
+      "path": "examples/synthetic_analysis/source_original.aradbp",
+      "bytes": 9776,
+      "sha256": "b4447eb44f0de5cb62291e5de9f9b272b576bc4c148f5436ba6c667e6bff02ad"
+    },
+    {
+      "path": "examples/synthetic_analysis/source_original.jsonl",
+      "bytes": 9688,
+      "sha256": "a856b26dc46fa5a3c93d8de38c087f602df342284d6b162c512281d6338c26cd"
+    },
+    {
+      "path": "examples/synthetic_analysis/summary.json",
+      "bytes": 14717,
+      "sha256": "3dcc639e3da3bca8b1f14cb5deff0b6541f9a5f2f1d70000726ea90188cf4d6c"
+    },
+    {
+      "path": "examples/synthetic_analysis/summary.md",
+      "bytes": 5042,
+      "sha256": "f0a99a42f4c89490204b9593e31e8e7b63f65ddd5b37ea00f2a9ae5bffe34263"
+    },
+    {
+      "path": "examples/synthetic_radio.jsonl",
+      "bytes": 9688,
+      "sha256": "a856b26dc46fa5a3c93d8de38c087f602df342284d6b162c512281d6338c26cd"
+    },
+    {
+      "path": "formal/RADIO_OBSERVATION_PROFILE.md",
+      "bytes": 14959,
+      "sha256": "f4f1da42d886a8781e86b6614ac6422854081c8c45a30ff3606c83e6f85121b3"
+    },
+    {
+      "path": "output/android/aTOMos-Radio-3.6.1.19-debug.apk",
+      "bytes": 113676,
+      "sha256": "ce7fa8e104250d30dc926be7df3d115968f294890408caf528a570f68cc3916b"
+    },
+    {
+      "path": "output/pdf/aTOMos_v3_6_1_19_Radio_Observatory_Tom_Klootwijk.pdf",
+      "bytes": 805097,
+      "sha256": "0f95ef9fd27e4804a106d67e8a4d1b84325d25afd5e9be41b3e7e5d1701fa4ad"
+    },
+    {
+      "path": "python/atomos_radio.py",
+      "bytes": 31390,
+      "sha256": "506afb8afcae9e1dac520ade2084a80969599ae340e13f72a5c49896fb719c52"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5539,
+      "sha256": "ecbd6393a1ad4b611a8c768e17af03897d72a09dd31cdccf41123483b80c9061"
+    },
+    {
+      "path": "requirements-document.txt",
+      "bytes": 46,
+      "sha256": "b044f72918b65be3505c8810fd822b1925176e66d862a08a18a3c8a8bd086f91"
+    },
+    {
+      "path": "requirements-study.txt",
+      "bytes": 103,
+      "sha256": "2db98ed3ffb80a02f2cffc3433670c32fcc345ef068b6cab03f3d11e3d85ad6d"
+    },
+    {
+      "path": "review/android/emulator-final-recording.png",
+      "bytes": 199776,
+      "sha256": "48baf93ae3342d728f4a3348cb9617ff1d330efa708e31a81988a0862d09805c"
+    },
+    {
+      "path": "review/android/emulator-recording.png",
+      "bytes": 192942,
+      "sha256": "71b16fd0519b21cf6bea07703a75328d24e9d8f2deffaf4af2acc41a43b10ca6"
+    },
+    {
+      "path": "review/android/emulator-session-final.jsonl",
+      "bytes": 22871,
+      "sha256": "01cab1d5b6de8967171f6899f2e6b80537ada2d841a9794cd02aaf7af4725f38"
+    },
+    {
+      "path": "review/android/emulator-session.jsonl",
+      "bytes": 19538,
+      "sha256": "eb1575e1261f8eb5a06215726c4e23b80c300c7241992f01a59039baee40ed45"
+    },
+    {
+      "path": "review/android/instrumentation-final.txt",
+      "bytes": 112,
+      "sha256": "9f0ab1d7f44b5234d19782e2326880cd75309e31e326d276e2c67c6af6247a87"
+    },
+    {
+      "path": "review/android/validation.json",
+      "bytes": 367,
+      "sha256": "3a7325b3fba4c4d71b5e72a03f3e6077b24e5973fecc716c719258a546527add"
+    },
+    {
+      "path": "review/android/VALIDATION.md",
+      "bytes": 3995,
+      "sha256": "d0f121c40a044ee5294c97925a91337bd74a782d9f9719120c84c9320e18230a"
+    },
+    {
+      "path": "review/integration.json",
+      "bytes": 567,
+      "sha256": "2d7ed9a2156a74340e6597b86c8d5b8f73610f17d55b6e62be30d900c29e82f5"
+    },
+    {
+      "path": "review/pdf_build.json",
+      "bytes": 509,
+      "sha256": "820b6d31032eb0f365ffbd214f1269bf3c20a78655deaf4a17c6b778a59dd5d9"
+    },
+    {
+      "path": "review/pdf_visual_review.json",
+      "bytes": 70245,
+      "sha256": "59308b06d85e9b023bad270b858f9d07a42ded23f5787d4ee616494e55f31c89"
+    },
+    {
+      "path": "schema/radio-event-v1.schema.json",
+      "bytes": 985,
+      "sha256": "4a94a68126ad161becee6ebb6b43256b4bf44434e21df2e453152262a84b0df2"
+    },
+    {
+      "path": "source/android_api/android-10.0.0_r1_CellSignalStrengthLte.java.txt",
+      "bytes": 15030,
+      "sha256": "0e9641a937193d9cadad180e05051c20c7e235ec46097f71023607ae97d76baa"
+    },
+    {
+      "path": "source/android_api/android-11.0.0_r1_CellSignalStrengthLte.java.txt",
+      "bytes": 19466,
+      "sha256": "13b7c6764d2c0301c19216bb6dd6605ba545690a4f37bc3ed1becd100f61fc4f"
+    },
+    {
+      "path": "source/api_sources.json",
+      "bytes": 1000,
+      "sha256": "c97a361c08cbb6fd85b1b14e76d1059051a177eed02c0be39166f9575a466dc4"
+    },
+    {
+      "path": "source/parent_R18.pdf",
+      "bytes": 613100,
+      "sha256": "a62e3d7a57ec4c01c18308d9eb4b3c2f16172baf0e88276fbf6e64e591390cf0"
+    },
+    {
+      "path": "tests/test_radio.py",
+      "bytes": 15301,
+      "sha256": "b703137d30b7e1b443aee3484556a23e8a80ef70939a4c76bbcdbcb267db562a"
+    },
+    {
+      "path": "tools/build_android.ps1",
+      "bytes": 1507,
+      "sha256": "2155b9031fe8b3da5358597163b7c0684605e323b6ff41dcbb900dbab0561408"
+    },
+    {
+      "path": "tools/build_pdf.py",
+      "bytes": 7993,
+      "sha256": "42bf2ef732e8b8438f1e861fd634757fb7caf25f859bc33aed45c6167c3f85f8"
+    },
+    {
+      "path": "tools/package_release.py",
+      "bytes": 4925,
+      "sha256": "42ce2f04e8781334ebbdac11ae0ef6ea4cb4b11c5d466302a13394934d8e0587"
+    },
+    {
+      "path": "tools/review_pdf.py",
+      "bytes": 9116,
+      "sha256": "768b7789bb0283e1e80e5b9d6e0e0a0387f734c788fa918a621f240b10426930"
+    },
+    {
+      "path": "tools/study_radio.py",
+      "bytes": 2662,
+      "sha256": "f439e64ee9f1b56ef71354ab0e4ffeea9cdd8aae3857de23508f8520c381b806"
+    },
+    {
+      "path": "VERSION.json",
+      "bytes": 2343,
+      "sha256": "cc4f99b6cec415c64684007b01c7a4671c188715de9cbcfeeeb282be1a419caa"
+    }
+  ]
+}

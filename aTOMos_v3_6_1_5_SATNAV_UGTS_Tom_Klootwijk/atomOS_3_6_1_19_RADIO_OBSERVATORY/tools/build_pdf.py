@@ -167,7 +167,7 @@ def main():
     report = {'pdf': str(target.relative_to(ROOT)), 'sha256': sha(target), 'pages': len(final.pages),
               'new_pages': len(intro.pages), 'retained_pages': len(parent.pages),
               'parent_sha256': PARENT_SHA256, 'parent_page_text_and_streams_equal': True,
-              'source_sha256': input_hash, 'visual_review': 'pending'}
+              'source_sha256': input_hash, 'visual_review_report': 'review/pdf_visual_review.json'}
     review = ROOT / 'review'
     review.mkdir(exist_ok=True)
     (review / 'pdf_build.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')

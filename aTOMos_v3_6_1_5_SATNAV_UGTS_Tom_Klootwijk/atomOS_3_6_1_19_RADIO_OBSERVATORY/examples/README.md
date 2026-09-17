@@ -1,5 +1,13 @@
 # R19 synthetic radio study
 
+`emulator_final_analysis/` is the study of the **final APK's** exported session:
+50 valid events, 20 radio records, zero validation issues, and three visibly
+labelled emulator plots. Original source and byte-identical bit-plane archive
+are included. Its source SHA-256 is
+`01cab1d5b6de8967171f6899f2e6b80537ada2d841a9794cd02aaf7af4725f38`.
+The older `emulator_analysis/` below belongs to the earlier build; the precise
+build boundary is documented in `../review/android/VALIDATION.md`.
+
 `synthetic_radio.jsonl` contains **invented test records**, not phone or over-air measurements. `make_synthetic.py` recreates its exact bytes. It includes Wi-Fi, LTE, NR, cached repeats, an old cached Wi-Fi timestamp, missing NR timestamps/metrics, status events and human marker labels.
 
 One LTE event deliberately carries the Android 29 `rssnr_tenth_db` field; other LTE events use the Android 30+ `rssnr_db` field. This tests both explicit unit profiles in one synthetic stream. It does not describe one physical phone changing its Android version.
