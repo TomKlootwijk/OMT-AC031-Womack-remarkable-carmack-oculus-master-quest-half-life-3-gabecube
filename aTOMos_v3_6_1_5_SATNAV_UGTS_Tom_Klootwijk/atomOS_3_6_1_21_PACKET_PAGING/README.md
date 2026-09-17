@@ -5,6 +5,11 @@ the inspected capture, then shows bounded pages of up to 200 matching records.
 Previous and Next reach later records without retaining every packet object.
 The desktop UDP report gains matching offset and page-size controls.
 
+Validated and installed on the POCO X7 Pro: 53 host tests and 29 Android tests
+pass. The upgrade preserved all three journals, the imported raw capture and its
+stored report byte for byte. The handset browser shows all 115 UDP records from
+the saved 209-packet capture. Lint reports no errors and 27 warnings.
+
 ## Install and browse
 
 Install `output/android/aTOMos-Radio-3.6.1.21-debug.apk` over the existing

@@ -1,0 +1,20 @@
+{
+  "schema": "atomos.r21.saved-capture-validation.v1",
+  "validated_utc": "2026-09-17T06:03:16.887393+00:00",
+  "status": "passed",
+  "source": "Previously recorded phone capture; bytes and packet details remain private.",
+  "source_bytes": 73852,
+  "capture_packets": 209,
+  "udp_matches": 115,
+  "udp_page_sizes": [
+    50,
+    50,
+    15
+  ],
+  "duplicates": 0,
+  "udp_records_beyond_old_global_200_detail_window": 7,
+  "source_unchanged": true,
+  "decoder_source_sha256": "54e8830f8628be295087a089497af0f970af12032ae288087e984614e58d6212",
+  "execution": "Java host runner using the R21 decoder; this is not an R21 phone installation.",
+  "identifying_packet_fields_published": false
+}

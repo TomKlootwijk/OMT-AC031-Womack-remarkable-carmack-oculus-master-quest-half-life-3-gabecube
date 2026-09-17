@@ -1,0 +1,17 @@
+plugins { id 'com.android.application' }
+android {
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    namespace 'org.atomos.radio'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'org.atomos.radio'
+        minSdk 29
+        targetSdk 36
+        versionCode 21
+        versionName '3.6.1.21'
+        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    buildTypes { debug { debuggable true }; release { minifyEnabled false } }
+}

@@ -1,0 +1,61 @@
+{
+  "version": "3.6.1.21",
+  "parent": "3.6.1.20",
+  "parent_commit": "87743d502ca7b590ec8b1ec7eafc45f957cdfd8e",
+  "git_repair_commit": "7481591f594be1ead3d6d00bc3f37fca2c978f35",
+  "profile": "ATOMOS-PACKET-PAGING-R1",
+  "status": "validated_development_release",
+  "acquisition_schema": "atomos.radio.v1",
+  "archive_profile": "ARADBP1",
+  "realization": "Bounded source-pinned filtered packet pages, global phone search, desktop UDP offset/limit and in-place POCO upgrade; exact native core unchanged.",
+  "android": {
+    "package": "org.atomos.radio",
+    "min_sdk": 29,
+    "target_sdk": 36,
+    "version_code": 21,
+    "build_type": "debug",
+    "apk": "output/android/aTOMos-Radio-3.6.1.21-debug.apk",
+    "sha256": "8527bbcf4aba99e493988eaf50152fed8e3503199b949d740f0dd48a1f3b46d4",
+    "apk_bytes": 332900,
+    "instrumentation_tests_passed": 29,
+    "lint_errors": 0,
+    "lint_warnings": 27,
+    "physical_poco_validation": "Installed APK bytes verified; all 5 prior private files preserved; saved209-packet capture opens with all115UDP records.",
+    "physical_evidence": "review/physical_validation.json",
+    "emulator_scope": "API36.1 synthetic pages, late matches, lifecycle, rotation, source identity and layout"
+  },
+  "document": {
+    "pages": 120,
+    "new_pages": 3,
+    "retained_r20_pages": 117,
+    "sha256": "8375b5c4fb056b6536e1a598ecef92333b6792df34fd55307d11716ed29c4610",
+    "complete_visual_review": true,
+    "all_parent_pages_pixel_identical": true
+  },
+  "implemented": [
+    "200-row pages across inspected raw capture",
+    "All/UDP/DNS/TCP/TLS protocol filter and global metadata/preview search",
+    "Expected SHA and before/after source checks",
+    "Debounce, cancellation, stale-result generation checks and saved query/page state",
+    "Desktop --udp-offset and --udp-limit with source hashes",
+    "Inherited radio logging, PCAPdroid launch, document import and byte-exact ARADBP1 archive"
+  ],
+  "remaining_scope": [
+    "Phone scans are limited to64MiB/100,000packets and re-run for each page; no persistent index",
+    "Summary JSON export retains first200 details; the phone browser rescans raw bytes",
+    "Text search covers decoded metadata and bounded previews, not every payload byte",
+    "TCP/IP reassembly and broader dissection use TShark; no added decryption",
+    "Physical USB storage not tested",
+    "No new RF calibration, ranging, ASA/NA/JK observation adapter or Mali GPU backend"
+  ],
+  "host_validation": {
+    "python_tests_passed": 53,
+    "radio_tests": 29,
+    "packet_tests": 24,
+    "tshark_version": "4.6.2",
+    "synthetic_packet_containers": 11,
+    "review": "review/host_validation.json",
+    "saved_capture_aggregate_review": "review/saved_capture_validation.json"
+  },
+  "evidence": "Public examples are synthetic. Physical captures, identifying derivatives, phone backup and screenshots remain private."
+}
