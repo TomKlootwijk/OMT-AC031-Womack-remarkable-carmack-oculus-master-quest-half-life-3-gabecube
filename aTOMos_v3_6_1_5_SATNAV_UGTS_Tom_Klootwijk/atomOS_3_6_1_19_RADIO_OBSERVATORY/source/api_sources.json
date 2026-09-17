@@ -1,0 +1,19 @@
+{
+  "purpose": "Source-pinned LTE RSSNR unit transition; source files remain unmodified under their original Apache 2.0 notices",
+  "records": [
+    {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-10.0.0_r1/telephony/java/android/telephony/CellSignalStrengthLte.java",
+      "retrieved_date": "2026-09-17",
+      "path": "source/android_api/android-10.0.0_r1_CellSignalStrengthLte.java.txt",
+      "sha256": "0e9641a937193d9cadad180e05051c20c7e235ec46097f71023607ae97d76baa",
+      "getRssnr_unit": "tenths_dB"
+    },
+    {
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-11.0.0_r1/telephony/java/android/telephony/CellSignalStrengthLte.java",
+      "retrieved_date": "2026-09-17",
+      "path": "source/android_api/android-11.0.0_r1_CellSignalStrengthLte.java.txt",
+      "sha256": "13b7c6764d2c0301c19216bb6dd6605ba545690a4f37bc3ed1becd100f61fc4f",
+      "getRssnr_unit": "dB"
+    }
+  ]
+}
