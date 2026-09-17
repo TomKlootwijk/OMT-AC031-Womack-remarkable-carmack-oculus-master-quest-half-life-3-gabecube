@@ -1,0 +1,32 @@
+test_corruption_and_truncation_rejected (test_radio.ArchiveTests.test_corruption_and_truncation_rejected) ... ok
+test_nonzero_padding_rejected_even_with_matching_trimmed_hash (test_radio.ArchiveTests.test_nonzero_padding_rejected_even_with_matching_trimmed_hash) ... ok
+test_partial_word_and_block_roundtrip (test_radio.ArchiveTests.test_partial_word_and_block_roundtrip) ... ok
+test_analysis_artifacts_preserve_source_and_plot (test_radio.StudyTests.test_analysis_artifacts_preserve_source_and_plot) ... ok
+test_cache_metadata_changes_do_not_create_new_observation (test_radio.StudyTests.test_cache_metadata_changes_do_not_create_new_observation) ... ok
+test_conflicting_same_timestamp_marks_entire_cluster (test_radio.StudyTests.test_conflicting_same_timestamp_marks_entire_cluster) ... ok
+test_duplicate_json_key_nonfinite_and_invalid_utf8_rejected (test_radio.StudyTests.test_duplicate_json_key_nonfinite_and_invalid_utf8_rejected) ... ok
+test_duplicate_out_of_order_and_gap_sequences_are_explicit (test_radio.StudyTests.test_duplicate_out_of_order_and_gap_sequences_are_explicit) ... ok
+test_equal_ns_identity_not_deduped_between_sessions (test_radio.StudyTests.test_equal_ns_identity_not_deduped_between_sessions) ... ok
+test_future_source_timestamp_not_used_as_measurement_time (test_radio.StudyTests.test_future_source_timestamp_not_used_as_measurement_time) ... ok
+test_invalid_rat_payload_reported_without_invented_classification (test_radio.StudyTests.test_invalid_rat_payload_reported_without_invented_classification) ... ok
+test_invalid_rows_and_truncated_tail_are_not_fabricated (test_radio.StudyTests.test_invalid_rows_and_truncated_tail_are_not_fabricated) ... ok
+test_large_identifiers_decimal_unknowns_and_raw_bytes_preserved (test_radio.StudyTests.test_large_identifiers_decimal_unknowns_and_raw_bytes_preserved) ... ok
+test_metric_statistics_do_not_mix_links_sessions_or_clock_segments (test_radio.StudyTests.test_metric_statistics_do_not_mix_links_sessions_or_clock_segments) ... ok
+test_missing_source_does_not_claim_freshness_or_dedup (test_radio.StudyTests.test_missing_source_does_not_claim_freshness_or_dedup) ... ok
+test_mixed_session_provenance_is_explicit (test_radio.StudyTests.test_mixed_session_provenance_is_explicit) ... ok
+test_nonempty_study_output_is_not_reused (test_radio.StudyTests.test_nonempty_study_output_is_not_reused) ... ok
+test_pack_cli_refuses_existing_output_and_preserves_it (test_radio.StudyTests.test_pack_cli_refuses_existing_output_and_preserves_it) ... ok
+test_reboot_and_wall_clock_step_explicit (test_radio.StudyTests.test_reboot_and_wall_clock_step_explicit) ... ok
+test_record_after_session_end_excluded (test_radio.StudyTests.test_record_after_session_end_excluded) ... ok
+test_rssnr_units_are_explicit_not_guessed_from_value (test_radio.StudyTests.test_rssnr_units_are_explicit_not_guessed_from_value) ... ok
+test_source_output_alias_refused (test_radio.StudyTests.test_source_output_alias_refused) ... ok
+test_stale_source_is_retained_and_flagged_by_named_policy (test_radio.StudyTests.test_stale_source_is_retained_and_flagged_by_named_policy) ... ok
+test_strict_schema_elapsed_and_boolean_integer_validation (test_radio.StudyTests.test_strict_schema_elapsed_and_boolean_integer_validation) ... ok
+test_synthetic_fixture_has_cache_unknowns_and_all_radio_types (test_radio.StudyTests.test_synthetic_fixture_has_cache_unknowns_and_all_radio_types) ... ok
+test_unknown_payload_fields_participate_in_exact_cache_comparison (test_radio.StudyTests.test_unknown_payload_fields_participate_in_exact_cache_comparison) ... ok
+test_valid_final_record_without_newline_is_not_declared_truncated (test_radio.StudyTests.test_valid_final_record_without_newline_is_not_declared_truncated) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.700s
+
+OK
