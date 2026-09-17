@@ -1,0 +1,54 @@
+================================================================================
+IPv6 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |    Relative    |   Duration   |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |      Start     |              |
+2001:db8:a::10       <-> 2001:db8:b::53             0 0 bytes         1 92 bytes        1 92 bytes     12,012000000         0,0000
+================================================================================
+================================================================================
+IPv4 Conversations
+Filter:<No Filter>
+                                               |       <-      | |       ->      | |     Total     |    Relative    |   Duration   |
+                                               | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |      Start     |              |
+192.0.2.10           <-> 198.51.100.20              4 312 bytes       8 582 bytes      12 894 bytes     2,002000000        12,0120
+192.0.2.10           <-> 192.0.2.53                 1 88 bytes        1 72 bytes        2 160 bytes     0,000000000         1,0010
+================================================================================
+================================================================================
+UDP Conversations
+Filter:<No Filter>
+                                                           |       <-      | |       ->      | |     Total     |    Relative    |   Duration   |
+                                                           | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |      Start     |              |
+192.0.2.10:53000           <-> 192.0.2.53:53                    1 88 bytes        1 72 bytes        2 160 bytes     0,000000000         1,0010
+2001:db8:a::10:53001       <-> 2001:db8:b::53:53                0 0 bytes         1 92 bytes        1 92 bytes     12,012000000         0,0000
+192.0.2.10:49000           <-> 198.51.100.20:49001              0 0 bytes         1 69 bytes        1 69 bytes     14,014000000         0,0000
+================================================================================
+================================================================================
+TCP Conversations
+Filter:<No Filter>
+                                                           |       <-      | |       ->      | |     Total     |    Relative    |   Duration   |
+                                                           | Frames  Bytes | | Frames  Bytes | | Frames  Bytes |      Start     |              |
+192.0.2.10:40000           <-> 198.51.100.20:80                 2 183 bytes       3 228 bytes       5 411 bytes     2,002000000         4,0040
+192.0.2.10:40001           <-> 198.51.100.20:443                2 129 bytes       3 235 bytes       5 364 bytes     7,007000000         4,0040
+================================================================================
+
+===================================================================
+Protocol Hierarchy Statistics
+Filter: 
+
+frame                                    frames:17 bytes:1233
+  eth                                    frames:17 bytes:1233
+    ip                                   frames:15 bytes:1110
+      udp                                frames:3 bytes:229
+        dns                              frames:2 bytes:160
+        data                             frames:1 bytes:69
+      tcp                                frames:10 bytes:775
+        http                             frames:2 bytes:249
+          data-text-lines                frames:1 bytes:129
+        tls                              frames:2 bytes:202
+      data                               frames:1 bytes:50
+      _ws.short                          frames:1 bytes:56
+    ipv6                                 frames:1 bytes:92
+      udp                                frames:1 bytes:92
+        dns                              frames:1 bytes:92
+    data                                 frames:1 bytes:31
+===================================================================
