@@ -100,9 +100,20 @@ The Android decoder reads classic PCAP and PCAPNG with bounded allocation and tr
 | Link | Ethernet with VLAN, RAW IP and Linux cooked capture variants. |
 | Network | IPv4 / IPv6 headers and bounded extension traversal. |
 | Transport | TCP / UDP / ICMP fields, endpoints and protocol counts. |
-| Application | Bounded DNS names, plaintext HTTP method/status and TLS record metadata. |
+| Application | Bounded DNS names, NTP/DHCP fields, HTTP method/status and TLS record metadata. |
 
 The small on-phone parser does not perform TCP stream reassembly or TLS decryption. DNS compression traversal must terminate, respect message bounds and reject cycles. A TLS record label does not identify a decrypted request, URL or message. Protocol-port hints do not replace verified protocol bytes.
+
+The readable UDP view presents source/destination endpoints, container time, UDP length, available payload length, decoded fields and a bounded text/hex preview. Printable bytes are a display interpretation, not proof of plaintext. Binary or encrypted content stays labeled; omitted preview bytes remain in the original file. The desktop UDP report offers the broader dissector's interpretation alongside raw previews.
+
+```
+payload_length = UDP_length - 8
+captured = max(0, min(IP_end, UDP_start + UDP_length) - UDP_start - 8)
+phone_preview_bytes = min(captured, 128)
+NTP_wire_seconds = seconds_field + fraction_field / 2^32
+```
+
+Full UDP payload coverage requires captured = payload_length and no unresolved fragment. NTP fields preserve their wire values; the era is unresolved and no UTC clock calibration is inferred (RFC 768, RFC 5905). DHCP fields follow RFC 2131/2132 with bounded option lengths.
 
 ## Desktop inspection
 
@@ -114,6 +125,8 @@ Unknown protocols and encrypted payloads remain available in the original captur
 # Capture and experiment workflow
 
 Open PCAPdroid from the aTOMos packet screen, choose PCAP file, start capture and accept Android's VPN prompt when shown. Use the phone normally for the experiment, then stop capture. Import the saved file from Downloads/PCAPdroid into aTOMos for local inspection. Capturing and importing are explicit actions.
+
+Radio acquisition and PCAPdroid capture can continue while backgrounded, using Android foreground services with ongoing notifications. They are started and stopped separately. Android's document picker can also import captures from mounted USB storage through its storage provider; this is file import, with no USB network-adapter driver added. The handset checks used Downloads; a physical USB drive was not tested.
 
 PCAPdroid remains a separate application with its own source, license and settings. Its non-root mode proxies phone-initiated connections: incoming IP and transport headers can be synthetic and packet sizes/timing can change. That provenance belongs in any interpretation of the trace. Radio and packet captures answer different questions and can be studied together when their time windows overlap.
 

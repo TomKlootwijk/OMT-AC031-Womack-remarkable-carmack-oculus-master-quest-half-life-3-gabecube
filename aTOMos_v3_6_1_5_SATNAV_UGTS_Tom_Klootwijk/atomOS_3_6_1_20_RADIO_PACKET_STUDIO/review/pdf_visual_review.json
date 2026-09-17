@@ -1,9 +1,9 @@
 {
   "schema": "atomos.r20.pdf_visual_review.v1",
-  "reviewed_at_utc": "2026-09-17T05:18:20.000777+00:00",
+  "reviewed_at_utc": "2026-09-17T05:35:22.058158+00:00",
   "pdf": "output\\pdf\\aTOMos_v3_6_1_20_Radio_Packet_Studio_Tom_Klootwijk.pdf",
-  "sha256": "132836b18eb3ca2eef5b920cb363f9bb1371c1f55f807c330dead9e467ed8ec8",
-  "source_sha256": "9e5f63012208e9e8f7f085e795a49dea50fd7135db8acf3626ed861f534370a0",
+  "sha256": "afebe08e91feb4d309f2c68268b435e0ca13a02c803264e96c2782972239a7ec",
+  "source_sha256": "9af7d42e4b01d079ac0ebd852585f6ba5f28f4b2ae628ba7ef7e79735383a80b",
   "pages": 117,
   "supplement_pages": 7,
   "parent_pages": 110,
@@ -28,7 +28,7 @@
   "inherited_text_checks_equal_parent": true,
   "inherited_text_extraction_artifact_count": 14,
   "inherited_text_extraction_note": "Fourteen NUL extraction values from retained TeX Type1 extension glyphs also occur identically in the reviewed R19; every retained page is pixel-identical. They are not new missing visual glyphs.",
-  "visual_review_sha256": "132836b18eb3ca2eef5b920cb363f9bb1371c1f55f807c330dead9e467ed8ec8",
+  "visual_review_sha256": "afebe08e91feb4d309f2c68268b435e0ca13a02c803264e96c2782972239a7ec",
   "visual_notes": "All seven supplement pages inspected individually at rendered resolution: headers, footers, page numbering, tables, formulas, code blocks, references, line wrapping and section transitions checked; no clipping or overlap.",
   "complete": true,
   "supplement_review": [
@@ -71,7 +71,7 @@
     {
       "page": 5,
       "png": "tmp\\pdf\\review\\supplement-005.png",
-      "png_sha256": "c1cd021114b2d286a0af314b3bd4318554e51f00c3efe0c6a4bb277d1476b056",
+      "png_sha256": "96a0606e63a9f610327ff637dcafe5d99e4ec5afdcbf66eb77cf47d15304d675",
       "header_present": true,
       "footer_present": true,
       "page_number_present": true,
@@ -80,7 +80,7 @@
     {
       "page": 6,
       "png": "tmp\\pdf\\review\\supplement-006.png",
-      "png_sha256": "fb2e587ba80aa0371c46de0f51b165c7a49666dfc34ebe27cd29bf06363d0d16",
+      "png_sha256": "3af529dea6d8cece4b62194d75679dcf19388c8f5d05ab4e37c6009a91453e64",
       "header_present": true,
       "footer_present": true,
       "page_number_present": true,
